@@ -1,0 +1,26 @@
+using System;
+
+namespace ClearHl7.Fhir.Codes.V281
+{
+    /// <summary>
+    /// HL7 Version 2 Table 0231 - Student Status.
+    /// </summary>
+    /// </remarks>https://www.hl7.org/fhir/v2/0231</remarks>
+    public enum StudentStatus
+    {
+        /// <summary>
+        /// F - Full-time student.
+        /// </summary>
+        FullTimeStudent,
+        
+        /// <summary>
+        /// N - Not a student.
+        /// </summary>
+        NotAStudent,
+        
+        /// <summary>
+        /// P - Part-time student.
+        /// </summary>
+        PartTimeStudent
+    }
+}

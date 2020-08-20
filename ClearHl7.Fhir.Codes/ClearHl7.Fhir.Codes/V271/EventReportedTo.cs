@@ -1,0 +1,31 @@
+using System;
+
+namespace ClearHl7.Fhir.Codes.V271
+{
+    /// <summary>
+    /// HL7 Version 2 Table 0236 - Event Reported To.
+    /// </summary>
+    /// </remarks>https://www.hl7.org/fhir/v2/0236</remarks>
+    public enum EventReportedTo
+    {
+        /// <summary>
+        /// D - Distributor.
+        /// </summary>
+        Distributor,
+        
+        /// <summary>
+        /// L - Local facility/user facility.
+        /// </summary>
+        LocalFacilityUserFacility,
+        
+        /// <summary>
+        /// M - Manufacturer.
+        /// </summary>
+        Manufacturer,
+        
+        /// <summary>
+        /// R - Regulatory agency.
+        /// </summary>
+        RegulatoryAgency
+    }
+}
