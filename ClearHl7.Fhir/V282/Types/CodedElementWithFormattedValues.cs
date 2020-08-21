@@ -88,7 +88,7 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// CF.16 - Value Set Version ID.
         /// </summary>
-        public DateTime ValueSetVersionId { get; set; }
+        public DateTime? ValueSetVersionId { get; set; }
 
         /// <summary>
         /// CF.17 - Alternate Coding System OID.
@@ -103,7 +103,7 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// CF.19 - Alternate Value Set Version ID.
         /// </summary>
-        public DateTime AlternateValueSetVersionId { get; set; }
+        public DateTime? AlternateValueSetVersionId { get; set; }
 
         /// <summary>
         /// CF.20 - Second Alternate Coding System OID.
@@ -118,6 +118,6 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// CF.22 - Second Alternate Value Set Version ID.
         /// </summary>
-        public DateTime SecondAlternateValueSetVersionId { get; set; }
+        public DateTime? SecondAlternateValueSetVersionId { get; set; }
     }
 }

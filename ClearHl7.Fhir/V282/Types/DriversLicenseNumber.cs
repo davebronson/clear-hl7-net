@@ -21,6 +21,6 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// DLN.3 - Expiration Date.
         /// </summary>
-        public DateTime ExpirationDate { get; set; }
+        public DateTime? ExpirationDate { get; set; }
     }
 }

@@ -16,6 +16,6 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// FC.2 - Effective Date.
         /// </summary>
-        public DateTime EffectiveDate { get; set; }
+        public DateTime? EffectiveDate { get; set; }
     }
 }

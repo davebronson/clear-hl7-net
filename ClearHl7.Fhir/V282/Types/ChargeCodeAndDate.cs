@@ -16,6 +16,6 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// CCD.2 - Date/time.
         /// </summary>
-        public DateTime Datetime { get; set; }
+        public DateTime? Datetime { get; set; }
     }
 }

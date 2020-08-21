@@ -43,12 +43,12 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// CX.7 - Effective Date.
         /// </summary>
-        public DateTime EffectiveDate { get; set; }
+        public DateTime? EffectiveDate { get; set; }
 
         /// <summary>
         /// CX.8 - Expiration Date.
         /// </summary>
-        public DateTime ExpirationDate { get; set; }
+        public DateTime? ExpirationDate { get; set; }
 
         /// <summary>
         /// CX.9 - Assigning Jurisdiction.

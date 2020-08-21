@@ -16,6 +16,6 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// DTN.2 - Number of Days.
         /// </summary>
-        public decimal NumberOfDays { get; set; }
+        public decimal? NumberOfDays { get; set; }
     }
 }

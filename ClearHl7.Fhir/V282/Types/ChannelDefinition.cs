@@ -30,7 +30,7 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// CD.5 - Channel Sampling Frequency.
         /// </summary>
-        public decimal ChannelSamplingFrequency { get; set; }
+        public decimal? ChannelSamplingFrequency { get; set; }
 
         /// <summary>
         /// CD.6 - Minimum and Maximum Data Values.

@@ -22,6 +22,6 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// ICD.3 - Date/Time Certification Required.
         /// </summary>
-        public DateTime DateTimeCertificationRequired { get; set; }
+        public DateTime? DateTimeCertificationRequired { get; set; }
     }
 }

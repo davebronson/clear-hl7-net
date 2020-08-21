@@ -10,7 +10,7 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// CQ.1 - Quantity.
         /// </summary>
-        public decimal Quantity { get; set; }
+        public decimal? Quantity { get; set; }
 
         /// <summary>
         /// CQ.2 - Units.

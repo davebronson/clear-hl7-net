@@ -1,0 +1,72 @@
+﻿using System;
+
+namespace ClearHl7.Fhir.V282.Types
+{
+    /// <summary>
+    /// HL7 Version 2 NDL - Name With Date And Location.
+    /// </summary>
+    public class NameWithDateAndLocation
+    {
+        /// <summary>
+        /// NDL.1 - Name.
+        /// </summary>
+        public CompositeIdNumberAndNameSimplified Name { get; set; }
+
+        /// <summary>
+        /// NDL.2 - Start Date/time.
+        /// </summary>
+        public DateTime? StartDateTime { get; set; }
+
+        /// <summary>
+        /// NDL.3 - End Date/time.
+        /// </summary>
+        public DateTime? EndDateTime { get; set; }
+
+        /// <summary>
+        /// NDL.4 - Point of Care.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0302</remarks>
+        public string PointOfCare { get; set; }
+
+        /// <summary>
+        /// NDL.5 - Room.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0303</remarks>
+        public string Room { get; set; }
+
+        /// <summary>
+        /// NDL.6 - Bed.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0304</remarks>
+        public string Bed { get; set; }
+
+        /// <summary>
+        /// NDL.7 - Facility.
+        /// </summary>
+        public HierarchicDesignator Facility { get; set; }
+
+        /// <summary>
+        /// NDL.8 - Location Status.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0306</remarks>
+        public string LocationStatus { get; set; }
+
+        /// <summary>
+        /// NDL.9 - Patient Location Type.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0305</remarks>
+        public string PatientLocationType { get; set; }
+
+        /// <summary>
+        /// NDL.10 - Building.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0307</remarks>
+        public string Building { get; set; }
+
+        /// <summary>
+        /// NDL.11 - Floor.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0308</remarks>
+        public string Floor { get; set; }
+    }
+}

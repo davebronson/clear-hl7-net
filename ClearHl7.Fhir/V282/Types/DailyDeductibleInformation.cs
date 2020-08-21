@@ -10,7 +10,7 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// DDI.1 - Delay Days.
         /// </summary>
-        public decimal DelayDays { get; set; }
+        public decimal? DelayDays { get; set; }
 
         /// <summary>
         /// DDI.22 - Monetary Amount.
@@ -20,6 +20,6 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// DDI.3 - Number of Days.
         /// </summary>
-        public decimal NumberOfDays { get; set; }
+        public decimal? NumberOfDays { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// DLT.2 - Numeric Threshold.
         /// </summary>
-        public decimal NumericThreshold { get; set; }
+        public decimal? NumericThreshold { get; set; }
 
         /// <summary>
         /// DLT.3 - Change Computation.
@@ -26,6 +26,6 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// DLT.4 - Days Retained.
         /// </summary>
-        public decimal DaysRetained { get; set; }
+        public decimal? DaysRetained { get; set; }
     }
 }

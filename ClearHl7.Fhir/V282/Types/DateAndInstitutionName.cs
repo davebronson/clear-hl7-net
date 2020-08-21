@@ -10,7 +10,7 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// DIN.1 - Date.
         /// </summary>
-        public DateTime Date { get; set; }
+        public DateTime? Date { get; set; }
 
         /// <summary>
         /// DIN.2 - Institution Name.

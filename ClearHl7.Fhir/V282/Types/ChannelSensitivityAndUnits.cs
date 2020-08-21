@@ -10,7 +10,7 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// CSU.1 - Channel Sensitivity.
         /// </summary>
-        public decimal ChannelSensitivity { get; set; }
+        public decimal? ChannelSensitivity { get; set; }
 
         /// <summary>
         /// CSU.2 - Unit of Measure Identifier.
@@ -93,7 +93,7 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// CSU.17 - Unit of MeasureValue Set Version ID.
         /// </summary>
-        public DateTime UnitOfMeasureValueSetVersionId { get; set; }
+        public DateTime? UnitOfMeasureValueSetVersionId { get; set; }
 
         /// <summary>
         /// CSU.18 - Alternate Unit of Measure Coding System OID.
@@ -108,7 +108,7 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// CSU.20 - Alternate Unit of Measure Value Set Version ID.
         /// </summary>
-        public DateTime AlternateUnitOfMeasureValueSetVersionId { get; set; }
+        public DateTime? AlternateUnitOfMeasureValueSetVersionId { get; set; }
 
         /// <summary>
         /// CSU.21 - Alternate Unit of Measure Coding System OID.

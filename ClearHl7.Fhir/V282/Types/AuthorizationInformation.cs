@@ -15,7 +15,7 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// AUI.2 - Date.
         /// </summary>
-        public DateTime Date { get; set; }
+        public DateTime? Date { get; set; }
 
         /// <summary>
         /// AUI.3 - Source.
