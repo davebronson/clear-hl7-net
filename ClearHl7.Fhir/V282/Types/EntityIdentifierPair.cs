@@ -1,0 +1,20 @@
+﻿using System;
+
+namespace ClearHl7.Fhir.V282.Types
+{
+    /// <summary>
+    /// HL7 Version 2 EIP - Entity Identifier Pair.
+    /// </summary>
+    public class EntityIdentifierPair
+    {
+        /// <summary>
+        /// EIP.1 - Placer Assigned Identifier.
+        /// </summary>
+        public EntityIdentifier PlacerAssignedIdentifier { get; set; }
+
+        /// <summary>
+        /// EIP.2 - Filler Assigned Identifier.
+        /// </summary>
+        public EntityIdentifier FillerAssignedIdentifier { get; set; }
+    }
+}

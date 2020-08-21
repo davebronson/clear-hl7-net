@@ -1,0 +1,21 @@
+﻿using System;
+
+namespace ClearHl7.Fhir.V282.Types
+{
+    /// <summary>
+    /// HL7 Version 2 DTN - Day Type And Number.
+    /// </summary>
+    public class DayTypeAndNumber
+    {
+        /// <summary>
+        /// DTN.1 - Day Type.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0149</remarks>
+        public CodedWithExceptions DayType { get; set; }
+
+        /// <summary>
+        /// DTN.2 - Number of Days.
+        /// </summary>
+        public decimal NumberOfDays { get; set; }
+    }
+}
