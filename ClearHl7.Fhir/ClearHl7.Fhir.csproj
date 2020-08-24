@@ -8,5 +8,6 @@
     <Folder Include="V282\" />
     <Folder Include="V282\Segments\" />
     <Folder Include="V282\Types\" />
+    <Folder Include="V282\Helpers\" />
   </ItemGroup>
 </Project>

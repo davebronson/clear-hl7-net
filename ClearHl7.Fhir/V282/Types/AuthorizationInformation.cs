@@ -21,5 +21,22 @@ namespace ClearHl7.Fhir.V282.Types
         /// AUI.3 - Source.
         /// </summary>
         public string Source { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                "{0}^{1}^{2}",
+                                AuthorizationNumber,
+                                Date.HasValue ? Date.Value.ToString(Consts.DateFormat, culture) : null,
+                                Source
+                                ).TrimEnd('^');
+        }
     }
 }

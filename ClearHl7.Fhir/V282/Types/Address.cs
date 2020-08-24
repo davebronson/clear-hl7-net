@@ -48,5 +48,29 @@ namespace ClearHl7.Fhir.V282.Types
         /// AD.8 - Other Geographic Designation.
         /// </summary>
         public string OtherGeographicDesignation { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <param name="isSubcomponent">Whether this instance is a subcomponent of another component instance.</param>
+        /// <returns>A string.</returns>
+        public string ToPipeString(bool isSubcomponent)
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            string format = isSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}";
+
+            return string.Format(
+                                culture,
+                                format,
+                                StreetAddress,
+                                OtherDesignation,
+                                City,
+                                StateOrProvince,
+                                ZipOrPostalCode,
+                                Country,
+                                AddressType,
+                                OtherGeographicDesignation
+                                ).TrimEnd(isSubcomponent ? '&' : '^');
+        }
     }
 }

@@ -21,5 +21,22 @@ namespace ClearHl7.Fhir.V282.Types
         /// CCP.3 - Channel Calibration Time Skew.
         /// </summary>
         public decimal? ChannelCalibrationTimeSkew { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                "{0}^{1}^{2}",
+                                ChannelCalibrationSensitivityCorrectionFactor.HasValue ? ChannelCalibrationSensitivityCorrectionFactor.Value.ToString(Consts.NumericFormat, culture) : null,
+                                ChannelCalibrationBaseline.HasValue ? ChannelCalibrationBaseline.Value.ToString(Consts.NumericFormat, culture) : null,
+                                ChannelCalibrationTimeSkew.HasValue ? ChannelCalibrationTimeSkew.Value.ToString(Consts.NumericFormat, culture) : null
+                                ).TrimEnd('^');
+        }
     }
 }

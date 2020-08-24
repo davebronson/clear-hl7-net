@@ -21,12 +21,12 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// CP.3 - From Value.
         /// </summary>
-        public decimal FromValue { get; set; }
+        public decimal? FromValue { get; set; }
 
         /// <summary>
         /// CP.4 - To Value.
         /// </summary>
-        public decimal ToValue { get; set; }
+        public decimal? ToValue { get; set; }
 
         /// <summary>
         /// CP.5 - Range Units.

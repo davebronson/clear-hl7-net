@@ -64,6 +64,6 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// RPT.11 - General Timing Specification.
         /// </summary>
-        public GeneralTimingSpecification GeneralTimingSpecification { get; set; }
+        public string GeneralTimingSpecification { get; set; }
     }
 }

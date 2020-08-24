@@ -15,7 +15,7 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// CF.2 - Formatted Text.
         /// </summary>
-        public FormattedText FormattedText { get; set; }
+        public string FormattedText { get; set; }
 
         /// <summary>
         /// CF.3 - Name of Coding System.
@@ -31,7 +31,7 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// CF.5 - Alternate Formatted Text.
         /// </summary>
-        public FormattedText AlternateFormattedText { get; set; }
+        public string AlternateFormattedText { get; set; }
 
         /// <summary>
         /// CF.6 - Name of Alternate Coding System.
@@ -62,7 +62,7 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// CF.11 - Second Alternate Formatted Text.
         /// </summary>
-        public FormattedText SecondAlternateFormattedText { get; set; }
+        public string SecondAlternateFormattedText { get; set; }
 
         /// <summary>
         /// CF.12 - Name of Second Alternate Coding System.
