@@ -33,5 +33,23 @@ namespace ClearHl7.Fhir.V282.Types
         /// VH.4 - End Hour Range.
         /// </summary>
         public DateTime? EndHourRange { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}" : "{0}^{1}^{2}^{3}",
+                                StartDayRange,
+                                EndDayRange,
+                                StartHourRange.HasValue ? StartHourRange.Value.ToString(Consts.TimeFormatPrecisionSecond, culture) : null,
+                                EndHourRange.HasValue ? EndHourRange.Value.ToString(Consts.TimeFormatPrecisionSecond, culture) : null
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

@@ -35,7 +35,7 @@ namespace ClearHl7.Fhir.V282.Types
                                 culture,
                                 IsSubcomponent ? "{0}&{1}" : "{0}^{1}",
                                 InvocationEvent,
-                                Datetime.HasValue ? Datetime.Value.ToString(Consts.DateTimeFormat, culture) : null
+                                Datetime.HasValue ? Datetime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
     }

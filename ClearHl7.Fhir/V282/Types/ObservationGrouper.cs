@@ -31,5 +31,23 @@ namespace ClearHl7.Fhir.V282.Types
         /// OG.4 - Identifier.
         /// </summary>
         public string Identifier { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}" : "{0}^{1}^{2}^{3}",
+                                OriginalSubIdentifier,
+                                Group.HasValue ? Group.Value.ToString(Consts.NumericFormat, culture) : null,
+                                Sequence.HasValue ? Sequence.Value.ToString(Consts.NumericFormat, culture) : null,
+                                Identifier
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

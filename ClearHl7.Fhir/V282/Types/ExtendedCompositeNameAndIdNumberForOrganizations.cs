@@ -65,5 +65,29 @@ namespace ClearHl7.Fhir.V282.Types
         /// XON.10 - Organization Identifier.
         /// </summary>
         public string OrganizationIdentifier { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}&{8}&{9}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}^{9}",
+                                OrganizationName,
+                                OrganizationNameTypeCode?.ToPipeString(),
+                                IdNumber.HasValue ? IdNumber.Value.ToString(Consts.NumericFormat, culture) : null,
+                                IdentifierCheckDigit.HasValue ? IdentifierCheckDigit.Value.ToString(Consts.NumericFormat, culture) : null,
+                                CheckDigitScheme,
+                                AssigningAuthority?.ToPipeString(),
+                                IdentifierTypeCode,
+                                AssigningFacility?.ToPipeString(),
+                                NameRepresentationCode,
+                                OrganizationIdentifier
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

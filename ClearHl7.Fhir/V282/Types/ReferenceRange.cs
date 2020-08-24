@@ -47,5 +47,26 @@ namespace ClearHl7.Fhir.V282.Types
         /// RFR.7 - Conditions.
         /// </summary>
         public string Conditions { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}",
+                                NumericRange?.ToPipeString(),
+                                AdministrativeSex?.ToPipeString(),
+                                AgeRange?.ToPipeString(),
+                                GestationalAgeRange?.ToPipeString(),
+                                Species,
+                                RaceSubspecies,
+                                Conditions
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

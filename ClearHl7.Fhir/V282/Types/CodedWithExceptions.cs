@@ -151,13 +151,13 @@ namespace ClearHl7.Fhir.V282.Types
                                 SecondAlternateCodingSystemVersionId,
                                 CodingSystemOid,
                                 ValueSetOid,
-                                ValueSetVersionId.HasValue ? ValueSetVersionId.Value.ToString(Consts.DateFormat, culture) : null,
+                                ValueSetVersionId.HasValue ? ValueSetVersionId.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 AlternateCodingSystemOid,
                                 AlternateValueSetOid,
-                                AlternateValueSetVersionId.HasValue ? AlternateValueSetVersionId.Value.ToString(Consts.DateFormat, culture) : null,
+                                AlternateValueSetVersionId.HasValue ? AlternateValueSetVersionId.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 SecondAlternateCodingSystemOid,
                                 SecondAlternateValueSetOid,
-                                SecondAlternateValueSetVersionId.HasValue ? SecondAlternateValueSetVersionId.Value.ToString(Consts.DateFormat, culture) : null
+                                SecondAlternateValueSetVersionId.HasValue ? SecondAlternateValueSetVersionId.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
     }

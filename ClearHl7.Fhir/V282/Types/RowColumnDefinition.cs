@@ -27,5 +27,22 @@ namespace ClearHl7.Fhir.V282.Types
         /// RCD.3 - Maximum Column Width.
         /// </summary>
         public decimal? MaximumColumnWidth { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}&{2}" : "{0}^{1}^{2}",
+                                SegmentFieldName,
+                                Hl7DataType,
+                                MaximumColumnWidth.HasValue ? MaximumColumnWidth.Value.ToString(Consts.NumericFormat, culture) : null
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

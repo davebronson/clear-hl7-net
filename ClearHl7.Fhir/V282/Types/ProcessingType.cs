@@ -23,5 +23,21 @@ namespace ClearHl7.Fhir.V282.Types
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0207</remarks>
         public string ProcessingMode { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}" : "{0}^{1}",
+                                ProcessingId,
+                                ProcessingMode
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

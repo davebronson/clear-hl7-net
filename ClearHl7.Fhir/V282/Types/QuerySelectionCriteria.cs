@@ -33,5 +33,23 @@ namespace ClearHl7.Fhir.V282.Types
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0210</remarks>
         public string RelationalConjunction { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}" : "{0}^{1}^{2}^{3}",
+                                SegmentFieldName,
+                                RelationalOperator,
+                                Value,
+                                RelationalConjunction
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

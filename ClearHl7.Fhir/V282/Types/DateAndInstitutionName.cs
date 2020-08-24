@@ -34,7 +34,7 @@ namespace ClearHl7.Fhir.V282.Types
             return string.Format(
                                 culture,
                                 IsSubcomponent ? "{0}&{1}" : "{0}^{1}",
-                                Date.HasValue ? Date.Value.ToString(Consts.DateFormat, culture) : null,
+                                Date.HasValue ? Date.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 InstitutionName?.ToPipeString()
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }

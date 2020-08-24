@@ -38,5 +38,24 @@ namespace ClearHl7.Fhir.V282.Types
         /// PIP.5 - Facility.
         /// </summary>
         public EntityIdentifier Facility { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}" : "{0}^{1}^{2}^{3}^{4}",
+                                Privilege?.ToPipeString(),
+                                PrivilegeClass?.ToPipeString(),
+                                ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
+                                ActivationDate.HasValue ? ActivationDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
+                                Facility?.ToPipeString()
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

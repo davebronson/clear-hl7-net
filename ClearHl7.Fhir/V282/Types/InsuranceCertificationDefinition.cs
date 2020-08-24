@@ -28,5 +28,22 @@ namespace ClearHl7.Fhir.V282.Types
         /// ICD.3 - Date/Time Certification Required.
         /// </summary>
         public DateTime? DateTimeCertificationRequired { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}&{2}" : "{0}^{1}^{2}",
+                                CertificationPatientType?.ToPipeString(),
+                                CertificationRequired,
+                                DateTimeCertificationRequired.HasValue ? DateTimeCertificationRequired.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

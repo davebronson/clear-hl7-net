@@ -31,5 +31,23 @@ namespace ClearHl7.Fhir.V282.Types
         /// SN.4 - Num2.
         /// </summary>
         public decimal? Num2 { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}" : "{0}^{1}^{2}^{3}",
+                                Comparator,
+                                Num1.HasValue ? Num1.Value.ToString(Consts.NumericFormat, culture) : null,
+                                SeparatorSuffix,
+                                Num2.HasValue ? Num2.Value.ToString(Consts.NumericFormat, culture) : null
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

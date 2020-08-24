@@ -41,5 +41,25 @@ namespace ClearHl7.Fhir.V282.Types
         /// ERL.6 - Sub-Component Number.
         /// </summary>
         public decimal? SubComponentNumber { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}" : "{0}^{1}^{2}^{3}^{4}^{5}",
+                                SegmentId,
+                                SegmentSequence.HasValue ? SegmentSequence.Value.ToString(Consts.NumericFormat, culture) : null,
+                                FieldPosition.HasValue ? FieldPosition.Value.ToString(Consts.NumericFormat, culture) : null,
+                                FieldRepetition.HasValue ? FieldRepetition.Value.ToString(Consts.NumericFormat, culture) : null,
+                                ComponentNumber.HasValue ? ComponentNumber.Value.ToString(Consts.NumericFormat, culture) : null,
+                                SubComponentNumber.HasValue ? SubComponentNumber.Value.ToString(Consts.NumericFormat, culture) : null
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

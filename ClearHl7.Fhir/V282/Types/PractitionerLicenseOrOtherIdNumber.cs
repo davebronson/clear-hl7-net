@@ -32,5 +32,23 @@ namespace ClearHl7.Fhir.V282.Types
         /// PLN.4 - Expiration Date.
         /// </summary>
         public DateTime? ExpirationDate { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}" : "{0}^{1}^{2}^{3}",
+                                IdNumber,
+                                TypeOfIdNumber?.ToPipeString(),
+                                StateOtherQualifyingInformation,
+                                ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

@@ -105,5 +105,37 @@ namespace ClearHl7.Fhir.V282.Types
         /// XTN.18 - Preference Order.
         /// </summary>
         public decimal? PreferenceOrder { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}&{8}&{9}&{10}&{11}&{12}&{13}&{14}&{15}&{16}&{17}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}^{9}^{10}^{11}^{12}^{13}^{14}^{15}^{16}^{17}",
+                                TelephoneNumber,
+                                TelecommunicationUseCode,
+                                TelecommunicationEquipmentType,
+                                CommunicationAddress,
+                                CountryCode.HasValue ? CountryCode.Value.ToString(culture) : null,
+                                AreaCityCode.HasValue ? AreaCityCode.Value.ToString(culture) : null,
+                                LocalNumber.HasValue ? LocalNumber.Value.ToString(culture) : null,
+                                Extension.HasValue ? Extension.Value.ToString(culture) : null,
+                                AnyText,
+                                ExtensionPrefix,
+                                SpeedDialCode,
+                                UnformattedTelephoneNumber,
+                                EffectiveStartDate.HasValue ? EffectiveStartDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond) : null,
+                                ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond) : null,
+                                ExpirationReason?.ToPipeString(),
+                                ProtectionCode?.ToPipeString(),
+                                SharedTelecommunicationIdentifier?.ToPipeString(),
+                                PreferenceOrder.HasValue ? PreferenceOrder.Value.ToString(Consts.NumericFormat, culture) : null
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

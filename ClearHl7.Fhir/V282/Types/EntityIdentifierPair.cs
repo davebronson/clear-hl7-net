@@ -21,5 +21,21 @@ namespace ClearHl7.Fhir.V282.Types
         /// EIP.2 - Filler Assigned Identifier.
         /// </summary>
         public EntityIdentifier FillerAssignedIdentifier { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}" : "{0}^{1}",
+                                PlacerAssignedIdentifier?.ToPipeString(),
+                                FillerAssignedIdentifier?.ToPipeString()
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

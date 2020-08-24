@@ -39,7 +39,7 @@ namespace ClearHl7.Fhir.V282.Types
                                 culture,
                                 IsSubcomponent ? "{0}&{1}&{2}" : "{0}^{1}^{2}",
                                 AuthorizationNumber,
-                                Date.HasValue ? Date.Value.ToString(Consts.DateFormat, culture) : null,
+                                Date.HasValue ? Date.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 Source
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }

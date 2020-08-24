@@ -150,5 +150,45 @@ namespace ClearHl7.Fhir.V282.Types
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0904</remarks>
         public string SecurityCheckScheme { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}&{8}&{9}&{10}&{11}&{12}&{13}&{14}&{15}&{16}&{17}&{18}&{19}&{20}&{21}&{22}&{23}&{24}&{25}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}^{9}^{10}^{11}^{12}^{13}^{14}^{15}^{16}^{17}^{18}^{19}^{20}^{21}^{22}^{23}^{24}^{25}",
+                                PersonIdentifier,
+                                FamilyName?.ToPipeString(),
+                                GivenName,
+                                SecondAndFurtherGivenNamesOrInitialsThereof,
+                                Suffix,
+                                Prefix,
+                                Degree,
+                                SourceTable?.ToPipeString(),
+                                AssigningAuthority?.ToPipeString(),
+                                NameTypeCode,
+                                IdentifierCheckDigit,
+                                CheckDigitScheme,
+                                IdentifierTypeCode,
+                                AssigningFacility?.ToPipeString(),
+                                DateTimeActionPerformed.HasValue ? DateTimeActionPerformed.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                NameRepresentationCode,
+                                NameContext?.ToPipeString(),
+                                NameValidityRange,
+                                NameAssemblyOrder,
+                                EffectiveDate.HasValue ? EffectiveDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                ProfessionalSuffix,
+                                AssigningJurisdiction?.ToPipeString(),
+                                AssigningAgencyOrDepartment?.ToPipeString(),
+                                SecurityCheck,
+                                SecurityCheckScheme
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

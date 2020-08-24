@@ -70,5 +70,30 @@ namespace ClearHl7.Fhir.V282.Types
         /// RPT.11 - General Timing Specification.
         /// </summary>
         public string GeneralTimingSpecification { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}&{8}&{9}&{10}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}^{9}^{10}",
+                                RepeatPatternCode?.ToPipeString(),
+                                CalendarAlignment,
+                                PhaseRangeBeginValue.HasValue ? PhaseRangeBeginValue.Value.ToString(Consts.NumericFormat, culture) : null,
+                                PhaseRangeEndValue.HasValue ? PhaseRangeEndValue.Value.ToString(Consts.NumericFormat, culture) : null,
+                                PeriodQuantity.HasValue ? PeriodQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
+                                PeriodUnits?.ToPipeString(),
+                                InstitutionSpecifiedTime,
+                                Event,
+                                EventOffsetQuantity.HasValue ? EventOffsetQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
+                                EventOffsetUnits?.ToPipeString(),
+                                GeneralTimingSpecification
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

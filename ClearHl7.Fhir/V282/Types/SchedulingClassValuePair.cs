@@ -22,5 +22,21 @@ namespace ClearHl7.Fhir.V282.Types
         /// SCV.2 - Parameter Value.
         /// </summary>
         public string ParameterValue { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}" : "{0}^{1}",
+                                ParameterClass?.ToPipeString(),
+                                ParameterValue
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

@@ -31,5 +31,23 @@ namespace ClearHl7.Fhir.V282.Types
         /// NA.4 - Value4.
         /// </summary>
         public decimal? Value4 { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}" : "{0}^{1}^{2}^{3}",
+                                Value1.HasValue ? Value1.Value.ToString(Consts.NumericFormat, culture) : null,
+                                Value2.HasValue ? Value2.Value.ToString(Consts.NumericFormat, culture) : null,
+                                Value3.HasValue ? Value3.Value.ToString(Consts.NumericFormat, culture) : null,
+                                Value4.HasValue ? Value4.Value.ToString(Consts.NumericFormat, culture) : null
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

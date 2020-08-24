@@ -21,5 +21,21 @@ namespace ClearHl7.Fhir.V282.Types
         /// QIP.2 - Values.
         /// </summary>
         public string Values { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}" : "{0}^{1}",
+                                SegmentFieldName,
+                                Values
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

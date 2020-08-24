@@ -136,5 +136,42 @@ namespace ClearHl7.Fhir.V282.Types
         /// XAD.23 - Address Identifier.
         /// </summary>
         public EntityIdentifier AddressIdentifier { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}&{8}&{9}&{10}&{11}&{12}&{13}&{14}&{15}&{16}&{17}&{18}&{19}&{20}&{21}&{22}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}^{9}^{10}^{11}^{12}^{13}^{14}^{15}^{16}^{17}^{18}^{19}^{20}^{21}^{22}",
+                                StreetAddress?.ToPipeString(),
+                                OtherDesignation,
+                                City,
+                                StateOrProvince,
+                                ZipOrPostalCode,
+                                Country,
+                                AddressType,
+                                OtherGeographicDesignation,
+                                CountyParishCode?.ToPipeString(),
+                                CensusTract?.ToPipeString(),
+                                AddressRepresentationCode,
+                                AddressValidityRange?.ToPipeString(),
+                                EffectiveDate.HasValue ? EffectiveDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                ExpirationReason?.ToPipeString(),
+                                TemporaryIndicator,
+                                BadAddressIndicator,
+                                AddressUsage,
+                                Addressee,
+                                Comment,
+                                PreferenceOrder.HasValue ? PreferenceOrder.Value.ToString(Consts.NumericFormat, culture) : null,
+                                ProtectionCode?.ToPipeString(),
+                                AddressIdentifier?.ToPipeString()
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

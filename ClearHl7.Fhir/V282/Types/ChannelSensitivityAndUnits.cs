@@ -157,10 +157,10 @@ namespace ClearHl7.Fhir.V282.Types
                                 SecondAlternateUnitOfMeasureCodingSystemVersionId,
                                 UnitOfMeasureCodingSystemOid,
                                 UnitOfMeasureValueSetOid,
-                                UnitOfMeasureValueSetVersionId.HasValue ? UnitOfMeasureValueSetVersionId.Value.ToString(Consts.DateFormat, culture) : null,
+                                UnitOfMeasureValueSetVersionId.HasValue ? UnitOfMeasureValueSetVersionId.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 AlternateUnitOfMeasureCodingSystemOid,
                                 AlternateUnitOfMeasureValueSetOid,
-                                AlternateUnitOfMeasureValueSetVersionId.HasValue ? AlternateUnitOfMeasureValueSetVersionId.Value.ToString(Consts.DateFormat, culture) : null,
+                                AlternateUnitOfMeasureValueSetVersionId.HasValue ? AlternateUnitOfMeasureValueSetVersionId.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 AlternateUnitOfMeasureCodingSystemOidAdditional,
                                 AlternateUnitOfMeasureValueSetOidAdditional,
                                 AlternateUnitOfMeasureValueSetVersionIdAdditional

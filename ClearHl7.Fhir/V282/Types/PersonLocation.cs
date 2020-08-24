@@ -74,5 +74,30 @@ namespace ClearHl7.Fhir.V282.Types
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0363</remarks>
         public HierarchicDesignator AssigningAuthorityForLocation { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}&{8}&{9}&{10}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}^{9}^{10}",
+                                PointOfCare?.ToPipeString(),
+                                Room?.ToPipeString(),
+                                Bed?.ToPipeString(),
+                                Facility?.ToPipeString(),
+                                LocationStatus,
+                                PersonLocationType,
+                                Building?.ToPipeString(),
+                                Floor?.ToPipeString(),
+                                LocationDescription,
+                                ComprehensiveLocationIdentifier?.ToPipeString(),
+                                AssigningAuthorityForLocation?.ToPipeString()
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

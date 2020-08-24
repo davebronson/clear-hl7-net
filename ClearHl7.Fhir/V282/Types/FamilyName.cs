@@ -36,5 +36,24 @@ namespace ClearHl7.Fhir.V282.Types
         /// FN.5 - Surname from Partner/Spouse.
         /// </summary>
         public string SurnameFromPartnerSpouse { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}" : "{0}^{1}^{2}^{3}^{4}",
+                                Surname,
+                                OwnSurnamePrefix,
+                                OwnSurname,
+                                SurnamePrefixFromPartnerSpouse,
+                                SurnameFromPartnerSpouse
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

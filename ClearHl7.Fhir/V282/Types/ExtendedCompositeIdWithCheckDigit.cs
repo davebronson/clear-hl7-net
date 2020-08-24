@@ -75,5 +75,31 @@ namespace ClearHl7.Fhir.V282.Types
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0904</remarks>
         public string SecurityCheckScheme { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}&{8}&{9}&{10}&{11}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}^{9}^{10}^{11}",
+                                IdNumber,
+                                IdentifierCheckDigit,
+                                CheckDigitScheme,
+                                AssigningAuthority?.ToPipeString(),
+                                IdentifierTypeCode,
+                                AssigningFacility?.ToPipeString(),
+                                EffectiveDate.HasValue ? EffectiveDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
+                                ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
+                                AssigningJurisdiction?.ToPipeString(),
+                                AssigningAgencyOrDepartment?.ToPipeString(),
+                                SecurityCheck,
+                                SecurityCheckScheme
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }
