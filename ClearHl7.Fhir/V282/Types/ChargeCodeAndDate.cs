@@ -8,6 +8,11 @@ namespace ClearHl7.Fhir.V282.Types
     public class ChargeCodeAndDate
     {
         /// <summary>
+        /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
+        /// </summary>
+        public bool IsSubcomponent { get; set; }
+
+        /// <summary>
         /// CCD.1 - Invocation Event.
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0100</remarks>
@@ -17,5 +22,21 @@ namespace ClearHl7.Fhir.V282.Types
         /// CCD.2 - Date/time.
         /// </summary>
         public DateTime? Datetime { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}" : "{0}^{1}",
+                                InvocationEvent,
+                                Datetime.HasValue ? Datetime.Value.ToString(Consts.DateTimeFormat, culture) : null
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

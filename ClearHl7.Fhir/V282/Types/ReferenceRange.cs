@@ -8,6 +8,11 @@ namespace ClearHl7.Fhir.V282.Types
     public class ReferenceRange
     {
         /// <summary>
+        /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
+        /// </summary>
+        public bool IsSubcomponent { get; set; }
+
+        /// <summary>
         /// RFR.1 - Numeric Range.
         /// </summary>
         public NumericRange NumericRange { get; set; }

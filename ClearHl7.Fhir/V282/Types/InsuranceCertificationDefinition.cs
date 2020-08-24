@@ -8,6 +8,11 @@ namespace ClearHl7.Fhir.V282.Types
     public class InsuranceCertificationDefinition
     {
         /// <summary>
+        /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
+        /// </summary>
+        public bool IsSubcomponent { get; set; }
+
+        /// <summary>
         /// ICD.1 - Certification Patient Type.
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0150</remarks>

@@ -8,6 +8,11 @@ namespace ClearHl7.Fhir.V282.Types
     public class ChannelDefinition
     {
         /// <summary>
+        /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
+        /// </summary>
+        public bool IsSubcomponent { get; set; }
+
+        /// <summary>
         /// CD.1 - Channel Identifier.
         /// </summary>
         public ChannelIdentifier ChannelIdentifier { get; set; }
@@ -40,23 +45,21 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// Returns a pipe-delimited representation of this instance. 
         /// </summary>
-        /// <param name="isSubcomponent">Whether this instance is a subcomponent of another component instance.</param>
         /// <returns>A string.</returns>
-        public string ToPipeString(bool isSubcomponent)
+        public string ToPipeString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
-            string format = isSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}" : "{0}^{1}^{2}^{3}^{4}^{5}";
 
             return string.Format(
                                 culture,
-                                format,
-                                ChannelIdentifier?.ToPipeString(true),
-                                WaveformSource,
-                                ChannelSensitivityAndUnits,
-                                ChannelCalibrationParameters,
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}" : "{0}^{1}^{2}^{3}^{4}^{5}",
+                                ChannelIdentifier?.ToPipeString(),
+                                WaveformSource?.ToPipeString(),
+                                ChannelSensitivityAndUnits?.ToPipeString(),
+                                ChannelCalibrationParameters?.ToPipeString(),
                                 ChannelSamplingFrequency.HasValue ? ChannelSamplingFrequency.Value.ToString(Consts.NumericFormat, culture) : null,
-                                MinimumAndMaximumDataValues
-                                ).TrimEnd(isSubcomponent ? '&' : '^');
+                                MinimumAndMaximumDataValues?.ToPipeString()
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
     }
 }

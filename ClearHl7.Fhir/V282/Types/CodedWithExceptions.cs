@@ -8,6 +8,11 @@ namespace ClearHl7.Fhir.V282.Types
     public class CodedWithExceptions
     {
         /// <summary>
+        /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
+        /// </summary>
+        public bool IsSubcomponent { get; set; }
+
+        /// <summary>
         /// CWE.1 - Identifier.
         /// </summary>
         public string Identifier { get; set; }
@@ -103,7 +108,7 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// CWE.19 - Alternate Value Set Version ID.
         /// </summary>
-        public DateTime AlternateValueSetVersionId { get; set; }
+        public DateTime? AlternateValueSetVersionId { get; set; }
 
         /// <summary>
         /// CWE.20 - Second Alternate Coding System OID.
@@ -119,5 +124,41 @@ namespace ClearHl7.Fhir.V282.Types
         /// CWE.22 - Second Alternate Value Set Version ID.
         /// </summary>
         public DateTime? SecondAlternateValueSetVersionId { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}&{8}&{9}&{10}&{11}&{12}&{13}&{14}&{15}&{16}&{17}&{18}&{19}&{20}&{21}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}^{9}^{10}^{11}^{12}^{13}^{14}^{15}^{16}^{17}^{18}^{19}^{20}^{21}",
+                                Identifier,
+                                Text,
+                                NameOfCodingSystem,
+                                AlternateIdentifier,
+                                AlternateText,
+                                NameOfAlternateCodingSystem,
+                                CodingSystemVersionId,
+                                AlternateCodingSystemVersionId,
+                                OriginalText,
+                                SecondAlternateIdentifier,
+                                SecondAlternateText,
+                                NameOfSecondAlternateCodingSystem,
+                                SecondAlternateCodingSystemVersionId,
+                                CodingSystemOid,
+                                ValueSetOid,
+                                ValueSetVersionId.HasValue ? ValueSetVersionId.Value.ToString(Consts.DateFormat, culture) : null,
+                                AlternateCodingSystemOid,
+                                AlternateValueSetOid,
+                                AlternateValueSetVersionId.HasValue ? AlternateValueSetVersionId.Value.ToString(Consts.DateFormat, culture) : null,
+                                SecondAlternateCodingSystemOid,
+                                SecondAlternateValueSetOid,
+                                SecondAlternateValueSetVersionId.HasValue ? SecondAlternateValueSetVersionId.Value.ToString(Consts.DateFormat, culture) : null
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

@@ -8,6 +8,11 @@ namespace ClearHl7.Fhir.V282.Types
     public class StreetAddress
     {
         /// <summary>
+        /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
+        /// </summary>
+        public bool IsSubcomponent { get; set; }
+
+        /// <summary>
         /// SAD.1 - Street or Mailing Address.
         /// </summary>
         public string StreetOrMailingAddress { get; set; }

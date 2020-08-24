@@ -8,6 +8,11 @@ namespace ClearHl7.Fhir.V282.Types
     public class NumericArray
     {
         /// <summary>
+        /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
+        /// </summary>
+        public bool IsSubcomponent { get; set; }
+
+        /// <summary>
         /// NA.1 - Value1.
         /// </summary>
         public decimal? Value1 { get; set; }

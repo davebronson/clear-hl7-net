@@ -8,6 +8,11 @@ namespace ClearHl7.Fhir.V282.Types
     public class EntityIdentifierPair
     {
         /// <summary>
+        /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
+        /// </summary>
+        public bool IsSubcomponent { get; set; }
+
+        /// <summary>
         /// EIP.1 - Placer Assigned Identifier.
         /// </summary>
         public EntityIdentifier PlacerAssignedIdentifier { get; set; }

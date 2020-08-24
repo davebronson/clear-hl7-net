@@ -8,6 +8,11 @@ namespace ClearHl7.Fhir.V282.Types
     public class AuthorizationInformation
     {
         /// <summary>
+        /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
+        /// </summary>
+        public bool IsSubcomponent { get; set; }
+
+        /// <summary>
         /// AUI.1 - Authorization Number.
         /// </summary>
         public string AuthorizationNumber { get; set; }
@@ -32,11 +37,11 @@ namespace ClearHl7.Fhir.V282.Types
 
             return string.Format(
                                 culture,
-                                "{0}^{1}^{2}",
+                                IsSubcomponent ? "{0}&{1}&{2}" : "{0}^{1}^{2}",
                                 AuthorizationNumber,
                                 Date.HasValue ? Date.Value.ToString(Consts.DateFormat, culture) : null,
                                 Source
-                                ).TrimEnd('^');
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
     }
 }

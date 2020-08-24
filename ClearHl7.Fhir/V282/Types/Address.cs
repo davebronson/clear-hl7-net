@@ -8,6 +8,11 @@ namespace ClearHl7.Fhir.V282.Types
     public class Address
     {
         /// <summary>
+        /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
+        /// </summary>
+        public bool IsSubcomponent { get; set; }
+
+        /// <summary>
         /// AD.1 - Street Address.
         /// </summary>
         public string StreetAddress { get; set; }
@@ -52,16 +57,14 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// Returns a pipe-delimited representation of this instance. 
         /// </summary>
-        /// <param name="isSubcomponent">Whether this instance is a subcomponent of another component instance.</param>
         /// <returns>A string.</returns>
-        public string ToPipeString(bool isSubcomponent)
+        public string ToPipeString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
-            string format = isSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}";
 
             return string.Format(
                                 culture,
-                                format,
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}",
                                 StreetAddress,
                                 OtherDesignation,
                                 City,
@@ -70,7 +73,7 @@ namespace ClearHl7.Fhir.V282.Types
                                 Country,
                                 AddressType,
                                 OtherGeographicDesignation
-                                ).TrimEnd(isSubcomponent ? '&' : '^');
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
     }
 }

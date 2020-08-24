@@ -8,6 +8,11 @@ namespace ClearHl7.Fhir.V282.Types
     public class ChannelCalibrationParameters
     {
         /// <summary>
+        /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
+        /// </summary>
+        public bool IsSubcomponent { get; set; }
+
+        /// <summary>
         /// CCP.1 - Channel Calibration Sensitivity Correction Factor.
         /// </summary>
         public decimal? ChannelCalibrationSensitivityCorrectionFactor { get; set; }
@@ -32,11 +37,11 @@ namespace ClearHl7.Fhir.V282.Types
 
             return string.Format(
                                 culture,
-                                "{0}^{1}^{2}",
+                                IsSubcomponent ? "{0}&{1}&{2}" : "{0}^{1}^{2}",
                                 ChannelCalibrationSensitivityCorrectionFactor.HasValue ? ChannelCalibrationSensitivityCorrectionFactor.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ChannelCalibrationBaseline.HasValue ? ChannelCalibrationBaseline.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ChannelCalibrationTimeSkew.HasValue ? ChannelCalibrationTimeSkew.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd('^');
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
     }
 }

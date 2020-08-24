@@ -8,6 +8,11 @@ namespace ClearHl7.Fhir.V282.Types
     public class ExtendedAddress
     {
         /// <summary>
+        /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
+        /// </summary>
+        public bool IsSubcomponent { get; set; }
+
+        /// <summary>
         /// XAD.1 - Street Address.
         /// </summary>
         public StreetAddress StreetAddress { get; set; }

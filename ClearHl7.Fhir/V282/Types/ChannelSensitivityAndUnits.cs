@@ -8,6 +8,11 @@ namespace ClearHl7.Fhir.V282.Types
     public class ChannelSensitivityAndUnits
     {
         /// <summary>
+        /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
+        /// </summary>
+        public bool IsSubcomponent { get; set; }
+
+        /// <summary>
         /// CSU.1 - Channel Sensitivity.
         /// </summary>
         public decimal? ChannelSensitivity { get; set; }
@@ -124,5 +129,42 @@ namespace ClearHl7.Fhir.V282.Types
         /// CSU.23 - Alternate Unit of Measure Value Set Version ID.
         /// </summary>
         public string AlternateUnitOfMeasureValueSetVersionIdAdditional { get; set; }
+
+        /// <summary>
+        /// Returns a pipe-delimited representation of this instance. 
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToPipeString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}&{8}&{9}&{10}&{11}&{12}&{13}&{14}&{15}&{16}&{17}&{18}&{19}&{20}&{21}&{22}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}^{9}^{10}^{11}^{12}^{13}^{14}^{15}^{16}^{17}^{18}^{19}^{20}^{21}^{22}",
+                                ChannelSensitivity.HasValue ? ChannelSensitivity.Value.ToString(Consts.NumericFormat, culture) : null,
+                                UnitOfMeasureIdentifier,
+                                UnitOfMeasureDescription,
+                                UnitOfMeasureCodingSystem,
+                                AlternateUnitOfMeasureIdentifier,
+                                AlternateUnitOfMeasureDescription,
+                                AlternateUnitOfMeasureCodingSystem,
+                                UnitOfMeasureCodingSystemVersionId,
+                                AlternateUnitOfMeasureCodingSystemVersionId,
+                                OriginalText,
+                                SecondAlternateUnitOfMeasureIdentifier,
+                                SecondAlternateUnitOfMeasureText,
+                                NameOfSecondAlternateUnitOfMeasureCodingSystem,
+                                SecondAlternateUnitOfMeasureCodingSystemVersionId,
+                                UnitOfMeasureCodingSystemOid,
+                                UnitOfMeasureValueSetOid,
+                                UnitOfMeasureValueSetVersionId.HasValue ? UnitOfMeasureValueSetVersionId.Value.ToString(Consts.DateFormat, culture) : null,
+                                AlternateUnitOfMeasureCodingSystemOid,
+                                AlternateUnitOfMeasureValueSetOid,
+                                AlternateUnitOfMeasureValueSetVersionId.HasValue ? AlternateUnitOfMeasureValueSetVersionId.Value.ToString(Consts.DateFormat, culture) : null,
+                                AlternateUnitOfMeasureCodingSystemOidAdditional,
+                                AlternateUnitOfMeasureValueSetOidAdditional,
+                                AlternateUnitOfMeasureValueSetVersionIdAdditional
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+        }
     }
 }

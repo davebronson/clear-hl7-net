@@ -8,6 +8,11 @@ namespace ClearHl7.Fhir.V282.Types
     public class ObservationGrouper
     {
         /// <summary>
+        /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
+        /// </summary>
+        public bool IsSubcomponent { get; set; }
+
+        /// <summary>
         /// OG.1 - Original Sub-Identifier.
         /// </summary>
         public string OriginalSubIdentifier { get; set; }

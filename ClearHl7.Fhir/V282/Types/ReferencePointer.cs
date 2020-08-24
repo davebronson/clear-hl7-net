@@ -8,6 +8,11 @@ namespace ClearHl7.Fhir.V282.Types
     public class ReferencePointer
     {
         /// <summary>
+        /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
+        /// </summary>
+        public bool IsSubcomponent { get; set; }
+
+        /// <summary>
         /// RP.1 - Pointer.
         /// </summary>
         public string Pointer { get; set; }

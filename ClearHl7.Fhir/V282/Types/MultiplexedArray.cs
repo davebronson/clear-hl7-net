@@ -8,6 +8,11 @@ namespace ClearHl7.Fhir.V282.Types
     public class MultiplexedArray
     {
         /// <summary>
+        /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
+        /// </summary>
+        public bool IsSubcomponent { get; set; }
+
+        /// <summary>
         /// MA.1 - Sample Y From Channel 1.
         /// </summary>
         public decimal? SampleYFromChannel1 { get; set; }

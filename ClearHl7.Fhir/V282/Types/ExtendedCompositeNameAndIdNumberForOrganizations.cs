@@ -8,6 +8,11 @@ namespace ClearHl7.Fhir.V282.Types
     public class ExtendedCompositeNameAndIdNumberForOrganizations
     {
         /// <summary>
+        /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
+        /// </summary>
+        public bool IsSubcomponent { get; set; }
+
+        /// <summary>
         /// XON.1 - Organization Name.
         /// </summary>
         public string OrganizationName { get; set; }

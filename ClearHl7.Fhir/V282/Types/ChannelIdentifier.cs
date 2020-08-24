@@ -8,6 +8,11 @@ namespace ClearHl7.Fhir.V282.Types
     public class ChannelIdentifier
     {
         /// <summary>
+        /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
+        /// </summary>
+        public bool IsSubcomponent { get; set; }
+
+        /// <summary>
         /// WVI.1 - Channel Number.
         /// </summary>
         public decimal? ChannelNumber { get; set; }
@@ -20,19 +25,17 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// Returns a pipe-delimited representation of this instance. 
         /// </summary>
-        /// <param name="isSubcomponent">Whether this instance is a subcomponent of another component instance.</param>
         /// <returns>A string.</returns>
-        public string ToPipeString(bool isSubcomponent)
+        public string ToPipeString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
-            string format = isSubcomponent ? "{0}&{1}" : "{0}^{1}";
 
             return string.Format(
                                 culture,
-                                format,
+                                IsSubcomponent ? "{0}&{1}" : "{0}^{1}",
                                 ChannelNumber.HasValue ? ChannelNumber.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ChannelName
-                                ).TrimEnd(isSubcomponent ? '&' : '^');
+                                ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
     }
 }
