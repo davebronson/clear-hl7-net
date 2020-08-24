@@ -35,10 +35,10 @@ namespace ClearHl7.Fhir.V282.Types
         public string RelationalConjunction { get; set; }
 
         /// <summary>
-        /// Returns a pipe-delimited representation of this instance. 
+        /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
-        public string ToPipeString()
+        public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
 

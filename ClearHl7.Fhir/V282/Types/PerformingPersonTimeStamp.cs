@@ -152,10 +152,10 @@ namespace ClearHl7.Fhir.V282.Types
         public string SecurityCheckScheme { get; set; }
 
         /// <summary>
-        /// Returns a pipe-delimited representation of this instance. 
+        /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
-        public string ToPipeString()
+        public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
 
@@ -163,29 +163,29 @@ namespace ClearHl7.Fhir.V282.Types
                                 culture,
                                 IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}&{8}&{9}&{10}&{11}&{12}&{13}&{14}&{15}&{16}&{17}&{18}&{19}&{20}&{21}&{22}&{23}&{24}&{25}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}^{9}^{10}^{11}^{12}^{13}^{14}^{15}^{16}^{17}^{18}^{19}^{20}^{21}^{22}^{23}^{24}^{25}",
                                 PersonIdentifier,
-                                FamilyName?.ToPipeString(),
+                                FamilyName?.ToDelimitedString(),
                                 GivenName,
                                 SecondAndFurtherGivenNamesOrInitialsThereof,
                                 Suffix,
                                 Prefix,
                                 Degree,
-                                SourceTable?.ToPipeString(),
-                                AssigningAuthority?.ToPipeString(),
+                                SourceTable?.ToDelimitedString(),
+                                AssigningAuthority?.ToDelimitedString(),
                                 NameTypeCode,
                                 IdentifierCheckDigit,
                                 CheckDigitScheme,
                                 IdentifierTypeCode,
-                                AssigningFacility?.ToPipeString(),
+                                AssigningFacility?.ToDelimitedString(),
                                 DateTimeActionPerformed.HasValue ? DateTimeActionPerformed.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 NameRepresentationCode,
-                                NameContext?.ToPipeString(),
+                                NameContext?.ToDelimitedString(),
                                 NameValidityRange,
                                 NameAssemblyOrder,
                                 EffectiveDate.HasValue ? EffectiveDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ProfessionalSuffix,
-                                AssigningJurisdiction?.ToPipeString(),
-                                AssigningAgencyOrDepartment?.ToPipeString(),
+                                AssigningJurisdiction?.ToDelimitedString(),
+                                AssigningAgencyOrDepartment?.ToDelimitedString(),
                                 SecurityCheck,
                                 SecurityCheckScheme
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');

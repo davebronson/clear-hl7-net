@@ -35,20 +35,20 @@ namespace ClearHl7.Fhir.V282.Types
         public MoneyOrPercentage MoneyOrPercentage { get; set; }
 
         /// <summary>
-        /// Returns a pipe-delimited representation of this instance. 
+        /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
-        public string ToPipeString()
+        public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
                                 IsSubcomponent ? "{0}&{1}&{2}&{3}" : "{0}^{1}^{2}^{3}",
-                                PolicyType?.ToPipeString(),
-                                AmountClass?.ToPipeString(),
+                                PolicyType?.ToDelimitedString(),
+                                AmountClass?.ToDelimitedString(),
                                 MoneyOrPercentageQuantity.HasValue ? MoneyOrPercentageQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
-                                MoneyOrPercentage?.ToPipeString()
+                                MoneyOrPercentage?.ToDelimitedString()
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
     }

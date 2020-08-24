@@ -28,18 +28,18 @@ namespace ClearHl7.Fhir.V282.Types
         public string ParentObservationValueDescriptor { get; set; }
 
         /// <summary>
-        /// Returns a pipe-delimited representation of this instance. 
+        /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
-        public string ToPipeString()
+        public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
                                 IsSubcomponent ? "{0}&{1}&{2}" : "{0}^{1}^{2}",
-                                ParentObservationIdentifier?.ToPipeString(),
-                                ParentObservationSubIdentifier?.ToPipeString(),
+                                ParentObservationIdentifier?.ToDelimitedString(),
+                                ParentObservationSubIdentifier?.ToDelimitedString(),
                                 ParentObservationValueDescriptor
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }

@@ -67,10 +67,10 @@ namespace ClearHl7.Fhir.V282.Types
         public string OrganizationIdentifier { get; set; }
 
         /// <summary>
-        /// Returns a pipe-delimited representation of this instance. 
+        /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
-        public string ToPipeString()
+        public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
 
@@ -78,13 +78,13 @@ namespace ClearHl7.Fhir.V282.Types
                                 culture,
                                 IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}&{8}&{9}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}^{9}",
                                 OrganizationName,
-                                OrganizationNameTypeCode?.ToPipeString(),
+                                OrganizationNameTypeCode?.ToDelimitedString(),
                                 IdNumber.HasValue ? IdNumber.Value.ToString(Consts.NumericFormat, culture) : null,
                                 IdentifierCheckDigit.HasValue ? IdentifierCheckDigit.Value.ToString(Consts.NumericFormat, culture) : null,
                                 CheckDigitScheme,
-                                AssigningAuthority?.ToPipeString(),
+                                AssigningAuthority?.ToDelimitedString(),
                                 IdentifierTypeCode,
-                                AssigningFacility?.ToPipeString(),
+                                AssigningFacility?.ToDelimitedString(),
                                 NameRepresentationCode,
                                 OrganizationIdentifier
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');

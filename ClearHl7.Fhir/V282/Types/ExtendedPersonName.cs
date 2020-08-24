@@ -93,17 +93,17 @@ namespace ClearHl7.Fhir.V282.Types
         public string CalledBy { get; set; }
 
         /// <summary>
-        /// Returns a pipe-delimited representation of this instance. 
+        /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
-        public string ToPipeString()
+        public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
                                 IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}&{8}&{9}&{10}&{11}&{12}&{13}&{14}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}^{9}^{10}^{11}^{12}^{13}^{14}",
-                                FamilyName?.ToPipeString(),
+                                FamilyName?.ToDelimitedString(),
                                 GivenName,
                                 SecondAndFurtherGivenNamesOrInitialsThereof,
                                 Suffix,
@@ -111,8 +111,8 @@ namespace ClearHl7.Fhir.V282.Types
                                 Degree,
                                 NameTypeCode,
                                 NameRepresentationCode,
-                                NameContext?.ToPipeString(),
-                                NameValidityRange?.ToPipeString(),
+                                NameContext?.ToDelimitedString(),
+                                NameValidityRange?.ToDelimitedString(),
                                 NameAssemblyOrder,
                                 EffectiveDate.HasValue ? EffectiveDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,

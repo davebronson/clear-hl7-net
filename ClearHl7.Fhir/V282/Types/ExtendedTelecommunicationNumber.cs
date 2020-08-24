@@ -107,10 +107,10 @@ namespace ClearHl7.Fhir.V282.Types
         public decimal? PreferenceOrder { get; set; }
 
         /// <summary>
-        /// Returns a pipe-delimited representation of this instance. 
+        /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
-        public string ToPipeString()
+        public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
 
@@ -131,9 +131,9 @@ namespace ClearHl7.Fhir.V282.Types
                                 UnformattedTelephoneNumber,
                                 EffectiveStartDate.HasValue ? EffectiveStartDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond) : null,
                                 ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond) : null,
-                                ExpirationReason?.ToPipeString(),
-                                ProtectionCode?.ToPipeString(),
-                                SharedTelecommunicationIdentifier?.ToPipeString(),
+                                ExpirationReason?.ToDelimitedString(),
+                                ProtectionCode?.ToDelimitedString(),
+                                SharedTelecommunicationIdentifier?.ToDelimitedString(),
                                 PreferenceOrder.HasValue ? PreferenceOrder.Value.ToString(Consts.NumericFormat, culture) : null
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }

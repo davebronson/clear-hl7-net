@@ -28,10 +28,10 @@ namespace ClearHl7.Fhir.V282.Types
         public decimal? NumberOfDays { get; set; }
 
         /// <summary>
-        /// Returns a pipe-delimited representation of this instance. 
+        /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
-        public string ToPipeString()
+        public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
 
@@ -39,7 +39,7 @@ namespace ClearHl7.Fhir.V282.Types
                                 culture,
                                 IsSubcomponent ? "{0}&{1}&{2}" : "{0}^{1}^{2}",
                                 DelayDays.HasValue ? DelayDays.Value.ToString(Consts.NumericFormat, culture) : null,
-                                MonetaryAmount?.ToPipeString(),
+                                MonetaryAmount?.ToDelimitedString(),
                                 NumberOfDays.HasValue ? NumberOfDays.Value.ToString(Consts.NumericFormat, culture) : null
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }

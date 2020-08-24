@@ -77,10 +77,10 @@ namespace ClearHl7.Fhir.V282.Types
         public string SecurityCheckScheme { get; set; }
 
         /// <summary>
-        /// Returns a pipe-delimited representation of this instance. 
+        /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
-        public string ToPipeString()
+        public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
 
@@ -90,13 +90,13 @@ namespace ClearHl7.Fhir.V282.Types
                                 IdNumber,
                                 IdentifierCheckDigit,
                                 CheckDigitScheme,
-                                AssigningAuthority?.ToPipeString(),
+                                AssigningAuthority?.ToDelimitedString(),
                                 IdentifierTypeCode,
-                                AssigningFacility?.ToPipeString(),
+                                AssigningFacility?.ToDelimitedString(),
                                 EffectiveDate.HasValue ? EffectiveDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
-                                AssigningJurisdiction?.ToPipeString(),
-                                AssigningAgencyOrDepartment?.ToPipeString(),
+                                AssigningJurisdiction?.ToDelimitedString(),
+                                AssigningAgencyOrDepartment?.ToDelimitedString(),
                                 SecurityCheck,
                                 SecurityCheckScheme
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');

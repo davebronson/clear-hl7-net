@@ -24,17 +24,17 @@ namespace ClearHl7.Fhir.V282.Types
         public DateTime? OccurrenceDate { get; set; }
 
         /// <summary>
-        /// Returns a pipe-delimited representation of this instance. 
+        /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
-        public string ToPipeString()
+        public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
                                 IsSubcomponent ? "{0}&{1}" : "{0}^{1}",
-                                OccurrenceCode?.ToPipeString(),
+                                OccurrenceCode?.ToDelimitedString(),
                                 OccurrenceDate.HasValue ? OccurrenceDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }

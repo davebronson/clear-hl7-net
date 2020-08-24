@@ -34,17 +34,17 @@ namespace ClearHl7.Fhir.V282.Types
         public decimal? DaysRetained { get; set; }
 
         /// <summary>
-        /// Returns a pipe-delimited representation of this instance. 
+        /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
-        public string ToPipeString()
+        public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
                                 IsSubcomponent ? "{0}&{1}&{2}&{3}" : "{0}^{1}^{2}^{3}",
-                                NormalRange?.ToPipeString(),
+                                NormalRange?.ToDelimitedString(),
                                 NumericThreshold.HasValue ? NumericThreshold.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ChangeComputation,
                                 DaysRetained.HasValue ? DaysRetained.Value.ToString(Consts.NumericFormat, culture) : null

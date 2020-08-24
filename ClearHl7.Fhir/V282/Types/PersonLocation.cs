@@ -76,27 +76,27 @@ namespace ClearHl7.Fhir.V282.Types
         public HierarchicDesignator AssigningAuthorityForLocation { get; set; }
 
         /// <summary>
-        /// Returns a pipe-delimited representation of this instance. 
+        /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
-        public string ToPipeString()
+        public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
                                 IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}&{8}&{9}&{10}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}^{9}^{10}",
-                                PointOfCare?.ToPipeString(),
-                                Room?.ToPipeString(),
-                                Bed?.ToPipeString(),
-                                Facility?.ToPipeString(),
+                                PointOfCare?.ToDelimitedString(),
+                                Room?.ToDelimitedString(),
+                                Bed?.ToDelimitedString(),
+                                Facility?.ToDelimitedString(),
                                 LocationStatus,
                                 PersonLocationType,
-                                Building?.ToPipeString(),
-                                Floor?.ToPipeString(),
+                                Building?.ToDelimitedString(),
+                                Floor?.ToDelimitedString(),
                                 LocationDescription,
-                                ComprehensiveLocationIdentifier?.ToPipeString(),
-                                AssigningAuthorityForLocation?.ToPipeString()
+                                ComprehensiveLocationIdentifier?.ToDelimitedString(),
+                                AssigningAuthorityForLocation?.ToDelimitedString()
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
     }

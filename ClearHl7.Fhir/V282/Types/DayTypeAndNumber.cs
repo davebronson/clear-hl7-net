@@ -24,17 +24,17 @@ namespace ClearHl7.Fhir.V282.Types
         public decimal? NumberOfDays { get; set; }
 
         /// <summary>
-        /// Returns a pipe-delimited representation of this instance. 
+        /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
-        public string ToPipeString()
+        public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
                                 IsSubcomponent ? "{0}&{1}" : "{0}^{1}",
-                                DayType?.ToPipeString(),
+                                DayType?.ToDelimitedString(),
                                 NumberOfDays.HasValue ? NumberOfDays.Value.ToString(Consts.NumericFormat, culture) : null
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
