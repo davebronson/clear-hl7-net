@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -16,7 +19,35 @@ namespace ClearHl7.Fhir.V282.Segments
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
         /// </summary>
         public int Ordinal { get; set; }
-        
+
+        /// <summary>
+        /// APR.1 - Time Selection Criteria.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0294</remarks>
+        public IEnumerable<SchedulingClassValuePair> TimeSelectionCriteria { get; set; }
+
+        /// <summary>
+        /// APR.2 - Resource Selection Criteria.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0294</remarks>
+        public IEnumerable<SchedulingClassValuePair> ResourceSelectionCriteria { get; set; }
+
+        /// <summary>
+        /// APR.3 - Location Selection Criteria.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0294</remarks>
+        public IEnumerable<SchedulingClassValuePair> LocationSelectionCriteria { get; set; }
+
+        /// <summary>
+        /// APR.4 - Slot Spacing Criteria.
+        /// </summary>
+        public decimal? SlotSpacingCriteria { get; set; }
+
+        /// <summary>
+        /// APR.5 - Filler Override Criteria.
+        /// </summary>
+        public IEnumerable<SchedulingClassValuePair> FillerOverrideCriteria { get; set; }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
@@ -27,7 +58,13 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}|{39}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}",
+                                Id,
+                                TimeSelectionCriteria != null ? string.Join("~", TimeSelectionCriteria.Select(x => x.ToDelimitedString())) : null,
+                                ResourceSelectionCriteria != null ? string.Join("~", ResourceSelectionCriteria.Select(x => x.ToDelimitedString())) : null,
+                                LocationSelectionCriteria != null ? string.Join("~", LocationSelectionCriteria.Select(x => x.ToDelimitedString())) : null,
+                                SlotSpacingCriteria.HasValue ? SlotSpacingCriteria.Value.ToString(Consts.NumericFormat, culture) : null,
+                                FillerOverrideCriteria != null ? string.Join("~", FillerOverrideCriteria.Select(x => x.ToDelimitedString())) : null
                                 ).TrimEnd('|');
         }
     }
