@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -16,7 +19,80 @@ namespace ClearHl7.Fhir.V282.Segments
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
         /// </summary>
         public int Ordinal { get; set; }
-        
+
+        /// <summary>
+        /// AIG.1 - Set ID - AIG.
+        /// </summary>
+        public uint? SetIdAig { get; set; }
+
+        /// <summary>
+        /// AIG.2 - Segment Action Code.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0206</remarks>
+        public string SegmentActionCode { get; set; }
+
+        /// <summary>
+        /// AIG.3 - Resource ID.
+        /// </summary>
+        public CodedWithExceptions ResourceId { get; set; }
+
+        /// <summary>
+        /// AIG.4 - Resource Type.
+        /// </summary>
+        public CodedWithExceptions ResourceType { get; set; }
+
+        /// <summary>
+        /// AIG.5 - Resource Group.
+        /// </summary>
+        public IEnumerable<CodedWithExceptions> ResourceGroup { get; set; }
+
+        /// <summary>
+        /// AIG.6 - Resource Quantity.
+        /// </summary>
+        public decimal? ResourceQuantity { get; set; }
+
+        /// <summary>
+        /// AIG.7 - Resource Quantity Units.
+        /// </summary>
+        public CodedWithNoExceptions ResourceQuantityUnits { get; set; }
+
+        /// <summary>
+        /// AIG.8 - Start Date/Time.
+        /// </summary>
+        public DateTime? StartDateTime { get; set; }
+
+        /// <summary>
+        /// AIG.9 - Start Date/Time Offset.
+        /// </summary>
+        public decimal? StartDateTimeOffset { get; set; }
+
+        /// <summary>
+        /// AIG.10 - Start Date/Time Offset Units.
+        /// </summary>
+        public CodedWithNoExceptions StartDateTimeOffsetUnits { get; set; }
+
+        /// <summary>
+        /// AIG.11 - Duration.
+        /// </summary>
+        public decimal? Duration { get; set; }
+
+        /// <summary>
+        /// AIG.12 - Duration Units.
+        /// </summary>
+        public CodedWithNoExceptions DurationUnits { get; set; }
+
+        /// <summary>
+        /// AIG.13 - Allow Substitution Code.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0279</remarks>
+        public CodedWithExceptions AllowSubstitutionCode { get; set; }
+
+        /// <summary>
+        /// AIG.14 - Filler Status Code.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0278</remarks>
+        public CodedWithExceptions FillerStatusCode { get; set; }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
@@ -27,7 +103,22 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}|{39}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}",
+                                Id,
+                                SetIdAig.HasValue ? SetIdAig.Value.ToString(culture) : null,
+                                SegmentActionCode,
+                                ResourceId?.ToDelimitedString(),
+                                ResourceType?.ToDelimitedString(),
+                                ResourceGroup != null ? string.Join("~", ResourceGroup.Select(x => x.ToDelimitedString())) : null,
+                                ResourceQuantity.HasValue ? ResourceQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
+                                ResourceQuantityUnits?.ToDelimitedString(),
+                                StartDateTime.HasValue ? StartDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                StartDateTimeOffset.HasValue ? StartDateTimeOffset.Value.ToString(Consts.NumericFormat, culture) : null,
+                                StartDateTimeOffsetUnits?.ToDelimitedString(),
+                                Duration.HasValue ? Duration.Value.ToString(Consts.NumericFormat, culture) : null,
+                                DurationUnits?.ToDelimitedString(),
+                                AllowSubstitutionCode?.ToDelimitedString(),
+                                FillerStatusCode?.ToDelimitedString()
                                 ).TrimEnd('|');
         }
     }
