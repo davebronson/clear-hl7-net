@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V250
     /// <summary>
     /// HL7 Version 2 Table 0085 - Observation Result Status Codes Interpretation.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0085</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0085</remarks>
     public enum ObservationResultStatusCodesInterpretation
     {
         /// <summary>

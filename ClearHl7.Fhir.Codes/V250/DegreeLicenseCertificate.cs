@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V250
     /// <summary>
     /// HL7 Version 2 Table 0360 - Degree/License/Certificate.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0360/2.3.1</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0360/2.3.1</remarks>
     public enum DegreeLicenseCertificate
     {
         /// <summary>

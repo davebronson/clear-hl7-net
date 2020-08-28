@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V282
     /// <summary>
     /// HL7 Version 2 Table 0653 - Date Format.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0653</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0653</remarks>
     public enum DateFormat
     {
         /// <summary>

@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V250
     /// <summary>
     /// HL7 Version 2 Table 0017 - Transaction Type.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0017</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0017</remarks>
     public enum TransactionType
     {
         /// <summary>

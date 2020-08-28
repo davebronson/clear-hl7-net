@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V220
     /// <summary>
     /// HL7 Version 2 Table 0191 - Type Of Referenced Data.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0191</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0191</remarks>
     public enum TypeOfReferencedData
     {
         /// <summary>

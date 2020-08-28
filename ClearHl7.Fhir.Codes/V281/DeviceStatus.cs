@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V281
     /// <summary>
     /// HL7 Version 2 Table 0682 - Device Status.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0682</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0682</remarks>
     public enum DeviceStatus
     {
         /// <summary>

@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V282
     /// <summary>
     /// HL7 Version 2 Table 0914 - Root Cause.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0914</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0914</remarks>
     public enum RootCause
     {
         /// <summary>

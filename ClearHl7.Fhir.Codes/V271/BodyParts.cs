@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V271
     /// <summary>
     /// HL7 Version 2 Table 0550 - Body Parts.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0550</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0550</remarks>
     public enum BodyParts
     {
         /// <summary>

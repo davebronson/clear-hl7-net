@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V270
     /// <summary>
     /// HL7 Version 2 Table 0571 - Invoice Processing Results Status.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0571</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0571</remarks>
     public enum InvoiceProcessingResultsStatus
     {
         /// <summary>

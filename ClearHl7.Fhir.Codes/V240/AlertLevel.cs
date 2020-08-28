@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V240
     /// <summary>
     /// HL7 Version 2 Table 0367 - Alert Level.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0367</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0367</remarks>
     public enum AlertLevel
     {
         /// <summary>

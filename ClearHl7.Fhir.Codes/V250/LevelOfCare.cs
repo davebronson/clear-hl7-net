@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V250
     /// <summary>
     /// HL7 Version 2 Table 0263 - Level Of Care.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0263</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0263</remarks>
     public enum LevelOfCare
     {
         /// <summary>

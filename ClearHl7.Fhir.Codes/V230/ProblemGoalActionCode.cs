@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V230
     /// <summary>
     /// HL7 Version 2 Table 0287 - Problem/Goal Action Code.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0287</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0287</remarks>
     public enum ProblemGoalActionCode
     {
         /// <summary>

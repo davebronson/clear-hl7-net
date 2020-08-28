@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V282
     /// <summary>
     /// HL7 Version 2 Table 0530 - Organization, Agency, Department.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0530</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0530</remarks>
     public enum OrganizationAgencyDepartment
     {
         /// <summary>

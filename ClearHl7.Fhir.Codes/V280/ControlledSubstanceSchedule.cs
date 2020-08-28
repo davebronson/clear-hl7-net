@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V280
     /// <summary>
     /// HL7 Version 2 Table 0477 - Controlled Substance Schedule.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0477</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0477</remarks>
     public enum ControlledSubstanceSchedule
     {
         /// <summary>

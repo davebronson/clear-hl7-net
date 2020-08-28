@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V220
     /// <summary>
     /// HL7 Version 2 Table 0162 - Route Of Administration.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0162</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0162</remarks>
     public enum RouteOfAdministration
     {
         /// <summary>

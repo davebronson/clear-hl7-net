@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V282
     /// <summary>
     /// HL7 Version 2 Table 0372 - Specimen Component.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0372</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0372</remarks>
     public enum SpecimenComponent
     {
         /// <summary>

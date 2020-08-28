@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V280
     /// <summary>
     /// HL7 Version 2 Table 0330 - Marketing Basis.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0330</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0330</remarks>
     public enum MarketingBasis
     {
         /// <summary>

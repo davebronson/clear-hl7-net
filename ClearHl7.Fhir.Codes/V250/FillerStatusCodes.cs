@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V250
     /// <summary>
     /// HL7 Version 2 Table 0278 - Filler Status Codes.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0278</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0278</remarks>
     public enum FillerStatusCodes
     {
         /// <summary>

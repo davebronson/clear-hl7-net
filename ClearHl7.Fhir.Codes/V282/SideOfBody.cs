@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V282
     /// <summary>
     /// HL7 Version 2 Table 0894 - Side Of Body.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0894</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0894</remarks>
     public enum SideOfBody
     {
         /// <summary>

@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V271
     /// <summary>
     /// HL7 Version 2 Table 0506 - Service Request Relationship.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0506</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0506</remarks>
     public enum ServiceRequestRelationship
     {
         /// <summary>

@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V251
     /// <summary>
     /// HL7 Version 2 Table 0513 - Blood Product Transfusion/Disposition Status.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0513</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0513</remarks>
     public enum BloodProductTransfusionDispositionStatus
     {
         /// <summary>

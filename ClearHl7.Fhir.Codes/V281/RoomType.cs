@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V281
     /// <summary>
     /// HL7 Version 2 Table 0145 - Room Type.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0145</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0145</remarks>
     public enum RoomType
     {
         /// <summary>

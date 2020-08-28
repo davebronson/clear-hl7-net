@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V270
     /// <summary>
     /// HL7 Version 2 Table 0625 - Item Status Codes.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0625</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0625</remarks>
     public enum ItemStatusCodes
     {
         /// <summary>

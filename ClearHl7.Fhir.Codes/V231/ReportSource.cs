@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V231
     /// <summary>
     /// HL7 Version 2 Table 0235 - Report Source.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0235</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0235</remarks>
     public enum ReportSource
     {
         /// <summary>

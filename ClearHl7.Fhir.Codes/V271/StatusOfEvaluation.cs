@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V271
     /// <summary>
     /// HL7 Version 2 Table 0247 - Status Of Evaluation.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0247</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0247</remarks>
     public enum StatusOfEvaluation
     {
         /// <summary>

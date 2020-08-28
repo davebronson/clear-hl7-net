@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V280
     /// <summary>
     /// HL7 Version 2 Table 0511 - BP Observation Status Codes Interpretation.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0511</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0511</remarks>
     public enum BpObservationStatusCodesInterpretation
     {
         /// <summary>

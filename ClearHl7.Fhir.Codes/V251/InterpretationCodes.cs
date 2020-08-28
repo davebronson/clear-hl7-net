@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V251
     /// <summary>
     /// HL7 Version 2 Table 0078 - Interpretation Codes.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0078</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0078</remarks>
     public enum InterpretationCodes
     {
         /// <summary>

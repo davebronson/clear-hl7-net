@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V281
     /// <summary>
     /// HL7 Version 2 Table 0749 - DRG Grouping Status.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0749</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0749</remarks>
     public enum DrgGroupingStatus
     {
         /// <summary>

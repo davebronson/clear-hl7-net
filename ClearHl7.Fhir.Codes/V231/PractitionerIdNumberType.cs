@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V231
     /// <summary>
     /// HL7 Version 2 Table 0338 - Practitioner ID Number Type.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0338</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0338</remarks>
     public enum PractitionerIdNumberType
     {
         /// <summary>

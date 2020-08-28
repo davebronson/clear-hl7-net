@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V250
     /// <summary>
     /// HL7 Version 2 Table 0256 - Time Delay Post Challenge.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0256</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0256</remarks>
     public enum TimeDelayPostChallenge
     {
         /// <summary>

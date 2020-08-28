@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V230
     /// <summary>
     /// HL7 Version 2 Table 0157 - Which Date/Time Status Qualifier.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0157</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0157</remarks>
     public enum WhichDateTimeStatusQualifier
     {
         /// <summary>

@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V251
     /// <summary>
     /// HL7 Version 2 Table 0491 - Specimen Quality.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0491</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0491</remarks>
     public enum SpecimenQuality
     {
         /// <summary>

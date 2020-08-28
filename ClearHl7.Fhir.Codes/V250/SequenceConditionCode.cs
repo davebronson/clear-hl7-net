@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V250
     /// <summary>
     /// HL7 Version 2 Table 0504 - Sequence Condition Code.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0504</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0504</remarks>
     public enum SequenceConditionCode
     {
         /// <summary>

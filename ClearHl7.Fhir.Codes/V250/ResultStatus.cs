@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V250
     /// <summary>
     /// HL7 Version 2 Table 0123 - Result Status.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0123</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0123</remarks>
     public enum ResultStatus
     {
         /// <summary>

@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V282
     /// <summary>
     /// HL7 Version 2 Table 0540 - Inactive Reason Code.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0540</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0540</remarks>
     public enum InactiveReasonCode
     {
         /// <summary>

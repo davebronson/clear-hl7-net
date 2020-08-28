@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V231
     /// <summary>
     /// HL7 Version 2 Table 0167 - Substitution Status.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0167</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0167</remarks>
     public enum SubstitutionStatus
     {
         /// <summary>

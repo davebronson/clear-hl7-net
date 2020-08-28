@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V271
     /// <summary>
     /// HL7 Version 2 Table 0368 - Remote Control Command.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0368</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0368</remarks>
     public enum RemoteControlCommand
     {
         /// <summary>

@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V240
     /// <summary>
     /// HL7 Version 2 Table 0128 - Allergy Severity.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0128</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0128</remarks>
     public enum AllergySeverity
     {
         /// <summary>

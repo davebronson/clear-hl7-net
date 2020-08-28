@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V271
     /// <summary>
     /// HL7 Version 2 Table 0189 - Ethnic Group.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0189</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0189</remarks>
     public enum EthnicGroup
     {
         /// <summary>

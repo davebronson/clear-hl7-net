@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V270
     /// <summary>
     /// HL7 Version 2 Table 0231 - Student Status.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0231</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0231</remarks>
     public enum StudentStatus
     {
         /// <summary>

@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V282
     /// <summary>
     /// HL7 Version 2 Table 0912 - Participation.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0912</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0912</remarks>
     public enum Participation
     {
         /// <summary>

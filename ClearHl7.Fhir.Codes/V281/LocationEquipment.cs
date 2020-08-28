@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V281
     /// <summary>
     /// HL7 Version 2 Table 0261 - Location Equipment.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0261</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0261</remarks>
     public enum LocationEquipment
     {
         /// <summary>

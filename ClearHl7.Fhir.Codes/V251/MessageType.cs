@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V251
     /// <summary>
     /// HL7 Version 2 Table 0076 - Message Type.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0076</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0076</remarks>
     public enum MessageType
     {
         /// <summary>

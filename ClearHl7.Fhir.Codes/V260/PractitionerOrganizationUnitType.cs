@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V260
     /// <summary>
     /// HL7 Version 2 Table 0474 - Practitioner Organization Unit Type.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0474</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0474</remarks>
     public enum PractitionerOrganizationUnitType
     {
         /// <summary>

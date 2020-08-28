@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V270
     /// <summary>
     /// HL7 Version 2 Table 0739 - DRG Status Patient.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0739</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0739</remarks>
     public enum DrgStatusPatient
     {
         /// <summary>

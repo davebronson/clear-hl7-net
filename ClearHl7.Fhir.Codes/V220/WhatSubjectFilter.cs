@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V220
     /// <summary>
     /// HL7 Version 2 Table 0048 - What Subject Filter.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0048</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0048</remarks>
     public enum WhatSubjectFilter
     {
         /// <summary>

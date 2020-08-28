@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V230
     /// <summary>
     /// HL7 Version 2 Table 0185 - Preferred Method Of Contact.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0185</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0185</remarks>
     public enum PreferredMethodOfContact
     {
         /// <summary>

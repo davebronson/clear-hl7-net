@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V250
     /// <summary>
     /// HL7 Version 2 Table 0292 - Vaccines Administered.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0292</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0292</remarks>
     public enum VaccinesAdministered
     {
         /// <summary>

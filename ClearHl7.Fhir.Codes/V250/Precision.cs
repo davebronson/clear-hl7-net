@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V250
     /// <summary>
     /// HL7 Version 2 Table 0529 - Precision.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0529</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0529</remarks>
     public enum Precision
     {
         /// <summary>

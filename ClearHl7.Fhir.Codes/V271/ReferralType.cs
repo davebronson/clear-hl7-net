@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V271
     /// <summary>
     /// HL7 Version 2 Table 0281 - Referral Type.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0281</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0281</remarks>
     public enum ReferralType
     {
         /// <summary>

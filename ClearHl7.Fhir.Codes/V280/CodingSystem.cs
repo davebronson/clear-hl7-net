@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V280
     /// <summary>
     /// HL7 Version 2 Table 0396 - Coding System.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0396</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0396</remarks>
     public enum CodingSystem
     {
         /// <summary>

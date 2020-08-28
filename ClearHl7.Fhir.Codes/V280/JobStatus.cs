@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V280
     /// <summary>
     /// HL7 Version 2 Table 0311 - Job Status.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0311</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0311</remarks>
     public enum JobStatus
     {
         /// <summary>

@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V281
     /// <summary>
     /// HL7 Version 2 Table 0165 - Administration Method.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0165</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0165</remarks>
     public enum AdministrationMethod
     {
         /// <summary>

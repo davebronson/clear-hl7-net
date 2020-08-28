@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V260
     /// <summary>
     /// HL7 Version 2 Table 0778 - Item Type.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0778</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0778</remarks>
     public enum ItemType
     {
         /// <summary>

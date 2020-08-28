@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V271
     /// <summary>
     /// HL7 Version 2 Table 0871 - Supply Risk Codes.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0871</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0871</remarks>
     public enum SupplyRiskCodes
     {
         /// <summary>

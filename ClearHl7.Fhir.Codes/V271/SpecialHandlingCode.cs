@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V271
     /// <summary>
     /// HL7 Version 2 Table 0376 - Special Handling Code.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0376</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0376</remarks>
     public enum SpecialHandlingCode
     {
         /// <summary>

@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V220
     /// <summary>
     /// HL7 Version 2 Table 0012 - Stock Location.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0012</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0012</remarks>
     public enum StockLocation
     {
         /// <summary>

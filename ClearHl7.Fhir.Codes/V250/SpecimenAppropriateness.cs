@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V250
     /// <summary>
     /// HL7 Version 2 Table 0492 - Specimen Appropriateness.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0492</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0492</remarks>
     public enum SpecimenAppropriateness
     {
         /// <summary>

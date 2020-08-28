@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V240
     /// <summary>
     /// HL7 Version 2 Table 0305 - Person Location Type.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0305</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0305</remarks>
     public enum PersonLocationType
     {
         /// <summary>

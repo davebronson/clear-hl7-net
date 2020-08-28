@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V282
     /// <summary>
     /// HL7 Version 2 Table 0008 - Acknowledgment Code.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0008</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0008</remarks>
     public enum AcknowledgmentCode
     {
         /// <summary>

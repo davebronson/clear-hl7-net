@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V281
     /// <summary>
     /// HL7 Version 2 Table 0122 - Charge Type.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0122</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0122</remarks>
     public enum ChargeType
     {
         /// <summary>

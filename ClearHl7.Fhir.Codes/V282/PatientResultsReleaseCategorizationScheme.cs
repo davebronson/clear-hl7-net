@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V282
     /// <summary>
     /// HL7 Version 2 Table 0909 - Patient Results Release Categorization Scheme.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0909</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0909</remarks>
     public enum PatientResultsReleaseCategorizationScheme
     {
         /// <summary>

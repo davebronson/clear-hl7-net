@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V260
     /// <summary>
     /// HL7 Version 2 Table 0242 - Primary Observer's Qualification.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0242</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0242</remarks>
     public enum PrimaryObserversQualification
     {
         /// <summary>

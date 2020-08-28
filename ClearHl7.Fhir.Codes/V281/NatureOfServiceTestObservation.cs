@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V281
     /// <summary>
     /// HL7 Version 2 Table 0174 - Nature Of Service/Test/Observation.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0174</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0174</remarks>
     public enum NatureOfServiceTestObservation
     {
         /// <summary>

@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V251
     /// <summary>
     /// HL7 Version 2 Table 0523 - Computation Type.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0523</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0523</remarks>
     public enum ComputationType
     {
         /// <summary>

@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V271
     /// <summary>
     /// HL7 Version 2 Table 0027 - Priority.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0027</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0027</remarks>
     public enum Priority
     {
         /// <summary>

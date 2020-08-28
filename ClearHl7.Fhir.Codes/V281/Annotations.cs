@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V281
     /// <summary>
     /// HL7 Version 2 Table 0317 - Annotations.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0317</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0317</remarks>
     public enum Annotations
     {
         /// <summary>

@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V251
     /// <summary>
     /// HL7 Version 2 Table 0275 - Document Storage Status.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0275</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0275</remarks>
     public enum DocumentStorageStatus
     {
         /// <summary>

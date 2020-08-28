@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V260
     /// <summary>
     /// HL7 Version 2 Table 0440 - Data Types.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0440</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0440</remarks>
     public enum DataTypes
     {
         /// <summary>

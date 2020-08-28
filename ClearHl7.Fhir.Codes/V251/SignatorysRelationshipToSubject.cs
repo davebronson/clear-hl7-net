@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V251
     /// <summary>
     /// HL7 Version 2 Table 0548 - Signatory's Relationship To Subject.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0548</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0548</remarks>
     public enum SignatorysRelationshipToSubject
     {
         /// <summary>

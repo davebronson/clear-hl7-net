@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V260
     /// <summary>
     /// HL7 Version 2 Table 0291 - Subtype Of Referenced Data.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0291</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0291</remarks>
     public enum SubtypeOfReferencedData
     {
         /// <summary>

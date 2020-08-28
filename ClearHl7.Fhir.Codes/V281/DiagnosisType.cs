@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.Codes.V281
     /// <summary>
     /// HL7 Version 2 Table 0052 - Diagnosis Type.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0052</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0052</remarks>
     public enum DiagnosisType
     {
         /// <summary>
