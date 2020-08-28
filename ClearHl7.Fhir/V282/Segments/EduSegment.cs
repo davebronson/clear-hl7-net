@@ -1,4 +1,8 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Resources;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -16,6 +20,53 @@ namespace ClearHl7.Fhir.V282.Segments
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
         /// </summary>
         public int Ordinal { get; set; }
+
+        /// <summary>
+        /// EDU.1 - Set ID - EDU.
+        /// </summary>
+        public uint? SetIdEdu { get; set; }
+
+        /// <summary>
+        /// EDU.2 - Academic Degree.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0360</remarks>
+        public CodedWithExceptions AcademicDegree { get; set; }
+
+        /// <summary>
+        /// EDU.3 - Academic Degree Program Date Range.
+        /// </summary>
+        public DateTimeRange AcademicDegreeProgramDateRange { get; set; }
+
+        /// <summary>
+        /// EDU.4 - Academic Degree Program Participation Date Range.
+        /// </summary>
+        public DateTimeRange AcademicDegreeProgramParticipationDateRange { get; set; }
+
+        /// <summary>
+        /// EDU.5 - Academic Degree Granted Date.
+        /// </summary>
+        public DateTime? AcademicDegreeGrantedDate { get; set; }
+
+        /// <summary>
+        /// EDU.6 - School.
+        /// </summary>
+        public ExtendedCompositeNameAndIdNumberForOrganizations School { get; set; }
+
+        /// <summary>
+        /// EDU.7 - School Type Code.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0402</remarks>
+        public CodedWithExceptions SchoolTypeCode { get; set; }
+
+        /// <summary>
+        /// EDU.8 - School Address.
+        /// </summary>
+        public ExtendedAddress SchoolAddress { get; set; }
+
+        /// <summary>
+        /// EDU.9 - Major Field of Study.
+        /// </summary>
+        public IEnumerable<CodedWithExceptions> MajorFieldOfStudy { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -27,7 +78,17 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}|{39}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}",
+                                Id,
+                                SetIdEdu.HasValue ? SetIdEdu.Value.ToString(culture) : null,
+                                AcademicDegree?.ToDelimitedString(),
+                                AcademicDegreeProgramDateRange?.ToDelimitedString(),
+                                AcademicDegreeProgramParticipationDateRange?.ToDelimitedString(),
+                                AcademicDegreeGrantedDate.HasValue ? AcademicDegreeGrantedDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
+                                School?.ToDelimitedString(),
+                                SchoolTypeCode?.ToDelimitedString(),
+                                SchoolAddress?.ToDelimitedString(),
+                                MajorFieldOfStudy != null ? string.Join("~", MajorFieldOfStudy.Select(x => x.ToDelimitedString())) : null
                                 ).TrimEnd('|');
         }
     }
