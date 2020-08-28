@@ -1,4 +1,5 @@
 using System;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -16,7 +17,34 @@ namespace ClearHl7.Fhir.V282.Segments
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
         /// </summary>
         public int Ordinal { get; set; }
-        
+
+        /// <summary>
+        /// DMI.1 - Diagnostic Related Group.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0055</remarks>
+        public CodedWithNoExceptions DiagnosticRelatedGroup { get; set; }
+
+        /// <summary>
+        /// DMI.2 - Major Diagnostic Category.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0118</remarks>
+        public CodedWithNoExceptions MajorDiagnosticCategory { get; set; }
+
+        /// <summary>
+        /// DMI.3 - Lower and Upper Trim Points.
+        /// </summary>
+        public NumericRange LowerAndUpperTrimPoints { get; set; }
+
+        /// <summary>
+        /// DMI.4 - Average Length of Stay.
+        /// </summary>
+        public decimal? AverageLengthOfStay { get; set; }
+
+        /// <summary>
+        /// DMI.5 - Relative Weight.
+        /// </summary>
+        public decimal? RelativeWeight { get; set; }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
@@ -27,7 +55,13 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}|{39}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}",
+                                Id,
+                                DiagnosticRelatedGroup?.ToDelimitedString(),
+                                MajorDiagnosticCategory?.ToDelimitedString(),
+                                LowerAndUpperTrimPoints?.ToDelimitedString(),
+                                AverageLengthOfStay.HasValue ? AverageLengthOfStay.Value.ToString(Consts.NumericFormat, culture) : null,
+                                RelativeWeight.HasValue ? RelativeWeight.Value.ToString(Consts.NumericFormat, culture) : null
                                 ).TrimEnd('|');
         }
     }
