@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -16,6 +19,51 @@ namespace ClearHl7.Fhir.V282.Segments
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
         /// </summary>
         public int Ordinal { get; set; }
+
+        /// <summary>
+        /// IPC.1 - Accession Identifier.
+        /// </summary>
+        public EntityIdentifier AccessionIdentifier { get; set; }
+
+        /// <summary>
+        /// IPC.2 - Requested Procedure ID.
+        /// </summary>
+        public EntityIdentifier RequestedProcedureId { get; set; }
+
+        /// <summary>
+        /// IPC.3 - Study Instance UID.
+        /// </summary>
+        public EntityIdentifier StudyInstanceUid { get; set; }
+
+        /// <summary>
+        /// IPC.4 - Scheduled Procedure Step ID.
+        /// </summary>
+        public EntityIdentifier ScheduledProcedureStepId { get; set; }
+
+        /// <summary>
+        /// IPC.5 - Modality.
+        /// </summary>
+        public CodedWithExceptions Modality { get; set; }
+
+        /// <summary>
+        /// IPC.6 - Protocol Code.
+        /// </summary>
+        public IEnumerable<CodedWithExceptions> ProtocolCode { get; set; }
+
+        /// <summary>
+        /// IPC.7 - Scheduled Station Name.
+        /// </summary>
+        public EntityIdentifier ScheduledStationName { get; set; }
+
+        /// <summary>
+        /// IPC.8 - Scheduled Procedure Step Location.
+        /// </summary>
+        public IEnumerable<CodedWithExceptions> ScheduledProcedureStepLocation { get; set; }
+
+        /// <summary>
+        /// IPC.9 - Scheduled Station AE Title.
+        /// </summary>
+        public string ScheduledStationAeTitle { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -27,7 +75,17 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}|{39}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}",
+                                Id,
+                                AccessionIdentifier?.ToDelimitedString(),
+                                RequestedProcedureId?.ToDelimitedString(),
+                                StudyInstanceUid?.ToDelimitedString(),
+                                ScheduledProcedureStepId?.ToDelimitedString(),
+                                Modality?.ToDelimitedString(),
+                                ProtocolCode != null ? string.Join("~", ProtocolCode.Select(x => x.ToDelimitedString())) : null,
+                                ScheduledStationName?.ToDelimitedString(),
+                                ScheduledProcedureStepLocation != null ? string.Join("~", ScheduledProcedureStepLocation.Select(x => x.ToDelimitedString())) : null,
+                                ScheduledStationAeTitle
                                 ).TrimEnd('|');
         }
     }
