@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -16,6 +19,29 @@ namespace ClearHl7.Fhir.V282.Segments
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
         /// </summary>
         public int Ordinal { get; set; }
+
+        /// <summary>
+        /// LCC.1 - Primary Key Value - LCC.
+        /// </summary>
+        public PersonLocation PrimaryKeyValueLcc { get; set; }
+
+        /// <summary>
+        /// LCC.2 - Location Department.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0264</remarks>
+        public CodedWithExceptions LocationDepartment { get; set; }
+
+        /// <summary>
+        /// LCC.3 - Accommodation Type.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0129</remarks>
+        public IEnumerable<CodedWithExceptions> AccommodationType { get; set; }
+
+        /// <summary>
+        /// LCC.4 - Charge Code.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0132</remarks>
+        public IEnumerable<CodedWithExceptions> ChargeCode { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -27,7 +53,12 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}|{39}"
+                                "{0}|{1}|{2}|{3}|{4}",
+                                Id,
+                                PrimaryKeyValueLcc?.ToDelimitedString(),
+                                LocationDepartment?.ToDelimitedString(),
+                                AccommodationType != null ? string.Join("~", AccommodationType.Select(x => x.ToDelimitedString())) : null,
+                                ChargeCode != null ? string.Join("~", ChargeCode.Select(x => x.ToDelimitedString())) : null
                                 ).TrimEnd('|');
         }
     }
