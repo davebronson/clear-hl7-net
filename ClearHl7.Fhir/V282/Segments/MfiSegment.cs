@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -16,6 +19,40 @@ namespace ClearHl7.Fhir.V282.Segments
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
         /// </summary>
         public int Ordinal { get; set; }
+
+        /// <summary>
+        /// MFI.1 - Master File Identifier.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0175</remarks>
+        public CodedWithExceptions MasterFileIdentifier { get; set; }
+
+        /// <summary>
+        /// MFI.2 - Master File Application Identifier.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0361</remarks>
+        public IEnumerable<HierarchicDesignator> MasterFileApplicationIdentifier { get; set; }
+
+        /// <summary>
+        /// MFI.3 - File-Level Event Code.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0178</remarks>
+        public string FileLevelEventCode { get; set; }
+
+        /// <summary>
+        /// MFI.4 - Entered Date/Time.
+        /// </summary>
+        public DateTime? EnteredDateTime { get; set; }
+
+        /// <summary>
+        /// MFI.5 - Effective Date/Time.
+        /// </summary>
+        public DateTime? EffectiveDateTime { get; set; }
+
+        /// <summary>
+        /// MFI.6 - Response Level Code.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0179</remarks>
+        public string ResponseLevelCode { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -27,7 +64,14 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}|{39}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}",
+                                Id,
+                                MasterFileIdentifier?.ToDelimitedString(),
+                                MasterFileApplicationIdentifier != null ? string.Join("~", MasterFileApplicationIdentifier.Select(x => x.ToDelimitedString())) : null,
+                                FileLevelEventCode,
+                                EnteredDateTime.HasValue ? EnteredDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                EffectiveDateTime.HasValue ? EffectiveDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                ResponseLevelCode
                                 ).TrimEnd('|');
         }
     }

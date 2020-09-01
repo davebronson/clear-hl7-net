@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -16,6 +19,55 @@ namespace ClearHl7.Fhir.V282.Segments
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
         /// </summary>
         public int Ordinal { get; set; }
+
+        /// <summary>
+        /// LOC.1 - Primary Key Value - LOC.
+        /// </summary>
+        public PersonLocation PrimaryKeyValueLoc { get; set; }
+
+        /// <summary>
+        /// LOC.2 - Location Description.
+        /// </summary>
+        public string LocationDescription { get; set; }
+
+        /// <summary>
+        /// LOC.3 - Location Type - LOC.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0260</remarks>
+        public IEnumerable<CodedWithExceptions> LocationTypeLoc { get; set; }
+
+        /// <summary>
+        /// LOC.4 - Organization Name - LOC.
+        /// </summary>
+        public IEnumerable<ExtendedCompositeNameAndIdNumberForOrganizations> OrganizationNameLoc { get; set; }
+
+        /// <summary>
+        /// LOC.5 - Location Address.
+        /// </summary>
+        public IEnumerable<ExtendedAddress> LocationAddress { get; set; }
+
+        /// <summary>
+        /// LOC.6 - Location Phone.
+        /// </summary>
+        public IEnumerable<ExtendedTelecommunicationNumber> LocationPhone { get; set; }
+
+        /// <summary>
+        /// LOC.7 - License Number.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0461</remarks>
+        public IEnumerable<CodedWithExceptions> LicenseNumber { get; set; }
+
+        /// <summary>
+        /// LOC.8 - Location Equipment.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0261</remarks>
+        public IEnumerable<CodedWithExceptions> LocationEquipment { get; set; }
+
+        /// <summary>
+        /// LOC.9 - Location Service Code.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0442</remarks>
+        public CodedWithExceptions LocationServiceCode { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -27,7 +79,17 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}|{39}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}",
+                                Id,
+                                PrimaryKeyValueLoc?.ToDelimitedString(),
+                                LocationDescription,
+                                LocationTypeLoc != null ? string.Join("~", LocationTypeLoc.Select(x => x.ToDelimitedString())) : null,
+                                OrganizationNameLoc != null ? string.Join("~", OrganizationNameLoc.Select(x => x.ToDelimitedString())) : null,
+                                LocationAddress != null ? string.Join("~", LocationAddress.Select(x => x.ToDelimitedString())) : null,
+                                LocationPhone != null ? string.Join("~", LocationPhone.Select(x => x.ToDelimitedString())) : null,
+                                LicenseNumber != null ? string.Join("~", LicenseNumber.Select(x => x.ToDelimitedString())) : null,
+                                LocationEquipment != null ? string.Join("~", LocationEquipment.Select(x => x.ToDelimitedString())) : null,
+                                LocationServiceCode?.ToDelimitedString()
                                 ).TrimEnd('|');
         }
     }
