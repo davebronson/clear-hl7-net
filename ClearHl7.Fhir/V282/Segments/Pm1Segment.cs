@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -17,125 +20,138 @@ namespace ClearHl7.Fhir.V282.Segments
         /// </summary>
         public int Ordinal { get; set; }
 
-        ///// <summary>
-        ///// PM1.1 - Health Plan ID.
-        ///// </summary>
-        //public HealthPlanId { get; set; }
+        /// <summary>
+        /// PM1.1 - Health Plan ID.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0072</remarks>
+        public CodedWithExceptions HealthPlanId { get; set; }
 
-        ///// <summary>
-        ///// PM1.2 - Insurance Company ID.
-        ///// </summary>
-        //public InsuranceCompanyId { get; set; }
+        /// <summary>
+        /// PM1.2 - Insurance Company ID.
+        /// </summary>
+        public IEnumerable<ExtendedCompositeIdWithCheckDigit> InsuranceCompanyId { get; set; }
 
-        ///// <summary>
-        ///// PM1.3 - Insurance Company Name.
-        ///// </summary>
-        //public InsuranceCompanyName { get; set; }
+        /// <summary>
+        /// PM1.3 - Insurance Company Name.
+        /// </summary>
+        public IEnumerable<ExtendedCompositeNameAndIdNumberForOrganizations> InsuranceCompanyName { get; set; }
 
-        ///// <summary>
-        ///// PM1.4 - Insurance Company Address.
-        ///// </summary>
-        //public InsuranceCompanyAddress { get; set; }
+        /// <summary>
+        /// PM1.4 - Insurance Company Address.
+        /// </summary>
+        public IEnumerable<ExtendedAddress> InsuranceCompanyAddress { get; set; }
 
-        ///// <summary>
-        ///// PM1.5 - Insurance Co Contact Person.
-        ///// </summary>
-        //public InsuranceCoContactPerson { get; set; }
+        /// <summary>
+        /// PM1.5 - Insurance Co Contact Person.
+        /// </summary>
+        public IEnumerable<ExtendedPersonName> InsuranceCoContactPerson { get; set; }
 
-        ///// <summary>
-        ///// PM1.6 - Insurance Co Phone Number.
-        ///// </summary>
-        //public InsuranceCoPhoneNumber { get; set; }
+        /// <summary>
+        /// PM1.6 - Insurance Co Phone Number.
+        /// </summary>
+        public IEnumerable<ExtendedTelecommunicationNumber> InsuranceCoPhoneNumber { get; set; }
 
-        ///// <summary>
-        ///// PM1.7 - Group Number.
-        ///// </summary>
-        //public GroupNumber { get; set; }
+        /// <summary>
+        /// PM1.7 - Group Number.
+        /// </summary>
+        public string GroupNumber { get; set; }
 
-        ///// <summary>
-        ///// PM1.8 - Group Name.
-        ///// </summary>
-        //public GroupName { get; set; }
+        /// <summary>
+        /// PM1.8 - Group Name.
+        /// </summary>
+        public IEnumerable<ExtendedCompositeNameAndIdNumberForOrganizations> GroupName { get; set; }
 
-        ///// <summary>
-        ///// PM1.9 - Plan Effective Date.
-        ///// </summary>
-        //public PlanEffectiveDate { get; set; }
+        /// <summary>
+        /// PM1.9 - Plan Effective Date.
+        /// </summary>
+        public DateTime? PlanEffectiveDate { get; set; }
 
-        ///// <summary>
-        ///// PM1.10 - Plan Expiration Date.
-        ///// </summary>
-        //public PlanExpirationDate { get; set; }
+        /// <summary>
+        /// PM1.10 - Plan Expiration Date.
+        /// </summary>
+        public DateTime? PlanExpirationDate { get; set; }
 
-        ///// <summary>
-        ///// PM1.11 - Patient DOB Required.
-        ///// </summary>
-        //public PatientDobRequired { get; set; }
+        /// <summary>
+        /// PM1.11 - Patient DOB Required.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string PatientDobRequired { get; set; }
 
-        ///// <summary>
-        ///// PM1.12 - Patient Gender Required.
-        ///// </summary>
-        //public PatientGenderRequired { get; set; }
+        /// <summary>
+        /// PM1.12 - Patient Gender Required.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string PatientGenderRequired { get; set; }
 
-        ///// <summary>
-        ///// PM1.13 - Patient Relationship Required.
-        ///// </summary>
-        //public PatientRelationshipRequired { get; set; }
+        /// <summary>
+        /// PM1.13 - Patient Relationship Required.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string PatientRelationshipRequired { get; set; }
 
-        ///// <summary>
-        ///// PM1.14 - Patient Signature Required.
-        ///// </summary>
-        //public PatientSignatureRequired { get; set; }
+        /// <summary>
+        /// PM1.14 - Patient Signature Required.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string PatientSignatureRequired { get; set; }
 
-        ///// <summary>
-        ///// PM1.15 - Diagnosis Required.
-        ///// </summary>
-        //public DiagnosisRequired { get; set; }
+        /// <summary>
+        /// PM1.15 - Diagnosis Required.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string DiagnosisRequired { get; set; }
 
-        ///// <summary>
-        ///// PM1.16 - Service Required.
-        ///// </summary>
-        //public ServiceRequired { get; set; }
+        /// <summary>
+        /// PM1.16 - Service Required.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string ServiceRequired { get; set; }
 
-        ///// <summary>
-        ///// PM1.17 - Patient Name Required.
-        ///// </summary>
-        //public PatientNameRequired { get; set; }
+        /// <summary>
+        /// PM1.17 - Patient Name Required.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string PatientNameRequired { get; set; }
 
-        ///// <summary>
-        ///// PM1.18 - Patient Address Required.
-        ///// </summary>
-        //public PatientAddressRequired { get; set; }
+        /// <summary>
+        /// PM1.18 - Patient Address Required.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string PatientAddressRequired { get; set; }
 
-        ///// <summary>
-        ///// PM1.19 - Subscribers Name Required.
-        ///// </summary>
-        //public SubscribersNameRequired { get; set; }
+        /// <summary>
+        /// PM1.19 - Subscribers Name Required.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string SubscribersNameRequired { get; set; }
 
-        ///// <summary>
-        ///// PM1.20 - Workman's Comp Indicator.
-        ///// </summary>
-        //public WorkmansCompIndicator { get; set; }
+        /// <summary>
+        /// PM1.20 - Workman's Comp Indicator.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string WorkmansCompIndicator { get; set; }
 
-        ///// <summary>
-        ///// PM1.21 - Bill Type Required.
-        ///// </summary>
-        //public BillTypeRequired { get; set; }
+        /// <summary>
+        /// PM1.21 - Bill Type Required.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string BillTypeRequired { get; set; }
 
-        ///// <summary>
-        ///// PM1.22 - Commercial Carrier Name and Address Required.
-        ///// </summary>
-        //public CommercialCarrierNameAndAddressRequired { get; set; }
+        /// <summary>
+        /// PM1.22 - Commercial Carrier Name and Address Required.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string CommercialCarrierNameAndAddressRequired { get; set; }
 
-        ///// <summary>
-        ///// PM1.23 - Policy Number Pattern.
-        ///// </summary>
-        //public PolicyNumberPattern { get; set; }
+        /// <summary>
+        /// PM1.23 - Policy Number Pattern.
+        /// </summary>
+        public string PolicyNumberPattern { get; set; }
 
-        ///// <summary>
-        ///// PM1.24 - Group Number Pattern.
-        ///// </summary>
-        //public GroupNumberPattern { get; set; }
+        /// <summary>
+        /// PM1.24 - Group Number Pattern.
+        /// </summary>
+        public string GroupNumberPattern { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -147,7 +163,32 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}",
+                                Id,
+                                HealthPlanId?.ToDelimitedString(),
+                                InsuranceCompanyId != null ? string.Join("~", InsuranceCompanyId.Select(x => x.ToDelimitedString())) : null,
+                                InsuranceCompanyName != null ? string.Join("~", InsuranceCompanyName.Select(x => x.ToDelimitedString())) : null,
+                                InsuranceCompanyAddress != null ? string.Join("~", InsuranceCompanyAddress.Select(x => x.ToDelimitedString())) : null,
+                                InsuranceCoContactPerson != null ? string.Join("~", InsuranceCoContactPerson.Select(x => x.ToDelimitedString())) : null,
+                                InsuranceCoPhoneNumber != null ? string.Join("~", InsuranceCoPhoneNumber.Select(x => x.ToDelimitedString())) : null,
+                                GroupNumber,
+                                GroupName != null ? string.Join("~", GroupName.Select(x => x.ToDelimitedString())) : null,
+                                PlanEffectiveDate.HasValue ? PlanEffectiveDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
+                                PlanExpirationDate.HasValue ? PlanExpirationDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
+                                PatientDobRequired,
+                                PatientGenderRequired,
+                                PatientRelationshipRequired,
+                                PatientSignatureRequired,
+                                DiagnosisRequired,
+                                ServiceRequired,
+                                PatientNameRequired,
+                                PatientAddressRequired,
+                                SubscribersNameRequired,
+                                WorkmansCompIndicator,
+                                BillTypeRequired,
+                                CommercialCarrierNameAndAddressRequired,
+                                PolicyNumberPattern,
+                                GroupNumberPattern
                                 ).TrimEnd('|');
         }
     }
