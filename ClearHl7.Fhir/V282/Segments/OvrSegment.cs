@@ -1,4 +1,5 @@
 using System;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -17,30 +18,32 @@ namespace ClearHl7.Fhir.V282.Segments
         /// </summary>
         public int Ordinal { get; set; }
 
-        ///// <summary>
-        ///// OVR.1 - Business Rule Override Type.
-        ///// </summary>
-        //public BusinessRuleOverrideType { get; set; }
+        /// <summary>
+        /// OVR.1 - Business Rule Override Type.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0518</remarks>
+        public CodedWithExceptions BusinessRuleOverrideType { get; set; }
 
-        ///// <summary>
-        ///// OVR.2 - Business Rule Override Code.
-        ///// </summary>
-        //public BusinessRuleOverrideCode { get; set; }
+        /// <summary>
+        /// OVR.2 - Business Rule Override Code.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0521</remarks>
+        public CodedWithExceptions BusinessRuleOverrideCode { get; set; }
 
-        ///// <summary>
-        ///// OVR.3 - Override Comments.
-        ///// </summary>
-        //public OverrideComments { get; set; }
+        /// <summary>
+        /// OVR.3 - Override Comments.
+        /// </summary>
+        public string OverrideComments { get; set; }
 
-        ///// <summary>
-        ///// OVR.4 - Override Entered By.
-        ///// </summary>
-        //public OverrideEnteredBy { get; set; }
+        /// <summary>
+        /// OVR.4 - Override Entered By.
+        /// </summary>
+        public ExtendedCompositeIdNumberAndNameForPersons OverrideEnteredBy { get; set; }
 
-        ///// <summary>
-        ///// OVR.5 - Override Authorized By.
-        ///// </summary>
-        //public OverrideAuthorizedBy { get; set; }
+        /// <summary>
+        /// OVR.5 - Override Authorized By.
+        /// </summary>
+        public ExtendedCompositeIdNumberAndNameForPersons OverrideAuthorizedBy { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -52,7 +55,13 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}",
+                                Id,
+                                BusinessRuleOverrideType?.ToDelimitedString(),
+                                BusinessRuleOverrideCode?.ToDelimitedString(),
+                                OverrideComments,
+                                OverrideEnteredBy?.ToDelimitedString(),
+                                OverrideAuthorizedBy?.ToDelimitedString()
                                 ).TrimEnd('|');
         }
     }
