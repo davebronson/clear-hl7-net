@@ -16,6 +16,81 @@ namespace ClearHl7.Fhir.V282.Segments
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
         /// </summary>
         public int Ordinal { get; set; }
+
+        ///// <summary>
+        ///// PDC.1 - Manufacturer/Distributor.
+        ///// </summary>
+        //public ManufacturerDistributor { get; set; }
+
+        ///// <summary>
+        ///// PDC.2 - Country.
+        ///// </summary>
+        //public Country { get; set; }
+
+        ///// <summary>
+        ///// PDC.3 - Brand Name.
+        ///// </summary>
+        //public BrandName { get; set; }
+
+        ///// <summary>
+        ///// PDC.4 - Device Family Name.
+        ///// </summary>
+        //public DeviceFamilyName { get; set; }
+
+        ///// <summary>
+        ///// PDC.5 - Generic Name.
+        ///// </summary>
+        //public GenericName { get; set; }
+
+        ///// <summary>
+        ///// PDC.6 - Model Identifier.
+        ///// </summary>
+        //public ModelIdentifier { get; set; }
+
+        ///// <summary>
+        ///// PDC.7 - Catalogue Identifier.
+        ///// </summary>
+        //public CatalogueIdentifier { get; set; }
+
+        ///// <summary>
+        ///// PDC.8 - Other Identifier.
+        ///// </summary>
+        //public OtherIdentifier { get; set; }
+
+        ///// <summary>
+        ///// PDC.9 - Product Code.
+        ///// </summary>
+        //public ProductCode { get; set; }
+
+        ///// <summary>
+        ///// PDC.10 - Marketing Basis.
+        ///// </summary>
+        //public MarketingBasis { get; set; }
+
+        ///// <summary>
+        ///// PDC.11 - Marketing Approval ID.
+        ///// </summary>
+        //public MarketingApprovalId { get; set; }
+
+        ///// <summary>
+        ///// PDC.12 - Labeled Shelf Life.
+        ///// </summary>
+        //public LabeledShelfLife { get; set; }
+
+        ///// <summary>
+        ///// PDC.13 - Expected Shelf Life.
+        ///// </summary>
+        //public ExpectedShelfLife { get; set; }
+
+        ///// <summary>
+        ///// PDC.14 - Date First Marketed.
+        ///// </summary>
+        //public DateFirstMarketed { get; set; }
+
+        ///// <summary>
+        ///// PDC.15 - Date Last Marketed.
+        ///// </summary>
+        //public DateLastMarketed { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -27,7 +102,7 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}|{39}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}"
                                 ).TrimEnd('|');
         }
     }

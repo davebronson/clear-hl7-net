@@ -16,6 +16,96 @@ namespace ClearHl7.Fhir.V282.Segments
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
         /// </summary>
         public int Ordinal { get; set; }
+
+        ///// <summary>
+        ///// PRC.1 - Primary Key Value - PRC.
+        ///// </summary>
+        //public PrimaryKeyValuePrc { get; set; }
+
+        ///// <summary>
+        ///// PRC.2 - Facility ID - PRC.
+        ///// </summary>
+        //public FacilityIdPrc { get; set; }
+
+        ///// <summary>
+        ///// PRC.3 - Department.
+        ///// </summary>
+        //public Department { get; set; }
+
+        ///// <summary>
+        ///// PRC.4 - Valid Patient Classes.
+        ///// </summary>
+        //public ValidPatientClasses { get; set; }
+
+        ///// <summary>
+        ///// PRC.5 - Price.
+        ///// </summary>
+        //public Price { get; set; }
+
+        ///// <summary>
+        ///// PRC.6 - Formula.
+        ///// </summary>
+        //public Formula { get; set; }
+
+        ///// <summary>
+        ///// PRC.7 - Minimum Quantity.
+        ///// </summary>
+        //public MinimumQuantity { get; set; }
+
+        ///// <summary>
+        ///// PRC.8 - Maximum Quantity.
+        ///// </summary>
+        //public MaximumQuantity { get; set; }
+
+        ///// <summary>
+        ///// PRC.9 - Minimum Price.
+        ///// </summary>
+        //public MinimumPrice { get; set; }
+
+        ///// <summary>
+        ///// PRC.10 - Maximum Price.
+        ///// </summary>
+        //public MaximumPrice { get; set; }
+
+        ///// <summary>
+        ///// PRC.11 - Effective Start Date.
+        ///// </summary>
+        //public EffectiveStartDate { get; set; }
+
+        ///// <summary>
+        ///// PRC.12 - Effective End Date.
+        ///// </summary>
+        //public EffectiveEndDate { get; set; }
+
+        ///// <summary>
+        ///// PRC.13 - Price Override Flag.
+        ///// </summary>
+        //public PriceOverrideFlag { get; set; }
+
+        ///// <summary>
+        ///// PRC.14 - Billing Category.
+        ///// </summary>
+        //public BillingCategory { get; set; }
+
+        ///// <summary>
+        ///// PRC.15 - Chargeable Flag.
+        ///// </summary>
+        //public ChargeableFlag { get; set; }
+
+        ///// <summary>
+        ///// PRC.16 - Active/Inactive Flag.
+        ///// </summary>
+        //public ActiveInactiveFlag { get; set; }
+
+        ///// <summary>
+        ///// PRC.17 - Cost.
+        ///// </summary>
+        //public Cost { get; set; }
+
+        ///// <summary>
+        ///// PRC.18 - Charge on Indicator.
+        ///// </summary>
+        //public ChargeOnIndicator { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -27,7 +117,7 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}|{39}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}"
                                 ).TrimEnd('|');
         }
     }

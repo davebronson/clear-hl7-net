@@ -16,6 +16,46 @@ namespace ClearHl7.Fhir.V282.Segments
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
         /// </summary>
         public int Ordinal { get; set; }
+
+        ///// <summary>
+        ///// TCD.1 - Universal Service Identifier.
+        ///// </summary>
+        //public UniversalServiceIdentifier { get; set; }
+
+        ///// <summary>
+        ///// TCD.2 - Auto-Dilution Factor.
+        ///// </summary>
+        //public AutoDilutionFactor { get; set; }
+
+        ///// <summary>
+        ///// TCD.3 - Rerun Dilution Factor.
+        ///// </summary>
+        //public RerunDilutionFactor { get; set; }
+
+        ///// <summary>
+        ///// TCD.4 - Pre-Dilution Factor.
+        ///// </summary>
+        //public PreDilutionFactor { get; set; }
+
+        ///// <summary>
+        ///// TCD.5 - Endogenous Content of Pre-Dilution Diluent.
+        ///// </summary>
+        //public EndogenousContentOfPreDilutionDiluent { get; set; }
+
+        ///// <summary>
+        ///// TCD.6 - Automatic Repeat Allowed.
+        ///// </summary>
+        //public AutomaticRepeatAllowed { get; set; }
+
+        ///// <summary>
+        ///// TCD.7 - Reflex Allowed.
+        ///// </summary>
+        //public ReflexAllowed { get; set; }
+
+        ///// <summary>
+        ///// TCD.8 - Analyte Repeat Status.
+        ///// </summary>
+        //public AnalyteRepeatStatus { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -27,7 +67,7 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}|{39}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}"
                                 ).TrimEnd('|');
         }
     }
