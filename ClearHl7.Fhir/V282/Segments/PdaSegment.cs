@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -17,50 +20,53 @@ namespace ClearHl7.Fhir.V282.Segments
         /// </summary>
         public int Ordinal { get; set; }
 
-        ///// <summary>
-        ///// PDA.1 - Death Cause Code.
-        ///// </summary>
-        //public DeathCauseCode { get; set; }
+        /// <summary>
+        /// PDA.1 - Death Cause Code.
+        /// </summary>
+        public IEnumerable<CodedWithExceptions> DeathCauseCode { get; set; }
 
-        ///// <summary>
-        ///// PDA.2 - Death Location.
-        ///// </summary>
-        //public DeathLocation { get; set; }
+        /// <summary>
+        /// PDA.2 - Death Location.
+        /// </summary>
+        public PersonLocation DeathLocation { get; set; }
 
-        ///// <summary>
-        ///// PDA.3 - Death Certified Indicator.
-        ///// </summary>
-        //public DeathCertifiedIndicator { get; set; }
+        /// <summary>
+        /// PDA.3 - Death Certified Indicator.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string DeathCertifiedIndicator { get; set; }
 
-        ///// <summary>
-        ///// PDA.4 - Death Certificate Signed Date/Time.
-        ///// </summary>
-        //public DeathCertificateSignedDateTime { get; set; }
+        /// <summary>
+        /// PDA.4 - Death Certificate Signed Date/Time.
+        /// </summary>
+        public DateTime? DeathCertificateSignedDateTime { get; set; }
 
-        ///// <summary>
-        ///// PDA.5 - Death Certified By.
-        ///// </summary>
-        //public DeathCertifiedBy { get; set; }
+        /// <summary>
+        /// PDA.5 - Death Certified By.
+        /// </summary>
+        public ExtendedCompositeIdNumberAndNameForPersons DeathCertifiedBy { get; set; }
 
-        ///// <summary>
-        ///// PDA.6 - Autopsy Indicator.
-        ///// </summary>
-        //public AutopsyIndicator { get; set; }
+        /// <summary>
+        /// PDA.6 - Autopsy Indicator.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string AutopsyIndicator { get; set; }
 
-        ///// <summary>
-        ///// PDA.7 - Autopsy Start and End Date/Time.
-        ///// </summary>
-        //public AutopsyStartAndEndDateTime { get; set; }
+        /// <summary>
+        /// PDA.7 - Autopsy Start and End Date/Time.
+        /// </summary>
+        public DateTimeRange AutopsyStartAndEndDateTime { get; set; }
 
-        ///// <summary>
-        ///// PDA.8 - Autopsy Performed By.
-        ///// </summary>
-        //public AutopsyPerformedBy { get; set; }
+        /// <summary>
+        /// PDA.8 - Autopsy Performed By.
+        /// </summary>
+        public ExtendedCompositeIdNumberAndNameForPersons AutopsyPerformedBy { get; set; }
 
-        ///// <summary>
-        ///// PDA.9 - Coroner Indicator.
-        ///// </summary>
-        //public CoronerIndicator { get; set; }
+        /// <summary>
+        /// PDA.9 - Coroner Indicator.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string CoronerIndicator { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -72,7 +78,17 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}",
+                                Id,
+                                DeathCauseCode != null ? string.Join("~", DeathCauseCode.Select(x => x.ToDelimitedString())) : null,
+                                DeathLocation?.ToDelimitedString(),
+                                DeathCertifiedIndicator,
+                                DeathCertificateSignedDateTime.HasValue ? DeathCertificateSignedDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                DeathCertifiedBy?.ToDelimitedString(),
+                                AutopsyIndicator,
+                                AutopsyStartAndEndDateTime?.ToDelimitedString(),
+                                AutopsyPerformedBy?.ToDelimitedString(),
+                                CoronerIndicator
                                 ).TrimEnd('|');
         }
     }

@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -17,70 +20,73 @@ namespace ClearHl7.Fhir.V282.Segments
         /// </summary>
         public int Ordinal { get; set; }
 
-        ///// <summary>
-        ///// PES.1 - Sender Organization Name.
-        ///// </summary>
-        //public SenderOrganizationName { get; set; }
+        /// <summary>
+        /// PES.1 - Sender Organization Name.
+        /// </summary>
+        public IEnumerable<ExtendedCompositeNameAndIdNumberForOrganizations> SenderOrganizationName { get; set; }
 
-        ///// <summary>
-        ///// PES.2 - Sender Individual Name.
-        ///// </summary>
-        //public SenderIndividualName { get; set; }
+        /// <summary>
+        /// PES.2 - Sender Individual Name.
+        /// </summary>
+        public IEnumerable<ExtendedCompositeIdNumberAndNameForPersons> SenderIndividualName { get; set; }
 
-        ///// <summary>
-        ///// PES.3 - Sender Address.
-        ///// </summary>
-        //public SenderAddress { get; set; }
+        /// <summary>
+        /// PES.3 - Sender Address.
+        /// </summary>
+        public IEnumerable<ExtendedAddress> SenderAddress { get; set; }
 
-        ///// <summary>
-        ///// PES.4 - Sender Telephone.
-        ///// </summary>
-        //public SenderTelephone { get; set; }
+        /// <summary>
+        /// PES.4 - Sender Telephone.
+        /// </summary>
+        public IEnumerable<ExtendedTelecommunicationNumber> SenderTelephone { get; set; }
 
-        ///// <summary>
-        ///// PES.5 - Sender Event Identifier.
-        ///// </summary>
-        //public SenderEventIdentifier { get; set; }
+        /// <summary>
+        /// PES.5 - Sender Event Identifier.
+        /// </summary>
+        public EntityIdentifier SenderEventIdentifier { get; set; }
 
-        ///// <summary>
-        ///// PES.6 - Sender Sequence Number.
-        ///// </summary>
-        //public SenderSequenceNumber { get; set; }
+        /// <summary>
+        /// PES.6 - Sender Sequence Number.
+        /// </summary>
+        public decimal? SenderSequenceNumber { get; set; }
 
-        ///// <summary>
-        ///// PES.7 - Sender Event Description.
-        ///// </summary>
-        //public SenderEventDescription { get; set; }
+        /// <summary>
+        /// PES.7 - Sender Event Description.
+        /// </summary>
+        public IEnumerable<string> SenderEventDescription { get; set; }
 
-        ///// <summary>
-        ///// PES.8 - Sender Comment.
-        ///// </summary>
-        //public SenderComment { get; set; }
+        /// <summary>
+        /// PES.8 - Sender Comment.
+        /// </summary>
+        public string SenderComment { get; set; }
 
-        ///// <summary>
-        ///// PES.9 - Sender Aware Date/Time.
-        ///// </summary>
-        //public SenderAwareDateTime { get; set; }
+        /// <summary>
+        /// PES.9 - Sender Aware Date/Time.
+        /// </summary>
+        public DateTime? SenderAwareDateTime { get; set; }
 
-        ///// <summary>
-        ///// PES.10 - Event Report Date.
-        ///// </summary>
-        //public EventReportDate { get; set; }
+        /// <summary>
+        /// PES.10 - Event Report Date.
+        /// </summary>
+        public DateTime? EventReportDate { get; set; }
 
-        ///// <summary>
-        ///// PES.11 - Event Report Timing/Type.
-        ///// </summary>
-        //public EventReportTimingType { get; set; }
+        /// <summary>
+        /// PES.11 - Event Report Timing/Type.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0234</remarks>
+        public IEnumerable<string> EventReportTimingType { get; set; }
 
-        ///// <summary>
-        ///// PES.12 - Event Report Source.
-        ///// </summary>
-        //public EventReportSource { get; set; }
+        /// <summary>
+        /// PES.12 - Event Report Source.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0235</remarks>
+        public string EventReportSource { get; set; }
 
-        ///// <summary>
-        ///// PES.13 - Event Reported To.
-        ///// </summary>
-        //public EventReportedTo { get; set; }
+        /// <summary>
+        /// PES.13 - Event Reported To.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0236</remarks>
+        public IEnumerable<string> EventReportedTo { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -92,7 +98,21 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}",
+                                Id,
+                                SenderOrganizationName != null ? string.Join("~", SenderOrganizationName.Select(x => x.ToDelimitedString())) : null,
+                                SenderIndividualName != null ? string.Join("~", SenderIndividualName.Select(x => x.ToDelimitedString())) : null,
+                                SenderAddress != null ? string.Join("~", SenderAddress.Select(x => x.ToDelimitedString())) : null,
+                                SenderTelephone != null ? string.Join("~", SenderTelephone.Select(x => x.ToDelimitedString())) : null,
+                                SenderEventIdentifier?.ToDelimitedString(),
+                                SenderSequenceNumber.HasValue ? SenderSequenceNumber.Value.ToString(Consts.NumericFormat, culture) : null,
+                                SenderEventDescription != null ? string.Join("~", SenderEventDescription) : null,
+                                SenderComment,
+                                SenderAwareDateTime.HasValue ? SenderAwareDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                EventReportDate.HasValue ? EventReportDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                EventReportTimingType != null ? string.Join("~", EventReportTimingType) : null,
+                                EventReportSource,
+                                EventReportedTo != null ? string.Join("~", EventReportedTo) : null
                                 ).TrimEnd('|');
         }
     }
