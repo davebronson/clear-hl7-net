@@ -1,4 +1,5 @@
 using System;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -17,20 +18,21 @@ namespace ClearHl7.Fhir.V282.Segments
         /// </summary>
         public int Ordinal { get; set; }
 
-        ///// <summary>
-        ///// RGS.1 - Set ID - RGS.
-        ///// </summary>
-        //public SetIdRgs { get; set; }
+        /// <summary>
+        /// RGS.1 - Set ID - RGS.
+        /// </summary>
+        public uint? SetIdRgs { get; set; }
 
-        ///// <summary>
-        ///// RGS.2 - Segment Action Code.
-        ///// </summary>
-        //public SegmentActionCode { get; set; }
+        /// <summary>
+        /// RGS.2 - Segment Action Code.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0206</remarks>
+        public string SegmentActionCode { get; set; }
 
-        ///// <summary>
-        ///// RGS.3 - Resource Group ID.
-        ///// </summary>
-        //public ResourceGroupId { get; set; }
+        /// <summary>
+        /// RGS.3 - Resource Group ID.
+        /// </summary>
+        public CodedWithExceptions ResourceGroupId { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -42,7 +44,11 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}"
+                                "{0}|{1}|{2}|{3}",
+                                Id,
+                                SetIdRgs.HasValue ? SetIdRgs.Value.ToString(culture) : null,
+                                SegmentActionCode,
+                                ResourceGroupId?.ToDelimitedString()
                                 ).TrimEnd('|');
         }
     }

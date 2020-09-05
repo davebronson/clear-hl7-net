@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -17,60 +20,61 @@ namespace ClearHl7.Fhir.V282.Segments
         /// </summary>
         public int Ordinal { get; set; }
 
-        ///// <summary>
-        ///// RXC.1 - RX Component Type.
-        ///// </summary>
-        //public RxComponentType { get; set; }
+        /// <summary>
+        /// RXC.1 - RX Component Type.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0166</remarks>
+        public string RxComponentType { get; set; }
 
-        ///// <summary>
-        ///// RXC.2 - Component Code.
-        ///// </summary>
-        //public ComponentCode { get; set; }
+        /// <summary>
+        /// RXC.2 - Component Code.
+        /// </summary>
+        public CodedWithExceptions ComponentCode { get; set; }
 
-        ///// <summary>
-        ///// RXC.3 - Component Amount.
-        ///// </summary>
-        //public ComponentAmount { get; set; }
+        /// <summary>
+        /// RXC.3 - Component Amount.
+        /// </summary>
+        public decimal? ComponentAmount { get; set; }
 
-        ///// <summary>
-        ///// RXC.4 - Component Units.
-        ///// </summary>
-        //public ComponentUnits { get; set; }
+        /// <summary>
+        /// RXC.4 - Component Units.
+        /// </summary>
+        public CodedWithExceptions ComponentUnits { get; set; }
 
-        ///// <summary>
-        ///// RXC.5 - Component Strength.
-        ///// </summary>
-        //public ComponentStrength { get; set; }
+        /// <summary>
+        /// RXC.5 - Component Strength.
+        /// </summary>
+        public decimal? ComponentStrength { get; set; }
 
-        ///// <summary>
-        ///// RXC.6 - Component Strength Units.
-        ///// </summary>
-        //public ComponentStrengthUnits { get; set; }
+        /// <summary>
+        /// RXC.6 - Component Strength Units.
+        /// </summary>
+        public CodedWithExceptions ComponentStrengthUnits { get; set; }
 
-        ///// <summary>
-        ///// RXC.7 - Supplementary Code.
-        ///// </summary>
-        //public SupplementaryCode { get; set; }
+        /// <summary>
+        /// RXC.7 - Supplementary Code.
+        /// </summary>
+        public IEnumerable<CodedWithExceptions> SupplementaryCode { get; set; }
 
-        ///// <summary>
-        ///// RXC.8 - Component Drug Strength Volume.
-        ///// </summary>
-        //public ComponentDrugStrengthVolume { get; set; }
+        /// <summary>
+        /// RXC.8 - Component Drug Strength Volume.
+        /// </summary>
+        public decimal? ComponentDrugStrengthVolume { get; set; }
 
-        ///// <summary>
-        ///// RXC.9 - Component Drug Strength Volume Units.
-        ///// </summary>
-        //public ComponentDrugStrengthVolumeUnits { get; set; }
+        /// <summary>
+        /// RXC.9 - Component Drug Strength Volume Units.
+        /// </summary>
+        public CodedWithExceptions ComponentDrugStrengthVolumeUnits { get; set; }
 
-        ///// <summary>
-        ///// RXC.10 - Dispense Amount.
-        ///// </summary>
-        //public DispenseAmount { get; set; }
+        /// <summary>
+        /// RXC.10 - Dispense Amount.
+        /// </summary>
+        public decimal? DispenseAmount { get; set; }
 
-        ///// <summary>
-        ///// RXC.11 - Dispense Units.
-        ///// </summary>
-        //public DispenseUnits { get; set; }
+        /// <summary>
+        /// RXC.11 - Dispense Units.
+        /// </summary>
+        public CodedWithExceptions DispenseUnits { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -82,7 +86,19 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}",
+                                Id,
+                                RxComponentType,
+                                ComponentCode?.ToDelimitedString(),
+                                ComponentAmount.HasValue ? ComponentAmount.Value.ToString(Consts.NumericFormat, culture) : null,
+                                ComponentUnits?.ToDelimitedString(),
+                                ComponentStrength.HasValue ? ComponentStrength.Value.ToString(Consts.NumericFormat, culture) : null,
+                                ComponentStrengthUnits?.ToDelimitedString(),
+                                SupplementaryCode != null ? string.Join("~", SupplementaryCode.Select(x => x.ToDelimitedString())) : null,
+                                ComponentDrugStrengthVolume.HasValue ? ComponentDrugStrengthVolume.Value.ToString(Consts.NumericFormat, culture) : null,
+                                ComponentDrugStrengthVolumeUnits?.ToDelimitedString(),
+                                DispenseAmount.HasValue ? DispenseAmount.Value.ToString(Consts.NumericFormat, culture) : null,
+                                DispenseUnits?.ToDelimitedString()
                                 ).TrimEnd('|');
         }
     }
