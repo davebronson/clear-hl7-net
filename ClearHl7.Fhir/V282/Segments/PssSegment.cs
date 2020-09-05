@@ -1,4 +1,5 @@
 using System;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -17,30 +18,30 @@ namespace ClearHl7.Fhir.V282.Segments
         /// </summary>
         public int Ordinal { get; set; }
 
-        ///// <summary>
-        ///// PSS.1 - Provider Product/Service Section Number.
-        ///// </summary>
-        //public ProviderProductServiceSectionNumber { get; set; }
+        /// <summary>
+        /// PSS.1 - Provider Product/Service Section Number.
+        /// </summary>
+        public EntityIdentifier ProviderProductServiceSectionNumber { get; set; }
 
-        ///// <summary>
-        ///// PSS.2 - Payer Product/Service Section Number.
-        ///// </summary>
-        //public PayerProductServiceSectionNumber { get; set; }
+        /// <summary>
+        /// PSS.2 - Payer Product/Service Section Number.
+        /// </summary>
+        public EntityIdentifier PayerProductServiceSectionNumber { get; set; }
 
-        ///// <summary>
-        ///// PSS.3 - Product/Service Section Sequence Number.
-        ///// </summary>
-        //public ProductServiceSectionSequenceNumber { get; set; }
+        /// <summary>
+        /// PSS.3 - Product/Service Section Sequence Number.
+        /// </summary>
+        public uint? ProductServiceSectionSequenceNumber { get; set; }
 
-        ///// <summary>
-        ///// PSS.4 - Billed Amount.
-        ///// </summary>
-        //public BilledAmount { get; set; }
+        /// <summary>
+        /// PSS.4 - Billed Amount.
+        /// </summary>
+        public CompositePrice BilledAmount { get; set; }
 
-        ///// <summary>
-        ///// PSS.5 - Section Description or Heading.
-        ///// </summary>
-        //public SectionDescriptionOrHeading { get; set; }
+        /// <summary>
+        /// PSS.5 - Section Description or Heading.
+        /// </summary>
+        public string SectionDescriptionOrHeading { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -52,7 +53,13 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}",
+                                Id,
+                                ProviderProductServiceSectionNumber?.ToDelimitedString(),
+                                PayerProductServiceSectionNumber?.ToDelimitedString(),
+                                ProductServiceSectionSequenceNumber.HasValue ? ProductServiceSectionSequenceNumber.Value.ToString(culture) : null,
+                                BilledAmount?.ToDelimitedString(),
+                                SectionDescriptionOrHeading
                                 ).TrimEnd('|');
         }
     }

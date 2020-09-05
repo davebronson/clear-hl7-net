@@ -1,4 +1,5 @@
 using System;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -17,40 +18,42 @@ namespace ClearHl7.Fhir.V282.Segments
         /// </summary>
         public int Ordinal { get; set; }
 
-        ///// <summary>
-        ///// PTH.1 - Action Code.
-        ///// </summary>
-        //public ActionCode { get; set; }
+        /// <summary>
+        /// PTH.1 - Action Code.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0206</remarks>
+        public string ActionCode { get; set; }
 
-        ///// <summary>
-        ///// PTH.2 - Pathway ID.
-        ///// </summary>
-        //public PathwayId { get; set; }
+        /// <summary>
+        /// PTH.2 - Pathway ID.
+        /// </summary>
+        public CodedWithExceptions PathwayId { get; set; }
 
-        ///// <summary>
-        ///// PTH.3 - Pathway Instance ID.
-        ///// </summary>
-        //public PathwayInstanceId { get; set; }
+        /// <summary>
+        /// PTH.3 - Pathway Instance ID.
+        /// </summary>
+        public EntityIdentifier PathwayInstanceId { get; set; }
 
-        ///// <summary>
-        ///// PTH.4 - Pathway Established Date/Time.
-        ///// </summary>
-        //public PathwayEstablishedDateTime { get; set; }
+        /// <summary>
+        /// PTH.4 - Pathway Established Date/Time.
+        /// </summary>
+        public DateTime? PathwayEstablishedDateTime { get; set; }
 
-        ///// <summary>
-        ///// PTH.5 - Pathway Life Cycle Status.
-        ///// </summary>
-        //public PathwayLifeCycleStatus { get; set; }
+        /// <summary>
+        /// PTH.5 - Pathway Life Cycle Status.
+        /// </summary>
+        public CodedWithExceptions PathwayLifeCycleStatus { get; set; }
 
-        ///// <summary>
-        ///// PTH.6 - Change Pathway Life Cycle Status Date/Time.
-        ///// </summary>
-        //public ChangePathwayLifeCycleStatusDateTime { get; set; }
+        /// <summary>
+        /// PTH.6 - Change Pathway Life Cycle Status Date/Time.
+        /// </summary>
+        public DateTime? ChangePathwayLifeCycleStatusDateTime { get; set; }
 
-        ///// <summary>
-        ///// PTH.7 - Mood Code.
-        ///// </summary>
-        //public MoodCode { get; set; }
+        /// <summary>
+        /// PTH.7 - Mood Code.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0725</remarks>
+        public CodedWithNoExceptions MoodCode { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -62,7 +65,15 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}",
+                                Id,
+                                ActionCode,
+                                PathwayId?.ToDelimitedString(),
+                                PathwayInstanceId?.ToDelimitedString(),
+                                PathwayEstablishedDateTime.HasValue ? PathwayEstablishedDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                PathwayLifeCycleStatus?.ToDelimitedString(),
+                                ChangePathwayLifeCycleStatusDateTime.HasValue ? ChangePathwayLifeCycleStatusDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                MoodCode?.ToDelimitedString()
                                 ).TrimEnd('|');
         }
     }

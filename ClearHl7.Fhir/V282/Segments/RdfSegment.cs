@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -17,15 +20,16 @@ namespace ClearHl7.Fhir.V282.Segments
         /// </summary>
         public int Ordinal { get; set; }
 
-        ///// <summary>
-        ///// RDF.1 - Number of Columns per Row.
-        ///// </summary>
-        //public NumberOfColumnsPerRow { get; set; }
+        /// <summary>
+        /// RDF.1 - Number of Columns per Row.
+        /// </summary>
+        public decimal? NumberOfColumnsPerRow { get; set; }
 
-        ///// <summary>
-        ///// RDF.2 - Column Description.
-        ///// </summary>
-        //public ColumnDescription { get; set; }
+        /// <summary>
+        /// RDF.2 - Column Description.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0440</remarks>
+        public IEnumerable<RowColumnDefinition> ColumnDescription { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -37,7 +41,10 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}"
+                                "{0}|{1}|{2}",
+                                Id,
+                                NumberOfColumnsPerRow.HasValue ? NumberOfColumnsPerRow.Value.ToString(Consts.NumericFormat, culture) : null,
+                                ColumnDescription != null ? string.Join("~", ColumnDescription.Select(x => x.ToDelimitedString())) : null
                                 ).TrimEnd('|');
         }
     }

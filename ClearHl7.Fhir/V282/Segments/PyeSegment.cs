@@ -1,4 +1,5 @@
 using System;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -17,40 +18,43 @@ namespace ClearHl7.Fhir.V282.Segments
         /// </summary>
         public int Ordinal { get; set; }
 
-        ///// <summary>
-        ///// PYE.1 - Set ID - PYE.
-        ///// </summary>
-        //public SetIdPye { get; set; }
+        /// <summary>
+        /// PYE.1 - Set ID - PYE.
+        /// </summary>
+        public uint? SetIdPye { get; set; }
 
-        ///// <summary>
-        ///// PYE.2 - Payee Type.
-        ///// </summary>
-        //public PayeeType { get; set; }
+        /// <summary>
+        /// PYE.2 - Payee Type.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0557</remarks>
+        public CodedWithExceptions PayeeType { get; set; }
 
-        ///// <summary>
-        ///// PYE.3 - Payee Relationship to Invoice (Patient).
-        ///// </summary>
-        //public PayeeRelationshipToInvoicePatient { get; set; }
+        /// <summary>
+        /// PYE.3 - Payee Relationship to Invoice (Patient).
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0558</remarks>
+        public CodedWithExceptions PayeeRelationshipToInvoicePatient { get; set; }
 
-        ///// <summary>
-        ///// PYE.4 - Payee Identification List.
-        ///// </summary>
-        //public PayeeIdentificationList { get; set; }
+        /// <summary>
+        /// PYE.4 - Payee Identification List.
+        /// </summary>
+        public ExtendedCompositeNameAndIdNumberForOrganizations PayeeIdentificationList { get; set; }
 
-        ///// <summary>
-        ///// PYE.5 - Payee Person Name.
-        ///// </summary>
-        //public PayeePersonName { get; set; }
+        /// <summary>
+        /// PYE.5 - Payee Person Name.
+        /// </summary>
+        public ExtendedPersonName PayeePersonName { get; set; }
 
-        ///// <summary>
-        ///// PYE.6 - Payee Address.
-        ///// </summary>
-        //public PayeeAddress { get; set; }
+        /// <summary>
+        /// PYE.6 - Payee Address.
+        /// </summary>
+        public ExtendedAddress PayeeAddress { get; set; }
 
-        ///// <summary>
-        ///// PYE.7 - Payment Method.
-        ///// </summary>
-        //public PaymentMethod { get; set; }
+        /// <summary>
+        /// PYE.7 - Payment Method.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0570</remarks>
+        public CodedWithExceptions PaymentMethod { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -62,7 +66,15 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}",
+                                Id,
+                                SetIdPye.HasValue ? SetIdPye.Value.ToString(culture) : null,
+                                PayeeType?.ToDelimitedString(),
+                                PayeeRelationshipToInvoicePatient?.ToDelimitedString(),
+                                PayeeIdentificationList?.ToDelimitedString(),
+                                PayeePersonName?.ToDelimitedString(),
+                                PayeeAddress?.ToDelimitedString(),
+                                PaymentMethod?.ToDelimitedString()
                                 ).TrimEnd('|');
         }
     }

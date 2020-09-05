@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -17,20 +20,22 @@ namespace ClearHl7.Fhir.V282.Segments
         /// </summary>
         public int Ordinal { get; set; }
 
-        ///// <summary>
-        ///// QRI.1 - Candidate Confidence.
-        ///// </summary>
-        //public CandidateConfidence { get; set; }
+        /// <summary>
+        /// QRI.1 - Candidate Confidence.
+        /// </summary>
+        public decimal? CandidateConfidence { get; set; }
 
-        ///// <summary>
-        ///// QRI.2 - Match Reason Code.
-        ///// </summary>
-        //public MatchReasonCode { get; set; }
+        /// <summary>
+        /// QRI.2 - Match Reason Code.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0392</remarks>
+        public IEnumerable<CodedWithExceptions> MatchReasonCode { get; set; }
 
-        ///// <summary>
-        ///// QRI.3 - Algorithm Descriptor.
-        ///// </summary>
-        //public AlgorithmDescriptor { get; set; }
+        /// <summary>
+        /// QRI.3 - Algorithm Descriptor.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0393</remarks>
+        public CodedWithExceptions AlgorithmDescriptor { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -42,7 +47,11 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}"
+                                "{0}|{1}|{2}|{3}",
+                                Id,
+                                CandidateConfidence.HasValue ? CandidateConfidence.Value.ToString(Consts.NumericFormat, culture) : null,
+                                MatchReasonCode != null ? string.Join("~", MatchReasonCode.Select(x => x.ToDelimitedString())) : null,
+                                AlgorithmDescriptor?.ToDelimitedString()
                                 ).TrimEnd('|');
         }
     }

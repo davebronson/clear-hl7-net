@@ -17,10 +17,10 @@ namespace ClearHl7.Fhir.V282.Segments
         /// </summary>
         public int Ordinal { get; set; }
 
-        ///// <summary>
-        ///// RDT.1 - Column Value.
-        ///// </summary>
-        //public ColumnValue { get; set; }
+        /// <summary>
+        /// RDT.1 - Column Value.
+        /// </summary>
+        public string ColumnValue { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -32,7 +32,9 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}"
+                                "{0}|{1}",
+                                Id,
+                                ColumnValue
                                 ).TrimEnd('|');
         }
     }

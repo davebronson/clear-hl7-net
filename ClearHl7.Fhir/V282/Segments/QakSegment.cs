@@ -1,4 +1,5 @@
 using System;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -17,35 +18,37 @@ namespace ClearHl7.Fhir.V282.Segments
         /// </summary>
         public int Ordinal { get; set; }
 
-        ///// <summary>
-        ///// QAK.1 - Query Tag.
-        ///// </summary>
-        //public QueryTag { get; set; }
+        /// <summary>
+        /// QAK.1 - Query Tag.
+        /// </summary>
+        public string QueryTag { get; set; }
 
-        ///// <summary>
-        ///// QAK.2 - Query Response Status.
-        ///// </summary>
-        //public QueryResponseStatus { get; set; }
+        /// <summary>
+        /// QAK.2 - Query Response Status.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0208</remarks>
+        public string QueryResponseStatus { get; set; }
 
-        ///// <summary>
-        ///// QAK.3 - Message Query Name.
-        ///// </summary>
-        //public MessageQueryName { get; set; }
+        /// <summary>
+        /// QAK.3 - Message Query Name.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0471</remarks>
+        public CodedWithExceptions MessageQueryName { get; set; }
 
-        ///// <summary>
-        ///// QAK.4 - Hit Count Total.
-        ///// </summary>
-        //public HitCountTotal { get; set; }
+        /// <summary>
+        /// QAK.4 - Hit Count Total.
+        /// </summary>
+        public decimal? HitCountTotal { get; set; }
 
-        ///// <summary>
-        ///// QAK.5 - This payload.
-        ///// </summary>
-        //public ThisPayload { get; set; }
+        /// <summary>
+        /// QAK.5 - This payload.
+        /// </summary>
+        public decimal? ThisPayload { get; set; }
 
-        ///// <summary>
-        ///// QAK.6 - Hits remaining.
-        ///// </summary>
-        //public HitsRemaining { get; set; }
+        /// <summary>
+        /// QAK.6 - Hits remaining.
+        /// </summary>
+        public decimal? HitsRemaining { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -57,7 +60,14 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}",
+                                Id,
+                                QueryTag,
+                                QueryResponseStatus,
+                                MessageQueryName?.ToDelimitedString(),
+                                HitCountTotal.HasValue ? HitCountTotal.Value.ToString(Consts.NumericFormat, culture) : null,
+                                ThisPayload.HasValue ? ThisPayload.Value.ToString(Consts.NumericFormat, culture) : null,
+                                HitsRemaining.HasValue ? HitsRemaining.Value.ToString(Consts.NumericFormat, culture) : null
                                 ).TrimEnd('|');
         }
     }
