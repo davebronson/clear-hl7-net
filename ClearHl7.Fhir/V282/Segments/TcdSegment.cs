@@ -1,4 +1,5 @@
 using System;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -17,45 +18,48 @@ namespace ClearHl7.Fhir.V282.Segments
         /// </summary>
         public int Ordinal { get; set; }
 
-        ///// <summary>
-        ///// TCD.1 - Universal Service Identifier.
-        ///// </summary>
-        //public UniversalServiceIdentifier { get; set; }
+        /// <summary>
+        /// TCD.1 - Universal Service Identifier.
+        /// </summary>
+        public CodedWithExceptions UniversalServiceIdentifier { get; set; }
 
-        ///// <summary>
-        ///// TCD.2 - Auto-Dilution Factor.
-        ///// </summary>
-        //public AutoDilutionFactor { get; set; }
+        /// <summary>
+        /// TCD.2 - Auto-Dilution Factor.
+        /// </summary>
+        public StructuredNumeric AutoDilutionFactor { get; set; }
 
-        ///// <summary>
-        ///// TCD.3 - Rerun Dilution Factor.
-        ///// </summary>
-        //public RerunDilutionFactor { get; set; }
+        /// <summary>
+        /// TCD.3 - Rerun Dilution Factor.
+        /// </summary>
+        public StructuredNumeric RerunDilutionFactor { get; set; }
 
-        ///// <summary>
-        ///// TCD.4 - Pre-Dilution Factor.
-        ///// </summary>
-        //public PreDilutionFactor { get; set; }
+        /// <summary>
+        /// TCD.4 - Pre-Dilution Factor.
+        /// </summary>
+        public StructuredNumeric PreDilutionFactor { get; set; }
 
-        ///// <summary>
-        ///// TCD.5 - Endogenous Content of Pre-Dilution Diluent.
-        ///// </summary>
-        //public EndogenousContentOfPreDilutionDiluent { get; set; }
+        /// <summary>
+        /// TCD.5 - Endogenous Content of Pre-Dilution Diluent.
+        /// </summary>
+        public StructuredNumeric EndogenousContentOfPreDilutionDiluent { get; set; }
 
-        ///// <summary>
-        ///// TCD.6 - Automatic Repeat Allowed.
-        ///// </summary>
-        //public AutomaticRepeatAllowed { get; set; }
+        /// <summary>
+        /// TCD.6 - Automatic Repeat Allowed.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string AutomaticRepeatAllowed { get; set; }
 
-        ///// <summary>
-        ///// TCD.7 - Reflex Allowed.
-        ///// </summary>
-        //public ReflexAllowed { get; set; }
+        /// <summary>
+        /// TCD.7 - Reflex Allowed.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string ReflexAllowed { get; set; }
 
-        ///// <summary>
-        ///// TCD.8 - Analyte Repeat Status.
-        ///// </summary>
-        //public AnalyteRepeatStatus { get; set; }
+        /// <summary>
+        /// TCD.8 - Analyte Repeat Status.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0389</remarks>
+        public CodedWithExceptions AnalyteRepeatStatus { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -67,7 +71,16 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}",
+                                Id,
+                                UniversalServiceIdentifier?.ToDelimitedString(),
+                                AutoDilutionFactor?.ToDelimitedString(),
+                                RerunDilutionFactor?.ToDelimitedString(),
+                                PreDilutionFactor?.ToDelimitedString(),
+                                EndogenousContentOfPreDilutionDiluent?.ToDelimitedString(),
+                                AutomaticRepeatAllowed,
+                                ReflexAllowed,
+                                AnalyteRepeatStatus?.ToDelimitedString()
                                 ).TrimEnd('|');
         }
     }

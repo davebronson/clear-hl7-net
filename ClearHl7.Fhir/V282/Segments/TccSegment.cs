@@ -1,4 +1,5 @@
 using System;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -17,80 +18,84 @@ namespace ClearHl7.Fhir.V282.Segments
         /// </summary>
         public int Ordinal { get; set; }
 
-        ///// <summary>
-        ///// TCC.1 - Universal Service Identifier.
-        ///// </summary>
-        //public UniversalServiceIdentifier { get; set; }
+        /// <summary>
+        /// TCC.1 - Universal Service Identifier.
+        /// </summary>
+        public CodedWithExceptions UniversalServiceIdentifier { get; set; }
 
-        ///// <summary>
-        ///// TCC.2 - Equipment Test Application Identifier.
-        ///// </summary>
-        //public EquipmentTestApplicationIdentifier { get; set; }
+        /// <summary>
+        /// TCC.2 - Equipment Test Application Identifier.
+        /// </summary>
+        public EntityIdentifier EquipmentTestApplicationIdentifier { get; set; }
 
-        ///// <summary>
-        ///// TCC.3 - Specimen Source.
-        ///// </summary>
-        //public SpecimenSource { get; set; }
+        /// <summary>
+        /// TCC.3 - Specimen Source.
+        /// </summary>
+        public string SpecimenSource { get; set; }
 
-        ///// <summary>
-        ///// TCC.4 - Auto-Dilution Factor Default.
-        ///// </summary>
-        //public AutoDilutionFactorDefault { get; set; }
+        /// <summary>
+        /// TCC.4 - Auto-Dilution Factor Default.
+        /// </summary>
+        public StructuredNumeric AutoDilutionFactorDefault { get; set; }
 
-        ///// <summary>
-        ///// TCC.5 - Rerun Dilution Factor Default.
-        ///// </summary>
-        //public RerunDilutionFactorDefault { get; set; }
+        /// <summary>
+        /// TCC.5 - Rerun Dilution Factor Default.
+        /// </summary>
+        public StructuredNumeric RerunDilutionFactorDefault { get; set; }
 
-        ///// <summary>
-        ///// TCC.6 - Pre-Dilution Factor Default.
-        ///// </summary>
-        //public PreDilutionFactorDefault { get; set; }
+        /// <summary>
+        /// TCC.6 - Pre-Dilution Factor Default.
+        /// </summary>
+        public StructuredNumeric PreDilutionFactorDefault { get; set; }
 
-        ///// <summary>
-        ///// TCC.7 - Endogenous Content of Pre-Dilution Diluent.
-        ///// </summary>
-        //public EndogenousContentOfPreDilutionDiluent { get; set; }
+        /// <summary>
+        /// TCC.7 - Endogenous Content of Pre-Dilution Diluent.
+        /// </summary>
+        public StructuredNumeric EndogenousContentOfPreDilutionDiluent { get; set; }
 
-        ///// <summary>
-        ///// TCC.8 - Inventory Limits Warning Level.
-        ///// </summary>
-        //public InventoryLimitsWarningLevel { get; set; }
+        /// <summary>
+        /// TCC.8 - Inventory Limits Warning Level.
+        /// </summary>
+        public decimal? InventoryLimitsWarningLevel { get; set; }
 
-        ///// <summary>
-        ///// TCC.9 - Automatic Rerun Allowed.
-        ///// </summary>
-        //public AutomaticRerunAllowed { get; set; }
+        /// <summary>
+        /// TCC.9 - Automatic Rerun Allowed.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string AutomaticRerunAllowed { get; set; }
 
-        ///// <summary>
-        ///// TCC.10 - Automatic Repeat Allowed.
-        ///// </summary>
-        //public AutomaticRepeatAllowed { get; set; }
+        /// <summary>
+        /// TCC.10 - Automatic Repeat Allowed.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string AutomaticRepeatAllowed { get; set; }
 
-        ///// <summary>
-        ///// TCC.11 - Automatic Reflex Allowed.
-        ///// </summary>
-        //public AutomaticReflexAllowed { get; set; }
+        /// <summary>
+        /// TCC.11 - Automatic Reflex Allowed.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string AutomaticReflexAllowed { get; set; }
 
-        ///// <summary>
-        ///// TCC.12 - Equipment Dynamic Range.
-        ///// </summary>
-        //public EquipmentDynamicRange { get; set; }
+        /// <summary>
+        /// TCC.12 - Equipment Dynamic Range.
+        /// </summary>
+        public StructuredNumeric EquipmentDynamicRange { get; set; }
 
-        ///// <summary>
-        ///// TCC.13 - Units.
-        ///// </summary>
-        //public Units { get; set; }
+        /// <summary>
+        /// TCC.13 - Units.
+        /// </summary>
+        public CodedWithExceptions Units { get; set; }
 
-        ///// <summary>
-        ///// TCC.14 - Processing Type.
-        ///// </summary>
-        //public ProcessingType { get; set; }
+        /// <summary>
+        /// TCC.14 - Processing Type.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0388</remarks>
+        public CodedWithExceptions ProcessingType { get; set; }
 
-        ///// <summary>
-        ///// TCC.15 - Test Criticality.
-        ///// </summary>
-        //public TestCriticality { get; set; }
+        /// <summary>
+        /// TCC.15 - Test Criticality.
+        /// </summary>
+        public CodedWithExceptions TestCriticality { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -102,7 +107,23 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}",
+                                Id,
+                                UniversalServiceIdentifier?.ToDelimitedString(),
+                                EquipmentTestApplicationIdentifier?.ToDelimitedString(),
+                                SpecimenSource,
+                                AutoDilutionFactorDefault?.ToDelimitedString(),
+                                RerunDilutionFactorDefault?.ToDelimitedString(),
+                                PreDilutionFactorDefault?.ToDelimitedString(),
+                                EndogenousContentOfPreDilutionDiluent?.ToDelimitedString(),
+                                InventoryLimitsWarningLevel.HasValue ? InventoryLimitsWarningLevel.Value.ToString(Consts.NumericFormat, culture) : null,
+                                AutomaticRerunAllowed,
+                                AutomaticRepeatAllowed,
+                                AutomaticReflexAllowed,
+                                EquipmentDynamicRange?.ToDelimitedString(),
+                                Units?.ToDelimitedString(),
+                                ProcessingType?.ToDelimitedString(),
+                                TestCriticality?.ToDelimitedString()
                                 ).TrimEnd('|');
         }
     }
