@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -17,35 +20,35 @@ namespace ClearHl7.Fhir.V282.Segments
         /// </summary>
         public int Ordinal { get; set; }
 
-        ///// <summary>
-        ///// VAR.1 - Variance Instance ID.
-        ///// </summary>
-        //public VarianceInstanceId { get; set; }
+        /// <summary>
+        /// VAR.1 - Variance Instance ID.
+        /// </summary>
+        public EntityIdentifier VarianceInstanceId { get; set; }
 
-        ///// <summary>
-        ///// VAR.2 - Documented Date/Time.
-        ///// </summary>
-        //public DocumentedDateTime { get; set; }
+        /// <summary>
+        /// VAR.2 - Documented Date/Time.
+        /// </summary>
+        public DateTime? DocumentedDateTime { get; set; }
 
-        ///// <summary>
-        ///// VAR.3 - Stated Variance Date/Time.
-        ///// </summary>
-        //public StatedVarianceDateTime { get; set; }
+        /// <summary>
+        /// VAR.3 - Stated Variance Date/Time.
+        /// </summary>
+        public DateTime? StatedVarianceDateTime { get; set; }
 
-        ///// <summary>
-        ///// VAR.4 - Variance Originator.
-        ///// </summary>
-        //public VarianceOriginator { get; set; }
+        /// <summary>
+        /// VAR.4 - Variance Originator.
+        /// </summary>
+        public IEnumerable<ExtendedCompositeIdNumberAndNameForPersons> VarianceOriginator { get; set; }
 
-        ///// <summary>
-        ///// VAR.5 - Variance Classification.
-        ///// </summary>
-        //public VarianceClassification { get; set; }
+        /// <summary>
+        /// VAR.5 - Variance Classification.
+        /// </summary>
+        public CodedWithExceptions VarianceClassification { get; set; }
 
-        ///// <summary>
-        ///// VAR.6 - Variance Description.
-        ///// </summary>
-        //public VarianceDescription { get; set; }
+        /// <summary>
+        /// VAR.6 - Variance Description.
+        /// </summary>
+        public IEnumerable<string> VarianceDescription { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -57,7 +60,14 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}",
+                                Id,
+                                VarianceInstanceId?.ToDelimitedString(),
+                                DocumentedDateTime.HasValue ? DocumentedDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                StatedVarianceDateTime.HasValue ? StatedVarianceDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                VarianceOriginator != null ? string.Join("~", VarianceOriginator.Select(x => x.ToDelimitedString())) : null,
+                                VarianceClassification?.ToDelimitedString(),
+                                VarianceDescription != null ? string.Join("~", VarianceDescription) : null
                                 ).TrimEnd('|');
         }
     }
