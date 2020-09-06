@@ -1,4 +1,5 @@
 using System;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -17,30 +18,30 @@ namespace ClearHl7.Fhir.V282.Segments
         /// </summary>
         public int Ordinal { get; set; }
 
-        ///// <summary>
-        ///// SLT.1 - Device Number.
-        ///// </summary>
-        //public DeviceNumber { get; set; }
+        /// <summary>
+        /// SLT.1 - Device Number.
+        /// </summary>
+        public EntityIdentifier DeviceNumber { get; set; }
 
-        ///// <summary>
-        ///// SLT.2 - Device Name.
-        ///// </summary>
-        //public DeviceName { get; set; }
+        /// <summary>
+        /// SLT.2 - Device Name.
+        /// </summary>
+        public string DeviceName { get; set; }
 
-        ///// <summary>
-        ///// SLT.3 - Lot Number.
-        ///// </summary>
-        //public LotNumber { get; set; }
+        /// <summary>
+        /// SLT.3 - Lot Number.
+        /// </summary>
+        public EntityIdentifier LotNumber { get; set; }
 
-        ///// <summary>
-        ///// SLT.4 - Item Identifier.
-        ///// </summary>
-        //public ItemIdentifier { get; set; }
+        /// <summary>
+        /// SLT.4 - Item Identifier.
+        /// </summary>
+        public EntityIdentifier ItemIdentifier { get; set; }
 
-        ///// <summary>
-        ///// SLT.5 - Bar Code.
-        ///// </summary>
-        //public BarCode { get; set; }
+        /// <summary>
+        /// SLT.5 - Bar Code.
+        /// </summary>
+        public string BarCode { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -52,7 +53,13 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}",
+                                Id,
+                                DeviceNumber?.ToDelimitedString(),
+                                DeviceName,
+                                LotNumber?.ToDelimitedString(),
+                                ItemIdentifier?.ToDelimitedString(),
+                                BarCode
                                 ).TrimEnd('|');
         }
     }

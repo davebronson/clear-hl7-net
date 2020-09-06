@@ -1,4 +1,5 @@
 using System;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -17,35 +18,35 @@ namespace ClearHl7.Fhir.V282.Segments
         /// </summary>
         public int Ordinal { get; set; }
 
-        ///// <summary>
-        ///// SFT.1 - Software Vendor Organization.
-        ///// </summary>
-        //public SoftwareVendorOrganization { get; set; }
+        /// <summary>
+        /// SFT.1 - Software Vendor Organization.
+        /// </summary>
+        public ExtendedCompositeNameAndIdNumberForOrganizations SoftwareVendorOrganization { get; set; }
 
-        ///// <summary>
-        ///// SFT.2 - Software Certified Version or Release Number.
-        ///// </summary>
-        //public SoftwareCertifiedVersionOrReleaseNumber { get; set; }
+        /// <summary>
+        /// SFT.2 - Software Certified Version or Release Number.
+        /// </summary>
+        public string SoftwareCertifiedVersionOrReleaseNumber { get; set; }
 
-        ///// <summary>
-        ///// SFT.3 - Software Product Name.
-        ///// </summary>
-        //public SoftwareProductName { get; set; }
+        /// <summary>
+        /// SFT.3 - Software Product Name.
+        /// </summary>
+        public string SoftwareProductName { get; set; }
 
-        ///// <summary>
-        ///// SFT.4 - Software Binary ID.
-        ///// </summary>
-        //public SoftwareBinaryId { get; set; }
+        /// <summary>
+        /// SFT.4 - Software Binary ID.
+        /// </summary>
+        public string SoftwareBinaryId { get; set; }
 
-        ///// <summary>
-        ///// SFT.5 - Software Product Information.
-        ///// </summary>
-        //public SoftwareProductInformation { get; set; }
+        /// <summary>
+        /// SFT.5 - Software Product Information.
+        /// </summary>
+        public string SoftwareProductInformation { get; set; }
 
-        ///// <summary>
-        ///// SFT.6 - Software Install Date.
-        ///// </summary>
-        //public SoftwareInstallDate { get; set; }
+        /// <summary>
+        /// SFT.6 - Software Install Date.
+        /// </summary>
+        public DateTime? SoftwareInstallDate { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -57,7 +58,14 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}",
+                                Id,
+                                SoftwareVendorOrganization?.ToDelimitedString(),
+                                SoftwareCertifiedVersionOrReleaseNumber,
+                                SoftwareProductName,
+                                SoftwareBinaryId,
+                                SoftwareProductInformation,
+                                SoftwareInstallDate.HasValue ? SoftwareInstallDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
                                 ).TrimEnd('|');
         }
     }

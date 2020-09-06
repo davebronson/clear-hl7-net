@@ -1,4 +1,5 @@
 using System;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -17,25 +18,26 @@ namespace ClearHl7.Fhir.V282.Segments
         /// </summary>
         public int Ordinal { get; set; }
 
-        ///// <summary>
-        ///// SID.1 - Application/Method Identifier.
-        ///// </summary>
-        //public ApplicationMethodIdentifier { get; set; }
+        /// <summary>
+        /// SID.1 - Application/Method Identifier.
+        /// </summary>
+        public CodedWithExceptions ApplicationMethodIdentifier { get; set; }
 
-        ///// <summary>
-        ///// SID.2 - Substance Lot Number.
-        ///// </summary>
-        //public SubstanceLotNumber { get; set; }
+        /// <summary>
+        /// SID.2 - Substance Lot Number.
+        /// </summary>
+        public string SubstanceLotNumber { get; set; }
 
-        ///// <summary>
-        ///// SID.3 - Substance Container Identifier.
-        ///// </summary>
-        //public SubstanceContainerIdentifier { get; set; }
+        /// <summary>
+        /// SID.3 - Substance Container Identifier.
+        /// </summary>
+        public string SubstanceContainerIdentifier { get; set; }
 
-        ///// <summary>
-        ///// SID.4 - Substance Manufacturer Identifier.
-        ///// </summary>
-        //public SubstanceManufacturerIdentifier { get; set; }
+        /// <summary>
+        /// SID.4 - Substance Manufacturer Identifier.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0385</remarks>
+        public CodedWithExceptions SubstanceManufacturerIdentifier { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -47,7 +49,12 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}"
+                                "{0}|{1}|{2}|{3}|{4}",
+                                Id,
+                                ApplicationMethodIdentifier?.ToDelimitedString(),
+                                SubstanceLotNumber,
+                                SubstanceContainerIdentifier,
+                                SubstanceManufacturerIdentifier?.ToDelimitedString()
                                 ).TrimEnd('|');
         }
     }

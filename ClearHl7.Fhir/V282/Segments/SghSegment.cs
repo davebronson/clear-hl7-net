@@ -17,15 +17,15 @@ namespace ClearHl7.Fhir.V282.Segments
         /// </summary>
         public int Ordinal { get; set; }
 
-        ///// <summary>
-        ///// SGH.1 - Set ID - SGH.
-        ///// </summary>
-        //public SetIdSgh { get; set; }
+        /// <summary>
+        /// SGH.1 - Set ID - SGH.
+        /// </summary>
+        public uint? SetIdSgh { get; set; }
 
-        ///// <summary>
-        ///// SGH.2 - Segment Group Name.
-        ///// </summary>
-        //public SegmentGroupName { get; set; }
+        /// <summary>
+        /// SGH.2 - Segment Group Name.
+        /// </summary>
+        public string SegmentGroupName { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -37,7 +37,10 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}"
+                                "{0}|{1}|{2}",
+                                Id,
+                                SetIdSgh.HasValue ? SetIdSgh.Value.ToString(culture) : null,
+                                SegmentGroupName
                                 ).TrimEnd('|');
         }
     }

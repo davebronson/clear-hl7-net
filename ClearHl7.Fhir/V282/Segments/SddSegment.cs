@@ -1,4 +1,5 @@
 using System;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -17,40 +18,42 @@ namespace ClearHl7.Fhir.V282.Segments
         /// </summary>
         public int Ordinal { get; set; }
 
-        ///// <summary>
-        ///// SDD.1 - Lot Number.
-        ///// </summary>
-        //public LotNumber { get; set; }
+        /// <summary>
+        /// SDD.1 - Lot Number.
+        /// </summary>
+        public EntityIdentifier LotNumber { get; set; }
 
-        ///// <summary>
-        ///// SDD.2 - Device Number.
-        ///// </summary>
-        //public DeviceNumber { get; set; }
+        /// <summary>
+        /// SDD.2 - Device Number.
+        /// </summary>
+        public EntityIdentifier DeviceNumber { get; set; }
 
-        ///// <summary>
-        ///// SDD.3 - Device Name.
-        ///// </summary>
-        //public DeviceName { get; set; }
+        /// <summary>
+        /// SDD.3 - Device Name.
+        /// </summary>
+        public string DeviceName { get; set; }
 
-        ///// <summary>
-        ///// SDD.4 - Device Data State.
-        ///// </summary>
-        //public DeviceDataState { get; set; }
+        /// <summary>
+        /// SDD.4 - Device Data State.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0667</remarks>
+        public CodedWithExceptions DeviceDataState { get; set; }
 
-        ///// <summary>
-        ///// SDD.5 - Load Status.
-        ///// </summary>
-        //public LoadStatus { get; set; }
+        /// <summary>
+        /// SDD.5 - Load Status.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0669</remarks>
+        public CodedWithExceptions LoadStatus { get; set; }
 
-        ///// <summary>
-        ///// SDD.6 - Control Code.
-        ///// </summary>
-        //public ControlCode { get; set; }
+        /// <summary>
+        /// SDD.6 - Control Code.
+        /// </summary>
+        public decimal? ControlCode { get; set; }
 
-        ///// <summary>
-        ///// SDD.7 - Operator Name.
-        ///// </summary>
-        //public OperatorName { get; set; }
+        /// <summary>
+        /// SDD.7 - Operator Name.
+        /// </summary>
+        public string OperatorName { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -62,7 +65,15 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}"
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}",
+                                Id,
+                                LotNumber?.ToDelimitedString(),
+                                DeviceNumber?.ToDelimitedString(),
+                                DeviceName,
+                                DeviceDataState?.ToDelimitedString(),
+                                LoadStatus?.ToDelimitedString(),
+                                ControlCode.HasValue ? ControlCode.Value.ToString(Consts.NumericFormat, culture) : null,
+                                OperatorName
                                 ).TrimEnd('|');
         }
     }
