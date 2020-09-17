@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -26,7 +27,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// URD.1 - Segment string.
         /// </summary>
-        public string SegmentString { get; set; }
+        public IEnumerable<string> SegmentStrings { get; set; }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -40,7 +41,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 culture,
                                 "{0}|{1}",
                                 Id,
-                                SegmentString
+                                SegmentStrings != null ? string.Join("|", SegmentStrings) : null
                                 ).TrimEnd('|');
         }
     }
