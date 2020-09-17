@@ -14,7 +14,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// Gets the ID for the Segment.  This property is read-only.
         /// </summary>
         public string Id { get; } = "MSH";
-        
+
         /// <summary>
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
         /// </summary>
@@ -23,12 +23,42 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// MSH.1 - Field Separator.
         /// </summary>
-        public string FieldSeparator { get; } = "|";
+        public char FieldSeparator { get; } = '|';
+
+        /// <summary>
+        /// Gets or sets the character used to separate components.
+        /// </summary>
+        /// <remarks>The default character ^ is recommended.</remarks>
+        public char ComponentSeparator { get; set; } = '^';
+
+        /// <summary>
+        /// Gets or sets the character used to separate components.
+        /// </summary>
+        /// <remarks>The default character ~ is recommended.</remarks>
+        public char FieldRepeatSeparator { get; set; } = '~';
+
+        /// <summary>
+        /// Gets or sets the character used to separate components.
+        /// </summary>
+        /// <remarks>The default character \ is recommended.</remarks>
+        public char EscapeCharacter { get; set; } = '\\';
+
+        /// <summary>
+        /// Gets or sets the character used to separate components.
+        /// </summary>
+        /// <remarks>The default character & is recommended.</remarks>
+        public char SubcomponentSeparator { get; set; } = '&';
 
         /// <summary>
         /// MSH.2 - Encoding Characters.  This property is read-only.
         /// </summary>
-        public string EncodingCharacters { get; } = @"^~\&";
+        public string EncodingCharacters 
+        {
+            get
+            {
+                return $"{ ComponentSeparator }{ FieldRepeatSeparator }{ EscapeCharacter }{ SubcomponentSeparator }";
+            }
+        }
 
         /// <summary>
         /// MSH.3 - Sending Application.
@@ -164,7 +194,7 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}",
+                                "{0}{1}{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}",
                                 Id,
                                 FieldSeparator,
                                 EncodingCharacters,
