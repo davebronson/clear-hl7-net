@@ -44,7 +44,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// SHP.5 - Shipment Status Reason.
         /// </summary>
-        public string ShipmentStatusReason { get; set; }
+        public Text ShipmentStatusReason { get; set; }
 
         /// <summary>
         /// SHP.6 - Shipment Priority.
@@ -97,7 +97,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 InternalShipmentId != null ? string.Join("~", InternalShipmentId.Select(x => x.ToDelimitedString())) : null,
                                 ShipmentStatus?.ToDelimitedString(),
                                 ShipmentStatusDateTime.HasValue ? ShipmentStatusDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                ShipmentStatusReason,
+                                ShipmentStatusReason?.ToDelimitedString(),
                                 ShipmentPriority?.ToDelimitedString(),
                                 ShipmentConfidentiality != null ? string.Join("~", ShipmentConfidentiality.Select(x => x.ToDelimitedString())) : null,
                                 NumberOfPackagesInShipment.HasValue ? NumberOfPackagesInShipment.Value.ToString(Consts.NumericFormat, culture) : null,

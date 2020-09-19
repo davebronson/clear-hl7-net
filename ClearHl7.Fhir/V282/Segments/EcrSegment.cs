@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
@@ -33,7 +34,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// ECR.3 - Command Response Parameters.
         /// </summary>
-        public IEnumerable<string> CommandResponseParameters { get; set; }
+        public IEnumerable<Text> CommandResponseParameters { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -49,7 +50,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 Id,
                                 CommandResponse?.ToDelimitedString(),
                                 DateTimeCompleted.HasValue ? DateTimeCompleted.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                CommandResponseParameters != null ? string.Join("~", CommandResponseParameters) : null
+                                CommandResponseParameters != null ? string.Join("~", CommandResponseParameters.Select(x => x.ToDelimitedString())) : null
                                 ).TrimEnd('|');
         }
     }

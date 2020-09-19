@@ -39,7 +39,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// OM7.4 - Category Description.
         /// </summary>
-        public string CategoryDescription { get; set; }
+        public Text CategoryDescription { get; set; }
 
         /// <summary>
         /// OM7.5 - Category Synonym.
@@ -162,7 +162,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 SequenceNumberTestObservationMasterFile.HasValue ? SequenceNumberTestObservationMasterFile.Value.ToString(Consts.NumericFormat, culture) : null,
                                 UniversalServiceIdentifier?.ToDelimitedString(),
                                 CategoryIdentifier != null ? string.Join("~", CategoryIdentifier.Select(x => x.ToDelimitedString())) : null,
-                                CategoryDescription,
+                                CategoryDescription?.ToDelimitedString(),
                                 CategorySynonym != null ? string.Join("~", CategorySynonym) : null,
                                 EffectiveTestServiceStartDateTime.HasValue ? EffectiveTestServiceStartDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 EffectiveTestServiceEndDateTime.HasValue ? EffectiveTestServiceEndDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,

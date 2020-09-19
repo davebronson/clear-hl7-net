@@ -56,12 +56,12 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// ERR.7 - Diagnostic Information.
         /// </summary>
-        public string DiagnosticInformation { get; set; }
+        public Text DiagnosticInformation { get; set; }
 
         /// <summary>
         /// ERR.8 - User Message.
         /// </summary>
-        public string UserMessage { get; set; }
+        public Text UserMessage { get; set; }
 
         /// <summary>
         /// ERR.9 - Inform Person Indicator.
@@ -104,8 +104,8 @@ namespace ClearHl7.Fhir.V282.Segments
                                 Severity,
                                 ApplicationErrorCode?.ToDelimitedString(),
                                 ApplicationErrorParameter != null ? string.Join("~", ApplicationErrorParameter) : null,
-                                DiagnosticInformation,
-                                UserMessage,
+                                DiagnosticInformation?.ToDelimitedString(),
+                                UserMessage?.ToDelimitedString(),
                                 InformPersonIndicator != null ? string.Join("~", InformPersonIndicator.Select(x => x.ToDelimitedString())) : null,
                                 OverrideType?.ToDelimitedString(),
                                 OverrideReasonCode != null ? string.Join("~", OverrideReasonCode.Select(x => x.ToDelimitedString())) : null,

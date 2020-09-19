@@ -69,12 +69,12 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// TQ1.10 - Condition text.
         /// </summary>
-        public string ConditionText { get; set; }
+        public Text ConditionText { get; set; }
 
         /// <summary>
         /// TQ1.11 - Text instruction.
         /// </summary>
-        public string TextInstruction { get; set; }
+        public Text TextInstruction { get; set; }
 
         /// <summary>
         /// TQ1.12 - Conjunction.
@@ -113,8 +113,8 @@ namespace ClearHl7.Fhir.V282.Segments
                                 StartDateTime.HasValue ? StartDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 EndDateTime.HasValue ? EndDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 Priority != null ? string.Join("~", Priority.Select(x => x.ToDelimitedString())) : null,
-                                ConditionText,
-                                TextInstruction,
+                                ConditionText?.ToDelimitedString(),
+                                TextInstruction?.ToDelimitedString(),
                                 Conjunction,
                                 OccurrenceDuration?.ToDelimitedString(),
                                 TotalOccurrences.HasValue ? TotalOccurrences.Value.ToString(Consts.NumericFormat, culture) : null

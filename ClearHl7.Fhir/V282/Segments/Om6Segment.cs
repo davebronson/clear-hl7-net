@@ -1,4 +1,5 @@
 using System;
+using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -25,7 +26,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// OM6.2 - Derivation Rule.
         /// </summary>
-        public string DerivationRule { get; set; }
+        public Text DerivationRule { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -40,7 +41,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 "{0}|{1}|{2}",
                                 Id,
                                 SequenceNumberTestObservationMasterFile.HasValue ? SequenceNumberTestObservationMasterFile.Value.ToString(Consts.NumericFormat, culture) : null,
-                                DerivationRule
+                                DerivationRule?.ToDelimitedString()
                                 ).TrimEnd('|');
         }
     }

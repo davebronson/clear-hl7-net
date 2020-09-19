@@ -3,7 +3,7 @@
 namespace ClearHl7.Fhir.V282.Types
 {
     /// <summary>
-    /// HL7 Version 2 TX - Text Numeric.
+    /// HL7 Version 2 TX - Text.
     /// </summary>
     public class Text : IType
     {

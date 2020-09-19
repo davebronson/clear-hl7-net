@@ -32,7 +32,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// DSP.3 - Data Line.
         /// </summary>
-        public string DataLine { get; set; }
+        public Text DataLine { get; set; }
 
         /// <summary>
         /// DSP.4 - Logical Break Point.
@@ -42,7 +42,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// DSP.5 - Result ID.
         /// </summary>
-        public string ResultId { get; set; }
+        public Text ResultId { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -58,9 +58,9 @@ namespace ClearHl7.Fhir.V282.Segments
                                 Id,
                                 SetIdDsp.HasValue ? SetIdDsp.Value.ToString(culture) : null,
                                 DisplayLevel.HasValue ? DisplayLevel.Value.ToString(culture) : null,
-                                DataLine,
+                                DataLine?.ToDelimitedString(),
                                 LogicalBreakPoint,
-                                ResultId
+                                ResultId?.ToDelimitedString()
                                 ).TrimEnd('|');
         }
     }

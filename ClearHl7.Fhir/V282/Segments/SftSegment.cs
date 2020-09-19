@@ -41,7 +41,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// SFT.5 - Software Product Information.
         /// </summary>
-        public string SoftwareProductInformation { get; set; }
+        public Text SoftwareProductInformation { get; set; }
 
         /// <summary>
         /// SFT.6 - Software Install Date.
@@ -64,7 +64,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 SoftwareCertifiedVersionOrReleaseNumber,
                                 SoftwareProductName,
                                 SoftwareBinaryId,
-                                SoftwareProductInformation,
+                                SoftwareProductInformation?.ToDelimitedString(),
                                 SoftwareInstallDate.HasValue ? SoftwareInstallDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
                                 ).TrimEnd('|');
         }

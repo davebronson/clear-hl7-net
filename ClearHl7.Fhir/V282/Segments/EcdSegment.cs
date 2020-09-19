@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using ClearHl7.Fhir.V282.Types;
 
@@ -45,7 +46,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// ECD.5 - Parameters.
         /// </summary>
-        public IEnumerable<string> Parameters { get; set; }
+        public IEnumerable<Text> Parameters { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -63,7 +64,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 RemoteControlCommand?.ToDelimitedString(),
                                 ResponseRequired,
                                 RequestedCompletionTime,
-                                Parameters != null ? string.Join("~", Parameters) : null
+                                Parameters != null ? string.Join("~", Parameters.Select(x => x.ToDelimitedString())) : null
                                 ).TrimEnd('|');
         }
     }

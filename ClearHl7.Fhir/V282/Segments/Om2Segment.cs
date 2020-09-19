@@ -43,7 +43,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// OM2.5 - SI Conversion Factor.
         /// </summary>
-        public string SiConversionFactor { get; set; }
+        public Text SiConversionFactor { get; set; }
 
         /// <summary>
         /// OM2.6 - Reference (Normal) Range for Ordinal and Continuous Observations.
@@ -86,7 +86,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 UnitsOfMeasure?.ToDelimitedString(),
                                 RangeOfDecimalPrecision != null ? string.Join("~", RangeOfDecimalPrecision.Select(x => x.ToString(Consts.NumericFormat, culture))) : null,
                                 CorrespondingSiUnitsOfMeasure?.ToDelimitedString(),
-                                SiConversionFactor,
+                                SiConversionFactor?.ToDelimitedString(),
                                 ReferenceNormalRangeForOrdinalAndContinuousObservations != null ? string.Join("~", ReferenceNormalRangeForOrdinalAndContinuousObservations.Select(x => x.ToDelimitedString())) : null,
                                 CriticalRangeForOrdinalAndContinuousObservations != null ? string.Join("~", CriticalRangeForOrdinalAndContinuousObservations.Select(x => x.ToDelimitedString())) : null,
                                 AbsoluteRangeForOrdinalAndContinuousObservations?.ToDelimitedString(),

@@ -50,7 +50,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// OM1.6 - Observation Description.
         /// </summary>
-        public string ObservationDescription { get; set; }
+        public Text ObservationDescription { get; set; }
 
         /// <summary>
         /// OM1.7 - Other Service/Test/Observation IDs for the Observation.
@@ -186,7 +186,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// OM1.32 - Interpretation of Observations.
         /// </summary>
-        public string InterpretationOfObservations { get; set; }
+        public Text InterpretationOfObservations { get; set; }
 
         /// <summary>
         /// OM1.33 - Contraindications to Observations.
@@ -201,7 +201,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// OM1.35 - Rules that Trigger Reflex Testing.
         /// </summary>
-        public IEnumerable<string> RulesThatTriggerReflexTesting { get; set; }
+        public IEnumerable<Text> RulesThatTriggerReflexTesting { get; set; }
 
         /// <summary>
         /// OM1.36 - Fixed Canned Message.
@@ -211,7 +211,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// OM1.37 - Patient Preparation.
         /// </summary>
-        public IEnumerable<string> PatientPreparation { get; set; }
+        public IEnumerable<Text> PatientPreparation { get; set; }
 
         /// <summary>
         /// OM1.38 - Procedure Medication.
@@ -221,7 +221,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// OM1.39 - Factors that may Affect the Observation.
         /// </summary>
-        public string FactorsThatMayAffectTheObservation { get; set; }
+        public Text FactorsThatMayAffectTheObservation { get; set; }
 
         /// <summary>
         /// OM1.40 - Service/Test/Observation Performance Schedule.
@@ -231,7 +231,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// OM1.41 - Description of Test Methods.
         /// </summary>
-        public string DescriptionOfTestMethods { get; set; }
+        public Text DescriptionOfTestMethods { get; set; }
 
         /// <summary>
         /// OM1.42 - Kind of Quantity Observed.
@@ -249,7 +249,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// OM1.44 - Challenge Information.
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0256</remarks>
-        public string ChallengeInformation { get; set; }
+        public Text ChallengeInformation { get; set; }
 
         /// <summary>
         /// OM1.45 - Relationship Modifier.
@@ -298,12 +298,12 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// OM1.53 - Prior Results Instructions.
         /// </summary>
-        public IEnumerable<string> PriorResultsInstructions { get; set; }
+        public IEnumerable<Text> PriorResultsInstructions { get; set; }
 
         /// <summary>
         /// OM1.54 - Special Instructions.
         /// </summary>
-        public string SpecialInstructions { get; set; }
+        public Text SpecialInstructions { get; set; }
 
         /// <summary>
         /// OM1.55 - Test Category.
@@ -348,7 +348,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 PermittedDataTypes != null ? string.Join("~", PermittedDataTypes) : null,
                                 SpecimenRequired,
                                 ProducerId?.ToDelimitedString(),
-                                ObservationDescription,
+                                ObservationDescription?.ToDelimitedString(),
                                 OtherServiceTestObservationIdsForTheObservation != null ? string.Join("~", OtherServiceTestObservationIdsForTheObservation.Select(x => x.ToDelimitedString())) : null,
                                 OtherNames != null ? string.Join("~", OtherNames) : null,
                                 PreferredReportNameForTheObservation,
@@ -374,19 +374,19 @@ namespace ClearHl7.Fhir.V282.Segments
                                 PhoneNumberOfOutsideSite?.ToDelimitedString(),
                                 ConfidentialityCode?.ToDelimitedString(),
                                 ObservationsRequiredToInterpretThisObservation != null ? string.Join("~", ObservationsRequiredToInterpretThisObservation.Select(x => x.ToDelimitedString())) : null,
-                                InterpretationOfObservations,
+                                InterpretationOfObservations?.ToDelimitedString(),
                                 ContraindicationsToObservations != null ? string.Join("~", ContraindicationsToObservations.Select(x => x.ToDelimitedString())) : null,
                                 ReflexTestsObservations != null ? string.Join("~", ReflexTestsObservations.Select(x => x.ToDelimitedString())) : null,
-                                RulesThatTriggerReflexTesting != null ? string.Join("~", RulesThatTriggerReflexTesting) : null,
+                                RulesThatTriggerReflexTesting != null ? string.Join("~", RulesThatTriggerReflexTesting.Select(x => x.ToDelimitedString())) : null,
                                 FixedCannedMessage != null ? string.Join("~", FixedCannedMessage.Select(x => x.ToDelimitedString())) : null,
-                                PatientPreparation != null ? string.Join("~", PatientPreparation) : null,
+                                PatientPreparation != null ? string.Join("~", PatientPreparation.Select(x => x.ToDelimitedString())) : null,
                                 ProcedureMedication?.ToDelimitedString(),
-                                FactorsThatMayAffectTheObservation,
+                                FactorsThatMayAffectTheObservation?.ToDelimitedString(),
                                 ServiceTestObservationPerformanceSchedule != null ? string.Join("~", ServiceTestObservationPerformanceSchedule) : null,
-                                DescriptionOfTestMethods,
+                                DescriptionOfTestMethods?.ToDelimitedString(),
                                 KindOfQuantityObserved?.ToDelimitedString(),
                                 PointVersusInterval?.ToDelimitedString(),
-                                ChallengeInformation,
+                                ChallengeInformation?.ToDelimitedString(),
                                 RelationshipModifier?.ToDelimitedString(),
                                 TargetAnatomicSiteOfTest?.ToDelimitedString(),
                                 ModalityOfImagingMeasurement?.ToDelimitedString(),
@@ -395,8 +395,8 @@ namespace ClearHl7.Fhir.V282.Segments
                                 TaxonomicClassificationCode?.ToDelimitedString(),
                                 OtherNamesB != null ? string.Join("~", OtherNamesB) : null,
                                 ReplacementProducersServiceTestObservationId != null ? string.Join("~", ReplacementProducersServiceTestObservationId.Select(x => x.ToDelimitedString())) : null,
-                                PriorResultsInstructions != null ? string.Join("~", PriorResultsInstructions) : null,
-                                SpecialInstructions,
+                                PriorResultsInstructions != null ? string.Join("~", PriorResultsInstructions.Select(x => x.ToDelimitedString())) : null,
+                                SpecialInstructions?.ToDelimitedString(),
                                 TestCategory != null ? string.Join("~", TestCategory.Select(x => x.ToDelimitedString())) : null,
                                 ObservationIdAssociatedWithProducersServiceTestObservationId?.ToDelimitedString(),
                                 TypicalTurnAroundTimeWithUnits?.ToDelimitedString(),

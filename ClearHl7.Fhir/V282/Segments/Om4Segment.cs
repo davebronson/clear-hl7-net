@@ -34,7 +34,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// OM4.3 - Container Description.
         /// </summary>
-        public IEnumerable<string> ContainerDescription { get; set; }
+        public IEnumerable<Text> ContainerDescription { get; set; }
 
         /// <summary>
         /// OM4.4 - Container Volume.
@@ -60,12 +60,12 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// OM4.8 - Preparation.
         /// </summary>
-        public string Preparation { get; set; }
+        public Text Preparation { get; set; }
 
         /// <summary>
         /// OM4.9 - Special Handling Requirements.
         /// </summary>
-        public string SpecialHandlingRequirements { get; set; }
+        public Text SpecialHandlingRequirements { get; set; }
 
         /// <summary>
         /// OM4.10 - Normal Collection Volume.
@@ -80,7 +80,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// OM4.12 - Specimen Requirements.
         /// </summary>
-        public string SpecimenRequirements { get; set; }
+        public Text SpecimenRequirements { get; set; }
 
         /// <summary>
         /// OM4.13 - Specimen Priorities.
@@ -129,16 +129,16 @@ namespace ClearHl7.Fhir.V282.Segments
                                 Id,
                                 SequenceNumberTestObservationMasterFile.HasValue ? SequenceNumberTestObservationMasterFile.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DerivedSpecimen,
-                                ContainerDescription != null ? string.Join("~", ContainerDescription) : null,
+                                ContainerDescription != null ? string.Join("~", ContainerDescription.Select(x => x.ToDelimitedString())) : null,
                                 ContainerVolume != null ? string.Join("~", ContainerVolume.Select(x => x.ToString(Consts.NumericFormat, culture))) : null,
                                 ContainerUnits != null ? string.Join("~", ContainerUnits.Select(x => x.ToDelimitedString())) : null,
                                 Specimen?.ToDelimitedString(),
                                 Additive?.ToDelimitedString(),
-                                Preparation,
-                                SpecialHandlingRequirements,
+                                Preparation?.ToDelimitedString(),
+                                SpecialHandlingRequirements?.ToDelimitedString(),
                                 NormalCollectionVolume?.ToDelimitedString(),
                                 MinimumCollectionVolume?.ToDelimitedString(),
-                                SpecimenRequirements,
+                                SpecimenRequirements?.ToDelimitedString(),
                                 SpecimenPriorities != null ? string.Join("~", SpecimenPriorities) : null,
                                 SpecimenRetentionTime?.ToDelimitedString(),
                                 SpecimenHandlingCode != null ? string.Join("~", SpecimenHandlingCode.Select(x => x.ToDelimitedString())) : null,

@@ -33,7 +33,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// OVR.3 - Override Comments.
         /// </summary>
-        public string OverrideComments { get; set; }
+        public Text OverrideComments { get; set; }
 
         /// <summary>
         /// OVR.4 - Override Entered By.
@@ -59,7 +59,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 Id,
                                 BusinessRuleOverrideType?.ToDelimitedString(),
                                 BusinessRuleOverrideCode?.ToDelimitedString(),
-                                OverrideComments,
+                                OverrideComments?.ToDelimitedString(),
                                 OverrideEnteredBy?.ToDelimitedString(),
                                 OverrideAuthorizedBy?.ToDelimitedString()
                                 ).TrimEnd('|');
