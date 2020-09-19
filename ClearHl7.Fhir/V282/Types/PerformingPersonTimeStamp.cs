@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.V282.Types
     /// <summary>
     /// HL7 Version 2 PPN - Performing Person Time Stamp.
     /// </summary>
-    public class PerformingPersonTimeStamp
+    public class PerformingPersonTimeStamp : IType
     {
         /// <summary>
         /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.

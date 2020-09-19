@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.V282.Types
     /// <summary>
     /// HL7 Version 2 XCN - Extended Composite Id Number And Name For Persons.
     /// </summary>
-    public class ExtendedCompositeIdNumberAndNameForPersons
+    public class ExtendedCompositeIdNumberAndNameForPersons : IType
     {
         /// <summary>
         /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.

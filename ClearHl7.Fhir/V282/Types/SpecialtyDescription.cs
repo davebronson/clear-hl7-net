@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.V282.Types
     /// <summary>
     /// HL7 Version 2 SPD - Specialty Description.
     /// </summary>
-    public class SpecialtyDescription
+    public class SpecialtyDescription : IType
     {
         /// <summary>
         /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.

@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.V282.Types
     /// <summary>
     /// HL7 Version 2 SRT - Sort Order.
     /// </summary>
-    public class SortOrder
+    public class SortOrder : IType
     {
         /// <summary>
         /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.

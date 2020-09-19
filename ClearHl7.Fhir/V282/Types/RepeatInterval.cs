@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.V282.Types
     /// <summary>
     /// HL7 Version 2 RI - Repeat Interval.
     /// </summary>
-    public class RepeatInterval
+    public class RepeatInterval : IType
     {
         /// <summary>
         /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.

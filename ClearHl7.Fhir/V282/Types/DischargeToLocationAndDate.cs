@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.V282.Types
     /// <summary>
     /// HL7 Version 2 DLD - Discharge To Location And Date.
     /// </summary>
-    public class DischargeToLocationAndDate
+    public class DischargeToLocationAndDate : IType
     {
         /// <summary>
         /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.

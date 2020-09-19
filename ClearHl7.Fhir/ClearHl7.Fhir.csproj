@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="V282\Types\" />
-    <Folder Include="V282\Helpers\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
 </Project>

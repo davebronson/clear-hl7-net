@@ -1,4 +1,4 @@
-﻿namespace ClearHl7.Fhir.V282.Segments
+﻿namespace ClearHl7.Fhir
 {
     public interface ISegment
     {

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using ClearHl7.Fhir.V282.Segments;
 
-namespace ClearHl7.Fhir.V282
+namespace ClearHl7.Fhir
 {
     public interface IMessage
     {
+        bool AutoSetSubcomponentFlags { get; set; }
         IEnumerable<ISegment> Segments { get; set; }
 
         string ToDelimitedString();
