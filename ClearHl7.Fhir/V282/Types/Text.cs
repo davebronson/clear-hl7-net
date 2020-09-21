@@ -28,7 +28,7 @@ namespace ClearHl7.Fhir.V282.Types
             return string.Format(
                                 culture,
                                 "{0}",
-                                new Helpers.StringHelper().Escape(Value)
+                                Value
                                 );
         }
     }

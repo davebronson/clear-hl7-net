@@ -121,7 +121,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// MSH.17 - Country Code.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0399</remarks>
+        /// <remarks>https://www.iso.org/iso-3166-country-codes.html</remarks>
         public string CountryCode { get; set; }
 
         /// <summary>

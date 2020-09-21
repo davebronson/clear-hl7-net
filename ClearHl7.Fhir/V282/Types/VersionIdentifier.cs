@@ -21,7 +21,7 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// VID.2 - Internationalization Code.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0399</remarks>
+        /// <remarks>https://www.iso.org/iso-3166-country-codes.html</remarks>
         public CodedWithExceptions InternationalizationCode { get; set; }
 
         /// <summary>

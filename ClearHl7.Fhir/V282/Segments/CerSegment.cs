@@ -53,7 +53,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// CER.7 - Granting Country.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0399</remarks>
+        /// <remarks>https://www.iso.org/iso-3166-country-codes.html</remarks>
         public string GrantingCountry { get; set; }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// CER.19 - Jurisdiction Country.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0399</remarks>
+        /// <remarks>https://www.iso.org/iso-3166-country-codes.html</remarks>
         public string JurisdictionCountry { get; set; }
 
         /// <summary>
