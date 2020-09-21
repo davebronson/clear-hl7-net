@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace ClearHl7.Fhir.V282.Types
+namespace ClearHl7.Fhir.V281.Types
 {
     /// <summary>
-    /// HL7 Version 2 JCC - Job Code Class.
+    /// HL7 Version 2 PRL - Parent Result Link.
     /// </summary>
-    public class JobCodeClass : IType
+    public class ParentResultLink : IType
     {
         /// <summary>
         /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
@@ -13,21 +13,19 @@ namespace ClearHl7.Fhir.V282.Types
         public bool IsSubcomponent { get; set; }
 
         /// <summary>
-        /// JCC.1 - Job Code.
+        /// PRL.1 - Parent Observation Identifier.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0327</remarks>
-        public CodedWithExceptions JobCode { get; set; }
+        public CodedWithExceptions ParentObservationIdentifier { get; set; }
 
         /// <summary>
-        /// JCC.2 - Job Class.
+        /// PRL.2 - Parent Observation Sub-identifier.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0328</remarks>
-        public CodedWithExceptions JobClass { get; set; }
+        public string ParentObservationSubIdentifier { get; set; }
 
         /// <summary>
-        /// JCC.3 - Job Description Text.
+        /// PRL.3 - Parent Observation Value Descriptor.
         /// </summary>
-        public Text JobDescriptionText { get; set; }
+        public Text ParentObservationValueDescriptor { get; set; }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -40,9 +38,9 @@ namespace ClearHl7.Fhir.V282.Types
             return string.Format(
                                 culture,
                                 IsSubcomponent ? "{0}&{1}&{2}" : "{0}^{1}^{2}",
-                                JobCode?.ToDelimitedString(),
-                                JobClass?.ToDelimitedString(),
-                                JobDescriptionText?.ToDelimitedString()
+                                ParentObservationIdentifier?.ToDelimitedString(),
+                                ParentObservationSubIdentifier,
+                                ParentObservationValueDescriptor?.ToDelimitedString()
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
     }

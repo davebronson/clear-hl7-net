@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="V281\Types\" />
+    <Folder Include="V281\Segments\" />
     <Folder Include="V282\Types\" />
     <Folder Include="Helpers\" />
     <Folder Include="Interfaces\" />

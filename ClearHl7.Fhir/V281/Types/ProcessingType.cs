@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace ClearHl7.Fhir.V282.Types
+namespace ClearHl7.Fhir.V281.Types
 {
     /// <summary>
-    /// HL7 Version 2 JCC - Job Code Class.
+    /// HL7 Version 2 PT - Processing Type.
     /// </summary>
-    public class JobCodeClass : IType
+    public class ProcessingType : IType
     {
         /// <summary>
         /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
@@ -13,21 +13,16 @@ namespace ClearHl7.Fhir.V282.Types
         public bool IsSubcomponent { get; set; }
 
         /// <summary>
-        /// JCC.1 - Job Code.
+        /// PT.1 - Processing ID.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0327</remarks>
-        public CodedWithExceptions JobCode { get; set; }
+        /// <remarks>https://www.hl7.org/fhir/v2/0103</remarks>
+        public string ProcessingId { get; set; }
 
         /// <summary>
-        /// JCC.2 - Job Class.
+        /// PT.2 - Processing Mode.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0328</remarks>
-        public CodedWithExceptions JobClass { get; set; }
-
-        /// <summary>
-        /// JCC.3 - Job Description Text.
-        /// </summary>
-        public Text JobDescriptionText { get; set; }
+        /// <remarks>https://www.hl7.org/fhir/v2/0207</remarks>
+        public string ProcessingMode { get; set; }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -39,10 +34,9 @@ namespace ClearHl7.Fhir.V282.Types
 
             return string.Format(
                                 culture,
-                                IsSubcomponent ? "{0}&{1}&{2}" : "{0}^{1}^{2}",
-                                JobCode?.ToDelimitedString(),
-                                JobClass?.ToDelimitedString(),
-                                JobDescriptionText?.ToDelimitedString()
+                                IsSubcomponent ? "{0}&{1}" : "{0}^{1}",
+                                ProcessingId,
+                                ProcessingMode
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
     }

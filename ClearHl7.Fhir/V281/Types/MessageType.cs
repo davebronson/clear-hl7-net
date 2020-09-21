@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace ClearHl7.Fhir.V282.Types
+namespace ClearHl7.Fhir.V281.Types
 {
     /// <summary>
-    /// HL7 Version 2 JCC - Job Code Class.
+    /// HL7 Version 2 MSG - Message Type.
     /// </summary>
-    public class JobCodeClass : IType
+    public class MessageType : IType
     {
         /// <summary>
         /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
@@ -13,21 +13,22 @@ namespace ClearHl7.Fhir.V282.Types
         public bool IsSubcomponent { get; set; }
 
         /// <summary>
-        /// JCC.1 - Job Code.
+        /// MSG.1 - Message Code.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0327</remarks>
-        public CodedWithExceptions JobCode { get; set; }
+        /// <remarks>https://www.hl7.org/fhir/v2/0076</remarks>
+        public string MessageCode { get; set; }
 
         /// <summary>
-        /// JCC.2 - Job Class.
+        /// MSG.2 - Trigger Event.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0328</remarks>
-        public CodedWithExceptions JobClass { get; set; }
+        /// <remarks>https://www.hl7.org/fhir/v2/0003</remarks>
+        public string TriggerEvent { get; set; }
 
         /// <summary>
-        /// JCC.3 - Job Description Text.
+        /// MSG.3 - Message Structure.
         /// </summary>
-        public Text JobDescriptionText { get; set; }
+        /// <remarks>https://www.hl7.org/fhir/v2/0354</remarks>
+        public string MessageStructure { get; set; }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -40,9 +41,9 @@ namespace ClearHl7.Fhir.V282.Types
             return string.Format(
                                 culture,
                                 IsSubcomponent ? "{0}&{1}&{2}" : "{0}^{1}^{2}",
-                                JobCode?.ToDelimitedString(),
-                                JobClass?.ToDelimitedString(),
-                                JobDescriptionText?.ToDelimitedString()
+                                MessageCode,
+                                TriggerEvent,
+                                MessageStructure
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
     }

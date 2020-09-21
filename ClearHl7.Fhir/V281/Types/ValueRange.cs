@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace ClearHl7.Fhir.V282.Types
+namespace ClearHl7.Fhir.V281.Types
 {
     /// <summary>
-    /// HL7 Version 2 JCC - Job Code Class.
+    /// HL7 Version 2 VR - Value Range.
     /// </summary>
-    public class JobCodeClass : IType
+    public class ValueRange : IType
     {
         /// <summary>
         /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
@@ -13,21 +13,14 @@ namespace ClearHl7.Fhir.V282.Types
         public bool IsSubcomponent { get; set; }
 
         /// <summary>
-        /// JCC.1 - Job Code.
+        /// VR.1 - First Data Code Value.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0327</remarks>
-        public CodedWithExceptions JobCode { get; set; }
+        public string FirstDataCodeValue { get; set; }
 
         /// <summary>
-        /// JCC.2 - Job Class.
+        /// VR.2 - Last Data Code Value.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0328</remarks>
-        public CodedWithExceptions JobClass { get; set; }
-
-        /// <summary>
-        /// JCC.3 - Job Description Text.
-        /// </summary>
-        public Text JobDescriptionText { get; set; }
+        public string LastDataCodeValue { get; set; }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -39,10 +32,9 @@ namespace ClearHl7.Fhir.V282.Types
 
             return string.Format(
                                 culture,
-                                IsSubcomponent ? "{0}&{1}&{2}" : "{0}^{1}^{2}",
-                                JobCode?.ToDelimitedString(),
-                                JobClass?.ToDelimitedString(),
-                                JobDescriptionText?.ToDelimitedString()
+                                IsSubcomponent ? "{0}&{1}" : "{0}^{1}",
+                                FirstDataCodeValue,
+                                LastDataCodeValue
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
     }

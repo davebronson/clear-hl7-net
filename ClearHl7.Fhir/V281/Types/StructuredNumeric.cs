@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace ClearHl7.Fhir.V282.Types
+namespace ClearHl7.Fhir.V281.Types
 {
     /// <summary>
-    /// HL7 Version 2 JCC - Job Code Class.
+    /// HL7 Version 2 SN - Structured Numeric.
     /// </summary>
-    public class JobCodeClass : IType
+    public class StructuredNumeric : IType
     {
         /// <summary>
         /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
@@ -13,21 +13,24 @@ namespace ClearHl7.Fhir.V282.Types
         public bool IsSubcomponent { get; set; }
 
         /// <summary>
-        /// JCC.1 - Job Code.
+        /// SN.1 - Comparator.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0327</remarks>
-        public CodedWithExceptions JobCode { get; set; }
+        public string Comparator { get; set; }
 
         /// <summary>
-        /// JCC.2 - Job Class.
+        /// SN.2 - Num1.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0328</remarks>
-        public CodedWithExceptions JobClass { get; set; }
+        public decimal? Num1 { get; set; }
 
         /// <summary>
-        /// JCC.3 - Job Description Text.
+        /// SN.3 - Separator/Suffix.
         /// </summary>
-        public Text JobDescriptionText { get; set; }
+        public string SeparatorSuffix { get; set; }
+
+        /// <summary>
+        /// SN.4 - Num2.
+        /// </summary>
+        public decimal? Num2 { get; set; }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -39,10 +42,11 @@ namespace ClearHl7.Fhir.V282.Types
 
             return string.Format(
                                 culture,
-                                IsSubcomponent ? "{0}&{1}&{2}" : "{0}^{1}^{2}",
-                                JobCode?.ToDelimitedString(),
-                                JobClass?.ToDelimitedString(),
-                                JobDescriptionText?.ToDelimitedString()
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}" : "{0}^{1}^{2}^{3}",
+                                Comparator,
+                                Num1.HasValue ? Num1.Value.ToString(Consts.NumericFormat, culture) : null,
+                                SeparatorSuffix,
+                                Num2.HasValue ? Num2.Value.ToString(Consts.NumericFormat, culture) : null
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
     }

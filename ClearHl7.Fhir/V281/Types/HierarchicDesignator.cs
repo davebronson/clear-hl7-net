@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace ClearHl7.Fhir.V282.Types
+namespace ClearHl7.Fhir.V281.Types
 {
     /// <summary>
-    /// HL7 Version 2 JCC - Job Code Class.
+    /// HL7 Version 2 HD - Hierarchic Designator.
     /// </summary>
-    public class JobCodeClass : IType
+    public class HierarchicDesignator : IType
     {
         /// <summary>
         /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
@@ -13,21 +13,21 @@ namespace ClearHl7.Fhir.V282.Types
         public bool IsSubcomponent { get; set; }
 
         /// <summary>
-        /// JCC.1 - Job Code.
+        /// HD.1 - Namespace ID.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0327</remarks>
-        public CodedWithExceptions JobCode { get; set; }
+        /// <remarks>https://www.hl7.org/fhir/v2/0300</remarks>
+        public string NamespaceId { get; set; }
 
         /// <summary>
-        /// JCC.2 - Job Class.
+        /// HD.2 - Universal ID.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0328</remarks>
-        public CodedWithExceptions JobClass { get; set; }
+        public string UniversalId { get; set; }
 
         /// <summary>
-        /// JCC.3 - Job Description Text.
+        /// HD.3 - Universal ID Type.
         /// </summary>
-        public Text JobDescriptionText { get; set; }
+        /// <remarks>https://www.hl7.org/fhir/v2/0301</remarks>
+        public string UniversalIdType { get; set; }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -40,9 +40,9 @@ namespace ClearHl7.Fhir.V282.Types
             return string.Format(
                                 culture,
                                 IsSubcomponent ? "{0}&{1}&{2}" : "{0}^{1}^{2}",
-                                JobCode?.ToDelimitedString(),
-                                JobClass?.ToDelimitedString(),
-                                JobDescriptionText?.ToDelimitedString()
+                                NamespaceId,
+                                UniversalId,
+                                UniversalIdType
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
     }

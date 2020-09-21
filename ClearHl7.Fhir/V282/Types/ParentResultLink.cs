@@ -25,7 +25,7 @@ namespace ClearHl7.Fhir.V282.Types
         /// <summary>
         /// PRL.3 - Parent Observation Value Descriptor.
         /// </summary>
-        public string ParentObservationValueDescriptor { get; set; }
+        public Text ParentObservationValueDescriptor { get; set; }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -40,7 +40,7 @@ namespace ClearHl7.Fhir.V282.Types
                                 IsSubcomponent ? "{0}&{1}&{2}" : "{0}^{1}^{2}",
                                 ParentObservationIdentifier?.ToDelimitedString(),
                                 ParentObservationSubIdentifier?.ToDelimitedString(),
-                                ParentObservationValueDescriptor
+                                ParentObservationValueDescriptor?.ToDelimitedString()
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
     }

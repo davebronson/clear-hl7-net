@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace ClearHl7.Fhir.V282.Types
+namespace ClearHl7.Fhir.V281.Types
 {
     /// <summary>
-    /// HL7 Version 2 JCC - Job Code Class.
+    /// HL7 Version 2 ICD - Insurance Certification Definition.
     /// </summary>
-    public class JobCodeClass : IType
+    public class InsuranceCertificationDefinition : IType
     {
         /// <summary>
         /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
@@ -13,21 +13,21 @@ namespace ClearHl7.Fhir.V282.Types
         public bool IsSubcomponent { get; set; }
 
         /// <summary>
-        /// JCC.1 - Job Code.
+        /// ICD.1 - Certification Patient Type.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0327</remarks>
-        public CodedWithExceptions JobCode { get; set; }
+        /// <remarks>https://www.hl7.org/fhir/v2/0150</remarks>
+        public CodedWithExceptions CertificationPatientType { get; set; }
 
         /// <summary>
-        /// JCC.2 - Job Class.
+        /// ICD.2 - Certification Required.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0328</remarks>
-        public CodedWithExceptions JobClass { get; set; }
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string CertificationRequired { get; set; }
 
         /// <summary>
-        /// JCC.3 - Job Description Text.
+        /// ICD.3 - Date/Time Certification Required.
         /// </summary>
-        public Text JobDescriptionText { get; set; }
+        public DateTime? DateTimeCertificationRequired { get; set; }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -40,9 +40,9 @@ namespace ClearHl7.Fhir.V282.Types
             return string.Format(
                                 culture,
                                 IsSubcomponent ? "{0}&{1}&{2}" : "{0}^{1}^{2}",
-                                JobCode?.ToDelimitedString(),
-                                JobClass?.ToDelimitedString(),
-                                JobDescriptionText?.ToDelimitedString()
+                                CertificationPatientType?.ToDelimitedString(),
+                                CertificationRequired,
+                                DateTimeCertificationRequired.HasValue ? DateTimeCertificationRequired.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
     }

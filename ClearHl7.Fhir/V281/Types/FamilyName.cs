@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace ClearHl7.Fhir.V282.Types
+namespace ClearHl7.Fhir.V281.Types
 {
     /// <summary>
-    /// HL7 Version 2 ED - Encapsulated Data.
+    /// HL7 Version 2 FN - Family Name.
     /// </summary>
-    public class EncapsulatedData : IType
+    public class FamilyName : IType
     {
         /// <summary>
         /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
@@ -13,32 +13,29 @@ namespace ClearHl7.Fhir.V282.Types
         public bool IsSubcomponent { get; set; }
 
         /// <summary>
-        /// ED.1 - Source Application.
+        /// FN.1 - Surname.
         /// </summary>
-        public HierarchicDesignator SourceApplication { get; set; }
+        public string Surname { get; set; }
 
         /// <summary>
-        /// ED.2 - Type of Data.
+        /// FN.2 - Own Surname Prefix.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0834</remarks>
-        public string TypeOfData { get; set; }
+        public string OwnSurnamePrefix { get; set; }
 
         /// <summary>
-        /// ED.3 - Data Subtype.
+        /// FN.3 - Own Surname.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0291</remarks>
-        public string DataSubtype { get; set; }
+        public string OwnSurname { get; set; }
 
         /// <summary>
-        /// ED.4 - Encoding.
+        /// FN.4 - Surname Prefix from Partner/Spouse.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0299</remarks>
-        public string Encoding { get; set; }
+        public string SurnamePrefixFromPartnerSpouse { get; set; }
 
         /// <summary>
-        /// ED.5 - Data.
+        /// FN.5 - Surname from Partner/Spouse.
         /// </summary>
-        public Text Data { get; set; }
+        public string SurnameFromPartnerSpouse { get; set; }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -51,11 +48,11 @@ namespace ClearHl7.Fhir.V282.Types
             return string.Format(
                                 culture,
                                 IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}" : "{0}^{1}^{2}^{3}^{4}",
-                                SourceApplication?.ToDelimitedString(),
-                                TypeOfData,
-                                DataSubtype,
-                                Encoding,
-                                Data?.ToDelimitedString()
+                                Surname,
+                                OwnSurnamePrefix,
+                                OwnSurname,
+                                SurnamePrefixFromPartnerSpouse,
+                                SurnameFromPartnerSpouse
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
     }
