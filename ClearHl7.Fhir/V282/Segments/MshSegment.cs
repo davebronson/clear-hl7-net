@@ -21,33 +21,15 @@ namespace ClearHl7.Fhir.V282.Segments
         public int Ordinal { get; set; }
 
         /// <summary>
-        /// MSH.1 - Field Separator.
+        /// MSH.1 - Field Separator.  This property is read-only.
         /// </summary>
-        public char FieldSeparator { get; } = '|';
-
-        /// <summary>
-        /// Gets or sets the character used to separate components.
-        /// </summary>
-        /// <remarks>The default character ^ is recommended.</remarks>
-        public char ComponentSeparator { get; set; } = '^';
-
-        /// <summary>
-        /// Gets or sets the character used to separate components.
-        /// </summary>
-        /// <remarks>The default character ~ is recommended.</remarks>
-        public char FieldRepeatSeparator { get; set; } = '~';
-
-        /// <summary>
-        /// Gets or sets the character used to separate components.
-        /// </summary>
-        /// <remarks>The default character \ is recommended.</remarks>
-        public char EscapeCharacter { get; set; } = '\\';
-
-        /// <summary>
-        /// Gets or sets the character used to separate components.
-        /// </summary>
-        /// <remarks>The default character & is recommended.</remarks>
-        public char SubcomponentSeparator { get; set; } = '&';
+        public char FieldSeparator
+        {
+            get
+            {
+                return Configuration.FieldSeparator;
+            }
+        }
 
         /// <summary>
         /// MSH.2 - Encoding Characters.  This property is read-only.
@@ -56,7 +38,7 @@ namespace ClearHl7.Fhir.V282.Segments
         {
             get
             {
-                return $"{ ComponentSeparator }{ FieldRepeatSeparator }{ EscapeCharacter }{ SubcomponentSeparator }";
+                return $"{ Configuration.ComponentSeparator }{ Configuration.FieldRepeatSeparator }{ Configuration.EscapeCharacter }{ Configuration.SubcomponentSeparator }";
             }
         }
 

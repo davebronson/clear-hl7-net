@@ -8,7 +8,7 @@ namespace ClearHl7.Fhir.Helpers
     /// <summary>
     /// Provides helper methods for interacting with HL7 Segments.
     /// </summary>
-    public class SegmentHelper : ISegmentHelper
+    public class SegmentHelper
     {
         /// <summary>
         /// Sets the IsSubcomponent property for any HL7 objects that are nested at the subcomponent level.

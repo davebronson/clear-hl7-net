@@ -27,9 +27,9 @@ namespace ClearHl7.Fhir.V282.Types
 
             return string.Format(
                                 culture,
-                                IsSubcomponent ? "{0}&" : "{0}^",
-                                Value
-                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+                                "{0}",
+                                new Helpers.StringHelper().Escape(Value)
+                                );
         }
     }
 }
