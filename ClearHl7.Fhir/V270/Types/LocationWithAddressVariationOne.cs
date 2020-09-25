@@ -3,9 +3,9 @@
 namespace ClearHl7.Fhir.V270.Types
 {
     /// <summary>
-    /// HL7 Version 2 LA2 - Location With Address Variation 2.
+    /// HL7 Version 2 LA1 - Location With Address Variation 1.
     /// </summary>
-    public class LocationWithAddressVariationTwo : IType
+    public class LocationWithAddressVariationOne : IType
     {
         /// <summary>
         /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
@@ -13,93 +13,56 @@ namespace ClearHl7.Fhir.V270.Types
         public bool IsSubcomponent { get; set; }
 
         /// <summary>
-        /// LA2.1 - Point of Care.
+        /// LA1.1 - Point of Care.
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0302</remarks>
         public string PointOfCare { get; set; }
 
         /// <summary>
-        /// LA2.2 - Room.
+        /// LA1.2 - Room.
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0303</remarks>
         public string Room { get; set; }
 
         /// <summary>
-        /// LA2.3 - Bed.
+        /// LA1.3 - Bed.
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0304</remarks>
         public string Bed { get; set; }
 
         /// <summary>
-        /// LA2.4 - Facility.
+        /// LA1.4 - Facility.
         /// </summary>
         public HierarchicDesignator Facility { get; set; }
 
         /// <summary>
-        /// LA2.5 - Location Status.
+        /// LA1.5 - Location Status.
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0306</remarks>
         public string LocationStatus { get; set; }
 
         /// <summary>
-        /// LA2.6 - Patient Location Type.
+        /// LA1.6 - Patient Location Type.
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0305</remarks>
         public string PatientLocationType { get; set; }
 
         /// <summary>
-        /// LA2.7 - Building.
+        /// LA1.7 - Building.
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0307</remarks>
         public string Building { get; set; }
 
         /// <summary>
-        /// LA2.8 - Floor.
+        /// LA1.8 - Floor.
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0308</remarks>
         public string Floor { get; set; }
 
         /// <summary>
-        /// LA2.9 - Street Address.
+        /// LA1.9 - Address.
         /// </summary>
-        public string StreetAddress { get; set; }
-
-        /// <summary>
-        /// LA2.10 - Other Designation.
-        /// </summary>
-        public string OtherDesignation { get; set; }
-
-        /// <summary>
-        /// LA2.11 - City.
-        /// </summary>
-        public string City { get; set; }
-
-        /// <summary>
-        /// LA2.12 - State or Province.
-        /// </summary>
-        public string StateOrProvince { get; set; }
-
-        /// <summary>
-        /// LA2.13 - Zip or Postal Code.
-        /// </summary>
-        public string ZipOrPostalCode { get; set; }
-
-        /// <summary>
-        /// LA2.14 - Country.
-        /// </summary>
-        /// <remarks>https://www.iso.org/iso-3166-country-codes.html</remarks>
-        public string Country { get; set; }
-
-        /// <summary>
-        /// LA2.15 - Address Type.
-        /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0190</remarks>
-        public string AddressType { get; set; }
-
-        /// <summary>
-        /// LA2.16 - Other Geographic Designation .
-        /// </summary>
-        public string OtherGeographicDesignation { get; set; }
+        public Address Address { get; set; }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -111,7 +74,7 @@ namespace ClearHl7.Fhir.V270.Types
 
             return string.Format(
                                 culture,
-                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}&{8}&{9}&{10}&{11}&{12}&{13}&{14}&{15}&{16}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}^{9}^{10}^{11}^{12}^{13}^{14}^{15}^{16}",
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}&{8}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}",
                                 PointOfCare,
                                 Room,
                                 Bed,
@@ -120,14 +83,7 @@ namespace ClearHl7.Fhir.V270.Types
                                 PatientLocationType,
                                 Building,
                                 Floor,
-                                StreetAddress,
-                                OtherDesignation,
-                                City,
-                                StateOrProvince,
-                                ZipOrPostalCode,
-                                Country,
-                                AddressType,
-                                OtherGeographicDesignation
+                                Address?.ToDelimitedString()
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
     }
