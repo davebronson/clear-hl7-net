@@ -13,15 +13,64 @@ namespace ClearHl7.Fhir.V260.Types
         public bool IsSubcomponent { get; set; }
 
         /// <summary>
-        /// OSD.1 - Occurrence Code.
+        /// OSD.1 - Sequence/Results Flag.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0350</remarks>
-        public CodedWithNoExceptions OccurrenceCode { get; set; }
+        /// <remarks>https://www.hl7.org/fhir/v2/0524</remarks>
+        public string SequenceResultsFlag { get; set; }
 
         /// <summary>
-        /// OSD.2 - Occurrence Date.
+        /// OSD.2 - Placer Order Number: Entity Identifier.
         /// </summary>
-        public DateTime? OccurrenceDate { get; set; }
+        public string PlacerOrderNumberEntityIdentifier { get; set; }
+
+        /// <summary>
+        /// OSD.3 - Placer Order Number: Namespace ID.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0363</remarks>
+        public string PlacerOrderNumberNamespaceId { get; set; }
+
+        /// <summary>
+        /// OSD.4 - Filler Order Number: Entity Identifier.
+        /// </summary>
+        public string FillerOrderNumberEntityIdentifier { get; set; }
+
+        /// <summary>
+        /// OSD.5 - Filler Order Number: Namespace ID.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0363</remarks>
+        public string FillerOrderNumberNamespaceId { get; set; }
+
+        /// <summary>
+        /// OSD.6 - Sequence Condition Value.
+        /// </summary>
+        public string SequenceConditionValue { get; set; }
+
+        /// <summary>
+        /// OSD.7 - Maximum Number of Repeats.
+        /// </summary>
+        public decimal? MaximumNumberOfRepeats { get; set; }
+
+        /// <summary>
+        /// OSD.8 - Placer Order Number: Universal ID.
+        /// </summary>
+        public string PlacerOrderNumberUniversalId { get; set; }
+
+        /// <summary>
+        /// OSD.9 - Placer Order Number: Universal ID Type.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0301</remarks>
+        public string PlacerOrderNumberUniversalIdType { get; set; }
+
+        /// <summary>
+        /// OSD.10 - Filler Order Number: Universal ID.
+        /// </summary>
+        public string FillerOrderNumberUniversalId { get; set; }
+
+        /// <summary>
+        /// OSD.11 - Filler Order Number: Universal ID Type.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0301</remarks>
+        public string FillerOrderNumberUniversalIdType { get; set; }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -33,9 +82,18 @@ namespace ClearHl7.Fhir.V260.Types
 
             return string.Format(
                                 culture,
-                                IsSubcomponent ? "{0}&{1}" : "{0}^{1}",
-                                OccurrenceCode?.ToDelimitedString(),
-                                OccurrenceDate.HasValue ? OccurrenceDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
+                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}&{8}&{9}&{10}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}^{9}^{10}",
+                                SequenceResultsFlag,
+                                PlacerOrderNumberEntityIdentifier,
+                                PlacerOrderNumberNamespaceId,
+                                FillerOrderNumberEntityIdentifier,
+                                FillerOrderNumberNamespaceId,
+                                SequenceConditionValue,
+                                MaximumNumberOfRepeats.HasValue ? MaximumNumberOfRepeats.Value.ToString(Consts.NumericFormat, culture) : null,
+                                PlacerOrderNumberUniversalId,
+                                PlacerOrderNumberUniversalIdType,
+                                FillerOrderNumberUniversalId,
+                                FillerOrderNumberUniversalIdType
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
     }
