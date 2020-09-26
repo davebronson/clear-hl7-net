@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ClearHl7.Fhir.V251.Types
+namespace ClearHl7.Fhir.V250.Types
 {
     /// <summary>
     /// HL7 Version 2 OSD - Order Sequence Definition.

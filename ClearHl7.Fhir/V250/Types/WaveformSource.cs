@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace ClearHl7.Fhir.V260.Types
+namespace ClearHl7.Fhir.V250.Types
 {
     /// <summary>
-    /// HL7 Version 2 OSD - Order Sequence Definition.
+    /// HL7 Version 2 WVS - Waveform Source.
     /// </summary>
-    public class OrderSequenceDefinition : IType
+    public class WaveformSource : IType
     {
         /// <summary>
         /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
@@ -13,15 +13,14 @@ namespace ClearHl7.Fhir.V260.Types
         public bool IsSubcomponent { get; set; }
 
         /// <summary>
-        /// OSD.1 - Occurrence Code.
+        /// WVS.1 - Source One Name.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0350</remarks>
-        public CodedWithNoExceptions OccurrenceCode { get; set; }
+        public string SourceOneName { get; set; }
 
         /// <summary>
-        /// OSD.2 - Occurrence Date.
+        /// WVS.2 - Source Two Name.
         /// </summary>
-        public DateTime? OccurrenceDate { get; set; }
+        public string SourceTwoName { get; set; }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -34,8 +33,8 @@ namespace ClearHl7.Fhir.V260.Types
             return string.Format(
                                 culture,
                                 IsSubcomponent ? "{0}&{1}" : "{0}^{1}",
-                                OccurrenceCode?.ToDelimitedString(),
-                                OccurrenceDate.HasValue ? OccurrenceDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
+                                SourceOneName,
+                                SourceTwoName
                                 ).TrimEnd(IsSubcomponent ? '&' : '^');
         }
     }
