@@ -13,7 +13,7 @@ namespace ClearHl7.Fhir.V280.Types
         public bool IsSubcomponent { get; set; }
 
         /// <summary>
-        /// SN.1 - Comparator.
+        /// TX.1 - Value.
         /// </summary>
         public string Value { get; set; }
 
