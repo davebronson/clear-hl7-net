@@ -1,0 +1,75 @@
+using System;
+using System.Collections.Generic;
+using ClearHl7.Fhir.V281.Types;
+
+namespace ClearHl7.Fhir.V281.Segments
+{
+    /// <summary>
+    /// HL7 Version 2 Segment AL1 - Patient Allergy Information.
+    /// </summary>
+    public class Al1Segment : ISegment
+    {
+        /// <summary>
+        /// Gets the ID for the Segment.  This property is read-only.
+        /// </summary>
+        public string Id { get; } = "AL1";
+        
+        /// <summary>
+        /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
+        /// </summary>
+        public int Ordinal { get; set; }
+
+        /// <summary>
+        /// AL1.1 - Set ID - AL1.
+        /// </summary>
+        public uint? SetIdAl1 { get; set; }
+
+        /// <summary>
+        /// AL1.2 - Allergen Type Code.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0127</remarks>
+        public CodedWithExceptions AllergenTypeCode { get; set; }
+
+        /// <summary>
+        /// AL1.3 - Allergen Code/Mnemonic/Description.
+        /// </summary>
+        public CodedWithExceptions AllergenCodeMnemonicDescription { get; set; }
+
+        /// <summary>
+        /// AL1.4 - Allergy Severity Code.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0128</remarks>
+        public CodedWithExceptions AllergySeverityCode { get; set; }
+
+        /// <summary>
+        /// AL1.5 - Allergy Reaction Code.
+        /// </summary>
+        public IEnumerable<string> AllergyReactionCode { get; set; }
+
+        /// <summary>
+        /// AL1.6 - Identification Date.
+        /// </summary>
+        public DateTime? IdentificationDate { get; set; }
+
+        /// <summary>
+        /// Returns a delimited string representation of this instance.
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToDelimitedString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}",
+                                Id,
+                                SetIdAl1.HasValue ? SetIdAl1.Value.ToString(culture) : null,
+                                AllergenTypeCode?.ToDelimitedString(),
+                                AllergenCodeMnemonicDescription?.ToDelimitedString(),
+                                AllergySeverityCode?.ToDelimitedString(),
+                                AllergyReactionCode != null ? string.Join("~", AllergyReactionCode) : null,
+                                IdentificationDate.HasValue ? IdentificationDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
+                                ).TrimEnd('|');
+        }
+    }
+}
