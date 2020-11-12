@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.V260.Types;
+using ClearHl7.Fhir.V251.Types;
 
-namespace ClearHl7.Fhir.V260.Segments
+namespace ClearHl7.Fhir.V251.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment OBR - Observation Request.
@@ -38,7 +38,7 @@ namespace ClearHl7.Fhir.V260.Segments
         /// <summary>
         /// OBR.4 - Universal Service Identifier.
         /// </summary>
-        public CodedWithExceptions UniversalServiceIdentifier { get; set; }
+        public CodedElement UniversalServiceIdentifier { get; set; }
 
         /// <summary>
         /// OBR.5 - Priority.
@@ -79,7 +79,7 @@ namespace ClearHl7.Fhir.V260.Segments
         /// <summary>
         /// OBR.12 - Danger Code.
         /// </summary>
-        public CodedWithExceptions DangerCode { get; set; }
+        public CodedElement DangerCode { get; set; }
 
         /// <summary>
         /// OBR.13 - Relevant Clinical Information.
@@ -94,7 +94,7 @@ namespace ClearHl7.Fhir.V260.Segments
         /// <summary>
         /// OBR.15 - Specimen Source.
         /// </summary>
-        public string SpecimenSource { get; set; }
+        public SpecimentSource SpecimenSource { get; set; }
 
         /// <summary>
         /// OBR.16 - Ordering Provider.
@@ -177,7 +177,7 @@ namespace ClearHl7.Fhir.V260.Segments
         /// <summary>
         /// OBR.31 - Reason for Study.
         /// </summary>
-        public IEnumerable<CodedWithExceptions> ReasonForStudy { get; set; }
+        public IEnumerable<CodedElement> ReasonForStudy { get; set; }
 
         /// <summary>
         /// OBR.32 - Principal Result Interpreter.
@@ -212,17 +212,17 @@ namespace ClearHl7.Fhir.V260.Segments
         /// <summary>
         /// OBR.38 - Transport Logistics of Collected Sample.
         /// </summary>
-        public IEnumerable<CodedWithExceptions> TransportLogisticsOfCollectedSample { get; set; }
+        public IEnumerable<CodedElement> TransportLogisticsOfCollectedSample { get; set; }
 
         /// <summary>
         /// OBR.39 - Collector's Comment.
         /// </summary>
-        public IEnumerable<CodedWithExceptions> CollectorsComment { get; set; }
+        public IEnumerable<CodedElement> CollectorsComment { get; set; }
 
         /// <summary>
         /// OBR.40 - Transport Arrangement Responsibility.
         /// </summary>
-        public CodedWithExceptions TransportArrangementResponsibility { get; set; }
+        public CodedElement TransportArrangementResponsibility { get; set; }
 
         /// <summary>
         /// OBR.41 - Transport Arranged.
@@ -239,31 +239,31 @@ namespace ClearHl7.Fhir.V260.Segments
         /// <summary>
         /// OBR.43 - Planned Patient Transport Comment.
         /// </summary>
-        public IEnumerable<CodedWithExceptions> PlannedPatientTransportComment { get; set; }
+        public IEnumerable<CodedElement> PlannedPatientTransportComment { get; set; }
 
         /// <summary>
         /// OBR.44 - Procedure Code.
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0088</remarks>
-        public CodedWithNoExceptions ProcedureCode { get; set; }
+        public CodedElement ProcedureCode { get; set; }
 
         /// <summary>
         /// OBR.45 - Procedure Code Modifier.
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0340</remarks>
-        public IEnumerable<CodedWithNoExceptions> ProcedureCodeModifier { get; set; }
+        public IEnumerable<CodedElement> ProcedureCodeModifier { get; set; }
 
         /// <summary>
         /// OBR.46 - Placer Supplemental Service Information.
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0411</remarks>
-        public IEnumerable<CodedWithExceptions> PlacerSupplementalServiceInformation { get; set; }
+        public IEnumerable<CodedElement> PlacerSupplementalServiceInformation { get; set; }
 
         /// <summary>
         /// OBR.47 - Filler Supplemental Service Information.
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0411</remarks>
-        public IEnumerable<CodedWithExceptions> FillerSupplementalServiceInformation { get; set; }
+        public IEnumerable<CodedElement> FillerSupplementalServiceInformation { get; set; }
 
         /// <summary>
         /// OBR.48 - Medically Necessary Duplicate Procedure Reason.
@@ -275,7 +275,7 @@ namespace ClearHl7.Fhir.V260.Segments
         /// OBR.49 - Result Handling.
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0507</remarks>
-        public CodedWithExceptions ResultHandling { get; set; }
+        public string ResultHandling { get; set; }
 
         /// <summary>
         /// OBR.50 - Parent Universal Service Identifier.
@@ -308,7 +308,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 DangerCode?.ToDelimitedString(),
                                 RelevantClinicalInformation,
                                 SpecimenReceivedDateTime.HasValue ? SpecimenReceivedDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                SpecimenSource,
+                                SpecimenSource?.ToDelimitedString(),
                                 OrderingProvider != null ? string.Join("~", OrderingProvider.Select(x => x.ToDelimitedString())) : null,
                                 OrderCallbackPhoneNumber != null ? string.Join("~", OrderCallbackPhoneNumber.Select(x => x.ToDelimitedString())) : null,
                                 PlacerField1,
@@ -342,7 +342,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 PlacerSupplementalServiceInformation != null ? string.Join("~", PlacerSupplementalServiceInformation.Select(x => x.ToDelimitedString())) : null,
                                 FillerSupplementalServiceInformation != null ? string.Join("~", FillerSupplementalServiceInformation.Select(x => x.ToDelimitedString())) : null,
                                 MedicallyNecessaryDuplicateProcedureReason?.ToDelimitedString(),
-                                ResultHandling?.ToDelimitedString(),
+                                ResultHandling,
                                 ParentUniversalServiceIdentifier?.ToDelimitedString()
                                 ).TrimEnd('|');
         }
