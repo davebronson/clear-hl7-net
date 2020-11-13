@@ -1,17 +1,17 @@
-using System;
-using ClearHl7.Fhir.V251.Types;
+﻿using System;
+using ClearHl7.Fhir.V250.Types;
 
-namespace ClearHl7.Fhir.V251.Segments
+namespace ClearHl7.Fhir.V250.Segments
 {
     /// <summary>
-    /// HL7 Version 2 Segment VTQ - Virtual Table Query Request.
+    /// HL7 Version 2 Segment DSP - Display Data.
     /// </summary>
-    public class VtqSegment : ISegment
+    public class DspSegment : ISegment
     {
         /// <summary>
         /// Gets the ID for the Segment.  This property is read-only.
         /// </summary>
-        public string Id { get; } = "VTQ";
+        public string Id { get; } = "DSP";
         
         /// <summary>
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
@@ -19,30 +19,29 @@ namespace ClearHl7.Fhir.V251.Segments
         public int Ordinal { get; set; }
 
         /// <summary>
-        /// VTQ.1 - Query Tag.
+        /// DSP.1 - Set ID - DSP.
         /// </summary>
-        public string QueryTag { get; set; }
+        public uint? SetIdDsp { get; set; }
 
         /// <summary>
-        /// VTQ.2 - Query/Response Format Code.
+        /// DSP.2 - Display Level.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0106</remarks>
-        public string QueryResponseFormatCode { get; set; }
+        public uint? DisplayLevel { get; set; }
 
         /// <summary>
-        /// VTQ.3 - VT Query Name.
+        /// DSP.3 - Data Line.
         /// </summary>
-        public CodedElement VtQueryName { get; set; }
+        public Text DataLine { get; set; }
 
         /// <summary>
-        /// VTQ.4 - Virtual Table Name.
+        /// DSP.4 - Logical Break Point.
         /// </summary>
-        public CodedElement VirtualTableName { get; set; }
+        public string LogicalBreakPoint { get; set; }
 
         /// <summary>
-        /// VTQ.5 - Selection Criteria.
+        /// DSP.5 - Result ID.
         /// </summary>
-        public QuerySelectionCriteria SelectionCriteria { get; set; }
+        public Text ResultId { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -56,11 +55,11 @@ namespace ClearHl7.Fhir.V251.Segments
                                 culture,
                                 "{0}|{1}|{2}|{3}|{4}|{5}",
                                 Id,
-                                QueryTag,
-                                QueryResponseFormatCode,
-                                VtQueryName?.ToDelimitedString(),
-                                VirtualTableName?.ToDelimitedString(),
-                                SelectionCriteria?.ToDelimitedString()
+                                SetIdDsp.HasValue ? SetIdDsp.Value.ToString(culture) : null,
+                                DisplayLevel.HasValue ? DisplayLevel.Value.ToString(culture) : null,
+                                DataLine?.ToDelimitedString(),
+                                LogicalBreakPoint,
+                                ResultId?.ToDelimitedString()
                                 ).TrimEnd('|');
         }
     }

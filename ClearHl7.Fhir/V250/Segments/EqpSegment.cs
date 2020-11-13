@@ -1,17 +1,17 @@
-using System;
-using ClearHl7.Fhir.V251.Types;
+﻿using System;
+using ClearHl7.Fhir.V250.Types;
 
-namespace ClearHl7.Fhir.V251.Segments
+namespace ClearHl7.Fhir.V250.Segments
 {
     /// <summary>
-    /// HL7 Version 2 Segment VTQ - Virtual Table Query Request.
+    /// HL7 Version 2 Segment EQP - Equipment Log Service.
     /// </summary>
-    public class VtqSegment : ISegment
+    public class EqpSegment : ISegment
     {
         /// <summary>
         /// Gets the ID for the Segment.  This property is read-only.
         /// </summary>
-        public string Id { get; } = "VTQ";
+        public string Id { get; } = "EQP";
         
         /// <summary>
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
@@ -19,30 +19,30 @@ namespace ClearHl7.Fhir.V251.Segments
         public int Ordinal { get; set; }
 
         /// <summary>
-        /// VTQ.1 - Query Tag.
+        /// EQP.1 - Event type.
         /// </summary>
-        public string QueryTag { get; set; }
+        /// <remarks>https://www.hl7.org/fhir/v2/0450</remarks>
+        public CodedElement EventType { get; set; }
 
         /// <summary>
-        /// VTQ.2 - Query/Response Format Code.
+        /// EQP.2 - File Name.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0106</remarks>
-        public string QueryResponseFormatCode { get; set; }
+        public string FileName { get; set; }
 
         /// <summary>
-        /// VTQ.3 - VT Query Name.
+        /// EQP.3 - Start Date/Time.
         /// </summary>
-        public CodedElement VtQueryName { get; set; }
+        public DateTime? StartDateTime { get; set; }
 
         /// <summary>
-        /// VTQ.4 - Virtual Table Name.
+        /// EQP.4 - End Date/Time.
         /// </summary>
-        public CodedElement VirtualTableName { get; set; }
+        public DateTime? EndDateTime { get; set; }
 
         /// <summary>
-        /// VTQ.5 - Selection Criteria.
+        /// EQP.5 - Transaction Data.
         /// </summary>
-        public QuerySelectionCriteria SelectionCriteria { get; set; }
+        public string TransactionData { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -56,11 +56,11 @@ namespace ClearHl7.Fhir.V251.Segments
                                 culture,
                                 "{0}|{1}|{2}|{3}|{4}|{5}",
                                 Id,
-                                QueryTag,
-                                QueryResponseFormatCode,
-                                VtQueryName?.ToDelimitedString(),
-                                VirtualTableName?.ToDelimitedString(),
-                                SelectionCriteria?.ToDelimitedString()
+                                EventType?.ToDelimitedString(),
+                                FileName,
+                                StartDateTime.HasValue ? StartDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                EndDateTime.HasValue ? EndDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                TransactionData
                                 ).TrimEnd('|');
         }
     }

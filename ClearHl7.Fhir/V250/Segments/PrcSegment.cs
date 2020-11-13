@@ -1,0 +1,155 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using ClearHl7.Fhir.V250.Types;
+
+namespace ClearHl7.Fhir.V250.Segments
+{
+    /// <summary>
+    /// HL7 Version 2 Segment PRC - Pricing.
+    /// </summary>
+    public class PrcSegment : ISegment
+    {
+        /// <summary>
+        /// Gets the ID for the Segment.  This property is read-only.
+        /// </summary>
+        public string Id { get; } = "PRC";
+        
+        /// <summary>
+        /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
+        /// </summary>
+        public int Ordinal { get; set; }
+
+        /// <summary>
+        /// PRC.1 - Primary Key Value - PRC.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0132</remarks>
+        public CodedElement PrimaryKeyValuePrc { get; set; }
+
+        /// <summary>
+        /// PRC.2 - Facility ID - PRC.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0464</remarks>
+        public IEnumerable<CodedElement> FacilityIdPrc { get; set; }
+
+        /// <summary>
+        /// PRC.3 - Department.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0184</remarks>
+        public IEnumerable<CodedElement> Department { get; set; }
+
+        /// <summary>
+        /// PRC.4 - Valid Patient Classes.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0004</remarks>
+        public IEnumerable<string> ValidPatientClasses { get; set; }
+
+        /// <summary>
+        /// PRC.5 - Price.
+        /// </summary>
+        public IEnumerable<CompositePrice> Price { get; set; }
+
+        /// <summary>
+        /// PRC.6 - Formula.
+        /// </summary>
+        public IEnumerable<string> Formula { get; set; }
+
+        /// <summary>
+        /// PRC.7 - Minimum Quantity.
+        /// </summary>
+        public decimal? MinimumQuantity { get; set; }
+
+        /// <summary>
+        /// PRC.8 - Maximum Quantity.
+        /// </summary>
+        public decimal? MaximumQuantity { get; set; }
+
+        /// <summary>
+        /// PRC.9 - Minimum Price.
+        /// </summary>
+        public Money MinimumPrice { get; set; }
+
+        /// <summary>
+        /// PRC.10 - Maximum Price.
+        /// </summary>
+        public Money MaximumPrice { get; set; }
+
+        /// <summary>
+        /// PRC.11 - Effective Start Date.
+        /// </summary>
+        public DateTime? EffectiveStartDate { get; set; }
+
+        /// <summary>
+        /// PRC.12 - Effective End Date.
+        /// </summary>
+        public DateTime? EffectiveEndDate { get; set; }
+
+        /// <summary>
+        /// PRC.13 - Price Override Flag.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0268</remarks>
+        public string PriceOverrideFlag { get; set; }
+
+        /// <summary>
+        /// PRC.14 - Billing Category.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0293</remarks>
+        public IEnumerable<CodedElement> BillingCategory { get; set; }
+
+        /// <summary>
+        /// PRC.15 - Chargeable Flag.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        public string ChargeableFlag { get; set; }
+
+        /// <summary>
+        /// PRC.16 - Active/Inactive Flag.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0183</remarks>
+        public string ActiveInactiveFlag { get; set; }
+
+        /// <summary>
+        /// PRC.17 - Cost.
+        /// </summary>
+        public Money Cost { get; set; }
+
+        /// <summary>
+        /// PRC.18 - Charge on Indicator.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0269</remarks>
+        public string ChargeOnIndicator { get; set; }
+        
+        /// <summary>
+        /// Returns a delimited string representation of this instance.
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToDelimitedString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}",
+                                Id,
+                                PrimaryKeyValuePrc?.ToDelimitedString(),
+                                FacilityIdPrc != null ? string.Join("~", FacilityIdPrc.Select(x => x.ToDelimitedString())) : null,
+                                Department != null ? string.Join("~", Department.Select(x => x.ToDelimitedString())) : null,
+                                ValidPatientClasses != null ? string.Join("~", ValidPatientClasses) : null,
+                                Price != null ? string.Join("~", Price.Select(x => x.ToDelimitedString())) : null,
+                                Formula != null ? string.Join("~", Formula) : null,
+                                MinimumQuantity.HasValue ? MinimumQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
+                                MaximumQuantity.HasValue ? MaximumQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
+                                MinimumPrice?.ToDelimitedString(),
+                                MaximumPrice?.ToDelimitedString(),
+                                EffectiveStartDate.HasValue ? EffectiveStartDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                EffectiveEndDate.HasValue ? EffectiveEndDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                PriceOverrideFlag,
+                                BillingCategory != null ? string.Join("~", BillingCategory.Select(x => x.ToDelimitedString())) : null,
+                                ChargeableFlag,
+                                ActiveInactiveFlag,
+                                Cost?.ToDelimitedString(),
+                                ChargeOnIndicator
+                                ).TrimEnd('|');
+        }
+    }
+}

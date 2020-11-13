@@ -1,17 +1,17 @@
-using System;
-using ClearHl7.Fhir.V251.Types;
+﻿using System;
+using ClearHl7.Fhir.V250.Types;
 
-namespace ClearHl7.Fhir.V251.Segments
+namespace ClearHl7.Fhir.V250.Segments
 {
     /// <summary>
-    /// HL7 Version 2 Segment VTQ - Virtual Table Query Request.
+    /// HL7 Version 2 Segment EQL - Embedded Query Language.
     /// </summary>
-    public class VtqSegment : ISegment
+    public class EqlSegment : ISegment
     {
         /// <summary>
         /// Gets the ID for the Segment.  This property is read-only.
         /// </summary>
-        public string Id { get; } = "VTQ";
+        public string Id { get; } = "EQL";
         
         /// <summary>
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
@@ -19,30 +19,25 @@ namespace ClearHl7.Fhir.V251.Segments
         public int Ordinal { get; set; }
 
         /// <summary>
-        /// VTQ.1 - Query Tag.
+        /// EQL.1 - Query Tag.
         /// </summary>
         public string QueryTag { get; set; }
 
         /// <summary>
-        /// VTQ.2 - Query/Response Format Code.
+        /// EQL.2 - Query/Response Format Code.
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0106</remarks>
         public string QueryResponseFormatCode { get; set; }
 
         /// <summary>
-        /// VTQ.3 - VT Query Name.
+        /// EQL.3 - EQL Query Name.
         /// </summary>
-        public CodedElement VtQueryName { get; set; }
+        public CodedElement EqlQueryName { get; set; }
 
         /// <summary>
-        /// VTQ.4 - Virtual Table Name.
+        /// EQL.4 - EQL Query Statement.
         /// </summary>
-        public CodedElement VirtualTableName { get; set; }
-
-        /// <summary>
-        /// VTQ.5 - Selection Criteria.
-        /// </summary>
-        public QuerySelectionCriteria SelectionCriteria { get; set; }
+        public string EqlQueryStatement { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -54,13 +49,12 @@ namespace ClearHl7.Fhir.V251.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}",
+                                "{0}|{1}|{2}|{3}|{4}",
                                 Id,
                                 QueryTag,
                                 QueryResponseFormatCode,
-                                VtQueryName?.ToDelimitedString(),
-                                VirtualTableName?.ToDelimitedString(),
-                                SelectionCriteria?.ToDelimitedString()
+                                EqlQueryName?.ToDelimitedString(),
+                                EqlQueryStatement
                                 ).TrimEnd('|');
         }
     }

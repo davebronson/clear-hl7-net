@@ -1,7 +1,9 @@
-using System;
-using ClearHl7.Fhir.V251.Types;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using ClearHl7.Fhir.V250.Types;
 
-namespace ClearHl7.Fhir.V251.Segments
+namespace ClearHl7.Fhir.V250.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment VTQ - Virtual Table Query Request.
@@ -42,7 +44,7 @@ namespace ClearHl7.Fhir.V251.Segments
         /// <summary>
         /// VTQ.5 - Selection Criteria.
         /// </summary>
-        public QuerySelectionCriteria SelectionCriteria { get; set; }
+        public IEnumerable<QuerySelectionCriteria> SelectionCriteria { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -60,7 +62,7 @@ namespace ClearHl7.Fhir.V251.Segments
                                 QueryResponseFormatCode,
                                 VtQueryName?.ToDelimitedString(),
                                 VirtualTableName?.ToDelimitedString(),
-                                SelectionCriteria?.ToDelimitedString()
+                                SelectionCriteria != null ? string.Join("~", SelectionCriteria.Select(x => x.ToDelimitedString())) : null
                                 ).TrimEnd('|');
         }
     }

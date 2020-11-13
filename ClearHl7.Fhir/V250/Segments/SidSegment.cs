@@ -1,0 +1,61 @@
+﻿using System;
+using ClearHl7.Fhir.V250.Types;
+
+namespace ClearHl7.Fhir.V250.Segments
+{
+    /// <summary>
+    /// HL7 Version 2 Segment SID - Substance Identifier.
+    /// </summary>
+    public class SidSegment : ISegment
+    {
+        /// <summary>
+        /// Gets the ID for the Segment.  This property is read-only.
+        /// </summary>
+        public string Id { get; } = "SID";
+        
+        /// <summary>
+        /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
+        /// </summary>
+        public int Ordinal { get; set; }
+
+        /// <summary>
+        /// SID.1 - Application/Method Identifier.
+        /// </summary>
+        public CodedElement ApplicationMethodIdentifier { get; set; }
+
+        /// <summary>
+        /// SID.2 - Substance Lot Number.
+        /// </summary>
+        public string SubstanceLotNumber { get; set; }
+
+        /// <summary>
+        /// SID.3 - Substance Container Identifier.
+        /// </summary>
+        public string SubstanceContainerIdentifier { get; set; }
+
+        /// <summary>
+        /// SID.4 - Substance Manufacturer Identifier.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0385</remarks>
+        public CodedElement SubstanceManufacturerIdentifier { get; set; }
+        
+        /// <summary>
+        /// Returns a delimited string representation of this instance.
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToDelimitedString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                "{0}|{1}|{2}|{3}|{4}",
+                                Id,
+                                ApplicationMethodIdentifier?.ToDelimitedString(),
+                                SubstanceLotNumber,
+                                SubstanceContainerIdentifier,
+                                SubstanceManufacturerIdentifier?.ToDelimitedString()
+                                ).TrimEnd('|');
+        }
+    }
+}
