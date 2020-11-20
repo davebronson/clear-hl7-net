@@ -216,7 +216,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 OrderingProviderAddress != null ? string.Join("~", OrderingProviderAddress.Select(x => x.ToDelimitedString())) : null,
                                 OrderStatusModifier?.ToDelimitedString(),
                                 AdvancedBeneficiaryNoticeOverrideReason?.ToDelimitedString(),
-                                OrderEffectiveDateTime.HasValue ? OrderEffectiveDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                FillersExpectedAvailabilityDateTime.HasValue ? FillersExpectedAvailabilityDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ConfidentialityCode?.ToDelimitedString(),
                                 OrderType?.ToDelimitedString(),
                                 EntererAuthorizationMode?.ToDelimitedString()

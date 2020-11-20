@@ -28,13 +28,13 @@ namespace ClearHl7.Fhir.V250.Segments
         /// <summary>
         /// DG1.2 - Diagnosis Coding Method.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/053</remarks>
+        /// <remarks>https://www.hl7.org/fhir/v2/0053</remarks>
         public string DiagnosisCodingMethod { get; set; }
 
         /// <summary>
         /// DG1.3 - Diagnosis Code - DG1.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/051</remarks>
+        /// <remarks>https://www.hl7.org/fhir/v2/0051</remarks>
         public CodedElement DiagnosisCodeDg1 { get; set; }
 
         /// <summary>

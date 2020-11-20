@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ClearHl7.Fhir.V250.Types
+namespace ClearHl7.Fhir.V240.Types
 {
     /// <summary>
     /// HL7 Version 2 CK - Composite Id With Check Digit.

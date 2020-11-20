@@ -14,7 +14,7 @@ namespace ClearHl7.Fhir.V260.Segments
         /// Gets the ID for the Segment.  This property is read-only.
         /// </summary>
         public string Id { get; } = "ORC";
-        
+
         /// <summary>
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
         /// </summary>
@@ -221,7 +221,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 OrderingProviderAddress != null ? string.Join("~", OrderingProviderAddress.Select(x => x.ToDelimitedString())) : null,
                                 OrderStatusModifier?.ToDelimitedString(),
                                 AdvancedBeneficiaryNoticeOverrideReason?.ToDelimitedString(),
-                                OrderEffectiveDateTime.HasValue ? OrderEffectiveDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                FillersExpectedAvailabilityDateTime.HasValue ? FillersExpectedAvailabilityDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ConfidentialityCode?.ToDelimitedString(),
                                 OrderType?.ToDelimitedString(),
                                 EntererAuthorizationMode?.ToDelimitedString(),
