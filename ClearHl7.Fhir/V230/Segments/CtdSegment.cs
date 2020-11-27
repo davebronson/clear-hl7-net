@@ -1,0 +1,82 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using ClearHl7.Fhir.V230.Types;
+
+namespace ClearHl7.Fhir.V230.Segments
+{
+    /// <summary>
+    /// HL7 Version 2 Segment CTD - Contact Data.
+    /// </summary>
+    public class CtdSegment : ISegment
+    {
+        /// <summary>
+        /// Gets the ID for the Segment.  This property is read-only.
+        /// </summary>
+        public string Id { get; } = "CTD";
+        
+        /// <summary>
+        /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
+        /// </summary>
+        public int Ordinal { get; set; }
+
+        /// <summary>
+        /// CTD.1 - Contact Role.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0131</remarks>
+        public IEnumerable<CodedElement> ContactRole { get; set; }
+
+        /// <summary>
+        /// CTD.2 - Contact Name.
+        /// </summary>
+        public IEnumerable<ExtendedPersonName> ContactName { get; set; }
+
+        /// <summary>
+        /// CTD.3 - Contact Address.
+        /// </summary>
+        public ExtendedAddress ContactAddress { get; set; }
+
+        /// <summary>
+        /// CTD.4 - Contact Location.
+        /// </summary>
+        public EntityIdentifier ContactLocation { get; set; }
+
+        /// <summary>
+        /// CTD.5 - Contact Communication Information.
+        /// </summary>
+        public IEnumerable<ExtendedTelecommunicationNumber> ContactCommunicationInformation { get; set; }
+
+        /// <summary>
+        /// CTD.6 - Preferred Method of Contact.
+        /// </summary>
+        /// <remarks>https://www.hl7.org/fhir/v2/0185</remarks>
+        public CodedElement PreferredMethodOfContact { get; set; }
+
+        /// <summary>
+        /// CTD.7 - Contact Identifiers.
+        /// </summary>
+        public IEnumerable<string> ContactIdentifiers { get; set; }
+
+        /// <summary>
+        /// Returns a delimited string representation of this instance.
+        /// </summary>
+        /// <returns>A string.</returns>
+        public string ToDelimitedString()
+        {
+            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+
+            return string.Format(
+                                culture,
+                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}",
+                                Id,
+                                ContactRole != null ? string.Join("~", ContactRole.Select(x => x.ToDelimitedString())) : null,
+                                ContactName != null ? string.Join("~", ContactName.Select(x => x.ToDelimitedString())) : null,
+                                ContactAddress?.ToDelimitedString(),
+                                ContactLocation?.ToDelimitedString(),
+                                ContactCommunicationInformation != null ? string.Join("~", ContactCommunicationInformation.Select(x => x.ToDelimitedString())) : null,
+                                PreferredMethodOfContact?.ToDelimitedString(),
+                                ContactIdentifiers != null ? string.Join("~", ContactIdentifiers) : null
+                                ).TrimEnd('|');
+        }
+    }
+}
