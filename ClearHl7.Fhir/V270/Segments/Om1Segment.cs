@@ -165,7 +165,7 @@ namespace ClearHl7.Fhir.V270.Segments
         /// <summary>
         /// OM1.28 - Address of Outside Site(s).
         /// </summary>
-        public IEnumerable<ExtendedAddress> AddressOfOutsideSiteS { get; set; }
+        public IEnumerable<ExtendedAddress> AddressOfOutsideSites { get; set; }
 
         /// <summary>
         /// OM1.29 - Phone Number of Outside Site.
@@ -307,7 +307,7 @@ namespace ClearHl7.Fhir.V270.Segments
                                 ProcessingPriority != null ? string.Join("~", ProcessingPriority) : null,
                                 ReportingPriority,
                                 OutsideSiteSWhereObservationMayBePerformed != null ? string.Join("~", OutsideSiteSWhereObservationMayBePerformed.Select(x => x.ToDelimitedString())) : null,
-                                AddressOfOutsideSiteS != null ? string.Join("~", AddressOfOutsideSiteS.Select(x => x.ToDelimitedString())) : null,
+                                AddressOfOutsideSites != null ? string.Join("~", AddressOfOutsideSites.Select(x => x.ToDelimitedString())) : null,
                                 PhoneNumberOfOutsideSite?.ToDelimitedString(),
                                 ConfidentialityCode?.ToDelimitedString(),
                                 ObservationsRequiredToInterpretThisObservation?.ToDelimitedString(),
