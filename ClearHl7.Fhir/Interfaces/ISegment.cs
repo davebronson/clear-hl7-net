@@ -3,7 +3,7 @@
     public interface ISegment
     {
         string Id { get; }
-        int Ordinal { get; set; }
+        int Ordinal { get; }
 
         string ToDelimitedString();
     }

@@ -16,9 +16,9 @@ namespace ClearHl7.Fhir.V270.Segments
         public string Id { get; } = "MSH";
 
         /// <summary>
-        /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
+        /// Gets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.  This property is read-only.
         /// </summary>
-        public int Ordinal { get; set; }
+        public int Ordinal { get; } = int.MinValue;
 
         /// <summary>
         /// MSH.1 - Field Separator.  This property is read-only.
