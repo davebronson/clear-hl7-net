@@ -90,7 +90,7 @@ namespace ClearHl7.Fhir.V230.Segments
         /// MSH.12 - Version ID.
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0104</remarks>
-        public string VersionId { get; set; }
+        public string VersionId { get; set; } = "2.3";
 
         /// <summary>
         /// MSH.13 - Sequence Number.

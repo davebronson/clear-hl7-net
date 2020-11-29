@@ -94,7 +94,7 @@ namespace ClearHl7.Fhir.V251.Segments
         /// <summary>
         /// MSH.12 - Version ID.
         /// </summary>
-        public VersionIdentifier VersionId { get; set; }
+        public VersionIdentifier VersionId { get; set; } = new VersionIdentifier { VersionId = "2.5.1" };
 
         /// <summary>
         /// MSH.13 - Sequence Number.
