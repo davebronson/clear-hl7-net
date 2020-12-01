@@ -1,4 +1,4 @@
-﻿using System;
+﻿using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V240.Types;
 
 namespace ClearHl7.Fhir.V240.Segments
@@ -102,7 +102,7 @@ namespace ClearHl7.Fhir.V240.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}",
+                                StringHelper.StringFormatSequence(0, 15, Configuration.FieldSeparator),
                                 Id,
                                 UniversalServiceIdentifier?.ToDelimitedString(),
                                 EquipmentTestApplicationIdentifier?.ToDelimitedString(),
@@ -118,7 +118,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 EquipmentDynamicRange?.ToDelimitedString(),
                                 Units?.ToDelimitedString(),
                                 ProcessingType?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

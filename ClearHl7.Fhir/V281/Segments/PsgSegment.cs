@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V281.Types;
 
 namespace ClearHl7.Fhir.V281.Segments
@@ -61,7 +59,7 @@ namespace ClearHl7.Fhir.V281.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}",
+                                StringHelper.StringFormatSequence(0, 7, Configuration.FieldSeparator),
                                 Id,
                                 ProviderProductServiceGroupNumber?.ToDelimitedString(),
                                 PayerProductServiceGroupNumber?.ToDelimitedString(),
@@ -69,7 +67,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 AdjudicateAsGroup,
                                 ProductServiceGroupBilledAmount?.ToDelimitedString(),
                                 ProductServiceGroupDescription
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

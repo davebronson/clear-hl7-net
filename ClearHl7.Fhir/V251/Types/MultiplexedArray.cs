@@ -1,4 +1,4 @@
-﻿using System;
+﻿using ClearHl7.Fhir.Helpers;
 
 namespace ClearHl7.Fhir.V251.Types
 {
@@ -49,17 +49,18 @@ namespace ClearHl7.Fhir.V251.Types
         public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            char separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
 
             return string.Format(
                                 culture,
-                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}" : "{0}^{1}^{2}^{3}^{4}^{5}",
+                                StringHelper.StringFormatSequence(0, 6, separator),
                                 Sample1FromChannel1.HasValue ? Sample1FromChannel1.Value.ToString(Consts.NumericFormat, culture) : null,
                                 Sample1FromChannel2.HasValue ? Sample1FromChannel2.Value.ToString(Consts.NumericFormat, culture) : null,
                                 Sample1FromChannelN.HasValue ? Sample1FromChannelN.Value.ToString(Consts.NumericFormat, culture) : null,
                                 Sample2FromChannel1.HasValue ? Sample2FromChannel1.Value.ToString(Consts.NumericFormat, culture) : null,
                                 Sample2FromChannelN.HasValue ? Sample2FromChannelN.Value.ToString(Consts.NumericFormat, culture) : null,
                                 SampleNFromChannelN.HasValue ? SampleNFromChannelN.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+                                ).TrimEnd(separator);
         }
     }
 }

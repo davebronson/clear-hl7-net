@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V250.Types;
 
 namespace ClearHl7.Fhir.V250.Segments
@@ -61,15 +62,15 @@ namespace ClearHl7.Fhir.V250.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}",
+                                StringHelper.StringFormatSequence(0, 7, Configuration.FieldSeparator),
                                 Id,
                                 SetIdAl1.HasValue ? SetIdAl1.Value.ToString(culture) : null,
                                 AllergenTypeCode?.ToDelimitedString(),
                                 AllergenCodeMnemonicDescription?.ToDelimitedString(),
                                 AllergySeverityCode?.ToDelimitedString(),
-                                AllergyReactionCode != null ? string.Join("~", AllergyReactionCode) : null,
+                                AllergyReactionCode != null ? string.Join(Configuration.FieldRepeatSeparator, AllergyReactionCode) : null,
                                 IdentificationDate.HasValue ? IdentificationDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

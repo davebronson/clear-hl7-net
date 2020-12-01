@@ -1,6 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V281.Types;
 
 namespace ClearHl7.Fhir.V281.Segments
@@ -51,13 +50,13 @@ namespace ClearHl7.Fhir.V281.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}",
+                                StringHelper.StringFormatSequence(0, 5, Configuration.FieldSeparator),
                                 Id,
                                 NotificationReferenceNumber.HasValue ? NotificationReferenceNumber.Value.ToString(Consts.NumericFormat, culture) : null,
                                 NotificationDateTime.HasValue ? NotificationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 NotificationAlertSeverity?.ToDelimitedString(),
                                 NotificationCode?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

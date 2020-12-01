@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V251.Types;
 
 namespace ClearHl7.Fhir.V251.Segments
@@ -96,7 +97,7 @@ namespace ClearHl7.Fhir.V251.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}",
+                                StringHelper.StringFormatSequence(0, 13, Configuration.FieldSeparator),
                                 Id,
                                 QueryDateTime.HasValue ? QueryDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 QueryFormatCode,
@@ -105,12 +106,12 @@ namespace ClearHl7.Fhir.V251.Segments
                                 DeferredResponseType,
                                 DeferredResponseDateTime.HasValue ? DeferredResponseDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 QuantityLimitedRequest?.ToDelimitedString(),
-                                WhoSubjectFilter != null ? string.Join("~", WhoSubjectFilter.Select(x => x.ToDelimitedString())) : null,
-                                WhatSubjectFilter != null ? string.Join("~", WhatSubjectFilter.Select(x => x.ToDelimitedString())) : null,
-                                WhatDepartmentDataCode != null ? string.Join("~", WhatDepartmentDataCode.Select(x => x.ToDelimitedString())) : null,
-                                WhatDataCodeValueQual != null ? string.Join("~", WhatDataCodeValueQual.Select(x => x.ToDelimitedString())) : null,
+                                WhoSubjectFilter != null ? string.Join(Configuration.FieldRepeatSeparator, WhoSubjectFilter.Select(x => x.ToDelimitedString())) : null,
+                                WhatSubjectFilter != null ? string.Join(Configuration.FieldRepeatSeparator, WhatSubjectFilter.Select(x => x.ToDelimitedString())) : null,
+                                WhatDepartmentDataCode != null ? string.Join(Configuration.FieldRepeatSeparator, WhatDepartmentDataCode.Select(x => x.ToDelimitedString())) : null,
+                                WhatDataCodeValueQual != null ? string.Join(Configuration.FieldRepeatSeparator, WhatDataCodeValueQual.Select(x => x.ToDelimitedString())) : null,
                                 QueryResultsLevel
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

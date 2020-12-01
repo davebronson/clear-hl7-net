@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V281.Types;
 
 namespace ClearHl7.Fhir.V281.Segments
@@ -86,7 +86,7 @@ namespace ClearHl7.Fhir.V281.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}",
+                                StringHelper.StringFormatSequence(0, 12, Configuration.FieldSeparator),
                                 Id,
                                 RxComponentType,
                                 ComponentCode?.ToDelimitedString(),
@@ -94,12 +94,12 @@ namespace ClearHl7.Fhir.V281.Segments
                                 ComponentUnits?.ToDelimitedString(),
                                 ComponentStrength.HasValue ? ComponentStrength.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ComponentStrengthUnits?.ToDelimitedString(),
-                                SupplementaryCode != null ? string.Join("~", SupplementaryCode.Select(x => x.ToDelimitedString())) : null,
+                                SupplementaryCode != null ? string.Join(Configuration.FieldRepeatSeparator, SupplementaryCode.Select(x => x.ToDelimitedString())) : null,
                                 ComponentDrugStrengthVolume.HasValue ? ComponentDrugStrengthVolume.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ComponentDrugStrengthVolumeUnits?.ToDelimitedString(),
                                 DispenseAmount.HasValue ? DispenseAmount.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DispenseUnits?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

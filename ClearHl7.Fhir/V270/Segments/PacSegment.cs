@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V270.Types;
 
 namespace ClearHl7.Fhir.V270.Segments
@@ -74,17 +74,17 @@ namespace ClearHl7.Fhir.V270.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}",
+                                StringHelper.StringFormatSequence(0, 9, Configuration.FieldSeparator),
                                 Id,
                                 SetIdPac.HasValue ? SetIdPac.Value.ToString(culture) : null,
                                 PackageId?.ToDelimitedString(),
                                 ParentPackageId?.ToDelimitedString(),
                                 PositionInParentPackage?.ToDelimitedString(),
                                 PackageType?.ToDelimitedString(),
-                                PackageCondition != null ? string.Join("~", PackageCondition.Select(x => x.ToDelimitedString())) : null,
-                                PackageHandlingCode != null ? string.Join("~", PackageHandlingCode.Select(x => x.ToDelimitedString())) : null,
-                                PackageRiskCode != null ? string.Join("~", PackageRiskCode.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                PackageCondition != null ? string.Join(Configuration.FieldRepeatSeparator, PackageCondition.Select(x => x.ToDelimitedString())) : null,
+                                PackageHandlingCode != null ? string.Join(Configuration.FieldRepeatSeparator, PackageHandlingCode.Select(x => x.ToDelimitedString())) : null,
+                                PackageRiskCode != null ? string.Join(Configuration.FieldRepeatSeparator, PackageRiskCode.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

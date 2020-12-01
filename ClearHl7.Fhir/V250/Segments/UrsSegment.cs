@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V250.Types;
 
 namespace ClearHl7.Fhir.V250.Segments
@@ -77,18 +78,18 @@ namespace ClearHl7.Fhir.V250.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}",
+                                StringHelper.StringFormatSequence(0, 10, Configuration.FieldSeparator),
                                 Id,
-                                RuWhereSubjectDefinition != null ? string.Join("~", RuWhereSubjectDefinition) : null,
+                                RuWhereSubjectDefinition != null ? string.Join(Configuration.FieldRepeatSeparator, RuWhereSubjectDefinition) : null,
                                 RuWhenDataStartDateTime.HasValue ? RuWhenDataStartDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 RuWhenDataEndDateTime.HasValue ? RuWhenDataEndDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                RuWhatUserQualifier != null ? string.Join("~", RuWhatUserQualifier) : null,
-                                RuOtherResultsSubjectDefinition != null ? string.Join("~", RuOtherResultsSubjectDefinition) : null,
-                                RuWhichDateTimeQualifier != null ? string.Join("~", RuWhichDateTimeQualifier) : null,
-                                RuWhichDateTimeStatusQualifier != null ? string.Join("~", RuWhichDateTimeStatusQualifier) : null,
-                                RuDateTimeSelectionQualifier != null ? string.Join("~", RuDateTimeSelectionQualifier) : null,
+                                RuWhatUserQualifier != null ? string.Join(Configuration.FieldRepeatSeparator, RuWhatUserQualifier) : null,
+                                RuOtherResultsSubjectDefinition != null ? string.Join(Configuration.FieldRepeatSeparator, RuOtherResultsSubjectDefinition) : null,
+                                RuWhichDateTimeQualifier != null ? string.Join(Configuration.FieldRepeatSeparator, RuWhichDateTimeQualifier) : null,
+                                RuWhichDateTimeStatusQualifier != null ? string.Join(Configuration.FieldRepeatSeparator, RuWhichDateTimeStatusQualifier) : null,
+                                RuDateTimeSelectionQualifier != null ? string.Join(Configuration.FieldRepeatSeparator, RuDateTimeSelectionQualifier) : null,
                                 RuQuantityTimingQualifier?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

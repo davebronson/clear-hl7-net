@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V251.Types;
 
 namespace ClearHl7.Fhir.V251.Segments
@@ -242,23 +243,23 @@ namespace ClearHl7.Fhir.V251.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}",
+                                StringHelper.StringFormatSequence(0, 39, Configuration.FieldSeparator),
                                 Id,
                                 PrimaryKeyValueStf?.ToDelimitedString(),
-                                StaffIdentifierList != null ? string.Join("~", StaffIdentifierList.Select(x => x.ToDelimitedString())) : null,
-                                StaffName != null ? string.Join("~", StaffName.Select(x => x.ToDelimitedString())) : null,
-                                StaffType != null ? string.Join("~", StaffType) : null,
+                                StaffIdentifierList != null ? string.Join(Configuration.FieldRepeatSeparator, StaffIdentifierList.Select(x => x.ToDelimitedString())) : null,
+                                StaffName != null ? string.Join(Configuration.FieldRepeatSeparator, StaffName.Select(x => x.ToDelimitedString())) : null,
+                                StaffType != null ? string.Join(Configuration.FieldRepeatSeparator, StaffType) : null,
                                 AdministrativeSex,
                                 DateTimeOfBirth.HasValue ? DateTimeOfBirth.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ActiveInactiveFlag,
-                                Department != null ? string.Join("~", Department.Select(x => x.ToDelimitedString())) : null,
-                                HospitalServiceStf != null ? string.Join("~", HospitalServiceStf.Select(x => x.ToDelimitedString())) : null,
-                                Phone != null ? string.Join("~", Phone.Select(x => x.ToDelimitedString())) : null,
-                                OfficeHomeAddressBirthplace != null ? string.Join("~", OfficeHomeAddressBirthplace.Select(x => x.ToDelimitedString())) : null,
-                                InstitutionActivationDate != null ? string.Join("~", InstitutionActivationDate.Select(x => x.ToDelimitedString())) : null,
-                                InstitutionInactivationDate != null ? string.Join("~", InstitutionInactivationDate.Select(x => x.ToDelimitedString())) : null,
-                                BackupPersonId != null ? string.Join("~", BackupPersonId.Select(x => x.ToDelimitedString())) : null,
-                                EmailAddress != null ? string.Join("~", EmailAddress) : null,
+                                Department != null ? string.Join(Configuration.FieldRepeatSeparator, Department.Select(x => x.ToDelimitedString())) : null,
+                                HospitalServiceStf != null ? string.Join(Configuration.FieldRepeatSeparator, HospitalServiceStf.Select(x => x.ToDelimitedString())) : null,
+                                Phone != null ? string.Join(Configuration.FieldRepeatSeparator, Phone.Select(x => x.ToDelimitedString())) : null,
+                                OfficeHomeAddressBirthplace != null ? string.Join(Configuration.FieldRepeatSeparator, OfficeHomeAddressBirthplace.Select(x => x.ToDelimitedString())) : null,
+                                InstitutionActivationDate != null ? string.Join(Configuration.FieldRepeatSeparator, InstitutionActivationDate.Select(x => x.ToDelimitedString())) : null,
+                                InstitutionInactivationDate != null ? string.Join(Configuration.FieldRepeatSeparator, InstitutionInactivationDate.Select(x => x.ToDelimitedString())) : null,
+                                BackupPersonId != null ? string.Join(Configuration.FieldRepeatSeparator, BackupPersonId.Select(x => x.ToDelimitedString())) : null,
+                                EmailAddress != null ? string.Join(Configuration.FieldRepeatSeparator, EmailAddress) : null,
                                 PreferredMethodOfContact?.ToDelimitedString(),
                                 MaritalStatus?.ToDelimitedString(),
                                 JobTitle,
@@ -273,16 +274,16 @@ namespace ClearHl7.Fhir.V251.Segments
                                 Race?.ToDelimitedString(),
                                 EthnicGroup?.ToDelimitedString(),
                                 ReActivationApprovalIndicator,
-                                Citizenship != null ? string.Join("~", Citizenship.Select(x => x.ToDelimitedString())) : null,
+                                Citizenship != null ? string.Join(Configuration.FieldRepeatSeparator, Citizenship.Select(x => x.ToDelimitedString())) : null,
                                 DateTimeOfDeath.HasValue ? DateTimeOfDeath.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 DeathIndicator,
                                 InstitutionRelationshipTypeCode?.ToDelimitedString(),
                                 InstitutionRelationshipPeriod?.ToDelimitedString(),
                                 ExpectedReturnDate.HasValue ? ExpectedReturnDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
-                                CostCenterCode != null ? string.Join("~", CostCenterCode.Select(x => x.ToDelimitedString())) : null,
+                                CostCenterCode != null ? string.Join(Configuration.FieldRepeatSeparator, CostCenterCode.Select(x => x.ToDelimitedString())) : null,
                                 GenericClassificationIndicator,
                                 InactiveReasonCode?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

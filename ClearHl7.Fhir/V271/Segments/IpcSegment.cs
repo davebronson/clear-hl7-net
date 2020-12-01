@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V271.Types;
 
 namespace ClearHl7.Fhir.V271.Segments
@@ -75,18 +75,18 @@ namespace ClearHl7.Fhir.V271.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}",
+                                StringHelper.StringFormatSequence(0, 10, Configuration.FieldSeparator),
                                 Id,
                                 AccessionIdentifier?.ToDelimitedString(),
                                 RequestedProcedureId?.ToDelimitedString(),
                                 StudyInstanceUid?.ToDelimitedString(),
                                 ScheduledProcedureStepId?.ToDelimitedString(),
                                 Modality?.ToDelimitedString(),
-                                ProtocolCode != null ? string.Join("~", ProtocolCode.Select(x => x.ToDelimitedString())) : null,
+                                ProtocolCode != null ? string.Join(Configuration.FieldRepeatSeparator, ProtocolCode.Select(x => x.ToDelimitedString())) : null,
                                 ScheduledStationName?.ToDelimitedString(),
-                                ScheduledProcedureStepLocation != null ? string.Join("~", ScheduledProcedureStepLocation.Select(x => x.ToDelimitedString())) : null,
+                                ScheduledProcedureStepLocation != null ? string.Join(Configuration.FieldRepeatSeparator, ScheduledProcedureStepLocation.Select(x => x.ToDelimitedString())) : null,
                                 ScheduledStationAeTitle
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

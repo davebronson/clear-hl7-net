@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V270.Types;
 
 namespace ClearHl7.Fhir.V270.Segments
@@ -106,16 +107,16 @@ namespace ClearHl7.Fhir.V270.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}",
+                                StringHelper.StringFormatSequence(0, 16, Configuration.FieldSeparator),
                                 Id,
-                                ManufacturerDistributor != null ? string.Join("~", ManufacturerDistributor.Select(x => x.ToDelimitedString())) : null,
+                                ManufacturerDistributor != null ? string.Join(Configuration.FieldRepeatSeparator, ManufacturerDistributor.Select(x => x.ToDelimitedString())) : null,
                                 Country?.ToDelimitedString(),
                                 BrandName,
                                 DeviceFamilyName,
                                 GenericName?.ToDelimitedString(),
-                                ModelIdentifier != null ? string.Join("~", ModelIdentifier) : null,
+                                ModelIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, ModelIdentifier) : null,
                                 CatalogueIdentifier,
-                                OtherIdentifier != null ? string.Join("~", OtherIdentifier) : null,
+                                OtherIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, OtherIdentifier) : null,
                                 ProductCode?.ToDelimitedString(),
                                 MarketingBasis,
                                 MarketingApprovalId,
@@ -123,7 +124,7 @@ namespace ClearHl7.Fhir.V270.Segments
                                 ExpectedShelfLife?.ToDelimitedString(),
                                 DateFirstMarketed.HasValue ? DateFirstMarketed.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 DateLastMarketed.HasValue ? DateLastMarketed.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

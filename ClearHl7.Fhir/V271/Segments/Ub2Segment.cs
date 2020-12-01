@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V271.Types;
 
 namespace ClearHl7.Fhir.V271.Segments
@@ -116,26 +116,26 @@ namespace ClearHl7.Fhir.V271.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}",
+                                StringHelper.StringFormatSequence(0, 18, Configuration.FieldSeparator),
                                 Id,
                                 SetIdUb2.HasValue ? SetIdUb2.Value.ToString(culture) : null,
                                 CoInsuranceDays9,
-                                ConditionCode2430 != null ? string.Join("~", ConditionCode2430.Select(x => x.ToDelimitedString())) : null,
+                                ConditionCode2430 != null ? string.Join(Configuration.FieldRepeatSeparator, ConditionCode2430.Select(x => x.ToDelimitedString())) : null,
                                 CoveredDays7,
                                 NonCoveredDays8,
-                                ValueAmountCode3941 != null ? string.Join("~", ValueAmountCode3941.Select(x => x.ToDelimitedString())) : null,
-                                OccurrenceCodeDate3235 != null ? string.Join("~", OccurrenceCodeDate3235.Select(x => x.ToDelimitedString())) : null,
-                                OccurrenceSpanCodeDates36 != null ? string.Join("~", OccurrenceSpanCodeDates36.Select(x => x.ToDelimitedString())) : null,
-                                UniformBillingLocator2State != null ? string.Join("~", UniformBillingLocator2State) : null,
-                                UniformBillingLocator11State != null ? string.Join("~", UniformBillingLocator11State) : null,
+                                ValueAmountCode3941 != null ? string.Join(Configuration.FieldRepeatSeparator, ValueAmountCode3941.Select(x => x.ToDelimitedString())) : null,
+                                OccurrenceCodeDate3235 != null ? string.Join(Configuration.FieldRepeatSeparator, OccurrenceCodeDate3235.Select(x => x.ToDelimitedString())) : null,
+                                OccurrenceSpanCodeDates36 != null ? string.Join(Configuration.FieldRepeatSeparator, OccurrenceSpanCodeDates36.Select(x => x.ToDelimitedString())) : null,
+                                UniformBillingLocator2State != null ? string.Join(Configuration.FieldRepeatSeparator, UniformBillingLocator2State) : null,
+                                UniformBillingLocator11State != null ? string.Join(Configuration.FieldRepeatSeparator, UniformBillingLocator11State) : null,
                                 UniformBillingLocator31National,
-                                DocumentControlNumber != null ? string.Join("~", DocumentControlNumber) : null,
-                                UniformBillingLocator49National != null ? string.Join("~", UniformBillingLocator49National) : null,
-                                UniformBillingLocator56State != null ? string.Join("~", UniformBillingLocator56State) : null,
+                                DocumentControlNumber != null ? string.Join(Configuration.FieldRepeatSeparator, DocumentControlNumber) : null,
+                                UniformBillingLocator49National != null ? string.Join(Configuration.FieldRepeatSeparator, UniformBillingLocator49National) : null,
+                                UniformBillingLocator56State != null ? string.Join(Configuration.FieldRepeatSeparator, UniformBillingLocator56State) : null,
                                 UniformBillingLocator57Sational,
-                                UniformBillingLocator78State != null ? string.Join("~", UniformBillingLocator78State) : null,
+                                UniformBillingLocator78State != null ? string.Join(Configuration.FieldRepeatSeparator, UniformBillingLocator78State) : null,
                                 SpecialVisitCount.HasValue ? SpecialVisitCount.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

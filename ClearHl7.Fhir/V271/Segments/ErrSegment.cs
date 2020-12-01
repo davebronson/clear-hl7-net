@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V271.Types;
 
 namespace ClearHl7.Fhir.V271.Segments
@@ -96,21 +96,21 @@ namespace ClearHl7.Fhir.V271.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}",
+                                StringHelper.StringFormatSequence(0, 13, Configuration.FieldSeparator),
                                 Id,
                                 ErrorCodeAndLocation,
-                                ErrorLocation != null ? string.Join("~", ErrorLocation.Select(x => x.ToDelimitedString())) : null,
+                                ErrorLocation != null ? string.Join(Configuration.FieldRepeatSeparator, ErrorLocation.Select(x => x.ToDelimitedString())) : null,
                                 Hl7ErrorCode?.ToDelimitedString(),
                                 Severity,
                                 ApplicationErrorCode?.ToDelimitedString(),
-                                ApplicationErrorParameter != null ? string.Join("~", ApplicationErrorParameter) : null,
+                                ApplicationErrorParameter != null ? string.Join(Configuration.FieldRepeatSeparator, ApplicationErrorParameter) : null,
                                 DiagnosticInformation?.ToDelimitedString(),
                                 UserMessage?.ToDelimitedString(),
-                                InformPersonIndicator != null ? string.Join("~", InformPersonIndicator.Select(x => x.ToDelimitedString())) : null,
+                                InformPersonIndicator != null ? string.Join(Configuration.FieldRepeatSeparator, InformPersonIndicator.Select(x => x.ToDelimitedString())) : null,
                                 OverrideType?.ToDelimitedString(),
-                                OverrideReasonCode != null ? string.Join("~", OverrideReasonCode.Select(x => x.ToDelimitedString())) : null,
-                                HelpDeskContactPoint != null ? string.Join("~", HelpDeskContactPoint.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                OverrideReasonCode != null ? string.Join(Configuration.FieldRepeatSeparator, OverrideReasonCode.Select(x => x.ToDelimitedString())) : null,
+                                HelpDeskContactPoint != null ? string.Join(Configuration.FieldRepeatSeparator, HelpDeskContactPoint.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

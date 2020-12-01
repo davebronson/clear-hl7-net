@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V230.Types;
 
 namespace ClearHl7.Fhir.V230.Segments
@@ -158,7 +158,7 @@ namespace ClearHl7.Fhir.V230.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}",
+                                StringHelper.StringFormatSequence(0, 26, Configuration.FieldSeparator),
                                 Id,
                                 PlacerAppointmentId?.ToDelimitedString(),
                                 FillerAppointmentId?.ToDelimitedString(),
@@ -170,7 +170,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 AppointmentType?.ToDelimitedString(),
                                 AppointmentDuration.HasValue ? AppointmentDuration.Value.ToString(Consts.NumericFormat, culture) : null,
                                 AppointmentDurationUnits?.ToDelimitedString(),
-                                AppointmentTimingQuantity != null ? string.Join("~", AppointmentTimingQuantity.Select(x => x.ToDelimitedString())) : null,
+                                AppointmentTimingQuantity != null ? string.Join(Configuration.FieldRepeatSeparator, AppointmentTimingQuantity.Select(x => x.ToDelimitedString())) : null,
                                 PlacerContactPerson?.ToDelimitedString(),
                                 PlacerContactPhoneNumber?.ToDelimitedString(),
                                 PlacerContactAddress?.ToDelimitedString(),
@@ -180,12 +180,12 @@ namespace ClearHl7.Fhir.V230.Segments
                                 FillerContactAddress?.ToDelimitedString(),
                                 FillerContactLocation?.ToDelimitedString(),
                                 EnteredByPerson?.ToDelimitedString(),
-                                EnteredByPhoneNumber != null ? string.Join("~", EnteredByPhoneNumber.Select(x => x.ToDelimitedString())) : null,
+                                EnteredByPhoneNumber != null ? string.Join(Configuration.FieldRepeatSeparator, EnteredByPhoneNumber.Select(x => x.ToDelimitedString())) : null,
                                 EnteredByLocation?.ToDelimitedString(),
                                 ParentPlacerAppointmentId?.ToDelimitedString(),
                                 ParentFillerAppointmentId?.ToDelimitedString(),
                                 FillerStatusCode?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

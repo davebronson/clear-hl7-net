@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V280.Types;
 
 namespace ClearHl7.Fhir.V280.Segments
@@ -84,19 +84,19 @@ namespace ClearHl7.Fhir.V280.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}",
+                                StringHelper.StringFormatSequence(0, 11, Configuration.FieldSeparator),
                                 Id,
                                 SetIdTq2.HasValue ? SetIdTq2.Value.ToString(culture) : null,
                                 SequenceResultsFlag,
-                                RelatedPlacerNumber != null ? string.Join("~", RelatedPlacerNumber.Select(x => x.ToDelimitedString())) : null,
-                                RelatedFillerNumber != null ? string.Join("~", RelatedFillerNumber.Select(x => x.ToDelimitedString())) : null,
-                                RelatedPlacerGroupNumber != null ? string.Join("~", RelatedPlacerGroupNumber.Select(x => x.ToDelimitedString())) : null,
+                                RelatedPlacerNumber != null ? string.Join(Configuration.FieldRepeatSeparator, RelatedPlacerNumber.Select(x => x.ToDelimitedString())) : null,
+                                RelatedFillerNumber != null ? string.Join(Configuration.FieldRepeatSeparator, RelatedFillerNumber.Select(x => x.ToDelimitedString())) : null,
+                                RelatedPlacerGroupNumber != null ? string.Join(Configuration.FieldRepeatSeparator, RelatedPlacerGroupNumber.Select(x => x.ToDelimitedString())) : null,
                                 SequenceConditionCode,
                                 CyclicEntryExitIndicator,
                                 SequenceConditionTimeInterval?.ToDelimitedString(),
                                 CyclicGroupMaximumNumberOfRepeats.HasValue ? CyclicGroupMaximumNumberOfRepeats.Value.ToString(Consts.NumericFormat, culture) : null,
                                 SpecialServiceRequestRelationship
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

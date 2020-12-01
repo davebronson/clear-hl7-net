@@ -1,7 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Resources;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
@@ -139,7 +139,7 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}",
+                                StringHelper.StringFormatSequence(0, 22, Configuration.FieldSeparator),
                                 Id,
                                 SetIdBpx.HasValue ? SetIdBpx.Value.ToString(culture) : null,
                                 BpDispenseStatus?.ToDelimitedString(),
@@ -152,7 +152,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 CpManufacturer?.ToDelimitedString(),
                                 CpLotNumber?.ToDelimitedString(),
                                 BpBloodGroup?.ToDelimitedString(),
-                                BcSpecialTesting != null ? string.Join("~", BcSpecialTesting.Select(x => x.ToDelimitedString())) : null,
+                                BcSpecialTesting != null ? string.Join(Configuration.FieldRepeatSeparator, BcSpecialTesting.Select(x => x.ToDelimitedString())) : null,
                                 BpExpirationDateTime.HasValue ? BpExpirationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 BpQuantity.HasValue ? BpQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
                                 BpAmount.HasValue ? BpAmount.Value.ToString(Consts.NumericFormat, culture) : null,
@@ -162,7 +162,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 BpActualDispensedToAddress?.ToDelimitedString(),
                                 BpDispensedToReceiver?.ToDelimitedString(),
                                 BpDispensingIndividual?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

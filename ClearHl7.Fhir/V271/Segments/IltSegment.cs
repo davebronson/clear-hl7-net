@@ -1,4 +1,5 @@
-using System;
+﻿using System;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V271.Types;
 
 namespace ClearHl7.Fhir.V271.Segments
@@ -80,7 +81,7 @@ namespace ClearHl7.Fhir.V271.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}",
+                                StringHelper.StringFormatSequence(0, 11, Configuration.FieldSeparator),
                                 Id,
                                 SetIdIlt.HasValue ? SetIdIlt.Value.ToString(culture) : null,
                                 InventoryLotNumber,
@@ -92,7 +93,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 InventoryOnHandDate.HasValue ? InventoryOnHandDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 InventoryOnHandQuantity.HasValue ? InventoryOnHandQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
                                 InventoryOnHandQuantityUnit?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

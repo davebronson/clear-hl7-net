@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V250.Types;
 
 namespace ClearHl7.Fhir.V250.Segments
@@ -53,13 +53,13 @@ namespace ClearHl7.Fhir.V250.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}",
+                                StringHelper.StringFormatSequence(0, 5, Configuration.FieldSeparator),
                                 Id,
                                 SetIdLan.HasValue ? SetIdLan.Value.ToString(culture) : null,
                                 LanguageCode?.ToDelimitedString(),
-                                LanguageAbilityCode != null ? string.Join("~", LanguageAbilityCode.Select(x => x.ToDelimitedString())) : null,
+                                LanguageAbilityCode != null ? string.Join(Configuration.FieldRepeatSeparator, LanguageAbilityCode.Select(x => x.ToDelimitedString())) : null,
                                 LanguageProficiencyCode?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

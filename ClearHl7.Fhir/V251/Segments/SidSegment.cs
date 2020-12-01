@@ -1,4 +1,4 @@
-using System;
+﻿using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V251.Types;
 
 namespace ClearHl7.Fhir.V251.Segments
@@ -49,13 +49,13 @@ namespace ClearHl7.Fhir.V251.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}",
+                                StringHelper.StringFormatSequence(0, 5, Configuration.FieldSeparator),
                                 Id,
                                 ApplicationMethodIdentifier?.ToDelimitedString(),
                                 SubstanceLotNumber,
                                 SubstanceContainerIdentifier,
                                 SubstanceManufacturerIdentifier?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

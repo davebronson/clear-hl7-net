@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
@@ -216,7 +216,7 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}",
+                                StringHelper.StringFormatSequence(0, 34, Configuration.FieldSeparator),
                                 Id,
                                 ItemIdentifier?.ToDelimitedString(),
                                 ItemDescription,
@@ -233,9 +233,9 @@ namespace ClearHl7.Fhir.V282.Segments
                                 TransactionAmountUnit?.ToDelimitedString(),
                                 StockedItemIndicator?.ToDelimitedString(),
                                 SupplyRiskCodes?.ToDelimitedString(),
-                                ApprovingRegulatoryAgency != null ? string.Join("~", ApprovingRegulatoryAgency.Select(x => x.ToDelimitedString())) : null,
+                                ApprovingRegulatoryAgency != null ? string.Join(Configuration.FieldRepeatSeparator, ApprovingRegulatoryAgency.Select(x => x.ToDelimitedString())) : null,
                                 LatexIndicator?.ToDelimitedString(),
-                                RulingAct != null ? string.Join("~", RulingAct.Select(x => x.ToDelimitedString())) : null,
+                                RulingAct != null ? string.Join(Configuration.FieldRepeatSeparator, RulingAct.Select(x => x.ToDelimitedString())) : null,
                                 ItemNaturalAccountCode?.ToDelimitedString(),
                                 ApprovedToBuyQuantity.HasValue ? ApprovedToBuyQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ApprovedToBuyPrice?.ToDelimitedString(),
@@ -245,13 +245,13 @@ namespace ClearHl7.Fhir.V282.Segments
                                 ItemSetIdentifier?.ToDelimitedString(),
                                 TrackDepartmentUsageIndicator?.ToDelimitedString(),
                                 ProcedureCode?.ToDelimitedString(),
-                                ProcedureCodeModifier != null ? string.Join("~", ProcedureCodeModifier.Select(x => x.ToDelimitedString())) : null,
+                                ProcedureCodeModifier != null ? string.Join(Configuration.FieldRepeatSeparator, ProcedureCodeModifier.Select(x => x.ToDelimitedString())) : null,
                                 SpecialHandlingCode?.ToDelimitedString(),
                                 HazardousIndicator?.ToDelimitedString(),
                                 SterileIndicator?.ToDelimitedString(),
                                 MaterialDataSafetySheetNumber?.ToDelimitedString(),
                                 UnitedNationsStandardProductsAndServicesCodeUnspsc?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

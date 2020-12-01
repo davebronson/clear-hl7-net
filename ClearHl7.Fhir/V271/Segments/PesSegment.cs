@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V271.Types;
 
 namespace ClearHl7.Fhir.V271.Segments
@@ -98,22 +99,22 @@ namespace ClearHl7.Fhir.V271.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}",
+                                StringHelper.StringFormatSequence(0, 14, Configuration.FieldSeparator),
                                 Id,
-                                SenderOrganizationName != null ? string.Join("~", SenderOrganizationName.Select(x => x.ToDelimitedString())) : null,
-                                SenderIndividualName != null ? string.Join("~", SenderIndividualName.Select(x => x.ToDelimitedString())) : null,
-                                SenderAddress != null ? string.Join("~", SenderAddress.Select(x => x.ToDelimitedString())) : null,
-                                SenderTelephone != null ? string.Join("~", SenderTelephone.Select(x => x.ToDelimitedString())) : null,
+                                SenderOrganizationName != null ? string.Join(Configuration.FieldRepeatSeparator, SenderOrganizationName.Select(x => x.ToDelimitedString())) : null,
+                                SenderIndividualName != null ? string.Join(Configuration.FieldRepeatSeparator, SenderIndividualName.Select(x => x.ToDelimitedString())) : null,
+                                SenderAddress != null ? string.Join(Configuration.FieldRepeatSeparator, SenderAddress.Select(x => x.ToDelimitedString())) : null,
+                                SenderTelephone != null ? string.Join(Configuration.FieldRepeatSeparator, SenderTelephone.Select(x => x.ToDelimitedString())) : null,
                                 SenderEventIdentifier?.ToDelimitedString(),
                                 SenderSequenceNumber.HasValue ? SenderSequenceNumber.Value.ToString(Consts.NumericFormat, culture) : null,
-                                SenderEventDescription != null ? string.Join("~", SenderEventDescription) : null,
+                                SenderEventDescription != null ? string.Join(Configuration.FieldRepeatSeparator, SenderEventDescription) : null,
                                 SenderComment,
                                 SenderAwareDateTime.HasValue ? SenderAwareDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 EventReportDate.HasValue ? EventReportDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                EventReportTimingType != null ? string.Join("~", EventReportTimingType) : null,
+                                EventReportTimingType != null ? string.Join(Configuration.FieldRepeatSeparator, EventReportTimingType) : null,
                                 EventReportSource,
-                                EventReportedTo != null ? string.Join("~", EventReportedTo) : null
-                                ).TrimEnd('|');
+                                EventReportedTo != null ? string.Join(Configuration.FieldRepeatSeparator, EventReportedTo) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

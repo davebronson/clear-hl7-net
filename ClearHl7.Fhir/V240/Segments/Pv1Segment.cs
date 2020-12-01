@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V240.Types;
 
 namespace ClearHl7.Fhir.V240.Segments
@@ -320,7 +321,7 @@ namespace ClearHl7.Fhir.V240.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}|{39}|{40}|{41}|{42}|{43}|{44}|{45}|{46}|{47}|{48}|{49}|{50}|{51}|{52}",
+                                StringHelper.StringFormatSequence(0, 53, Configuration.FieldSeparator),
                                 Id,
                                 SetIdPv1.HasValue ? SetIdPv1.Value.ToString(culture) : null,
                                 PatientClass,
@@ -328,27 +329,27 @@ namespace ClearHl7.Fhir.V240.Segments
                                 AdmissionType,
                                 PreadmitNumber?.ToDelimitedString(),
                                 PriorPatientLocation?.ToDelimitedString(),
-                                AttendingDoctor != null ? string.Join("~", AttendingDoctor.Select(x => x.ToDelimitedString())) : null,
-                                ReferringDoctor != null ? string.Join("~", ReferringDoctor.Select(x => x.ToDelimitedString())) : null,
-                                ConsultingDoctor != null ? string.Join("~", ConsultingDoctor.Select(x => x.ToDelimitedString())) : null,
+                                AttendingDoctor != null ? string.Join(Configuration.FieldRepeatSeparator, AttendingDoctor.Select(x => x.ToDelimitedString())) : null,
+                                ReferringDoctor != null ? string.Join(Configuration.FieldRepeatSeparator, ReferringDoctor.Select(x => x.ToDelimitedString())) : null,
+                                ConsultingDoctor != null ? string.Join(Configuration.FieldRepeatSeparator, ConsultingDoctor.Select(x => x.ToDelimitedString())) : null,
                                 HospitalService,
                                 TemporaryLocation?.ToDelimitedString(),
                                 PreadmitTestIndicator,
                                 ReAdmissionIndicator,
                                 AdmitSource,
-                                AmbulatoryStatus != null ? string.Join("~", AmbulatoryStatus) : null,
+                                AmbulatoryStatus != null ? string.Join(Configuration.FieldRepeatSeparator, AmbulatoryStatus) : null,
                                 VipIndicator,
-                                AdmittingDoctor != null ? string.Join("~", AdmittingDoctor.Select(x => x.ToDelimitedString())) : null,
+                                AdmittingDoctor != null ? string.Join(Configuration.FieldRepeatSeparator, AdmittingDoctor.Select(x => x.ToDelimitedString())) : null,
                                 PatientType,
                                 VisitNumber?.ToDelimitedString(),
-                                FinancialClass != null ? string.Join("~", FinancialClass.Select(x => x.ToDelimitedString())) : null,
+                                FinancialClass != null ? string.Join(Configuration.FieldRepeatSeparator, FinancialClass.Select(x => x.ToDelimitedString())) : null,
                                 ChargePriceIndicator,
                                 CourtesyCode,
                                 CreditRating,
-                                ContractCode != null ? string.Join("~", ContractCode) : null,
-                                ContractEffectiveDate != null ? string.Join("~", ContractEffectiveDate.Select(x => x.ToString(Consts.DateFormatPrecisionDay, culture))) : null,
-                                ContractAmount != null ? string.Join("~", ContractAmount.Select(x => x.ToString(Consts.NumericFormat, culture))) : null,
-                                ContractPeriod != null ? string.Join("~", ContractPeriod.Select(x => x.ToString(Consts.NumericFormat, culture))) : null,
+                                ContractCode != null ? string.Join(Configuration.FieldRepeatSeparator, ContractCode) : null,
+                                ContractEffectiveDate != null ? string.Join(Configuration.FieldRepeatSeparator, ContractEffectiveDate.Select(x => x.ToString(Consts.DateFormatPrecisionDay, culture))) : null,
+                                ContractAmount != null ? string.Join(Configuration.FieldRepeatSeparator, ContractAmount.Select(x => x.ToString(Consts.NumericFormat, culture))) : null,
+                                ContractPeriod != null ? string.Join(Configuration.FieldRepeatSeparator, ContractPeriod.Select(x => x.ToString(Consts.NumericFormat, culture))) : null,
                                 InterestCode,
                                 TransferToBadDebtCode,
                                 TransferToBadDebtDate.HasValue ? TransferToBadDebtDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
@@ -366,15 +367,15 @@ namespace ClearHl7.Fhir.V240.Segments
                                 PendingLocation?.ToDelimitedString(),
                                 PriorTemporaryLocation?.ToDelimitedString(),
                                 AdmitDateTime.HasValue ? AdmitDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                DischargeDateTime != null ? string.Join("~", DischargeDateTime.Select(x => x.ToString(Consts.DateTimeFormatPrecisionSecond, culture))) : null,
+                                DischargeDateTime != null ? string.Join(Configuration.FieldRepeatSeparator, DischargeDateTime.Select(x => x.ToString(Consts.DateTimeFormatPrecisionSecond, culture))) : null,
                                 CurrentPatientBalance.HasValue ? CurrentPatientBalance.Value.ToString(Consts.NumericFormat, culture) : null,
                                 TotalCharges.HasValue ? TotalCharges.Value.ToString(Consts.NumericFormat, culture) : null,
                                 TotalAdjustments.HasValue ? TotalAdjustments.Value.ToString(Consts.NumericFormat, culture) : null,
                                 TotalPayments.HasValue ? TotalPayments.Value.ToString(Consts.NumericFormat, culture) : null,
                                 AlternateVisitId?.ToDelimitedString(),
                                 VisitIndicator,
-                                OtherHealthcareProvider != null ? string.Join("~", OtherHealthcareProvider.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                OtherHealthcareProvider != null ? string.Join(Configuration.FieldRepeatSeparator, OtherHealthcareProvider.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

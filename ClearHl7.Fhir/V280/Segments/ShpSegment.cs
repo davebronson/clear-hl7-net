@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V280.Types;
 
 namespace ClearHl7.Fhir.V280.Segments
@@ -91,20 +92,20 @@ namespace ClearHl7.Fhir.V280.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}",
+                                StringHelper.StringFormatSequence(0, 12, Configuration.FieldSeparator),
                                 Id,
                                 ShipmentId?.ToDelimitedString(),
-                                InternalShipmentId != null ? string.Join("~", InternalShipmentId.Select(x => x.ToDelimitedString())) : null,
+                                InternalShipmentId != null ? string.Join(Configuration.FieldRepeatSeparator, InternalShipmentId.Select(x => x.ToDelimitedString())) : null,
                                 ShipmentStatus?.ToDelimitedString(),
                                 ShipmentStatusDateTime.HasValue ? ShipmentStatusDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ShipmentStatusReason?.ToDelimitedString(),
                                 ShipmentPriority?.ToDelimitedString(),
-                                ShipmentConfidentiality != null ? string.Join("~", ShipmentConfidentiality.Select(x => x.ToDelimitedString())) : null,
+                                ShipmentConfidentiality != null ? string.Join(Configuration.FieldRepeatSeparator, ShipmentConfidentiality.Select(x => x.ToDelimitedString())) : null,
                                 NumberOfPackagesInShipment.HasValue ? NumberOfPackagesInShipment.Value.ToString(Consts.NumericFormat, culture) : null,
-                                ShipmentCondition != null ? string.Join("~", ShipmentCondition.Select(x => x.ToDelimitedString())) : null,
-                                ShipmentHandlingCode != null ? string.Join("~", ShipmentHandlingCode.Select(x => x.ToDelimitedString())) : null,
-                                ShipmentRiskCode != null ? string.Join("~", ShipmentRiskCode.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                ShipmentCondition != null ? string.Join(Configuration.FieldRepeatSeparator, ShipmentCondition.Select(x => x.ToDelimitedString())) : null,
+                                ShipmentHandlingCode != null ? string.Join(Configuration.FieldRepeatSeparator, ShipmentHandlingCode.Select(x => x.ToDelimitedString())) : null,
+                                ShipmentRiskCode != null ? string.Join(Configuration.FieldRepeatSeparator, ShipmentRiskCode.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

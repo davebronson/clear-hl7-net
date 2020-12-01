@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V231.Types;
 
 namespace ClearHl7.Fhir.V231.Segments
@@ -71,17 +72,17 @@ namespace ClearHl7.Fhir.V231.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}",
+                                StringHelper.StringFormatSequence(0, 9, Configuration.FieldSeparator),
                                 Id,
                                 RoleInstanceId?.ToDelimitedString(),
                                 ActionCode,
                                 RoleRol?.ToDelimitedString(),
-                                RolePerson != null ? string.Join("~", RolePerson.Select(x => x.ToDelimitedString())) : null,
+                                RolePerson != null ? string.Join(Configuration.FieldRepeatSeparator, RolePerson.Select(x => x.ToDelimitedString())) : null,
                                 RoleBeginDateTime.HasValue ? RoleBeginDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 RoleEndDateTime.HasValue ? RoleEndDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 RoleDuration?.ToDelimitedString(),
                                 RoleActionReason?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

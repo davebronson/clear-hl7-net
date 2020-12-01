@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V251.Types;
 
 namespace ClearHl7.Fhir.V251.Segments
@@ -85,20 +86,20 @@ namespace ClearHl7.Fhir.V251.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}",
+                                StringHelper.StringFormatSequence(0, 12, Configuration.FieldSeparator),
                                 Id,
                                 SetIdCm0.HasValue ? SetIdCm0.Value.ToString(culture) : null,
                                 SponsorStudyId?.ToDelimitedString(),
-                                AlternateStudyId != null ? string.Join("~", AlternateStudyId.Select(x => x.ToDelimitedString())) : null,
+                                AlternateStudyId != null ? string.Join(Configuration.FieldRepeatSeparator, AlternateStudyId.Select(x => x.ToDelimitedString())) : null,
                                 TitleOfStudy,
-                                ChairmanOfStudy != null ? string.Join("~", ChairmanOfStudy.Select(x => x.ToDelimitedString())) : null,
+                                ChairmanOfStudy != null ? string.Join(Configuration.FieldRepeatSeparator, ChairmanOfStudy.Select(x => x.ToDelimitedString())) : null,
                                 LastIrbApprovalDate.HasValue ? LastIrbApprovalDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 TotalAccrualToDate.HasValue ? TotalAccrualToDate.Value.ToString(Consts.NumericFormat, culture) : null,
                                 LastAccrualDate.HasValue ? LastAccrualDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
-                                ContactForStudy != null ? string.Join("~", ContactForStudy.Select(x => x.ToDelimitedString())) : null,
+                                ContactForStudy != null ? string.Join(Configuration.FieldRepeatSeparator, ContactForStudy.Select(x => x.ToDelimitedString())) : null,
                                 ContactsTelephoneNumber?.ToDelimitedString(),
-                                ContactsAddress != null ? string.Join("~", ContactsAddress.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                ContactsAddress != null ? string.Join(Configuration.FieldRepeatSeparator, ContactsAddress.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

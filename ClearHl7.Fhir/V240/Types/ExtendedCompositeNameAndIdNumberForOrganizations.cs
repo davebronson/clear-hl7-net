@@ -1,4 +1,4 @@
-﻿using System;
+﻿using ClearHl7.Fhir.Helpers;
 
 namespace ClearHl7.Fhir.V240.Types
 {
@@ -69,10 +69,11 @@ namespace ClearHl7.Fhir.V240.Types
         public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            char separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
 
             return string.Format(
                                 culture,
-                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}&{8}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}",
+                                StringHelper.StringFormatSequence(0, 9, separator),
                                 OrganizationName,
                                 OrganizationNameTypeCode,
                                 IdNumber.HasValue ? IdNumber.Value.ToString(Consts.NumericFormat, culture) : null,
@@ -82,7 +83,7 @@ namespace ClearHl7.Fhir.V240.Types
                                 IdentifierTypeCode,
                                 AssigningFacility?.ToDelimitedString(),
                                 NameRepresentationCode
-                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+                                ).TrimEnd(separator);
         }
     }
 }

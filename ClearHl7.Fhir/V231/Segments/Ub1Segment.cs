@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V231.Types;
 
 namespace ClearHl7.Fhir.V231.Segments
@@ -149,7 +150,7 @@ namespace ClearHl7.Fhir.V231.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}",
+                                StringHelper.StringFormatSequence(0, 24, Configuration.FieldSeparator),
                                 Id,
                                 SetIdUb1.HasValue ? SetIdUb1.Value.ToString(culture) : null,
                                 BloodDeductible.HasValue ? BloodDeductible.Value.ToString(Consts.NumericFormat, culture) : null,
@@ -157,16 +158,16 @@ namespace ClearHl7.Fhir.V231.Segments
                                 BloodReplacedPints.HasValue ? BloodReplacedPints.Value.ToString(Consts.NumericFormat, culture) : null,
                                 BloodNotReplacedPints.HasValue ? BloodNotReplacedPints.Value.ToString(Consts.NumericFormat, culture) : null,
                                 CoInsuranceDays.HasValue ? CoInsuranceDays.Value.ToString(Consts.NumericFormat, culture) : null,
-                                ConditionCode != null ? string.Join("~", ConditionCode) : null,
+                                ConditionCode != null ? string.Join(Configuration.FieldRepeatSeparator, ConditionCode) : null,
                                 CoveredDays.HasValue ? CoveredDays.Value.ToString(Consts.NumericFormat, culture) : null,
                                 NonCoveredDays.HasValue ? NonCoveredDays.Value.ToString(Consts.NumericFormat, culture) : null,
-                                ValueAmountCode != null ? string.Join("~", ValueAmountCode.Select(x => x.ToDelimitedString())) : null,
+                                ValueAmountCode != null ? string.Join(Configuration.FieldRepeatSeparator, ValueAmountCode.Select(x => x.ToDelimitedString())) : null,
                                 NumberOfGraceDays.HasValue ? NumberOfGraceDays.Value.ToString(Consts.NumericFormat, culture) : null,
                                 SpecialProgramIndicator?.ToDelimitedString(),
                                 PsroUrApprovalIndicator?.ToDelimitedString(),
                                 PsroUrApprovedStayFm.HasValue ? PsroUrApprovedStayFm.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 PsroUrApprovedStayTo.HasValue ? PsroUrApprovedStayTo.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
-                                Occurrence != null ? string.Join("~", Occurrence.Select(x => x.ToDelimitedString())) : null,
+                                Occurrence != null ? string.Join(Configuration.FieldRepeatSeparator, Occurrence.Select(x => x.ToDelimitedString())) : null,
                                 OccurrenceSpan?.ToDelimitedString(),
                                 OccurSpanStartDate.HasValue ? OccurSpanStartDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 OccurSpanEndDate.HasValue ? OccurSpanEndDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
@@ -174,7 +175,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 Ub82Locator9,
                                 Ub82Locator27,
                                 Ub82Locator45
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

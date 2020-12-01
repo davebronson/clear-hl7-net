@@ -1,4 +1,4 @@
-using System;
+﻿using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V260.Types;
 
 namespace ClearHl7.Fhir.V260.Segments
@@ -74,7 +74,7 @@ namespace ClearHl7.Fhir.V260.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}",
+                                StringHelper.StringFormatSequence(0, 10, Configuration.FieldSeparator),
                                 Id,
                                 ApplicationChangeType,
                                 CurrentCpu,
@@ -85,7 +85,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 NewFileserver,
                                 NewApplication?.ToDelimitedString(),
                                 NewFacility?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

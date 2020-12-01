@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
@@ -143,23 +144,23 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}",
+                                StringHelper.StringFormatSequence(0, 23, Configuration.FieldSeparator),
                                 Id,
                                 ParticipationInstanceId?.ToDelimitedString(),
                                 ActionCode,
                                 ActionReason?.ToDelimitedString(),
                                 Participation?.ToDelimitedString(),
-                                ParticipationPerson != null ? string.Join("~", ParticipationPerson.Select(x => x.ToDelimitedString())) : null,
+                                ParticipationPerson != null ? string.Join(Configuration.FieldRepeatSeparator, ParticipationPerson.Select(x => x.ToDelimitedString())) : null,
                                 ParticipationPersonProviderType?.ToDelimitedString(),
                                 ParticipantOrganizationUnitType?.ToDelimitedString(),
-                                ParticipationOrganization != null ? string.Join("~", ParticipationOrganization.Select(x => x.ToDelimitedString())) : null,
-                                ParticipantLocation != null ? string.Join("~", ParticipantLocation.Select(x => x.ToDelimitedString())) : null,
-                                ParticipationDevice != null ? string.Join("~", ParticipationDevice.Select(x => x.ToDelimitedString())) : null,
+                                ParticipationOrganization != null ? string.Join(Configuration.FieldRepeatSeparator, ParticipationOrganization.Select(x => x.ToDelimitedString())) : null,
+                                ParticipantLocation != null ? string.Join(Configuration.FieldRepeatSeparator, ParticipantLocation.Select(x => x.ToDelimitedString())) : null,
+                                ParticipationDevice != null ? string.Join(Configuration.FieldRepeatSeparator, ParticipationDevice.Select(x => x.ToDelimitedString())) : null,
                                 ParticipationBeginDateTimeArrivalTime.HasValue ? ParticipationBeginDateTimeArrivalTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ParticipationEndDateTimeDepartureTime.HasValue ? ParticipationEndDateTimeDepartureTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ParticipationQualitativeDuration?.ToDelimitedString(),
-                                ParticipationAddress != null ? string.Join("~", ParticipationAddress.Select(x => x.ToDelimitedString())) : null,
-                                ParticipantTelecommunicationAddress != null ? string.Join("~", ParticipantTelecommunicationAddress.Select(x => x.ToDelimitedString())) : null,
+                                ParticipationAddress != null ? string.Join(Configuration.FieldRepeatSeparator, ParticipationAddress.Select(x => x.ToDelimitedString())) : null,
+                                ParticipantTelecommunicationAddress != null ? string.Join(Configuration.FieldRepeatSeparator, ParticipantTelecommunicationAddress.Select(x => x.ToDelimitedString())) : null,
                                 ParticipantDeviceIdentifier?.ToDelimitedString(),
                                 ParticipantDeviceManufactureDate.HasValue ? ParticipantDeviceManufactureDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ParticipantDeviceExpiryDate.HasValue ? ParticipantDeviceExpiryDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
@@ -167,7 +168,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 ParticipantDeviceSerialNumber,
                                 ParticipantDeviceDonationIdentification?.ToDelimitedString(),
                                 ParticipationDeviceType?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

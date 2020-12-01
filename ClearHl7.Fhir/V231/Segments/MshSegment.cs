@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V231.Types;
 
 namespace ClearHl7.Fhir.V231.Segments
@@ -23,24 +23,12 @@ namespace ClearHl7.Fhir.V231.Segments
         /// <summary>
         /// MSH.1 - Field Separator.  This property is read-only.
         /// </summary>
-        public char FieldSeparator
-        {
-            get
-            {
-                return Configuration.FieldSeparator;
-            }
-        }
+        public char FieldSeparator => Configuration.FieldSeparator;
 
         /// <summary>
         /// MSH.2 - Encoding Characters.  This property is read-only.
         /// </summary>
-        public string EncodingCharacters 
-        {
-            get
-            {
-                return $"{ Configuration.ComponentSeparator }{ Configuration.FieldRepeatSeparator }{ Configuration.EscapeCharacter }{ Configuration.SubcomponentSeparator }";
-            }
-        }
+        public string EncodingCharacters => $"{ Configuration.ComponentSeparator }{ Configuration.FieldRepeatSeparator }{ Configuration.EscapeCharacter }{ Configuration.SubcomponentSeparator }";
 
         /// <summary>
         /// MSH.3 - Sending Application.
@@ -151,7 +139,7 @@ namespace ClearHl7.Fhir.V231.Segments
 
             return string.Format(
                                 culture,
-                                "{0}{1}{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}",
+                                $"{{0}}{{1}}{ StringHelper.StringFormatSequence(2, 19, Configuration.FieldSeparator) }",
                                 Id,
                                 FieldSeparator,
                                 EncodingCharacters,
@@ -170,10 +158,10 @@ namespace ClearHl7.Fhir.V231.Segments
                                 AcceptAcknowledgmentType,
                                 ApplicationAcknowledgmentType,
                                 CountryCode,
-                                CharacterSet != null ? string.Join("~", CharacterSet) : null,
+                                CharacterSet != null ? string.Join(Configuration.FieldRepeatSeparator, CharacterSet) : null,
                                 PrincipalLanguageOfMessage?.ToDelimitedString(),
                                 AlternateCharacterSetHandlingScheme
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

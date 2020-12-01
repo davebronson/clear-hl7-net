@@ -1,4 +1,4 @@
-﻿using System;
+﻿using ClearHl7.Fhir.Helpers;
 
 namespace ClearHl7.Fhir.V282.Types
 {
@@ -18,7 +18,7 @@ namespace ClearHl7.Fhir.V282.Types
         public decimal? DelayDays { get; set; }
 
         /// <summary>
-        /// DDI.22 - Monetary Amount.
+        /// DDI.2 - Monetary Amount.
         /// </summary>
         public Money MonetaryAmount { get; set; }
 
@@ -34,14 +34,15 @@ namespace ClearHl7.Fhir.V282.Types
         public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            char separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
 
             return string.Format(
                                 culture,
-                                IsSubcomponent ? "{0}&{1}&{2}" : "{0}^{1}^{2}",
+                                StringHelper.StringFormatSequence(0, 3, separator),
                                 DelayDays.HasValue ? DelayDays.Value.ToString(Consts.NumericFormat, culture) : null,
                                 MonetaryAmount?.ToDelimitedString(),
                                 NumberOfDays.HasValue ? NumberOfDays.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+                                ).TrimEnd(separator);
         }
     }
 }

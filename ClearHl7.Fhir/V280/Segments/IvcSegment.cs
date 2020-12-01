@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V280.Types;
 
 namespace ClearHl7.Fhir.V280.Segments
@@ -187,7 +188,7 @@ namespace ClearHl7.Fhir.V280.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}",
+                                StringHelper.StringFormatSequence(0, 31, Configuration.FieldSeparator),
                                 Id,
                                 ProviderInvoiceNumber?.ToDelimitedString(),
                                 PayerInvoiceNumber?.ToDelimitedString(),
@@ -212,14 +213,14 @@ namespace ClearHl7.Fhir.V280.Segments
                                 InvoicePrepaidAmount?.ToDelimitedString(),
                                 TotalInvoiceAmountWithoutPrepaidAmount?.ToDelimitedString(),
                                 TotalAmountOfVat?.ToDelimitedString(),
-                                VatRatesApplied != null ? string.Join("~", VatRatesApplied.Select(x => x.ToString(Consts.NumericFormat, culture))) : null,
+                                VatRatesApplied != null ? string.Join(Configuration.FieldRepeatSeparator, VatRatesApplied.Select(x => x.ToString(Consts.NumericFormat, culture))) : null,
                                 BenefitGroup?.ToDelimitedString(),
                                 ProviderTaxId,
                                 PayerTaxId,
                                 ProviderTaxStatus?.ToDelimitedString(),
                                 PayerTaxStatus?.ToDelimitedString(),
                                 SalesTaxId
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V270.Types;
 
 namespace ClearHl7.Fhir.V270.Segments
@@ -129,14 +130,14 @@ namespace ClearHl7.Fhir.V270.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}",
+                                StringHelper.StringFormatSequence(0, 19, Configuration.FieldSeparator),
                                 Id,
                                 PrimaryKeyValuePrc?.ToDelimitedString(),
-                                FacilityIdPrc != null ? string.Join("~", FacilityIdPrc.Select(x => x.ToDelimitedString())) : null,
-                                Department != null ? string.Join("~", Department.Select(x => x.ToDelimitedString())) : null,
-                                ValidPatientClasses != null ? string.Join("~", ValidPatientClasses.Select(x => x.ToDelimitedString())) : null,
-                                Price != null ? string.Join("~", Price.Select(x => x.ToDelimitedString())) : null,
-                                Formula != null ? string.Join("~", Formula) : null,
+                                FacilityIdPrc != null ? string.Join(Configuration.FieldRepeatSeparator, FacilityIdPrc.Select(x => x.ToDelimitedString())) : null,
+                                Department != null ? string.Join(Configuration.FieldRepeatSeparator, Department.Select(x => x.ToDelimitedString())) : null,
+                                ValidPatientClasses != null ? string.Join(Configuration.FieldRepeatSeparator, ValidPatientClasses.Select(x => x.ToDelimitedString())) : null,
+                                Price != null ? string.Join(Configuration.FieldRepeatSeparator, Price.Select(x => x.ToDelimitedString())) : null,
+                                Formula != null ? string.Join(Configuration.FieldRepeatSeparator, Formula) : null,
                                 MinimumQuantity.HasValue ? MinimumQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
                                 MaximumQuantity.HasValue ? MaximumQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
                                 MinimumPrice?.ToDelimitedString(),
@@ -144,12 +145,12 @@ namespace ClearHl7.Fhir.V270.Segments
                                 EffectiveStartDate.HasValue ? EffectiveStartDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 EffectiveEndDate.HasValue ? EffectiveEndDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 PriceOverrideFlag?.ToDelimitedString(),
-                                BillingCategory != null ? string.Join("~", BillingCategory.Select(x => x.ToDelimitedString())) : null,
+                                BillingCategory != null ? string.Join(Configuration.FieldRepeatSeparator, BillingCategory.Select(x => x.ToDelimitedString())) : null,
                                 ChargeableFlag,
                                 ActiveInactiveFlag,
                                 Cost?.ToDelimitedString(),
                                 ChargeOnIndicator?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

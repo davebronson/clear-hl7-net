@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V281.Types;
 
 namespace ClearHl7.Fhir.V281.Segments
@@ -313,7 +314,7 @@ namespace ClearHl7.Fhir.V281.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}|{39}|{40}|{41}|{42}|{43}|{44}|{45}|{46}|{47}|{48}|{49}|{50}|{51}|{52}|{53}|{54}",
+                                StringHelper.StringFormatSequence(0, 55, Configuration.FieldSeparator),
                                 Id,
                                 SetIdObr.HasValue ? SetIdObr.Value.ToString(culture) : null,
                                 PlacerOrderNumber?.ToDelimitedString(),
@@ -324,14 +325,14 @@ namespace ClearHl7.Fhir.V281.Segments
                                 ObservationDateTime.HasValue ? ObservationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ObservationEndDateTime.HasValue ? ObservationEndDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 CollectionVolume?.ToDelimitedString(),
-                                CollectorIdentifier != null ? string.Join("~", CollectorIdentifier.Select(x => x.ToDelimitedString())) : null,
+                                CollectorIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, CollectorIdentifier.Select(x => x.ToDelimitedString())) : null,
                                 SpecimenActionCode,
                                 DangerCode?.ToDelimitedString(),
-                                RelevantClinicalInformation != null ? string.Join("~", RelevantClinicalInformation.Select(x => x.ToDelimitedString())) : null,
+                                RelevantClinicalInformation != null ? string.Join(Configuration.FieldRepeatSeparator, RelevantClinicalInformation.Select(x => x.ToDelimitedString())) : null,
                                 SpecimenReceivedDateTime.HasValue ? SpecimenReceivedDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 SpecimenSource,
-                                OrderingProvider != null ? string.Join("~", OrderingProvider.Select(x => x.ToDelimitedString())) : null,
-                                OrderCallbackPhoneNumber != null ? string.Join("~", OrderCallbackPhoneNumber.Select(x => x.ToDelimitedString())) : null,
+                                OrderingProvider != null ? string.Join(Configuration.FieldRepeatSeparator, OrderingProvider.Select(x => x.ToDelimitedString())) : null,
+                                OrderCallbackPhoneNumber != null ? string.Join(Configuration.FieldRepeatSeparator, OrderCallbackPhoneNumber.Select(x => x.ToDelimitedString())) : null,
                                 PlacerField1,
                                 PlacerField2,
                                 FillerField1,
@@ -341,35 +342,35 @@ namespace ClearHl7.Fhir.V281.Segments
                                 DiagnosticServSectId,
                                 ResultStatus,
                                 ParentResult?.ToDelimitedString(),
-                                QuantityTiming != null ? string.Join("~", QuantityTiming) : null,
-                                ResultCopiesTo != null ? string.Join("~", ResultCopiesTo.Select(x => x.ToDelimitedString())) : null,
+                                QuantityTiming != null ? string.Join(Configuration.FieldRepeatSeparator, QuantityTiming) : null,
+                                ResultCopiesTo != null ? string.Join(Configuration.FieldRepeatSeparator, ResultCopiesTo.Select(x => x.ToDelimitedString())) : null,
                                 ParentResultsObservationIdentifier?.ToDelimitedString(),
                                 TransportationMode,
-                                ReasonForStudy != null ? string.Join("~", ReasonForStudy.Select(x => x.ToDelimitedString())) : null,
+                                ReasonForStudy != null ? string.Join(Configuration.FieldRepeatSeparator, ReasonForStudy.Select(x => x.ToDelimitedString())) : null,
                                 PrincipalResultInterpreter?.ToDelimitedString(),
-                                AssistantResultInterpreter != null ? string.Join("~", AssistantResultInterpreter.Select(x => x.ToDelimitedString())) : null,
-                                Technician != null ? string.Join("~", Technician.Select(x => x.ToDelimitedString())) : null,
-                                Transcriptionist != null ? string.Join("~", Transcriptionist.Select(x => x.ToDelimitedString())) : null,
+                                AssistantResultInterpreter != null ? string.Join(Configuration.FieldRepeatSeparator, AssistantResultInterpreter.Select(x => x.ToDelimitedString())) : null,
+                                Technician != null ? string.Join(Configuration.FieldRepeatSeparator, Technician.Select(x => x.ToDelimitedString())) : null,
+                                Transcriptionist != null ? string.Join(Configuration.FieldRepeatSeparator, Transcriptionist.Select(x => x.ToDelimitedString())) : null,
                                 ScheduledDateTime.HasValue ? ScheduledDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 NumberOfSampleContainers.HasValue ? NumberOfSampleContainers.Value.ToString(Consts.NumericFormat, culture) : null,
-                                TransportLogisticsOfCollectedSample != null ? string.Join("~", TransportLogisticsOfCollectedSample.Select(x => x.ToDelimitedString())) : null,
-                                CollectorsComment != null ? string.Join("~", CollectorsComment.Select(x => x.ToDelimitedString())) : null,
+                                TransportLogisticsOfCollectedSample != null ? string.Join(Configuration.FieldRepeatSeparator, TransportLogisticsOfCollectedSample.Select(x => x.ToDelimitedString())) : null,
+                                CollectorsComment != null ? string.Join(Configuration.FieldRepeatSeparator, CollectorsComment.Select(x => x.ToDelimitedString())) : null,
                                 TransportArrangementResponsibility,
                                 TransportArranged,
                                 EscortRequired,
-                                PlannedPatientTransportComment != null ? string.Join("~", PlannedPatientTransportComment.Select(x => x.ToDelimitedString())) : null,
+                                PlannedPatientTransportComment != null ? string.Join(Configuration.FieldRepeatSeparator, PlannedPatientTransportComment.Select(x => x.ToDelimitedString())) : null,
                                 ProcedureCode?.ToDelimitedString(),
-                                ProcedureCodeModifier != null ? string.Join("~", ProcedureCodeModifier.Select(x => x.ToDelimitedString())) : null,
-                                PlacerSupplementalServiceInformation != null ? string.Join("~", PlacerSupplementalServiceInformation.Select(x => x.ToDelimitedString())) : null,
-                                FillerSupplementalServiceInformation != null ? string.Join("~", FillerSupplementalServiceInformation.Select(x => x.ToDelimitedString())) : null,
+                                ProcedureCodeModifier != null ? string.Join(Configuration.FieldRepeatSeparator, ProcedureCodeModifier.Select(x => x.ToDelimitedString())) : null,
+                                PlacerSupplementalServiceInformation != null ? string.Join(Configuration.FieldRepeatSeparator, PlacerSupplementalServiceInformation.Select(x => x.ToDelimitedString())) : null,
+                                FillerSupplementalServiceInformation != null ? string.Join(Configuration.FieldRepeatSeparator, FillerSupplementalServiceInformation.Select(x => x.ToDelimitedString())) : null,
                                 MedicallyNecessaryDuplicateProcedureReason?.ToDelimitedString(),
                                 ResultHandling?.ToDelimitedString(),
                                 ParentUniversalServiceIdentifier?.ToDelimitedString(),
                                 ObservationGroupId?.ToDelimitedString(),
                                 ParentObservationGroupId?.ToDelimitedString(),
-                                AlternatePlacerOrderNumber != null ? string.Join("~", AlternatePlacerOrderNumber.Select(x => x.ToDelimitedString())) : null,
+                                AlternatePlacerOrderNumber != null ? string.Join(Configuration.FieldRepeatSeparator, AlternatePlacerOrderNumber.Select(x => x.ToDelimitedString())) : null,
                                 ParentOrder?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

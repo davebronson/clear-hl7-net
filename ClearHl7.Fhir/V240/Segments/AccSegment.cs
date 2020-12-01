@@ -1,4 +1,5 @@
 ﻿using System;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V240.Types;
 
 namespace ClearHl7.Fhir.V240.Segments
@@ -83,7 +84,7 @@ namespace ClearHl7.Fhir.V240.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}",
+                                StringHelper.StringFormatSequence(0, 11, Configuration.FieldSeparator),
                                 Id,
                                 AccidentDateTime.HasValue ? AccidentDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 AccidentCode?.ToDelimitedString(),
@@ -95,7 +96,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 AccidentDescription,
                                 BroughtInBy,
                                 PoliceNotifiedIndicator
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

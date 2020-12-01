@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V240.Types;
 
 namespace ClearHl7.Fhir.V240.Segments
@@ -58,14 +58,14 @@ namespace ClearHl7.Fhir.V240.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}",
+                                StringHelper.StringFormatSequence(0, 6, Configuration.FieldSeparator),
                                 Id,
-                                TimeSelectionCriteria != null ? string.Join("~", TimeSelectionCriteria.Select(x => x.ToDelimitedString())) : null,
-                                ResourceSelectionCriteria != null ? string.Join("~", ResourceSelectionCriteria.Select(x => x.ToDelimitedString())) : null,
-                                LocationSelectionCriteria != null ? string.Join("~", LocationSelectionCriteria.Select(x => x.ToDelimitedString())) : null,
+                                TimeSelectionCriteria != null ? string.Join(Configuration.FieldRepeatSeparator, TimeSelectionCriteria.Select(x => x.ToDelimitedString())) : null,
+                                ResourceSelectionCriteria != null ? string.Join(Configuration.FieldRepeatSeparator, ResourceSelectionCriteria.Select(x => x.ToDelimitedString())) : null,
+                                LocationSelectionCriteria != null ? string.Join(Configuration.FieldRepeatSeparator, LocationSelectionCriteria.Select(x => x.ToDelimitedString())) : null,
                                 SlotSpacingCriteria.HasValue ? SlotSpacingCriteria.Value.ToString(Consts.NumericFormat, culture) : null,
-                                FillerOverrideCriteria != null ? string.Join("~", FillerOverrideCriteria.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                FillerOverrideCriteria != null ? string.Join(Configuration.FieldRepeatSeparator, FillerOverrideCriteria.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

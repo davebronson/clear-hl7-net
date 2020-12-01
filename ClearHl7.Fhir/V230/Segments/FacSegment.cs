@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V230.Types;
 
 namespace ClearHl7.Fhir.V230.Segments
@@ -91,21 +91,21 @@ namespace ClearHl7.Fhir.V230.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}",
+                                StringHelper.StringFormatSequence(0, 13, Configuration.FieldSeparator),
                                 Id,
                                 FacilityIdFac?.ToDelimitedString(),
                                 FacilityType,
                                 FacilityAddress?.ToDelimitedString(),
                                 FacilityTelecommunication?.ToDelimitedString(),
-                                ContactPerson != null ? string.Join("~", ContactPerson.Select(x => x.ToDelimitedString())) : null,
-                                ContactTitle != null ? string.Join("~", ContactTitle) : null,
-                                ContactAddress != null ? string.Join("~", ContactAddress.Select(x => x.ToDelimitedString())) : null,
-                                ContactTelecommunication != null ? string.Join("~", ContactTelecommunication.Select(x => x.ToDelimitedString())) : null,
+                                ContactPerson != null ? string.Join(Configuration.FieldRepeatSeparator, ContactPerson.Select(x => x.ToDelimitedString())) : null,
+                                ContactTitle != null ? string.Join(Configuration.FieldRepeatSeparator, ContactTitle) : null,
+                                ContactAddress != null ? string.Join(Configuration.FieldRepeatSeparator, ContactAddress.Select(x => x.ToDelimitedString())) : null,
+                                ContactTelecommunication != null ? string.Join(Configuration.FieldRepeatSeparator, ContactTelecommunication.Select(x => x.ToDelimitedString())) : null,
                                 SignatureAuthority?.ToDelimitedString(),
                                 SignatureAuthorityTitle,
                                 SignatureAuthorityAddress?.ToDelimitedString(),
                                 SignatureAuthorityTelecommunication?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

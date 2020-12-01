@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V271.Types;
 
 namespace ClearHl7.Fhir.V271.Segments
@@ -103,11 +104,11 @@ namespace ClearHl7.Fhir.V271.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}",
+                                StringHelper.StringFormatSequence(0, 15, Configuration.FieldSeparator),
                                 Id,
                                 SetIdBpo.HasValue ? SetIdBpo.Value.ToString(culture) : null,
                                 BpUniversalServiceIdentifier?.ToDelimitedString(),
-                                BpProcessingRequirements != null ? string.Join("~", BpProcessingRequirements.Select(x => x.ToDelimitedString())) : null,
+                                BpProcessingRequirements != null ? string.Join(Configuration.FieldRepeatSeparator, BpProcessingRequirements.Select(x => x.ToDelimitedString())) : null,
                                 BpQuantity.HasValue ? BpQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
                                 BpAmount.HasValue ? BpAmount.Value.ToString(Consts.NumericFormat, culture) : null,
                                 BpUnits?.ToDelimitedString(),
@@ -117,9 +118,9 @@ namespace ClearHl7.Fhir.V271.Segments
                                 BpRequestedDispenseDateTime.HasValue ? BpRequestedDispenseDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 BpRequestedDispenseToLocation?.ToDelimitedString(),
                                 BpRequestedDispenseToAddress?.ToDelimitedString(),
-                                BpIndicationForUse != null ? string.Join("~", BpIndicationForUse.Select(x => x.ToDelimitedString())) : null,
+                                BpIndicationForUse != null ? string.Join(Configuration.FieldRepeatSeparator, BpIndicationForUse.Select(x => x.ToDelimitedString())) : null,
                                 BpInformedConsentIndicator
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

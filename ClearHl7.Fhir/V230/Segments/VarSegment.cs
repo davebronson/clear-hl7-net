@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V230.Types;
 
 namespace ClearHl7.Fhir.V230.Segments
@@ -60,15 +60,15 @@ namespace ClearHl7.Fhir.V230.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}",
+                                StringHelper.StringFormatSequence(0, 7, Configuration.FieldSeparator),
                                 Id,
                                 VarianceInstanceId?.ToDelimitedString(),
                                 DocumentedDateTime.HasValue ? DocumentedDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 StatedVarianceDateTime.HasValue ? StatedVarianceDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 VarianceOriginator?.ToDelimitedString(),
                                 VarianceClassification?.ToDelimitedString(),
-                                VarianceDescription != null ? string.Join("~", VarianceDescription) : null
-                                ).TrimEnd('|');
+                                VarianceDescription != null ? string.Join(Configuration.FieldRepeatSeparator, VarianceDescription) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

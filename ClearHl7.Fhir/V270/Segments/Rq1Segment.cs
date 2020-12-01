@@ -1,4 +1,4 @@
-using System;
+﻿using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V270.Types;
 
 namespace ClearHl7.Fhir.V270.Segments
@@ -66,7 +66,7 @@ namespace ClearHl7.Fhir.V270.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}",
+                                StringHelper.StringFormatSequence(0, 8, Configuration.FieldSeparator),
                                 Id,
                                 AnticipatedPrice,
                                 ManufacturerIdentifier?.ToDelimitedString(),
@@ -75,7 +75,7 @@ namespace ClearHl7.Fhir.V270.Segments
                                 VendorCatalog,
                                 Taxable,
                                 SubstituteAllowed
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

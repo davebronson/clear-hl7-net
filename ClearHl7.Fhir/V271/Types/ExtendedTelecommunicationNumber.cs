@@ -1,4 +1,5 @@
 ﻿using System;
+using ClearHl7.Fhir.Helpers;
 
 namespace ClearHl7.Fhir.V271.Types
 {
@@ -113,10 +114,11 @@ namespace ClearHl7.Fhir.V271.Types
         public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            char separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
 
             return string.Format(
                                 culture,
-                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}&{8}&{9}&{10}&{11}&{12}&{13}&{14}&{15}&{16}&{17}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}^{9}^{10}^{11}^{12}^{13}^{14}^{15}^{16}^{17}",
+                                StringHelper.StringFormatSequence(0, 18, separator),
                                 TelephoneNumber,
                                 TelecommunicationUseCode,
                                 TelecommunicationEquipmentType,
@@ -135,7 +137,7 @@ namespace ClearHl7.Fhir.V271.Types
                                 ProtectionCode?.ToDelimitedString(),
                                 SharedTelecommunicationIdentifier?.ToDelimitedString(),
                                 PreferenceOrder.HasValue ? PreferenceOrder.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+                                ).TrimEnd(separator);
         }
     }
 }

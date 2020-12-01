@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V231.Types;
 
 namespace ClearHl7.Fhir.V231.Segments
@@ -100,21 +100,21 @@ namespace ClearHl7.Fhir.V231.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}",
+                                StringHelper.StringFormatSequence(0, 13, Configuration.FieldSeparator),
                                 Id,
-                                LivingDependency != null ? string.Join("~", LivingDependency) : null,
+                                LivingDependency != null ? string.Join(Configuration.FieldRepeatSeparator, LivingDependency) : null,
                                 LivingArrangement,
-                                PatientPrimaryFacility != null ? string.Join("~", PatientPrimaryFacility.Select(x => x.ToDelimitedString())) : null,
-                                PatientPrimaryCareProviderNameIdNo != null ? string.Join("~", PatientPrimaryCareProviderNameIdNo.Select(x => x.ToDelimitedString())) : null,
+                                PatientPrimaryFacility != null ? string.Join(Configuration.FieldRepeatSeparator, PatientPrimaryFacility.Select(x => x.ToDelimitedString())) : null,
+                                PatientPrimaryCareProviderNameIdNo != null ? string.Join(Configuration.FieldRepeatSeparator, PatientPrimaryCareProviderNameIdNo.Select(x => x.ToDelimitedString())) : null,
                                 StudentIndicator,
                                 Handicap,
                                 LivingWillCode,
                                 OrganDonorCode,
                                 SeparateBill,
-                                DuplicatePatient != null ? string.Join("~", DuplicatePatient.Select(x => x.ToDelimitedString())) : null,
+                                DuplicatePatient != null ? string.Join(Configuration.FieldRepeatSeparator, DuplicatePatient.Select(x => x.ToDelimitedString())) : null,
                                 PublicityCode?.ToDelimitedString(),
                                 ProtectionIndicator
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

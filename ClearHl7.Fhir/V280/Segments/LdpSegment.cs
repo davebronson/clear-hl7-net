@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V280.Types;
 
 namespace ClearHl7.Fhir.V280.Segments
@@ -97,21 +98,21 @@ namespace ClearHl7.Fhir.V280.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}",
+                                StringHelper.StringFormatSequence(0, 13, Configuration.FieldSeparator),
                                 Id,
                                 PrimaryKeyValueLdp?.ToDelimitedString(),
                                 LocationDepartment?.ToDelimitedString(),
-                                LocationService != null ? string.Join("~", LocationService.Select(x => x.ToDelimitedString())) : null,
-                                SpecialtyType != null ? string.Join("~", SpecialtyType.Select(x => x.ToDelimitedString())) : null,
-                                ValidPatientClasses != null ? string.Join("~", ValidPatientClasses.Select(x => x.ToDelimitedString())) : null,
+                                LocationService != null ? string.Join(Configuration.FieldRepeatSeparator, LocationService.Select(x => x.ToDelimitedString())) : null,
+                                SpecialtyType != null ? string.Join(Configuration.FieldRepeatSeparator, SpecialtyType.Select(x => x.ToDelimitedString())) : null,
+                                ValidPatientClasses != null ? string.Join(Configuration.FieldRepeatSeparator, ValidPatientClasses.Select(x => x.ToDelimitedString())) : null,
                                 ActiveInactiveFlag,
                                 ActivationDateLdp.HasValue ? ActivationDateLdp.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 InactivationDateLdp.HasValue ? InactivationDateLdp.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 InactivatedReason,
-                                VisitingHours != null ? string.Join("~", VisitingHours.Select(x => x.ToDelimitedString())) : null,
+                                VisitingHours != null ? string.Join(Configuration.FieldRepeatSeparator, VisitingHours.Select(x => x.ToDelimitedString())) : null,
                                 ContactPhone?.ToDelimitedString(),
                                 LocationCostCenter?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

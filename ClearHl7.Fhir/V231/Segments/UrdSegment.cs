@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V231.Types;
 
 namespace ClearHl7.Fhir.V231.Segments
@@ -68,16 +69,16 @@ namespace ClearHl7.Fhir.V231.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}",
+                                StringHelper.StringFormatSequence(0, 8, Configuration.FieldSeparator),
                                 Id,
                                 RuDateTime.HasValue ? RuDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ReportPriority,
-                                RuWhoSubjectDefinition != null ? string.Join("~", RuWhoSubjectDefinition.Select(x => x.ToDelimitedString())) : null,
-                                RuWhatSubjectDefinition != null ? string.Join("~", RuWhatSubjectDefinition.Select(x => x.ToDelimitedString())) : null,
-                                RuWhatDepartmentCode != null ? string.Join("~", RuWhatDepartmentCode.Select(x => x.ToDelimitedString())) : null,
-                                RuDisplayPrintLocations != null ? string.Join("~", RuDisplayPrintLocations) : null,
+                                RuWhoSubjectDefinition != null ? string.Join(Configuration.FieldRepeatSeparator, RuWhoSubjectDefinition.Select(x => x.ToDelimitedString())) : null,
+                                RuWhatSubjectDefinition != null ? string.Join(Configuration.FieldRepeatSeparator, RuWhatSubjectDefinition.Select(x => x.ToDelimitedString())) : null,
+                                RuWhatDepartmentCode != null ? string.Join(Configuration.FieldRepeatSeparator, RuWhatDepartmentCode.Select(x => x.ToDelimitedString())) : null,
+                                RuDisplayPrintLocations != null ? string.Join(Configuration.FieldRepeatSeparator, RuDisplayPrintLocations) : null,
                                 RuResultsLevel
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

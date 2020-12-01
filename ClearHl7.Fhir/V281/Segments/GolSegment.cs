@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V281.Types;
 
 namespace ClearHl7.Fhir.V281.Segments
@@ -142,7 +143,7 @@ namespace ClearHl7.Fhir.V281.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}",
+                                StringHelper.StringFormatSequence(0, 23, Configuration.FieldSeparator),
                                 Id,
                                 ActionCode,
                                 ActionDateTime.HasValue ? ActionDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
@@ -160,13 +161,13 @@ namespace ClearHl7.Fhir.V281.Segments
                                 PreviousGoalReviewDateTime.HasValue ? PreviousGoalReviewDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 GoalReviewInterval,
                                 GoalEvaluation?.ToDelimitedString(),
-                                GoalEvaluationComment != null ? string.Join("~", GoalEvaluationComment) : null,
+                                GoalEvaluationComment != null ? string.Join(Configuration.FieldRepeatSeparator, GoalEvaluationComment) : null,
                                 GoalLifeCycleStatus?.ToDelimitedString(),
                                 GoalLifeCycleStatusDateTime.HasValue ? GoalLifeCycleStatusDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                GoalTargetType != null ? string.Join("~", GoalTargetType.Select(x => x.ToDelimitedString())) : null,
-                                GoalTargetName != null ? string.Join("~", GoalTargetName.Select(x => x.ToDelimitedString())) : null,
+                                GoalTargetType != null ? string.Join(Configuration.FieldRepeatSeparator, GoalTargetType.Select(x => x.ToDelimitedString())) : null,
+                                GoalTargetName != null ? string.Join(Configuration.FieldRepeatSeparator, GoalTargetName.Select(x => x.ToDelimitedString())) : null,
                                 MoodCode?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

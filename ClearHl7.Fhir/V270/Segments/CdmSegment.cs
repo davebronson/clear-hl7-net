@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V270.Types;
 
 namespace ClearHl7.Fhir.V270.Segments
@@ -103,22 +103,22 @@ namespace ClearHl7.Fhir.V270.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}",
+                                StringHelper.StringFormatSequence(0, 14, Configuration.FieldSeparator),
                                 Id,
                                 PrimaryKeyValueCdm?.ToDelimitedString(),
-                                ChargeCodeAlias != null ? string.Join("~", ChargeCodeAlias.Select(x => x.ToDelimitedString())) : null,
+                                ChargeCodeAlias != null ? string.Join(Configuration.FieldRepeatSeparator, ChargeCodeAlias.Select(x => x.ToDelimitedString())) : null,
                                 ChargeDescriptionShort,
                                 ChargeDescriptionLong,
                                 DescriptionOverrideIndicator?.ToDelimitedString(),
-                                ExplodingCharges != null ? string.Join("~", ExplodingCharges.Select(x => x.ToDelimitedString())) : null,
-                                ProcedureCode != null ? string.Join("~", ProcedureCode.Select(x => x.ToDelimitedString())) : null,
+                                ExplodingCharges != null ? string.Join(Configuration.FieldRepeatSeparator, ExplodingCharges.Select(x => x.ToDelimitedString())) : null,
+                                ProcedureCode != null ? string.Join(Configuration.FieldRepeatSeparator, ProcedureCode.Select(x => x.ToDelimitedString())) : null,
                                 ActiveInactiveFlag,
-                                InventoryNumber != null ? string.Join("~", InventoryNumber.Select(x => x.ToDelimitedString())) : null,
+                                InventoryNumber != null ? string.Join(Configuration.FieldRepeatSeparator, InventoryNumber.Select(x => x.ToDelimitedString())) : null,
                                 ResourceLoad.HasValue ? ResourceLoad.Value.ToString(Consts.NumericFormat, culture) : null,
-                                ContractNumber != null ? string.Join("~", ContractNumber.Select(x => x.ToDelimitedString())) : null,
-                                ContractOrganization != null ? string.Join("~", ContractOrganization.Select(x => x.ToDelimitedString())) : null,
+                                ContractNumber != null ? string.Join(Configuration.FieldRepeatSeparator, ContractNumber.Select(x => x.ToDelimitedString())) : null,
+                                ContractOrganization != null ? string.Join(Configuration.FieldRepeatSeparator, ContractOrganization.Select(x => x.ToDelimitedString())) : null,
                                 RoomFeeIndicator
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

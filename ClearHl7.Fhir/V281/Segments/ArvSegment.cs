@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V281.Types;
 
 namespace ClearHl7.Fhir.V281.Segments
@@ -63,15 +63,15 @@ namespace ClearHl7.Fhir.V281.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}",
+                                StringHelper.StringFormatSequence(0, 7, Configuration.FieldSeparator),
                                 Id,
                                 SetId.HasValue ? SetId.Value.ToString(culture) : null,
                                 AccessRestrictionActionCode?.ToDelimitedString(),
                                 AccessRestrictionValue?.ToDelimitedString(),
-                                AccessRestrictionReason != null ? string.Join("~", AccessRestrictionReason.Select(x => x.ToDelimitedString())) : null,
-                                SpecialAccessRestrictionInstructions != null ? string.Join("~", SpecialAccessRestrictionInstructions) : null,
+                                AccessRestrictionReason != null ? string.Join(Configuration.FieldRepeatSeparator, AccessRestrictionReason.Select(x => x.ToDelimitedString())) : null,
+                                SpecialAccessRestrictionInstructions != null ? string.Join(Configuration.FieldRepeatSeparator, SpecialAccessRestrictionInstructions) : null,
                                 AccessRestrictionDateRange?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

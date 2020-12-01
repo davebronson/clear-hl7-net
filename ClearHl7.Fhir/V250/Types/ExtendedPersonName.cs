@@ -1,4 +1,5 @@
 ﻿using System;
+using ClearHl7.Fhir.Helpers;
 
 namespace ClearHl7.Fhir.V250.Types
 {
@@ -94,10 +95,11 @@ namespace ClearHl7.Fhir.V250.Types
         public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            char separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
 
             return string.Format(
                                 culture,
-                                IsSubcomponent ? "{0}&{1}&{2}&{3}&{4}&{5}&{6}&{7}&{8}&{9}&{10}&{11}&{12}&{13}" : "{0}^{1}^{2}^{3}^{4}^{5}^{6}^{7}^{8}^{9}^{10}^{11}^{12}^{13}",
+                                StringHelper.StringFormatSequence(0, 14, separator),
                                 FamilyName?.ToDelimitedString(),
                                 GivenName,
                                 SecondAndFurtherGivenNamesOrInitialsThereof,
@@ -112,7 +114,7 @@ namespace ClearHl7.Fhir.V250.Types
                                 EffectiveDate.HasValue ? EffectiveDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ProfessionalSuffix
-                                ).TrimEnd(IsSubcomponent ? '&' : '^');
+                                ).TrimEnd(separator);
         }
     }
 }

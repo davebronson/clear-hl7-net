@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V271.Types;
 
 namespace ClearHl7.Fhir.V271.Segments
@@ -168,7 +169,7 @@ namespace ClearHl7.Fhir.V271.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}",
+                                StringHelper.StringFormatSequence(0, 26, Configuration.FieldSeparator),
                                 Id,
                                 SetIdPr1.HasValue ? SetIdPr1.Value.ToString(culture) : null,
                                 ProcedureCodingMethod,
@@ -185,17 +186,17 @@ namespace ClearHl7.Fhir.V271.Segments
                                 ConsentCode?.ToDelimitedString(),
                                 ProcedurePriority.HasValue ? ProcedurePriority.Value.ToString(Consts.NumericFormat, culture) : null,
                                 AssociatedDiagnosisCode?.ToDelimitedString(),
-                                ProcedureCodeModifier != null ? string.Join("~", ProcedureCodeModifier.Select(x => x.ToDelimitedString())) : null,
+                                ProcedureCodeModifier != null ? string.Join(Configuration.FieldRepeatSeparator, ProcedureCodeModifier.Select(x => x.ToDelimitedString())) : null,
                                 ProcedureDrgType?.ToDelimitedString(),
-                                TissueTypeCode != null ? string.Join("~", TissueTypeCode.Select(x => x.ToDelimitedString())) : null,
+                                TissueTypeCode != null ? string.Join(Configuration.FieldRepeatSeparator, TissueTypeCode.Select(x => x.ToDelimitedString())) : null,
                                 ProcedureIdentifier?.ToDelimitedString(),
                                 ProcedureActionCode,
                                 DrgProcedureDeterminationStatus?.ToDelimitedString(),
                                 DrgProcedureRelevance?.ToDelimitedString(),
-                                TreatingOrganizationalUnit != null ? string.Join("~", TreatingOrganizationalUnit.Select(x => x.ToDelimitedString())) : null,
+                                TreatingOrganizationalUnit != null ? string.Join(Configuration.FieldRepeatSeparator, TreatingOrganizationalUnit.Select(x => x.ToDelimitedString())) : null,
                                 RespiratoryWithinSurgery,
                                 ParentProcedureId?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

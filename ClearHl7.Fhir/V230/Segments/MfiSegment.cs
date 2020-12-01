@@ -1,4 +1,5 @@
 ﻿using System;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V230.Types;
 
 namespace ClearHl7.Fhir.V230.Segments
@@ -61,7 +62,7 @@ namespace ClearHl7.Fhir.V230.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}",
+                                StringHelper.StringFormatSequence(0, 7, Configuration.FieldSeparator),
                                 Id,
                                 MasterFileIdentifier?.ToDelimitedString(),
                                 MasterFileApplicationIdentifier?.ToDelimitedString(),
@@ -69,7 +70,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 EnteredDateTime.HasValue ? EnteredDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 EffectiveDateTime.HasValue ? EffectiveDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ResponseLevelCode
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

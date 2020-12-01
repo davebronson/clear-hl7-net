@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V271.Types;
 
 namespace ClearHl7.Fhir.V271.Segments
@@ -14,7 +14,7 @@ namespace ClearHl7.Fhir.V271.Segments
         /// Gets the ID for the Segment.  This property is read-only.
         /// </summary>
         public string Id { get; } = "ECD";
-        
+
         /// <summary>
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
         /// </summary>
@@ -46,7 +46,7 @@ namespace ClearHl7.Fhir.V271.Segments
         /// ECD.5 - Parameters.
         /// </summary>
         public IEnumerable<Text> Parameters { get; set; }
-        
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
@@ -57,14 +57,14 @@ namespace ClearHl7.Fhir.V271.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}",
+                                StringHelper.StringFormatSequence(0, 6, Configuration.FieldSeparator),
                                 Id,
                                 ReferenceCommandNumber.HasValue ? ReferenceCommandNumber.Value.ToString(Consts.NumericFormat, culture) : null,
                                 RemoteControlCommand?.ToDelimitedString(),
                                 ResponseRequired,
                                 RequestedCompletionTime,
-                                Parameters != null ? string.Join("~", Parameters.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                Parameters != null ? string.Join(Configuration.FieldRepeatSeparator, Parameters.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

@@ -1,5 +1,6 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V270.Types;
 
 namespace ClearHl7.Fhir.V270.Segments
@@ -62,15 +63,15 @@ namespace ClearHl7.Fhir.V270.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}",
+                                StringHelper.StringFormatSequence(0, 7, Configuration.FieldSeparator),
                                 Id,
                                 RecordLevelEventCode,
                                 MfnControlId,
                                 EventCompletionDateTime.HasValue ? EventCompletionDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 MfnRecordLevelErrorReturn?.ToDelimitedString(),
-                                PrimaryKeyValueMfa != null ? string.Join("~", PrimaryKeyValueMfa) : null,
-                                PrimaryKeyValueTypeMfa != null ? string.Join("~", PrimaryKeyValueTypeMfa) : null
-                                ).TrimEnd('|');
+                                PrimaryKeyValueMfa != null ? string.Join(Configuration.FieldRepeatSeparator, PrimaryKeyValueMfa) : null,
+                                PrimaryKeyValueTypeMfa != null ? string.Join(Configuration.FieldRepeatSeparator, PrimaryKeyValueTypeMfa) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

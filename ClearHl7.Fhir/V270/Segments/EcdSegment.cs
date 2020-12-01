@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V270.Types;
 
 namespace ClearHl7.Fhir.V270.Segments
@@ -57,14 +57,14 @@ namespace ClearHl7.Fhir.V270.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}",
+                                StringHelper.StringFormatSequence(0, 6, Configuration.FieldSeparator),
                                 Id,
                                 ReferenceCommandNumber.HasValue ? ReferenceCommandNumber.Value.ToString(Consts.NumericFormat, culture) : null,
                                 RemoteControlCommand?.ToDelimitedString(),
                                 ResponseRequired,
                                 RequestedCompletionTime,
-                                Parameters != null ? string.Join("~", Parameters.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                Parameters != null ? string.Join(Configuration.FieldRepeatSeparator, Parameters.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

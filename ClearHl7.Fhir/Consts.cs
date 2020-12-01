@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ClearHl7.Fhir
+﻿namespace ClearHl7.Fhir
 {
     public static class Consts
     {

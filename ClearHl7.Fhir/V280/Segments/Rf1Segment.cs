@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V280.Types;
 
 namespace ClearHl7.Fhir.V280.Segments
@@ -163,19 +164,19 @@ namespace ClearHl7.Fhir.V280.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}",
+                                StringHelper.StringFormatSequence(0, 26, Configuration.FieldSeparator),
                                 Id,
                                 ReferralStatus?.ToDelimitedString(),
                                 ReferralPriority?.ToDelimitedString(),
                                 ReferralType?.ToDelimitedString(),
-                                ReferralDisposition != null ? string.Join("~", ReferralDisposition.Select(x => x.ToDelimitedString())) : null,
+                                ReferralDisposition != null ? string.Join(Configuration.FieldRepeatSeparator, ReferralDisposition.Select(x => x.ToDelimitedString())) : null,
                                 ReferralCategory?.ToDelimitedString(),
                                 OriginatingReferralIdentifier?.ToDelimitedString(),
                                 EffectiveDate.HasValue ? EffectiveDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ProcessDate.HasValue ? ProcessDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                ReferralReason != null ? string.Join("~", ReferralReason.Select(x => x.ToDelimitedString())) : null,
-                                ExternalReferralIdentifier != null ? string.Join("~", ExternalReferralIdentifier.Select(x => x.ToDelimitedString())) : null,
+                                ReferralReason != null ? string.Join(Configuration.FieldRepeatSeparator, ReferralReason.Select(x => x.ToDelimitedString())) : null,
+                                ExternalReferralIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, ExternalReferralIdentifier.Select(x => x.ToDelimitedString())) : null,
                                 ReferralDocumentationCompletionStatus?.ToDelimitedString(),
                                 PlannedTreatmentStopDate.HasValue ? PlannedTreatmentStopDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ReferralReasonText,
@@ -190,7 +191,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 SourcePhone?.ToDelimitedString(),
                                 Comment,
                                 ActionCode
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

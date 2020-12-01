@@ -1,4 +1,5 @@
-using System;
+﻿using System;
+using ClearHl7.Fhir.Helpers;
 
 namespace ClearHl7.Fhir.V240.Segments
 {
@@ -32,10 +33,10 @@ namespace ClearHl7.Fhir.V240.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}",
+                                StringHelper.StringFormatSequence(0, 2, Configuration.FieldSeparator),
                                 Id,
                                 SystemDateTime.HasValue ? SystemDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

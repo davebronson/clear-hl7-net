@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V280.Types;
 
 namespace ClearHl7.Fhir.V280.Segments
@@ -179,7 +180,7 @@ namespace ClearHl7.Fhir.V280.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}",
+                                StringHelper.StringFormatSequence(0, 30, Configuration.FieldSeparator),
                                 Id,
                                 GiveSubIdCounter.HasValue ? GiveSubIdCounter.Value.ToString(Consts.NumericFormat, culture) : null,
                                 AdministrationSubIdCounter.HasValue ? AdministrationSubIdCounter.Value.ToString(Consts.NumericFormat, culture) : null,
@@ -189,17 +190,17 @@ namespace ClearHl7.Fhir.V280.Segments
                                 AdministeredAmount.HasValue ? AdministeredAmount.Value.ToString(Consts.NumericFormat, culture) : null,
                                 AdministeredUnits?.ToDelimitedString(),
                                 AdministeredDosageForm?.ToDelimitedString(),
-                                AdministrationNotes != null ? string.Join("~", AdministrationNotes.Select(x => x.ToDelimitedString())) : null,
-                                AdministeringProvider != null ? string.Join("~", AdministeringProvider.Select(x => x.ToDelimitedString())) : null,
+                                AdministrationNotes != null ? string.Join(Configuration.FieldRepeatSeparator, AdministrationNotes.Select(x => x.ToDelimitedString())) : null,
+                                AdministeringProvider != null ? string.Join(Configuration.FieldRepeatSeparator, AdministeringProvider.Select(x => x.ToDelimitedString())) : null,
                                 AdministeredAtLocation,
                                 AdministeredPerTimeUnit,
                                 AdministeredStrength.HasValue ? AdministeredStrength.Value.ToString(Consts.NumericFormat, culture) : null,
                                 AdministeredStrengthUnits?.ToDelimitedString(),
-                                SubstanceLotNumber != null ? string.Join("~", SubstanceLotNumber) : null,
-                                SubstanceExpirationDate != null ? string.Join("~", SubstanceExpirationDate.Select(x => x.ToString(Consts.DateTimeFormatPrecisionSecond, culture))) : null,
-                                SubstanceManufacturerName != null ? string.Join("~", SubstanceManufacturerName.Select(x => x.ToDelimitedString())) : null,
-                                SubstanceTreatmentRefusalReason != null ? string.Join("~", SubstanceTreatmentRefusalReason.Select(x => x.ToDelimitedString())) : null,
-                                Indication != null ? string.Join("~", Indication.Select(x => x.ToDelimitedString())) : null,
+                                SubstanceLotNumber != null ? string.Join(Configuration.FieldRepeatSeparator, SubstanceLotNumber) : null,
+                                SubstanceExpirationDate != null ? string.Join(Configuration.FieldRepeatSeparator, SubstanceExpirationDate.Select(x => x.ToString(Consts.DateTimeFormatPrecisionSecond, culture))) : null,
+                                SubstanceManufacturerName != null ? string.Join(Configuration.FieldRepeatSeparator, SubstanceManufacturerName.Select(x => x.ToDelimitedString())) : null,
+                                SubstanceTreatmentRefusalReason != null ? string.Join(Configuration.FieldRepeatSeparator, SubstanceTreatmentRefusalReason.Select(x => x.ToDelimitedString())) : null,
+                                Indication != null ? string.Join(Configuration.FieldRepeatSeparator, Indication.Select(x => x.ToDelimitedString())) : null,
                                 CompletionStatus,
                                 ActionCodeRxa,
                                 SystemEntryDateTime.HasValue ? SystemEntryDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
@@ -209,8 +210,8 @@ namespace ClearHl7.Fhir.V280.Segments
                                 PharmacyOrderType,
                                 AdministerAt?.ToDelimitedString(),
                                 AdministeredAtAddress?.ToDelimitedString(),
-                                AdministeredTagIdentifier != null ? string.Join("~", AdministeredTagIdentifier.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                AdministeredTagIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, AdministeredTagIdentifier.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

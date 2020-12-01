@@ -1,4 +1,4 @@
-using System;
+﻿using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V271.Types;
 
 namespace ClearHl7.Fhir.V271.Segments
@@ -54,14 +54,14 @@ namespace ClearHl7.Fhir.V271.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}",
+                                StringHelper.StringFormatSequence(0, 6, Configuration.FieldSeparator),
                                 Id,
                                 SetIdVnd.HasValue ? SetIdVnd.Value.ToString(culture) : null,
                                 VendorIdentifier?.ToDelimitedString(),
                                 VendorName,
                                 VendorCatalogNumber?.ToDelimitedString(),
                                 PrimaryVendorIndicator?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

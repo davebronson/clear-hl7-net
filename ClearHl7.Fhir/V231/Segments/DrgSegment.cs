@@ -1,4 +1,5 @@
 ﻿using System;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V231.Types;
 
 namespace ClearHl7.Fhir.V231.Segments
@@ -84,7 +85,7 @@ namespace ClearHl7.Fhir.V231.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}",
+                                StringHelper.StringFormatSequence(0, 11, Configuration.FieldSeparator),
                                 Id,
                                 DiagnosticRelatedGroup?.ToDelimitedString(),
                                 DrgAssignedDateTime.HasValue ? DrgAssignedDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
@@ -96,7 +97,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 DrgPayor,
                                 OutlierReimbursement?.ToDelimitedString(),
                                 ConfidentialIndicator
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

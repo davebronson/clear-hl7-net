@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V280.Types;
 
 namespace ClearHl7.Fhir.V280.Segments
@@ -70,16 +70,16 @@ namespace ClearHl7.Fhir.V280.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}",
+                                StringHelper.StringFormatSequence(0, 8, Configuration.FieldSeparator),
                                 Id,
-                                PriorPatientIdentifierList != null ? string.Join("~", PriorPatientIdentifierList.Select(x => x.ToDelimitedString())) : null,
+                                PriorPatientIdentifierList != null ? string.Join(Configuration.FieldRepeatSeparator, PriorPatientIdentifierList.Select(x => x.ToDelimitedString())) : null,
                                 PriorAlternatePatientId,
                                 PriorPatientAccountNumber?.ToDelimitedString(),
                                 PriorPatientId,
                                 PriorVisitNumber?.ToDelimitedString(),
-                                PriorAlternateVisitId != null ? string.Join("~", PriorAlternateVisitId.Select(x => x.ToDelimitedString())) : null,
-                                PriorPatientName != null ? string.Join("~", PriorPatientName.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                PriorAlternateVisitId != null ? string.Join(Configuration.FieldRepeatSeparator, PriorAlternateVisitId.Select(x => x.ToDelimitedString())) : null,
+                                PriorPatientName != null ? string.Join(Configuration.FieldRepeatSeparator, PriorPatientName.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

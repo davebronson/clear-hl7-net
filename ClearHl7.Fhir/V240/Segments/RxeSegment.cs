@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V240.Types;
 
 namespace ClearHl7.Fhir.V240.Segments
@@ -189,7 +190,7 @@ namespace ClearHl7.Fhir.V240.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}",
+                                StringHelper.StringFormatSequence(0, 32, Configuration.FieldSeparator),
                                 Id,
                                 QuantityTiming?.ToDelimitedString(),
                                 GiveCode?.ToDelimitedString(),
@@ -197,32 +198,32 @@ namespace ClearHl7.Fhir.V240.Segments
                                 GiveAmountMaximum.HasValue ? GiveAmountMaximum.Value.ToString(Consts.NumericFormat, culture) : null,
                                 GiveUnits?.ToDelimitedString(),
                                 GiveDosageForm?.ToDelimitedString(),
-                                ProvidersAdministrationInstructions != null ? string.Join("~", ProvidersAdministrationInstructions.Select(x => x.ToDelimitedString())) : null,
+                                ProvidersAdministrationInstructions != null ? string.Join(Configuration.FieldRepeatSeparator, ProvidersAdministrationInstructions.Select(x => x.ToDelimitedString())) : null,
                                 DeliverToLocation?.ToDelimitedString(),
                                 SubstitutionStatus,
                                 DispenseAmount.HasValue ? DispenseAmount.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DispenseUnits?.ToDelimitedString(),
                                 NumberOfRefills.HasValue ? NumberOfRefills.Value.ToString(Consts.NumericFormat, culture) : null,
-                                OrderingProvidersDeaNumber != null ? string.Join("~", OrderingProvidersDeaNumber.Select(x => x.ToDelimitedString())) : null,
-                                PharmacistTreatmentSuppliersVerifierId != null ? string.Join("~", PharmacistTreatmentSuppliersVerifierId.Select(x => x.ToDelimitedString())) : null,
+                                OrderingProvidersDeaNumber != null ? string.Join(Configuration.FieldRepeatSeparator, OrderingProvidersDeaNumber.Select(x => x.ToDelimitedString())) : null,
+                                PharmacistTreatmentSuppliersVerifierId != null ? string.Join(Configuration.FieldRepeatSeparator, PharmacistTreatmentSuppliersVerifierId.Select(x => x.ToDelimitedString())) : null,
                                 PrescriptionNumber,
                                 NumberOfRefillsRemaining.HasValue ? NumberOfRefillsRemaining.Value.ToString(Consts.NumericFormat, culture) : null,
                                 NumberOfRefillsDosesDispensed.HasValue ? NumberOfRefillsDosesDispensed.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DTOfMostRecentRefillOrDoseDispensed.HasValue ? DTOfMostRecentRefillOrDoseDispensed.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 TotalDailyDose?.ToDelimitedString(),
                                 NeedsHumanReview,
-                                SpecialDispensingInstructions != null ? string.Join("~", SpecialDispensingInstructions.Select(x => x.ToDelimitedString())) : null,
+                                SpecialDispensingInstructions != null ? string.Join(Configuration.FieldRepeatSeparator, SpecialDispensingInstructions.Select(x => x.ToDelimitedString())) : null,
                                 GivePerTimeUnit,
                                 GiveRateAmount,
                                 GiveRateUnits?.ToDelimitedString(),
                                 GiveStrength.HasValue ? GiveStrength.Value.ToString(Consts.NumericFormat, culture) : null,
                                 GiveStrengthUnits?.ToDelimitedString(),
-                                GiveIndication != null ? string.Join("~", GiveIndication.Select(x => x.ToDelimitedString())) : null,
+                                GiveIndication != null ? string.Join(Configuration.FieldRepeatSeparator, GiveIndication.Select(x => x.ToDelimitedString())) : null,
                                 DispensePackageSize.HasValue ? DispensePackageSize.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DispensePackageSizeUnit?.ToDelimitedString(),
                                 DispensePackageMethod,
-                                SupplementaryCode != null ? string.Join("~", SupplementaryCode.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                SupplementaryCode != null ? string.Join(Configuration.FieldRepeatSeparator, SupplementaryCode.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

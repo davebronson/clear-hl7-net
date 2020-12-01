@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V250.Types;
 
 namespace ClearHl7.Fhir.V250.Segments
@@ -159,13 +160,13 @@ namespace ClearHl7.Fhir.V250.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}",
+                                StringHelper.StringFormatSequence(0, 25, Configuration.FieldSeparator),
                                 Id,
                                 SequenceNumberTestObservationMasterFile.HasValue ? SequenceNumberTestObservationMasterFile.Value.ToString(Consts.NumericFormat, culture) : null,
                                 UniversalServiceIdentifier?.ToDelimitedString(),
-                                CategoryIdentifier != null ? string.Join("~", CategoryIdentifier.Select(x => x.ToDelimitedString())) : null,
+                                CategoryIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, CategoryIdentifier.Select(x => x.ToDelimitedString())) : null,
                                 CategoryDescription?.ToDelimitedString(),
-                                CategorySynonym != null ? string.Join("~", CategorySynonym) : null,
+                                CategorySynonym != null ? string.Join(Configuration.FieldRepeatSeparator, CategorySynonym) : null,
                                 EffectiveTestServiceStartDateTime.HasValue ? EffectiveTestServiceStartDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 EffectiveTestServiceEndDateTime.HasValue ? EffectiveTestServiceEndDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 TestServiceDefaultDurationQuantity.HasValue ? TestServiceDefaultDurationQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
@@ -181,11 +182,11 @@ namespace ClearHl7.Fhir.V250.Segments
                                 ConsentWaitingPeriodUnits?.ToDelimitedString(),
                                 EffectiveDateTimeOfChange.HasValue ? EffectiveDateTimeOfChange.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 EnteredBy?.ToDelimitedString(),
-                                OrderableAtLocation != null ? string.Join("~", OrderableAtLocation.Select(x => x.ToDelimitedString())) : null,
+                                OrderableAtLocation != null ? string.Join(Configuration.FieldRepeatSeparator, OrderableAtLocation.Select(x => x.ToDelimitedString())) : null,
                                 FormularyStatus,
                                 SpecialOrderIndicator,
-                                PrimaryKeyValueCdm != null ? string.Join("~", PrimaryKeyValueCdm.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                PrimaryKeyValueCdm != null ? string.Join(Configuration.FieldRepeatSeparator, PrimaryKeyValueCdm.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

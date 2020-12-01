@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V271.Types;
 
 namespace ClearHl7.Fhir.V271.Segments
@@ -174,7 +175,7 @@ namespace ClearHl7.Fhir.V271.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}",
+                                StringHelper.StringFormatSequence(0, 29, Configuration.FieldSeparator),
                                 Id,
                                 ActionCode,
                                 ActionDateTime.HasValue ? ActionDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
@@ -186,7 +187,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 AnticipatedProblemResolutionDateTime.HasValue ? AnticipatedProblemResolutionDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ActualProblemResolutionDateTime.HasValue ? ActualProblemResolutionDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ProblemClassification?.ToDelimitedString(),
-                                ProblemManagementDiscipline != null ? string.Join("~", ProblemManagementDiscipline.Select(x => x.ToDelimitedString())) : null,
+                                ProblemManagementDiscipline != null ? string.Join(Configuration.FieldRepeatSeparator, ProblemManagementDiscipline.Select(x => x.ToDelimitedString())) : null,
                                 ProblemPersistence?.ToDelimitedString(),
                                 ProblemConfirmationStatus?.ToDelimitedString(),
                                 ProblemLifeCycleStatus?.ToDelimitedString(),
@@ -204,7 +205,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 ProblemSeverity?.ToDelimitedString(),
                                 ProblemPerspective?.ToDelimitedString(),
                                 MoodCode?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

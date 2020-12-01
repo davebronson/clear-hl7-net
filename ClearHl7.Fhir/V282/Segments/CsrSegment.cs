@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
@@ -110,7 +111,7 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}",
+                                StringHelper.StringFormatSequence(0, 17, Configuration.FieldSeparator),
                                 Id,
                                 SponsorStudyId?.ToDelimitedString(),
                                 AlternateStudyId?.ToDelimitedString(),
@@ -118,17 +119,17 @@ namespace ClearHl7.Fhir.V282.Segments
                                 SponsorPatientId?.ToDelimitedString(),
                                 AlternatePatientIdCsr?.ToDelimitedString(),
                                 DateTimeOfPatientStudyRegistration.HasValue ? DateTimeOfPatientStudyRegistration.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                PersonPerformingStudyRegistration != null ? string.Join("~", PersonPerformingStudyRegistration.Select(x => x.ToDelimitedString())) : null,
-                                StudyAuthorizingProvider != null ? string.Join("~", StudyAuthorizingProvider.Select(x => x.ToDelimitedString())) : null,
+                                PersonPerformingStudyRegistration != null ? string.Join(Configuration.FieldRepeatSeparator, PersonPerformingStudyRegistration.Select(x => x.ToDelimitedString())) : null,
+                                StudyAuthorizingProvider != null ? string.Join(Configuration.FieldRepeatSeparator, StudyAuthorizingProvider.Select(x => x.ToDelimitedString())) : null,
                                 DateTimePatientStudyConsentSigned.HasValue ? DateTimePatientStudyConsentSigned.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 PatientStudyEligibilityStatus?.ToDelimitedString(),
-                                StudyRandomizationDateTime != null ? string.Join("~", StudyRandomizationDateTime.Select(x => x.ToString(Consts.DateTimeFormatPrecisionSecond, culture))) : null,
-                                RandomizedStudyArm != null ? string.Join("~", RandomizedStudyArm.Select(x => x.ToDelimitedString())) : null,
-                                StratumForStudyRandomization != null ? string.Join("~", StratumForStudyRandomization.Select(x => x.ToDelimitedString())) : null,
+                                StudyRandomizationDateTime != null ? string.Join(Configuration.FieldRepeatSeparator, StudyRandomizationDateTime.Select(x => x.ToString(Consts.DateTimeFormatPrecisionSecond, culture))) : null,
+                                RandomizedStudyArm != null ? string.Join(Configuration.FieldRepeatSeparator, RandomizedStudyArm.Select(x => x.ToDelimitedString())) : null,
+                                StratumForStudyRandomization != null ? string.Join(Configuration.FieldRepeatSeparator, StratumForStudyRandomization.Select(x => x.ToDelimitedString())) : null,
                                 PatientEvaluabilityStatus?.ToDelimitedString(),
                                 DateTimeEndedStudy.HasValue ? DateTimeEndedStudy.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ReasonEndedStudy?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V231.Types;
 
 namespace ClearHl7.Fhir.V231.Segments
@@ -233,13 +234,13 @@ namespace ClearHl7.Fhir.V231.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}",
+                                StringHelper.StringFormatSequence(0, 38, Configuration.FieldSeparator),
                                 Id,
                                 PriorPendingLocation?.ToDelimitedString(),
                                 AccommodationCode?.ToDelimitedString(),
                                 AdmitReason?.ToDelimitedString(),
                                 TransferReason?.ToDelimitedString(),
-                                PatientValuables != null ? string.Join("~", PatientValuables) : null,
+                                PatientValuables != null ? string.Join(Configuration.FieldRepeatSeparator, PatientValuables) : null,
                                 PatientValuablesLocation,
                                 VisitUserCode,
                                 ExpectedAdmitDateTime.HasValue ? ExpectedAdmitDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
@@ -247,7 +248,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 EstimatedLengthOfInpatientStay.HasValue ? EstimatedLengthOfInpatientStay.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ActualLengthOfInpatientStay.HasValue ? ActualLengthOfInpatientStay.Value.ToString(Consts.NumericFormat, culture) : null,
                                 VisitDescription,
-                                ReferralSourceCode != null ? string.Join("~", ReferralSourceCode.Select(x => x.ToDelimitedString())) : null,
+                                ReferralSourceCode != null ? string.Join(Configuration.FieldRepeatSeparator, ReferralSourceCode.Select(x => x.ToDelimitedString())) : null,
                                 PreviousServiceDate.HasValue ? PreviousServiceDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 EmploymentIllnessRelatedIndicator,
                                 PurgeStatusCode,
@@ -257,7 +258,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 ExpectedNumberOfInsurancePlans.HasValue ? ExpectedNumberOfInsurancePlans.Value.ToString(Consts.NumericFormat, culture) : null,
                                 VisitPublicityCode,
                                 VisitProtectionIndicator,
-                                ClinicOrganizationName != null ? string.Join("~", ClinicOrganizationName.Select(x => x.ToDelimitedString())) : null,
+                                ClinicOrganizationName != null ? string.Join(Configuration.FieldRepeatSeparator, ClinicOrganizationName.Select(x => x.ToDelimitedString())) : null,
                                 PatientStatusCode,
                                 VisitPriorityCode,
                                 PreviousTreatmentDate.HasValue ? PreviousTreatmentDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
@@ -272,7 +273,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 MilitaryNonAvailabilityCode,
                                 NewbornBabyIndicator,
                                 BabyDetainedIndicator
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

@@ -1,7 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
@@ -104,23 +104,23 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}",
+                                StringHelper.StringFormatSequence(0, 15, Configuration.FieldSeparator),
                                 Id,
                                 RoleInstanceId?.ToDelimitedString(),
                                 ActionCode,
                                 RoleRol?.ToDelimitedString(),
-                                RolePerson != null ? string.Join("~", RolePerson.Select(x => x.ToDelimitedString())) : null,
+                                RolePerson != null ? string.Join(Configuration.FieldRepeatSeparator, RolePerson.Select(x => x.ToDelimitedString())) : null,
                                 RoleBeginDateTime.HasValue ? RoleBeginDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 RoleEndDateTime.HasValue ? RoleEndDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 RoleDuration?.ToDelimitedString(),
                                 RoleActionReason?.ToDelimitedString(),
-                                ProviderType != null ? string.Join("~", ProviderType.Select(x => x.ToDelimitedString())) : null,
+                                ProviderType != null ? string.Join(Configuration.FieldRepeatSeparator, ProviderType.Select(x => x.ToDelimitedString())) : null,
                                 OrganizationUnitType?.ToDelimitedString(),
-                                OfficeHomeAddressBirthplace != null ? string.Join("~", OfficeHomeAddressBirthplace.Select(x => x.ToDelimitedString())) : null,
-                                Phone != null ? string.Join("~", Phone.Select(x => x.ToDelimitedString())) : null,
+                                OfficeHomeAddressBirthplace != null ? string.Join(Configuration.FieldRepeatSeparator, OfficeHomeAddressBirthplace.Select(x => x.ToDelimitedString())) : null,
+                                Phone != null ? string.Join(Configuration.FieldRepeatSeparator, Phone.Select(x => x.ToDelimitedString())) : null,
                                 PersonsLocation?.ToDelimitedString(),
                                 Organization?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

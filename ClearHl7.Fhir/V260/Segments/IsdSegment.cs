@@ -1,4 +1,4 @@
-using System;
+﻿using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V260.Types;
 
 namespace ClearHl7.Fhir.V260.Segments
@@ -45,12 +45,12 @@ namespace ClearHl7.Fhir.V260.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}",
+                                StringHelper.StringFormatSequence(0, 4, Configuration.FieldSeparator),
                                 Id,
                                 ReferenceInteractionNumber.HasValue ? ReferenceInteractionNumber.Value.ToString(culture) : null,
                                 InteractionTypeIdentifier?.ToDelimitedString(),
                                 InteractionActiveState?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

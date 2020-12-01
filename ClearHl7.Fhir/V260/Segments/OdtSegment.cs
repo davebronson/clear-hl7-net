@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V260.Types;
 
 namespace ClearHl7.Fhir.V260.Segments
@@ -46,12 +46,12 @@ namespace ClearHl7.Fhir.V260.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}",
+                                StringHelper.StringFormatSequence(0, 4, Configuration.FieldSeparator),
                                 Id,
                                 TrayType?.ToDelimitedString(),
-                                ServicePeriod != null ? string.Join("~", ServicePeriod.Select(x => x.ToDelimitedString())) : null,
+                                ServicePeriod != null ? string.Join(Configuration.FieldRepeatSeparator, ServicePeriod.Select(x => x.ToDelimitedString())) : null,
                                 TextInstruction
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

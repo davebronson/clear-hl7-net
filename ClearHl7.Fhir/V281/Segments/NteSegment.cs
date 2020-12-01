@@ -1,6 +1,6 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V281.Types;
 
 namespace ClearHl7.Fhir.V281.Segments
@@ -72,17 +72,17 @@ namespace ClearHl7.Fhir.V281.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}",
+                                StringHelper.StringFormatSequence(0, 9, Configuration.FieldSeparator),
                                 Id,
                                 SetIdNte.HasValue ? SetIdNte.Value.ToString(culture) : null,
                                 SourceOfComment,
-                                Comment != null ? string.Join("~", Comment) : null,
+                                Comment != null ? string.Join(Configuration.FieldRepeatSeparator, Comment) : null,
                                 CommentType?.ToDelimitedString(),
                                 EnteredBy?.ToDelimitedString(),
                                 EnteredDateTime.HasValue ? EnteredDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 EffectiveStartDate.HasValue ? EffectiveStartDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

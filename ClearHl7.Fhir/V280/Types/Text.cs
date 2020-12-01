@@ -1,4 +1,4 @@
-﻿using System;
+﻿using ClearHl7.Fhir.Helpers;
 
 namespace ClearHl7.Fhir.V280.Types
 {
@@ -24,10 +24,11 @@ namespace ClearHl7.Fhir.V280.Types
         public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            char separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
 
             return string.Format(
                                 culture,
-                                "{0}",
+                                StringHelper.StringFormatSequence(0, 1, separator),
                                 Value
                                 );
         }

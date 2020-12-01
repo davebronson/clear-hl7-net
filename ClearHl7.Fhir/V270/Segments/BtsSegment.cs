@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 
 namespace ClearHl7.Fhir.V270.Segments
 {
@@ -44,12 +44,12 @@ namespace ClearHl7.Fhir.V270.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}",
+                                StringHelper.StringFormatSequence(0, 4, Configuration.FieldSeparator),
                                 Id,
                                 BatchMessageCount,
                                 BatchComment,
-                                BatchTotals != null ? string.Join("~", BatchTotals.Select(x => x.ToString(Consts.NumericFormat, culture))) : null
-                                ).TrimEnd('|');
+                                BatchTotals != null ? string.Join(Configuration.FieldRepeatSeparator, BatchTotals.Select(x => x.ToString(Consts.NumericFormat, culture))) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

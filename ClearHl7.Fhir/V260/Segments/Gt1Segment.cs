@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V260.Types;
 
 namespace ClearHl7.Fhir.V260.Segments
@@ -341,15 +342,15 @@ namespace ClearHl7.Fhir.V260.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}|{39}|{40}|{41}|{42}|{43}|{44}|{45}|{46}|{47}|{48}|{49}|{50}|{51}|{52}|{53}|{54}|{55}|{56}|{57}",
+                                StringHelper.StringFormatSequence(0, 58, Configuration.FieldSeparator),
                                 Id,
                                 SetIdGt1.HasValue ? SetIdGt1.Value.ToString(culture) : null,
-                                GuarantorNumber != null ? string.Join("~", GuarantorNumber.Select(x => x.ToDelimitedString())) : null,
-                                GuarantorName != null ? string.Join("~", GuarantorName.Select(x => x.ToDelimitedString())) : null,
-                                GuarantorSpouseName != null ? string.Join("~", GuarantorSpouseName.Select(x => x.ToDelimitedString())) : null,
-                                GuarantorAddress != null ? string.Join("~", GuarantorAddress.Select(x => x.ToDelimitedString())) : null,
-                                GuarantorPhNumHome != null ? string.Join("~", GuarantorPhNumHome.Select(x => x.ToDelimitedString())) : null,
-                                GuarantorPhNumBusiness != null ? string.Join("~", GuarantorPhNumBusiness.Select(x => x.ToDelimitedString())) : null,
+                                GuarantorNumber != null ? string.Join(Configuration.FieldRepeatSeparator, GuarantorNumber.Select(x => x.ToDelimitedString())) : null,
+                                GuarantorName != null ? string.Join(Configuration.FieldRepeatSeparator, GuarantorName.Select(x => x.ToDelimitedString())) : null,
+                                GuarantorSpouseName != null ? string.Join(Configuration.FieldRepeatSeparator, GuarantorSpouseName.Select(x => x.ToDelimitedString())) : null,
+                                GuarantorAddress != null ? string.Join(Configuration.FieldRepeatSeparator, GuarantorAddress.Select(x => x.ToDelimitedString())) : null,
+                                GuarantorPhNumHome != null ? string.Join(Configuration.FieldRepeatSeparator, GuarantorPhNumHome.Select(x => x.ToDelimitedString())) : null,
+                                GuarantorPhNumBusiness != null ? string.Join(Configuration.FieldRepeatSeparator, GuarantorPhNumBusiness.Select(x => x.ToDelimitedString())) : null,
                                 GuarantorDateTimeOfBirth.HasValue ? GuarantorDateTimeOfBirth.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 GuarantorAdministrativeSex,
                                 GuarantorType,
@@ -358,12 +359,12 @@ namespace ClearHl7.Fhir.V260.Segments
                                 GuarantorDateBegin.HasValue ? GuarantorDateBegin.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 GuarantorDateEnd.HasValue ? GuarantorDateEnd.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 GuarantorPriority.HasValue ? GuarantorPriority.Value.ToString(Consts.NumericFormat, culture) : null,
-                                GuarantorEmployerName != null ? string.Join("~", GuarantorEmployerName.Select(x => x.ToDelimitedString())) : null,
-                                GuarantorEmployerAddress != null ? string.Join("~", GuarantorEmployerAddress.Select(x => x.ToDelimitedString())) : null,
-                                GuarantorEmployerPhoneNumber != null ? string.Join("~", GuarantorEmployerPhoneNumber.Select(x => x.ToDelimitedString())) : null,
-                                GuarantorEmployeeIdNumber != null ? string.Join("~", GuarantorEmployeeIdNumber.Select(x => x.ToDelimitedString())) : null,
+                                GuarantorEmployerName != null ? string.Join(Configuration.FieldRepeatSeparator, GuarantorEmployerName.Select(x => x.ToDelimitedString())) : null,
+                                GuarantorEmployerAddress != null ? string.Join(Configuration.FieldRepeatSeparator, GuarantorEmployerAddress.Select(x => x.ToDelimitedString())) : null,
+                                GuarantorEmployerPhoneNumber != null ? string.Join(Configuration.FieldRepeatSeparator, GuarantorEmployerPhoneNumber.Select(x => x.ToDelimitedString())) : null,
+                                GuarantorEmployeeIdNumber != null ? string.Join(Configuration.FieldRepeatSeparator, GuarantorEmployeeIdNumber.Select(x => x.ToDelimitedString())) : null,
                                 GuarantorEmploymentStatus,
-                                GuarantorOrganizationName != null ? string.Join("~", GuarantorOrganizationName.Select(x => x.ToDelimitedString())) : null,
+                                GuarantorOrganizationName != null ? string.Join(Configuration.FieldRepeatSeparator, GuarantorOrganizationName.Select(x => x.ToDelimitedString())) : null,
                                 GuarantorBillingHoldFlag,
                                 GuarantorCreditRatingCode?.ToDelimitedString(),
                                 GuarantorDeathDateAndTime.HasValue ? GuarantorDeathDateAndTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
@@ -371,36 +372,36 @@ namespace ClearHl7.Fhir.V260.Segments
                                 GuarantorChargeAdjustmentCode?.ToDelimitedString(),
                                 GuarantorHouseholdAnnualIncome?.ToDelimitedString(),
                                 GuarantorHouseholdSize.HasValue ? GuarantorHouseholdSize.Value.ToString(Consts.NumericFormat, culture) : null,
-                                GuarantorEmployerIdNumber != null ? string.Join("~", GuarantorEmployerIdNumber.Select(x => x.ToDelimitedString())) : null,
+                                GuarantorEmployerIdNumber != null ? string.Join(Configuration.FieldRepeatSeparator, GuarantorEmployerIdNumber.Select(x => x.ToDelimitedString())) : null,
                                 GuarantorMaritalStatusCode?.ToDelimitedString(),
                                 GuarantorHireEffectiveDate.HasValue ? GuarantorHireEffectiveDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 EmploymentStopDate.HasValue ? EmploymentStopDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 LivingDependency,
-                                AmbulatoryStatus != null ? string.Join("~", AmbulatoryStatus) : null,
-                                Citizenship != null ? string.Join("~", Citizenship.Select(x => x.ToDelimitedString())) : null,
+                                AmbulatoryStatus != null ? string.Join(Configuration.FieldRepeatSeparator, AmbulatoryStatus) : null,
+                                Citizenship != null ? string.Join(Configuration.FieldRepeatSeparator, Citizenship.Select(x => x.ToDelimitedString())) : null,
                                 PrimaryLanguage?.ToDelimitedString(),
                                 LivingArrangement,
                                 PublicityCode?.ToDelimitedString(),
                                 ProtectionIndicator,
                                 StudentIndicator,
                                 Religion?.ToDelimitedString(),
-                                MothersMaidenName != null ? string.Join("~", MothersMaidenName.Select(x => x.ToDelimitedString())) : null,
+                                MothersMaidenName != null ? string.Join(Configuration.FieldRepeatSeparator, MothersMaidenName.Select(x => x.ToDelimitedString())) : null,
                                 Nationality?.ToDelimitedString(),
-                                EthnicGroup != null ? string.Join("~", EthnicGroup.Select(x => x.ToDelimitedString())) : null,
-                                ContactPersonsName != null ? string.Join("~", ContactPersonsName.Select(x => x.ToDelimitedString())) : null,
-                                ContactPersonsTelephoneNumber != null ? string.Join("~", ContactPersonsTelephoneNumber.Select(x => x.ToDelimitedString())) : null,
+                                EthnicGroup != null ? string.Join(Configuration.FieldRepeatSeparator, EthnicGroup.Select(x => x.ToDelimitedString())) : null,
+                                ContactPersonsName != null ? string.Join(Configuration.FieldRepeatSeparator, ContactPersonsName.Select(x => x.ToDelimitedString())) : null,
+                                ContactPersonsTelephoneNumber != null ? string.Join(Configuration.FieldRepeatSeparator, ContactPersonsTelephoneNumber.Select(x => x.ToDelimitedString())) : null,
                                 ContactReason?.ToDelimitedString(),
                                 ContactRelationship,
                                 JobTitle,
                                 JobCodeClass?.ToDelimitedString(),
-                                GuarantorEmployersOrganizationName != null ? string.Join("~", GuarantorEmployersOrganizationName.Select(x => x.ToDelimitedString())) : null,
+                                GuarantorEmployersOrganizationName != null ? string.Join(Configuration.FieldRepeatSeparator, GuarantorEmployersOrganizationName.Select(x => x.ToDelimitedString())) : null,
                                 Handicap,
                                 JobStatus,
                                 GuarantorFinancialClass?.ToDelimitedString(),
-                                GuarantorRace != null ? string.Join("~", GuarantorRace.Select(x => x.ToDelimitedString())) : null,
+                                GuarantorRace != null ? string.Join(Configuration.FieldRepeatSeparator, GuarantorRace.Select(x => x.ToDelimitedString())) : null,
                                 GuarantorBirthPlace,
                                 VipIndicator
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

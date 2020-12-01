@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V270.Types;
 
 namespace ClearHl7.Fhir.V270.Segments
@@ -203,7 +204,7 @@ namespace ClearHl7.Fhir.V270.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}",
+                                StringHelper.StringFormatSequence(0, 34, Configuration.FieldSeparator),
                                 Id,
                                 OrderControl,
                                 PlacerOrderNumber?.ToDelimitedString(),
@@ -211,24 +212,24 @@ namespace ClearHl7.Fhir.V270.Segments
                                 PlacerGroupNumber?.ToDelimitedString(),
                                 OrderStatus,
                                 ResponseFlag,
-                                QuantityTiming != null ? string.Join("~", QuantityTiming) : null,
+                                QuantityTiming != null ? string.Join(Configuration.FieldRepeatSeparator, QuantityTiming) : null,
                                 ParentOrder?.ToDelimitedString(),
                                 DateTimeOfTransaction.HasValue ? DateTimeOfTransaction.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                EnteredBy != null ? string.Join("~", EnteredBy.Select(x => x.ToDelimitedString())) : null,
-                                VerifiedBy != null ? string.Join("~", VerifiedBy.Select(x => x.ToDelimitedString())) : null,
-                                OrderingProvider != null ? string.Join("~", OrderingProvider.Select(x => x.ToDelimitedString())) : null,
+                                EnteredBy != null ? string.Join(Configuration.FieldRepeatSeparator, EnteredBy.Select(x => x.ToDelimitedString())) : null,
+                                VerifiedBy != null ? string.Join(Configuration.FieldRepeatSeparator, VerifiedBy.Select(x => x.ToDelimitedString())) : null,
+                                OrderingProvider != null ? string.Join(Configuration.FieldRepeatSeparator, OrderingProvider.Select(x => x.ToDelimitedString())) : null,
                                 EnterersLocation?.ToDelimitedString(),
-                                CallBackPhoneNumber != null ? string.Join("~", CallBackPhoneNumber.Select(x => x.ToDelimitedString())) : null,
+                                CallBackPhoneNumber != null ? string.Join(Configuration.FieldRepeatSeparator, CallBackPhoneNumber.Select(x => x.ToDelimitedString())) : null,
                                 OrderEffectiveDateTime.HasValue ? OrderEffectiveDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 OrderControlCodeReason?.ToDelimitedString(),
                                 EnteringOrganization?.ToDelimitedString(),
                                 EnteringDevice?.ToDelimitedString(),
-                                ActionBy != null ? string.Join("~", ActionBy.Select(x => x.ToDelimitedString())) : null,
+                                ActionBy != null ? string.Join(Configuration.FieldRepeatSeparator, ActionBy.Select(x => x.ToDelimitedString())) : null,
                                 AdvancedBeneficiaryNoticeCode?.ToDelimitedString(),
-                                OrderingFacilityName != null ? string.Join("~", OrderingFacilityName.Select(x => x.ToDelimitedString())) : null,
-                                OrderingFacilityAddress != null ? string.Join("~", OrderingFacilityAddress.Select(x => x.ToDelimitedString())) : null,
-                                OrderingFacilityPhoneNumber != null ? string.Join("~", OrderingFacilityPhoneNumber.Select(x => x.ToDelimitedString())) : null,
-                                OrderingProviderAddress != null ? string.Join("~", OrderingProviderAddress.Select(x => x.ToDelimitedString())) : null,
+                                OrderingFacilityName != null ? string.Join(Configuration.FieldRepeatSeparator, OrderingFacilityName.Select(x => x.ToDelimitedString())) : null,
+                                OrderingFacilityAddress != null ? string.Join(Configuration.FieldRepeatSeparator, OrderingFacilityAddress.Select(x => x.ToDelimitedString())) : null,
+                                OrderingFacilityPhoneNumber != null ? string.Join(Configuration.FieldRepeatSeparator, OrderingFacilityPhoneNumber.Select(x => x.ToDelimitedString())) : null,
+                                OrderingProviderAddress != null ? string.Join(Configuration.FieldRepeatSeparator, OrderingProviderAddress.Select(x => x.ToDelimitedString())) : null,
                                 OrderStatusModifier?.ToDelimitedString(),
                                 AdvancedBeneficiaryNoticeOverrideReason?.ToDelimitedString(),
                                 FillersExpectedAvailabilityDateTime.HasValue ? FillersExpectedAvailabilityDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
@@ -237,8 +238,8 @@ namespace ClearHl7.Fhir.V270.Segments
                                 EntererAuthorizationMode?.ToDelimitedString(),
                                 ParentUniversalServiceIdentifier?.ToDelimitedString(),
                                 AdvancedBeneficiaryNoticeDate.HasValue ? AdvancedBeneficiaryNoticeDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
-                                AlternatePlacerOrderNumber != null ? string.Join("~", AlternatePlacerOrderNumber.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                AlternatePlacerOrderNumber != null ? string.Join(Configuration.FieldRepeatSeparator, AlternatePlacerOrderNumber.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V250.Types;
 
 namespace ClearHl7.Fhir.V250.Segments
@@ -82,19 +83,19 @@ namespace ClearHl7.Fhir.V250.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}",
+                                StringHelper.StringFormatSequence(0, 11, Configuration.FieldSeparator),
                                 Id,
-                                WhereSubjectFilter != null ? string.Join("~", WhereSubjectFilter) : null,
+                                WhereSubjectFilter != null ? string.Join(Configuration.FieldRepeatSeparator, WhereSubjectFilter) : null,
                                 WhenDataStartDateTime.HasValue ? WhenDataStartDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 WhenDataEndDateTime.HasValue ? WhenDataEndDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                WhatUserQualifier != null ? string.Join("~", WhatUserQualifier) : null,
-                                OtherQrySubjectFilter != null ? string.Join("~", OtherQrySubjectFilter) : null,
-                                WhichDateTimeQualifier != null ? string.Join("~", WhichDateTimeQualifier) : null,
-                                WhichDateTimeStatusQualifier != null ? string.Join("~", WhichDateTimeStatusQualifier) : null,
-                                DateTimeSelectionQualifier != null ? string.Join("~", DateTimeSelectionQualifier) : null,
+                                WhatUserQualifier != null ? string.Join(Configuration.FieldRepeatSeparator, WhatUserQualifier) : null,
+                                OtherQrySubjectFilter != null ? string.Join(Configuration.FieldRepeatSeparator, OtherQrySubjectFilter) : null,
+                                WhichDateTimeQualifier != null ? string.Join(Configuration.FieldRepeatSeparator, WhichDateTimeQualifier) : null,
+                                WhichDateTimeStatusQualifier != null ? string.Join(Configuration.FieldRepeatSeparator, WhichDateTimeStatusQualifier) : null,
+                                DateTimeSelectionQualifier != null ? string.Join(Configuration.FieldRepeatSeparator, DateTimeSelectionQualifier) : null,
                                 WhenQuantityTimingQualifier?.ToDelimitedString(),
                                 SearchConfidenceThreshold.HasValue ? SearchConfidenceThreshold.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V280.Types;
 
 namespace ClearHl7.Fhir.V280.Segments
@@ -46,12 +44,12 @@ namespace ClearHl7.Fhir.V280.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}",
+                                StringHelper.StringFormatSequence(0, 4, Configuration.FieldSeparator),
                                 Id,
                                 SetIdRgs.HasValue ? SetIdRgs.Value.ToString(culture) : null,
                                 SegmentActionCode,
                                 ResourceGroupId?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

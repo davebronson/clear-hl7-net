@@ -1,7 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.V281.Types;
+using ClearHl7.Fhir.Helpers;
 
 namespace ClearHl7.Fhir.V281.Segments
 {
@@ -41,10 +41,10 @@ namespace ClearHl7.Fhir.V281.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}",
+                                StringHelper.StringFormatSequence(0, 2, Configuration.FieldSeparator),
                                 Id,
-                                SegmentItems != null ? string.Join("|", SegmentItems.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                SegmentItems != null ? string.Join(Configuration.FieldSeparator, SegmentItems.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

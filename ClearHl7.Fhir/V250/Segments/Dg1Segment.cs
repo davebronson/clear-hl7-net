@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V250.Types;
 
 namespace ClearHl7.Fhir.V250.Segments
@@ -147,7 +148,7 @@ namespace ClearHl7.Fhir.V250.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}",
+                                StringHelper.StringFormatSequence(0, 22, Configuration.FieldSeparator),
                                 Id,
                                 SetIdDg1.HasValue ? SetIdDg1.Value.ToString(culture) : null,
                                 DiagnosisCodingMethod,
@@ -164,13 +165,13 @@ namespace ClearHl7.Fhir.V250.Segments
                                 OutlierCost?.ToDelimitedString(),
                                 GrouperVersionAndType,
                                 DiagnosisPriority,
-                                DiagnosingClinician != null ? string.Join("~", DiagnosingClinician.Select(x => x.ToDelimitedString())) : null,
+                                DiagnosingClinician != null ? string.Join(Configuration.FieldRepeatSeparator, DiagnosingClinician.Select(x => x.ToDelimitedString())) : null,
                                 DiagnosisClassification,
                                 ConfidentialIndicator,
                                 AttestationDateTime.HasValue? AttestationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 DiagnosisIdentifier?.ToDelimitedString(),
                                 DiagnosisActionCode
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

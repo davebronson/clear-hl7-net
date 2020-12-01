@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
@@ -163,16 +164,16 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}",
+                                StringHelper.StringFormatSequence(0, 25, Configuration.FieldSeparator),
                                 Id,
                                 HealthPlanId?.ToDelimitedString(),
-                                InsuranceCompanyId != null ? string.Join("~", InsuranceCompanyId.Select(x => x.ToDelimitedString())) : null,
-                                InsuranceCompanyName != null ? string.Join("~", InsuranceCompanyName.Select(x => x.ToDelimitedString())) : null,
-                                InsuranceCompanyAddress != null ? string.Join("~", InsuranceCompanyAddress.Select(x => x.ToDelimitedString())) : null,
-                                InsuranceCoContactPerson != null ? string.Join("~", InsuranceCoContactPerson.Select(x => x.ToDelimitedString())) : null,
-                                InsuranceCoPhoneNumber != null ? string.Join("~", InsuranceCoPhoneNumber.Select(x => x.ToDelimitedString())) : null,
+                                InsuranceCompanyId != null ? string.Join(Configuration.FieldRepeatSeparator, InsuranceCompanyId.Select(x => x.ToDelimitedString())) : null,
+                                InsuranceCompanyName != null ? string.Join(Configuration.FieldRepeatSeparator, InsuranceCompanyName.Select(x => x.ToDelimitedString())) : null,
+                                InsuranceCompanyAddress != null ? string.Join(Configuration.FieldRepeatSeparator, InsuranceCompanyAddress.Select(x => x.ToDelimitedString())) : null,
+                                InsuranceCoContactPerson != null ? string.Join(Configuration.FieldRepeatSeparator, InsuranceCoContactPerson.Select(x => x.ToDelimitedString())) : null,
+                                InsuranceCoPhoneNumber != null ? string.Join(Configuration.FieldRepeatSeparator, InsuranceCoPhoneNumber.Select(x => x.ToDelimitedString())) : null,
                                 GroupNumber,
-                                GroupName != null ? string.Join("~", GroupName.Select(x => x.ToDelimitedString())) : null,
+                                GroupName != null ? string.Join(Configuration.FieldRepeatSeparator, GroupName.Select(x => x.ToDelimitedString())) : null,
                                 PlanEffectiveDate.HasValue ? PlanEffectiveDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 PlanExpirationDate.HasValue ? PlanExpirationDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 PatientDobRequired,
@@ -189,7 +190,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 CommercialCarrierNameAndAddressRequired,
                                 PolicyNumberPattern,
                                 GroupNumberPattern
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

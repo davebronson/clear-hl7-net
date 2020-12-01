@@ -1,5 +1,6 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
+using ClearHl7.Fhir.Helpers;
 
 namespace ClearHl7.Fhir.V230.Segments
 {
@@ -49,13 +50,13 @@ namespace ClearHl7.Fhir.V230.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}",
+                                StringHelper.StringFormatSequence(0, 5, Configuration.FieldSeparator),
                                 Id,
                                 RecordLevelEventCode,
                                 MfnControlId,
                                 EffectiveDateTime.HasValue ? EffectiveDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                PrimaryKeyValueMfe != null ? string.Join("~", PrimaryKeyValueMfe) : null
-                                ).TrimEnd('|');
+                                PrimaryKeyValueMfe != null ? string.Join(Configuration.FieldRepeatSeparator, PrimaryKeyValueMfe) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

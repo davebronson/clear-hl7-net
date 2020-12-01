@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V240.Types;
 
 namespace ClearHl7.Fhir.V240.Segments
@@ -80,19 +80,19 @@ namespace ClearHl7.Fhir.V240.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}",
+                                StringHelper.StringFormatSequence(0, 11, Configuration.FieldSeparator),
                                 Id,
                                 SequenceNumberTestObservationMasterFile.HasValue ? SequenceNumberTestObservationMasterFile.Value.ToString(Consts.NumericFormat, culture) : null,
                                 UnitsOfMeasure?.ToDelimitedString(),
-                                RangeOfDecimalPrecision != null ? string.Join("~", RangeOfDecimalPrecision.Select(x => x.ToString(Consts.NumericFormat, culture))) : null,
+                                RangeOfDecimalPrecision != null ? string.Join(Configuration.FieldRepeatSeparator, RangeOfDecimalPrecision.Select(x => x.ToString(Consts.NumericFormat, culture))) : null,
                                 CorrespondingSiUnitsOfMeasure?.ToDelimitedString(),
                                 SiConversionFactor?.ToDelimitedString(),
-                                ReferenceNormalRangeForOrdinalAndContinuousObservations != null ? string.Join("~", ReferenceNormalRangeForOrdinalAndContinuousObservations.Select(x => x.ToDelimitedString())) : null,
-                                CriticalRangeForOrdinalAndContinuousObservations != null ? string.Join("~", CriticalRangeForOrdinalAndContinuousObservations.Select(x => x.ToDelimitedString())) : null,
+                                ReferenceNormalRangeForOrdinalAndContinuousObservations != null ? string.Join(Configuration.FieldRepeatSeparator, ReferenceNormalRangeForOrdinalAndContinuousObservations.Select(x => x.ToDelimitedString())) : null,
+                                CriticalRangeForOrdinalAndContinuousObservations != null ? string.Join(Configuration.FieldRepeatSeparator, CriticalRangeForOrdinalAndContinuousObservations.Select(x => x.ToDelimitedString())) : null,
                                 AbsoluteRangeForOrdinalAndContinuousObservations?.ToDelimitedString(),
-                                DeltaCheckCriteria != null ? string.Join("~", DeltaCheckCriteria.Select(x => x.ToDelimitedString())) : null,
+                                DeltaCheckCriteria != null ? string.Join(Configuration.FieldRepeatSeparator, DeltaCheckCriteria.Select(x => x.ToDelimitedString())) : null,
                                 MinimumMeaningfulIncrements.HasValue ? MinimumMeaningfulIncrements.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

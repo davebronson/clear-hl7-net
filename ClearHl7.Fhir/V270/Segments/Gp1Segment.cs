@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V270.Types;
 
 namespace ClearHl7.Fhir.V270.Segments
@@ -59,14 +59,14 @@ namespace ClearHl7.Fhir.V270.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}",
+                                StringHelper.StringFormatSequence(0, 6, Configuration.FieldSeparator),
                                 Id,
                                 TypeOfBillCode?.ToDelimitedString(),
-                                RevenueCode != null ? string.Join("~", RevenueCode.Select(x => x.ToDelimitedString())) : null,
+                                RevenueCode != null ? string.Join(Configuration.FieldRepeatSeparator, RevenueCode.Select(x => x.ToDelimitedString())) : null,
                                 OverallClaimDispositionCode?.ToDelimitedString(),
-                                OceEditsPerVisitCode != null ? string.Join("~", OceEditsPerVisitCode.Select(x => x.ToDelimitedString())) : null,
+                                OceEditsPerVisitCode != null ? string.Join(Configuration.FieldRepeatSeparator, OceEditsPerVisitCode.Select(x => x.ToDelimitedString())) : null,
                                 OutlierCost?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

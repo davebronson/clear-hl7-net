@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V270.Types;
 
 namespace ClearHl7.Fhir.V270.Segments
@@ -170,7 +170,7 @@ namespace ClearHl7.Fhir.V270.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}",
+                                StringHelper.StringFormatSequence(0, 27, Configuration.FieldSeparator),
                                 Id,
                                 SetIdIvt.HasValue ? SetIdIvt.Value.ToString(culture) : null,
                                 InventoryLocationIdentifier?.ToDelimitedString(),
@@ -178,7 +178,7 @@ namespace ClearHl7.Fhir.V270.Segments
                                 SourceLocationIdentifier?.ToDelimitedString(),
                                 SourceLocationName,
                                 ItemStatus?.ToDelimitedString(),
-                                BinLocationIdentifier != null ? string.Join("~", BinLocationIdentifier.Select(x => x.ToDelimitedString())) : null,
+                                BinLocationIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, BinLocationIdentifier.Select(x => x.ToDelimitedString())) : null,
                                 OrderPackaging?.ToDelimitedString(),
                                 IssuePackaging?.ToDelimitedString(),
                                 DefaultInventoryAssetAccount?.ToDelimitedString(),
@@ -190,7 +190,7 @@ namespace ClearHl7.Fhir.V270.Segments
                                 ConsignmentItemIndicator?.ToDelimitedString(),
                                 ReusableItemIndicator?.ToDelimitedString(),
                                 ReusableCost?.ToDelimitedString(),
-                                SubstituteItemIdentifier != null ? string.Join("~", SubstituteItemIdentifier.Select(x => x.ToDelimitedString())) : null,
+                                SubstituteItemIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, SubstituteItemIdentifier.Select(x => x.ToDelimitedString())) : null,
                                 LatexFreeSubstituteItemIdentifier?.ToDelimitedString(),
                                 RecommendedReorderTheory?.ToDelimitedString(),
                                 RecommendedSafetyStockDays.HasValue ? RecommendedSafetyStockDays.Value.ToString(Consts.NumericFormat, culture) : null,
@@ -198,7 +198,7 @@ namespace ClearHl7.Fhir.V270.Segments
                                 RecommendedOrderPoint.HasValue ? RecommendedOrderPoint.Value.ToString(Consts.NumericFormat, culture) : null,
                                 RecommendedOrderAmount.HasValue ? RecommendedOrderAmount.Value.ToString(Consts.NumericFormat, culture) : null,
                                 OperatingRoomParLevelIndicator?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

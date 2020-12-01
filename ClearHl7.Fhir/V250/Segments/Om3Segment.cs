@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V250.Types;
 
 namespace ClearHl7.Fhir.V250.Segments
@@ -66,16 +66,16 @@ namespace ClearHl7.Fhir.V250.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}",
+                                StringHelper.StringFormatSequence(0, 8, Configuration.FieldSeparator),
                                 Id,
                                 SequenceNumberTestObservationMasterFile.HasValue ? SequenceNumberTestObservationMasterFile.Value.ToString(Consts.NumericFormat, culture) : null,
                                 PreferredCodingSystem?.ToDelimitedString(),
                                 ValidCodedAnswers?.ToDelimitedString(),
-                                NormalTextCodesForCategoricalObservations != null ? string.Join("~", NormalTextCodesForCategoricalObservations.Select(x => x.ToDelimitedString())) : null,
-                                AbnormalTextCodesForCategoricalObservations != null ? string.Join("~", AbnormalTextCodesForCategoricalObservations.Select(x => x.ToDelimitedString())) : null,
-                                CriticalTextCodesForCategoricalObservations != null ? string.Join("~", CriticalTextCodesForCategoricalObservations.Select(x => x.ToDelimitedString())) : null,
+                                NormalTextCodesForCategoricalObservations != null ? string.Join(Configuration.FieldRepeatSeparator, NormalTextCodesForCategoricalObservations.Select(x => x.ToDelimitedString())) : null,
+                                AbnormalTextCodesForCategoricalObservations != null ? string.Join(Configuration.FieldRepeatSeparator, AbnormalTextCodesForCategoricalObservations.Select(x => x.ToDelimitedString())) : null,
+                                CriticalTextCodesForCategoricalObservations != null ? string.Join(Configuration.FieldRepeatSeparator, CriticalTextCodesForCategoricalObservations.Select(x => x.ToDelimitedString())) : null,
                                 ValueType
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V281.Types;
 
 namespace ClearHl7.Fhir.V281.Segments
@@ -104,23 +105,23 @@ namespace ClearHl7.Fhir.V281.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}",
+                                StringHelper.StringFormatSequence(0, 15, Configuration.FieldSeparator),
                                 Id,
-                                ProviderRole != null ? string.Join("~", ProviderRole.Select(x => x.ToDelimitedString())) : null,
-                                ProviderName != null ? string.Join("~", ProviderName.Select(x => x.ToDelimitedString())) : null,
-                                ProviderAddress != null ? string.Join("~", ProviderAddress.Select(x => x.ToDelimitedString())) : null,
+                                ProviderRole != null ? string.Join(Configuration.FieldRepeatSeparator, ProviderRole.Select(x => x.ToDelimitedString())) : null,
+                                ProviderName != null ? string.Join(Configuration.FieldRepeatSeparator, ProviderName.Select(x => x.ToDelimitedString())) : null,
+                                ProviderAddress != null ? string.Join(Configuration.FieldRepeatSeparator, ProviderAddress.Select(x => x.ToDelimitedString())) : null,
                                 ProviderLocation?.ToDelimitedString(),
-                                ProviderCommunicationInformation != null ? string.Join("~", ProviderCommunicationInformation.Select(x => x.ToDelimitedString())) : null,
+                                ProviderCommunicationInformation != null ? string.Join(Configuration.FieldRepeatSeparator, ProviderCommunicationInformation.Select(x => x.ToDelimitedString())) : null,
                                 PreferredMethodOfContact?.ToDelimitedString(),
-                                ProviderIdentifiers != null ? string.Join("~", ProviderIdentifiers.Select(x => x.ToDelimitedString())) : null,
+                                ProviderIdentifiers != null ? string.Join(Configuration.FieldRepeatSeparator, ProviderIdentifiers.Select(x => x.ToDelimitedString())) : null,
                                 EffectiveStartDateOfProviderRole.HasValue ? EffectiveStartDateOfProviderRole.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                EffectiveEndDateOfProviderRole != null ? string.Join("~", EffectiveEndDateOfProviderRole.Select(x => x.ToString(Consts.DateTimeFormatPrecisionSecond, culture))) : null,
+                                EffectiveEndDateOfProviderRole != null ? string.Join(Configuration.FieldRepeatSeparator, EffectiveEndDateOfProviderRole.Select(x => x.ToString(Consts.DateTimeFormatPrecisionSecond, culture))) : null,
                                 ProviderOrganizationNameAndIdentifier?.ToDelimitedString(),
-                                ProviderOrganizationAddress != null ? string.Join("~", ProviderOrganizationAddress.Select(x => x.ToDelimitedString())) : null,
-                                ProviderOrganizationLocationInformation != null ? string.Join("~", ProviderOrganizationLocationInformation.Select(x => x.ToDelimitedString())) : null,
-                                ProviderOrganizationCommunicationInformation != null ? string.Join("~", ProviderOrganizationCommunicationInformation.Select(x => x.ToDelimitedString())) : null,
+                                ProviderOrganizationAddress != null ? string.Join(Configuration.FieldRepeatSeparator, ProviderOrganizationAddress.Select(x => x.ToDelimitedString())) : null,
+                                ProviderOrganizationLocationInformation != null ? string.Join(Configuration.FieldRepeatSeparator, ProviderOrganizationLocationInformation.Select(x => x.ToDelimitedString())) : null,
+                                ProviderOrganizationCommunicationInformation != null ? string.Join(Configuration.FieldRepeatSeparator, ProviderOrganizationCommunicationInformation.Select(x => x.ToDelimitedString())) : null,
                                 ProviderOrganizationMethodOfContact?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

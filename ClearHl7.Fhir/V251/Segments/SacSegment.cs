@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V251.Types;
 
 namespace ClearHl7.Fhir.V251.Segments
@@ -263,7 +264,7 @@ namespace ClearHl7.Fhir.V251.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}|{39}|{40}|{41}|{42}|{43}|{44}",
+                                StringHelper.StringFormatSequence(0, 45, Configuration.FieldSeparator),
                                 Id,
                                 ExternalAccessionIdentifier?.ToDelimitedString(),
                                 AccessionIdentifier?.ToDelimitedString(),
@@ -279,7 +280,7 @@ namespace ClearHl7.Fhir.V251.Segments
                                 TrayTypeSac?.ToDelimitedString(),
                                 TrayIdentifier?.ToDelimitedString(),
                                 PositionInTray?.ToDelimitedString(),
-                                Location != null ? string.Join("~", Location.Select(x => x.ToDelimitedString())) : null,
+                                Location != null ? string.Join(Configuration.FieldRepeatSeparator, Location.Select(x => x.ToDelimitedString())) : null,
                                 ContainerHeight.HasValue ? ContainerHeight.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ContainerDiameter.HasValue ? ContainerDiameter.Value.ToString(Consts.NumericFormat, culture) : null,
                                 BarrierDelta.HasValue ? BarrierDelta.Value.ToString(Consts.NumericFormat, culture) : null,
@@ -291,7 +292,7 @@ namespace ClearHl7.Fhir.V251.Segments
                                 VolumeUnits?.ToDelimitedString(),
                                 SeparatorType?.ToDelimitedString(),
                                 CapType?.ToDelimitedString(),
-                                Additive != null ? string.Join("~", Additive.Select(x => x.ToDelimitedString())) : null,
+                                Additive != null ? string.Join(Configuration.FieldRepeatSeparator, Additive.Select(x => x.ToDelimitedString())) : null,
                                 SpecimenComponent?.ToDelimitedString(),
                                 DilutionFactor?.ToDelimitedString(),
                                 Treatment?.ToDelimitedString(),
@@ -304,12 +305,12 @@ namespace ClearHl7.Fhir.V251.Segments
                                 IcterusIndexUnits?.ToDelimitedString(),
                                 FibrinIndex.HasValue ? FibrinIndex.Value.ToString(Consts.NumericFormat, culture) : null,
                                 FibrinIndexUnits?.ToDelimitedString(),
-                                SystemInducedContaminants != null ? string.Join("~", SystemInducedContaminants.Select(x => x.ToDelimitedString())) : null,
-                                DrugInterference != null ? string.Join("~", DrugInterference.Select(x => x.ToDelimitedString())) : null,
+                                SystemInducedContaminants != null ? string.Join(Configuration.FieldRepeatSeparator, SystemInducedContaminants.Select(x => x.ToDelimitedString())) : null,
+                                DrugInterference != null ? string.Join(Configuration.FieldRepeatSeparator, DrugInterference.Select(x => x.ToDelimitedString())) : null,
                                 ArtificialBlood?.ToDelimitedString(),
-                                SpecialHandlingCode != null ? string.Join("~", SpecialHandlingCode.Select(x => x.ToDelimitedString())) : null,
-                                OtherEnvironmentalFactors != null ? string.Join("~", OtherEnvironmentalFactors.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                SpecialHandlingCode != null ? string.Join(Configuration.FieldRepeatSeparator, SpecialHandlingCode.Select(x => x.ToDelimitedString())) : null,
+                                OtherEnvironmentalFactors != null ? string.Join(Configuration.FieldRepeatSeparator, OtherEnvironmentalFactors.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

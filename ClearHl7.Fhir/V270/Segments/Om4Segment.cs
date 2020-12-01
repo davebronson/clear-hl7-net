@@ -1,5 +1,5 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V270.Types;
 
 namespace ClearHl7.Fhir.V270.Segments
@@ -102,7 +102,7 @@ namespace ClearHl7.Fhir.V270.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}",
+                                StringHelper.StringFormatSequence(0, 15, Configuration.FieldSeparator),
                                 Id,
                                 SequenceNumberTestObservationMasterFile.HasValue ? SequenceNumberTestObservationMasterFile.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DerivedSpecimen,
@@ -116,9 +116,9 @@ namespace ClearHl7.Fhir.V270.Segments
                                 NormalCollectionVolume?.ToDelimitedString(),
                                 MinimumCollectionVolume?.ToDelimitedString(),
                                 SpecimenRequirements?.ToDelimitedString(),
-                                SpecimenPriorities != null ? string.Join("~", SpecimenPriorities) : null,
+                                SpecimenPriorities != null ? string.Join(Configuration.FieldRepeatSeparator, SpecimenPriorities) : null,
                                 SpecimenRetentionTime?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

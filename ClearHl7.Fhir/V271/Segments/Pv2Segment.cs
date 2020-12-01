@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V271.Types;
 
 namespace ClearHl7.Fhir.V271.Segments
@@ -307,21 +308,21 @@ namespace ClearHl7.Fhir.V271.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}|{39}|{40}|{41}|{42}|{43}|{44}|{45}|{46}|{47}|{48}|{49}|{50}",
+                                StringHelper.StringFormatSequence(0, 51, Configuration.FieldSeparator),
                                 Id,
                                 PriorPendingLocation?.ToDelimitedString(),
                                 AccommodationCode?.ToDelimitedString(),
                                 AdmitReason?.ToDelimitedString(),
                                 TransferReason?.ToDelimitedString(),
-                                PatientValuables != null ? string.Join("~", PatientValuables) : null,
+                                PatientValuables != null ? string.Join(Configuration.FieldRepeatSeparator, PatientValuables) : null,
                                 PatientValuablesLocation,
-                                VisitUserCode != null ? string.Join("~", VisitUserCode.Select(x => x.ToDelimitedString())) : null,
+                                VisitUserCode != null ? string.Join(Configuration.FieldRepeatSeparator, VisitUserCode.Select(x => x.ToDelimitedString())) : null,
                                 ExpectedAdmitDateTime.HasValue ? ExpectedAdmitDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ExpectedDischargeDateTime.HasValue ? ExpectedDischargeDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 EstimatedLengthOfInpatientStay.HasValue ? EstimatedLengthOfInpatientStay.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ActualLengthOfInpatientStay.HasValue ? ActualLengthOfInpatientStay.Value.ToString(Consts.NumericFormat, culture) : null,
                                 VisitDescription,
-                                ReferralSourceCode != null ? string.Join("~", ReferralSourceCode.Select(x => x.ToDelimitedString())) : null,
+                                ReferralSourceCode != null ? string.Join(Configuration.FieldRepeatSeparator, ReferralSourceCode.Select(x => x.ToDelimitedString())) : null,
                                 PreviousServiceDate.HasValue ? PreviousServiceDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 EmploymentIllnessRelatedIndicator,
                                 PurgeStatusCode?.ToDelimitedString(),
@@ -331,7 +332,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 ExpectedNumberOfInsurancePlans.HasValue ? ExpectedNumberOfInsurancePlans.Value.ToString(Consts.NumericFormat, culture) : null,
                                 VisitPublicityCode?.ToDelimitedString(),
                                 VisitProtectionIndicator,
-                                ClinicOrganizationName != null ? string.Join("~", ClinicOrganizationName.Select(x => x.ToDelimitedString())) : null,
+                                ClinicOrganizationName != null ? string.Join(Configuration.FieldRepeatSeparator, ClinicOrganizationName.Select(x => x.ToDelimitedString())) : null,
                                 PatientStatusCode?.ToDelimitedString(),
                                 VisitPriorityCode?.ToDelimitedString(),
                                 PreviousTreatmentDate.HasValue ? PreviousTreatmentDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
@@ -347,19 +348,19 @@ namespace ClearHl7.Fhir.V271.Segments
                                 NewbornBabyIndicator,
                                 BabyDetainedIndicator,
                                 ModeOfArrivalCode?.ToDelimitedString(),
-                                RecreationalDrugUseCode != null ? string.Join("~", RecreationalDrugUseCode.Select(x => x.ToDelimitedString())) : null,
+                                RecreationalDrugUseCode != null ? string.Join(Configuration.FieldRepeatSeparator, RecreationalDrugUseCode.Select(x => x.ToDelimitedString())) : null,
                                 AdmissionLevelOfCareCode?.ToDelimitedString(),
-                                PrecautionCode != null ? string.Join("~", PrecautionCode.Select(x => x.ToDelimitedString())) : null,
+                                PrecautionCode != null ? string.Join(Configuration.FieldRepeatSeparator, PrecautionCode.Select(x => x.ToDelimitedString())) : null,
                                 PatientConditionCode?.ToDelimitedString(),
                                 LivingWillCode?.ToDelimitedString(),
                                 OrganDonorCode?.ToDelimitedString(),
-                                AdvanceDirectiveCode != null ? string.Join("~", AdvanceDirectiveCode.Select(x => x.ToDelimitedString())) : null,
+                                AdvanceDirectiveCode != null ? string.Join(Configuration.FieldRepeatSeparator, AdvanceDirectiveCode.Select(x => x.ToDelimitedString())) : null,
                                 PatientStatusEffectiveDate.HasValue ? PatientStatusEffectiveDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 ExpectedLoaReturnDateTime.HasValue ? ExpectedLoaReturnDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ExpectedPreAdmissionTestingDateTime.HasValue ? ExpectedPreAdmissionTestingDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                NotifyClergyCode != null ? string.Join("~", NotifyClergyCode.Select(x => x.ToDelimitedString())) : null,
+                                NotifyClergyCode != null ? string.Join(Configuration.FieldRepeatSeparator, NotifyClergyCode.Select(x => x.ToDelimitedString())) : null,
                                 AdvanceDirectiveLastVerifiedDate.HasValue ? AdvanceDirectiveLastVerifiedDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

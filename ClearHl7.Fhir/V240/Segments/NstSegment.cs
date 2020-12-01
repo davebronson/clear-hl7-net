@@ -1,4 +1,5 @@
-using System;
+﻿using System;
+using ClearHl7.Fhir.Helpers;
 
 namespace ClearHl7.Fhir.V240.Segments
 {
@@ -104,7 +105,7 @@ namespace ClearHl7.Fhir.V240.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}",
+                                StringHelper.StringFormatSequence(0, 16, Configuration.FieldSeparator),
                                 Id,
                                 StatisticsAvailable,
                                 SourceIdentifier,
@@ -121,7 +122,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 ConnectTimeouts.HasValue ? ConnectTimeouts.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ReceiveTimeouts.HasValue ? ReceiveTimeouts.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ApplicationControlLevelErrors.HasValue ? ApplicationControlLevelErrors.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

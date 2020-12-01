@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using ClearHl7.Fhir.V280.Types;
+﻿using ClearHl7.Fhir.Helpers;
 
 namespace ClearHl7.Fhir.V280.Segments
 {
@@ -35,10 +32,10 @@ namespace ClearHl7.Fhir.V280.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}",
+                                StringHelper.StringFormatSequence(0, 2, Configuration.FieldSeparator),
                                 Id,
                                 AddendumContinuationPointer
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

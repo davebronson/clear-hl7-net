@@ -1,4 +1,5 @@
-using System;
+﻿using System;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V271.Types;
 
 namespace ClearHl7.Fhir.V271.Segments
@@ -65,7 +66,7 @@ namespace ClearHl7.Fhir.V271.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}",
+                                StringHelper.StringFormatSequence(0, 8, Configuration.FieldSeparator),
                                 Id,
                                 SetIdPkg.HasValue ? SetIdPkg.Value.ToString(culture) : null,
                                 PackagingUnits?.ToDelimitedString(),
@@ -74,7 +75,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 Price?.ToDelimitedString(),
                                 FutureItemPrice?.ToDelimitedString(),
                                 FutureItemPriceEffectiveDate.HasValue ? FutureItemPriceEffectiveDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

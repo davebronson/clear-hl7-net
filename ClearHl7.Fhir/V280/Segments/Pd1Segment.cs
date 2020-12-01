@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V280.Types;
 
 namespace ClearHl7.Fhir.V280.Segments
@@ -155,23 +156,23 @@ namespace ClearHl7.Fhir.V280.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}",
+                                StringHelper.StringFormatSequence(0, 23, Configuration.FieldSeparator),
                                 Id,
-                                LivingDependency != null ? string.Join("~", LivingDependency.Select(x => x.ToDelimitedString())) : null,
+                                LivingDependency != null ? string.Join(Configuration.FieldRepeatSeparator, LivingDependency.Select(x => x.ToDelimitedString())) : null,
                                 LivingArrangement?.ToDelimitedString(),
-                                PatientPrimaryFacility != null ? string.Join("~", PatientPrimaryFacility.Select(x => x.ToDelimitedString())) : null,
+                                PatientPrimaryFacility != null ? string.Join(Configuration.FieldRepeatSeparator, PatientPrimaryFacility.Select(x => x.ToDelimitedString())) : null,
                                 PatientPrimaryCareProviderNameIdNo?.ToDelimitedString(),
                                 StudentIndicator?.ToDelimitedString(),
                                 Handicap?.ToDelimitedString(),
                                 LivingWillCode?.ToDelimitedString(),
                                 OrganDonorCode?.ToDelimitedString(),
                                 SeparateBill,
-                                DuplicatePatient != null ? string.Join("~", DuplicatePatient.Select(x => x.ToDelimitedString())) : null,
+                                DuplicatePatient != null ? string.Join(Configuration.FieldRepeatSeparator, DuplicatePatient.Select(x => x.ToDelimitedString())) : null,
                                 PublicityCode?.ToDelimitedString(),
                                 ProtectionIndicator,
                                 ProtectionIndicatorEffectiveDate.HasValue ? ProtectionIndicatorEffectiveDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
-                                PlaceOfWorship != null ? string.Join("~", PlaceOfWorship.Select(x => x.ToDelimitedString())) : null,
-                                AdvanceDirectiveCode != null ? string.Join("~", AdvanceDirectiveCode.Select(x => x.ToDelimitedString())) : null,
+                                PlaceOfWorship != null ? string.Join(Configuration.FieldRepeatSeparator, PlaceOfWorship.Select(x => x.ToDelimitedString())) : null,
+                                AdvanceDirectiveCode != null ? string.Join(Configuration.FieldRepeatSeparator, AdvanceDirectiveCode.Select(x => x.ToDelimitedString())) : null,
                                 ImmunizationRegistryStatus?.ToDelimitedString(),
                                 ImmunizationRegistryStatusEffectiveDate.HasValue ? ImmunizationRegistryStatusEffectiveDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 PublicityCodeEffectiveDate.HasValue ? PublicityCodeEffectiveDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
@@ -179,7 +180,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 MilitaryRankGrade?.ToDelimitedString(),
                                 MilitaryStatus?.ToDelimitedString(),
                                 AdvanceDirectiveLastVerifiedDate.HasValue ? AdvanceDirectiveLastVerifiedDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

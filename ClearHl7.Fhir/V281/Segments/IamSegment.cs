@@ -1,6 +1,6 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V281.Types;
 
 namespace ClearHl7.Fhir.V281.Segments
@@ -187,13 +187,13 @@ namespace ClearHl7.Fhir.V281.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}",
+                                StringHelper.StringFormatSequence(0, 31, Configuration.FieldSeparator),
                                 Id,
                                 SetIdIam.HasValue ? SetIdIam.Value.ToString(culture) : null,
                                 AllergenTypeCode?.ToDelimitedString(),
                                 AllergenCodeMnemonicDescription?.ToDelimitedString(),
                                 AllergySeverityCode?.ToDelimitedString(),
-                                AllergyReactionCode != null ? string.Join("~", AllergyReactionCode) : null,
+                                AllergyReactionCode != null ? string.Join(Configuration.FieldRepeatSeparator, AllergyReactionCode) : null,
                                 AllergyActionCode?.ToDelimitedString(),
                                 AllergyUniqueIdentifier?.ToDelimitedString(),
                                 ActionReason,
@@ -219,7 +219,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 InitiallyRecordedByOrganization?.ToDelimitedString(),
                                 ModifiedByOrganization?.ToDelimitedString(),
                                 InactivatedByOrganization?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V260.Types;
 
 namespace ClearHl7.Fhir.V260.Segments
@@ -227,7 +228,7 @@ namespace ClearHl7.Fhir.V260.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}",
+                                StringHelper.StringFormatSequence(0, 38, Configuration.FieldSeparator),
                                 Id,
                                 CycleStartTime.HasValue ? CycleStartTime.Value.ToString(Consts.TimeFormatPrecisionSecond, culture) : null,
                                 CycleCount.HasValue ? CycleCount.Value.ToString(Consts.NumericFormat, culture) : null,
@@ -261,12 +262,12 @@ namespace ClearHl7.Fhir.V260.Segments
                                 WashTime?.ToDelimitedString(),
                                 InjectionRate?.ToDelimitedString(),
                                 ProcedureCode?.ToDelimitedString(),
-                                PatientIdentifierList != null ? string.Join("~", PatientIdentifierList.Select(x => x.ToDelimitedString())) : null,
+                                PatientIdentifierList != null ? string.Join(Configuration.FieldRepeatSeparator, PatientIdentifierList.Select(x => x.ToDelimitedString())) : null,
                                 AttendingDoctor?.ToDelimitedString(),
                                 DilutionFactor?.ToDelimitedString(),
                                 FillTime?.ToDelimitedString(),
                                 InletTemperature?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

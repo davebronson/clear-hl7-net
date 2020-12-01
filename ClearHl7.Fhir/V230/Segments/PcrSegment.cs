@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V230.Types;
 
 namespace ClearHl7.Fhir.V230.Segments
@@ -155,7 +156,7 @@ namespace ClearHl7.Fhir.V230.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}",
+                                StringHelper.StringFormatSequence(0, 24, Configuration.FieldSeparator),
                                 Id,
                                 ImplicatedProduct?.ToDelimitedString(),
                                 GenericProduct,
@@ -168,7 +169,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 SingleUseDevice,
                                 IndicationForProductUse?.ToDelimitedString(),
                                 ProductProblem,
-                                ProductSerialLotNumber != null ? string.Join("~", ProductSerialLotNumber) : null,
+                                ProductSerialLotNumber != null ? string.Join(Configuration.FieldRepeatSeparator, ProductSerialLotNumber) : null,
                                 ProductAvailableForInspection,
                                 ProductEvaluationPerformed?.ToDelimitedString(),
                                 ProductEvaluationStatus?.ToDelimitedString(),
@@ -177,10 +178,10 @@ namespace ClearHl7.Fhir.V230.Segments
                                 DateProductReturnedToManufacturer.HasValue ? DateProductReturnedToManufacturer.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 DeviceOperatorQualifications,
                                 RelatednessAssessment,
-                                ActionTakenInResponseToTheEvent != null ? string.Join("~", ActionTakenInResponseToTheEvent) : null,
-                                EventCausalityObservations != null ? string.Join("~", EventCausalityObservations) : null,
-                                IndirectExposureMechanism != null ? string.Join("~", IndirectExposureMechanism) : null
-                                ).TrimEnd('|');
+                                ActionTakenInResponseToTheEvent != null ? string.Join(Configuration.FieldRepeatSeparator, ActionTakenInResponseToTheEvent) : null,
+                                EventCausalityObservations != null ? string.Join(Configuration.FieldRepeatSeparator, EventCausalityObservations) : null,
+                                IndirectExposureMechanism != null ? string.Join(Configuration.FieldRepeatSeparator, IndirectExposureMechanism) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

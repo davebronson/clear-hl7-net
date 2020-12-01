@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V251.Types;
 
 namespace ClearHl7.Fhir.V251.Segments
@@ -62,15 +62,15 @@ namespace ClearHl7.Fhir.V251.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}",
+                                StringHelper.StringFormatSequence(0, 7, Configuration.FieldSeparator),
                                 Id,
                                 PrimaryKeyValueLrl?.ToDelimitedString(),
                                 SegmentActionCode,
                                 SegmentUniqueKey?.ToDelimitedString(),
                                 LocationRelationshipId?.ToDelimitedString(),
-                                OrganizationalLocationRelationshipValue != null ? string.Join("~", OrganizationalLocationRelationshipValue.Select(x => x.ToDelimitedString())) : null,
+                                OrganizationalLocationRelationshipValue != null ? string.Join(Configuration.FieldRepeatSeparator, OrganizationalLocationRelationshipValue.Select(x => x.ToDelimitedString())) : null,
                                 PatientLocationRelationshipValue?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V280.Types;
 
 namespace ClearHl7.Fhir.V280.Segments
@@ -207,7 +208,7 @@ namespace ClearHl7.Fhir.V280.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}",
+                                StringHelper.StringFormatSequence(0, 34, Configuration.FieldSeparator),
                                 Id,
                                 DonationIdentificationNumberDin?.ToDelimitedString(),
                                 DonationType?.ToDelimitedString(),
@@ -215,14 +216,14 @@ namespace ClearHl7.Fhir.V280.Segments
                                 PhlebotomyEndDateTime.HasValue ? PhlebotomyEndDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 DonationDuration.HasValue ? DonationDuration.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DonationDurationUnits?.ToDelimitedString(),
-                                IntendedProcedureType != null ? string.Join("~", IntendedProcedureType.Select(x => x.ToDelimitedString())) : null,
-                                ActualProcedureType != null ? string.Join("~", ActualProcedureType.Select(x => x.ToDelimitedString())) : null,
+                                IntendedProcedureType != null ? string.Join(Configuration.FieldRepeatSeparator, IntendedProcedureType.Select(x => x.ToDelimitedString())) : null,
+                                ActualProcedureType != null ? string.Join(Configuration.FieldRepeatSeparator, ActualProcedureType.Select(x => x.ToDelimitedString())) : null,
                                 DonorEligibilityFlag,
-                                DonorEligibilityProcedureType != null ? string.Join("~", DonorEligibilityProcedureType.Select(x => x.ToDelimitedString())) : null,
+                                DonorEligibilityProcedureType != null ? string.Join(Configuration.FieldRepeatSeparator, DonorEligibilityProcedureType.Select(x => x.ToDelimitedString())) : null,
                                 DonorEligibilityDate.HasValue ? DonorEligibilityDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ProcessInterruption?.ToDelimitedString(),
                                 ProcessInterruptionReason?.ToDelimitedString(),
-                                PhlebotomyIssue != null ? string.Join("~", PhlebotomyIssue.Select(x => x.ToDelimitedString())) : null,
+                                PhlebotomyIssue != null ? string.Join(Configuration.FieldRepeatSeparator, PhlebotomyIssue.Select(x => x.ToDelimitedString())) : null,
                                 IntendedRecipientBloodRelative,
                                 IntendedRecipientName?.ToDelimitedString(),
                                 IntendedRecipientDob.HasValue ? IntendedRecipientDob.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
@@ -239,10 +240,10 @@ namespace ClearHl7.Fhir.V280.Segments
                                 FinalReviewStaffId?.ToDelimitedString(),
                                 FinalReviewDateTime.HasValue ? FinalReviewDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 NumberOfTubesCollected.HasValue ? NumberOfTubesCollected.Value.ToString(Consts.NumericFormat, culture) : null,
-                                DonationSampleIdentifier != null ? string.Join("~", DonationSampleIdentifier.Select(x => x.ToDelimitedString())) : null,
+                                DonationSampleIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, DonationSampleIdentifier.Select(x => x.ToDelimitedString())) : null,
                                 DonationAcceptStaff?.ToDelimitedString(),
-                                DonationMaterialReviewStaff != null ? string.Join("~", DonationMaterialReviewStaff.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                DonationMaterialReviewStaff != null ? string.Join(Configuration.FieldRepeatSeparator, DonationMaterialReviewStaff.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

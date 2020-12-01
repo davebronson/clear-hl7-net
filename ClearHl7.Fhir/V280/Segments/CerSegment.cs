@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V280.Types;
 
 namespace ClearHl7.Fhir.V280.Segments
@@ -194,7 +195,7 @@ namespace ClearHl7.Fhir.V280.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}",
+                                StringHelper.StringFormatSequence(0, 32, Configuration.FieldSeparator),
                                 Id,
                                 SetIdCer.HasValue ? SetIdCer.Value.ToString(culture) : null,
                                 SerialNumber,
@@ -209,15 +210,15 @@ namespace ClearHl7.Fhir.V280.Segments
                                 CertificateDomain?.ToDelimitedString(),
                                 SubjectId?.ToDelimitedString(),
                                 SubjectName,
-                                SubjectDirectoryAttributeExtension != null ? string.Join("~", SubjectDirectoryAttributeExtension.Select(x => x.ToDelimitedString())) : null,
+                                SubjectDirectoryAttributeExtension != null ? string.Join(Configuration.FieldRepeatSeparator, SubjectDirectoryAttributeExtension.Select(x => x.ToDelimitedString())) : null,
                                 SubjectPublicKeyInfo?.ToDelimitedString(),
                                 AuthorityKeyIdentifier?.ToDelimitedString(),
                                 BasicConstraint,
-                                CrlDistributionPoint != null ? string.Join("~", CrlDistributionPoint.Select(x => x.ToDelimitedString())) : null,
+                                CrlDistributionPoint != null ? string.Join(Configuration.FieldRepeatSeparator, CrlDistributionPoint.Select(x => x.ToDelimitedString())) : null,
                                 JurisdictionCountry,
                                 JurisdictionStateProvince?.ToDelimitedString(),
                                 JurisdictionCountyParish?.ToDelimitedString(),
-                                JurisdictionBreadth != null ? string.Join("~", JurisdictionBreadth.Select(x => x.ToDelimitedString())) : null,
+                                JurisdictionBreadth != null ? string.Join(Configuration.FieldRepeatSeparator, JurisdictionBreadth.Select(x => x.ToDelimitedString())) : null,
                                 GrantingDate.HasValue ? GrantingDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 IssuingDate.HasValue ? IssuingDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ActivationDate.HasValue ? ActivationDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
@@ -227,7 +228,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 RevocationDate.HasValue ? RevocationDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 RevocationReasonCode?.ToDelimitedString(),
                                 CertificateStatusCode?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

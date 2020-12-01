@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V281.Types;
 
 namespace ClearHl7.Fhir.V281.Segments
@@ -107,7 +108,7 @@ namespace ClearHl7.Fhir.V281.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}",
+                                StringHelper.StringFormatSequence(0, 16, Configuration.FieldSeparator),
                                 Id,
                                 PrimaryKeyValueIim?.ToDelimitedString(),
                                 ServiceItemCode?.ToDelimitedString(),
@@ -123,8 +124,8 @@ namespace ClearHl7.Fhir.V281.Segments
                                 InventoryOnHandQuantity.HasValue ? InventoryOnHandQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
                                 InventoryOnHandQuantityUnit?.ToDelimitedString(),
                                 ProcedureCode?.ToDelimitedString(),
-                                ProcedureCodeModifier != null ? string.Join("~", ProcedureCodeModifier.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                ProcedureCodeModifier != null ? string.Join(Configuration.FieldRepeatSeparator, ProcedureCodeModifier.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

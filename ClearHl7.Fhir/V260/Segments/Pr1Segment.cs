@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V260.Types;
 
 namespace ClearHl7.Fhir.V260.Segments
@@ -152,7 +153,7 @@ namespace ClearHl7.Fhir.V260.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}",
+                                StringHelper.StringFormatSequence(0, 23, Configuration.FieldSeparator),
                                 Id,
                                 SetIdPr1.HasValue ? SetIdPr1.Value.ToString(culture) : null,
                                 ProcedureCodingMethod,
@@ -169,14 +170,14 @@ namespace ClearHl7.Fhir.V260.Segments
                                 ConsentCode?.ToDelimitedString(),
                                 ProcedurePriority.HasValue ? ProcedurePriority.Value.ToString(Consts.NumericFormat, culture) : null,
                                 AssociatedDiagnosisCode?.ToDelimitedString(),
-                                ProcedureCodeModifier != null ? string.Join("~", ProcedureCodeModifier.Select(x => x.ToDelimitedString())) : null,
+                                ProcedureCodeModifier != null ? string.Join(Configuration.FieldRepeatSeparator, ProcedureCodeModifier.Select(x => x.ToDelimitedString())) : null,
                                 ProcedureDrgType,
-                                TissueTypeCode != null ? string.Join("~", TissueTypeCode.Select(x => x.ToDelimitedString())) : null,
+                                TissueTypeCode != null ? string.Join(Configuration.FieldRepeatSeparator, TissueTypeCode.Select(x => x.ToDelimitedString())) : null,
                                 ProcedureIdentifier?.ToDelimitedString(),
                                 ProcedureActionCode,
                                 DrgProcedureDeterminationStatus,
                                 DrgProcedureRelevance
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

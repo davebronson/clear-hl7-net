@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V230.Types;
 
 namespace ClearHl7.Fhir.V230.Segments
@@ -234,27 +235,27 @@ namespace ClearHl7.Fhir.V230.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}",
+                                StringHelper.StringFormatSequence(0, 38, Configuration.FieldSeparator),
                                 Id,
                                 SetIdNk1.HasValue ? SetIdNk1.Value.ToString(culture) : null,
-                                Name != null ? string.Join("~", Name.Select(x => x.ToDelimitedString())) : null,
+                                Name != null ? string.Join(Configuration.FieldRepeatSeparator, Name.Select(x => x.ToDelimitedString())) : null,
                                 Relationship?.ToDelimitedString(),
-                                Address != null ? string.Join("~", Address.Select(x => x.ToDelimitedString())) : null,
-                                PhoneNumber != null ? string.Join("~", PhoneNumber.Select(x => x.ToDelimitedString())) : null,
-                                BusinessPhoneNumber != null ? string.Join("~", BusinessPhoneNumber.Select(x => x.ToDelimitedString())) : null,
+                                Address != null ? string.Join(Configuration.FieldRepeatSeparator, Address.Select(x => x.ToDelimitedString())) : null,
+                                PhoneNumber != null ? string.Join(Configuration.FieldRepeatSeparator, PhoneNumber.Select(x => x.ToDelimitedString())) : null,
+                                BusinessPhoneNumber != null ? string.Join(Configuration.FieldRepeatSeparator, BusinessPhoneNumber.Select(x => x.ToDelimitedString())) : null,
                                 ContactRole?.ToDelimitedString(),
                                 StartDate.HasValue ? StartDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 EndDate.HasValue ? EndDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 NextOfKinAssociatedPartiesJobTitle,
                                 NextOfKinAssociatedPartiesJobCodeClass?.ToDelimitedString(),
                                 NextOfKinAssociatedPartiesEmployeeNumber?.ToDelimitedString(),
-                                OrganizationNameNk1 != null ? string.Join("~", OrganizationNameNk1.Select(x => x.ToDelimitedString())) : null,
+                                OrganizationNameNk1 != null ? string.Join(Configuration.FieldRepeatSeparator, OrganizationNameNk1.Select(x => x.ToDelimitedString())) : null,
                                 MaritalStatus,
                                 AdministrativeSex,
                                 DateTimeOfBirth.HasValue ? DateTimeOfBirth.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                LivingDependency != null ? string.Join("~", LivingDependency) : null,
-                                AmbulatoryStatus != null ? string.Join("~", AmbulatoryStatus) : null,
-                                Citizenship != null ? string.Join("~", Citizenship) : null,
+                                LivingDependency != null ? string.Join(Configuration.FieldRepeatSeparator, LivingDependency) : null,
+                                AmbulatoryStatus != null ? string.Join(Configuration.FieldRepeatSeparator, AmbulatoryStatus) : null,
+                                Citizenship != null ? string.Join(Configuration.FieldRepeatSeparator, Citizenship) : null,
                                 PrimaryLanguage?.ToDelimitedString(),
                                 LivingArrangement,
                                 PublicityCode?.ToDelimitedString(),
@@ -264,16 +265,16 @@ namespace ClearHl7.Fhir.V230.Segments
                                 MothersMaidenName?.ToDelimitedString(),
                                 Nationality?.ToDelimitedString(),
                                 EthnicGroup,
-                                ContactReason != null ? string.Join("~", ContactReason.Select(x => x.ToDelimitedString())) : null,
-                                ContactPersonsName != null ? string.Join("~", ContactPersonsName.Select(x => x.ToDelimitedString())) : null,
-                                ContactPersonsTelephoneNumber != null ? string.Join("~", ContactPersonsTelephoneNumber.Select(x => x.ToDelimitedString())) : null,
-                                ContactPersonsAddress != null ? string.Join("~", ContactPersonsAddress.Select(x => x.ToDelimitedString())) : null,
-                                NextOfKinAssociatedPartysIdentifiers != null ? string.Join("~", NextOfKinAssociatedPartysIdentifiers.Select(x => x.ToDelimitedString())) : null,
+                                ContactReason != null ? string.Join(Configuration.FieldRepeatSeparator, ContactReason.Select(x => x.ToDelimitedString())) : null,
+                                ContactPersonsName != null ? string.Join(Configuration.FieldRepeatSeparator, ContactPersonsName.Select(x => x.ToDelimitedString())) : null,
+                                ContactPersonsTelephoneNumber != null ? string.Join(Configuration.FieldRepeatSeparator, ContactPersonsTelephoneNumber.Select(x => x.ToDelimitedString())) : null,
+                                ContactPersonsAddress != null ? string.Join(Configuration.FieldRepeatSeparator, ContactPersonsAddress.Select(x => x.ToDelimitedString())) : null,
+                                NextOfKinAssociatedPartysIdentifiers != null ? string.Join(Configuration.FieldRepeatSeparator, NextOfKinAssociatedPartysIdentifiers.Select(x => x.ToDelimitedString())) : null,
                                 JobStatus,
                                 Race,
                                 Handicap,
                                 ContactPersonSocialSecurityNumber
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

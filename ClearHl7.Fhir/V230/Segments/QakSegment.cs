@@ -1,4 +1,4 @@
-﻿using System;
+﻿using ClearHl7.Fhir.Helpers;
 
 namespace ClearHl7.Fhir.V230.Segments
 {
@@ -38,11 +38,11 @@ namespace ClearHl7.Fhir.V230.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}",
+                                StringHelper.StringFormatSequence(0, 3, Configuration.FieldSeparator),
                                 Id,
                                 QueryTag,
                                 QueryResponseStatus
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

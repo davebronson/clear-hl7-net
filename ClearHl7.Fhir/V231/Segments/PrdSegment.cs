@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V231.Types;
 
 namespace ClearHl7.Fhir.V231.Segments
@@ -77,18 +78,18 @@ namespace ClearHl7.Fhir.V231.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}",
+                                StringHelper.StringFormatSequence(0, 10, Configuration.FieldSeparator),
                                 Id,
-                                ProviderRole != null ? string.Join("~", ProviderRole.Select(x => x.ToDelimitedString())) : null,
-                                ProviderName != null ? string.Join("~", ProviderName.Select(x => x.ToDelimitedString())) : null,
-                                ProviderAddress != null ? string.Join("~", ProviderAddress.Select(x => x.ToDelimitedString())) : null,
+                                ProviderRole != null ? string.Join(Configuration.FieldRepeatSeparator, ProviderRole.Select(x => x.ToDelimitedString())) : null,
+                                ProviderName != null ? string.Join(Configuration.FieldRepeatSeparator, ProviderName.Select(x => x.ToDelimitedString())) : null,
+                                ProviderAddress != null ? string.Join(Configuration.FieldRepeatSeparator, ProviderAddress.Select(x => x.ToDelimitedString())) : null,
                                 ProviderLocation?.ToDelimitedString(),
-                                ProviderCommunicationInformation != null ? string.Join("~", ProviderCommunicationInformation.Select(x => x.ToDelimitedString())) : null,
+                                ProviderCommunicationInformation != null ? string.Join(Configuration.FieldRepeatSeparator, ProviderCommunicationInformation.Select(x => x.ToDelimitedString())) : null,
                                 PreferredMethodOfContact?.ToDelimitedString(),
-                                ProviderIdentifiers != null ? string.Join("~", ProviderIdentifiers.Select(x => x.ToDelimitedString())) : null,
+                                ProviderIdentifiers != null ? string.Join(Configuration.FieldRepeatSeparator, ProviderIdentifiers.Select(x => x.ToDelimitedString())) : null,
                                 EffectiveStartDateOfProviderRole.HasValue ? EffectiveStartDateOfProviderRole.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 EffectiveEndDateOfProviderRole.HasValue ? EffectiveEndDateOfProviderRole.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V280.Types;
 
 namespace ClearHl7.Fhir.V280.Segments
@@ -109,7 +107,7 @@ namespace ClearHl7.Fhir.V280.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}",
+                                StringHelper.StringFormatSequence(0, 16, Configuration.FieldSeparator),
                                 Id,
                                 UniversalServiceIdentifier?.ToDelimitedString(),
                                 EquipmentTestApplicationIdentifier?.ToDelimitedString(),
@@ -126,7 +124,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 Units?.ToDelimitedString(),
                                 ProcessingType?.ToDelimitedString(),
                                 TestCriticality?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

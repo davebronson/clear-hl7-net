@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V271.Types;
 
 namespace ClearHl7.Fhir.V271.Segments
@@ -167,17 +168,17 @@ namespace ClearHl7.Fhir.V271.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}",
+                                StringHelper.StringFormatSequence(0, 26, Configuration.FieldSeparator),
                                 Id,
                                 SetIdCon.HasValue ? SetIdCon.Value.ToString(culture) : null,
                                 ConsentType?.ToDelimitedString(),
                                 ConsentFormIdAndVersion,
                                 ConsentFormNumber?.ToDelimitedString(),
-                                ConsentText != null ? string.Join("~", ConsentText) : null,
-                                SubjectSpecificConsentText != null ? string.Join("~", SubjectSpecificConsentText) : null,
-                                ConsentBackgroundInformation != null ? string.Join("~", ConsentBackgroundInformation) : null,
-                                SubjectSpecificConsentBackgroundText != null ? string.Join("~", SubjectSpecificConsentBackgroundText) : null,
-                                ConsenterImposedLimitations != null ? string.Join("~", ConsenterImposedLimitations) : null,
+                                ConsentText != null ? string.Join(Configuration.FieldRepeatSeparator, ConsentText) : null,
+                                SubjectSpecificConsentText != null ? string.Join(Configuration.FieldRepeatSeparator, SubjectSpecificConsentText) : null,
+                                ConsentBackgroundInformation != null ? string.Join(Configuration.FieldRepeatSeparator, ConsentBackgroundInformation) : null,
+                                SubjectSpecificConsentBackgroundText != null ? string.Join(Configuration.FieldRepeatSeparator, SubjectSpecificConsentBackgroundText) : null,
+                                ConsenterImposedLimitations != null ? string.Join(Configuration.FieldRepeatSeparator, ConsenterImposedLimitations) : null,
                                 ConsentMode?.ToDelimitedString(),
                                 ConsentStatus?.ToDelimitedString(),
                                 ConsentDiscussionDateTime.HasValue ? ConsentDiscussionDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
@@ -192,9 +193,9 @@ namespace ClearHl7.Fhir.V271.Segments
                                 ConsentDisclosureLevel,
                                 ConsentNonDisclosureReason?.ToDelimitedString(),
                                 NonSubjectConsenterReason?.ToDelimitedString(),
-                                ConsenterId != null ? string.Join("~", ConsenterId.Select(x => x.ToDelimitedString())) : null,
-                                RelationshipToSubject != null ? string.Join("~", RelationshipToSubject.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                ConsenterId != null ? string.Join(Configuration.FieldRepeatSeparator, ConsenterId.Select(x => x.ToDelimitedString())) : null,
+                                RelationshipToSubject != null ? string.Join(Configuration.FieldRepeatSeparator, RelationshipToSubject.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V281.Types;
 
 namespace ClearHl7.Fhir.V281.Segments
@@ -125,13 +125,13 @@ namespace ClearHl7.Fhir.V281.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}",
+                                StringHelper.StringFormatSequence(0, 19, Configuration.FieldSeparator),
                                 Id,
                                 SequenceNumberTestObservationMasterFile.HasValue ? SequenceNumberTestObservationMasterFile.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DerivedSpecimen,
-                                ContainerDescription != null ? string.Join("~", ContainerDescription.Select(x => x.ToDelimitedString())) : null,
-                                ContainerVolume != null ? string.Join("~", ContainerVolume.Select(x => x.ToString(Consts.NumericFormat, culture))) : null,
-                                ContainerUnits != null ? string.Join("~", ContainerUnits.Select(x => x.ToDelimitedString())) : null,
+                                ContainerDescription != null ? string.Join(Configuration.FieldRepeatSeparator, ContainerDescription.Select(x => x.ToDelimitedString())) : null,
+                                ContainerVolume != null ? string.Join(Configuration.FieldRepeatSeparator, ContainerVolume.Select(x => x.ToString(Consts.NumericFormat, culture))) : null,
+                                ContainerUnits != null ? string.Join(Configuration.FieldRepeatSeparator, ContainerUnits.Select(x => x.ToDelimitedString())) : null,
                                 Specimen?.ToDelimitedString(),
                                 Additive?.ToDelimitedString(),
                                 Preparation?.ToDelimitedString(),
@@ -139,13 +139,13 @@ namespace ClearHl7.Fhir.V281.Segments
                                 NormalCollectionVolume?.ToDelimitedString(),
                                 MinimumCollectionVolume?.ToDelimitedString(),
                                 SpecimenRequirements?.ToDelimitedString(),
-                                SpecimenPriorities != null ? string.Join("~", SpecimenPriorities) : null,
+                                SpecimenPriorities != null ? string.Join(Configuration.FieldRepeatSeparator, SpecimenPriorities) : null,
                                 SpecimenRetentionTime?.ToDelimitedString(),
-                                SpecimenHandlingCode != null ? string.Join("~", SpecimenHandlingCode.Select(x => x.ToDelimitedString())) : null,
+                                SpecimenHandlingCode != null ? string.Join(Configuration.FieldRepeatSeparator, SpecimenHandlingCode.Select(x => x.ToDelimitedString())) : null,
                                 SpecimenPreference,
                                 PreferredSpecimenAttribtureSequenceId.HasValue ? PreferredSpecimenAttribtureSequenceId.Value.ToString(Consts.NumericFormat, culture) : null,
-                                TaxonomicClassificationCode != null ? string.Join("~", TaxonomicClassificationCode.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                TaxonomicClassificationCode != null ? string.Join(Configuration.FieldRepeatSeparator, TaxonomicClassificationCode.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

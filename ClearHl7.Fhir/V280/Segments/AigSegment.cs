@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V280.Types;
 
 namespace ClearHl7.Fhir.V280.Segments
@@ -103,13 +104,13 @@ namespace ClearHl7.Fhir.V280.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}",
+                                StringHelper.StringFormatSequence(0, 15, Configuration.FieldSeparator),
                                 Id,
                                 SetIdAig.HasValue ? SetIdAig.Value.ToString(culture) : null,
                                 SegmentActionCode,
                                 ResourceId?.ToDelimitedString(),
                                 ResourceType?.ToDelimitedString(),
-                                ResourceGroup != null ? string.Join("~", ResourceGroup.Select(x => x.ToDelimitedString())) : null,
+                                ResourceGroup != null ? string.Join(Configuration.FieldRepeatSeparator, ResourceGroup.Select(x => x.ToDelimitedString())) : null,
                                 ResourceQuantity.HasValue ? ResourceQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ResourceQuantityUnits?.ToDelimitedString(),
                                 StartDateTime.HasValue ? StartDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
@@ -119,7 +120,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 DurationUnits?.ToDelimitedString(),
                                 AllowSubstitutionCode?.ToDelimitedString(),
                                 FillerStatusCode?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using ClearHl7.Fhir.Helpers;
 using System.Collections.Generic;
 using System.Linq;
 using ClearHl7.Fhir.V230.Types;
@@ -151,7 +152,7 @@ namespace ClearHl7.Fhir.V230.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}",
+                                StringHelper.StringFormatSequence(0, 24, Configuration.FieldSeparator),
                                 Id,
                                 SetIdTxa.HasValue ? SetIdTxa.Value.ToString(culture) : null,
                                 DocumentType,
@@ -160,13 +161,13 @@ namespace ClearHl7.Fhir.V230.Segments
                                 PrimaryActivityProviderCodeName?.ToDelimitedString(),
                                 OriginationDateTime.HasValue ? OriginationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 TranscriptionDateTime.HasValue ? TranscriptionDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                EditDateTime != null ? string.Join("~", EditDateTime.Select(x => x.ToString(Consts.DateTimeFormatPrecisionSecond, culture))) : null,
+                                EditDateTime != null ? string.Join(Configuration.FieldRepeatSeparator, EditDateTime.Select(x => x.ToString(Consts.DateTimeFormatPrecisionSecond, culture))) : null,
                                 OriginatorCodeName?.ToDelimitedString(),
-                                AssignedDocumentAuthenticator != null ? string.Join("~", AssignedDocumentAuthenticator.Select(x => x.ToDelimitedString())) : null,
+                                AssignedDocumentAuthenticator != null ? string.Join(Configuration.FieldRepeatSeparator, AssignedDocumentAuthenticator.Select(x => x.ToDelimitedString())) : null,
                                 TranscriptionistCodeName?.ToDelimitedString(),
                                 UniqueDocumentNumber?.ToDelimitedString(),
                                 ParentDocumentNumber,
-                                PlacerOrderNumber != null ? string.Join("~", PlacerOrderNumber.Select(x => x.ToDelimitedString())) : null,
+                                PlacerOrderNumber != null ? string.Join(Configuration.FieldRepeatSeparator, PlacerOrderNumber.Select(x => x.ToDelimitedString())) : null,
                                 FillerOrderNumber?.ToDelimitedString(),
                                 UniqueDocumentFileName,
                                 DocumentCompletionStatus,
@@ -174,9 +175,9 @@ namespace ClearHl7.Fhir.V230.Segments
                                 DocumentAvailabilityStatus,
                                 DocumentStorageStatus,
                                 DocumentChangeReason,
-                                AuthenticationPersonTimeStampSet != null ? string.Join("~", AuthenticationPersonTimeStampSet.Select(x => x.ToDelimitedString())) : null,
-                                DistributedCopiesCodeAndNameOfRecipientS != null ? string.Join("~", DistributedCopiesCodeAndNameOfRecipientS.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                AuthenticationPersonTimeStampSet != null ? string.Join(Configuration.FieldRepeatSeparator, AuthenticationPersonTimeStampSet.Select(x => x.ToDelimitedString())) : null,
+                                DistributedCopiesCodeAndNameOfRecipientS != null ? string.Join(Configuration.FieldRepeatSeparator, DistributedCopiesCodeAndNameOfRecipientS.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

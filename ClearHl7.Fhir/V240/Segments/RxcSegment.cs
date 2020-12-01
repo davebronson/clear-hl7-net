@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V240.Types;
 
 namespace ClearHl7.Fhir.V240.Segments
@@ -66,7 +66,7 @@ namespace ClearHl7.Fhir.V240.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}",
+                                StringHelper.StringFormatSequence(0, 8, Configuration.FieldSeparator),
                                 Id,
                                 RxComponentType,
                                 ComponentCode?.ToDelimitedString(),
@@ -74,8 +74,8 @@ namespace ClearHl7.Fhir.V240.Segments
                                 ComponentUnits?.ToDelimitedString(),
                                 ComponentStrength.HasValue ? ComponentStrength.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ComponentStrengthUnits?.ToDelimitedString(),
-                                SupplementaryCode != null ? string.Join("~", SupplementaryCode.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                SupplementaryCode != null ? string.Join(Configuration.FieldRepeatSeparator, SupplementaryCode.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

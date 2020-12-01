@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V280.Types;
 
 namespace ClearHl7.Fhir.V280.Segments
@@ -259,7 +260,7 @@ namespace ClearHl7.Fhir.V280.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}|{39}|{40}|{41}|{42}|{43}",
+                                StringHelper.StringFormatSequence(0, 44, Configuration.FieldSeparator),
                                 Id,
                                 SetIdFt1.HasValue ? SetIdFt1.Value.ToString(culture) : null,
                                 TransactionId,
@@ -279,24 +280,24 @@ namespace ClearHl7.Fhir.V280.Segments
                                 AssignedPatientLocation?.ToDelimitedString(),
                                 FeeSchedule?.ToDelimitedString(),
                                 PatientType?.ToDelimitedString(),
-                                DiagnosisCodeFt1 != null ? string.Join("~", DiagnosisCodeFt1.Select(x => x.ToDelimitedString())) : null,
-                                PerformedByCode != null ? string.Join("~", PerformedByCode.Select(x => x.ToDelimitedString())) : null,
-                                OrderedByCode != null ? string.Join("~", OrderedByCode.Select(x => x.ToDelimitedString())) : null,
+                                DiagnosisCodeFt1 != null ? string.Join(Configuration.FieldRepeatSeparator, DiagnosisCodeFt1.Select(x => x.ToDelimitedString())) : null,
+                                PerformedByCode != null ? string.Join(Configuration.FieldRepeatSeparator, PerformedByCode.Select(x => x.ToDelimitedString())) : null,
+                                OrderedByCode != null ? string.Join(Configuration.FieldRepeatSeparator, OrderedByCode.Select(x => x.ToDelimitedString())) : null,
                                 UnitCost?.ToDelimitedString(),
                                 FillerOrderNumber?.ToDelimitedString(),
-                                EnteredByCode != null ? string.Join("~", EnteredByCode.Select(x => x.ToDelimitedString())) : null,
+                                EnteredByCode != null ? string.Join(Configuration.FieldRepeatSeparator, EnteredByCode.Select(x => x.ToDelimitedString())) : null,
                                 ProcedureCode?.ToDelimitedString(),
-                                ProcedureCodeModifier != null ? string.Join("~", ProcedureCodeModifier.Select(x => x.ToDelimitedString())) : null,
+                                ProcedureCodeModifier != null ? string.Join(Configuration.FieldRepeatSeparator, ProcedureCodeModifier.Select(x => x.ToDelimitedString())) : null,
                                 AdvancedBeneficiaryNoticeCode?.ToDelimitedString(),
                                 MedicallyNecessaryDuplicateProcedureReason?.ToDelimitedString(),
                                 NdcCode?.ToDelimitedString(),
                                 PaymentReferenceId?.ToDelimitedString(),
-                                TransactionReferenceKey != null ? string.Join("~", TransactionReferenceKey.Select(x => x.ToString(Consts.NumericFormat, culture))) : null,
-                                PerformingFacility != null ? string.Join("~", PerformingFacility.Select(x => x.ToDelimitedString())) : null,
+                                TransactionReferenceKey != null ? string.Join(Configuration.FieldRepeatSeparator, TransactionReferenceKey.Select(x => x.ToString(Consts.NumericFormat, culture))) : null,
+                                PerformingFacility != null ? string.Join(Configuration.FieldRepeatSeparator, PerformingFacility.Select(x => x.ToDelimitedString())) : null,
                                 OrderingFacility?.ToDelimitedString(),
                                 ItemNumber?.ToDelimitedString(),
                                 ModelNumber,
-                                SpecialProcessingCode != null ? string.Join("~", SpecialProcessingCode.Select(x => x.ToDelimitedString())) : null,
+                                SpecialProcessingCode != null ? string.Join(Configuration.FieldRepeatSeparator, SpecialProcessingCode.Select(x => x.ToDelimitedString())) : null,
                                 ClinicCode?.ToDelimitedString(),
                                 ReferralNumber?.ToDelimitedString(),
                                 AuthorizationNumber?.ToDelimitedString(),
@@ -304,7 +305,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 RevenueCode?.ToDelimitedString(),
                                 PrescriptionNumber,
                                 NdcQtyAndUom?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

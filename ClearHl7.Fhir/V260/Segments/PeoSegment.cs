@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V260.Types;
 
 namespace ClearHl7.Fhir.V260.Segments
@@ -163,34 +164,34 @@ namespace ClearHl7.Fhir.V260.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}",
+                                StringHelper.StringFormatSequence(0, 26, Configuration.FieldSeparator),
                                 Id,
-                                EventIdentifiersUsed != null ? string.Join("~", EventIdentifiersUsed.Select(x => x.ToDelimitedString())) : null,
-                                EventSymptomDiagnosisCode != null ? string.Join("~", EventSymptomDiagnosisCode.Select(x => x.ToDelimitedString())) : null,
+                                EventIdentifiersUsed != null ? string.Join(Configuration.FieldRepeatSeparator, EventIdentifiersUsed.Select(x => x.ToDelimitedString())) : null,
+                                EventSymptomDiagnosisCode != null ? string.Join(Configuration.FieldRepeatSeparator, EventSymptomDiagnosisCode.Select(x => x.ToDelimitedString())) : null,
                                 EventOnsetDateTime.HasValue ? EventOnsetDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 EventExacerbationDateTime.HasValue ? EventExacerbationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 EventImprovedDateTime.HasValue ? EventImprovedDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 EventEndedDataTime.HasValue ? EventEndedDataTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                EventLocationOccurredAddress != null ? string.Join("~", EventLocationOccurredAddress.Select(x => x.ToDelimitedString())) : null,
-                                EventQualification != null ? string.Join("~", EventQualification) : null,
+                                EventLocationOccurredAddress != null ? string.Join(Configuration.FieldRepeatSeparator, EventLocationOccurredAddress.Select(x => x.ToDelimitedString())) : null,
+                                EventQualification != null ? string.Join(Configuration.FieldRepeatSeparator, EventQualification) : null,
                                 EventSerious,
                                 EventExpected,
-                                EventOutcome != null ? string.Join("~", EventOutcome) : null,
+                                EventOutcome != null ? string.Join(Configuration.FieldRepeatSeparator, EventOutcome) : null,
                                 PatientOutcome,
-                                EventDescriptionFromOthers != null ? string.Join("~", EventDescriptionFromOthers) : null,
-                                EventDescriptionFromOriginalReporter != null ? string.Join("~", EventDescriptionFromOriginalReporter) : null,
-                                EventDescriptionFromPatient != null ? string.Join("~", EventDescriptionFromPatient) : null,
-                                EventDescriptionFromPractitioner != null ? string.Join("~", EventDescriptionFromPractitioner) : null,
-                                EventDescriptionFromAutopsy != null ? string.Join("~", EventDescriptionFromAutopsy) : null,
-                                CauseOfDeath != null ? string.Join("~", CauseOfDeath.Select(x => x.ToDelimitedString())) : null,
-                                PrimaryObserverName != null ? string.Join("~", PrimaryObserverName.Select(x => x.ToDelimitedString())) : null,
-                                PrimaryObserverAddress != null ? string.Join("~", PrimaryObserverAddress.Select(x => x.ToDelimitedString())) : null,
-                                PrimaryObserverTelephone != null ? string.Join("~", PrimaryObserverTelephone.Select(x => x.ToDelimitedString())) : null,
+                                EventDescriptionFromOthers != null ? string.Join(Configuration.FieldRepeatSeparator, EventDescriptionFromOthers) : null,
+                                EventDescriptionFromOriginalReporter != null ? string.Join(Configuration.FieldRepeatSeparator, EventDescriptionFromOriginalReporter) : null,
+                                EventDescriptionFromPatient != null ? string.Join(Configuration.FieldRepeatSeparator, EventDescriptionFromPatient) : null,
+                                EventDescriptionFromPractitioner != null ? string.Join(Configuration.FieldRepeatSeparator, EventDescriptionFromPractitioner) : null,
+                                EventDescriptionFromAutopsy != null ? string.Join(Configuration.FieldRepeatSeparator, EventDescriptionFromAutopsy) : null,
+                                CauseOfDeath != null ? string.Join(Configuration.FieldRepeatSeparator, CauseOfDeath.Select(x => x.ToDelimitedString())) : null,
+                                PrimaryObserverName != null ? string.Join(Configuration.FieldRepeatSeparator, PrimaryObserverName.Select(x => x.ToDelimitedString())) : null,
+                                PrimaryObserverAddress != null ? string.Join(Configuration.FieldRepeatSeparator, PrimaryObserverAddress.Select(x => x.ToDelimitedString())) : null,
+                                PrimaryObserverTelephone != null ? string.Join(Configuration.FieldRepeatSeparator, PrimaryObserverTelephone.Select(x => x.ToDelimitedString())) : null,
                                 PrimaryObserversQualification,
                                 ConfirmationProvidedBy,
                                 PrimaryObserverAwareDateTime.HasValue ? PrimaryObserverAwareDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 PrimaryObserversIdentityMayBeDivulged
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

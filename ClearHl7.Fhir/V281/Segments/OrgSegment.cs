@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V281.Types;
 
 namespace ClearHl7.Fhir.V281.Segments
@@ -105,7 +105,7 @@ namespace ClearHl7.Fhir.V281.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}",
+                                StringHelper.StringFormatSequence(0, 14, Configuration.FieldSeparator),
                                 Id,
                                 SetIdOrg.HasValue ? SetIdOrg.Value.ToString(culture) : null,
                                 OrganizationUnitCode?.ToDelimitedString(),
@@ -119,8 +119,8 @@ namespace ClearHl7.Fhir.V281.Segments
                                 EmploymentStatusCode?.ToDelimitedString(),
                                 BoardApprovalIndicator,
                                 PrimaryCarePhysicianIndicator,
-                                CostCenterCode != null ? string.Join("~", CostCenterCode.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                CostCenterCode != null ? string.Join(Configuration.FieldRepeatSeparator, CostCenterCode.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

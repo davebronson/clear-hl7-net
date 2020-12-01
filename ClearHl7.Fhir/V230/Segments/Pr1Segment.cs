@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V230.Types;
 
 namespace ClearHl7.Fhir.V230.Segments
@@ -111,7 +112,7 @@ namespace ClearHl7.Fhir.V230.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}",
+                                StringHelper.StringFormatSequence(0, 16, Configuration.FieldSeparator),
                                 Id,
                                 SetIdPr1.HasValue ? SetIdPr1.Value.ToString(culture) : null,
                                 ProcedureCodingMethod,
@@ -120,15 +121,15 @@ namespace ClearHl7.Fhir.V230.Segments
                                 ProcedureDateTime.HasValue ? ProcedureDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ProcedureFunctionalType,
                                 ProcedureMinutes.HasValue ? ProcedureMinutes.Value.ToString(Consts.NumericFormat, culture) : null,
-                                Anesthesiologist != null ? string.Join("~", Anesthesiologist.Select(x => x.ToDelimitedString())) : null,
+                                Anesthesiologist != null ? string.Join(Configuration.FieldRepeatSeparator, Anesthesiologist.Select(x => x.ToDelimitedString())) : null,
                                 AnesthesiaCode,
                                 AnesthesiaMinutes.HasValue ? AnesthesiaMinutes.Value.ToString(Consts.NumericFormat, culture) : null,
-                                Surgeon != null ? string.Join("~", Surgeon.Select(x => x.ToDelimitedString())) : null,
-                                ProcedurePractitioner != null ? string.Join("~", ProcedurePractitioner.Select(x => x.ToDelimitedString())) : null,
+                                Surgeon != null ? string.Join(Configuration.FieldRepeatSeparator, Surgeon.Select(x => x.ToDelimitedString())) : null,
+                                ProcedurePractitioner != null ? string.Join(Configuration.FieldRepeatSeparator, ProcedurePractitioner.Select(x => x.ToDelimitedString())) : null,
                                 ConsentCode?.ToDelimitedString(),
                                 ProcedurePriority,
                                 AssociatedDiagnosisCode?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

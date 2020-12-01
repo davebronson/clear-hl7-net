@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V270.Types;
 
 namespace ClearHl7.Fhir.V270.Segments
@@ -72,17 +73,17 @@ namespace ClearHl7.Fhir.V270.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}",
+                                StringHelper.StringFormatSequence(0, 9, Configuration.FieldSeparator),
                                 Id,
                                 SetIdDb1.HasValue ? SetIdDb1.Value.ToString(culture) : null,
                                 DisabledPersonCode?.ToDelimitedString(),
-                                DisabledPersonIdentifier != null ? string.Join("~", DisabledPersonIdentifier.Select(x => x.ToDelimitedString())) : null,
+                                DisabledPersonIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, DisabledPersonIdentifier.Select(x => x.ToDelimitedString())) : null,
                                 DisabilityIndicator,
                                 DisabilityStartDate.HasValue ? DisabilityStartDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 DisabilityEndDate.HasValue ? DisabilityEndDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 DisabilityReturnToWorkDate.HasValue ? DisabilityReturnToWorkDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 DisabilityUnableToWorkDate.HasValue ? DisabilityUnableToWorkDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

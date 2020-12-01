@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V230.Types;
 
 namespace ClearHl7.Fhir.V230.Segments
@@ -85,11 +86,11 @@ namespace ClearHl7.Fhir.V230.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}",
+                                StringHelper.StringFormatSequence(0, 12, Configuration.FieldSeparator),
                                 Id,
                                 SetIdCm0.HasValue ? SetIdCm0.Value.ToString(culture) : null,
                                 SponsorStudyId?.ToDelimitedString(),
-                                AlternateStudyId != null ? string.Join("~", AlternateStudyId.Select(x => x.ToDelimitedString())) : null,
+                                AlternateStudyId != null ? string.Join(Configuration.FieldRepeatSeparator, AlternateStudyId.Select(x => x.ToDelimitedString())) : null,
                                 TitleOfStudy,
                                 ChairmanOfStudy?.ToDelimitedString(),
                                 LastIrbApprovalDate.HasValue ? LastIrbApprovalDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
@@ -98,7 +99,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 ContactForStudy?.ToDelimitedString(),
                                 ContactsTelephoneNumber?.ToDelimitedString(),
                                 ContactsAddress?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V280.Types;
 
 namespace ClearHl7.Fhir.V280.Segments
@@ -176,36 +177,36 @@ namespace ClearHl7.Fhir.V280.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}",
+                                StringHelper.StringFormatSequence(0, 28, Configuration.FieldSeparator),
                                 Id,
                                 SetIdIn3.HasValue ? SetIdIn3.Value.ToString(culture) : null,
                                 CertificationNumber?.ToDelimitedString(),
-                                CertifiedBy != null ? string.Join("~", CertifiedBy.Select(x => x.ToDelimitedString())) : null,
+                                CertifiedBy != null ? string.Join(Configuration.FieldRepeatSeparator, CertifiedBy.Select(x => x.ToDelimitedString())) : null,
                                 CertificationRequired,
                                 Penalty?.ToDelimitedString(),
                                 CertificationDateTime.HasValue ? CertificationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 CertificationModifyDateTime.HasValue ? CertificationModifyDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                Operator != null ? string.Join("~", Operator.Select(x => x.ToDelimitedString())) : null,
+                                Operator != null ? string.Join(Configuration.FieldRepeatSeparator, Operator.Select(x => x.ToDelimitedString())) : null,
                                 CertificationBeginDate.HasValue ? CertificationBeginDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 CertificationEndDate.HasValue ? CertificationEndDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 Days?.ToDelimitedString(),
                                 NonConcurCodeDescription?.ToDelimitedString(),
                                 NonConcurEffectiveDateTime.HasValue ? NonConcurEffectiveDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                PhysicianReviewer != null ? string.Join("~", PhysicianReviewer.Select(x => x.ToDelimitedString())) : null,
+                                PhysicianReviewer != null ? string.Join(Configuration.FieldRepeatSeparator, PhysicianReviewer.Select(x => x.ToDelimitedString())) : null,
                                 CertificationContact,
-                                CertificationContactPhoneNumber != null ? string.Join("~", CertificationContactPhoneNumber.Select(x => x.ToDelimitedString())) : null,
+                                CertificationContactPhoneNumber != null ? string.Join(Configuration.FieldRepeatSeparator, CertificationContactPhoneNumber.Select(x => x.ToDelimitedString())) : null,
                                 AppealReason?.ToDelimitedString(),
                                 CertificationAgency?.ToDelimitedString(),
-                                CertificationAgencyPhoneNumber != null ? string.Join("~", CertificationAgencyPhoneNumber.Select(x => x.ToDelimitedString())) : null,
-                                PreCertificationRequirement != null ? string.Join("~", PreCertificationRequirement.Select(x => x.ToDelimitedString())) : null,
+                                CertificationAgencyPhoneNumber != null ? string.Join(Configuration.FieldRepeatSeparator, CertificationAgencyPhoneNumber.Select(x => x.ToDelimitedString())) : null,
+                                PreCertificationRequirement != null ? string.Join(Configuration.FieldRepeatSeparator, PreCertificationRequirement.Select(x => x.ToDelimitedString())) : null,
                                 CaseManager,
                                 SecondOpinionDate.HasValue ? SecondOpinionDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 SecondOpinionStatus?.ToDelimitedString(),
-                                SecondOpinionDocumentationReceived != null ? string.Join("~", SecondOpinionDocumentationReceived.Select(x => x.ToDelimitedString())) : null,
-                                SecondOpinionPhysician != null ? string.Join("~", SecondOpinionPhysician.Select(x => x.ToDelimitedString())) : null,
+                                SecondOpinionDocumentationReceived != null ? string.Join(Configuration.FieldRepeatSeparator, SecondOpinionDocumentationReceived.Select(x => x.ToDelimitedString())) : null,
+                                SecondOpinionPhysician != null ? string.Join(Configuration.FieldRepeatSeparator, SecondOpinionPhysician.Select(x => x.ToDelimitedString())) : null,
                                 CertificationType?.ToDelimitedString(),
                                 CertificationCategory?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

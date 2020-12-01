@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V281.Types;
 
 namespace ClearHl7.Fhir.V281.Segments
@@ -70,16 +71,16 @@ namespace ClearHl7.Fhir.V281.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}",
+                                StringHelper.StringFormatSequence(0, 8, Configuration.FieldSeparator),
                                 Id,
                                 QueryPriority,
                                 QuantityLimitedRequest?.ToDelimitedString(),
                                 ResponseModality?.ToDelimitedString(),
                                 ExecutionAndDeliveryTime.HasValue ? ExecutionAndDeliveryTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ModifyIndicator,
-                                SortByField != null ? string.Join("~", SortByField.Select(x => x.ToDelimitedString())) : null,
-                                SegmentGroupInclusion != null ? string.Join("~", SegmentGroupInclusion) : null
-                                ).TrimEnd('|');
+                                SortByField != null ? string.Join(Configuration.FieldRepeatSeparator, SortByField.Select(x => x.ToDelimitedString())) : null,
+                                SegmentGroupInclusion != null ? string.Join(Configuration.FieldRepeatSeparator, SegmentGroupInclusion) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V270.Types;
 
 namespace ClearHl7.Fhir.V270.Segments
@@ -262,7 +263,7 @@ namespace ClearHl7.Fhir.V270.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}|{39}|{40}|{41}|{42}|{43}|{44}|{45}",
+                                StringHelper.StringFormatSequence(0, 46, Configuration.FieldSeparator),
                                 Id,
                                 QuantityTiming,
                                 GiveCode?.ToDelimitedString(),
@@ -270,37 +271,37 @@ namespace ClearHl7.Fhir.V270.Segments
                                 GiveAmountMaximum.HasValue ? GiveAmountMaximum.Value.ToString(Consts.NumericFormat, culture) : null,
                                 GiveUnits?.ToDelimitedString(),
                                 GiveDosageForm?.ToDelimitedString(),
-                                ProvidersAdministrationInstructions != null ? string.Join("~", ProvidersAdministrationInstructions.Select(x => x.ToDelimitedString())) : null,
+                                ProvidersAdministrationInstructions != null ? string.Join(Configuration.FieldRepeatSeparator, ProvidersAdministrationInstructions.Select(x => x.ToDelimitedString())) : null,
                                 DeliverToLocation,
                                 SubstitutionStatus,
                                 DispenseAmount.HasValue ? DispenseAmount.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DispenseUnits?.ToDelimitedString(),
                                 NumberOfRefills.HasValue ? NumberOfRefills.Value.ToString(Consts.NumericFormat, culture) : null,
-                                OrderingProvidersDeaNumber != null ? string.Join("~", OrderingProvidersDeaNumber.Select(x => x.ToDelimitedString())) : null,
-                                PharmacistTreatmentSuppliersVerifierId != null ? string.Join("~", PharmacistTreatmentSuppliersVerifierId.Select(x => x.ToDelimitedString())) : null,
+                                OrderingProvidersDeaNumber != null ? string.Join(Configuration.FieldRepeatSeparator, OrderingProvidersDeaNumber.Select(x => x.ToDelimitedString())) : null,
+                                PharmacistTreatmentSuppliersVerifierId != null ? string.Join(Configuration.FieldRepeatSeparator, PharmacistTreatmentSuppliersVerifierId.Select(x => x.ToDelimitedString())) : null,
                                 PrescriptionNumber,
                                 NumberOfRefillsRemaining.HasValue ? NumberOfRefillsRemaining.Value.ToString(Consts.NumericFormat, culture) : null,
                                 NumberOfRefillsDosesDispensed.HasValue ? NumberOfRefillsDosesDispensed.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DTOfMostRecentRefillOrDoseDispensed.HasValue ? DTOfMostRecentRefillOrDoseDispensed.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 TotalDailyDose?.ToDelimitedString(),
                                 NeedsHumanReview,
-                                SpecialDispensingInstructions != null ? string.Join("~", SpecialDispensingInstructions.Select(x => x.ToDelimitedString())) : null,
+                                SpecialDispensingInstructions != null ? string.Join(Configuration.FieldRepeatSeparator, SpecialDispensingInstructions.Select(x => x.ToDelimitedString())) : null,
                                 GivePerTimeUnit,
                                 GiveRateAmount,
                                 GiveRateUnits?.ToDelimitedString(),
                                 GiveStrength.HasValue ? GiveStrength.Value.ToString(Consts.NumericFormat, culture) : null,
                                 GiveStrengthUnits?.ToDelimitedString(),
-                                GiveIndication != null ? string.Join("~", GiveIndication.Select(x => x.ToDelimitedString())) : null,
+                                GiveIndication != null ? string.Join(Configuration.FieldRepeatSeparator, GiveIndication.Select(x => x.ToDelimitedString())) : null,
                                 DispensePackageSize.HasValue ? DispensePackageSize.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DispensePackageSizeUnit?.ToDelimitedString(),
                                 DispensePackageMethod,
-                                SupplementaryCode != null ? string.Join("~", SupplementaryCode.Select(x => x.ToDelimitedString())) : null,
+                                SupplementaryCode != null ? string.Join(Configuration.FieldRepeatSeparator, SupplementaryCode.Select(x => x.ToDelimitedString())) : null,
                                 OriginalOrderDateTime.HasValue ? OriginalOrderDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 GiveDrugStrengthVolume.HasValue ? GiveDrugStrengthVolume.Value.ToString(Consts.NumericFormat, culture) : null,
                                 GiveDrugStrengthVolumeUnits?.ToDelimitedString(),
                                 ControlledSubstanceSchedule?.ToDelimitedString(),
                                 FormularyStatus,
-                                PharmaceuticalSubstanceAlternative != null ? string.Join("~", PharmaceuticalSubstanceAlternative.Select(x => x.ToDelimitedString())) : null,
+                                PharmaceuticalSubstanceAlternative != null ? string.Join(Configuration.FieldRepeatSeparator, PharmaceuticalSubstanceAlternative.Select(x => x.ToDelimitedString())) : null,
                                 PharmacyOfMostRecentFill?.ToDelimitedString(),
                                 InitialDispenseAmount.HasValue ? InitialDispenseAmount.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DispensingPharmacy?.ToDelimitedString(),
@@ -308,8 +309,8 @@ namespace ClearHl7.Fhir.V270.Segments
                                 DeliverToPatientLocation?.ToDelimitedString(),
                                 DeliverToAddress?.ToDelimitedString(),
                                 PharmacyOrderType,
-                                PharmacyPhoneNumber != null ? string.Join("~", PharmacyPhoneNumber.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                PharmacyPhoneNumber != null ? string.Join(Configuration.FieldRepeatSeparator, PharmacyPhoneNumber.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

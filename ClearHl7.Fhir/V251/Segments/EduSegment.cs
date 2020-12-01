@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V251.Types;
 
 namespace ClearHl7.Fhir.V251.Segments
@@ -77,7 +78,7 @@ namespace ClearHl7.Fhir.V251.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}",
+                                StringHelper.StringFormatSequence(0, 10, Configuration.FieldSeparator),
                                 Id,
                                 SetIdEdu.HasValue ? SetIdEdu.Value.ToString(culture) : null,
                                 AcademicDegree,
@@ -87,8 +88,8 @@ namespace ClearHl7.Fhir.V251.Segments
                                 School?.ToDelimitedString(),
                                 SchoolTypeCode?.ToDelimitedString(),
                                 SchoolAddress?.ToDelimitedString(),
-                                MajorFieldOfStudy != null ? string.Join("~", MajorFieldOfStudy.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                MajorFieldOfStudy != null ? string.Join(Configuration.FieldRepeatSeparator, MajorFieldOfStudy.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

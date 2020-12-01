@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V230.Types;
 
 namespace ClearHl7.Fhir.V230.Segments
@@ -164,7 +165,7 @@ namespace ClearHl7.Fhir.V230.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}",
+                                StringHelper.StringFormatSequence(0, 26, Configuration.FieldSeparator),
                                 Id,
                                 SetIdFt1.HasValue ? SetIdFt1.Value.ToString(culture) : null,
                                 TransactionId,
@@ -184,14 +185,14 @@ namespace ClearHl7.Fhir.V230.Segments
                                 AssignedPatientLocation?.ToDelimitedString(),
                                 FeeSchedule,
                                 PatientType,
-                                DiagnosisCodeFt1 != null ? string.Join("~", DiagnosisCodeFt1.Select(x => x.ToDelimitedString())) : null,
+                                DiagnosisCodeFt1 != null ? string.Join(Configuration.FieldRepeatSeparator, DiagnosisCodeFt1.Select(x => x.ToDelimitedString())) : null,
                                 PerformedByCode?.ToDelimitedString(),
                                 OrderedByCode?.ToDelimitedString(),
                                 UnitCost?.ToDelimitedString(),
                                 FillerOrderNumber?.ToDelimitedString(),
                                 EnteredByCode?.ToDelimitedString(),
                                 ProcedureCode?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V251.Types;
 
 namespace ClearHl7.Fhir.V251.Segments
@@ -79,18 +79,18 @@ namespace ClearHl7.Fhir.V251.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}",
+                                StringHelper.StringFormatSequence(0, 10, Configuration.FieldSeparator),
                                 Id,
                                 PrimaryKeyValueLoc?.ToDelimitedString(),
                                 LocationDescription,
-                                LocationTypeLoc != null ? string.Join("~", LocationTypeLoc) : null,
-                                OrganizationNameLoc != null ? string.Join("~", OrganizationNameLoc.Select(x => x.ToDelimitedString())) : null,
-                                LocationAddress != null ? string.Join("~", LocationAddress.Select(x => x.ToDelimitedString())) : null,
-                                LocationPhone != null ? string.Join("~", LocationPhone.Select(x => x.ToDelimitedString())) : null,
-                                LicenseNumber != null ? string.Join("~", LicenseNumber.Select(x => x.ToDelimitedString())) : null,
-                                LocationEquipment != null ? string.Join("~", LocationEquipment) : null,
+                                LocationTypeLoc != null ? string.Join(Configuration.FieldRepeatSeparator, LocationTypeLoc) : null,
+                                OrganizationNameLoc != null ? string.Join(Configuration.FieldRepeatSeparator, OrganizationNameLoc.Select(x => x.ToDelimitedString())) : null,
+                                LocationAddress != null ? string.Join(Configuration.FieldRepeatSeparator, LocationAddress.Select(x => x.ToDelimitedString())) : null,
+                                LocationPhone != null ? string.Join(Configuration.FieldRepeatSeparator, LocationPhone.Select(x => x.ToDelimitedString())) : null,
+                                LicenseNumber != null ? string.Join(Configuration.FieldRepeatSeparator, LicenseNumber.Select(x => x.ToDelimitedString())) : null,
+                                LocationEquipment != null ? string.Join(Configuration.FieldRepeatSeparator, LocationEquipment) : null,
                                 LocationServiceCode
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

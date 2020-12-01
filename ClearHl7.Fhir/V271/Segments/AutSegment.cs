@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V271.Types;
 
 namespace ClearHl7.Fhir.V271.Segments
@@ -92,7 +93,7 @@ namespace ClearHl7.Fhir.V271.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}",
+                                StringHelper.StringFormatSequence(0, 13, Configuration.FieldSeparator),
                                 Id,
                                 AuthorizingPayorPlanId?.ToDelimitedString(),
                                 AuthorizingPayorCompanyId?.ToDelimitedString(),
@@ -104,9 +105,9 @@ namespace ClearHl7.Fhir.V271.Segments
                                 RequestedNumberOfTreatments?.ToDelimitedString(),
                                 AuthorizedNumberOfTreatments?.ToDelimitedString(),
                                 ProcessDate.HasValue ? ProcessDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                RequestedDisciplines != null ? string.Join("~", RequestedDisciplines.Select(x => x.ToDelimitedString())) : null,
-                                AuthorizedDisciplines != null ? string.Join("~", AuthorizedDisciplines.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                RequestedDisciplines != null ? string.Join(Configuration.FieldRepeatSeparator, RequestedDisciplines.Select(x => x.ToDelimitedString())) : null,
+                                AuthorizedDisciplines != null ? string.Join(Configuration.FieldRepeatSeparator, AuthorizedDisciplines.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V250.Types;
 
 namespace ClearHl7.Fhir.V250.Segments
@@ -108,23 +108,23 @@ namespace ClearHl7.Fhir.V250.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}",
+                                StringHelper.StringFormatSequence(0, 15, Configuration.FieldSeparator),
                                 Id,
                                 RevenueCode,
                                 NumberOfServiceUnits.HasValue ? NumberOfServiceUnits.Value.ToString(Consts.NumericFormat, culture) : null,
                                 Charge?.ToDelimitedString(),
                                 ReimbursementActionCode,
                                 DenialOrRejectionCode,
-                                OceEditCode != null ? string.Join("~", OceEditCode) : null,
+                                OceEditCode != null ? string.Join(Configuration.FieldRepeatSeparator, OceEditCode) : null,
                                 AmbulatoryPaymentClassificationCode?.ToDelimitedString(),
-                                ModifierEditCode != null ? string.Join("~", ModifierEditCode) : null,
+                                ModifierEditCode != null ? string.Join(Configuration.FieldRepeatSeparator, ModifierEditCode) : null,
                                 PaymentAdjustmentCode,
                                 PackagingStatusCode,
                                 ExpectedCmsPaymentAmount,
                                 ReimbursementTypeCode,
                                 CoPayAmount?.ToDelimitedString(),
                                 PayRatePerServiceUnit.HasValue ? PayRatePerServiceUnit.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

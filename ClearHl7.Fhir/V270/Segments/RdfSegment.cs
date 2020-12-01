@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V270.Types;
 
 namespace ClearHl7.Fhir.V270.Segments
@@ -41,11 +41,11 @@ namespace ClearHl7.Fhir.V270.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}",
+                                StringHelper.StringFormatSequence(0, 3, Configuration.FieldSeparator),
                                 Id,
                                 NumberOfColumnsPerRow.HasValue ? NumberOfColumnsPerRow.Value.ToString(Consts.NumericFormat, culture) : null,
-                                ColumnDescription != null ? string.Join("~", ColumnDescription.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                ColumnDescription != null ? string.Join(Configuration.FieldRepeatSeparator, ColumnDescription.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

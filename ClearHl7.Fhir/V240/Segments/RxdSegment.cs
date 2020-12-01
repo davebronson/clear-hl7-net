@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V240.Types;
 
 namespace ClearHl7.Fhir.V240.Segments
@@ -170,7 +171,7 @@ namespace ClearHl7.Fhir.V240.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}",
+                                StringHelper.StringFormatSequence(0, 28, Configuration.FieldSeparator),
                                 Id,
                                 DispenseSubIdCounter.HasValue ? DispenseSubIdCounter.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DispenseGiveCode?.ToDelimitedString(),
@@ -180,26 +181,26 @@ namespace ClearHl7.Fhir.V240.Segments
                                 ActualDosageForm?.ToDelimitedString(),
                                 PrescriptionNumber,
                                 NumberOfRefillsRemaining.HasValue ? NumberOfRefillsRemaining.Value.ToString(Consts.NumericFormat, culture) : null,
-                                DispenseNotes != null ? string.Join("~", DispenseNotes) : null,
-                                DispensingProvider != null ? string.Join("~", DispensingProvider.Select(x => x.ToDelimitedString())) : null,
+                                DispenseNotes != null ? string.Join(Configuration.FieldRepeatSeparator, DispenseNotes) : null,
+                                DispensingProvider != null ? string.Join(Configuration.FieldRepeatSeparator, DispensingProvider.Select(x => x.ToDelimitedString())) : null,
                                 SubstitutionStatus,
                                 TotalDailyDose?.ToDelimitedString(),
                                 DispenseToLocation?.ToDelimitedString(),
                                 NeedsHumanReview,
-                                SpecialDispensingInstructions != null ? string.Join("~", SpecialDispensingInstructions.Select(x => x.ToDelimitedString())) : null,
+                                SpecialDispensingInstructions != null ? string.Join(Configuration.FieldRepeatSeparator, SpecialDispensingInstructions.Select(x => x.ToDelimitedString())) : null,
                                 ActualStrength.HasValue ? ActualStrength.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ActualStrengthUnit?.ToDelimitedString(),
-                                SubstanceLotNumber != null ? string.Join("~", SubstanceLotNumber) : null,
-                                SubstanceExpirationDate != null ? string.Join("~", SubstanceExpirationDate.Select(x => x.ToString(Consts.DateTimeFormatPrecisionSecond, culture))) : null,
-                                SubstanceManufacturerName != null ? string.Join("~", SubstanceManufacturerName.Select(x => x.ToDelimitedString())) : null,
-                                Indication != null ? string.Join("~", Indication.Select(x => x.ToDelimitedString())) : null,
+                                SubstanceLotNumber != null ? string.Join(Configuration.FieldRepeatSeparator, SubstanceLotNumber) : null,
+                                SubstanceExpirationDate != null ? string.Join(Configuration.FieldRepeatSeparator, SubstanceExpirationDate.Select(x => x.ToString(Consts.DateTimeFormatPrecisionSecond, culture))) : null,
+                                SubstanceManufacturerName != null ? string.Join(Configuration.FieldRepeatSeparator, SubstanceManufacturerName.Select(x => x.ToDelimitedString())) : null,
+                                Indication != null ? string.Join(Configuration.FieldRepeatSeparator, Indication.Select(x => x.ToDelimitedString())) : null,
                                 DispensePackageSize.HasValue ? DispensePackageSize.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DispensePackageSizeUnit?.ToDelimitedString(),
                                 DispensePackageMethod,
-                                SupplementaryCode != null ? string.Join("~", SupplementaryCode.Select(x => x.ToDelimitedString())) : null,
+                                SupplementaryCode != null ? string.Join(Configuration.FieldRepeatSeparator, SupplementaryCode.Select(x => x.ToDelimitedString())) : null,
                                 InitiatingLocation?.ToDelimitedString(),
                                 PackagingAssemblyLocation?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

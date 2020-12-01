@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using ClearHl7.Fhir.Helpers;
 
 namespace ClearHl7.Fhir.V230.Segments
 {
@@ -44,12 +44,12 @@ namespace ClearHl7.Fhir.V230.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}",
+                                StringHelper.StringFormatSequence(0, 4, Configuration.FieldSeparator),
                                 Id,
                                 SetIdNte.HasValue ? SetIdNte.Value.ToString(culture) : null,
                                 SourceOfComment,
-                                Comment != null ? string.Join("~", Comment) : null
-                                ).TrimEnd('|');
+                                Comment != null ? string.Join(Configuration.FieldRepeatSeparator, Comment) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V271.Types;
 
 namespace ClearHl7.Fhir.V271.Segments
@@ -185,7 +186,7 @@ namespace ClearHl7.Fhir.V271.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}",
+                                StringHelper.StringFormatSequence(0, 31, Configuration.FieldSeparator),
                                 Id,
                                 GiveSubIdCounter.HasValue ? GiveSubIdCounter.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DispenseSubIdCounter.HasValue ? GiveSubIdCounter.Value.ToString(Consts.NumericFormat, culture) : null,
@@ -195,20 +196,20 @@ namespace ClearHl7.Fhir.V271.Segments
                                 GiveAmountMaximum.HasValue ? GiveAmountMaximum.Value.ToString(Consts.NumericFormat, culture) : null,
                                 GiveUnits?.ToDelimitedString(),
                                 GiveDosageForm?.ToDelimitedString(),
-                                AdministrationNotes != null ? string.Join("~", AdministrationNotes.Select(x => x.ToDelimitedString())) : null,
+                                AdministrationNotes != null ? string.Join(Configuration.FieldRepeatSeparator, AdministrationNotes.Select(x => x.ToDelimitedString())) : null,
                                 SubstitutionStatus,
                                 DispenseToLocation?.ToDelimitedString(),
                                 NeedsHumanReview,
-                                SpecialAdministrationInstructions != null ? string.Join("~", SpecialAdministrationInstructions.Select(x => x.ToDelimitedString())) : null,
+                                SpecialAdministrationInstructions != null ? string.Join(Configuration.FieldRepeatSeparator, SpecialAdministrationInstructions.Select(x => x.ToDelimitedString())) : null,
                                 GivePerTimeUnit,
                                 GiveRateAmount,
                                 GiveRateUnits?.ToDelimitedString(),
                                 GiveStrength.HasValue ? GiveStrength.Value.ToString(Consts.NumericFormat, culture) : null,
                                 GiveStrengthUnits?.ToDelimitedString(),
-                                SubstanceLotNumber != null ? string.Join("~", SubstanceLotNumber) : null,
-                                SubstanceExpirationDate != null ? string.Join("~", SubstanceExpirationDate.Select(x => x.ToString(Consts.DateTimeFormatPrecisionSecond, culture))) : null,
-                                SubstanceManufacturerName != null ? string.Join("~", SubstanceManufacturerName.Select(x => x.ToDelimitedString())) : null,
-                                Indication != null ? string.Join("~", Indication.Select(x => x.ToDelimitedString())) : null,
+                                SubstanceLotNumber != null ? string.Join(Configuration.FieldRepeatSeparator, SubstanceLotNumber) : null,
+                                SubstanceExpirationDate != null ? string.Join(Configuration.FieldRepeatSeparator, SubstanceExpirationDate.Select(x => x.ToString(Consts.DateTimeFormatPrecisionSecond, culture))) : null,
+                                SubstanceManufacturerName != null ? string.Join(Configuration.FieldRepeatSeparator, SubstanceManufacturerName.Select(x => x.ToDelimitedString())) : null,
+                                Indication != null ? string.Join(Configuration.FieldRepeatSeparator, Indication.Select(x => x.ToDelimitedString())) : null,
                                 GiveDrugStrengthVolume.HasValue ? GiveDrugStrengthVolume.Value.ToString(Consts.NumericFormat, culture) : null,
                                 GiveDrugStrengthVolumeUnits?.ToDelimitedString(),
                                 GiveBarcodeIdentifier?.ToDelimitedString(),
@@ -217,7 +218,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 DispenseToPharmacyAddress?.ToDelimitedString(),
                                 DeliverToPatientLocation?.ToDelimitedString(),
                                 DeliverToAddress?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

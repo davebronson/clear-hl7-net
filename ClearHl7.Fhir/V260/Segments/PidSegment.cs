@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V260.Types;
 
 namespace ClearHl7.Fhir.V260.Segments
@@ -244,48 +245,48 @@ namespace ClearHl7.Fhir.V260.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}|{39}",
+                                StringHelper.StringFormatSequence(0, 40, Configuration.FieldSeparator),
                                 Id,
                                 SetIdPid.HasValue ? SetIdPid.Value.ToString(culture) : null,
                                 PatientId?.ToDelimitedString(),
-                                PatientIdentifierList != null ? string.Join("~", PatientIdentifierList.Select(x => x.ToDelimitedString())) : null,
-                                AlternatePatientIdPid != null ? string.Join("~", AlternatePatientIdPid.Select(x => x.ToDelimitedString())) : null,
-                                PatientName != null ? string.Join("~", PatientName.Select(x => x.ToDelimitedString())) : null,
-                                MothersMaidenName != null ? string.Join("~", MothersMaidenName.Select(x => x.ToDelimitedString())) : null,
+                                PatientIdentifierList != null ? string.Join(Configuration.FieldRepeatSeparator, PatientIdentifierList.Select(x => x.ToDelimitedString())) : null,
+                                AlternatePatientIdPid != null ? string.Join(Configuration.FieldRepeatSeparator, AlternatePatientIdPid.Select(x => x.ToDelimitedString())) : null,
+                                PatientName != null ? string.Join(Configuration.FieldRepeatSeparator, PatientName.Select(x => x.ToDelimitedString())) : null,
+                                MothersMaidenName != null ? string.Join(Configuration.FieldRepeatSeparator, MothersMaidenName.Select(x => x.ToDelimitedString())) : null,
                                 DateTimeOfBirth.HasValue ? DateTimeOfBirth.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 AdministrativeSex,
                                 PatientAlias?.ToDelimitedString(),
-                                Race != null ? string.Join("~", Race.Select(x => x.ToDelimitedString())) : null,
-                                PatientAddress != null ? string.Join("~", PatientAddress.Select(x => x.ToDelimitedString())) : null,
+                                Race != null ? string.Join(Configuration.FieldRepeatSeparator, Race.Select(x => x.ToDelimitedString())) : null,
+                                PatientAddress != null ? string.Join(Configuration.FieldRepeatSeparator, PatientAddress.Select(x => x.ToDelimitedString())) : null,
                                 CountyCode,
-                                PhoneNumberHome != null ? string.Join("~", PhoneNumberHome.Select(x => x.ToDelimitedString())) : null,
-                                PhoneNumberBusiness != null ? string.Join("~", PhoneNumberBusiness.Select(x => x.ToDelimitedString())) : null,
+                                PhoneNumberHome != null ? string.Join(Configuration.FieldRepeatSeparator, PhoneNumberHome.Select(x => x.ToDelimitedString())) : null,
+                                PhoneNumberBusiness != null ? string.Join(Configuration.FieldRepeatSeparator, PhoneNumberBusiness.Select(x => x.ToDelimitedString())) : null,
                                 PrimaryLanguage?.ToDelimitedString(),
                                 MaritalStatus?.ToDelimitedString(),
                                 Religion?.ToDelimitedString(),
                                 PatientAccountNumber?.ToDelimitedString(),
                                 SsnNumberPatient,
                                 DriversLicenseNumberPatient?.ToDelimitedString(),
-                                MothersIdentifier != null ? string.Join("~", MothersIdentifier.Select(x => x.ToDelimitedString())) : null,
-                                EthnicGroup != null ? string.Join("~", EthnicGroup.Select(x => x.ToDelimitedString())) : null,
+                                MothersIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, MothersIdentifier.Select(x => x.ToDelimitedString())) : null,
+                                EthnicGroup != null ? string.Join(Configuration.FieldRepeatSeparator, EthnicGroup.Select(x => x.ToDelimitedString())) : null,
                                 BirthPlace,
                                 MultipleBirthIndicator,
                                 BirthOrder.HasValue ? BirthOrder.Value.ToString(Consts.NumericFormat, culture) : null,
-                                Citizenship != null ? string.Join("~", Citizenship.Select(x => x.ToDelimitedString())) : null,
+                                Citizenship != null ? string.Join(Configuration.FieldRepeatSeparator, Citizenship.Select(x => x.ToDelimitedString())) : null,
                                 VeteransMilitaryStatus?.ToDelimitedString(),
                                 Nationality?.ToDelimitedString(),
                                 PatientDeathDateAndTime.HasValue ? PatientDeathDateAndTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 PatientDeathIndicator,
                                 IdentityUnknownIndicator,
-                                IdentityReliabilityCode != null ? string.Join("~", IdentityReliabilityCode) : null,
+                                IdentityReliabilityCode != null ? string.Join(Configuration.FieldRepeatSeparator, IdentityReliabilityCode) : null,
                                 LastUpdateDateTime.HasValue ? LastUpdateDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 LastUpdateFacility?.ToDelimitedString(),
                                 TaxonomicClassificationCode?.ToDelimitedString(),
                                 BreedCode?.ToDelimitedString(),
                                 Strain,
                                 ProductionClassCode?.ToDelimitedString(),
-                                TribalCitizenship != null ? string.Join("~", TribalCitizenship.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd('|');
+                                TribalCitizenship != null ? string.Join(Configuration.FieldRepeatSeparator, TribalCitizenship.Select(x => x.ToDelimitedString())) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

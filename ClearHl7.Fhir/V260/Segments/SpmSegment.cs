@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V260.Types;
 
 namespace ClearHl7.Fhir.V260.Segments
@@ -191,38 +192,38 @@ namespace ClearHl7.Fhir.V260.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}",
+                                StringHelper.StringFormatSequence(0, 30, Configuration.FieldSeparator),
                                 Id,
                                 SetIdSpm.HasValue ? SetIdSpm.Value.ToString(culture) : null,
                                 SpecimenId?.ToDelimitedString(),
-                                SpecimenParentIds != null ? string.Join("~", SpecimenParentIds.Select(x => x.ToDelimitedString())) : null,
+                                SpecimenParentIds != null ? string.Join(Configuration.FieldRepeatSeparator, SpecimenParentIds.Select(x => x.ToDelimitedString())) : null,
                                 SpecimenType?.ToDelimitedString(),
-                                SpecimenTypeModifier != null ? string.Join("~", SpecimenTypeModifier.Select(x => x.ToDelimitedString())) : null,
-                                SpecimenAdditives != null ? string.Join("~", SpecimenAdditives.Select(x => x.ToDelimitedString())) : null,
+                                SpecimenTypeModifier != null ? string.Join(Configuration.FieldRepeatSeparator, SpecimenTypeModifier.Select(x => x.ToDelimitedString())) : null,
+                                SpecimenAdditives != null ? string.Join(Configuration.FieldRepeatSeparator, SpecimenAdditives.Select(x => x.ToDelimitedString())) : null,
                                 SpecimenCollectionMethod?.ToDelimitedString(),
                                 SpecimenSourceSite?.ToDelimitedString(),
-                                SpecimenSourceSiteModifier != null ? string.Join("~", SpecimenSourceSiteModifier.Select(x => x.ToDelimitedString())) : null,
+                                SpecimenSourceSiteModifier != null ? string.Join(Configuration.FieldRepeatSeparator, SpecimenSourceSiteModifier.Select(x => x.ToDelimitedString())) : null,
                                 SpecimenCollectionSite?.ToDelimitedString(),
-                                SpecimenRole != null ? string.Join("~", SpecimenRole.Select(x => x.ToDelimitedString())) : null,
+                                SpecimenRole != null ? string.Join(Configuration.FieldRepeatSeparator, SpecimenRole.Select(x => x.ToDelimitedString())) : null,
                                 SpecimenCollectionAmount?.ToDelimitedString(),
                                 GroupedSpecimenCount.HasValue ? GroupedSpecimenCount.Value.ToString(Consts.NumericFormat, culture) : null,
-                                SpecimenDescription != null ? string.Join("~", SpecimenDescription) : null,
-                                SpecimenHandlingCode != null ? string.Join("~", SpecimenHandlingCode.Select(x => x.ToDelimitedString())) : null,
-                                SpecimenRiskCode != null ? string.Join("~", SpecimenRiskCode.Select(x => x.ToDelimitedString())) : null,
+                                SpecimenDescription != null ? string.Join(Configuration.FieldRepeatSeparator, SpecimenDescription) : null,
+                                SpecimenHandlingCode != null ? string.Join(Configuration.FieldRepeatSeparator, SpecimenHandlingCode.Select(x => x.ToDelimitedString())) : null,
+                                SpecimenRiskCode != null ? string.Join(Configuration.FieldRepeatSeparator, SpecimenRiskCode.Select(x => x.ToDelimitedString())) : null,
                                 SpecimenCollectionDateTime?.ToDelimitedString(),
                                 SpecimenReceivedDateTime.HasValue ? SpecimenReceivedDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 SpecimenExpirationDateTime.HasValue ? SpecimenExpirationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 SpecimenAvailability,
-                                SpecimenRejectReason != null ? string.Join("~", SpecimenRejectReason.Select(x => x.ToDelimitedString())) : null,
+                                SpecimenRejectReason != null ? string.Join(Configuration.FieldRepeatSeparator, SpecimenRejectReason.Select(x => x.ToDelimitedString())) : null,
                                 SpecimenQuality?.ToDelimitedString(),
                                 SpecimenAppropriateness?.ToDelimitedString(),
-                                SpecimenCondition != null ? string.Join("~", SpecimenCondition.Select(x => x.ToDelimitedString())) : null,
+                                SpecimenCondition != null ? string.Join(Configuration.FieldRepeatSeparator, SpecimenCondition.Select(x => x.ToDelimitedString())) : null,
                                 SpecimenCurrentQuantity?.ToDelimitedString(),
                                 NumberOfSpecimenContainers.HasValue ? NumberOfSpecimenContainers.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ContainerType?.ToDelimitedString(),
                                 ContainerCondition?.ToDelimitedString(),
                                 SpecimenChildRole?.ToDelimitedString()
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V282.Types;
 
 namespace ClearHl7.Fhir.V282.Segments
@@ -324,27 +325,27 @@ namespace ClearHl7.Fhir.V282.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}|{39}|{40}|{41}|{42}|{43}|{44}|{45}|{46}|{47}|{48}|{49}|{50}|{51}|{52}|{53}|{54}|{55}",
+                                StringHelper.StringFormatSequence(0, 56, Configuration.FieldSeparator),
                                 Id,
                                 SetIdIn1.HasValue ? SetIdIn1.Value.ToString(culture) : null,
                                 HealthPlanId?.ToDelimitedString(),
-                                InsuranceCompanyId != null ? string.Join("~", InsuranceCompanyId.Select(x => x.ToDelimitedString())) : null,
-                                InsuranceCompanyName != null ? string.Join("~", InsuranceCompanyName.Select(x => x.ToDelimitedString())) : null,
-                                InsuranceCompanyAddress != null ? string.Join("~", InsuranceCompanyAddress.Select(x => x.ToDelimitedString())) : null,
-                                InsuranceCoContactPerson != null ? string.Join("~", InsuranceCoContactPerson.Select(x => x.ToDelimitedString())) : null,
-                                InsuranceCoPhoneNumber != null ? string.Join("~", InsuranceCoPhoneNumber.Select(x => x.ToDelimitedString())) : null,
+                                InsuranceCompanyId != null ? string.Join(Configuration.FieldRepeatSeparator, InsuranceCompanyId.Select(x => x.ToDelimitedString())) : null,
+                                InsuranceCompanyName != null ? string.Join(Configuration.FieldRepeatSeparator, InsuranceCompanyName.Select(x => x.ToDelimitedString())) : null,
+                                InsuranceCompanyAddress != null ? string.Join(Configuration.FieldRepeatSeparator, InsuranceCompanyAddress.Select(x => x.ToDelimitedString())) : null,
+                                InsuranceCoContactPerson != null ? string.Join(Configuration.FieldRepeatSeparator, InsuranceCoContactPerson.Select(x => x.ToDelimitedString())) : null,
+                                InsuranceCoPhoneNumber != null ? string.Join(Configuration.FieldRepeatSeparator, InsuranceCoPhoneNumber.Select(x => x.ToDelimitedString())) : null,
                                 GroupNumber,
-                                GroupName != null ? string.Join("~", GroupName.Select(x => x.ToDelimitedString())) : null,
-                                InsuredsGroupEmpId != null ? string.Join("~", InsuredsGroupEmpId.Select(x => x.ToDelimitedString())) : null,
-                                InsuredsGroupEmpName != null ? string.Join("~", InsuredsGroupEmpName.Select(x => x.ToDelimitedString())) : null,
+                                GroupName != null ? string.Join(Configuration.FieldRepeatSeparator, GroupName.Select(x => x.ToDelimitedString())) : null,
+                                InsuredsGroupEmpId != null ? string.Join(Configuration.FieldRepeatSeparator, InsuredsGroupEmpId.Select(x => x.ToDelimitedString())) : null,
+                                InsuredsGroupEmpName != null ? string.Join(Configuration.FieldRepeatSeparator, InsuredsGroupEmpName.Select(x => x.ToDelimitedString())) : null,
                                 PlanEffectiveDate.HasValue ? PlanEffectiveDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 PlanExpirationDate.HasValue ? PlanExpirationDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 AuthorizationInformation?.ToDelimitedString(),
                                 PlanType?.ToDelimitedString(),
-                                NameOfInsured != null ? string.Join("~", NameOfInsured.Select(x => x.ToDelimitedString())) : null,
+                                NameOfInsured != null ? string.Join(Configuration.FieldRepeatSeparator, NameOfInsured.Select(x => x.ToDelimitedString())) : null,
                                 InsuredsRelationshipToPatient?.ToDelimitedString(),
                                 InsuredsDateOfBirth.HasValue ? InsuredsDateOfBirth.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                InsuredsAddress != null ? string.Join("~", InsuredsAddress.Select(x => x.ToDelimitedString())) : null,
+                                InsuredsAddress != null ? string.Join(Configuration.FieldRepeatSeparator, InsuredsAddress.Select(x => x.ToDelimitedString())) : null,
                                 AssignmentOfBenefits?.ToDelimitedString(),
                                 CoordinationOfBenefits?.ToDelimitedString(),
                                 CoordOfBenPriority,
@@ -355,7 +356,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 ReleaseInformationCode?.ToDelimitedString(),
                                 PreAdmitCertPac,
                                 VerificationDateTime.HasValue ? VerificationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                VerificationBy != null ? string.Join("~", VerificationBy.Select(x => x.ToDelimitedString())) : null,
+                                VerificationBy != null ? string.Join(Configuration.FieldRepeatSeparator, VerificationBy.Select(x => x.ToDelimitedString())) : null,
                                 TypeOfAgreementCode?.ToDelimitedString(),
                                 BillingStatus?.ToDelimitedString(),
                                 LifetimeReserveDays.HasValue ? LifetimeReserveDays.Value.ToString(Consts.NumericFormat, culture) : null,
@@ -369,19 +370,19 @@ namespace ClearHl7.Fhir.V282.Segments
                                 RoomRatePrivate,
                                 InsuredsEmploymentStatus?.ToDelimitedString(),
                                 InsuredsAdministrativeSex?.ToDelimitedString(),
-                                InsuredsEmployersAddress != null ? string.Join("~", InsuredsEmployersAddress.Select(x => x.ToDelimitedString())) : null,
+                                InsuredsEmployersAddress != null ? string.Join(Configuration.FieldRepeatSeparator, InsuredsEmployersAddress.Select(x => x.ToDelimitedString())) : null,
                                 VerificationStatus,
                                 PriorInsurancePlanId?.ToDelimitedString(),
                                 CoverageType?.ToDelimitedString(),
                                 Handicap?.ToDelimitedString(),
-                                InsuredsIdNumber != null ? string.Join("~", InsuredsIdNumber.Select(x => x.ToDelimitedString())) : null,
+                                InsuredsIdNumber != null ? string.Join(Configuration.FieldRepeatSeparator, InsuredsIdNumber.Select(x => x.ToDelimitedString())) : null,
                                 SignatureCode?.ToDelimitedString(),
                                 SignatureCodeDate.HasValue ? SignatureCodeDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 InsuredsBirthPlace,
                                 VipIndicator?.ToDelimitedString(),
-                                ExternalHealthPlanIdentifiers != null ? string.Join("~", ExternalHealthPlanIdentifiers.Select(x => x.ToDelimitedString())) : null,
+                                ExternalHealthPlanIdentifiers != null ? string.Join(Configuration.FieldRepeatSeparator, ExternalHealthPlanIdentifiers.Select(x => x.ToDelimitedString())) : null,
                                 InsuranceActionCode
-                                ).TrimEnd('|');
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }

@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClearHl7.Fhir.Helpers;
 using ClearHl7.Fhir.V280.Types;
 
 namespace ClearHl7.Fhir.V280.Segments
@@ -300,24 +301,24 @@ namespace ClearHl7.Fhir.V280.Segments
 
             return string.Format(
                                 culture,
-                                "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}|{10}|{11}|{12}|{13}|{14}|{15}|{16}|{17}|{18}|{19}|{20}|{21}|{22}|{23}|{24}|{25}|{26}|{27}|{28}|{29}|{30}|{31}|{32}|{33}|{34}|{35}|{36}|{37}|{38}|{39}|{40}|{41}|{42}|{43}|{44}|{45}|{46}|{47}|{48}|{49}|{50}|{51}",
+                                StringHelper.StringFormatSequence(0, 52, Configuration.FieldSeparator),
                                 Id,
                                 SequenceNumberTestObservationMasterFile.HasValue ? SequenceNumberTestObservationMasterFile.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ProducersServiceTestObservationId?.ToDelimitedString(),
-                                PermittedDataTypes != null ? string.Join("~", PermittedDataTypes) : null,
+                                PermittedDataTypes != null ? string.Join(Configuration.FieldRepeatSeparator, PermittedDataTypes) : null,
                                 SpecimenRequired,
                                 ProducerId?.ToDelimitedString(),
                                 ObservationDescription?.ToDelimitedString(),
-                                OtherServiceTestObservationIdsForTheObservation != null ? string.Join("~", OtherServiceTestObservationIdsForTheObservation.Select(x => x.ToDelimitedString())) : null,
-                                OtherNames != null ? string.Join("~", OtherNames) : null,
+                                OtherServiceTestObservationIdsForTheObservation != null ? string.Join(Configuration.FieldRepeatSeparator, OtherServiceTestObservationIdsForTheObservation.Select(x => x.ToDelimitedString())) : null,
+                                OtherNames != null ? string.Join(Configuration.FieldRepeatSeparator, OtherNames) : null,
                                 PreferredReportNameForTheObservation,
                                 PreferredShortNameOrMnemonicForTheObservation,
                                 PreferredLongNameForTheObservation,
                                 Orderability,
-                                IdentityOfInstrumentUsedToPerformThisStudy != null ? string.Join("~", IdentityOfInstrumentUsedToPerformThisStudy.Select(x => x.ToDelimitedString())) : null,
-                                CodedRepresentationOfMethod != null ? string.Join("~", CodedRepresentationOfMethod.Select(x => x.ToDelimitedString())) : null,
+                                IdentityOfInstrumentUsedToPerformThisStudy != null ? string.Join(Configuration.FieldRepeatSeparator, IdentityOfInstrumentUsedToPerformThisStudy.Select(x => x.ToDelimitedString())) : null,
+                                CodedRepresentationOfMethod != null ? string.Join(Configuration.FieldRepeatSeparator, CodedRepresentationOfMethod.Select(x => x.ToDelimitedString())) : null,
                                 PortableDeviceIndicator,
-                                ObservationProducingDepartmentSection != null ? string.Join("~", ObservationProducingDepartmentSection.Select(x => x.ToDelimitedString())) : null,
+                                ObservationProducingDepartmentSection != null ? string.Join(Configuration.FieldRepeatSeparator, ObservationProducingDepartmentSection.Select(x => x.ToDelimitedString())) : null,
                                 TelephoneNumberOfSection?.ToDelimitedString(),
                                 NatureOfServiceTestObservation?.ToDelimitedString(),
                                 ReportSubheader?.ToDelimitedString(),
@@ -326,22 +327,22 @@ namespace ClearHl7.Fhir.V280.Segments
                                 EffectiveDateTimeOfChange.HasValue ? EffectiveDateTimeOfChange.Value.ToString(Consts.DateTimeFormatPrecisionSecond) : null,
                                 TypicalTurnAroundTime.HasValue ? TypicalTurnAroundTime.Value.ToString(Consts.NumericFormat) : null,
                                 ProcessingTime.HasValue ? ProcessingTime.Value.ToString(Consts.NumericFormat) : null,
-                                ProcessingPriority != null ? string.Join("~", ProcessingPriority) : null,
+                                ProcessingPriority != null ? string.Join(Configuration.FieldRepeatSeparator, ProcessingPriority) : null,
                                 ReportingPriority,
-                                OutsideSiteSWhereObservationMayBePerformed != null ? string.Join("~", OutsideSiteSWhereObservationMayBePerformed.Select(x => x.ToDelimitedString())) : null,
-                                AddressOfOutsideSites != null ? string.Join("~", AddressOfOutsideSites.Select(x => x.ToDelimitedString())) : null,
+                                OutsideSiteSWhereObservationMayBePerformed != null ? string.Join(Configuration.FieldRepeatSeparator, OutsideSiteSWhereObservationMayBePerformed.Select(x => x.ToDelimitedString())) : null,
+                                AddressOfOutsideSites != null ? string.Join(Configuration.FieldRepeatSeparator, AddressOfOutsideSites.Select(x => x.ToDelimitedString())) : null,
                                 PhoneNumberOfOutsideSite?.ToDelimitedString(),
                                 ConfidentialityCode?.ToDelimitedString(),
-                                ObservationsRequiredToInterpretThisObservation != null ? string.Join("~", ObservationsRequiredToInterpretThisObservation.Select(x => x.ToDelimitedString())) : null,
+                                ObservationsRequiredToInterpretThisObservation != null ? string.Join(Configuration.FieldRepeatSeparator, ObservationsRequiredToInterpretThisObservation.Select(x => x.ToDelimitedString())) : null,
                                 InterpretationOfObservations?.ToDelimitedString(),
-                                ContraindicationsToObservations != null ? string.Join("~", ContraindicationsToObservations.Select(x => x.ToDelimitedString())) : null,
-                                ReflexTestsObservations != null ? string.Join("~", ReflexTestsObservations.Select(x => x.ToDelimitedString())) : null,
-                                RulesThatTriggerReflexTesting != null ? string.Join("~", RulesThatTriggerReflexTesting.Select(x => x.ToDelimitedString())) : null,
-                                FixedCannedMessage != null ? string.Join("~", FixedCannedMessage.Select(x => x.ToDelimitedString())) : null,
-                                PatientPreparation != null ? string.Join("~", PatientPreparation.Select(x => x.ToDelimitedString())) : null,
+                                ContraindicationsToObservations != null ? string.Join(Configuration.FieldRepeatSeparator, ContraindicationsToObservations.Select(x => x.ToDelimitedString())) : null,
+                                ReflexTestsObservations != null ? string.Join(Configuration.FieldRepeatSeparator, ReflexTestsObservations.Select(x => x.ToDelimitedString())) : null,
+                                RulesThatTriggerReflexTesting != null ? string.Join(Configuration.FieldRepeatSeparator, RulesThatTriggerReflexTesting.Select(x => x.ToDelimitedString())) : null,
+                                FixedCannedMessage != null ? string.Join(Configuration.FieldRepeatSeparator, FixedCannedMessage.Select(x => x.ToDelimitedString())) : null,
+                                PatientPreparation != null ? string.Join(Configuration.FieldRepeatSeparator, PatientPreparation.Select(x => x.ToDelimitedString())) : null,
                                 ProcedureMedication?.ToDelimitedString(),
                                 FactorsThatMayAffectTheObservation?.ToDelimitedString(),
-                                ServiceTestObservationPerformanceSchedule != null ? string.Join("~", ServiceTestObservationPerformanceSchedule) : null,
+                                ServiceTestObservationPerformanceSchedule != null ? string.Join(Configuration.FieldRepeatSeparator, ServiceTestObservationPerformanceSchedule) : null,
                                 DescriptionOfTestMethods?.ToDelimitedString(),
                                 KindOfQuantityObserved?.ToDelimitedString(),
                                 PointVersusInterval?.ToDelimitedString(),
@@ -352,8 +353,8 @@ namespace ClearHl7.Fhir.V280.Segments
                                 ExclusiveTest,
                                 DiagnosticServSectId,
                                 TaxonomicClassificationCode?.ToDelimitedString(),
-                                OtherNamesB != null ? string.Join("~", OtherNamesB) : null
-                                ).TrimEnd('|');
+                                OtherNamesB != null ? string.Join(Configuration.FieldRepeatSeparator, OtherNamesB) : null
+                                ).TrimEnd(Configuration.FieldSeparator);
         }
     }
 }
