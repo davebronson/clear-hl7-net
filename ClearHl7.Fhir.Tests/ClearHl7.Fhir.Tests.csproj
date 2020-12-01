@@ -20,7 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="SegmentsTests\" />
     <Folder Include="TypesTests\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClearHl7.Fhir\ClearHl7.Fhir.csproj" />
   </ItemGroup>
 </Project>
