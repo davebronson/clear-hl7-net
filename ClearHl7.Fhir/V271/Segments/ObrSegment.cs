@@ -363,7 +363,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 ObservationGroupId?.ToDelimitedString(),
                                 ParentObservationGroupId?.ToDelimitedString(),
                                 AlternatePlacerOrderNumber != null ? string.Join(Configuration.FieldRepeatSeparator, AlternatePlacerOrderNumber.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

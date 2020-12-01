@@ -211,7 +211,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 AdministerAt?.ToDelimitedString(),
                                 AdministeredAtAddress?.ToDelimitedString(),
                                 AdministeredTagIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, AdministeredTagIdentifier.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

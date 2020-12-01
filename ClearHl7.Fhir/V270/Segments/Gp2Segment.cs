@@ -125,7 +125,7 @@ namespace ClearHl7.Fhir.V270.Segments
                                 ReimbursementTypeCode?.ToDelimitedString(),
                                 CoPayAmount?.ToDelimitedString(),
                                 PayRatePerServiceUnit.HasValue ? PayRatePerServiceUnit.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

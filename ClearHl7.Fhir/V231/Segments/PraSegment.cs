@@ -86,7 +86,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 PractitionerIdNumbers != null ? string.Join(Configuration.FieldRepeatSeparator, PractitionerIdNumbers.Select(x => x.ToDelimitedString())) : null,
                                 Privileges != null ? string.Join(Configuration.FieldRepeatSeparator, Privileges.Select(x => x.ToDelimitedString())) : null,
                                 DateEnteredPractice.HasValue ? DateEnteredPractice.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

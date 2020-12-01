@@ -227,7 +227,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 OrderType?.ToDelimitedString(),
                                 EntererAuthorizationMode?.ToDelimitedString(),
                                 ParentUniversalServiceIdentifier?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -103,7 +103,7 @@ namespace ClearHl7.Fhir.V251.Segments
                                 FileHeaderComment,
                                 FileControlId,
                                 ReferenceFileControlId
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

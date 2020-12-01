@@ -203,7 +203,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 RequestedDrugStrengthVolumeUnits?.ToDelimitedString(),
                                 PharmacyOrderType,
                                 DispensingInterval.HasValue ? DispensingInterval.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

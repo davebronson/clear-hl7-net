@@ -78,7 +78,7 @@ namespace ClearHl7.Fhir.V251.Types
         public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
-            char separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
 
             return string.Format(
                                 culture,
@@ -94,7 +94,7 @@ namespace ClearHl7.Fhir.V251.Types
                                 EventOffsetQuantity.HasValue ? EventOffsetQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
                                 EventOffsetUnits,
                                 GeneralTimingSpecification
-                                ).TrimEnd(separator);
+                                ).TrimEnd(separator.ToCharArray());
         }
     }
 }

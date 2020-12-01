@@ -248,7 +248,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 StatusWeightAtBirth,
                                 StatusRespirationMinutes,
                                 StatusAdmission
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

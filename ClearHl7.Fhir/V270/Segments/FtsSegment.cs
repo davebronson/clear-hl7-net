@@ -41,7 +41,7 @@ namespace ClearHl7.Fhir.V270.Segments
                                 Id,
                                 FileBatchCount.HasValue ? FileBatchCount.Value.ToString(Consts.NumericFormat, culture) : null,
                                 FileTrailerComment
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

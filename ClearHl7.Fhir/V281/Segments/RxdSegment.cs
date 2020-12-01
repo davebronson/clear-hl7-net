@@ -249,7 +249,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 DispenseType?.ToDelimitedString(),
                                 PharmacyPhoneNumber != null ? string.Join(Configuration.FieldRepeatSeparator, PharmacyPhoneNumber.Select(x => x.ToDelimitedString())) : null,
                                 DispenseTagIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, DispenseTagIdentifier.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

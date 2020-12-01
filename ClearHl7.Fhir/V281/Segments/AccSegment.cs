@@ -116,7 +116,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 AccidentAddress?.ToDelimitedString(),
                                 DegreeOfPatientLiability.HasValue ? DegreeOfPatientLiability.Value.ToString(Consts.NumericFormat, culture) : null,
                                 AccidentIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, AccidentIdentifier.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

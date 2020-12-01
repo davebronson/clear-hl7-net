@@ -72,7 +72,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 MfnRecordLevelErrorReturn?.ToDelimitedString(),
                                 PrimaryKeyValueMfa != null ? string.Join(Configuration.FieldRepeatSeparator, PrimaryKeyValueMfa.Select(x => x.ToDelimitedString())) : null,
                                 PrimaryKeyValueTypeMfa != null ? string.Join(Configuration.FieldRepeatSeparator, PrimaryKeyValueTypeMfa) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

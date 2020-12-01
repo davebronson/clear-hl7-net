@@ -375,7 +375,7 @@ namespace ClearHl7.Fhir.V270.Segments
                                 InsuredsBirthPlace,
                                 VipIndicator?.ToDelimitedString(),
                                 ExternalHealthPlanIdentifiers != null ? string.Join(Configuration.FieldRepeatSeparator, ExternalHealthPlanIdentifiers.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

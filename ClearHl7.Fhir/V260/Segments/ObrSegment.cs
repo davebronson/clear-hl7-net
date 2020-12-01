@@ -345,7 +345,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 MedicallyNecessaryDuplicateProcedureReason?.ToDelimitedString(),
                                 ResultHandling?.ToDelimitedString(),
                                 ParentUniversalServiceIdentifier?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

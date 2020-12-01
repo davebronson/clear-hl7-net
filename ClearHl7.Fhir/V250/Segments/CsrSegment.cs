@@ -129,7 +129,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 PatientEvaluabilityStatus?.ToDelimitedString(),
                                 DateTimeEndedStudy.HasValue ? DateTimeEndedStudy.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ReasonEndedStudy?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -120,7 +120,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 BpRequestedDispenseToAddress?.ToDelimitedString(),
                                 BpIndicationForUse != null ? string.Join(Configuration.FieldRepeatSeparator, BpIndicationForUse.Select(x => x.ToDelimitedString())) : null,
                                 BpInformedConsentIndicator
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

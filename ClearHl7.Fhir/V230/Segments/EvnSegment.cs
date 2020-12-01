@@ -70,7 +70,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 EventReasonCode,
                                 OperatorId?.ToDelimitedString(),
                                 EventOccurred.HasValue ? EventOccurred.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

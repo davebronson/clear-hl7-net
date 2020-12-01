@@ -118,7 +118,7 @@ namespace ClearHl7.Fhir.V270.Segments
                                 EquipmentDynamicRange?.ToDelimitedString(),
                                 Units?.ToDelimitedString(),
                                 ProcessingType?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

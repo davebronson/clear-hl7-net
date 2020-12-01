@@ -49,7 +49,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 BatchMessageCount,
                                 BatchComment,
                                 BatchTotals != null ? string.Join(Configuration.FieldRepeatSeparator, BatchTotals.Select(x => x.ToString(Consts.NumericFormat, culture))) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

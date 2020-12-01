@@ -125,7 +125,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 ProviderProductServiceLineItemNumberCrossReference?.ToDelimitedString(),
                                 AdjustmentDate.HasValue ? AdjustmentDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ResponsibleOrganization?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

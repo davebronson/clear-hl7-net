@@ -277,7 +277,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 BreedCode?.ToDelimitedString(),
                                 Strain,
                                 ProductionClassCode?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

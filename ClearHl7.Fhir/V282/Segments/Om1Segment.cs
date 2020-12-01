@@ -403,7 +403,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 TypicalTurnAroundTimeWithUnits?.ToDelimitedString(),
                                 GenderRestriction != null ? string.Join(Configuration.FieldRepeatSeparator, GenderRestriction.Select(x => x.ToDelimitedString())) : null,
                                 AgeRestriction != null ? string.Join(Configuration.FieldRepeatSeparator, AgeRestriction.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

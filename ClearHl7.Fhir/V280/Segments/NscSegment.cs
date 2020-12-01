@@ -89,7 +89,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 NewFileserver,
                                 NewApplication?.ToDelimitedString(),
                                 NewFacility?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

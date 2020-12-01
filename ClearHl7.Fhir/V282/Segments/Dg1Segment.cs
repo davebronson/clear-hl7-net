@@ -204,7 +204,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 DrgGroupingUsage,
                                 DrgDiagnosisDeterminationStatus?.ToDelimitedString(),
                                 PresentOnAdmissionPoaIndicator?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

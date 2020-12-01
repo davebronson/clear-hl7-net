@@ -120,7 +120,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 DurationUnits?.ToDelimitedString(),
                                 AllowSubstitutionCode,
                                 FillerStatusCode?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

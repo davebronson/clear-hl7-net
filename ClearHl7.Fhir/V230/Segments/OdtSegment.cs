@@ -51,7 +51,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 TrayType?.ToDelimitedString(),
                                 ServicePeriod != null ? string.Join(Configuration.FieldRepeatSeparator, ServicePeriod.Select(x => x.ToDelimitedString())) : null,
                                 TextInstruction
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

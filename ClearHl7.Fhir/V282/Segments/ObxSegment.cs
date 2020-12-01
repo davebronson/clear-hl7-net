@@ -224,7 +224,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 LocalProcessControl != null ? string.Join(Configuration.FieldRepeatSeparator, LocalProcessControl.Select(x => x.ToDelimitedString())) : null,
                                 ObservationType,
                                 ObservationSubType
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

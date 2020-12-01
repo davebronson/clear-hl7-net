@@ -75,7 +75,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 AbnormalTextCodesForCategoricalObservations?.ToDelimitedString(),
                                 CriticalTextCodesForCategoricalObservations?.ToDelimitedString(),
                                 ValueType
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

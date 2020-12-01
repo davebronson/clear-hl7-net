@@ -60,7 +60,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 DataLine?.ToDelimitedString(),
                                 LogicalBreakPoint,
                                 ResultId?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -17,30 +17,30 @@
         /// Gets the character used to separate fields.  This property is read-only.
         /// </summary>
         /// <remarks>The default character | is recommended.</remarks>
-        public static char FieldSeparator { get; } = '|';
+        public static string FieldSeparator { get; } = "|";
 
         /// <summary>
         /// Gets or sets the character used to separate components.
         /// </summary>
         /// <remarks>The default character ^ is recommended.</remarks>
-        public static char ComponentSeparator { get; set; } = '^';
+        public static string ComponentSeparator { get; set; } = "^";
 
         /// <summary>
         /// Gets or sets the character used to separate repeated fields.
         /// </summary>
         /// <remarks>The default character ~ is recommended.</remarks>
-        public static char FieldRepeatSeparator { get; set; } = '~';
+        public static string FieldRepeatSeparator { get; set; } = "~";
 
         /// <summary>
         /// Gets or sets the character used to escape an encoding character.
         /// </summary>
         /// <remarks>The default character \ is recommended.</remarks>
-        public static char EscapeCharacter { get; set; } = '\\';
+        public static string EscapeCharacter { get; set; } = "\\";
 
         /// <summary>
         /// Gets or sets the character used to separate subcomponents.
         /// </summary>
         /// <remarks>The default character & is recommended.</remarks>
-        public static char SubcomponentSeparator { get; set; } = '&';
+        public static string SubcomponentSeparator { get; set; } = "&";
     }
 }

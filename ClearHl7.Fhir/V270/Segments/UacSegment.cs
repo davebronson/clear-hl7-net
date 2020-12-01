@@ -43,7 +43,7 @@ namespace ClearHl7.Fhir.V270.Segments
                                 Id,
                                 UserAuthenticationCredentialTypeCode?.ToDelimitedString(),
                                 UserAuthenticationCredential?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

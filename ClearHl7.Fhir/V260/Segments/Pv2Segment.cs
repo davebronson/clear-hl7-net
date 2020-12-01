@@ -360,7 +360,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 ExpectedPreAdmissionTestingDateTime.HasValue ? ExpectedPreAdmissionTestingDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 NotifyClergyCode != null ? string.Join(Configuration.FieldRepeatSeparator, NotifyClergyCode) : null,
                                 AdvanceDirectiveLastVerifiedDate.HasValue ? AdvanceDirectiveLastVerifiedDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

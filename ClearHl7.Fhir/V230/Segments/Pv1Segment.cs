@@ -375,7 +375,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 AlternateVisitId?.ToDelimitedString(),
                                 VisitIndicator,
                                 OtherHealthcareProvider != null ? string.Join(Configuration.FieldRepeatSeparator, OtherHealthcareProvider.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

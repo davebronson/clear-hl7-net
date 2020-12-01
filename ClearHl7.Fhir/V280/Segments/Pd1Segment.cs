@@ -180,7 +180,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 MilitaryRankGrade?.ToDelimitedString(),
                                 MilitaryStatus?.ToDelimitedString(),
                                 AdvanceDirectiveLastVerifiedDate.HasValue ? AdvanceDirectiveLastVerifiedDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

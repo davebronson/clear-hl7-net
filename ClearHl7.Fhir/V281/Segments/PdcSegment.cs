@@ -123,7 +123,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 ExpectedShelfLife?.ToDelimitedString(),
                                 DateFirstMarketed.HasValue ? DateFirstMarketed.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 DateLastMarketed.HasValue ? DateLastMarketed.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

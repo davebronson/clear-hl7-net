@@ -31,14 +31,14 @@ namespace ClearHl7.Fhir.V280.Types
         public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
-            char separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
 
             return string.Format(
                                 culture,
                                 StringHelper.StringFormatSequence(0, 2, separator),
                                 FinancialClassCode?.ToDelimitedString(),
                                 EffectiveDate.HasValue ? EffectiveDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
-                                ).TrimEnd(separator);
+                                ).TrimEnd(separator.ToCharArray());
         }
     }
 }

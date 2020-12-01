@@ -90,7 +90,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 AutopsyStartAndEndDateTime?.ToDelimitedString(),
                                 AutopsyPerformedBy?.ToDelimitedString(),
                                 CoronerIndicator
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

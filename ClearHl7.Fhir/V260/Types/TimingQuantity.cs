@@ -81,7 +81,7 @@ namespace ClearHl7.Fhir.V260.Types
         public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
-            char separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
 
             return string.Format(
                                 culture,
@@ -98,7 +98,7 @@ namespace ClearHl7.Fhir.V260.Types
                                 OrderSequencing?.ToDelimitedString(),
                                 OccurrenceDuration?.ToDelimitedString(),
                                 TotalOccurrences.HasValue ? TotalOccurrences.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd(separator);
+                                ).TrimEnd(separator.ToCharArray());
         }
     }
 }

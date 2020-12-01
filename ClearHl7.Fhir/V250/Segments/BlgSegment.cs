@@ -57,7 +57,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 ChargeType,
                                 AccountId?.ToDelimitedString(),
                                 ChargeTypeReason?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

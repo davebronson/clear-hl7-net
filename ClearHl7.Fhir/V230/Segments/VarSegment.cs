@@ -68,7 +68,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 VarianceOriginator?.ToDelimitedString(),
                                 VarianceClassification?.ToDelimitedString(),
                                 VarianceDescription != null ? string.Join(Configuration.FieldRepeatSeparator, VarianceDescription) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -127,7 +127,7 @@ namespace ClearHl7.Fhir.V270.Segments
                                 InventoryOnHandQuantityUnit?.ToDelimitedString(),
                                 ProcedureCode?.ToDelimitedString(),
                                 ProcedureCodeModifier != null ? string.Join(Configuration.FieldRepeatSeparator, ProcedureCodeModifier.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

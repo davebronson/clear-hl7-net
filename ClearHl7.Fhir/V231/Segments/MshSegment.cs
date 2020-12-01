@@ -23,7 +23,7 @@ namespace ClearHl7.Fhir.V231.Segments
         /// <summary>
         /// MSH.1 - Field Separator.  This property is read-only.
         /// </summary>
-        public char FieldSeparator => Configuration.FieldSeparator;
+        public string FieldSeparator => Configuration.FieldSeparator;
 
         /// <summary>
         /// MSH.2 - Encoding Characters.  This property is read-only.
@@ -161,7 +161,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 CharacterSet != null ? string.Join(Configuration.FieldRepeatSeparator, CharacterSet) : null,
                                 PrincipalLanguageOfMessage?.ToDelimitedString(),
                                 AlternateCharacterSetHandlingScheme
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

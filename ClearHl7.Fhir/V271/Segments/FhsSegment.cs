@@ -115,7 +115,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 ReferenceFileControlId,
                                 FileSendingNetworkAddress?.ToDelimitedString(),
                                 FileReceivingNetworkAddress?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

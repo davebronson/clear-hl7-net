@@ -174,7 +174,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 MilitaryBranch,
                                 MilitaryRankGrade,
                                 MilitaryStatus
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

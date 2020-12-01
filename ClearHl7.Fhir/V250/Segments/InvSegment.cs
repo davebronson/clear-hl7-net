@@ -158,7 +158,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 SupplierIdentifier?.ToDelimitedString(),
                                 OnBoardStabilityTime?.ToDelimitedString(),
                                 TargetValue?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -1,4 +1,4 @@
-using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Fhir.Helpers;
 
 namespace ClearHl7.Fhir.V282.Segments
 {
@@ -35,7 +35,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 StringHelper.StringFormatSequence(0, 2, Configuration.FieldSeparator),
                                 Id,
                                 AddendumContinuationPointer
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

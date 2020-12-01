@@ -228,7 +228,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 RevocationDate.HasValue ? RevocationDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 RevocationReasonCode?.ToDelimitedString(),
                                 CertificateStatusCode?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

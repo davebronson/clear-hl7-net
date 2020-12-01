@@ -95,7 +95,7 @@ namespace ClearHl7.Fhir.V251.Types
         public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
-            char separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
 
             return string.Format(
                                 culture,
@@ -114,7 +114,7 @@ namespace ClearHl7.Fhir.V251.Types
                                 EffectiveDate.HasValue ? EffectiveDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ProfessionalSuffix
-                                ).TrimEnd(separator);
+                                ).TrimEnd(separator.ToCharArray());
         }
     }
 }

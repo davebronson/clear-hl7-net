@@ -67,7 +67,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 ComponentUnits?.ToDelimitedString(),
                                 ComponentStrength.HasValue ? ComponentStrength.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ComponentStrengthUnits?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

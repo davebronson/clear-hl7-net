@@ -282,7 +282,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 CostCenterCode != null ? string.Join(Configuration.FieldRepeatSeparator, CostCenterCode.Select(x => x.ToDelimitedString())) : null,
                                 GenericClassificationIndicator,
                                 InactiveReasonCode?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

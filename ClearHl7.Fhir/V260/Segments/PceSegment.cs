@@ -56,7 +56,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 CostCenterAccountNumber,
                                 TransactionCode?.ToDelimitedString(),
                                 TransactionAmountUnit?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

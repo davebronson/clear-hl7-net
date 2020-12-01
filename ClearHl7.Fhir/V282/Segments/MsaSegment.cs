@@ -79,7 +79,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 ErrorCondition,
                                 MessageWaitingNumber.HasValue ? MessageWaitingNumber.Value.ToString(Consts.NumericFormat, culture) : null,
                                 MessageWaitingPriority
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

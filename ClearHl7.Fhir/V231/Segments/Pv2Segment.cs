@@ -273,7 +273,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 MilitaryNonAvailabilityCode,
                                 NewbornBabyIndicator,
                                 BabyDetainedIndicator
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

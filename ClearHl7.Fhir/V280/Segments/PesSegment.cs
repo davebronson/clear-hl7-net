@@ -114,7 +114,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 EventReportTimingType != null ? string.Join(Configuration.FieldRepeatSeparator, EventReportTimingType) : null,
                                 EventReportSource,
                                 EventReportedTo != null ? string.Join(Configuration.FieldRepeatSeparator, EventReportedTo) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

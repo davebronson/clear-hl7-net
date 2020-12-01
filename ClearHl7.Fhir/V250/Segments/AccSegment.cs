@@ -102,7 +102,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 BroughtInBy,
                                 PoliceNotifiedIndicator,
                                 AccidentAddress?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

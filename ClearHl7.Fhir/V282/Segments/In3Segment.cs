@@ -206,7 +206,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 SecondOpinionPhysician != null ? string.Join(Configuration.FieldRepeatSeparator, SecondOpinionPhysician.Select(x => x.ToDelimitedString())) : null,
                                 CertificationType?.ToDelimitedString(),
                                 CertificationCategory?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

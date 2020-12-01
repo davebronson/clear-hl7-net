@@ -99,7 +99,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 ComponentDrugStrengthVolumeUnits?.ToDelimitedString(),
                                 DispenseAmount.HasValue ? DispenseAmount.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DispenseUnits?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

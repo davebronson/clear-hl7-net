@@ -40,7 +40,7 @@ namespace ClearHl7.Fhir.V250.Types
         public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
-            char separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
 
             return string.Format(
                                 culture,
@@ -49,7 +49,7 @@ namespace ClearHl7.Fhir.V250.Types
                                 NumericThreshold.HasValue ? NumericThreshold.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ChangeComputation,
                                 DaysRetained.HasValue ? DaysRetained.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd(separator);
+                                ).TrimEnd(separator.ToCharArray());
         }
     }
 }

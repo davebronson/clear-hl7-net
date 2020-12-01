@@ -115,7 +115,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 ReferenceBatchControlId,
                                 BatchSendingNetworkAddress?.ToDelimitedString(),
                                 BatchReceivingNetworkAddress?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

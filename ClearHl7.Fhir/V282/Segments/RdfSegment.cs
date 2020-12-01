@@ -45,7 +45,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 Id,
                                 NumberOfColumnsPerRow.HasValue ? NumberOfColumnsPerRow.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ColumnDescription != null ? string.Join(Configuration.FieldRepeatSeparator, ColumnDescription.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

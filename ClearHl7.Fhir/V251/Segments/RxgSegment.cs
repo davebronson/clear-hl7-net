@@ -194,7 +194,7 @@ namespace ClearHl7.Fhir.V251.Segments
                                 GiveDrugStrengthVolumeUnits?.ToDelimitedString(),
                                 GiveBarcodeIdentifier?.ToDelimitedString(),
                                 PharmacyOrderType
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

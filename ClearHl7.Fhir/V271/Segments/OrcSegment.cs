@@ -239,7 +239,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 ParentUniversalServiceIdentifier?.ToDelimitedString(),
                                 AdvancedBeneficiaryNoticeDate.HasValue ? AdvancedBeneficiaryNoticeDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 AlternatePlacerOrderNumber != null ? string.Join(Configuration.FieldRepeatSeparator, AlternatePlacerOrderNumber.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

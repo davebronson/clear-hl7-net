@@ -146,7 +146,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 ManufacturerLotNumber,
                                 ManufacturerIdentifier?.ToDelimitedString(),
                                 SupplierIdentifier?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

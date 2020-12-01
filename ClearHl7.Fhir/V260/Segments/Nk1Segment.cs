@@ -288,7 +288,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 ContactPersonSocialSecurityNumber,
                                 NextOfKinBirthPlace,
                                 VipIndicator
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

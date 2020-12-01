@@ -150,7 +150,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 ActiveInactiveFlag,
                                 Cost?.ToDelimitedString(),
                                 ChargeOnIndicator
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

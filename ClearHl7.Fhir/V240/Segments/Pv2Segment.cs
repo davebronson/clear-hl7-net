@@ -341,7 +341,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 AdvanceDirectiveCode != null ? string.Join(Configuration.FieldRepeatSeparator, AdvanceDirectiveCode.Select(x => x.ToDelimitedString())) : null,
                                 PatientStatusEffectiveDate.HasValue ? PatientStatusEffectiveDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 ExpectedLoaReturnDateTime.HasValue ? ExpectedLoaReturnDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -49,7 +49,7 @@ namespace ClearHl7.Fhir.V231.Types
         public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
-            char separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
 
             return string.Format(
                                 culture,
@@ -60,7 +60,7 @@ namespace ClearHl7.Fhir.V231.Types
                                 Sample2FromChannel1.HasValue ? Sample2FromChannel1.Value.ToString(Consts.NumericFormat, culture) : null,
                                 Sample2FromChannelN.HasValue ? Sample2FromChannelN.Value.ToString(Consts.NumericFormat, culture) : null,
                                 SampleNFromChannelN.HasValue ? SampleNFromChannelN.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd(separator);
+                                ).TrimEnd(separator.ToCharArray());
         }
     }
 }

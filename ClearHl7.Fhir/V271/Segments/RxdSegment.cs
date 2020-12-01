@@ -244,7 +244,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 PharmacyOrderType,
                                 DispenseType?.ToDelimitedString(),
                                 PharmacyPhoneNumber != null ? string.Join(Configuration.FieldRepeatSeparator, PharmacyPhoneNumber.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

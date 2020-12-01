@@ -185,7 +185,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 ParentPlacerAppointmentId?.ToDelimitedString(),
                                 ParentFillerAppointmentId?.ToDelimitedString(),
                                 FillerStatusCode?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -95,7 +95,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 SequenceConditionTimeInterval?.ToDelimitedString(),
                                 CyclicGroupMaximumNumberOfRepeats.HasValue ? CyclicGroupMaximumNumberOfRepeats.Value.ToString(Consts.NumericFormat, culture) : null,
                                 SpecialServiceRequestRelationship
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

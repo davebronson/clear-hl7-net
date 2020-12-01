@@ -75,7 +75,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 PayeePersonName?.ToDelimitedString(),
                                 PayeeAddress?.ToDelimitedString(),
                                 PaymentMethod?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

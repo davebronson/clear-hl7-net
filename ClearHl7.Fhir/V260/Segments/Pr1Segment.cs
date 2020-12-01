@@ -177,7 +177,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 ProcedureActionCode,
                                 DrgProcedureDeterminationStatus,
                                 DrgProcedureRelevance
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

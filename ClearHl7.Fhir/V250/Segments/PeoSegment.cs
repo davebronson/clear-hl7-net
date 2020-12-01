@@ -191,7 +191,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 ConfirmationProvidedBy,
                                 PrimaryObserverAwareDateTime.HasValue ? PrimaryObserverAwareDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 PrimaryObserversIdentityMayBeDivulged
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

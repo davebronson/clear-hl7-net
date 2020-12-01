@@ -41,7 +41,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 Id,
                                 SetIdSgt.HasValue ? SetIdSgt.Value.ToString(culture) : null,
                                 SegmentGroupName
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

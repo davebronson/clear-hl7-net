@@ -192,7 +192,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 FillerOrderNumber?.ToDelimitedString(),
                                 EnteredByCode?.ToDelimitedString(),
                                 ProcedureCode?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

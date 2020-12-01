@@ -218,7 +218,7 @@ namespace ClearHl7.Fhir.V270.Segments
                                 DispenseToPharmacyAddress?.ToDelimitedString(),
                                 DeliverToPatientLocation?.ToDelimitedString(),
                                 DeliverToAddress?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

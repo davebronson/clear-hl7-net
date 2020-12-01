@@ -389,7 +389,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 JobStatus,
                                 GuarantorFinancialClass?.ToDelimitedString(),
                                 GuarantorRace != null ? string.Join(Configuration.FieldRepeatSeparator, GuarantorRace.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

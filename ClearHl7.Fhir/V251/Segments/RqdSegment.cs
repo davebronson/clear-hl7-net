@@ -93,7 +93,7 @@ namespace ClearHl7.Fhir.V251.Segments
                                 ItemNaturalAccountCode,
                                 DeliverToId?.ToDelimitedString(),
                                 DateNeeded.HasValue ? DateNeeded.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

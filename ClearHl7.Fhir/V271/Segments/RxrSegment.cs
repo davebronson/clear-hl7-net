@@ -71,7 +71,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 AdministrationMethod?.ToDelimitedString(),
                                 RoutingInstruction?.ToDelimitedString(),
                                 AdministrationSiteModifier?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

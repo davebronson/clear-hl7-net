@@ -248,7 +248,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 StatusWeightAtBirth?.ToDelimitedString(),
                                 StatusRespirationMinutes?.ToDelimitedString(),
                                 StatusAdmission?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

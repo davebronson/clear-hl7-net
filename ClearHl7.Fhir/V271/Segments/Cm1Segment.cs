@@ -48,7 +48,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 SetIdCm1.HasValue ? SetIdCm1.Value.ToString(culture) : null,
                                 StudyPhaseIdentifier?.ToDelimitedString(),
                                 DescriptionOfStudyPhase
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

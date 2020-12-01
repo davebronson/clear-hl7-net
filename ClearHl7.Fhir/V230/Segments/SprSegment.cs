@@ -57,7 +57,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 QueryResponseFormatCode,
                                 StoredProcedureName?.ToDelimitedString(),
                                 InputParameterList != null ? string.Join(Configuration.FieldRepeatSeparator, InputParameterList.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

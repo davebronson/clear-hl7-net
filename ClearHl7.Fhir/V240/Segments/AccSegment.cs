@@ -96,7 +96,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 AccidentDescription,
                                 BroughtInBy,
                                 PoliceNotifiedIndicator
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

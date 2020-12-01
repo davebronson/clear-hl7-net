@@ -124,7 +124,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 Units?.ToDelimitedString(),
                                 ProcessingType?.ToDelimitedString(),
                                 TestCriticality?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

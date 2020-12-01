@@ -184,7 +184,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 IndividualAwarenessOfPrognosis?.ToDelimitedString(),
                                 FamilySignificantOtherAwarenessOfProblemPrognosis,
                                 SecuritySensitivity?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

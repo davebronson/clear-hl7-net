@@ -219,7 +219,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 InitiallyRecordedByOrganization?.ToDelimitedString(),
                                 ModifiedByOrganization?.ToDelimitedString(),
                                 InactivatedByOrganization?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

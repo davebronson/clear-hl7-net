@@ -50,7 +50,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 ReferenceInteractionNumber.HasValue ? ReferenceInteractionNumber.Value.ToString(culture) : null,
                                 InteractionTypeIdentifier?.ToDelimitedString(),
                                 InteractionActiveState?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -354,7 +354,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 DiagnosticServSectId,
                                 TaxonomicClassificationCode?.ToDelimitedString(),
                                 OtherNamesB != null ? string.Join(Configuration.FieldRepeatSeparator, OtherNamesB) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

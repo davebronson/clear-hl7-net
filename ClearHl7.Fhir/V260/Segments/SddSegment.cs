@@ -74,7 +74,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 LoadStatus,
                                 ControlCode.HasValue ? ControlCode.Value.ToString(Consts.NumericFormat, culture) : null,
                                 OperatorName
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

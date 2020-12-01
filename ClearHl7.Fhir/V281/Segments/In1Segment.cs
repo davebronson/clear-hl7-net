@@ -382,7 +382,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 VipIndicator?.ToDelimitedString(),
                                 ExternalHealthPlanIdentifiers != null ? string.Join(Configuration.FieldRepeatSeparator, ExternalHealthPlanIdentifiers.Select(x => x.ToDelimitedString())) : null,
                                 InsuranceActionCode
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

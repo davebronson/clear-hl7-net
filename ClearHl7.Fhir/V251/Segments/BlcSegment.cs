@@ -43,7 +43,7 @@ namespace ClearHl7.Fhir.V251.Segments
                                 Id,
                                 BloodProductCode?.ToDelimitedString(),
                                 BloodAmount?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

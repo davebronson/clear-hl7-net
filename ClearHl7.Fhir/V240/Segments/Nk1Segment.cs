@@ -274,7 +274,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 Race != null ? string.Join(Configuration.FieldRepeatSeparator, Race.Select(x => x.ToDelimitedString())) : null,
                                 Handicap,
                                 ContactPersonSocialSecurityNumber
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

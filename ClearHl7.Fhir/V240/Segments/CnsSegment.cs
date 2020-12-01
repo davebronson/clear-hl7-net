@@ -67,7 +67,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 EndingNotificationDateTime.HasValue ? EndingNotificationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 StartingNotificationCode?.ToDelimitedString(),
                                 EndingNotificationCode?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

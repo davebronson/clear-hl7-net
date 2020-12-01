@@ -128,7 +128,7 @@ namespace ClearHl7.Fhir.V270.Segments
                                 PriorityNo.HasValue ? PriorityNo.Value.ToString(Consts.NumericFormat, culture) : null,
                                 PrioritySequenceNoRelPreferenceForConsideration.HasValue ? PrioritySequenceNoRelPreferenceForConsideration.Value.ToString(Consts.NumericFormat, culture) : null,
                                 SeparabilityIndicator
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

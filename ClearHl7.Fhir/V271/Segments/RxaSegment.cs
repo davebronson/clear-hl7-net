@@ -206,7 +206,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 PharmacyOrderType,
                                 AdministerAt?.ToDelimitedString(),
                                 AdministeredAtAddress?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -120,7 +120,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 BoardApprovalIndicator,
                                 PrimaryCarePhysicianIndicator,
                                 CostCenterCode != null ? string.Join(Configuration.FieldRepeatSeparator, CostCenterCode.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

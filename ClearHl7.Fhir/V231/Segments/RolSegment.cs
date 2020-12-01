@@ -82,7 +82,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 RoleEndDateTime.HasValue ? RoleEndDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 RoleDuration?.ToDelimitedString(),
                                 RoleActionReason?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

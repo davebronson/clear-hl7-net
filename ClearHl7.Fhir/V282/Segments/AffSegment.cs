@@ -62,7 +62,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 ProfessionalOrganizationAddress?.ToDelimitedString(),
                                 ProfessionalOrganizationAffiliationDateRange != null ? string.Join(Configuration.FieldRepeatSeparator, ProfessionalOrganizationAffiliationDateRange.Select(x => x.ToDelimitedString())) : null,
                                 ProfessionalAffiliationAdditionalInformation
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

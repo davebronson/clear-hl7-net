@@ -300,7 +300,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 VipIndicator?.ToDelimitedString(),
                                 NextOfKinTelecommunicationInformation?.ToDelimitedString(),
                                 ContactPersonsTelecommunicationInformation?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

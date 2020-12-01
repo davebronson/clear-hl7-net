@@ -290,7 +290,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 GenericClassificationIndicator,
                                 InactiveReasonCode?.ToDelimitedString(),
                                 GenericResourceTypeOrCategory != null ? string.Join(Configuration.FieldRepeatSeparator, GenericResourceTypeOrCategory.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

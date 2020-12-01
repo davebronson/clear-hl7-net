@@ -81,7 +81,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 School?.ToDelimitedString(),
                                 SchoolTypeCode?.ToDelimitedString(),
                                 SchoolAddress?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

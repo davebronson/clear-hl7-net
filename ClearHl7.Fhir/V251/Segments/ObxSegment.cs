@@ -189,7 +189,7 @@ namespace ClearHl7.Fhir.V251.Segments
                                 PerformingOrganizationName?.ToDelimitedString(),
                                 PerformingOrganizationAddress?.ToDelimitedString(),
                                 PerformingOrganizationMedicalDirector?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -89,7 +89,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 SchoolTypeCode?.ToDelimitedString(),
                                 SchoolAddress?.ToDelimitedString(),
                                 MajorFieldOfStudy != null ? string.Join(Configuration.FieldRepeatSeparator, MajorFieldOfStudy.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

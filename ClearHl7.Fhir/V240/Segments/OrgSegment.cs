@@ -111,7 +111,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 EmploymentStatusCode,
                                 BoardApprovalIndicator,
                                 PrimaryCarePhysicianIndicator
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

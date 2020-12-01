@@ -55,7 +55,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 QueryResponseFormatCode,
                                 EqlQueryName?.ToDelimitedString(),
                                 EqlQueryStatement
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

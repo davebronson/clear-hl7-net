@@ -43,7 +43,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 Id,
                                 BedLocation?.ToDelimitedString(),
                                 BedStatus?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

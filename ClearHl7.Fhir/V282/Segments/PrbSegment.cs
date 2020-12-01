@@ -205,7 +205,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 ProblemSeverity?.ToDelimitedString(),
                                 ProblemPerspective?.ToDelimitedString(),
                                 MoodCode?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

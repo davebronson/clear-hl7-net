@@ -66,7 +66,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 EquipmentState?.ToDelimitedString(),
                                 LocalRemoteControlState?.ToDelimitedString(),
                                 AlertLevel?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

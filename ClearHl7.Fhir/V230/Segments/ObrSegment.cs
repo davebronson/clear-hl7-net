@@ -297,7 +297,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 TransportArranged,
                                 EscortRequired,
                                 PlannedPatientTransportComment != null ? string.Join(Configuration.FieldRepeatSeparator, PlannedPatientTransportComment.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

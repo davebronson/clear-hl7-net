@@ -80,7 +80,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 AdjudicatedPaidAmount?.ToDelimitedString(),
                                 ExpectedPaymentDateTime.HasValue ? ExpectedPaymentDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 IprChecksum
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

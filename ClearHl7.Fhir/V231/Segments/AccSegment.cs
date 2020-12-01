@@ -71,7 +71,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 AutoAccidentState?.ToDelimitedString(),
                                 AccidentJobRelatedIndicator,
                                 AccidentDeathIndicator
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

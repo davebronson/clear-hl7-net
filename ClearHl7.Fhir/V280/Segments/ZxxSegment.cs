@@ -44,7 +44,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 StringHelper.StringFormatSequence(0, 2, Configuration.FieldSeparator),
                                 Id,
                                 SegmentItems != null ? string.Join("|", SegmentItems.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

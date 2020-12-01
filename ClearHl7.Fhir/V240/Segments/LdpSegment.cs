@@ -112,7 +112,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 VisitingHours != null ? string.Join(Configuration.FieldRepeatSeparator, VisitingHours.Select(x => x.ToDelimitedString())) : null,
                                 ContactPhone?.ToDelimitedString(),
                                 LocationCostCenter?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

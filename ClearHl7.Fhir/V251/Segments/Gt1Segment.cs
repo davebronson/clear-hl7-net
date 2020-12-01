@@ -401,7 +401,7 @@ namespace ClearHl7.Fhir.V251.Segments
                                 GuarantorRace != null ? string.Join(Configuration.FieldRepeatSeparator, GuarantorRace.Select(x => x.ToDelimitedString())) : null,
                                 GuarantorBirthPlace,
                                 VipIndicator
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -49,7 +49,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 MessageQueryName?.ToDelimitedString(),
                                 QueryTag,
                                 UserParametersInSuccessiveFields
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

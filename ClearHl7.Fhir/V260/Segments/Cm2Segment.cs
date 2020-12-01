@@ -56,7 +56,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 ScheduledTimePoint?.ToDelimitedString(),
                                 DescriptionOfTimePoint,
                                 EventsScheduledThisTimePoint != null ? string.Join(Configuration.FieldRepeatSeparator, EventsScheduledThisTimePoint.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

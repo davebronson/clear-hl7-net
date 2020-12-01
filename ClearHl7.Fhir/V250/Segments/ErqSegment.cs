@@ -50,7 +50,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 QueryTag,
                                 EventIdentifier?.ToDelimitedString(),
                                 InputParameterList != null ? string.Join(Configuration.FieldRepeatSeparator, InputParameterList.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

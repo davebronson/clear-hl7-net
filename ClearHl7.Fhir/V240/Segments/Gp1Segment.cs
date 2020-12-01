@@ -65,7 +65,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 OverallClaimDispositionCode,
                                 OceEditsPerVisitCode != null ? string.Join(Configuration.FieldRepeatSeparator, OceEditsPerVisitCode) : null,
                                 OutlierCost?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

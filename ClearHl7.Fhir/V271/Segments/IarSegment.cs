@@ -56,7 +56,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 AllergySeverityCode?.ToDelimitedString(),
                                 SensitivityToCausativeAgentCode?.ToDelimitedString(),
                                 Management
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

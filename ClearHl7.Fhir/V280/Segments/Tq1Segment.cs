@@ -119,7 +119,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 Conjunction,
                                 OccurrenceDuration?.ToDelimitedString(),
                                 TotalOccurrences.HasValue ? TotalOccurrences.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

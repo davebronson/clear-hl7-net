@@ -66,7 +66,7 @@ namespace ClearHl7.Fhir.V231.Types
         public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
-            char separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
 
             return string.Format(
                                 culture,
@@ -80,7 +80,7 @@ namespace ClearHl7.Fhir.V231.Types
                                 LocalNumber.HasValue ? LocalNumber.Value.ToString(culture) : null,
                                 Extension.HasValue ? Extension.Value.ToString(culture) : null,
                                 AnyText
-                                ).TrimEnd(separator);
+                                ).TrimEnd(separator.ToCharArray());
         }
     }
 }

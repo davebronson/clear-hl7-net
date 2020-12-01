@@ -210,7 +210,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 SourcePhone?.ToDelimitedString(),
                                 Comment,
                                 ActionCode
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -58,7 +58,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 AdministrationSite?.ToDelimitedString(),
                                 AdministrationDevice?.ToDelimitedString(),
                                 AdministrationMethod?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

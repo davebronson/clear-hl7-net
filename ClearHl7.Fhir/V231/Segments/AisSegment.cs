@@ -94,7 +94,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 DurationUnits?.ToDelimitedString(),
                                 AllowSubstitutionCode,
                                 FillerStatusCode?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

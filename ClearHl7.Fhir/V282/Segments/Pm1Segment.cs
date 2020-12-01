@@ -190,7 +190,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 CommercialCarrierNameAndAddressRequired,
                                 PolicyNumberPattern,
                                 GroupNumberPattern
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

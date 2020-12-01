@@ -328,7 +328,7 @@ namespace ClearHl7.Fhir.V270.Segments
                                 RelationshipModifier?.ToDelimitedString(),
                                 TargetAnatomicSiteOfTest?.ToDelimitedString(),
                                 ModalityOfImagingMeasurement?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

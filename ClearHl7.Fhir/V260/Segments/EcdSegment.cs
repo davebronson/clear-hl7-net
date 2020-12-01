@@ -64,7 +64,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 ResponseRequired,
                                 RequestedCompletionTime?.ToDelimitedString(),
                                 Parameters != null ? string.Join(Configuration.FieldRepeatSeparator, Parameters.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

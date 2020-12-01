@@ -82,7 +82,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 DeviceModelName,
                                 DeviceType?.ToDelimitedString(),
                                 LotControl?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

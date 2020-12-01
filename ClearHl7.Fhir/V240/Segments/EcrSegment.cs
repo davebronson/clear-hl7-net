@@ -51,7 +51,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 CommandResponse?.ToDelimitedString(),
                                 DateTimeCompleted.HasValue ? DateTimeCompleted.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 CommandResponseParameters != null ? string.Join(Configuration.FieldRepeatSeparator, CommandResponseParameters) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -195,7 +195,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 NonSubjectConsenterReason?.ToDelimitedString(),
                                 ConsenterId != null ? string.Join(Configuration.FieldRepeatSeparator, ConsenterId.Select(x => x.ToDelimitedString())) : null,
                                 RelationshipToSubject != null ? string.Join(Configuration.FieldRepeatSeparator, RelationshipToSubject.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

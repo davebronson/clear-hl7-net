@@ -172,7 +172,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 RequestedGiveRateAmount,
                                 RequestedGiveRateUnits?.ToDelimitedString(),
                                 TotalDailyDose?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

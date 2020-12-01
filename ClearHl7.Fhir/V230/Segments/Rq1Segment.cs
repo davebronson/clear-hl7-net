@@ -74,7 +74,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 VendorCatalog,
                                 Taxable,
                                 SubstituteAllowed
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

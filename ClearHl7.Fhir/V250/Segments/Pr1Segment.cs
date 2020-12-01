@@ -164,7 +164,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 TissueTypeCode != null ? string.Join(Configuration.FieldRepeatSeparator, TissueTypeCode.Select(x => x.ToDelimitedString())) : null,
                                 ProcedureIdentifier?.ToDelimitedString(),
                                 ProcedureActionCode
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

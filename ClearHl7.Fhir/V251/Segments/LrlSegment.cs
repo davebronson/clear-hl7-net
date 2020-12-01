@@ -70,7 +70,7 @@ namespace ClearHl7.Fhir.V251.Segments
                                 LocationRelationshipId?.ToDelimitedString(),
                                 OrganizationalLocationRelationshipValue != null ? string.Join(Configuration.FieldRepeatSeparator, OrganizationalLocationRelationshipValue.Select(x => x.ToDelimitedString())) : null,
                                 PatientLocationRelationshipValue?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

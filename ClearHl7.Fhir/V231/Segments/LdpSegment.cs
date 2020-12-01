@@ -105,7 +105,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 InactivatedReason,
                                 VisitingHours != null ? string.Join(Configuration.FieldRepeatSeparator, VisitingHours.Select(x => x.ToDelimitedString())) : null,
                                 ContactPhone?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

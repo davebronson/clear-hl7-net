@@ -57,7 +57,7 @@ namespace ClearHl7.Fhir.V251.Segments
                                 SourceOfComment,
                                 Comment != null ? string.Join(Configuration.FieldRepeatSeparator, Comment) : null,
                                 CommentType?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

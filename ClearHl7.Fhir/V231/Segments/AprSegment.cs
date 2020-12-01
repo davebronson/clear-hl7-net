@@ -65,7 +65,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 LocationSelectionCriteria != null ? string.Join(Configuration.FieldRepeatSeparator, LocationSelectionCriteria.Select(x => x.ToDelimitedString())) : null,
                                 SlotSpacingCriteria.HasValue ? SlotSpacingCriteria.Value.ToString(Consts.NumericFormat, culture) : null,
                                 FillerOverrideCriteria != null ? string.Join(Configuration.FieldRepeatSeparator, FillerOverrideCriteria.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

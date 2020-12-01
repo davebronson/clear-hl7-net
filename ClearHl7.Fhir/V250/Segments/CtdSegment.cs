@@ -76,7 +76,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 ContactCommunicationInformation != null ? string.Join(Configuration.FieldRepeatSeparator, ContactCommunicationInformation.Select(x => x.ToDelimitedString())) : null,
                                 PreferredMethodOfContact?.ToDelimitedString(),
                                 ContactIdentifiers != null ? string.Join(Configuration.FieldRepeatSeparator, ContactIdentifiers.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

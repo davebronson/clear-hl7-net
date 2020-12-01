@@ -369,7 +369,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 SignatureCodeDate.HasValue ? SignatureCodeDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 InsuredsBirthPlace,
                                 VipIndicator
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

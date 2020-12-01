@@ -103,7 +103,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 BatchComment,
                                 BatchControlId,
                                 ReferenceBatchControlId
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

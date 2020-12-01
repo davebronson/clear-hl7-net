@@ -60,7 +60,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 LotNumber?.ToDelimitedString(),
                                 ItemIdentifier?.ToDelimitedString(),
                                 BarCode
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

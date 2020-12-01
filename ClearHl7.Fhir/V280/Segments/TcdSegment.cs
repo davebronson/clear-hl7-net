@@ -81,7 +81,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 AutomaticRepeatAllowed,
                                 ReflexAllowed,
                                 AnalyteRepeatStatus?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

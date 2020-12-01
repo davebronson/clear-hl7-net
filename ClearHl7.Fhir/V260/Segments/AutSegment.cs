@@ -93,7 +93,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 RequestedNumberOfTreatments.HasValue ? RequestedNumberOfTreatments.Value.ToString(Consts.NumericFormat) : null,
                                 AuthorizedNumberOfTreatments.HasValue ? AuthorizedNumberOfTreatments.Value.ToString(Consts.NumericFormat) : null,
                                 ProcessDate.HasValue ? ProcessDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

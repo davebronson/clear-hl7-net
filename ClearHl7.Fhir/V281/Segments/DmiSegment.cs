@@ -62,7 +62,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 LowerAndUpperTrimPoints?.ToDelimitedString(),
                                 AverageLengthOfStay.HasValue ? AverageLengthOfStay.Value.ToString(Consts.NumericFormat, culture) : null,
                                 RelativeWeight.HasValue ? RelativeWeight.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

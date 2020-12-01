@@ -50,7 +50,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 SequenceNumberTestObservationMasterFile.HasValue ? SequenceNumberTestObservationMasterFile.Value.ToString(Consts.NumericFormat, culture) : null,
                                 TestObservationsIncludedWithinAnOrderedTestBattery != null ? string.Join(Configuration.FieldRepeatSeparator, TestObservationsIncludedWithinAnOrderedTestBattery.Select(x => x.ToDelimitedString())) : null,
                                 ObservationIdSuffixes
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

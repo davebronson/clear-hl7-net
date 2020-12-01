@@ -172,7 +172,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 EnteredByLocation?.ToDelimitedString(),
                                 ParentPlacerAppointmentId?.ToDelimitedString(),
                                 ParentFillerAppointmentId?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

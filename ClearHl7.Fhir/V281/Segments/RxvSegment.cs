@@ -165,7 +165,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 SyringeSize.HasValue ? SyringeSize.Value.ToString(Consts.NumericFormat, culture) : null,
                                 SyringeSizeUnits?.ToDelimitedString(),
                                 ActionCode
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

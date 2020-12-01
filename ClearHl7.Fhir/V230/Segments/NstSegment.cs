@@ -121,7 +121,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 ConnectTimeouts.HasValue ? ConnectTimeouts.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ReceiveTimeouts.HasValue ? ReceiveTimeouts.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ApplicationControlLevelErrors.HasValue ? ApplicationControlLevelErrors.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

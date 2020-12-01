@@ -246,7 +246,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 AdvancedBeneficiaryNoticeDate.HasValue ? AdvancedBeneficiaryNoticeDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 AlternatePlacerOrderNumber != null ? string.Join(Configuration.FieldRepeatSeparator, AlternatePlacerOrderNumber.Select(x => x.ToDelimitedString())) : null,
                                 OrderWorkflowProfile != null ? string.Join(Configuration.FieldRepeatSeparator, OrderWorkflowProfile.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

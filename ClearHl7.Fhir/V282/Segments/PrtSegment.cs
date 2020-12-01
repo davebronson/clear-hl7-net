@@ -168,7 +168,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 ParticipantDeviceSerialNumber,
                                 ParticipantDeviceDonationIdentification?.ToDelimitedString(),
                                 ParticipationDeviceType?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

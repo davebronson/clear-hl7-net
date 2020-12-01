@@ -81,7 +81,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 FutureItemPrice?.ToDelimitedString(),
                                 FutureItemPriceEffectiveDate.HasValue ? FutureItemPriceEffectiveDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 GlobalTradeItemNumber?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

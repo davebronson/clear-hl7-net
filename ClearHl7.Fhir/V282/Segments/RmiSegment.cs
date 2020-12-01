@@ -49,7 +49,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 RiskManagementIncidentCode?.ToDelimitedString(),
                                 DateTimeIncident.HasValue ? DateTimeIncident.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 IncidentTypeCode?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

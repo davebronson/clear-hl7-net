@@ -251,7 +251,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 SterileIndicator?.ToDelimitedString(),
                                 MaterialDataSafetySheetNumber?.ToDelimitedString(),
                                 UnitedNationsStandardProductsAndServicesCodeUnspsc?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

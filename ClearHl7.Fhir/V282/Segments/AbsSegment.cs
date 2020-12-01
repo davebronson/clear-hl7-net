@@ -124,7 +124,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 GestationPeriodWeeks.HasValue ? GestationPeriodWeeks.Value.ToString(Consts.NumericFormat, culture) : null,
                                 NewbornCode?.ToDelimitedString(),
                                 StillbornIndicator
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

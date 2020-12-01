@@ -49,7 +49,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 SetIdNte.HasValue ? SetIdNte.Value.ToString(culture) : null,
                                 SourceOfComment,
                                 Comment != null ? string.Join(Configuration.FieldRepeatSeparator, Comment) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

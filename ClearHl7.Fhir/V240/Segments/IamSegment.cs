@@ -159,7 +159,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 StatusedByPerson?.ToDelimitedString(),
                                 StatusedByOrganization?.ToDelimitedString(),
                                 StatusedAtDateTime.HasValue ? StatusedAtDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

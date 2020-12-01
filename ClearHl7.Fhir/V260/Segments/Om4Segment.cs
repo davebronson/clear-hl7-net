@@ -118,7 +118,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 SpecimenRequirements?.ToDelimitedString(),
                                 SpecimenPriorities != null ? string.Join(Configuration.FieldRepeatSeparator, SpecimenPriorities) : null,
                                 SpecimenRetentionTime?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

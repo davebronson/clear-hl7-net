@@ -223,7 +223,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 DispensePackageSizeUnit?.ToDelimitedString(),
                                 DispensePackageMethod,
                                 SupplementaryCode != null ? string.Join(Configuration.FieldRepeatSeparator, SupplementaryCode.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

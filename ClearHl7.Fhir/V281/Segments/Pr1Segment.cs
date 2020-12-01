@@ -196,7 +196,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 TreatingOrganizationalUnit != null ? string.Join(Configuration.FieldRepeatSeparator, TreatingOrganizationalUnit.Select(x => x.ToDelimitedString())) : null,
                                 RespiratoryWithinSurgery,
                                 ParentProcedureId?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

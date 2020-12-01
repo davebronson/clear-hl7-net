@@ -51,7 +51,7 @@ namespace ClearHl7.Fhir.V251.Segments
                                 CandidateConfidence.HasValue ? CandidateConfidence.Value.ToString(Consts.NumericFormat, culture) : null,
                                 MatchReasonCode != null ? string.Join(Configuration.FieldRepeatSeparator, MatchReasonCode) : null,
                                 AlgorithmDescriptor?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

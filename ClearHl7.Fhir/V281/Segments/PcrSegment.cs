@@ -181,7 +181,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 ActionTakenInResponseToTheEvent != null ? string.Join(Configuration.FieldRepeatSeparator, ActionTakenInResponseToTheEvent) : null,
                                 EventCausalityObservations != null ? string.Join(Configuration.FieldRepeatSeparator, EventCausalityObservations) : null,
                                 IndirectExposureMechanism != null ? string.Join(Configuration.FieldRepeatSeparator, IndirectExposureMechanism) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

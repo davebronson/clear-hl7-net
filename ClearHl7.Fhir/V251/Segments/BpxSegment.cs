@@ -162,7 +162,7 @@ namespace ClearHl7.Fhir.V251.Segments
                                 BpActualDispensedToAddress?.ToDelimitedString(),
                                 BpDispensedToReceiver?.ToDelimitedString(),
                                 BpDispensingIndividual?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -223,7 +223,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 ContainerType?.ToDelimitedString(),
                                 ContainerCondition?.ToDelimitedString(),
                                 SpecimenChildRole?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

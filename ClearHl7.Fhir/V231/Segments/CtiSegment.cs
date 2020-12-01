@@ -48,7 +48,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 SponsorStudyId?.ToDelimitedString(),
                                 StudyPhaseIdentifier?.ToDelimitedString(),
                                 StudyScheduledTimePoint?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

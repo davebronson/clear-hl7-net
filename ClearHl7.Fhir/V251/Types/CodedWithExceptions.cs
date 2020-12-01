@@ -66,7 +66,7 @@ namespace ClearHl7.Fhir.V251.Types
         public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
-            char separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
 
             return string.Format(
                                 culture,
@@ -80,7 +80,7 @@ namespace ClearHl7.Fhir.V251.Types
                                 CodingSystemVersionId,
                                 AlternateCodingSystemVersionId,
                                 OriginalText
-                                ).TrimEnd(separator);
+                                ).TrimEnd(separator.ToCharArray());
         }
     }
 }

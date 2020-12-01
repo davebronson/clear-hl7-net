@@ -95,7 +95,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 DateTimeSelectionQualifier != null ? string.Join(Configuration.FieldRepeatSeparator, DateTimeSelectionQualifier) : null,
                                 WhenQuantityTimingQualifier?.ToDelimitedString(),
                                 SearchConfidenceThreshold.HasValue ? SearchConfidenceThreshold.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

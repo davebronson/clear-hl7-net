@@ -62,7 +62,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 OverrideComments?.ToDelimitedString(),
                                 OverrideEnteredBy?.ToDelimitedString(),
                                 OverrideAuthorizedBy?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

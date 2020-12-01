@@ -114,7 +114,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 DuplicatePatient != null ? string.Join(Configuration.FieldRepeatSeparator, DuplicatePatient.Select(x => x.ToDelimitedString())) : null,
                                 PublicityCode?.ToDelimitedString(),
                                 ProtectionIndicator
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

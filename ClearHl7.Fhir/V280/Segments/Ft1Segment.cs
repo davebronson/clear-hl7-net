@@ -305,7 +305,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 RevenueCode?.ToDelimitedString(),
                                 PrescriptionNumber,
                                 NdcQtyAndUom?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

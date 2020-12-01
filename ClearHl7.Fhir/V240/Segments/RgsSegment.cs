@@ -49,7 +49,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 SetIdRgs.HasValue ? SetIdRgs.Value.ToString(culture) : null,
                                 SegmentActionCode,
                                 ResourceGroupId?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

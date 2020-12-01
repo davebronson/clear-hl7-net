@@ -158,7 +158,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 BpAdverseReactionType != null ? string.Join(Configuration.FieldRepeatSeparator, BpAdverseReactionType.Select(x => x.ToDelimitedString())) : null,
                                 BpTransfusionInterruptedReason?.ToDelimitedString(),
                                 BpUniqueId?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -74,7 +74,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 PriorVisitNumber?.ToDelimitedString(),
                                 PriorAlternateVisitId?.ToDelimitedString(),
                                 PriorPatientName?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

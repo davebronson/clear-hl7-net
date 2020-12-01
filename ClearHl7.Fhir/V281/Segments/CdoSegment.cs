@@ -56,7 +56,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 ActionCode,
                                 CumulativeDosageLimit?.ToDelimitedString(),
                                 CumulativeDosageLimitTimeInterval?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

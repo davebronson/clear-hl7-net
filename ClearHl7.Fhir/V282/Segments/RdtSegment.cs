@@ -35,7 +35,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 StringHelper.StringFormatSequence(0, 2, Configuration.FieldSeparator),
                                 Id,
                                 ColumnValue
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

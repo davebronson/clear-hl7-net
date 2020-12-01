@@ -182,7 +182,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 DispensePackageSize.HasValue ? DispensePackageSize.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DispensePackageSizeUnit?.ToDelimitedString(),
                                 DispensePackageMethod
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

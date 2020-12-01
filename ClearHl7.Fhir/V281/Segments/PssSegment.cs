@@ -60,7 +60,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 ProductServiceSectionSequenceNumber.HasValue ? ProductServiceSectionSequenceNumber.Value.ToString(culture) : null,
                                 BilledAmount?.ToDelimitedString(),
                                 SectionDescriptionOrHeading
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

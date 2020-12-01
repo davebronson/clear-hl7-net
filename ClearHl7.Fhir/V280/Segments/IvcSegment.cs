@@ -220,7 +220,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 ProviderTaxStatus?.ToDelimitedString(),
                                 PayerTaxStatus?.ToDelimitedString(),
                                 SalesTaxId
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

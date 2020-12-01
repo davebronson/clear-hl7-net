@@ -48,7 +48,7 @@ namespace ClearHl7.Fhir.V251.Segments
                                 QueryTag,
                                 EventIdentifier?.ToDelimitedString(),
                                 InputParameterList?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

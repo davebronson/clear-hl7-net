@@ -9,15 +9,15 @@ namespace ClearHl7.Fhir.Helpers
         /// </summary>
         /// <param name="start">The value of the first integer in the sequence.</param>
         /// <param name="count">The number of sequential integers to generate.</param>
-        /// <param name="separator">The char to use as a separator.</param>
+        /// <param name="separator">The character(s) to use as a separator.</param>
         /// <returns>A string.</returns>
         /// <remarks>
-        /// For example:  StringFormatSequence(0, 10, '|')
+        /// For example:  StringFormatSequence(0, 10, "|")
         ///
         /// will output the following:
         /// "{0}|{1}|{2}|{3}|{4}|{5}|{6}|{7}|{8}|{9}"
         /// </remarks>
-        public static string StringFormatSequence(int start, int count, char separator)
+        public static string StringFormatSequence(int start, int count, string separator)
         {
             return string.Join(separator, Enumerable.Range(start, count).Select(x => $"{{{ x }}}"));
         }
@@ -39,11 +39,11 @@ namespace ClearHl7.Fhir.Helpers
             }
 
             return input
-                .Replace(Configuration.EscapeCharacter.ToString(), @"\E\")
-                .Replace(Configuration.FieldSeparator.ToString(), @"\F\")
-                .Replace(Configuration.ComponentSeparator.ToString(), @"\S\")
-                .Replace(Configuration.SubcomponentSeparator.ToString(), @"\T\")
-                .Replace(Configuration.FieldRepeatSeparator.ToString(), @"\R\");
+                .Replace(Configuration.EscapeCharacter, @"\E\")
+                .Replace(Configuration.FieldSeparator, @"\F\")
+                .Replace(Configuration.ComponentSeparator, @"\S\")
+                .Replace(Configuration.SubcomponentSeparator, @"\T\")
+                .Replace(Configuration.FieldRepeatSeparator, @"\R\");
         }
 
         /// <summary>
@@ -63,11 +63,11 @@ namespace ClearHl7.Fhir.Helpers
             }
 
             return input
-                .Replace(@"\F\", Configuration.FieldSeparator.ToString())
-                .Replace(@"\S\", Configuration.ComponentSeparator.ToString())
-                .Replace(@"\T\", Configuration.SubcomponentSeparator.ToString())
-                .Replace(@"\R\", Configuration.FieldRepeatSeparator.ToString())
-                .Replace(@"\E\", Configuration.EscapeCharacter.ToString());
+                .Replace(@"\F\", Configuration.FieldSeparator)
+                .Replace(@"\S\", Configuration.ComponentSeparator)
+                .Replace(@"\T\", Configuration.SubcomponentSeparator)
+                .Replace(@"\R\", Configuration.FieldRepeatSeparator)
+                .Replace(@"\E\", Configuration.EscapeCharacter);
         }
     }
 }

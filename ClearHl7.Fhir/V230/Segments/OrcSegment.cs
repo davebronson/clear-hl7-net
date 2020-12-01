@@ -150,7 +150,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 EnteringOrganization?.ToDelimitedString(),
                                 EnteringDevice?.ToDelimitedString(),
                                 ActionBy?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

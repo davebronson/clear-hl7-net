@@ -67,7 +67,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 SoftwareBinaryId,
                                 SoftwareProductInformation?.ToDelimitedString(),
                                 SoftwareInstallDate.HasValue ? SoftwareInstallDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

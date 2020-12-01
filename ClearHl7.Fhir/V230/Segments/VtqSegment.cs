@@ -63,7 +63,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 VtQueryName?.ToDelimitedString(),
                                 VirtualTableName?.ToDelimitedString(),
                                 SelectionCriteria != null ? string.Join(Configuration.FieldRepeatSeparator, SelectionCriteria.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

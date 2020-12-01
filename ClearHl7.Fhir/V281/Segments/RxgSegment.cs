@@ -235,7 +235,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 GiveTagIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, GiveTagIdentifier.Select(x => x.ToDelimitedString())) : null,
                                 DispenseAmount.HasValue ? DispenseAmount.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DispenseUnits?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

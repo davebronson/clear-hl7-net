@@ -185,7 +185,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 FormularyStatus?.ToDelimitedString(),
                                 SpecialOrderIndicator,
                                 PrimaryKeyValueCdm != null ? string.Join(Configuration.FieldRepeatSeparator, PrimaryKeyValueCdm.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

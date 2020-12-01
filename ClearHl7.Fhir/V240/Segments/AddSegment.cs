@@ -35,7 +35,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 StringHelper.StringFormatSequence(0, 2, Configuration.FieldSeparator),
                                 Id,
                                 AddendumContinuationPointer
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

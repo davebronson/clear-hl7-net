@@ -66,7 +66,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 OverallClaimDispositionCode?.ToDelimitedString(),
                                 OceEditsPerVisitCode != null ? string.Join(Configuration.FieldRepeatSeparator, OceEditsPerVisitCode.Select(x => x.ToDelimitedString())) : null,
                                 OutlierCost?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

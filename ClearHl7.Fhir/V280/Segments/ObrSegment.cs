@@ -370,7 +370,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 ParentObservationGroupId?.ToDelimitedString(),
                                 AlternatePlacerOrderNumber != null ? string.Join(Configuration.FieldRepeatSeparator, AlternatePlacerOrderNumber.Select(x => x.ToDelimitedString())) : null,
                                 ParentOrder?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

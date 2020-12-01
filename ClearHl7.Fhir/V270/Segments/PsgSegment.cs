@@ -67,7 +67,7 @@ namespace ClearHl7.Fhir.V270.Segments
                                 AdjudicateAsGroup,
                                 ProductServiceGroupBilledAmount?.ToDelimitedString(),
                                 ProductServiceGroupDescription
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

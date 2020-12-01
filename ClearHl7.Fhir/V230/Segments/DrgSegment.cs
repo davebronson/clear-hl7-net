@@ -97,7 +97,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 DrgPayor,
                                 OutlierReimbursement?.ToDelimitedString(),
                                 ConfidentialIndicator
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

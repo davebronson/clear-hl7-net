@@ -331,7 +331,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 MainService,
                                 Validation,
                                 Comment
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

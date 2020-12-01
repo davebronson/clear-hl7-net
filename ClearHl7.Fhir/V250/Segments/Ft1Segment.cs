@@ -232,7 +232,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 NdcCode?.ToDelimitedString(),
                                 PaymentReferenceId?.ToDelimitedString(),
                                 TransactionReferenceKey != null ? string.Join(Configuration.FieldRepeatSeparator, TransactionReferenceKey.Select(x => x.ToString(Consts.NumericFormat, culture))) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

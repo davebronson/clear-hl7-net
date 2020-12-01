@@ -59,7 +59,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 LanguageCode?.ToDelimitedString(),
                                 LanguageAbilityCode != null ? string.Join(Configuration.FieldRepeatSeparator, LanguageAbilityCode.Select(x => x.ToDelimitedString())) : null,
                                 LanguageProficiencyCode?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

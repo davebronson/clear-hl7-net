@@ -58,7 +58,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 SterilizationCycle?.ToDelimitedString(),
                                 MaintenanceCycle?.ToDelimitedString(),
                                 MaintenanceType?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

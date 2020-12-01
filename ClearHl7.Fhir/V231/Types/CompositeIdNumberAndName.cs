@@ -67,7 +67,7 @@ namespace ClearHl7.Fhir.V231.Types
         public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
-            char separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
 
             return string.Format(
                                 culture,
@@ -81,7 +81,7 @@ namespace ClearHl7.Fhir.V231.Types
                                 Degree,
                                 SourceTable,
                                 AssigningAuthority?.ToDelimitedString()
-                                ).TrimEnd(separator);
+                                ).TrimEnd(separator.ToCharArray());
         }
     }
 }

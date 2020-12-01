@@ -241,7 +241,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 AccessionId != null ? string.Join(Configuration.FieldRepeatSeparator, AccessionId.Select(x => x.ToDelimitedString())) : null,
                                 OtherSpecimenId != null ? string.Join(Configuration.FieldRepeatSeparator, OtherSpecimenId.Select(x => x.ToDelimitedString())) : null,
                                 ShipmentId?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -375,7 +375,7 @@ namespace ClearHl7.Fhir.V251.Segments
                                 AlternateVisitId?.ToDelimitedString(),
                                 VisitIndicator,
                                 OtherHealthcareProvider?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -175,7 +175,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 Ub82Locator9,
                                 Ub82Locator27,
                                 Ub82Locator45
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

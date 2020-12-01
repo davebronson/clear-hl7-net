@@ -43,7 +43,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 Id,
                                 QueryTag,
                                 MessageQueryName?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

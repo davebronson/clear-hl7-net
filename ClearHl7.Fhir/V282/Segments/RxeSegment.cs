@@ -310,7 +310,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 DeliverToAddress?.ToDelimitedString(),
                                 PharmacyOrderType,
                                 PharmacyPhoneNumber != null ? string.Join(Configuration.FieldRepeatSeparator, PharmacyPhoneNumber.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

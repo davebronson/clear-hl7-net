@@ -75,7 +75,7 @@ namespace ClearHl7.Fhir.V270.Segments
                                 Price?.ToDelimitedString(),
                                 FutureItemPrice?.ToDelimitedString(),
                                 FutureItemPriceEffectiveDate.HasValue ? FutureItemPriceEffectiveDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

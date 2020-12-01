@@ -171,7 +171,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 AttestationDateTime.HasValue? AttestationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 DiagnosisIdentifier?.ToDelimitedString(),
                                 DiagnosisActionCode
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

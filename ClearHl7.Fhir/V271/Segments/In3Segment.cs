@@ -192,7 +192,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 SecondOpinionStatus?.ToDelimitedString(),
                                 SecondOpinionDocumentationReceived != null ? string.Join(Configuration.FieldRepeatSeparator, SecondOpinionDocumentationReceived.Select(x => x.ToDelimitedString())) : null,
                                 SecondOpinionPhysician != null ? string.Join(Configuration.FieldRepeatSeparator, SecondOpinionPhysician.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

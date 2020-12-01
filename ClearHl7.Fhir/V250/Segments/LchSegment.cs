@@ -62,7 +62,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 SegmentUniqueKey?.ToDelimitedString(),
                                 LocationCharacteristicId?.ToDelimitedString(),
                                 LocationCharacteristicValueLch?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

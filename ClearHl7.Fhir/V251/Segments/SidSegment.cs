@@ -55,7 +55,7 @@ namespace ClearHl7.Fhir.V251.Segments
                                 SubstanceLotNumber,
                                 SubstanceContainerIdentifier,
                                 SubstanceManufacturerIdentifier?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -304,7 +304,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 DeliverToPatientLocation?.ToDelimitedString(),
                                 DeliverToAddress?.ToDelimitedString(),
                                 PharmacyOrderType
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

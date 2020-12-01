@@ -386,7 +386,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 OtherHealthcareProvider?.ToDelimitedString(),
                                 ServiceEpisodeDescription,
                                 ServiceEpisodeIdentifier?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

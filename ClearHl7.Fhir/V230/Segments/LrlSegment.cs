@@ -68,7 +68,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 LocationRelationshipId?.ToDelimitedString(),
                                 OrganizationalLocationRelationshipValue?.ToDelimitedString(),
                                 PatientLocationRelationshipValue?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

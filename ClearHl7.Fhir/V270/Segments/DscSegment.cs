@@ -42,7 +42,7 @@ namespace ClearHl7.Fhir.V270.Segments
                                 Id,
                                 ContinuationPointer,
                                 ContinuationStyle
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

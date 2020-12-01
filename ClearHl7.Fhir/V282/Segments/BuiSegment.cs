@@ -106,7 +106,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 ContainerManufacturer?.ToDelimitedString(),
                                 TransportTemperature?.ToDelimitedString(),
                                 TransportTemperatureUnits?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

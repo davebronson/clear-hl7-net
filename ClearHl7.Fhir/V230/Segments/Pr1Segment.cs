@@ -129,7 +129,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 ConsentCode?.ToDelimitedString(),
                                 ProcedurePriority,
                                 AssociatedDiagnosisCode?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

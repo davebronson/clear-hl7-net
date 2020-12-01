@@ -343,7 +343,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 CoverageType,
                                 Handicap,
                                 InsuredsIdNumber != null ? string.Join(Configuration.FieldRepeatSeparator, InsuredsIdNumber.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

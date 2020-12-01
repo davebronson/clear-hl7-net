@@ -169,7 +169,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 CompletionStatus,
                                 ActionCodeRxa,
                                 SystemEntryDateTime.HasValue ? SystemEntryDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -105,7 +105,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 SignatureAuthorityTitle,
                                 SignatureAuthorityAddress != null ? string.Join(Configuration.FieldRepeatSeparator, SignatureAuthorityAddress.Select(x => x.ToDelimitedString())) : null,
                                 SignatureAuthorityTelecommunication?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

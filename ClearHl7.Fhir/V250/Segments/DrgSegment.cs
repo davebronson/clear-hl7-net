@@ -104,7 +104,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 OutlierReimbursement?.ToDelimitedString(),
                                 ConfidentialIndicator,
                                 DrgTransferType
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

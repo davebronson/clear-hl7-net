@@ -104,7 +104,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 PayeeBankAccountId?.ToDelimitedString(),
                                 PaymentOrganization?.ToDelimitedString(),
                                 EsrCodeLine
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -99,7 +99,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 ContactForStudy?.ToDelimitedString(),
                                 ContactsTelephoneNumber?.ToDelimitedString(),
                                 ContactsAddress?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

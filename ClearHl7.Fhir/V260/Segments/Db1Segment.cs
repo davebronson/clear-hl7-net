@@ -83,7 +83,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 DisabilityEndDate.HasValue ? DisabilityEndDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 DisabilityReturnToWorkDate.HasValue ? DisabilityReturnToWorkDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 DisabilityUnableToWorkDate.HasValue ? DisabilityUnableToWorkDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

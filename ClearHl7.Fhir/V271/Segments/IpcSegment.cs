@@ -86,7 +86,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 ScheduledStationName?.ToDelimitedString(),
                                 ScheduledProcedureStepLocation != null ? string.Join(Configuration.FieldRepeatSeparator, ScheduledProcedureStepLocation.Select(x => x.ToDelimitedString())) : null,
                                 ScheduledStationAeTitle
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

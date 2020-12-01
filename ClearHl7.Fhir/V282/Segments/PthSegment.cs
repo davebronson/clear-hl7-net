@@ -75,7 +75,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 PathwayLifeCycleStatus?.ToDelimitedString(),
                                 ChangePathwayLifeCycleStatusDateTime.HasValue ? ChangePathwayLifeCycleStatusDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 MoodCode?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

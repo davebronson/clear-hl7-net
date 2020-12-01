@@ -166,7 +166,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 Indication != null ? string.Join(Configuration.FieldRepeatSeparator, Indication.Select(x => x.ToDelimitedString())) : null,
                                 RequestedGiveRateAmount,
                                 RequestedGiveRateUnits?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

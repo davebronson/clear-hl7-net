@@ -90,7 +90,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 LicenseNumber != null ? string.Join(Configuration.FieldRepeatSeparator, LicenseNumber.Select(x => x.ToDelimitedString())) : null,
                                 LocationEquipment != null ? string.Join(Configuration.FieldRepeatSeparator, LocationEquipment.Select(x => x.ToDelimitedString())) : null,
                                 LocationServiceCode?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

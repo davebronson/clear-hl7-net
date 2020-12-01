@@ -108,7 +108,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 PoliceNotifiedIndicator,
                                 AccidentAddress?.ToDelimitedString(),
                                 DegreeOfPatientLiability.HasValue ? DegreeOfPatientLiability.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

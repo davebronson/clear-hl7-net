@@ -195,7 +195,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 FolderAssignment != null ? string.Join(Configuration.FieldRepeatSeparator, FolderAssignment.Select(x => x.ToDelimitedString())) : null,
                                 DocumentTitle != null ? string.Join(Configuration.FieldRepeatSeparator, DocumentTitle) : null,
                                 AgreedDueDateTime.HasValue ? AgreedDueDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

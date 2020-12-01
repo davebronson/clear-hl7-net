@@ -224,7 +224,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 Nationality?.ToDelimitedString(),
                                 PatientDeathDateAndTime.HasValue ? PatientDeathDateAndTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 PatientDeathIndicator
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

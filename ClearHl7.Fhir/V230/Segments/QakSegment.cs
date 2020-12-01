@@ -42,7 +42,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 Id,
                                 QueryTag,
                                 QueryResponseStatus
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -267,7 +267,7 @@ namespace ClearHl7.Fhir.V260.Segments
                                 DilutionFactor?.ToDelimitedString(),
                                 FillTime?.ToDelimitedString(),
                                 InletTemperature?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

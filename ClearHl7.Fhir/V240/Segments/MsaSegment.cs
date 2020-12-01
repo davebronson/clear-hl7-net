@@ -68,7 +68,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 ExpectedSequenceNumber.HasValue ? ExpectedSequenceNumber.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DelayedAcknowledgmentType,
                                 ErrorCondition
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

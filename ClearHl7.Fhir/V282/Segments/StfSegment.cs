@@ -303,7 +303,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 GenericResourceTypeOrCategory != null ? string.Join(Configuration.FieldRepeatSeparator, GenericResourceTypeOrCategory.Select(x => x.ToDelimitedString())) : null,
                                 Religion?.ToDelimitedString(),
                                 Signature?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

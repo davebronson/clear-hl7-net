@@ -274,7 +274,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 Race,
                                 Handicap,
                                 ContactPersonSocialSecurityNumber
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

@@ -389,7 +389,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 JobStatus,
                                 GuarantorFinancialClass?.ToDelimitedString(),
                                 GuarantorRace
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }

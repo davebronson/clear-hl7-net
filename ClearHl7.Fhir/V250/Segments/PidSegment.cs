@@ -284,7 +284,7 @@ namespace ClearHl7.Fhir.V250.Segments
                                 Strain,
                                 ProductionClassCode?.ToDelimitedString(),
                                 TribalCitizenship != null ? string.Join(Configuration.FieldRepeatSeparator, TribalCitizenship.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator);
+                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
 }
