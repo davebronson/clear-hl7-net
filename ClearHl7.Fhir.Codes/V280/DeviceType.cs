@@ -1,5 +1,3 @@
-using System;
-
 namespace ClearHl7.Fhir.Codes.V280
 {
     /// <summary>
