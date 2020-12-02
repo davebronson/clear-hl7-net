@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
@@ -11,9 +11,9 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         /// Validates that ToDelimitedString() returns output with all fields populated and in the correct sequence.
         /// </summary>
         [Fact]
-        public void ToDelimitedString_WhenFullyPopulated_ReturnsCorrectFieldSequence()
+        public void ToDelimitedString_WithAllProperties_ReturnsCorrectlySequencedFields()
         {
-            ISegment segment = new AbsSegment
+            ISegment hl7Segment = new AbsSegment
             {
                 DischargeCareProvider = new ExtendedCompositeIdNumberAndNameForPersons
                 {
@@ -59,7 +59,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
             };
 
             string expected = "ABS|1|2|3|20200401000000|5|6|20200701000000|8|9|10|11|12|13|14";
-            string actual = segment.ToDelimitedString();
+            string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);
         }

@@ -5,7 +5,7 @@ namespace ClearHl7.Fhir.V270.Types
     /// <summary>
     /// HL7 Version 2 PTA - Policy Type And Amount.
     /// </summary>
-    public class PolicyTypeAndAmount
+    public class PolicyTypeAndAmount : IType
     {
         /// <summary>
         /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
