@@ -92,7 +92,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 AutoAccidentState?.ToDelimitedString(),
                                 AccidentJobRelatedIndicator,
                                 AccidentDeathIndicator,
-                                EnteredBy,
+                                EnteredBy?.ToDelimitedString(),
                                 AccidentDescription,
                                 BroughtInBy,
                                 PoliceNotifiedIndicator

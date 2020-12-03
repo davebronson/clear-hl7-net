@@ -15,10 +15,60 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new AdjSegment
             {
-                
+                ProviderAdjustmentNumber = new EntityIdentifier
+                {
+                    EntityId = "1"
+                },
+                PayerAdjustmentNumber = new EntityIdentifier
+                {
+                    EntityId = "2"
+                },
+                AdjustmentSequenceNumber = new EntityIdentifier
+                {
+                    EntityId = "3"
+                },
+                AdjustmentCategory = new CodedWithExceptions
+                {
+                    Identifier = "4"
+                },
+                AdjustmentAmount = new CompositePrice
+                {
+                    Price = new Money
+                    {
+                        Quantity = 5
+                    }
+                },
+                AdjustmentQuantity = new CompositeQuantityWithUnits
+                {
+                    Quantity = 6
+                },
+                AdjustmentReasonPa = new CodedWithExceptions
+                {
+                    Identifier = "7"
+                },
+                AdjustmentDescription = "8",
+                OriginalValue = 9,
+                SubstituteValue = 10,
+                AdjustmentAction = new CodedWithExceptions
+                {
+                    Identifier = "11"
+                },
+                ProviderAdjustmentNumberCrossReference = new EntityIdentifier
+                {
+                    EntityId = "12"
+                },
+                ProviderProductServiceLineItemNumberCrossReference = new EntityIdentifier
+                {
+                    EntityId = "13"
+                },
+                AdjustmentDate = new DateTime(2020, 1, 14, 0, 0, 14),
+                ResponsibleOrganization = new ExtendedCompositeNameAndIdNumberForOrganizations
+                {
+                    OrganizationName = "15"
+                }
             };
 
-            string expected = "ADJ|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "ADJ|1|2|3|4|5|6|7|8|9|10|11|12|13|20200114000014|15";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

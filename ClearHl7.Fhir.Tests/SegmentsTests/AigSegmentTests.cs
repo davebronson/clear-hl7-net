@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
@@ -15,10 +16,50 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new AigSegment
             {
-                
+                SetIdAig = 1,
+                SegmentActionCode = "2",
+                ResourceId = new CodedWithExceptions
+                {
+                    Identifier = "3"
+                },
+                ResourceType = new CodedWithExceptions
+                {
+                    Identifier = "4"
+                },
+                ResourceGroup = new List<CodedWithExceptions>
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "5"
+                    }
+                },
+                ResourceQuantity = 6,
+                ResourceQuantityUnits = new CodedWithNoExceptions
+                {
+                    Identifier = "7"
+                },
+                StartDateTime = new DateTime(2020, 8, 8, 0, 0, 8),
+                StartDateTimeOffset = 9,
+                StartDateTimeOffsetUnits = new CodedWithNoExceptions
+                {
+                    Identifier = "10"
+                },
+                Duration = 11,
+                DurationUnits = new CodedWithNoExceptions
+                {
+                    Identifier = "12"
+                },
+                AllowSubstitutionCode = new CodedWithExceptions
+                {
+                    Identifier = "13"
+                },
+                FillerStatusCode = new CodedWithExceptions
+                {
+                    Identifier = "14"
+                }
             };
 
-            string expected = "AIG|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "AIG|1|2|3|4|5|6|7|20200808000008|9|10|11|12|13|14";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);
