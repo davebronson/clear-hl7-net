@@ -1,4 +1,5 @@
-﻿using ClearHl7.Fhir.V282.Types;
+﻿using System;
+using ClearHl7.Fhir.V282.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.TypesTests
@@ -13,10 +14,15 @@ namespace ClearHl7.Fhir.Tests.TypesTests
         {
             IType hl7Type = new InsuranceCertificationDefinition
             {
-
+                CertificationPatientType = new CodedWithExceptions
+                {
+                    Identifier = "1"
+                },
+                CertificationRequired = "2",
+                DateTimeCertificationRequired = new DateTime(2020, 3, 3, 0, 0, 33)
             };
 
-            string expected = "1^2^3^4^5^6^7^8^9^10^11^12^13^14^15^16^17^18^19^20^21^22^23^24^25^26^27^28^29^30^31^32^33^34^35^36^37^38^39^40^41^42^43^44^45^46^47^48^49^50";
+            string expected = "1^2^20200303000033";
             string actual = hl7Type.ToDelimitedString();
 
             Assert.Equal(expected, actual);

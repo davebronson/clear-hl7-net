@@ -13,10 +13,31 @@ namespace ClearHl7.Fhir.Tests.TypesTests
         {
             IType hl7Type = new ReferenceRange
             {
-
+                NumericRange = new NumericRange
+                {
+                    LowValue = 1
+                },
+                AdministrativeSex = new CodedWithExceptions
+                {
+                    Identifier = "2"
+                },
+                AgeRange = new NumericRange
+                {
+                    LowValue = 3
+                },
+                GestationalAgeRange = new NumericRange
+                {
+                    LowValue = 4
+                },
+                Species = "5",
+                RaceSubspecies = "6",
+                Conditions = new Text
+                {
+                    Value = "7"
+                }
             };
 
-            string expected = "1^2^3^4^5^6^7^8^9^10^11^12^13^14^15^16^17^18^19^20^21^22^23^24^25^26^27^28^29^30^31^32^33^34^35^36^37^38^39^40^41^42^43^44^45^46^47^48^49^50";
+            string expected = "1^2^3^4^5^6^7";
             string actual = hl7Type.ToDelimitedString();
 
             Assert.Equal(expected, actual);

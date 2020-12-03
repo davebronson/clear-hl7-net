@@ -1,4 +1,5 @@
-﻿using ClearHl7.Fhir.V282.Types;
+﻿using System;
+using ClearHl7.Fhir.V282.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.TypesTests
@@ -13,10 +14,36 @@ namespace ClearHl7.Fhir.Tests.TypesTests
         {
             IType hl7Type = new ExtendedTelecommunicationNumber
             {
-
+                TelephoneNumber = "1",
+                TelecommunicationUseCode = "2",
+                TelecommunicationEquipmentType = "3",
+                CommunicationAddress = "4",
+                CountryCode = 5,
+                AreaCityCode = 6,
+                LocalNumber = 7,
+                Extension = 8,
+                AnyText = "9",
+                ExtensionPrefix = "10",
+                SpeedDialCode = "11",
+                UnformattedTelephoneNumber = "12",
+                EffectiveStartDate = new DateTime(2020, 1, 13, 0, 0, 13),
+                ExpirationDate = new DateTime(2020, 1, 14, 0, 0, 14),
+                ExpirationReason = new CodedWithExceptions
+                {
+                    Identifier = "15"
+                },
+                ProtectionCode = new CodedWithExceptions
+                {
+                    Identifier = "16"
+                },
+                SharedTelecommunicationIdentifier = new EntityIdentifier
+                {
+                    EntityId = "17"
+                },
+                PreferenceOrder = 18
             };
 
-            string expected = "1^2^3^4^5^6^7^8^9^10^11^12^13^14^15^16^17^18^19^20^21^22^23^24^25^26^27^28^29^30^31^32^33^34^35^36^37^38^39^40^41^42^43^44^45^46^47^48^49^50";
+            string expected = "1^2^3^4^5^6^7^8^9^10^11^12^20200113000013^20200114000014^15^16^17^18";
             string actual = hl7Type.ToDelimitedString();
 
             Assert.Equal(expected, actual);

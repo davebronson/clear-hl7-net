@@ -77,7 +77,7 @@ namespace ClearHl7.Fhir.V282.Types
 
             return string.Format(
                                 culture,
-                                StringHelper.StringFormatSequence(0, 11, separator),
+                                StringHelper.StringFormatSequence(0, 10, separator),
                                 OrganizationName,
                                 OrganizationNameTypeCode?.ToDelimitedString(),
                                 IdNumber.HasValue ? IdNumber.Value.ToString(Consts.NumericFormat, culture) : null,

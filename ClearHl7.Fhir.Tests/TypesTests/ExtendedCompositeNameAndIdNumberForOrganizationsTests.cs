@@ -13,10 +13,28 @@ namespace ClearHl7.Fhir.Tests.TypesTests
         {
             IType hl7Type = new ExtendedCompositeNameAndIdNumberForOrganizations
             {
-
+                OrganizationName = "1",
+                OrganizationNameTypeCode = new CodedWithExceptions
+                {
+                    Identifier = "2"
+                },
+                IdNumber = 3,
+                IdentifierCheckDigit = 4,
+                CheckDigitScheme = "5",
+                AssigningAuthority = new HierarchicDesignator
+                {
+                    NamespaceId = "6"
+                },
+                IdentifierTypeCode = "7",
+                AssigningFacility = new HierarchicDesignator
+                {
+                    NamespaceId = "8"
+                },
+                NameRepresentationCode = "9",
+                OrganizationIdentifier = "10"
             };
 
-            string expected = "1^2^3^4^5^6^7^8^9^10^11^12^13^14^15^16^17^18^19^20^21^22^23^24^25^26^27^28^29^30^31^32^33^34^35^36^37^38^39^40^41^42^43^44^45^46^47^48^49^50";
+            string expected = "1^2^3^4^5^6^7^8^9^10";
             string actual = hl7Type.ToDelimitedString();
 
             Assert.Equal(expected, actual);

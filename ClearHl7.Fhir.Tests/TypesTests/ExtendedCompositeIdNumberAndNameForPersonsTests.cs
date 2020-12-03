@@ -1,4 +1,5 @@
-﻿using ClearHl7.Fhir.V282.Types;
+﻿using System;
+using ClearHl7.Fhir.V282.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.TypesTests
@@ -13,10 +14,58 @@ namespace ClearHl7.Fhir.Tests.TypesTests
         {
             IType hl7Type = new ExtendedCompositeIdNumberAndNameForPersons
             {
-
+                PersonIdentifier = "1",
+                FamilyName = new FamilyName
+                {
+                    Surname = "2"
+                },
+                GivenName = "3",
+                SecondAndFurtherGivenNamesOrInitialsThereof = "4",
+                Suffix = "5",
+                Prefix = "6",
+                Degree = "7",
+                SourceTable = new CodedWithExceptions
+                {
+                    Identifier = "8"
+                },
+                AssigningAuthority = new HierarchicDesignator
+                {
+                    NamespaceId = "9"
+                },
+                NameTypeCode = "10",
+                IdentifierCheckDigit = "11",
+                CheckDigitScheme = "12",
+                IdentifierTypeCode = "13",
+                AssigningFacility = new HierarchicDesignator
+                {
+                    NamespaceId = "14"
+                },
+                NameRepresentationCode = "15",
+                NameContext = new CodedWithExceptions
+                {
+                    Identifier = "16"
+                },
+                NameValidityRange = new DateTimeRange
+                {
+                    RangeStartDateTime = new DateTime(2020, 1, 17, 0, 0, 17)
+                },
+                NameAssemblyOrder = "18",
+                EffectiveDate = new DateTime(2020, 1, 19, 0, 0, 19),
+                ExpirationDate = new DateTime(2020, 1, 20, 0, 0, 20),
+                ProfessionalSuffix = "21",
+                AssigningJurisdiction = new CodedWithExceptions
+                {
+                    Identifier = "22"
+                },
+                AssigningAgencyOrDepartment = new CodedWithExceptions
+                {
+                    Identifier = "23"
+                },
+                SecurityCheck = "24",
+                SecurityCheckScheme = "25"
             };
 
-            string expected = "1^2^3^4^5^6^7^8^9^10^11^12^13^14^15^16^17^18^19^20^21^22^23^24^25^26^27^28^29^30^31^32^33^34^35^36^37^38^39^40^41^42^43^44^45^46^47^48^49^50";
+            string expected = "1^2^3^4^5^6^7^8^9^10^11^12^13^14^15^16^20200117000017^18^20200119000019^20200120000020^21^22^23^24^25";
             string actual = hl7Type.ToDelimitedString();
 
             Assert.Equal(expected, actual);

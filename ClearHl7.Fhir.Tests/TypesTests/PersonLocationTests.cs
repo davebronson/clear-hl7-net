@@ -13,10 +13,44 @@ namespace ClearHl7.Fhir.Tests.TypesTests
         {
             IType hl7Type = new PersonLocation
             {
-
+                PointOfCare = new HierarchicDesignator
+                {
+                    NamespaceId = "1"
+                },
+                Room = new HierarchicDesignator
+                {
+                    NamespaceId = "2"
+                },
+                Bed = new HierarchicDesignator
+                {
+                    NamespaceId = "3"
+                },
+                Facility = new HierarchicDesignator
+                {
+                    NamespaceId = "4"
+                },
+                LocationStatus = "5",
+                PersonLocationType = "6",
+                Building = new HierarchicDesignator
+                {
+                    NamespaceId = "7"
+                },
+                Floor = new HierarchicDesignator
+                {
+                    NamespaceId = "8"
+                },
+                LocationDescription = "9",
+                ComprehensiveLocationIdentifier = new EntityIdentifier
+                {
+                    EntityId = "10"
+                },
+                AssigningAuthorityForLocation = new HierarchicDesignator
+                {
+                    NamespaceId = "11"
+                }
             };
 
-            string expected = "1^2^3^4^5^6^7^8^9^10^11^12^13^14^15^16^17^18^19^20^21^22^23^24^25^26^27^28^29^30^31^32^33^34^35^36^37^38^39^40^41^42^43^44^45^46^47^48^49^50";
+            string expected = "1^2^3^4^5^6^7^8^9^10^11";
             string actual = hl7Type.ToDelimitedString();
 
             Assert.Equal(expected, actual);

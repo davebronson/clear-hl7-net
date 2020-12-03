@@ -1,4 +1,5 @@
-﻿using ClearHl7.Fhir.V282.Types;
+﻿using System;
+using ClearHl7.Fhir.V282.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.TypesTests
@@ -13,10 +14,33 @@ namespace ClearHl7.Fhir.Tests.TypesTests
         {
             IType hl7Type = new ExtendedCompositeIdWithCheckDigit
             {
-
+                IdNumber = "1",
+                IdentifierCheckDigit = "2",
+                CheckDigitScheme = "3",
+                AssigningAuthority = new HierarchicDesignator
+                {
+                    NamespaceId = "4"
+                },
+                IdentifierTypeCode = "5",
+                AssigningFacility = new HierarchicDesignator
+                {
+                    NamespaceId = "6"
+                },
+                EffectiveDate = new DateTime(2020, 7, 7),
+                ExpirationDate = new DateTime(2020, 8, 8),
+                AssigningJurisdiction = new CodedWithExceptions
+                {
+                    Identifier = "9"
+                },
+                AssigningAgencyOrDepartment = new CodedWithExceptions
+                {
+                    Identifier = "10"
+                },
+                SecurityCheck = "11",
+                SecurityCheckScheme = "12"
             };
 
-            string expected = "1^2^3^4^5^6^7^8^9^10^11^12^13^14^15^16^17^18^19^20^21^22^23^24^25^26^27^28^29^30^31^32^33^34^35^36^37^38^39^40^41^42^43^44^45^46^47^48^49^50";
+            string expected = "1^2^3^4^5^6^20200707^20200808^9^10^11^12";
             string actual = hl7Type.ToDelimitedString();
 
             Assert.Equal(expected, actual);
