@@ -15,10 +15,41 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new BhsSegment
             {
-                
+                BatchFieldSeparator = "1",
+                BatchEncodingCharacters = "2",
+                BatchSendingApplication = new HierarchicDesignator
+                {
+                    NamespaceId = "3"
+                },
+                BatchSendingFacility = new HierarchicDesignator
+                {
+                    NamespaceId = "4"
+                },
+                BatchReceivingApplication = new HierarchicDesignator
+                {
+                    NamespaceId = "5"
+                },
+                BatchReceivingFacility = new HierarchicDesignator
+                {
+                    NamespaceId = "6"
+                },
+                BatchCreationDateTime = new DateTime(2020, 7, 7, 0, 0, 7),
+                BatchSecurity = "8",
+                BatchNameIdType = "9",
+                BatchComment = "10",
+                BatchControlId = "11",
+                ReferenceBatchControlId = "12",
+                BatchSendingNetworkAddress = new HierarchicDesignator
+                {
+                    NamespaceId = "13"
+                },
+                BatchReceivingNetworkAddress = new HierarchicDesignator
+                {
+                    NamespaceId = "14"
+                }
             };
 
-            string expected = "BHS|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "BHS|1|2|3|4|5|6|20200707000007|8|9|10|11|12|13|14";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

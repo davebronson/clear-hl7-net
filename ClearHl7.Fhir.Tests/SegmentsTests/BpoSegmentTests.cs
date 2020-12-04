@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
@@ -15,10 +16,65 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new BpoSegment
             {
-                
+                SetIdBpo = 1,
+                BpUniversalServiceIdentifier = new CodedWithExceptions
+                {
+                    Identifier = "2"
+                },
+                BpProcessingRequirements = new List<CodedWithExceptions>
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "3"
+                    }
+                },
+                BpQuantity = 4,
+                BpAmount  = 5,
+                BpUnits = new CodedWithExceptions
+                {
+                    Identifier = "6"
+                },
+                BpIntendedUseDateTime = new DateTime(2020,7,7,0,0,7),
+                BpIntendedDispenseFromLocation = new PersonLocation
+                {
+                    PointOfCare =new HierarchicDesignator
+                    {
+                        NamespaceId = "8"
+                    }
+                },
+                BpIntendedDispenseFromAddress = new ExtendedAddress
+                {
+                    StreetAddress = new StreetAddress
+                    {
+                        StreetOrMailingAddress = "9"
+                    }
+                },
+                BpRequestedDispenseDateTime = new DateTime(2020,10,10,0,0,10),
+                BpRequestedDispenseToLocation = new PersonLocation
+                {
+                    PointOfCare = new HierarchicDesignator
+                    {
+                        NamespaceId = "11"
+                    }
+                },
+                BpRequestedDispenseToAddress = new ExtendedAddress
+                {
+                    StreetAddress = new StreetAddress
+                    {
+                        StreetOrMailingAddress = "12"
+                    }
+                },
+                BpIndicationForUse = new List<CodedWithExceptions>
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "13"
+                    }
+                },
+                BpInformedConsentIndicator = "14"
             };
 
-            string expected = "BPO|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "BPO|1|2|3|4|5|6|20200707000007|8|9|20201010000010|11|12|13|14";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);
