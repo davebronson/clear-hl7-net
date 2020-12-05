@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
@@ -15,10 +16,135 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new DonSegment
             {
-                
+                DonationIdentificationNumberDin = new EntityIdentifier
+                {
+                    EntityId = "1"
+                },
+                DonationType = new CodedWithNoExceptions
+                {
+                    Identifier = "2"
+                },
+                PhlebotomyStartDateTime = new DateTime(2020, 3, 3, 0, 0, 3),
+                PhlebotomyEndDateTime = new DateTime(2020, 4, 4, 0, 0, 4),
+                DonationDuration = 5,
+                DonationDurationUnits = new CodedWithNoExceptions
+                {
+                    Identifier = "6"
+                },
+                IntendedProcedureType = new List<CodedWithNoExceptions>
+                {
+                    new CodedWithNoExceptions
+                    {
+                        Identifier = "7"
+                    }
+                },
+                ActualProcedureType = new List<CodedWithNoExceptions>
+                {
+                    new CodedWithNoExceptions
+                    {
+                        Identifier = "8"
+                    }
+                },
+                DonorEligibilityFlag = "9",
+                DonorEligibilityProcedureType = new List<CodedWithNoExceptions>
+                {
+                    new CodedWithNoExceptions
+                    {
+                        Identifier = "10"
+                    }
+                },
+                DonorEligibilityDate = new DateTime(2020, 11, 11, 0, 0, 11),
+                ProcessInterruption = new CodedWithNoExceptions
+                {
+                    Identifier = "12"
+                },
+                ProcessInterruptionReason = new CodedWithNoExceptions
+                {
+                    Identifier = "13"
+                },
+                PhlebotomyIssue = new List<CodedWithNoExceptions>
+                {
+                    new CodedWithNoExceptions
+                    {
+                        Identifier = "14"
+                    }
+                },
+                IntendedRecipientBloodRelative = "15",
+                IntendedRecipientName = new ExtendedPersonName
+                {
+                    FamilyName = new FamilyName
+                    {
+                        Surname = "16"
+                    }
+                },
+                IntendedRecipientDob = new DateTime(2020, 1, 17, 0, 0, 17),
+                IntendedRecipientFacility = new ExtendedCompositeNameAndIdNumberForOrganizations
+                {
+                    OrganizationName = "18"
+                },
+                IntendedRecipientProcedureDate = new DateTime(2020, 1, 19, 0, 0, 19),
+                IntendedRecipientOrderingProvider = new ExtendedPersonName
+                {
+                    FamilyName = new FamilyName
+                    {
+                        Surname = "20"
+                    }
+                },
+                PhlebotomyStatus = new CodedWithNoExceptions
+                {
+                    Identifier = "21"
+                },
+                ArmStick = new CodedWithNoExceptions
+                {
+                    Identifier = "22"
+                },
+                BleedStartPhlebotomist = new ExtendedPersonName
+                {
+                    FamilyName = new FamilyName
+                    {
+                        Surname = "23"
+                    }
+                },
+                BleedEndPhlebotomist = new ExtendedPersonName
+                {
+                    FamilyName = new FamilyName
+                    {
+                        Surname = "24"
+                    }
+                },
+                AphaeresisTypeMachine = "25",
+                AphaeresisMachineSerialNumber = "26",
+                DonorReaction = "27",
+                FinalReviewStaffId = new ExtendedPersonName
+                {
+                    FamilyName = new FamilyName
+                    {
+                        Surname = "28"
+                    }
+                },
+                FinalReviewDateTime = new DateTime(2020, 1, 29, 0, 0, 29),
+                NumberOfTubesCollected = 30,
+                DonationSampleIdentifier = new List<EntityIdentifier>
+                {
+                    new EntityIdentifier
+                    {
+                        EntityId = "31"
+                    }
+                },
+                DonationAcceptStaff = new ExtendedCompositeIdNumberAndNameForPersons
+                {
+                    PersonIdentifier = "32"
+                },
+                DonationMaterialReviewStaff = new List<ExtendedCompositeIdNumberAndNameForPersons>
+                {
+                    new ExtendedCompositeIdNumberAndNameForPersons
+                    {
+                        PersonIdentifier ="33"
+                    }
+                }
             };
 
-            string expected = "DON|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "DON|1|2|20200303000003|20200404000004|5|6|7|8|9|10|20201111000011|12|13|14|15|16|20200117000017|18|20200119000019|20|21|22|23|24|25|26|27|28|20200129000029|30|31|32|33";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

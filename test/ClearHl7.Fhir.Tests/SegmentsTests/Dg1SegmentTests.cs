@@ -23,7 +23,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                     Identifier = "3"
                 },
                 DiagnosisDescription = "4",
-                DiagnosisDateTime = new DateTime(2020,5,5,0,0,5),
+                DiagnosisDateTime = new DateTime(2020, 5, 5, 0, 0, 5),
                 DiagnosisType = new CodedWithExceptions
                 {
                     Identifier = "6"
@@ -39,7 +39,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 DrgApprovalIndicator = "9",
                 DrgGrouperReviewCode = new CodedWithExceptions
                 {
-                    Identifier ="10"
+                    Identifier = "10"
                 },
                 OutlierType = new CodedWithExceptions
                 {
@@ -67,7 +67,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                     Identifier = "17"
                 },
                 ConfidentialIndicator = "18",
-                AttestationDateTime = new DateTime(2020,1,19,0,0,19),
+                AttestationDateTime = new DateTime(2020, 1, 19, 0, 0, 19),
                 DiagnosisIdentifier = new EntityIdentifier
                 {
                     EntityId = "20"
@@ -75,7 +75,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 DiagnosisActionCode = "21",
                 ParentDiagnosis = new EntityIdentifier
                 {
-                    EntityId ="22"
+                    EntityId = "22"
                 },
                 DrgCclValueCode = new CodedWithExceptions
                 {
