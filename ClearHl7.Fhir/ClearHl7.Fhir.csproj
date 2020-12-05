@@ -2,6 +2,16 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>
+    <Authors>Dave Bronson</Authors>
+    <Copyright>Copyright © Dave Bronson 2020</Copyright>
+    <PackageProjectUrl>https://github.com/davebronson/clear-hl7-net</PackageProjectUrl>
+    <Summary>.NET HL7 messaging library for the FHIR standard</Summary>
+    <PackageTags>hl7;fhir;dotnet</PackageTags>
+    <Title>ClearHL7.Fhir</Title>
+    <Description>.NET HL7 messaging library for the FHIR standard</Description>
+    <PackageLicenseUrl>https://github.com/davebronson/clear-hl7-net/blob/master/LICENSE</PackageLicenseUrl>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <LangVersion>latest</LangVersion>
