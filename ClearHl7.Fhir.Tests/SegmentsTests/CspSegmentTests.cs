@@ -15,10 +15,19 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new CspSegment
             {
-                
+                StudyPhaseIdentifier = new CodedWithExceptions
+                {
+                    Identifier = "1"
+                },
+                DateTimeStudyPhaseBegan = new DateTime(2020, 2, 2, 0, 0, 2),
+                DateTimeStudyPhaseEnded = new DateTime(2020, 3, 3, 0, 0, 3),
+                StudyPhaseEvaluability = new CodedWithExceptions
+                {
+                    Identifier = "4"
+                }
             };
 
-            string expected = "CSP|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "CSP|1|20200202000002|20200303000003|4";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);
