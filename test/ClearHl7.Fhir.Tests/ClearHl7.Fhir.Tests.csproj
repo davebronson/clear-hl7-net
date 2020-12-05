@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ClearHl7.Fhir\ClearHl7.Fhir.csproj" />
+    <ProjectReference Include="..\..\src\ClearHl7.Fhir\ClearHl7.Fhir.csproj" />
+    <ProjectReference Include="..\..\src\ClearHl7.Fhir.Codes\ClearHl7.Fhir.Codes.csproj" />
   </ItemGroup>
 </Project>
