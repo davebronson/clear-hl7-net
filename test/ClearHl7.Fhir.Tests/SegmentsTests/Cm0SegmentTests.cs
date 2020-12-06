@@ -25,7 +25,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     new EntityIdentifier
                     {
-                        EntityId ="3"
+                        EntityId = "3"
                     }
                 },
                 TitleOfStudy = "4",

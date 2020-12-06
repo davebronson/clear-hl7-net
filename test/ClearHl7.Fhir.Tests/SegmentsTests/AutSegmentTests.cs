@@ -51,7 +51,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     new CodedWithExceptions
                     {
-                        Identifier ="11"
+                        Identifier = "11"
                     }
                 },
                 AuthorizedDisciplines = new List<CodedWithExceptions>

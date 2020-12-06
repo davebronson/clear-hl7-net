@@ -55,7 +55,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     new CodedWithNoExceptions
                     {
-                        Identifier ="12"
+                        Identifier = "12"
                     }
                 },
                 BpExpirationDateTime = new DateTime(2020, 1, 13, 0, 0, 13),

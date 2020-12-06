@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
@@ -15,10 +15,63 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new ErrSegment
             {
-                
+                ErrorCodeAndLocation = "1",
+                ErrorLocation = new List<ErrorLocation>
+                {
+                    new ErrorLocation
+                    {
+                        SegmentId = "2"
+                    }
+                },
+                Hl7ErrorCode = new CodedWithExceptions
+                {
+                    Identifier = "3"
+                },
+                Severity = "4",
+                ApplicationErrorCode = new CodedWithExceptions
+                {
+                    Identifier = "5"
+                },
+                ApplicationErrorParameter = new List<string>
+                {
+                    "6"
+                },
+                DiagnosticInformation = new Text
+                {
+                    Value = "7"
+                },
+                UserMessage = new Text
+                {
+                    Value = "8"
+                },
+                InformPersonIndicator = new List<CodedWithExceptions>
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "9"
+                    }
+                },
+                OverrideType = new CodedWithExceptions
+                {
+                    Identifier = "10"
+                },
+                OverrideReasonCode = new List<CodedWithExceptions>
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "11"
+                    }
+                },
+                HelpDeskContactPoint = new List<ExtendedTelecommunicationNumber>
+                {
+                    new ExtendedTelecommunicationNumber
+                    {
+                        TelephoneNumber = "12"
+                    }
+                }
             };
 
-            string expected = "Err|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "ERR|1|2|3|4|5|6|7|8|9|10|11|12";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

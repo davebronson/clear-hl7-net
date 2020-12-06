@@ -37,7 +37,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 BpIntendedUseDateTime = new DateTime(2020,7,7,0,0,7),
                 BpIntendedDispenseFromLocation = new PersonLocation
                 {
-                    PointOfCare =new HierarchicDesignator
+                    PointOfCare = new HierarchicDesignator
                     {
                         NamespaceId = "8"
                     }

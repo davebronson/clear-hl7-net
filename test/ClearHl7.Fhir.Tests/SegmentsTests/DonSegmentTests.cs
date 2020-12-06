@@ -139,7 +139,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     new ExtendedCompositeIdNumberAndNameForPersons
                     {
-                        PersonIdentifier ="33"
+                        PersonIdentifier = "33"
                     }
                 }
             };

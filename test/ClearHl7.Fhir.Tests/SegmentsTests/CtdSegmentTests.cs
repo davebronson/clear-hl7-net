@@ -27,7 +27,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     new ExtendedPersonName
                     {
-                        FamilyName =new FamilyName
+                        FamilyName = new FamilyName
                         {
                             Surname = "2"
                         }
