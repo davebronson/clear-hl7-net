@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
@@ -31,14 +30,14 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     Identifier = "6"
                 },
-                IntendedProcedureType = new List<CodedWithNoExceptions>
+                IntendedProcedureType = new CodedWithNoExceptions[]
                 {
                     new CodedWithNoExceptions
                     {
                         Identifier = "7"
                     }
                 },
-                ActualProcedureType = new List<CodedWithNoExceptions>
+                ActualProcedureType = new CodedWithNoExceptions[]
                 {
                     new CodedWithNoExceptions
                     {
@@ -46,7 +45,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                     }
                 },
                 DonorEligibilityFlag = "9",
-                DonorEligibilityProcedureType = new List<CodedWithNoExceptions>
+                DonorEligibilityProcedureType = new CodedWithNoExceptions[]
                 {
                     new CodedWithNoExceptions
                     {
@@ -62,7 +61,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     Identifier = "13"
                 },
-                PhlebotomyIssue = new List<CodedWithNoExceptions>
+                PhlebotomyIssue = new CodedWithNoExceptions[]
                 {
                     new CodedWithNoExceptions
                     {
@@ -124,7 +123,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 },
                 FinalReviewDateTime = new DateTime(2020, 1, 29, 0, 0, 29),
                 NumberOfTubesCollected = 30,
-                DonationSampleIdentifier = new List<EntityIdentifier>
+                DonationSampleIdentifier = new EntityIdentifier[]
                 {
                     new EntityIdentifier
                     {
@@ -135,7 +134,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     PersonIdentifier = "32"
                 },
-                DonationMaterialReviewStaff = new List<ExtendedCompositeIdNumberAndNameForPersons>
+                DonationMaterialReviewStaff = new ExtendedCompositeIdNumberAndNameForPersons[]
                 {
                     new ExtendedCompositeIdNumberAndNameForPersons
                     {

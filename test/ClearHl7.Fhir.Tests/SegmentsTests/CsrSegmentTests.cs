@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
@@ -37,14 +36,14 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                     IdNumber = "5"
                 },
                 DateTimeOfPatientStudyRegistration = new DateTime(2020, 6, 6, 0, 0, 6),
-                PersonPerformingStudyRegistration = new List<ExtendedCompositeIdNumberAndNameForPersons>
+                PersonPerformingStudyRegistration = new ExtendedCompositeIdNumberAndNameForPersons[]
                 {
                     new ExtendedCompositeIdNumberAndNameForPersons
                     {
                         PersonIdentifier = "7"
                     }
                 },
-                StudyAuthorizingProvider = new List<ExtendedCompositeIdNumberAndNameForPersons>
+                StudyAuthorizingProvider = new ExtendedCompositeIdNumberAndNameForPersons[]
                 {
                     new ExtendedCompositeIdNumberAndNameForPersons
                     {
@@ -56,18 +55,18 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     Identifier = "10"
                 },
-                StudyRandomizationDateTime = new List<DateTime>
+                StudyRandomizationDateTime = new DateTime[]
                 {
                     new DateTime(2020,11,11,0,0,11)
                 },
-                RandomizedStudyArm = new List<CodedWithExceptions>
+                RandomizedStudyArm = new CodedWithExceptions[]
                 {
                     new CodedWithExceptions
                     {
                         Identifier = "12"
                     }
                 },
-                StratumForStudyRandomization = new List<CodedWithExceptions>
+                StratumForStudyRandomization = new CodedWithExceptions[]
                 {
                     new CodedWithExceptions
                     {

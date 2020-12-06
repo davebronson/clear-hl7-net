@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
@@ -63,7 +62,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 },
                 BpTransfusionStartDateTimeOfStatus = new DateTime(2020, 1, 16, 0, 0, 16),
                 BpTransfusionEndDateTimeOfStatus = new DateTime(2020, 1, 17, 0, 0, 17),
-                BpAdverseReactionType = new List<CodedWithExceptions>
+                BpAdverseReactionType = new CodedWithExceptions[]
                 {
                     new CodedWithExceptions
                     {

@@ -1,5 +1,4 @@
-﻿using System;
-using ClearHl7.Fhir.V282.Segments;
+﻿using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
 
@@ -15,10 +14,78 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new FacSegment
             {
-                
+                FacilityIdFac = new EntityIdentifier
+                {
+                    EntityId = "1"
+                },
+                FacilityType = "2",
+                FacilityAddress = new ExtendedAddress[]
+                {
+                    new ExtendedAddress
+                    {
+                        StreetAddress = new StreetAddress
+                        {
+                            StreetOrMailingAddress = "3"
+                        }
+                    }
+                },
+                FacilityTelecommunication = new ExtendedTelecommunicationNumber
+                {
+                    TelephoneNumber = "4"
+                },
+                ContactPerson = new ExtendedCompositeIdNumberAndNameForPersons[]
+                {
+                    new ExtendedCompositeIdNumberAndNameForPersons
+                    {
+                        PersonIdentifier = "5"
+                    }
+                },
+                ContactTitle = new string[]
+                {
+                    "6"
+                },
+                ContactAddress = new ExtendedAddress[]
+                {
+                    new ExtendedAddress
+                    {
+                        StreetAddress = new StreetAddress
+                        {
+                            StreetOrMailingAddress = "7"
+                        }
+                    }
+                },
+                ContactTelecommunication = new ExtendedTelecommunicationNumber[]
+                {
+                    new ExtendedTelecommunicationNumber
+                    {
+                        TelephoneNumber = "8"
+                    }
+                },
+                SignatureAuthority = new ExtendedCompositeIdNumberAndNameForPersons[]
+                {
+                    new ExtendedCompositeIdNumberAndNameForPersons
+                    {
+                        PersonIdentifier = "9"
+                    }
+                },
+                SignatureAuthorityTitle = "10",
+                SignatureAuthorityAddress = new ExtendedAddress[]
+                {
+                    new ExtendedAddress
+                    {
+                        StreetAddress = new StreetAddress
+                        {
+                            StreetOrMailingAddress = "11"
+                        }
+                    }
+                },
+                SignatureAuthorityTelecommunication = new ExtendedTelecommunicationNumber
+                {
+                    TelephoneNumber = "12"
+                }
             };
 
-            string expected = "FAC|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "FAC|1|2|3|4|5|6|7|8|9|10|11|12";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

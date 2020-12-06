@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using ClearHl7.Fhir.V282.Segments;
+﻿using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
 
@@ -16,7 +14,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new AprSegment
             {
-                TimeSelectionCriteria = new List<SchedulingClassValuePair>
+                TimeSelectionCriteria = new SchedulingClassValuePair[]
                 {
                     new SchedulingClassValuePair
                     {
@@ -26,7 +24,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                         }
                     }
                 },
-                ResourceSelectionCriteria = new List<SchedulingClassValuePair>
+                ResourceSelectionCriteria = new SchedulingClassValuePair[]
                 {
                     new SchedulingClassValuePair
                     {
@@ -36,7 +34,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                         }
                     }
                 },
-                LocationSelectionCriteria = new List<SchedulingClassValuePair>
+                LocationSelectionCriteria = new SchedulingClassValuePair[]
                 {
                     new SchedulingClassValuePair
                     {
@@ -47,7 +45,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                     }
                 },
                 SlotSpacingCriteria = 4,
-                FillerOverrideCriteria = new List<SchedulingClassValuePair>
+                FillerOverrideCriteria = new SchedulingClassValuePair[]
                 {
                     new SchedulingClassValuePair
                     {

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
@@ -47,14 +46,14 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                     Quantity = 9
                 },
                 ProcessDate = new DateTime(2020, 10, 10, 0, 0, 10),
-                RequestedDisciplines = new List<CodedWithExceptions>
+                RequestedDisciplines = new CodedWithExceptions[]
                 {
                     new CodedWithExceptions
                     {
                         Identifier = "11"
                     }
                 },
-                AuthorizedDisciplines = new List<CodedWithExceptions>
+                AuthorizedDisciplines = new CodedWithExceptions[]
                 {
                     new CodedWithExceptions
                     {

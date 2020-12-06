@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
@@ -53,7 +52,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     Identifier = "10"
                 },
-                RequestedStartDateTimeRange = new List<DateTimeRange>
+                RequestedStartDateTimeRange = new DateTimeRange[]
                 {
                     new DateTimeRange
                     {
@@ -69,21 +68,21 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                     }
                 },
                 RepeatingIntervalDuration = "14",
-                PlacerContactPerson = new List<ExtendedCompositeIdNumberAndNameForPersons>
+                PlacerContactPerson = new ExtendedCompositeIdNumberAndNameForPersons[]
                 {
                     new ExtendedCompositeIdNumberAndNameForPersons
                     {
                         PersonIdentifier = "15"
                     }
                 },
-                PlacerContactPhoneNumber = new List<ExtendedTelecommunicationNumber>
+                PlacerContactPhoneNumber = new ExtendedTelecommunicationNumber[]
                 {
                     new ExtendedTelecommunicationNumber
                     {
                         TelephoneNumber = "16"
                     }
                 },
-                PlacerContactAddress = new List<ExtendedAddress>
+                PlacerContactAddress = new ExtendedAddress[]
                 {
                     new ExtendedAddress
                     {
@@ -100,14 +99,14 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                         NamespaceId = "18"
                     }
                 },
-                EnteredByPerson = new List<ExtendedCompositeIdNumberAndNameForPersons>
+                EnteredByPerson = new ExtendedCompositeIdNumberAndNameForPersons[]
                 {
                     new ExtendedCompositeIdNumberAndNameForPersons
                     {
                         PersonIdentifier = "19"
                     }
                 },
-                EnteredByPhoneNumber = new List<ExtendedTelecommunicationNumber>
+                EnteredByPhoneNumber = new ExtendedTelecommunicationNumber[]
                 {
                     new ExtendedTelecommunicationNumber
                     {
@@ -129,14 +128,14 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     EntityId = "23"
                 },
-                PlacerOrderNumber = new List<EntityIdentifier>
+                PlacerOrderNumber = new EntityIdentifier[]
                 {
                     new EntityIdentifier
                     {
                         EntityId = "24"
                     }
                 },
-                FillerOrderNumber = new List<EntityIdentifier>
+                FillerOrderNumber = new EntityIdentifier[]
                 {
                     new EntityIdentifier
                     {

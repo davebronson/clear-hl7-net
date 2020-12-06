@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
@@ -29,7 +28,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     Identifier = "4"
                 },
-                AllergyReactionCode = new List<string>
+                AllergyReactionCode = new string[]
                 {
                     "5"
                 },

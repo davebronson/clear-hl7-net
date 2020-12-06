@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
@@ -28,7 +27,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                         StreetOrMailingAddress = "3"
                     }
                 },
-                ProfessionalOrganizationAffiliationDateRange = new List<DateTimeRange>
+                ProfessionalOrganizationAffiliationDateRange = new DateTimeRange[]
                 {
                     new DateTimeRange
                     {

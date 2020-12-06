@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using ClearHl7.Fhir.V282.Segments;
+﻿using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
 
@@ -20,7 +18,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     Identifier = "1"
                 },
-                ChargeCodeAlias = new List<CodedWithExceptions>
+                ChargeCodeAlias = new CodedWithExceptions[]
                 {
                     new CodedWithExceptions
                     {
@@ -33,14 +31,14 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     Identifier = "5"
                 },
-                ExplodingCharges = new List<CodedWithExceptions>
+                ExplodingCharges = new CodedWithExceptions[]
                 {
                     new CodedWithExceptions
                     {
                         Identifier = "6"
                     }
                 },
-                ProcedureCode = new List<CodedWithNoExceptions>
+                ProcedureCode = new CodedWithNoExceptions[]
                 {
                     new CodedWithNoExceptions
                     {
@@ -48,7 +46,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                     }
                 },
                 ActiveInactiveFlag = "8",
-                InventoryNumber = new List<CodedWithExceptions>
+                InventoryNumber = new CodedWithExceptions[]
                 {
                     new CodedWithExceptions
                     {
@@ -56,14 +54,14 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                     }
                 },
                 ResourceLoad = 10,
-                ContractNumber = new List<ExtendedCompositeIdWithCheckDigit>
+                ContractNumber = new ExtendedCompositeIdWithCheckDigit[]
                 {
                     new ExtendedCompositeIdWithCheckDigit
                     {
                         IdNumber = "11"
                     }
                 },
-                ContractOrganization = new List<ExtendedCompositeNameAndIdNumberForOrganizations>
+                ContractOrganization = new ExtendedCompositeNameAndIdNumberForOrganizations[]
                 {
                     new ExtendedCompositeNameAndIdNumberForOrganizations
                     {

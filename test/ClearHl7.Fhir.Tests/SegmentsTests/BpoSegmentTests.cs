@@ -21,7 +21,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     Identifier = "2"
                 },
-                BpProcessingRequirements = new List<CodedWithExceptions>
+                BpProcessingRequirements = new CodedWithExceptions[]
                 {
                     new CodedWithExceptions
                     {
@@ -64,7 +64,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                         StreetOrMailingAddress = "12"
                     }
                 },
-                BpIndicationForUse = new List<CodedWithExceptions>
+                BpIndicationForUse = new CodedWithExceptions[]
                 {
                     new CodedWithExceptions
                     {

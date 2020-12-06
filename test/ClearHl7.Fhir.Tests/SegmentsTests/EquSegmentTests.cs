@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
@@ -16,7 +15,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new EquSegment
             {
-                EquipmentInstanceIdentifier = new List<EntityIdentifier>
+                EquipmentInstanceIdentifier = new EntityIdentifier[]
                 {
                     new EntityIdentifier
                     {

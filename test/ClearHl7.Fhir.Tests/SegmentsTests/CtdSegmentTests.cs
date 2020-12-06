@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using ClearHl7.Fhir.V282.Segments;
+﻿using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
 
@@ -16,14 +14,14 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new CtdSegment
             {
-                ContactRole = new List<CodedWithExceptions>
+                ContactRole = new CodedWithExceptions[]
                 {
                     new CodedWithExceptions
                     {
                         Identifier = "1"
                     }
                 },
-                ContactName = new List<ExtendedPersonName>
+                ContactName = new ExtendedPersonName[]
                 {
                     new ExtendedPersonName
                     {
@@ -33,7 +31,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                         }
                     }
                 },
-                ContactAddress = new List<ExtendedAddress>
+                ContactAddress = new ExtendedAddress[]
                 {
                     new ExtendedAddress
                     {
@@ -50,7 +48,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                         NamespaceId = "4"
                     }
                 },
-                ContactCommunicationInformation = new List<ExtendedTelecommunicationNumber>
+                ContactCommunicationInformation = new ExtendedTelecommunicationNumber[]
                 {
                     new ExtendedTelecommunicationNumber
                     {
@@ -61,7 +59,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     Identifier = "6"
                 },
-                ContactIdentifiers = new List<PractitionerLicenseOrOtherIdNumber>
+                ContactIdentifiers = new PractitionerLicenseOrOtherIdNumber[]
                 {
                     new PractitionerLicenseOrOtherIdNumber
                     {

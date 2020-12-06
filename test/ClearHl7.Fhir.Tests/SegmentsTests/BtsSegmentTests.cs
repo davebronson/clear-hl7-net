@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+﻿using ClearHl7.Fhir.V282.Segments;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests
@@ -18,7 +15,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
             {
                 BatchMessageCount = "1",
                 BatchComment = "2",
-                BatchTotals = new List<decimal>
+                BatchTotals = new decimal[]
                 {
                     3
                 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
@@ -20,7 +19,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     Identifier = "1"
                 },
-                ProcedureCode = new List<CodedWithExceptions>
+                ProcedureCode = new CodedWithExceptions[]
                 {
                     new CodedWithExceptions
                     {

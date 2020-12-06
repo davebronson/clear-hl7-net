@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
@@ -55,7 +54,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 },
                 GrouperVersionAndType = "14",
                 DiagnosisPriority = 15,
-                DiagnosingClinician = new List<ExtendedCompositeIdNumberAndNameForPersons>
+                DiagnosingClinician = new ExtendedCompositeIdNumberAndNameForPersons[]
                 {
                     new ExtendedCompositeIdNumberAndNameForPersons
                     {

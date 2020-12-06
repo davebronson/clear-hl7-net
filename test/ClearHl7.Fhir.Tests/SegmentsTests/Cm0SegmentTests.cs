@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
@@ -21,7 +20,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     EntityId = "2"
                 },
-                AlternateStudyId = new List<EntityIdentifier>
+                AlternateStudyId = new EntityIdentifier[]
                 {
                     new EntityIdentifier
                     {
@@ -29,7 +28,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                     }
                 },
                 TitleOfStudy = "4",
-                ChairmanOfStudy = new List<ExtendedCompositeIdNumberAndNameForPersons>
+                ChairmanOfStudy = new ExtendedCompositeIdNumberAndNameForPersons[]
                 {
                     new ExtendedCompositeIdNumberAndNameForPersons
                     {
@@ -39,7 +38,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 LastIrbApprovalDate = new DateTime(2020, 6, 6),
                 TotalAccrualToDate = 7,
                 LastAccrualDate = new DateTime(2020, 8, 8),
-                ContactForStudy = new List<ExtendedCompositeIdNumberAndNameForPersons>
+                ContactForStudy = new ExtendedCompositeIdNumberAndNameForPersons[]
                 {
                     new ExtendedCompositeIdNumberAndNameForPersons
                     {
@@ -50,7 +49,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     TelephoneNumber = "10"
                 },
-                ContactsAddress = new List<ExtendedAddress>
+                ContactsAddress = new ExtendedAddress[]
                 {
                     new ExtendedAddress
                     {

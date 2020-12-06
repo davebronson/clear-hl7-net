@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
@@ -18,7 +17,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
             {
                 SetIdAil = 1,
                 SegmentActionCode = "2",
-                LocationResourceId = new List<PersonLocation>
+                LocationResourceId = new PersonLocation[]
                 {
                     new PersonLocation
                     {

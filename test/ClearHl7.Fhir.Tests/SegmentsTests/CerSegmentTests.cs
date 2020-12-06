@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
@@ -56,7 +55,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                     EntityId = "12"
                 },
                 SubjectName = "13",
-                SubjectDirectoryAttributeExtension = new List<CodedWithExceptions>
+                SubjectDirectoryAttributeExtension = new CodedWithExceptions[]
                 {
                     new CodedWithExceptions
                     {
@@ -72,7 +71,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                     Identifier = "16"
                 },
                 BasicConstraint = "17",
-                CrlDistributionPoint = new List<CodedWithExceptions>
+                CrlDistributionPoint = new CodedWithExceptions[]
                 {
                     new CodedWithExceptions
                     {
@@ -88,7 +87,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     Identifier = "21"
                 },
-                JurisdictionBreadth = new List<CodedWithExceptions>
+                JurisdictionBreadth = new CodedWithExceptions[]
                 {
                     new CodedWithExceptions
                     {

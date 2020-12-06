@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
@@ -26,23 +25,23 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     EntityId = "4"
                 },
-                ConsentText = new List<string>
+                ConsentText = new string[]
                 {
                     "5"
                 },
-                SubjectSpecificConsentText = new List<string>
+                SubjectSpecificConsentText = new string[]
                 {
                     "6"
                 },
-                ConsentBackgroundInformation = new List<string>
+                ConsentBackgroundInformation = new string[]
                 {
                     "7"
                 },
-                SubjectSpecificConsentBackgroundText = new List<string>
+                SubjectSpecificConsentBackgroundText = new string[]
                 {
                     "8"
                 },
-                ConsenterImposedLimitations = new List<string>
+                ConsenterImposedLimitations = new string[]
                 {
                     "9"
                 },
@@ -78,7 +77,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     Identifier = "23"
                 },
-                ConsenterId = new List<ExtendedPersonName>
+                ConsenterId = new ExtendedPersonName[]
                 {
                     new ExtendedPersonName
                     {
@@ -88,7 +87,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                         }
                     }
                 },
-                RelationshipToSubject = new List<CodedWithExceptions>
+                RelationshipToSubject = new CodedWithExceptions[]
                 {
                     new CodedWithExceptions
                     {
