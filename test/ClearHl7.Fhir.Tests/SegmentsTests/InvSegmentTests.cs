@@ -15,10 +15,71 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new InvSegment
             {
-                
+                SubstanceIdentifier = new CodedWithExceptions
+                {
+                    Identifier = "1"
+                },
+                SubstanceStatus = new CodedWithExceptions[]
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "2"
+                    }
+                },
+                SubstanceType = new CodedWithExceptions
+                {
+                    Identifier = "3"
+                },
+                InventoryContainerIdentifier = new CodedWithExceptions
+                {
+                    Identifier = "4"
+                },
+                ContainerCarrierIdentifier = new CodedWithExceptions
+                {
+                    Identifier = "5"
+                },
+                PositionOnCarrier = new CodedWithExceptions
+                {
+                    Identifier = "6"
+                },
+                InitialQuantity = 7,
+                CurrentQuantity = 8,
+                AvailableQuantity = 9,
+                ConsumptionQuantity = 10,
+                QuantityUnits = new CodedWithExceptions
+                {
+                    Identifier = "11"
+                },
+                ExpirationDateTime = new DateTime(2020, 12, 12, 0, 0, 12),
+                FirstUsedDateTime = new DateTime(2020, 1, 13, 0, 0, 13),
+                OnBoardStabilityDuration = "14",
+                TestFluidIdentifiers = new CodedWithExceptions[]
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "15"
+                    }
+                },
+                ManufacturerLotNumber = "16",
+                ManufacturerIdentifier = new CodedWithExceptions
+                {
+                    Identifier = "17"
+                },
+                SupplierIdentifier = new CodedWithExceptions
+                {
+                    Identifier = "18"
+                },
+                OnBoardStabilityTime = new CompositeQuantityWithUnits
+                {
+                    Quantity = 19
+                },
+                TargetValue = new CompositeQuantityWithUnits
+                {
+                    Quantity = 20
+                }
             };
 
-            string expected = "INV|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "INV|1|2|3|4|5|6|7|8|9|10|11|20201212000012|20200113000013|14|15|16|17|18|19|20";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);
