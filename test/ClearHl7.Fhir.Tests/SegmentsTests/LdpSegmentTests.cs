@@ -15,10 +15,60 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new LdpSegment
             {
-                
+                PrimaryKeyValueLdp = new PersonLocation
+                {
+                    PointOfCare = new HierarchicDesignator
+                    {
+                        NamespaceId = "1"
+                    }
+                },
+                LocationDepartment = new CodedWithExceptions
+                {
+                    Identifier = "2"
+                },
+                LocationService = new CodedWithExceptions[]
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "3"
+                    }
+                },
+                SpecialtyType = new CodedWithExceptions[]
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "4"
+                    }
+                },
+                ValidPatientClasses = new CodedWithExceptions[]
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "5"
+                    }
+                },
+                ActiveInactiveFlag = "6",
+                ActivationDateLdp = new DateTime(2020, 7, 7, 0, 0, 7),
+                InactivationDateLdp = new DateTime(2020, 8, 8, 0, 0, 8),
+                InactivatedReason = "9",
+                VisitingHours = new VisitingHours[]
+                {
+                    new VisitingHours
+                    {
+                        StartDayRange = "10"
+                    }
+                },
+                ContactPhone = new ExtendedTelecommunicationNumber
+                {
+                    TelephoneNumber = "11"
+                },
+                LocationCostCenter = new CodedWithExceptions
+                {
+                    Identifier = "12"
+                }
             };
 
-            string expected = "LDP|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "LDP|1|2|3|4|5|6|20200707000007|20200808000008|9|10|11|12";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

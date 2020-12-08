@@ -10,15 +10,83 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         /// <summary>
         /// Validates that ToDelimitedString() returns output with all fields populated and in the correct sequence.
         /// </summary>
+        /// <remarks>Assumes usage of the standard delimiter characters.</remarks>
         [Fact]
         public void ToDelimitedString_WithAllProperties_ReturnsCorrectlySequencedFields()
         {
             ISegment hl7Segment = new MshSegment
             {
-                
+                SendingApplication = new HierarchicDesignator
+                {
+                    NamespaceId = "3"
+                },
+                SendingFacility = new HierarchicDesignator
+                {
+                    NamespaceId = "4"
+                },
+                ReceivingApplication = new HierarchicDesignator
+                {
+                    NamespaceId = "5"
+                },
+                ReceivingFacility = new HierarchicDesignator
+                {
+                    NamespaceId = "6"
+                },
+                DateTimeOfMessage = new DateTime(2020, 7, 7, 0, 0, 7),
+                Security = "8",
+                MessageType = new MessageType
+                {
+                    MessageCode = "9"
+                },
+                MessageControlId = "10",
+                ProcessingId = new ProcessingType
+                {
+                    ProcessingId = "11"
+                },
+                VersionId = new VersionIdentifier
+                {
+                    VersionId = "12"
+                },
+                SequenceNumber = 13,
+                ContinuationPointer = "14",
+                AcceptAcknowledgmentType = "15",
+                ApplicationAcknowledgmentType = "16",
+                CountryCode = "17",
+                CharacterSet = new string[]
+                {
+                    "18"
+                },
+                PrincipalLanguageOfMessage = new CodedWithExceptions
+                {
+                    Identifier = "19"
+                },
+                AlternateCharacterSetHandlingScheme = "20",
+                MessageProfileIdentifier = new EntityIdentifier[]
+                {
+                    new EntityIdentifier
+                    {
+                        EntityId = "21"
+                    }
+                },
+                SendingResponsibleOrganization = new ExtendedCompositeNameAndIdNumberForOrganizations
+                {
+                    OrganizationName = "22"
+                },
+                ReceivingResponsibleOrganization = new ExtendedCompositeNameAndIdNumberForOrganizations
+                {
+                    OrganizationName = "23"
+                },
+                SendingNetworkAddress = new HierarchicDesignator
+                {
+                    NamespaceId = "24"
+                },
+                ReceivingNetworkAddress = new HierarchicDesignator
+                {
+                    NamespaceId = "25"
+                }
             };
 
-            string expected = "MSH|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "MSH|^~\\&|3|4|5|6|20200707000007|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);
