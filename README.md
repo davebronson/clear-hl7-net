@@ -3,23 +3,23 @@
 
 Understanding and programmatically building HL7 messages can be difficult.  clear-hl7-net takes pain out of this process by exposing an object hierarchy that is well structured, clearly named, and (most importantly) strongly-typed.
 
-# Important
+## Important
 clear-hl7-net is functional and quickly approaching an official release.  However, as testing continues there is always a chance that minor breaking changes may be necessary.  Please proceed with this caution in mind.
 
-# Getting Started
-## Building clear-hl7-net
+## Getting Started
+### Building clear-hl7-net
 1. Clone the source code: `git clone https://github.com/davebronson/clear-hl7-net.git`
 2. Open ClearHl7.Fhir.sln in Visual Studio for Windows or Mac, or build from the command line
 
-## Download From NuGet
+### Download From NuGet
 [Coming soon...]
 
-## Targets
+### Targets
 * .NET Standard 2.0
 * .NET Standard 2.1
 * .NET 5
 
-# Supported HL7 Versions
+## Supported HL7 Versions
 Several published versions exist for the HL7 Version 2.x messaging standard.  clear-hl7-net supports the following:
 * 2.3
 * 2.31
@@ -40,7 +40,7 @@ using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 ```
 
-# HL7 Messages, Conceptually
+## HL7 Messages, Conceptually
 HL7 Version 2.x messages consist of a collection of segments, with the MSH segment being required and appearing first.  Each segment is presented as a string on a single line, as a series of field values that are delimited with special characters indicating the position and nesting of each value.  Conceptually simple enough, but not very human-readable, and confusing to build correctly without the right tool.  clear-hl7-net represents this composition using a hierarchical class structure that is easy to interact with.  Pseudo example:
 * Message
     * MSH Segment
@@ -58,7 +58,7 @@ HL7 Version 2.x messages consist of a collection of segments, with the MSH segme
         * Type
             * Sub-Type
 
-# Example
+## Example
 Let's build a sample `Message` containing the standard MSH `Segment`, and accompanied by PID, PVI, and Zxx `Segment`s.
 ```csharp
 using ClearHl7.Fhir;
@@ -189,8 +189,8 @@ PV1||I||E|||||||||R||A2~A5~A6~B3|||||||||||||||||||||||||||||20200101133512||143
 ZPD|GREEN|^^^andy.anderson@somewhere.com|Code1234|Anderson \T\ Sons \R\ Piano \T\ Drywall Repair
 ```
 
-# Customizing
-## Delimiter Characters
+## Customizing
+### Delimiter Characters
 The HL7 specification calls out default delimiters to use for fields (pipe `|`), components (caret `^`), subcomponents (ampersand `&`), escaping (backslash `\`), and repetition (tilde `~`).  Most will use these defaults.  But if the consumer of your messages supports it, you may also define your own delimiters.
 ```csharp
 using ClearHl7.Fhir;
@@ -201,7 +201,7 @@ Configuration.FieldRepeatSeparator = "%"; // Use percent symbol
 Configuration.SubcomponentSeparator = "/"; // Use forward slash
 ```
 
-# Using the ClearHl7.Codes Component
+## Using the ClearHl7.Codes Component
 There are code systems published as part of the FHIR HL7 specification, which are recommended for use in your messages.  You have flexibility, of course, to use any coded values that you and your message consumer might agree upon.  To easily access the FHIR-defined codes you may utilize the `ClearHl7.Fhir.Codes` component, which contains enumerations for each.
 ```csharp
 using System.Linq;
@@ -218,19 +218,19 @@ pidSegment.MaritalStatus = new CodedWithExceptions { Identifier = helper.ValueTo
 pidSegment.MultipleBirthIndicator = helper.ValueToCode(YesNoIndicator.No);
 ```
 
-# Anything Else?
+## Anything Else?
 * `Segment`s, `Type`s, and collections are __not__ automatically initialized for you.  You must manually instantiate each object that you're going to read/write to.  But be a good steward of machine resources, and only instantiate objects that you'll interact with.
 * Collection properties are all implemented with the `IEnumerable` interface to provide you with wide flexibility in the type of collection that you pass into the class.  The example above shows usage of simple arrays, but you can use more complex types like `List`, etc.
 * `Segment`s can be built and added to a `Message` in any order.  Just set the `Segment.Ordinal` property for each to specify the ordering in the final output.  And remember that the MSH `Segment` is required, and must appear first.
 * Any string input that may contain one of the utilized delimiter characters should be escaped with `ClearHl7.Fhir.Helpers.StringHelper.Escape()`.  See the Zxx/ZPD segment in the example above.
 * You may call `ToDelimitedString()` on any `Message`, `Segment`, or `Type` to receive the full serialized output for that instance.
 
-# Contributing
+## Contributing
 We welcome code and documentation contributions!
-## Complex Changes
+### Complex Changes
 Please discuss with the repo owners before making the change.  We would like to talk about motivations for the change, and go over your design decisions.
-## Simple Changes
+### Simple Changes
 Fork davebronson/clear-hl7-net.git and begin development from your own fork.
 
-# License
+## License
 clear-hl7-net is licensed under the [MIT License](https://github.com/davebronson/clear-hl7-net/blob/master/LICENSE).
