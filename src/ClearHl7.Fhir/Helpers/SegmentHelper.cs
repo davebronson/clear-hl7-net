@@ -52,7 +52,7 @@ namespace ClearHl7.Fhir.Helpers
             {
                 object propertyValue = property.GetValue(obj, null);
 
-                if (propertyValue is IList list)
+                if (propertyValue is IEnumerable list)
                 {
                     foreach (IType item in list.OfType<IType>())
                     {
