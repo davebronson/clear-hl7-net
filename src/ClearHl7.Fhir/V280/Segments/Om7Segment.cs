@@ -15,7 +15,7 @@ namespace ClearHl7.Fhir.V280.Segments
         /// Gets the ID for the Segment.  This property is read-only.
         /// </summary>
         public string Id { get; } = "OM7";
-        
+
         /// <summary>
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
         /// </summary>
@@ -147,7 +147,7 @@ namespace ClearHl7.Fhir.V280.Segments
         /// OM7.24 - Primary Key Value - CDM.
         /// </summary>
         public IEnumerable<CodedWithExceptions> PrimaryKeyValueCdm { get; set; }
-        
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
@@ -174,7 +174,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 ConsentIdentifier?.ToDelimitedString(),
                                 ConsentEffectiveStartDateTime.HasValue ? ConsentEffectiveStartDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ConsentEffectiveEndDateTime.HasValue ? ConsentEffectiveEndDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                ConsentIntervalQuantity.HasValue ? EffectiveTestServiceEndDateTime.Value.ToString(Consts.NumericFormat, culture) : null,
+                                ConsentIntervalQuantity.HasValue ? ConsentIntervalQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ConsentIntervalUnits?.ToDelimitedString(),
                                 ConsentWaitingPeriodQuantity.HasValue ? ConsentWaitingPeriodQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ConsentWaitingPeriodUnits?.ToDelimitedString(),

@@ -1,6 +1,5 @@
 ﻿using System;
 using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests
@@ -15,10 +14,24 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new NstSegment
             {
-                
+                StatisticsAvailable = "1",
+                SourceIdentifier = "2",
+                SourceType = "3",
+                StatisticsStart = new DateTime(2020, 4, 4, 0, 0, 4),
+                StatisticsEnd = new DateTime(2020, 5, 5, 0, 0, 5),
+                ReceiveCharacterCount = 6,
+                SendCharacterCount = 7,
+                MessagesReceived = 8,
+                MessagesSent = 9,
+                ChecksumErrorsReceived = 10,
+                LengthErrorsReceived = 11,
+                OtherErrorsReceived = 12,
+                ConnectTimeouts = 13,
+                ReceiveTimeouts = 14,
+                ApplicationControlLevelErrors = 15
             };
 
-            string expected = "NST|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "NST|1|2|3|20200404000004|20200505000005|6|7|8|9|10|11|12|13|14|15";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

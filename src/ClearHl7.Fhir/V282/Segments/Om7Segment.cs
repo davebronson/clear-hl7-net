@@ -174,7 +174,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 ConsentIdentifier?.ToDelimitedString(),
                                 ConsentEffectiveStartDateTime.HasValue ? ConsentEffectiveStartDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ConsentEffectiveEndDateTime.HasValue ? ConsentEffectiveEndDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                ConsentIntervalQuantity.HasValue ? EffectiveTestServiceEndDateTime.Value.ToString(Consts.NumericFormat, culture) : null,
+                                ConsentIntervalQuantity.HasValue ? ConsentIntervalQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ConsentIntervalUnits?.ToDelimitedString(),
                                 ConsentWaitingPeriodQuantity.HasValue ? ConsentWaitingPeriodQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ConsentWaitingPeriodUnits?.ToDelimitedString(),

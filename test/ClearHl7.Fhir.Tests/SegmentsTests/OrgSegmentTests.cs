@@ -15,10 +15,52 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new OrgSegment
             {
-                
+                SetIdOrg = 1,
+                OrganizationUnitCode = new CodedWithExceptions
+                {
+                    Identifier = "2"
+                },
+                OrganizationUnitTypeCode = new CodedWithExceptions
+                {
+                    Identifier = "3"
+                },
+                PrimaryOrgUnitIndicator = "4",
+                PractitionerOrgUnitIdentifier = new ExtendedCompositeIdWithCheckDigit
+                {
+                    IdNumber = "5"
+                },
+                HealthCareProviderTypeCode = new CodedWithExceptions
+                {
+                    Identifier = "6"
+                },
+                HealthCareProviderClassificationCode = new CodedWithExceptions
+                {
+                    Identifier = "7"
+                },
+                HealthCareProviderAreaOfSpecializationCode = new CodedWithExceptions
+                {
+                    Identifier = "8"
+                },
+                EffectiveDateRange = new DateTimeRange
+                {
+                    RangeStartDateTime = new DateTime(2020, 9, 9, 0, 0, 9)
+                },
+                EmploymentStatusCode = new CodedWithExceptions
+                {
+                    Identifier = "10"
+                },
+                BoardApprovalIndicator = "11",
+                PrimaryCarePhysicianIndicator = "12",
+                CostCenterCode = new CodedWithExceptions[]
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "13"
+                    }
+                }
             };
 
-            string expected = "ORG|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "ORG|1|2|3|4|5|6|7|8|20200909000009|10|11|12|13";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

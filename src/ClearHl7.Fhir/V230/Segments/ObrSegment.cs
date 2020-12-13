@@ -15,7 +15,7 @@ namespace ClearHl7.Fhir.V230.Segments
         /// Gets the ID for the Segment.  This property is read-only.
         /// </summary>
         public string Id { get; } = "OBR";
-        
+
         /// <summary>
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
         /// </summary>
@@ -293,7 +293,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 NumberOfSampleContainers.HasValue ? NumberOfSampleContainers.Value.ToString(Consts.NumericFormat, culture) : null,
                                 TransportLogisticsOfCollectedSample != null ? string.Join(Configuration.FieldRepeatSeparator, TransportLogisticsOfCollectedSample.Select(x => x.ToDelimitedString())) : null,
                                 CollectorsComment != null ? string.Join(Configuration.FieldRepeatSeparator, CollectorsComment.Select(x => x.ToDelimitedString())) : null,
-                                TransportArrangementResponsibility,
+                                TransportArrangementResponsibility?.ToDelimitedString(),
                                 TransportArranged,
                                 EscortRequired,
                                 PlannedPatientTransportComment != null ? string.Join(Configuration.FieldRepeatSeparator, PlannedPatientTransportComment.Select(x => x.ToDelimitedString())) : null
