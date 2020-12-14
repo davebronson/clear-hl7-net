@@ -15,10 +15,62 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new ShpSegment
             {
-                
+                ShipmentId = new EntityIdentifier
+                {
+                    EntityId = "1"
+                },
+                InternalShipmentId = new EntityIdentifier[]
+                {
+                    new EntityIdentifier
+                    {
+                        EntityId = "2"
+                    }
+                },
+                ShipmentStatus = new CodedWithExceptions
+                {
+                    Identifier = "3"
+                },
+                ShipmentStatusDateTime = new DateTime(2020, 4, 4, 0, 0, 4),
+                ShipmentStatusReason = new Text
+                {
+                    Value = "5"
+                },
+                ShipmentPriority = new CodedWithExceptions
+                {
+                    Identifier = "6"
+                },
+                ShipmentConfidentiality = new CodedWithExceptions[]
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "7"
+                    }
+                },
+                NumberOfPackagesInShipment = 8,
+                ShipmentCondition = new CodedWithExceptions[]
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "9"
+                    }
+                },
+                ShipmentHandlingCode = new CodedWithExceptions[]
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "10"
+                    }
+                },
+                ShipmentRiskCode = new CodedWithExceptions[]
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "11"
+                    }
+                }
             };
 
-            string expected = "SHP|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "SHP|1|2|3|20200404000004|5|6|7|8|9|10|11";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

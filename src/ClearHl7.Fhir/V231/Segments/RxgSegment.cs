@@ -148,7 +148,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 StringHelper.StringFormatSequence(0, 23, Configuration.FieldSeparator),
                                 Id,
                                 GiveSubIdCounter.HasValue ? GiveSubIdCounter.Value.ToString(Consts.NumericFormat, culture) : null,
-                                DispenseSubIdCounter.HasValue ? GiveSubIdCounter.Value.ToString(Consts.NumericFormat, culture) : null,
+                                DispenseSubIdCounter.HasValue ? DispenseSubIdCounter.Value.ToString(Consts.NumericFormat, culture) : null,
                                 QuantityTiming?.ToDelimitedString(),
                                 GiveCode?.ToDelimitedString(),
                                 GiveAmountMinimum.HasValue ? GiveAmountMinimum.Value.ToString(Consts.NumericFormat, culture) : null,

@@ -1,5 +1,4 @@
-﻿using System;
-using ClearHl7.Fhir.V282.Segments;
+﻿using ClearHl7.Fhir.V282.Segments;
 using ClearHl7.Fhir.V282.Types;
 using Xunit;
 
@@ -15,10 +14,77 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new Ub2Segment
             {
-                
+                SetIdUb2 = 1,
+                CoInsuranceDays9 = "2",
+                ConditionCode2430 = new CodedWithExceptions[]
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "3"
+                    }
+                },
+                CoveredDays7 = "4",
+                NonCoveredDays8 = "5",
+                ValueAmountCode3941 = new ValueCodeAndAmount[]
+                {
+                    new ValueCodeAndAmount
+                    {
+                        ValueCode = new CodedWithExceptions
+                        {
+                            Identifier = "6"
+                        }
+                    }
+                },
+                OccurrenceCodeDate3235 = new OccurrenceCodeAndDate[]
+                {
+                    new OccurrenceCodeAndDate
+                    {
+                        OccurrenceCode = new CodedWithNoExceptions
+                        {
+                            Identifier = "7"
+                        }
+                    }
+                },
+                OccurrenceSpanCodeDates36 = new OccurrenceSpanCodeAndDate[]
+                {
+                    new OccurrenceSpanCodeAndDate
+                    {
+                        OccurrenceSpanCode = new CodedWithNoExceptions
+                        {
+                            Identifier = "8"
+                        }
+                    }
+                },
+                UniformBillingLocator2State = new string[]
+                {
+                    "9"
+                },
+                UniformBillingLocator11State = new string[]
+                {
+                    "10"
+                },
+                UniformBillingLocator31National = "11",
+                DocumentControlNumber = new string[]
+                {
+                    "12"
+                },
+                UniformBillingLocator49National = new string[]
+                {
+                    "13"
+                },
+                UniformBillingLocator56State = new string[]
+                {
+                    "14"
+                },
+                UniformBillingLocator57Sational = "15",
+                UniformBillingLocator78State = new string[]
+                {
+                    "16"
+                },
+                SpecialVisitCount = 17
             };
 
-            string expected = "UB2|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "UB2|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

@@ -15,10 +15,62 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new Tq1Segment
             {
-                
+                SetIdTq1 = 1,
+                Quantity = new CompositeQuantityWithUnits
+                {
+                    Quantity = 2
+                },
+                RepeatPattern = new RepeatPattern[]
+                {
+                    new RepeatPattern
+                    {
+                        RepeatPatternCode = new CodedWithExceptions
+                        {
+                            Identifier = "3"
+                        }
+                    }
+                },
+                ExplicitTime = new DateTime[]
+                {
+                    new DateTime(2020, 4, 4, 0, 0, 4)
+                },
+                RelativeTimeAndUnits = new CompositeQuantityWithUnits[]
+                {
+                    new CompositeQuantityWithUnits
+                    {
+                        Quantity = 5
+                    }
+                },
+                ServiceDuration = new CompositeQuantityWithUnits
+                {
+                    Quantity = 6
+                },
+                StartDateTime = new DateTime(2020, 7, 7, 0, 0, 7),
+                EndDateTime = new DateTime(2020, 8, 8, 0, 0, 8),
+                Priority = new CodedWithExceptions[]
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "9"
+                    }
+                },
+                ConditionText = new Text
+                {
+                    Value = "10"
+                },
+                TextInstruction = new Text
+                {
+                    Value = "11"
+                },
+                Conjunction = "12",
+                OccurrenceDuration = new CompositeQuantityWithUnits
+                {
+                    Quantity = 13
+                },
+                TotalOccurrences = 14
             };
 
-            string expected = "TQ1|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "TQ1|1|2|3|000004|5|6|20200707000007|20200808000008|9|10|11|12|13|14";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

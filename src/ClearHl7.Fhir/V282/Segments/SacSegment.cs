@@ -272,7 +272,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 PrimaryParentContainerIdentifier?.ToDelimitedString(),
                                 EquipmentContainerIdentifier?.ToDelimitedString(),
                                 SpecimenSource,
-                                RegistrationDateTime.HasValue ? RegistrationDateTime.Value.ToString(Consts.NumericFormat, culture) : null,
+                                RegistrationDateTime.HasValue ? RegistrationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 ContainerStatus?.ToDelimitedString(),
                                 CarrierType?.ToDelimitedString(),
                                 CarrierIdentifier?.ToDelimitedString(),

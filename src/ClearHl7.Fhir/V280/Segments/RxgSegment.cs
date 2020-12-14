@@ -203,7 +203,7 @@ namespace ClearHl7.Fhir.V280.Segments
                                 StringHelper.StringFormatSequence(0, 34, Configuration.FieldSeparator),
                                 Id,
                                 GiveSubIdCounter.HasValue ? GiveSubIdCounter.Value.ToString(Consts.NumericFormat, culture) : null,
-                                DispenseSubIdCounter.HasValue ? GiveSubIdCounter.Value.ToString(Consts.NumericFormat, culture) : null,
+                                DispenseSubIdCounter.HasValue ? DispenseSubIdCounter.Value.ToString(Consts.NumericFormat, culture) : null,
                                 QuantityTiming,
                                 GiveCode?.ToDelimitedString(),
                                 GiveAmountMinimum.HasValue ? GiveAmountMinimum.Value.ToString(Consts.NumericFormat, culture) : null,
