@@ -15,10 +15,94 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new Pd1Segment
             {
-                
+                LivingDependency = new CodedWithExceptions[]
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "1"
+                    }
+                },
+                LivingArrangement = new CodedWithExceptions
+                {
+                    Identifier = "2"
+                },
+                PatientPrimaryFacility = new ExtendedCompositeNameAndIdNumberForOrganizations[]
+                {
+                    new ExtendedCompositeNameAndIdNumberForOrganizations
+                    {
+                        OrganizationName = "3"
+                    }
+                },
+                PatientPrimaryCareProviderNameIdNo = new ExtendedCompositeIdNumberAndNameForPersons
+                {
+                    PersonIdentifier = "4"
+                },
+                StudentIndicator = new CodedWithExceptions
+                {
+                    Identifier = "5"
+                },
+                Handicap = new CodedWithExceptions
+                {
+                    Identifier = "6"
+                },
+                LivingWillCode = new CodedWithExceptions
+                {
+                    Identifier = "7"
+                },
+                OrganDonorCode = new CodedWithExceptions
+                {
+                    Identifier = "8"
+                },
+                SeparateBill = "9",
+                DuplicatePatient = new ExtendedCompositeIdWithCheckDigit[]
+                {
+                    new ExtendedCompositeIdWithCheckDigit
+                    {
+                        IdNumber = "10"
+                    }
+                },
+                PublicityCode = new CodedWithExceptions
+                {
+                    Identifier = "11"
+                },
+                ProtectionIndicator = "12",
+                ProtectionIndicatorEffectiveDate = new DateTime(2020, 1, 13),
+                PlaceOfWorship = new ExtendedCompositeNameAndIdNumberForOrganizations[]
+                {
+                    new ExtendedCompositeNameAndIdNumberForOrganizations
+                    {
+                        OrganizationName = "14"
+                    }
+                },
+                AdvanceDirectiveCode = new CodedWithExceptions[]
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "15"
+                    }
+                },
+                ImmunizationRegistryStatus = new CodedWithExceptions
+                {
+                    Identifier = "16"
+                },
+                ImmunizationRegistryStatusEffectiveDate = new DateTime(2020, 1, 17),
+                PublicityCodeEffectiveDate = new DateTime(2020, 1, 18),
+                MilitaryBranch = new CodedWithExceptions
+                {
+                    Identifier = "19"
+                },
+                MilitaryRankGrade = new CodedWithExceptions
+                {
+                    Identifier = "20"
+                },
+                MilitaryStatus = new CodedWithExceptions
+                {
+                    Identifier = "21"
+                },
+                AdvanceDirectiveLastVerifiedDate = new DateTime(2020, 1, 22)
             };
 
-            string expected = "PD1|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "PD1|1|2|3|4|5|6|7|8|9|10|11|12|20200113|14|15|16|20200117|20200118|19|20|21|20200122";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

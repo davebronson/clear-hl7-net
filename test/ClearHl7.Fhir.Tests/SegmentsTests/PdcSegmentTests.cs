@@ -15,10 +15,51 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new PdcSegment
             {
-                
+                ManufacturerDistributor = new ExtendedCompositeNameAndIdNumberForOrganizations[]
+                {
+                    new ExtendedCompositeNameAndIdNumberForOrganizations
+                    {
+                        OrganizationName = "1"
+                    }
+                },
+                Country = new CodedWithExceptions
+                {
+                    Identifier = "2"
+                },
+                BrandName = "3",
+                DeviceFamilyName = "4",
+                GenericName = new CodedWithExceptions
+                {
+                    Identifier = "5"
+                },
+                ModelIdentifier = new string[]
+                {
+                    "6"
+                },
+                CatalogueIdentifier = "7",
+                OtherIdentifier = new string[]
+                {
+                    "8"
+                },
+                ProductCode = new CodedWithExceptions
+                {
+                    Identifier = "9"
+                },
+                MarketingBasis = "10",
+                MarketingApprovalId = "11",
+                LabeledShelfLife = new CompositeQuantityWithUnits
+                {
+                    Quantity = 12
+                },
+                ExpectedShelfLife = new CompositeQuantityWithUnits
+                {
+                    Quantity = 13
+                },
+                DateFirstMarketed = new DateTime(2020, 1, 14, 0, 0, 14),
+                DateLastMarketed = new DateTime(2020, 1, 15, 0, 0, 15)
             };
 
-            string expected = "PDC|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "PDC|1|2|3|4|5|6|7|8|9|10|11|12|13|20200114000014|20200115000015";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

@@ -15,10 +15,61 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new PesSegment
             {
-                
+                SenderOrganizationName = new ExtendedCompositeNameAndIdNumberForOrganizations[]
+                {
+                    new ExtendedCompositeNameAndIdNumberForOrganizations
+                    {
+                        OrganizationName = "1"
+                    }
+                },
+                SenderIndividualName = new ExtendedCompositeIdNumberAndNameForPersons[]
+                {
+                    new ExtendedCompositeIdNumberAndNameForPersons
+                    {
+                        PersonIdentifier = "2"
+                    }
+                },
+                SenderAddress = new ExtendedAddress[]
+                {
+                    new ExtendedAddress
+                    {
+                        StreetAddress = new StreetAddress
+                        {
+                            StreetOrMailingAddress = "3"
+                        }
+                    }
+                },
+                SenderTelephone = new ExtendedTelecommunicationNumber[]
+                {
+                    new ExtendedTelecommunicationNumber
+                    {
+                        TelephoneNumber = "4"
+                    }
+                },
+                SenderEventIdentifier = new EntityIdentifier
+                {
+                    EntityId = "5"
+                },
+                SenderSequenceNumber = 6,
+                SenderEventDescription = new string[]
+                {
+                    "7"
+                },
+                SenderComment = "8",
+                SenderAwareDateTime = new DateTime(2020, 9, 9, 0, 0, 9),
+                EventReportDate = new DateTime(2020, 10, 10, 0, 0, 10),
+                EventReportTimingType = new string[]
+                {
+                    "11"
+                },
+                EventReportSource = "12",
+                EventReportedTo = new string[]
+                {
+                    "13"
+                }
             };
 
-            string expected = "PES|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "PES|1|2|3|4|5|6|7|8|20200909000009|20201010000010|11|12|13";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);
