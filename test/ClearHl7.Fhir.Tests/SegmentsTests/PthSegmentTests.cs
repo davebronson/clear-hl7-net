@@ -15,10 +15,28 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new PthSegment
             {
-                
+                ActionCode = "1",
+                PathwayId = new CodedWithExceptions
+                {
+                    Identifier = "2"
+                },
+                PathwayInstanceId = new EntityIdentifier
+                {
+                    EntityId = "3"
+                },
+                PathwayEstablishedDateTime = new DateTime(2020, 4, 4, 0, 0, 4),
+                PathwayLifeCycleStatus = new CodedWithExceptions
+                {
+                    Identifier = "5"
+                },
+                ChangePathwayLifeCycleStatusDateTime = new DateTime(2020, 6, 6, 0, 0, 6),
+                MoodCode = new CodedWithNoExceptions
+                {
+                    Identifier = "7"
+                }
             };
 
-            string expected = "PTH|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "PTH|1|2|3|20200404000004|5|20200606000006|7";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

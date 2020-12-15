@@ -15,10 +15,61 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new RelSegment
             {
-                
+                SetIdRel = 1,
+                RelationshipType = new CodedWithExceptions
+                {
+                    Identifier = "2"
+                },
+                ThisRelationshipInstanceIdentifier = new EntityIdentifier
+                {
+                    EntityId = "3"
+                },
+                SourceInformationInstanceIdentifier = new EntityIdentifier
+                {
+                    EntityId = "4"
+                },
+                TargetInformationInstanceIdentifier = new EntityIdentifier
+                {
+                    EntityId = "5"
+                },
+                AssertingEntityInstanceId = new EntityIdentifier
+                {
+                    EntityId = "6"
+                },
+                AssertingPerson = new ExtendedCompositeIdNumberAndNameForPersons
+                {
+                    PersonIdentifier = "7"
+                },
+                AssertingOrganization = new ExtendedCompositeNameAndIdNumberForOrganizations
+                {
+                    OrganizationName = "8"
+                },
+                AssertorAddress = new ExtendedAddress
+                {
+                    StreetAddress = new StreetAddress
+                    {
+                        StreetOrMailingAddress = "9"
+                    }
+                },
+                AssertorContact = new ExtendedTelecommunicationNumber
+                {
+                    TelephoneNumber = "10"
+                },
+                AssertionDateRange = new DateTimeRange
+                {
+                    RangeStartDateTime = new DateTime(2020, 11, 11, 0, 0, 11)
+                },
+                NegationIndicator = "12",
+                CertaintyOfRelationship = new CodedWithExceptions
+                {
+                    Identifier = "13"
+                },
+                PriorityNo = 14,
+                PrioritySequenceNoRelPreferenceForConsideration = 15,
+                SeparabilityIndicator = "16"
             };
 
-            string expected = "REL|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "REL|1|2|3|4|5|6|7|8|9|10|20201111000011|12|13|14|15|16";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

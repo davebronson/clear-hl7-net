@@ -15,10 +15,38 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
         {
             ISegment hl7Segment = new PshSegment
             {
-                
+                ReportType = "1",
+                ReportFormIdentifier = "2",
+                ReportDate = new DateTime(2020, 3, 3, 0, 0, 3),
+                ReportIntervalStartDate = new DateTime(2020, 4, 4, 0, 0, 4),
+                ReportIntervalEndDate = new DateTime(2020, 5, 5, 0, 0, 5),
+                QuantityManufactured = new CompositeQuantityWithUnits
+                {
+                    Quantity = 6
+                },
+                QuantityDistributed = new CompositeQuantityWithUnits
+                {
+                    Quantity = 7
+                },
+                QuantityDistributedMethod = "8",
+                QuantityDistributedComment = "9",
+                QuantityInUse = new CompositeQuantityWithUnits
+                {
+                    Quantity = 10
+                },
+                QuantityInUseMethod = "11",
+                QuantityInUseComment = "12",
+                NumberOfProductExperienceReportsFiledByFacility = new decimal[]
+                {
+                    13
+                },
+                NumberOfProductExperienceReportsFiledByDistributor = new decimal[]
+                {
+                    14
+                }
             };
 
-            string expected = "PSH|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50";
+            string expected = "PSH|1|2|20200303000003|20200404000004|20200505000005|6|7|8|9|10|11|12|13|14";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);
