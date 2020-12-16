@@ -16,7 +16,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
             ISegment hl7Segment = new BtxSegment
             {
                 SetIdBtx = 1,
-                BcDonationid = new EntityIdentifier
+                BcDonationId = new EntityIdentifier
                 {
                     EntityId = "2"
                 },

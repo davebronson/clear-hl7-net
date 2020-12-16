@@ -134,7 +134,7 @@ namespace ClearHl7.Fhir.V251.Segments
                                 StringHelper.StringFormatSequence(0, 20, Configuration.FieldSeparator),
                                 Id,
                                 SetIdBtx.HasValue ? SetIdBtx.Value.ToString(culture) : null,
-                                BcDonationid?.ToDelimitedString(),
+                                BcDonationId?.ToDelimitedString(),
                                 BcComponent?.ToDelimitedString(),
                                 BcBloodGroup?.ToDelimitedString(),
                                 CpCommercialProduct?.ToDelimitedString(),
