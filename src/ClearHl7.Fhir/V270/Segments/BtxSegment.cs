@@ -29,7 +29,7 @@ namespace ClearHl7.Fhir.V270.Segments
         /// <summary>
         /// BTX.2 - BC Donation ID.
         /// </summary>
-        public EntityIdentifier BcDonationid { get; set; }
+        public EntityIdentifier BcDonationId { get; set; }
 
         /// <summary>
         /// BTX.3 - BC Component.
