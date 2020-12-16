@@ -161,7 +161,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// <summary>
         /// OM1.27 - Outside Site(s) Where Observation May Be Performed.
         /// </summary>
-        public IEnumerable<CodedWithExceptions> OutsideSiteSWhereObservationMayBePerformed { get; set; }
+        public IEnumerable<CodedWithExceptions> OutsideSitesWhereObservationMayBePerformed { get; set; }
 
         /// <summary>
         /// OM1.28 - Address of Outside Site(s).
@@ -370,7 +370,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 ProcessingTime.HasValue ? ProcessingTime.Value.ToString(Consts.NumericFormat) : null,
                                 ProcessingPriority != null ? string.Join(Configuration.FieldRepeatSeparator, ProcessingPriority) : null,
                                 ReportingPriority,
-                                OutsideSiteSWhereObservationMayBePerformed != null ? string.Join(Configuration.FieldRepeatSeparator, OutsideSiteSWhereObservationMayBePerformed.Select(x => x.ToDelimitedString())) : null,
+                                OutsideSitesWhereObservationMayBePerformed != null ? string.Join(Configuration.FieldRepeatSeparator, OutsideSitesWhereObservationMayBePerformed.Select(x => x.ToDelimitedString())) : null,
                                 AddressOfOutsideSites != null ? string.Join(Configuration.FieldRepeatSeparator, AddressOfOutsideSites.Select(x => x.ToDelimitedString())) : null,
                                 PhoneNumberOfOutsideSite?.ToDelimitedString(),
                                 ConfidentialityCode?.ToDelimitedString(),

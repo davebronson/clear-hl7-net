@@ -92,7 +92,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                     "25"
                 },
                 ReportingPriority = "26",
-                OutsideSiteSWhereObservationMayBePerformed = new CodedWithExceptions[]
+                OutsideSitesWhereObservationMayBePerformed = new CodedWithExceptions[]
                 {
                     new CodedWithExceptions
                     {
