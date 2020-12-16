@@ -204,7 +204,7 @@ namespace ClearHl7.Fhir.V282.Segments
         /// ITM.33 - United Nations Standard Products and Services Code (UNSPSC).
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0396</remarks>
-        public CodedWithExceptions UnitedNationsStandardProductsAndServicesCodeUnspsc { get; set; }
+        public CodedWithExceptions UnitedNationsStandardProductsAndServicesCode { get; set; }
         
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -250,7 +250,7 @@ namespace ClearHl7.Fhir.V282.Segments
                                 HazardousIndicator?.ToDelimitedString(),
                                 SterileIndicator?.ToDelimitedString(),
                                 MaterialDataSafetySheetNumber?.ToDelimitedString(),
-                                UnitedNationsStandardProductsAndServicesCodeUnspsc?.ToDelimitedString()
+                                UnitedNationsStandardProductsAndServicesCode?.ToDelimitedString()
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

@@ -142,7 +142,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     EntityId = "32"
                 },
-                UnitedNationsStandardProductsAndServicesCodeUnspsc = new CodedWithExceptions
+                UnitedNationsStandardProductsAndServicesCode = new CodedWithExceptions
                 {
                     Identifier = "33"
                 }
