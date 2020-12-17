@@ -21,6 +21,8 @@
 
   <ItemGroup>
     <Folder Include="MessagesTests\" />
+    <Folder Include="HelpersTests\" />
+    <Folder Include="FormatTests\" />
   </ItemGroup>
 
   <ItemGroup>
