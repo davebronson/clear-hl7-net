@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace ClearHl7.Fhir.Codes.V240.Helpers
 {
@@ -8,7036 +8,7036 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
     public class EnumHelper : IEnumHelper
     {
         /// <summary>
-        /// Converts the given AcceptApplicationAcknowledgmentConditions enum value into its HL7 equivalent code.
+        /// Converts the given CodeAcceptApplicationAcknowledgmentConditions enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AcceptApplicationAcknowledgmentConditions input)
+        public string EnumToCode(CodeAcceptApplicationAcknowledgmentConditions input)
         {
             return input switch
             {
-                AcceptApplicationAcknowledgmentConditions.Always => "AL",
-                AcceptApplicationAcknowledgmentConditions.ErrorRejectConditionsOnly => "ER",
-                AcceptApplicationAcknowledgmentConditions.Never => "NE",
-                AcceptApplicationAcknowledgmentConditions.SuccessfulCompletionOnly => "SU",
+                CodeAcceptApplicationAcknowledgmentConditions.Always => "AL",
+                CodeAcceptApplicationAcknowledgmentConditions.ErrorRejectConditionsOnly => "ER",
+                CodeAcceptApplicationAcknowledgmentConditions.Never => "NE",
+                CodeAcceptApplicationAcknowledgmentConditions.SuccessfulCompletionOnly => "SU",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AcknowledgmentTypeCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeAcknowledgmentCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AcknowledgmentTypeCode input)
+        public string EnumToCode(CodeAcknowledgmentCode input)
         {
             return input switch
             {
-                AcknowledgmentTypeCode.OriginalModeAcceptEnhancedModeAcknowledgmentAccept => "AA",
-                AcknowledgmentTypeCode.OriginalModeErrorEnhancedModeAcknowledgmentError => "AE",
-                AcknowledgmentTypeCode.OriginalModeRejectEnhancedModeAcknowledgmentReject => "AR",
-                AcknowledgmentTypeCode.EnhancedModeAcceptAcknowledgmentCommitAccept => "CA",
-                AcknowledgmentTypeCode.EnhancedModeAcceptAcknowledgmentCommitError => "CE",
-                AcknowledgmentTypeCode.EnhancedModeAcceptAcknowledgmentCommitReject => "CR",
+                CodeAcknowledgmentCode.OriginalModeAcceptEnhancedModeAcknowledgmentAccept => "AA",
+                CodeAcknowledgmentCode.OriginalModeErrorEnhancedModeAcknowledgmentError => "AE",
+                CodeAcknowledgmentCode.OriginalModeRejectEnhancedModeAcknowledgmentReject => "AR",
+                CodeAcknowledgmentCode.EnhancedModeAcceptAcknowledgmentCommitAccept => "CA",
+                CodeAcknowledgmentCode.EnhancedModeAcceptAcknowledgmentCommitError => "CE",
+                CodeAcknowledgmentCode.EnhancedModeAcceptAcknowledgmentCommitReject => "CR",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ActionCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeActionCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ActionCode input)
+        public string EnumToCode(CodeActionCode input)
         {
             return input switch
             {
-                ActionCode.AddInsert => "A",
-                ActionCode.Delete => "D",
-                ActionCode.Update => "U",
+                CodeActionCode.AddInsert => "A",
+                CodeActionCode.Delete => "D",
+                CodeActionCode.Update => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ActionTakenInResponseToTheEventCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeActionTakenInResponseToTheEvent enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ActionTakenInResponseToTheEventCode input)
+        public string EnumToCode(CodeActionTakenInResponseToTheEvent input)
         {
             return input switch
             {
-                ActionTakenInResponseToTheEventCode.ProductDoseIncreased => "DI",
-                ActionTakenInResponseToTheEventCode.ProductDoseReduced => "DR",
-                ActionTakenInResponseToTheEventCode.None => "N",
-                ActionTakenInResponseToTheEventCode.Other => "OT",
-                ActionTakenInResponseToTheEventCode.ProductWithdrawnPermanently => "WP",
-                ActionTakenInResponseToTheEventCode.ProductWithdrawnTemporarily => "WT",
+                CodeActionTakenInResponseToTheEvent.ProductDoseIncreased => "DI",
+                CodeActionTakenInResponseToTheEvent.ProductDoseReduced => "DR",
+                CodeActionTakenInResponseToTheEvent.None => "N",
+                CodeActionTakenInResponseToTheEvent.Other => "OT",
+                CodeActionTakenInResponseToTheEvent.ProductWithdrawnPermanently => "WP",
+                CodeActionTakenInResponseToTheEvent.ProductWithdrawnTemporarily => "WT",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ActiveInactive enum value into its HL7 equivalent code.
+        /// Converts the given CodeActiveInactive enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ActiveInactive input)
+        public string EnumToCode(CodeActiveInactive input)
         {
             return input switch
             {
-                ActiveInactive.ActiveStaff => "A",
-                ActiveInactive.InactiveStaff => "I",
+                CodeActiveInactive.ActiveStaff => "A",
+                CodeActiveInactive.InactiveStaff => "I",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AdditivePreservative enum value into its HL7 equivalent code.
+        /// Converts the given CodeAdditivePreservative enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AdditivePreservative input)
+        public string EnumToCode(CodeAdditivePreservative input)
         {
             return input switch
             {
-                AdditivePreservative.BorateBoricAcid => "BOR",
-                AdditivePreservative.ThreePointTwoPercentCitrate => "C32",
-                AdditivePreservative.ThreePointEightPercentCitrate => "C38",
-                AdditivePreservative.PotassiumKEdta => "EDTK",
-                AdditivePreservative.SodiumNaEdta => "EDTN",
-                AdditivePreservative.SixNHcl => "HCL6",
-                AdditivePreservative.LithiumLiHeparin => "HEPL",
-                AdditivePreservative.SodiumNaHeparin => "HEPN",
+                CodeAdditivePreservative.BorateBoricAcid => "BOR",
+                CodeAdditivePreservative.ThreePointTwoPercentCitrate => "C32",
+                CodeAdditivePreservative.ThreePointEightPercentCitrate => "C38",
+                CodeAdditivePreservative.PotassiumKEdta => "EDTK",
+                CodeAdditivePreservative.SodiumNaEdta => "EDTN",
+                CodeAdditivePreservative.SixNHcl => "HCL6",
+                CodeAdditivePreservative.LithiumLiHeparin => "HEPL",
+                CodeAdditivePreservative.SodiumNaHeparin => "HEPN",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AddressTypeCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeAddressType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AddressTypeCode input)
+        public string EnumToCode(CodeAddressType input)
         {
             return input switch
             {
-                AddressTypeCode.FirmBusiness => "B",
-                AddressTypeCode.BadAddress => "BA",
-                AddressTypeCode.BirthDeliveryLocation => "BDL",
-                AddressTypeCode.ResidenceAtBirth => "BR",
-                AddressTypeCode.CurrentOrTemporary => "C",
-                AddressTypeCode.CountryOfOrigin => "F",
-                AddressTypeCode.Home => "H",
-                AddressTypeCode.LegalAddress => "L",
-                AddressTypeCode.Mailing => "M",
-                AddressTypeCode.BirthNee => "N",
-                AddressTypeCode.OfficeBusiness => "O",
-                AddressTypeCode.Permanent => "P",
-                AddressTypeCode.RegistryHome => "RH",
+                CodeAddressType.FirmBusiness => "B",
+                CodeAddressType.BadAddress => "BA",
+                CodeAddressType.BirthDeliveryLocation => "BDL",
+                CodeAddressType.ResidenceAtBirth => "BR",
+                CodeAddressType.CurrentOrTemporary => "C",
+                CodeAddressType.CountryOfOrigin => "F",
+                CodeAddressType.Home => "H",
+                CodeAddressType.LegalAddress => "L",
+                CodeAddressType.Mailing => "M",
+                CodeAddressType.BirthNee => "N",
+                CodeAddressType.OfficeBusiness => "O",
+                CodeAddressType.Permanent => "P",
+                CodeAddressType.RegistryHome => "RH",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AdministrationDeviceCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeAdministrationDevice enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AdministrationDeviceCode input)
+        public string EnumToCode(CodeAdministrationDevice input)
         {
             return input switch
             {
-                AdministrationDeviceCode.Applicator => "AP",
-                AdministrationDeviceCode.Buretrol => "BT",
-                AdministrationDeviceCode.HeparinLock => "HL",
-                AdministrationDeviceCode.Ippb => "IPPB",
-                AdministrationDeviceCode.IvPump => "IVP",
-                AdministrationDeviceCode.IvSoluset => "IVS",
-                AdministrationDeviceCode.MeteredInhaler => "MI",
-                AdministrationDeviceCode.Nebulizer => "NEB",
-                AdministrationDeviceCode.PcaPump => "PCA",
+                CodeAdministrationDevice.Applicator => "AP",
+                CodeAdministrationDevice.Buretrol => "BT",
+                CodeAdministrationDevice.HeparinLock => "HL",
+                CodeAdministrationDevice.Ippb => "IPPB",
+                CodeAdministrationDevice.IvPump => "IVP",
+                CodeAdministrationDevice.IvSoluset => "IVS",
+                CodeAdministrationDevice.MeteredInhaler => "MI",
+                CodeAdministrationDevice.Nebulizer => "NEB",
+                CodeAdministrationDevice.PcaPump => "PCA",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AdministrationMethodCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeAdministrationMethod enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AdministrationMethodCode input)
+        public string EnumToCode(CodeAdministrationMethod input)
         {
             return input switch
             {
-                AdministrationMethodCode.Chew => "CH",
-                AdministrationMethodCode.Dissolve => "DI",
-                AdministrationMethodCode.Dust => "DU",
-                AdministrationMethodCode.Infiltrate => "IF",
-                AdministrationMethodCode.Irrigate => "IR",
-                AdministrationMethodCode.Insert => "IS",
-                AdministrationMethodCode.IvPush => "IVP",
-                AdministrationMethodCode.IvPiggyback => "IVPB",
-                AdministrationMethodCode.Nebulized => "NB",
-                AdministrationMethodCode.Perfuse => "PF",
-                AdministrationMethodCode.Paint => "PT",
-                AdministrationMethodCode.Shampoo => "SH",
-                AdministrationMethodCode.Soak => "SO",
-                AdministrationMethodCode.Wash => "WA",
-                AdministrationMethodCode.Wipe => "WI",
+                CodeAdministrationMethod.Chew => "CH",
+                CodeAdministrationMethod.Dissolve => "DI",
+                CodeAdministrationMethod.Dust => "DU",
+                CodeAdministrationMethod.Infiltrate => "IF",
+                CodeAdministrationMethod.Irrigate => "IR",
+                CodeAdministrationMethod.Insert => "IS",
+                CodeAdministrationMethod.IvPush => "IVP",
+                CodeAdministrationMethod.IvPiggyback => "IVPB",
+                CodeAdministrationMethod.Nebulized => "NB",
+                CodeAdministrationMethod.Perfuse => "PF",
+                CodeAdministrationMethod.Paint => "PT",
+                CodeAdministrationMethod.Shampoo => "SH",
+                CodeAdministrationMethod.Soak => "SO",
+                CodeAdministrationMethod.Wash => "WA",
+                CodeAdministrationMethod.Wipe => "WI",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AdministrativeSexCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeAdministrativeSex enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AdministrativeSexCode input)
+        public string EnumToCode(CodeAdministrativeSex input)
         {
             return input switch
             {
-                AdministrativeSexCode.Ambiguous => "A",
-                AdministrativeSexCode.Female => "F",
-                AdministrativeSexCode.Male => "M",
-                AdministrativeSexCode.NotApplicable => "N",
-                AdministrativeSexCode.Other => "O",
-                AdministrativeSexCode.Unknown => "U",
+                CodeAdministrativeSex.Ambiguous => "A",
+                CodeAdministrativeSex.Female => "F",
+                CodeAdministrativeSex.Male => "M",
+                CodeAdministrativeSex.NotApplicable => "N",
+                CodeAdministrativeSex.Other => "O",
+                CodeAdministrativeSex.Unknown => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AdmissionLevelOfCareValueCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeAdmissionLevelOfCareCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AdmissionLevelOfCareValueCode input)
+        public string EnumToCode(CodeAdmissionLevelOfCareCode input)
         {
             return input switch
             {
-                AdmissionLevelOfCareValueCode.Acute => "AC",
-                AdmissionLevelOfCareValueCode.Chronic => "CH",
-                AdmissionLevelOfCareValueCode.Comatose => "CO",
-                AdmissionLevelOfCareValueCode.Critical => "CR",
-                AdmissionLevelOfCareValueCode.Improved => "IM",
-                AdmissionLevelOfCareValueCode.Moribund => "MO",
+                CodeAdmissionLevelOfCareCode.Acute => "AC",
+                CodeAdmissionLevelOfCareCode.Chronic => "CH",
+                CodeAdmissionLevelOfCareCode.Comatose => "CO",
+                CodeAdmissionLevelOfCareCode.Critical => "CR",
+                CodeAdmissionLevelOfCareCode.Improved => "IM",
+                CodeAdmissionLevelOfCareCode.Moribund => "MO",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AdmissionTypeCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeAdmissionType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AdmissionTypeCode input)
+        public string EnumToCode(CodeAdmissionType input)
         {
             return input switch
             {
-                AdmissionTypeCode.Accident => "A",
-                AdmissionTypeCode.Elective => "C",
-                AdmissionTypeCode.Emergency => "E",
-                AdmissionTypeCode.LaborAndDelivery => "L",
-                AdmissionTypeCode.NewbornBirthInHealthcareFacility => "N",
-                AdmissionTypeCode.Routine => "R",
-                AdmissionTypeCode.Urgent => "U",
+                CodeAdmissionType.Accident => "A",
+                CodeAdmissionType.Elective => "C",
+                CodeAdmissionType.Emergency => "E",
+                CodeAdmissionType.LaborAndDelivery => "L",
+                CodeAdmissionType.NewbornBirthInHealthcareFacility => "N",
+                CodeAdmissionType.Routine => "R",
+                CodeAdmissionType.Urgent => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AdmitSourceCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeAdmitSource enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AdmitSourceCode input)
+        public string EnumToCode(CodeAdmitSource input)
         {
             return input switch
             {
-                AdmitSourceCode.PhysicianReferral => "1",
-                AdmitSourceCode.ClinicReferral => "2",
-                AdmitSourceCode.HmoReferral => "3",
-                AdmitSourceCode.TransferFromHospital => "4",
-                AdmitSourceCode.TransferFromSkilledNursingFacility => "5",
-                AdmitSourceCode.TransferFromAnotherHealthCareFacility => "6",
-                AdmitSourceCode.EmergencyRoom => "7",
-                AdmitSourceCode.CourtLawEnforcement => "8",
-                AdmitSourceCode.InformationNotAvailable => "9",
+                CodeAdmitSource.PhysicianReferral => "1",
+                CodeAdmitSource.ClinicReferral => "2",
+                CodeAdmitSource.HmoReferral => "3",
+                CodeAdmitSource.TransferFromHospital => "4",
+                CodeAdmitSource.TransferFromSkilledNursingFacility => "5",
+                CodeAdmitSource.TransferFromAnotherHealthCareFacility => "6",
+                CodeAdmitSource.EmergencyRoom => "7",
+                CodeAdmitSource.CourtLawEnforcement => "8",
+                CodeAdmitSource.InformationNotAvailable => "9",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AdvancedBeneficiaryNoticeCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeAdvancedBeneficiaryNoticeCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AdvancedBeneficiaryNoticeCode input)
+        public string EnumToCode(CodeAdvancedBeneficiaryNoticeCode input)
         {
             return input switch
             {
-                AdvancedBeneficiaryNoticeCode.ServiceSubjectToMedicalNecessity => "1",
-                AdvancedBeneficiaryNoticeCode.PatientHasBeenInformedAndAgreesToPayForService => "2",
-                AdvancedBeneficiaryNoticeCode.PatientHasBeenInformedAndAsksThatPayerBeBilled => "3",
-                AdvancedBeneficiaryNoticeCode.AdvancedBeneficiaryNoticeHasNotBeenSigned => "4",
+                CodeAdvancedBeneficiaryNoticeCode.ServiceSubjectToMedicalNecessity => "1",
+                CodeAdvancedBeneficiaryNoticeCode.PatientHasBeenInformedAndAgreesToPayForService => "2",
+                CodeAdvancedBeneficiaryNoticeCode.PatientHasBeenInformedAndAsksThatPayerBeBilled => "3",
+                CodeAdvancedBeneficiaryNoticeCode.AdvancedBeneficiaryNoticeHasNotBeenSigned => "4",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AdvanceDirectiveCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeAdvanceDirectiveCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AdvanceDirectiveCode input)
+        public string EnumToCode(CodeAdvanceDirectiveCode input)
         {
             return input switch
             {
-                AdvanceDirectiveCode.DoNotResuscitate => "DNR",
+                CodeAdvanceDirectiveCode.DoNotResuscitate => "DNR",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AlertDeviceCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeAlertDeviceCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AlertDeviceCode input)
+        public string EnumToCode(CodeAlertDeviceCode input)
         {
             return input switch
             {
-                AlertDeviceCode.Bracelet => "B",
-                AlertDeviceCode.Necklace => "N",
-                AlertDeviceCode.WalletCard => "W",
+                CodeAlertDeviceCode.Bracelet => "B",
+                CodeAlertDeviceCode.Necklace => "N",
+                CodeAlertDeviceCode.WalletCard => "W",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AlertLevel enum value into its HL7 equivalent code.
+        /// Converts the given CodeAlertLevel enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AlertLevel input)
+        public string EnumToCode(CodeAlertLevel input)
         {
             return input switch
             {
-                AlertLevel.Critical => "C",
-                AlertLevel.Normal => "N",
-                AlertLevel.Serious => "S",
-                AlertLevel.Warning => "W",
+                CodeAlertLevel.Critical => "C",
+                CodeAlertLevel.Normal => "N",
+                CodeAlertLevel.Serious => "S",
+                CodeAlertLevel.Warning => "W",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AllergenType enum value into its HL7 equivalent code.
+        /// Converts the given CodeAllergenType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AllergenType input)
+        public string EnumToCode(CodeAllergenType input)
         {
             return input switch
             {
-                AllergenType.AnimalAllergy => "AA",
-                AllergenType.DrugAllergy => "DA",
-                AllergenType.EnvironmentalAllergy => "EA",
-                AllergenType.FoodAllergy => "FA",
-                AllergenType.PollenAllergy => "LA",
-                AllergenType.MiscellaneousAllergy => "MA",
-                AllergenType.MiscellaneousContraindication => "MC",
-                AllergenType.PlantAllergy => "PA",
+                CodeAllergenType.AnimalAllergy => "AA",
+                CodeAllergenType.DrugAllergy => "DA",
+                CodeAllergenType.EnvironmentalAllergy => "EA",
+                CodeAllergenType.FoodAllergy => "FA",
+                CodeAllergenType.PollenAllergy => "LA",
+                CodeAllergenType.MiscellaneousAllergy => "MA",
+                CodeAllergenType.MiscellaneousContraindication => "MC",
+                CodeAllergenType.PlantAllergy => "PA",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AllergyClinicalStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeAllergyClinicalStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AllergyClinicalStatus input)
+        public string EnumToCode(CodeAllergyClinicalStatus input)
         {
             return input switch
             {
-                AllergyClinicalStatus.ConfirmedOrVerified => "C",
-                AllergyClinicalStatus.DoubtRaised => "D",
-                AllergyClinicalStatus.Erroneous => "E",
-                AllergyClinicalStatus.ConfirmedButInactive => "I",
-                AllergyClinicalStatus.Pending => "P",
-                AllergyClinicalStatus.Suspect => "S",
-                AllergyClinicalStatus.Unconfirmed => "U",
+                CodeAllergyClinicalStatus.ConfirmedOrVerified => "C",
+                CodeAllergyClinicalStatus.DoubtRaised => "D",
+                CodeAllergyClinicalStatus.Erroneous => "E",
+                CodeAllergyClinicalStatus.ConfirmedButInactive => "I",
+                CodeAllergyClinicalStatus.Pending => "P",
+                CodeAllergyClinicalStatus.Suspect => "S",
+                CodeAllergyClinicalStatus.Unconfirmed => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AllergySeverity enum value into its HL7 equivalent code.
+        /// Converts the given CodeAllergySeverity enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AllergySeverity input)
+        public string EnumToCode(CodeAllergySeverity input)
         {
             return input switch
             {
-                AllergySeverity.Mild => "MI",
-                AllergySeverity.Moderate => "MO",
-                AllergySeverity.Severe => "SV",
-                AllergySeverity.Unknown => "U",
+                CodeAllergySeverity.Mild => "MI",
+                CodeAllergySeverity.Moderate => "MO",
+                CodeAllergySeverity.Severe => "SV",
+                CodeAllergySeverity.Unknown => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AllowSubstitution enum value into its HL7 equivalent code.
+        /// Converts the given CodeAllowSubstitution enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AllowSubstitution input)
+        public string EnumToCode(CodeAllowSubstitution input)
         {
             return input switch
             {
-                AllowSubstitution.AllowGenericSubstitutions => "G",
-                AllowSubstitution.SubstitutionsAreNotAuthorized => "N",
-                AllowSubstitution.AllowTherapeuticSubstitutions => "T",
+                CodeAllowSubstitution.AllowGenericSubstitutions => "G",
+                CodeAllowSubstitution.SubstitutionsAreNotAuthorized => "N",
+                CodeAllowSubstitution.AllowTherapeuticSubstitutions => "T",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AllowSubstitutionCodes enum value into its HL7 equivalent code.
+        /// Converts the given CodeAllowSubstitutionCodes enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AllowSubstitutionCodes input)
+        public string EnumToCode(CodeAllowSubstitutionCodes input)
         {
             return input switch
             {
-                AllowSubstitutionCodes.ContactPlacerPriorToSubstitution => "Confirm",
-                AllowSubstitutionCodes.SubstitutionIsNotAllowed => "No",
-                AllowSubstitutionCodes.NotifyPlacerThatSubstitutionHasBeenMade => "Notify",
-                AllowSubstitutionCodes.SubstitutionOfThisResourceIsAllowed => "Yes",
+                CodeAllowSubstitutionCodes.ContactPlacerPriorToSubstitution => "Confirm",
+                CodeAllowSubstitutionCodes.SubstitutionIsNotAllowed => "No",
+                CodeAllowSubstitutionCodes.NotifyPlacerThatSubstitutionHasBeenMade => "Notify",
+                CodeAllowSubstitutionCodes.SubstitutionOfThisResourceIsAllowed => "Yes",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AlternateCharacterSetHandlingScheme enum value into its HL7 equivalent code.
+        /// Converts the given CodeAlternateCharacterSetHandlingScheme enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AlternateCharacterSetHandlingScheme input)
+        public string EnumToCode(CodeAlternateCharacterSetHandlingScheme input)
         {
             return input switch
             {
-                AlternateCharacterSetHandlingScheme.CharacterSetSwitchingXpnExtendedPersonName => "2.3",
-                AlternateCharacterSetHandlingScheme.NoCharacterSetSwitching => "null",
-                AlternateCharacterSetHandlingScheme.Iso20221994 => "ISO 2022-1994",
+                CodeAlternateCharacterSetHandlingScheme.CharacterSetSwitchingXpnExtendedPersonName => "2.3",
+                CodeAlternateCharacterSetHandlingScheme.NoCharacterSetSwitching => "null",
+                CodeAlternateCharacterSetHandlingScheme.Iso20221994 => "ISO 2022-1994",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AlternateCharacterSets enum value into its HL7 equivalent code.
+        /// Converts the given CodeAlternateCharacterSets enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AlternateCharacterSets input)
+        public string EnumToCode(CodeAlternateCharacterSets input)
         {
             return input switch
             {
-                AlternateCharacterSets.Iso88591CharacterSet => "8859/1",
-                AlternateCharacterSets.Iso88592CharacterSet => "8859/2",
-                AlternateCharacterSets.Iso88593CharacterSet => "8859/3",
-                AlternateCharacterSets.Iso88594CharacterSet => "8859/4",
-                AlternateCharacterSets.Iso88595CharacterSet => "8859/5",
-                AlternateCharacterSets.Iso88596CharacterSet => "8859/6",
-                AlternateCharacterSets.Iso88597CharacterSet => "8859/7",
-                AlternateCharacterSets.Iso88598CharacterSet => "8859/8",
-                AlternateCharacterSets.Iso88599CharacterSet => "8859/9",
-                AlternateCharacterSets.Seven7BitAsciiCharacterSet => "ASCII",
-                AlternateCharacterSets.InfoExchangeOneByteJisX02011976 => "ISO IR14",
-                AlternateCharacterSets.JapaneseGraphicJisX02121990 => "ISO IR159",
-                AlternateCharacterSets.JapaneseGraphicJisX02081990 => "ISO IR87",
-                AlternateCharacterSets.IsoIec1064611993 => "UNICODE",
+                CodeAlternateCharacterSets.Iso88591CharacterSet => "8859/1",
+                CodeAlternateCharacterSets.Iso88592CharacterSet => "8859/2",
+                CodeAlternateCharacterSets.Iso88593CharacterSet => "8859/3",
+                CodeAlternateCharacterSets.Iso88594CharacterSet => "8859/4",
+                CodeAlternateCharacterSets.Iso88595CharacterSet => "8859/5",
+                CodeAlternateCharacterSets.Iso88596CharacterSet => "8859/6",
+                CodeAlternateCharacterSets.Iso88597CharacterSet => "8859/7",
+                CodeAlternateCharacterSets.Iso88598CharacterSet => "8859/8",
+                CodeAlternateCharacterSets.Iso88599CharacterSet => "8859/9",
+                CodeAlternateCharacterSets.Seven7BitAsciiCharacterSet => "ASCII",
+                CodeAlternateCharacterSets.InfoExchangeOneByteJisX02011976 => "ISO IR14",
+                CodeAlternateCharacterSets.JapaneseGraphicJisX02121990 => "ISO IR159",
+                CodeAlternateCharacterSets.JapaneseGraphicJisX02081990 => "ISO IR87",
+                CodeAlternateCharacterSets.IsoIec1064611993 => "UNICODE",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AmbulatoryPaymentClassificationCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeAmbulatoryPaymentClassificationCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AmbulatoryPaymentClassificationCode input)
+        public string EnumToCode(CodeAmbulatoryPaymentClassificationCode input)
         {
             return input switch
             {
-                AmbulatoryPaymentClassificationCode.NoSuggestedValuesDefined => "...",
-                AmbulatoryPaymentClassificationCode.DentalProcedures => "031",
-                AmbulatoryPaymentClassificationCode.ExcisionBiopsy => "163",
-                AmbulatoryPaymentClassificationCode.Level1SkinRepair => "181",
+                CodeAmbulatoryPaymentClassificationCode.NoSuggestedValuesDefined => "...",
+                CodeAmbulatoryPaymentClassificationCode.DentalProcedures => "031",
+                CodeAmbulatoryPaymentClassificationCode.ExcisionBiopsy => "163",
+                CodeAmbulatoryPaymentClassificationCode.Level1SkinRepair => "181",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AmbulatoryStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeAmbulatoryStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AmbulatoryStatus input)
+        public string EnumToCode(CodeAmbulatoryStatus input)
         {
             return input switch
             {
-                AmbulatoryStatus.NoFunctionalLimitations => "A0",
-                AmbulatoryStatus.AmbulatesWithAssistiveDevice => "A1",
-                AmbulatoryStatus.WheelchairStretcherBound => "A2",
-                AmbulatoryStatus.ComatoseNonResponsive => "A3",
-                AmbulatoryStatus.Disoriented => "A4",
-                AmbulatoryStatus.VisionImpaired => "A5",
-                AmbulatoryStatus.HearingImpaired => "A6",
-                AmbulatoryStatus.SpeechImpaired => "A7",
-                AmbulatoryStatus.NonEnglishSpeaking => "A8",
-                AmbulatoryStatus.FunctionalLevelUnknown => "A9",
-                AmbulatoryStatus.OxygenTherapy => "B1",
-                AmbulatoryStatus.SpecialEquipmentTubesIvsCatheters => "B2",
-                AmbulatoryStatus.Amputee => "B3",
-                AmbulatoryStatus.Mastectomy => "B4",
-                AmbulatoryStatus.Paraplegic => "B5",
-                AmbulatoryStatus.Pregnant => "B6",
+                CodeAmbulatoryStatus.NoFunctionalLimitations => "A0",
+                CodeAmbulatoryStatus.AmbulatesWithAssistiveDevice => "A1",
+                CodeAmbulatoryStatus.WheelchairStretcherBound => "A2",
+                CodeAmbulatoryStatus.ComatoseNonResponsive => "A3",
+                CodeAmbulatoryStatus.Disoriented => "A4",
+                CodeAmbulatoryStatus.VisionImpaired => "A5",
+                CodeAmbulatoryStatus.HearingImpaired => "A6",
+                CodeAmbulatoryStatus.SpeechImpaired => "A7",
+                CodeAmbulatoryStatus.NonEnglishSpeaking => "A8",
+                CodeAmbulatoryStatus.FunctionalLevelUnknown => "A9",
+                CodeAmbulatoryStatus.OxygenTherapy => "B1",
+                CodeAmbulatoryStatus.SpecialEquipmentTubesIvsCatheters => "B2",
+                CodeAmbulatoryStatus.Amputee => "B3",
+                CodeAmbulatoryStatus.Mastectomy => "B4",
+                CodeAmbulatoryStatus.Paraplegic => "B5",
+                CodeAmbulatoryStatus.Pregnant => "B6",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AmountClass enum value into its HL7 equivalent code.
+        /// Converts the given CodeAmountClass enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AmountClass input)
+        public string EnumToCode(CodeAmountClass input)
         {
             return input switch
             {
-                AmountClass.Amount => "AT",
-                AmountClass.Limit => "LM",
-                AmountClass.Percentage => "PC",
-                AmountClass.Unlimited => "UL",
+                CodeAmountClass.Amount => "AT",
+                CodeAmountClass.Limit => "LM",
+                CodeAmountClass.Percentage => "PC",
+                CodeAmountClass.Unlimited => "UL",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AmountType enum value into its HL7 equivalent code.
+        /// Converts the given CodeAmountType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AmountType input)
+        public string EnumToCode(CodeAmountType input)
         {
             return input switch
             {
-                AmountType.Differential => "DF",
-                AmountType.Limit => "LM",
-                AmountType.Percentage => "PC",
-                AmountType.Rate => "RT",
-                AmountType.Unlimited => "UL",
+                CodeAmountType.Differential => "DF",
+                CodeAmountType.Limit => "LM",
+                CodeAmountType.Percentage => "PC",
+                CodeAmountType.Rate => "RT",
+                CodeAmountType.Unlimited => "UL",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AnalyteRepeatStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeAnalyteRepeatStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AnalyteRepeatStatus input)
+        public string EnumToCode(CodeAnalyteRepeatStatus input)
         {
             return input switch
             {
-                AnalyteRepeatStatus.RepeatedWithDilution => "D",
-                AnalyteRepeatStatus.ReflexTest => "F",
-                AnalyteRepeatStatus.OriginalFirstRun => "O",
-                AnalyteRepeatStatus.RepeatedWithoutDilution => "R",
+                CodeAnalyteRepeatStatus.RepeatedWithDilution => "D",
+                CodeAnalyteRepeatStatus.ReflexTest => "F",
+                CodeAnalyteRepeatStatus.OriginalFirstRun => "O",
+                CodeAnalyteRepeatStatus.RepeatedWithoutDilution => "R",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given Annotations enum value into its HL7 equivalent code.
+        /// Converts the given CodeAnnotations enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(Annotations input)
+        public string EnumToCode(CodeAnnotations input)
         {
             return input switch
             {
-                Annotations.PaceSpike => "9900",
-                Annotations.SasMarker => "9901",
-                Annotations.SenseMarker => "9902",
-                Annotations.BeatMarker => "9903",
-                Annotations.Etc => "9904",
+                CodeAnnotations.PaceSpike => "9900",
+                CodeAnnotations.SasMarker => "9901",
+                CodeAnnotations.SenseMarker => "9902",
+                CodeAnnotations.BeatMarker => "9903",
+                CodeAnnotations.Etc => "9904",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ApplicationChangeType enum value into its HL7 equivalent code.
+        /// Converts the given CodeApplicationChangeType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ApplicationChangeType input)
+        public string EnumToCode(CodeApplicationChangeType input)
         {
             return input switch
             {
-                ApplicationChangeType.MigratesToDifferentCpu => "M",
-                ApplicationChangeType.ShutDown => "SD",
-                ApplicationChangeType.StartUp => "SU",
+                CodeApplicationChangeType.MigratesToDifferentCpu => "M",
+                CodeApplicationChangeType.ShutDown => "SD",
+                CodeApplicationChangeType.StartUp => "SU",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AppointmentReasonCodes enum value into its HL7 equivalent code.
+        /// Converts the given CodeAppointmentReasonCodes enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AppointmentReasonCodes input)
+        public string EnumToCode(CodeAppointmentReasonCodes input)
         {
             return input switch
             {
-                AppointmentReasonCodes.ARoutineCheckUpSuchAsAnAnnualPhysical => "CHECKUP",
-                AppointmentReasonCodes.EmergencyAppointment => "EMERGENCY",
-                AppointmentReasonCodes.AFollowUpVisitFromAPreviousAppointment => "FOLLOWUP",
-                AppointmentReasonCodes.RoutineAppointmentDefaultIfNotValued => "ROUTINE",
-                AppointmentReasonCodes.APreviouslyUnscheduledWalkInVisit => "WALKIN",
+                CodeAppointmentReasonCodes.ARoutineCheckUpSuchAsAnAnnualPhysical => "CHECKUP",
+                CodeAppointmentReasonCodes.EmergencyAppointment => "EMERGENCY",
+                CodeAppointmentReasonCodes.AFollowUpVisitFromAPreviousAppointment => "FOLLOWUP",
+                CodeAppointmentReasonCodes.RoutineAppointmentDefaultIfNotValued => "ROUTINE",
+                CodeAppointmentReasonCodes.APreviouslyUnscheduledWalkInVisit => "WALKIN",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AppointmentTypeCodes enum value into its HL7 equivalent code.
+        /// Converts the given CodeAppointmentTypeCodes enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AppointmentTypeCodes input)
+        public string EnumToCode(CodeAppointmentTypeCodes input)
         {
             return input switch
             {
-                AppointmentTypeCodes.RequestToAddCompletedAppointment => "Complete",
-                AppointmentTypeCodes.RoutineScheduleRequestTypeDefaultIfNotValued => "Normal",
-                AppointmentTypeCodes.RequestForTentativeAppointment => "Tentative",
+                CodeAppointmentTypeCodes.RequestToAddCompletedAppointment => "Complete",
+                CodeAppointmentTypeCodes.RoutineScheduleRequestTypeDefaultIfNotValued => "Normal",
+                CodeAppointmentTypeCodes.RequestForTentativeAppointment => "Tentative",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ArtificialBlood enum value into its HL7 equivalent code.
+        /// Converts the given CodeArtificialBlood enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ArtificialBlood input)
+        public string EnumToCode(CodeArtificialBlood input)
         {
             return input switch
             {
-                ArtificialBlood.Fluorocarbons => "FLUR",
-                ArtificialBlood.StromalFreeHemoglobinPreparations => "SFHB",
+                CodeArtificialBlood.Fluorocarbons => "FLUR",
+                CodeArtificialBlood.StromalFreeHemoglobinPreparations => "SFHB",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AssigningAuthority enum value into its HL7 equivalent code.
+        /// Converts the given CodeAssigningAuthority enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AssigningAuthority input)
+        public string EnumToCode(CodeAssigningAuthority input)
         {
             return input switch
             {
-                AssigningAuthority.AustraliaDeptOfVeteransAffairs => "AUSDVA",
-                AssigningAuthority.AustraliaHealthInsuranceCommission => "AUSHIC",
-                AssigningAuthority.CanadaAlberta => "CANAB",
-                AssigningAuthority.CanadaBritishColumbia => "CANBC",
-                AssigningAuthority.CanadaManitoba => "CANMB",
-                AssigningAuthority.CanadaNewBrunswick => "CANNB",
-                AssigningAuthority.CanadaNewfoundland => "CANNF",
-                AssigningAuthority.CanadaNovaScotia => "CANNS",
-                AssigningAuthority.CanadaNorthwestTerritories => "CANNT",
-                AssigningAuthority.CanadaNanavut => "CANNU",
-                AssigningAuthority.CanadaOntario => "CANON",
-                AssigningAuthority.CanadaPrinceEdwardIsland => "CANPE",
-                AssigningAuthority.CanadaQuebec => "CANQC",
-                AssigningAuthority.CanadaSaskatchewan => "CANSK",
-                AssigningAuthority.CanadaYukonTerritories => "CANYT",
-                AssigningAuthority.NlMinisterieVanVolksgezondheidWelzijnEnSport => "NLVWS",
-                AssigningAuthority.UsCenterForDiseaseControl => "USCDC",
-                AssigningAuthority.UsHealthcareFinanceAuthority => "USHCFA",
-                AssigningAuthority.UsSocialSecurityAdministration => "USSSA",
+                CodeAssigningAuthority.AustraliaDeptOfVeteransAffairs => "AUSDVA",
+                CodeAssigningAuthority.AustraliaHealthInsuranceCommission => "AUSHIC",
+                CodeAssigningAuthority.CanadaAlberta => "CANAB",
+                CodeAssigningAuthority.CanadaBritishColumbia => "CANBC",
+                CodeAssigningAuthority.CanadaManitoba => "CANMB",
+                CodeAssigningAuthority.CanadaNewBrunswick => "CANNB",
+                CodeAssigningAuthority.CanadaNewfoundland => "CANNF",
+                CodeAssigningAuthority.CanadaNovaScotia => "CANNS",
+                CodeAssigningAuthority.CanadaNorthwestTerritories => "CANNT",
+                CodeAssigningAuthority.CanadaNanavut => "CANNU",
+                CodeAssigningAuthority.CanadaOntario => "CANON",
+                CodeAssigningAuthority.CanadaPrinceEdwardIsland => "CANPE",
+                CodeAssigningAuthority.CanadaQuebec => "CANQC",
+                CodeAssigningAuthority.CanadaSaskatchewan => "CANSK",
+                CodeAssigningAuthority.CanadaYukonTerritories => "CANYT",
+                CodeAssigningAuthority.NlMinisterieVanVolksgezondheidWelzijnEnSport => "NLVWS",
+                CodeAssigningAuthority.UsCenterForDiseaseControl => "USCDC",
+                CodeAssigningAuthority.UsHealthcareFinanceAuthority => "USHCFA",
+                CodeAssigningAuthority.UsSocialSecurityAdministration => "USSSA",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given AssignmentOfBenefits enum value into its HL7 equivalent code.
+        /// Converts the given CodeAssignmentOfBenefits enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AssignmentOfBenefits input)
+        public string EnumToCode(CodeAssignmentOfBenefits input)
         {
             return input switch
             {
-                AssignmentOfBenefits.ModifiedAssignment => "M",
-                AssignmentOfBenefits.No => "N",
-                AssignmentOfBenefits.Yes => "Y",
+                CodeAssignmentOfBenefits.ModifiedAssignment => "M",
+                CodeAssignmentOfBenefits.No => "N",
+                CodeAssignmentOfBenefits.Yes => "Y",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given BedStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeBedStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(BedStatus input)
+        public string EnumToCode(CodeBedStatus input)
         {
             return input switch
             {
-                BedStatus.Closed => "C",
-                BedStatus.Housekeeping => "H",
-                BedStatus.Isolated => "I",
-                BedStatus.Contaminated => "K",
-                BedStatus.Occupied => "O",
-                BedStatus.Unoccupied => "U",
+                CodeBedStatus.Closed => "C",
+                CodeBedStatus.Housekeeping => "H",
+                CodeBedStatus.Isolated => "I",
+                CodeBedStatus.Contaminated => "K",
+                CodeBedStatus.Occupied => "O",
+                CodeBedStatus.Unoccupied => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given BloodProductCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeBloodProductCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(BloodProductCode input)
+        public string EnumToCode(CodeBloodProductCode input)
         {
             return input switch
             {
-                BloodProductCode.CryoprecipitatedAhf => "CRYO",
-                BloodProductCode.PooledCryoprecipitate => "CRYOP",
-                BloodProductCode.FreshFrozenPlasma => "FFP",
-                BloodProductCode.FreshFrozenPlasmaThawed => "FFPTH",
-                BloodProductCode.PackedCells => "PC",
-                BloodProductCode.AutologousPackedCells => "PCA",
-                BloodProductCode.PackedCellsNeonatal => "PCNEO",
-                BloodProductCode.WashedPackedCells => "PCW",
-                BloodProductCode.PlateletConcentrate => "PLT",
-                BloodProductCode.ReducedVolumePlatelets => "PLTNEO",
-                BloodProductCode.PooledPlatelets => "PLTP",
-                BloodProductCode.PlateletPheresis => "PLTPH",
-                BloodProductCode.LeukoreducedPlateletPheresis => "PLTPHLR",
-                BloodProductCode.ReconstitutedWholeBlood => "RWB",
-                BloodProductCode.AutologousWholeBlood => "WBA",
+                CodeBloodProductCode.CryoprecipitatedAhf => "CRYO",
+                CodeBloodProductCode.PooledCryoprecipitate => "CRYOP",
+                CodeBloodProductCode.FreshFrozenPlasma => "FFP",
+                CodeBloodProductCode.FreshFrozenPlasmaThawed => "FFPTH",
+                CodeBloodProductCode.PackedCells => "PC",
+                CodeBloodProductCode.AutologousPackedCells => "PCA",
+                CodeBloodProductCode.PackedCellsNeonatal => "PCNEO",
+                CodeBloodProductCode.WashedPackedCells => "PCW",
+                CodeBloodProductCode.PlateletConcentrate => "PLT",
+                CodeBloodProductCode.ReducedVolumePlatelets => "PLTNEO",
+                CodeBloodProductCode.PooledPlatelets => "PLTP",
+                CodeBloodProductCode.PlateletPheresis => "PLTPH",
+                CodeBloodProductCode.LeukoreducedPlateletPheresis => "PLTPHLR",
+                CodeBloodProductCode.ReconstitutedWholeBlood => "RWB",
+                CodeBloodProductCode.AutologousWholeBlood => "WBA",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given BodySite enum value into its HL7 equivalent code.
+        /// Converts the given CodeBodySite enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(BodySite input)
+        public string EnumToCode(CodeBodySite input)
         {
             return input switch
             {
-                BodySite.BilateralEars => "BE",
-                BodySite.BilateralNares => "BN",
-                BodySite.Buttock => "BU",
-                BodySite.ChestTube => "CT",
-                BodySite.LeftArm => "LA",
-                BodySite.LeftAnteriorChest => "LAC",
-                BodySite.LeftAntecubitalFossa => "LACF",
-                BodySite.LeftDeltoid => "LD",
-                BodySite.LeftEar => "LE",
-                BodySite.LeftExternalJugular => "LEJ",
-                BodySite.LeftFoot => "LF",
-                BodySite.LeftGluteusMedius => "LG",
-                BodySite.LeftHand => "LH",
-                BodySite.LeftInternalJugular => "LIJ",
-                BodySite.LeftLowerAbdQuadrant => "LLAQ",
-                BodySite.LeftLowerForearm => "LLFA",
-                BodySite.LeftMidForearm => "LMFA",
-                BodySite.LeftNaris => "LN",
-                BodySite.LeftPosteriorChest => "LPC",
-                BodySite.LeftSubclavian => "LSC",
-                BodySite.LeftThigh => "LT",
-                BodySite.LeftUpperArm => "LUA",
-                BodySite.LeftUpperAbdQuadrant => "LUAQ",
-                BodySite.LeftUpperForearm => "LUFA",
-                BodySite.LeftVentragluteal => "LVG",
-                BodySite.LeftVastusLateralis => "LVL",
-                BodySite.Nebulized => "NB",
-                BodySite.RightEye => "OD",
-                BodySite.LeftEye => "OS",
-                BodySite.BilateralEyes => "OU",
-                BodySite.Perianal => "PA",
-                BodySite.Perineal => "PERIN",
-                BodySite.RightArm => "RA",
-                BodySite.RightAnteriorChest => "RAC",
-                BodySite.RightAntecubitalFossa => "RACF",
-                BodySite.RightDeltoid => "RD",
-                BodySite.RightEar => "RE",
-                BodySite.RightExternalJugular => "REJ",
-                BodySite.RightFoot => "RF",
-                BodySite.RightGluteusMedius => "RG",
-                BodySite.RightHand => "RH",
-                BodySite.RightInternalJugular => "RIJ",
-                BodySite.RtLowerAbdQuadrant => "RLAQ",
-                BodySite.RightLowerForearm => "RLFA",
-                BodySite.RightMidForearm => "RMFA",
-                BodySite.RightNaris => "RN",
-                BodySite.RightPosteriorChest => "RPC",
-                BodySite.RightSubclavian => "RSC",
-                BodySite.RightThigh => "RT",
-                BodySite.RightUpperArm => "RUA",
-                BodySite.RightUpperAbdQuadrant => "RUAQ",
-                BodySite.RightUpperForearm => "RUFA",
-                BodySite.RightVentragluteal => "RVG",
-                BodySite.RightVastusLateralis => "RVL",
+                CodeBodySite.BilateralEars => "BE",
+                CodeBodySite.BilateralNares => "BN",
+                CodeBodySite.Buttock => "BU",
+                CodeBodySite.ChestTube => "CT",
+                CodeBodySite.LeftArm => "LA",
+                CodeBodySite.LeftAnteriorChest => "LAC",
+                CodeBodySite.LeftAntecubitalFossa => "LACF",
+                CodeBodySite.LeftDeltoid => "LD",
+                CodeBodySite.LeftEar => "LE",
+                CodeBodySite.LeftExternalJugular => "LEJ",
+                CodeBodySite.LeftFoot => "LF",
+                CodeBodySite.LeftGluteusMedius => "LG",
+                CodeBodySite.LeftHand => "LH",
+                CodeBodySite.LeftInternalJugular => "LIJ",
+                CodeBodySite.LeftLowerAbdQuadrant => "LLAQ",
+                CodeBodySite.LeftLowerForearm => "LLFA",
+                CodeBodySite.LeftMidForearm => "LMFA",
+                CodeBodySite.LeftNaris => "LN",
+                CodeBodySite.LeftPosteriorChest => "LPC",
+                CodeBodySite.LeftSubclavian => "LSC",
+                CodeBodySite.LeftThigh => "LT",
+                CodeBodySite.LeftUpperArm => "LUA",
+                CodeBodySite.LeftUpperAbdQuadrant => "LUAQ",
+                CodeBodySite.LeftUpperForearm => "LUFA",
+                CodeBodySite.LeftVentragluteal => "LVG",
+                CodeBodySite.LeftVastusLateralis => "LVL",
+                CodeBodySite.Nebulized => "NB",
+                CodeBodySite.RightEye => "OD",
+                CodeBodySite.LeftEye => "OS",
+                CodeBodySite.BilateralEyes => "OU",
+                CodeBodySite.Perianal => "PA",
+                CodeBodySite.Perineal => "PERIN",
+                CodeBodySite.RightArm => "RA",
+                CodeBodySite.RightAnteriorChest => "RAC",
+                CodeBodySite.RightAntecubitalFossa => "RACF",
+                CodeBodySite.RightDeltoid => "RD",
+                CodeBodySite.RightEar => "RE",
+                CodeBodySite.RightExternalJugular => "REJ",
+                CodeBodySite.RightFoot => "RF",
+                CodeBodySite.RightGluteusMedius => "RG",
+                CodeBodySite.RightHand => "RH",
+                CodeBodySite.RightInternalJugular => "RIJ",
+                CodeBodySite.RtLowerAbdQuadrant => "RLAQ",
+                CodeBodySite.RightLowerForearm => "RLFA",
+                CodeBodySite.RightMidForearm => "RMFA",
+                CodeBodySite.RightNaris => "RN",
+                CodeBodySite.RightPosteriorChest => "RPC",
+                CodeBodySite.RightSubclavian => "RSC",
+                CodeBodySite.RightThigh => "RT",
+                CodeBodySite.RightUpperArm => "RUA",
+                CodeBodySite.RightUpperAbdQuadrant => "RUAQ",
+                CodeBodySite.RightUpperForearm => "RUFA",
+                CodeBodySite.RightVentragluteal => "RVG",
+                CodeBodySite.RightVastusLateralis => "RVL",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given CaseCategoryCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeCaseCategoryCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(CaseCategoryCode input)
+        public string EnumToCode(CodeCaseCategoryCode input)
         {
             return input switch
             {
-                CaseCategoryCode.DoctorsOfficeClosed => "D",
+                CodeCaseCategoryCode.DoctorsOfficeClosed => "D",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given CausalityObservations enum value into its HL7 equivalent code.
+        /// Converts the given CodeCausalityObservations enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(CausalityObservations input)
+        public string EnumToCode(CodeCausalityObservations input)
         {
             return input switch
             {
-                CausalityObservations.AbatementOfEventAfterProductWithdrawn => "AW",
-                CausalityObservations.EventRecurredAfterProductReintroduced => "BE",
-                CausalityObservations.DoseResponseObserved => "DR",
-                CausalityObservations.AlternativeExplanationForEventAvailable => "EX",
-                CausalityObservations.EventOccurredAfterProductIntroduced => "IN",
-                CausalityObservations.LiteratureReportsAssociationOfProductWithEvent => "LI",
-                CausalityObservations.OccurrenceOfEventConfirmedByObjectiveEvidence => "OE",
-                CausalityObservations.Other => "OT",
-                CausalityObservations.EffectObservedWhenPatientReceivesPlacebo => "PL",
-                CausalityObservations.SimilarEventsInPastForThisPatient => "SE",
-                CausalityObservations.ToxicLevelsOfProductDocumented => "TC",
+                CodeCausalityObservations.AbatementOfEventAfterProductWithdrawn => "AW",
+                CodeCausalityObservations.EventRecurredAfterProductReintroduced => "BE",
+                CodeCausalityObservations.DoseResponseObserved => "DR",
+                CodeCausalityObservations.AlternativeExplanationForEventAvailable => "EX",
+                CodeCausalityObservations.EventOccurredAfterProductIntroduced => "IN",
+                CodeCausalityObservations.LiteratureReportsAssociationOfProductWithEvent => "LI",
+                CodeCausalityObservations.OccurrenceOfEventConfirmedByObjectiveEvidence => "OE",
+                CodeCausalityObservations.Other => "OT",
+                CodeCausalityObservations.EffectObservedWhenPatientReceivesPlacebo => "PL",
+                CodeCausalityObservations.SimilarEventsInPastForThisPatient => "SE",
+                CodeCausalityObservations.ToxicLevelsOfProductDocumented => "TC",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given CertificationPatientType enum value into its HL7 equivalent code.
+        /// Converts the given CodeCertificationPatientType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(CertificationPatientType input)
+        public string EnumToCode(CodeCertificationPatientType input)
         {
             return input switch
             {
-                CertificationPatientType.Emergency => "ER",
-                CertificationPatientType.InpatientElective => "IPE",
-                CertificationPatientType.OutpatientElective => "OPE",
-                CertificationPatientType.Urgent => "UR",
+                CodeCertificationPatientType.Emergency => "ER",
+                CodeCertificationPatientType.InpatientElective => "IPE",
+                CodeCertificationPatientType.OutpatientElective => "OPE",
+                CodeCertificationPatientType.Urgent => "UR",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given CertificationStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeCertificationStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(CertificationStatus input)
+        public string EnumToCode(CodeCertificationStatus input)
         {
             return input switch
             {
-                CertificationStatus.Certified => "C",
-                CertificationStatus.Eligible => "E",
+                CodeCertificationStatus.Certified => "C",
+                CodeCertificationStatus.Eligible => "E",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ChargeOnIndicator enum value into its HL7 equivalent code.
+        /// Converts the given CodeChargeOnIndicator enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ChargeOnIndicator input)
+        public string EnumToCode(CodeChargeOnIndicator input)
         {
             return input switch
             {
-                ChargeOnIndicator.ChargeOnOrder => "O",
-                ChargeOnIndicator.ChargeOnResult => "R",
+                CodeChargeOnIndicator.ChargeOnOrder => "O",
+                CodeChargeOnIndicator.ChargeOnResult => "R",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ChargeType enum value into its HL7 equivalent code.
+        /// Converts the given CodeChargeType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ChargeType input)
+        public string EnumToCode(CodeChargeType input)
         {
             return input switch
             {
-                ChargeType.Charge => "CH",
-                ChargeType.Contract => "CO",
-                ChargeType.Credit => "CR",
-                ChargeType.Department => "DP",
-                ChargeType.Grant => "GR",
-                ChargeType.NoCharge => "NC",
-                ChargeType.Professional => "PC",
-                ChargeType.Research => "RS",
+                CodeChargeType.Charge => "CH",
+                CodeChargeType.Contract => "CO",
+                CodeChargeType.Credit => "CR",
+                CodeChargeType.Department => "DP",
+                CodeChargeType.Grant => "GR",
+                CodeChargeType.NoCharge => "NC",
+                CodeChargeType.Professional => "PC",
+                CodeChargeType.Research => "RS",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given CheckDigitScheme enum value into its HL7 equivalent code.
+        /// Converts the given CodeCheckDigitScheme enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(CheckDigitScheme input)
+        public string EnumToCode(CodeCheckDigitScheme input)
         {
             return input switch
             {
-                CheckDigitScheme.Iso70641983 => "ISO",
-                CheckDigitScheme.Mod10Algorithm => "M10",
-                CheckDigitScheme.Mod11Algorithm => "M11",
-                CheckDigitScheme.CheckDigitInTheNationalProviderIdentifier => "NPI",
+                CodeCheckDigitScheme.Iso70641983 => "ISO",
+                CodeCheckDigitScheme.Mod10Algorithm => "M10",
+                CodeCheckDigitScheme.Mod11Algorithm => "M11",
+                CodeCheckDigitScheme.CheckDigitInTheNationalProviderIdentifier => "NPI",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given CodingSystem enum value into its HL7 equivalent code.
+        /// Converts the given CodeCodingSystem enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(CodingSystem input)
+        public string EnumToCode(CodeCodingSystem input)
         {
             return input switch
             {
-                CodingSystem.LocalGeneralCode99ZzzOrL => "99zzz or L",
-                CodingSystem.AmericanCollegeOfRadiologyFindingCodes => "ACR",
-                CodingSystem.WhoAdverseReactionTerms => "ART",
-                CodingSystem.AstmE1238E1467Universal => "AS4",
-                CodingSystem.As4NeurophysiologyCodes => "AS4E",
-                CodingSystem.AmericanTypeCultureCollection => "ATC",
-                CodingSystem.Cpt4 => "C4",
-                CodingSystem.Cpt5 => "C5",
-                CodingSystem.ChemicalAbstractCodes => "CAS",
-                CodingSystem.Cdt2Codes => "CD2",
-                CodingSystem.CdcAnalyteCodes => "CDCA",
-                CodingSystem.CdcMethodsInstrumentsCodes => "CDCM",
-                CodingSystem.CdcSurveillance => "CDS",
-                CodingSystem.CenEcgDiagnosticCodes => "CE",
-                CodingSystem.Clip => "CLP",
-                CodingSystem.CptModifierCode => "CPTM",
-                CodingSystem.Costart => "CST",
-                CodingSystem.CdcVaccineCodes => "CVX",
-                CodingSystem.DicomClassLabel => "DCL",
-                CodingSystem.DicomControlledTerminology => "DCM",
-                CodingSystem.DicomQueryLabel => "DQL",
-                CodingSystem.Euclides => "E",
-                CodingSystem.EuclidesQuantityCodes => "E5",
-                CodingSystem.EuclidesLabMethodCodes => "E6",
-                CodingSystem.EuclidesLabEquipmentCodes => "E7",
-                CodingSystem.EnzymeCodes => "ENZC",
-                CodingSystem.FirstDatabankDrugCodes => "FDDC",
-                CodingSystem.FirstDatabankDiagnosticCodes => "FDDX",
-                CodingSystem.FdaK10 => "FDK",
-                CodingSystem.Hibcc => "HB",
-                CodingSystem.CmsFormerlyHcfaCommonProcedureCodingSystem => "HCPCS",
-                CodingSystem.HomeHealthCare => "HHC",
-                CodingSystem.HealthOutcomes => "HI",
-                CodingSystem.Hl7DefinedCodesWhereNnnnIsTheHl7TableNumber => "HL7nnnn",
-                CodingSystem.CmsFormerlyHcfaProcedureCodesHcpcs => "HPC",
-                CodingSystem.Icd10 => "I10",
-                CodingSystem.Icd10ProcedureCodes => "I10P",
-                CodingSystem.Icd9 => "I9",
-                CodingSystem.Icd9Cm => "I9C",
-                CodingSystem.Isbt => "IBT",
-                CodingSystem.Ichppc2 => "IC2",
-                CodingSystem.IcdForOncology => "ICDO",
-                CodingSystem.Iccs => "ICS",
-                CodingSystem.Icsd => "ICSD",
-                CodingSystem.IsoDefinedCodes => "ISOnnnn",
-                CodingSystem.IupacIfccComponentCodes => "IUPC",
-                CodingSystem.IupacIfccPropertyCodes => "IUPP",
-                CodingSystem.JapaneseChemistry => "JC8",
-                CodingSystem.LocalBillingCode => "LB",
-                CodingSystem.LogicalObservationIdentifierNamesAndCodesLoinc => "LN",
-                CodingSystem.Medicaid => "MCD",
-                CodingSystem.Medicare => "MCR",
-                CodingSystem.MedispanDiagnosticCodes => "MDDX",
-                CodingSystem.MedicalEconomicsDrugCodes => "MEDC",
-                CodingSystem.MedicalDictionaryForDrugRegulatoryAffairs => "MEDR",
-                CodingSystem.MedicalEconomicsDiagnosticCodes => "MEDX",
-                CodingSystem.MedispanGpi => "MGPI",
-                CodingSystem.CdcVaccineManufacturerCodes => "MVX",
-                CodingSystem.Nanda => "NDA",
-                CodingSystem.NationalDrugCodes => "NDC",
-                CodingSystem.NursingInterventionsClassification => "NIC",
-                CodingSystem.NationalProviderIdentifier => "NPI",
-                CodingSystem.OmahaSystem => "OHA",
-                CodingSystem.PosCodes => "POS",
-                CodingSystem.ReadClassification => "RC",
-                CodingSystem.SnomedDicomMicroglossary => "SDM",
-                CodingSystem.SystemizedNomenclatureOfMedicineSnomed => "SNM",
-                CodingSystem.SnomedInternational => "SNM3",
-                CodingSystem.SnomedTopologyCodesAnatomicSites => "SNT",
-                CodingSystem.Ucds => "UC",
-                CodingSystem.Mdns => "UMD",
-                CodingSystem.UnifiedMedicalLanguage => "UML",
-                CodingSystem.UniversalProductCode => "UPC",
-                CodingSystem.Upin => "UPIN",
-                CodingSystem.WhoRecordDrugCodes6Digit => "W1",
-                CodingSystem.WhoRecordDrugCodes8Digit => "W2",
-                CodingSystem.WhoRecordCodeWithAstmExtension => "W4",
-                CodingSystem.WhoAtc => "WC",
+                CodeCodingSystem.LocalGeneralCode99ZzzOrL => "99zzz or L",
+                CodeCodingSystem.AmericanCollegeOfRadiologyFindingCodes => "ACR",
+                CodeCodingSystem.WhoAdverseReactionTerms => "ART",
+                CodeCodingSystem.AstmE1238E1467Universal => "AS4",
+                CodeCodingSystem.As4NeurophysiologyCodes => "AS4E",
+                CodeCodingSystem.AmericanTypeCultureCollection => "ATC",
+                CodeCodingSystem.Cpt4 => "C4",
+                CodeCodingSystem.Cpt5 => "C5",
+                CodeCodingSystem.ChemicalAbstractCodes => "CAS",
+                CodeCodingSystem.Cdt2Codes => "CD2",
+                CodeCodingSystem.CdcAnalyteCodes => "CDCA",
+                CodeCodingSystem.CdcMethodsInstrumentsCodes => "CDCM",
+                CodeCodingSystem.CdcSurveillance => "CDS",
+                CodeCodingSystem.CenEcgDiagnosticCodes => "CE",
+                CodeCodingSystem.Clip => "CLP",
+                CodeCodingSystem.CptModifierCode => "CPTM",
+                CodeCodingSystem.Costart => "CST",
+                CodeCodingSystem.CdcVaccineCodes => "CVX",
+                CodeCodingSystem.DicomClassLabel => "DCL",
+                CodeCodingSystem.DicomControlledTerminology => "DCM",
+                CodeCodingSystem.DicomQueryLabel => "DQL",
+                CodeCodingSystem.Euclides => "E",
+                CodeCodingSystem.EuclidesQuantityCodes => "E5",
+                CodeCodingSystem.EuclidesLabMethodCodes => "E6",
+                CodeCodingSystem.EuclidesLabEquipmentCodes => "E7",
+                CodeCodingSystem.EnzymeCodes => "ENZC",
+                CodeCodingSystem.FirstDatabankDrugCodes => "FDDC",
+                CodeCodingSystem.FirstDatabankDiagnosticCodes => "FDDX",
+                CodeCodingSystem.FdaK10 => "FDK",
+                CodeCodingSystem.Hibcc => "HB",
+                CodeCodingSystem.CmsFormerlyHcfaCommonProcedureCodingSystem => "HCPCS",
+                CodeCodingSystem.HomeHealthCare => "HHC",
+                CodeCodingSystem.HealthOutcomes => "HI",
+                CodeCodingSystem.Hl7DefinedCodesWhereNnnnIsTheHl7TableNumber => "HL7nnnn",
+                CodeCodingSystem.CmsFormerlyHcfaProcedureCodesHcpcs => "HPC",
+                CodeCodingSystem.Icd10 => "I10",
+                CodeCodingSystem.Icd10ProcedureCodes => "I10P",
+                CodeCodingSystem.Icd9 => "I9",
+                CodeCodingSystem.Icd9Cm => "I9C",
+                CodeCodingSystem.Isbt => "IBT",
+                CodeCodingSystem.Ichppc2 => "IC2",
+                CodeCodingSystem.IcdForOncology => "ICDO",
+                CodeCodingSystem.Iccs => "ICS",
+                CodeCodingSystem.Icsd => "ICSD",
+                CodeCodingSystem.IsoDefinedCodes => "ISOnnnn",
+                CodeCodingSystem.IupacIfccComponentCodes => "IUPC",
+                CodeCodingSystem.IupacIfccPropertyCodes => "IUPP",
+                CodeCodingSystem.JapaneseChemistry => "JC8",
+                CodeCodingSystem.LocalBillingCode => "LB",
+                CodeCodingSystem.LogicalObservationIdentifierNamesAndCodesLoinc => "LN",
+                CodeCodingSystem.Medicaid => "MCD",
+                CodeCodingSystem.Medicare => "MCR",
+                CodeCodingSystem.MedispanDiagnosticCodes => "MDDX",
+                CodeCodingSystem.MedicalEconomicsDrugCodes => "MEDC",
+                CodeCodingSystem.MedicalDictionaryForDrugRegulatoryAffairs => "MEDR",
+                CodeCodingSystem.MedicalEconomicsDiagnosticCodes => "MEDX",
+                CodeCodingSystem.MedispanGpi => "MGPI",
+                CodeCodingSystem.CdcVaccineManufacturerCodes => "MVX",
+                CodeCodingSystem.Nanda => "NDA",
+                CodeCodingSystem.NationalDrugCodes => "NDC",
+                CodeCodingSystem.NursingInterventionsClassification => "NIC",
+                CodeCodingSystem.NationalProviderIdentifier => "NPI",
+                CodeCodingSystem.OmahaSystem => "OHA",
+                CodeCodingSystem.PosCodes => "POS",
+                CodeCodingSystem.ReadClassification => "RC",
+                CodeCodingSystem.SnomedDicomMicroglossary => "SDM",
+                CodeCodingSystem.SystemizedNomenclatureOfMedicineSnomed => "SNM",
+                CodeCodingSystem.SnomedInternational => "SNM3",
+                CodeCodingSystem.SnomedTopologyCodesAnatomicSites => "SNT",
+                CodeCodingSystem.Ucds => "UC",
+                CodeCodingSystem.Mdns => "UMD",
+                CodeCodingSystem.UnifiedMedicalLanguage => "UML",
+                CodeCodingSystem.UniversalProductCode => "UPC",
+                CodeCodingSystem.Upin => "UPIN",
+                CodeCodingSystem.WhoRecordDrugCodes6Digit => "W1",
+                CodeCodingSystem.WhoRecordDrugCodes8Digit => "W2",
+                CodeCodingSystem.WhoRecordCodeWithAstmExtension => "W4",
+                CodeCodingSystem.WhoAtc => "WC",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given CommandResponse enum value into its HL7 equivalent code.
+        /// Converts the given CodeCommandResponse enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(CommandResponse input)
+        public string EnumToCode(CodeCommandResponse input)
         {
             return input switch
             {
-                CommandResponse.CommandCannotBeCompletedBecauseOfError => "ER",
-                CommandResponse.CommandCompletedSuccessfully => "OK",
-                CommandResponse.CommandCannotBeCompletedBecauseOfEquipmentStatus => "ST",
-                CommandResponse.CommandCannotBeCompletedWithinRequestedTime => "TI",
-                CommandResponse.CommandCannotBeCompletedForUnknownReasons => "UN",
+                CodeCommandResponse.CommandCannotBeCompletedBecauseOfError => "ER",
+                CodeCommandResponse.CommandCompletedSuccessfully => "OK",
+                CodeCommandResponse.CommandCannotBeCompletedBecauseOfEquipmentStatus => "ST",
+                CodeCommandResponse.CommandCannotBeCompletedWithinRequestedTime => "TI",
+                CodeCommandResponse.CommandCannotBeCompletedForUnknownReasons => "UN",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given CommentType enum value into its HL7 equivalent code.
+        /// Converts the given CodeCommentType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(CommentType input)
+        public string EnumToCode(CodeCommentType input)
         {
             return input switch
             {
-                CommentType.PrimaryReason => "1R",
-                CommentType.SecondaryReason => "2R",
-                CommentType.AncillaryInstructions => "AI",
-                CommentType.DuplicateInteractionReason => "DR",
-                CommentType.GeneralInstructions => "GI",
-                CommentType.GeneralReason => "GR",
-                CommentType.PatientInstructions => "PI",
-                CommentType.Remark => "RE",
+                CodeCommentType.PrimaryReason => "1R",
+                CodeCommentType.SecondaryReason => "2R",
+                CodeCommentType.AncillaryInstructions => "AI",
+                CodeCommentType.DuplicateInteractionReason => "DR",
+                CodeCommentType.GeneralInstructions => "GI",
+                CodeCommentType.GeneralReason => "GR",
+                CodeCommentType.PatientInstructions => "PI",
+                CodeCommentType.Remark => "RE",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given CompletionStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeCompletionStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(CompletionStatus input)
+        public string EnumToCode(CodeCompletionStatus input)
         {
             return input switch
             {
-                CompletionStatus.Complete => "CP",
-                CompletionStatus.NotAdministered => "NA",
-                CompletionStatus.PartiallyAdministered => "PA",
-                CompletionStatus.Refused => "RE",
+                CodeCompletionStatus.Complete => "CP",
+                CodeCompletionStatus.NotAdministered => "NA",
+                CodeCompletionStatus.PartiallyAdministered => "PA",
+                CodeCompletionStatus.Refused => "RE",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ConditionCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeConditionCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ConditionCode input)
+        public string EnumToCode(CodeConditionCode input)
         {
             return input switch
             {
-                ConditionCode.MilitaryServiceRelated => "01",
-                ConditionCode.ConditionIsEmploymentRelated => "02",
-                ConditionCode.PatientCoveredByInsuranceNotReflectedHere => "03",
-                ConditionCode.HmoEnrollee => "04",
-                ConditionCode.LienHasBeenFiled => "05",
-                ConditionCode.EsrdPatient18MonthsCoveredByEmployerInsurance => "06",
-                ConditionCode.TreatmentOfNonTerminalConditionHospicePatient => "07",
-                ConditionCode.BeneficiaryWouldNotProvideInfoConcerningOtherInsurance => "08",
-                ConditionCode.NeitherPatientNorSpouseIsEmployed => "09",
-                ConditionCode.PatientAndOrSpouseIsEmployedButNoEghpExists => "10",
-                ConditionCode.DisabledBeneficiaryButNoLghp => "11",
-                ConditionCode.PayerCodes12 => "12",
-                ConditionCode.PayerCodes12To16 => "12 ... 16",
-                ConditionCode.PayerCodes13 => "13",
-                ConditionCode.PayerCodes14 => "14",
-                ConditionCode.PayerCodes15 => "15",
-                ConditionCode.PayerCodes16 => "16",
-                ConditionCode.MaidenNameRetained => "18",
-                ConditionCode.ChildRetainsMothersName => "19",
-                ConditionCode.BeneficiaryRequestedBilling => "20",
-                ConditionCode.BillingForDenialNotice => "21",
-                ConditionCode.VaPatientChoosesMedicareCertifiedFacility => "26",
-                ConditionCode.PatientReferredToHospitalForDiagnosticLabTest => "27",
-                ConditionCode.PatientAndOrSpousesEghpIsSecondaryToMedicare => "28",
-                ConditionCode.DisabledBeneficiaryAndOrFamilyMembersLghpIsSecondaryToMedicare => "29",
-                ConditionCode.PatientIsStudentFullTimeDay => "31",
-                ConditionCode.PatientIsStudentWorkStudyProgram => "32",
-                ConditionCode.PatientIsStudentFullTimeNight => "33",
-                ConditionCode.PatientIsStudentPartTime => "34",
-                ConditionCode.GeneralCarePatientInSpecialUnit => "36",
-                ConditionCode.WardAccommodationAsPatientRequest => "37",
-                ConditionCode.SemiPrivateRoomNotAvailable => "38",
-                ConditionCode.PrivateRoomMedicallyNecessary => "39",
-                ConditionCode.SameDayTransfer => "40",
-                ConditionCode.PartialHospitalization => "41",
-                ConditionCode.NonAvailabilityStatementOnFile => "46",
-                ConditionCode.PsycTreatmentCentersForChildrenAndAdolescents => "48",
-                ConditionCode.SnfBedNotAvailable => "55",
-                ConditionCode.MedicalAppropriateness => "56",
-                ConditionCode.SnfReadmission => "57",
-                ConditionCode.DayOutlier => "60",
-                ConditionCode.CostOutlier => "61",
-                ConditionCode.PayerCode => "62",
-                ConditionCode.ProviderDoesNotWishCostOutlierPayment => "66",
-                ConditionCode.BeneficiaryElectsNotToUseLifeTimeReserveLtrDays => "67",
-                ConditionCode.BeneficiaryElectsToUseLifeTimeReserveLtrDays => "68",
-                ConditionCode.SelfAdministeredEpo => "70",
-                ConditionCode.FullCareInUnit => "71",
-                ConditionCode.SelfCareInUnit => "72",
-                ConditionCode.SelfCareTraining => "73",
-                ConditionCode.Home => "74",
-                ConditionCode.Home100Reimbursement => "75",
-                ConditionCode.BackUpInFacilityDialysis => "76",
-                ConditionCode.ProviderAcceptsPayerPaymentInFull => "77",
-                ConditionCode.NewCoverageNotImplementedByHmo => "78",
-                ConditionCode.CorfServicesProvidedOffSite => "79",
-                ConditionCode.Pregnant => "80",
+                CodeConditionCode.MilitaryServiceRelated => "01",
+                CodeConditionCode.ConditionIsEmploymentRelated => "02",
+                CodeConditionCode.PatientCoveredByInsuranceNotReflectedHere => "03",
+                CodeConditionCode.HmoEnrollee => "04",
+                CodeConditionCode.LienHasBeenFiled => "05",
+                CodeConditionCode.EsrdPatient18MonthsCoveredByEmployerInsurance => "06",
+                CodeConditionCode.TreatmentOfNonTerminalConditionHospicePatient => "07",
+                CodeConditionCode.BeneficiaryWouldNotProvideInfoConcerningOtherInsurance => "08",
+                CodeConditionCode.NeitherPatientNorSpouseIsEmployed => "09",
+                CodeConditionCode.PatientAndOrSpouseIsEmployedButNoEghpExists => "10",
+                CodeConditionCode.DisabledBeneficiaryButNoLghp => "11",
+                CodeConditionCode.PayerCodes12 => "12",
+                CodeConditionCode.PayerCodes12To16 => "12 ... 16",
+                CodeConditionCode.PayerCodes13 => "13",
+                CodeConditionCode.PayerCodes14 => "14",
+                CodeConditionCode.PayerCodes15 => "15",
+                CodeConditionCode.PayerCodes16 => "16",
+                CodeConditionCode.MaidenNameRetained => "18",
+                CodeConditionCode.ChildRetainsMothersName => "19",
+                CodeConditionCode.BeneficiaryRequestedBilling => "20",
+                CodeConditionCode.BillingForDenialNotice => "21",
+                CodeConditionCode.VaPatientChoosesMedicareCertifiedFacility => "26",
+                CodeConditionCode.PatientReferredToHospitalForDiagnosticLabTest => "27",
+                CodeConditionCode.PatientAndOrSpousesEghpIsSecondaryToMedicare => "28",
+                CodeConditionCode.DisabledBeneficiaryAndOrFamilyMembersLghpIsSecondaryToMedicare => "29",
+                CodeConditionCode.PatientIsStudentFullTimeDay => "31",
+                CodeConditionCode.PatientIsStudentWorkStudyProgram => "32",
+                CodeConditionCode.PatientIsStudentFullTimeNight => "33",
+                CodeConditionCode.PatientIsStudentPartTime => "34",
+                CodeConditionCode.GeneralCarePatientInSpecialUnit => "36",
+                CodeConditionCode.WardAccommodationAsPatientRequest => "37",
+                CodeConditionCode.SemiPrivateRoomNotAvailable => "38",
+                CodeConditionCode.PrivateRoomMedicallyNecessary => "39",
+                CodeConditionCode.SameDayTransfer => "40",
+                CodeConditionCode.PartialHospitalization => "41",
+                CodeConditionCode.NonAvailabilityStatementOnFile => "46",
+                CodeConditionCode.PsycTreatmentCentersForChildrenAndAdolescents => "48",
+                CodeConditionCode.SnfBedNotAvailable => "55",
+                CodeConditionCode.MedicalAppropriateness => "56",
+                CodeConditionCode.SnfReadmission => "57",
+                CodeConditionCode.DayOutlier => "60",
+                CodeConditionCode.CostOutlier => "61",
+                CodeConditionCode.PayerCode => "62",
+                CodeConditionCode.ProviderDoesNotWishCostOutlierPayment => "66",
+                CodeConditionCode.BeneficiaryElectsNotToUseLifeTimeReserveLtrDays => "67",
+                CodeConditionCode.BeneficiaryElectsToUseLifeTimeReserveLtrDays => "68",
+                CodeConditionCode.SelfAdministeredEpo => "70",
+                CodeConditionCode.FullCareInUnit => "71",
+                CodeConditionCode.SelfCareInUnit => "72",
+                CodeConditionCode.SelfCareTraining => "73",
+                CodeConditionCode.Home => "74",
+                CodeConditionCode.Home100Reimbursement => "75",
+                CodeConditionCode.BackUpInFacilityDialysis => "76",
+                CodeConditionCode.ProviderAcceptsPayerPaymentInFull => "77",
+                CodeConditionCode.NewCoverageNotImplementedByHmo => "78",
+                CodeConditionCode.CorfServicesProvidedOffSite => "79",
+                CodeConditionCode.Pregnant => "80",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ConfidentialityCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeConfidentialityCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ConfidentialityCode input)
+        public string EnumToCode(CodeConfidentialityCode input)
         {
             return input switch
             {
-                ConfidentialityCode.AidsPatient => "AID",
-                ConfidentialityCode.Employee => "EMP",
-                ConfidentialityCode.AlcoholDrugTreatmentPatient => "ETH",
-                ConfidentialityCode.HivPatient => "HIV",
-                ConfidentialityCode.PsychiatricPatient => "PSY",
-                ConfidentialityCode.Restricted => "R",
-                ConfidentialityCode.UsualControl => "U",
-                ConfidentialityCode.UnwedMother => "UWM",
-                ConfidentialityCode.VeryRestricted => "V",
-                ConfidentialityCode.VeryImportantPersonOrCelebrity => "VIP",
+                CodeConfidentialityCode.AidsPatient => "AID",
+                CodeConfidentialityCode.Employee => "EMP",
+                CodeConfidentialityCode.AlcoholDrugTreatmentPatient => "ETH",
+                CodeConfidentialityCode.HivPatient => "HIV",
+                CodeConfidentialityCode.PsychiatricPatient => "PSY",
+                CodeConfidentialityCode.Restricted => "R",
+                CodeConfidentialityCode.UsualControl => "U",
+                CodeConfidentialityCode.UnwedMother => "UWM",
+                CodeConfidentialityCode.VeryRestricted => "V",
+                CodeConfidentialityCode.VeryImportantPersonOrCelebrity => "VIP",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ContainerStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeContainerStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ContainerStatus input)
+        public string EnumToCode(CodeContainerStatus input)
         {
             return input switch
             {
-                ContainerStatus.Identified => "I",
-                ContainerStatus.LeftEquipment => "L",
-                ContainerStatus.Missing => "M",
-                ContainerStatus.InProcess => "O",
-                ContainerStatus.InPosition => "P",
-                ContainerStatus.ProcessCompleted => "R",
-                ContainerStatus.Unknown => "U",
-                ContainerStatus.ContainerUnavailable => "X",
+                CodeContainerStatus.Identified => "I",
+                CodeContainerStatus.LeftEquipment => "L",
+                CodeContainerStatus.Missing => "M",
+                CodeContainerStatus.InProcess => "O",
+                CodeContainerStatus.InPosition => "P",
+                CodeContainerStatus.ProcessCompleted => "R",
+                CodeContainerStatus.Unknown => "U",
+                CodeContainerStatus.ContainerUnavailable => "X",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ContinuationStyleCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeContinuationStyleCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ContinuationStyleCode input)
+        public string EnumToCode(CodeContinuationStyleCode input)
         {
             return input switch
             {
-                ContinuationStyleCode.Fragmentation => "F",
-                ContinuationStyleCode.InteractiveContinuation => "I",
+                CodeContinuationStyleCode.Fragmentation => "F",
+                CodeContinuationStyleCode.InteractiveContinuation => "I",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given CoordinationOfBenefits enum value into its HL7 equivalent code.
+        /// Converts the given CodeCoordinationOfBenefits enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(CoordinationOfBenefits input)
+        public string EnumToCode(CodeCoordinationOfBenefits input)
         {
             return input switch
             {
-                CoordinationOfBenefits.Coordination => "CO",
-                CoordinationOfBenefits.Independent => "IN",
+                CodeCoordinationOfBenefits.Coordination => "CO",
+                CodeCoordinationOfBenefits.Independent => "IN",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given CoverageType enum value into its HL7 equivalent code.
+        /// Converts the given CodeCoverageType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(CoverageType input)
+        public string EnumToCode(CodeCoverageType input)
         {
             return input switch
             {
-                CoverageType.BothHospitalAndPhysician => "B",
-                CoverageType.HospitalInstitutional => "H",
-                CoverageType.PhysicianProfessional => "P",
+                CodeCoverageType.BothHospitalAndPhysician => "B",
+                CodeCoverageType.HospitalInstitutional => "H",
+                CodeCoverageType.PhysicianProfessional => "P",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given CpRangeType enum value into its HL7 equivalent code.
+        /// Converts the given CodeCpRangeType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(CpRangeType input)
+        public string EnumToCode(CodeCpRangeType input)
         {
             return input switch
             {
-                CpRangeType.FlatRate => "F",
-                CpRangeType.ProRate => "P",
+                CodeCpRangeType.FlatRate => "F",
+                CodeCpRangeType.ProRate => "P",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DataTypes enum value into its HL7 equivalent code.
+        /// Converts the given CodeDataTypes enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DataTypes input)
+        public string EnumToCode(CodeDataTypes input)
         {
             return input switch
             {
-                DataTypes.Address => "AD",
-                DataTypes.ChannelDefinition => "CD",
-                DataTypes.CodedElement => "CE",
-                DataTypes.CodedElementWithFormattedValues => "CF",
-                DataTypes.CompositeIdWithCheckDigit => "CK",
-                DataTypes.Composite => "CM",
-                DataTypes.CompositeIdNumberAndName => "CN",
-                DataTypes.CodedWithNoExceptions => "CNE",
-                DataTypes.CompositePrice => "CP",
-                DataTypes.CompositeQuantityWithUnits => "CQ",
-                DataTypes.CodedWithExceptions => "CWE",
-                DataTypes.ExtendedCompositeIdWithCheckDigit => "CX",
-                DataTypes.DriversLicenseNumber => "DLN",
-                DataTypes.DateTimeRange => "DR",
-                DataTypes.Date => "DT",
-                DataTypes.EncapsulatedData => "ED",
-                DataTypes.EntityIdentifier => "EI",
-                DataTypes.FinancialClass => "FC",
-                DataTypes.FamilyName => "FN",
-                DataTypes.FormattedText => "FT",
-                DataTypes.HierarchicDesignator => "HD",
-                DataTypes.CodedValuesForHl7Tables => "ID",
-                DataTypes.CodedValueForUserDefinedTables => "IS",
-                DataTypes.JobCodeClass => "JCC",
-                DataTypes.MultiplexedArray => "MA",
-                DataTypes.Money => "MO",
-                DataTypes.NumericArray => "NA",
-                DataTypes.Numeric => "NM",
-                DataTypes.PersonLocation => "PL",
-                DataTypes.PersonName => "PN",
-                DataTypes.PerformingPersonTimeStamp => "PPN",
-                DataTypes.ProcessingType => "PT",
-                DataTypes.QueryInputParameterList => "QIP",
-                DataTypes.QuerySelectionCriteria => "QSC",
-                DataTypes.RowColumnDefinition => "RCD",
-                DataTypes.RepeatInterval => "RI",
-                DataTypes.ReferencePointer => "RP",
-                DataTypes.StreetAddress => "SAD",
-                DataTypes.SchedulingClassValuePair => "SCV",
-                DataTypes.SequenceId => "SI",
-                DataTypes.StructuredNumeric => "SN",
-                DataTypes.SortOrder => "SRT",
-                DataTypes.StringData => "ST",
-                DataTypes.Time => "TM",
-                DataTypes.TelephoneNumber => "TN",
-                DataTypes.TimingQuantity => "TQ",
-                DataTypes.TimeStamp => "TS",
-                DataTypes.TextData => "TX",
-                DataTypes.VisitingHours => "VH",
-                DataTypes.VersionIdentifier => "VID",
-                DataTypes.ExtendedAddress => "XAD",
-                DataTypes.ExtendedCompositeIdNumberAndNameForPersons => "XCN",
-                DataTypes.ExtendedCompositeNameAndIdNumberForOrganizations => "XON",
-                DataTypes.ExtendedPersonName => "XPN",
-                DataTypes.ExtendedTelecommunicationsNumber => "XTN",
+                CodeDataTypes.Address => "AD",
+                CodeDataTypes.ChannelDefinition => "CD",
+                CodeDataTypes.CodedElement => "CE",
+                CodeDataTypes.CodedElementWithFormattedValues => "CF",
+                CodeDataTypes.CompositeIdWithCheckDigit => "CK",
+                CodeDataTypes.Composite => "CM",
+                CodeDataTypes.CompositeIdNumberAndName => "CN",
+                CodeDataTypes.CodedWithNoExceptions => "CNE",
+                CodeDataTypes.CompositePrice => "CP",
+                CodeDataTypes.CompositeQuantityWithUnits => "CQ",
+                CodeDataTypes.CodedWithExceptions => "CWE",
+                CodeDataTypes.ExtendedCompositeIdWithCheckDigit => "CX",
+                CodeDataTypes.DriversLicenseNumber => "DLN",
+                CodeDataTypes.DateTimeRange => "DR",
+                CodeDataTypes.Date => "DT",
+                CodeDataTypes.EncapsulatedData => "ED",
+                CodeDataTypes.EntityIdentifier => "EI",
+                CodeDataTypes.FinancialClass => "FC",
+                CodeDataTypes.FamilyName => "FN",
+                CodeDataTypes.FormattedText => "FT",
+                CodeDataTypes.HierarchicDesignator => "HD",
+                CodeDataTypes.CodedValuesForHl7Tables => "ID",
+                CodeDataTypes.CodedValueForUserDefinedTables => "IS",
+                CodeDataTypes.JobCodeClass => "JCC",
+                CodeDataTypes.MultiplexedArray => "MA",
+                CodeDataTypes.Money => "MO",
+                CodeDataTypes.NumericArray => "NA",
+                CodeDataTypes.Numeric => "NM",
+                CodeDataTypes.PersonLocation => "PL",
+                CodeDataTypes.PersonName => "PN",
+                CodeDataTypes.PerformingPersonTimeStamp => "PPN",
+                CodeDataTypes.ProcessingType => "PT",
+                CodeDataTypes.QueryInputParameterList => "QIP",
+                CodeDataTypes.QuerySelectionCriteria => "QSC",
+                CodeDataTypes.RowColumnDefinition => "RCD",
+                CodeDataTypes.RepeatInterval => "RI",
+                CodeDataTypes.ReferencePointer => "RP",
+                CodeDataTypes.StreetAddress => "SAD",
+                CodeDataTypes.SchedulingClassValuePair => "SCV",
+                CodeDataTypes.SequenceId => "SI",
+                CodeDataTypes.StructuredNumeric => "SN",
+                CodeDataTypes.SortOrder => "SRT",
+                CodeDataTypes.StringData => "ST",
+                CodeDataTypes.Time => "TM",
+                CodeDataTypes.TelephoneNumber => "TN",
+                CodeDataTypes.TimingQuantity => "TQ",
+                CodeDataTypes.TimeStamp => "TS",
+                CodeDataTypes.TextData => "TX",
+                CodeDataTypes.VisitingHours => "VH",
+                CodeDataTypes.VersionIdentifier => "VID",
+                CodeDataTypes.ExtendedAddress => "XAD",
+                CodeDataTypes.ExtendedCompositeIdNumberAndNameForPersons => "XCN",
+                CodeDataTypes.ExtendedCompositeNameAndIdNumberForOrganizations => "XON",
+                CodeDataTypes.ExtendedPersonName => "XPN",
+                CodeDataTypes.ExtendedTelecommunicationsNumber => "XTN",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DateTimeSelectionQualifier enum value into its HL7 equivalent code.
+        /// Converts the given CodeDateTimeSelectionQualifier enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DateTimeSelectionQualifier input)
+        public string EnumToCode(CodeDateTimeSelectionQualifier input)
         {
             return input switch
             {
-                DateTimeSelectionQualifier.FirstValueWithinRange => "1ST",
-                DateTimeSelectionQualifier.AllValuesWithinTheRange => "ALL",
-                DateTimeSelectionQualifier.LastValueWithinTheRange => "LST",
-                DateTimeSelectionQualifier.ValuesWithinRangeInReverseOrder => "REV",
+                CodeDateTimeSelectionQualifier.FirstValueWithinRange => "1ST",
+                CodeDateTimeSelectionQualifier.AllValuesWithinTheRange => "ALL",
+                CodeDateTimeSelectionQualifier.LastValueWithinTheRange => "LST",
+                CodeDateTimeSelectionQualifier.ValuesWithinRangeInReverseOrder => "REV",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DaysOfTheWeek enum value into its HL7 equivalent code.
+        /// Converts the given CodeDaysOfTheWeek enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DaysOfTheWeek input)
+        public string EnumToCode(CodeDaysOfTheWeek input)
         {
             return input switch
             {
-                DaysOfTheWeek.Friday => "FRI",
-                DaysOfTheWeek.Monday => "MON",
-                DaysOfTheWeek.Saturday => "SAT",
-                DaysOfTheWeek.Sunday => "SUN",
-                DaysOfTheWeek.Thursday => "THU",
-                DaysOfTheWeek.Tuesday => "TUE",
-                DaysOfTheWeek.Wednesday => "WED",
+                CodeDaysOfTheWeek.Friday => "FRI",
+                CodeDaysOfTheWeek.Monday => "MON",
+                CodeDaysOfTheWeek.Saturday => "SAT",
+                CodeDaysOfTheWeek.Sunday => "SUN",
+                CodeDaysOfTheWeek.Thursday => "THU",
+                CodeDaysOfTheWeek.Tuesday => "TUE",
+                CodeDaysOfTheWeek.Wednesday => "WED",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DayType enum value into its HL7 equivalent code.
+        /// Converts the given CodeDayType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DayType input)
+        public string EnumToCode(CodeDayType input)
         {
             return input switch
             {
-                DayType.Approved => "AP",
-                DayType.Denied => "DE",
-                DayType.Pending => "PE",
+                CodeDayType.Approved => "AP",
+                CodeDayType.Denied => "DE",
+                CodeDayType.Pending => "PE",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DeferredResponseType enum value into its HL7 equivalent code.
+        /// Converts the given CodeDeferredResponseType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DeferredResponseType input)
+        public string EnumToCode(CodeDeferredResponseType input)
         {
             return input switch
             {
-                DeferredResponseType.BeforeTheDateTimeSpecified => "B",
-                DeferredResponseType.LaterThanTheDateTimeSpecified => "L",
+                CodeDeferredResponseType.BeforeTheDateTimeSpecified => "B",
+                CodeDeferredResponseType.LaterThanTheDateTimeSpecified => "L",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DegreeLicenseCertificate enum value into its HL7 equivalent code.
+        /// Converts the given CodeDegreeLicenseCertificate enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DegreeLicenseCertificate input)
+        public string EnumToCode(CodeDegreeLicenseCertificate input)
         {
             return input switch
             {
-                DegreeLicenseCertificate.AssociateOfArts => "AA",
-                DegreeLicenseCertificate.AssociateOfAppliedScience => "AAS",
-                DegreeLicenseCertificate.AssociateOfBusinessAdministration => "ABA",
-                DegreeLicenseCertificate.AssociateOfEngineering => "AE",
-                DegreeLicenseCertificate.AssociateOfScience => "AS",
-                DegreeLicenseCertificate.BachelorOfArts => "BA",
-                DegreeLicenseCertificate.BachelorOfBusinessAdministration => "BBA",
-                DegreeLicenseCertificate.BachelorOrEngineering => "BE",
-                DegreeLicenseCertificate.BachelorOfFineArts => "BFA",
-                DegreeLicenseCertificate.BachelorOfNursing => "BN",
-                DegreeLicenseCertificate.BachelorOfScience => "BS",
-                DegreeLicenseCertificate.BachelorOfScienceLaw => "BSL",
-                DegreeLicenseCertificate.BachelorOfTheology => "BT",
-                DegreeLicenseCertificate.Certificate => "CER",
-                DegreeLicenseCertificate.DoctorOfBusinessAdministration => "DBA",
-                DegreeLicenseCertificate.DoctorOfEducation => "DED",
-                DegreeLicenseCertificate.Diploma => "DIP",
-                DegreeLicenseCertificate.DoctorOfOsteopathy => "DO",
-                DegreeLicenseCertificate.HighSchoolGraduate => "HS",
-                DegreeLicenseCertificate.JurisDoctor => "JD",
-                DegreeLicenseCertificate.MasterOfArts => "MA",
-                DegreeLicenseCertificate.MasterOfBusinessAdministration => "MBA",
-                DegreeLicenseCertificate.MasterOfCivilEngineering => "MCE",
-                DegreeLicenseCertificate.DoctorOfMedicine => "MD",
-                DegreeLicenseCertificate.MasterOfDivinity => "MDI",
-                DegreeLicenseCertificate.MasterOfEngineering => "ME",
-                DegreeLicenseCertificate.MasterOfEducation => "MED",
-                DegreeLicenseCertificate.MasterOfElectricalEngineering => "MEE",
-                DegreeLicenseCertificate.MasterOfFineArts => "MFA",
-                DegreeLicenseCertificate.MasterOfMechanicalEngineering => "MME",
-                DegreeLicenseCertificate.MasterOfScience => "MS",
-                DegreeLicenseCertificate.MasterOfScienceLaw => "MSL",
-                DegreeLicenseCertificate.MasterOfTheology => "MT",
-                DegreeLicenseCertificate.NonGraduate => "NG",
-                DegreeLicenseCertificate.DoctorOfPhilosophy => "PHD",
-                DegreeLicenseCertificate.DoctorOfEngineering => "PHE",
-                DegreeLicenseCertificate.DoctorOfScience => "PHS",
-                DegreeLicenseCertificate.DoctorOfPharmacy => "PharmD",
-                DegreeLicenseCertificate.SecretarialCertificate => "SEC",
-                DegreeLicenseCertificate.TradeSchoolGraduate => "TS",
+                CodeDegreeLicenseCertificate.AssociateOfArts => "AA",
+                CodeDegreeLicenseCertificate.AssociateOfAppliedScience => "AAS",
+                CodeDegreeLicenseCertificate.AssociateOfBusinessAdministration => "ABA",
+                CodeDegreeLicenseCertificate.AssociateOfEngineering => "AE",
+                CodeDegreeLicenseCertificate.AssociateOfScience => "AS",
+                CodeDegreeLicenseCertificate.BachelorOfArts => "BA",
+                CodeDegreeLicenseCertificate.BachelorOfBusinessAdministration => "BBA",
+                CodeDegreeLicenseCertificate.BachelorOrEngineering => "BE",
+                CodeDegreeLicenseCertificate.BachelorOfFineArts => "BFA",
+                CodeDegreeLicenseCertificate.BachelorOfNursing => "BN",
+                CodeDegreeLicenseCertificate.BachelorOfScience => "BS",
+                CodeDegreeLicenseCertificate.BachelorOfScienceLaw => "BSL",
+                CodeDegreeLicenseCertificate.BachelorOfTheology => "BT",
+                CodeDegreeLicenseCertificate.Certificate => "CER",
+                CodeDegreeLicenseCertificate.DoctorOfBusinessAdministration => "DBA",
+                CodeDegreeLicenseCertificate.DoctorOfEducation => "DED",
+                CodeDegreeLicenseCertificate.Diploma => "DIP",
+                CodeDegreeLicenseCertificate.DoctorOfOsteopathy => "DO",
+                CodeDegreeLicenseCertificate.HighSchoolGraduate => "HS",
+                CodeDegreeLicenseCertificate.JurisDoctor => "JD",
+                CodeDegreeLicenseCertificate.MasterOfArts => "MA",
+                CodeDegreeLicenseCertificate.MasterOfBusinessAdministration => "MBA",
+                CodeDegreeLicenseCertificate.MasterOfCivilEngineering => "MCE",
+                CodeDegreeLicenseCertificate.DoctorOfMedicine => "MD",
+                CodeDegreeLicenseCertificate.MasterOfDivinity => "MDI",
+                CodeDegreeLicenseCertificate.MasterOfEngineering => "ME",
+                CodeDegreeLicenseCertificate.MasterOfEducation => "MED",
+                CodeDegreeLicenseCertificate.MasterOfElectricalEngineering => "MEE",
+                CodeDegreeLicenseCertificate.MasterOfFineArts => "MFA",
+                CodeDegreeLicenseCertificate.MasterOfMechanicalEngineering => "MME",
+                CodeDegreeLicenseCertificate.MasterOfScience => "MS",
+                CodeDegreeLicenseCertificate.MasterOfScienceLaw => "MSL",
+                CodeDegreeLicenseCertificate.MasterOfTheology => "MT",
+                CodeDegreeLicenseCertificate.NonGraduate => "NG",
+                CodeDegreeLicenseCertificate.DoctorOfPhilosophy => "PHD",
+                CodeDegreeLicenseCertificate.DoctorOfEngineering => "PHE",
+                CodeDegreeLicenseCertificate.DoctorOfScience => "PHS",
+                CodeDegreeLicenseCertificate.DoctorOfPharmacy => "PharmD",
+                CodeDegreeLicenseCertificate.SecretarialCertificate => "SEC",
+                CodeDegreeLicenseCertificate.TradeSchoolGraduate => "TS",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DelayedAcknowledgmentType enum value into its HL7 equivalent code.
+        /// Converts the given CodeDelayedAcknowledgmentType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DelayedAcknowledgmentType input)
+        public string EnumToCode(CodeDelayedAcknowledgmentType input)
         {
             return input switch
             {
-                DelayedAcknowledgmentType.MessageReceived => "D",
-                DelayedAcknowledgmentType.AcknowledgmentAfterProcessing => "F",
+                CodeDelayedAcknowledgmentType.MessageReceived => "D",
+                CodeDelayedAcknowledgmentType.AcknowledgmentAfterProcessing => "F",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DenialOrRejectionCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeDenialOrRejectionCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DenialOrRejectionCode input)
+        public string EnumToCode(CodeDenialOrRejectionCode input)
         {
             return input switch
             {
-                DenialOrRejectionCode.LineItemNotDeniedOrRejected => "0",
-                DenialOrRejectionCode.LineItemDeniedOrRejected => "1",
-                DenialOrRejectionCode.LineItemIsOnAMultipleDayClaim => "2",
+                CodeDenialOrRejectionCode.LineItemNotDeniedOrRejected => "0",
+                CodeDenialOrRejectionCode.LineItemDeniedOrRejected => "1",
+                CodeDenialOrRejectionCode.LineItemIsOnAMultipleDayClaim => "2",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DerivedSpecimen enum value into its HL7 equivalent code.
+        /// Converts the given CodeDerivedSpecimen enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DerivedSpecimen input)
+        public string EnumToCode(CodeDerivedSpecimen input)
         {
             return input switch
             {
-                DerivedSpecimen.ChildObservation => "C",
-                DerivedSpecimen.NotApplicable => "N",
-                DerivedSpecimen.ParentObservation => "P",
+                CodeDerivedSpecimen.ChildObservation => "C",
+                CodeDerivedSpecimen.NotApplicable => "N",
+                CodeDerivedSpecimen.ParentObservation => "P",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DiagnosisClassification enum value into its HL7 equivalent code.
+        /// Converts the given CodeDiagnosisClassification enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DiagnosisClassification input)
+        public string EnumToCode(CodeDiagnosisClassification input)
         {
             return input switch
             {
-                DiagnosisClassification.Consultation => "C",
-                DiagnosisClassification.Diagnosis => "D",
-                DiagnosisClassification.InvasiveProcedureNotClassified => "I",
-                DiagnosisClassification.MedicationAntibiotic => "M",
-                DiagnosisClassification.Other => "O",
-                DiagnosisClassification.RadiologicalScheduling => "R",
-                DiagnosisClassification.SignAndSymptom => "S",
-                DiagnosisClassification.TissueDiagnosis => "T",
+                CodeDiagnosisClassification.Consultation => "C",
+                CodeDiagnosisClassification.Diagnosis => "D",
+                CodeDiagnosisClassification.InvasiveProcedureNotClassified => "I",
+                CodeDiagnosisClassification.MedicationAntibiotic => "M",
+                CodeDiagnosisClassification.Other => "O",
+                CodeDiagnosisClassification.RadiologicalScheduling => "R",
+                CodeDiagnosisClassification.SignAndSymptom => "S",
+                CodeDiagnosisClassification.TissueDiagnosis => "T",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DiagnosisPriority enum value into its HL7 equivalent code.
+        /// Converts the given CodeDiagnosisPriority enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DiagnosisPriority input)
+        public string EnumToCode(CodeDiagnosisPriority input)
         {
             return input switch
             {
-                DiagnosisPriority.NotIncludedInDiagnosisRanking => "0",
-                DiagnosisPriority.ThePrimaryDiagnosis => "1",
-                DiagnosisPriority.ForRankedSecondaryDiagnoses => "2 ...",
+                CodeDiagnosisPriority.NotIncludedInDiagnosisRanking => "0",
+                CodeDiagnosisPriority.ThePrimaryDiagnosis => "1",
+                CodeDiagnosisPriority.ForRankedSecondaryDiagnoses => "2 ...",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DiagnosisType enum value into its HL7 equivalent code.
+        /// Converts the given CodeDiagnosisType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DiagnosisType input)
+        public string EnumToCode(CodeDiagnosisType input)
         {
             return input switch
             {
-                DiagnosisType.Admitting => "A",
-                DiagnosisType.Final => "F",
-                DiagnosisType.Working => "W",
+                CodeDiagnosisType.Admitting => "A",
+                CodeDiagnosisType.Final => "F",
+                CodeDiagnosisType.Working => "W",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DiagnosticServiceSectionId enum value into its HL7 equivalent code.
+        /// Converts the given CodeDiagnosticServiceSectionId enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DiagnosticServiceSectionId input)
+        public string EnumToCode(CodeDiagnosticServiceSectionId input)
         {
             return input switch
             {
-                DiagnosticServiceSectionId.Audiology => "AU",
-                DiagnosticServiceSectionId.BloodGases => "BG",
-                DiagnosticServiceSectionId.BloodBank => "BLB",
-                DiagnosticServiceSectionId.Chemistry => "CH",
-                DiagnosticServiceSectionId.Cytopathology => "CP",
-                DiagnosticServiceSectionId.CatScan => "CT",
-                DiagnosticServiceSectionId.CardiacCatheterization => "CTH",
-                DiagnosticServiceSectionId.CardiacUltrasound => "CUS",
-                DiagnosticServiceSectionId.Electrocardiac => "EC",
-                DiagnosticServiceSectionId.Electroneuro => "EN",
-                DiagnosticServiceSectionId.Hematology => "HM",
-                DiagnosticServiceSectionId.BedsideIcuMonitoring => "ICU",
-                DiagnosticServiceSectionId.DiagnosticImaging => "IMG",
-                DiagnosticServiceSectionId.Immunology => "IMM",
-                DiagnosticServiceSectionId.Laboratory => "LAB",
-                DiagnosticServiceSectionId.Microbiology => "MB",
-                DiagnosticServiceSectionId.Mycobacteriology => "MCB",
-                DiagnosticServiceSectionId.Mycology => "MYC",
-                DiagnosticServiceSectionId.NuclearMagneticResonance => "NMR",
-                DiagnosticServiceSectionId.NuclearMedicineScan => "NMS",
-                DiagnosticServiceSectionId.NursingServiceMeasures => "NRS",
-                DiagnosticServiceSectionId.OutsideLab => "OSL",
-                DiagnosticServiceSectionId.OccupationalTherapy => "OT",
-                DiagnosticServiceSectionId.Other => "OTH",
-                DiagnosticServiceSectionId.ObUltrasound => "OUS",
-                DiagnosticServiceSectionId.Parasitology => "PAR",
-                DiagnosticServiceSectionId.Pathology => "PAT",
-                DiagnosticServiceSectionId.PulmonaryFunction => "PF",
-                DiagnosticServiceSectionId.Pharmacy => "PHR",
-                DiagnosticServiceSectionId.Physician => "PHY",
-                DiagnosticServiceSectionId.PhysicalTherapy => "PT",
-                DiagnosticServiceSectionId.Radiology => "RAD",
-                DiagnosticServiceSectionId.RespiratoryCareTherapy => "RC",
-                DiagnosticServiceSectionId.RadiationTherapy => "RT",
-                DiagnosticServiceSectionId.RadiologyUltrasound => "RUS",
-                DiagnosticServiceSectionId.Radiograph => "RX",
-                DiagnosticServiceSectionId.SurgicalPathology => "SP",
-                DiagnosticServiceSectionId.Serology => "SR",
-                DiagnosticServiceSectionId.Toxicology => "TX",
-                DiagnosticServiceSectionId.Urinalysis => "URN",
-                DiagnosticServiceSectionId.Virology => "VR",
-                DiagnosticServiceSectionId.VascularUltrasound => "VUS",
-                DiagnosticServiceSectionId.Cineradiograph => "XRC",
+                CodeDiagnosticServiceSectionId.Audiology => "AU",
+                CodeDiagnosticServiceSectionId.BloodGases => "BG",
+                CodeDiagnosticServiceSectionId.BloodBank => "BLB",
+                CodeDiagnosticServiceSectionId.Chemistry => "CH",
+                CodeDiagnosticServiceSectionId.Cytopathology => "CP",
+                CodeDiagnosticServiceSectionId.CatScan => "CT",
+                CodeDiagnosticServiceSectionId.CardiacCatheterization => "CTH",
+                CodeDiagnosticServiceSectionId.CardiacUltrasound => "CUS",
+                CodeDiagnosticServiceSectionId.Electrocardiac => "EC",
+                CodeDiagnosticServiceSectionId.Electroneuro => "EN",
+                CodeDiagnosticServiceSectionId.Hematology => "HM",
+                CodeDiagnosticServiceSectionId.BedsideIcuMonitoring => "ICU",
+                CodeDiagnosticServiceSectionId.DiagnosticImaging => "IMG",
+                CodeDiagnosticServiceSectionId.Immunology => "IMM",
+                CodeDiagnosticServiceSectionId.Laboratory => "LAB",
+                CodeDiagnosticServiceSectionId.Microbiology => "MB",
+                CodeDiagnosticServiceSectionId.Mycobacteriology => "MCB",
+                CodeDiagnosticServiceSectionId.Mycology => "MYC",
+                CodeDiagnosticServiceSectionId.NuclearMagneticResonance => "NMR",
+                CodeDiagnosticServiceSectionId.NuclearMedicineScan => "NMS",
+                CodeDiagnosticServiceSectionId.NursingServiceMeasures => "NRS",
+                CodeDiagnosticServiceSectionId.OutsideLab => "OSL",
+                CodeDiagnosticServiceSectionId.OccupationalTherapy => "OT",
+                CodeDiagnosticServiceSectionId.Other => "OTH",
+                CodeDiagnosticServiceSectionId.ObUltrasound => "OUS",
+                CodeDiagnosticServiceSectionId.Parasitology => "PAR",
+                CodeDiagnosticServiceSectionId.Pathology => "PAT",
+                CodeDiagnosticServiceSectionId.PulmonaryFunction => "PF",
+                CodeDiagnosticServiceSectionId.Pharmacy => "PHR",
+                CodeDiagnosticServiceSectionId.Physician => "PHY",
+                CodeDiagnosticServiceSectionId.PhysicalTherapy => "PT",
+                CodeDiagnosticServiceSectionId.Radiology => "RAD",
+                CodeDiagnosticServiceSectionId.RespiratoryCareTherapy => "RC",
+                CodeDiagnosticServiceSectionId.RadiationTherapy => "RT",
+                CodeDiagnosticServiceSectionId.RadiologyUltrasound => "RUS",
+                CodeDiagnosticServiceSectionId.Radiograph => "RX",
+                CodeDiagnosticServiceSectionId.SurgicalPathology => "SP",
+                CodeDiagnosticServiceSectionId.Serology => "SR",
+                CodeDiagnosticServiceSectionId.Toxicology => "TX",
+                CodeDiagnosticServiceSectionId.Urinalysis => "URN",
+                CodeDiagnosticServiceSectionId.Virology => "VR",
+                CodeDiagnosticServiceSectionId.VascularUltrasound => "VUS",
+                CodeDiagnosticServiceSectionId.Cineradiograph => "XRC",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DietCodeSpecificationType enum value into its HL7 equivalent code.
+        /// Converts the given CodeDietCodeSpecificationType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DietCodeSpecificationType input)
+        public string EnumToCode(CodeDietCodeSpecificationType input)
         {
             return input switch
             {
-                DietCodeSpecificationType.Diet => "D",
-                DietCodeSpecificationType.Preference => "P",
-                DietCodeSpecificationType.Supplement => "S",
+                CodeDietCodeSpecificationType.Diet => "D",
+                CodeDietCodeSpecificationType.Preference => "P",
+                CodeDietCodeSpecificationType.Supplement => "S",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DisabledPersonCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeDisabledPersonCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DisabledPersonCode input)
+        public string EnumToCode(CodeDisabledPersonCode input)
         {
             return input switch
             {
-                DisabledPersonCode.AssociatedParty => "AP",
-                DisabledPersonCode.Guarantor => "GT",
-                DisabledPersonCode.Insured => "IN",
-                DisabledPersonCode.Patient => "PT",
+                CodeDisabledPersonCode.AssociatedParty => "AP",
+                CodeDisabledPersonCode.Guarantor => "GT",
+                CodeDisabledPersonCode.Insured => "IN",
+                CodeDisabledPersonCode.Patient => "PT",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DispenseMethod enum value into its HL7 equivalent code.
+        /// Converts the given CodeDispenseMethod enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DispenseMethod input)
+        public string EnumToCode(CodeDispenseMethod input)
         {
             return input switch
             {
-                DispenseMethod.AutomaticDispensing => "AD",
-                DispenseMethod.FloorStock => "F",
-                DispenseMethod.Traditional => "TR",
-                DispenseMethod.UnitDose => "UD",
+                CodeDispenseMethod.AutomaticDispensing => "AD",
+                CodeDispenseMethod.FloorStock => "F",
+                CodeDispenseMethod.Traditional => "TR",
+                CodeDispenseMethod.UnitDose => "UD",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DocumentAvailabilityStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeDocumentAvailabilityStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DocumentAvailabilityStatus input)
+        public string EnumToCode(CodeDocumentAvailabilityStatus input)
         {
             return input switch
             {
-                DocumentAvailabilityStatus.AvailableForPatientCare => "AV",
-                DocumentAvailabilityStatus.Deleted => "CA",
-                DocumentAvailabilityStatus.Obsolete => "OB",
-                DocumentAvailabilityStatus.UnavailableForPatientCare => "UN",
+                CodeDocumentAvailabilityStatus.AvailableForPatientCare => "AV",
+                CodeDocumentAvailabilityStatus.Deleted => "CA",
+                CodeDocumentAvailabilityStatus.Obsolete => "OB",
+                CodeDocumentAvailabilityStatus.UnavailableForPatientCare => "UN",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DocumentCompletionStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeDocumentCompletionStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DocumentCompletionStatus input)
+        public string EnumToCode(CodeDocumentCompletionStatus input)
         {
             return input switch
             {
-                DocumentCompletionStatus.Authenticated => "AU",
-                DocumentCompletionStatus.Dictated => "DI",
-                DocumentCompletionStatus.Documented => "DO",
-                DocumentCompletionStatus.Incomplete => "IN",
-                DocumentCompletionStatus.InProgress => "IP",
-                DocumentCompletionStatus.LegallyAuthenticated => "LA",
-                DocumentCompletionStatus.PreAuthenticated => "PA",
+                CodeDocumentCompletionStatus.Authenticated => "AU",
+                CodeDocumentCompletionStatus.Dictated => "DI",
+                CodeDocumentCompletionStatus.Documented => "DO",
+                CodeDocumentCompletionStatus.Incomplete => "IN",
+                CodeDocumentCompletionStatus.InProgress => "IP",
+                CodeDocumentCompletionStatus.LegallyAuthenticated => "LA",
+                CodeDocumentCompletionStatus.PreAuthenticated => "PA",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DocumentConfidentialityStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeDocumentConfidentialityStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DocumentConfidentialityStatus input)
+        public string EnumToCode(CodeDocumentConfidentialityStatus input)
         {
             return input switch
             {
-                DocumentConfidentialityStatus.Restricted => "R",
-                DocumentConfidentialityStatus.UsualControl => "U",
-                DocumentConfidentialityStatus.VeryRestricted => "V",
+                CodeDocumentConfidentialityStatus.Restricted => "R",
+                CodeDocumentConfidentialityStatus.UsualControl => "U",
+                CodeDocumentConfidentialityStatus.VeryRestricted => "V",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DocumentStorageStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeDocumentStorageStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DocumentStorageStatus input)
+        public string EnumToCode(CodeDocumentStorageStatus input)
         {
             return input switch
             {
-                DocumentStorageStatus.ActiveAndArchived => "AA",
-                DocumentStorageStatus.Active => "AC",
-                DocumentStorageStatus.Archived => "AR",
-                DocumentStorageStatus.Purged => "PU",
+                CodeDocumentStorageStatus.ActiveAndArchived => "AA",
+                CodeDocumentStorageStatus.Active => "AC",
+                CodeDocumentStorageStatus.Archived => "AR",
+                CodeDocumentStorageStatus.Purged => "PU",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DocumentType enum value into its HL7 equivalent code.
+        /// Converts the given CodeDocumentType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DocumentType input)
+        public string EnumToCode(CodeDocumentType input)
         {
             return input switch
             {
-                DocumentType.AutopsyReport => "AR",
-                DocumentType.Cardiodiagnostics => "CD",
-                DocumentType.Consultation => "CN",
-                DocumentType.DiagnosticImaging => "DI",
-                DocumentType.DischargeSummary => "DS",
-                DocumentType.EmergencyDepartmentReport => "ED",
-                DocumentType.HistoryAndPhysicalExamination => "HP",
-                DocumentType.OperativeReport => "OP",
-                DocumentType.PsychiatricConsultation => "PC",
-                DocumentType.PsychiatricHistoryAndPhysicalExamination => "PH",
-                DocumentType.ProcedureNote => "PN",
-                DocumentType.ProgressNote => "PR",
-                DocumentType.SurgicalPathology => "SP",
-                DocumentType.TransferSummary => "TS",
+                CodeDocumentType.AutopsyReport => "AR",
+                CodeDocumentType.Cardiodiagnostics => "CD",
+                CodeDocumentType.Consultation => "CN",
+                CodeDocumentType.DiagnosticImaging => "DI",
+                CodeDocumentType.DischargeSummary => "DS",
+                CodeDocumentType.EmergencyDepartmentReport => "ED",
+                CodeDocumentType.HistoryAndPhysicalExamination => "HP",
+                CodeDocumentType.OperativeReport => "OP",
+                CodeDocumentType.PsychiatricConsultation => "PC",
+                CodeDocumentType.PsychiatricHistoryAndPhysicalExamination => "PH",
+                CodeDocumentType.ProcedureNote => "PN",
+                CodeDocumentType.ProgressNote => "PR",
+                CodeDocumentType.SurgicalPathology => "SP",
+                CodeDocumentType.TransferSummary => "TS",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DrgPayor enum value into its HL7 equivalent code.
+        /// Converts the given CodeDrgPayor enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DrgPayor input)
+        public string EnumToCode(CodeDrgPayor input)
         {
             return input switch
             {
-                DrgPayor.Champus => "C",
-                DrgPayor.ManagedCareOrganization => "G",
-                DrgPayor.Medicare => "M",
+                CodeDrgPayor.Champus => "C",
+                CodeDrgPayor.ManagedCareOrganization => "G",
+                CodeDrgPayor.Medicare => "M",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given DurationCategories enum value into its HL7 equivalent code.
+        /// Converts the given CodeDurationCategories enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(DurationCategories input)
+        public string EnumToCode(CodeDurationCategories input)
         {
             return input switch
             {
-                DurationCategories.AsteriskLifeOfTheUnit => "*",
-                DurationCategories.TwelveHours => "12H",
-                DurationCategories.OneHour => "1H",
-                DurationCategories.OneMonth => "1L",
-                DurationCategories.OneWeek => "1W",
-                DurationCategories.TwoAndAHalfHours => "2.5H",
-                DurationCategories.TwentyFourHours => "24H",
-                DurationCategories.TwoDays => "2D",
-                DurationCategories.TwoHours => "2H",
-                DurationCategories.TwoMonths => "2L",
-                DurationCategories.TwoWeeks => "2W",
-                DurationCategories.ThirtyMinutes => "30M",
-                DurationCategories.ThreeDays => "3D",
-                DurationCategories.ThreeHours => "3H",
-                DurationCategories.ThreeMonths => "3L",
-                DurationCategories.ThreeWeeks => "3W",
-                DurationCategories.FourDays => "4D",
-                DurationCategories.FourHours => "4H",
-                DurationCategories.FourWeeks => "4W",
-                DurationCategories.FiveDays => "5D",
-                DurationCategories.FiveHours => "5H",
-                DurationCategories.SixDays => "6D",
-                DurationCategories.SixHours => "6H",
-                DurationCategories.SevenHours => "7H",
-                DurationCategories.EightHours => "8H",
-                DurationCategories.PointInTime => "PT",
+                CodeDurationCategories.AsteriskLifeOfTheUnit => "*",
+                CodeDurationCategories.TwelveHours => "12H",
+                CodeDurationCategories.OneHour => "1H",
+                CodeDurationCategories.OneMonth => "1L",
+                CodeDurationCategories.OneWeek => "1W",
+                CodeDurationCategories.TwoAndAHalfHours => "2.5H",
+                CodeDurationCategories.TwentyFourHours => "24H",
+                CodeDurationCategories.TwoDays => "2D",
+                CodeDurationCategories.TwoHours => "2H",
+                CodeDurationCategories.TwoMonths => "2L",
+                CodeDurationCategories.TwoWeeks => "2W",
+                CodeDurationCategories.ThirtyMinutes => "30M",
+                CodeDurationCategories.ThreeDays => "3D",
+                CodeDurationCategories.ThreeHours => "3H",
+                CodeDurationCategories.ThreeMonths => "3L",
+                CodeDurationCategories.ThreeWeeks => "3W",
+                CodeDurationCategories.FourDays => "4D",
+                CodeDurationCategories.FourHours => "4H",
+                CodeDurationCategories.FourWeeks => "4W",
+                CodeDurationCategories.FiveDays => "5D",
+                CodeDurationCategories.FiveHours => "5H",
+                CodeDurationCategories.SixDays => "6D",
+                CodeDurationCategories.SixHours => "6H",
+                CodeDurationCategories.SevenHours => "7H",
+                CodeDurationCategories.EightHours => "8H",
+                CodeDurationCategories.PointInTime => "PT",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given EligibilitySource enum value into its HL7 equivalent code.
+        /// Converts the given CodeEligibilitySource enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(EligibilitySource input)
+        public string EnumToCode(CodeEligibilitySource input)
         {
             return input switch
             {
-                EligibilitySource.InsuranceCompany => "1",
-                EligibilitySource.Employer => "2",
-                EligibilitySource.InsuredPresentedPolicy => "3",
-                EligibilitySource.InsuredPresentedCard => "4",
-                EligibilitySource.SignedStatementOnFile => "5",
-                EligibilitySource.VerbalInformation => "6",
-                EligibilitySource.None => "7",
+                CodeEligibilitySource.InsuranceCompany => "1",
+                CodeEligibilitySource.Employer => "2",
+                CodeEligibilitySource.InsuredPresentedPolicy => "3",
+                CodeEligibilitySource.InsuredPresentedCard => "4",
+                CodeEligibilitySource.SignedStatementOnFile => "5",
+                CodeEligibilitySource.VerbalInformation => "6",
+                CodeEligibilitySource.None => "7",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given EmploymentStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeEmploymentStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(EmploymentStatus input)
+        public string EnumToCode(CodeEmploymentStatus input)
         {
             return input switch
             {
-                EmploymentStatus.FullTimeEmployed => "1",
-                EmploymentStatus.PartTimeEmployed => "2",
-                EmploymentStatus.Unemployed => "3",
-                EmploymentStatus.SelfEmployed => "4",
-                EmploymentStatus.Retired => "5",
-                EmploymentStatus.OnActiveMilitaryDuty => "6",
-                EmploymentStatus.Unknown => "9",
-                EmploymentStatus.ContractPerDiem => "C",
-                EmploymentStatus.PerDiem => "D",
-                EmploymentStatus.FullTime => "F",
-                EmploymentStatus.LeaveOfAbsence => "L",
-                EmploymentStatus.Other => "O",
-                EmploymentStatus.PartTime => "P",
-                EmploymentStatus.TemporarilyUnemployed => "T",
+                CodeEmploymentStatus.FullTimeEmployed => "1",
+                CodeEmploymentStatus.PartTimeEmployed => "2",
+                CodeEmploymentStatus.Unemployed => "3",
+                CodeEmploymentStatus.SelfEmployed => "4",
+                CodeEmploymentStatus.Retired => "5",
+                CodeEmploymentStatus.OnActiveMilitaryDuty => "6",
+                CodeEmploymentStatus.Unknown => "9",
+                CodeEmploymentStatus.ContractPerDiem => "C",
+                CodeEmploymentStatus.PerDiem => "D",
+                CodeEmploymentStatus.FullTime => "F",
+                CodeEmploymentStatus.LeaveOfAbsence => "L",
+                CodeEmploymentStatus.Other => "O",
+                CodeEmploymentStatus.PartTime => "P",
+                CodeEmploymentStatus.TemporarilyUnemployed => "T",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given Encoding enum value into its HL7 equivalent code.
+        /// Converts the given CodeEncoding enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(Encoding input)
+        public string EnumToCode(CodeEncoding input)
         {
             return input switch
             {
-                Encoding.NoEncoding => "A",
-                Encoding.Base64 => "Base64",
-                Encoding.Hexadecimal => "Hex",
+                CodeEncoding.NoEncoding => "A",
+                CodeEncoding.Base64 => "Base64",
+                CodeEncoding.Hexadecimal => "Hex",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given EquipmentState enum value into its HL7 equivalent code.
+        /// Converts the given CodeEquipmentState enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(EquipmentState input)
+        public string EnumToCode(CodeEquipmentState input)
         {
             return input switch
             {
-                EquipmentState.Clearing => "CL",
-                EquipmentState.Configuring => "CO",
-                EquipmentState.EStopped => "ES",
-                EquipmentState.Idle => "ID",
-                EquipmentState.Initializing => "IN",
-                EquipmentState.NormalOperation => "OP",
-                EquipmentState.Pausing => "PA",
-                EquipmentState.Paused => "PD",
-                EquipmentState.PoweredUp => "PU",
+                CodeEquipmentState.Clearing => "CL",
+                CodeEquipmentState.Configuring => "CO",
+                CodeEquipmentState.EStopped => "ES",
+                CodeEquipmentState.Idle => "ID",
+                CodeEquipmentState.Initializing => "IN",
+                CodeEquipmentState.NormalOperation => "OP",
+                CodeEquipmentState.Pausing => "PA",
+                CodeEquipmentState.Paused => "PD",
+                CodeEquipmentState.PoweredUp => "PU",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given EscortRequired enum value into its HL7 equivalent code.
+        /// Converts the given CodeEscortRequired enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(EscortRequired input)
+        public string EnumToCode(CodeEscortRequired input)
         {
             return input switch
             {
-                EscortRequired.NotRequired => "N",
-                EscortRequired.Required => "R",
-                EscortRequired.Unknown => "U",
+                CodeEscortRequired.NotRequired => "N",
+                CodeEscortRequired.Required => "R",
+                CodeEscortRequired.Unknown => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given EthnicGroup enum value into its HL7 equivalent code.
+        /// Converts the given CodeEthnicGroup enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(EthnicGroup input)
+        public string EnumToCode(CodeEthnicGroup input)
         {
             return input switch
             {
-                EthnicGroup.HispanicOrLatino => "H",
-                EthnicGroup.NotHispanicOrLatino => "N",
-                EthnicGroup.Unknown => "U",
+                CodeEthnicGroup.HispanicOrLatino => "H",
+                CodeEthnicGroup.NotHispanicOrLatino => "N",
+                CodeEthnicGroup.Unknown => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given EventConsequence enum value into its HL7 equivalent code.
+        /// Converts the given CodeEventConsequence enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(EventConsequence input)
+        public string EnumToCode(CodeEventConsequence input)
         {
             return input switch
             {
-                EventConsequence.CongenitalAnomalyBirthDefect => "C",
-                EventConsequence.Death => "D",
-                EventConsequence.CausedHospitalized => "H",
-                EventConsequence.Incapacity => "I",
-                EventConsequence.Disability => "J",
-                EventConsequence.LifeThreatening => "L",
-                EventConsequence.Other => "O",
-                EventConsequence.ProlongedHospitalization => "P",
-                EventConsequence.RequiredIntervention => "R",
+                CodeEventConsequence.CongenitalAnomalyBirthDefect => "C",
+                CodeEventConsequence.Death => "D",
+                CodeEventConsequence.CausedHospitalized => "H",
+                CodeEventConsequence.Incapacity => "I",
+                CodeEventConsequence.Disability => "J",
+                CodeEventConsequence.LifeThreatening => "L",
+                CodeEventConsequence.Other => "O",
+                CodeEventConsequence.ProlongedHospitalization => "P",
+                CodeEventConsequence.RequiredIntervention => "R",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given EventExpected enum value into its HL7 equivalent code.
+        /// Converts the given CodeEventExpected enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(EventExpected input)
+        public string EnumToCode(CodeEventExpected input)
         {
             return input switch
             {
-                EventExpected.No => "N",
-                EventExpected.Unknown => "U",
-                EventExpected.Yes => "Y",
+                CodeEventExpected.No => "N",
+                CodeEventExpected.Unknown => "U",
+                CodeEventExpected.Yes => "Y",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given EventQualification enum value into its HL7 equivalent code.
+        /// Converts the given CodeEventQualification enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(EventQualification input)
+        public string EnumToCode(CodeEventQualification input)
         {
             return input switch
             {
-                EventQualification.Abuse => "A",
-                EventQualification.UnexpectedBeneficialEffect => "B",
-                EventQualification.Dependency => "D",
-                EventQualification.Interaction => "I",
-                EventQualification.LackOfExpectTherapeuticEffect => "L",
-                EventQualification.Misuse => "M",
-                EventQualification.Overdose => "O",
-                EventQualification.DrugWithdrawal => "W",
+                CodeEventQualification.Abuse => "A",
+                CodeEventQualification.UnexpectedBeneficialEffect => "B",
+                CodeEventQualification.Dependency => "D",
+                CodeEventQualification.Interaction => "I",
+                CodeEventQualification.LackOfExpectTherapeuticEffect => "L",
+                CodeEventQualification.Misuse => "M",
+                CodeEventQualification.Overdose => "O",
+                CodeEventQualification.DrugWithdrawal => "W",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given EventReason enum value into its HL7 equivalent code.
+        /// Converts the given CodeEventReason enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(EventReason input)
+        public string EnumToCode(CodeEventReason input)
         {
             return input switch
             {
-                EventReason.PatientRequest => "01",
-                EventReason.PhysicianHealthPractitionerOrder => "02",
-                EventReason.CensusManagement => "03",
+                CodeEventReason.PatientRequest => "01",
+                CodeEventReason.PhysicianHealthPractitionerOrder => "02",
+                CodeEventReason.CensusManagement => "03",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given EventReportedTo enum value into its HL7 equivalent code.
+        /// Converts the given CodeEventReportedTo enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(EventReportedTo input)
+        public string EnumToCode(CodeEventReportedTo input)
         {
             return input switch
             {
-                EventReportedTo.Distributor => "D",
-                EventReportedTo.LocalFacilityUserFacility => "L",
-                EventReportedTo.Manufacturer => "M",
-                EventReportedTo.RegulatoryAgency => "R",
+                CodeEventReportedTo.Distributor => "D",
+                CodeEventReportedTo.LocalFacilityUserFacility => "L",
+                CodeEventReportedTo.Manufacturer => "M",
+                CodeEventReportedTo.RegulatoryAgency => "R",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given EventSeriousness enum value into its HL7 equivalent code.
+        /// Converts the given CodeEventSeriousness enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(EventSeriousness input)
+        public string EnumToCode(CodeEventSeriousness input)
         {
             return input switch
             {
-                EventSeriousness.No => "N",
-                EventSeriousness.Significant => "S",
-                EventSeriousness.Yes => "Y",
+                CodeEventSeriousness.No => "N",
+                CodeEventSeriousness.Significant => "S",
+                CodeEventSeriousness.Yes => "Y",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given EventType enum value into its HL7 equivalent code.
+        /// Converts the given CodeEventType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(EventType input)
+        public string EnumToCode(CodeEventType input)
         {
             return input switch
             {
-                EventType.LogEvent => "LOG",
-                EventType.ServiceEvent => "SER",
+                CodeEventType.LogEvent => "LOG",
+                CodeEventType.ServiceEvent => "SER",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given EventTypeCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeEventTypeCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(EventTypeCode input)
+        public string EnumToCode(CodeEventTypeCode input)
         {
             return input switch
             {
-                EventTypeCode.AdtAckAdmitVisitNotification => "A01",
-                EventTypeCode.AdtAckTransferAPatient => "A02",
-                EventTypeCode.AdtAckDischargeEndVisit => "A03",
-                EventTypeCode.AdtAckRegisterAPatient => "A04",
-                EventTypeCode.AdtAckPreAdmitAPatient => "A05",
-                EventTypeCode.AdtAckChangeAnOutpatientToAnInpatient => "A06",
-                EventTypeCode.AdtAckChangeAnInpatientToAnOutpatient => "A07",
-                EventTypeCode.AdtAckUpdatePatientInformation => "A08",
-                EventTypeCode.AdtAckPatientDepartingTracking => "A09",
-                EventTypeCode.AdtAckPatientArrivingTracking => "A10",
-                EventTypeCode.AdtAckCancelAdmitVisitNotification => "A11",
-                EventTypeCode.AdtAckCancelTransfer => "A12",
-                EventTypeCode.AdtAckCancelDischargeEndVisit => "A13",
-                EventTypeCode.AdtAckPendingAdmit => "A14",
-                EventTypeCode.AdtAckPendingTransfer => "A15",
-                EventTypeCode.AdtAckPendingDischarge => "A16",
-                EventTypeCode.AdtAckSwapPatients => "A17",
-                EventTypeCode.AdtAckMergePatientInformation => "A18",
-                EventTypeCode.QryAdrPatientQuery => "A19",
-                EventTypeCode.AdtAckBedStatusUpdate => "A20",
-                EventTypeCode.AdtAckPatientGoesOnALeaveOfAbsence => "A21",
-                EventTypeCode.AdtAckPatientReturnsFromALeaveOfAbsence => "A22",
-                EventTypeCode.AdtAckDeleteAPatientRecord => "A23",
-                EventTypeCode.AdtAckLinkPatientInformation => "A24",
-                EventTypeCode.AdtAckCancelPendingDischarge => "A25",
-                EventTypeCode.AdtAckCancelPendingTransfer => "A26",
-                EventTypeCode.AdtAckCancelPendingAdmit => "A27",
-                EventTypeCode.AdtAckAddPersonInformation => "A28",
-                EventTypeCode.AdtAckDeletePersonInformation => "A29",
-                EventTypeCode.AdtAckMergePersonInformation => "A30",
-                EventTypeCode.AdtAckUpdatePersonInformation => "A31",
-                EventTypeCode.AdtAckCancelPatientArrivingTracking => "A32",
-                EventTypeCode.AdtAckCancelPatientDepartingTracking => "A33",
-                EventTypeCode.AdtAckMergePatientInfoPatientId => "A34",
-                EventTypeCode.AdtAckMergePatientInfoAccountNumber => "A35",
-                EventTypeCode.AdtAckMergePatientInfoPatientIdAccountNumber => "A36",
-                EventTypeCode.AdtAckUnlinkPatientInformation => "A37",
-                EventTypeCode.AdtAckCancelPreAdmit => "A38",
-                EventTypeCode.AdtAckMergePersonPatientId => "A39",
-                EventTypeCode.AdtAckMergePatientPatientIdList => "A40",
-                EventTypeCode.AdtAckMergeAccountPatientAccountNumber => "A41",
-                EventTypeCode.AdtAckMergeVisitVisitNumber => "A42",
-                EventTypeCode.AdtAckMovePatientInfoPatientIdList => "A43",
-                EventTypeCode.AdtAckMoveAccountInfoPatientAccountNumber => "A44",
-                EventTypeCode.AdtAckMoveVisitInfoVisitNumber => "A45",
-                EventTypeCode.AdtAckChangePatientId => "A46",
-                EventTypeCode.AdtAckChangePatientIdList => "A47",
-                EventTypeCode.AdtAckChangeAlternatePatientId => "A48",
-                EventTypeCode.AdtAckChangePatientAccountNumber => "A49",
-                EventTypeCode.AdtAckChangeVisitNumber => "A50",
-                EventTypeCode.AdtAckChangeAlternateVisitId => "A51",
-                EventTypeCode.AdtAckCancelLeaveOfAbsenceForAPatient => "A52",
-                EventTypeCode.AdtAckCancelPatientReturnsFromLoa => "A53",
-                EventTypeCode.AdtAckChangeAttendingDoctor => "A54",
-                EventTypeCode.AdtAckCancelChangeAttendingDoctor => "A55",
-                EventTypeCode.AdtAckUpdateAllergyInfo => "A60",
-                EventTypeCode.AdtAckChangeConsultingDoctor => "A61",
-                EventTypeCode.AdtAckCancelChangeConsultingDoctor => "A62",
-                EventTypeCode.PmuAckAddPersonnelRecord => "B01",
-                EventTypeCode.PmuAckUpdatePersonnelRecord => "B02",
-                EventTypeCode.PmuAckDeletePersonnelReCord => "B03",
-                EventTypeCode.PmuAckActivePracticingPerson => "B04",
-                EventTypeCode.PmuAckDeactivatePracticingPerson => "B05",
-                EventTypeCode.PmuAckTerminatePracticingPerson => "B06",
-                EventTypeCode.CrmRegisterPatientOnClinicalTrial => "C01",
-                EventTypeCode.CrmCancelPatientRegistrationOnClinicalTrial => "C02",
-                EventTypeCode.CrmUpdateRegistrationInformation => "C03",
-                EventTypeCode.CrmPatientOffClinicalTrial => "C04",
-                EventTypeCode.CrmPatientEntersPhaseOfClinicalTrial => "C05",
-                EventTypeCode.CrmCancelPatientEnteringPhase => "C06",
-                EventTypeCode.CrmUpdatePhaseInfo => "C07",
-                EventTypeCode.CrmPatientHasGoneOffPhaseOfClinicalTrial => "C08",
-                EventTypeCode.CsuAutomatedTimeIntervalsForReporting => "C09",
-                EventTypeCode.CsuPatientCompletesClinicalTrial => "C10",
-                EventTypeCode.CsuPatientCompletesPhaseOfClinicalTrial => "C11",
-                EventTypeCode.CsuUpdatePatientOrderResultInfo => "C12",
-                EventTypeCode.CancelQuery => "CNQ",
-                EventTypeCode.RqiRpiRequestForInsuranceInformation => "I01",
-                EventTypeCode.RqiRplRequestReceiptOfPatientSelectionDisplayList => "I02",
-                EventTypeCode.RqiRprRequestReceiptOfPatientSelectionList => "I03",
-                EventTypeCode.RqdRpiRequestForPatientDemographicData => "I04",
-                EventTypeCode.RqcRciRequestForPatientClinicalInformation => "I05",
-                EventTypeCode.RqcRclRequestReceiptOfClinicalDataListing => "I06",
-                EventTypeCode.PinAckUnsolicitedInsuranceInformation => "I07",
-                EventTypeCode.RqaRpaRequestForTreatmentAuthorizationInformation => "I08",
-                EventTypeCode.RqaRpaRequestForModificationToAuthorization => "I09",
-                EventTypeCode.RqaRpaRequestForResubmissionOfAuthorization => "I10",
-                EventTypeCode.RqaRpaRequestForCancellationOfAuthorization => "I11",
-                EventTypeCode.RefRriPatientReferral => "I12",
-                EventTypeCode.RefRriModifyPatientReferral => "I13",
-                EventTypeCode.RefRriCancelPatientReferral => "I14",
-                EventTypeCode.RefRriRequestPatientReferralStatus => "I15",
-                EventTypeCode.QcnAckCancelQueryAcknowledgeMessage => "J01",
-                EventTypeCode.QsxAckCancelSubscriptionAcknowledgeMessage => "J02",
-                EventTypeCode.RspGetPersonDemographicsResponse => "K21",
-                EventTypeCode.RspFindCandidatesResponse => "K22",
-                EventTypeCode.RspGetCorrespondingIdentifiersResponse => "K23",
-                EventTypeCode.RspAllocateIdentifiersResponse => "K24",
-                EventTypeCode.RspPersonnelInformationBySegmentResponse => "K25",
-                EventTypeCode.MfnMfkMasterFileNotOtherwiseSpecified => "M01",
-                EventTypeCode.MfnMfkMasterFileStaffPractitioner => "M02",
-                EventTypeCode.MfnMfkMasterFileTestObservation => "M03",
-                EventTypeCode.MfnMfkMasterFilesChargeDescription => "M04",
-                EventTypeCode.MfnMfkPatientLocationMasterFile => "M05",
-                EventTypeCode.MfnMfkClinicalStudyWithPhasesAndSchedulesMasterFile => "M06",
-                EventTypeCode.MfnMfkClinicalStudyWithoutPhasesButWithSchedulesMasterFile => "M07",
-                EventTypeCode.MfnMfkTestObservationNumericMasterFile => "M08",
-                EventTypeCode.MfnMfkTestObservationCategoricalMasterFile => "M09",
-                EventTypeCode.MfnMfkTestObservationBatteriesMasterFile => "M10",
-                EventTypeCode.MfnMfkTestCalculatedObservationsMasterFile => "M11",
-                EventTypeCode.MfnMfkMasterFileNotificationMessage => "M12",
-                EventTypeCode.NmqNmrApplicationManagementQueryMessage => "N01",
-                EventTypeCode.NmdAckApplicationManagementDataMessageUnsolicited => "N02",
-                EventTypeCode.OrmOrderMessage => "O01",
-                EventTypeCode.OrrOrderResponse => "O02",
-                EventTypeCode.OmdDietOrder => "O03",
-                EventTypeCode.OrdDietOrderAcknowledgment => "O04",
-                EventTypeCode.OmsStockRequisitionOrder => "O05",
-                EventTypeCode.OrsStockRequisitionAcknowledgment => "O06",
-                EventTypeCode.OmnNonStockRequisitionOrder => "O07",
-                EventTypeCode.OrnNonStockRequisitionAcknowledgment => "O08",
-                EventTypeCode.OmpPharmacyTreatmentOrder => "O09",
-                EventTypeCode.OrpPharmacyTreatmentOrderAcknowledgment => "O10",
-                EventTypeCode.RdePharmacyTreatmentEncodedOrder => "O11",
-                EventTypeCode.RrePharmacyTreatmentEncodedOrderAcknowledgment => "O12",
-                EventTypeCode.RdsPharmacyTreatmentDispense => "O13",
-                EventTypeCode.RrdPharmacyTreatmentDispenseAcknowledgment => "O14",
-                EventTypeCode.RgvPharmacyTreatmentGive => "O15",
-                EventTypeCode.RrgPharmacyTreatmentGiveAcknowledgment => "O16",
-                EventTypeCode.RasPharmacyTreatmentAdministration => "O17",
-                EventTypeCode.RraPharmacyTreatmentAdministrationAcknowledgment => "O18",
-                EventTypeCode.OmgGeneralClinicalOrder => "O19",
-                EventTypeCode.OrgOrlGeneralClinicalOrderResponse => "O20",
-                EventTypeCode.OmlLaboratoryOrder => "O21",
-                EventTypeCode.BarAckAddPatientAccounts => "P01",
-                EventTypeCode.BarAckPurgePatientAccounts => "P02",
-                EventTypeCode.DftAckPostDetailFinancialTransaction => "P03",
-                EventTypeCode.QryDspGenerateBillAndARStatements => "P04",
-                EventTypeCode.BarAckUpdateAccount => "P05",
-                EventTypeCode.BarAckEndAccount => "P06",
-                EventTypeCode.PexUnsolicitedInitialExperienceReport => "P07",
-                EventTypeCode.PexUnsolicitedUpdateExperienceReport => "P08",
-                EventTypeCode.SurSummaryExperienceReport => "P09",
-                EventTypeCode.BarAckTransmitAmbulatoryPaymentClassificationApc => "P10",
-                EventTypeCode.PprPcProblemAdd => "PC1",
-                EventTypeCode.PprPcProblemUpdate => "PC2",
-                EventTypeCode.PprPcProblemDelete => "PC3",
-                EventTypeCode.QryPcProblemQuery => "PC4",
-                EventTypeCode.PrrPcProblemResponse => "PC5",
-                EventTypeCode.PglPcGoalAdd => "PC6",
-                EventTypeCode.PglPcGoalUpdate => "PC7",
-                EventTypeCode.PglPcGoalDelete => "PC8",
-                EventTypeCode.QryPcGoalQuery => "PC9",
-                EventTypeCode.PpvPcGoalResponse => "PCA",
-                EventTypeCode.PppPcPathwayProblemOrientedAdd => "PCB",
-                EventTypeCode.PppPcPathwayProblemOrientedUpdate => "PCC",
-                EventTypeCode.PppPcPathwayProblemOrientedDelete => "PCD",
-                EventTypeCode.QryPcPathwayProblemOrientedQuery => "PCE",
-                EventTypeCode.PtrPcPathwayProblemOrientedQueryResponse => "PCF",
-                EventTypeCode.PpgPcPathwayGoalOrientedAdd => "PCG",
-                EventTypeCode.PpgPcPathwayGoalOrientedUpdate => "PCH",
-                EventTypeCode.PpgPcPathwayGoalOrientedDelete => "PCJ",
-                EventTypeCode.QryPcPathwayGoalOrientedQuery => "PCK",
-                EventTypeCode.PptPcPathwayGoalOrientedQueryResponse => "PCL",
-                EventTypeCode.QryDsrQuerySentForImmediateResponse => "Q01",
-                EventTypeCode.QryQckQuerySentForDeferredResponse => "Q02",
-                EventTypeCode.DsrAckDeferredResponseToAQuery => "Q03",
-                EventTypeCode.EqqEmbeddedQueryLanguageQuery => "Q04",
-                EventTypeCode.UdmAckUnsolicitedDisplayUpdateMessage => "Q05",
-                EventTypeCode.OsqOsrQueryForOrderStatus => "Q06",
-                EventTypeCode.VqqVirtualTableQuery => "Q07",
-                EventTypeCode.SpqStoredProcedureRequest => "Q08",
-                EventTypeCode.RqqEventReplayQuery => "Q09",
-                EventTypeCode.QsbCreateSubscription => "Q16",
-                EventTypeCode.QvrQueryForPreviousEvents => "Q17",
-                EventTypeCode.QbpGetPersonDemographics => "Q21",
-                EventTypeCode.QbpFindCandidates => "Q22",
-                EventTypeCode.QbpGetCorrespondingIdentifiers => "Q23",
-                EventTypeCode.QbpAllocateIdentifiers => "Q24",
-                EventTypeCode.QbpPersonnelInformationBySegmentQuery => "Q25",
-                EventTypeCode.OruAckUnsolicitedTransmissionOfObservation => "R01",
-                EventTypeCode.QryQueryForResultsOfObservation => "R02",
-                EventTypeCode.QryDsrDisplayOrientedResultsQueryUnsolUpdate => "R03",
-                EventTypeCode.OrfResponseToQueryTransmissionOfRequestedObservation => "R04",
-                EventTypeCode.QryDsrQueryForDisplayResults => "R05",
-                EventTypeCode.UdmUnsolicitedUpdateDisplayResults => "R06",
-                EventTypeCode.EdrEnhancedDisplayResponse => "R07",
-                EventTypeCode.TbrTabularDataResponse => "R08",
-                EventTypeCode.ErpEventReplayResponse => "R09",
-                EventTypeCode.OulUnsolicitedLaboratoryObservation => "R21",
-                EventTypeCode.RarPharmacyAdministrationInfoQueryResponse => "RAR",
-                EventTypeCode.RdrPharmacyDispenseInfoQueryResponse => "RDR",
-                EventTypeCode.RerPharmacyEncodedOrderInfoQueryResponse => "RER",
-                EventTypeCode.RgrPharmacyDoseInfoQueryResponse => "RGR",
-                EventTypeCode.RorPharmacyPrescriptionOrderQueryResponse => "ROR",
-                EventTypeCode.SrmSrrRequestNewAppointmentBooking => "S01",
-                EventTypeCode.SrmSrrRequestAppointmentRescheduling => "S02",
-                EventTypeCode.SrmSrrRequestAppointmentModification => "S03",
-                EventTypeCode.SrmSrrRequestAppointmentCancellation => "S04",
-                EventTypeCode.SrmSrrRequestAppointmentDiscontinuation => "S05",
-                EventTypeCode.SrmSrrRequestAppointmentDeletion => "S06",
-                EventTypeCode.SrmSrrRequestAdditionOfServiceOnAppointment => "S07",
-                EventTypeCode.SrmSrrRequestModificationOfServiceOnAppointment => "S08",
-                EventTypeCode.SrmSrrRequestCancellationOfServiceOnAppointment => "S09",
-                EventTypeCode.SrmSrrRequestDiscontinuationOfServiceOnAppointment => "S10",
-                EventTypeCode.SrmSrrRequestDeletionOfServiceOnAppointment => "S11",
-                EventTypeCode.SiuAckNotifyNewAppointmentBooking => "S12",
-                EventTypeCode.SiuAckNotifyAppointmentRescheduling => "S13",
-                EventTypeCode.SiuAckNotifyAppointmentModification => "S14",
-                EventTypeCode.SiuAckNotifyAppointmentCancellation => "S15",
-                EventTypeCode.SiuAckNotificationOfAppointmentDiscontinuation => "S16",
-                EventTypeCode.SiuAckNotifyAppointmentDeletion => "S17",
-                EventTypeCode.SiuAckNotifyAdditionOfServiceOnAppointment => "S18",
-                EventTypeCode.SiuAckNotifyModificationOfServiceOnAppointment => "S19",
-                EventTypeCode.SiuAckNotifyCancellationOfServiceOnAppointment => "S20",
-                EventTypeCode.SiuAckNotifyDiscontinuationOfServiceOnAppointment => "S21",
-                EventTypeCode.SiuAckNotifyDeletionOfServiceResourceOnAppointment => "S22",
-                EventTypeCode.SiuAckNotifyBlockedScheduleTimeSlots => "S23",
-                EventTypeCode.SiuAckNotifyOpenedUnblockedScheduleTimeSlots => "S24",
-                EventTypeCode.SqmSqrScheduleQueryMessageAndResponse => "S25",
-                EventTypeCode.SiuAckNotifyPatientDidNotShowUpForAppointment => "S26",
-                EventTypeCode.MdmAckOriginalDocument => "T01",
-                EventTypeCode.MdmAckOriginalDocumentNotifyAndContent => "T02",
-                EventTypeCode.MdmAckDocumentStatusChange => "T03",
-                EventTypeCode.MdmAckDocumentStatusChangeNotifyAndContent => "T04",
-                EventTypeCode.MdmAckDocumentAddendum => "T05",
-                EventTypeCode.MdmAckDocumentAddendumNotifyAndContent => "T06",
-                EventTypeCode.MdmAckDocumentEdit => "T07",
-                EventTypeCode.MdmAckDocumentEditNotifyAndContent => "T08",
-                EventTypeCode.MdmAckDocumentReplacement => "T09",
-                EventTypeCode.MdmAckDocumentReplacementNotifyAndContent => "T10",
-                EventTypeCode.MdmAckDocumentCancel => "T11",
-                EventTypeCode.QryDocDocumentQuery => "T12",
-                EventTypeCode.EsuAckAutomatedEquipmentStatusUpdate => "U01",
-                EventTypeCode.EsrAckAutomatedEquipmentStatusRequest => "U02",
-                EventTypeCode.SsuAckSpecimenStatusUpdate => "U03",
-                EventTypeCode.SsrAckSpecimenStatusRequest => "U04",
-                EventTypeCode.InuAckAutomatedEquipmentInventoryUpdate => "U05",
-                EventTypeCode.InrAckAutomatedEquipmentInventoryRequest => "U06",
-                EventTypeCode.EacAckAutomatedEquipmentCommand => "U07",
-                EventTypeCode.EarAckAutomatedEquipmentResponse => "U08",
-                EventTypeCode.EanAckAutomatedEquipment => "U09",
-                EventTypeCode.TcuAckAutomatedEquipmentTestCodeSettingsUpdate => "U10",
-                EventTypeCode.TcrAckAutomatedEquipmentTestCodeSettingsRequest => "U11",
-                EventTypeCode.LsuAckAutomatedEquipmentLogServiceUpdate => "U12",
-                EventTypeCode.LsrAckAutomatedEquipmentLogServiceRequest => "U13",
-                EventTypeCode.VxqQueryForVaccinationRecord => "V01",
-                EventTypeCode.VxxResponseToVaccinationQueryMultiplePidMatches => "V02",
-                EventTypeCode.VxrVaccinationRecordResponse => "V03",
-                EventTypeCode.VxuUnsolicitedVaccinationRecordUpdate => "V04",
-                EventTypeCode.MfqMfrMasterFilesQuery => "Varies",
-                EventTypeCode.OruWaveformResultUnsolicitedTransmission => "W01",
-                EventTypeCode.QrfWaveformResultResponseToQuery => "W02",
+                CodeEventTypeCode.AdtAckAdmitVisitNotification => "A01",
+                CodeEventTypeCode.AdtAckTransferAPatient => "A02",
+                CodeEventTypeCode.AdtAckDischargeEndVisit => "A03",
+                CodeEventTypeCode.AdtAckRegisterAPatient => "A04",
+                CodeEventTypeCode.AdtAckPreAdmitAPatient => "A05",
+                CodeEventTypeCode.AdtAckChangeAnOutpatientToAnInpatient => "A06",
+                CodeEventTypeCode.AdtAckChangeAnInpatientToAnOutpatient => "A07",
+                CodeEventTypeCode.AdtAckUpdatePatientInformation => "A08",
+                CodeEventTypeCode.AdtAckPatientDepartingTracking => "A09",
+                CodeEventTypeCode.AdtAckPatientArrivingTracking => "A10",
+                CodeEventTypeCode.AdtAckCancelAdmitVisitNotification => "A11",
+                CodeEventTypeCode.AdtAckCancelTransfer => "A12",
+                CodeEventTypeCode.AdtAckCancelDischargeEndVisit => "A13",
+                CodeEventTypeCode.AdtAckPendingAdmit => "A14",
+                CodeEventTypeCode.AdtAckPendingTransfer => "A15",
+                CodeEventTypeCode.AdtAckPendingDischarge => "A16",
+                CodeEventTypeCode.AdtAckSwapPatients => "A17",
+                CodeEventTypeCode.AdtAckMergePatientInformation => "A18",
+                CodeEventTypeCode.QryAdrPatientQuery => "A19",
+                CodeEventTypeCode.AdtAckBedStatusUpdate => "A20",
+                CodeEventTypeCode.AdtAckPatientGoesOnALeaveOfAbsence => "A21",
+                CodeEventTypeCode.AdtAckPatientReturnsFromALeaveOfAbsence => "A22",
+                CodeEventTypeCode.AdtAckDeleteAPatientRecord => "A23",
+                CodeEventTypeCode.AdtAckLinkPatientInformation => "A24",
+                CodeEventTypeCode.AdtAckCancelPendingDischarge => "A25",
+                CodeEventTypeCode.AdtAckCancelPendingTransfer => "A26",
+                CodeEventTypeCode.AdtAckCancelPendingAdmit => "A27",
+                CodeEventTypeCode.AdtAckAddPersonInformation => "A28",
+                CodeEventTypeCode.AdtAckDeletePersonInformation => "A29",
+                CodeEventTypeCode.AdtAckMergePersonInformation => "A30",
+                CodeEventTypeCode.AdtAckUpdatePersonInformation => "A31",
+                CodeEventTypeCode.AdtAckCancelPatientArrivingTracking => "A32",
+                CodeEventTypeCode.AdtAckCancelPatientDepartingTracking => "A33",
+                CodeEventTypeCode.AdtAckMergePatientInfoPatientId => "A34",
+                CodeEventTypeCode.AdtAckMergePatientInfoAccountNumber => "A35",
+                CodeEventTypeCode.AdtAckMergePatientInfoPatientIdAccountNumber => "A36",
+                CodeEventTypeCode.AdtAckUnlinkPatientInformation => "A37",
+                CodeEventTypeCode.AdtAckCancelPreAdmit => "A38",
+                CodeEventTypeCode.AdtAckMergePersonPatientId => "A39",
+                CodeEventTypeCode.AdtAckMergePatientPatientIdList => "A40",
+                CodeEventTypeCode.AdtAckMergeAccountPatientAccountNumber => "A41",
+                CodeEventTypeCode.AdtAckMergeVisitVisitNumber => "A42",
+                CodeEventTypeCode.AdtAckMovePatientInfoPatientIdList => "A43",
+                CodeEventTypeCode.AdtAckMoveAccountInfoPatientAccountNumber => "A44",
+                CodeEventTypeCode.AdtAckMoveVisitInfoVisitNumber => "A45",
+                CodeEventTypeCode.AdtAckChangePatientId => "A46",
+                CodeEventTypeCode.AdtAckChangePatientIdList => "A47",
+                CodeEventTypeCode.AdtAckChangeAlternatePatientId => "A48",
+                CodeEventTypeCode.AdtAckChangePatientAccountNumber => "A49",
+                CodeEventTypeCode.AdtAckChangeVisitNumber => "A50",
+                CodeEventTypeCode.AdtAckChangeAlternateVisitId => "A51",
+                CodeEventTypeCode.AdtAckCancelLeaveOfAbsenceForAPatient => "A52",
+                CodeEventTypeCode.AdtAckCancelPatientReturnsFromLoa => "A53",
+                CodeEventTypeCode.AdtAckChangeAttendingDoctor => "A54",
+                CodeEventTypeCode.AdtAckCancelChangeAttendingDoctor => "A55",
+                CodeEventTypeCode.AdtAckUpdateAllergyInfo => "A60",
+                CodeEventTypeCode.AdtAckChangeConsultingDoctor => "A61",
+                CodeEventTypeCode.AdtAckCancelChangeConsultingDoctor => "A62",
+                CodeEventTypeCode.PmuAckAddPersonnelRecord => "B01",
+                CodeEventTypeCode.PmuAckUpdatePersonnelRecord => "B02",
+                CodeEventTypeCode.PmuAckDeletePersonnelReCord => "B03",
+                CodeEventTypeCode.PmuAckActivePracticingPerson => "B04",
+                CodeEventTypeCode.PmuAckDeactivatePracticingPerson => "B05",
+                CodeEventTypeCode.PmuAckTerminatePracticingPerson => "B06",
+                CodeEventTypeCode.CrmRegisterPatientOnClinicalTrial => "C01",
+                CodeEventTypeCode.CrmCancelPatientRegistrationOnClinicalTrial => "C02",
+                CodeEventTypeCode.CrmUpdateRegistrationInformation => "C03",
+                CodeEventTypeCode.CrmPatientOffClinicalTrial => "C04",
+                CodeEventTypeCode.CrmPatientEntersPhaseOfClinicalTrial => "C05",
+                CodeEventTypeCode.CrmCancelPatientEnteringPhase => "C06",
+                CodeEventTypeCode.CrmUpdatePhaseInfo => "C07",
+                CodeEventTypeCode.CrmPatientHasGoneOffPhaseOfClinicalTrial => "C08",
+                CodeEventTypeCode.CsuAutomatedTimeIntervalsForReporting => "C09",
+                CodeEventTypeCode.CsuPatientCompletesClinicalTrial => "C10",
+                CodeEventTypeCode.CsuPatientCompletesPhaseOfClinicalTrial => "C11",
+                CodeEventTypeCode.CsuUpdatePatientOrderResultInfo => "C12",
+                CodeEventTypeCode.CancelQuery => "CNQ",
+                CodeEventTypeCode.RqiRpiRequestForInsuranceInformation => "I01",
+                CodeEventTypeCode.RqiRplRequestReceiptOfPatientSelectionDisplayList => "I02",
+                CodeEventTypeCode.RqiRprRequestReceiptOfPatientSelectionList => "I03",
+                CodeEventTypeCode.RqdRpiRequestForPatientDemographicData => "I04",
+                CodeEventTypeCode.RqcRciRequestForPatientClinicalInformation => "I05",
+                CodeEventTypeCode.RqcRclRequestReceiptOfClinicalDataListing => "I06",
+                CodeEventTypeCode.PinAckUnsolicitedInsuranceInformation => "I07",
+                CodeEventTypeCode.RqaRpaRequestForTreatmentAuthorizationInformation => "I08",
+                CodeEventTypeCode.RqaRpaRequestForModificationToAuthorization => "I09",
+                CodeEventTypeCode.RqaRpaRequestForResubmissionOfAuthorization => "I10",
+                CodeEventTypeCode.RqaRpaRequestForCancellationOfAuthorization => "I11",
+                CodeEventTypeCode.RefRriPatientReferral => "I12",
+                CodeEventTypeCode.RefRriModifyPatientReferral => "I13",
+                CodeEventTypeCode.RefRriCancelPatientReferral => "I14",
+                CodeEventTypeCode.RefRriRequestPatientReferralStatus => "I15",
+                CodeEventTypeCode.QcnAckCancelQueryAcknowledgeMessage => "J01",
+                CodeEventTypeCode.QsxAckCancelSubscriptionAcknowledgeMessage => "J02",
+                CodeEventTypeCode.RspGetPersonDemographicsResponse => "K21",
+                CodeEventTypeCode.RspFindCandidatesResponse => "K22",
+                CodeEventTypeCode.RspGetCorrespondingIdentifiersResponse => "K23",
+                CodeEventTypeCode.RspAllocateIdentifiersResponse => "K24",
+                CodeEventTypeCode.RspPersonnelInformationBySegmentResponse => "K25",
+                CodeEventTypeCode.MfnMfkMasterFileNotOtherwiseSpecified => "M01",
+                CodeEventTypeCode.MfnMfkMasterFileStaffPractitioner => "M02",
+                CodeEventTypeCode.MfnMfkMasterFileTestObservation => "M03",
+                CodeEventTypeCode.MfnMfkMasterFilesChargeDescription => "M04",
+                CodeEventTypeCode.MfnMfkPatientLocationMasterFile => "M05",
+                CodeEventTypeCode.MfnMfkClinicalStudyWithPhasesAndSchedulesMasterFile => "M06",
+                CodeEventTypeCode.MfnMfkClinicalStudyWithoutPhasesButWithSchedulesMasterFile => "M07",
+                CodeEventTypeCode.MfnMfkTestObservationNumericMasterFile => "M08",
+                CodeEventTypeCode.MfnMfkTestObservationCategoricalMasterFile => "M09",
+                CodeEventTypeCode.MfnMfkTestObservationBatteriesMasterFile => "M10",
+                CodeEventTypeCode.MfnMfkTestCalculatedObservationsMasterFile => "M11",
+                CodeEventTypeCode.MfnMfkMasterFileNotificationMessage => "M12",
+                CodeEventTypeCode.NmqNmrApplicationManagementQueryMessage => "N01",
+                CodeEventTypeCode.NmdAckApplicationManagementDataMessageUnsolicited => "N02",
+                CodeEventTypeCode.OrmOrderMessage => "O01",
+                CodeEventTypeCode.OrrOrderResponse => "O02",
+                CodeEventTypeCode.OmdDietOrder => "O03",
+                CodeEventTypeCode.OrdDietOrderAcknowledgment => "O04",
+                CodeEventTypeCode.OmsStockRequisitionOrder => "O05",
+                CodeEventTypeCode.OrsStockRequisitionAcknowledgment => "O06",
+                CodeEventTypeCode.OmnNonStockRequisitionOrder => "O07",
+                CodeEventTypeCode.OrnNonStockRequisitionAcknowledgment => "O08",
+                CodeEventTypeCode.OmpPharmacyTreatmentOrder => "O09",
+                CodeEventTypeCode.OrpPharmacyTreatmentOrderAcknowledgment => "O10",
+                CodeEventTypeCode.RdePharmacyTreatmentEncodedOrder => "O11",
+                CodeEventTypeCode.RrePharmacyTreatmentEncodedOrderAcknowledgment => "O12",
+                CodeEventTypeCode.RdsPharmacyTreatmentDispense => "O13",
+                CodeEventTypeCode.RrdPharmacyTreatmentDispenseAcknowledgment => "O14",
+                CodeEventTypeCode.RgvPharmacyTreatmentGive => "O15",
+                CodeEventTypeCode.RrgPharmacyTreatmentGiveAcknowledgment => "O16",
+                CodeEventTypeCode.RasPharmacyTreatmentAdministration => "O17",
+                CodeEventTypeCode.RraPharmacyTreatmentAdministrationAcknowledgment => "O18",
+                CodeEventTypeCode.OmgGeneralClinicalOrder => "O19",
+                CodeEventTypeCode.OrgOrlGeneralClinicalOrderResponse => "O20",
+                CodeEventTypeCode.OmlLaboratoryOrder => "O21",
+                CodeEventTypeCode.BarAckAddPatientAccounts => "P01",
+                CodeEventTypeCode.BarAckPurgePatientAccounts => "P02",
+                CodeEventTypeCode.DftAckPostDetailFinancialTransaction => "P03",
+                CodeEventTypeCode.QryDspGenerateBillAndARStatements => "P04",
+                CodeEventTypeCode.BarAckUpdateAccount => "P05",
+                CodeEventTypeCode.BarAckEndAccount => "P06",
+                CodeEventTypeCode.PexUnsolicitedInitialExperienceReport => "P07",
+                CodeEventTypeCode.PexUnsolicitedUpdateExperienceReport => "P08",
+                CodeEventTypeCode.SurSummaryExperienceReport => "P09",
+                CodeEventTypeCode.BarAckTransmitAmbulatoryPaymentClassificationApc => "P10",
+                CodeEventTypeCode.PprPcProblemAdd => "PC1",
+                CodeEventTypeCode.PprPcProblemUpdate => "PC2",
+                CodeEventTypeCode.PprPcProblemDelete => "PC3",
+                CodeEventTypeCode.QryPcProblemQuery => "PC4",
+                CodeEventTypeCode.PrrPcProblemResponse => "PC5",
+                CodeEventTypeCode.PglPcGoalAdd => "PC6",
+                CodeEventTypeCode.PglPcGoalUpdate => "PC7",
+                CodeEventTypeCode.PglPcGoalDelete => "PC8",
+                CodeEventTypeCode.QryPcGoalQuery => "PC9",
+                CodeEventTypeCode.PpvPcGoalResponse => "PCA",
+                CodeEventTypeCode.PppPcPathwayProblemOrientedAdd => "PCB",
+                CodeEventTypeCode.PppPcPathwayProblemOrientedUpdate => "PCC",
+                CodeEventTypeCode.PppPcPathwayProblemOrientedDelete => "PCD",
+                CodeEventTypeCode.QryPcPathwayProblemOrientedQuery => "PCE",
+                CodeEventTypeCode.PtrPcPathwayProblemOrientedQueryResponse => "PCF",
+                CodeEventTypeCode.PpgPcPathwayGoalOrientedAdd => "PCG",
+                CodeEventTypeCode.PpgPcPathwayGoalOrientedUpdate => "PCH",
+                CodeEventTypeCode.PpgPcPathwayGoalOrientedDelete => "PCJ",
+                CodeEventTypeCode.QryPcPathwayGoalOrientedQuery => "PCK",
+                CodeEventTypeCode.PptPcPathwayGoalOrientedQueryResponse => "PCL",
+                CodeEventTypeCode.QryDsrQuerySentForImmediateResponse => "Q01",
+                CodeEventTypeCode.QryQckQuerySentForDeferredResponse => "Q02",
+                CodeEventTypeCode.DsrAckDeferredResponseToAQuery => "Q03",
+                CodeEventTypeCode.EqqEmbeddedQueryLanguageQuery => "Q04",
+                CodeEventTypeCode.UdmAckUnsolicitedDisplayUpdateMessage => "Q05",
+                CodeEventTypeCode.OsqOsrQueryForOrderStatus => "Q06",
+                CodeEventTypeCode.VqqVirtualTableQuery => "Q07",
+                CodeEventTypeCode.SpqStoredProcedureRequest => "Q08",
+                CodeEventTypeCode.RqqEventReplayQuery => "Q09",
+                CodeEventTypeCode.QsbCreateSubscription => "Q16",
+                CodeEventTypeCode.QvrQueryForPreviousEvents => "Q17",
+                CodeEventTypeCode.QbpGetPersonDemographics => "Q21",
+                CodeEventTypeCode.QbpFindCandidates => "Q22",
+                CodeEventTypeCode.QbpGetCorrespondingIdentifiers => "Q23",
+                CodeEventTypeCode.QbpAllocateIdentifiers => "Q24",
+                CodeEventTypeCode.QbpPersonnelInformationBySegmentQuery => "Q25",
+                CodeEventTypeCode.OruAckUnsolicitedTransmissionOfObservation => "R01",
+                CodeEventTypeCode.QryQueryForResultsOfObservation => "R02",
+                CodeEventTypeCode.QryDsrDisplayOrientedResultsQueryUnsolUpdate => "R03",
+                CodeEventTypeCode.OrfResponseToQueryTransmissionOfRequestedObservation => "R04",
+                CodeEventTypeCode.QryDsrQueryForDisplayResults => "R05",
+                CodeEventTypeCode.UdmUnsolicitedUpdateDisplayResults => "R06",
+                CodeEventTypeCode.EdrEnhancedDisplayResponse => "R07",
+                CodeEventTypeCode.TbrTabularDataResponse => "R08",
+                CodeEventTypeCode.ErpEventReplayResponse => "R09",
+                CodeEventTypeCode.OulUnsolicitedLaboratoryObservation => "R21",
+                CodeEventTypeCode.RarPharmacyAdministrationInfoQueryResponse => "RAR",
+                CodeEventTypeCode.RdrPharmacyDispenseInfoQueryResponse => "RDR",
+                CodeEventTypeCode.RerPharmacyEncodedOrderInfoQueryResponse => "RER",
+                CodeEventTypeCode.RgrPharmacyDoseInfoQueryResponse => "RGR",
+                CodeEventTypeCode.RorPharmacyPrescriptionOrderQueryResponse => "ROR",
+                CodeEventTypeCode.SrmSrrRequestNewAppointmentBooking => "S01",
+                CodeEventTypeCode.SrmSrrRequestAppointmentRescheduling => "S02",
+                CodeEventTypeCode.SrmSrrRequestAppointmentModification => "S03",
+                CodeEventTypeCode.SrmSrrRequestAppointmentCancellation => "S04",
+                CodeEventTypeCode.SrmSrrRequestAppointmentDiscontinuation => "S05",
+                CodeEventTypeCode.SrmSrrRequestAppointmentDeletion => "S06",
+                CodeEventTypeCode.SrmSrrRequestAdditionOfServiceOnAppointment => "S07",
+                CodeEventTypeCode.SrmSrrRequestModificationOfServiceOnAppointment => "S08",
+                CodeEventTypeCode.SrmSrrRequestCancellationOfServiceOnAppointment => "S09",
+                CodeEventTypeCode.SrmSrrRequestDiscontinuationOfServiceOnAppointment => "S10",
+                CodeEventTypeCode.SrmSrrRequestDeletionOfServiceOnAppointment => "S11",
+                CodeEventTypeCode.SiuAckNotifyNewAppointmentBooking => "S12",
+                CodeEventTypeCode.SiuAckNotifyAppointmentRescheduling => "S13",
+                CodeEventTypeCode.SiuAckNotifyAppointmentModification => "S14",
+                CodeEventTypeCode.SiuAckNotifyAppointmentCancellation => "S15",
+                CodeEventTypeCode.SiuAckNotificationOfAppointmentDiscontinuation => "S16",
+                CodeEventTypeCode.SiuAckNotifyAppointmentDeletion => "S17",
+                CodeEventTypeCode.SiuAckNotifyAdditionOfServiceOnAppointment => "S18",
+                CodeEventTypeCode.SiuAckNotifyModificationOfServiceOnAppointment => "S19",
+                CodeEventTypeCode.SiuAckNotifyCancellationOfServiceOnAppointment => "S20",
+                CodeEventTypeCode.SiuAckNotifyDiscontinuationOfServiceOnAppointment => "S21",
+                CodeEventTypeCode.SiuAckNotifyDeletionOfServiceResourceOnAppointment => "S22",
+                CodeEventTypeCode.SiuAckNotifyBlockedScheduleTimeSlots => "S23",
+                CodeEventTypeCode.SiuAckNotifyOpenedUnblockedScheduleTimeSlots => "S24",
+                CodeEventTypeCode.SqmSqrScheduleQueryMessageAndResponse => "S25",
+                CodeEventTypeCode.SiuAckNotifyPatientDidNotShowUpForAppointment => "S26",
+                CodeEventTypeCode.MdmAckOriginalDocument => "T01",
+                CodeEventTypeCode.MdmAckOriginalDocumentNotifyAndContent => "T02",
+                CodeEventTypeCode.MdmAckDocumentStatusChange => "T03",
+                CodeEventTypeCode.MdmAckDocumentStatusChangeNotifyAndContent => "T04",
+                CodeEventTypeCode.MdmAckDocumentAddendum => "T05",
+                CodeEventTypeCode.MdmAckDocumentAddendumNotifyAndContent => "T06",
+                CodeEventTypeCode.MdmAckDocumentEdit => "T07",
+                CodeEventTypeCode.MdmAckDocumentEditNotifyAndContent => "T08",
+                CodeEventTypeCode.MdmAckDocumentReplacement => "T09",
+                CodeEventTypeCode.MdmAckDocumentReplacementNotifyAndContent => "T10",
+                CodeEventTypeCode.MdmAckDocumentCancel => "T11",
+                CodeEventTypeCode.QryDocDocumentQuery => "T12",
+                CodeEventTypeCode.EsuAckAutomatedEquipmentStatusUpdate => "U01",
+                CodeEventTypeCode.EsrAckAutomatedEquipmentStatusRequest => "U02",
+                CodeEventTypeCode.SsuAckSpecimenStatusUpdate => "U03",
+                CodeEventTypeCode.SsrAckSpecimenStatusRequest => "U04",
+                CodeEventTypeCode.InuAckAutomatedEquipmentInventoryUpdate => "U05",
+                CodeEventTypeCode.InrAckAutomatedEquipmentInventoryRequest => "U06",
+                CodeEventTypeCode.EacAckAutomatedEquipmentCommand => "U07",
+                CodeEventTypeCode.EarAckAutomatedEquipmentResponse => "U08",
+                CodeEventTypeCode.EanAckAutomatedEquipment => "U09",
+                CodeEventTypeCode.TcuAckAutomatedEquipmentTestCodeSettingsUpdate => "U10",
+                CodeEventTypeCode.TcrAckAutomatedEquipmentTestCodeSettingsRequest => "U11",
+                CodeEventTypeCode.LsuAckAutomatedEquipmentLogServiceUpdate => "U12",
+                CodeEventTypeCode.LsrAckAutomatedEquipmentLogServiceRequest => "U13",
+                CodeEventTypeCode.VxqQueryForVaccinationRecord => "V01",
+                CodeEventTypeCode.VxxResponseToVaccinationQueryMultiplePidMatches => "V02",
+                CodeEventTypeCode.VxrVaccinationRecordResponse => "V03",
+                CodeEventTypeCode.VxuUnsolicitedVaccinationRecordUpdate => "V04",
+                CodeEventTypeCode.MfqMfrMasterFilesQuery => "Varies",
+                CodeEventTypeCode.OruWaveformResultUnsolicitedTransmission => "W01",
+                CodeEventTypeCode.QrfWaveformResultResponseToQuery => "W02",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given FacilityType enum value into its HL7 equivalent code.
+        /// Converts the given CodeFacilityType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(FacilityType input)
+        public string EnumToCode(CodeFacilityType input)
         {
             return input switch
             {
-                FacilityType.AgentForForeignManufacturer => "A",
-                FacilityType.Distributor => "D",
-                FacilityType.Manufacturer => "M",
-                FacilityType.User => "U",
+                CodeFacilityType.AgentForForeignManufacturer => "A",
+                CodeFacilityType.Distributor => "D",
+                CodeFacilityType.Manufacturer => "M",
+                CodeFacilityType.User => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given FileLevelEventCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeFileLevelEventCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(FileLevelEventCode input)
+        public string EnumToCode(CodeFileLevelEventCode input)
         {
             return input switch
             {
-                FileLevelEventCode.ReplaceCurrentVersionOfMasterFile => "REP",
-                FileLevelEventCode.ChangeFileRecordsAsDefined => "UPD",
+                CodeFileLevelEventCode.ReplaceCurrentVersionOfMasterFile => "REP",
+                CodeFileLevelEventCode.ChangeFileRecordsAsDefined => "UPD",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given FillerStatusCodes enum value into its HL7 equivalent code.
+        /// Converts the given CodeFillerStatusCodes enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(FillerStatusCodes input)
+        public string EnumToCode(CodeFillerStatusCodes input)
         {
             return input switch
             {
-                FillerStatusCodes.Blocked => "Blocked",
-                FillerStatusCodes.Booked => "Booked",
-                FillerStatusCodes.Cancelled => "Cancelled",
-                FillerStatusCodes.Complete => "Complete",
-                FillerStatusCodes.Deleted => "Deleted",
-                FillerStatusCodes.Discontinued => "Discontinued",
-                FillerStatusCodes.Overbook => "Overbook",
-                FillerStatusCodes.Pending => "Pending",
-                FillerStatusCodes.Started => "Started",
-                FillerStatusCodes.Waitlist => "Waitlist",
+                CodeFillerStatusCodes.Blocked => "Blocked",
+                CodeFillerStatusCodes.Booked => "Booked",
+                CodeFillerStatusCodes.Cancelled => "Cancelled",
+                CodeFillerStatusCodes.Complete => "Complete",
+                CodeFillerStatusCodes.Deleted => "Deleted",
+                CodeFillerStatusCodes.Discontinued => "Discontinued",
+                CodeFillerStatusCodes.Overbook => "Overbook",
+                CodeFillerStatusCodes.Pending => "Pending",
+                CodeFillerStatusCodes.Started => "Started",
+                CodeFillerStatusCodes.Waitlist => "Waitlist",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given FormularyStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeFormularyStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(FormularyStatus input)
+        public string EnumToCode(CodeFormularyStatus input)
         {
             return input switch
             {
-                FormularyStatus.ThisObservationServiceIsOnFormularyAndHasGuidelines => "G",
-                FormularyStatus.ThisObservationServiceIsNotOnFormulary => "N",
-                FormularyStatus.ThisObservationServiceIsOnFormularyButIsRestricted => "R",
-                FormularyStatus.ThisObservationServiceIsOnFormulary => "Y",
+                CodeFormularyStatus.ThisObservationServiceIsOnFormularyAndHasGuidelines => "G",
+                CodeFormularyStatus.ThisObservationServiceIsNotOnFormulary => "N",
+                CodeFormularyStatus.ThisObservationServiceIsOnFormularyButIsRestricted => "R",
+                CodeFormularyStatus.ThisObservationServiceIsOnFormulary => "Y",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given GestationCategoryCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeGestationCategoryCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(GestationCategoryCode input)
+        public string EnumToCode(CodeGestationCategoryCode input)
         {
             return input switch
             {
-                GestationCategoryCode.PrematurePreTerm => "1",
-                GestationCategoryCode.FullTerm => "2",
-                GestationCategoryCode.OverduePostTerm => "3",
+                CodeGestationCategoryCode.PrematurePreTerm => "1",
+                CodeGestationCategoryCode.FullTerm => "2",
+                CodeGestationCategoryCode.OverduePostTerm => "3",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given GovernmentReimbursementProgram enum value into its HL7 equivalent code.
+        /// Converts the given CodeGovernmentReimbursementProgram enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(GovernmentReimbursementProgram input)
+        public string EnumToCode(CodeGovernmentReimbursementProgram input)
         {
             return input switch
             {
-                GovernmentReimbursementProgram.MediCal => "C",
-                GovernmentReimbursementProgram.Medicare => "MM",
+                CodeGovernmentReimbursementProgram.MediCal => "C",
+                CodeGovernmentReimbursementProgram.Medicare => "MM",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given HospitalService enum value into its HL7 equivalent code.
+        /// Converts the given CodeHospitalService enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(HospitalService input)
+        public string EnumToCode(CodeHospitalService input)
         {
             return input switch
             {
-                HospitalService.CardiacService => "CAR",
-                HospitalService.MedicalService => "MED",
-                HospitalService.PulmonaryService => "PUL",
-                HospitalService.SurgicalService => "SUR",
-                HospitalService.UrologyService => "URO",
+                CodeHospitalService.CardiacService => "CAR",
+                CodeHospitalService.MedicalService => "MED",
+                CodeHospitalService.PulmonaryService => "PUL",
+                CodeHospitalService.SurgicalService => "SUR",
+                CodeHospitalService.UrologyService => "URO",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given IdentifierType enum value into its HL7 equivalent code.
+        /// Converts the given CodeIdentifierType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(IdentifierType input)
+        public string EnumToCode(CodeIdentifierType input)
         {
             return input switch
             {
-                IdentifierType.AmericanExpress => "AM",
-                IdentifierType.AccountNumber => "AN",
-                IdentifierType.BankAccountNumber => "BA",
-                IdentifierType.BirthRegistryNumber => "BR",
-                IdentifierType.BreedRegistryNumber => "BRN",
-                IdentifierType.DinersClubCard => "DI",
-                IdentifierType.DriversLicenseNumber => "DL",
-                IdentifierType.DoctorNumber => "DN",
-                IdentifierType.DonorRegistrationNumber => "DR",
-                IdentifierType.DiscoverCard => "DS",
-                IdentifierType.EmployeeNumber => "EI",
-                IdentifierType.EmployerNumber => "EN",
-                IdentifierType.FacilityId => "FI",
-                IdentifierType.GuarantorInternalIdentifier => "GI",
-                IdentifierType.GuarantorExternalIdentifier => "GN",
-                IdentifierType.HealthCardNumber => "HC",
-                IdentifierType.JurisdictionalHealthNumberCanada => "JHN",
-                IdentifierType.LicenseNumber => "LN",
-                IdentifierType.LocalRegistryId => "LR",
-                IdentifierType.PatientMedicaidNumber => "MA",
-                IdentifierType.PatientsMedicareNumber => "MC",
-                IdentifierType.MicrochipNumber => "MCN",
-                IdentifierType.MedicalRecordNumber => "MR",
-                IdentifierType.Mastercard => "MS",
-                IdentifierType.NationalEmployerId => "NE",
-                IdentifierType.NationalHealthPlanId => "NH",
-                IdentifierType.NationalUniqueIndividualId => "NI",
-                IdentifierType.NationalPersonIdentifier => "NNxxx",
-                IdentifierType.NationalProviderIdentifier => "NPI",
-                IdentifierType.PensionNumber => "PEN",
-                IdentifierType.PatientInternalIdentifier => "PI",
-                IdentifierType.PersonNumber => "PN",
-                IdentifierType.ProviderNumber => "PRN",
-                IdentifierType.PatientExternalIdentifier => "PT",
-                IdentifierType.RailroadRetirementNumber => "RR",
-                IdentifierType.RegionalRegistryId => "RRI",
-                IdentifierType.StateLicense => "SL",
-                IdentifierType.StateRegistryId => "SR",
-                IdentifierType.SocialSecurityNumber => "SS",
-                IdentifierType.UnspecifiedIdentifier => "U",
-                IdentifierType.MedicareCmsUniversalPhysicianId => "UPIN",
-                IdentifierType.VisitNumber => "VN",
-                IdentifierType.Visa => "VS",
-                IdentifierType.WicIdentifier => "WC",
-                IdentifierType.WorkersCompNumber => "WCN",
-                IdentifierType.OrganizationIdentifier => "XX",
+                CodeIdentifierType.AmericanExpress => "AM",
+                CodeIdentifierType.AccountNumber => "AN",
+                CodeIdentifierType.BankAccountNumber => "BA",
+                CodeIdentifierType.BirthRegistryNumber => "BR",
+                CodeIdentifierType.BreedRegistryNumber => "BRN",
+                CodeIdentifierType.DinersClubCard => "DI",
+                CodeIdentifierType.DriversLicenseNumber => "DL",
+                CodeIdentifierType.DoctorNumber => "DN",
+                CodeIdentifierType.DonorRegistrationNumber => "DR",
+                CodeIdentifierType.DiscoverCard => "DS",
+                CodeIdentifierType.EmployeeNumber => "EI",
+                CodeIdentifierType.EmployerNumber => "EN",
+                CodeIdentifierType.FacilityId => "FI",
+                CodeIdentifierType.GuarantorInternalIdentifier => "GI",
+                CodeIdentifierType.GuarantorExternalIdentifier => "GN",
+                CodeIdentifierType.HealthCardNumber => "HC",
+                CodeIdentifierType.JurisdictionalHealthNumberCanada => "JHN",
+                CodeIdentifierType.LicenseNumber => "LN",
+                CodeIdentifierType.LocalRegistryId => "LR",
+                CodeIdentifierType.PatientMedicaidNumber => "MA",
+                CodeIdentifierType.PatientsMedicareNumber => "MC",
+                CodeIdentifierType.MicrochipNumber => "MCN",
+                CodeIdentifierType.MedicalRecordNumber => "MR",
+                CodeIdentifierType.Mastercard => "MS",
+                CodeIdentifierType.NationalEmployerId => "NE",
+                CodeIdentifierType.NationalHealthPlanId => "NH",
+                CodeIdentifierType.NationalUniqueIndividualId => "NI",
+                CodeIdentifierType.NationalPersonIdentifier => "NNxxx",
+                CodeIdentifierType.NationalProviderIdentifier => "NPI",
+                CodeIdentifierType.PensionNumber => "PEN",
+                CodeIdentifierType.PatientInternalIdentifier => "PI",
+                CodeIdentifierType.PersonNumber => "PN",
+                CodeIdentifierType.ProviderNumber => "PRN",
+                CodeIdentifierType.PatientExternalIdentifier => "PT",
+                CodeIdentifierType.RailroadRetirementNumber => "RR",
+                CodeIdentifierType.RegionalRegistryId => "RRI",
+                CodeIdentifierType.StateLicense => "SL",
+                CodeIdentifierType.StateRegistryId => "SR",
+                CodeIdentifierType.SocialSecurityNumber => "SS",
+                CodeIdentifierType.UnspecifiedIdentifier => "U",
+                CodeIdentifierType.MedicareCmsUniversalPhysicianId => "UPIN",
+                CodeIdentifierType.VisitNumber => "VN",
+                CodeIdentifierType.Visa => "VS",
+                CodeIdentifierType.WicIdentifier => "WC",
+                CodeIdentifierType.WorkersCompNumber => "WCN",
+                CodeIdentifierType.OrganizationIdentifier => "XX",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given IdentityMayBeDivulged enum value into its HL7 equivalent code.
+        /// Converts the given CodeIdentityMayBeDivulged enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(IdentityMayBeDivulged input)
+        public string EnumToCode(CodeIdentityMayBeDivulged input)
         {
             return input switch
             {
-                IdentityMayBeDivulged.No => "N",
-                IdentityMayBeDivulged.NotApplicable => "NA",
-                IdentityMayBeDivulged.Yes => "Y",
+                CodeIdentityMayBeDivulged.No => "N",
+                CodeIdentityMayBeDivulged.NotApplicable => "NA",
+                CodeIdentityMayBeDivulged.Yes => "Y",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given IdentityReliabilityCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeIdentityReliabilityCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(IdentityReliabilityCode input)
+        public string EnumToCode(CodeIdentityReliabilityCode input)
         {
             return input switch
             {
-                IdentityReliabilityCode.PatientPersonNameIsAnAlias => "AL",
-                IdentityReliabilityCode.UnknownDefaultAddress => "UA",
-                IdentityReliabilityCode.UnknownDefaultDateOfBirth => "UD",
-                IdentityReliabilityCode.UnknownDefaultSocialSecurityNumber => "US",
+                CodeIdentityReliabilityCode.PatientPersonNameIsAnAlias => "AL",
+                CodeIdentityReliabilityCode.UnknownDefaultAddress => "UA",
+                CodeIdentityReliabilityCode.UnknownDefaultDateOfBirth => "UD",
+                CodeIdentityReliabilityCode.UnknownDefaultSocialSecurityNumber => "US",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ImmunizationRegistryStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeImmunizationRegistryStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ImmunizationRegistryStatus input)
+        public string EnumToCode(CodeImmunizationRegistryStatus input)
         {
             return input switch
             {
-                ImmunizationRegistryStatus.Active => "A",
-                ImmunizationRegistryStatus.Inactive => "I",
-                ImmunizationRegistryStatus.InactiveLostToFollowUp => "L",
-                ImmunizationRegistryStatus.InactiveMovedOrGoneElsewhere => "M",
-                ImmunizationRegistryStatus.Other => "O",
-                ImmunizationRegistryStatus.InactivePermanently => "P",
-                ImmunizationRegistryStatus.Unknown => "U",
+                CodeImmunizationRegistryStatus.Active => "A",
+                CodeImmunizationRegistryStatus.Inactive => "I",
+                CodeImmunizationRegistryStatus.InactiveLostToFollowUp => "L",
+                CodeImmunizationRegistryStatus.InactiveMovedOrGoneElsewhere => "M",
+                CodeImmunizationRegistryStatus.Other => "O",
+                CodeImmunizationRegistryStatus.InactivePermanently => "P",
+                CodeImmunizationRegistryStatus.Unknown => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given IncidentTypeCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeIncidentTypeCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(IncidentTypeCode input)
+        public string EnumToCode(CodeIncidentTypeCode input)
         {
             return input switch
             {
-                IncidentTypeCode.Other => "O",
-                IncidentTypeCode.Preventable => "P",
-                IncidentTypeCode.UserError => "U",
+                CodeIncidentTypeCode.Other => "O",
+                CodeIncidentTypeCode.Preventable => "P",
+                CodeIncidentTypeCode.UserError => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given IndirectExposureMechanism enum value into its HL7 equivalent code.
+        /// Converts the given CodeIndirectExposureMechanism enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(IndirectExposureMechanism input)
+        public string EnumToCode(CodeIndirectExposureMechanism input)
         {
             return input switch
             {
-                IndirectExposureMechanism.BreastMilk => "B",
-                IndirectExposureMechanism.Father => "F",
-                IndirectExposureMechanism.Other => "O",
-                IndirectExposureMechanism.Transplacental => "P",
-                IndirectExposureMechanism.BloodProduct => "X",
+                CodeIndirectExposureMechanism.BreastMilk => "B",
+                CodeIndirectExposureMechanism.Father => "F",
+                CodeIndirectExposureMechanism.Other => "O",
+                CodeIndirectExposureMechanism.Transplacental => "P",
+                CodeIndirectExposureMechanism.BloodProduct => "X",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given InsuranceCompanyContactReason enum value into its HL7 equivalent code.
+        /// Converts the given CodeInsuranceCompanyContactReason enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(InsuranceCompanyContactReason input)
+        public string EnumToCode(CodeInsuranceCompanyContactReason input)
         {
             return input switch
             {
-                InsuranceCompanyContactReason.MedicareClaimStatus => "01",
-                InsuranceCompanyContactReason.MedicaidClaimStatus => "02",
-                InsuranceCompanyContactReason.NameAddressChange => "03",
+                CodeInsuranceCompanyContactReason.MedicareClaimStatus => "01",
+                CodeInsuranceCompanyContactReason.MedicaidClaimStatus => "02",
+                CodeInsuranceCompanyContactReason.NameAddressChange => "03",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given InterpretationCodes enum value into its HL7 equivalent code.
+        /// Converts the given CodeInterpretationCodes enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(InterpretationCodes input)
+        public string EnumToCode(CodeInterpretationCodes input)
         {
             return input switch
             {
-                InterpretationCodes.OffScaleLow => "",
-                InterpretationCodes.OffScaleHigh => "",
-                InterpretationCodes.Abnormal => "A",
-                InterpretationCodes.CriticallyAbnormal => "AA",
-                InterpretationCodes.Better => "B",
-                InterpretationCodes.SignificantChangeDown => "D",
-                InterpretationCodes.High => "H",
-                InterpretationCodes.CriticallyHigh => "HH",
-                InterpretationCodes.Intermediate => "I",
-                InterpretationCodes.Low => "L",
-                InterpretationCodes.CriticallyLow => "LL",
-                InterpretationCodes.ModeratelySusceptible => "MS",
-                InterpretationCodes.Normal => "N",
-                InterpretationCodes.NoRangeDefinedOrNormalRangesDontApply => "null",
-                InterpretationCodes.Resistant => "R",
-                InterpretationCodes.Susceptible => "S",
-                InterpretationCodes.SignificantChangeUp => "U",
-                InterpretationCodes.VerySusceptible => "VS",
-                InterpretationCodes.Worse => "W",
+                CodeInterpretationCodes.OffScaleLow => "",
+                CodeInterpretationCodes.OffScaleHigh => "",
+                CodeInterpretationCodes.Abnormal => "A",
+                CodeInterpretationCodes.CriticallyAbnormal => "AA",
+                CodeInterpretationCodes.Better => "B",
+                CodeInterpretationCodes.SignificantChangeDown => "D",
+                CodeInterpretationCodes.High => "H",
+                CodeInterpretationCodes.CriticallyHigh => "HH",
+                CodeInterpretationCodes.Intermediate => "I",
+                CodeInterpretationCodes.Low => "L",
+                CodeInterpretationCodes.CriticallyLow => "LL",
+                CodeInterpretationCodes.ModeratelySusceptible => "MS",
+                CodeInterpretationCodes.Normal => "N",
+                CodeInterpretationCodes.NoRangeDefinedOrNormalRangesDontApply => "null",
+                CodeInterpretationCodes.Resistant => "R",
+                CodeInterpretationCodes.Susceptible => "S",
+                CodeInterpretationCodes.SignificantChangeUp => "U",
+                CodeInterpretationCodes.VerySusceptible => "VS",
+                CodeInterpretationCodes.Worse => "W",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given InvocationEvent enum value into its HL7 equivalent code.
+        /// Converts the given CodeInvocationEvent enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(InvocationEvent input)
+        public string EnumToCode(CodeInvocationEvent input)
         {
             return input switch
             {
-                InvocationEvent.OnDischarge => "D",
-                InvocationEvent.OnReceiptOfOrder => "O",
-                InvocationEvent.AtTimeServiceIsCompleted => "R",
-                InvocationEvent.AtTimeServiceIsStarted => "S",
-                InvocationEvent.AtDesignatedDateTime => "T",
+                CodeInvocationEvent.OnDischarge => "D",
+                CodeInvocationEvent.OnReceiptOfOrder => "O",
+                CodeInvocationEvent.AtTimeServiceIsCompleted => "R",
+                CodeInvocationEvent.AtTimeServiceIsStarted => "S",
+                CodeInvocationEvent.AtDesignatedDateTime => "T",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given JobStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeJobStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(JobStatus input)
+        public string EnumToCode(CodeJobStatus input)
         {
             return input switch
             {
-                JobStatus.Other => "O",
-                JobStatus.Permanent => "P",
-                JobStatus.Temporary => "T",
-                JobStatus.Unknown => "U",
+                CodeJobStatus.Other => "O",
+                CodeJobStatus.Permanent => "P",
+                CodeJobStatus.Temporary => "T",
+                CodeJobStatus.Unknown => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given KindOfQuantity enum value into its HL7 equivalent code.
+        /// Converts the given CodeKindOfQuantity enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(KindOfQuantity input)
+        public string EnumToCode(CodeKindOfQuantity input)
         {
             return input switch
             {
-                KindOfQuantity.Absorbance => "ABS",
-                KindOfQuantity.ConcentrationArbitrarySubstance => "ACNC",
-                KindOfQuantity.Activity => "ACT",
-                KindOfQuantity.Appearance => "APER",
-                KindOfQuantity.Arbitrary => "ARB",
-                KindOfQuantity.Area => "AREA",
-                KindOfQuantity.Aspect => "ASPECT",
-                KindOfQuantity.CatalyticActivity => "CACT",
-                KindOfQuantity.CatalyticContent => "CCNT",
-                KindOfQuantity.CatalyticConcentrationRatio => "CCRTO",
-                KindOfQuantity.CatalyticFraction => "CFR",
-                KindOfQuantity.Class => "CLAS",
-                KindOfQuantity.CatalyticConcentration => "CNC",
-                KindOfQuantity.Constant => "CNST",
-                KindOfQuantity.Coefficient => "COEF",
-                KindOfQuantity.Color => "COLOR",
-                KindOfQuantity.Consistency => "CONS",
-                KindOfQuantity.CatalyticRate => "CRAT",
-                KindOfQuantity.CatalyticRatio => "CRTO",
-                KindOfQuantity.Density => "DEN",
-                KindOfQuantity.Device => "DEV",
-                KindOfQuantity.Difference => "DIFF",
-                KindOfQuantity.Elasticity => "ELAS",
-                KindOfQuantity.ElectricalPotential => "ELPOT",
-                KindOfQuantity.ElectricalCurrent => "ELRAT",
-                KindOfQuantity.ElectricalResistance => "ELRES",
-                KindOfQuantity.Energy => "ENGR",
-                KindOfQuantity.Entitic => "ENT",
-                KindOfQuantity.EntiticCatalyticActivity => "ENTCAT",
-                KindOfQuantity.EntiticNumber => "ENTNUM",
-                KindOfQuantity.EntiticSubstanceOfAmount => "ENTSUB",
-                KindOfQuantity.EntiticVolume => "ENTVOL",
-                KindOfQuantity.Equilibrium => "EQL",
-                KindOfQuantity.MechanicalForce => "FORCE",
-                KindOfQuantity.Frequency => "FREQ",
-                KindOfQuantity.ImpressionInterpretationOfStudy => "IMP",
-                KindOfQuantity.KinematicViscosity => "KINV",
-                KindOfQuantity.Length => "LEN",
-                KindOfQuantity.LengthIncrement => "LINC",
-                KindOfQuantity.Liquefaction => "LIQ",
-                KindOfQuantity.Mass => "MASS",
-                KindOfQuantity.MassConcentration => "MCNC",
-                KindOfQuantity.MassContent => "MCNT",
-                KindOfQuantity.MassConcentrationRatio => "MCRTO",
-                KindOfQuantity.MassFraction => "MFR",
-                KindOfQuantity.MagneticFlux => "MGFLUX",
-                KindOfQuantity.MassIncrement => "MINC",
-                KindOfQuantity.Morphology => "MORPH",
-                KindOfQuantity.Motility => "MOTIL",
-                KindOfQuantity.MassRate => "MRAT",
-                KindOfQuantity.MassRatio => "MRTO",
-                KindOfQuantity.NumberConcentration => "NCNC",
-                KindOfQuantity.NumberContent => "NCNT",
-                KindOfQuantity.NumberFraction => "NFR",
-                KindOfQuantity.NumberRatio => "NRTO",
-                KindOfQuantity.Number => "NUM",
-                KindOfQuantity.OpticalDensity => "OD",
-                KindOfQuantity.Osmolality => "OSMOL",
-                KindOfQuantity.Pressure => "PRES",
-                KindOfQuantity.PresenceIdentityExistence => "PRID",
-                KindOfQuantity.PowerWattage => "PWR",
-                KindOfQuantity.Ranges => "RANGE",
-                KindOfQuantity.Ratios => "RATIO",
-                KindOfQuantity.ReciprocalRelativeTime => "RCRLTM",
-                KindOfQuantity.RelativeDensity => "RDEN",
-                KindOfQuantity.Relative => "REL",
-                KindOfQuantity.RelativeMassConcentration => "RLMCNC",
-                KindOfQuantity.RelativeSubstanceConcentration => "RLSCNC",
-                KindOfQuantity.RelativeTime => "RLTM",
-                KindOfQuantity.SaturationFraction => "SATFR",
-                KindOfQuantity.SubstanceConcentration => "SCNC",
-                KindOfQuantity.SubstanceConcentrationIncrement => "SCNCIN",
-                KindOfQuantity.SubstanceContent => "SCNT",
-                KindOfQuantity.SubstanceContentRate => "SCNTR",
-                KindOfQuantity.SubstanceConcentrationRatio => "SCRTO",
-                KindOfQuantity.SubstanceFraction => "SFR",
-                KindOfQuantity.Shape => "SHAPE",
-                KindOfQuantity.Smell => "SMELL",
-                KindOfQuantity.SubstanceRate => "SRAT",
-                KindOfQuantity.SubstanceRatio => "SRTO",
-                KindOfQuantity.SubstanceAmount => "SUB",
-                KindOfQuantity.Susceptibility => "SUSC",
-                KindOfQuantity.Taste => "TASTE",
-                KindOfQuantity.Temperature => "TEMP",
-                KindOfQuantity.TemperatureDifference => "TEMPDF",
-                KindOfQuantity.TemperatureIncrement => "TEMPIN",
-                KindOfQuantity.ThresholdMassConcentration => "THRMCNC",
-                KindOfQuantity.ThresholdSubstanceConcentration => "THRSCNC",
-                KindOfQuantity.Time => "TIME",
-                KindOfQuantity.DilutionFactor => "TITR",
-                KindOfQuantity.TimeDifference => "TMDF",
-                KindOfQuantity.TimeStampDateAndTime => "TMSTP",
-                KindOfQuantity.TimeRatio => "TRTO",
-                KindOfQuantity.Type => "TYPE",
-                KindOfQuantity.VolumeContent => "VCNT",
-                KindOfQuantity.Velocity => "VEL",
-                KindOfQuantity.VelocityRatio => "VELRT",
-                KindOfQuantity.VolumeFraction => "VFR",
-                KindOfQuantity.Viscosity => "VISC",
-                KindOfQuantity.Volume => "VOL",
-                KindOfQuantity.VolumeRate => "VRAT",
-                KindOfQuantity.VolumeRatio => "VRTO",
+                CodeKindOfQuantity.Absorbance => "ABS",
+                CodeKindOfQuantity.ConcentrationArbitrarySubstance => "ACNC",
+                CodeKindOfQuantity.Activity => "ACT",
+                CodeKindOfQuantity.Appearance => "APER",
+                CodeKindOfQuantity.Arbitrary => "ARB",
+                CodeKindOfQuantity.Area => "AREA",
+                CodeKindOfQuantity.Aspect => "ASPECT",
+                CodeKindOfQuantity.CatalyticActivity => "CACT",
+                CodeKindOfQuantity.CatalyticContent => "CCNT",
+                CodeKindOfQuantity.CatalyticConcentrationRatio => "CCRTO",
+                CodeKindOfQuantity.CatalyticFraction => "CFR",
+                CodeKindOfQuantity.Class => "CLAS",
+                CodeKindOfQuantity.CatalyticConcentration => "CNC",
+                CodeKindOfQuantity.Constant => "CNST",
+                CodeKindOfQuantity.Coefficient => "COEF",
+                CodeKindOfQuantity.Color => "COLOR",
+                CodeKindOfQuantity.Consistency => "CONS",
+                CodeKindOfQuantity.CatalyticRate => "CRAT",
+                CodeKindOfQuantity.CatalyticRatio => "CRTO",
+                CodeKindOfQuantity.Density => "DEN",
+                CodeKindOfQuantity.Device => "DEV",
+                CodeKindOfQuantity.Difference => "DIFF",
+                CodeKindOfQuantity.Elasticity => "ELAS",
+                CodeKindOfQuantity.ElectricalPotential => "ELPOT",
+                CodeKindOfQuantity.ElectricalCurrent => "ELRAT",
+                CodeKindOfQuantity.ElectricalResistance => "ELRES",
+                CodeKindOfQuantity.Energy => "ENGR",
+                CodeKindOfQuantity.Entitic => "ENT",
+                CodeKindOfQuantity.EntiticCatalyticActivity => "ENTCAT",
+                CodeKindOfQuantity.EntiticNumber => "ENTNUM",
+                CodeKindOfQuantity.EntiticSubstanceOfAmount => "ENTSUB",
+                CodeKindOfQuantity.EntiticVolume => "ENTVOL",
+                CodeKindOfQuantity.Equilibrium => "EQL",
+                CodeKindOfQuantity.MechanicalForce => "FORCE",
+                CodeKindOfQuantity.Frequency => "FREQ",
+                CodeKindOfQuantity.ImpressionInterpretationOfStudy => "IMP",
+                CodeKindOfQuantity.KinematicViscosity => "KINV",
+                CodeKindOfQuantity.Length => "LEN",
+                CodeKindOfQuantity.LengthIncrement => "LINC",
+                CodeKindOfQuantity.Liquefaction => "LIQ",
+                CodeKindOfQuantity.Mass => "MASS",
+                CodeKindOfQuantity.MassConcentration => "MCNC",
+                CodeKindOfQuantity.MassContent => "MCNT",
+                CodeKindOfQuantity.MassConcentrationRatio => "MCRTO",
+                CodeKindOfQuantity.MassFraction => "MFR",
+                CodeKindOfQuantity.MagneticFlux => "MGFLUX",
+                CodeKindOfQuantity.MassIncrement => "MINC",
+                CodeKindOfQuantity.Morphology => "MORPH",
+                CodeKindOfQuantity.Motility => "MOTIL",
+                CodeKindOfQuantity.MassRate => "MRAT",
+                CodeKindOfQuantity.MassRatio => "MRTO",
+                CodeKindOfQuantity.NumberConcentration => "NCNC",
+                CodeKindOfQuantity.NumberContent => "NCNT",
+                CodeKindOfQuantity.NumberFraction => "NFR",
+                CodeKindOfQuantity.NumberRatio => "NRTO",
+                CodeKindOfQuantity.Number => "NUM",
+                CodeKindOfQuantity.OpticalDensity => "OD",
+                CodeKindOfQuantity.Osmolality => "OSMOL",
+                CodeKindOfQuantity.Pressure => "PRES",
+                CodeKindOfQuantity.PresenceIdentityExistence => "PRID",
+                CodeKindOfQuantity.PowerWattage => "PWR",
+                CodeKindOfQuantity.Ranges => "RANGE",
+                CodeKindOfQuantity.Ratios => "RATIO",
+                CodeKindOfQuantity.ReciprocalRelativeTime => "RCRLTM",
+                CodeKindOfQuantity.RelativeDensity => "RDEN",
+                CodeKindOfQuantity.Relative => "REL",
+                CodeKindOfQuantity.RelativeMassConcentration => "RLMCNC",
+                CodeKindOfQuantity.RelativeSubstanceConcentration => "RLSCNC",
+                CodeKindOfQuantity.RelativeTime => "RLTM",
+                CodeKindOfQuantity.SaturationFraction => "SATFR",
+                CodeKindOfQuantity.SubstanceConcentration => "SCNC",
+                CodeKindOfQuantity.SubstanceConcentrationIncrement => "SCNCIN",
+                CodeKindOfQuantity.SubstanceContent => "SCNT",
+                CodeKindOfQuantity.SubstanceContentRate => "SCNTR",
+                CodeKindOfQuantity.SubstanceConcentrationRatio => "SCRTO",
+                CodeKindOfQuantity.SubstanceFraction => "SFR",
+                CodeKindOfQuantity.Shape => "SHAPE",
+                CodeKindOfQuantity.Smell => "SMELL",
+                CodeKindOfQuantity.SubstanceRate => "SRAT",
+                CodeKindOfQuantity.SubstanceRatio => "SRTO",
+                CodeKindOfQuantity.SubstanceAmount => "SUB",
+                CodeKindOfQuantity.Susceptibility => "SUSC",
+                CodeKindOfQuantity.Taste => "TASTE",
+                CodeKindOfQuantity.Temperature => "TEMP",
+                CodeKindOfQuantity.TemperatureDifference => "TEMPDF",
+                CodeKindOfQuantity.TemperatureIncrement => "TEMPIN",
+                CodeKindOfQuantity.ThresholdMassConcentration => "THRMCNC",
+                CodeKindOfQuantity.ThresholdSubstanceConcentration => "THRSCNC",
+                CodeKindOfQuantity.Time => "TIME",
+                CodeKindOfQuantity.DilutionFactor => "TITR",
+                CodeKindOfQuantity.TimeDifference => "TMDF",
+                CodeKindOfQuantity.TimeStampDateAndTime => "TMSTP",
+                CodeKindOfQuantity.TimeRatio => "TRTO",
+                CodeKindOfQuantity.Type => "TYPE",
+                CodeKindOfQuantity.VolumeContent => "VCNT",
+                CodeKindOfQuantity.Velocity => "VEL",
+                CodeKindOfQuantity.VelocityRatio => "VELRT",
+                CodeKindOfQuantity.VolumeFraction => "VFR",
+                CodeKindOfQuantity.Viscosity => "VISC",
+                CodeKindOfQuantity.Volume => "VOL",
+                CodeKindOfQuantity.VolumeRate => "VRAT",
+                CodeKindOfQuantity.VolumeRatio => "VRTO",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given LanguageAbility enum value into its HL7 equivalent code.
+        /// Converts the given CodeLanguageAbility enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(LanguageAbility input)
+        public string EnumToCode(CodeLanguageAbility input)
         {
             return input switch
             {
-                LanguageAbility.Read => "1",
-                LanguageAbility.Write => "2",
-                LanguageAbility.Speak => "3",
-                LanguageAbility.Understand => "4",
-                LanguageAbility.Sign => "5",
+                CodeLanguageAbility.Read => "1",
+                CodeLanguageAbility.Write => "2",
+                CodeLanguageAbility.Speak => "3",
+                CodeLanguageAbility.Understand => "4",
+                CodeLanguageAbility.Sign => "5",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given LanguageProficiency enum value into its HL7 equivalent code.
+        /// Converts the given CodeLanguageProficiency enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(LanguageProficiency input)
+        public string EnumToCode(CodeLanguageProficiency input)
         {
             return input switch
             {
-                LanguageProficiency.Excellent => "1",
-                LanguageProficiency.Good => "2",
-                LanguageProficiency.Fair => "3",
-                LanguageProficiency.Poor => "4",
-                LanguageProficiency.SomeLevelUnknown => "5",
-                LanguageProficiency.None => "6",
+                CodeLanguageProficiency.Excellent => "1",
+                CodeLanguageProficiency.Good => "2",
+                CodeLanguageProficiency.Fair => "3",
+                CodeLanguageProficiency.Poor => "4",
+                CodeLanguageProficiency.SomeLevelUnknown => "5",
+                CodeLanguageProficiency.None => "6",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given LevelOfCare enum value into its HL7 equivalent code.
+        /// Converts the given CodeLevelOfCare enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(LevelOfCare input)
+        public string EnumToCode(CodeLevelOfCare input)
         {
             return input switch
             {
-                LevelOfCare.Ambulatory => "A",
-                LevelOfCare.CriticalCare => "C",
-                LevelOfCare.Emergency => "E",
-                LevelOfCare.Isolation => "F",
-                LevelOfCare.IntensiveCare => "N",
-                LevelOfCare.Routine => "R",
-                LevelOfCare.Surgery => "S",
+                CodeLevelOfCare.Ambulatory => "A",
+                CodeLevelOfCare.CriticalCare => "C",
+                CodeLevelOfCare.Emergency => "E",
+                CodeLevelOfCare.Isolation => "F",
+                CodeLevelOfCare.IntensiveCare => "N",
+                CodeLevelOfCare.Routine => "R",
+                CodeLevelOfCare.Surgery => "S",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given LivingArrangement enum value into its HL7 equivalent code.
+        /// Converts the given CodeLivingArrangement enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(LivingArrangement input)
+        public string EnumToCode(CodeLivingArrangement input)
         {
             return input switch
             {
-                LivingArrangement.Alone => "A",
-                LivingArrangement.Family => "F",
-                LivingArrangement.Institution => "I",
-                LivingArrangement.Relative => "R",
-                LivingArrangement.SpouseOnly => "S",
-                LivingArrangement.Unknown => "U",
+                CodeLivingArrangement.Alone => "A",
+                CodeLivingArrangement.Family => "F",
+                CodeLivingArrangement.Institution => "I",
+                CodeLivingArrangement.Relative => "R",
+                CodeLivingArrangement.SpouseOnly => "S",
+                CodeLivingArrangement.Unknown => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given LivingDependency enum value into its HL7 equivalent code.
+        /// Converts the given CodeLivingDependency enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(LivingDependency input)
+        public string EnumToCode(CodeLivingDependency input)
         {
             return input switch
             {
-                LivingDependency.SmallChildrenDependent => "C",
-                LivingDependency.CommonBathDeprecated => "CB",
-                LivingDependency.SpouseDependentDeprecated => "D",
-                LivingDependency.MedicalSupervisionRequired => "M",
-                LivingDependency.Other => "O",
-                LivingDependency.SpouseDependent => "S",
-                LivingDependency.Unknown => "U",
-                LivingDependency.WalkUpDeprecated => "WU",
+                CodeLivingDependency.SmallChildrenDependent => "C",
+                CodeLivingDependency.CommonBathDeprecated => "CB",
+                CodeLivingDependency.SpouseDependentDeprecated => "D",
+                CodeLivingDependency.MedicalSupervisionRequired => "M",
+                CodeLivingDependency.Other => "O",
+                CodeLivingDependency.SpouseDependent => "S",
+                CodeLivingDependency.Unknown => "U",
+                CodeLivingDependency.WalkUpDeprecated => "WU",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given LivingWillCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeLivingWillCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(LivingWillCode input)
+        public string EnumToCode(CodeLivingWillCode input)
         {
             return input switch
             {
-                LivingWillCode.YesPatientHasLivingWillButNotOnFile => "F",
-                LivingWillCode.NoPatientDoesNotHaveLivingWillButInfoWasProvided => "I",
-                LivingWillCode.NoPatientDoesNotHaveLivingWillAndNoInfoWasProvided => "N",
-                LivingWillCode.Unknown => "U",
-                LivingWillCode.YesPatientHasLivingWill => "Y",
+                CodeLivingWillCode.YesPatientHasLivingWillButNotOnFile => "F",
+                CodeLivingWillCode.NoPatientDoesNotHaveLivingWillButInfoWasProvided => "I",
+                CodeLivingWillCode.NoPatientDoesNotHaveLivingWillAndNoInfoWasProvided => "N",
+                CodeLivingWillCode.Unknown => "U",
+                CodeLivingWillCode.YesPatientHasLivingWill => "Y",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given LocalRemoteControlState enum value into its HL7 equivalent code.
+        /// Converts the given CodeLocalRemoteControlState enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(LocalRemoteControlState input)
+        public string EnumToCode(CodeLocalRemoteControlState input)
         {
             return input switch
             {
-                LocalRemoteControlState.Local => "L",
-                LocalRemoteControlState.Remote => "R",
+                CodeLocalRemoteControlState.Local => "L",
+                CodeLocalRemoteControlState.Remote => "R",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given LocationCharacteristicId enum value into its HL7 equivalent code.
+        /// Converts the given CodeLocationCharacteristicId enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(LocationCharacteristicId input)
+        public string EnumToCode(CodeLocationCharacteristicId input)
         {
             return input switch
             {
-                LocationCharacteristicId.GenderOfPatientS => "GEN",
-                LocationCharacteristicId.Implant => "IMP",
-                LocationCharacteristicId.InfectiousDisease => "INF",
-                LocationCharacteristicId.LevelOfCare => "LCR",
-                LocationCharacteristicId.Licensed => "LIC",
-                LocationCharacteristicId.Overflow => "OVR",
-                LocationCharacteristicId.PrivacyLevel => "PRL",
-                LocationCharacteristicId.BedIsSetUp => "SET",
-                LocationCharacteristicId.Shadow => "SHA",
-                LocationCharacteristicId.Smoking => "SMK",
-                LocationCharacteristicId.BedIsStaffed => "STF",
-                LocationCharacteristicId.TeachingLocation => "TEA",
+                CodeLocationCharacteristicId.GenderOfPatientS => "GEN",
+                CodeLocationCharacteristicId.Implant => "IMP",
+                CodeLocationCharacteristicId.InfectiousDisease => "INF",
+                CodeLocationCharacteristicId.LevelOfCare => "LCR",
+                CodeLocationCharacteristicId.Licensed => "LIC",
+                CodeLocationCharacteristicId.Overflow => "OVR",
+                CodeLocationCharacteristicId.PrivacyLevel => "PRL",
+                CodeLocationCharacteristicId.BedIsSetUp => "SET",
+                CodeLocationCharacteristicId.Shadow => "SHA",
+                CodeLocationCharacteristicId.Smoking => "SMK",
+                CodeLocationCharacteristicId.BedIsStaffed => "STF",
+                CodeLocationCharacteristicId.TeachingLocation => "TEA",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given LocationEquipment enum value into its HL7 equivalent code.
+        /// Converts the given CodeLocationEquipment enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(LocationEquipment input)
+        public string EnumToCode(CodeLocationEquipment input)
         {
             return input switch
             {
-                LocationEquipment.ElectroEncephalogram => "EEG",
-                LocationEquipment.ElectroCardiogram => "EKG",
-                LocationEquipment.InfusionPump => "INF",
-                LocationEquipment.IvPump => "IVP",
-                LocationEquipment.Oxygen => "OXY",
-                LocationEquipment.Suction => "SUC",
-                LocationEquipment.Ventilator => "VEN",
-                LocationEquipment.VitalSignsMonitor => "VIT",
+                CodeLocationEquipment.ElectroEncephalogram => "EEG",
+                CodeLocationEquipment.ElectroCardiogram => "EKG",
+                CodeLocationEquipment.InfusionPump => "INF",
+                CodeLocationEquipment.IvPump => "IVP",
+                CodeLocationEquipment.Oxygen => "OXY",
+                CodeLocationEquipment.Suction => "SUC",
+                CodeLocationEquipment.Ventilator => "VEN",
+                CodeLocationEquipment.VitalSignsMonitor => "VIT",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given LocationRelationshipId enum value into its HL7 equivalent code.
+        /// Converts the given CodeLocationRelationshipId enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(LocationRelationshipId input)
+        public string EnumToCode(CodeLocationRelationshipId input)
         {
             return input switch
             {
-                LocationRelationshipId.LocationAliasEs => "ALI",
-                LocationRelationshipId.NearestDietaryLocation => "DTY",
-                LocationRelationshipId.NearestLab => "LAB",
-                LocationRelationshipId.SecondNearestLab => "LB2",
-                LocationRelationshipId.ParentLocation => "PAR",
-                LocationRelationshipId.NearestPharmacy => "RX",
-                LocationRelationshipId.SecondNearestPharmacy => "RX2",
+                CodeLocationRelationshipId.LocationAliasEs => "ALI",
+                CodeLocationRelationshipId.NearestDietaryLocation => "DTY",
+                CodeLocationRelationshipId.NearestLab => "LAB",
+                CodeLocationRelationshipId.SecondNearestLab => "LB2",
+                CodeLocationRelationshipId.ParentLocation => "PAR",
+                CodeLocationRelationshipId.NearestPharmacy => "RX",
+                CodeLocationRelationshipId.SecondNearestPharmacy => "RX2",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given LocationServiceCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeLocationServiceCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(LocationServiceCode input)
+        public string EnumToCode(CodeLocationServiceCode input)
         {
             return input switch
             {
-                LocationServiceCode.Diagnostic => "D",
-                LocationServiceCode.EmergencyRoomCasualty => "E",
-                LocationServiceCode.PrimaryCare => "P",
-                LocationServiceCode.Therapeutic => "T",
+                CodeLocationServiceCode.Diagnostic => "D",
+                CodeLocationServiceCode.EmergencyRoomCasualty => "E",
+                CodeLocationServiceCode.PrimaryCare => "P",
+                CodeLocationServiceCode.Therapeutic => "T",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given MailClaimParty enum value into its HL7 equivalent code.
+        /// Converts the given CodeMailClaimParty enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(MailClaimParty input)
+        public string EnumToCode(CodeMailClaimParty input)
         {
             return input switch
             {
-                MailClaimParty.Employer => "E",
-                MailClaimParty.Guarantor => "G",
-                MailClaimParty.InsuranceCompany => "I",
-                MailClaimParty.Other => "O",
-                MailClaimParty.Patient => "P",
+                CodeMailClaimParty.Employer => "E",
+                CodeMailClaimParty.Guarantor => "G",
+                CodeMailClaimParty.InsuranceCompany => "I",
+                CodeMailClaimParty.Other => "O",
+                CodeMailClaimParty.Patient => "P",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ManufacturersOfVaccines enum value into its HL7 equivalent code.
+        /// Converts the given CodeManufacturersOfVaccines enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ManufacturersOfVaccines input)
+        public string EnumToCode(CodeManufacturersOfVaccines input)
         {
             return input switch
             {
-                ManufacturersOfVaccines.AbbottLaboratories => "AB",
-                ManufacturersOfVaccines.AdamsLaboratoriesInc => "AD",
-                ManufacturersOfVaccines.AlphaTherapeuticCorporation => "ALP",
-                ManufacturersOfVaccines.Armour => "AR",
-                ManufacturersOfVaccines.Aviron => "AVI",
-                ManufacturersOfVaccines.BaxterHealthcareCorporationDeprecated => "BA",
-                ManufacturersOfVaccines.BayerCorporation => "BAY",
-                ManufacturersOfVaccines.BernaProducts => "BP",
-                ManufacturersOfVaccines.BernaProductsCorporation => "BPC",
-                ManufacturersOfVaccines.CenteonLLC => "CEN",
-                ManufacturersOfVaccines.ChironCorporation => "CHI",
-                ManufacturersOfVaccines.Connaught => "CON",
-                ManufacturersOfVaccines.EvansMedicalLimited => "EVN",
-                ManufacturersOfVaccines.GreerLaboratoriesInc => "GRE",
-                ManufacturersOfVaccines.ImmunoInternationalAg => "IAG",
-                ManufacturersOfVaccines.Merieux => "IM",
-                ManufacturersOfVaccines.ImmunoUSInc => "IUS",
-                ManufacturersOfVaccines.ResearchFoundationForMicrobialDiseasesOfOsaka => "JPN",
-                ManufacturersOfVaccines.KoreaGreenCrossCorporation => "KGC",
-                ManufacturersOfVaccines.Lederle => "LED",
-                ManufacturersOfVaccines.MassachusettsPublicHealthBiologicLabs => "MA",
-                ManufacturersOfVaccines.MedimmuneInc => "MED",
-                ManufacturersOfVaccines.Miles => "MIL",
-                ManufacturersOfVaccines.BioportCorporation => "MIP",
-                ManufacturersOfVaccines.MerckCoInc => "MSD",
-                ManufacturersOfVaccines.Nabi => "NAB",
-                ManufacturersOfVaccines.NorthAmericanVaccineInc => "NAV",
-                ManufacturersOfVaccines.NovartisPharmaceuticalCorporation => "NOV",
-                ManufacturersOfVaccines.NewYorkBloodCenter => "NYB",
-                ManufacturersOfVaccines.OrthoClinicalDiagnostics => "ORT",
-                ManufacturersOfVaccines.OrganonTeknikaCorporation => "OTC",
-                ManufacturersOfVaccines.OtherManufacturer => "OTH",
-                ManufacturersOfVaccines.ParkedalePharmaceuticals => "PD",
-                ManufacturersOfVaccines.SanofiPasteur => "PMC",
-                ManufacturersOfVaccines.PraxisBiologics => "PRX",
-                ManufacturersOfVaccines.SclavoInc => "SCL",
-                ManufacturersOfVaccines.SwissSerumAndVaccineInst => "SI",
-                ManufacturersOfVaccines.Glaxosmithkline => "SKB",
-                ManufacturersOfVaccines.UnknownManufacturer => "UNK",
-                ManufacturersOfVaccines.UsArmyMedicalResearchAndMaterialCommand => "USA",
-                ManufacturersOfVaccines.WyethAyerstDeprecated => "WA",
-                ManufacturersOfVaccines.WyethAyerst => "WAL",
+                CodeManufacturersOfVaccines.AbbottLaboratories => "AB",
+                CodeManufacturersOfVaccines.AdamsLaboratoriesInc => "AD",
+                CodeManufacturersOfVaccines.AlphaTherapeuticCorporation => "ALP",
+                CodeManufacturersOfVaccines.Armour => "AR",
+                CodeManufacturersOfVaccines.Aviron => "AVI",
+                CodeManufacturersOfVaccines.BaxterHealthcareCorporationDeprecated => "BA",
+                CodeManufacturersOfVaccines.BayerCorporation => "BAY",
+                CodeManufacturersOfVaccines.BernaProducts => "BP",
+                CodeManufacturersOfVaccines.BernaProductsCorporation => "BPC",
+                CodeManufacturersOfVaccines.CenteonLLC => "CEN",
+                CodeManufacturersOfVaccines.ChironCorporation => "CHI",
+                CodeManufacturersOfVaccines.Connaught => "CON",
+                CodeManufacturersOfVaccines.EvansMedicalLimited => "EVN",
+                CodeManufacturersOfVaccines.GreerLaboratoriesInc => "GRE",
+                CodeManufacturersOfVaccines.ImmunoInternationalAg => "IAG",
+                CodeManufacturersOfVaccines.Merieux => "IM",
+                CodeManufacturersOfVaccines.ImmunoUSInc => "IUS",
+                CodeManufacturersOfVaccines.ResearchFoundationForMicrobialDiseasesOfOsaka => "JPN",
+                CodeManufacturersOfVaccines.KoreaGreenCrossCorporation => "KGC",
+                CodeManufacturersOfVaccines.Lederle => "LED",
+                CodeManufacturersOfVaccines.MassachusettsPublicHealthBiologicLabs => "MA",
+                CodeManufacturersOfVaccines.MedimmuneInc => "MED",
+                CodeManufacturersOfVaccines.Miles => "MIL",
+                CodeManufacturersOfVaccines.BioportCorporation => "MIP",
+                CodeManufacturersOfVaccines.MerckCoInc => "MSD",
+                CodeManufacturersOfVaccines.Nabi => "NAB",
+                CodeManufacturersOfVaccines.NorthAmericanVaccineInc => "NAV",
+                CodeManufacturersOfVaccines.NovartisPharmaceuticalCorporation => "NOV",
+                CodeManufacturersOfVaccines.NewYorkBloodCenter => "NYB",
+                CodeManufacturersOfVaccines.OrthoClinicalDiagnostics => "ORT",
+                CodeManufacturersOfVaccines.OrganonTeknikaCorporation => "OTC",
+                CodeManufacturersOfVaccines.OtherManufacturer => "OTH",
+                CodeManufacturersOfVaccines.ParkedalePharmaceuticals => "PD",
+                CodeManufacturersOfVaccines.SanofiPasteur => "PMC",
+                CodeManufacturersOfVaccines.PraxisBiologics => "PRX",
+                CodeManufacturersOfVaccines.SclavoInc => "SCL",
+                CodeManufacturersOfVaccines.SwissSerumAndVaccineInst => "SI",
+                CodeManufacturersOfVaccines.Glaxosmithkline => "SKB",
+                CodeManufacturersOfVaccines.UnknownManufacturer => "UNK",
+                CodeManufacturersOfVaccines.UsArmyMedicalResearchAndMaterialCommand => "USA",
+                CodeManufacturersOfVaccines.WyethAyerstDeprecated => "WA",
+                CodeManufacturersOfVaccines.WyethAyerst => "WAL",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given MaritalStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeMaritalStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(MaritalStatus input)
+        public string EnumToCode(CodeMaritalStatus input)
         {
             return input switch
             {
-                MaritalStatus.Separated => "A",
-                MaritalStatus.Unmarried => "B",
-                MaritalStatus.CommonLaw => "C",
-                MaritalStatus.Divorced => "D",
-                MaritalStatus.LegallySeparated => "E",
-                MaritalStatus.LivingTogether => "G",
-                MaritalStatus.Interlocutory => "I",
-                MaritalStatus.Married => "M",
-                MaritalStatus.Annulled => "N",
-                MaritalStatus.Other => "O",
-                MaritalStatus.DomesticPartner => "P",
-                MaritalStatus.RegisteredDomesticPartner => "R",
-                MaritalStatus.Single => "S",
-                MaritalStatus.Unreported => "T",
-                MaritalStatus.Unknown => "U",
-                MaritalStatus.Widowed => "W",
+                CodeMaritalStatus.Separated => "A",
+                CodeMaritalStatus.Unmarried => "B",
+                CodeMaritalStatus.CommonLaw => "C",
+                CodeMaritalStatus.Divorced => "D",
+                CodeMaritalStatus.LegallySeparated => "E",
+                CodeMaritalStatus.LivingTogether => "G",
+                CodeMaritalStatus.Interlocutory => "I",
+                CodeMaritalStatus.Married => "M",
+                CodeMaritalStatus.Annulled => "N",
+                CodeMaritalStatus.Other => "O",
+                CodeMaritalStatus.DomesticPartner => "P",
+                CodeMaritalStatus.RegisteredDomesticPartner => "R",
+                CodeMaritalStatus.Single => "S",
+                CodeMaritalStatus.Unreported => "T",
+                CodeMaritalStatus.Unknown => "U",
+                CodeMaritalStatus.Widowed => "W",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given MarketingBasis enum value into its HL7 equivalent code.
+        /// Converts the given CodeMarketingBasis enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(MarketingBasis input)
+        public string EnumToCode(CodeMarketingBasis input)
         {
             return input switch
             {
-                MarketingBasis.Basis510KExempt => "510E",
-                MarketingBasis.Basis510K => "510K",
-                MarketingBasis.PostMarketingStudy522 => "522S",
-                MarketingBasis.PremarketingAuthorization => "PMA",
-                MarketingBasis.Preamendment => "PRE",
-                MarketingBasis.Transitional => "TXN",
+                CodeMarketingBasis.Basis510KExempt => "510E",
+                CodeMarketingBasis.Basis510K => "510K",
+                CodeMarketingBasis.PostMarketingStudy522 => "522S",
+                CodeMarketingBasis.PremarketingAuthorization => "PMA",
+                CodeMarketingBasis.Preamendment => "PRE",
+                CodeMarketingBasis.Transitional => "TXN",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given MasterfileActionCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeMasterfileActionCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(MasterfileActionCode input)
+        public string EnumToCode(CodeMasterfileActionCode input)
         {
             return input switch
             {
-                MasterfileActionCode.ReactivateDeactivatedRecord => "MAC",
-                MasterfileActionCode.AddRecordToMasterFile => "MAD",
-                MasterfileActionCode.Deactivate => "MDC",
-                MasterfileActionCode.DeleteRecordFromMasterFile => "MDL",
-                MasterfileActionCode.UpdateRecordForMasterFile => "MUP",
+                CodeMasterfileActionCode.ReactivateDeactivatedRecord => "MAC",
+                CodeMasterfileActionCode.AddRecordToMasterFile => "MAD",
+                CodeMasterfileActionCode.Deactivate => "MDC",
+                CodeMasterfileActionCode.DeleteRecordFromMasterFile => "MDL",
+                CodeMasterfileActionCode.UpdateRecordForMasterFile => "MUP",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given MasterFileIdentifierCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeMasterFileIdentifierCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(MasterFileIdentifierCode input)
+        public string EnumToCode(CodeMasterFileIdentifierCode input)
         {
             return input switch
             {
-                MasterFileIdentifierCode.ChargeDescriptionMasterFile => "CDM",
-                MasterFileIdentifierCode.ClinicMasterFile => "CLN",
-                MasterFileIdentifierCode.ClinicalStudyWithPhasesAndScheduledMasterFile => "CMA",
-                MasterFileIdentifierCode.ClinicalStudyWithoutPhasesButWithScheduledMasterFile => "CMB",
-                MasterFileIdentifierCode.LocationMasterFile => "LOC",
-                MasterFileIdentifierCode.NumericalObservationMasterFile => "OMA",
-                MasterFileIdentifierCode.CategoricalObservationMasterFile => "OMB",
-                MasterFileIdentifierCode.ObservationBatteriesMasterFile => "OMC",
-                MasterFileIdentifierCode.CalculatedObservationsMasterFile => "OMD",
-                MasterFileIdentifierCode.OtherObservationServiceItemMasterFile => "OME",
-                MasterFileIdentifierCode.PractitionerMasterFile => "PRA",
-                MasterFileIdentifierCode.StaffMasterFile => "STF",
+                CodeMasterFileIdentifierCode.ChargeDescriptionMasterFile => "CDM",
+                CodeMasterFileIdentifierCode.ClinicMasterFile => "CLN",
+                CodeMasterFileIdentifierCode.ClinicalStudyWithPhasesAndScheduledMasterFile => "CMA",
+                CodeMasterFileIdentifierCode.ClinicalStudyWithoutPhasesButWithScheduledMasterFile => "CMB",
+                CodeMasterFileIdentifierCode.LocationMasterFile => "LOC",
+                CodeMasterFileIdentifierCode.NumericalObservationMasterFile => "OMA",
+                CodeMasterFileIdentifierCode.CategoricalObservationMasterFile => "OMB",
+                CodeMasterFileIdentifierCode.ObservationBatteriesMasterFile => "OMC",
+                CodeMasterFileIdentifierCode.CalculatedObservationsMasterFile => "OMD",
+                CodeMasterFileIdentifierCode.OtherObservationServiceItemMasterFile => "OME",
+                CodeMasterFileIdentifierCode.PractitionerMasterFile => "PRA",
+                CodeMasterFileIdentifierCode.StaffMasterFile => "STF",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given MatchAlgorithms enum value into its HL7 equivalent code.
+        /// Converts the given CodeMatchAlgorithms enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(MatchAlgorithms input)
+        public string EnumToCode(CodeMatchAlgorithms input)
         {
             return input switch
             {
-                MatchAlgorithms.ProprietaryAlgorithmForLinksoftV201 => "LINKSOFT_2.01",
-                MatchAlgorithms.ProprietaryAlgorithmForMatchwareV12 => "MATCHWARE_1.2",
+                CodeMatchAlgorithms.ProprietaryAlgorithmForLinksoftV201 => "LINKSOFT_2.01",
+                CodeMatchAlgorithms.ProprietaryAlgorithmForMatchwareV12 => "MATCHWARE_1.2",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given MatchReason enum value into its HL7 equivalent code.
+        /// Converts the given CodeMatchReason enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(MatchReason input)
+        public string EnumToCode(CodeMatchReason input)
         {
             return input switch
             {
-                MatchReason.MatchOnDateOfBirth => "DB",
-                MatchReason.MatchOnNameAlphaMatch => "NA",
-                MatchReason.MatchOnNamePhoneticMatch => "NP",
-                MatchReason.MatchOnSocialSecurityNumber => "SS",
+                CodeMatchReason.MatchOnDateOfBirth => "DB",
+                CodeMatchReason.MatchOnNameAlphaMatch => "NA",
+                CodeMatchReason.MatchOnNamePhoneticMatch => "NP",
+                CodeMatchReason.MatchOnSocialSecurityNumber => "SS",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given MessageErrorConditionCodes enum value into its HL7 equivalent code.
+        /// Converts the given CodeMessageErrorConditionCodes enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(MessageErrorConditionCodes input)
+        public string EnumToCode(CodeMessageErrorConditionCodes input)
         {
             return input switch
             {
-                MessageErrorConditionCodes.MessageAccepted => "0",
-                MessageErrorConditionCodes.SegmentSequenceError => "100",
-                MessageErrorConditionCodes.RequiredFieldMissing => "101",
-                MessageErrorConditionCodes.DataTypeError => "102",
-                MessageErrorConditionCodes.TableValueNotFound => "103",
-                MessageErrorConditionCodes.UnsupportedMessageType => "200",
-                MessageErrorConditionCodes.UnsupportedEventCode => "201",
-                MessageErrorConditionCodes.UnsupportedProcessingId => "202",
-                MessageErrorConditionCodes.UnsupportedVersionId => "203",
-                MessageErrorConditionCodes.UnknownKeyIdentifier => "204",
-                MessageErrorConditionCodes.DuplicateKeyIdentifier => "205",
-                MessageErrorConditionCodes.ApplicationRecordLocked => "206",
-                MessageErrorConditionCodes.ApplicationError => "207",
+                CodeMessageErrorConditionCodes.MessageAccepted => "0",
+                CodeMessageErrorConditionCodes.SegmentSequenceError => "100",
+                CodeMessageErrorConditionCodes.RequiredFieldMissing => "101",
+                CodeMessageErrorConditionCodes.DataTypeError => "102",
+                CodeMessageErrorConditionCodes.TableValueNotFound => "103",
+                CodeMessageErrorConditionCodes.UnsupportedMessageType => "200",
+                CodeMessageErrorConditionCodes.UnsupportedEventCode => "201",
+                CodeMessageErrorConditionCodes.UnsupportedProcessingId => "202",
+                CodeMessageErrorConditionCodes.UnsupportedVersionId => "203",
+                CodeMessageErrorConditionCodes.UnknownKeyIdentifier => "204",
+                CodeMessageErrorConditionCodes.DuplicateKeyIdentifier => "205",
+                CodeMessageErrorConditionCodes.ApplicationRecordLocked => "206",
+                CodeMessageErrorConditionCodes.ApplicationError => "207",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given MessageStructure enum value into its HL7 equivalent code.
+        /// Converts the given CodeMessageStructure enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(MessageStructure input)
+        public string EnumToCode(CodeMessageStructure input)
         {
             return input switch
             {
-                MessageStructure.Varies => "ACK",
-                MessageStructure.AdrA19Deprecated => "ADR_A19",
-                MessageStructure.A01A04A08A13 => "ADT_A01",
-                MessageStructure.A02 => "ADT_A02",
-                MessageStructure.A03 => "ADT_A03",
-                MessageStructure.A05A14A28A31 => "ADT_A05",
-                MessageStructure.A06A07 => "ADT_A06",
-                MessageStructure.A09A10A11 => "ADT_A09",
-                MessageStructure.A12 => "ADT_A12",
-                MessageStructure.A15 => "ADT_A15",
-                MessageStructure.A16 => "ADT_A16",
-                MessageStructure.A17 => "ADT_A17",
-                MessageStructure.AdtA18Deprecated => "ADT_A18",
-                MessageStructure.A20 => "ADT_A20",
-                MessageStructure.A21A22A23A25A26A27A29A32A33 => "ADT_A21",
-                MessageStructure.A24 => "ADT_A24",
-                MessageStructure.AdtA30Deprecated => "ADT_A30",
-                MessageStructure.A37 => "ADT_A37",
-                MessageStructure.A38 => "ADT_A38",
-                MessageStructure.A39A40A41A42 => "ADT_A39",
-                MessageStructure.A43 => "ADT_A43",
-                MessageStructure.A45 => "ADT_A45",
-                MessageStructure.A50A51 => "ADT_A50",
-                MessageStructure.A52A53 => "ADT_A52",
-                MessageStructure.A54A55 => "ADT_A54",
-                MessageStructure.A60 => "ADT_A60",
-                MessageStructure.A61A62 => "ADT_A61",
-                MessageStructure.P01 => "BAR_P01",
-                MessageStructure.P02 => "BAR_P02",
-                MessageStructure.P05 => "BAR_P05",
-                MessageStructure.P06 => "BAR_P06",
-                MessageStructure.P10 => "BAR_P10",
-                MessageStructure.C01C02C03C04C05C06C07C08 => "CRM_C01",
-                MessageStructure.C09C10C11C12 => "CSU_C09",
-                MessageStructure.P03 => "DFT_P03",
-                MessageStructure.DocT12Deprecated => "DOC_T12",
-                MessageStructure.P04DSRDeprecated => "DSR_P04",
-                MessageStructure.Q01Deprecated => "DSR_Q01",
-                MessageStructure.Q03Deprecated => "DSR_Q03",
-                MessageStructure.U07 => "EAC_U07",
-                MessageStructure.U09 => "EAN_U09",
-                MessageStructure.U08 => "EAR_U08",
-                MessageStructure.R07Deprecated => "EDR_R07",
-                MessageStructure.Q04Deprecated => "EQQ_Q04",
-                MessageStructure.R09ERPDeprecated => "ERP_R09",
-                MessageStructure.U02 => "ESR_U02",
-                MessageStructure.U01 => "ESU_U01",
-                MessageStructure.U06 => "INR_U06",
-                MessageStructure.U05 => "INU_U05",
-                MessageStructure.U12U13 => "LSU_U12",
-                MessageStructure.T01T03T05T07T09T11 => "MDM_T01",
-                MessageStructure.T02T04T06T08T10 => "MDM_T02",
-                MessageStructure.MfaDeprecated => "MFD_MFA",
-                MessageStructure.M01M02M03M04M05M06M07M08M09M10M11 => "MFK_M01",
-                MessageStructure.MfnM01Deprecated => "MFN_M01",
-                MessageStructure.M02 => "MFN_M02",
-                MessageStructure.M03Deprecated => "MFN_M03",
-                MessageStructure.M04 => "MFN_M04",
-                MessageStructure.M05 => "MFN_M05",
-                MessageStructure.M06 => "MFN_M06",
-                MessageStructure.M07 => "MFN_M07",
-                MessageStructure.M08 => "MFN_M08",
-                MessageStructure.M09 => "MFN_M09",
-                MessageStructure.M10 => "MFN_M10",
-                MessageStructure.M11 => "MFN_M11",
-                MessageStructure.M12 => "MFN_M12",
-                MessageStructure.M01M02M03M04M05M06Deprecated => "MFQ_M01",
-                MessageStructure.M01M02M03Deprecated => "MFR_M01",
-                MessageStructure.N02 => "NMD_N02",
-                MessageStructure.N01NMQDeprecated => "NMQ_N01",
-                MessageStructure.N01NMRDeprecated => "NMR_N01",
-                MessageStructure.O03 => "OMD_O03",
-                MessageStructure.O19 => "OMG_O19",
-                MessageStructure.O21 => "OML_O21",
-                MessageStructure.O07 => "OMN_O07",
-                MessageStructure.O09 => "OMP_O09",
-                MessageStructure.O05 => "OMS_O05",
-                MessageStructure.O04 => "ORD_O04",
-                MessageStructure.R04Deprecated => "ORF_R04",
-                MessageStructure.O20 => "ORG_O20",
-                MessageStructure.O22 => "ORL_O22",
-                MessageStructure.O01ORMDeprecated => "ORM_O01",
-                MessageStructure.O08 => "ORN_O08",
-                MessageStructure.O10 => "ORP_O10",
-                MessageStructure.O02ORRDeprecated => "ORR_O02",
-                MessageStructure.O06 => "ORS_O06",
-                MessageStructure.R01 => "ORU_R01",
-                MessageStructure.W01Deprecated => "ORU_W01",
-                MessageStructure.Q06OSQDeprecated => "OSQ_Q06",
-                MessageStructure.Q06OSRDeprecated => "OSR_Q06",
-                MessageStructure.R21Deprecated => "OUL_R21",
-                MessageStructure.P07P08 => "PEX_P07",
-                MessageStructure.Pc6Pc7Pc8 => "PGL_PC6",
-                MessageStructure.B01B02 => "PMU_B01",
-                MessageStructure.B03 => "PMU_B03",
-                MessageStructure.B04B05B06 => "PMU_B04",
-                MessageStructure.PccPcgPchPcj => "PPG_PCG",
-                MessageStructure.PcbPcd => "PPP_PCB",
-                MessageStructure.Pc1Pc2Pc3 => "PPR_PC1",
-                MessageStructure.PclDeprecated => "PPT_PCL",
-                MessageStructure.PcaDeprecated => "PPV_PCA",
-                MessageStructure.Pc5Deprecated => "PRR_PC5",
-                MessageStructure.PcfDeprecated => "PTR_PCF",
-                MessageStructure.Q11 => "QBP_Q11",
-                MessageStructure.Q13 => "QBP_Q13",
-                MessageStructure.Q15 => "QBP_Q15",
-                MessageStructure.Q21Q22Q23Q24Q25 => "QBP_Q21",
-                MessageStructure.Q02QCKDeprecated => "QCK_Q02",
-                MessageStructure.J01J02 => "QCN_J01",
-                MessageStructure.A19QRYDeprecated => "QRY_A19",
-                MessageStructure.Pc4Pc9PcePckDeprecated => "QRY_PC4",
-                MessageStructure.Q01Q26Q27Q28Q29Q30Deprecated => "QRY_Q01",
-                MessageStructure.Q02QRYDeprecated => "QRY_Q02",
-                MessageStructure.R02Deprecated => "QRY_R02",
-                MessageStructure.T12Deprecated => "QRY_T12",
-                MessageStructure.Q16 => "QSB_Q16",
-                MessageStructure.Q17 => "QVR_Q17",
-                MessageStructure.RarDeprecated => "RAR_RAR",
-                MessageStructure.O17 => "RAS_O17",
-                MessageStructure.I05Deprecated => "RCI_I05",
-                MessageStructure.I06RCLDeprecated => "RCL_I06",
-                MessageStructure.O01RDEDeprecated => "RDE_O01",
-                MessageStructure.O11O25 => "RDE_O11",
-                MessageStructure.Rdr => "RDR_RDR",
-                MessageStructure.O13 => "RDS_O13",
-                MessageStructure.K11Deprecated => "RDY_K11",
-                MessageStructure.K15 => "RDY_K15",
-                MessageStructure.I12I13I14I15REF => "REF_I12",
-                MessageStructure.RerDeprecated => "RER_RER",
-                MessageStructure.RgrDeprecated => "RGR_RGR",
-                MessageStructure.O15 => "RGV_O15",
-                MessageStructure.RorDeprecated => "ROR_ROR",
-                MessageStructure.I08I09I10I11RPA => "RPA_I08",
-                MessageStructure.I01I04 => "RPI_I01",
-                MessageStructure.I04RPI => "RPI_I04",
-                MessageStructure.I02 => "RPL_I02",
-                MessageStructure.I03 => "RPR_I03",
-                MessageStructure.I08I09I10I11RQA => "RQA_I08",
-                MessageStructure.I05I06Deprecated => "RQC_I05",
-                MessageStructure.I01I02I03I07 => "RQI_I01",
-                MessageStructure.I04RQP => "RQP_I04",
-                MessageStructure.Q09Deprecated => "RQQ_Q09",
-                MessageStructure.O02RRADeprecated => "RRA_O02",
-                MessageStructure.O18 => "RRA_O18",
-                MessageStructure.O14 => "RRD_O14",
-                MessageStructure.O12O26 => "RRE_O12",
-                MessageStructure.O16 => "RRG_O16",
-                MessageStructure.I12I13I14I15RRI => "RRI_I12",
-                MessageStructure.K21 => "RSP_K21",
-                MessageStructure.K22 => "RSP_K22",
-                MessageStructure.K23K24 => "RSP_K23",
-                MessageStructure.K24Deprecated => "RSP_K24",
-                MessageStructure.K25 => "RSP_K25",
-                MessageStructure.K13 => "RTB_K13",
-                MessageStructure.S12S13S14S15S16S17S18S19S20S21S22S23S24S26 => "SIU_S12",
-                MessageStructure.Q08Deprecated => "SPQ_Q08",
-                MessageStructure.S25SQMDeprecated => "SQM_S25",
-                MessageStructure.S25SQRDeprecated => "SQR_S25",
-                MessageStructure.S01S02S03S04S05S06S07S08S09S10S11SRM => "SRM_S01",
-                MessageStructure.S01S02S03S04S05S06S07S08S09S10S11SRR => "SRR_S01",
-                MessageStructure.U04 => "SSR_U04",
-                MessageStructure.U03 => "SSU_U03",
-                MessageStructure.P09SURDeprecated => "SUR_P09",
-                MessageStructure.R08Deprecated => "TBR_R08",
-                MessageStructure.R09TBRDeprecated => "TBR_R09",
-                MessageStructure.U10U11 => "TCU_U10",
-                MessageStructure.Q05 => "UDM_Q05",
-                MessageStructure.Q07Deprecated => "VQQ_Q07",
-                MessageStructure.V01Deprecated => "VXQ_V01",
-                MessageStructure.V03Deprecated => "VXR_V03",
-                MessageStructure.V04 => "VXU_V04",
-                MessageStructure.V02Deprecated => "VXX_V02",
+                CodeMessageStructure.Varies => "ACK",
+                CodeMessageStructure.AdrA19Deprecated => "ADR_A19",
+                CodeMessageStructure.A01A04A08A13 => "ADT_A01",
+                CodeMessageStructure.A02 => "ADT_A02",
+                CodeMessageStructure.A03 => "ADT_A03",
+                CodeMessageStructure.A05A14A28A31 => "ADT_A05",
+                CodeMessageStructure.A06A07 => "ADT_A06",
+                CodeMessageStructure.A09A10A11 => "ADT_A09",
+                CodeMessageStructure.A12 => "ADT_A12",
+                CodeMessageStructure.A15 => "ADT_A15",
+                CodeMessageStructure.A16 => "ADT_A16",
+                CodeMessageStructure.A17 => "ADT_A17",
+                CodeMessageStructure.AdtA18Deprecated => "ADT_A18",
+                CodeMessageStructure.A20 => "ADT_A20",
+                CodeMessageStructure.A21A22A23A25A26A27A29A32A33 => "ADT_A21",
+                CodeMessageStructure.A24 => "ADT_A24",
+                CodeMessageStructure.AdtA30Deprecated => "ADT_A30",
+                CodeMessageStructure.A37 => "ADT_A37",
+                CodeMessageStructure.A38 => "ADT_A38",
+                CodeMessageStructure.A39A40A41A42 => "ADT_A39",
+                CodeMessageStructure.A43 => "ADT_A43",
+                CodeMessageStructure.A45 => "ADT_A45",
+                CodeMessageStructure.A50A51 => "ADT_A50",
+                CodeMessageStructure.A52A53 => "ADT_A52",
+                CodeMessageStructure.A54A55 => "ADT_A54",
+                CodeMessageStructure.A60 => "ADT_A60",
+                CodeMessageStructure.A61A62 => "ADT_A61",
+                CodeMessageStructure.P01 => "BAR_P01",
+                CodeMessageStructure.P02 => "BAR_P02",
+                CodeMessageStructure.P05 => "BAR_P05",
+                CodeMessageStructure.P06 => "BAR_P06",
+                CodeMessageStructure.P10 => "BAR_P10",
+                CodeMessageStructure.C01C02C03C04C05C06C07C08 => "CRM_C01",
+                CodeMessageStructure.C09C10C11C12 => "CSU_C09",
+                CodeMessageStructure.P03 => "DFT_P03",
+                CodeMessageStructure.DocT12Deprecated => "DOC_T12",
+                CodeMessageStructure.P04DSRDeprecated => "DSR_P04",
+                CodeMessageStructure.Q01Deprecated => "DSR_Q01",
+                CodeMessageStructure.Q03Deprecated => "DSR_Q03",
+                CodeMessageStructure.U07 => "EAC_U07",
+                CodeMessageStructure.U09 => "EAN_U09",
+                CodeMessageStructure.U08 => "EAR_U08",
+                CodeMessageStructure.R07Deprecated => "EDR_R07",
+                CodeMessageStructure.Q04Deprecated => "EQQ_Q04",
+                CodeMessageStructure.R09ERPDeprecated => "ERP_R09",
+                CodeMessageStructure.U02 => "ESR_U02",
+                CodeMessageStructure.U01 => "ESU_U01",
+                CodeMessageStructure.U06 => "INR_U06",
+                CodeMessageStructure.U05 => "INU_U05",
+                CodeMessageStructure.U12U13 => "LSU_U12",
+                CodeMessageStructure.T01T03T05T07T09T11 => "MDM_T01",
+                CodeMessageStructure.T02T04T06T08T10 => "MDM_T02",
+                CodeMessageStructure.MfaDeprecated => "MFD_MFA",
+                CodeMessageStructure.M01M02M03M04M05M06M07M08M09M10M11 => "MFK_M01",
+                CodeMessageStructure.MfnM01Deprecated => "MFN_M01",
+                CodeMessageStructure.M02 => "MFN_M02",
+                CodeMessageStructure.M03Deprecated => "MFN_M03",
+                CodeMessageStructure.M04 => "MFN_M04",
+                CodeMessageStructure.M05 => "MFN_M05",
+                CodeMessageStructure.M06 => "MFN_M06",
+                CodeMessageStructure.M07 => "MFN_M07",
+                CodeMessageStructure.M08 => "MFN_M08",
+                CodeMessageStructure.M09 => "MFN_M09",
+                CodeMessageStructure.M10 => "MFN_M10",
+                CodeMessageStructure.M11 => "MFN_M11",
+                CodeMessageStructure.M12 => "MFN_M12",
+                CodeMessageStructure.M01M02M03M04M05M06Deprecated => "MFQ_M01",
+                CodeMessageStructure.M01M02M03Deprecated => "MFR_M01",
+                CodeMessageStructure.N02 => "NMD_N02",
+                CodeMessageStructure.N01NMQDeprecated => "NMQ_N01",
+                CodeMessageStructure.N01NMRDeprecated => "NMR_N01",
+                CodeMessageStructure.O03 => "OMD_O03",
+                CodeMessageStructure.O19 => "OMG_O19",
+                CodeMessageStructure.O21 => "OML_O21",
+                CodeMessageStructure.O07 => "OMN_O07",
+                CodeMessageStructure.O09 => "OMP_O09",
+                CodeMessageStructure.O05 => "OMS_O05",
+                CodeMessageStructure.O04 => "ORD_O04",
+                CodeMessageStructure.R04Deprecated => "ORF_R04",
+                CodeMessageStructure.O20 => "ORG_O20",
+                CodeMessageStructure.O22 => "ORL_O22",
+                CodeMessageStructure.O01ORMDeprecated => "ORM_O01",
+                CodeMessageStructure.O08 => "ORN_O08",
+                CodeMessageStructure.O10 => "ORP_O10",
+                CodeMessageStructure.O02ORRDeprecated => "ORR_O02",
+                CodeMessageStructure.O06 => "ORS_O06",
+                CodeMessageStructure.R01 => "ORU_R01",
+                CodeMessageStructure.W01Deprecated => "ORU_W01",
+                CodeMessageStructure.Q06OSQDeprecated => "OSQ_Q06",
+                CodeMessageStructure.Q06OSRDeprecated => "OSR_Q06",
+                CodeMessageStructure.R21Deprecated => "OUL_R21",
+                CodeMessageStructure.P07P08 => "PEX_P07",
+                CodeMessageStructure.Pc6Pc7Pc8 => "PGL_PC6",
+                CodeMessageStructure.B01B02 => "PMU_B01",
+                CodeMessageStructure.B03 => "PMU_B03",
+                CodeMessageStructure.B04B05B06 => "PMU_B04",
+                CodeMessageStructure.PccPcgPchPcj => "PPG_PCG",
+                CodeMessageStructure.PcbPcd => "PPP_PCB",
+                CodeMessageStructure.Pc1Pc2Pc3 => "PPR_PC1",
+                CodeMessageStructure.PclDeprecated => "PPT_PCL",
+                CodeMessageStructure.PcaDeprecated => "PPV_PCA",
+                CodeMessageStructure.Pc5Deprecated => "PRR_PC5",
+                CodeMessageStructure.PcfDeprecated => "PTR_PCF",
+                CodeMessageStructure.Q11 => "QBP_Q11",
+                CodeMessageStructure.Q13 => "QBP_Q13",
+                CodeMessageStructure.Q15 => "QBP_Q15",
+                CodeMessageStructure.Q21Q22Q23Q24Q25 => "QBP_Q21",
+                CodeMessageStructure.Q02QCKDeprecated => "QCK_Q02",
+                CodeMessageStructure.J01J02 => "QCN_J01",
+                CodeMessageStructure.A19QRYDeprecated => "QRY_A19",
+                CodeMessageStructure.Pc4Pc9PcePckDeprecated => "QRY_PC4",
+                CodeMessageStructure.Q01Q26Q27Q28Q29Q30Deprecated => "QRY_Q01",
+                CodeMessageStructure.Q02QRYDeprecated => "QRY_Q02",
+                CodeMessageStructure.R02Deprecated => "QRY_R02",
+                CodeMessageStructure.T12Deprecated => "QRY_T12",
+                CodeMessageStructure.Q16 => "QSB_Q16",
+                CodeMessageStructure.Q17 => "QVR_Q17",
+                CodeMessageStructure.RarDeprecated => "RAR_RAR",
+                CodeMessageStructure.O17 => "RAS_O17",
+                CodeMessageStructure.I05Deprecated => "RCI_I05",
+                CodeMessageStructure.I06RCLDeprecated => "RCL_I06",
+                CodeMessageStructure.O01RDEDeprecated => "RDE_O01",
+                CodeMessageStructure.O11O25 => "RDE_O11",
+                CodeMessageStructure.Rdr => "RDR_RDR",
+                CodeMessageStructure.O13 => "RDS_O13",
+                CodeMessageStructure.K11Deprecated => "RDY_K11",
+                CodeMessageStructure.K15 => "RDY_K15",
+                CodeMessageStructure.I12I13I14I15REF => "REF_I12",
+                CodeMessageStructure.RerDeprecated => "RER_RER",
+                CodeMessageStructure.RgrDeprecated => "RGR_RGR",
+                CodeMessageStructure.O15 => "RGV_O15",
+                CodeMessageStructure.RorDeprecated => "ROR_ROR",
+                CodeMessageStructure.I08I09I10I11RPA => "RPA_I08",
+                CodeMessageStructure.I01I04 => "RPI_I01",
+                CodeMessageStructure.I04RPI => "RPI_I04",
+                CodeMessageStructure.I02 => "RPL_I02",
+                CodeMessageStructure.I03 => "RPR_I03",
+                CodeMessageStructure.I08I09I10I11RQA => "RQA_I08",
+                CodeMessageStructure.I05I06Deprecated => "RQC_I05",
+                CodeMessageStructure.I01I02I03I07 => "RQI_I01",
+                CodeMessageStructure.I04RQP => "RQP_I04",
+                CodeMessageStructure.Q09Deprecated => "RQQ_Q09",
+                CodeMessageStructure.O02RRADeprecated => "RRA_O02",
+                CodeMessageStructure.O18 => "RRA_O18",
+                CodeMessageStructure.O14 => "RRD_O14",
+                CodeMessageStructure.O12O26 => "RRE_O12",
+                CodeMessageStructure.O16 => "RRG_O16",
+                CodeMessageStructure.I12I13I14I15RRI => "RRI_I12",
+                CodeMessageStructure.K21 => "RSP_K21",
+                CodeMessageStructure.K22 => "RSP_K22",
+                CodeMessageStructure.K23K24 => "RSP_K23",
+                CodeMessageStructure.K24Deprecated => "RSP_K24",
+                CodeMessageStructure.K25 => "RSP_K25",
+                CodeMessageStructure.K13 => "RTB_K13",
+                CodeMessageStructure.S12S13S14S15S16S17S18S19S20S21S22S23S24S26 => "SIU_S12",
+                CodeMessageStructure.Q08Deprecated => "SPQ_Q08",
+                CodeMessageStructure.S25SQMDeprecated => "SQM_S25",
+                CodeMessageStructure.S25SQRDeprecated => "SQR_S25",
+                CodeMessageStructure.S01S02S03S04S05S06S07S08S09S10S11SRM => "SRM_S01",
+                CodeMessageStructure.S01S02S03S04S05S06S07S08S09S10S11SRR => "SRR_S01",
+                CodeMessageStructure.U04 => "SSR_U04",
+                CodeMessageStructure.U03 => "SSU_U03",
+                CodeMessageStructure.P09SURDeprecated => "SUR_P09",
+                CodeMessageStructure.R08Deprecated => "TBR_R08",
+                CodeMessageStructure.R09TBRDeprecated => "TBR_R09",
+                CodeMessageStructure.U10U11 => "TCU_U10",
+                CodeMessageStructure.Q05 => "UDM_Q05",
+                CodeMessageStructure.Q07Deprecated => "VQQ_Q07",
+                CodeMessageStructure.V01Deprecated => "VXQ_V01",
+                CodeMessageStructure.V03Deprecated => "VXR_V03",
+                CodeMessageStructure.V04 => "VXU_V04",
+                CodeMessageStructure.V02Deprecated => "VXX_V02",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given MessageType enum value into its HL7 equivalent code.
+        /// Converts the given CodeMessageType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(MessageType input)
+        public string EnumToCode(CodeMessageType input)
         {
             return input switch
             {
-                MessageType.GeneralAcknowledgment => "ACK",
-                MessageType.AdtResponseDeprecated => "ADR",
-                MessageType.AdtMessage => "ADT",
-                MessageType.AddChangeBillingAccount => "BAR",
-                MessageType.ClinicalStudyRegistration => "CRM",
-                MessageType.UnsolicitedStudyData => "CSU",
-                MessageType.DetailFinancialTransactions => "DFT",
-                MessageType.DocumentResponseDeprecated => "DOC",
-                MessageType.DisplayResponseDeprecated => "DSR",
-                MessageType.AutomatedEquipmentCommand => "EAC",
-                MessageType.AutomatedEquipmentNotification => "EAN",
-                MessageType.AutomatedEquipmentResponse => "EAR",
-                MessageType.EnhancedDisplayResponseDeprecated => "EDR",
-                MessageType.EmbeddedQueryLanguageQueryDeprecated => "EQQ",
-                MessageType.EventReplayResponseDeprecated => "ERP",
-                MessageType.AutomatedEquipmentStatusUpdateAcknowledgment => "ESR",
-                MessageType.AutomatedEquipmentStatusUpdate => "ESU",
-                MessageType.AutomatedEquipmentInventoryRequest => "INR",
-                MessageType.AutomatedEquipmentInventoryUpdate => "INU",
-                MessageType.AutomatedEquipmentLogServiceRequest => "LSR",
-                MessageType.AutomatedEquipmentLogServiceUpdate => "LSU",
-                MessageType.DelayedAcknowledgmentDeprecated => "MCF",
-                MessageType.MedicalDocumentManagement => "MDM",
-                MessageType.MasterFilesDelayedApplicationAcknowledgmentDeprecated => "MFD",
-                MessageType.MasterFilesApplicationAcknowledgment => "MFK",
-                MessageType.MasterFilesNotification => "MFN",
-                MessageType.MasterFilesQueryDeprecated => "MFQ",
-                MessageType.MasterFilesResponseDeprecated => "MFR",
-                MessageType.ApplicationManagementData => "NMD",
-                MessageType.ApplicationManagementQueryDeprecated => "NMQ",
-                MessageType.ApplicationManagementResponseDeprecated => "NMR",
-                MessageType.DietaryOrder => "OMD",
-                MessageType.GeneralClinicalOrder => "OMG",
-                MessageType.LaboratoryOrder => "OML",
-                MessageType.NonStockRequisitionOrder => "OMN",
-                MessageType.PharmacyTreatmentOrder => "OMP",
-                MessageType.StockRequisitionOrder => "OMS",
-                MessageType.DietaryOrderAcknowledgment => "ORD",
-                MessageType.QueryForResultsOfObservationDeprecated => "ORF",
-                MessageType.GeneralClinicalOrderAcknowledgment => "ORG",
-                MessageType.LaboratoryAcknowledgmentUnsolicited => "ORL",
-                MessageType.PharmacyTreatmentOrderDeprecated => "ORM",
-                MessageType.NonStockRequisitionGeneralOrderAcknowledgment => "ORN",
-                MessageType.PharmacyTreatmentOrderAcknowledgment => "ORP",
-                MessageType.GeneralOrderResponseToAnyOrmDeprecated => "ORR",
-                MessageType.StockRequisitionOrderAcknowledgment => "ORS",
-                MessageType.UnsolicitedTransmissionOfObservation => "ORU",
-                MessageType.QueryResponseForOrderStatusOsqDeprecated => "OSQ",
-                MessageType.QueryResponseForOrderStatusOsrDeprecated => "OSR",
-                MessageType.UnsolicitedLaboratoryObservation => "OUL",
-                MessageType.ProductExperience => "PEX",
-                MessageType.PatientGoalMessage => "PGL",
-                MessageType.PatientInsuranceInformation => "PIN",
-                MessageType.AddPersonnelRecord => "PMU",
-                MessageType.PatientPathwayGoalOriented => "PPG",
-                MessageType.PatientPathwayProblemOriented => "PPP",
-                MessageType.PatientProblem => "PPR",
-                MessageType.PatientPathwayGoalOrientedResponseDeprecated => "PPT",
-                MessageType.PatientGoalResponseDeprecated => "PPV",
-                MessageType.PatientProblemResponseDeprecated => "PRR",
-                MessageType.PatientPathwayProblemOrientedResponseDeprecated => "PTR",
-                MessageType.QueryByParameter => "QBP",
-                MessageType.QueryGeneralAcknowledgmentDeprecated => "QCK",
-                MessageType.CancelQuery => "QCN",
-                MessageType.QueryOriginalMode => "QRY",
-                MessageType.CreateSubscription => "QSB",
-                MessageType.CancelSubscriptionAcknowledge => "QSX",
-                MessageType.QueryForPreviousEvents => "QVR",
-                MessageType.PharmacyTreatmentAdministrationInfoDeprecated => "RAR",
-                MessageType.PharmacyTreatmentAdministration => "RAS",
-                MessageType.ReturnClinicalInformation => "RCI",
-                MessageType.ReturnClinicalList => "RCL",
-                MessageType.PharmacyTreatmentEncodedOrder => "RDE",
-                MessageType.PharmacyTreatmentDispenseInfo => "RDR",
-                MessageType.PharmacyTreatmentDispense => "RDS",
-                MessageType.DisplayBasedResponse => "RDY",
-                MessageType.PatientReferral => "REF",
-                MessageType.PharmacyTreatmentEncodedOrderInformationDeprecated => "RER",
-                MessageType.PharmacyTreatmentDoseInformationDeprecated => "RGR",
-                MessageType.PharmacyTreatmentGive => "RGV",
-                MessageType.PharmacyTreatmentOrderResponseDeprecated => "ROR",
-                MessageType.ReturnPatientAuthorization => "RPA",
-                MessageType.ReturnPatientInfo => "RPI",
-                MessageType.ReturnPatientDisplayList => "RPL",
-                MessageType.ReturnPatientList => "RPR",
-                MessageType.RequestPatientAuthorization => "RQA",
-                MessageType.RequestClinicalInformation => "RQC",
-                MessageType.RequestPatientInformation => "RQI",
-                MessageType.RequestPatientDemographics => "RQP",
-                MessageType.EventReplayQueryDeprecated => "RQQ",
-                MessageType.PharmacyTreatmentAdministrationAcknowledgment => "RRA",
-                MessageType.PharmacyTreatmentDispenseAcknowledgment => "RRD",
-                MessageType.PharmacyTreatmentEncodedOrderAcknowledgment => "RRE",
-                MessageType.PharmacyTreatmentGiveAcknowledgment => "RRG",
-                MessageType.ReturnReferralInfo => "RRI",
-                MessageType.SegmentPatternResponse => "RSP",
-                MessageType.TabularResponse => "RTB",
-                MessageType.ScheduleInfoUnsolicited => "SIU",
-                MessageType.StoredProcedureRequestDeprecated => "SPQ",
-                MessageType.ScheduleQueryMessageDeprecated => "SQM",
-                MessageType.ScheduleQueryResponseDeprecated => "SQR",
-                MessageType.ScheduleRequestMessage => "SRM",
-                MessageType.ScheduledRequestResponse => "SRR",
-                MessageType.SpecimenStatusRequestMessage => "SSR",
-                MessageType.SpecimenStatusUpdateMessage => "SSU",
-                MessageType.SummaryProductExperienceReportDeprecated => "SUR",
-                MessageType.TabularDataResponseDeprecated => "TBR",
-                MessageType.AutomatedEquipmentTestCodeSettingsRequest => "TCR",
-                MessageType.AutomatedEquipmentTestCodeSettingsUpdate => "TCU",
-                MessageType.UnsolicitedDisplayUpdateMessage => "UDM",
-                MessageType.VirtualTableQueryDeprecated => "VQQ",
-                MessageType.QueryForVaccinationRecordDeprecated => "VXQ",
-                MessageType.VaccinationRecordResponseDeprecated => "VXR",
-                MessageType.UnsolicitedVaccinationRecordUpdate => "VXU",
-                MessageType.ResponseForVaccinationQueryWithMultiplePidMatchesDeprecated => "VXX",
+                CodeMessageType.GeneralAcknowledgment => "ACK",
+                CodeMessageType.AdtResponseDeprecated => "ADR",
+                CodeMessageType.AdtMessage => "ADT",
+                CodeMessageType.AddChangeBillingAccount => "BAR",
+                CodeMessageType.ClinicalStudyRegistration => "CRM",
+                CodeMessageType.UnsolicitedStudyData => "CSU",
+                CodeMessageType.DetailFinancialTransactions => "DFT",
+                CodeMessageType.DocumentResponseDeprecated => "DOC",
+                CodeMessageType.DisplayResponseDeprecated => "DSR",
+                CodeMessageType.AutomatedEquipmentCommand => "EAC",
+                CodeMessageType.AutomatedEquipmentNotification => "EAN",
+                CodeMessageType.AutomatedEquipmentResponse => "EAR",
+                CodeMessageType.EnhancedDisplayResponseDeprecated => "EDR",
+                CodeMessageType.EmbeddedQueryLanguageQueryDeprecated => "EQQ",
+                CodeMessageType.EventReplayResponseDeprecated => "ERP",
+                CodeMessageType.AutomatedEquipmentStatusUpdateAcknowledgment => "ESR",
+                CodeMessageType.AutomatedEquipmentStatusUpdate => "ESU",
+                CodeMessageType.AutomatedEquipmentInventoryRequest => "INR",
+                CodeMessageType.AutomatedEquipmentInventoryUpdate => "INU",
+                CodeMessageType.AutomatedEquipmentLogServiceRequest => "LSR",
+                CodeMessageType.AutomatedEquipmentLogServiceUpdate => "LSU",
+                CodeMessageType.DelayedAcknowledgmentDeprecated => "MCF",
+                CodeMessageType.MedicalDocumentManagement => "MDM",
+                CodeMessageType.MasterFilesDelayedApplicationAcknowledgmentDeprecated => "MFD",
+                CodeMessageType.MasterFilesApplicationAcknowledgment => "MFK",
+                CodeMessageType.MasterFilesNotification => "MFN",
+                CodeMessageType.MasterFilesQueryDeprecated => "MFQ",
+                CodeMessageType.MasterFilesResponseDeprecated => "MFR",
+                CodeMessageType.ApplicationManagementData => "NMD",
+                CodeMessageType.ApplicationManagementQueryDeprecated => "NMQ",
+                CodeMessageType.ApplicationManagementResponseDeprecated => "NMR",
+                CodeMessageType.DietaryOrder => "OMD",
+                CodeMessageType.GeneralClinicalOrder => "OMG",
+                CodeMessageType.LaboratoryOrder => "OML",
+                CodeMessageType.NonStockRequisitionOrder => "OMN",
+                CodeMessageType.PharmacyTreatmentOrder => "OMP",
+                CodeMessageType.StockRequisitionOrder => "OMS",
+                CodeMessageType.DietaryOrderAcknowledgment => "ORD",
+                CodeMessageType.QueryForResultsOfObservationDeprecated => "ORF",
+                CodeMessageType.GeneralClinicalOrderAcknowledgment => "ORG",
+                CodeMessageType.LaboratoryAcknowledgmentUnsolicited => "ORL",
+                CodeMessageType.PharmacyTreatmentOrderDeprecated => "ORM",
+                CodeMessageType.NonStockRequisitionGeneralOrderAcknowledgment => "ORN",
+                CodeMessageType.PharmacyTreatmentOrderAcknowledgment => "ORP",
+                CodeMessageType.GeneralOrderResponseToAnyOrmDeprecated => "ORR",
+                CodeMessageType.StockRequisitionOrderAcknowledgment => "ORS",
+                CodeMessageType.UnsolicitedTransmissionOfObservation => "ORU",
+                CodeMessageType.QueryResponseForOrderStatusOsqDeprecated => "OSQ",
+                CodeMessageType.QueryResponseForOrderStatusOsrDeprecated => "OSR",
+                CodeMessageType.UnsolicitedLaboratoryObservation => "OUL",
+                CodeMessageType.ProductExperience => "PEX",
+                CodeMessageType.PatientGoalMessage => "PGL",
+                CodeMessageType.PatientInsuranceInformation => "PIN",
+                CodeMessageType.AddPersonnelRecord => "PMU",
+                CodeMessageType.PatientPathwayGoalOriented => "PPG",
+                CodeMessageType.PatientPathwayProblemOriented => "PPP",
+                CodeMessageType.PatientProblem => "PPR",
+                CodeMessageType.PatientPathwayGoalOrientedResponseDeprecated => "PPT",
+                CodeMessageType.PatientGoalResponseDeprecated => "PPV",
+                CodeMessageType.PatientProblemResponseDeprecated => "PRR",
+                CodeMessageType.PatientPathwayProblemOrientedResponseDeprecated => "PTR",
+                CodeMessageType.QueryByParameter => "QBP",
+                CodeMessageType.QueryGeneralAcknowledgmentDeprecated => "QCK",
+                CodeMessageType.CancelQuery => "QCN",
+                CodeMessageType.QueryOriginalMode => "QRY",
+                CodeMessageType.CreateSubscription => "QSB",
+                CodeMessageType.CancelSubscriptionAcknowledge => "QSX",
+                CodeMessageType.QueryForPreviousEvents => "QVR",
+                CodeMessageType.PharmacyTreatmentAdministrationInfoDeprecated => "RAR",
+                CodeMessageType.PharmacyTreatmentAdministration => "RAS",
+                CodeMessageType.ReturnClinicalInformation => "RCI",
+                CodeMessageType.ReturnClinicalList => "RCL",
+                CodeMessageType.PharmacyTreatmentEncodedOrder => "RDE",
+                CodeMessageType.PharmacyTreatmentDispenseInfo => "RDR",
+                CodeMessageType.PharmacyTreatmentDispense => "RDS",
+                CodeMessageType.DisplayBasedResponse => "RDY",
+                CodeMessageType.PatientReferral => "REF",
+                CodeMessageType.PharmacyTreatmentEncodedOrderInformationDeprecated => "RER",
+                CodeMessageType.PharmacyTreatmentDoseInformationDeprecated => "RGR",
+                CodeMessageType.PharmacyTreatmentGive => "RGV",
+                CodeMessageType.PharmacyTreatmentOrderResponseDeprecated => "ROR",
+                CodeMessageType.ReturnPatientAuthorization => "RPA",
+                CodeMessageType.ReturnPatientInfo => "RPI",
+                CodeMessageType.ReturnPatientDisplayList => "RPL",
+                CodeMessageType.ReturnPatientList => "RPR",
+                CodeMessageType.RequestPatientAuthorization => "RQA",
+                CodeMessageType.RequestClinicalInformation => "RQC",
+                CodeMessageType.RequestPatientInformation => "RQI",
+                CodeMessageType.RequestPatientDemographics => "RQP",
+                CodeMessageType.EventReplayQueryDeprecated => "RQQ",
+                CodeMessageType.PharmacyTreatmentAdministrationAcknowledgment => "RRA",
+                CodeMessageType.PharmacyTreatmentDispenseAcknowledgment => "RRD",
+                CodeMessageType.PharmacyTreatmentEncodedOrderAcknowledgment => "RRE",
+                CodeMessageType.PharmacyTreatmentGiveAcknowledgment => "RRG",
+                CodeMessageType.ReturnReferralInfo => "RRI",
+                CodeMessageType.SegmentPatternResponse => "RSP",
+                CodeMessageType.TabularResponse => "RTB",
+                CodeMessageType.ScheduleInfoUnsolicited => "SIU",
+                CodeMessageType.StoredProcedureRequestDeprecated => "SPQ",
+                CodeMessageType.ScheduleQueryMessageDeprecated => "SQM",
+                CodeMessageType.ScheduleQueryResponseDeprecated => "SQR",
+                CodeMessageType.ScheduleRequestMessage => "SRM",
+                CodeMessageType.ScheduledRequestResponse => "SRR",
+                CodeMessageType.SpecimenStatusRequestMessage => "SSR",
+                CodeMessageType.SpecimenStatusUpdateMessage => "SSU",
+                CodeMessageType.SummaryProductExperienceReportDeprecated => "SUR",
+                CodeMessageType.TabularDataResponseDeprecated => "TBR",
+                CodeMessageType.AutomatedEquipmentTestCodeSettingsRequest => "TCR",
+                CodeMessageType.AutomatedEquipmentTestCodeSettingsUpdate => "TCU",
+                CodeMessageType.UnsolicitedDisplayUpdateMessage => "UDM",
+                CodeMessageType.VirtualTableQueryDeprecated => "VQQ",
+                CodeMessageType.QueryForVaccinationRecordDeprecated => "VXQ",
+                CodeMessageType.VaccinationRecordResponseDeprecated => "VXR",
+                CodeMessageType.UnsolicitedVaccinationRecordUpdate => "VXU",
+                CodeMessageType.ResponseForVaccinationQueryWithMultiplePidMatchesDeprecated => "VXX",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given MfnRecordLevelErrorReturn enum value into its HL7 equivalent code.
+        /// Converts the given CodeMfnRecordLevelErrorReturn enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(MfnRecordLevelErrorReturn input)
+        public string EnumToCode(CodeMfnRecordLevelErrorReturn input)
         {
             return input switch
             {
-                MfnRecordLevelErrorReturn.SuccessfulPostingOfTheRecord => "S",
-                MfnRecordLevelErrorReturn.UnsuccessfulPostingOfTheRecord => "U",
+                CodeMfnRecordLevelErrorReturn.SuccessfulPostingOfTheRecord => "S",
+                CodeMfnRecordLevelErrorReturn.UnsuccessfulPostingOfTheRecord => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given MilitaryRankGrade enum value into its HL7 equivalent code.
+        /// Converts the given CodeMilitaryRankGrade enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(MilitaryRankGrade input)
+        public string EnumToCode(CodeMilitaryRankGrade input)
         {
             return input switch
             {
-                MilitaryRankGrade.Enlisted1 => "E1",
-                MilitaryRankGrade.Enlisted1To9 => "E1 ... E9",
-                MilitaryRankGrade.Enlisted2 => "E2",
-                MilitaryRankGrade.Enlisted3 => "E3",
-                MilitaryRankGrade.Enlisted4 => "E4",
-                MilitaryRankGrade.Enlisted5 => "E5",
-                MilitaryRankGrade.Enlisted6 => "E6",
-                MilitaryRankGrade.Enlisted7 => "E7",
-                MilitaryRankGrade.Enlisted8 => "E8",
-                MilitaryRankGrade.Enlisted9 => "E9",
-                MilitaryRankGrade.Officers1 => "O1",
-                MilitaryRankGrade.Officers => "O1 ... O10",
-                MilitaryRankGrade.Officers10 => "O10",
-                MilitaryRankGrade.Officers2 => "O2",
-                MilitaryRankGrade.Officers3 => "O3",
-                MilitaryRankGrade.Officers4 => "O4",
-                MilitaryRankGrade.Officers5 => "O5",
-                MilitaryRankGrade.Officers6 => "O6",
-                MilitaryRankGrade.Officers7 => "O7",
-                MilitaryRankGrade.Officers8 => "O8",
-                MilitaryRankGrade.Officers9 => "O9",
-                MilitaryRankGrade.WarrantOfficers1 => "W1",
-                MilitaryRankGrade.WarrantOfficers => "W1 ... W4",
-                MilitaryRankGrade.WarrantOfficers2 => "W2",
-                MilitaryRankGrade.WarrantOfficers3 => "W3",
-                MilitaryRankGrade.WarrantOfficers4 => "W4",
+                CodeMilitaryRankGrade.Enlisted1 => "E1",
+                CodeMilitaryRankGrade.Enlisted1To9 => "E1 ... E9",
+                CodeMilitaryRankGrade.Enlisted2 => "E2",
+                CodeMilitaryRankGrade.Enlisted3 => "E3",
+                CodeMilitaryRankGrade.Enlisted4 => "E4",
+                CodeMilitaryRankGrade.Enlisted5 => "E5",
+                CodeMilitaryRankGrade.Enlisted6 => "E6",
+                CodeMilitaryRankGrade.Enlisted7 => "E7",
+                CodeMilitaryRankGrade.Enlisted8 => "E8",
+                CodeMilitaryRankGrade.Enlisted9 => "E9",
+                CodeMilitaryRankGrade.Officers1 => "O1",
+                CodeMilitaryRankGrade.Officers => "O1 ... O10",
+                CodeMilitaryRankGrade.Officers10 => "O10",
+                CodeMilitaryRankGrade.Officers2 => "O2",
+                CodeMilitaryRankGrade.Officers3 => "O3",
+                CodeMilitaryRankGrade.Officers4 => "O4",
+                CodeMilitaryRankGrade.Officers5 => "O5",
+                CodeMilitaryRankGrade.Officers6 => "O6",
+                CodeMilitaryRankGrade.Officers7 => "O7",
+                CodeMilitaryRankGrade.Officers8 => "O8",
+                CodeMilitaryRankGrade.Officers9 => "O9",
+                CodeMilitaryRankGrade.WarrantOfficers1 => "W1",
+                CodeMilitaryRankGrade.WarrantOfficers => "W1 ... W4",
+                CodeMilitaryRankGrade.WarrantOfficers2 => "W2",
+                CodeMilitaryRankGrade.WarrantOfficers3 => "W3",
+                CodeMilitaryRankGrade.WarrantOfficers4 => "W4",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given MilitaryService enum value into its HL7 equivalent code.
+        /// Converts the given CodeMilitaryService enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(MilitaryService input)
+        public string EnumToCode(CodeMilitaryService input)
         {
             return input switch
             {
-                MilitaryService.AustralianArmy => "AUSA",
-                MilitaryService.AustralianAirForce => "AUSAF",
-                MilitaryService.AustralianNavy => "AUSN",
-                MilitaryService.Nato => "NATO",
-                MilitaryService.Noaa => "NOAA",
-                MilitaryService.UsArmy => "USA",
-                MilitaryService.UsAirForce => "USAF",
-                MilitaryService.UsCoastGuard => "USCG",
-                MilitaryService.UsMarineCorps => "USMC",
-                MilitaryService.UsNavy => "USN",
-                MilitaryService.UsPublicHealthService => "USPHS",
+                CodeMilitaryService.AustralianArmy => "AUSA",
+                CodeMilitaryService.AustralianAirForce => "AUSAF",
+                CodeMilitaryService.AustralianNavy => "AUSN",
+                CodeMilitaryService.Nato => "NATO",
+                CodeMilitaryService.Noaa => "NOAA",
+                CodeMilitaryService.UsArmy => "USA",
+                CodeMilitaryService.UsAirForce => "USAF",
+                CodeMilitaryService.UsCoastGuard => "USCG",
+                CodeMilitaryService.UsMarineCorps => "USMC",
+                CodeMilitaryService.UsNavy => "USN",
+                CodeMilitaryService.UsPublicHealthService => "USPHS",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given MilitaryStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeMilitaryStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(MilitaryStatus input)
+        public string EnumToCode(CodeMilitaryStatus input)
         {
             return input switch
             {
-                MilitaryStatus.ActiveDuty => "ACT",
-                MilitaryStatus.Deceased => "DEC",
-                MilitaryStatus.Retired => "RET",
+                CodeMilitaryStatus.ActiveDuty => "ACT",
+                CodeMilitaryStatus.Deceased => "DEC",
+                CodeMilitaryStatus.Retired => "RET",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given MimeBase64EncodingCharacters enum value into its HL7 equivalent code.
+        /// Converts the given CodeMimeBase64EncodingCharacters enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(MimeBase64EncodingCharacters input)
+        public string EnumToCode(CodeMimeBase64EncodingCharacters input)
         {
             return input switch
             {
-                MimeBase64EncodingCharacters.EqualsSign => "(pad)",
-                MimeBase64EncodingCharacters.A => "0",
-                MimeBase64EncodingCharacters.B => "1",
-                MimeBase64EncodingCharacters.K => "10",
-                MimeBase64EncodingCharacters.L => "11",
-                MimeBase64EncodingCharacters.M => "12",
-                MimeBase64EncodingCharacters.N => "13",
-                MimeBase64EncodingCharacters.O => "14",
-                MimeBase64EncodingCharacters.P => "15",
-                MimeBase64EncodingCharacters.Q => "16",
-                MimeBase64EncodingCharacters.R => "17",
-                MimeBase64EncodingCharacters.S => "18",
-                MimeBase64EncodingCharacters.T => "19",
-                MimeBase64EncodingCharacters.C => "2",
-                MimeBase64EncodingCharacters.U => "20",
-                MimeBase64EncodingCharacters.V => "21",
-                MimeBase64EncodingCharacters.W => "22",
-                MimeBase64EncodingCharacters.X => "23",
-                MimeBase64EncodingCharacters.Y => "24",
-                MimeBase64EncodingCharacters.Z => "25",
-                MimeBase64EncodingCharacters.a => "26",
-                MimeBase64EncodingCharacters.b => "27",
-                MimeBase64EncodingCharacters.c => "28",
-                MimeBase64EncodingCharacters.d => "29",
-                MimeBase64EncodingCharacters.D => "3",
-                MimeBase64EncodingCharacters.e => "30",
-                MimeBase64EncodingCharacters.f => "31",
-                MimeBase64EncodingCharacters.g => "32",
-                MimeBase64EncodingCharacters.h => "33",
-                MimeBase64EncodingCharacters.i => "34",
-                MimeBase64EncodingCharacters.j => "35",
-                MimeBase64EncodingCharacters.k => "36",
-                MimeBase64EncodingCharacters.l => "37",
-                MimeBase64EncodingCharacters.m => "38",
-                MimeBase64EncodingCharacters.n => "39",
-                MimeBase64EncodingCharacters.E => "4",
-                MimeBase64EncodingCharacters.o => "40",
-                MimeBase64EncodingCharacters.p => "41",
-                MimeBase64EncodingCharacters.q => "42",
-                MimeBase64EncodingCharacters.r => "43",
-                MimeBase64EncodingCharacters.s => "44",
-                MimeBase64EncodingCharacters.t => "45",
-                MimeBase64EncodingCharacters.u => "46",
-                MimeBase64EncodingCharacters.v => "47",
-                MimeBase64EncodingCharacters.w => "48",
-                MimeBase64EncodingCharacters.x => "49",
-                MimeBase64EncodingCharacters.F => "5",
-                MimeBase64EncodingCharacters.y => "50",
-                MimeBase64EncodingCharacters.z => "51",
-                MimeBase64EncodingCharacters.Number0 => "52",
-                MimeBase64EncodingCharacters.Number1 => "53",
-                MimeBase64EncodingCharacters.Number2 => "54",
-                MimeBase64EncodingCharacters.Number3 => "55",
-                MimeBase64EncodingCharacters.Number4 => "56",
-                MimeBase64EncodingCharacters.Number5 => "57",
-                MimeBase64EncodingCharacters.Number6 => "58",
-                MimeBase64EncodingCharacters.Number7 => "59",
-                MimeBase64EncodingCharacters.G => "6",
-                MimeBase64EncodingCharacters.Number8 => "60",
-                MimeBase64EncodingCharacters.Number9 => "61",
-                MimeBase64EncodingCharacters.PlusSign => "62",
-                MimeBase64EncodingCharacters.ForwardSlash => "63",
-                MimeBase64EncodingCharacters.H => "7",
-                MimeBase64EncodingCharacters.I => "8",
-                MimeBase64EncodingCharacters.J => "9",
+                CodeMimeBase64EncodingCharacters.EqualsSign => "(pad)",
+                CodeMimeBase64EncodingCharacters.A => "0",
+                CodeMimeBase64EncodingCharacters.B => "1",
+                CodeMimeBase64EncodingCharacters.K => "10",
+                CodeMimeBase64EncodingCharacters.L => "11",
+                CodeMimeBase64EncodingCharacters.M => "12",
+                CodeMimeBase64EncodingCharacters.N => "13",
+                CodeMimeBase64EncodingCharacters.O => "14",
+                CodeMimeBase64EncodingCharacters.P => "15",
+                CodeMimeBase64EncodingCharacters.Q => "16",
+                CodeMimeBase64EncodingCharacters.R => "17",
+                CodeMimeBase64EncodingCharacters.S => "18",
+                CodeMimeBase64EncodingCharacters.T => "19",
+                CodeMimeBase64EncodingCharacters.C => "2",
+                CodeMimeBase64EncodingCharacters.U => "20",
+                CodeMimeBase64EncodingCharacters.V => "21",
+                CodeMimeBase64EncodingCharacters.W => "22",
+                CodeMimeBase64EncodingCharacters.X => "23",
+                CodeMimeBase64EncodingCharacters.Y => "24",
+                CodeMimeBase64EncodingCharacters.Z => "25",
+                CodeMimeBase64EncodingCharacters.a => "26",
+                CodeMimeBase64EncodingCharacters.b => "27",
+                CodeMimeBase64EncodingCharacters.c => "28",
+                CodeMimeBase64EncodingCharacters.d => "29",
+                CodeMimeBase64EncodingCharacters.D => "3",
+                CodeMimeBase64EncodingCharacters.e => "30",
+                CodeMimeBase64EncodingCharacters.f => "31",
+                CodeMimeBase64EncodingCharacters.g => "32",
+                CodeMimeBase64EncodingCharacters.h => "33",
+                CodeMimeBase64EncodingCharacters.i => "34",
+                CodeMimeBase64EncodingCharacters.j => "35",
+                CodeMimeBase64EncodingCharacters.k => "36",
+                CodeMimeBase64EncodingCharacters.l => "37",
+                CodeMimeBase64EncodingCharacters.m => "38",
+                CodeMimeBase64EncodingCharacters.n => "39",
+                CodeMimeBase64EncodingCharacters.E => "4",
+                CodeMimeBase64EncodingCharacters.o => "40",
+                CodeMimeBase64EncodingCharacters.p => "41",
+                CodeMimeBase64EncodingCharacters.q => "42",
+                CodeMimeBase64EncodingCharacters.r => "43",
+                CodeMimeBase64EncodingCharacters.s => "44",
+                CodeMimeBase64EncodingCharacters.t => "45",
+                CodeMimeBase64EncodingCharacters.u => "46",
+                CodeMimeBase64EncodingCharacters.v => "47",
+                CodeMimeBase64EncodingCharacters.w => "48",
+                CodeMimeBase64EncodingCharacters.x => "49",
+                CodeMimeBase64EncodingCharacters.F => "5",
+                CodeMimeBase64EncodingCharacters.y => "50",
+                CodeMimeBase64EncodingCharacters.z => "51",
+                CodeMimeBase64EncodingCharacters.Number0 => "52",
+                CodeMimeBase64EncodingCharacters.Number1 => "53",
+                CodeMimeBase64EncodingCharacters.Number2 => "54",
+                CodeMimeBase64EncodingCharacters.Number3 => "55",
+                CodeMimeBase64EncodingCharacters.Number4 => "56",
+                CodeMimeBase64EncodingCharacters.Number5 => "57",
+                CodeMimeBase64EncodingCharacters.Number6 => "58",
+                CodeMimeBase64EncodingCharacters.Number7 => "59",
+                CodeMimeBase64EncodingCharacters.G => "6",
+                CodeMimeBase64EncodingCharacters.Number8 => "60",
+                CodeMimeBase64EncodingCharacters.Number9 => "61",
+                CodeMimeBase64EncodingCharacters.PlusSign => "62",
+                CodeMimeBase64EncodingCharacters.ForwardSlash => "63",
+                CodeMimeBase64EncodingCharacters.H => "7",
+                CodeMimeBase64EncodingCharacters.I => "8",
+                CodeMimeBase64EncodingCharacters.J => "9",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given Modality enum value into its HL7 equivalent code.
+        /// Converts the given CodeModality enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(Modality input)
+        public string EnumToCode(CodeModality input)
         {
             return input switch
             {
-                Modality.Angioscopy => "AS",
-                Modality.BiomagneticImaging => "BS",
-                Modality.ColorFlowDoppler => "CD",
-                Modality.Colposcopy => "CP",
-                Modality.ComputedRadiography => "CR",
-                Modality.Cystoscopy => "CS",
-                Modality.ComputedTomography => "CT",
-                Modality.DuplexDoppler => "DD",
-                Modality.Diapanography => "DG",
-                Modality.DigitalMicroscopy => "DM",
-                Modality.Echocardiography => "EC",
-                Modality.Endoscopy => "ES",
-                Modality.FluoresceinAngiography => "FA",
-                Modality.Fundoscopy => "FS",
-                Modality.Laparoscopy => "LP",
-                Modality.LaserSurfaceScan => "LS",
-                Modality.MagneticResonanceAngiography => "MA",
-                Modality.MagneticResonanceSpectroscopy => "MS",
-                Modality.NuclearMedicine => "NM",
-                Modality.Other => "OT",
-                Modality.PositronEmissionTomography => "PT",
-                Modality.RadioFluoroscopy => "RF",
-                Modality.SinglePhotonEmissionComputedTomography => "ST",
-                Modality.Thermography => "TG",
-                Modality.Ultrasound => "US",
-                Modality.XRayAngiography => "XA",
+                CodeModality.Angioscopy => "AS",
+                CodeModality.BiomagneticImaging => "BS",
+                CodeModality.ColorFlowDoppler => "CD",
+                CodeModality.Colposcopy => "CP",
+                CodeModality.ComputedRadiography => "CR",
+                CodeModality.Cystoscopy => "CS",
+                CodeModality.ComputedTomography => "CT",
+                CodeModality.DuplexDoppler => "DD",
+                CodeModality.Diapanography => "DG",
+                CodeModality.DigitalMicroscopy => "DM",
+                CodeModality.Echocardiography => "EC",
+                CodeModality.Endoscopy => "ES",
+                CodeModality.FluoresceinAngiography => "FA",
+                CodeModality.Fundoscopy => "FS",
+                CodeModality.Laparoscopy => "LP",
+                CodeModality.LaserSurfaceScan => "LS",
+                CodeModality.MagneticResonanceAngiography => "MA",
+                CodeModality.MagneticResonanceSpectroscopy => "MS",
+                CodeModality.NuclearMedicine => "NM",
+                CodeModality.Other => "OT",
+                CodeModality.PositronEmissionTomography => "PT",
+                CodeModality.RadioFluoroscopy => "RF",
+                CodeModality.SinglePhotonEmissionComputedTomography => "ST",
+                CodeModality.Thermography => "TG",
+                CodeModality.Ultrasound => "US",
+                CodeModality.XRayAngiography => "XA",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ModeOfArrivalCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeModeOfArrivalCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ModeOfArrivalCode input)
+        public string EnumToCode(CodeModeOfArrivalCode input)
         {
             return input switch
             {
-                ModeOfArrivalCode.Ambulance => "A",
-                ModeOfArrivalCode.Car => "C",
-                ModeOfArrivalCode.OnFoot => "F",
-                ModeOfArrivalCode.Helicopter => "H",
-                ModeOfArrivalCode.Other => "O",
-                ModeOfArrivalCode.PublicTransport => "P",
-                ModeOfArrivalCode.Unknown => "U",
+                CodeModeOfArrivalCode.Ambulance => "A",
+                CodeModeOfArrivalCode.Car => "C",
+                CodeModeOfArrivalCode.OnFoot => "F",
+                CodeModeOfArrivalCode.Helicopter => "H",
+                CodeModeOfArrivalCode.Other => "O",
+                CodeModeOfArrivalCode.PublicTransport => "P",
+                CodeModeOfArrivalCode.Unknown => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ModifyIndicator enum value into its HL7 equivalent code.
+        /// Converts the given CodeModifyIndicator enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ModifyIndicator input)
+        public string EnumToCode(CodeModifyIndicator input)
         {
             return input switch
             {
-                ModifyIndicator.ModifiedSubscription => "M",
-                ModifyIndicator.NewSubscription => "N",
+                CodeModifyIndicator.ModifiedSubscription => "M",
+                CodeModifyIndicator.NewSubscription => "N",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given MoneyOrPercentageIndicator enum value into its HL7 equivalent code.
+        /// Converts the given CodeMoneyOrPercentageIndicator enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(MoneyOrPercentageIndicator input)
+        public string EnumToCode(CodeMoneyOrPercentageIndicator input)
         {
             return input switch
             {
-                MoneyOrPercentageIndicator.CurrencyAmount => "AT",
-                MoneyOrPercentageIndicator.Percentage => "PC",
+                CodeMoneyOrPercentageIndicator.CurrencyAmount => "AT",
+                CodeMoneyOrPercentageIndicator.Percentage => "PC",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given NameAddressRepresentation enum value into its HL7 equivalent code.
+        /// Converts the given CodeNameAddressRepresentation enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(NameAddressRepresentation input)
+        public string EnumToCode(CodeNameAddressRepresentation input)
         {
             return input switch
             {
-                NameAddressRepresentation.Alphabetic => "A",
-                NameAddressRepresentation.Ideographic => "I",
-                NameAddressRepresentation.Phonetic => "P",
+                CodeNameAddressRepresentation.Alphabetic => "A",
+                CodeNameAddressRepresentation.Ideographic => "I",
+                CodeNameAddressRepresentation.Phonetic => "P",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given NameAssemblyOrder enum value into its HL7 equivalent code.
+        /// Converts the given CodeNameAssemblyOrder enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(NameAssemblyOrder input)
+        public string EnumToCode(CodeNameAssemblyOrder input)
         {
             return input switch
             {
-                NameAssemblyOrder.PrefixFamilyMiddleGivenSuffix => "F",
-                NameAssemblyOrder.PrefixGivenMiddleFamilySuffix => "G",
+                CodeNameAssemblyOrder.PrefixFamilyMiddleGivenSuffix => "F",
+                CodeNameAssemblyOrder.PrefixGivenMiddleFamilySuffix => "G",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given NameType enum value into its HL7 equivalent code.
+        /// Converts the given CodeNameType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(NameType input)
+        public string EnumToCode(CodeNameType input)
         {
             return input switch
             {
-                NameType.Assigned => "A",
-                NameType.BirthName => "B",
-                NameType.AdoptedName => "C",
-                NameType.CustomaryName => "D",
-                NameType.LicensingName => "I",
-                NameType.OfficialRegistryName => "L",
-                NameType.MaidenName => "M",
-                NameType.Nickname => "N",
-                NameType.NameOfPartnerSpouse => "P",
-                NameType.RegisteredName => "R",
-                NameType.Pseudonym => "S",
-                NameType.IndigenousTribal => "T",
-                NameType.Unknown => "U",
+                CodeNameType.Assigned => "A",
+                CodeNameType.BirthName => "B",
+                CodeNameType.AdoptedName => "C",
+                CodeNameType.CustomaryName => "D",
+                CodeNameType.LicensingName => "I",
+                CodeNameType.OfficialRegistryName => "L",
+                CodeNameType.MaidenName => "M",
+                CodeNameType.Nickname => "N",
+                CodeNameType.NameOfPartnerSpouse => "P",
+                CodeNameType.RegisteredName => "R",
+                CodeNameType.Pseudonym => "S",
+                CodeNameType.IndigenousTribal => "T",
+                CodeNameType.Unknown => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given NatureOfAbnormalTesting enum value into its HL7 equivalent code.
+        /// Converts the given CodeNatureOfAbnormalTesting enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(NatureOfAbnormalTesting input)
+        public string EnumToCode(CodeNatureOfAbnormalTesting input)
         {
             return input switch
             {
-                NatureOfAbnormalTesting.AgeBasedPopulation => "A",
-                NatureOfAbnormalTesting.None => "N",
-                NatureOfAbnormalTesting.RaceBasedPopulation => "R",
-                NatureOfAbnormalTesting.SexBasedPopulation => "S",
+                CodeNatureOfAbnormalTesting.AgeBasedPopulation => "A",
+                CodeNatureOfAbnormalTesting.None => "N",
+                CodeNatureOfAbnormalTesting.RaceBasedPopulation => "R",
+                CodeNatureOfAbnormalTesting.SexBasedPopulation => "S",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given NatureOfChallenge enum value into its HL7 equivalent code.
+        /// Converts the given CodeNatureOfChallenge enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(NatureOfChallenge input)
+        public string EnumToCode(CodeNatureOfChallenge input)
         {
             return input switch
             {
-                NatureOfChallenge.FastingForPeriodSpecified => "CFST",
-                NatureOfChallenge.ExerciseCanBeQuantified => "EXCZ",
-                NatureOfChallenge.NoFluidIntakeForPeriodSpecified => "FFST",
+                CodeNatureOfChallenge.FastingForPeriodSpecified => "CFST",
+                CodeNatureOfChallenge.ExerciseCanBeQuantified => "EXCZ",
+                CodeNatureOfChallenge.NoFluidIntakeForPeriodSpecified => "FFST",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given NatureOfServiceTestObservation enum value into its HL7 equivalent code.
+        /// Converts the given CodeNatureOfServiceTestObservation enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(NatureOfServiceTestObservation input)
+        public string EnumToCode(CodeNatureOfServiceTestObservation input)
         {
             return input switch
             {
-                NatureOfServiceTestObservation.AtomicServiceTestObservation => "A",
-                NatureOfServiceTestObservation.SingleObservation => "C",
-                NatureOfServiceTestObservation.FunctionalProcedure => "F",
-                NatureOfServiceTestObservation.ProfileFromAtomicObservation => "P",
-                NatureOfServiceTestObservation.Superset => "S",
+                CodeNatureOfServiceTestObservation.AtomicServiceTestObservation => "A",
+                CodeNatureOfServiceTestObservation.SingleObservation => "C",
+                CodeNatureOfServiceTestObservation.FunctionalProcedure => "F",
+                CodeNatureOfServiceTestObservation.ProfileFromAtomicObservation => "P",
+                CodeNatureOfServiceTestObservation.Superset => "S",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given NewbornCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeNewbornCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(NewbornCode input)
+        public string EnumToCode(CodeNewbornCode input)
         {
             return input switch
             {
-                NewbornCode.BornInFacility => "1",
-                NewbornCode.TransferIn => "2",
-                NewbornCode.BornEnRoute => "3",
-                NewbornCode.Other => "4",
-                NewbornCode.BornAtHome => "5",
+                CodeNewbornCode.BornInFacility => "1",
+                CodeNewbornCode.TransferIn => "2",
+                CodeNewbornCode.BornEnRoute => "3",
+                CodeNewbornCode.Other => "4",
+                CodeNewbornCode.BornAtHome => "5",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ObservationResultStatusCodesInterpretation enum value into its HL7 equivalent code.
+        /// Converts the given CodeObservationResultStatusCodesInterpretation enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ObservationResultStatusCodesInterpretation input)
+        public string EnumToCode(CodeObservationResultStatusCodesInterpretation input)
         {
             return input switch
             {
-                ObservationResultStatusCodesInterpretation.RecordIsCorrection => "C",
-                ObservationResultStatusCodesInterpretation.DeletesTheObxRecord => "D",
-                ObservationResultStatusCodesInterpretation.FinalResults => "F",
-                ObservationResultStatusCodesInterpretation.SpecimenInLabResultsPending => "I",
-                ObservationResultStatusCodesInterpretation.NotAsked => "N",
-                ObservationResultStatusCodesInterpretation.OrderDetailDescription => "O",
-                ObservationResultStatusCodesInterpretation.PreliminaryResults => "P",
-                ObservationResultStatusCodesInterpretation.ResultsEnteredNotVerified => "R",
-                ObservationResultStatusCodesInterpretation.PartialResults => "S",
-                ObservationResultStatusCodesInterpretation.ResultsChangeToFinalWithoutRetransmit => "U",
-                ObservationResultStatusCodesInterpretation.PostOriginalAsWrongEGTransmittedForWrongPatient => "W",
-                ObservationResultStatusCodesInterpretation.ResultsCannotBeObtainedForThisObservation => "X",
+                CodeObservationResultStatusCodesInterpretation.RecordIsCorrection => "C",
+                CodeObservationResultStatusCodesInterpretation.DeletesTheObxRecord => "D",
+                CodeObservationResultStatusCodesInterpretation.FinalResults => "F",
+                CodeObservationResultStatusCodesInterpretation.SpecimenInLabResultsPending => "I",
+                CodeObservationResultStatusCodesInterpretation.NotAsked => "N",
+                CodeObservationResultStatusCodesInterpretation.OrderDetailDescription => "O",
+                CodeObservationResultStatusCodesInterpretation.PreliminaryResults => "P",
+                CodeObservationResultStatusCodesInterpretation.ResultsEnteredNotVerified => "R",
+                CodeObservationResultStatusCodesInterpretation.PartialResults => "S",
+                CodeObservationResultStatusCodesInterpretation.ResultsChangeToFinalWithoutRetransmit => "U",
+                CodeObservationResultStatusCodesInterpretation.PostOriginalAsWrongEGTransmittedForWrongPatient => "W",
+                CodeObservationResultStatusCodesInterpretation.ResultsCannotBeObtainedForThisObservation => "X",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given OccurrenceCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeOccurrenceCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(OccurrenceCode input)
+        public string EnumToCode(CodeOccurrenceCode input)
         {
             return input switch
             {
-                OccurrenceCode.AutoAccident => "01",
-                OccurrenceCode.NoFaultInsuranceInvolved => "02",
-                OccurrenceCode.AccidentTortLiability => "03",
-                OccurrenceCode.AccidentEmploymentRelated => "04",
-                OccurrenceCode.OtherAccident => "05",
-                OccurrenceCode.CrimeVictim => "06",
-                OccurrenceCode.StartOfInfertilityTreatment => "09",
-                OccurrenceCode.LastMenstrualPeriod => "10",
-                OccurrenceCode.OnsetOfSymptomsIllness => "11",
-                OccurrenceCode.DateOfOnsetForChronicallyDependent => "12",
-                OccurrenceCode.DateOutpatientOccupationalTherapyPlanEstablishedOrReviewed => "17",
-                OccurrenceCode.DateOfRetirementPatientBeneficiary => "18",
-                OccurrenceCode.DateOfRetirementSpouse => "19",
-                OccurrenceCode.GuaranteeOfPaymentBegan => "20",
-                OccurrenceCode.UrNoticeReceived => "21",
-                OccurrenceCode.DateActiveCareEnded => "22",
-                OccurrenceCode.DateInsuranceDenied => "24",
-                OccurrenceCode.DateBenefitsTerminatedByPrimaryPayor => "25",
-                OccurrenceCode.DateSnfBedAvailable => "26",
-                OccurrenceCode.DateHomeHealthPlanEstablished => "27",
-                OccurrenceCode.SpousesDateOfBirth => "28",
-                OccurrenceCode.DateOutpatientPhysicalTherapyPlanEstablishedOrReviewed => "29",
-                OccurrenceCode.DateOutpatientSpeechPathologyPlanEstablishedOrReviewed => "30",
-                OccurrenceCode.DateBeneficiaryNotifiedOfIntentToBillAccommodations => "31",
-                OccurrenceCode.DateBeneficiaryNotifiedOfIntentToBillTreatments => "32",
-                OccurrenceCode.FirstDayOfMedicareCoordinationPeriodForEsrdBeneficiariesCoveredByEghp => "33",
-                OccurrenceCode.DateOfElectionOfExtendedCareFacilities => "34",
-                OccurrenceCode.DateTreatmentStartedForPT => "35",
-                OccurrenceCode.DateOfInpatientDischargeForCoveredTransplantPatients => "36",
-                OccurrenceCode.DateOfInpatientDischargeForNonCoveredTransplantPatient => "37",
-                OccurrenceCode.ScheduledDateOfAdmission => "40",
-                OccurrenceCode.DateOfFirstTestForPreAdmissionTesting => "41",
-                OccurrenceCode.DateOfDischarge => "42",
-                OccurrenceCode.ScheduledDateOfCanceledSurgery => "43",
-                OccurrenceCode.DateTreatmentStartedForOT => "44",
-                OccurrenceCode.DateTreatmentStartedForST => "45",
-                OccurrenceCode.DateTreatmentStartedForCardiacRehab => "46",
-                OccurrenceCode.PayerCodes47 => "47",
-                OccurrenceCode.PayerCodes47To49 => "47 ... 49",
-                OccurrenceCode.PayerCodes48 => "48",
-                OccurrenceCode.PayerCodes49 => "49",
-                OccurrenceCode.DateLienReleased => "50",
-                OccurrenceCode.DateTreatmentStartedForPsychiatricCare => "51",
-                OccurrenceCode.OccurrenceSpanCodesAndDates => "70",
-                OccurrenceCode.OccurrenceSpanCodesAndDates70To99 => "70 ... 99",
-                OccurrenceCode.OccurrenceSpanCodesAndDates71 => "71",
-                OccurrenceCode.OccurrenceSpanCodesAndDates72 => "72",
-                OccurrenceCode.OccurrenceSpanCodesAndDates73 => "73",
-                OccurrenceCode.OccurrenceSpanCodesAndDates74 => "74",
-                OccurrenceCode.OccurrenceSpanCodesAndDates75 => "75",
-                OccurrenceCode.OccurrenceSpanCodesAndDates76 => "76",
-                OccurrenceCode.OccurrenceSpanCodesAndDates77 => "77",
-                OccurrenceCode.OccurrenceSpanCodesAndDates78 => "78",
-                OccurrenceCode.OccurrenceSpanCodesAndDates79 => "79",
-                OccurrenceCode.OccurrenceSpanCodesAndDates80 => "80",
-                OccurrenceCode.OccurrenceSpanCodesAndDates81 => "81",
-                OccurrenceCode.OccurrenceSpanCodesAndDates82 => "82",
-                OccurrenceCode.OccurrenceSpanCodesAndDates83 => "83",
-                OccurrenceCode.OccurrenceSpanCodesAndDates84 => "84",
-                OccurrenceCode.OccurrenceSpanCodesAndDates85 => "85",
-                OccurrenceCode.OccurrenceSpanCodesAndDates86 => "86",
-                OccurrenceCode.OccurrenceSpanCodesAndDates87 => "87",
-                OccurrenceCode.OccurrenceSpanCodesAndDates88 => "88",
-                OccurrenceCode.OccurrenceSpanCodesAndDates89 => "89",
-                OccurrenceCode.OccurrenceSpanCodesAndDates90 => "90",
-                OccurrenceCode.OccurrenceSpanCodesAndDates91 => "91",
-                OccurrenceCode.OccurrenceSpanCodesAndDates92 => "92",
-                OccurrenceCode.OccurrenceSpanCodesAndDates93 => "93",
-                OccurrenceCode.OccurrenceSpanCodesAndDates94 => "94",
-                OccurrenceCode.OccurrenceSpanCodesAndDates95 => "95",
-                OccurrenceCode.OccurrenceSpanCodesAndDates96 => "96",
-                OccurrenceCode.OccurrenceSpanCodesAndDates97 => "97",
-                OccurrenceCode.OccurrenceSpanCodesAndDates98 => "98",
-                OccurrenceCode.OccurrenceSpanCodesAndDates99 => "99",
-                OccurrenceCode.BirthdateInsuredA => "A1",
-                OccurrenceCode.EffectiveDateInsuredAPolicy => "A2",
-                OccurrenceCode.BenefitsExhaustedPayerA => "A3",
+                CodeOccurrenceCode.AutoAccident => "01",
+                CodeOccurrenceCode.NoFaultInsuranceInvolved => "02",
+                CodeOccurrenceCode.AccidentTortLiability => "03",
+                CodeOccurrenceCode.AccidentEmploymentRelated => "04",
+                CodeOccurrenceCode.OtherAccident => "05",
+                CodeOccurrenceCode.CrimeVictim => "06",
+                CodeOccurrenceCode.StartOfInfertilityTreatment => "09",
+                CodeOccurrenceCode.LastMenstrualPeriod => "10",
+                CodeOccurrenceCode.OnsetOfSymptomsIllness => "11",
+                CodeOccurrenceCode.DateOfOnsetForChronicallyDependent => "12",
+                CodeOccurrenceCode.DateOutpatientOccupationalTherapyPlanEstablishedOrReviewed => "17",
+                CodeOccurrenceCode.DateOfRetirementPatientBeneficiary => "18",
+                CodeOccurrenceCode.DateOfRetirementSpouse => "19",
+                CodeOccurrenceCode.GuaranteeOfPaymentBegan => "20",
+                CodeOccurrenceCode.UrNoticeReceived => "21",
+                CodeOccurrenceCode.DateActiveCareEnded => "22",
+                CodeOccurrenceCode.DateInsuranceDenied => "24",
+                CodeOccurrenceCode.DateBenefitsTerminatedByPrimaryPayor => "25",
+                CodeOccurrenceCode.DateSnfBedAvailable => "26",
+                CodeOccurrenceCode.DateHomeHealthPlanEstablished => "27",
+                CodeOccurrenceCode.SpousesDateOfBirth => "28",
+                CodeOccurrenceCode.DateOutpatientPhysicalTherapyPlanEstablishedOrReviewed => "29",
+                CodeOccurrenceCode.DateOutpatientSpeechPathologyPlanEstablishedOrReviewed => "30",
+                CodeOccurrenceCode.DateBeneficiaryNotifiedOfIntentToBillAccommodations => "31",
+                CodeOccurrenceCode.DateBeneficiaryNotifiedOfIntentToBillTreatments => "32",
+                CodeOccurrenceCode.FirstDayOfMedicareCoordinationPeriodForEsrdBeneficiariesCoveredByEghp => "33",
+                CodeOccurrenceCode.DateOfElectionOfExtendedCareFacilities => "34",
+                CodeOccurrenceCode.DateTreatmentStartedForPT => "35",
+                CodeOccurrenceCode.DateOfInpatientDischargeForCoveredTransplantPatients => "36",
+                CodeOccurrenceCode.DateOfInpatientDischargeForNonCoveredTransplantPatient => "37",
+                CodeOccurrenceCode.ScheduledDateOfAdmission => "40",
+                CodeOccurrenceCode.DateOfFirstTestForPreAdmissionTesting => "41",
+                CodeOccurrenceCode.DateOfDischarge => "42",
+                CodeOccurrenceCode.ScheduledDateOfCanceledSurgery => "43",
+                CodeOccurrenceCode.DateTreatmentStartedForOT => "44",
+                CodeOccurrenceCode.DateTreatmentStartedForST => "45",
+                CodeOccurrenceCode.DateTreatmentStartedForCardiacRehab => "46",
+                CodeOccurrenceCode.PayerCodes47 => "47",
+                CodeOccurrenceCode.PayerCodes47To49 => "47 ... 49",
+                CodeOccurrenceCode.PayerCodes48 => "48",
+                CodeOccurrenceCode.PayerCodes49 => "49",
+                CodeOccurrenceCode.DateLienReleased => "50",
+                CodeOccurrenceCode.DateTreatmentStartedForPsychiatricCare => "51",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates => "70",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates70To99 => "70 ... 99",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates71 => "71",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates72 => "72",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates73 => "73",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates74 => "74",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates75 => "75",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates76 => "76",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates77 => "77",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates78 => "78",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates79 => "79",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates80 => "80",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates81 => "81",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates82 => "82",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates83 => "83",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates84 => "84",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates85 => "85",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates86 => "86",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates87 => "87",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates88 => "88",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates89 => "89",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates90 => "90",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates91 => "91",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates92 => "92",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates93 => "93",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates94 => "94",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates95 => "95",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates96 => "96",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates97 => "97",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates98 => "98",
+                CodeOccurrenceCode.OccurrenceSpanCodesAndDates99 => "99",
+                CodeOccurrenceCode.BirthdateInsuredA => "A1",
+                CodeOccurrenceCode.EffectiveDateInsuredAPolicy => "A2",
+                CodeOccurrenceCode.BenefitsExhaustedPayerA => "A3",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given OccurrenceSpan enum value into its HL7 equivalent code.
+        /// Converts the given CodeOccurrenceSpan enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(OccurrenceSpan input)
+        public string EnumToCode(CodeOccurrenceSpan input)
         {
             return input switch
             {
-                OccurrenceSpan.QualifyingStayDatesForSnf => "70",
-                OccurrenceSpan.PriorStayDates => "71",
-                OccurrenceSpan.FirstLastVisit => "72",
-                OccurrenceSpan.BenefitEligibilityPeriod => "73",
-                OccurrenceSpan.NonCoveredLevelOfCare => "74",
-                OccurrenceSpan.SnfLevelOfCare => "75",
-                OccurrenceSpan.PatientLiability => "76",
-                OccurrenceSpan.ProviderLiabilityPeriod => "77",
-                OccurrenceSpan.SnfPriorStayDates => "78",
-                OccurrenceSpan.PayerCode => "79",
-                OccurrenceSpan.PsroUrApprovedStayDates => "M0",
+                CodeOccurrenceSpan.QualifyingStayDatesForSnf => "70",
+                CodeOccurrenceSpan.PriorStayDates => "71",
+                CodeOccurrenceSpan.FirstLastVisit => "72",
+                CodeOccurrenceSpan.BenefitEligibilityPeriod => "73",
+                CodeOccurrenceSpan.NonCoveredLevelOfCare => "74",
+                CodeOccurrenceSpan.SnfLevelOfCare => "75",
+                CodeOccurrenceSpan.PatientLiability => "76",
+                CodeOccurrenceSpan.ProviderLiabilityPeriod => "77",
+                CodeOccurrenceSpan.SnfPriorStayDates => "78",
+                CodeOccurrenceSpan.PayerCode => "79",
+                CodeOccurrenceSpan.PsroUrApprovedStayDates => "M0",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given OrderControlCodes enum value into its HL7 equivalent code.
+        /// Converts the given CodeOrderControlCodes enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(OrderControlCodes input)
+        public string EnumToCode(CodeOrderControlCodes input)
         {
             return input switch
             {
-                OrderControlCodes.OrderServiceRefillRequestApproval => "AF",
-                OrderControlCodes.CancelOrderServiceRequest => "CA",
-                OrderControlCodes.ChildOrderService => "CH",
-                OrderControlCodes.CombinedResult => "CN",
-                OrderControlCodes.CanceledAsRequested => "CR",
-                OrderControlCodes.DiscontinueOrderServiceRequest => "DC",
-                OrderControlCodes.DataErrors => "DE",
-                OrderControlCodes.OrderServiceRefillRequestDenied => "DF",
-                OrderControlCodes.DiscontinuedAsRequested => "DR",
-                OrderControlCodes.OrderServiceRefilledUnsolicited => "FU",
-                OrderControlCodes.HoldOrderRequest => "HD",
-                OrderControlCodes.OnHoldAsRequested => "HR",
-                OrderControlCodes.LinkOrderToPatientCareProblemOrGoal => "LI",
-                OrderControlCodes.NumberAssigned => "NA",
-                OrderControlCodes.NewOrderService => "NW",
-                OrderControlCodes.OrderServiceCanceled => "OC",
-                OrderControlCodes.OrderServiceDiscontinued => "OD",
-                OrderControlCodes.OrderServiceReleased => "OE",
-                OrderControlCodes.OrderServiceRefilledAsRequested => "OF",
-                OrderControlCodes.OrderServiceHeld => "OH",
-                OrderControlCodes.OrderServiceAcceptedOk => "OK",
-                OrderControlCodes.ReleasedAsRequested => "OR",
-                OrderControlCodes.ParentOrderService => "PA",
-                OrderControlCodes.PreviousResultsWithNewOrderService => "PR",
-                OrderControlCodes.ObservationsPerformedServiceToFollow => "RE",
-                OrderControlCodes.RefillOrderServiceRequest => "RF",
-                OrderControlCodes.ReleasePreviousHold => "RL",
-                OrderControlCodes.ReplacementOrder => "RO",
-                OrderControlCodes.OrderServiceReplaceRequest => "RP",
-                OrderControlCodes.ReplacedAsRequested => "RQ",
-                OrderControlCodes.RequestReceived => "RR",
-                OrderControlCodes.ReplacedUnsolicited => "RU",
-                OrderControlCodes.StatusChanged => "SC",
-                OrderControlCodes.SendOrderServiceNumber => "SN",
-                OrderControlCodes.ResponseToSendOrderServiceStatusRequest => "SR",
-                OrderControlCodes.SendOrderServiceStatusRequest => "SS",
-                OrderControlCodes.UnableToAcceptOrderService => "UA",
-                OrderControlCodes.UnableToCancel => "UC",
-                OrderControlCodes.UnableToDiscontinue => "UD",
-                OrderControlCodes.UnableToRefill => "UF",
-                OrderControlCodes.UnableToPutOnHold => "UH",
-                OrderControlCodes.UnableToReplace => "UM",
-                OrderControlCodes.UnlinkOrderServiceFromPatientCareProblemOrGoal => "UN",
-                OrderControlCodes.UnableToRelease => "UR",
-                OrderControlCodes.UnableToChange => "UX",
-                OrderControlCodes.ChangeOrderServiceRequest => "XO",
-                OrderControlCodes.ChangedAsRequested => "XR",
-                OrderControlCodes.OrderServiceChangedUnsol => "XX",
+                CodeOrderControlCodes.OrderServiceRefillRequestApproval => "AF",
+                CodeOrderControlCodes.CancelOrderServiceRequest => "CA",
+                CodeOrderControlCodes.ChildOrderService => "CH",
+                CodeOrderControlCodes.CombinedResult => "CN",
+                CodeOrderControlCodes.CanceledAsRequested => "CR",
+                CodeOrderControlCodes.DiscontinueOrderServiceRequest => "DC",
+                CodeOrderControlCodes.DataErrors => "DE",
+                CodeOrderControlCodes.OrderServiceRefillRequestDenied => "DF",
+                CodeOrderControlCodes.DiscontinuedAsRequested => "DR",
+                CodeOrderControlCodes.OrderServiceRefilledUnsolicited => "FU",
+                CodeOrderControlCodes.HoldOrderRequest => "HD",
+                CodeOrderControlCodes.OnHoldAsRequested => "HR",
+                CodeOrderControlCodes.LinkOrderToPatientCareProblemOrGoal => "LI",
+                CodeOrderControlCodes.NumberAssigned => "NA",
+                CodeOrderControlCodes.NewOrderService => "NW",
+                CodeOrderControlCodes.OrderServiceCanceled => "OC",
+                CodeOrderControlCodes.OrderServiceDiscontinued => "OD",
+                CodeOrderControlCodes.OrderServiceReleased => "OE",
+                CodeOrderControlCodes.OrderServiceRefilledAsRequested => "OF",
+                CodeOrderControlCodes.OrderServiceHeld => "OH",
+                CodeOrderControlCodes.OrderServiceAcceptedOk => "OK",
+                CodeOrderControlCodes.ReleasedAsRequested => "OR",
+                CodeOrderControlCodes.ParentOrderService => "PA",
+                CodeOrderControlCodes.PreviousResultsWithNewOrderService => "PR",
+                CodeOrderControlCodes.ObservationsPerformedServiceToFollow => "RE",
+                CodeOrderControlCodes.RefillOrderServiceRequest => "RF",
+                CodeOrderControlCodes.ReleasePreviousHold => "RL",
+                CodeOrderControlCodes.ReplacementOrder => "RO",
+                CodeOrderControlCodes.OrderServiceReplaceRequest => "RP",
+                CodeOrderControlCodes.ReplacedAsRequested => "RQ",
+                CodeOrderControlCodes.RequestReceived => "RR",
+                CodeOrderControlCodes.ReplacedUnsolicited => "RU",
+                CodeOrderControlCodes.StatusChanged => "SC",
+                CodeOrderControlCodes.SendOrderServiceNumber => "SN",
+                CodeOrderControlCodes.ResponseToSendOrderServiceStatusRequest => "SR",
+                CodeOrderControlCodes.SendOrderServiceStatusRequest => "SS",
+                CodeOrderControlCodes.UnableToAcceptOrderService => "UA",
+                CodeOrderControlCodes.UnableToCancel => "UC",
+                CodeOrderControlCodes.UnableToDiscontinue => "UD",
+                CodeOrderControlCodes.UnableToRefill => "UF",
+                CodeOrderControlCodes.UnableToPutOnHold => "UH",
+                CodeOrderControlCodes.UnableToReplace => "UM",
+                CodeOrderControlCodes.UnlinkOrderServiceFromPatientCareProblemOrGoal => "UN",
+                CodeOrderControlCodes.UnableToRelease => "UR",
+                CodeOrderControlCodes.UnableToChange => "UX",
+                CodeOrderControlCodes.ChangeOrderServiceRequest => "XO",
+                CodeOrderControlCodes.ChangedAsRequested => "XR",
+                CodeOrderControlCodes.OrderServiceChangedUnsol => "XX",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given OrderStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeOrderStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(OrderStatus input)
+        public string EnumToCode(CodeOrderStatus input)
         {
             return input switch
             {
-                OrderStatus.SomeButNotAllResultsAvailable => "A",
-                OrderStatus.OrderWasCanceled => "CA",
-                OrderStatus.OrderIsCompleted => "CM",
-                OrderStatus.OrderWasDiscontinued => "DC",
-                OrderStatus.ErrorOrderNotFound => "ER",
-                OrderStatus.OrderIsOnHold => "HD",
-                OrderStatus.InProcessUnspecified => "IP",
-                OrderStatus.OrderHasBeenReplaced => "RP",
-                OrderStatus.InProcessScheduled => "SC",
+                CodeOrderStatus.SomeButNotAllResultsAvailable => "A",
+                CodeOrderStatus.OrderWasCanceled => "CA",
+                CodeOrderStatus.OrderIsCompleted => "CM",
+                CodeOrderStatus.OrderWasDiscontinued => "DC",
+                CodeOrderStatus.ErrorOrderNotFound => "ER",
+                CodeOrderStatus.OrderIsOnHold => "HD",
+                CodeOrderStatus.InProcessUnspecified => "IP",
+                CodeOrderStatus.OrderHasBeenReplaced => "RP",
+                CodeOrderStatus.InProcessScheduled => "SC",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given OrganDonorCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeOrganDonorCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(OrganDonorCode input)
+        public string EnumToCode(CodeOrganDonorCode input)
         {
             return input switch
             {
-                OrganDonorCode.YesPatientIsDonorButDocumentationNotOnFile => "F",
-                OrganDonorCode.NoPatientIsNotDonorButInfoWasProvided => "I",
-                OrganDonorCode.NoPatientHasNotAgreedToBeDonor => "N",
-                OrganDonorCode.PatientLeavesOrganDonationDecisionToSpecificPerson => "P",
-                OrganDonorCode.PatientLeavesOrganDonationDecisionToRelatives => "R",
-                OrganDonorCode.Unknown => "U",
-                OrganDonorCode.YesPatientIsDocumentedDonorAndDocumentationIsOnFile => "Y",
+                CodeOrganDonorCode.YesPatientIsDonorButDocumentationNotOnFile => "F",
+                CodeOrganDonorCode.NoPatientIsNotDonorButInfoWasProvided => "I",
+                CodeOrganDonorCode.NoPatientHasNotAgreedToBeDonor => "N",
+                CodeOrganDonorCode.PatientLeavesOrganDonationDecisionToSpecificPerson => "P",
+                CodeOrganDonorCode.PatientLeavesOrganDonationDecisionToRelatives => "R",
+                CodeOrganDonorCode.Unknown => "U",
+                CodeOrganDonorCode.YesPatientIsDocumentedDonorAndDocumentationIsOnFile => "Y",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given OrganizationalNameType enum value into its HL7 equivalent code.
+        /// Converts the given CodeOrganizationalNameType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(OrganizationalNameType input)
+        public string EnumToCode(CodeOrganizationalNameType input)
         {
             return input switch
             {
-                OrganizationalNameType.AliasName => "A",
-                OrganizationalNameType.DisplayName => "D",
-                OrganizationalNameType.LegalName => "L",
-                OrganizationalNameType.StockExchangeListingName => "SL",
+                CodeOrganizationalNameType.AliasName => "A",
+                CodeOrganizationalNameType.DisplayName => "D",
+                CodeOrganizationalNameType.LegalName => "L",
+                CodeOrganizationalNameType.StockExchangeListingName => "SL",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given OtherEnvironmentalFactors enum value into its HL7 equivalent code.
+        /// Converts the given CodeOtherEnvironmentalFactors enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(OtherEnvironmentalFactors input)
+        public string EnumToCode(CodeOtherEnvironmentalFactors input)
         {
             return input switch
             {
-                OtherEnvironmentalFactors.OpenedContainerIndoorAtmosphere60MinutesDuration => "A60",
-                OtherEnvironmentalFactors.OpenedContainerAtmosphereAndDurationUnspecified => "ATM",
+                CodeOtherEnvironmentalFactors.OpenedContainerIndoorAtmosphere60MinutesDuration => "A60",
+                CodeOtherEnvironmentalFactors.OpenedContainerAtmosphereAndDurationUnspecified => "ATM",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given OutlierType enum value into its HL7 equivalent code.
+        /// Converts the given CodeOutlierType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(OutlierType input)
+        public string EnumToCode(CodeOutlierType input)
         {
             return input switch
             {
-                OutlierType.OutlierCost => "C",
-                OutlierType.OutlierDays => "D",
+                CodeOutlierType.OutlierCost => "C",
+                CodeOutlierType.OutlierDays => "D",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given OverallClaimDispositionCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeOverallClaimDispositionCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(OverallClaimDispositionCode input)
+        public string EnumToCode(CodeOverallClaimDispositionCode input)
         {
             return input switch
             {
-                OverallClaimDispositionCode.NoEditsPresentOnClaim => "0",
-                OverallClaimDispositionCode.EditsPresentAreForLineItemDenialOrRejection => "1",
-                OverallClaimDispositionCode.MultipleDayClaimWithDaysDeniedOrRejected => "2",
-                OverallClaimDispositionCode.ClaimDeniedWithOnlyPostPaymentEdits => "3",
-                OverallClaimDispositionCode.ClaimDeniedWithOnlyPrePaymentEdits => "4",
+                CodeOverallClaimDispositionCode.NoEditsPresentOnClaim => "0",
+                CodeOverallClaimDispositionCode.EditsPresentAreForLineItemDenialOrRejection => "1",
+                CodeOverallClaimDispositionCode.MultipleDayClaimWithDaysDeniedOrRejected => "2",
+                CodeOverallClaimDispositionCode.ClaimDeniedWithOnlyPostPaymentEdits => "3",
+                CodeOverallClaimDispositionCode.ClaimDeniedWithOnlyPrePaymentEdits => "4",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given Override enum value into its HL7 equivalent code.
+        /// Converts the given CodeOverride enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(Override input)
+        public string EnumToCode(CodeOverride input)
         {
             return input switch
             {
-                Override.OverrideAllowed => "A",
-                Override.OverrideRequired => "R",
-                Override.OverrideNotAllowed => "X",
+                CodeOverride.OverrideAllowed => "A",
+                CodeOverride.OverrideRequired => "R",
+                CodeOverride.OverrideNotAllowed => "X",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given PackagingStatusCode enum value into its HL7 equivalent code.
+        /// Converts the given CodePackagingStatusCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(PackagingStatusCode input)
+        public string EnumToCode(CodePackagingStatusCode input)
         {
             return input switch
             {
-                PackagingStatusCode.NotPackaged => "0",
-                PackagingStatusCode.PackagedService => "1",
-                PackagingStatusCode.PackagedAsPartOfPerDiem => "2",
+                CodePackagingStatusCode.NotPackaged => "0",
+                CodePackagingStatusCode.PackagedService => "1",
+                CodePackagingStatusCode.PackagedAsPartOfPerDiem => "2",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ParticipantOrganizationUnitType enum value into its HL7 equivalent code.
+        /// Converts the given CodeParticipantOrganizationUnitType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ParticipantOrganizationUnitType input)
+        public string EnumToCode(CodeParticipantOrganizationUnitType input)
         {
             return input switch
             {
-                ParticipantOrganizationUnitType.Hospital => "1",
-                ParticipantOrganizationUnitType.PhysicianClinic => "2",
-                ParticipantOrganizationUnitType.LongTermCare => "3",
-                ParticipantOrganizationUnitType.AcuteCare => "4",
-                ParticipantOrganizationUnitType.Other => "5",
-                ParticipantOrganizationUnitType.Home => "H",
-                ParticipantOrganizationUnitType.Office => "O",
+                CodeParticipantOrganizationUnitType.Hospital => "1",
+                CodeParticipantOrganizationUnitType.PhysicianClinic => "2",
+                CodeParticipantOrganizationUnitType.LongTermCare => "3",
+                CodeParticipantOrganizationUnitType.AcuteCare => "4",
+                CodeParticipantOrganizationUnitType.Other => "5",
+                CodeParticipantOrganizationUnitType.Home => "H",
+                CodeParticipantOrganizationUnitType.Office => "O",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given PatientClass enum value into its HL7 equivalent code.
+        /// Converts the given CodePatientClass enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(PatientClass input)
+        public string EnumToCode(CodePatientClass input)
         {
             return input switch
             {
-                PatientClass.Obstetrics => "B",
-                PatientClass.CommercialAccount => "C",
-                PatientClass.Emergency => "E",
-                PatientClass.Inpatient => "I",
-                PatientClass.NotApplicable => "N",
-                PatientClass.Outpatient => "O",
-                PatientClass.Preadmit => "P",
-                PatientClass.RecurringPatient => "R",
-                PatientClass.Unknown => "U",
+                CodePatientClass.Obstetrics => "B",
+                CodePatientClass.CommercialAccount => "C",
+                CodePatientClass.Emergency => "E",
+                CodePatientClass.Inpatient => "I",
+                CodePatientClass.NotApplicable => "N",
+                CodePatientClass.Outpatient => "O",
+                CodePatientClass.Preadmit => "P",
+                CodePatientClass.RecurringPatient => "R",
+                CodePatientClass.Unknown => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given PatientConditionCode enum value into its HL7 equivalent code.
+        /// Converts the given CodePatientConditionCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(PatientConditionCode input)
+        public string EnumToCode(CodePatientConditionCode input)
         {
             return input switch
             {
-                PatientConditionCode.Satisfactory => "A",
-                PatientConditionCode.Critical => "C",
-                PatientConditionCode.Other => "O",
-                PatientConditionCode.Poor => "P",
-                PatientConditionCode.Stable => "S",
-                PatientConditionCode.Unknown => "U",
+                CodePatientConditionCode.Satisfactory => "A",
+                CodePatientConditionCode.Critical => "C",
+                CodePatientConditionCode.Other => "O",
+                CodePatientConditionCode.Poor => "P",
+                CodePatientConditionCode.Stable => "S",
+                CodePatientConditionCode.Unknown => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given PatientLocationType enum value into its HL7 equivalent code.
+        /// Converts the given CodePatientLocationType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(PatientLocationType input)
+        public string EnumToCode(CodePatientLocationType input)
         {
             return input switch
             {
-                PatientLocationType.Bed => "B",
-                PatientLocationType.Clinic => "C",
-                PatientLocationType.Department => "D",
-                PatientLocationType.ExamRoom => "E",
-                PatientLocationType.OtherLocation => "L",
-                PatientLocationType.NursingUnit => "N",
-                PatientLocationType.OperatingRoom => "O",
-                PatientLocationType.Room => "R",
+                CodePatientLocationType.Bed => "B",
+                CodePatientLocationType.Clinic => "C",
+                CodePatientLocationType.Department => "D",
+                CodePatientLocationType.ExamRoom => "E",
+                CodePatientLocationType.OtherLocation => "L",
+                CodePatientLocationType.NursingUnit => "N",
+                CodePatientLocationType.OperatingRoom => "O",
+                CodePatientLocationType.Room => "R",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given PatientOutcome enum value into its HL7 equivalent code.
+        /// Converts the given CodePatientOutcome enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(PatientOutcome input)
+        public string EnumToCode(CodePatientOutcome input)
         {
             return input switch
             {
-                PatientOutcome.Died => "D",
-                PatientOutcome.FullyRecovered => "F",
-                PatientOutcome.NotRecoveringUnchanged => "N",
-                PatientOutcome.Recovering => "R",
-                PatientOutcome.Sequelae => "S",
-                PatientOutcome.Unknown => "U",
-                PatientOutcome.Worsening => "W",
+                CodePatientOutcome.Died => "D",
+                CodePatientOutcome.FullyRecovered => "F",
+                CodePatientOutcome.NotRecoveringUnchanged => "N",
+                CodePatientOutcome.Recovering => "R",
+                CodePatientOutcome.Sequelae => "S",
+                CodePatientOutcome.Unknown => "U",
+                CodePatientOutcome.Worsening => "W",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given PatientsRelationshiptoInsured enum value into its HL7 equivalent code.
+        /// Converts the given CodePatientsRelationshiptoInsured enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(PatientsRelationshiptoInsured input)
+        public string EnumToCode(CodePatientsRelationshiptoInsured input)
         {
             return input switch
             {
-                PatientsRelationshiptoInsured.PatientIsInsured => "01",
-                PatientsRelationshiptoInsured.Spouse => "02",
-                PatientsRelationshiptoInsured.NaturalChildInsuredFinancialResponsibility => "03",
-                PatientsRelationshiptoInsured.NaturalChildInsuredDoesNotHaveFinancialResponsibility => "04",
-                PatientsRelationshiptoInsured.StepChild => "05",
-                PatientsRelationshiptoInsured.FosterChild => "06",
-                PatientsRelationshiptoInsured.WardOfTheCourt => "07",
-                PatientsRelationshiptoInsured.Employee => "08",
-                PatientsRelationshiptoInsured.Unknown => "09",
-                PatientsRelationshiptoInsured.HandicappedDependent => "10",
-                PatientsRelationshiptoInsured.OrganDonor => "11",
-                PatientsRelationshiptoInsured.CadaverDonor => "12",
-                PatientsRelationshiptoInsured.Grandchild => "13",
-                PatientsRelationshiptoInsured.NieceNephew => "14",
-                PatientsRelationshiptoInsured.InjuredPlaintiff => "15",
-                PatientsRelationshiptoInsured.SponsoredDependent => "16",
-                PatientsRelationshiptoInsured.MinorDependentOfAMinorDependent => "17",
-                PatientsRelationshiptoInsured.Parent => "18",
-                PatientsRelationshiptoInsured.Grandparent => "19",
+                CodePatientsRelationshiptoInsured.PatientIsInsured => "01",
+                CodePatientsRelationshiptoInsured.Spouse => "02",
+                CodePatientsRelationshiptoInsured.NaturalChildInsuredFinancialResponsibility => "03",
+                CodePatientsRelationshiptoInsured.NaturalChildInsuredDoesNotHaveFinancialResponsibility => "04",
+                CodePatientsRelationshiptoInsured.StepChild => "05",
+                CodePatientsRelationshiptoInsured.FosterChild => "06",
+                CodePatientsRelationshiptoInsured.WardOfTheCourt => "07",
+                CodePatientsRelationshiptoInsured.Employee => "08",
+                CodePatientsRelationshiptoInsured.Unknown => "09",
+                CodePatientsRelationshiptoInsured.HandicappedDependent => "10",
+                CodePatientsRelationshiptoInsured.OrganDonor => "11",
+                CodePatientsRelationshiptoInsured.CadaverDonor => "12",
+                CodePatientsRelationshiptoInsured.Grandchild => "13",
+                CodePatientsRelationshiptoInsured.NieceNephew => "14",
+                CodePatientsRelationshiptoInsured.InjuredPlaintiff => "15",
+                CodePatientsRelationshiptoInsured.SponsoredDependent => "16",
+                CodePatientsRelationshiptoInsured.MinorDependentOfAMinorDependent => "17",
+                CodePatientsRelationshiptoInsured.Parent => "18",
+                CodePatientsRelationshiptoInsured.Grandparent => "19",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given PaymentAdjustmentCode enum value into its HL7 equivalent code.
+        /// Converts the given CodePaymentAdjustmentCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(PaymentAdjustmentCode input)
+        public string EnumToCode(CodePaymentAdjustmentCode input)
         {
             return input switch
             {
-                PaymentAdjustmentCode.NoPaymentAdjustment => "1",
-                PaymentAdjustmentCode.DesignatedDrugOrBiologicalPaymentAdjustmentAppliesToApc => "2",
-                PaymentAdjustmentCode.DesignatedNewDevicePaymentAdjustmentAppliesToApc => "3",
-                PaymentAdjustmentCode.DesignatedNewDrugOrNewBiologicalPaymentAdjustmentAppliesToApc => "4",
-                PaymentAdjustmentCode.DeductibleNotApplicable => "5",
+                CodePaymentAdjustmentCode.NoPaymentAdjustment => "1",
+                CodePaymentAdjustmentCode.DesignatedDrugOrBiologicalPaymentAdjustmentAppliesToApc => "2",
+                CodePaymentAdjustmentCode.DesignatedNewDevicePaymentAdjustmentAppliesToApc => "3",
+                CodePaymentAdjustmentCode.DesignatedNewDrugOrNewBiologicalPaymentAdjustmentAppliesToApc => "4",
+                CodePaymentAdjustmentCode.DeductibleNotApplicable => "5",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given PersonLocationType enum value into its HL7 equivalent code.
+        /// Converts the given CodePersonLocationType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(PersonLocationType input)
+        public string EnumToCode(CodePersonLocationType input)
         {
             return input switch
             {
-                PersonLocationType.Clinic => "C",
-                PersonLocationType.Department => "D",
-                PersonLocationType.Home => "H",
-                PersonLocationType.NursingUnit => "N",
-                PersonLocationType.ProvidersOffice => "O",
-                PersonLocationType.Phone => "P",
-                PersonLocationType.Snf => "S",
+                CodePersonLocationType.Clinic => "C",
+                CodePersonLocationType.Department => "D",
+                CodePersonLocationType.Home => "H",
+                CodePersonLocationType.NursingUnit => "N",
+                CodePersonLocationType.ProvidersOffice => "O",
+                CodePersonLocationType.Phone => "P",
+                CodePersonLocationType.Snf => "S",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given PolicyType enum value into its HL7 equivalent code.
+        /// Converts the given CodePolicyType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(PolicyType input)
+        public string EnumToCode(CodePolicyType input)
         {
             return input switch
             {
-                PolicyType.SecondAncillary => "2ANC",
-                PolicyType.SecondMajorMedical => "2MMD",
-                PolicyType.ThirdMajorMedical => "3MMD",
-                PolicyType.Ancillary => "ANC",
-                PolicyType.MajorMedical => "MMD",
+                CodePolicyType.SecondAncillary => "2ANC",
+                CodePolicyType.SecondMajorMedical => "2MMD",
+                CodePolicyType.ThirdMajorMedical => "3MMD",
+                CodePolicyType.Ancillary => "ANC",
+                CodePolicyType.MajorMedical => "MMD",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given PractitionerIdNumberType enum value into its HL7 equivalent code.
+        /// Converts the given CodePractitionerIdNumberType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(PractitionerIdNumberType input)
+        public string EnumToCode(CodePractitionerIdNumberType input)
         {
             return input switch
             {
-                PractitionerIdNumberType.CountyNumber => "CY",
-                PractitionerIdNumberType.DrugEnforcementAgencyNo => "DEA",
-                PractitionerIdNumberType.GeneralLedgerNumber => "GL",
-                PractitionerIdNumberType.LaborAndIndustriesNumberDeprecated => "L&I",
-                PractitionerIdNumberType.MedicaidNumber => "MCD",
-                PractitionerIdNumberType.MedicareNumber => "MCR",
-                PractitionerIdNumberType.QaNumber => "QA",
-                PractitionerIdNumberType.StateLicenseNumber => "SL",
-                PractitionerIdNumberType.TaxIdNumber => "TAX",
-                PractitionerIdNumberType.TrainingLicenseNumber => "TRL",
-                PractitionerIdNumberType.UniquePhysicianIdNo => "UPIN",
+                CodePractitionerIdNumberType.CountyNumber => "CY",
+                CodePractitionerIdNumberType.DrugEnforcementAgencyNo => "DEA",
+                CodePractitionerIdNumberType.GeneralLedgerNumber => "GL",
+                CodePractitionerIdNumberType.LaborAndIndustriesNumberDeprecated => "L&I",
+                CodePractitionerIdNumberType.MedicaidNumber => "MCD",
+                CodePractitionerIdNumberType.MedicareNumber => "MCR",
+                CodePractitionerIdNumberType.QaNumber => "QA",
+                CodePractitionerIdNumberType.StateLicenseNumber => "SL",
+                CodePractitionerIdNumberType.TaxIdNumber => "TAX",
+                CodePractitionerIdNumberType.TrainingLicenseNumber => "TRL",
+                CodePractitionerIdNumberType.UniquePhysicianIdNo => "UPIN",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given PractitionerOrganizationUnitType enum value into its HL7 equivalent code.
+        /// Converts the given CodePractitionerOrganizationUnitType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(PractitionerOrganizationUnitType input)
+        public string EnumToCode(CodePractitionerOrganizationUnitType input)
         {
             return input switch
             {
-                PractitionerOrganizationUnitType.Department => "D",
-                PractitionerOrganizationUnitType.Facility => "F",
-                PractitionerOrganizationUnitType.LocalMarketArea => "L",
-                PractitionerOrganizationUnitType.MedicalCenterArea => "M",
-                PractitionerOrganizationUnitType.Subdivision => "S",
-                PractitionerOrganizationUnitType.Subdepartment => "U",
-                PractitionerOrganizationUnitType.Division => "V",
+                CodePractitionerOrganizationUnitType.Department => "D",
+                CodePractitionerOrganizationUnitType.Facility => "F",
+                CodePractitionerOrganizationUnitType.LocalMarketArea => "L",
+                CodePractitionerOrganizationUnitType.MedicalCenterArea => "M",
+                CodePractitionerOrganizationUnitType.Subdivision => "S",
+                CodePractitionerOrganizationUnitType.Subdepartment => "U",
+                CodePractitionerOrganizationUnitType.Division => "V",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given PrecautionCode enum value into its HL7 equivalent code.
+        /// Converts the given CodePrecautionCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(PrecautionCode input)
+        public string EnumToCode(CodePrecautionCode input)
         {
             return input switch
             {
-                PrecautionCode.Aggressive => "A",
-                PrecautionCode.Blind => "B",
-                PrecautionCode.Confused => "C",
-                PrecautionCode.Deaf => "D",
-                PrecautionCode.OnIv => "I",
-                PrecautionCode.DoNotResuscitate => "N",
-                PrecautionCode.Other => "O",
-                PrecautionCode.Paraplegic => "P",
-                PrecautionCode.Unknown => "U",
+                CodePrecautionCode.Aggressive => "A",
+                CodePrecautionCode.Blind => "B",
+                CodePrecautionCode.Confused => "C",
+                CodePrecautionCode.Deaf => "D",
+                CodePrecautionCode.OnIv => "I",
+                CodePrecautionCode.DoNotResuscitate => "N",
+                CodePrecautionCode.Other => "O",
+                CodePrecautionCode.Paraplegic => "P",
+                CodePrecautionCode.Unknown => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given PreferredMethodOfContact enum value into its HL7 equivalent code.
+        /// Converts the given CodePreferredMethodOfContact enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(PreferredMethodOfContact input)
+        public string EnumToCode(CodePreferredMethodOfContact input)
         {
             return input switch
             {
-                PreferredMethodOfContact.BeeperNumber => "B",
-                PreferredMethodOfContact.CellularPhoneNumber => "C",
-                PreferredMethodOfContact.EmailAddress => "E",
-                PreferredMethodOfContact.FaxNumber => "F",
-                PreferredMethodOfContact.HomePhoneNumber => "H",
-                PreferredMethodOfContact.OfficePhoneNumber => "O",
+                CodePreferredMethodOfContact.BeeperNumber => "B",
+                CodePreferredMethodOfContact.CellularPhoneNumber => "C",
+                CodePreferredMethodOfContact.EmailAddress => "E",
+                CodePreferredMethodOfContact.FaxNumber => "F",
+                CodePreferredMethodOfContact.HomePhoneNumber => "H",
+                CodePreferredMethodOfContact.OfficePhoneNumber => "O",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given PriceType enum value into its HL7 equivalent code.
+        /// Converts the given CodePriceType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(PriceType input)
+        public string EnumToCode(CodePriceType input)
         {
             return input switch
             {
-                PriceType.AdministrativePriceOrHandlingFee => "AP",
-                PriceType.DirectUnitCost => "DC",
-                PriceType.IndirectUnitCost => "IC",
-                PriceType.ProfessionalFeeForPerformingProvider => "PF",
-                PriceType.TechnologyFeeForUseOfEquipment => "TF",
-                PriceType.TotalPrice => "TP",
-                PriceType.UnitPrice => "UP",
+                CodePriceType.AdministrativePriceOrHandlingFee => "AP",
+                CodePriceType.DirectUnitCost => "DC",
+                CodePriceType.IndirectUnitCost => "IC",
+                CodePriceType.ProfessionalFeeForPerformingProvider => "PF",
+                CodePriceType.TechnologyFeeForUseOfEquipment => "TF",
+                CodePriceType.TotalPrice => "TP",
+                CodePriceType.UnitPrice => "UP",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given PrimaryKeyValueType enum value into its HL7 equivalent code.
+        /// Converts the given CodePrimaryKeyValueType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(PrimaryKeyValueType input)
+        public string EnumToCode(CodePrimaryKeyValueType input)
         {
             return input switch
             {
-                PrimaryKeyValueType.CodedElement => "CE",
-                PrimaryKeyValueType.PersonLocation => "PL",
+                CodePrimaryKeyValueType.CodedElement => "CE",
+                CodePrimaryKeyValueType.PersonLocation => "PL",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given PrimaryObserversQualification enum value into its HL7 equivalent code.
+        /// Converts the given CodePrimaryObserversQualification enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(PrimaryObserversQualification input)
+        public string EnumToCode(CodePrimaryObserversQualification input)
         {
             return input switch
             {
-                PrimaryObserversQualification.HealthCareConsumerPatient => "C",
-                PrimaryObserversQualification.OtherHealthProfessional => "H",
-                PrimaryObserversQualification.LawyerAttorney => "L",
-                PrimaryObserversQualification.MidLevelProfessional => "M",
-                PrimaryObserversQualification.OtherNonHealthProfessional => "O",
-                PrimaryObserversQualification.PhysicianOsteopathHomeopath => "P",
-                PrimaryObserversQualification.Pharmacist => "R",
+                CodePrimaryObserversQualification.HealthCareConsumerPatient => "C",
+                CodePrimaryObserversQualification.OtherHealthProfessional => "H",
+                CodePrimaryObserversQualification.LawyerAttorney => "L",
+                CodePrimaryObserversQualification.MidLevelProfessional => "M",
+                CodePrimaryObserversQualification.OtherNonHealthProfessional => "O",
+                CodePrimaryObserversQualification.PhysicianOsteopathHomeopath => "P",
+                CodePrimaryObserversQualification.Pharmacist => "R",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given Priority enum value into its HL7 equivalent code.
+        /// Converts the given CodePriority enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(Priority input)
+        public string EnumToCode(CodePriority input)
         {
             return input switch
             {
-                Priority.AsSoonAsPossible => "A",
-                Priority.Preoperative => "P",
-                Priority.Routine => "R",
-                Priority.Stat => "S",
-                Priority.TimingCritical => "T",
+                CodePriority.AsSoonAsPossible => "A",
+                CodePriority.Preoperative => "P",
+                CodePriority.Routine => "R",
+                CodePriority.Stat => "S",
+                CodePriority.TimingCritical => "T",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given PrivacyLevel enum value into its HL7 equivalent code.
+        /// Converts the given CodePrivacyLevel enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(PrivacyLevel input)
+        public string EnumToCode(CodePrivacyLevel input)
         {
             return input switch
             {
-                PrivacyLevel.Isolation => "F",
-                PrivacyLevel.PrivateRoomMedicallyJustified => "J",
-                PrivacyLevel.PrivateRoom => "P",
-                PrivacyLevel.PrivateRoomDueToOverflow => "Q",
-                PrivacyLevel.SemiPrivateRoom => "S",
-                PrivacyLevel.Ward => "W",
+                CodePrivacyLevel.Isolation => "F",
+                CodePrivacyLevel.PrivateRoomMedicallyJustified => "J",
+                CodePrivacyLevel.PrivateRoom => "P",
+                CodePrivacyLevel.PrivateRoomDueToOverflow => "Q",
+                CodePrivacyLevel.SemiPrivateRoom => "S",
+                CodePrivacyLevel.Ward => "W",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ProblemGoalActionCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeProblemGoalActionCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ProblemGoalActionCode input)
+        public string EnumToCode(CodeProblemGoalActionCode input)
         {
             return input switch
             {
-                ProblemGoalActionCode.Add => "AD",
-                ProblemGoalActionCode.Correct => "CO",
-                ProblemGoalActionCode.Delete => "DE",
-                ProblemGoalActionCode.Link => "LI",
-                ProblemGoalActionCode.Unchanged => "UC",
-                ProblemGoalActionCode.Unlink => "UN",
-                ProblemGoalActionCode.Update => "UP",
+                CodeProblemGoalActionCode.Add => "AD",
+                CodeProblemGoalActionCode.Correct => "CO",
+                CodeProblemGoalActionCode.Delete => "DE",
+                CodeProblemGoalActionCode.Link => "LI",
+                CodeProblemGoalActionCode.Unchanged => "UC",
+                CodeProblemGoalActionCode.Unlink => "UN",
+                CodeProblemGoalActionCode.Update => "UP",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ProcedureDrgType enum value into its HL7 equivalent code.
+        /// Converts the given CodeProcedureDrgType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ProcedureDrgType input)
+        public string EnumToCode(CodeProcedureDrgType input)
         {
             return input switch
             {
-                ProcedureDrgType.FirstNonOperative => "1",
-                ProcedureDrgType.SecondNonOperative => "2",
-                ProcedureDrgType.MajorOperative => "3",
-                ProcedureDrgType.SecondOperative => "4",
-                ProcedureDrgType.ThirdOperative => "5",
+                CodeProcedureDrgType.FirstNonOperative => "1",
+                CodeProcedureDrgType.SecondNonOperative => "2",
+                CodeProcedureDrgType.MajorOperative => "3",
+                CodeProcedureDrgType.SecondOperative => "4",
+                CodeProcedureDrgType.ThirdOperative => "5",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ProcedureFunctionalType enum value into its HL7 equivalent code.
+        /// Converts the given CodeProcedureFunctionalType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ProcedureFunctionalType input)
+        public string EnumToCode(CodeProcedureFunctionalType input)
         {
             return input switch
             {
-                ProcedureFunctionalType.Anesthesia => "A",
-                ProcedureFunctionalType.DiagnosticProcedure => "D",
-                ProcedureFunctionalType.InvasiveProcedureNotClassified => "I",
-                ProcedureFunctionalType.ProcedureForTreatment => "P",
+                CodeProcedureFunctionalType.Anesthesia => "A",
+                CodeProcedureFunctionalType.DiagnosticProcedure => "D",
+                CodeProcedureFunctionalType.InvasiveProcedureNotClassified => "I",
+                CodeProcedureFunctionalType.ProcedureForTreatment => "P",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ProcedurePractitionerIdentifierCodeType enum value into its HL7 equivalent code.
+        /// Converts the given CodeProcedurePractitionerIdentifierCodeType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ProcedurePractitionerIdentifierCodeType input)
+        public string EnumToCode(CodeProcedurePractitionerIdentifierCodeType input)
         {
             return input switch
             {
-                ProcedurePractitionerIdentifierCodeType.AnesthesiologistAnesthetist => "AN",
-                ProcedurePractitionerIdentifierCodeType.AssistantSurgeon => "AS",
-                ProcedurePractitionerIdentifierCodeType.CertifiedNurseMidwife => "CM",
-                ProcedurePractitionerIdentifierCodeType.NursePractitioner => "NP",
-                ProcedurePractitionerIdentifierCodeType.ProcedureMdSurgeon => "PR",
-                ProcedurePractitionerIdentifierCodeType.PrimarySurgeon => "PS",
-                ProcedurePractitionerIdentifierCodeType.Radiologist => "RD",
-                ProcedurePractitionerIdentifierCodeType.Resident => "RS",
-                ProcedurePractitionerIdentifierCodeType.ScrubNurse => "SN",
+                CodeProcedurePractitionerIdentifierCodeType.AnesthesiologistAnesthetist => "AN",
+                CodeProcedurePractitionerIdentifierCodeType.AssistantSurgeon => "AS",
+                CodeProcedurePractitionerIdentifierCodeType.CertifiedNurseMidwife => "CM",
+                CodeProcedurePractitionerIdentifierCodeType.NursePractitioner => "NP",
+                CodeProcedurePractitionerIdentifierCodeType.ProcedureMdSurgeon => "PR",
+                CodeProcedurePractitionerIdentifierCodeType.PrimarySurgeon => "PS",
+                CodeProcedurePractitionerIdentifierCodeType.Radiologist => "RD",
+                CodeProcedurePractitionerIdentifierCodeType.Resident => "RS",
+                CodeProcedurePractitionerIdentifierCodeType.ScrubNurse => "SN",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ProcedurePriority enum value into its HL7 equivalent code.
+        /// Converts the given CodeProcedurePriority enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ProcedurePriority input)
+        public string EnumToCode(CodeProcedurePriority input)
         {
             return input switch
             {
-                ProcedurePriority.TheAdmittingProcedure => "0",
-                ProcedurePriority.ThePrimaryProcedure => "1",
-                ProcedurePriority.ForRankedSecondaryProcedures => "2",
+                CodeProcedurePriority.TheAdmittingProcedure => "0",
+                CodeProcedurePriority.ThePrimaryProcedure => "1",
+                CodeProcedurePriority.ForRankedSecondaryProcedures => "2",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ProcessingId enum value into its HL7 equivalent code.
+        /// Converts the given CodeProcessingId enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ProcessingId input)
+        public string EnumToCode(CodeProcessingId input)
         {
             return input switch
             {
-                ProcessingId.Debugging => "D",
-                ProcessingId.Production => "P",
-                ProcessingId.Training => "T",
+                CodeProcessingId.Debugging => "D",
+                CodeProcessingId.Production => "P",
+                CodeProcessingId.Training => "T",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ProcessingMode enum value into its HL7 equivalent code.
+        /// Converts the given CodeProcessingMode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ProcessingMode input)
+        public string EnumToCode(CodeProcessingMode input)
         {
             return input switch
             {
-                ProcessingMode.Archive => "A",
-                ProcessingMode.InitialLoad => "I",
-                ProcessingMode.NotPresent => "Not present",
-                ProcessingMode.RestoreFromArchive => "R",
-                ProcessingMode.CurrentProcessing => "T",
+                CodeProcessingMode.Archive => "A",
+                CodeProcessingMode.InitialLoad => "I",
+                CodeProcessingMode.NotPresent => "Not present",
+                CodeProcessingMode.RestoreFromArchive => "R",
+                CodeProcessingMode.CurrentProcessing => "T",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ProcessingPriority enum value into its HL7 equivalent code.
+        /// Converts the given CodeProcessingPriority enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ProcessingPriority input)
+        public string EnumToCode(CodeProcessingPriority input)
         {
             return input switch
             {
-                ProcessingPriority.AsSoonAsPossible => "A",
-                ProcessingPriority.DoAtBedsideOrPortable => "B",
-                ProcessingPriority.MeasureContinuously => "C",
-                ProcessingPriority.Preoperative => "P",
-                ProcessingPriority.Routine => "R",
-                ProcessingPriority.Stat => "S",
-                ProcessingPriority.TimingCritical => "T",
+                CodeProcessingPriority.AsSoonAsPossible => "A",
+                CodeProcessingPriority.DoAtBedsideOrPortable => "B",
+                CodeProcessingPriority.MeasureContinuously => "C",
+                CodeProcessingPriority.Preoperative => "P",
+                CodeProcessingPriority.Routine => "R",
+                CodeProcessingPriority.Stat => "S",
+                CodeProcessingPriority.TimingCritical => "T",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ProcessingType enum value into its HL7 equivalent code.
+        /// Converts the given CodeProcessingType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ProcessingType input)
+        public string EnumToCode(CodeProcessingType input)
         {
             return input switch
             {
-                ProcessingType.Evaluation => "E",
-                ProcessingType.RegularProduction => "P",
+                CodeProcessingType.Evaluation => "E",
+                CodeProcessingType.RegularProduction => "P",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ProductionClassCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeProductionClassCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ProductionClassCode input)
+        public string EnumToCode(CodeProductionClassCode input)
         {
             return input switch
             {
-                ProductionClassCode.BreedingGeneticStock => "BR",
-                ProductionClassCode.Dairy => "DA",
-                ProductionClassCode.Draft => "DR",
-                ProductionClassCode.DualPurpose => "DU",
-                ProductionClassCode.LayerIncludesMultiplierFlocks => "LY",
-                ProductionClassCode.Meat => "MT",
-                ProductionClassCode.NotApplicable => "NA",
-                ProductionClassCode.Other => "OT",
-                ProductionClassCode.Pleasure => "PL",
-                ProductionClassCode.Racing => "RA",
-                ProductionClassCode.Show => "SH",
-                ProductionClassCode.Unknown => "U",
+                CodeProductionClassCode.BreedingGeneticStock => "BR",
+                CodeProductionClassCode.Dairy => "DA",
+                CodeProductionClassCode.Draft => "DR",
+                CodeProductionClassCode.DualPurpose => "DU",
+                CodeProductionClassCode.LayerIncludesMultiplierFlocks => "LY",
+                CodeProductionClassCode.Meat => "MT",
+                CodeProductionClassCode.NotApplicable => "NA",
+                CodeProductionClassCode.Other => "OT",
+                CodeProductionClassCode.Pleasure => "PL",
+                CodeProductionClassCode.Racing => "RA",
+                CodeProductionClassCode.Show => "SH",
+                CodeProductionClassCode.Unknown => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ProductSource enum value into its HL7 equivalent code.
+        /// Converts the given CodeProductSource enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ProductSource input)
+        public string EnumToCode(CodeProductSource input)
         {
             return input switch
             {
-                ProductSource.ActualProductWasEvaluated => "A",
-                ProductSource.ProductFromSameLotWasEvaluated => "L",
-                ProductSource.ProductFromNonRelatedInventoryWasEvaluated => "N",
-                ProductSource.ProductFromReserveWasEvaluated => "R",
+                CodeProductSource.ActualProductWasEvaluated => "A",
+                CodeProductSource.ProductFromSameLotWasEvaluated => "L",
+                CodeProductSource.ProductFromNonRelatedInventoryWasEvaluated => "N",
+                CodeProductSource.ProductFromReserveWasEvaluated => "R",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ProviderBilling enum value into its HL7 equivalent code.
+        /// Converts the given CodeProviderBilling enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ProviderBilling input)
+        public string EnumToCode(CodeProviderBilling input)
         {
             return input switch
             {
-                ProviderBilling.InstitutionBillsForProvider => "I",
-                ProviderBilling.ProviderDoesOwnBilling => "P",
+                CodeProviderBilling.InstitutionBillsForProvider => "I",
+                CodeProviderBilling.ProviderDoesOwnBilling => "P",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ProviderRole enum value into its HL7 equivalent code.
+        /// Converts the given CodeProviderRole enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ProviderRole input)
+        public string EnumToCode(CodeProviderRole input)
         {
             return input switch
             {
-                ProviderRole.Admitting => "AD",
-                ProviderRole.Attending => "AT",
-                ProviderRole.ConsultingProvider => "CP",
-                ProviderRole.FamilyHealthCareProfessional => "FHCP",
-                ProviderRole.PrimaryCareProvider => "PP",
-                ProviderRole.ReferringProvider => "RP",
-                ProviderRole.ReferredToProvider => "RT",
+                CodeProviderRole.Admitting => "AD",
+                CodeProviderRole.Attending => "AT",
+                CodeProviderRole.ConsultingProvider => "CP",
+                CodeProviderRole.FamilyHealthCareProfessional => "FHCP",
+                CodeProviderRole.PrimaryCareProvider => "PP",
+                CodeProviderRole.ReferringProvider => "RP",
+                CodeProviderRole.ReferredToProvider => "RT",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given PurgeStatusCode enum value into its HL7 equivalent code.
+        /// Converts the given CodePurgeStatusCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(PurgeStatusCode input)
+        public string EnumToCode(CodePurgeStatusCode input)
         {
             return input switch
             {
-                PurgeStatusCode.VisitMarkedForDeletion => "D",
-                PurgeStatusCode.VisitMarkedInactive => "I",
-                PurgeStatusCode.MarkedForPurge => "P",
+                CodePurgeStatusCode.VisitMarkedForDeletion => "D",
+                CodePurgeStatusCode.VisitMarkedInactive => "I",
+                CodePurgeStatusCode.MarkedForPurge => "P",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given QuantityLimitedRequest enum value into its HL7 equivalent code.
+        /// Converts the given CodeQuantityLimitedRequest enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(QuantityLimitedRequest input)
+        public string EnumToCode(CodeQuantityLimitedRequest input)
         {
             return input switch
             {
-                QuantityLimitedRequest.Characters => "CH",
-                QuantityLimitedRequest.Lines => "LI",
-                QuantityLimitedRequest.Pages => "PG",
-                QuantityLimitedRequest.Records => "RD",
-                QuantityLimitedRequest.LocallyDefined => "ZO",
+                CodeQuantityLimitedRequest.Characters => "CH",
+                CodeQuantityLimitedRequest.Lines => "LI",
+                CodeQuantityLimitedRequest.Pages => "PG",
+                CodeQuantityLimitedRequest.Records => "RD",
+                CodeQuantityLimitedRequest.LocallyDefined => "ZO",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given QuantityMethod enum value into its HL7 equivalent code.
+        /// Converts the given CodeQuantityMethod enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(QuantityMethod input)
+        public string EnumToCode(CodeQuantityMethod input)
         {
             return input switch
             {
-                QuantityMethod.ActualCount => "A",
-                QuantityMethod.EstimatedSeeComment => "E",
+                CodeQuantityMethod.ActualCount => "A",
+                CodeQuantityMethod.EstimatedSeeComment => "E",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given QueryPriority enum value into its HL7 equivalent code.
+        /// Converts the given CodeQueryPriority enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(QueryPriority input)
+        public string EnumToCode(CodeQueryPriority input)
         {
             return input switch
             {
-                QueryPriority.Deferred => "D",
-                QueryPriority.Immediate => "I",
+                CodeQueryPriority.Deferred => "D",
+                CodeQueryPriority.Immediate => "I",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given QueryResponseFormatCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeQueryResponseFormatCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(QueryResponseFormatCode input)
+        public string EnumToCode(CodeQueryResponseFormatCode input)
         {
             return input switch
             {
-                QueryResponseFormatCode.ResponseIsInDisplayFormat => "D",
-                QueryResponseFormatCode.ResponseIsInRecordOrientedFormat => "R",
-                QueryResponseFormatCode.ResponseIsInTabularFormat => "T",
+                CodeQueryResponseFormatCode.ResponseIsInDisplayFormat => "D",
+                CodeQueryResponseFormatCode.ResponseIsInRecordOrientedFormat => "R",
+                CodeQueryResponseFormatCode.ResponseIsInTabularFormat => "T",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given QueryResponseStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeQueryResponseStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(QueryResponseStatus input)
+        public string EnumToCode(CodeQueryResponseStatus input)
         {
             return input switch
             {
-                QueryResponseStatus.ApplicationError => "AE",
-                QueryResponseStatus.ApplicationReject => "AR",
-                QueryResponseStatus.NoDataFoundNoErrors => "NF",
-                QueryResponseStatus.DataFoundNoErrors => "OK",
+                CodeQueryResponseStatus.ApplicationError => "AE",
+                CodeQueryResponseStatus.ApplicationReject => "AR",
+                CodeQueryResponseStatus.NoDataFoundNoErrors => "NF",
+                CodeQueryResponseStatus.DataFoundNoErrors => "OK",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given QueryResultsLevel enum value into its HL7 equivalent code.
+        /// Converts the given CodeQueryResultsLevel enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(QueryResultsLevel input)
+        public string EnumToCode(CodeQueryResultsLevel input)
         {
             return input switch
             {
-                QueryResultsLevel.OrderPlusOrderStatus => "O",
-                QueryResultsLevel.ResultsWithoutBulkText => "R",
-                QueryResultsLevel.StatusOnly => "S",
-                QueryResultsLevel.FullResults => "T",
+                CodeQueryResultsLevel.OrderPlusOrderStatus => "O",
+                CodeQueryResultsLevel.ResultsWithoutBulkText => "R",
+                CodeQueryResultsLevel.StatusOnly => "S",
+                CodeQueryResultsLevel.FullResults => "T",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ReadmissionIndicator enum value into its HL7 equivalent code.
+        /// Converts the given CodeReadmissionIndicator enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ReadmissionIndicator input)
+        public string EnumToCode(CodeReadmissionIndicator input)
         {
             return input switch
             {
-                ReadmissionIndicator.ReAdmission => "R",
+                CodeReadmissionIndicator.ReAdmission => "R",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given RecreationalDrugUseCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeRecreationalDrugUseCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(RecreationalDrugUseCode input)
+        public string EnumToCode(CodeRecreationalDrugUseCode input)
         {
             return input switch
             {
-                RecreationalDrugUseCode.Alcohol => "A",
-                RecreationalDrugUseCode.TobaccoChewed => "C",
-                RecreationalDrugUseCode.Kava => "K",
-                RecreationalDrugUseCode.Marijuana => "M",
-                RecreationalDrugUseCode.Other => "O",
-                RecreationalDrugUseCode.TobaccoSmoked => "T",
-                RecreationalDrugUseCode.Unknown => "U",
+                CodeRecreationalDrugUseCode.Alcohol => "A",
+                CodeRecreationalDrugUseCode.TobaccoChewed => "C",
+                CodeRecreationalDrugUseCode.Kava => "K",
+                CodeRecreationalDrugUseCode.Marijuana => "M",
+                CodeRecreationalDrugUseCode.Other => "O",
+                CodeRecreationalDrugUseCode.TobaccoSmoked => "T",
+                CodeRecreationalDrugUseCode.Unknown => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ReferralCategory enum value into its HL7 equivalent code.
+        /// Converts the given CodeReferralCategory enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ReferralCategory input)
+        public string EnumToCode(CodeReferralCategory input)
         {
             return input switch
             {
-                ReferralCategory.Ambulatory => "A",
-                ReferralCategory.Emergency => "E",
-                ReferralCategory.Inpatient => "I",
-                ReferralCategory.Outpatient => "O",
+                CodeReferralCategory.Ambulatory => "A",
+                CodeReferralCategory.Emergency => "E",
+                CodeReferralCategory.Inpatient => "I",
+                CodeReferralCategory.Outpatient => "O",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ReferralDisposition enum value into its HL7 equivalent code.
+        /// Converts the given CodeReferralDisposition enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ReferralDisposition input)
+        public string EnumToCode(CodeReferralDisposition input)
         {
             return input switch
             {
-                ReferralDisposition.AssumeManagement => "AM",
-                ReferralDisposition.ReturnPatientAfterEvaluation => "RP",
-                ReferralDisposition.SecondOpinion => "SO",
-                ReferralDisposition.SendWrittenReport => "WR",
+                CodeReferralDisposition.AssumeManagement => "AM",
+                CodeReferralDisposition.ReturnPatientAfterEvaluation => "RP",
+                CodeReferralDisposition.SecondOpinion => "SO",
+                CodeReferralDisposition.SendWrittenReport => "WR",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ReferralPriority enum value into its HL7 equivalent code.
+        /// Converts the given CodeReferralPriority enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ReferralPriority input)
+        public string EnumToCode(CodeReferralPriority input)
         {
             return input switch
             {
-                ReferralPriority.Asap => "A",
-                ReferralPriority.Routine => "R",
-                ReferralPriority.Stat => "S",
+                CodeReferralPriority.Asap => "A",
+                CodeReferralPriority.Routine => "R",
+                CodeReferralPriority.Stat => "S",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ReferralReason enum value into its HL7 equivalent code.
+        /// Converts the given CodeReferralReason enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ReferralReason input)
+        public string EnumToCode(CodeReferralReason input)
         {
             return input switch
             {
-                ReferralReason.ProviderOrdered => "O",
-                ReferralReason.PatientPreference => "P",
-                ReferralReason.SecondOpinion => "S",
-                ReferralReason.WorkLoad => "W",
+                CodeReferralReason.ProviderOrdered => "O",
+                CodeReferralReason.PatientPreference => "P",
+                CodeReferralReason.SecondOpinion => "S",
+                CodeReferralReason.WorkLoad => "W",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ReferralStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeReferralStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ReferralStatus input)
+        public string EnumToCode(CodeReferralStatus input)
         {
             return input switch
             {
-                ReferralStatus.Accepted => "A",
-                ReferralStatus.Expired => "E",
-                ReferralStatus.Pending => "P",
-                ReferralStatus.Rejected => "R",
+                CodeReferralStatus.Accepted => "A",
+                CodeReferralStatus.Expired => "E",
+                CodeReferralStatus.Pending => "P",
+                CodeReferralStatus.Rejected => "R",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ReferralType enum value into its HL7 equivalent code.
+        /// Converts the given CodeReferralType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ReferralType input)
+        public string EnumToCode(CodeReferralType input)
         {
             return input switch
             {
-                ReferralType.HomeCare => "Hom",
-                ReferralType.Laboratory => "Lab",
-                ReferralType.Medical => "Med",
-                ReferralType.Psychiatric => "Psy",
-                ReferralType.Radiology => "Rad",
-                ReferralType.SkilledNursing => "Skn",
+                CodeReferralType.HomeCare => "Hom",
+                CodeReferralType.Laboratory => "Lab",
+                CodeReferralType.Medical => "Med",
+                CodeReferralType.Psychiatric => "Psy",
+                CodeReferralType.Radiology => "Rad",
+                CodeReferralType.SkilledNursing => "Skn",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ReimbursementActionCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeReimbursementActionCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ReimbursementActionCode input)
+        public string EnumToCode(CodeReimbursementActionCode input)
         {
             return input switch
             {
-                ReimbursementActionCode.OceLineItemDenialOrRejectionIsNotIgnored => "0",
-                ReimbursementActionCode.OceLineItemDenialOrRejectionIsIgnored => "1",
-                ReimbursementActionCode.ExternalLineItemDenial => "2",
-                ReimbursementActionCode.ExternalLineItemRejection => "3",
+                CodeReimbursementActionCode.OceLineItemDenialOrRejectionIsNotIgnored => "0",
+                CodeReimbursementActionCode.OceLineItemDenialOrRejectionIsIgnored => "1",
+                CodeReimbursementActionCode.ExternalLineItemDenial => "2",
+                CodeReimbursementActionCode.ExternalLineItemRejection => "3",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ReimbursementTypeCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeReimbursementTypeCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ReimbursementTypeCode input)
+        public string EnumToCode(CodeReimbursementTypeCode input)
         {
             return input switch
             {
-                ReimbursementTypeCode.CornealTissueApc => "Crnl",
-                ReimbursementTypeCode.DurableMedicalEquipment => "DME",
-                ReimbursementTypeCode.Epotein => "EPO",
-                ReimbursementTypeCode.ClinicalLaboratoryApc => "Lab",
-                ReimbursementTypeCode.ScreeningMammographyApc => "Mamm",
-                ReimbursementTypeCode.ThisApcIsNotPaid => "NoPay",
-                ReimbursementTypeCode.OutpatientProspectivePaymentSystem => "OPPS",
-                ReimbursementTypeCode.PartialHospitalizationApc => "PartH",
-                ReimbursementTypeCode.PackagedApc => "Pckg",
-                ReimbursementTypeCode.TherapyApc => "Thrpy",
+                CodeReimbursementTypeCode.CornealTissueApc => "Crnl",
+                CodeReimbursementTypeCode.DurableMedicalEquipment => "DME",
+                CodeReimbursementTypeCode.Epotein => "EPO",
+                CodeReimbursementTypeCode.ClinicalLaboratoryApc => "Lab",
+                CodeReimbursementTypeCode.ScreeningMammographyApc => "Mamm",
+                CodeReimbursementTypeCode.ThisApcIsNotPaid => "NoPay",
+                CodeReimbursementTypeCode.OutpatientProspectivePaymentSystem => "OPPS",
+                CodeReimbursementTypeCode.PartialHospitalizationApc => "PartH",
+                CodeReimbursementTypeCode.PackagedApc => "Pckg",
+                CodeReimbursementTypeCode.TherapyApc => "Thrpy",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given RelatednessAssessment enum value into its HL7 equivalent code.
+        /// Converts the given CodeRelatednessAssessment enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(RelatednessAssessment input)
+        public string EnumToCode(CodeRelatednessAssessment input)
         {
             return input switch
             {
-                RelatednessAssessment.HighlyProbable => "H",
-                RelatednessAssessment.Improbable => "I",
-                RelatednessAssessment.ModeratelyProbable => "M",
-                RelatednessAssessment.NotRelated => "N",
-                RelatednessAssessment.SomewhatProbable => "S",
+                CodeRelatednessAssessment.HighlyProbable => "H",
+                CodeRelatednessAssessment.Improbable => "I",
+                CodeRelatednessAssessment.ModeratelyProbable => "M",
+                CodeRelatednessAssessment.NotRelated => "N",
+                CodeRelatednessAssessment.SomewhatProbable => "S",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given RelationalConjunction enum value into its HL7 equivalent code.
+        /// Converts the given CodeRelationalConjunction enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(RelationalConjunction input)
+        public string EnumToCode(CodeRelationalConjunction input)
         {
             return input switch
             {
-                RelationalConjunction.Default => "AND",
-                RelationalConjunction.Or => "OR",
+                CodeRelationalConjunction.Default => "AND",
+                CodeRelationalConjunction.Or => "OR",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given RelationalOperator enum value into its HL7 equivalent code.
+        /// Converts the given CodeRelationalOperator enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(RelationalOperator input)
+        public string EnumToCode(CodeRelationalOperator input)
         {
             return input switch
             {
-                RelationalOperator.Contains => "CT",
-                RelationalOperator.Equal => "EQ",
-                RelationalOperator.GreaterThanOrEqual => "GE",
-                RelationalOperator.Generic => "GN",
-                RelationalOperator.GreaterThan => "GT",
-                RelationalOperator.LessThanOrEqual => "LE",
-                RelationalOperator.LessThan => "LT",
-                RelationalOperator.NotEqual => "NE",
+                CodeRelationalOperator.Contains => "CT",
+                CodeRelationalOperator.Equal => "EQ",
+                CodeRelationalOperator.GreaterThanOrEqual => "GE",
+                CodeRelationalOperator.Generic => "GN",
+                CodeRelationalOperator.GreaterThan => "GT",
+                CodeRelationalOperator.LessThanOrEqual => "LE",
+                CodeRelationalOperator.LessThan => "LT",
+                CodeRelationalOperator.NotEqual => "NE",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given Relationship enum value into its HL7 equivalent code.
+        /// Converts the given CodeRelationship enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(Relationship input)
+        public string EnumToCode(CodeRelationship input)
         {
             return input switch
             {
-                Relationship.Associate => "ASC",
-                Relationship.Brother => "BRO",
-                Relationship.CareGiver => "CGV",
-                Relationship.Child => "CHD",
-                Relationship.HandicappedDependent => "DEP",
-                Relationship.LifePartner => "DOM",
-                Relationship.EmergencyContact => "EMC",
-                Relationship.Employee => "EME",
-                Relationship.Employer => "EMR",
-                Relationship.ExtendedFamily => "EXF",
-                Relationship.FosterChild => "FCH",
-                Relationship.Friend => "FND",
-                Relationship.Father => "FTH",
-                Relationship.Grandchild => "GCH",
-                Relationship.Guardian => "GRD",
-                Relationship.Grandparent => "GRP",
-                Relationship.Manager => "MGR",
-                Relationship.Mother => "MTH",
-                Relationship.NaturalChild => "NCH",
-                Relationship.None => "NON",
-                Relationship.OtherAdult => "OAD",
-                Relationship.Other => "OTH",
-                Relationship.Owner => "OWN",
-                Relationship.Parent => "PAR",
-                Relationship.Stepchild => "SCH",
-                Relationship.Self => "SEL",
-                Relationship.Sibling => "SIB",
-                Relationship.Sister => "SIS",
-                Relationship.Spouse => "SPO",
-                Relationship.Trainer => "TRA",
-                Relationship.Unknown => "UNK",
-                Relationship.WardOfCourt => "WRD",
+                CodeRelationship.Associate => "ASC",
+                CodeRelationship.Brother => "BRO",
+                CodeRelationship.CareGiver => "CGV",
+                CodeRelationship.Child => "CHD",
+                CodeRelationship.HandicappedDependent => "DEP",
+                CodeRelationship.LifePartner => "DOM",
+                CodeRelationship.EmergencyContact => "EMC",
+                CodeRelationship.Employee => "EME",
+                CodeRelationship.Employer => "EMR",
+                CodeRelationship.ExtendedFamily => "EXF",
+                CodeRelationship.FosterChild => "FCH",
+                CodeRelationship.Friend => "FND",
+                CodeRelationship.Father => "FTH",
+                CodeRelationship.Grandchild => "GCH",
+                CodeRelationship.Guardian => "GRD",
+                CodeRelationship.Grandparent => "GRP",
+                CodeRelationship.Manager => "MGR",
+                CodeRelationship.Mother => "MTH",
+                CodeRelationship.NaturalChild => "NCH",
+                CodeRelationship.None => "NON",
+                CodeRelationship.OtherAdult => "OAD",
+                CodeRelationship.Other => "OTH",
+                CodeRelationship.Owner => "OWN",
+                CodeRelationship.Parent => "PAR",
+                CodeRelationship.Stepchild => "SCH",
+                CodeRelationship.Self => "SEL",
+                CodeRelationship.Sibling => "SIB",
+                CodeRelationship.Sister => "SIS",
+                CodeRelationship.Spouse => "SPO",
+                CodeRelationship.Trainer => "TRA",
+                CodeRelationship.Unknown => "UNK",
+                CodeRelationship.WardOfCourt => "WRD",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given RelationshipModifier enum value into its HL7 equivalent code.
+        /// Converts the given CodeRelationshipModifier enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(RelationshipModifier input)
+        public string EnumToCode(CodeRelationshipModifier input)
         {
             return input switch
             {
-                RelationshipModifier.BloodProductUnit => "BPU",
-                RelationshipModifier.Control => "CONTROL",
-                RelationshipModifier.Donor => "DONOR",
-                RelationshipModifier.Patient => "PATIENT",
+                CodeRelationshipModifier.BloodProductUnit => "BPU",
+                CodeRelationshipModifier.Control => "CONTROL",
+                CodeRelationshipModifier.Donor => "DONOR",
+                CodeRelationshipModifier.Patient => "PATIENT",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given Religion enum value into its HL7 equivalent code.
+        /// Converts the given CodeReligion enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(Religion input)
+        public string EnumToCode(CodeReligion input)
         {
             return input switch
             {
-                Religion.ChristianAmericanBaptistChurch => "ABC",
-                Religion.Agnostic => "AGN",
-                Religion.ChristianAfricanMethodistEpiscopalZion => "AME",
-                Religion.ChristianAfricanMethodistEpiscopal => "AMT",
-                Religion.ChristianAnglican => "ANG",
-                Religion.ChristianAssemblyOfGod => "AOG",
-                Religion.Atheist => "ATH",
-                Religion.Bahai => "BAH",
-                Religion.ChristianBaptist => "BAP",
-                Religion.BuddhistMahayana => "BMA",
-                Religion.BuddhistOther => "BOT",
-                Religion.BuddhistTantrayana => "BTA",
-                Religion.BuddhistTheravada => "BTH",
-                Religion.Buddhist => "BUD",
-                Religion.ChristianRomanCatholic => "CAT",
-                Religion.ChineseFolkReligionist => "CFR",
-                Religion.Christian => "CHR",
-                Religion.ChristianChristianScience => "CHS",
-                Religion.ChristianChristianMissionaryAlliance => "CMA",
-                Religion.Confucian => "CNF",
-                Religion.ChristianChurchOfChrist => "COC",
-                Religion.ChristianChurchOfGod => "COG",
-                Religion.ChristianChurchOfGodInChrist => "COI",
-                Religion.ChristianCongregational => "COL",
-                Religion.ChristianCommunity => "COM",
-                Religion.ChristianOtherPentecostal => "COP",
-                Religion.ChristianOther => "COT",
-                Religion.ChristianChristianReformed => "CRR",
-                Religion.ChristianEasternOrthodox => "EOT",
-                Religion.ChristianEpiscopalian => "EPI",
-                Religion.EthnicReligionist => "ERL",
-                Religion.ChristianEvangelicalChurch => "EVC",
-                Religion.ChristianFriends => "FRQ",
-                Religion.ChristianFreeWillBaptist => "FWB",
-                Religion.ChristianGreekOrthodox => "GRE",
-                Religion.Hindu => "HIN",
-                Religion.HinduOther => "HOT",
-                Religion.HinduShaivites => "HSH",
-                Religion.HinduVaishnavites => "HVA",
-                Religion.Jain => "JAI",
-                Religion.JewishConservative => "JCO",
-                Religion.Jewish => "JEW",
-                Religion.JewishOrthodox => "JOR",
-                Religion.JewishOther => "JOT",
-                Religion.JewishReconstructionist => "JRC",
-                Religion.JewishReform => "JRF",
-                Religion.JewishRenewal => "JRN",
-                Religion.ChristianJehovahsWitness => "JWN",
-                Religion.ChristianLutheranMissouriSynod => "LMS",
-                Religion.ChristianLutheran => "LUT",
-                Religion.ChristianMennonite => "MEN",
-                Religion.ChristianMethodist => "MET",
-                Religion.ChristianLatterDaySaints => "MOM",
-                Religion.Muslim => "MOS",
-                Religion.MuslimOther => "MOT",
-                Religion.MuslimShiite => "MSH",
-                Religion.MuslimSunni => "MSU",
-                Religion.NativeAmerican => "NAM",
-                Religion.ChristianChurchOfTheNazarene => "NAZ",
-                Religion.Nonreligious => "NOE",
-                Religion.NewReligionist => "NRL",
-                Religion.ChristianOrthodox => "ORT",
-                Religion.Other => "OTH",
-                Religion.ChristianPentecostal => "PEN",
-                Religion.ChristianOtherProtestant => "PRC",
-                Religion.ChristianPresbyterian => "PRE",
-                Religion.ChristianProtestant => "PRO",
-                Religion.ChristianFriendsDeprecated => "QUA",
-                Religion.ChristianReformedChurch => "REC",
-                Religion.ChristianReorganizedChurchOfJesusChristLds => "REO",
-                Religion.ChristianSalvationArmy => "SAA",
-                Religion.ChristianSeventhDayAdventist => "SEV",
-                Religion.Shintoist => "SHN",
-                Religion.Sikh => "SIK",
-                Religion.ChristianSouthernBaptist => "SOU",
-                Religion.Spiritist => "SPI",
-                Religion.ChristianUnitedChurchOfChrist => "UCC",
-                Religion.ChristianUnitedMethodist => "UMD",
-                Religion.ChristianUnitarian => "UNI",
-                Religion.ChristianUnitarianUniversalist => "UNU",
-                Religion.Unknown => "VAR",
-                Religion.ChristianWesleyan => "WES",
-                Religion.ChristianWesleyanMethodist => "WMC",
+                CodeReligion.ChristianAmericanBaptistChurch => "ABC",
+                CodeReligion.Agnostic => "AGN",
+                CodeReligion.ChristianAfricanMethodistEpiscopalZion => "AME",
+                CodeReligion.ChristianAfricanMethodistEpiscopal => "AMT",
+                CodeReligion.ChristianAnglican => "ANG",
+                CodeReligion.ChristianAssemblyOfGod => "AOG",
+                CodeReligion.Atheist => "ATH",
+                CodeReligion.Bahai => "BAH",
+                CodeReligion.ChristianBaptist => "BAP",
+                CodeReligion.BuddhistMahayana => "BMA",
+                CodeReligion.BuddhistOther => "BOT",
+                CodeReligion.BuddhistTantrayana => "BTA",
+                CodeReligion.BuddhistTheravada => "BTH",
+                CodeReligion.Buddhist => "BUD",
+                CodeReligion.ChristianRomanCatholic => "CAT",
+                CodeReligion.ChineseFolkReligionist => "CFR",
+                CodeReligion.Christian => "CHR",
+                CodeReligion.ChristianChristianScience => "CHS",
+                CodeReligion.ChristianChristianMissionaryAlliance => "CMA",
+                CodeReligion.Confucian => "CNF",
+                CodeReligion.ChristianChurchOfChrist => "COC",
+                CodeReligion.ChristianChurchOfGod => "COG",
+                CodeReligion.ChristianChurchOfGodInChrist => "COI",
+                CodeReligion.ChristianCongregational => "COL",
+                CodeReligion.ChristianCommunity => "COM",
+                CodeReligion.ChristianOtherPentecostal => "COP",
+                CodeReligion.ChristianOther => "COT",
+                CodeReligion.ChristianChristianReformed => "CRR",
+                CodeReligion.ChristianEasternOrthodox => "EOT",
+                CodeReligion.ChristianEpiscopalian => "EPI",
+                CodeReligion.EthnicReligionist => "ERL",
+                CodeReligion.ChristianEvangelicalChurch => "EVC",
+                CodeReligion.ChristianFriends => "FRQ",
+                CodeReligion.ChristianFreeWillBaptist => "FWB",
+                CodeReligion.ChristianGreekOrthodox => "GRE",
+                CodeReligion.Hindu => "HIN",
+                CodeReligion.HinduOther => "HOT",
+                CodeReligion.HinduShaivites => "HSH",
+                CodeReligion.HinduVaishnavites => "HVA",
+                CodeReligion.Jain => "JAI",
+                CodeReligion.JewishConservative => "JCO",
+                CodeReligion.Jewish => "JEW",
+                CodeReligion.JewishOrthodox => "JOR",
+                CodeReligion.JewishOther => "JOT",
+                CodeReligion.JewishReconstructionist => "JRC",
+                CodeReligion.JewishReform => "JRF",
+                CodeReligion.JewishRenewal => "JRN",
+                CodeReligion.ChristianJehovahsWitness => "JWN",
+                CodeReligion.ChristianLutheranMissouriSynod => "LMS",
+                CodeReligion.ChristianLutheran => "LUT",
+                CodeReligion.ChristianMennonite => "MEN",
+                CodeReligion.ChristianMethodist => "MET",
+                CodeReligion.ChristianLatterDaySaints => "MOM",
+                CodeReligion.Muslim => "MOS",
+                CodeReligion.MuslimOther => "MOT",
+                CodeReligion.MuslimShiite => "MSH",
+                CodeReligion.MuslimSunni => "MSU",
+                CodeReligion.NativeAmerican => "NAM",
+                CodeReligion.ChristianChurchOfTheNazarene => "NAZ",
+                CodeReligion.Nonreligious => "NOE",
+                CodeReligion.NewReligionist => "NRL",
+                CodeReligion.ChristianOrthodox => "ORT",
+                CodeReligion.Other => "OTH",
+                CodeReligion.ChristianPentecostal => "PEN",
+                CodeReligion.ChristianOtherProtestant => "PRC",
+                CodeReligion.ChristianPresbyterian => "PRE",
+                CodeReligion.ChristianProtestant => "PRO",
+                CodeReligion.ChristianFriendsDeprecated => "QUA",
+                CodeReligion.ChristianReformedChurch => "REC",
+                CodeReligion.ChristianReorganizedChurchOfJesusChristLds => "REO",
+                CodeReligion.ChristianSalvationArmy => "SAA",
+                CodeReligion.ChristianSeventhDayAdventist => "SEV",
+                CodeReligion.Shintoist => "SHN",
+                CodeReligion.Sikh => "SIK",
+                CodeReligion.ChristianSouthernBaptist => "SOU",
+                CodeReligion.Spiritist => "SPI",
+                CodeReligion.ChristianUnitedChurchOfChrist => "UCC",
+                CodeReligion.ChristianUnitedMethodist => "UMD",
+                CodeReligion.ChristianUnitarian => "UNI",
+                CodeReligion.ChristianUnitarianUniversalist => "UNU",
+                CodeReligion.Unknown => "VAR",
+                CodeReligion.ChristianWesleyan => "WES",
+                CodeReligion.ChristianWesleyanMethodist => "WMC",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given RemoteControlCommand enum value into its HL7 equivalent code.
+        /// Converts the given CodeRemoteControlCommand enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(RemoteControlCommand input)
+        public string EnumToCode(CodeRemoteControlCommand input)
         {
             return input switch
             {
-                RemoteControlCommand.Abort => "AB",
-                RemoteControlCommand.Clear => "CL",
-                RemoteControlCommand.ClearNotification => "CN",
-                RemoteControlCommand.DisableSendingEvents => "DI",
-                RemoteControlCommand.EnableSendingEvents => "EN",
-                RemoteControlCommand.EmergencyStop => "ES",
-                RemoteControlCommand.Execute => "EX",
-                RemoteControlCommand.Initialize => "IN",
-                RemoteControlCommand.LocalControlRequest => "LC",
-                RemoteControlCommand.Lock => "LK",
-                RemoteControlCommand.Load => "LO",
-                RemoteControlCommand.Pause => "PA",
-                RemoteControlCommand.RemoteControlRequest => "RC",
-                RemoteControlCommand.Resume => "RE",
-                RemoteControlCommand.Sampling => "SA",
-                RemoteControlCommand.Setup => "SU",
-                RemoteControlCommand.TransportTo => "TT",
-                RemoteControlCommand.Unlock => "UC",
-                RemoteControlCommand.Unload => "UN",
+                CodeRemoteControlCommand.Abort => "AB",
+                CodeRemoteControlCommand.Clear => "CL",
+                CodeRemoteControlCommand.ClearNotification => "CN",
+                CodeRemoteControlCommand.DisableSendingEvents => "DI",
+                CodeRemoteControlCommand.EnableSendingEvents => "EN",
+                CodeRemoteControlCommand.EmergencyStop => "ES",
+                CodeRemoteControlCommand.Execute => "EX",
+                CodeRemoteControlCommand.Initialize => "IN",
+                CodeRemoteControlCommand.LocalControlRequest => "LC",
+                CodeRemoteControlCommand.Lock => "LK",
+                CodeRemoteControlCommand.Load => "LO",
+                CodeRemoteControlCommand.Pause => "PA",
+                CodeRemoteControlCommand.RemoteControlRequest => "RC",
+                CodeRemoteControlCommand.Resume => "RE",
+                CodeRemoteControlCommand.Sampling => "SA",
+                CodeRemoteControlCommand.Setup => "SU",
+                CodeRemoteControlCommand.TransportTo => "TT",
+                CodeRemoteControlCommand.Unlock => "UC",
+                CodeRemoteControlCommand.Unload => "UN",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given RepeatPattern enum value into its HL7 equivalent code.
+        /// Converts the given CodeRepeatPattern enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(RepeatPattern input)
+        public string EnumToCode(CodeRepeatPattern input)
         {
             return input switch
             {
-                RepeatPattern.AnteBefore => "A",
-                RepeatPattern.TwiceADay => "BID",
-                RepeatPattern.ServiceProvidedContinuouslyBetweenStartAndStopTime => "C",
-                RepeatPattern.CibusDiurnusLunch => "D",
-                RepeatPattern.Inter => "I",
-                RepeatPattern.CibusMatutinusBreakfast => "M",
-                RepeatPattern.TimingcCumMeal => "Meal Related Timings",
-                RepeatPattern.OneTimeOnly => "Once",
-                RepeatPattern.PostAfter => "P",
-                RepeatPattern.GivenAsNeeded => "PRN",
-                RepeatPattern.WhereXxxIsSomeFrequencyCode => "PRNxxx",
-                RepeatPattern.EveryIntegerDays => "QintegerD",
-                RepeatPattern.EveryIntegerHours => "QintegerH",
-                RepeatPattern.RepeatsOnParticularDayOfTheWeek => "QintegerJday#",
-                RepeatPattern.EveryIntegerMonthsLunarCycle => "QintegerL",
-                RepeatPattern.EveryIntegerMinutes => "QintegerM",
-                RepeatPattern.EveryIntegerSeconds => "QintegerS",
-                RepeatPattern.EveryIntegerWeeks => "QintegerW",
-                RepeatPattern.InTheMorning => "QAM",
-                RepeatPattern.EveryDayBeforeTheHourOfSleep => "QHS",
-                RepeatPattern.FourTimesDay => "QID",
-                RepeatPattern.EveryOtherDay => "QOD",
-                RepeatPattern.InTheEvening => "QPM",
-                RepeatPattern.DuringEachOfThreeEightHourShifts => "QSHIFT",
-                RepeatPattern.ThreeTimesADay => "TID",
-                RepeatPattern.UnixCron => "U spec",
-                RepeatPattern.CibusVespertinusDinner => "V",
-                RepeatPattern.XTimesPerDay => "xID",
+                CodeRepeatPattern.AnteBefore => "A",
+                CodeRepeatPattern.TwiceADay => "BID",
+                CodeRepeatPattern.ServiceProvidedContinuouslyBetweenStartAndStopTime => "C",
+                CodeRepeatPattern.CibusDiurnusLunch => "D",
+                CodeRepeatPattern.Inter => "I",
+                CodeRepeatPattern.CibusMatutinusBreakfast => "M",
+                CodeRepeatPattern.TimingcCumMeal => "Meal Related Timings",
+                CodeRepeatPattern.OneTimeOnly => "Once",
+                CodeRepeatPattern.PostAfter => "P",
+                CodeRepeatPattern.GivenAsNeeded => "PRN",
+                CodeRepeatPattern.WhereXxxIsSomeFrequencyCode => "PRNxxx",
+                CodeRepeatPattern.EveryIntegerDays => "QintegerD",
+                CodeRepeatPattern.EveryIntegerHours => "QintegerH",
+                CodeRepeatPattern.RepeatsOnParticularDayOfTheWeek => "QintegerJday#",
+                CodeRepeatPattern.EveryIntegerMonthsLunarCycle => "QintegerL",
+                CodeRepeatPattern.EveryIntegerMinutes => "QintegerM",
+                CodeRepeatPattern.EveryIntegerSeconds => "QintegerS",
+                CodeRepeatPattern.EveryIntegerWeeks => "QintegerW",
+                CodeRepeatPattern.InTheMorning => "QAM",
+                CodeRepeatPattern.EveryDayBeforeTheHourOfSleep => "QHS",
+                CodeRepeatPattern.FourTimesDay => "QID",
+                CodeRepeatPattern.EveryOtherDay => "QOD",
+                CodeRepeatPattern.InTheEvening => "QPM",
+                CodeRepeatPattern.DuringEachOfThreeEightHourShifts => "QSHIFT",
+                CodeRepeatPattern.ThreeTimesADay => "TID",
+                CodeRepeatPattern.UnixCron => "U spec",
+                CodeRepeatPattern.CibusVespertinusDinner => "V",
+                CodeRepeatPattern.XTimesPerDay => "xID",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ReportingPriority enum value into its HL7 equivalent code.
+        /// Converts the given CodeReportingPriority enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ReportingPriority input)
+        public string EnumToCode(CodeReportingPriority input)
         {
             return input switch
             {
-                ReportingPriority.CallBackResults => "C",
-                ReportingPriority.RushReporting => "R",
+                CodeReportingPriority.CallBackResults => "C",
+                CodeReportingPriority.RushReporting => "R",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ReportPriority enum value into its HL7 equivalent code.
+        /// Converts the given CodeReportPriority enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ReportPriority input)
+        public string EnumToCode(CodeReportPriority input)
         {
             return input switch
             {
-                ReportPriority.Routine => "R",
-                ReportPriority.Stat => "S",
+                CodeReportPriority.Routine => "R",
+                CodeReportPriority.Stat => "S",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ReportSource enum value into its HL7 equivalent code.
+        /// Converts the given CodeReportSource enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ReportSource input)
+        public string EnumToCode(CodeReportSource input)
         {
             return input switch
             {
-                ReportSource.ClinicalTrial => "C",
-                ReportSource.DatabaseRegistryPoisonControlCenter => "D",
-                ReportSource.Distributor => "E",
-                ReportSource.HealthProfessional => "H",
-                ReportSource.Literature => "L",
-                ReportSource.ManufacturerMarketingAuthorityHolder => "M",
-                ReportSource.NonHealthcareProfessional => "N",
-                ReportSource.Other => "O",
-                ReportSource.Patient => "P",
-                ReportSource.RegulatoryAgency => "R",
+                CodeReportSource.ClinicalTrial => "C",
+                CodeReportSource.DatabaseRegistryPoisonControlCenter => "D",
+                CodeReportSource.Distributor => "E",
+                CodeReportSource.HealthProfessional => "H",
+                CodeReportSource.Literature => "L",
+                CodeReportSource.ManufacturerMarketingAuthorityHolder => "M",
+                CodeReportSource.NonHealthcareProfessional => "N",
+                CodeReportSource.Other => "O",
+                CodeReportSource.Patient => "P",
+                CodeReportSource.RegulatoryAgency => "R",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ReportTiming enum value into its HL7 equivalent code.
+        /// Converts the given CodeReportTiming enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ReportTiming input)
+        public string EnumToCode(CodeReportTiming input)
         {
             return input switch
             {
-                ReportTiming.TenDayReport => "10D",
-                ReportTiming.FifteenDayReport => "15D",
-                ReportTiming.ThirtyDayReport => "30D",
-                ReportTiming.ThreeDayReport => "3D",
-                ReportTiming.SevenDayReport => "7D",
-                ReportTiming.AdditionalInformation => "AD",
-                ReportTiming.Correction => "CO",
-                ReportTiming.DeviceEvaluation => "DE",
-                ReportTiming.Periodic => "PD",
-                ReportTiming.RequestedInformation => "RQ",
+                CodeReportTiming.TenDayReport => "10D",
+                CodeReportTiming.FifteenDayReport => "15D",
+                CodeReportTiming.ThirtyDayReport => "30D",
+                CodeReportTiming.ThreeDayReport => "3D",
+                CodeReportTiming.SevenDayReport => "7D",
+                CodeReportTiming.AdditionalInformation => "AD",
+                CodeReportTiming.Correction => "CO",
+                CodeReportTiming.DeviceEvaluation => "DE",
+                CodeReportTiming.Periodic => "PD",
+                CodeReportTiming.RequestedInformation => "RQ",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ResponseFlag enum value into its HL7 equivalent code.
+        /// Converts the given CodeResponseFlag enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ResponseFlag input)
+        public string EnumToCode(CodeResponseFlag input)
         {
             return input switch
             {
-                ResponseFlag.AlsoOtherAssociatedSegments => "D",
-                ResponseFlag.ReportExceptionsOnly => "E",
-                ResponseFlag.PlusConfirmationsExplicitly => "F",
-                ResponseFlag.OnlyMsaSegmentIsReturned => "N",
-                ResponseFlag.ReplacementAndParentChild => "R",
+                CodeResponseFlag.AlsoOtherAssociatedSegments => "D",
+                CodeResponseFlag.ReportExceptionsOnly => "E",
+                CodeResponseFlag.PlusConfirmationsExplicitly => "F",
+                CodeResponseFlag.OnlyMsaSegmentIsReturned => "N",
+                CodeResponseFlag.ReplacementAndParentChild => "R",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ResponseLevel enum value into its HL7 equivalent code.
+        /// Converts the given CodeResponseLevel enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ResponseLevel input)
+        public string EnumToCode(CodeResponseLevel input)
         {
             return input switch
             {
-                ResponseLevel.Always => "AL",
-                ResponseLevel.ErrorReject => "ER",
-                ResponseLevel.Never => "NE",
-                ResponseLevel.Success => "SU",
+                CodeResponseLevel.Always => "AL",
+                CodeResponseLevel.ErrorReject => "ER",
+                CodeResponseLevel.Never => "NE",
+                CodeResponseLevel.Success => "SU",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ResponseModality enum value into its HL7 equivalent code.
+        /// Converts the given CodeResponseModality enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ResponseModality input)
+        public string EnumToCode(CodeResponseModality input)
         {
             return input switch
             {
-                ResponseModality.Batch => "B",
-                ResponseModality.RealTime => "R",
-                ResponseModality.Bolus => "T",
+                CodeResponseModality.Batch => "B",
+                CodeResponseModality.RealTime => "R",
+                CodeResponseModality.Bolus => "T",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ResultStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeResultStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ResultStatus input)
+        public string EnumToCode(CodeResultStatus input)
         {
             return input switch
             {
-                ResultStatus.SomeResultsAvailable => "A",
-                ResultStatus.CorrectedFinal => "C",
-                ResultStatus.FinalResults => "F",
-                ResultStatus.NoResultsAvailableSpecimenReceivedProcedureIncomplete => "I",
-                ResultStatus.OrderReceivedSpecimenNotYetReceived => "O",
-                ResultStatus.Preliminary => "P",
-                ResultStatus.ResultsStoredNotYetVerified => "R",
-                ResultStatus.NoResultsAvailableProcedureScheduledButNotDone => "S",
-                ResultStatus.NoResultsAvailableOrderCanceled => "X",
-                ResultStatus.NoOrderOnRecordForThisTest => "Y",
-                ResultStatus.NoRecordOfThisPatient => "Z",
+                CodeResultStatus.SomeResultsAvailable => "A",
+                CodeResultStatus.CorrectedFinal => "C",
+                CodeResultStatus.FinalResults => "F",
+                CodeResultStatus.NoResultsAvailableSpecimenReceivedProcedureIncomplete => "I",
+                CodeResultStatus.OrderReceivedSpecimenNotYetReceived => "O",
+                CodeResultStatus.Preliminary => "P",
+                CodeResultStatus.ResultsStoredNotYetVerified => "R",
+                CodeResultStatus.NoResultsAvailableProcedureScheduledButNotDone => "S",
+                CodeResultStatus.NoResultsAvailableOrderCanceled => "X",
+                CodeResultStatus.NoOrderOnRecordForThisTest => "Y",
+                CodeResultStatus.NoRecordOfThisPatient => "Z",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given RevenueCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeRevenueCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(RevenueCode input)
+        public string EnumToCode(CodeRevenueCode input)
         {
             return input switch
             {
-                RevenueCode.NoSuggestedValuesDefined => "...",
-                RevenueCode.IvTherapy => "260",
-                RevenueCode.Oncology => "280",
-                RevenueCode.LabChemistry => "301",
-                RevenueCode.CafeteriaGuestTray => "991",
-                RevenueCode.TelephoneTelegraph => "993",
-                RevenueCode.TvRadio => "994",
+                CodeRevenueCode.NoSuggestedValuesDefined => "...",
+                CodeRevenueCode.IvTherapy => "260",
+                CodeRevenueCode.Oncology => "280",
+                CodeRevenueCode.LabChemistry => "301",
+                CodeRevenueCode.CafeteriaGuestTray => "991",
+                CodeRevenueCode.TelephoneTelegraph => "993",
+                CodeRevenueCode.TvRadio => "994",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given RiskManagementIncidentCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeRiskManagementIncidentCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(RiskManagementIncidentCode input)
+        public string EnumToCode(CodeRiskManagementIncidentCode input)
         {
             return input switch
             {
-                RiskManagementIncidentCode.BodyFluidExposure => "B",
-                RiskManagementIncidentCode.ContaminatedSubstance => "C",
-                RiskManagementIncidentCode.DietErrors => "D",
-                RiskManagementIncidentCode.EquipmentProblem => "E",
-                RiskManagementIncidentCode.PatientFellNotFromBed => "F",
-                RiskManagementIncidentCode.PatientFellFromBed => "H",
-                RiskManagementIncidentCode.InfusionError => "I",
-                RiskManagementIncidentCode.ForeignObjectLeftDuringSurgery => "J",
-                RiskManagementIncidentCode.SterilePrecautionViolated => "K",
-                RiskManagementIncidentCode.Other => "O",
-                RiskManagementIncidentCode.ProcedureError => "P",
-                RiskManagementIncidentCode.PharmaceuticalError => "R",
-                RiskManagementIncidentCode.SuicideAttempt => "S",
-                RiskManagementIncidentCode.TransfusionError => "T",
+                CodeRiskManagementIncidentCode.BodyFluidExposure => "B",
+                CodeRiskManagementIncidentCode.ContaminatedSubstance => "C",
+                CodeRiskManagementIncidentCode.DietErrors => "D",
+                CodeRiskManagementIncidentCode.EquipmentProblem => "E",
+                CodeRiskManagementIncidentCode.PatientFellNotFromBed => "F",
+                CodeRiskManagementIncidentCode.PatientFellFromBed => "H",
+                CodeRiskManagementIncidentCode.InfusionError => "I",
+                CodeRiskManagementIncidentCode.ForeignObjectLeftDuringSurgery => "J",
+                CodeRiskManagementIncidentCode.SterilePrecautionViolated => "K",
+                CodeRiskManagementIncidentCode.Other => "O",
+                CodeRiskManagementIncidentCode.ProcedureError => "P",
+                CodeRiskManagementIncidentCode.PharmaceuticalError => "R",
+                CodeRiskManagementIncidentCode.SuicideAttempt => "S",
+                CodeRiskManagementIncidentCode.TransfusionError => "T",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given RoomType enum value into its HL7 equivalent code.
+        /// Converts the given CodeRoomType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(RoomType input)
+        public string EnumToCode(CodeRoomType input)
         {
             return input switch
             {
-                RoomType.SecondIntensiveCareUnit => "2ICU",
-                RoomType.SecondPrivateRoom => "2PRI",
-                RoomType.SecondSemiPrivateRoom => "2SPR",
-                RoomType.IntensiveCareUnit => "ICU",
-                RoomType.PrivateRoom => "PRI",
-                RoomType.SemiPrivateRoom => "SPR",
+                CodeRoomType.SecondIntensiveCareUnit => "2ICU",
+                CodeRoomType.SecondPrivateRoom => "2PRI",
+                CodeRoomType.SecondSemiPrivateRoom => "2SPR",
+                CodeRoomType.IntensiveCareUnit => "ICU",
+                CodeRoomType.PrivateRoom => "PRI",
+                CodeRoomType.SemiPrivateRoom => "SPR",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given RouteOfAdministration enum value into its HL7 equivalent code.
+        /// Converts the given CodeRouteOfAdministration enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(RouteOfAdministration input)
+        public string EnumToCode(CodeRouteOfAdministration input)
         {
             return input switch
             {
-                RouteOfAdministration.ApplyExternally => "AP",
-                RouteOfAdministration.Buccal => "B",
-                RouteOfAdministration.Dental => "DT",
-                RouteOfAdministration.Epidural => "EP",
-                RouteOfAdministration.EndotrachialTube => "ET",
-                RouteOfAdministration.GastrostomyTube => "GTT",
-                RouteOfAdministration.GuIrrigant => "GU",
-                RouteOfAdministration.IntraArterial => "IA",
-                RouteOfAdministration.Intrabursal => "IB",
-                RouteOfAdministration.Intracardiac => "IC",
-                RouteOfAdministration.Intracervical => "ICV",
-                RouteOfAdministration.Intradermal => "ID",
-                RouteOfAdministration.Inhalation => "IH",
-                RouteOfAdministration.IntrahepaticArtery => "IHA",
-                RouteOfAdministration.Intramuscular => "IM",
-                RouteOfAdministration.ImmerseBodyPart => "IMR",
-                RouteOfAdministration.Intranasal => "IN",
-                RouteOfAdministration.Intraocular => "IO",
-                RouteOfAdministration.Intraperitoneal => "IP",
-                RouteOfAdministration.Intrasynovial => "IS",
-                RouteOfAdministration.Intrathecal => "IT",
-                RouteOfAdministration.Intrauterine => "IU",
-                RouteOfAdministration.Intravenous => "IV",
-                RouteOfAdministration.MucousMembrane => "MM",
-                RouteOfAdministration.MouthThroat => "MTH",
-                RouteOfAdministration.Nasogastric => "NG",
-                RouteOfAdministration.NasalProngs => "NP",
-                RouteOfAdministration.Nasal => "NS",
-                RouteOfAdministration.NasotrachialTube => "NT",
-                RouteOfAdministration.Ophthalmic => "OP",
-                RouteOfAdministration.Otic => "OT",
-                RouteOfAdministration.OtherMiscellaneous => "OTH",
-                RouteOfAdministration.Perfusion => "PF",
-                RouteOfAdministration.Oral => "PO",
-                RouteOfAdministration.Rectal => "PR",
-                RouteOfAdministration.RebreatherMask => "RM",
-                RouteOfAdministration.Subcutaneous => "SC",
-                RouteOfAdministration.SoakedDressing => "SD",
-                RouteOfAdministration.Sublingual => "SL",
-                RouteOfAdministration.Transdermal => "TD",
-                RouteOfAdministration.Translingual => "TL",
-                RouteOfAdministration.Topical => "TP",
-                RouteOfAdministration.Tracheostomy => "TRA",
-                RouteOfAdministration.Urethral => "UR",
-                RouteOfAdministration.Vaginal => "VG",
-                RouteOfAdministration.Ventimask => "VM",
-                RouteOfAdministration.Wound => "WND",
+                CodeRouteOfAdministration.ApplyExternally => "AP",
+                CodeRouteOfAdministration.Buccal => "B",
+                CodeRouteOfAdministration.Dental => "DT",
+                CodeRouteOfAdministration.Epidural => "EP",
+                CodeRouteOfAdministration.EndotrachialTube => "ET",
+                CodeRouteOfAdministration.GastrostomyTube => "GTT",
+                CodeRouteOfAdministration.GuIrrigant => "GU",
+                CodeRouteOfAdministration.IntraArterial => "IA",
+                CodeRouteOfAdministration.Intrabursal => "IB",
+                CodeRouteOfAdministration.Intracardiac => "IC",
+                CodeRouteOfAdministration.Intracervical => "ICV",
+                CodeRouteOfAdministration.Intradermal => "ID",
+                CodeRouteOfAdministration.Inhalation => "IH",
+                CodeRouteOfAdministration.IntrahepaticArtery => "IHA",
+                CodeRouteOfAdministration.Intramuscular => "IM",
+                CodeRouteOfAdministration.ImmerseBodyPart => "IMR",
+                CodeRouteOfAdministration.Intranasal => "IN",
+                CodeRouteOfAdministration.Intraocular => "IO",
+                CodeRouteOfAdministration.Intraperitoneal => "IP",
+                CodeRouteOfAdministration.Intrasynovial => "IS",
+                CodeRouteOfAdministration.Intrathecal => "IT",
+                CodeRouteOfAdministration.Intrauterine => "IU",
+                CodeRouteOfAdministration.Intravenous => "IV",
+                CodeRouteOfAdministration.MucousMembrane => "MM",
+                CodeRouteOfAdministration.MouthThroat => "MTH",
+                CodeRouteOfAdministration.Nasogastric => "NG",
+                CodeRouteOfAdministration.NasalProngs => "NP",
+                CodeRouteOfAdministration.Nasal => "NS",
+                CodeRouteOfAdministration.NasotrachialTube => "NT",
+                CodeRouteOfAdministration.Ophthalmic => "OP",
+                CodeRouteOfAdministration.Otic => "OT",
+                CodeRouteOfAdministration.OtherMiscellaneous => "OTH",
+                CodeRouteOfAdministration.Perfusion => "PF",
+                CodeRouteOfAdministration.Oral => "PO",
+                CodeRouteOfAdministration.Rectal => "PR",
+                CodeRouteOfAdministration.RebreatherMask => "RM",
+                CodeRouteOfAdministration.Subcutaneous => "SC",
+                CodeRouteOfAdministration.SoakedDressing => "SD",
+                CodeRouteOfAdministration.Sublingual => "SL",
+                CodeRouteOfAdministration.Transdermal => "TD",
+                CodeRouteOfAdministration.Translingual => "TL",
+                CodeRouteOfAdministration.Topical => "TP",
+                CodeRouteOfAdministration.Tracheostomy => "TRA",
+                CodeRouteOfAdministration.Urethral => "UR",
+                CodeRouteOfAdministration.Vaginal => "VG",
+                CodeRouteOfAdministration.Ventimask => "VM",
+                CodeRouteOfAdministration.Wound => "WND",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given RXComponentType enum value into its HL7 equivalent code.
+        /// Converts the given CodeRXComponentType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(RXComponentType input)
+        public string EnumToCode(CodeRXComponentType input)
         {
             return input switch
             {
-                RXComponentType.Additive => "A",
-                RXComponentType.Base => "B",
+                CodeRXComponentType.Additive => "A",
+                CodeRXComponentType.Base => "B",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given SchoolType enum value into its HL7 equivalent code.
+        /// Converts the given CodeSchoolType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(SchoolType input)
+        public string EnumToCode(CodeSchoolType input)
         {
             return input switch
             {
-                SchoolType.Dental => "D",
-                SchoolType.Graduate => "G",
-                SchoolType.Medical => "M",
-                SchoolType.Undergraduate => "U",
+                CodeSchoolType.Dental => "D",
+                CodeSchoolType.Graduate => "G",
+                CodeSchoolType.Medical => "M",
+                CodeSchoolType.Undergraduate => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given SegmentActionCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeSegmentActionCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(SegmentActionCode input)
+        public string EnumToCode(CodeSegmentActionCode input)
         {
             return input switch
             {
-                SegmentActionCode.AddInsert => "A",
-                SegmentActionCode.Delete => "D",
-                SegmentActionCode.Update => "U",
+                CodeSegmentActionCode.AddInsert => "A",
+                CodeSegmentActionCode.Delete => "D",
+                CodeSegmentActionCode.Update => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given SegmentGroup enum value into its HL7 equivalent code.
+        /// Converts the given CodeSegmentGroup enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(SegmentGroup input)
+        public string EnumToCode(CodeSegmentGroup input)
         {
             return input switch
             {
-                SegmentGroup.ObrGroup => "OBRG",
-                SegmentGroup.OrcGroup => "ORCG",
-                SegmentGroup.PidGroup => "PIDG",
-                SegmentGroup.RxaGroup => "RXAG",
-                SegmentGroup.RxdGroup => "RXDG",
-                SegmentGroup.RxeGroup => "RXEG",
-                SegmentGroup.RxoGroup => "RXOG",
-                SegmentGroup.Etc => "etc",
+                CodeSegmentGroup.ObrGroup => "OBRG",
+                CodeSegmentGroup.OrcGroup => "ORCG",
+                CodeSegmentGroup.PidGroup => "PIDG",
+                CodeSegmentGroup.RxaGroup => "RXAG",
+                CodeSegmentGroup.RxdGroup => "RXDG",
+                CodeSegmentGroup.RxeGroup => "RXEG",
+                CodeSegmentGroup.RxoGroup => "RXOG",
+                CodeSegmentGroup.Etc => "etc",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given SensitivityToCausativeAgentCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeSensitivityToCausativeAgentCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(SensitivityToCausativeAgentCode input)
+        public string EnumToCode(CodeSensitivityToCausativeAgentCode input)
         {
             return input switch
             {
-                SensitivityToCausativeAgentCode.AdverseReaction => "AD",
-                SensitivityToCausativeAgentCode.Allergy => "AL",
-                SensitivityToCausativeAgentCode.Contraindication => "CT",
-                SensitivityToCausativeAgentCode.Intolerance => "IN",
+                CodeSensitivityToCausativeAgentCode.AdverseReaction => "AD",
+                CodeSensitivityToCausativeAgentCode.Allergy => "AL",
+                CodeSensitivityToCausativeAgentCode.Contraindication => "CT",
+                CodeSensitivityToCausativeAgentCode.Intolerance => "IN",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given Sequencing enum value into its HL7 equivalent code.
+        /// Converts the given CodeSequencing enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(Sequencing input)
+        public string EnumToCode(CodeSequencing input)
         {
             return input switch
             {
-                Sequencing.Ascending => "A",
-                Sequencing.AscendingCaseInsensitive => "AN",
-                Sequencing.Descending => "D",
-                Sequencing.DescendingCaseInsensitive => "DN",
-                Sequencing.None => "N",
+                CodeSequencing.Ascending => "A",
+                CodeSequencing.AscendingCaseInsensitive => "AN",
+                CodeSequencing.Descending => "D",
+                CodeSequencing.DescendingCaseInsensitive => "DN",
+                CodeSequencing.None => "N",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given SeverityOfIllnessCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeSeverityOfIllnessCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(SeverityOfIllnessCode input)
+        public string EnumToCode(CodeSeverityOfIllnessCode input)
         {
             return input switch
             {
-                SeverityOfIllnessCode.Mild => "MI",
-                SeverityOfIllnessCode.Moderate => "MO",
-                SeverityOfIllnessCode.Severe => "SE",
+                CodeSeverityOfIllnessCode.Mild => "MI",
+                CodeSeverityOfIllnessCode.Moderate => "MO",
+                CodeSeverityOfIllnessCode.Severe => "SE",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given SourceOfComment enum value into its HL7 equivalent code.
+        /// Converts the given CodeSourceOfComment enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(SourceOfComment input)
+        public string EnumToCode(CodeSourceOfComment input)
         {
             return input switch
             {
-                SourceOfComment.AncillaryDepartmentIsSourceOfComment => "L",
-                SourceOfComment.OtherSystemIsSourceOfComment => "O",
-                SourceOfComment.OrdererIsSourceOfComment => "P",
+                CodeSourceOfComment.AncillaryDepartmentIsSourceOfComment => "L",
+                CodeSourceOfComment.OtherSystemIsSourceOfComment => "O",
+                CodeSourceOfComment.OrdererIsSourceOfComment => "P",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given SourceType enum value into its HL7 equivalent code.
+        /// Converts the given CodeSourceType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(SourceType input)
+        public string EnumToCode(CodeSourceType input)
         {
             return input switch
             {
-                SourceType.Accept => "A",
-                SourceType.Initiate => "I",
+                CodeSourceType.Accept => "A",
+                CodeSourceType.Initiate => "I",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given SpecialHandlingCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeSpecialHandlingCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(SpecialHandlingCode input)
+        public string EnumToCode(CodeSpecialHandlingCode input)
         {
             return input switch
             {
-                SpecialHandlingCode.BodyTemperature => "C37",
-                SpecialHandlingCode.CriticalAmbientTemperature => "CAMB",
-                SpecialHandlingCode.ProtectFromAir => "CATM",
-                SpecialHandlingCode.CriticalFrozenTemperature => "CFRZ",
-                SpecialHandlingCode.CriticalRefrigeratedTemperature => "CREF",
-                SpecialHandlingCode.ProtectFromLight => "PRTL",
+                CodeSpecialHandlingCode.BodyTemperature => "C37",
+                CodeSpecialHandlingCode.CriticalAmbientTemperature => "CAMB",
+                CodeSpecialHandlingCode.ProtectFromAir => "CATM",
+                CodeSpecialHandlingCode.CriticalFrozenTemperature => "CFRZ",
+                CodeSpecialHandlingCode.CriticalRefrigeratedTemperature => "CREF",
+                CodeSpecialHandlingCode.ProtectFromLight => "PRTL",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given SpecialtyType enum value into its HL7 equivalent code.
+        /// Converts the given CodeSpecialtyType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(SpecialtyType input)
+        public string EnumToCode(CodeSpecialtyType input)
         {
             return input switch
             {
-                SpecialtyType.Allergy => "ALC",
-                SpecialtyType.Ambulatory => "AMB",
-                SpecialtyType.Cancer => "CAN",
-                SpecialtyType.CoronaryCardiacCare => "CAR",
-                SpecialtyType.CriticalCare => "CCR",
-                SpecialtyType.Chiropractic => "CHI",
-                SpecialtyType.Education => "EDI",
-                SpecialtyType.Emergency => "EMR",
-                SpecialtyType.FamilyPlanning => "FPC",
-                SpecialtyType.IntensiveCare => "INT",
-                SpecialtyType.Isolation => "ISO",
-                SpecialtyType.Naturopathic => "NAT",
-                SpecialtyType.NewbornNurseryInfants => "NBI",
-                SpecialtyType.ObstetricsGynecology => "OBG",
-                SpecialtyType.Observation => "OBS",
-                SpecialtyType.OtherSpecialty => "OTH",
-                SpecialtyType.Pediatrics => "PED",
-                SpecialtyType.GeneralFamilyPractice => "PHY",
-                SpecialtyType.PediatricNeonatalIntensiveCare => "PIN",
-                SpecialtyType.PediatricPsychiatric => "PPS",
-                SpecialtyType.PediatricRehabilitation => "PRE",
-                SpecialtyType.PsychiatricIntensiveCare => "PSI",
-                SpecialtyType.Psychiatric => "PSY",
-                SpecialtyType.Rehabilitation => "REH",
-                SpecialtyType.Surgery => "SUR",
-                SpecialtyType.WalkInClinic => "WIC",
+                CodeSpecialtyType.Allergy => "ALC",
+                CodeSpecialtyType.Ambulatory => "AMB",
+                CodeSpecialtyType.Cancer => "CAN",
+                CodeSpecialtyType.CoronaryCardiacCare => "CAR",
+                CodeSpecialtyType.CriticalCare => "CCR",
+                CodeSpecialtyType.Chiropractic => "CHI",
+                CodeSpecialtyType.Education => "EDI",
+                CodeSpecialtyType.Emergency => "EMR",
+                CodeSpecialtyType.FamilyPlanning => "FPC",
+                CodeSpecialtyType.IntensiveCare => "INT",
+                CodeSpecialtyType.Isolation => "ISO",
+                CodeSpecialtyType.Naturopathic => "NAT",
+                CodeSpecialtyType.NewbornNurseryInfants => "NBI",
+                CodeSpecialtyType.ObstetricsGynecology => "OBG",
+                CodeSpecialtyType.Observation => "OBS",
+                CodeSpecialtyType.OtherSpecialty => "OTH",
+                CodeSpecialtyType.Pediatrics => "PED",
+                CodeSpecialtyType.GeneralFamilyPractice => "PHY",
+                CodeSpecialtyType.PediatricNeonatalIntensiveCare => "PIN",
+                CodeSpecialtyType.PediatricPsychiatric => "PPS",
+                CodeSpecialtyType.PediatricRehabilitation => "PRE",
+                CodeSpecialtyType.PsychiatricIntensiveCare => "PSI",
+                CodeSpecialtyType.Psychiatric => "PSY",
+                CodeSpecialtyType.Rehabilitation => "REH",
+                CodeSpecialtyType.Surgery => "SUR",
+                CodeSpecialtyType.WalkInClinic => "WIC",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given SpecimenActionCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeSpecimenActionCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(SpecimenActionCode input)
+        public string EnumToCode(CodeSpecimenActionCode input)
         {
             return input switch
             {
-                SpecimenActionCode.AddOrderedTestsToExistingSpecimen => "A",
-                SpecimenActionCode.GeneratedOrderReflexOrder => "G",
-                SpecimenActionCode.LabToObtainSpecimenFromPatient => "L",
-                SpecimenActionCode.SpecimenObtainedByServiceOtherThanLab => "O",
-                SpecimenActionCode.PendingSpecimenOrderSentPriorToDelivery => "P",
-                SpecimenActionCode.RevisedOrder => "R",
-                SpecimenActionCode.ScheduleTheTestsSpecifiedBelow => "S",
+                CodeSpecimenActionCode.AddOrderedTestsToExistingSpecimen => "A",
+                CodeSpecimenActionCode.GeneratedOrderReflexOrder => "G",
+                CodeSpecimenActionCode.LabToObtainSpecimenFromPatient => "L",
+                CodeSpecimenActionCode.SpecimenObtainedByServiceOtherThanLab => "O",
+                CodeSpecimenActionCode.PendingSpecimenOrderSentPriorToDelivery => "P",
+                CodeSpecimenActionCode.RevisedOrder => "R",
+                CodeSpecimenActionCode.ScheduleTheTestsSpecifiedBelow => "S",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given SpecimenComponent enum value into its HL7 equivalent code.
+        /// Converts the given CodeSpecimenComponent enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(SpecimenComponent input)
+        public string EnumToCode(CodeSpecimenComponent input)
         {
             return input switch
             {
-                SpecimenComponent.WholeBloodHomogeneous => "BLD",
-                SpecimenComponent.WholeBloodSeparated => "BSEP",
-                SpecimenComponent.Plasma => "PLAS",
-                SpecimenComponent.PlateletPoorPlasma => "PPP",
-                SpecimenComponent.PlateletRichPlasma => "PRP",
-                SpecimenComponent.Sediment => "SED",
-                SpecimenComponent.SerumNosNotOtherwiseSpecified => "SER",
-                SpecimenComponent.Supernatant => "SUP",
+                CodeSpecimenComponent.WholeBloodHomogeneous => "BLD",
+                CodeSpecimenComponent.WholeBloodSeparated => "BSEP",
+                CodeSpecimenComponent.Plasma => "PLAS",
+                CodeSpecimenComponent.PlateletPoorPlasma => "PPP",
+                CodeSpecimenComponent.PlateletRichPlasma => "PRP",
+                CodeSpecimenComponent.Sediment => "SED",
+                CodeSpecimenComponent.SerumNosNotOtherwiseSpecified => "SER",
+                CodeSpecimenComponent.Supernatant => "SUP",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given SpecimenRole enum value into its HL7 equivalent code.
+        /// Converts the given CodeSpecimenRole enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(SpecimenRole input)
+        public string EnumToCode(CodeSpecimenRole input)
         {
             return input switch
             {
-                SpecimenRole.BlindSample => "B",
-                SpecimenRole.Calibrator => "C",
-                SpecimenRole.Patient => "P",
-                SpecimenRole.ControlSpecimen => "Q",
-                SpecimenRole.Replicate => "R",
+                CodeSpecimenRole.BlindSample => "B",
+                CodeSpecimenRole.Calibrator => "C",
+                CodeSpecimenRole.Patient => "P",
+                CodeSpecimenRole.ControlSpecimen => "Q",
+                CodeSpecimenRole.Replicate => "R",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given SpecimenSourceCodes enum value into its HL7 equivalent code.
+        /// Converts the given CodeSpecimenSourceCodes enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(SpecimenSourceCodes input)
+        public string EnumToCode(CodeSpecimenSourceCodes input)
         {
             return input switch
             {
-                SpecimenSourceCodes.Abscess => "ABS",
-                SpecimenSourceCodes.AmnioticFluid => "AMN",
-                SpecimenSourceCodes.Aspirate => "ASP",
-                SpecimenSourceCodes.BloodBag => "BBL",
-                SpecimenSourceCodes.WholeBody => "BDY",
-                SpecimenSourceCodes.BileFluid => "BIFL",
-                SpecimenSourceCodes.WholeBlood => "BLD",
-                SpecimenSourceCodes.BloodArterial => "BLDA",
-                SpecimenSourceCodes.BloodCapillary => "BLDC",
-                SpecimenSourceCodes.CordBlood => "BLDCO",
-                SpecimenSourceCodes.BloodVenous => "BLDV",
-                SpecimenSourceCodes.Bone => "BON",
-                SpecimenSourceCodes.Basophils => "BPH",
-                SpecimenSourceCodes.BloodProductUnit => "BPU",
-                SpecimenSourceCodes.Burn => "BRN",
-                SpecimenSourceCodes.Bronchial => "BRO",
-                SpecimenSourceCodes.Breath => "BRTH",
-                SpecimenSourceCodes.Calculus => "CALC",
-                SpecimenSourceCodes.CordBloodCbld => "CBLD",
-                SpecimenSourceCodes.CardiacMuscle => "CDM",
-                SpecimenSourceCodes.Conjunctiva => "CNJT",
-                SpecimenSourceCodes.Cannula => "CNL",
-                SpecimenSourceCodes.Colostrum => "COL",
-                SpecimenSourceCodes.CerebralSpinalFluid => "CSF",
-                SpecimenSourceCodes.CatheterTip => "CTP",
-                SpecimenSourceCodes.Curettage => "CUR",
-                SpecimenSourceCodes.CervicalMucus => "CVM",
-                SpecimenSourceCodes.Cervix => "CVX",
-                SpecimenSourceCodes.Cyst => "CYST",
-                SpecimenSourceCodes.DialysisFluid => "DIAF",
-                SpecimenSourceCodes.DoseMedOrSubstance => "DOSE",
-                SpecimenSourceCodes.Drain => "DRN",
-                SpecimenSourceCodes.DuodenalFluid => "DUFL",
-                SpecimenSourceCodes.Ear => "EAR",
-                SpecimenSourceCodes.EarWax => "EARW",
-                SpecimenSourceCodes.Electrode => "ELT",
-                SpecimenSourceCodes.Endocardium => "ENDC",
-                SpecimenSourceCodes.Endometrium => "ENDM",
-                SpecimenSourceCodes.Eosinophils => "EOS",
-                SpecimenSourceCodes.ExhaledGas => "EXG",
-                SpecimenSourceCodes.ExhaledGasExhld => "EXHLD",
-                SpecimenSourceCodes.Eye => "EYE",
-                SpecimenSourceCodes.Fibroblasts => "FIB",
-                SpecimenSourceCodes.Fistula => "FIST",
-                SpecimenSourceCodes.Filter => "FLT",
-                SpecimenSourceCodes.BodyFluidUnsp => "FLU",
-                SpecimenSourceCodes.Gas => "GAS",
-                SpecimenSourceCodes.GastricFluidContents => "GAST",
-                SpecimenSourceCodes.Genital => "GEN",
-                SpecimenSourceCodes.GenitalCervix => "GENC",
-                SpecimenSourceCodes.GenitalLochia => "GENL",
-                SpecimenSourceCodes.GenitalVaginal => "GENV",
-                SpecimenSourceCodes.Hair => "HAR",
-                SpecimenSourceCodes.InhaledGas => "IHG",
-                SpecimenSourceCodes.Isolate => "ISLT",
-                SpecimenSourceCodes.IntubationTube => "IT",
-                SpecimenSourceCodes.Lamella => "LAM",
-                SpecimenSourceCodes.LiquidNos => "LIQ",
-                SpecimenSourceCodes.Line => "LN",
-                SpecimenSourceCodes.LineArterial => "LNA",
-                SpecimenSourceCodes.LineVenous => "LNV",
-                SpecimenSourceCodes.Lymphocytes => "LYM",
-                SpecimenSourceCodes.Macrophages => "MAC",
-                SpecimenSourceCodes.Marrow => "MAR",
-                SpecimenSourceCodes.MenstrualBlood => "MBLD",
-                SpecimenSourceCodes.Meconium => "MEC",
-                SpecimenSourceCodes.BreastMilk => "MILK",
-                SpecimenSourceCodes.Milk => "MLK",
-                SpecimenSourceCodes.Nail => "NAIL",
-                SpecimenSourceCodes.Nose => "NOS",
-                SpecimenSourceCodes.Other => "ORH",
-                SpecimenSourceCodes.PancreaticFluid => "PAFL",
-                SpecimenSourceCodes.Patient => "PAT",
-                SpecimenSourceCodes.Plasma => "PLAS",
-                SpecimenSourceCodes.PlasmaBag => "PLB",
-                SpecimenSourceCodes.Placenta => "PLC",
-                SpecimenSourceCodes.PleuralFluid => "PLR",
-                SpecimenSourceCodes.PolymorphonuclearNeutrophils => "PMN",
-                SpecimenSourceCodes.PlateletPoorPlasma => "PPP",
-                SpecimenSourceCodes.PlateletRichPlasma => "PRP",
-                SpecimenSourceCodes.PeritonealFluidAscites => "PRT",
-                SpecimenSourceCodes.Pus => "PUS",
-                SpecimenSourceCodes.Erythrocytes => "RBC",
-                SpecimenSourceCodes.RouteOfMedicine => "RT",
-                SpecimenSourceCodes.Saliva => "SAL",
-                SpecimenSourceCodes.SeminalFluidSem => "SEM",
-                SpecimenSourceCodes.Serum => "SER",
-                SpecimenSourceCodes.SkeletalMuscle => "SKM",
-                SpecimenSourceCodes.Skin => "SKN",
-                SpecimenSourceCodes.SeminalFluid => "SMN",
-                SpecimenSourceCodes.SynovialFluid => "SNV",
-                SpecimenSourceCodes.Spermatozoa => "SPRM",
-                SpecimenSourceCodes.Sputum => "SPT",
-                SpecimenSourceCodes.SputumCoughed => "SPTC",
-                SpecimenSourceCodes.SputumTrachealAspirate => "SPTT",
-                SpecimenSourceCodes.StoolFecal => "STL",
-                SpecimenSourceCodes.Stone => "STON",
-                SpecimenSourceCodes.Sweat => "SWT",
-                SpecimenSourceCodes.Tears => "TEAR",
-                SpecimenSourceCodes.Thrombocyte => "THRB",
-                SpecimenSourceCodes.Throat => "THRT",
-                SpecimenSourceCodes.TissueGallBladder => "TISG",
-                SpecimenSourceCodes.TissuePlacenta => "TISPL",
-                SpecimenSourceCodes.Tissue => "TISS",
-                SpecimenSourceCodes.TissueUlcer => "TISU",
-                SpecimenSourceCodes.TissueLargeIntestine => "TLGI",
-                SpecimenSourceCodes.TissueLung => "TLNG",
-                SpecimenSourceCodes.TissueSmallIntestine => "TSMI",
-                SpecimenSourceCodes.TubeNos => "TUB",
-                SpecimenSourceCodes.Ulcer => "ULC",
-                SpecimenSourceCodes.UmbilicalBlood => "UMB",
-                SpecimenSourceCodes.UnknownMedicine => "UMED",
-                SpecimenSourceCodes.Urine => "UR",
-                SpecimenSourceCodes.UrineCleanCatch => "URC",
-                SpecimenSourceCodes.UrineSediment => "URNS",
-                SpecimenSourceCodes.UrineCatheter => "URT",
-                SpecimenSourceCodes.Urethra => "URTH",
-                SpecimenSourceCodes.UnknownSubstance => "USUB",
-                SpecimenSourceCodes.VitreousFluid => "VITF",
-                SpecimenSourceCodes.Vomitus => "VOM",
-                SpecimenSourceCodes.Water => "WAT",
-                SpecimenSourceCodes.Leukocytes => "WBC",
-                SpecimenSourceCodes.Wick => "WICK",
-                SpecimenSourceCodes.Wound => "WND",
-                SpecimenSourceCodes.WoundAbscess => "WNDA",
-                SpecimenSourceCodes.WoundDrainage => "WNDD",
-                SpecimenSourceCodes.WoundExudate => "WNDE",
-                SpecimenSourceCodes.ToBeSpecifiedInAnotherPartOfMessage => "XXX",
+                CodeSpecimenSourceCodes.Abscess => "ABS",
+                CodeSpecimenSourceCodes.AmnioticFluid => "AMN",
+                CodeSpecimenSourceCodes.Aspirate => "ASP",
+                CodeSpecimenSourceCodes.BloodBag => "BBL",
+                CodeSpecimenSourceCodes.WholeBody => "BDY",
+                CodeSpecimenSourceCodes.BileFluid => "BIFL",
+                CodeSpecimenSourceCodes.WholeBlood => "BLD",
+                CodeSpecimenSourceCodes.BloodArterial => "BLDA",
+                CodeSpecimenSourceCodes.BloodCapillary => "BLDC",
+                CodeSpecimenSourceCodes.CordBlood => "BLDCO",
+                CodeSpecimenSourceCodes.BloodVenous => "BLDV",
+                CodeSpecimenSourceCodes.Bone => "BON",
+                CodeSpecimenSourceCodes.Basophils => "BPH",
+                CodeSpecimenSourceCodes.BloodProductUnit => "BPU",
+                CodeSpecimenSourceCodes.Burn => "BRN",
+                CodeSpecimenSourceCodes.Bronchial => "BRO",
+                CodeSpecimenSourceCodes.Breath => "BRTH",
+                CodeSpecimenSourceCodes.Calculus => "CALC",
+                CodeSpecimenSourceCodes.CordBloodCbld => "CBLD",
+                CodeSpecimenSourceCodes.CardiacMuscle => "CDM",
+                CodeSpecimenSourceCodes.Conjunctiva => "CNJT",
+                CodeSpecimenSourceCodes.Cannula => "CNL",
+                CodeSpecimenSourceCodes.Colostrum => "COL",
+                CodeSpecimenSourceCodes.CerebralSpinalFluid => "CSF",
+                CodeSpecimenSourceCodes.CatheterTip => "CTP",
+                CodeSpecimenSourceCodes.Curettage => "CUR",
+                CodeSpecimenSourceCodes.CervicalMucus => "CVM",
+                CodeSpecimenSourceCodes.Cervix => "CVX",
+                CodeSpecimenSourceCodes.Cyst => "CYST",
+                CodeSpecimenSourceCodes.DialysisFluid => "DIAF",
+                CodeSpecimenSourceCodes.DoseMedOrSubstance => "DOSE",
+                CodeSpecimenSourceCodes.Drain => "DRN",
+                CodeSpecimenSourceCodes.DuodenalFluid => "DUFL",
+                CodeSpecimenSourceCodes.Ear => "EAR",
+                CodeSpecimenSourceCodes.EarWax => "EARW",
+                CodeSpecimenSourceCodes.Electrode => "ELT",
+                CodeSpecimenSourceCodes.Endocardium => "ENDC",
+                CodeSpecimenSourceCodes.Endometrium => "ENDM",
+                CodeSpecimenSourceCodes.Eosinophils => "EOS",
+                CodeSpecimenSourceCodes.ExhaledGas => "EXG",
+                CodeSpecimenSourceCodes.ExhaledGasExhld => "EXHLD",
+                CodeSpecimenSourceCodes.Eye => "EYE",
+                CodeSpecimenSourceCodes.Fibroblasts => "FIB",
+                CodeSpecimenSourceCodes.Fistula => "FIST",
+                CodeSpecimenSourceCodes.Filter => "FLT",
+                CodeSpecimenSourceCodes.BodyFluidUnsp => "FLU",
+                CodeSpecimenSourceCodes.Gas => "GAS",
+                CodeSpecimenSourceCodes.GastricFluidContents => "GAST",
+                CodeSpecimenSourceCodes.Genital => "GEN",
+                CodeSpecimenSourceCodes.GenitalCervix => "GENC",
+                CodeSpecimenSourceCodes.GenitalLochia => "GENL",
+                CodeSpecimenSourceCodes.GenitalVaginal => "GENV",
+                CodeSpecimenSourceCodes.Hair => "HAR",
+                CodeSpecimenSourceCodes.InhaledGas => "IHG",
+                CodeSpecimenSourceCodes.Isolate => "ISLT",
+                CodeSpecimenSourceCodes.IntubationTube => "IT",
+                CodeSpecimenSourceCodes.Lamella => "LAM",
+                CodeSpecimenSourceCodes.LiquidNos => "LIQ",
+                CodeSpecimenSourceCodes.Line => "LN",
+                CodeSpecimenSourceCodes.LineArterial => "LNA",
+                CodeSpecimenSourceCodes.LineVenous => "LNV",
+                CodeSpecimenSourceCodes.Lymphocytes => "LYM",
+                CodeSpecimenSourceCodes.Macrophages => "MAC",
+                CodeSpecimenSourceCodes.Marrow => "MAR",
+                CodeSpecimenSourceCodes.MenstrualBlood => "MBLD",
+                CodeSpecimenSourceCodes.Meconium => "MEC",
+                CodeSpecimenSourceCodes.BreastMilk => "MILK",
+                CodeSpecimenSourceCodes.Milk => "MLK",
+                CodeSpecimenSourceCodes.Nail => "NAIL",
+                CodeSpecimenSourceCodes.Nose => "NOS",
+                CodeSpecimenSourceCodes.Other => "ORH",
+                CodeSpecimenSourceCodes.PancreaticFluid => "PAFL",
+                CodeSpecimenSourceCodes.Patient => "PAT",
+                CodeSpecimenSourceCodes.Plasma => "PLAS",
+                CodeSpecimenSourceCodes.PlasmaBag => "PLB",
+                CodeSpecimenSourceCodes.Placenta => "PLC",
+                CodeSpecimenSourceCodes.PleuralFluid => "PLR",
+                CodeSpecimenSourceCodes.PolymorphonuclearNeutrophils => "PMN",
+                CodeSpecimenSourceCodes.PlateletPoorPlasma => "PPP",
+                CodeSpecimenSourceCodes.PlateletRichPlasma => "PRP",
+                CodeSpecimenSourceCodes.PeritonealFluidAscites => "PRT",
+                CodeSpecimenSourceCodes.Pus => "PUS",
+                CodeSpecimenSourceCodes.Erythrocytes => "RBC",
+                CodeSpecimenSourceCodes.RouteOfMedicine => "RT",
+                CodeSpecimenSourceCodes.Saliva => "SAL",
+                CodeSpecimenSourceCodes.SeminalFluidSem => "SEM",
+                CodeSpecimenSourceCodes.Serum => "SER",
+                CodeSpecimenSourceCodes.SkeletalMuscle => "SKM",
+                CodeSpecimenSourceCodes.Skin => "SKN",
+                CodeSpecimenSourceCodes.SeminalFluid => "SMN",
+                CodeSpecimenSourceCodes.SynovialFluid => "SNV",
+                CodeSpecimenSourceCodes.Spermatozoa => "SPRM",
+                CodeSpecimenSourceCodes.Sputum => "SPT",
+                CodeSpecimenSourceCodes.SputumCoughed => "SPTC",
+                CodeSpecimenSourceCodes.SputumTrachealAspirate => "SPTT",
+                CodeSpecimenSourceCodes.StoolFecal => "STL",
+                CodeSpecimenSourceCodes.Stone => "STON",
+                CodeSpecimenSourceCodes.Sweat => "SWT",
+                CodeSpecimenSourceCodes.Tears => "TEAR",
+                CodeSpecimenSourceCodes.Thrombocyte => "THRB",
+                CodeSpecimenSourceCodes.Throat => "THRT",
+                CodeSpecimenSourceCodes.TissueGallBladder => "TISG",
+                CodeSpecimenSourceCodes.TissuePlacenta => "TISPL",
+                CodeSpecimenSourceCodes.Tissue => "TISS",
+                CodeSpecimenSourceCodes.TissueUlcer => "TISU",
+                CodeSpecimenSourceCodes.TissueLargeIntestine => "TLGI",
+                CodeSpecimenSourceCodes.TissueLung => "TLNG",
+                CodeSpecimenSourceCodes.TissueSmallIntestine => "TSMI",
+                CodeSpecimenSourceCodes.TubeNos => "TUB",
+                CodeSpecimenSourceCodes.Ulcer => "ULC",
+                CodeSpecimenSourceCodes.UmbilicalBlood => "UMB",
+                CodeSpecimenSourceCodes.UnknownMedicine => "UMED",
+                CodeSpecimenSourceCodes.Urine => "UR",
+                CodeSpecimenSourceCodes.UrineCleanCatch => "URC",
+                CodeSpecimenSourceCodes.UrineSediment => "URNS",
+                CodeSpecimenSourceCodes.UrineCatheter => "URT",
+                CodeSpecimenSourceCodes.Urethra => "URTH",
+                CodeSpecimenSourceCodes.UnknownSubstance => "USUB",
+                CodeSpecimenSourceCodes.VitreousFluid => "VITF",
+                CodeSpecimenSourceCodes.Vomitus => "VOM",
+                CodeSpecimenSourceCodes.Water => "WAT",
+                CodeSpecimenSourceCodes.Leukocytes => "WBC",
+                CodeSpecimenSourceCodes.Wick => "WICK",
+                CodeSpecimenSourceCodes.Wound => "WND",
+                CodeSpecimenSourceCodes.WoundAbscess => "WNDA",
+                CodeSpecimenSourceCodes.WoundDrainage => "WNDD",
+                CodeSpecimenSourceCodes.WoundExudate => "WNDE",
+                CodeSpecimenSourceCodes.ToBeSpecifiedInAnotherPartOfMessage => "XXX",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given StatusOfEvaluation enum value into its HL7 equivalent code.
+        /// Converts the given CodeStatusOfEvaluation enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(StatusOfEvaluation input)
+        public string EnumToCode(CodeStatusOfEvaluation input)
         {
             return input switch
             {
-                StatusOfEvaluation.EvaluationAnticipatedNotYetBegun => "A",
-                StatusOfEvaluation.ProductReceivedInConditionWhichMadeAnalysisImpossible => "C",
-                StatusOfEvaluation.ProductDiscardedNoFollowUp => "D",
-                StatusOfEvaluation.ProductRemainsImplantedNoFollowUp => "I",
-                StatusOfEvaluation.ProblemAlreadyKnownNoEvaluation => "K",
-                StatusOfEvaluation.Other => "O",
-                StatusOfEvaluation.EvaluationInProgress => "P",
-                StatusOfEvaluation.ProductUnderQuarantineNoFollowUp => "Q",
-                StatusOfEvaluation.ProductUnderRecall => "R",
-                StatusOfEvaluation.ProductUnavailableForFollowUp => "U",
-                StatusOfEvaluation.ProductNotMadeByCompany => "X",
-                StatusOfEvaluation.EvaluationCompleted => "Y",
+                CodeStatusOfEvaluation.EvaluationAnticipatedNotYetBegun => "A",
+                CodeStatusOfEvaluation.ProductReceivedInConditionWhichMadeAnalysisImpossible => "C",
+                CodeStatusOfEvaluation.ProductDiscardedNoFollowUp => "D",
+                CodeStatusOfEvaluation.ProductRemainsImplantedNoFollowUp => "I",
+                CodeStatusOfEvaluation.ProblemAlreadyKnownNoEvaluation => "K",
+                CodeStatusOfEvaluation.Other => "O",
+                CodeStatusOfEvaluation.EvaluationInProgress => "P",
+                CodeStatusOfEvaluation.ProductUnderQuarantineNoFollowUp => "Q",
+                CodeStatusOfEvaluation.ProductUnderRecall => "R",
+                CodeStatusOfEvaluation.ProductUnavailableForFollowUp => "U",
+                CodeStatusOfEvaluation.ProductNotMadeByCompany => "X",
+                CodeStatusOfEvaluation.EvaluationCompleted => "Y",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given StudentStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeStudentStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(StudentStatus input)
+        public string EnumToCode(CodeStudentStatus input)
         {
             return input switch
             {
-                StudentStatus.FullTimeStudent => "F",
-                StudentStatus.NotAStudent => "N",
-                StudentStatus.PartTimeStudent => "P",
+                CodeStudentStatus.FullTimeStudent => "F",
+                CodeStudentStatus.NotAStudent => "N",
+                CodeStudentStatus.PartTimeStudent => "P",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given SubstanceStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeSubstanceStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(SubstanceStatus input)
+        public string EnumToCode(CodeSubstanceStatus input)
         {
             return input switch
             {
-                SubstanceStatus.CalibrationError => "CE",
-                SubstanceStatus.CalibrationWarning => "CW",
-                SubstanceStatus.ExpiredError => "EE",
-                SubstanceStatus.ExpiredWarning => "EW",
-                SubstanceStatus.NotAvailableError => "NE",
-                SubstanceStatus.NotAvailableWarning => "NW",
-                SubstanceStatus.OtherError => "OE",
-                SubstanceStatus.OkStatus => "OK",
-                SubstanceStatus.OtherWarning => "OW",
-                SubstanceStatus.QcError => "QE",
-                SubstanceStatus.QcWarning => "QW",
+                CodeSubstanceStatus.CalibrationError => "CE",
+                CodeSubstanceStatus.CalibrationWarning => "CW",
+                CodeSubstanceStatus.ExpiredError => "EE",
+                CodeSubstanceStatus.ExpiredWarning => "EW",
+                CodeSubstanceStatus.NotAvailableError => "NE",
+                CodeSubstanceStatus.NotAvailableWarning => "NW",
+                CodeSubstanceStatus.OtherError => "OE",
+                CodeSubstanceStatus.OkStatus => "OK",
+                CodeSubstanceStatus.OtherWarning => "OW",
+                CodeSubstanceStatus.QcError => "QE",
+                CodeSubstanceStatus.QcWarning => "QW",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given SubstanceType enum value into its HL7 equivalent code.
+        /// Converts the given CodeSubstanceType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(SubstanceType input)
+        public string EnumToCode(CodeSubstanceType input)
         {
             return input switch
             {
-                SubstanceType.ControlReagent => "CO",
-                SubstanceType.Diluent => "DI",
-                SubstanceType.MeasurableLiquidItem => "LI",
-                SubstanceType.LiquidWaste => "LW",
-                SubstanceType.MultipleTestReagent => "MR",
-                SubstanceType.Other => "OT",
-                SubstanceType.Pretreatment => "PT",
-                SubstanceType.PurifiedWater => "PW",
-                SubstanceType.ReagentCalibrator => "RC",
-                SubstanceType.CountableSolidItem => "SC",
-                SubstanceType.SingleTestReagent => "SR",
-                SubstanceType.SolidWaste => "SW",
+                CodeSubstanceType.ControlReagent => "CO",
+                CodeSubstanceType.Diluent => "DI",
+                CodeSubstanceType.MeasurableLiquidItem => "LI",
+                CodeSubstanceType.LiquidWaste => "LW",
+                CodeSubstanceType.MultipleTestReagent => "MR",
+                CodeSubstanceType.Other => "OT",
+                CodeSubstanceType.Pretreatment => "PT",
+                CodeSubstanceType.PurifiedWater => "PW",
+                CodeSubstanceType.ReagentCalibrator => "RC",
+                CodeSubstanceType.CountableSolidItem => "SC",
+                CodeSubstanceType.SingleTestReagent => "SR",
+                CodeSubstanceType.SolidWaste => "SW",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given SubstitutionStatus enum value into its HL7 equivalent code.
+        /// Converts the given CodeSubstitutionStatus enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(SubstitutionStatus input)
+        public string EnumToCode(CodeSubstitutionStatus input)
         {
             return input switch
             {
-                SubstitutionStatus.NoProductSelectionIndicated => "0",
-                SubstitutionStatus.SubstitutionNotAllowedByPrescriber => "1",
-                SubstitutionStatus.SubstitutionAllowedPatientRequested => "2",
-                SubstitutionStatus.SubstitutionAllowedPharmacistSelected => "3",
-                SubstitutionStatus.SubstitutionAllowedGenericDrugNotInStock => "4",
-                SubstitutionStatus.SubstitutionAllowedDispensedAsGeneric => "5",
-                SubstitutionStatus.SubstitutionNotAllowedBrandMandatedByLaw => "7",
-                SubstitutionStatus.SubstitutionAllowedGenericNotAvailable => "8",
-                SubstitutionStatus.AGenericSubstitutionWasDispensed => "G",
-                SubstitutionStatus.NoSubstituteWasDispensed => "N",
-                SubstitutionStatus.TherapeuticSubstitutionWasDispensed => "T",
+                CodeSubstitutionStatus.NoProductSelectionIndicated => "0",
+                CodeSubstitutionStatus.SubstitutionNotAllowedByPrescriber => "1",
+                CodeSubstitutionStatus.SubstitutionAllowedPatientRequested => "2",
+                CodeSubstitutionStatus.SubstitutionAllowedPharmacistSelected => "3",
+                CodeSubstitutionStatus.SubstitutionAllowedGenericDrugNotInStock => "4",
+                CodeSubstitutionStatus.SubstitutionAllowedDispensedAsGeneric => "5",
+                CodeSubstitutionStatus.SubstitutionNotAllowedBrandMandatedByLaw => "7",
+                CodeSubstitutionStatus.SubstitutionAllowedGenericNotAvailable => "8",
+                CodeSubstitutionStatus.AGenericSubstitutionWasDispensed => "G",
+                CodeSubstitutionStatus.NoSubstituteWasDispensed => "N",
+                CodeSubstitutionStatus.TherapeuticSubstitutionWasDispensed => "T",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given SubtypeOfReferencedData enum value into its HL7 equivalent code.
+        /// Converts the given CodeSubtypeOfReferencedData enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(SubtypeOfReferencedData input)
+        public string EnumToCode(CodeSubtypeOfReferencedData input)
         {
             return input switch
             {
-                SubtypeOfReferencedData.IsdnPcmAudioData => "BASIC",
-                SubtypeOfReferencedData.DigitalImagingAndCommunicationsInMedicine => "DICOM",
-                SubtypeOfReferencedData.FacsimileData => "FAX",
-                SubtypeOfReferencedData.GraphicsInterchangeFormat => "GIF",
-                SubtypeOfReferencedData.HypertextMarkupLanguage => "HTML",
-                SubtypeOfReferencedData.ElectronicInkDataJot10Standard => "JOT",
-                SubtypeOfReferencedData.JointPhotographicExpertsGroup => "JPEG",
-                SubtypeOfReferencedData.UninterpretedBinaryData => "Octet-stream",
-                SubtypeOfReferencedData.PictFormatImageData => "PICT",
-                SubtypeOfReferencedData.PostscriptProgram => "PostScript",
-                SubtypeOfReferencedData.RichTextFormat => "RTF",
-                SubtypeOfReferencedData.SgmlStandardGeneralizedMarkupLanguage => "SGML",
-                SubtypeOfReferencedData.TiffImageData => "TIFF",
-                SubtypeOfReferencedData.Hl7ClinicalDocumentArchitectureLevelOne => "x-hl7-cda-level-one",
-                SubtypeOfReferencedData.XmlExtensibleMarkupLanguage => "XML",
+                CodeSubtypeOfReferencedData.IsdnPcmAudioData => "BASIC",
+                CodeSubtypeOfReferencedData.DigitalImagingAndCommunicationsInMedicine => "DICOM",
+                CodeSubtypeOfReferencedData.FacsimileData => "FAX",
+                CodeSubtypeOfReferencedData.GraphicsInterchangeFormat => "GIF",
+                CodeSubtypeOfReferencedData.HypertextMarkupLanguage => "HTML",
+                CodeSubtypeOfReferencedData.ElectronicInkDataJot10Standard => "JOT",
+                CodeSubtypeOfReferencedData.JointPhotographicExpertsGroup => "JPEG",
+                CodeSubtypeOfReferencedData.UninterpretedBinaryData => "Octet-stream",
+                CodeSubtypeOfReferencedData.PictFormatImageData => "PICT",
+                CodeSubtypeOfReferencedData.PostscriptProgram => "PostScript",
+                CodeSubtypeOfReferencedData.RichTextFormat => "RTF",
+                CodeSubtypeOfReferencedData.SgmlStandardGeneralizedMarkupLanguage => "SGML",
+                CodeSubtypeOfReferencedData.TiffImageData => "TIFF",
+                CodeSubtypeOfReferencedData.Hl7ClinicalDocumentArchitectureLevelOne => "x-hl7-cda-level-one",
+                CodeSubtypeOfReferencedData.XmlExtensibleMarkupLanguage => "XML",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given SupplementalServiceInformationValues enum value into its HL7 equivalent code.
+        /// Converts the given CodeSupplementalServiceInformationValues enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(SupplementalServiceInformationValues input)
+        public string EnumToCode(CodeSupplementalServiceInformationValues input)
         {
             return input switch
             {
-                SupplementalServiceInformationValues.First => "1ST",
-                SupplementalServiceInformationValues.Second => "2ND",
-                SupplementalServiceInformationValues.Third => "3RD",
-                SupplementalServiceInformationValues.Fourth => "4TH",
-                SupplementalServiceInformationValues.Fifth => "5TH",
-                SupplementalServiceInformationValues.AnteriorPosterior => "A/P",
-                SupplementalServiceInformationValues.Anterior => "ANT",
-                SupplementalServiceInformationValues.Bilateral => "BLT",
-                SupplementalServiceInformationValues.Decubitus => "DEC",
-                SupplementalServiceInformationValues.Distal => "DST",
-                SupplementalServiceInformationValues.Lateral => "LAT",
-                SupplementalServiceInformationValues.Left => "LFT",
-                SupplementalServiceInformationValues.LeftLowerQuadrant => "LLQ",
-                SupplementalServiceInformationValues.Lower => "LOW",
-                SupplementalServiceInformationValues.LeftUpperQuadrant => "LUQ",
-                SupplementalServiceInformationValues.Medial => "MED",
-                SupplementalServiceInformationValues.OperatingRoom => "OR",
-                SupplementalServiceInformationValues.Pediatric => "PED",
-                SupplementalServiceInformationValues.Posterior => "POS",
-                SupplementalServiceInformationValues.Portable => "PRT",
-                SupplementalServiceInformationValues.Proximal => "PRX",
-                SupplementalServiceInformationValues.Recumbent => "REC",
-                SupplementalServiceInformationValues.Right => "RGH",
-                SupplementalServiceInformationValues.RightLowerQuadrant => "RLQ",
-                SupplementalServiceInformationValues.RightUpperQuadrant => "RUQ",
-                SupplementalServiceInformationValues.Upper => "UPP",
-                SupplementalServiceInformationValues.Upright => "UPR",
-                SupplementalServiceInformationValues.WithContrast => "WCT",
-                SupplementalServiceInformationValues.WithoutContrast => "WOC",
-                SupplementalServiceInformationValues.WithSedation => "WSD",
+                CodeSupplementalServiceInformationValues.First => "1ST",
+                CodeSupplementalServiceInformationValues.Second => "2ND",
+                CodeSupplementalServiceInformationValues.Third => "3RD",
+                CodeSupplementalServiceInformationValues.Fourth => "4TH",
+                CodeSupplementalServiceInformationValues.Fifth => "5TH",
+                CodeSupplementalServiceInformationValues.AnteriorPosterior => "A/P",
+                CodeSupplementalServiceInformationValues.Anterior => "ANT",
+                CodeSupplementalServiceInformationValues.Bilateral => "BLT",
+                CodeSupplementalServiceInformationValues.Decubitus => "DEC",
+                CodeSupplementalServiceInformationValues.Distal => "DST",
+                CodeSupplementalServiceInformationValues.Lateral => "LAT",
+                CodeSupplementalServiceInformationValues.Left => "LFT",
+                CodeSupplementalServiceInformationValues.LeftLowerQuadrant => "LLQ",
+                CodeSupplementalServiceInformationValues.Lower => "LOW",
+                CodeSupplementalServiceInformationValues.LeftUpperQuadrant => "LUQ",
+                CodeSupplementalServiceInformationValues.Medial => "MED",
+                CodeSupplementalServiceInformationValues.OperatingRoom => "OR",
+                CodeSupplementalServiceInformationValues.Pediatric => "PED",
+                CodeSupplementalServiceInformationValues.Posterior => "POS",
+                CodeSupplementalServiceInformationValues.Portable => "PRT",
+                CodeSupplementalServiceInformationValues.Proximal => "PRX",
+                CodeSupplementalServiceInformationValues.Recumbent => "REC",
+                CodeSupplementalServiceInformationValues.Right => "RGH",
+                CodeSupplementalServiceInformationValues.RightLowerQuadrant => "RLQ",
+                CodeSupplementalServiceInformationValues.RightUpperQuadrant => "RUQ",
+                CodeSupplementalServiceInformationValues.Upper => "UPP",
+                CodeSupplementalServiceInformationValues.Upright => "UPR",
+                CodeSupplementalServiceInformationValues.WithContrast => "WCT",
+                CodeSupplementalServiceInformationValues.WithoutContrast => "WOC",
+                CodeSupplementalServiceInformationValues.WithSedation => "WSD",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given SystemInducedContaminants enum value into its HL7 equivalent code.
+        /// Converts the given CodeSystemInducedContaminants enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(SystemInducedContaminants input)
+        public string EnumToCode(CodeSystemInducedContaminants input)
         {
             return input switch
             {
-                SystemInducedContaminants.PresentTypeOfContaminationUnspecified => "CNTM",
+                CodeSystemInducedContaminants.PresentTypeOfContaminationUnspecified => "CNTM",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given TelecommunicationEquipmentType enum value into its HL7 equivalent code.
+        /// Converts the given CodeTelecommunicationEquipmentType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(TelecommunicationEquipmentType input)
+        public string EnumToCode(CodeTelecommunicationEquipmentType input)
         {
             return input switch
             {
-                TelecommunicationEquipmentType.Beeper => "BP",
-                TelecommunicationEquipmentType.CellularOrMobilePhone => "CP",
-                TelecommunicationEquipmentType.Fax => "FX",
-                TelecommunicationEquipmentType.InternetAddress => "Internet",
-                TelecommunicationEquipmentType.Modem => "MD",
-                TelecommunicationEquipmentType.Telephone => "PH",
-                TelecommunicationEquipmentType.X400EmailAddress => "X.400",
+                CodeTelecommunicationEquipmentType.Beeper => "BP",
+                CodeTelecommunicationEquipmentType.CellularOrMobilePhone => "CP",
+                CodeTelecommunicationEquipmentType.Fax => "FX",
+                CodeTelecommunicationEquipmentType.InternetAddress => "Internet",
+                CodeTelecommunicationEquipmentType.Modem => "MD",
+                CodeTelecommunicationEquipmentType.Telephone => "PH",
+                CodeTelecommunicationEquipmentType.X400EmailAddress => "X.400",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given TelecommunicationUseCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeTelecommunicationUseCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(TelecommunicationUseCode input)
+        public string EnumToCode(CodeTelecommunicationUseCode input)
         {
             return input switch
             {
-                TelecommunicationUseCode.AnsweringServiceNumber => "ASN",
-                TelecommunicationUseCode.BeeperNumber => "BPN",
-                TelecommunicationUseCode.EmergencyNumber => "EMR",
-                TelecommunicationUseCode.NetworkEmailAddress => "NET",
-                TelecommunicationUseCode.OtherResidenceNumber => "ORN",
-                TelecommunicationUseCode.PrimaryResidenceNumber => "PRN",
-                TelecommunicationUseCode.VacationHomeNumber => "VHN",
-                TelecommunicationUseCode.WorkNumber => "WPN",
+                CodeTelecommunicationUseCode.AnsweringServiceNumber => "ASN",
+                CodeTelecommunicationUseCode.BeeperNumber => "BPN",
+                CodeTelecommunicationUseCode.EmergencyNumber => "EMR",
+                CodeTelecommunicationUseCode.NetworkEmailAddress => "NET",
+                CodeTelecommunicationUseCode.OtherResidenceNumber => "ORN",
+                CodeTelecommunicationUseCode.PrimaryResidenceNumber => "PRN",
+                CodeTelecommunicationUseCode.VacationHomeNumber => "VHN",
+                CodeTelecommunicationUseCode.WorkNumber => "WPN",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given TimeDelayPostChallenge enum value into its HL7 equivalent code.
+        /// Converts the given CodeTimeDelayPostChallenge enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(TimeDelayPostChallenge input)
+        public string EnumToCode(CodeTimeDelayPostChallenge input)
         {
             return input switch
             {
-                TimeDelayPostChallenge.TenDays => "10D",
-                TimeDelayPostChallenge.TenMinutesPostChallenge => "10M",
-                TimeDelayPostChallenge.TwelveHoursPostChallenge => "12H",
-                TimeDelayPostChallenge.FifteenMinutesPostChallenge => "15M",
-                TimeDelayPostChallenge.OneHourPostChallenge => "1H",
-                TimeDelayPostChallenge.OneMonthPostChallenge => "1L",
-                TimeDelayPostChallenge.OneMinutePostChallenge => "1M",
-                TimeDelayPostChallenge.OneWeek => "1W",
-                TimeDelayPostChallenge.TwoAndAHalfHoursPostChallenge => "2.5H",
-                TimeDelayPostChallenge.TwentyMinutesPostChallenge => "20M",
-                TimeDelayPostChallenge.TwentyFourHoursPostChallenge => "24H",
-                TimeDelayPostChallenge.TwentyFiveMinutesPostChallenge => "25M",
-                TimeDelayPostChallenge.TwoDays => "2D",
-                TimeDelayPostChallenge.TwoHoursPostChallenge => "2H",
-                TimeDelayPostChallenge.TwoMonthsPostChallenge => "2L",
-                TimeDelayPostChallenge.TwoMinutesPostChallenge => "2M",
-                TimeDelayPostChallenge.TwoWeeks => "2W",
-                TimeDelayPostChallenge.ThirtyMinutesPostChallenge => "30M",
-                TimeDelayPostChallenge.ThreeDays => "3D",
-                TimeDelayPostChallenge.ThreeHoursPostChallenge => "3H",
-                TimeDelayPostChallenge.ThreeMonthsPostChallenge => "3L",
-                TimeDelayPostChallenge.ThreeMinutesPostChallenge => "3M",
-                TimeDelayPostChallenge.ThreeWeeks => "3W",
-                TimeDelayPostChallenge.FourDays => "4D",
-                TimeDelayPostChallenge.FourHoursPostChallenge => "4H",
-                TimeDelayPostChallenge.FourMinutesPostChallenge => "4M",
-                TimeDelayPostChallenge.FourWeeks => "4W",
-                TimeDelayPostChallenge.FiveDays => "5D",
-                TimeDelayPostChallenge.FiveHoursPostChallenge => "5H",
-                TimeDelayPostChallenge.FiveMinutesPostChallenge => "5M",
-                TimeDelayPostChallenge.SixDays => "6D",
-                TimeDelayPostChallenge.SixHoursPostChallenge => "6H",
-                TimeDelayPostChallenge.SixMinutesPostChallenge => "6M",
-                TimeDelayPostChallenge.SevenDays => "7D",
-                TimeDelayPostChallenge.SevenHoursPostChallenge => "7H",
-                TimeDelayPostChallenge.SevenMinutesPostChallenge => "7M",
-                TimeDelayPostChallenge.EightHoursPostChallenge => "8H",
-                TimeDelayPostChallenge.EightHoursAlignedOnNursingShifts => "8H SHIFT",
-                TimeDelayPostChallenge.EightMinutesPostChallenge => "8M",
-                TimeDelayPostChallenge.NineMinutesPostChallenge => "9M",
-                TimeDelayPostChallenge.Baseline => "BS",
-                TimeDelayPostChallenge.TimePostDrugDoseHighestDrugLevelReached => "PEAK",
-                TimeDelayPostChallenge.TimeFromChallengeOrDoseNotSpecified => "RANDOM",
-                TimeDelayPostChallenge.TimePostDrugDoseLowestDrugLevelReached => "TROUGH",
+                CodeTimeDelayPostChallenge.TenDays => "10D",
+                CodeTimeDelayPostChallenge.TenMinutesPostChallenge => "10M",
+                CodeTimeDelayPostChallenge.TwelveHoursPostChallenge => "12H",
+                CodeTimeDelayPostChallenge.FifteenMinutesPostChallenge => "15M",
+                CodeTimeDelayPostChallenge.OneHourPostChallenge => "1H",
+                CodeTimeDelayPostChallenge.OneMonthPostChallenge => "1L",
+                CodeTimeDelayPostChallenge.OneMinutePostChallenge => "1M",
+                CodeTimeDelayPostChallenge.OneWeek => "1W",
+                CodeTimeDelayPostChallenge.TwoAndAHalfHoursPostChallenge => "2.5H",
+                CodeTimeDelayPostChallenge.TwentyMinutesPostChallenge => "20M",
+                CodeTimeDelayPostChallenge.TwentyFourHoursPostChallenge => "24H",
+                CodeTimeDelayPostChallenge.TwentyFiveMinutesPostChallenge => "25M",
+                CodeTimeDelayPostChallenge.TwoDays => "2D",
+                CodeTimeDelayPostChallenge.TwoHoursPostChallenge => "2H",
+                CodeTimeDelayPostChallenge.TwoMonthsPostChallenge => "2L",
+                CodeTimeDelayPostChallenge.TwoMinutesPostChallenge => "2M",
+                CodeTimeDelayPostChallenge.TwoWeeks => "2W",
+                CodeTimeDelayPostChallenge.ThirtyMinutesPostChallenge => "30M",
+                CodeTimeDelayPostChallenge.ThreeDays => "3D",
+                CodeTimeDelayPostChallenge.ThreeHoursPostChallenge => "3H",
+                CodeTimeDelayPostChallenge.ThreeMonthsPostChallenge => "3L",
+                CodeTimeDelayPostChallenge.ThreeMinutesPostChallenge => "3M",
+                CodeTimeDelayPostChallenge.ThreeWeeks => "3W",
+                CodeTimeDelayPostChallenge.FourDays => "4D",
+                CodeTimeDelayPostChallenge.FourHoursPostChallenge => "4H",
+                CodeTimeDelayPostChallenge.FourMinutesPostChallenge => "4M",
+                CodeTimeDelayPostChallenge.FourWeeks => "4W",
+                CodeTimeDelayPostChallenge.FiveDays => "5D",
+                CodeTimeDelayPostChallenge.FiveHoursPostChallenge => "5H",
+                CodeTimeDelayPostChallenge.FiveMinutesPostChallenge => "5M",
+                CodeTimeDelayPostChallenge.SixDays => "6D",
+                CodeTimeDelayPostChallenge.SixHoursPostChallenge => "6H",
+                CodeTimeDelayPostChallenge.SixMinutesPostChallenge => "6M",
+                CodeTimeDelayPostChallenge.SevenDays => "7D",
+                CodeTimeDelayPostChallenge.SevenHoursPostChallenge => "7H",
+                CodeTimeDelayPostChallenge.SevenMinutesPostChallenge => "7M",
+                CodeTimeDelayPostChallenge.EightHoursPostChallenge => "8H",
+                CodeTimeDelayPostChallenge.EightHoursAlignedOnNursingShifts => "8H SHIFT",
+                CodeTimeDelayPostChallenge.EightMinutesPostChallenge => "8M",
+                CodeTimeDelayPostChallenge.NineMinutesPostChallenge => "9M",
+                CodeTimeDelayPostChallenge.Baseline => "BS",
+                CodeTimeDelayPostChallenge.TimePostDrugDoseHighestDrugLevelReached => "PEAK",
+                CodeTimeDelayPostChallenge.TimeFromChallengeOrDoseNotSpecified => "RANDOM",
+                CodeTimeDelayPostChallenge.TimePostDrugDoseLowestDrugLevelReached => "TROUGH",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given TimeSelectionCriteriaParameterClassCodes enum value into its HL7 equivalent code.
+        /// Converts the given CodeTimeSelectionCriteriaParameterClassCodes enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(TimeSelectionCriteriaParameterClassCodes input)
+        public string EnumToCode(CodeTimeSelectionCriteriaParameterClassCodes input)
         {
             return input switch
             {
-                TimeSelectionCriteriaParameterClassCodes.Friday => "Fri",
-                TimeSelectionCriteriaParameterClassCodes.Monday => "Mon",
-                TimeSelectionCriteriaParameterClassCodes.IsPreferredEndTime => "Prefend",
-                TimeSelectionCriteriaParameterClassCodes.IsPreferredStartTime => "Prefstart",
-                TimeSelectionCriteriaParameterClassCodes.Saturday => "Sat",
-                TimeSelectionCriteriaParameterClassCodes.Sunday => "Sun",
-                TimeSelectionCriteriaParameterClassCodes.Thursday => "Thu",
-                TimeSelectionCriteriaParameterClassCodes.Tuesday => "Tue",
-                TimeSelectionCriteriaParameterClassCodes.Wednesday => "Wed",
+                CodeTimeSelectionCriteriaParameterClassCodes.Friday => "Fri",
+                CodeTimeSelectionCriteriaParameterClassCodes.Monday => "Mon",
+                CodeTimeSelectionCriteriaParameterClassCodes.IsPreferredEndTime => "Prefend",
+                CodeTimeSelectionCriteriaParameterClassCodes.IsPreferredStartTime => "Prefstart",
+                CodeTimeSelectionCriteriaParameterClassCodes.Saturday => "Sat",
+                CodeTimeSelectionCriteriaParameterClassCodes.Sunday => "Sun",
+                CodeTimeSelectionCriteriaParameterClassCodes.Thursday => "Thu",
+                CodeTimeSelectionCriteriaParameterClassCodes.Tuesday => "Tue",
+                CodeTimeSelectionCriteriaParameterClassCodes.Wednesday => "Wed",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given TissueTypeCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeTissueTypeCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(TissueTypeCode input)
+        public string EnumToCode(CodeTissueTypeCode input)
         {
             return input switch
             {
-                TissueTypeCode.NoTissueExpected => "0",
-                TissueTypeCode.InsufficientTissue => "1",
-                TissueTypeCode.NotAbnormal => "2",
-                TissueTypeCode.AbnormalNotCategorized => "3",
-                TissueTypeCode.MechanicalAbnormal => "4",
-                TissueTypeCode.GrowthAlteration => "5",
-                TissueTypeCode.DegenerationNecrosis => "6",
-                TissueTypeCode.NonAcuteInflammation => "7",
-                TissueTypeCode.NonMalignantNeoplasm => "8",
-                TissueTypeCode.MalignantNeoplasm => "9",
-                TissueTypeCode.BasalCellCarcinoma => "B",
-                TissueTypeCode.CarcinomaUnspecifiedType => "C",
-                TissueTypeCode.AdditionalTissueRequired => "G",
+                CodeTissueTypeCode.NoTissueExpected => "0",
+                CodeTissueTypeCode.InsufficientTissue => "1",
+                CodeTissueTypeCode.NotAbnormal => "2",
+                CodeTissueTypeCode.AbnormalNotCategorized => "3",
+                CodeTissueTypeCode.MechanicalAbnormal => "4",
+                CodeTissueTypeCode.GrowthAlteration => "5",
+                CodeTissueTypeCode.DegenerationNecrosis => "6",
+                CodeTissueTypeCode.NonAcuteInflammation => "7",
+                CodeTissueTypeCode.NonMalignantNeoplasm => "8",
+                CodeTissueTypeCode.MalignantNeoplasm => "9",
+                CodeTissueTypeCode.BasalCellCarcinoma => "B",
+                CodeTissueTypeCode.CarcinomaUnspecifiedType => "C",
+                CodeTissueTypeCode.AdditionalTissueRequired => "G",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given TqConjunctionId enum value into its HL7 equivalent code.
+        /// Converts the given CodeTqConjunctionId enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(TqConjunctionId input)
+        public string EnumToCode(CodeTqConjunctionId input)
         {
             return input switch
             {
-                TqConjunctionId.Asynchronous => "A",
-                TqConjunctionId.ActuationTime => "C",
-                TqConjunctionId.Synchronous => "S",
+                CodeTqConjunctionId.Asynchronous => "A",
+                CodeTqConjunctionId.ActuationTime => "C",
+                CodeTqConjunctionId.Synchronous => "S",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given TransactionType enum value into its HL7 equivalent code.
+        /// Converts the given CodeTransactionType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(TransactionType input)
+        public string EnumToCode(CodeTransactionType input)
         {
             return input switch
             {
-                TransactionType.Adjustment => "AJ",
-                TransactionType.Credit => "CD",
-                TransactionType.Charge => "CG",
-                TransactionType.CoPayment => "CO",
-                TransactionType.Payment => "PY",
+                CodeTransactionType.Adjustment => "AJ",
+                CodeTransactionType.Credit => "CD",
+                CodeTransactionType.Charge => "CG",
+                CodeTransactionType.CoPayment => "CO",
+                CodeTransactionType.Payment => "PY",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given TransferType enum value into its HL7 equivalent code.
+        /// Converts the given CodeTransferType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(TransferType input)
+        public string EnumToCode(CodeTransferType input)
         {
             return input switch
             {
-                TransferType.DrgExempt => "E",
-                TransferType.DrgNonExempt => "N",
+                CodeTransferType.DrgExempt => "E",
+                CodeTransferType.DrgNonExempt => "N",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given TransportArranged enum value into its HL7 equivalent code.
+        /// Converts the given CodeTransportArranged enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(TransportArranged input)
+        public string EnumToCode(CodeTransportArranged input)
         {
             return input switch
             {
-                TransportArranged.Arranged => "A",
-                TransportArranged.NotArranged => "N",
-                TransportArranged.Unknown => "U",
+                CodeTransportArranged.Arranged => "A",
+                CodeTransportArranged.NotArranged => "N",
+                CodeTransportArranged.Unknown => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given TransportationMode enum value into its HL7 equivalent code.
+        /// Converts the given CodeTransportationMode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(TransportationMode input)
+        public string EnumToCode(CodeTransportationMode input)
         {
             return input switch
             {
-                TransportationMode.CartPatientTravelsOnCartOrGurney => "CART",
-                TransportationMode.TheExaminingDeviceGoesToPatientsLocation => "PORT",
-                TransportationMode.PatientWalksToDiagnosticService => "WALK",
-                TransportationMode.Wheelchair => "WHLC",
+                CodeTransportationMode.CartPatientTravelsOnCartOrGurney => "CART",
+                CodeTransportationMode.TheExaminingDeviceGoesToPatientsLocation => "PORT",
+                CodeTransportationMode.PatientWalksToDiagnosticService => "WALK",
+                CodeTransportationMode.Wheelchair => "WHLC",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given TrayType enum value into its HL7 equivalent code.
+        /// Converts the given CodeTrayType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(TrayType input)
+        public string EnumToCode(CodeTrayType input)
         {
             return input switch
             {
-                TrayType.EarlyTray => "EARLY",
-                TrayType.GuestTray => "GUEST",
-                TrayType.LateTray => "LATE",
-                TrayType.TrayMessageOnly => "MSG",
-                TrayType.NoTray => "NO",
+                CodeTrayType.EarlyTray => "EARLY",
+                CodeTrayType.GuestTray => "GUEST",
+                CodeTrayType.LateTray => "LATE",
+                CodeTrayType.TrayMessageOnly => "MSG",
+                CodeTrayType.NoTray => "NO",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given Treatment enum value into its HL7 equivalent code.
+        /// Converts the given CodeTreatment enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(Treatment input)
+        public string EnumToCode(CodeTreatment input)
         {
             return input switch
             {
-                Treatment.Acidification => "ACID",
-                Treatment.Alkalization => "ALK",
-                Treatment.Defibrination => "DEFB",
-                Treatment.Filtration => "FILT",
-                Treatment.LdlPrecipitation => "LDLP",
-                Treatment.Neutralization => "NEUT",
-                Treatment.Recalification => "RECA",
-                Treatment.Ultrafiltration => "UFIL",
+                CodeTreatment.Acidification => "ACID",
+                CodeTreatment.Alkalization => "ALK",
+                CodeTreatment.Defibrination => "DEFB",
+                CodeTreatment.Filtration => "FILT",
+                CodeTreatment.LdlPrecipitation => "LDLP",
+                CodeTreatment.Neutralization => "NEUT",
+                CodeTreatment.Recalification => "RECA",
+                CodeTreatment.Ultrafiltration => "UFIL",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given TriageCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeTriageCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(TriageCode input)
+        public string EnumToCode(CodeTriageCode input)
         {
             return input switch
             {
-                TriageCode.NonAcute => "1",
-                TriageCode.Acute => "2",
-                TriageCode.Urgent => "3",
-                TriageCode.Severe => "4",
-                TriageCode.DeadOnArrivalDoa => "5",
-                TriageCode.Other => "99",
+                CodeTriageCode.NonAcute => "1",
+                CodeTriageCode.Acute => "2",
+                CodeTriageCode.Urgent => "3",
+                CodeTriageCode.Severe => "4",
+                CodeTriageCode.DeadOnArrivalDoa => "5",
+                CodeTriageCode.Other => "99",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given TypeOfAgreement enum value into its HL7 equivalent code.
+        /// Converts the given CodeTypeOfAgreement enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(TypeOfAgreement input)
+        public string EnumToCode(CodeTypeOfAgreement input)
         {
             return input switch
             {
-                TypeOfAgreement.Maternity => "M",
-                TypeOfAgreement.Standard => "S",
-                TypeOfAgreement.Unified => "U",
+                CodeTypeOfAgreement.Maternity => "M",
+                CodeTypeOfAgreement.Standard => "S",
+                CodeTypeOfAgreement.Unified => "U",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given TypeOfBillCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeTypeOfBillCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(TypeOfBillCode input)
+        public string EnumToCode(CodeTypeOfBillCode input)
         {
             return input switch
             {
-                TypeOfBillCode.NoSuggestedValuesDefined => "...",
-                TypeOfBillCode.HospitalOutpatientAdmitThruDischargeClaim => "131",
-                TypeOfBillCode.HospitalOtherAdmitThruDischargeClaim => "141",
+                CodeTypeOfBillCode.NoSuggestedValuesDefined => "...",
+                CodeTypeOfBillCode.HospitalOutpatientAdmitThruDischargeClaim => "131",
+                CodeTypeOfBillCode.HospitalOtherAdmitThruDischargeClaim => "141",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given TypeOfReferencedData enum value into its HL7 equivalent code.
+        /// Converts the given CodeTypeOfReferencedData enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(TypeOfReferencedData input)
+        public string EnumToCode(CodeTypeOfReferencedData input)
         {
             return input switch
             {
-                TypeOfReferencedData.OtherApplicationData => "AP",
-                TypeOfReferencedData.AudioData => "AU",
-                TypeOfReferencedData.FormattedText => "FT",
-                TypeOfReferencedData.ImageData => "IM",
-                TypeOfReferencedData.MimeMultipartPackage => "multipart",
-                TypeOfReferencedData.NonScannedImage => "NS",
-                TypeOfReferencedData.ScannedDocument => "SD",
-                TypeOfReferencedData.ScannedImage => "SI",
-                TypeOfReferencedData.MachineReadableTextDocument => "TEXT",
+                CodeTypeOfReferencedData.OtherApplicationData => "AP",
+                CodeTypeOfReferencedData.AudioData => "AU",
+                CodeTypeOfReferencedData.FormattedText => "FT",
+                CodeTypeOfReferencedData.ImageData => "IM",
+                CodeTypeOfReferencedData.MimeMultipartPackage => "multipart",
+                CodeTypeOfReferencedData.NonScannedImage => "NS",
+                CodeTypeOfReferencedData.ScannedDocument => "SD",
+                CodeTypeOfReferencedData.ScannedImage => "SI",
+                CodeTypeOfReferencedData.MachineReadableTextDocument => "TEXT",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given UniversalIdType enum value into its HL7 equivalent code.
+        /// Converts the given CodeUniversalIdType enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(UniversalIdType input)
+        public string EnumToCode(CodeUniversalIdType input)
         {
             return input switch
             {
-                UniversalIdType.DomainNameSystem => "DNS",
-                UniversalIdType.GloballyUniqueIdentifier => "GUID",
-                UniversalIdType.CenHealthcareCodingIdentifier => "HCD",
-                UniversalIdType.Hl7RegistrationSchemes => "HL7",
-                UniversalIdType.IsoObjectIdentifier => "ISO",
-                UniversalIdType.LocalL => "L",
-                UniversalIdType.LocalLMN => "L,M,N",
-                UniversalIdType.LocalM => "M",
-                UniversalIdType.LocalN => "N",
-                UniversalIdType.Random => "Random",
-                UniversalIdType.UniversalUniqueIdentifier => "UUID",
-                UniversalIdType.X400MhsIdentifier => "x400",
-                UniversalIdType.X500DirectoryName => "x500",
+                CodeUniversalIdType.DomainNameSystem => "DNS",
+                CodeUniversalIdType.GloballyUniqueIdentifier => "GUID",
+                CodeUniversalIdType.CenHealthcareCodingIdentifier => "HCD",
+                CodeUniversalIdType.Hl7RegistrationSchemes => "HL7",
+                CodeUniversalIdType.IsoObjectIdentifier => "ISO",
+                CodeUniversalIdType.LocalL => "L",
+                CodeUniversalIdType.LocalLMN => "L,M,N",
+                CodeUniversalIdType.LocalM => "M",
+                CodeUniversalIdType.LocalN => "N",
+                CodeUniversalIdType.Random => "Random",
+                CodeUniversalIdType.UniversalUniqueIdentifier => "UUID",
+                CodeUniversalIdType.X400MhsIdentifier => "x400",
+                CodeUniversalIdType.X500DirectoryName => "x500",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given VaccinesAdministered enum value into its HL7 equivalent code.
+        /// Converts the given CodeVaccinesAdministered enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(VaccinesAdministered input)
+        public string EnumToCode(CodeVaccinesAdministered input)
         {
             return input switch
             {
-                VaccinesAdministered.Dtp => "01",
-                VaccinesAdministered.Opv => "02",
-                VaccinesAdministered.Mmr => "03",
-                VaccinesAdministered.MR => "04",
-                VaccinesAdministered.Measles => "05",
-                VaccinesAdministered.Rubella => "06",
-                VaccinesAdministered.Mumps => "07",
-                VaccinesAdministered.HepBAdolescentOrPediatric => "08",
-                VaccinesAdministered.TdAdult09 => "09",
-                VaccinesAdministered.Ipv => "10",
-                VaccinesAdministered.PneumococcalConjugate => "100",
-                VaccinesAdministered.TyphoidVicps => "101",
-                VaccinesAdministered.Pertussis => "11",
-                VaccinesAdministered.DiphtheriaAntitoxin => "12",
-                VaccinesAdministered.Tig => "13",
-                VaccinesAdministered.IgNos => "14",
-                VaccinesAdministered.InfluenzaSplitInclPurifiedSurfaceAntigen => "15",
-                VaccinesAdministered.InfluenzaWhole => "16",
-                VaccinesAdministered.HibNos => "17",
-                VaccinesAdministered.RabiesIntramuscularInjection => "18",
-                VaccinesAdministered.Bcg => "19",
-                VaccinesAdministered.Dtap => "20",
-                VaccinesAdministered.Varicella => "21",
-                VaccinesAdministered.DtpHib => "22",
-                VaccinesAdministered.Plague => "23",
-                VaccinesAdministered.Anthrax => "24",
-                VaccinesAdministered.TyphoidOral => "25",
-                VaccinesAdministered.Cholera => "26",
-                VaccinesAdministered.BotulinumAntitoxin => "27",
-                VaccinesAdministered.DtPediatric => "28",
-                VaccinesAdministered.Cmvig => "29",
-                VaccinesAdministered.Hbig => "30",
-                VaccinesAdministered.HepAPediatricNos => "31",
-                VaccinesAdministered.Meningococcal => "32",
-                VaccinesAdministered.Pneumococcal => "33",
-                VaccinesAdministered.Rig => "34",
-                VaccinesAdministered.TetanusToxoid => "35",
-                VaccinesAdministered.Vzig => "36",
-                VaccinesAdministered.YellowFever => "37",
-                VaccinesAdministered.RubellaMumps => "38",
-                VaccinesAdministered.JapaneseEncephalitis => "39",
-                VaccinesAdministered.RabiesIntradermalInjection => "40",
-                VaccinesAdministered.TyphoidParenteral => "41",
-                VaccinesAdministered.HepBAdolescentHighRiskInfant2 => "42",
-                VaccinesAdministered.HepBAdult4 => "43",
-                VaccinesAdministered.HepBDialysis => "44",
-                VaccinesAdministered.HepBNos => "45",
-                VaccinesAdministered.HibPrpD => "46",
-                VaccinesAdministered.HibHboc => "47",
-                VaccinesAdministered.HibPrpT => "48",
-                VaccinesAdministered.HibPrpOmp => "49",
-                VaccinesAdministered.DtapHib => "50",
-                VaccinesAdministered.HibHepB => "51",
-                VaccinesAdministered.HepAAdult => "52",
-                VaccinesAdministered.TyphoidParenteralAkdUSMilitary => "53",
-                VaccinesAdministered.AdenovirusType4 => "54",
-                VaccinesAdministered.AdenovirusType7 => "55",
-                VaccinesAdministered.DengueFever => "56",
-                VaccinesAdministered.Hantavirus => "57",
-                VaccinesAdministered.HepC => "58",
-                VaccinesAdministered.HepE => "59",
-                VaccinesAdministered.HerpesSimplex2 => "60",
-                VaccinesAdministered.Hiv => "61",
-                VaccinesAdministered.HpvQuadrivalent => "62",
-                VaccinesAdministered.JuninVirus => "63",
-                VaccinesAdministered.Leishmaniasis => "64",
-                VaccinesAdministered.Leprosy => "65",
-                VaccinesAdministered.LymeDisease => "66",
-                VaccinesAdministered.Malaria => "67",
-                VaccinesAdministered.Melanoma => "68",
-                VaccinesAdministered.Parainfluenza3 => "69",
-                VaccinesAdministered.QFever => "70",
-                VaccinesAdministered.RsvIgiv => "71",
-                VaccinesAdministered.RheumaticFever => "72",
-                VaccinesAdministered.RiftValleyFever => "73",
-                VaccinesAdministered.RotavirusTetravalent => "74",
-                VaccinesAdministered.VacciniaSmallpox => "75",
-                VaccinesAdministered.StaphylococcusBacterioLysate => "76",
-                VaccinesAdministered.TickBorneEncephalitis => "77",
-                VaccinesAdministered.TularemiaVaccine => "78",
-                VaccinesAdministered.VacciniaImmuneGlobulin => "79",
-                VaccinesAdministered.VeeLive => "80",
-                VaccinesAdministered.VeeInactivated => "81",
-                VaccinesAdministered.AdenovirusNos1 => "82",
-                VaccinesAdministered.HepAPedAdol2Dose => "83",
-                VaccinesAdministered.HepAPedAdol3Dose => "84",
-                VaccinesAdministered.HepANos => "85",
-                VaccinesAdministered.Ig => "86",
-                VaccinesAdministered.Igiv => "87",
-                VaccinesAdministered.InfluenzaNos => "88",
-                VaccinesAdministered.PolioNos => "89",
-                VaccinesAdministered.RabiesNos => "90",
-                VaccinesAdministered.TyphoidNos => "91",
-                VaccinesAdministered.VeeNos => "92",
-                VaccinesAdministered.RsvMab => "93",
-                VaccinesAdministered.Mmrv => "94",
-                VaccinesAdministered.TstOtTineTest => "95",
-                VaccinesAdministered.TstPpdIntradermal => "96",
-                VaccinesAdministered.TstPpdTineTest => "97",
-                VaccinesAdministered.TstNos => "98",
-                VaccinesAdministered.ReservedDoNotUse3 => "99",
-                VaccinesAdministered.Unknown => "999",
+                CodeVaccinesAdministered.Dtp => "01",
+                CodeVaccinesAdministered.Opv => "02",
+                CodeVaccinesAdministered.Mmr => "03",
+                CodeVaccinesAdministered.MR => "04",
+                CodeVaccinesAdministered.Measles => "05",
+                CodeVaccinesAdministered.Rubella => "06",
+                CodeVaccinesAdministered.Mumps => "07",
+                CodeVaccinesAdministered.HepBAdolescentOrPediatric => "08",
+                CodeVaccinesAdministered.TdAdult09 => "09",
+                CodeVaccinesAdministered.Ipv => "10",
+                CodeVaccinesAdministered.PneumococcalConjugate => "100",
+                CodeVaccinesAdministered.TyphoidVicps => "101",
+                CodeVaccinesAdministered.Pertussis => "11",
+                CodeVaccinesAdministered.DiphtheriaAntitoxin => "12",
+                CodeVaccinesAdministered.Tig => "13",
+                CodeVaccinesAdministered.IgNos => "14",
+                CodeVaccinesAdministered.InfluenzaSplitInclPurifiedSurfaceAntigen => "15",
+                CodeVaccinesAdministered.InfluenzaWhole => "16",
+                CodeVaccinesAdministered.HibNos => "17",
+                CodeVaccinesAdministered.RabiesIntramuscularInjection => "18",
+                CodeVaccinesAdministered.Bcg => "19",
+                CodeVaccinesAdministered.Dtap => "20",
+                CodeVaccinesAdministered.Varicella => "21",
+                CodeVaccinesAdministered.DtpHib => "22",
+                CodeVaccinesAdministered.Plague => "23",
+                CodeVaccinesAdministered.Anthrax => "24",
+                CodeVaccinesAdministered.TyphoidOral => "25",
+                CodeVaccinesAdministered.Cholera => "26",
+                CodeVaccinesAdministered.BotulinumAntitoxin => "27",
+                CodeVaccinesAdministered.DtPediatric => "28",
+                CodeVaccinesAdministered.Cmvig => "29",
+                CodeVaccinesAdministered.Hbig => "30",
+                CodeVaccinesAdministered.HepAPediatricNos => "31",
+                CodeVaccinesAdministered.Meningococcal => "32",
+                CodeVaccinesAdministered.Pneumococcal => "33",
+                CodeVaccinesAdministered.Rig => "34",
+                CodeVaccinesAdministered.TetanusToxoid => "35",
+                CodeVaccinesAdministered.Vzig => "36",
+                CodeVaccinesAdministered.YellowFever => "37",
+                CodeVaccinesAdministered.RubellaMumps => "38",
+                CodeVaccinesAdministered.JapaneseEncephalitis => "39",
+                CodeVaccinesAdministered.RabiesIntradermalInjection => "40",
+                CodeVaccinesAdministered.TyphoidParenteral => "41",
+                CodeVaccinesAdministered.HepBAdolescentHighRiskInfant2 => "42",
+                CodeVaccinesAdministered.HepBAdult4 => "43",
+                CodeVaccinesAdministered.HepBDialysis => "44",
+                CodeVaccinesAdministered.HepBNos => "45",
+                CodeVaccinesAdministered.HibPrpD => "46",
+                CodeVaccinesAdministered.HibHboc => "47",
+                CodeVaccinesAdministered.HibPrpT => "48",
+                CodeVaccinesAdministered.HibPrpOmp => "49",
+                CodeVaccinesAdministered.DtapHib => "50",
+                CodeVaccinesAdministered.HibHepB => "51",
+                CodeVaccinesAdministered.HepAAdult => "52",
+                CodeVaccinesAdministered.TyphoidParenteralAkdUSMilitary => "53",
+                CodeVaccinesAdministered.AdenovirusType4 => "54",
+                CodeVaccinesAdministered.AdenovirusType7 => "55",
+                CodeVaccinesAdministered.DengueFever => "56",
+                CodeVaccinesAdministered.Hantavirus => "57",
+                CodeVaccinesAdministered.HepC => "58",
+                CodeVaccinesAdministered.HepE => "59",
+                CodeVaccinesAdministered.HerpesSimplex2 => "60",
+                CodeVaccinesAdministered.Hiv => "61",
+                CodeVaccinesAdministered.HpvQuadrivalent => "62",
+                CodeVaccinesAdministered.JuninVirus => "63",
+                CodeVaccinesAdministered.Leishmaniasis => "64",
+                CodeVaccinesAdministered.Leprosy => "65",
+                CodeVaccinesAdministered.LymeDisease => "66",
+                CodeVaccinesAdministered.Malaria => "67",
+                CodeVaccinesAdministered.Melanoma => "68",
+                CodeVaccinesAdministered.Parainfluenza3 => "69",
+                CodeVaccinesAdministered.QFever => "70",
+                CodeVaccinesAdministered.RsvIgiv => "71",
+                CodeVaccinesAdministered.RheumaticFever => "72",
+                CodeVaccinesAdministered.RiftValleyFever => "73",
+                CodeVaccinesAdministered.RotavirusTetravalent => "74",
+                CodeVaccinesAdministered.VacciniaSmallpox => "75",
+                CodeVaccinesAdministered.StaphylococcusBacterioLysate => "76",
+                CodeVaccinesAdministered.TickBorneEncephalitis => "77",
+                CodeVaccinesAdministered.TularemiaVaccine => "78",
+                CodeVaccinesAdministered.VacciniaImmuneGlobulin => "79",
+                CodeVaccinesAdministered.VeeLive => "80",
+                CodeVaccinesAdministered.VeeInactivated => "81",
+                CodeVaccinesAdministered.AdenovirusNos1 => "82",
+                CodeVaccinesAdministered.HepAPedAdol2Dose => "83",
+                CodeVaccinesAdministered.HepAPedAdol3Dose => "84",
+                CodeVaccinesAdministered.HepANos => "85",
+                CodeVaccinesAdministered.Ig => "86",
+                CodeVaccinesAdministered.Igiv => "87",
+                CodeVaccinesAdministered.InfluenzaNos => "88",
+                CodeVaccinesAdministered.PolioNos => "89",
+                CodeVaccinesAdministered.RabiesNos => "90",
+                CodeVaccinesAdministered.TyphoidNos => "91",
+                CodeVaccinesAdministered.VeeNos => "92",
+                CodeVaccinesAdministered.RsvMab => "93",
+                CodeVaccinesAdministered.Mmrv => "94",
+                CodeVaccinesAdministered.TstOtTineTest => "95",
+                CodeVaccinesAdministered.TstPpdIntradermal => "96",
+                CodeVaccinesAdministered.TstPpdTineTest => "97",
+                CodeVaccinesAdministered.TstNos => "98",
+                CodeVaccinesAdministered.ReservedDoNotUse3 => "99",
+                CodeVaccinesAdministered.Unknown => "999",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given ValueCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeValueCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ValueCode input)
+        public string EnumToCode(CodeValueCode input)
         {
             return input switch
             {
-                ValueCode.MostCommonSemiPrivateRate => "01",
-                ValueCode.HospitalHasNoSemiPrivateRooms => "02",
-                ValueCode.InpatientChargesCombinedBilled => "04",
-                ValueCode.ProfessionalComponentIncludedInChargesAndBilledCarrier => "05",
-                ValueCode.MedicareBloodDeductible => "06",
-                ValueCode.MedicareLifeTimeReserveAmountInFirstYear => "08",
-                ValueCode.MedicareCoInsuranceAmountInFirstYear => "09",
-                ValueCode.LifetimeReserveAmountInSecondYear => "10",
-                ValueCode.CoInsuranceAmountInSecondYear => "11",
-                ValueCode.WorkingAgedBeneficiarySpouseWithEmployerGroupPlan => "12",
-                ValueCode.EsrdBeneficiaryInMedicareCoordPeriodWithEmployerGroupPlan => "13",
-                ValueCode.NoFault => "14",
-                ValueCode.WorkersCompensation => "15",
-                ValueCode.PhsOrOtherFederalAgency => "16",
-                ValueCode.PayerCode => "17",
-                ValueCode.Catastrophic => "21",
-                ValueCode.Surplus => "22",
-                ValueCode.RecurringMonthlyIncode => "23",
-                ValueCode.MedicaidRateCode => "24",
-                ValueCode.PreAdmissionTesting => "30",
-                ValueCode.PatientLiabilityAmount => "31",
-                ValueCode.PintsOfBloodFurnished => "37",
-                ValueCode.BloodDeductiblePints => "38",
-                ValueCode.PintsOfBloodReplaced => "39",
-                ValueCode.NewCoverageNotImplementedByHmo => "40",
-                ValueCode.BlackLung => "41",
-                ValueCode.Va => "42",
-                ValueCode.DisabledBeneficiaryUnderAge64WithLghp => "43",
-                ValueCode.AmountFromPayerLessThanChargesButHigherThanPayment => "44",
-                ValueCode.AccidentHour => "45",
-                ValueCode.NumberOfGraceDays => "46",
-                ValueCode.AnyLiabilityInsurance => "47",
-                ValueCode.HemoglobinReading => "48",
-                ValueCode.HematocritReading => "49",
-                ValueCode.PhysicalTherapyVisits => "50",
-                ValueCode.OccupationalTherapyVisits => "51",
-                ValueCode.SpeechTherapyVisits => "52",
-                ValueCode.CardiacRehabVisits => "53",
-                ValueCode.SkilledNurseHomeVisitHours => "56",
-                ValueCode.HomeHealthAideHomeVisitHours => "57",
-                ValueCode.ArterialBloodGas => "58",
-                ValueCode.OxygenSaturation => "59",
-                ValueCode.HhaBranchMsa => "60",
-                ValueCode.PeritonealDialysis => "67",
-                ValueCode.EpoDrug => "68",
-                ValueCode.PayerCodes70 => "70",
-                ValueCode.PayerCodes70To72 => "70 ... 72",
-                ValueCode.PayerCodes71 => "71",
-                ValueCode.PayerCodes72 => "72",
-                ValueCode.PayerCodes75 => "75",
-                ValueCode.PayerCodes75To79 => "75 ... 79",
-                ValueCode.PayerCodes76 => "76",
-                ValueCode.PayerCodes77 => "77",
-                ValueCode.PayerCodes78 => "78",
-                ValueCode.PayerCodes79 => "79",
-                ValueCode.PsychiatricVisits => "80",
-                ValueCode.VisitsSubjectToCoPayment => "81",
-                ValueCode.DeductiblePayerA => "A1",
-                ValueCode.CoinsurancePayerA => "A2",
-                ValueCode.EstimatedResponsibilityPayerA => "A3",
-                ValueCode.ServiceExcludedOnPrimaryPolicy => "X0",
-                ValueCode.SupplementalCoverage => "X4",
+                CodeValueCode.MostCommonSemiPrivateRate => "01",
+                CodeValueCode.HospitalHasNoSemiPrivateRooms => "02",
+                CodeValueCode.InpatientChargesCombinedBilled => "04",
+                CodeValueCode.ProfessionalComponentIncludedInChargesAndBilledCarrier => "05",
+                CodeValueCode.MedicareBloodDeductible => "06",
+                CodeValueCode.MedicareLifeTimeReserveAmountInFirstYear => "08",
+                CodeValueCode.MedicareCoInsuranceAmountInFirstYear => "09",
+                CodeValueCode.LifetimeReserveAmountInSecondYear => "10",
+                CodeValueCode.CoInsuranceAmountInSecondYear => "11",
+                CodeValueCode.WorkingAgedBeneficiarySpouseWithEmployerGroupPlan => "12",
+                CodeValueCode.EsrdBeneficiaryInMedicareCoordPeriodWithEmployerGroupPlan => "13",
+                CodeValueCode.NoFault => "14",
+                CodeValueCode.WorkersCompensation => "15",
+                CodeValueCode.PhsOrOtherFederalAgency => "16",
+                CodeValueCode.PayerCode => "17",
+                CodeValueCode.Catastrophic => "21",
+                CodeValueCode.Surplus => "22",
+                CodeValueCode.RecurringMonthlyIncode => "23",
+                CodeValueCode.MedicaidRateCode => "24",
+                CodeValueCode.PreAdmissionTesting => "30",
+                CodeValueCode.PatientLiabilityAmount => "31",
+                CodeValueCode.PintsOfBloodFurnished => "37",
+                CodeValueCode.BloodDeductiblePints => "38",
+                CodeValueCode.PintsOfBloodReplaced => "39",
+                CodeValueCode.NewCoverageNotImplementedByHmo => "40",
+                CodeValueCode.BlackLung => "41",
+                CodeValueCode.Va => "42",
+                CodeValueCode.DisabledBeneficiaryUnderAge64WithLghp => "43",
+                CodeValueCode.AmountFromPayerLessThanChargesButHigherThanPayment => "44",
+                CodeValueCode.AccidentHour => "45",
+                CodeValueCode.NumberOfGraceDays => "46",
+                CodeValueCode.AnyLiabilityInsurance => "47",
+                CodeValueCode.HemoglobinReading => "48",
+                CodeValueCode.HematocritReading => "49",
+                CodeValueCode.PhysicalTherapyVisits => "50",
+                CodeValueCode.OccupationalTherapyVisits => "51",
+                CodeValueCode.SpeechTherapyVisits => "52",
+                CodeValueCode.CardiacRehabVisits => "53",
+                CodeValueCode.SkilledNurseHomeVisitHours => "56",
+                CodeValueCode.HomeHealthAideHomeVisitHours => "57",
+                CodeValueCode.ArterialBloodGas => "58",
+                CodeValueCode.OxygenSaturation => "59",
+                CodeValueCode.HhaBranchMsa => "60",
+                CodeValueCode.PeritonealDialysis => "67",
+                CodeValueCode.EpoDrug => "68",
+                CodeValueCode.PayerCodes70 => "70",
+                CodeValueCode.PayerCodes70To72 => "70 ... 72",
+                CodeValueCode.PayerCodes71 => "71",
+                CodeValueCode.PayerCodes72 => "72",
+                CodeValueCode.PayerCodes75 => "75",
+                CodeValueCode.PayerCodes75To79 => "75 ... 79",
+                CodeValueCode.PayerCodes76 => "76",
+                CodeValueCode.PayerCodes77 => "77",
+                CodeValueCode.PayerCodes78 => "78",
+                CodeValueCode.PayerCodes79 => "79",
+                CodeValueCode.PsychiatricVisits => "80",
+                CodeValueCode.VisitsSubjectToCoPayment => "81",
+                CodeValueCode.DeductiblePayerA => "A1",
+                CodeValueCode.CoinsurancePayerA => "A2",
+                CodeValueCode.EstimatedResponsibilityPayerA => "A3",
+                CodeValueCode.ServiceExcludedOnPrimaryPolicy => "X0",
+                CodeValueCode.SupplementalCoverage => "X4",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given VersionId enum value into its HL7 equivalent code.
+        /// Converts the given CodeVersionId enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(VersionId input)
+        public string EnumToCode(CodeVersionId input)
         {
             return input switch
             {
-                VersionId.Release20 => "2.0",
-                VersionId.Demo20 => "2.0D",
-                VersionId.Release21 => "2.1",
-                VersionId.Release22 => "2.2",
-                VersionId.Release23 => "2.3",
-                VersionId.Release231 => "2.3.1",
-                VersionId.Release24 => "2.4",
+                CodeVersionId.Release20 => "2.0",
+                CodeVersionId.Demo20 => "2.0D",
+                CodeVersionId.Release21 => "2.1",
+                CodeVersionId.Release22 => "2.2",
+                CodeVersionId.Release23 => "2.3",
+                CodeVersionId.Release231 => "2.3.1",
+                CodeVersionId.Release24 => "2.4",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given VisitIndicator enum value into its HL7 equivalent code.
+        /// Converts the given CodeVisitIndicator enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(VisitIndicator input)
+        public string EnumToCode(CodeVisitIndicator input)
         {
             return input switch
             {
-                VisitIndicator.AccountLevel => "A",
-                VisitIndicator.VisitLevel => "V",
+                CodeVisitIndicator.AccountLevel => "A",
+                CodeVisitIndicator.VisitLevel => "V",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given VisitPriorityCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeVisitPriorityCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(VisitPriorityCode input)
+        public string EnumToCode(CodeVisitPriorityCode input)
         {
             return input switch
             {
-                VisitPriorityCode.Emergency => "1",
-                VisitPriorityCode.Urgent => "2",
-                VisitPriorityCode.Elective => "3",
+                CodeVisitPriorityCode.Emergency => "1",
+                CodeVisitPriorityCode.Urgent => "2",
+                CodeVisitPriorityCode.Elective => "3",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given VisitUserCode enum value into its HL7 equivalent code.
+        /// Converts the given CodeVisitUserCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(VisitUserCode input)
+        public string EnumToCode(CodeVisitUserCode input)
         {
             return input switch
             {
-                VisitUserCode.Home => "HO",
-                VisitUserCode.MobileUnit => "MO",
-                VisitUserCode.Phone => "PH",
-                VisitUserCode.Teaching => "TE",
+                CodeVisitUserCode.Home => "HO",
+                CodeVisitUserCode.MobileUnit => "MO",
+                CodeVisitUserCode.Phone => "PH",
+                CodeVisitUserCode.Teaching => "TE",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given WhatSubjectFilter enum value into its HL7 equivalent code.
+        /// Converts the given CodeWhatSubjectFilter enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(WhatSubjectFilter input)
+        public string EnumToCode(CodeWhatSubjectFilter input)
         {
             return input switch
             {
-                WhatSubjectFilter.AdviceDiagnosis => "ADV",
-                WhatSubjectFilter.NursingUnitLookupExcludingEmptyBeds => "ANU",
-                WhatSubjectFilter.AccountNumberQuery => "APA",
-                WhatSubjectFilter.MedicalRecordNumberQuery => "APM",
-                WhatSubjectFilter.PatientNameLookup => "APN",
-                WhatSubjectFilter.PhysicianLookup => "APP",
-                WhatSubjectFilter.NursingUnitLookupIncludingEmptyBeds => "ARN",
-                WhatSubjectFilter.Cancel => "CAN",
-                WhatSubjectFilter.Demographics => "DEM",
-                WhatSubjectFilter.Financial => "FIN",
-                WhatSubjectFilter.GenerateNewIdentifier => "GID",
-                WhatSubjectFilter.Goals => "GOL",
-                WhatSubjectFilter.MostRecentInpatient => "MRI",
-                WhatSubjectFilter.MostRecentOutpatient => "MRO",
-                WhatSubjectFilter.NetworkClock => "NCK",
-                WhatSubjectFilter.NetworkStatusChange => "NSC",
-                WhatSubjectFilter.NetworkStatistic => "NST",
-                WhatSubjectFilter.Order => "ORD",
-                WhatSubjectFilter.Other => "OTH",
-                WhatSubjectFilter.Problems => "PRB",
-                WhatSubjectFilter.Procedure => "PRO",
-                WhatSubjectFilter.PharmacyAdministrationInfo => "RAR",
-                WhatSubjectFilter.PharmacyDispenseInfo => "RDR",
-                WhatSubjectFilter.PharmacyEncodedOrderInfo => "RER",
-                WhatSubjectFilter.Result => "RES",
-                WhatSubjectFilter.PharmacyGiveInfo => "RGR",
-                WhatSubjectFilter.PharmacyPrescriptionInfo => "ROR",
-                WhatSubjectFilter.AllScheduleRelatedInfo => "SAL",
-                WhatSubjectFilter.BookedSlotsOnIdentifiedSchedule => "SBK",
-                WhatSubjectFilter.BlockedSlotsOnIdentifiedSchedule => "SBL",
-                WhatSubjectFilter.FirstOpenSlotOnIdentifiedSchedule => "SOF",
-                WhatSubjectFilter.OpenSlotsOnIdentifiedSchedule => "SOP",
-                WhatSubjectFilter.TimeSlotsAvailableForSingleAppointment => "SSA",
-                WhatSubjectFilter.TimeSlotsAvailableForRecurringAppointment => "SSR",
-                WhatSubjectFilter.Status => "STA",
-                WhatSubjectFilter.VaccineInformation => "VXI",
-                WhatSubjectFilter.GetCrossReferencedIds => "XID",
+                CodeWhatSubjectFilter.AdviceDiagnosis => "ADV",
+                CodeWhatSubjectFilter.NursingUnitLookupExcludingEmptyBeds => "ANU",
+                CodeWhatSubjectFilter.AccountNumberQuery => "APA",
+                CodeWhatSubjectFilter.MedicalRecordNumberQuery => "APM",
+                CodeWhatSubjectFilter.PatientNameLookup => "APN",
+                CodeWhatSubjectFilter.PhysicianLookup => "APP",
+                CodeWhatSubjectFilter.NursingUnitLookupIncludingEmptyBeds => "ARN",
+                CodeWhatSubjectFilter.Cancel => "CAN",
+                CodeWhatSubjectFilter.Demographics => "DEM",
+                CodeWhatSubjectFilter.Financial => "FIN",
+                CodeWhatSubjectFilter.GenerateNewIdentifier => "GID",
+                CodeWhatSubjectFilter.Goals => "GOL",
+                CodeWhatSubjectFilter.MostRecentInpatient => "MRI",
+                CodeWhatSubjectFilter.MostRecentOutpatient => "MRO",
+                CodeWhatSubjectFilter.NetworkClock => "NCK",
+                CodeWhatSubjectFilter.NetworkStatusChange => "NSC",
+                CodeWhatSubjectFilter.NetworkStatistic => "NST",
+                CodeWhatSubjectFilter.Order => "ORD",
+                CodeWhatSubjectFilter.Other => "OTH",
+                CodeWhatSubjectFilter.Problems => "PRB",
+                CodeWhatSubjectFilter.Procedure => "PRO",
+                CodeWhatSubjectFilter.PharmacyAdministrationInfo => "RAR",
+                CodeWhatSubjectFilter.PharmacyDispenseInfo => "RDR",
+                CodeWhatSubjectFilter.PharmacyEncodedOrderInfo => "RER",
+                CodeWhatSubjectFilter.Result => "RES",
+                CodeWhatSubjectFilter.PharmacyGiveInfo => "RGR",
+                CodeWhatSubjectFilter.PharmacyPrescriptionInfo => "ROR",
+                CodeWhatSubjectFilter.AllScheduleRelatedInfo => "SAL",
+                CodeWhatSubjectFilter.BookedSlotsOnIdentifiedSchedule => "SBK",
+                CodeWhatSubjectFilter.BlockedSlotsOnIdentifiedSchedule => "SBL",
+                CodeWhatSubjectFilter.FirstOpenSlotOnIdentifiedSchedule => "SOF",
+                CodeWhatSubjectFilter.OpenSlotsOnIdentifiedSchedule => "SOP",
+                CodeWhatSubjectFilter.TimeSlotsAvailableForSingleAppointment => "SSA",
+                CodeWhatSubjectFilter.TimeSlotsAvailableForRecurringAppointment => "SSR",
+                CodeWhatSubjectFilter.Status => "STA",
+                CodeWhatSubjectFilter.VaccineInformation => "VXI",
+                CodeWhatSubjectFilter.GetCrossReferencedIds => "XID",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given WhichDateTimeQualifier enum value into its HL7 equivalent code.
+        /// Converts the given CodeWhichDateTimeQualifier enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(WhichDateTimeQualifier input)
+        public string EnumToCode(CodeWhichDateTimeQualifier input)
         {
             return input switch
             {
-                WhichDateTimeQualifier.AnyDateTimeWithinRange => "ANY",
-                WhichDateTimeQualifier.CollectionDateTime => "COL",
-                WhichDateTimeQualifier.OrderDateTime => "ORD",
-                WhichDateTimeQualifier.SpecimenReceiptDateTime => "RCT",
-                WhichDateTimeQualifier.ReportDateTime => "REP",
-                WhichDateTimeQualifier.ScheduleDateTime => "SCHED",
+                CodeWhichDateTimeQualifier.AnyDateTimeWithinRange => "ANY",
+                CodeWhichDateTimeQualifier.CollectionDateTime => "COL",
+                CodeWhichDateTimeQualifier.OrderDateTime => "ORD",
+                CodeWhichDateTimeQualifier.SpecimenReceiptDateTime => "RCT",
+                CodeWhichDateTimeQualifier.ReportDateTime => "REP",
+                CodeWhichDateTimeQualifier.ScheduleDateTime => "SCHED",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given WhichDateTimeStatusQualifier enum value into its HL7 equivalent code.
+        /// Converts the given CodeWhichDateTimeStatusQualifier enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(WhichDateTimeStatusQualifier input)
+        public string EnumToCode(CodeWhichDateTimeStatusQualifier input)
         {
             return input switch
             {
-                WhichDateTimeStatusQualifier.AnyStatus => "ANY",
-                WhichDateTimeStatusQualifier.CurrentFinalValueWhetherFinalOrCorrected => "CFN",
-                WhichDateTimeStatusQualifier.CorrectedOnly => "COR",
-                WhichDateTimeStatusQualifier.FinalOnly => "FIN",
-                WhichDateTimeStatusQualifier.Preliminary => "PRE",
-                WhichDateTimeStatusQualifier.ReportCompletionDateTime => "REP",
+                CodeWhichDateTimeStatusQualifier.AnyStatus => "ANY",
+                CodeWhichDateTimeStatusQualifier.CurrentFinalValueWhetherFinalOrCorrected => "CFN",
+                CodeWhichDateTimeStatusQualifier.CorrectedOnly => "COR",
+                CodeWhichDateTimeStatusQualifier.FinalOnly => "FIN",
+                CodeWhichDateTimeStatusQualifier.Preliminary => "PRE",
+                CodeWhichDateTimeStatusQualifier.ReportCompletionDateTime => "REP",
                 _ => throw new NotImplementedException()
             };
         }
 
         /// <summary>
-        /// Converts the given YesNoIndicator enum value into its HL7 equivalent code.
+        /// Converts the given CodeYesNoIndicator enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(YesNoIndicator input)
+        public string EnumToCode(CodeYesNoIndicator input)
         {
             return input switch
             {
-                YesNoIndicator.No => "N",
-                YesNoIndicator.Yes => "Y",
+                CodeYesNoIndicator.No => "N",
+                CodeYesNoIndicator.Yes => "Y",
                 _ => throw new NotImplementedException()
             };
         }
