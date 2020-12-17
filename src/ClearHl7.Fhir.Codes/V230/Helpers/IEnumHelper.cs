@@ -11,7 +11,7 @@
         string EnumToCode(AdministrationDeviceCode input);
         string EnumToCode(AdministrationMethodCode input);
         string EnumToCode(AdministrativeSexCode input);
-        string EnumToCode(AdmissionType input);
+        string EnumToCode(AdmissionTypeCode input);
         string EnumToCode(AllergenType input);
         string EnumToCode(AllergySeverity input);
         string EnumToCode(AllowSubstitution input);

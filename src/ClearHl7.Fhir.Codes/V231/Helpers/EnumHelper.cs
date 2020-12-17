@@ -187,18 +187,18 @@ namespace ClearHl7.Fhir.Codes.V231.Helpers
         }
 
         /// <summary>
-        /// Converts the given AdmissionType enum value into its HL7 equivalent code.
+        /// Converts the given AdmissionTypeCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AdmissionType input)
+        public string EnumToCode(AdmissionTypeCode input)
         {
             return input switch
             {
-                AdmissionType.Accident => "A",
-                AdmissionType.Emergency => "E",
-                AdmissionType.LaborAndDelivery => "L",
-                AdmissionType.Routine => "R",
+                AdmissionTypeCode.Accident => "A",
+                AdmissionTypeCode.Emergency => "E",
+                AdmissionTypeCode.LaborAndDelivery => "L",
+                AdmissionTypeCode.Routine => "R",
                 _ => throw new NotImplementedException()
             };
         }

@@ -18,7 +18,7 @@
         string EnumToCode(AdministrationMethodCode input);
         string EnumToCode(AdministrativeSexCode input);
         string EnumToCode(AdmissionLevelOfCareValueCode input);
-        string EnumToCode(AdmissionType input);
+        string EnumToCode(AdmissionTypeCode input);
         string EnumToCode(AdmitSource input);
         string EnumToCode(AdvancedBeneficiaryNoticeCode input);
         string EnumToCode(AdvanceDirectiveCode input);
