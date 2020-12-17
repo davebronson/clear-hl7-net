@@ -427,15 +427,15 @@ namespace ClearHl7.Fhir.Codes.V282.Helpers
         }
 
         /// <summary>
-        /// Converts the given AdmitSource enum value into its HL7 equivalent code.
+        /// Converts the given AdmitSourceCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AdmitSource input)
+        public string EnumToCode(AdmitSourceCode input)
         {
             return input switch
             {
-                AdmitSource.NoSuggestedValuesDefined => "...",
+                AdmitSourceCode.NoSuggestedValuesDefined => "...",
                 _ => throw new NotImplementedException()
             };
         }

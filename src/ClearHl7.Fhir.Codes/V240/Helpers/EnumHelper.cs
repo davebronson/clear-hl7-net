@@ -249,23 +249,23 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         }
 
         /// <summary>
-        /// Converts the given AdmitSource enum value into its HL7 equivalent code.
+        /// Converts the given AdmitSourceCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AdmitSource input)
+        public string EnumToCode(AdmitSourceCode input)
         {
             return input switch
             {
-                AdmitSource.PhysicianReferral => "1",
-                AdmitSource.ClinicReferral => "2",
-                AdmitSource.HmoReferral => "3",
-                AdmitSource.TransferFromHospital => "4",
-                AdmitSource.TransferFromSkilledNursingFacility => "5",
-                AdmitSource.TransferFromAnotherHealthCareFacility => "6",
-                AdmitSource.EmergencyRoom => "7",
-                AdmitSource.CourtLawEnforcement => "8",
-                AdmitSource.InformationNotAvailable => "9",
+                AdmitSourceCode.PhysicianReferral => "1",
+                AdmitSourceCode.ClinicReferral => "2",
+                AdmitSourceCode.HmoReferral => "3",
+                AdmitSourceCode.TransferFromHospital => "4",
+                AdmitSourceCode.TransferFromSkilledNursingFacility => "5",
+                AdmitSourceCode.TransferFromAnotherHealthCareFacility => "6",
+                AdmitSourceCode.EmergencyRoom => "7",
+                AdmitSourceCode.CourtLawEnforcement => "8",
+                AdmitSourceCode.InformationNotAvailable => "9",
                 _ => throw new NotImplementedException()
             };
         }
