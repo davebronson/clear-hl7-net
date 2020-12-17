@@ -35,7 +35,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                         }
                     }
                 },
-                OccurrenceCodeDate3235 = new OccurrenceCodeAndDate[]
+                OccurrenceCodeDate32To35 = new OccurrenceCodeAndDate[]
                 {
                     new OccurrenceCodeAndDate
                     {

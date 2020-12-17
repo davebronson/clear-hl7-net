@@ -54,7 +54,7 @@ namespace ClearHl7.Fhir.V230.Segments
         /// <summary>
         /// UB2.7 - Occurrence Code & Date (32-35).
         /// </summary>
-        public IEnumerable<OccurrenceCodeAndDate> OccurrenceCodeDate3235 { get; set; }
+        public IEnumerable<OccurrenceCodeAndDate> OccurrenceCodeDate32To35 { get; set; }
 
         /// <summary>
         /// UB2.8 - Occurrence Span Code/Dates (36).
@@ -124,7 +124,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 CoveredDays7,
                                 NonCoveredDays8,
                                 ValueAmountCode39To41 != null ? string.Join(Configuration.FieldRepeatSeparator, ValueAmountCode39To41.Select(x => x.ToDelimitedString())) : null,
-                                OccurrenceCodeDate3235 != null ? string.Join(Configuration.FieldRepeatSeparator, OccurrenceCodeDate3235.Select(x => x.ToDelimitedString())) : null,
+                                OccurrenceCodeDate32To35 != null ? string.Join(Configuration.FieldRepeatSeparator, OccurrenceCodeDate32To35.Select(x => x.ToDelimitedString())) : null,
                                 OccurrenceSpanCodeDates36 != null ? string.Join(Configuration.FieldRepeatSeparator, OccurrenceSpanCodeDates36.Select(x => x.ToDelimitedString())) : null,
                                 UniformBillingLocator2State != null ? string.Join(Configuration.FieldRepeatSeparator, UniformBillingLocator2State) : null,
                                 UniformBillingLocator11State != null ? string.Join(Configuration.FieldRepeatSeparator, UniformBillingLocator11State) : null,
