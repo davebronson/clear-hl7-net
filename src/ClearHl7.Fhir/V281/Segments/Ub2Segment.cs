@@ -49,7 +49,7 @@ namespace ClearHl7.Fhir.V281.Segments
         /// <summary>
         /// UB2.6 - Value Amount & Code (39-41).
         /// </summary>
-        public IEnumerable<ValueCodeAndAmount> ValueAmountCode3941 { get; set; }
+        public IEnumerable<ValueCodeAndAmount> ValueAmountCode39To41 { get; set; }
 
         /// <summary>
         /// UB2.7 - Occurrence Code & Date (32-35).
@@ -123,7 +123,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 ConditionCode24To30 != null ? string.Join(Configuration.FieldRepeatSeparator, ConditionCode24To30.Select(x => x.ToDelimitedString())) : null,
                                 CoveredDays7,
                                 NonCoveredDays8,
-                                ValueAmountCode3941 != null ? string.Join(Configuration.FieldRepeatSeparator, ValueAmountCode3941.Select(x => x.ToDelimitedString())) : null,
+                                ValueAmountCode39To41 != null ? string.Join(Configuration.FieldRepeatSeparator, ValueAmountCode39To41.Select(x => x.ToDelimitedString())) : null,
                                 OccurrenceCodeDate3235 != null ? string.Join(Configuration.FieldRepeatSeparator, OccurrenceCodeDate3235.Select(x => x.ToDelimitedString())) : null,
                                 OccurrenceSpanCodeDates36 != null ? string.Join(Configuration.FieldRepeatSeparator, OccurrenceSpanCodeDates36.Select(x => x.ToDelimitedString())) : null,
                                 UniformBillingLocator2State != null ? string.Join(Configuration.FieldRepeatSeparator, UniformBillingLocator2State) : null,

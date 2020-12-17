@@ -25,7 +25,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 },
                 CoveredDays7 = "4",
                 NonCoveredDays8 = "5",
-                ValueAmountCode3941 = new ValueCodeAndAmount[]
+                ValueAmountCode39To41 = new ValueCodeAndAmount[]
                 {
                     new ValueCodeAndAmount
                     {
