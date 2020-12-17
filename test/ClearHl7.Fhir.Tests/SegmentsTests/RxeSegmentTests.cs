@@ -62,7 +62,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 PrescriptionNumber = "15",
                 NumberOfRefillsRemaining = 16,
                 NumberOfRefillsDosesDispensed = 17,
-                DTOfMostRecentRefillOrDoseDispensed = new DateTime(2020, 1, 18, 0, 0, 18),
+                DateTimeOfMostRecentRefillOrDoseDispensed = new DateTime(2020, 1, 18, 0, 0, 18),
                 TotalDailyDose = new CompositeQuantityWithUnits
                 {
                     Quantity = 19

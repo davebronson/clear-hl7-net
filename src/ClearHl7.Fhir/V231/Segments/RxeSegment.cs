@@ -111,7 +111,7 @@ namespace ClearHl7.Fhir.V231.Segments
         /// <summary>
         /// RXE.18 - D/T of Most Recent Refill or Dose Dispensed.
         /// </summary>
-        public DateTime? DTOfMostRecentRefillOrDoseDispensed { get; set; }
+        public DateTime? DateTimeOfMostRecentRefillOrDoseDispensed { get; set; }
 
         /// <summary>
         /// RXE.19 - Total Daily Dose.
@@ -204,7 +204,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 PrescriptionNumber,
                                 NumberOfRefillsRemaining.HasValue ? NumberOfRefillsRemaining.Value.ToString(Consts.NumericFormat, culture) : null,
                                 NumberOfRefillsDosesDispensed.HasValue ? NumberOfRefillsDosesDispensed.Value.ToString(Consts.NumericFormat, culture) : null,
-                                DTOfMostRecentRefillOrDoseDispensed.HasValue ? DTOfMostRecentRefillOrDoseDispensed.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                DateTimeOfMostRecentRefillOrDoseDispensed.HasValue ? DateTimeOfMostRecentRefillOrDoseDispensed.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 TotalDailyDose?.ToDelimitedString(),
                                 NeedsHumanReview,
                                 SpecialDispensingInstructions != null ? string.Join(Configuration.FieldRepeatSeparator, SpecialDispensingInstructions.Select(x => x.ToDelimitedString())) : null,
