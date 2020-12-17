@@ -191,7 +191,7 @@ ZPD|GREEN|^^^andy.anderson@somewhere.com|Code1234|Anderson \T\ Sons \R\ Piano \T
 
 ## Customizing
 ### Delimiter Characters
-The HL7 specification calls out default delimiters to use for fields (pipe `|`), components (caret `^`), subcomponents (ampersand `&`), escaping (backslash `\`), and repetition (tilde `~`).  Most will use these defaults.  But if the consumer of your messages supports it, you may also define your own delimiters.
+The HL7 specification calls out default delimiters to use for fields (pipe `|`), components (caret `^`), subcomponents (ampersand `&`), escaping (backslash `\`), and repetition (tilde `~`).  Most will use these defaults.  But if the consumer of your messages supports it, it is possible to define your own delimiters.
 ```csharp
 using ClearHl7.Fhir;
 
@@ -214,8 +214,8 @@ var helper = new EnumHelper();
 
 // Example using the MaritalStatus and YesNoIndicator codes
 // You must call EnumHelper.EnumToCode() to receive the actual coded string for a given enum value
-pidSegment.MaritalStatus = new CodedWithExceptions { Identifier = helper.EnumToCode(MaritalStatus.Married) };
-pidSegment.MultipleBirthIndicator = helper.EnumToCode(YesNoIndicator.No);
+pidSegment.MaritalStatus = new CodedWithExceptions { Identifier = helper.EnumToCode(CodeMaritalStatus.Married) };
+pidSegment.MultipleBirthIndicator = helper.EnumToCode(CodeYesNoIndicator.No);
 ```
 
 ## Anything Else?
