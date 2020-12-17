@@ -3,7 +3,7 @@
     public interface IEnumHelper
     {
         string EnumToCode(AcceptApplicationAcknowledgmentConditions input);
-        string EnumToCode(AcknowledgmentCode input);
+        string EnumToCode(AcknowledgmentTypeCode input);
         string EnumToCode(ActionCode input);
         string EnumToCode(ActionTakenInResponseToTheEvent input);
         string EnumToCode(ActiveInactive input);

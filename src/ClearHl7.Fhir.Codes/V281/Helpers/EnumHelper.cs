@@ -71,20 +71,20 @@ namespace ClearHl7.Fhir.Codes.V281.Helpers
         }
 
         /// <summary>
-        /// Converts the given AcknowledgmentCode enum value into its HL7 equivalent code.
+        /// Converts the given AcknowledgmentTypeCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AcknowledgmentCode input)
+        public string EnumToCode(AcknowledgmentTypeCode input)
         {
             return input switch
             {
-                AcknowledgmentCode.OriginalModeAcceptEnhancedModeAcknowledgmentAccept => "AA",
-                AcknowledgmentCode.OriginalModeErrorEnhancedModeAcknowledgmentError => "AE",
-                AcknowledgmentCode.OriginalModeRejectEnhancedModeAcknowledgmentReject => "AR",
-                AcknowledgmentCode.EnhancedModeAcceptAcknowledgmentCommitAccept => "CA",
-                AcknowledgmentCode.EnhancedModeAcceptAcknowledgmentCommitError => "CE",
-                AcknowledgmentCode.EnhancedModeAcceptAcknowledgmentCommitReject => "CR",
+                AcknowledgmentTypeCode.OriginalModeAcceptEnhancedModeAcknowledgmentAccept => "AA",
+                AcknowledgmentTypeCode.OriginalModeErrorEnhancedModeAcknowledgmentError => "AE",
+                AcknowledgmentTypeCode.OriginalModeRejectEnhancedModeAcknowledgmentReject => "AR",
+                AcknowledgmentTypeCode.EnhancedModeAcceptAcknowledgmentCommitAccept => "CA",
+                AcknowledgmentTypeCode.EnhancedModeAcceptAcknowledgmentCommitError => "CE",
+                AcknowledgmentTypeCode.EnhancedModeAcceptAcknowledgmentCommitReject => "CR",
                 _ => throw new NotImplementedException()
             };
         }
