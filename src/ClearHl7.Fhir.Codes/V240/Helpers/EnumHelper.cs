@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace ClearHl7.Fhir.Codes.V240.Helpers
 {
@@ -12,7 +12,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AcceptApplicationAcknowledgmentConditions input)
+        public string EnumToCode(AcceptApplicationAcknowledgmentConditions input)
         {
             return input switch
             {
@@ -29,7 +29,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AcknowledgmentCode input)
+        public string EnumToCode(AcknowledgmentCode input)
         {
             return input switch
             {
@@ -48,7 +48,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ActionCode input)
+        public string EnumToCode(ActionCode input)
         {
             return input switch
             {
@@ -64,7 +64,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ActionTakenInResponseToTheEvent input)
+        public string EnumToCode(ActionTakenInResponseToTheEvent input)
         {
             return input switch
             {
@@ -83,7 +83,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ActiveInactive input)
+        public string EnumToCode(ActiveInactive input)
         {
             return input switch
             {
@@ -98,7 +98,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AdditivePreservative input)
+        public string EnumToCode(AdditivePreservative input)
         {
             return input switch
             {
@@ -119,7 +119,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AddressType input)
+        public string EnumToCode(AddressType input)
         {
             return input switch
             {
@@ -145,7 +145,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AdministrationDevice input)
+        public string EnumToCode(AdministrationDevice input)
         {
             return input switch
             {
@@ -167,7 +167,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AdministrationMethod input)
+        public string EnumToCode(AdministrationMethod input)
         {
             return input switch
             {
@@ -195,7 +195,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AdministrativeSex input)
+        public string EnumToCode(AdministrativeSex input)
         {
             return input switch
             {
@@ -214,7 +214,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AdmissionLevelOfCareCode input)
+        public string EnumToCode(AdmissionLevelOfCareCode input)
         {
             return input switch
             {
@@ -233,7 +233,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AdmissionType input)
+        public string EnumToCode(AdmissionType input)
         {
             return input switch
             {
@@ -253,7 +253,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AdmitSource input)
+        public string EnumToCode(AdmitSource input)
         {
             return input switch
             {
@@ -275,7 +275,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AdvancedBeneficiaryNoticeCode input)
+        public string EnumToCode(AdvancedBeneficiaryNoticeCode input)
         {
             return input switch
             {
@@ -292,7 +292,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AdvanceDirectiveCode input)
+        public string EnumToCode(AdvanceDirectiveCode input)
         {
             return input switch
             {
@@ -306,7 +306,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AlertDeviceCode input)
+        public string EnumToCode(AlertDeviceCode input)
         {
             return input switch
             {
@@ -322,7 +322,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AlertLevel input)
+        public string EnumToCode(AlertLevel input)
         {
             return input switch
             {
@@ -339,7 +339,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AllergenType input)
+        public string EnumToCode(AllergenType input)
         {
             return input switch
             {
@@ -360,7 +360,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AllergyClinicalStatus input)
+        public string EnumToCode(AllergyClinicalStatus input)
         {
             return input switch
             {
@@ -380,7 +380,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AllergySeverity input)
+        public string EnumToCode(AllergySeverity input)
         {
             return input switch
             {
@@ -397,7 +397,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AllowSubstitution input)
+        public string EnumToCode(AllowSubstitution input)
         {
             return input switch
             {
@@ -413,7 +413,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AllowSubstitutionCodes input)
+        public string EnumToCode(AllowSubstitutionCodes input)
         {
             return input switch
             {
@@ -430,7 +430,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AlternateCharacterSetHandlingScheme input)
+        public string EnumToCode(AlternateCharacterSetHandlingScheme input)
         {
             return input switch
             {
@@ -446,7 +446,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AlternateCharacterSets input)
+        public string EnumToCode(AlternateCharacterSets input)
         {
             return input switch
             {
@@ -473,7 +473,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AmbulatoryPaymentClassificationCode input)
+        public string EnumToCode(AmbulatoryPaymentClassificationCode input)
         {
             return input switch
             {
@@ -490,7 +490,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AmbulatoryStatus input)
+        public string EnumToCode(AmbulatoryStatus input)
         {
             return input switch
             {
@@ -519,7 +519,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AmountClass input)
+        public string EnumToCode(AmountClass input)
         {
             return input switch
             {
@@ -536,7 +536,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AmountType input)
+        public string EnumToCode(AmountType input)
         {
             return input switch
             {
@@ -554,7 +554,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AnalyteRepeatStatus input)
+        public string EnumToCode(AnalyteRepeatStatus input)
         {
             return input switch
             {
@@ -571,7 +571,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(Annotations input)
+        public string EnumToCode(Annotations input)
         {
             return input switch
             {
@@ -589,7 +589,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ApplicationChangeType input)
+        public string EnumToCode(ApplicationChangeType input)
         {
             return input switch
             {
@@ -605,7 +605,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AppointmentReasonCodes input)
+        public string EnumToCode(AppointmentReasonCodes input)
         {
             return input switch
             {
@@ -623,7 +623,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AppointmentTypeCodes input)
+        public string EnumToCode(AppointmentTypeCodes input)
         {
             return input switch
             {
@@ -639,7 +639,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ArtificialBlood input)
+        public string EnumToCode(ArtificialBlood input)
         {
             return input switch
             {
@@ -654,7 +654,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AssigningAuthority input)
+        public string EnumToCode(AssigningAuthority input)
         {
             return input switch
             {
@@ -686,7 +686,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(AssignmentOfBenefits input)
+        public string EnumToCode(AssignmentOfBenefits input)
         {
             return input switch
             {
@@ -702,7 +702,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(BedStatus input)
+        public string EnumToCode(BedStatus input)
         {
             return input switch
             {
@@ -721,7 +721,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(BloodProductCode input)
+        public string EnumToCode(BloodProductCode input)
         {
             return input switch
             {
@@ -749,7 +749,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(BodySite input)
+        public string EnumToCode(BodySite input)
         {
             return input switch
             {
@@ -816,7 +816,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(CaseCategoryCode input)
+        public string EnumToCode(CaseCategoryCode input)
         {
             return input switch
             {
@@ -830,7 +830,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(CausalityObservations input)
+        public string EnumToCode(CausalityObservations input)
         {
             return input switch
             {
@@ -854,7 +854,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(CertificationPatientType input)
+        public string EnumToCode(CertificationPatientType input)
         {
             return input switch
             {
@@ -871,7 +871,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(CertificationStatus input)
+        public string EnumToCode(CertificationStatus input)
         {
             return input switch
             {
@@ -886,7 +886,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ChargeOnIndicator input)
+        public string EnumToCode(ChargeOnIndicator input)
         {
             return input switch
             {
@@ -901,7 +901,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ChargeType input)
+        public string EnumToCode(ChargeType input)
         {
             return input switch
             {
@@ -922,7 +922,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(CheckDigitScheme input)
+        public string EnumToCode(CheckDigitScheme input)
         {
             return input switch
             {
@@ -939,7 +939,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(CodingSystem input)
+        public string EnumToCode(CodingSystem input)
         {
             return input switch
             {
@@ -1030,7 +1030,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(CommandResponse input)
+        public string EnumToCode(CommandResponse input)
         {
             return input switch
             {
@@ -1048,7 +1048,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(CommentType input)
+        public string EnumToCode(CommentType input)
         {
             return input switch
             {
@@ -1069,7 +1069,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(CompletionStatus input)
+        public string EnumToCode(CompletionStatus input)
         {
             return input switch
             {
@@ -1086,7 +1086,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ConditionCode input)
+        public string EnumToCode(ConditionCode input)
         {
             return input switch
             {
@@ -1156,7 +1156,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ConfidentialityCode input)
+        public string EnumToCode(ConfidentialityCode input)
         {
             return input switch
             {
@@ -1179,7 +1179,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ContainerStatus input)
+        public string EnumToCode(ContainerStatus input)
         {
             return input switch
             {
@@ -1200,7 +1200,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ContinuationStyleCode input)
+        public string EnumToCode(ContinuationStyleCode input)
         {
             return input switch
             {
@@ -1215,7 +1215,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(CoordinationOfBenefits input)
+        public string EnumToCode(CoordinationOfBenefits input)
         {
             return input switch
             {
@@ -1230,7 +1230,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(CoverageType input)
+        public string EnumToCode(CoverageType input)
         {
             return input switch
             {
@@ -1246,7 +1246,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(CpRangeType input)
+        public string EnumToCode(CpRangeType input)
         {
             return input switch
             {
@@ -1261,7 +1261,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DataTypes input)
+        public string EnumToCode(DataTypes input)
         {
             return input switch
             {
@@ -1329,7 +1329,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DateTimeSelectionQualifier input)
+        public string EnumToCode(DateTimeSelectionQualifier input)
         {
             return input switch
             {
@@ -1346,7 +1346,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DaysOfTheWeek input)
+        public string EnumToCode(DaysOfTheWeek input)
         {
             return input switch
             {
@@ -1366,7 +1366,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DayType input)
+        public string EnumToCode(DayType input)
         {
             return input switch
             {
@@ -1382,7 +1382,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DeferredResponseType input)
+        public string EnumToCode(DeferredResponseType input)
         {
             return input switch
             {
@@ -1397,7 +1397,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DegreeLicenseCertificate input)
+        public string EnumToCode(DegreeLicenseCertificate input)
         {
             return input switch
             {
@@ -1450,7 +1450,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DelayedAcknowledgmentType input)
+        public string EnumToCode(DelayedAcknowledgmentType input)
         {
             return input switch
             {
@@ -1465,7 +1465,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DenialOrRejectionCode input)
+        public string EnumToCode(DenialOrRejectionCode input)
         {
             return input switch
             {
@@ -1481,7 +1481,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DerivedSpecimen input)
+        public string EnumToCode(DerivedSpecimen input)
         {
             return input switch
             {
@@ -1497,7 +1497,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DiagnosisClassification input)
+        public string EnumToCode(DiagnosisClassification input)
         {
             return input switch
             {
@@ -1518,7 +1518,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DiagnosisPriority input)
+        public string EnumToCode(DiagnosisPriority input)
         {
             return input switch
             {
@@ -1534,7 +1534,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DiagnosisType input)
+        public string EnumToCode(DiagnosisType input)
         {
             return input switch
             {
@@ -1550,7 +1550,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DiagnosticServiceSectionId input)
+        public string EnumToCode(DiagnosticServiceSectionId input)
         {
             return input switch
             {
@@ -1606,7 +1606,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DietCodeSpecificationType input)
+        public string EnumToCode(DietCodeSpecificationType input)
         {
             return input switch
             {
@@ -1622,7 +1622,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DisabledPersonCode input)
+        public string EnumToCode(DisabledPersonCode input)
         {
             return input switch
             {
@@ -1639,7 +1639,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DispenseMethod input)
+        public string EnumToCode(DispenseMethod input)
         {
             return input switch
             {
@@ -1656,7 +1656,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DocumentAvailabilityStatus input)
+        public string EnumToCode(DocumentAvailabilityStatus input)
         {
             return input switch
             {
@@ -1673,7 +1673,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DocumentCompletionStatus input)
+        public string EnumToCode(DocumentCompletionStatus input)
         {
             return input switch
             {
@@ -1693,7 +1693,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DocumentConfidentialityStatus input)
+        public string EnumToCode(DocumentConfidentialityStatus input)
         {
             return input switch
             {
@@ -1709,7 +1709,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DocumentStorageStatus input)
+        public string EnumToCode(DocumentStorageStatus input)
         {
             return input switch
             {
@@ -1726,7 +1726,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DocumentType input)
+        public string EnumToCode(DocumentType input)
         {
             return input switch
             {
@@ -1753,7 +1753,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DrgPayor input)
+        public string EnumToCode(DrgPayor input)
         {
             return input switch
             {
@@ -1769,7 +1769,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(DurationCategories input)
+        public string EnumToCode(DurationCategories input)
         {
             return input switch
             {
@@ -1808,7 +1808,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(EligibilitySource input)
+        public string EnumToCode(EligibilitySource input)
         {
             return input switch
             {
@@ -1828,7 +1828,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(EmploymentStatus input)
+        public string EnumToCode(EmploymentStatus input)
         {
             return input switch
             {
@@ -1855,7 +1855,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(Encoding input)
+        public string EnumToCode(Encoding input)
         {
             return input switch
             {
@@ -1871,7 +1871,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(EquipmentState input)
+        public string EnumToCode(EquipmentState input)
         {
             return input switch
             {
@@ -1893,7 +1893,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(EscortRequired input)
+        public string EnumToCode(EscortRequired input)
         {
             return input switch
             {
@@ -1909,7 +1909,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(EthnicGroup input)
+        public string EnumToCode(EthnicGroup input)
         {
             return input switch
             {
@@ -1925,7 +1925,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(EventConsequence input)
+        public string EnumToCode(EventConsequence input)
         {
             return input switch
             {
@@ -1947,7 +1947,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(EventExpected input)
+        public string EnumToCode(EventExpected input)
         {
             return input switch
             {
@@ -1963,7 +1963,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(EventQualification input)
+        public string EnumToCode(EventQualification input)
         {
             return input switch
             {
@@ -1984,7 +1984,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(EventReason input)
+        public string EnumToCode(EventReason input)
         {
             return input switch
             {
@@ -2000,7 +2000,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(EventReportedTo input)
+        public string EnumToCode(EventReportedTo input)
         {
             return input switch
             {
@@ -2017,7 +2017,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(EventSeriousness input)
+        public string EnumToCode(EventSeriousness input)
         {
             return input switch
             {
@@ -2033,7 +2033,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(EventType input)
+        public string EnumToCode(EventType input)
         {
             return input switch
             {
@@ -2048,7 +2048,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(EventTypeCode input)
+        public string EnumToCode(EventTypeCode input)
         {
             return input switch
             {
@@ -2314,7 +2314,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(FacilityType input)
+        public string EnumToCode(FacilityType input)
         {
             return input switch
             {
@@ -2331,7 +2331,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(FileLevelEventCode input)
+        public string EnumToCode(FileLevelEventCode input)
         {
             return input switch
             {
@@ -2346,7 +2346,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(FillerStatusCodes input)
+        public string EnumToCode(FillerStatusCodes input)
         {
             return input switch
             {
@@ -2369,7 +2369,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(FormularyStatus input)
+        public string EnumToCode(FormularyStatus input)
         {
             return input switch
             {
@@ -2386,7 +2386,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(GestationCategoryCode input)
+        public string EnumToCode(GestationCategoryCode input)
         {
             return input switch
             {
@@ -2402,7 +2402,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(GovernmentReimbursementProgram input)
+        public string EnumToCode(GovernmentReimbursementProgram input)
         {
             return input switch
             {
@@ -2417,7 +2417,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(HospitalService input)
+        public string EnumToCode(HospitalService input)
         {
             return input switch
             {
@@ -2435,7 +2435,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(IdentifierType input)
+        public string EnumToCode(IdentifierType input)
         {
             return input switch
             {
@@ -2494,7 +2494,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(IdentityMayBeDivulged input)
+        public string EnumToCode(IdentityMayBeDivulged input)
         {
             return input switch
             {
@@ -2510,7 +2510,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(IdentityReliabilityCode input)
+        public string EnumToCode(IdentityReliabilityCode input)
         {
             return input switch
             {
@@ -2527,7 +2527,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ImmunizationRegistryStatus input)
+        public string EnumToCode(ImmunizationRegistryStatus input)
         {
             return input switch
             {
@@ -2547,7 +2547,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(IncidentTypeCode input)
+        public string EnumToCode(IncidentTypeCode input)
         {
             return input switch
             {
@@ -2563,7 +2563,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(IndirectExposureMechanism input)
+        public string EnumToCode(IndirectExposureMechanism input)
         {
             return input switch
             {
@@ -2581,7 +2581,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(InsuranceCompanyContactReason input)
+        public string EnumToCode(InsuranceCompanyContactReason input)
         {
             return input switch
             {
@@ -2597,7 +2597,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(InterpretationCodes input)
+        public string EnumToCode(InterpretationCodes input)
         {
             return input switch
             {
@@ -2629,7 +2629,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(InvocationEvent input)
+        public string EnumToCode(InvocationEvent input)
         {
             return input switch
             {
@@ -2647,7 +2647,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(JobStatus input)
+        public string EnumToCode(JobStatus input)
         {
             return input switch
             {
@@ -2664,7 +2664,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(KindOfQuantity input)
+        public string EnumToCode(KindOfQuantity input)
         {
             return input switch
             {
@@ -2779,7 +2779,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(LanguageAbility input)
+        public string EnumToCode(LanguageAbility input)
         {
             return input switch
             {
@@ -2797,7 +2797,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(LanguageProficiency input)
+        public string EnumToCode(LanguageProficiency input)
         {
             return input switch
             {
@@ -2816,7 +2816,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(LevelOfCare input)
+        public string EnumToCode(LevelOfCare input)
         {
             return input switch
             {
@@ -2836,7 +2836,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(LivingArrangement input)
+        public string EnumToCode(LivingArrangement input)
         {
             return input switch
             {
@@ -2855,7 +2855,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(LivingDependency input)
+        public string EnumToCode(LivingDependency input)
         {
             return input switch
             {
@@ -2876,7 +2876,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(LivingWillCode input)
+        public string EnumToCode(LivingWillCode input)
         {
             return input switch
             {
@@ -2894,7 +2894,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(LocalRemoteControlState input)
+        public string EnumToCode(LocalRemoteControlState input)
         {
             return input switch
             {
@@ -2909,7 +2909,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(LocationCharacteristicId input)
+        public string EnumToCode(LocationCharacteristicId input)
         {
             return input switch
             {
@@ -2934,7 +2934,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(LocationEquipment input)
+        public string EnumToCode(LocationEquipment input)
         {
             return input switch
             {
@@ -2955,7 +2955,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(LocationRelationshipId input)
+        public string EnumToCode(LocationRelationshipId input)
         {
             return input switch
             {
@@ -2975,7 +2975,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(LocationServiceCode input)
+        public string EnumToCode(LocationServiceCode input)
         {
             return input switch
             {
@@ -2992,7 +2992,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(MailClaimParty input)
+        public string EnumToCode(MailClaimParty input)
         {
             return input switch
             {
@@ -3010,7 +3010,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ManufacturersOfVaccines input)
+        public string EnumToCode(ManufacturersOfVaccines input)
         {
             return input switch
             {
@@ -3065,7 +3065,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(MaritalStatus input)
+        public string EnumToCode(MaritalStatus input)
         {
             return input switch
             {
@@ -3094,7 +3094,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(MarketingBasis input)
+        public string EnumToCode(MarketingBasis input)
         {
             return input switch
             {
@@ -3113,7 +3113,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(MasterfileActionCode input)
+        public string EnumToCode(MasterfileActionCode input)
         {
             return input switch
             {
@@ -3131,7 +3131,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(MasterFileIdentifierCode input)
+        public string EnumToCode(MasterFileIdentifierCode input)
         {
             return input switch
             {
@@ -3156,7 +3156,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(MatchAlgorithms input)
+        public string EnumToCode(MatchAlgorithms input)
         {
             return input switch
             {
@@ -3171,7 +3171,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(MatchReason input)
+        public string EnumToCode(MatchReason input)
         {
             return input switch
             {
@@ -3188,7 +3188,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(MessageErrorConditionCodes input)
+        public string EnumToCode(MessageErrorConditionCodes input)
         {
             return input switch
             {
@@ -3214,7 +3214,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(MessageStructure input)
+        public string EnumToCode(MessageStructure input)
         {
             return input switch
             {
@@ -3399,7 +3399,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(MessageType input)
+        public string EnumToCode(MessageType input)
         {
             return input switch
             {
@@ -3527,7 +3527,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(MfnRecordLevelErrorReturn input)
+        public string EnumToCode(MfnRecordLevelErrorReturn input)
         {
             return input switch
             {
@@ -3542,7 +3542,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(MilitaryRankGrade input)
+        public string EnumToCode(MilitaryRankGrade input)
         {
             return input switch
             {
@@ -3581,7 +3581,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(MilitaryService input)
+        public string EnumToCode(MilitaryService input)
         {
             return input switch
             {
@@ -3605,7 +3605,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(MilitaryStatus input)
+        public string EnumToCode(MilitaryStatus input)
         {
             return input switch
             {
@@ -3621,7 +3621,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(MimeBase64EncodingCharacters input)
+        public string EnumToCode(MimeBase64EncodingCharacters input)
         {
             return input switch
             {
@@ -3699,7 +3699,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(Modality input)
+        public string EnumToCode(Modality input)
         {
             return input switch
             {
@@ -3738,7 +3738,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ModeOfArrivalCode input)
+        public string EnumToCode(ModeOfArrivalCode input)
         {
             return input switch
             {
@@ -3758,7 +3758,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ModifyIndicator input)
+        public string EnumToCode(ModifyIndicator input)
         {
             return input switch
             {
@@ -3773,7 +3773,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(MoneyOrPercentageIndicator input)
+        public string EnumToCode(MoneyOrPercentageIndicator input)
         {
             return input switch
             {
@@ -3788,7 +3788,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(NameAddressRepresentation input)
+        public string EnumToCode(NameAddressRepresentation input)
         {
             return input switch
             {
@@ -3804,7 +3804,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(NameAssemblyOrder input)
+        public string EnumToCode(NameAssemblyOrder input)
         {
             return input switch
             {
@@ -3819,7 +3819,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(NameType input)
+        public string EnumToCode(NameType input)
         {
             return input switch
             {
@@ -3845,7 +3845,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(NatureOfAbnormalTesting input)
+        public string EnumToCode(NatureOfAbnormalTesting input)
         {
             return input switch
             {
@@ -3862,7 +3862,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(NatureOfChallenge input)
+        public string EnumToCode(NatureOfChallenge input)
         {
             return input switch
             {
@@ -3878,7 +3878,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(NatureOfServiceTestObservation input)
+        public string EnumToCode(NatureOfServiceTestObservation input)
         {
             return input switch
             {
@@ -3896,7 +3896,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(NewbornCode input)
+        public string EnumToCode(NewbornCode input)
         {
             return input switch
             {
@@ -3914,7 +3914,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ObservationResultStatusCodesInterpretation input)
+        public string EnumToCode(ObservationResultStatusCodesInterpretation input)
         {
             return input switch
             {
@@ -3939,7 +3939,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(OccurrenceCode input)
+        public string EnumToCode(OccurrenceCode input)
         {
             return input switch
             {
@@ -4029,7 +4029,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(OccurrenceSpan input)
+        public string EnumToCode(OccurrenceSpan input)
         {
             return input switch
             {
@@ -4053,7 +4053,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(OrderControlCodes input)
+        public string EnumToCode(OrderControlCodes input)
         {
             return input switch
             {
@@ -4114,7 +4114,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(OrderStatus input)
+        public string EnumToCode(OrderStatus input)
         {
             return input switch
             {
@@ -4136,7 +4136,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(OrganDonorCode input)
+        public string EnumToCode(OrganDonorCode input)
         {
             return input switch
             {
@@ -4156,7 +4156,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(OrganizationalNameType input)
+        public string EnumToCode(OrganizationalNameType input)
         {
             return input switch
             {
@@ -4173,7 +4173,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(OtherEnvironmentalFactors input)
+        public string EnumToCode(OtherEnvironmentalFactors input)
         {
             return input switch
             {
@@ -4188,7 +4188,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(OutlierType input)
+        public string EnumToCode(OutlierType input)
         {
             return input switch
             {
@@ -4203,7 +4203,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(OverallClaimDispositionCode input)
+        public string EnumToCode(OverallClaimDispositionCode input)
         {
             return input switch
             {
@@ -4221,7 +4221,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(Override input)
+        public string EnumToCode(Override input)
         {
             return input switch
             {
@@ -4237,7 +4237,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(PackagingStatusCode input)
+        public string EnumToCode(PackagingStatusCode input)
         {
             return input switch
             {
@@ -4253,7 +4253,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ParticipantOrganizationUnitType input)
+        public string EnumToCode(ParticipantOrganizationUnitType input)
         {
             return input switch
             {
@@ -4273,7 +4273,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(PatientClass input)
+        public string EnumToCode(PatientClass input)
         {
             return input switch
             {
@@ -4295,7 +4295,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(PatientConditionCode input)
+        public string EnumToCode(PatientConditionCode input)
         {
             return input switch
             {
@@ -4314,7 +4314,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(PatientLocationType input)
+        public string EnumToCode(PatientLocationType input)
         {
             return input switch
             {
@@ -4335,7 +4335,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(PatientOutcome input)
+        public string EnumToCode(PatientOutcome input)
         {
             return input switch
             {
@@ -4355,7 +4355,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(PatientsRelationshiptoInsured input)
+        public string EnumToCode(PatientsRelationshiptoInsured input)
         {
             return input switch
             {
@@ -4387,7 +4387,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(PaymentAdjustmentCode input)
+        public string EnumToCode(PaymentAdjustmentCode input)
         {
             return input switch
             {
@@ -4405,7 +4405,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(PersonLocationType input)
+        public string EnumToCode(PersonLocationType input)
         {
             return input switch
             {
@@ -4425,7 +4425,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(PolicyType input)
+        public string EnumToCode(PolicyType input)
         {
             return input switch
             {
@@ -4443,7 +4443,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(PractitionerIdNumberType input)
+        public string EnumToCode(PractitionerIdNumberType input)
         {
             return input switch
             {
@@ -4467,7 +4467,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(PractitionerOrganizationUnitType input)
+        public string EnumToCode(PractitionerOrganizationUnitType input)
         {
             return input switch
             {
@@ -4487,7 +4487,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(PrecautionCode input)
+        public string EnumToCode(PrecautionCode input)
         {
             return input switch
             {
@@ -4509,7 +4509,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(PreferredMethodOfContact input)
+        public string EnumToCode(PreferredMethodOfContact input)
         {
             return input switch
             {
@@ -4528,7 +4528,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(PriceType input)
+        public string EnumToCode(PriceType input)
         {
             return input switch
             {
@@ -4548,7 +4548,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(PrimaryKeyValueType input)
+        public string EnumToCode(PrimaryKeyValueType input)
         {
             return input switch
             {
@@ -4563,7 +4563,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(PrimaryObserversQualification input)
+        public string EnumToCode(PrimaryObserversQualification input)
         {
             return input switch
             {
@@ -4583,7 +4583,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(Priority input)
+        public string EnumToCode(Priority input)
         {
             return input switch
             {
@@ -4601,7 +4601,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(PrivacyLevel input)
+        public string EnumToCode(PrivacyLevel input)
         {
             return input switch
             {
@@ -4620,7 +4620,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ProblemGoalActionCode input)
+        public string EnumToCode(ProblemGoalActionCode input)
         {
             return input switch
             {
@@ -4640,7 +4640,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ProcedureDrgType input)
+        public string EnumToCode(ProcedureDrgType input)
         {
             return input switch
             {
@@ -4658,7 +4658,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ProcedureFunctionalType input)
+        public string EnumToCode(ProcedureFunctionalType input)
         {
             return input switch
             {
@@ -4675,7 +4675,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ProcedurePractitionerIdentifierCodeType input)
+        public string EnumToCode(ProcedurePractitionerIdentifierCodeType input)
         {
             return input switch
             {
@@ -4697,7 +4697,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ProcedurePriority input)
+        public string EnumToCode(ProcedurePriority input)
         {
             return input switch
             {
@@ -4713,7 +4713,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ProcessingId input)
+        public string EnumToCode(ProcessingId input)
         {
             return input switch
             {
@@ -4729,7 +4729,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ProcessingMode input)
+        public string EnumToCode(ProcessingMode input)
         {
             return input switch
             {
@@ -4747,7 +4747,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ProcessingPriority input)
+        public string EnumToCode(ProcessingPriority input)
         {
             return input switch
             {
@@ -4767,7 +4767,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ProcessingType input)
+        public string EnumToCode(ProcessingType input)
         {
             return input switch
             {
@@ -4782,7 +4782,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ProductionClassCode input)
+        public string EnumToCode(ProductionClassCode input)
         {
             return input switch
             {
@@ -4807,7 +4807,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ProductSource input)
+        public string EnumToCode(ProductSource input)
         {
             return input switch
             {
@@ -4824,7 +4824,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ProviderBilling input)
+        public string EnumToCode(ProviderBilling input)
         {
             return input switch
             {
@@ -4839,7 +4839,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ProviderRole input)
+        public string EnumToCode(ProviderRole input)
         {
             return input switch
             {
@@ -4859,7 +4859,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(PurgeStatusCode input)
+        public string EnumToCode(PurgeStatusCode input)
         {
             return input switch
             {
@@ -4875,7 +4875,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(QuantityLimitedRequest input)
+        public string EnumToCode(QuantityLimitedRequest input)
         {
             return input switch
             {
@@ -4893,7 +4893,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(QuantityMethod input)
+        public string EnumToCode(QuantityMethod input)
         {
             return input switch
             {
@@ -4908,7 +4908,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(QueryPriority input)
+        public string EnumToCode(QueryPriority input)
         {
             return input switch
             {
@@ -4923,7 +4923,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(QueryResponseFormatCode input)
+        public string EnumToCode(QueryResponseFormatCode input)
         {
             return input switch
             {
@@ -4939,7 +4939,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(QueryResponseStatus input)
+        public string EnumToCode(QueryResponseStatus input)
         {
             return input switch
             {
@@ -4956,7 +4956,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(QueryResultsLevel input)
+        public string EnumToCode(QueryResultsLevel input)
         {
             return input switch
             {
@@ -4973,7 +4973,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ReadmissionIndicator input)
+        public string EnumToCode(ReadmissionIndicator input)
         {
             return input switch
             {
@@ -4987,7 +4987,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(RecreationalDrugUseCode input)
+        public string EnumToCode(RecreationalDrugUseCode input)
         {
             return input switch
             {
@@ -5007,7 +5007,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ReferralCategory input)
+        public string EnumToCode(ReferralCategory input)
         {
             return input switch
             {
@@ -5024,7 +5024,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ReferralDisposition input)
+        public string EnumToCode(ReferralDisposition input)
         {
             return input switch
             {
@@ -5041,7 +5041,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ReferralPriority input)
+        public string EnumToCode(ReferralPriority input)
         {
             return input switch
             {
@@ -5057,7 +5057,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ReferralReason input)
+        public string EnumToCode(ReferralReason input)
         {
             return input switch
             {
@@ -5074,7 +5074,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ReferralStatus input)
+        public string EnumToCode(ReferralStatus input)
         {
             return input switch
             {
@@ -5091,7 +5091,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ReferralType input)
+        public string EnumToCode(ReferralType input)
         {
             return input switch
             {
@@ -5110,7 +5110,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ReimbursementActionCode input)
+        public string EnumToCode(ReimbursementActionCode input)
         {
             return input switch
             {
@@ -5127,7 +5127,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ReimbursementTypeCode input)
+        public string EnumToCode(ReimbursementTypeCode input)
         {
             return input switch
             {
@@ -5150,7 +5150,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(RelatednessAssessment input)
+        public string EnumToCode(RelatednessAssessment input)
         {
             return input switch
             {
@@ -5168,7 +5168,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(RelationalConjunction input)
+        public string EnumToCode(RelationalConjunction input)
         {
             return input switch
             {
@@ -5183,7 +5183,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(RelationalOperator input)
+        public string EnumToCode(RelationalOperator input)
         {
             return input switch
             {
@@ -5204,7 +5204,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(Relationship input)
+        public string EnumToCode(Relationship input)
         {
             return input switch
             {
@@ -5249,7 +5249,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(RelationshipModifier input)
+        public string EnumToCode(RelationshipModifier input)
         {
             return input switch
             {
@@ -5266,7 +5266,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(Religion input)
+        public string EnumToCode(Religion input)
         {
             return input switch
             {
@@ -5362,7 +5362,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(RemoteControlCommand input)
+        public string EnumToCode(RemoteControlCommand input)
         {
             return input switch
             {
@@ -5394,7 +5394,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(RepeatPattern input)
+        public string EnumToCode(RepeatPattern input)
         {
             return input switch
             {
@@ -5435,7 +5435,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ReportingPriority input)
+        public string EnumToCode(ReportingPriority input)
         {
             return input switch
             {
@@ -5450,7 +5450,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ReportPriority input)
+        public string EnumToCode(ReportPriority input)
         {
             return input switch
             {
@@ -5465,7 +5465,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ReportSource input)
+        public string EnumToCode(ReportSource input)
         {
             return input switch
             {
@@ -5488,7 +5488,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ReportTiming input)
+        public string EnumToCode(ReportTiming input)
         {
             return input switch
             {
@@ -5511,7 +5511,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ResponseFlag input)
+        public string EnumToCode(ResponseFlag input)
         {
             return input switch
             {
@@ -5529,7 +5529,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ResponseLevel input)
+        public string EnumToCode(ResponseLevel input)
         {
             return input switch
             {
@@ -5546,7 +5546,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ResponseModality input)
+        public string EnumToCode(ResponseModality input)
         {
             return input switch
             {
@@ -5562,7 +5562,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ResultStatus input)
+        public string EnumToCode(ResultStatus input)
         {
             return input switch
             {
@@ -5586,7 +5586,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(RevenueCode input)
+        public string EnumToCode(RevenueCode input)
         {
             return input switch
             {
@@ -5606,7 +5606,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(RiskManagementIncidentCode input)
+        public string EnumToCode(RiskManagementIncidentCode input)
         {
             return input switch
             {
@@ -5633,7 +5633,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(RoomType input)
+        public string EnumToCode(RoomType input)
         {
             return input switch
             {
@@ -5652,7 +5652,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(RouteOfAdministration input)
+        public string EnumToCode(RouteOfAdministration input)
         {
             return input switch
             {
@@ -5712,7 +5712,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(RXComponentType input)
+        public string EnumToCode(RXComponentType input)
         {
             return input switch
             {
@@ -5727,7 +5727,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(SchoolType input)
+        public string EnumToCode(SchoolType input)
         {
             return input switch
             {
@@ -5744,7 +5744,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(SegmentActionCode input)
+        public string EnumToCode(SegmentActionCode input)
         {
             return input switch
             {
@@ -5760,7 +5760,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(SegmentGroup input)
+        public string EnumToCode(SegmentGroup input)
         {
             return input switch
             {
@@ -5781,7 +5781,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(SensitivityToCausativeAgentCode input)
+        public string EnumToCode(SensitivityToCausativeAgentCode input)
         {
             return input switch
             {
@@ -5798,7 +5798,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(Sequencing input)
+        public string EnumToCode(Sequencing input)
         {
             return input switch
             {
@@ -5816,7 +5816,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(SeverityOfIllnessCode input)
+        public string EnumToCode(SeverityOfIllnessCode input)
         {
             return input switch
             {
@@ -5832,7 +5832,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(SourceOfComment input)
+        public string EnumToCode(SourceOfComment input)
         {
             return input switch
             {
@@ -5848,7 +5848,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(SourceType input)
+        public string EnumToCode(SourceType input)
         {
             return input switch
             {
@@ -5863,7 +5863,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(SpecialHandlingCode input)
+        public string EnumToCode(SpecialHandlingCode input)
         {
             return input switch
             {
@@ -5882,7 +5882,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(SpecialtyType input)
+        public string EnumToCode(SpecialtyType input)
         {
             return input switch
             {
@@ -5921,7 +5921,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(SpecimenActionCode input)
+        public string EnumToCode(SpecimenActionCode input)
         {
             return input switch
             {
@@ -5941,7 +5941,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(SpecimenComponent input)
+        public string EnumToCode(SpecimenComponent input)
         {
             return input switch
             {
@@ -5962,7 +5962,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(SpecimenRole input)
+        public string EnumToCode(SpecimenRole input)
         {
             return input switch
             {
@@ -5980,7 +5980,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(SpecimenSourceCodes input)
+        public string EnumToCode(SpecimenSourceCodes input)
         {
             return input switch
             {
@@ -6121,7 +6121,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(StatusOfEvaluation input)
+        public string EnumToCode(StatusOfEvaluation input)
         {
             return input switch
             {
@@ -6146,7 +6146,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(StudentStatus input)
+        public string EnumToCode(StudentStatus input)
         {
             return input switch
             {
@@ -6162,7 +6162,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(SubstanceStatus input)
+        public string EnumToCode(SubstanceStatus input)
         {
             return input switch
             {
@@ -6186,7 +6186,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(SubstanceType input)
+        public string EnumToCode(SubstanceType input)
         {
             return input switch
             {
@@ -6211,7 +6211,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(SubstitutionStatus input)
+        public string EnumToCode(SubstitutionStatus input)
         {
             return input switch
             {
@@ -6235,7 +6235,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(SubtypeOfReferencedData input)
+        public string EnumToCode(SubtypeOfReferencedData input)
         {
             return input switch
             {
@@ -6263,7 +6263,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(SupplementalServiceInformationValues input)
+        public string EnumToCode(SupplementalServiceInformationValues input)
         {
             return input switch
             {
@@ -6306,7 +6306,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(SystemInducedContaminants input)
+        public string EnumToCode(SystemInducedContaminants input)
         {
             return input switch
             {
@@ -6320,7 +6320,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(TelecommunicationEquipmentType input)
+        public string EnumToCode(TelecommunicationEquipmentType input)
         {
             return input switch
             {
@@ -6340,7 +6340,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(TelecommunicationUseCode input)
+        public string EnumToCode(TelecommunicationUseCode input)
         {
             return input switch
             {
@@ -6361,7 +6361,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(TimeDelayPostChallenge input)
+        public string EnumToCode(TimeDelayPostChallenge input)
         {
             return input switch
             {
@@ -6418,7 +6418,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(TimeSelectionCriteriaParameterClassCodes input)
+        public string EnumToCode(TimeSelectionCriteriaParameterClassCodes input)
         {
             return input switch
             {
@@ -6440,7 +6440,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(TissueTypeCode input)
+        public string EnumToCode(TissueTypeCode input)
         {
             return input switch
             {
@@ -6466,7 +6466,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(TqConjunctionId input)
+        public string EnumToCode(TqConjunctionId input)
         {
             return input switch
             {
@@ -6482,7 +6482,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(TransactionType input)
+        public string EnumToCode(TransactionType input)
         {
             return input switch
             {
@@ -6500,7 +6500,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(TransferType input)
+        public string EnumToCode(TransferType input)
         {
             return input switch
             {
@@ -6515,7 +6515,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(TransportArranged input)
+        public string EnumToCode(TransportArranged input)
         {
             return input switch
             {
@@ -6531,7 +6531,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(TransportationMode input)
+        public string EnumToCode(TransportationMode input)
         {
             return input switch
             {
@@ -6548,7 +6548,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(TrayType input)
+        public string EnumToCode(TrayType input)
         {
             return input switch
             {
@@ -6566,7 +6566,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(Treatment input)
+        public string EnumToCode(Treatment input)
         {
             return input switch
             {
@@ -6587,7 +6587,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(TriageCode input)
+        public string EnumToCode(TriageCode input)
         {
             return input switch
             {
@@ -6606,7 +6606,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(TypeOfAgreement input)
+        public string EnumToCode(TypeOfAgreement input)
         {
             return input switch
             {
@@ -6622,7 +6622,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(TypeOfBillCode input)
+        public string EnumToCode(TypeOfBillCode input)
         {
             return input switch
             {
@@ -6638,7 +6638,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(TypeOfReferencedData input)
+        public string EnumToCode(TypeOfReferencedData input)
         {
             return input switch
             {
@@ -6660,7 +6660,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(UniversalIdType input)
+        public string EnumToCode(UniversalIdType input)
         {
             return input switch
             {
@@ -6686,7 +6686,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(VaccinesAdministered input)
+        public string EnumToCode(VaccinesAdministered input)
         {
             return input switch
             {
@@ -6801,7 +6801,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(ValueCode input)
+        public string EnumToCode(ValueCode input)
         {
             return input switch
             {
@@ -6876,7 +6876,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(VersionId input)
+        public string EnumToCode(VersionId input)
         {
             return input switch
             {
@@ -6896,7 +6896,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(VisitIndicator input)
+        public string EnumToCode(VisitIndicator input)
         {
             return input switch
             {
@@ -6911,7 +6911,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(VisitPriorityCode input)
+        public string EnumToCode(VisitPriorityCode input)
         {
             return input switch
             {
@@ -6927,7 +6927,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(VisitUserCode input)
+        public string EnumToCode(VisitUserCode input)
         {
             return input switch
             {
@@ -6944,7 +6944,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(WhatSubjectFilter input)
+        public string EnumToCode(WhatSubjectFilter input)
         {
             return input switch
             {
@@ -6994,7 +6994,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(WhichDateTimeQualifier input)
+        public string EnumToCode(WhichDateTimeQualifier input)
         {
             return input switch
             {
@@ -7013,7 +7013,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(WhichDateTimeStatusQualifier input)
+        public string EnumToCode(WhichDateTimeStatusQualifier input)
         {
             return input switch
             {
@@ -7032,7 +7032,7 @@ namespace ClearHl7.Fhir.Codes.V240.Helpers
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string ValueToCode(YesNoIndicator input)
+        public string EnumToCode(YesNoIndicator input)
         {
             return input switch
             {
