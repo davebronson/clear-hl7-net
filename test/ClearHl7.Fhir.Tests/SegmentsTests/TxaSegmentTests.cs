@@ -88,7 +88,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                         PersonIdentifier = "22"
                     }
                 },
-                DistributedCopiesCodeAndNameOfRecipientS = new ExtendedCompositeIdNumberAndNameForPersons[]
+                DistributedCopiesCodeAndNameOfRecipients = new ExtendedCompositeIdNumberAndNameForPersons[]
                 {
                     new ExtendedCompositeIdNumberAndNameForPersons
                     {

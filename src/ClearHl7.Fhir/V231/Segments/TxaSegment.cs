@@ -140,7 +140,7 @@ namespace ClearHl7.Fhir.V231.Segments
         /// <summary>
         /// TXA.23 - Distributed Copies (Code and Name of Recipient(s) ).
         /// </summary>
-        public IEnumerable<ExtendedCompositeIdNumberAndNameForPersons> DistributedCopiesCodeAndNameOfRecipientS { get; set; }
+        public IEnumerable<ExtendedCompositeIdNumberAndNameForPersons> DistributedCopiesCodeAndNameOfRecipients { get; set; }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -176,7 +176,7 @@ namespace ClearHl7.Fhir.V231.Segments
                                 DocumentStorageStatus,
                                 DocumentChangeReason,
                                 AuthenticationPersonTimeStampSet != null ? string.Join(Configuration.FieldRepeatSeparator, AuthenticationPersonTimeStampSet.Select(x => x.ToDelimitedString())) : null,
-                                DistributedCopiesCodeAndNameOfRecipientS != null ? string.Join(Configuration.FieldRepeatSeparator, DistributedCopiesCodeAndNameOfRecipientS.Select(x => x.ToDelimitedString())) : null
+                                DistributedCopiesCodeAndNameOfRecipients != null ? string.Join(Configuration.FieldRepeatSeparator, DistributedCopiesCodeAndNameOfRecipients.Select(x => x.ToDelimitedString())) : null
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

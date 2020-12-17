@@ -140,7 +140,7 @@ namespace ClearHl7.Fhir.V271.Segments
         /// <summary>
         /// TXA.23 - Distributed Copies (Code and Name of Recipient(s) ).
         /// </summary>
-        public IEnumerable<ExtendedCompositeIdNumberAndNameForPersons> DistributedCopiesCodeAndNameOfRecipientS { get; set; }
+        public IEnumerable<ExtendedCompositeIdNumberAndNameForPersons> DistributedCopiesCodeAndNameOfRecipients { get; set; }
 
         /// <summary>
         /// TXA.24 - Folder Assignment.
@@ -191,7 +191,7 @@ namespace ClearHl7.Fhir.V271.Segments
                                 DocumentStorageStatus,
                                 DocumentChangeReason,
                                 AuthenticationPersonTimeStampSet != null ? string.Join(Configuration.FieldRepeatSeparator, AuthenticationPersonTimeStampSet.Select(x => x.ToDelimitedString())) : null,
-                                DistributedCopiesCodeAndNameOfRecipientS != null ? string.Join(Configuration.FieldRepeatSeparator, DistributedCopiesCodeAndNameOfRecipientS.Select(x => x.ToDelimitedString())) : null,
+                                DistributedCopiesCodeAndNameOfRecipients != null ? string.Join(Configuration.FieldRepeatSeparator, DistributedCopiesCodeAndNameOfRecipients.Select(x => x.ToDelimitedString())) : null,
                                 FolderAssignment != null ? string.Join(Configuration.FieldRepeatSeparator, FolderAssignment.Select(x => x.ToDelimitedString())) : null,
                                 DocumentTitle != null ? string.Join(Configuration.FieldRepeatSeparator, DocumentTitle) : null,
                                 AgreedDueDateTime.HasValue ? AgreedDueDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
