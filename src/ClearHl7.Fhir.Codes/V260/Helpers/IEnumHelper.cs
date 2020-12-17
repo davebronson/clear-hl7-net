@@ -4,7 +4,7 @@
     {
         string EnumToCode(AcceptApplicationAcknowledgmentConditions input);
         string EnumToCode(AccessRestrictionReasonCode input);
-        string EnumToCode(AccessRestrictionValue input);
+        string EnumToCode(AccessRestrictionValueCode input);
         string EnumToCode(AcknowledgmentCode input);
         string EnumToCode(ActionTakenInResponseToTheEvent input);
         string EnumToCode(ActiveInactive input);

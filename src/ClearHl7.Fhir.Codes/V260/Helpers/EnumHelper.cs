@@ -45,27 +45,27 @@ namespace ClearHl7.Fhir.Codes.V260.Helpers
         }
 
         /// <summary>
-        /// Converts the given AccessRestrictionValue enum value into its HL7 equivalent code.
+        /// Converts the given AccessRestrictionValueCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AccessRestrictionValue input)
+        public string EnumToCode(AccessRestrictionValueCode input)
         {
             return input switch
             {
-                AccessRestrictionValue.All => "ALL",
-                AccessRestrictionValue.AllDemographicData => "DEM",
-                AccessRestrictionValue.Drug => "DRG",
-                AccessRestrictionValue.HivStatusAndResults => "HIV",
-                AccessRestrictionValue.PatientLocation => "LOC",
-                AccessRestrictionValue.None => "NO",
-                AccessRestrictionValue.OptInAllRegistriesHipaa => "OI",
-                AccessRestrictionValue.OptOutAllRegistriesHipaa => "OO",
-                AccessRestrictionValue.Religion => "PID-17",
-                AccessRestrictionValue.DateOfBirth => "PID-7",
-                AccessRestrictionValue.PsychiatricMentalHealth => "PSY",
-                AccessRestrictionValue.SensitiveMedicalData => "SMD",
-                AccessRestrictionValue.SexuallyTransmittedDiseases => "STD",
+                AccessRestrictionValueCode.All => "ALL",
+                AccessRestrictionValueCode.AllDemographicData => "DEM",
+                AccessRestrictionValueCode.Drug => "DRG",
+                AccessRestrictionValueCode.HivStatusAndResults => "HIV",
+                AccessRestrictionValueCode.PatientLocation => "LOC",
+                AccessRestrictionValueCode.None => "NO",
+                AccessRestrictionValueCode.OptInAllRegistriesHipaa => "OI",
+                AccessRestrictionValueCode.OptOutAllRegistriesHipaa => "OO",
+                AccessRestrictionValueCode.Religion => "PID-17",
+                AccessRestrictionValueCode.DateOfBirth => "PID-7",
+                AccessRestrictionValueCode.PsychiatricMentalHealth => "PSY",
+                AccessRestrictionValueCode.SensitiveMedicalData => "SMD",
+                AccessRestrictionValueCode.SexuallyTransmittedDiseases => "STD",
                 _ => throw new NotImplementedException()
             };
         }

@@ -1,10 +1,10 @@
-namespace ClearHl7.Fhir.Codes.V280
+﻿namespace ClearHl7.Fhir.Codes.V280
 {
     /// <summary>
     /// HL7 Version 2 Table 0717 - Access Restriction Value.
     /// </summary>
     /// <remarks>https://www.hl7.org/fhir/v2/0717</remarks>
-    public enum AccessRestrictionValue
+    public enum AccessRestrictionValueCode
     {
         /// <summary>
         /// ALL - All.
