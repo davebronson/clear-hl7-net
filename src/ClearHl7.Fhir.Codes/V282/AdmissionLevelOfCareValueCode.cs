@@ -4,7 +4,7 @@ namespace ClearHl7.Fhir.Codes.V282
     /// HL7 Version 2 Table 0432 - Admission Level Of Care Code.
     /// </summary>
     /// <remarks>https://www.hl7.org/fhir/v2/0432</remarks>
-    public enum AdmissionLevelOfCareCode
+    public enum AdmissionLevelOfCareValueCode
     {
         /// <summary>
         /// AC - Acute.

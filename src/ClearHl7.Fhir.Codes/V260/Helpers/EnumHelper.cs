@@ -359,20 +359,20 @@ namespace ClearHl7.Fhir.Codes.V260.Helpers
         }
 
         /// <summary>
-        /// Converts the given AdmissionLevelOfCareCode enum value into its HL7 equivalent code.
+        /// Converts the given AdmissionLevelOfCareValueCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AdmissionLevelOfCareCode input)
+        public string EnumToCode(AdmissionLevelOfCareValueCode input)
         {
             return input switch
             {
-                AdmissionLevelOfCareCode.Acute => "AC",
-                AdmissionLevelOfCareCode.Chronic => "CH",
-                AdmissionLevelOfCareCode.Comatose => "CO",
-                AdmissionLevelOfCareCode.Critical => "CR",
-                AdmissionLevelOfCareCode.Improved => "IM",
-                AdmissionLevelOfCareCode.Moribund => "MO",
+                AdmissionLevelOfCareValueCode.Acute => "AC",
+                AdmissionLevelOfCareValueCode.Chronic => "CH",
+                AdmissionLevelOfCareValueCode.Comatose => "CO",
+                AdmissionLevelOfCareValueCode.Critical => "CR",
+                AdmissionLevelOfCareValueCode.Improved => "IM",
+                AdmissionLevelOfCareValueCode.Moribund => "MO",
                 _ => throw new NotImplementedException()
             };
         }
