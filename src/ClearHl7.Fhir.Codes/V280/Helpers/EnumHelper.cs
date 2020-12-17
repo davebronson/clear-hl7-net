@@ -369,20 +369,20 @@ namespace ClearHl7.Fhir.Codes.V280.Helpers
         }
 
         /// <summary>
-        /// Converts the given AdministrativeSex enum value into its HL7 equivalent code.
+        /// Converts the given AdministrativeSexCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AdministrativeSex input)
+        public string EnumToCode(AdministrativeSexCode input)
         {
             return input switch
             {
-                AdministrativeSex.Ambiguous => "A",
-                AdministrativeSex.Female => "F",
-                AdministrativeSex.Male => "M",
-                AdministrativeSex.NotApplicable => "N",
-                AdministrativeSex.Other => "O",
-                AdministrativeSex.Unknown => "U",
+                AdministrativeSexCode.Ambiguous => "A",
+                AdministrativeSexCode.Female => "F",
+                AdministrativeSexCode.Male => "M",
+                AdministrativeSexCode.NotApplicable => "N",
+                AdministrativeSexCode.Other => "O",
+                AdministrativeSexCode.Unknown => "U",
                 _ => throw new NotImplementedException()
             };
         }

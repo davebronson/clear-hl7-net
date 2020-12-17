@@ -10,7 +10,7 @@
         string EnumToCode(AddressTypeCode input);
         string EnumToCode(AdministrationDeviceCode input);
         string EnumToCode(AdministrationMethodCode input);
-        string EnumToCode(AdministrativeSex input);
+        string EnumToCode(AdministrativeSexCode input);
         string EnumToCode(AdmissionType input);
         string EnumToCode(AllergenType input);
         string EnumToCode(AllergySeverity input);
