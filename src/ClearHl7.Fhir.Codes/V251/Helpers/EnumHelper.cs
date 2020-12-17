@@ -213,29 +213,29 @@ namespace ClearHl7.Fhir.Codes.V251.Helpers
         }
 
         /// <summary>
-        /// Converts the given AdministrationMethod enum value into its HL7 equivalent code.
+        /// Converts the given AdministrationMethodCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AdministrationMethod input)
+        public string EnumToCode(AdministrationMethodCode input)
         {
             return input switch
             {
-                AdministrationMethod.Chew => "CH",
-                AdministrationMethod.Dissolve => "DI",
-                AdministrationMethod.Dust => "DU",
-                AdministrationMethod.Infiltrate => "IF",
-                AdministrationMethod.Irrigate => "IR",
-                AdministrationMethod.Insert => "IS",
-                AdministrationMethod.IvPush => "IVP",
-                AdministrationMethod.IvPiggyback => "IVPB",
-                AdministrationMethod.Nebulized => "NB",
-                AdministrationMethod.Perfuse => "PF",
-                AdministrationMethod.Paint => "PT",
-                AdministrationMethod.Shampoo => "SH",
-                AdministrationMethod.Soak => "SO",
-                AdministrationMethod.Wash => "WA",
-                AdministrationMethod.Wipe => "WI",
+                AdministrationMethodCode.Chew => "CH",
+                AdministrationMethodCode.Dissolve => "DI",
+                AdministrationMethodCode.Dust => "DU",
+                AdministrationMethodCode.Infiltrate => "IF",
+                AdministrationMethodCode.Irrigate => "IR",
+                AdministrationMethodCode.Insert => "IS",
+                AdministrationMethodCode.IvPush => "IVP",
+                AdministrationMethodCode.IvPiggyback => "IVPB",
+                AdministrationMethodCode.Nebulized => "NB",
+                AdministrationMethodCode.Perfuse => "PF",
+                AdministrationMethodCode.Paint => "PT",
+                AdministrationMethodCode.Shampoo => "SH",
+                AdministrationMethodCode.Soak => "SO",
+                AdministrationMethodCode.Wash => "WA",
+                AdministrationMethodCode.Wipe => "WI",
                 _ => throw new NotImplementedException()
             };
         }

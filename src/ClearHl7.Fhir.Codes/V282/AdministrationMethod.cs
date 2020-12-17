@@ -4,7 +4,7 @@ namespace ClearHl7.Fhir.Codes.V282
     /// HL7 Version 2 Table 0165 - Administration Method.
     /// </summary>
     /// <remarks>https://www.hl7.org/fhir/v2/0165</remarks>
-    public enum AdministrationMethod
+    public enum AdministrationMethodCode
     {
         /// <summary>
         /// CH - Chew.

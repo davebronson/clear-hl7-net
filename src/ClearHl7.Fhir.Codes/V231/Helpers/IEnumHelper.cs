@@ -9,7 +9,7 @@
         string EnumToCode(ActiveInactive input);
         string EnumToCode(AddressTypeCode input);
         string EnumToCode(AdministrationDeviceCode input);
-        string EnumToCode(AdministrationMethod input);
+        string EnumToCode(AdministrationMethodCode input);
         string EnumToCode(AdministrativeSex input);
         string EnumToCode(AdmissionType input);
         string EnumToCode(AdmitSource input);
