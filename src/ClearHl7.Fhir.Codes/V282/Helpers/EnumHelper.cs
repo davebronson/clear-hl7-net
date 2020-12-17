@@ -270,17 +270,17 @@ namespace ClearHl7.Fhir.Codes.V282.Helpers
         }
 
         /// <summary>
-        /// Converts the given AddressUsage enum value into its HL7 equivalent code.
+        /// Converts the given AddressUsageCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AddressUsage input)
+        public string EnumToCode(AddressUsageCode input)
         {
             return input switch
             {
-                AddressUsage.Classification => "C",
-                AddressUsage.Mailing => "M",
-                AddressUsage.Visit => "V",
+                AddressUsageCode.Classification => "C",
+                AddressUsageCode.Mailing => "M",
+                AddressUsageCode.Visit => "V",
                 _ => throw new NotImplementedException()
             };
         }
