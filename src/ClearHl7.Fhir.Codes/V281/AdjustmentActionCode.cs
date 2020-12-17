@@ -4,7 +4,7 @@ namespace ClearHl7.Fhir.Codes.V281
     /// HL7 Version 2 Table 0569 - Adjustment Action.
     /// </summary>
     /// <remarks>https://www.hl7.org/fhir/v2/0569</remarks>
-    public enum AdjustmentAction
+    public enum AdjustmentActionCode
     {
         /// <summary>
         /// EOB - Print on EOB.

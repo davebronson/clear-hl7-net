@@ -286,17 +286,17 @@ namespace ClearHl7.Fhir.Codes.V280.Helpers
         }
 
         /// <summary>
-        /// Converts the given AdjustmentAction enum value into its HL7 equivalent code.
+        /// Converts the given AdjustmentActionCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AdjustmentAction input)
+        public string EnumToCode(AdjustmentActionCode input)
         {
             return input switch
             {
-                AdjustmentAction.PrintOnEob => "EOB",
-                AdjustmentAction.InformPatient => "PAT",
-                AdjustmentAction.InformProvider => "PRO",
+                AdjustmentActionCode.PrintOnEob => "EOB",
+                AdjustmentActionCode.InformPatient => "PAT",
+                AdjustmentActionCode.InformProvider => "PRO",
                 _ => throw new NotImplementedException()
             };
         }
