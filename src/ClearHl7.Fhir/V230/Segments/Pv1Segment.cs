@@ -92,7 +92,7 @@ namespace ClearHl7.Fhir.V230.Segments
         /// PV1.13 - Re-admission Indicator.
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0092</remarks>
-        public string ReAdmissionIndicator { get; set; }
+        public string ReadmissionIndicator { get; set; }
 
         /// <summary>
         /// PV1.14 - Admit Source.
@@ -335,7 +335,7 @@ namespace ClearHl7.Fhir.V230.Segments
                                 HospitalService,
                                 TemporaryLocation?.ToDelimitedString(),
                                 PreadmitTestIndicator,
-                                ReAdmissionIndicator,
+                                ReadmissionIndicator,
                                 AdmitSource,
                                 AmbulatoryStatus != null ? string.Join(Configuration.FieldRepeatSeparator, AmbulatoryStatus) : null,
                                 VipIndicator,

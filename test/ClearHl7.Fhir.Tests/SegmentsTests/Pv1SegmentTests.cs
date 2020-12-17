@@ -78,7 +78,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     Identifier = "12"
                 },
-                ReAdmissionIndicator = new CodedWithExceptions
+                ReadmissionIndicator = new CodedWithExceptions
                 {
                     Identifier = "13"
                 },
