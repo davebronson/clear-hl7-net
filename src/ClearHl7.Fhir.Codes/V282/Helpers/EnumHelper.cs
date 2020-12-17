@@ -90,20 +90,20 @@ namespace ClearHl7.Fhir.Codes.V282.Helpers
         }
 
         /// <summary>
-        /// Converts the given ActionTakenInResponseToTheEvent enum value into its HL7 equivalent code.
+        /// Converts the given ActionTakenInResponseToTheEventCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(ActionTakenInResponseToTheEvent input)
+        public string EnumToCode(ActionTakenInResponseToTheEventCode input)
         {
             return input switch
             {
-                ActionTakenInResponseToTheEvent.ProductDoseIncreased => "DI",
-                ActionTakenInResponseToTheEvent.ProductDoseReduced => "DR",
-                ActionTakenInResponseToTheEvent.None => "N",
-                ActionTakenInResponseToTheEvent.Other => "OT",
-                ActionTakenInResponseToTheEvent.ProductWithdrawnPermanently => "WP",
-                ActionTakenInResponseToTheEvent.ProductWithdrawnTemporarily => "WT",
+                ActionTakenInResponseToTheEventCode.ProductDoseIncreased => "DI",
+                ActionTakenInResponseToTheEventCode.ProductDoseReduced => "DR",
+                ActionTakenInResponseToTheEventCode.None => "N",
+                ActionTakenInResponseToTheEventCode.Other => "OT",
+                ActionTakenInResponseToTheEventCode.ProductWithdrawnPermanently => "WP",
+                ActionTakenInResponseToTheEventCode.ProductWithdrawnTemporarily => "WT",
                 _ => throw new NotImplementedException()
             };
         }

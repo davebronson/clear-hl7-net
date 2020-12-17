@@ -6,7 +6,7 @@
         string EnumToCode(AccessRestrictionReasonCode input);
         string EnumToCode(AccessRestrictionValueCode input);
         string EnumToCode(AcknowledgmentTypeCode input);
-        string EnumToCode(ActionTakenInResponseToTheEvent input);
+        string EnumToCode(ActionTakenInResponseToTheEventCode input);
         string EnumToCode(ActiveInactive input);
         string EnumToCode(ActPriority input);
         string EnumToCode(AdditivePreservative input);

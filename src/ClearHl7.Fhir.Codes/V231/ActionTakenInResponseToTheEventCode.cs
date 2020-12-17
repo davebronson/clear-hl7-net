@@ -4,7 +4,7 @@ namespace ClearHl7.Fhir.Codes.V231
     /// HL7 Version 2 Table 0251 - Action Taken In Response To The Event.
     /// </summary>
     /// <remarks>https://www.hl7.org/fhir/v2/0251</remarks>
-    public enum ActionTakenInResponseToTheEvent
+    public enum ActionTakenInResponseToTheEventCode
     {
         /// <summary>
         /// DI - Product dose or frequency of use increased.

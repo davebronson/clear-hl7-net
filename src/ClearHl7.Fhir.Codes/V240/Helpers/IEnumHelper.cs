@@ -5,7 +5,7 @@
         string EnumToCode(AcceptApplicationAcknowledgmentConditions input);
         string EnumToCode(AcknowledgmentTypeCode input);
         string EnumToCode(ActionCode input);
-        string EnumToCode(ActionTakenInResponseToTheEvent input);
+        string EnumToCode(ActionTakenInResponseToTheEventCode input);
         string EnumToCode(ActiveInactive input);
         string EnumToCode(AdditivePreservative input);
         string EnumToCode(AddressType input);
