@@ -239,32 +239,32 @@ namespace ClearHl7.Fhir.Codes.V280.Helpers
         }
 
         /// <summary>
-        /// Converts the given AddressType enum value into its HL7 equivalent code.
+        /// Converts the given AddressTypeCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AddressType input)
+        public string EnumToCode(AddressTypeCode input)
         {
             return input switch
             {
-                AddressType.FirmBusiness => "B",
-                AddressType.BadAddress => "BA",
-                AddressType.BirthDeliveryLocation => "BDL",
-                AddressType.BillingAddress => "BI",
-                AddressType.ResidenceAtBirth => "BR",
-                AddressType.CurrentOrTemporary => "C",
-                AddressType.CountryOfOrigin => "F",
-                AddressType.Home => "H",
-                AddressType.LegalAddress => "L",
-                AddressType.Mailing => "M",
-                AddressType.BirthNee => "N",
-                AddressType.OfficeBusiness => "O",
-                AddressType.Permanent => "P",
-                AddressType.RegistryHome => "RH",
-                AddressType.ServiceLocation => "S",
-                AddressType.ShippingAddress => "SH",
-                AddressType.TubeAddress => "TM",
-                AddressType.Vacation => "V",
+                AddressTypeCode.FirmBusiness => "B",
+                AddressTypeCode.BadAddress => "BA",
+                AddressTypeCode.BirthDeliveryLocation => "BDL",
+                AddressTypeCode.BillingAddress => "BI",
+                AddressTypeCode.ResidenceAtBirth => "BR",
+                AddressTypeCode.CurrentOrTemporary => "C",
+                AddressTypeCode.CountryOfOrigin => "F",
+                AddressTypeCode.Home => "H",
+                AddressTypeCode.LegalAddress => "L",
+                AddressTypeCode.Mailing => "M",
+                AddressTypeCode.BirthNee => "N",
+                AddressTypeCode.OfficeBusiness => "O",
+                AddressTypeCode.Permanent => "P",
+                AddressTypeCode.RegistryHome => "RH",
+                AddressTypeCode.ServiceLocation => "S",
+                AddressTypeCode.ShippingAddress => "SH",
+                AddressTypeCode.TubeAddress => "TM",
+                AddressTypeCode.Vacation => "V",
                 _ => throw new NotImplementedException()
             };
         }

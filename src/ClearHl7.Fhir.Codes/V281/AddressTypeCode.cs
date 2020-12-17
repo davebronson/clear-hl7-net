@@ -4,7 +4,7 @@ namespace ClearHl7.Fhir.Codes.V281
     /// HL7 Version 2 Table 0190 - Address Type.
     /// </summary>
     /// <remarks>https://www.hl7.org/fhir/v2/0190</remarks>
-    public enum AddressType
+    public enum AddressTypeCode
     {
         /// <summary>
         /// B - Firm/Business.

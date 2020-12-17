@@ -8,7 +8,7 @@
         string EnumToCode(ActionTakenInResponseToTheEventCode input);
         string EnumToCode(ActiveInactive input);
         string EnumToCode(AdditivePreservative input);
-        string EnumToCode(AddressType input);
+        string EnumToCode(AddressTypeCode input);
         string EnumToCode(AdministrationDevice input);
         string EnumToCode(AdministrationMethod input);
         string EnumToCode(AdministrativeSex input);

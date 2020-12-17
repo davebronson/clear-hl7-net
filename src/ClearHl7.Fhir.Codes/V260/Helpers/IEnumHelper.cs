@@ -10,7 +10,7 @@
         string EnumToCode(ActiveInactive input);
         string EnumToCode(AdditivePreservative input);
         string EnumToCode(AddressExpirationReason input);
-        string EnumToCode(AddressType input);
+        string EnumToCode(AddressTypeCode input);
         string EnumToCode(AddressUsage input);
         string EnumToCode(AdjustmentAction input);
         string EnumToCode(AdjustmentCategoryCode input);
