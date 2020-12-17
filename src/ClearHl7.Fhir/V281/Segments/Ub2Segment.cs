@@ -34,7 +34,7 @@ namespace ClearHl7.Fhir.V281.Segments
         /// UB2.3 - Condition Code (24-30).
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0043</remarks>
-        public IEnumerable<CodedWithExceptions> ConditionCode2430 { get; set; }
+        public IEnumerable<CodedWithExceptions> ConditionCode24To30 { get; set; }
 
         /// <summary>
         /// UB2.4 - Covered Days (7).
@@ -120,7 +120,7 @@ namespace ClearHl7.Fhir.V281.Segments
                                 Id,
                                 SetIdUb2.HasValue ? SetIdUb2.Value.ToString(culture) : null,
                                 CoInsuranceDays9,
-                                ConditionCode2430 != null ? string.Join(Configuration.FieldRepeatSeparator, ConditionCode2430.Select(x => x.ToDelimitedString())) : null,
+                                ConditionCode24To30 != null ? string.Join(Configuration.FieldRepeatSeparator, ConditionCode24To30.Select(x => x.ToDelimitedString())) : null,
                                 CoveredDays7,
                                 NonCoveredDays8,
                                 ValueAmountCode3941 != null ? string.Join(Configuration.FieldRepeatSeparator, ValueAmountCode3941.Select(x => x.ToDelimitedString())) : null,

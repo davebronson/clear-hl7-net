@@ -16,7 +16,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
             {
                 SetIdUb2 = 1,
                 CoInsuranceDays9 = "2",
-                ConditionCode2430 = new CodedWithExceptions[]
+                ConditionCode24To30 = new CodedWithExceptions[]
                 {
                     new CodedWithExceptions
                     {
