@@ -150,7 +150,7 @@ var message = new Message
             Ordinal = 2,
             PatientClass = new CodedWithExceptions { Identifier = "I" }, // Inpatient
             AdmissionType = new CodedWithExceptions { Identifier = "E" }, // Emergency
-            ReAdmissionIndicator = new CodedWithExceptions { Identifier = "R" }, // Re-admission	
+            ReadmissionIndicator = new CodedWithExceptions { Identifier = "R" }, // Re-admission	
             AmbulatoryStatus = new CodedWithExceptions[]
             {
                 new CodedWithExceptions { Identifier = "A2" }, // Ambulates with assistive device
@@ -213,9 +213,9 @@ using ClearHl7.Fhir.Codes.V282.Helpers;
 var helper = new EnumHelper();
 
 // Example using the MaritalStatus and YesNoIndicator codes
-// You must call EnumHelper.ValueToCode() to receive the actual coded string for a given enum value
-pidSegment.MaritalStatus = new CodedWithExceptions { Identifier = helper.ValueToCode(MaritalStatus.Married) };
-pidSegment.MultipleBirthIndicator = helper.ValueToCode(YesNoIndicator.No);
+// You must call EnumHelper.EnumToCode() to receive the actual coded string for a given enum value
+pidSegment.MaritalStatus = new CodedWithExceptions { Identifier = helper.EnumToCode(MaritalStatus.Married) };
+pidSegment.MultipleBirthIndicator = helper.EnumToCode(YesNoIndicator.No);
 ```
 
 ## Anything Else?
