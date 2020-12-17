@@ -290,23 +290,23 @@ namespace ClearHl7.Fhir.Codes.V260.Helpers
         }
 
         /// <summary>
-        /// Converts the given AdministrationDevice enum value into its HL7 equivalent code.
+        /// Converts the given AdministrationDeviceCode enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
         /// <returns>A string.</returns>
-        public string EnumToCode(AdministrationDevice input)
+        public string EnumToCode(AdministrationDeviceCode input)
         {
             return input switch
             {
-                AdministrationDevice.Applicator => "AP",
-                AdministrationDevice.Buretrol => "BT",
-                AdministrationDevice.HeparinLock => "HL",
-                AdministrationDevice.Ippb => "IPPB",
-                AdministrationDevice.IvPump => "IVP",
-                AdministrationDevice.IvSoluset => "IVS",
-                AdministrationDevice.MeteredInhaler => "MI",
-                AdministrationDevice.Nebulizer => "NEB",
-                AdministrationDevice.PcaPump => "PCA",
+                AdministrationDeviceCode.Applicator => "AP",
+                AdministrationDeviceCode.Buretrol => "BT",
+                AdministrationDeviceCode.HeparinLock => "HL",
+                AdministrationDeviceCode.Ippb => "IPPB",
+                AdministrationDeviceCode.IvPump => "IVP",
+                AdministrationDeviceCode.IvSoluset => "IVS",
+                AdministrationDeviceCode.MeteredInhaler => "MI",
+                AdministrationDeviceCode.Nebulizer => "NEB",
+                AdministrationDeviceCode.PcaPump => "PCA",
                 _ => throw new NotImplementedException()
             };
         }

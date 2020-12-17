@@ -15,7 +15,7 @@
         string EnumToCode(AddressUsageCode input);
         string EnumToCode(AdjustmentActionCode input);
         string EnumToCode(AdjustmentCategoryCode input);
-        string EnumToCode(AdministrationDevice input);
+        string EnumToCode(AdministrationDeviceCode input);
         string EnumToCode(AdministrationMethod input);
         string EnumToCode(AdministrativeSex input);
         string EnumToCode(AdmissionLevelOfCareCode input);
