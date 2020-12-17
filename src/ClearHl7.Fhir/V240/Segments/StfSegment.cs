@@ -179,7 +179,7 @@ namespace ClearHl7.Fhir.V240.Segments
         /// STF.29 - Re-activation Approval Indicator.
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
-        public string ReActivationApprovalIndicator { get; set; }
+        public string ReactivationApprovalIndicator { get; set; }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -221,7 +221,7 @@ namespace ClearHl7.Fhir.V240.Segments
                                 DateNextDmvReview.HasValue ? DateNextDmvReview.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 Race?.ToDelimitedString(),
                                 EthnicGroup?.ToDelimitedString(),
-                                ReActivationApprovalIndicator
+                                ReactivationApprovalIndicator
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

@@ -142,7 +142,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     Identifier = "28"
                 },
-                ReActivationApprovalIndicator = "29",
+                ReactivationApprovalIndicator = "29",
                 Citizenship = new CodedWithExceptions[]
                 {
                     new CodedWithExceptions

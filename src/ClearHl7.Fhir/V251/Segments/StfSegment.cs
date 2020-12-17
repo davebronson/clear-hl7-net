@@ -180,7 +180,7 @@ namespace ClearHl7.Fhir.V251.Segments
         /// STF.29 - Re-activation Approval Indicator.
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
-        public string ReActivationApprovalIndicator { get; set; }
+        public string ReactivationApprovalIndicator { get; set; }
 
         /// <summary>
         /// STF.30 - Citizenship.
@@ -273,7 +273,7 @@ namespace ClearHl7.Fhir.V251.Segments
                                 DateNextDmvReview.HasValue ? DateNextDmvReview.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
                                 Race?.ToDelimitedString(),
                                 EthnicGroup?.ToDelimitedString(),
-                                ReActivationApprovalIndicator,
+                                ReactivationApprovalIndicator,
                                 Citizenship != null ? string.Join(Configuration.FieldRepeatSeparator, Citizenship.Select(x => x.ToDelimitedString())) : null,
                                 DateTimeOfDeath.HasValue ? DateTimeOfDeath.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 DeathIndicator,
