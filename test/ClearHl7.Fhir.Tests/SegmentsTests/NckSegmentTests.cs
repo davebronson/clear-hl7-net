@@ -1,6 +1,5 @@
 ﻿using System;
 using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests

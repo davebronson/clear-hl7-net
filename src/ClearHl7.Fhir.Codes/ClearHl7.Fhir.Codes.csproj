@@ -6,7 +6,7 @@
     <Copyright>Copyright © Dave Bronson 2020</Copyright>
     <PackageProjectUrl>https://github.com/davebronson/clear-hl7-net</PackageProjectUrl>
     <Summary>Enumerated coded values for the FHIR HL7 standard</Summary>
-    <PackageTags>hl7;fhir;dotnet;code;codesystem</PackageTags>
+    <PackageTags>hl7;fhir;dotnet;healthcare;code;codesystem</PackageTags>
     <Title>ClearHL7.Fhir.Codes</Title>
     <Description>Enumerated coded values for the FHIR HL7 standard</Description>
     <PackageLicenseUrl>https://github.com/davebronson/clear-hl7-net/blob/master/LICENSE</PackageLicenseUrl>
