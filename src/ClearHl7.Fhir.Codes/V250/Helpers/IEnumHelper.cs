@@ -234,6 +234,7 @@
         string EnumToCode(CodeQueryResponseFormatCode input);
         string EnumToCode(CodeQueryResponseStatus input);
         string EnumToCode(CodeQueryResultsLevel input);
+        string EnumToCode(CodeRace input);
         string EnumToCode(CodeReadmissionIndicator input);
         string EnumToCode(CodeRecreationalDrugUseCode input);
         string EnumToCode(CodeReferralCategory input);

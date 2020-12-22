@@ -297,6 +297,7 @@
         string EnumToCode(CodeQuantityMethod input);
         string EnumToCode(CodeQueryPriority input);
         string EnumToCode(CodeQueryResponseStatus input);
+        string EnumToCode(CodeRace input);
         string EnumToCode(CodeReadmissionIndicator input);
         string EnumToCode(CodeRecreationalDrugUseCode input);
         string EnumToCode(CodeReferralCategory input);

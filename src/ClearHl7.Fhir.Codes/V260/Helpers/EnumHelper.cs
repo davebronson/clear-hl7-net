@@ -7173,6 +7173,25 @@ namespace ClearHl7.Fhir.Codes.V260.Helpers
         }
 
         /// <summary>
+        /// Converts the given CodeRace enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public string EnumToCode(CodeRace input)
+        {
+            return input switch
+            {
+                CodeRace.AmericanIndianOrAlaskaNative => "1002-5",
+                CodeRace.Asian => "2028-9",
+                CodeRace.BlackOrAfricanAmerican => "2054-5",
+                CodeRace.NativeHawaiianOrOtherPacificIslander => "2076-8",
+                CodeRace.White => "2106-3",
+                CodeRace.OtherRace => "2131-1",
+                _ => throw new NotImplementedException()
+            };
+        }
+
+        /// <summary>
         /// Converts the given CodeReadmissionIndicator enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
