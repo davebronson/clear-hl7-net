@@ -204,7 +204,6 @@ Configuration.SubcomponentSeparator = "/"; // Use forward slash
 ## Using the ClearHl7.Codes Component
 There are code systems published as part of the FHIR HL7 specification, which are recommended for use in your messages.  You have flexibility, of course, to use any coded values that you and your message consumer might agree upon.  To easily access the FHIR-defined codes you may utilize the `ClearHl7.Fhir.Codes` component, which contains enumerations for each.
 ```csharp
-using System.Linq;
 using ClearHl7.Fhir.Codes.V282;
 using ClearHl7.Fhir.Codes.V282.Helpers;
 
