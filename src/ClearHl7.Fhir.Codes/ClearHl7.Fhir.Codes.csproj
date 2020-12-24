@@ -6,12 +6,14 @@
     <Copyright>Copyright © Dave Bronson 2020</Copyright>
     <PackageProjectUrl>https://github.com/davebronson/clear-hl7-net</PackageProjectUrl>
     <Summary>Enumerated coded values for the FHIR HL7 standard</Summary>
-    <PackageTags>hl7;fhir;dotnet;healthcare;code;codesystem</PackageTags>
+    <PackageTags>hl7;hl7-builder;hl7-message;hl7-generating;hl7-fhir;fhir;dotnet;healthcare;code;codesystem</PackageTags>
     <Title>ClearHL7.Fhir.Codes</Title>
     <Description>Enumerated coded values for the FHIR HL7 standard</Description>
-    <PackageLicenseUrl>https://github.com/davebronson/clear-hl7-net/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicense>https://github.com/davebronson/clear-hl7-net/blob/master/LICENSE</PackageLicense>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <ReleaseVersion>1.0</ReleaseVersion>
+    <PackageVersion>1.0.0-beta1</PackageVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <LangVersion>latest</LangVersion>
@@ -19,5 +21,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <LangVersion>latest</LangVersion>
+    <DebugType></DebugType>
+    <DocumentationFile>bin\Release\netstandard2.0\ClearHl7.Fhir.Codes.xml</DocumentationFile>
   </PropertyGroup>
 </Project>

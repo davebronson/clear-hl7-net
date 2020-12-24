@@ -26,4 +26,11 @@ Global
 		{1303BCA9-187A-4CE7-A77E-51FCEC3781E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1303BCA9-187A-4CE7-A77E-51FCEC3781E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.StandardHeader = $1
+		$0.VersionControlPolicy = $2
+		version = 1.0
+		description = .NET HL7 library
+	EndGlobalSection
 EndGlobal
