@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V250
+﻿namespace ClearHl7.Fhir.Codes.V250
 {
     /// <summary>
     /// HL7 Version 2 Table 0257 - Nature Of Challenge.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0257</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0257</remarks>
     public enum CodeNatureOfChallenge
     {
         /// <summary>

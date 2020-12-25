@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V260
+﻿namespace ClearHl7.Fhir.Codes.V260
 {
     /// <summary>
     /// HL7 Version 2 Table 0475 - Charge Type Reason.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0475</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0475</remarks>
     public enum CodeChargeTypeReason
     {
         /// <summary>

@@ -47,12 +47,12 @@ namespace ClearHl7.Fhir.V251.Segments
         public string NonCoveredDays8 { get; set; }
 
         /// <summary>
-        /// UB2.6 - Value Amount & Code (39-41).
+        /// UB2.6 - Value Amount &amp; Code (39-41).
         /// </summary>
         public IEnumerable<ValueCodeAndAmount> ValueAmountCode39To41 { get; set; }
 
         /// <summary>
-        /// UB2.7 - Occurrence Code & Date (32-35).
+        /// UB2.7 - Occurrence Code &amp; Date (32-35).
         /// </summary>
         public IEnumerable<OccurrenceCodeAndDate> OccurrenceCodeDate32To35 { get; set; }
 

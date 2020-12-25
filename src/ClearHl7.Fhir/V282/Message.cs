@@ -5,6 +5,9 @@ using ClearHl7.Fhir.Helpers;
 
 namespace ClearHl7.Fhir.V282
 {
+    /// <summary>
+    /// HL7 Version 2 Message.
+    /// </summary>
     public class Message : IMessage
     {
         /// <summary>

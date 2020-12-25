@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V260
+﻿namespace ClearHl7.Fhir.Codes.V260
 {
     /// <summary>
     /// HL7 Version 2 Table 0731 - DRG Diagnosis Determination Status.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0731</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0731</remarks>
     public enum CodeDrgDiagnosisDeterminationStatus
     {
         /// <summary>

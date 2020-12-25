@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V240
+﻿namespace ClearHl7.Fhir.Codes.V240
 {
     /// <summary>
     /// HL7 Version 2 Table 0394 - Response Modality.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0394</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0394</remarks>
     public enum CodeResponseModality
     {
         /// <summary>

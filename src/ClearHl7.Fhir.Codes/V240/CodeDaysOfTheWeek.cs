@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V240
+﻿namespace ClearHl7.Fhir.Codes.V240
 {
     /// <summary>
     /// HL7 Version 2 Table 0267 - Days Of The Week.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0267</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0267</remarks>
     public enum CodeDaysOfTheWeek
     {
         /// <summary>

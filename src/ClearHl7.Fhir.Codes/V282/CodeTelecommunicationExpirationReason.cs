@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V282
+﻿namespace ClearHl7.Fhir.Codes.V282
 {
     /// <summary>
     /// HL7 Version 2 Table 0868 - Telecommunication Expiration Reason.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0868</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0868</remarks>
     public enum CodeTelecommunicationExpirationReason
     {
         /// <summary>

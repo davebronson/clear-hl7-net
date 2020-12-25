@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V280
+﻿namespace ClearHl7.Fhir.Codes.V280
 {
     /// <summary>
     /// HL7 Version 2 Table 0383 - Substance Status.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0383</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0383</remarks>
     public enum CodeSubstanceStatus
     {
         /// <summary>

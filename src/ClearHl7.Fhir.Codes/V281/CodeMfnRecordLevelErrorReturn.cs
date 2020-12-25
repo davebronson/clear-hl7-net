@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V281
+﻿namespace ClearHl7.Fhir.Codes.V281
 {
     /// <summary>
     /// HL7 Version 2 Table 0181 - MFN Record-Level Error Return.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0181</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0181</remarks>
     public enum CodeMfnRecordLevelErrorReturn
     {
         /// <summary>

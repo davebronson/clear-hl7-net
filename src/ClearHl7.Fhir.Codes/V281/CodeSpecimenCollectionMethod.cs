@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V281
+﻿namespace ClearHl7.Fhir.Codes.V281
 {
     /// <summary>
     /// HL7 Version 2 Table 0488 - Specimen Collection Method.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0488</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0488</remarks>
     public enum CodeSpecimenCollectionMethod
     {
         /// <summary>

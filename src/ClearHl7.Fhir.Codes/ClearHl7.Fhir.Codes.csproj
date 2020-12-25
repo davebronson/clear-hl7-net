@@ -9,6 +9,7 @@
     <PackageTags>hl7;hl7-builder;hl7-message;hl7-generating;hl7-fhir;fhir;dotnet;healthcare;code;codesystem</PackageTags>
     <Title>ClearHL7.Fhir.Codes</Title>
     <Description>Enumerated coded values for the FHIR HL7 standard</Description>
+    <PackageLicenseUrl>https://github.com/davebronson/clear-hl7-net/blob/master/LICENSE</PackageLicenseUrl>
     <PackageLicense>https://github.com/davebronson/clear-hl7-net/blob/master/LICENSE</PackageLicense>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>

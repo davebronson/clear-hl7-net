@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V290
+﻿namespace ClearHl7.Fhir.Codes.V290
 {
     /// <summary>
     /// HL7 Version 2 Table 0140 - Military Service.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0140</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0140</remarks>
     public enum CodeMilitaryService
     {
         /// <summary>

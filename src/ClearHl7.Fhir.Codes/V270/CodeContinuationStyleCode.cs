@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V270
+﻿namespace ClearHl7.Fhir.Codes.V270
 {
     /// <summary>
     /// HL7 Version 2 Table 0398 - Continuation Style Code.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0398</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0398</remarks>
     public enum CodeContinuationStyleCode
     {
         /// <summary>

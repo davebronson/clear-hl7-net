@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V270
+﻿namespace ClearHl7.Fhir.Codes.V270
 {
     /// <summary>
     /// HL7 Version 2 Table 0074 - Diagnostic Service Section ID.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0074</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0074</remarks>
     public enum CodeDiagnosticServiceSectionId
     {
         /// <summary>

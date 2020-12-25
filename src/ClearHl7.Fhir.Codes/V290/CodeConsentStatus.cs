@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V290
+﻿namespace ClearHl7.Fhir.Codes.V290
 {
     /// <summary>
     /// HL7 Version 2 Table 0498 - Consent Status.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0498</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0498</remarks>
     public enum CodeConsentStatus
     {
         /// <summary>

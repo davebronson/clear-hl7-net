@@ -2,6 +2,9 @@
 
 namespace ClearHl7.Fhir.Helpers
 {
+    /// <summary>
+    /// Provides static string helper methods.
+    /// </summary>
     public class StringHelper
     {
         /// <summary>

@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V281
+﻿namespace ClearHl7.Fhir.Codes.V281
 {
     /// <summary>
     /// HL7 Version 2 Table 0268 - Override.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0268</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0268</remarks>
     public enum CodeOverride
     {
         /// <summary>

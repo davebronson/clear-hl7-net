@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V260
+﻿namespace ClearHl7.Fhir.Codes.V260
 {
     /// <summary>
     /// HL7 Version 2 Table 0065 - Specimen Action Code.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0065</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0065</remarks>
     public enum CodeSpecimenActionCode
     {
         /// <summary>

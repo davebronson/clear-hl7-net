@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V231
+﻿namespace ClearHl7.Fhir.Codes.V231
 {
     /// <summary>
     /// HL7 Version 2 Table 0270 - Document Type.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0270</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0270</remarks>
     public enum CodeDocumentType
     {
         /// <summary>

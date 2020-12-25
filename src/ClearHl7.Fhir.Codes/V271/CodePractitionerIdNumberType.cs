@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V271
+﻿namespace ClearHl7.Fhir.Codes.V271
 {
     /// <summary>
     /// HL7 Version 2 Table 0338 - Practitioner ID Number Type.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0338</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0338</remarks>
     public enum CodePractitionerIdNumberType
     {
         /// <summary>
@@ -20,9 +20,9 @@ namespace ClearHl7.Fhir.Codes.V271
         /// GL - General ledger number.
         /// </summary>
         GeneralLedgerNumber,
-        
+
         /// <summary>
-        /// L&I - Labor and industries number.
+        /// L&amp;I - Labor and industries number.
         /// </summary>
         LaborAndIndustriesNumberDeprecated,
         

@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V250
+﻿namespace ClearHl7.Fhir.Codes.V250
 {
     /// <summary>
     /// HL7 Version 2 Table 0141 - Military Rank/Grade.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0141</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0141</remarks>
     public enum CodeMilitaryRankGrade
     {
         /// <summary>

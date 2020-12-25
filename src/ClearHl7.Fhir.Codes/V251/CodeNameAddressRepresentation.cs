@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V251
+﻿namespace ClearHl7.Fhir.Codes.V251
 {
     /// <summary>
     /// HL7 Version 2 Table 0465 - Name/Address Representation.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0465</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0465</remarks>
     public enum CodeNameAddressRepresentation
     {
         /// <summary>

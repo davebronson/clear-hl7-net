@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V231
+﻿namespace ClearHl7.Fhir.Codes.V231
 {
     /// <summary>
     /// HL7 Version 2 Table 0124 - Transportation Mode.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0124</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0124</remarks>
     public enum CodeTransportationMode
     {
         /// <summary>

@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V251
+﻿namespace ClearHl7.Fhir.Codes.V251
 {
     /// <summary>
     /// HL7 Version 2 Table 0404 - Language Proficiency.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0404</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0404</remarks>
     public enum CodeLanguageProficiency
     {
         /// <summary>

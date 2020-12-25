@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V282
+﻿namespace ClearHl7.Fhir.Codes.V282
 {
     /// <summary>
     /// HL7 Version 2 Table 0203 - Identifier Type.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0203</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0203</remarks>
     public enum CodeIdentifierType
     {
         /// <summary>

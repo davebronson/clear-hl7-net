@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V260
+﻿namespace ClearHl7.Fhir.Codes.V260
 {
     /// <summary>
     /// HL7 Version 2 Table 0763 - DRG Procedure Relevance.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0763</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0763</remarks>
     public enum CodeDrgProcedureRelevance
     {
         /// <summary>

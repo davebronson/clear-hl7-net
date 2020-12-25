@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V270
+﻿namespace ClearHl7.Fhir.Codes.V270
 {
     /// <summary>
     /// HL7 Version 2 Table 0669 - Load Status.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0669</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0669</remarks>
     public enum CodeLoadStatus
     {
         /// <summary>

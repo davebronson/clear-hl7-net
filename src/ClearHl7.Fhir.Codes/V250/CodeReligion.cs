@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V250
+﻿namespace ClearHl7.Fhir.Codes.V250
 {
     /// <summary>
     /// HL7 Version 2 Table 0006 - Religion.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0006/2.4</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0006/2.4</remarks>
     public enum CodeReligion
     {
         /// <summary>

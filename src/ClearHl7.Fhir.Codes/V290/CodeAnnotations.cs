@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V290
+﻿namespace ClearHl7.Fhir.Codes.V290
 {
     /// <summary>
     /// HL7 Version 2 Table 0317 - Annotations.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0317</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0317</remarks>
     public enum CodeAnnotations
     {
         /// <summary>

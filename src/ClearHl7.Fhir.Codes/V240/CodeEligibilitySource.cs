@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V240
+﻿namespace ClearHl7.Fhir.Codes.V240
 {
     /// <summary>
     /// HL7 Version 2 Table 0144 - Eligibility Source.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0144</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0144</remarks>
     public enum CodeEligibilitySource
     {
         /// <summary>

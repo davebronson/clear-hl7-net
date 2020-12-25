@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V281
+﻿namespace ClearHl7.Fhir.Codes.V281
 {
     /// <summary>
     /// HL7 Version 2 Table 0356 - Alternate Character Set Handling Scheme.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0356</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0356</remarks>
     public enum CodeAlternateCharacterSetHandlingScheme
     {
         /// <summary>

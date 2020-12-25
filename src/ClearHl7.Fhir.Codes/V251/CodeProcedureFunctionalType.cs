@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V251
+﻿namespace ClearHl7.Fhir.Codes.V251
 {
     /// <summary>
     /// HL7 Version 2 Table 0230 - Procedure Functional Type.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0230</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0230</remarks>
     public enum CodeProcedureFunctionalType
     {
         /// <summary>

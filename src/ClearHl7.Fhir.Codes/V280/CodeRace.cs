@@ -3,7 +3,7 @@
     /// <summary>
     /// HL7 Version 2 Table 0005 - Race.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0005</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0005</remarks>
     public enum CodeRace
     {
         /// <summary>

@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V281
+﻿namespace ClearHl7.Fhir.Codes.V281
 {
     /// <summary>
     /// HL7 Version 2 Table 0659 - Lot Control.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0659</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0659</remarks>
     public enum CodeLotControl
     {
         /// <summary>

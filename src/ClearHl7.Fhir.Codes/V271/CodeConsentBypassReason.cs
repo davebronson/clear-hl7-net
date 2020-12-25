@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V271
+﻿namespace ClearHl7.Fhir.Codes.V271
 {
     /// <summary>
     /// HL7 Version 2 Table 0499 - Consent Bypass Reason.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0499</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0499</remarks>
     public enum CodeConsentBypassReason
     {
         /// <summary>

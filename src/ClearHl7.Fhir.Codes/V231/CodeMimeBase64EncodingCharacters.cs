@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V231
+﻿namespace ClearHl7.Fhir.Codes.V231
 {
     /// <summary>
     /// HL7 Version 2 Table 0290 - MIME Base64 Encoding Characters.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0290</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0290</remarks>
     public enum CodeMimeBase64EncodingCharacters
     {
         /// <summary>

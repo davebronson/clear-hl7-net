@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V280
+﻿namespace ClearHl7.Fhir.Codes.V280
 {
     /// <summary>
     /// HL7 Version 2 Table 0335 - Repeat Pattern.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0335</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0335</remarks>
     public enum CodeRepeatPattern
     {
         /// <summary>

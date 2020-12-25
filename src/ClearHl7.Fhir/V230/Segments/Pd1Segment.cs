@@ -38,7 +38,7 @@ namespace ClearHl7.Fhir.V230.Segments
         public IEnumerable<ExtendedCompositeNameAndIdNumberForOrganizations> PatientPrimaryFacility { get; set; }
 
         /// <summary>
-        /// PD1.4 - Patient Primary Care Provider Name & ID No..
+        /// PD1.4 - Patient Primary Care Provider Name &amp; ID No..
         /// </summary>
         public IEnumerable<ExtendedCompositeIdNumberAndNameForPersons> PatientPrimaryCareProviderNameIdNo { get; set; }
 

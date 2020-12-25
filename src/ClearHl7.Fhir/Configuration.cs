@@ -1,5 +1,8 @@
 ﻿namespace ClearHl7.Fhir
 {
+    /// <summary>
+    /// Provides access to certain library configuration.
+    /// </summary>
     public static class Configuration
     {
         /// <summary>
@@ -40,7 +43,7 @@
         /// <summary>
         /// Gets or sets the character used to separate subcomponents.
         /// </summary>
-        /// <remarks>The default character & is recommended.</remarks>
+        /// <remarks>The default character &amp; is recommended.</remarks>
         public static string SubcomponentSeparator { get; set; } = "&";
     }
 }

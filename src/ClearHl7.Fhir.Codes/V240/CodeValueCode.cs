@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V240
+﻿namespace ClearHl7.Fhir.Codes.V240
 {
     /// <summary>
     /// HL7 Version 2 Table 0153 - Value Code.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0153</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0153</remarks>
     public enum CodeValueCode
     {
         /// <summary>

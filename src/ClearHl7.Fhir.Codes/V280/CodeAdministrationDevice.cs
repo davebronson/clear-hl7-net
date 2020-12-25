@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V280
+﻿namespace ClearHl7.Fhir.Codes.V280
 {
     /// <summary>
     /// HL7 Version 2 Table 0164 - Administration Device.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0164</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0164</remarks>
     public enum CodeAdministrationDevice
     {
         /// <summary>

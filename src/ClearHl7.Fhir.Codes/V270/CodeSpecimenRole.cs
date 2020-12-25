@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V270
+﻿namespace ClearHl7.Fhir.Codes.V270
 {
     /// <summary>
     /// HL7 Version 2 Table 0369 - Specimen Role.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0369</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0369</remarks>
     public enum CodeSpecimenRole
     {
         /// <summary>

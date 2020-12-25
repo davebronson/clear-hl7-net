@@ -1,5 +1,8 @@
 ﻿namespace ClearHl7.Fhir.Codes.V250.Helpers
 {
+    /// <summary>
+    /// Provides helper methods for interacting with enumerations.
+    /// </summary>
     public interface IEnumHelper
     {
         string EnumToCode(CodeAcceptApplicationAcknowledgmentConditions input);

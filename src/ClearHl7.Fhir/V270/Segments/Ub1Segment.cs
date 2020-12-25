@@ -67,7 +67,7 @@ namespace ClearHl7.Fhir.V270.Segments
         public decimal? NonCoveredDays { get; set; }
 
         /// <summary>
-        /// UB1.10 - Value Amount & Code.
+        /// UB1.10 - Value Amount &amp; Code.
         /// </summary>
         public IEnumerable<ValueCodeAndAmount> ValueAmountCode { get; set; }
 

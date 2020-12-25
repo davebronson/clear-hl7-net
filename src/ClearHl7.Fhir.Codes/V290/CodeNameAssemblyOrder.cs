@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V290
+﻿namespace ClearHl7.Fhir.Codes.V290
 {
     /// <summary>
     /// HL7 Version 2 Table 0444 - Name Assembly Order.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0444</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0444</remarks>
     public enum CodeNameAssemblyOrder
     {
         /// <summary>

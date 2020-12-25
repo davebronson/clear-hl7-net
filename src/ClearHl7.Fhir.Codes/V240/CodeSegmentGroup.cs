@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V240
+﻿namespace ClearHl7.Fhir.Codes.V240
 {
     /// <summary>
     /// HL7 Version 2 Table 0391 - Segment Group.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0391/2.4</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0391/2.4</remarks>
     public enum CodeSegmentGroup
     {
         /// <summary>

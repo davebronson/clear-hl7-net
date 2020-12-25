@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V271
+﻿namespace ClearHl7.Fhir.Codes.V271
 {
     /// <summary>
     /// HL7 Version 2 Table 0615 - User Authentication Credential Type Code.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0615</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0615</remarks>
     public enum CodeUserAuthenticationCredentialTypeCode
     {
         /// <summary>

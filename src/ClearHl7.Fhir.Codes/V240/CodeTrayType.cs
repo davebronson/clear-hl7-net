@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V240
+﻿namespace ClearHl7.Fhir.Codes.V240
 {
     /// <summary>
     /// HL7 Version 2 Table 0160 - Tray Type.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0160</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0160</remarks>
     public enum CodeTrayType
     {
         /// <summary>

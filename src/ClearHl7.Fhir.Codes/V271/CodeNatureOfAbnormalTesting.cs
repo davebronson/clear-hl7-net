@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V271
+﻿namespace ClearHl7.Fhir.Codes.V271
 {
     /// <summary>
     /// HL7 Version 2 Table 0080 - Nature Of Abnormal Testing.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0080</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0080</remarks>
     public enum CodeNatureOfAbnormalTesting
     {
         /// <summary>

@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V251
+﻿namespace ClearHl7.Fhir.Codes.V251
 {
     /// <summary>
     /// HL7 Version 2 Table 0159 - Diet Code Specification Type.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0159</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0159</remarks>
     public enum CodeDietCodeSpecificationType
     {
         /// <summary>

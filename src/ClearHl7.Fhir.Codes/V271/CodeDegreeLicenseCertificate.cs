@@ -1,9 +1,9 @@
-namespace ClearHl7.Fhir.Codes.V271
+﻿namespace ClearHl7.Fhir.Codes.V271
 {
     /// <summary>
     /// HL7 Version 2 Table 0360 - Degree/License/Certificate.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0360/2.7</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0360/2.7</remarks>
     public enum CodeDegreeLicenseCertificate
     {
         /// <summary>
