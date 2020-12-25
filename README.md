@@ -12,7 +12,8 @@ clear-hl7-net is functional and quickly approaching an official release.  Howeve
 2. Open ClearHl7.Fhir.sln in Visual Studio for Windows or Mac, or build from the command line
 
 ### Download From NuGet
-[Coming soon...]
+* https://www.nuget.org/packages/ClearHl7.Fhir
+* https://www.nuget.org/packages/ClearHl7.Fhir.Codes
 
 ### Targets
 * .NET Standard 2.0
@@ -201,7 +202,7 @@ Configuration.FieldRepeatSeparator = "%"; // Use percent symbol
 Configuration.SubcomponentSeparator = "/"; // Use forward slash
 ```
 
-## Using the ClearHl7.Codes Component
+## Using the ClearHl7.Fhir.Codes Component
 There are code systems published as part of the FHIR HL7 specification, which are recommended for use in your messages.  You have flexibility, of course, to use any coded values that you and your message consumer might agree upon.  To easily access the FHIR-defined codes you may utilize the `ClearHl7.Fhir.Codes` component, which contains enumerations for each.
 ```csharp
 using ClearHl7.Fhir.Codes.V282;

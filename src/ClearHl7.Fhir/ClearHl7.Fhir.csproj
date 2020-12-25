@@ -10,10 +10,8 @@
     <Title>ClearHL7.Fhir</Title>
     <Description>.NET HL7 message generation library for the FHIR Version 2.x standard</Description>
     <PackageLicenseUrl>https://github.com/davebronson/clear-hl7-net/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageLicense>https://github.com/davebronson/clear-hl7-net/blob/master/LICENSE</PackageLicense>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <ReleaseVersion>1.0</ReleaseVersion>
     <PackageVersion>1.0.0-beta1</PackageVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
