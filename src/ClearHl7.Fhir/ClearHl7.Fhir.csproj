@@ -23,4 +23,9 @@
     <DebugType></DebugType>
     <DocumentationFile>bin\Release\netstandard2.0\ClearHl7.Fhir.xml</DocumentationFile>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="V290\" />
+    <Folder Include="V290\Segments\" />
+    <Folder Include="V290\Types\" />
+  </ItemGroup>
 </Project>
