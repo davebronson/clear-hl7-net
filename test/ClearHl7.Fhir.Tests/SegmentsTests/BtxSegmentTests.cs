@@ -1,6 +1,6 @@
 ﻿using System;
-using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+using ClearHl7.Fhir.V290.Segments;
+using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests
@@ -76,10 +76,11 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 BpUniqueId = new EntityIdentifier
                 {
                     EntityId = "20"
-                }
+                },
+                ActionCode = "21"
             };
 
-            string expected = "BTX|1|2|3|4|5|6|7|8|9|10|11|12|20200113000013|14|15|20200116000016|20200117000017|18|19|20";
+            string expected = "BTX|1|2|3|4|5|6|7|8|9|10|11|12|20200113000013|14|15|20200116000016|20200117000017|18|19|20|21";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

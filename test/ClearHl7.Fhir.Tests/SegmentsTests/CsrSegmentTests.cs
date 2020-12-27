@@ -1,6 +1,6 @@
 ﻿using System;
-using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+using ClearHl7.Fhir.V290.Segments;
+using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests
@@ -81,10 +81,11 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 ReasonEndedStudy = new CodedWithExceptions
                 {
                     Identifier = "16"
-                }
+                },
+                ActionCode = "17"
             };
 
-            string expected = "CSR|1|2|3|4|5|20200606000006|7|8|20200909000009|10|20201111000011|12|13|14|20200115000015|16";
+            string expected = "CSR|1|2|3|4|5|20200606000006|7|8|20200909000009|10|20201111000011|12|13|14|20200115000015|16|17";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

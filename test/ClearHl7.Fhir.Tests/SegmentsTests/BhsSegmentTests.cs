@@ -1,6 +1,6 @@
 ﻿using System;
-using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+using ClearHl7.Fhir.V290.Segments;
+using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests
@@ -46,10 +46,25 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 BatchReceivingNetworkAddress = new HierarchicDesignator
                 {
                     NamespaceId = "14"
+                },
+                SecurityClassificationTag = new CodedWithExceptions
+                {
+                    Identifier = "15"
+                },
+                SecurityHandlingInstructions = new CodedWithExceptions[]
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "16"
+                    }
+                },
+                SpecialAccessRestrictionInstructions = new string[]
+                {
+                    "17"
                 }
             };
 
-            string expected = "BHS|1|2|3|4|5|6|20200707000007|8|9|10|11|12|13|14";
+            string expected = "BHS|1|2|3|4|5|6|20200707000007|8|9|10|11|12|13|14|15|16|17";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);
