@@ -1,4 +1,4 @@
-﻿using ClearHl7.Fhir.V282.Types;
+﻿using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.TypesTests
@@ -17,10 +17,7 @@ namespace ClearHl7.Fhir.Tests.TypesTests
                 {
                     Identifier = "1"
                 },
-                ParentObservationSubIdentifier = new ObservationGrouper
-                {
-                    OriginalSubIdentifier = "2"
-                },
+                ParentObservationSubIdentifier = "2",
                 ParentObservationValueDescriptor = new Text
                 {
                     Value = "3"
