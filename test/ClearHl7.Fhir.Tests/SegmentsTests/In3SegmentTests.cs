@@ -1,6 +1,6 @@
 ﻿using System;
-using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+using ClearHl7.Fhir.V290.Segments;
+using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests
@@ -122,10 +122,20 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 CertificationCategory = new CodedWithExceptions
                 {
                     Identifier = "27"
-                }
+                },
+                OnlineVerificationDateTime = new DateTime(2020, 1, 28, 0, 0, 28),
+                OnlineVerificationResult = new CodedWithExceptions
+                {
+                    Identifier = "29"
+                },
+                OnlineVerificationResultErrorCode = new CodedWithExceptions
+                {
+                    Identifier = "30"
+                },
+                OnlineVerificationResultCheckDigit = "31"
             };
 
-            string expected = "IN3|1|2|3|4|5|20200606000006|20200707000007|8|20200909|20201010|11|12|20200113000013|14|15|16|17|18|19|20|21|20200202|23|24|25|26|27";
+            string expected = "IN3|1|2|3|4|5|20200606000006|20200707000007|8|20200909|20201010|11|12|20200113000013|14|15|16|17|18|19|20|21|20200202|23|24|25|26|27|20200128000028|29|30|31";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

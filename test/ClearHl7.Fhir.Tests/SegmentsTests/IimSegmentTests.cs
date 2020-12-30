@@ -1,6 +1,6 @@
 ﻿using System;
-using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+using ClearHl7.Fhir.V290.Segments;
+using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests
@@ -44,10 +44,7 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                     Quantity = 10
                 },
                 InventoryOnHandDate = new DateTime(2020, 11, 11, 0, 0, 11),
-                InventoryOnHandQuantity = new CodedWithExceptions
-                {
-                    Identifier = "12"
-                },
+                InventoryOnHandQuantity = 12,
                 InventoryOnHandQuantityUnit = new CodedWithExceptions
                 {
                     Identifier = "13"

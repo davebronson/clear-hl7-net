@@ -1,6 +1,6 @@
 ﻿using System;
-using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+using ClearHl7.Fhir.V290.Segments;
+using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests
@@ -140,10 +140,11 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                     {
                         PersonIdentifier = "33"
                     }
-                }
+                },
+                ActionCode = "34"
             };
 
-            string expected = "DON|1|2|20200303000003|20200404000004|5|6|7|8|9|10|20201111000011|12|13|14|15|16|20200117000017|18|20200119000019|20|21|22|23|24|25|26|27|28|20200129000029|30|31|32|33";
+            string expected = "DON|1|2|20200303000003|20200404000004|5|6|7|8|9|10|20201111000011|12|13|14|15|16|20200117000017|18|20200119000019|20|21|22|23|24|25|26|27|28|20200129000029|30|31|32|33|34";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

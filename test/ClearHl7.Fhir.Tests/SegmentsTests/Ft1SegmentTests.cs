@@ -1,6 +1,6 @@
 ﻿using System;
-using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+using ClearHl7.Fhir.V290.Segments;
+using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests
@@ -16,7 +16,10 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
             ISegment hl7Segment = new Ft1Segment
             {
                 SetIdFt1 = 1,
-                TransactionId = "2",
+                TransactionId = new ExtendedCompositeIdWithCheckDigit
+                {
+                    IdNumber = "2"
+                },
                 TransactionBatchId = "3",
                 TransactionDate = new DateTimeRange
                 {
@@ -195,10 +198,47 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 NdcQtyAndUom = new CompositeQuantityWithUnits
                 {
                     Quantity = 43
+                },
+                DmeCertificateOfMedicalNecessityTransmissionCode = new CodedWithExceptions
+                {
+                    Identifier = "44"
+                },
+                DmeCertificationTypeCode = new CodedWithExceptions
+                {
+                    Identifier = "45"
+                },
+                DmeDurationValue = 46,
+                DmeCertificationRevisionDate = new DateTime(2020, 4, 7),
+                DmeInitialCertificationDate = new DateTime(2020, 4, 8),
+                DmeLastCertificationDate = new DateTime(2020, 4, 9),
+                DmeLengthOfMedicalNecessityDays = 50,
+                DmeRentalPrice = new Money
+                {
+                    Quantity = 51
+                },
+                DmePurchasePrice = new Money
+                {
+                    Quantity = 52
+                },
+                DmeFrequencyCode = new CodedWithExceptions
+                {
+                    Identifier = "53"
+                },
+                DmeCertificationConditionIndicator = "54",
+                DmeConditionIndicatorCode = new CodedWithExceptions[]
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "55"
+                    }
+                },
+                ServiceReasonCode = new CodedWithExceptions
+                {
+                    Identifier = "56"
                 }
             };
 
-            string expected = "FT1|1|2|3|20200404000004|20200505000005|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43";
+            string expected = "FT1|1|2|3|20200404000004|20200505000005|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|20200407|20200408|20200409|50|51|52|53|54|55|56";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

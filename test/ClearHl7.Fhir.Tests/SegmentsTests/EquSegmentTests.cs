@@ -1,6 +1,6 @@
 ﻿using System;
-using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+using ClearHl7.Fhir.V290.Segments;
+using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests
@@ -34,10 +34,11 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 AlertLevel = new CodedWithExceptions
                 {
                     Identifier = "5"
-                }
+                },
+                ExpectedDateTimeOfTheNextStatusChange = new DateTime(2020, 6, 6, 0, 0, 6)
             };
 
-            string expected = "EQU|1|20200202000002|3|4|5";
+            string expected = "EQU|1|20200202000002|3|4|5|20200606000006";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);
