@@ -1,5 +1,5 @@
-﻿using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+﻿using ClearHl7.Fhir.V290.Segments;
+using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests
@@ -52,10 +52,11 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                         Identifier = "8"
                     }
                 },
-                ScheduledStationAeTitle = "9"
+                ScheduledStationAeTitle = "9",
+                ActionCode = "10"
             };
 
-            string expected = "IPC|1|2|3|4|5|6|7|8|9";
+            string expected = "IPC|1|2|3|4|5|6|7|8|9|10";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

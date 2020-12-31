@@ -1,6 +1,6 @@
 ﻿using System;
-using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+using ClearHl7.Fhir.V290.Segments;
+using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests
@@ -28,9 +28,12 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     NamespaceId = "5"
                 },
-                ReceivingFacility = new HierarchicDesignator
+                ReceivingFacility = new HierarchicDesignator[]
                 {
-                    NamespaceId = "6"
+                    new HierarchicDesignator
+                    {
+                        NamespaceId = "6"
+                    }
                 },
                 DateTimeOfMessage = new DateTime(2020, 7, 7, 0, 0, 7),
                 Security = "8",
@@ -83,10 +86,25 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 ReceivingNetworkAddress = new HierarchicDesignator
                 {
                     NamespaceId = "25"
+                },
+                SecurityClassificationTag = new CodedWithExceptions
+                {
+                    Identifier = "26"
+                },
+                SecurityHandlingInstructions = new CodedWithExceptions[]
+                {
+                    new CodedWithExceptions
+                    {
+                        Identifier = "27"
+                    }
+                },
+                SpecialAccessRestrictionInstructions = new string[]
+                {
+                    "28"
                 }
             };
 
-            string expected = "MSH|^~\\&|3|4|5|6|20200707000007|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25";
+            string expected = "MSH|^~\\&|3|4|5|6|20200707000007|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

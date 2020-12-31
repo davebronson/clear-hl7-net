@@ -1,6 +1,6 @@
 ﻿using System;
-using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+using ClearHl7.Fhir.V290.Segments;
+using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests
@@ -236,16 +236,20 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                         IdNumber = "53"
                     }
                 },
-                ParentOrder = new EntityIdentifierPair
+                ParentOrder = new EntityIdentifierPair[]
                 {
-                    PlacerAssignedIdentifier = new EntityIdentifier
+                    new EntityIdentifierPair
                     {
-                        EntityId = "54"
+                        PlacerAssignedIdentifier = new EntityIdentifier
+                        {
+                            EntityId = "54"
+                        }
                     }
-                }
+                },
+                ActionCode = "55"
             };
 
-            string expected = "OBR|1|2|3|4|5|20200606000006|20200707000007|20200808000008|9|10|11|12|13|20200114000014|15|16|17|18|19|20|21|20200122000022|23|24|25|26|27|28|29|30|31|32|33|34|35|20200306000036|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54";
+            string expected = "OBR|1|2|3|4|5|20200606000006|20200707000007|20200808000008|9|10|11|12|13|20200114000014|15|16|17|18|19|20|21|20200122000022|23|24|25|26|27|28|29|30|31|32|33|34|35|20200306000036|37|38|39|40|41|42|43|44|45|46|47|48|49|50|51|52|53|54|55";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);
