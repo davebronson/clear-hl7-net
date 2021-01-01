@@ -1,6 +1,6 @@
 ﻿using System;
-using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+using ClearHl7.Fhir.V290.Segments;
+using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests
@@ -37,11 +37,14 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     "7"
                 },
-                ParentOrder = new EntityIdentifierPair
+                ParentOrder = new EntityIdentifierPair[]
                 {
-                    PlacerAssignedIdentifier = new EntityIdentifier
+                    new EntityIdentifierPair
                     {
-                        EntityId = "8"
+                        PlacerAssignedIdentifier = new EntityIdentifier
+                        {
+                            EntityId = "8"
+                        }
                     }
                 },
                 DateTimeOfTransaction = new DateTime(2020, 9, 9, 0, 0, 9),
@@ -177,10 +180,20 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                     {
                         Identifier = "34"
                     }
+                },
+                ActionCode = "35",
+                OrderStatusDateRange = new DateTimeRange
+                {
+                    RangeStartDateTime = new DateTime(2020, 3, 6, 0, 0, 36)
+                },
+                OrderCreationDateTime = new DateTime(2020, 3, 7, 0, 0, 37),
+                FillerOrderGroupNumber = new EntityIdentifier
+                {
+                    EntityId = "38"
                 }
             };
 
-            string expected = "ORC|1|2|3|4|5|6|7|8|20200909000009|10|11|12|13|14|20200115000015|16|17|18|19|20|21|22|23|24|25|26|20200127000027|28|29|30|31|20200302|33|34";
+            string expected = "ORC|1|2|3|4|5|6|7|8|20200909000009|10|11|12|13|14|20200115000015|16|17|18|19|20|21|22|23|24|25|26|20200127000027|28|29|30|31|20200302|33|34|35|20200306000036|20200307000037|38";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

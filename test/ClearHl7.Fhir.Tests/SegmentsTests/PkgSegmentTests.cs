@@ -1,6 +1,6 @@
 ﻿using System;
-using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+using ClearHl7.Fhir.V290.Segments;
+using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests
@@ -43,10 +43,19 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 GlobalTradeItemNumber = new CodedWithExceptions
                 {
                     Identifier = "8"
+                },
+                ContractPrice = new Money
+                {
+                    Quantity = 9
+                },
+                QuantityOfEach = 10,
+                VendorCatalogNumber = new EntityIdentifier
+                {
+                    EntityId = "11"
                 }
             };
 
-            string expected = "PKG|1|2|3|4|5|6|20200707000007|8";
+            string expected = "PKG|1|2|3|4|5|6|20200707000007|8|9|10|11";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

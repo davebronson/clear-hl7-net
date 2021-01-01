@@ -1,6 +1,6 @@
 ﻿using System;
-using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+using ClearHl7.Fhir.V290.Segments;
+using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests
@@ -99,10 +99,11 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     Identifier = "21"
                 },
-                AdvanceDirectiveLastVerifiedDate = new DateTime(2020, 1, 22)
+                AdvanceDirectiveLastVerifiedDate = new DateTime(2020, 1, 22),
+                RetirementDate = new DateTime(2020, 1, 23)
             };
 
-            string expected = "PD1|1|2|3|4|5|6|7|8|9|10|11|12|20200113|14|15|16|20200117|20200118|19|20|21|20200122";
+            string expected = "PD1|1|2|3|4|5|6|7|8|9|10|11|12|20200113|14|15|16|20200117|20200118|19|20|21|20200122|20200123";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);
