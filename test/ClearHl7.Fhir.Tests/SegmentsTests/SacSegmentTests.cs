@@ -1,6 +1,6 @@
 ﻿using System;
-using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+using ClearHl7.Fhir.V290.Segments;
+using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests
@@ -169,10 +169,30 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                     {
                         Identifier = "44"
                     }
+                },
+                ContainerLength = new CompositeQuantityWithUnits
+                {
+                    Quantity = 45
+                },
+                ContainerWidth = new CompositeQuantityWithUnits
+                {
+                    Quantity = 46
+                },
+                ContainerForm = new CodedWithExceptions
+                {
+                    Identifier = "47"
+                },
+                ContainerMaterial = new CodedWithExceptions
+                {
+                    Identifier = "48"
+                },
+                ContainerCommonName = new CodedWithExceptions
+                {
+                    Identifier = "49"
                 }
             };
 
-            string expected = "SAC|1|2|3|4|5|6|20200707000007|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44";
+            string expected = "SAC|1|2|3|4|5|6|20200707000007|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

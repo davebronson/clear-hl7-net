@@ -1,6 +1,6 @@
 ﻿using System;
-using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+using ClearHl7.Fhir.V290.Segments;
+using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests
@@ -66,10 +66,12 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 },
                 PriorityNo = 14,
                 PrioritySequenceNoRelPreferenceForConsideration = 15,
-                SeparabilityIndicator = "16"
+                SeparabilityIndicator = "16",
+                SourceInformationInstanceObjectType = "17",
+                TargetInformationInstanceObjectType = "18"
             };
 
-            string expected = "REL|1|2|3|4|5|6|7|8|9|10|20201111000011|12|13|14|15|16";
+            string expected = "REL|1|2|3|4|5|6|7|8|9|10|20201111000011|12|13|14|15|16|17|18";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);
