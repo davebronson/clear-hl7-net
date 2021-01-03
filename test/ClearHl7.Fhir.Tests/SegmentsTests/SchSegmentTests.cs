@@ -1,5 +1,5 @@
-﻿using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+﻿using ClearHl7.Fhir.V290.Segments;
+using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests
@@ -154,10 +154,17 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                     {
                         EntityId = "27"
                     }
+                },
+                AlternatePlacerOrderGroupNumber = new EntityIdentifierPair
+                {
+                    PlacerAssignedIdentifier = new EntityIdentifier
+                    {
+                        EntityId = "28"
+                    }
                 }
             };
 
-            string expected = "SCH|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27";
+            string expected = "SCH|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

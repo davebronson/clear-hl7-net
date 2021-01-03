@@ -1,6 +1,6 @@
 ﻿using System;
-using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+using ClearHl7.Fhir.V290.Segments;
+using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests
@@ -106,10 +106,18 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 {
                     "25"
                 },
-                AgreedDueDateTime = new DateTime(2020, 1, 26, 0, 0, 26)
+                AgreedDueDateTime = new DateTime(2020, 1, 26, 0, 0, 26),
+                CreatingFacility = new HierarchicDesignator
+                {
+                    NamespaceId = "27"
+                },
+                CreatingSpecialty = new CodedWithExceptions
+                {
+                    Identifier = "28"
+                }
             };
 
-            string expected = "TXA|1|2|3|20200404000004|5|20200606000006|20200707000007|20200808000008|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|20200126000026";
+            string expected = "TXA|1|2|3|20200404000004|5|20200606000006|20200707000007|20200808000008|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|20200126000026|27|28";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);

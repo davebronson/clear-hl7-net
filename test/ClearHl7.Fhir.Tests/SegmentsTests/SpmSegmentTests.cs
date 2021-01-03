@@ -1,6 +1,6 @@
 ﻿using System;
-using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+using ClearHl7.Fhir.V290.Segments;
+using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.SegmentsTests
@@ -163,10 +163,13 @@ namespace ClearHl7.Fhir.Tests.SegmentsTests
                 ShipmentId = new EntityIdentifier
                 {
                     EntityId = "32"
-                }
+                },
+                CultureStartDateTime = new DateTime(2020, 3, 3, 0, 0, 33),
+                CultureFinalDateTime = new DateTime(2020, 3, 4, 0, 0, 34),
+                ActionCode = "35"
             };
 
-            string expected = "SPM|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|20200117000017|20200118000018|20200119000019|20|21|22|23|24|25|26|27|28|29|30|31|32";
+            string expected = "SPM|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|20200117000017|20200118000018|20200119000019|20|21|22|23|24|25|26|27|28|29|30|31|32|20200303000033|20200304000034|35";
             string actual = hl7Segment.ToDelimitedString();
 
             Assert.Equal(expected, actual);
