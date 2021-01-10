@@ -38,8 +38,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SPM.4 - Specimen Type.
+        /// <para>Suggested: 0487 Specimen Type -&gt; ClearHl7.Fhir.Codes.V290.CodeSpecimenType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0487</remarks>
         public CodedWithExceptions SpecimenType { get; set; }
 
         /// <summary>
@@ -50,14 +50,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SPM.6 - Specimen Additives.
+        /// <para>Suggested: 0371 Additive/Preservative -&gt; ClearHl7.Fhir.Codes.V290.CodeAdditivePreservative</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0371</remarks>
         public IEnumerable<CodedWithExceptions> SpecimenAdditives { get; set; }
 
         /// <summary>
         /// SPM.7 - Specimen Collection Method.
+        /// <para>Suggested: 0488 Specimen Collection Method -&gt; ClearHl7.Fhir.Codes.V290.CodeSpecimenCollectionMethod</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0488</remarks>
         public CodedWithExceptions SpecimenCollectionMethod { get; set; }
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SPM.11 - Specimen Role.
+        /// <para>Suggested: 0369 Specimen Role -&gt; ClearHl7.Fhir.Codes.V290.CodeSpecimenRole</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0369</remarks>
         public IEnumerable<CodedWithExceptions> SpecimenRole { get; set; }
 
         /// <summary>
@@ -100,14 +100,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SPM.15 - Specimen Handling Code.
+        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Fhir.Codes.V290.CodeSpecialHandlingCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0376</remarks>
         public IEnumerable<CodedWithExceptions> SpecimenHandlingCode { get; set; }
 
         /// <summary>
         /// SPM.16 - Specimen Risk Code.
+        /// <para>Suggested: 0489 Risk Codes -&gt; ClearHl7.Fhir.Codes.V290.CodeRiskCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0489</remarks>
         public IEnumerable<CodedWithExceptions> SpecimenRiskCode { get; set; }
 
         /// <summary>
@@ -127,32 +127,32 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SPM.20 - Specimen Availability.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string SpecimenAvailability { get; set; }
 
         /// <summary>
         /// SPM.21 - Specimen Reject Reason.
+        /// <para>Suggested: 0490 Specimen Reject Reason -&gt; ClearHl7.Fhir.Codes.V290.CodeSpecimenRejectReason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0490</remarks>
         public IEnumerable<CodedWithExceptions> SpecimenRejectReason { get; set; }
 
         /// <summary>
         /// SPM.22 - Specimen Quality.
+        /// <para>Suggested: 0491 Specimen Quality -&gt; ClearHl7.Fhir.Codes.V290.CodeSpecimenQuality</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0491</remarks>
         public CodedWithExceptions SpecimenQuality { get; set; }
 
         /// <summary>
         /// SPM.23 - Specimen Appropriateness.
+        /// <para>Suggested: 0492 Specimen Appropriateness -&gt; ClearHl7.Fhir.Codes.V290.CodeSpecimenAppropriateness</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0492</remarks>
         public CodedWithExceptions SpecimenAppropriateness { get; set; }
 
         /// <summary>
         /// SPM.24 - Specimen Condition.
+        /// <para>Suggested: 0493 Specimen Condition -&gt; ClearHl7.Fhir.Codes.V290.CodeSpecimenCondition</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0493</remarks>
         public IEnumerable<CodedWithExceptions> SpecimenCondition { get; set; }
 
         /// <summary>
@@ -178,8 +178,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SPM.29 - Specimen Child Role.
+        /// <para>Suggested: 0494 Specimen Child Role -&gt; ClearHl7.Fhir.Codes.V290.CodeSpecimenChildRole</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0494</remarks>
         public CodedWithExceptions SpecimenChildRole { get; set; }
 
         /// <summary>

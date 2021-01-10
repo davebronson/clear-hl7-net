@@ -72,14 +72,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SHP.10 - Shipment Handling Code.
+        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Fhir.Codes.V290.CodeSpecialHandlingCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0376</remarks>
         public IEnumerable<CodedWithExceptions> ShipmentHandlingCode { get; set; }
 
         /// <summary>
         /// SHP.11 - Shipment Risk Code.
+        /// <para>Suggested: 0489 Risk Codes -&gt; ClearHl7.Fhir.Codes.V290.CodeRiskCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0489</remarks>
         public IEnumerable<CodedWithExceptions> ShipmentRiskCode { get; set; }
 
         /// <summary>

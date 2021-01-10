@@ -66,8 +66,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DON.9 - Donor Eligibility Flag.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string DonorEligibilityFlag { get; set; }
 
         /// <summary>
@@ -101,8 +101,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DON.15 - Intended Recipient Blood Relative.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string IntendedRecipientBloodRelative { get; set; }
 
         /// <summary>
@@ -164,8 +164,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DON.27 - Donor Reaction.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string DonorReaction { get; set; }
 
         /// <summary>

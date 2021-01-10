@@ -188,8 +188,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SCD.32 - Procedure Code.
+        /// <para>Suggested: 0088 Procedure Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0088</remarks>
         public CodedWithNoExceptions ProcedureCode { get; set; }
 
         /// <summary>
@@ -199,8 +199,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SCD.34 - Attending Doctor.
+        /// <para>Suggested: 0010 Physician ID</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0010</remarks>
         public ExtendedCompositeIdNumberAndNameForPersons AttendingDoctor { get; set; }
 
         /// <summary>

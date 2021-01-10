@@ -21,6 +21,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RMI.1 - Risk Management Incident Code.
+        /// <para>Suggested: 0427 Risk Management Incident Code -&gt; ClearHl7.Fhir.Codes.V290.CodeRiskManagementIncidentCode</para>
         /// </summary>
         public CodedWithExceptions RiskManagementIncidentCode { get; set; }
 
@@ -31,6 +32,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RMI.3 - Incident Type Code.
+        /// <para>Suggested: 0428 Incident Type Code -&gt; ClearHl7.Fhir.Codes.V290.CodeIncidentTypeCode</para>
         /// </summary>
         public CodedWithExceptions IncidentTypeCode { get; set; }
         

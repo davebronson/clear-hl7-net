@@ -27,8 +27,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ARV.2 - Access Restriction Action Code.
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V290.CodeSegmentActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0206</remarks>
         public CodedWithNoExceptions AccessRestrictionActionCode { get; set; }
 
         /// <summary>

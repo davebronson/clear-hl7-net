@@ -20,8 +20,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OVR.1 - Business Rule Override Type.
+        /// <para>Suggested: 0518 Override Type -&gt; ClearHl7.Fhir.Codes.V290.CodeOverrideType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0518</remarks>
         public CodedWithExceptions BusinessRuleOverrideType { get; set; }
 
         /// <summary>

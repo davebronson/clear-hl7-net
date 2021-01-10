@@ -45,20 +45,20 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// TCD.6 - Automatic Repeat Allowed.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string AutomaticRepeatAllowed { get; set; }
 
         /// <summary>
         /// TCD.7 - Reflex Allowed.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string ReflexAllowed { get; set; }
 
         /// <summary>
         /// TCD.8 - Analyte Repeat Status.
+        /// <para>Suggested: 0389 Analyte Repeat Status -&gt; ClearHl7.Fhir.Codes.V290.CodeAnalyteRepeatStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0389</remarks>
         public CodedWithExceptions AnalyteRepeatStatus { get; set; }
 
         /// <summary>

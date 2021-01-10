@@ -81,8 +81,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ITM.12 - Transaction Code.
+        /// <para>Suggested: 0132 Transaction Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0132</remarks>
         public CodedWithExceptions TransactionCode { get; set; }
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ITM.19 - Item Natural Account Code.
+        /// <para>Suggested: 0320 Item Natural Account Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0320</remarks>
         public CodedWithExceptions ItemNaturalAccountCode { get; set; }
 
         /// <summary>
@@ -167,20 +167,20 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ITM.27 - Procedure Code.
+        /// <para>Suggested: 0088 Procedure Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0088</remarks>
         public CodedWithNoExceptions ProcedureCode { get; set; }
 
         /// <summary>
         /// ITM.28 - Procedure Code Modifier.
+        /// <para>Suggested: 0340 Procedure Code Modifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0340</remarks>
         public IEnumerable<CodedWithNoExceptions> ProcedureCodeModifier { get; set; }
 
         /// <summary>
         /// ITM.29 - Special Handling Code.
+        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Fhir.Codes.V290.CodeSpecialHandlingCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0376</remarks>
         public CodedWithExceptions SpecialHandlingCode { get; set; }
 
         /// <summary>
@@ -202,8 +202,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ITM.33 - United Nations Standard Products and Services Code (UNSPSC).
+        /// <para>Suggested: 0396 Coding System</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0396</remarks>
         public CodedWithExceptions UnitedNationsStandardProductsAndServicesCode { get; set; }
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ITM.38 - Field Level Event Code.
+        /// <para>Suggested: 0180 Masterfile Action Code -&gt; ClearHl7.Fhir.Codes.V290.CodeMasterfileActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0180</remarks>
         public string FieldLevelEventCode { get; set; }
 
         /// <summary>

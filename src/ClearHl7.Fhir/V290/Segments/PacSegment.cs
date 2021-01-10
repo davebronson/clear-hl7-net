@@ -54,14 +54,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PAC.7 - Package Handling Code.
+        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Fhir.Codes.V290.CodeSpecialHandlingCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0376</remarks>
         public IEnumerable<CodedWithExceptions> PackageHandlingCode { get; set; }
 
         /// <summary>
         /// PAC.8 - Package Risk Code.
+        /// <para>Suggested: 0489 Risk Codes -&gt; ClearHl7.Fhir.Codes.V290.CodeRiskCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0489</remarks>
         public IEnumerable<CodedWithExceptions> PackageRiskCode { get; set; }
 
         /// <summary>

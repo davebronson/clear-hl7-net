@@ -27,8 +27,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OMC.2 - Segment Action Code.
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V290.CodeSegmentActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0206</remarks>
         public string SegmentActionCode { get; set; }
 
         /// <summary>
@@ -55,8 +55,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OMC.7 - Answer Required.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string AnswerRequired { get; set; }
 
         /// <summary>
@@ -66,14 +66,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OMC.9 - Type of Answer.
+        /// <para>Suggested: 0125 Value Type -&gt; ClearHl7.Fhir.Codes.V290.CodeValueType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0125</remarks>
         public string TypeOfAnswer { get; set; }
 
         /// <summary>
         /// OMC.10 - Multiple Answers Allowed.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string MultipleAnswersAllowed { get; set; }
 
         /// <summary>

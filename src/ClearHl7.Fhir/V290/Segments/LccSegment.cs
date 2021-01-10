@@ -27,20 +27,20 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// LCC.2 - Location Department.
+        /// <para>Suggested: 0264 Location Department</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0264</remarks>
         public CodedWithExceptions LocationDepartment { get; set; }
 
         /// <summary>
         /// LCC.3 - Accommodation Type.
+        /// <para>Suggested: 0129 Accommodation Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0129</remarks>
         public IEnumerable<CodedWithExceptions> AccommodationType { get; set; }
 
         /// <summary>
         /// LCC.4 - Charge Code.
+        /// <para>Suggested: 0132 Transaction Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0132</remarks>
         public IEnumerable<CodedWithExceptions> ChargeCode { get; set; }
         
         /// <summary>

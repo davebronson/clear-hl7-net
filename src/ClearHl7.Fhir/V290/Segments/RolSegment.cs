@@ -34,8 +34,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ROL.3 - Role-ROL.
+        /// <para>Suggested: 0443 Provider Role -&gt; ClearHl7.Fhir.Codes.V290.CodeProviderRole</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0443</remarks>
         public CodedWithExceptions RoleRol { get; set; }
 
         /// <summary>
@@ -70,8 +70,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ROL.10 - Organization Unit Type.
+        /// <para>Suggested: 0406 Participant Organization Unit Type -&gt; ClearHl7.Fhir.Codes.V290.CodeParticipantOrganizationUnitType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0406</remarks>
         public CodedWithExceptions OrganizationUnitType { get; set; }
 
         /// <summary>

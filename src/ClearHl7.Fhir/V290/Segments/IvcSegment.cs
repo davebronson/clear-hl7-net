@@ -86,8 +86,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// IVC.13 - Last Invoice Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string LastInvoiceIndicator { get; set; }
 
         /// <summary>

@@ -23,20 +23,20 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RCP.1 - Query Priority.
+        /// <para>Suggested: 0091 Query Priority -&gt; ClearHl7.Fhir.Codes.V290.CodeQueryPriority</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0091</remarks>
         public string QueryPriority { get; set; }
 
         /// <summary>
         /// RCP.2 - Quantity Limited Request.
+        /// <para>Suggested: 0126 Quantity Limited Request -&gt; ClearHl7.Fhir.Codes.V290.CodeQuantityLimitedRequest</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0126</remarks>
         public CompositeQuantityWithUnits QuantityLimitedRequest { get; set; }
 
         /// <summary>
         /// RCP.3 - Response Modality.
+        /// <para>Suggested: 0394 Response Modality -&gt; ClearHl7.Fhir.Codes.V290.CodeResponseModality</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0394</remarks>
         public CodedWithNoExceptions ResponseModality { get; set; }
 
         /// <summary>
@@ -46,8 +46,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RCP.5 - Modify Indicator.
+        /// <para>Suggested: 0395 Modify Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeModifyIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0395</remarks>
         public string ModifyIndicator { get; set; }
 
         /// <summary>
@@ -57,8 +57,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RCP.7 - Segment group inclusion.
+        /// <para>Suggested: 0391 Segment Group -&gt; ClearHl7.Fhir.Codes.V290.CodeSegmentGroup</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0391</remarks>
         public IEnumerable<string> SegmentGroupInclusion { get; set; }
         
         /// <summary>

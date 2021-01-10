@@ -197,6 +197,7 @@
         string EnumToCode(CodeUniversalIdType input);
         string EnumToCode(CodeVaccinesAdministered input);
         string EnumToCode(CodeValueCode input);
+        string EnumToCode(CodeValueType input);
         string EnumToCode(CodeVersionId input);
         string EnumToCode(CodeVisitIndicator input);
         string EnumToCode(CodeWhatSubjectFilter input);

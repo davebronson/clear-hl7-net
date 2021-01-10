@@ -23,8 +23,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ORC.1 - Order Control.
+        /// <para>Suggested: 0119 Order Control Codes -&gt; ClearHl7.Fhir.Codes.V290.CodeOrderControlCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0119</remarks>
         public string OrderControl { get; set; }
 
         /// <summary>
@@ -44,14 +44,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ORC.5 - Order Status.
+        /// <para>Suggested: 0038 Order Status -&gt; ClearHl7.Fhir.Codes.V290.CodeOrderStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0038</remarks>
         public string OrderStatus { get; set; }
 
         /// <summary>
         /// ORC.6 - Response Flag.
+        /// <para>Suggested: 0121 Response Flag -&gt; ClearHl7.Fhir.Codes.V290.CodeResponseFlag</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0121</remarks>
         public string ResponseFlag { get; set; }
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ORC.20 - Advanced Beneficiary Notice Code.
+        /// <para>Suggested: 0339 Advanced Beneficiary Notice Code -&gt; ClearHl7.Fhir.Codes.V290.CodeAdvancedBeneficiaryNoticeCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0339</remarks>
         public CodedWithExceptions AdvancedBeneficiaryNoticeCode { get; set; }
 
         /// <summary>
@@ -163,20 +163,20 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ORC.28 - Confidentiality Code.
+        /// <para>Suggested: 0177 Confidentiality Code -&gt; ClearHl7.Fhir.Codes.V290.CodeConfidentialityCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0177</remarks>
         public CodedWithExceptions ConfidentialityCode { get; set; }
 
         /// <summary>
         /// ORC.29 - Order Type.
+        /// <para>Suggested: 0482 Order Type -&gt; ClearHl7.Fhir.Codes.V290.CodeOrderType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0482</remarks>
         public CodedWithExceptions OrderType { get; set; }
 
         /// <summary>
         /// ORC.30 - Enterer Authorization Mode.
+        /// <para>Suggested: 0483 Authorization Mode -&gt; ClearHl7.Fhir.Codes.V290.CodeAuthorizationMode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0483</remarks>
         public CodedWithNoExceptions EntererAuthorizationMode { get; set; }
 
         /// <summary>

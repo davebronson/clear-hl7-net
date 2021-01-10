@@ -32,8 +32,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// LOC.3 - Location Type - LOC.
+        /// <para>Suggested: 0260 Patient Location Type -&gt; ClearHl7.Fhir.Codes.V290.CodePatientLocationType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0260</remarks>
         public IEnumerable<CodedWithExceptions> LocationTypeLoc { get; set; }
 
         /// <summary>
@@ -53,20 +53,20 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// LOC.7 - License Number.
+        /// <para>Suggested: 0461 License Number</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0461</remarks>
         public IEnumerable<CodedWithExceptions> LicenseNumber { get; set; }
 
         /// <summary>
         /// LOC.8 - Location Equipment.
+        /// <para>Suggested: 0261 Location Equipment -&gt; ClearHl7.Fhir.Codes.V290.CodeLocationEquipment</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0261</remarks>
         public IEnumerable<CodedWithExceptions> LocationEquipment { get; set; }
 
         /// <summary>
         /// LOC.9 - Location Service Code.
+        /// <para>Suggested: 0442 Location Service Code -&gt; ClearHl7.Fhir.Codes.V290.CodeLocationServiceCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0442</remarks>
         public CodedWithExceptions LocationServiceCode { get; set; }
         
         /// <summary>

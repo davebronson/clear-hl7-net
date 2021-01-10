@@ -75,8 +75,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// REL.12 - Negation Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string NegationIndicator { get; set; }
 
         /// <summary>
@@ -96,20 +96,20 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// REL.16 - Separability Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string SeparabilityIndicator { get; set; }
 
         /// <summary>
         /// REL.17 - Source Information Instance Object Type.
+        /// <para>Suggested: 0203 Identifier Type -&gt; ClearHl7.Fhir.Codes.V290.CodeIdentifierType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0203</remarks>
         public string SourceInformationInstanceObjectType { get; set; }
 
         /// <summary>
         /// REL.18 - Target Information Instance Object Type.
+        /// <para>Suggested: 0203 Identifier Type -&gt; ClearHl7.Fhir.Codes.V290.CodeIdentifierType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0203</remarks>
         public string TargetInformationInstanceObjectType { get; set; }
 
         /// <summary>

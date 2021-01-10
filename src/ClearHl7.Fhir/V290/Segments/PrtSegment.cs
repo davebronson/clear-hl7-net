@@ -55,8 +55,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PRT.7 - Participant Organization Unit Type.
+        /// <para>Suggested: 0406 Participant Organization Unit Type -&gt; ClearHl7.Fhir.Codes.V290.CodeParticipantOrganizationUnitType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0406</remarks>
         public CodedWithExceptions ParticipantOrganizationUnitType { get; set; }
 
         /// <summary>
@@ -136,14 +136,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PRT.23 - Preferred Method Of Contact.
+        /// <para>Suggested: 0185 Preferred Method Of Contact -&gt; ClearHl7.Fhir.Codes.V290.CodePreferredMethodOfContact</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0185</remarks>
         public CodedWithExceptions PreferredMethodOfContact { get; set; }
 
         /// <summary>
         /// PRT.24 - Contact Identifiers.
+        /// <para>Suggested: 0328 Employee Classification</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0328</remarks>
         public IEnumerable<PractitionerLicenseOrOtherIdNumber> ContactIdentifiers { get; set; }
 
         /// <summary>

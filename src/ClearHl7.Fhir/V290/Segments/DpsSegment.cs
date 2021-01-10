@@ -23,8 +23,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DPS.1 - Diagnosis Code - MCP.
+        /// <para>Suggested: 0051 Diagnosis Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0051</remarks>
         public CodedWithExceptions DiagnosisCodeMcp { get; set; }
 
         /// <summary>

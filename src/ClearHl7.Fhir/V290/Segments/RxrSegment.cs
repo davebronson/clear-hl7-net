@@ -20,8 +20,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXR.1 - Route.
+        /// <para>Suggested: 0162 Route of Administration -&gt; ClearHl7.Fhir.Codes.V290.CodeRouteOfAdministration</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0392</remarks>
         public CodedWithExceptions Route { get; set; }
 
         /// <summary>
@@ -32,14 +32,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXR.3 - Administration Device.
+        /// <para>Suggested: 0164 Administration Device -&gt; ClearHl7.Fhir.Codes.V290.CodeAdministrationDevice</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0164</remarks>
         public CodedWithExceptions AdministrationDevice { get; set; }
 
         /// <summary>
         /// RXR.4 - Administration Method.
+        /// <para>Suggested: 0165 Administration Method -&gt; ClearHl7.Fhir.Codes.V290.CodeAdministrationMethod</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0165</remarks>
         public CodedWithExceptions AdministrationMethod { get; set; }
 
         /// <summary>
@@ -49,8 +49,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXR.6 - Administration Site Modifier.
+        /// <para>Suggested: 0495 Body Site Modifier -&gt; ClearHl7.Fhir.Codes.V290.CodeBodySiteModifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0495</remarks>
         public CodedWithExceptions AdministrationSiteModifier { get; set; }
         
         /// <summary>

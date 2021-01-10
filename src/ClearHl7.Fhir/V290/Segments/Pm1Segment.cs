@@ -23,8 +23,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PM1.1 - Health Plan ID.
+        /// <para>Suggested: 0072 Insurance Plan ID</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0072</remarks>
         public CodedWithExceptions HealthPlanId { get; set; }
 
         /// <summary>
@@ -74,74 +74,74 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PM1.11 - Patient DOB Required.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string PatientDobRequired { get; set; }
 
         /// <summary>
         /// PM1.12 - Patient Gender Required.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string PatientGenderRequired { get; set; }
 
         /// <summary>
         /// PM1.13 - Patient Relationship Required.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string PatientRelationshipRequired { get; set; }
 
         /// <summary>
         /// PM1.14 - Patient Signature Required.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string PatientSignatureRequired { get; set; }
 
         /// <summary>
         /// PM1.15 - Diagnosis Required.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string DiagnosisRequired { get; set; }
 
         /// <summary>
         /// PM1.16 - Service Required.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string ServiceRequired { get; set; }
 
         /// <summary>
         /// PM1.17 - Patient Name Required.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string PatientNameRequired { get; set; }
 
         /// <summary>
         /// PM1.18 - Patient Address Required.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string PatientAddressRequired { get; set; }
 
         /// <summary>
         /// PM1.19 - Subscribers Name Required.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string SubscribersNameRequired { get; set; }
 
         /// <summary>
         /// PM1.20 - Workman's Comp Indicator.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         public string WorkmansCompIndicator { get; set; }
 
         /// <summary>
         /// PM1.21 - Bill Type Required.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string BillTypeRequired { get; set; }
 
         /// <summary>
         /// PM1.22 - Commercial Carrier Name and Address Required.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string CommercialCarrierNameAndAddressRequired { get; set; }
 
         /// <summary>

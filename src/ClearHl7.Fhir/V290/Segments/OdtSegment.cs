@@ -22,8 +22,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ODT.1 - Tray Type.
+        /// <para>Suggested: 0160 Tray Type -&gt; ClearHl7.Fhir.Codes.V290.CodeTrayType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0160</remarks>
         public CodedWithExceptions TrayType { get; set; }
 
         /// <summary>
