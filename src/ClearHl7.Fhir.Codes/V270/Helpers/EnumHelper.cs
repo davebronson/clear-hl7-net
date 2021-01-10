@@ -3948,6 +3948,28 @@ namespace ClearHl7.Fhir.Codes.V270.Helpers
         }
 
         /// <summary>
+        /// Converts the given CodeExpandedYesNoIndicator enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public string EnumToCode(CodeExpandedYesNoIndicator input)
+        {
+            return input switch
+            {
+                CodeExpandedYesNoIndicator.AskedButUnknown => "ASKU",
+                CodeExpandedYesNoIndicator.No => "N",
+                CodeExpandedYesNoIndicator.NotApplicable => "NA",
+                CodeExpandedYesNoIndicator.NotAsked => "NASK",
+                CodeExpandedYesNoIndicator.TemporarilyUnavailable => "NAV",
+                CodeExpandedYesNoIndicator.NoInformation => "NI",
+                CodeExpandedYesNoIndicator.NotPresent => "NP",
+                CodeExpandedYesNoIndicator.Unknown => "UNK",
+                CodeExpandedYesNoIndicator.Yes => "Y",
+                _ => throw new NotImplementedException()
+            };
+        }
+
+        /// <summary>
         /// Converts the given CodeExtendedPriorityCodes enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
@@ -10021,6 +10043,51 @@ namespace ClearHl7.Fhir.Codes.V270.Helpers
             return input switch
             {
                 CodeValueCode.SeeNubcCodesADeprecated => "...",
+                _ => throw new NotImplementedException()
+            };
+        }
+
+        /// <summary>
+        /// Converts the given CodeValueType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public string EnumToCode(CodeValueType input)
+        {
+            return input switch
+            {
+                CodeValueType.Address => "AD",
+                CodeValueType.CodedElementWithFormattedValues => "CF",
+                CodeValueType.CompositeIdWithCheckDigit => "CK",
+                CodeValueType.CompositeIdAndName => "CN",
+                CodeValueType.CodedWithNoExceptions => "CNE",
+                CodeValueType.CompositePrice => "CP",
+                CodeValueType.CodedWithExceptions => "CWE",
+                CodeValueType.ExtendedCompositeIdWithCheckDigit => "CX",
+                CodeValueType.DateTimeRange => "DR",
+                CodeValueType.Date => "DT",
+                CodeValueType.DateTime => "DTM",
+                CodeValueType.EncapsulatedData => "ED",
+                CodeValueType.FormattedText => "FT",
+                CodeValueType.CodedValueForHl7DefinedTables => "ID",
+                CodeValueType.CodedValueForUserDefinedTables => "IS",
+                CodeValueType.MultiplexedArray => "MA",
+                CodeValueType.Money => "MO",
+                CodeValueType.NumericArray => "NA",
+                CodeValueType.NameWithDateAndLocation => "NDL",
+                CodeValueType.Numeric => "NM",
+                CodeValueType.PersonName => "PN",
+                CodeValueType.ReferencePointer => "RP",
+                CodeValueType.StructuredNumeric => "SN",
+                CodeValueType.StringData => "ST",
+                CodeValueType.Time => "TM",
+                CodeValueType.TelephoneNumber => "TN",
+                CodeValueType.TextData => "TX",
+                CodeValueType.ExtendedAddress => "XAD",
+                CodeValueType.ExtendedCompositeIdNumberAndNameForPersons => "XCN",
+                CodeValueType.ExtendedCompositeNameAndIdNumberForOrganizations => "OXN",
+                CodeValueType.ExtendedPersonName => "XPN",
+                CodeValueType.ExtendedTelecommunicationsNumber => "XTN",
                 _ => throw new NotImplementedException()
             };
         }

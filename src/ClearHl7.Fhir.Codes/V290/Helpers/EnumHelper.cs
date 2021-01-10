@@ -3902,6 +3902,28 @@ namespace ClearHl7.Fhir.Codes.V290.Helpers
         }
 
         /// <summary>
+        /// Converts the given CodeExpandedYesNoIndicator enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public string EnumToCode(CodeExpandedYesNoIndicator input)
+        {
+            return input switch
+            {
+                CodeExpandedYesNoIndicator.AskedButUnknown => "ASKU",
+                CodeExpandedYesNoIndicator.No => "N",
+                CodeExpandedYesNoIndicator.NotApplicable => "NA",
+                CodeExpandedYesNoIndicator.NotAsked => "NASK",
+                CodeExpandedYesNoIndicator.TemporarilyUnavailable => "NAV",
+                CodeExpandedYesNoIndicator.NoInformation => "NI",
+                CodeExpandedYesNoIndicator.NotPresent => "NP",
+                CodeExpandedYesNoIndicator.Unknown => "UNK",
+                CodeExpandedYesNoIndicator.Yes => "Y",
+                _ => throw new NotImplementedException()
+            };
+        }
+
+        /// <summary>
         /// Converts the given CodeExtendedPriorityCodes enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
@@ -9925,6 +9947,97 @@ namespace ClearHl7.Fhir.Codes.V290.Helpers
             {
                 CodeUserAuthenticationCredentialTypeCode.KerberosServiceTicket => "KERB",
                 CodeUserAuthenticationCredentialTypeCode.AuthenticatedUserIdentityAssertion => "SAML",
+                _ => throw new NotImplementedException()
+            };
+        }
+
+        /// <summary>
+        /// Converts the given CodeValueType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public string EnumToCode(CodeValueType input)
+        {
+            return input switch
+            {
+                CodeValueType.AuthorizationInformation => "AUI",
+                CodeValueType.ChargeCodeAndDate => "CCD",
+                CodeValueType.ChannelCalibrationParameters => "CCP",
+                CodeValueType.ChannelDefinition => "CD",
+                CodeValueType.CodedElementWithFormattedValues => "CF",
+                CodeValueType.CodedWithNoExceptions => "CNE",
+                CodeValueType.CompositeIdNumberAndNameSimplified => "CNN",
+                CodeValueType.CompositePrice => "CP",
+                CodeValueType.ChannelSensitivityAndUnits => "CSU",
+                CodeValueType.CodedWithExceptions => "CWE",
+                CodeValueType.ExtendedCompositeIdWithCheckDigit => "CX",
+                CodeValueType.DailyDeductibleInformation => "DDI",
+                CodeValueType.DateAndInstitutionName => "DIN",
+                CodeValueType.DischargeToLocationAndDate => "DLD",
+                CodeValueType.DriversLicenseNumber => "DLN",
+                CodeValueType.Delta => "DLT",
+                CodeValueType.DateTimeRange => "DR",
+                CodeValueType.Date => "DT",
+                CodeValueType.DateTime => "DTM",
+                CodeValueType.DayTypeAndNumber => "DTN",
+                CodeValueType.EncapsulatedData => "ED",
+                CodeValueType.EntityIdentifier => "EI",
+                CodeValueType.EntityIdentifierPair => "EIP",
+                CodeValueType.ErrorLocation => "ERL",
+                CodeValueType.FinancialClass => "FC",
+                CodeValueType.FormattedText => "FT",
+                CodeValueType.GeneralTimingSpecification => "GTS",
+                CodeValueType.HierarchicDesignator => "HD",
+                CodeValueType.InsuranceCertificationDefinition => "ICD",
+                CodeValueType.CodedValueForUserDefinedTables => "IS",
+                CodeValueType.JobCodeClass => "JCC",
+                CodeValueType.LocationWithAddressVariation1 => "LA1",
+                CodeValueType.LocationWithAddressVariation2 => "LA2",
+                CodeValueType.MultiplexedArray => "MA",
+                CodeValueType.Money => "MO",
+                CodeValueType.MoneyAndChargeCode => "MOC",
+                CodeValueType.MoneyOrPercentage => "MOP",
+                CodeValueType.MessageType => "MSG",
+                CodeValueType.NumericArray => "NA",
+                CodeValueType.NameWithDateAndLocation => "NDL",
+                CodeValueType.Numeric => "NM",
+                CodeValueType.NumericRange => "NR",
+                CodeValueType.OccurrenceCodeAndDate => "OCD",
+                CodeValueType.OccurrenceSpanCodeAndDate => "OSP",
+                CodeValueType.PractitionerInstitutionalPrivileges => "PIP",
+                CodeValueType.PersonLocation => "PL",
+                CodeValueType.PractitionerLicenseOrOtherIdNumber => "PLN",
+                CodeValueType.PerformingPersonTimeStamp => "PPN",
+                CodeValueType.ParentResultLink => "PRL",
+                CodeValueType.ProcessingType => "PT",
+                CodeValueType.PolicyTypeAndAmount => "PTA",
+                CodeValueType.QueryInputParameterList => "QIP",
+                CodeValueType.QuerySelectionCriteria => "QSC",
+                CodeValueType.RowColumnDefinition => "RCD",
+                CodeValueType.ReferenceRange => "RFR",
+                CodeValueType.RepeatInterval => "RI",
+                CodeValueType.RoomCoverage => "RMC",
+                CodeValueType.ReferencePointer => "RP",
+                CodeValueType.RepeatPattern => "RPT",
+                CodeValueType.SchedulingClassValuePair => "SCV",
+                CodeValueType.StructuredNumeric => "SN",
+                CodeValueType.StringOfTelephoneNumberDigits => "SNM",
+                CodeValueType.SpecialtyDescription => "SPD",
+                CodeValueType.SortOrder => "SRT",
+                CodeValueType.StringData => "ST",
+                CodeValueType.Time => "TM",
+                CodeValueType.TextData => "TX",
+                CodeValueType.UbValueCodeAndAmount => "UVC",
+                CodeValueType.VisitingHours => "VH",
+                CodeValueType.VersionIdentifier => "VID",
+                CodeValueType.ValueRange => "VR",
+                CodeValueType.ChannelIdentifier => "WVI",
+                CodeValueType.WaveformSource => "WVS",
+                CodeValueType.ExtendedAddress => "XAD",
+                CodeValueType.ExtendedCompositeIdNumberAndNameForPersons => "XCN",
+                CodeValueType.ExtendedCompositeNameAndIdNumberForOrganizations => "OXN",
+                CodeValueType.ExtendedPersonName => "XPN",
+                CodeValueType.ExtendedTelecommunicationsNumber => "XTN",
                 _ => throw new NotImplementedException()
             };
         }

@@ -142,6 +142,7 @@
         string EnumToCode(CodeEventSeriousness input);
         string EnumToCode(CodeEventType input);
         string EnumToCode(CodeEventTypeCode input);
+        string EnumToCode(CodeExpandedYesNoIndicator input);
         string EnumToCode(CodeExtendedPriorityCodes input);
         string EnumToCode(CodeFacilityType input);
         string EnumToCode(CodeFileLevelEventCode input);

@@ -4894,6 +4894,46 @@ namespace ClearHl7.Fhir.Codes.V231.Helpers
         }
 
         /// <summary>
+        /// Converts the given CodeValueType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public string EnumToCode(CodeValueType input)
+        {
+            return input switch
+            {
+                CodeValueType.Address => "AD",
+                CodeValueType.CodedEntry => "CE",
+                CodeValueType.CodedElementWithFormattedValues => "CF",
+                CodeValueType.CompositeIdWithCheckDigit => "CK",
+                CodeValueType.CompositeIdAndName => "CN",
+                CodeValueType.CompositePrice => "CP",
+                CodeValueType.ExtendedCompositeIdWithCheckDigit => "CX",
+                CodeValueType.Date => "DT",
+                CodeValueType.EncapsulatedData => "ED",
+                CodeValueType.FormattedText => "FT",
+                CodeValueType.CodedValueForHl7DefinedTables => "ID",
+                CodeValueType.Money => "MO",
+                CodeValueType.NameWithDateAndLocation => "NDL",
+                CodeValueType.Numeric => "NM",
+                CodeValueType.PersonName => "PN",
+                CodeValueType.ReferencePointer => "RP",
+                CodeValueType.StructuredNumeric => "SN",
+                CodeValueType.StringData => "ST",
+                CodeValueType.Time => "TM",
+                CodeValueType.TelephoneNumber => "TN",
+                CodeValueType.TimeStampDateAndTime => "TS",
+                CodeValueType.TextData => "TX",
+                CodeValueType.ExtendedAddress => "XAD",
+                CodeValueType.ExtendedCompositeIdNumberAndNameForPersons => "XCN",
+                CodeValueType.ExtendedCompositeNameAndIdNumberForOrganizations => "OXN",
+                CodeValueType.ExtendedPersonName => "XPN",
+                CodeValueType.ExtendedTelecommunicationsNumber => "XTN",
+                _ => throw new NotImplementedException()
+            };
+        }
+
+        /// <summary>
         /// Converts the given CodeVersionId enum value into its HL7 equivalent code.
         /// </summary>
         /// <param name="input">An enum value to convert.</param>
