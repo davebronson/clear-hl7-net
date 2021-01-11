@@ -144,8 +144,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DG1.23 - DRG CCL Value Code.
+        /// <para>Suggested: 0728 DRG CCL Value Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0728</remarks>
         public CodedWithExceptions DrgCclValueCode { get; set; }
 
         /// <summary>
@@ -156,14 +156,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DG1.25 - DRG Diagnosis Determination Status.
+        /// <para>Suggested: 0731 DRG Diagnosis Determination Status -&gt; ClearHl7.Fhir.Codes.V290.CodeDrgDiagnosisDeterminationStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0731</remarks>
         public CodedWithExceptions DrgDiagnosisDeterminationStatus { get; set; }
 
         /// <summary>
         /// DG1.26 - Present On Admission(POA) Indicator.
+        /// <para>Suggested: 0895 Present On Admission (POA) Indicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0895</remarks>
         public CodedWithExceptions PresentOnAdmissionPoaIndicator { get; set; }
 
         /// <summary>

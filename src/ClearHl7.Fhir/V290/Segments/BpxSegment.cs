@@ -50,11 +50,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// BPX.6 - BC Component.
+        /// <para>Suggested: 0577 BC Component</para>
         /// </summary>
         public CodedWithNoExceptions BcComponent { get; set; }
 
         /// <summary>
         /// BPX.7 - BC Donation Type / Intended Use.
+        /// <para>Suggested: 0578 BC Donation Type/Intended Use</para>
         /// </summary>
         public CodedWithNoExceptions BcDonationTypeIntendedUse { get; set; }
 
@@ -76,11 +78,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// BPX.11 - BP Blood Group.
+        /// <para>Suggested: 0579 BP Blood Group</para>
         /// </summary>
         public CodedWithNoExceptions BpBloodGroup { get; set; }
 
         /// <summary>
         /// BPX.12 - BC Special Testing.
+        /// <para>Suggested: 0580 BC Special Testing</para>
         /// </summary>
         public IEnumerable<CodedWithNoExceptions> BcSpecialTesting { get; set; }
 
@@ -101,6 +105,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// BPX.16 - BP Units.
+        /// <para>Suggested: 0581 BP Units</para>
         /// </summary>
         public CodedWithExceptions BpUnits { get; set; }
 

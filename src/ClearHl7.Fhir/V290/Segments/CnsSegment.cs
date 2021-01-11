@@ -41,11 +41,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CNS.5 - Starting Notification Code.
+        /// <para>Suggested: 0585 Starting Notification Code</para>
         /// </summary>
         public CodedWithExceptions StartingNotificationCode { get; set; }
 
         /// <summary>
         /// CNS.6 - Ending Notification Code.
+        /// <para>Suggested: 0586 Ending Notification Code</para>
         /// </summary>
         public CodedWithExceptions EndingNotificationCode { get; set; }
 

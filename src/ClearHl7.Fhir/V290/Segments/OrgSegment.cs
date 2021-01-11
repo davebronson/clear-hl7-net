@@ -91,8 +91,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ORG.13 - Cost Center Code.
+        /// <para>Suggested: 0539 Cost Center Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0539</remarks>
         public IEnumerable<CodedWithExceptions> CostCenterCode { get; set; }
         
         /// <summary>

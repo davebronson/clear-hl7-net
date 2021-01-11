@@ -84,8 +84,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RF1.12 - Referral Documentation Completion Status.
+        /// <para>Suggested: 0865 Referral Documentation Completion Status</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0865</remarks>
         public CodedWithExceptions ReferralDocumentationCompletionStatus { get; set; }
 
         /// <summary>

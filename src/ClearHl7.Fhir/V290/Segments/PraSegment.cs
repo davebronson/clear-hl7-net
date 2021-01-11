@@ -23,6 +23,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PRA.1 - Primary Key Value - PRA.
+        /// <para>Suggested: 0681 Primary Key Value - PRA</para>
         /// </summary>
         public CodedWithExceptions PrimaryKeyValuePra { get; set; }
 
@@ -68,8 +69,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PRA.9 - Institution.
+        /// <para>Suggested: 0537 Institution</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0537</remarks>
         public CodedWithExceptions Institution { get; set; }
 
         /// <summary>

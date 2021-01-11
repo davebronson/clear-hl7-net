@@ -23,6 +23,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// STF.1 - Primary Key Value - STF.
+        /// <para>Suggested: 0786 Primary Key Value – STF</para>
         /// </summary>
         public CodedWithExceptions PrimaryKeyValueStf { get; set; }
 
@@ -84,14 +85,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// STF.12 - Institution Activation Date.
+        /// <para>Suggested: 0537 Institution</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0537</remarks>
         public IEnumerable<DateAndInstitutionName> InstitutionActivationDate { get; set; }
 
         /// <summary>
         /// STF.13 - Institution Inactivation Date.
+        /// <para>Suggested: 0537 Institution</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0537</remarks>
         public IEnumerable<DateAndInstitutionName> InstitutionInactivationDate { get; set; }
 
         /// <summary>
@@ -201,8 +202,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// STF.33 - Institution Relationship Type Code.
+        /// <para>Suggested: 0538 Institution Relationship Type -&gt; ClearHl7.Fhir.Codes.V290.CodeInstitutionRelationshipType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0538</remarks>
         public CodedWithExceptions InstitutionRelationshipTypeCode { get; set; }
 
         /// <summary>
@@ -217,8 +218,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// STF.36 - Cost Center Code.
+        /// <para>Suggested: 0539 Cost Center Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0539</remarks>
         public IEnumerable<CodedWithExceptions> CostCenterCode { get; set; }
 
         /// <summary>
@@ -229,14 +230,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// STF.38 - Inactive Reason Code.
+        /// <para>Suggested: 0540 Inactive Reason Code -&gt; ClearHl7.Fhir.Codes.V290.CodeInactiveReasonCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0540</remarks>
         public CodedWithExceptions InactiveReasonCode { get; set; }
 
         /// <summary>
         /// STF.39 - Generic resource type or category.
+        /// <para>Suggested: 0771 Generic resource type or category</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0771</remarks>
         public IEnumerable<CodedWithExceptions> GenericResourceTypeOrCategory { get; set; }
 
         /// <summary>

@@ -96,6 +96,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SAC.15 - Location.
+        /// <para>Suggested: 0774 Location</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> Location { get; set; }
 
@@ -121,6 +122,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SAC.20 - Container Height/Diameter/Delta Units.
+        /// <para>Suggested: 0775 Container Height/Diameter/Delta Units</para>
         /// </summary>
         public CodedWithExceptions ContainerHeightDiameterDeltaUnits { get; set; }
 
@@ -141,6 +143,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SAC.24 - Volume Units.
+        /// <para>Suggested: 0777 Volume Units</para>
         /// </summary>
         public CodedWithExceptions VolumeUnits { get; set; }
 
@@ -191,6 +194,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SAC.33 - Hemolysis Index Units.
+        /// <para>Suggested: 0779 Hemolysis Index Units</para>
         /// </summary>
         public CodedWithExceptions HemolysisIndexUnits { get; set; }
 
@@ -201,6 +205,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SAC.35 - Lipemia Index Units.
+        /// <para>Suggested: 0780 Lipemia Index Units</para>
         /// </summary>
         public CodedWithExceptions LipemiaIndexUnits { get; set; }
 
@@ -211,6 +216,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SAC.37 - Icterus Index Units.
+        /// <para>Suggested: 0781 Icterus Index Units</para>
         /// </summary>
         public CodedWithExceptions IcterusIndexUnits { get; set; }
 
@@ -221,6 +227,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SAC.39 - Fibrin Index Units.
+        /// <para>Suggested: 0782 Fibrin Index Units</para>
         /// </summary>
         public CodedWithExceptions FibrinIndexUnits { get; set; }
 
@@ -266,20 +273,20 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SAC.47 - Container Form.
+        /// <para>Suggested: 0967 Container Form</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0967</remarks>
         public CodedWithExceptions ContainerForm { get; set; }
 
         /// <summary>
         /// SAC.48 - Container Material.
+        /// <para>Suggested: 0968 Container Material</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0968</remarks>
         public CodedWithExceptions ContainerMaterial { get; set; }
 
         /// <summary>
         /// SAC.49 - Container Common Name.
+        /// <para>Suggested: 0969 Container Common Name</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0969</remarks>
         public CodedWithExceptions ContainerCommonName { get; set; }
 
         /// <summary>

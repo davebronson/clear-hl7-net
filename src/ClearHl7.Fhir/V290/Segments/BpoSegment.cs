@@ -28,6 +28,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// BPO.2 - BP Universal Service Identifier.
+        /// <para>Suggested: 0575 BP Universal Service Identifier</para>
         /// </summary>
         public CodedWithExceptions BpUniversalServiceIdentifier { get; set; }
 
@@ -49,6 +50,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// BPO.6 - BP Units.
+        /// <para>Suggested: 0576 BP Units</para>
         /// </summary>
         public CodedWithExceptions BpUnits { get; set; }
 

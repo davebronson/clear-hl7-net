@@ -33,14 +33,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ARV.3 - Access Restriction Value.
+        /// <para>Suggested: 0717 Access Restriction Value -&gt; ClearHl7.Fhir.Codes.V290.CodeAccessRestrictionValue</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0717</remarks>
         public CodedWithExceptions AccessRestrictionValue { get; set; }
 
         /// <summary>
         /// ARV.4 - Access Restriction Reason.
+        /// <para>Suggested: 0719 Access Restriction Reason Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0719</remarks>
         public IEnumerable<CodedWithExceptions> AccessRestrictionReason { get; set; }
 
         /// <summary>
@@ -55,14 +55,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ARV.7 - Security Classification Tag.
+        /// <para>Suggested: 0952 Security Classification Tag</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0952</remarks>
         public CodedWithExceptions SecurityClassificationTag { get; set; }
 
         /// <summary>
         /// ARV.8 - Security Handling Instructions.
+        /// <para>Suggested: 0953 Security Handling Instructions</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0953</remarks>
         public IEnumerable<CodedWithExceptions> SecurityHandlingInstructions { get; set; }
 
         /// <summary>

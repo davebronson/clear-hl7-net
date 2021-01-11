@@ -157,14 +157,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// IN3.26 - Certification Type.
+        /// <para>Suggested: 0921 Certification Type Code -&gt; ClearHl7.Fhir.Codes.V290.CodeCertificationTypeCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0921</remarks>
         public CodedWithExceptions CertificationType { get; set; }
 
         /// <summary>
         /// IN3.27 - Certification Category.
+        /// <para>Suggested: 0922 Certification Category Code -&gt; ClearHl7.Fhir.Codes.V290.CodeCertificationCategoryCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0922</remarks>
         public CodedWithExceptions CertificationCategory { get; set; }
 
         /// <summary>
@@ -174,14 +174,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// IN3.29 - Online Verification Result.
+        /// <para>Suggested: 0970 Online Verification Result</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0970</remarks>
         public CodedWithExceptions OnlineVerificationResult { get; set; }
 
         /// <summary>
         /// IN3.30 - Online Verification Result Error Code.
+        /// <para>Suggested: 0971 Online Verification Result Error Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0971</remarks>
         public CodedWithExceptions OnlineVerificationResultErrorCode { get; set; }
 
         /// <summary>

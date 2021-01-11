@@ -121,6 +121,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// MSH.19 - Principal Language Of Message.
+        /// <para>Suggested: 0609 Principal Language Of Message</para>
         /// </summary>
         public CodedWithExceptions PrincipalLanguageOfMessage { get; set; }
 
@@ -157,11 +158,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// MSH.26 - Security Classification Tag.
+        /// <para>Suggested: 0952 Security Classification Tag</para>
         /// </summary>
         public CodedWithExceptions SecurityClassificationTag { get; set; }
 
         /// <summary>
         /// MSH.27 - Security Handling Instructions.
+        /// <para>Suggested: 0953 Security Handling Instructions</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> SecurityHandlingInstructions { get; set; }
 

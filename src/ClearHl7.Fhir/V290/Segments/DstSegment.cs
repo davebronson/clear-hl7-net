@@ -22,11 +22,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DST.1 - Destination.
+        /// <para>Suggested: 0943 Destination</para>
         /// </summary>
         public CodedWithExceptions Destination { get; set; }
 
         /// <summary>
         /// DST.2 - Route.
+        /// <para>Suggested: 0944 Route</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> Route { get; set; }
 

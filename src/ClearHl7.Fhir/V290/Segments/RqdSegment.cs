@@ -26,16 +26,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RQD.2 - Item Code - Internal.
+        /// <para>Suggested: 0684 Item Code - Internal</para>
         /// </summary>
         public CodedWithExceptions ItemCodeInternal { get; set; }
 
         /// <summary>
         /// RQD.3 - Item Code - External.
+        /// <para>Suggested: 0685 Item Code - External</para>
         /// </summary>
         public CodedWithExceptions ItemCodeExternal { get; set; }
 
         /// <summary>
         /// RQD.4 - Hospital Item Code.
+        /// <para>Suggested: 0686 Hospital Item Code</para>
         /// </summary>
         public CodedWithExceptions HospitalItemCode { get; set; }
 
@@ -46,6 +49,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RQD.6 - Requisition Unit of Measure.
+        /// <para>Suggested: 0687 Requisition Unit of Measure</para>
         /// </summary>
         public CodedWithExceptions RequisitionUnitOfMeasure { get; set; }
 
@@ -63,6 +67,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RQD.9 - Deliver To ID.
+        /// <para>Suggested: 0688 Deliver To ID</para>
         /// </summary>
         public CodedWithExceptions DeliverToId { get; set; }
 

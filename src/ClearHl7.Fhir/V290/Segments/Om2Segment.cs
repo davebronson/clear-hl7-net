@@ -27,6 +27,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM2.2 - Units of Measure.
+        /// <para>Suggested: 0648 Units of Measure</para>
         /// </summary>
         public CodedWithExceptions UnitsOfMeasure { get; set; }
 
@@ -37,6 +38,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM2.4 - Corresponding SI Units of Measure.
+        /// <para>Suggested: 0649 Corresponding SI Units of Measure</para>
         /// </summary>
         public CodedWithExceptions CorrespondingSiUnitsOfMeasure { get; set; }
 

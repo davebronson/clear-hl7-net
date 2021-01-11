@@ -26,8 +26,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OVR.2 - Business Rule Override Code.
+        /// <para>Suggested: 0521 Override Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0521</remarks>
         public CodedWithExceptions BusinessRuleOverrideCode { get; set; }
 
         /// <summary>

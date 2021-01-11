@@ -75,21 +75,25 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// AUT.11 - Requested Discipline(s).
+        /// <para>Suggested: 0522 Requested Discipline(s)</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> RequestedDisciplines { get; set; }
 
         /// <summary>
         /// AUT.12 - Authorized Discipline(s).
+        /// <para>Suggested: 0546 Authorized Discipline(s)</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> AuthorizedDisciplines { get; set; }
 
         /// <summary>
         /// AUT.13 - Authorization Referral Type.
+        /// <para>Suggested: 0551 Authorization Referral Type</para>
         /// </summary>
         public CodedWithExceptions AuthorizationReferralType { get; set; }
 
         /// <summary>
         /// AUT.14 - Approval Status.
+        /// <para>Suggested: 0563 Approval Status</para>
         /// </summary>
         public CodedWithExceptions ApprovalStatus { get; set; }
 
@@ -100,6 +104,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// AUT.16 - Clinical Service.
+        /// <para>Suggested: 0573 Clinical Service</para>
         /// </summary>
         public CodedWithExceptions ClinicalService { get; set; }
 
@@ -125,6 +130,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// AUT.21 - Encounter Type.
+        /// <para>Suggested: 0574 Encounter Type</para>
         /// </summary>
         public CodedWithExceptions EncounterType { get; set; }
 

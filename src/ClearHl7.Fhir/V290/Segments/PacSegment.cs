@@ -42,14 +42,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PAC.5 - Package Type.
+        /// <para>Suggested: 0908 Package Type</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0908</remarks>
         public CodedWithExceptions PackageType { get; set; }
 
         /// <summary>
         /// PAC.6 - Package Condition.
+        /// <para>Suggested: 0544 Container Condition -&gt; ClearHl7.Fhir.Codes.V290.CodeContainerCondition</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0544</remarks>
         public IEnumerable<CodedWithExceptions> PackageCondition { get; set; }
 
         /// <summary>

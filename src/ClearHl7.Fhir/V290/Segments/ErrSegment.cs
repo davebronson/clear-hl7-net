@@ -44,8 +44,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ERR.5 - Application Error Code.
+        /// <para>Suggested: 0533 Application Error Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0533</remarks>
         public CodedWithExceptions ApplicationErrorCode { get; set; }
 
         /// <summary>

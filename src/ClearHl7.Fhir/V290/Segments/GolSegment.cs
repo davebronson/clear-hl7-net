@@ -24,7 +24,6 @@ namespace ClearHl7.Fhir.V290.Segments
         /// <summary>
         /// GOL.1 - Action Code.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0206</remarks>
         public string ActionCode { get; set; }
 
         /// <summary>
@@ -129,8 +128,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// GOL.22 - Mood Code.
+        /// <para>Suggested: 0725 Mood Codes -&gt; ClearHl7.Fhir.Codes.V290.CodeMoodCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0725</remarks>
         public CodedWithNoExceptions MoodCode { get; set; }
         
         /// <summary>

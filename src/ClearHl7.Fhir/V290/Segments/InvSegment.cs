@@ -41,16 +41,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// INV.4 - Inventory Container Identifier.
+        /// <para>Suggested: 0599 Inventory Container Identifier</para>
         /// </summary>
         public CodedWithExceptions InventoryContainerIdentifier { get; set; }
 
         /// <summary>
         /// INV.5 - Container Carrier Identifier.
+        /// <para>Suggested: 0600 Container Carrier Identifier</para>
         /// </summary>
         public CodedWithExceptions ContainerCarrierIdentifier { get; set; }
 
         /// <summary>
         /// INV.6 - Position on Carrier.
+        /// <para>Suggested: 0601 Position On Carrier</para>
         /// </summary>
         public CodedWithExceptions PositionOnCarrier { get; set; }
 
@@ -76,6 +79,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// INV.11 - Quantity Units.
+        /// <para>Suggested: 0602 Quality Units</para>
         /// </summary>
         public CodedWithExceptions QuantityUnits { get; set; }
 
@@ -96,6 +100,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// INV.15 - Test/Fluid Identifier(s).
+        /// <para>Suggested: 0603 Test/Fluid Identifier(s)</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> TestFluidIdentifiers { get; set; }
 
@@ -128,6 +133,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// INV.21 - Equipment State Indicator Type Code.
+        /// <para>Suggested: 0942 Equipment State Indicator Type Code</para>
         /// </summary>
         public CodedWithExceptions EquipmentStateIndicatorTypeCode { get; set; }
 

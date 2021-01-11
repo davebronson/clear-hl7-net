@@ -28,6 +28,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PDC.2 - Country.
+        /// <para>Suggested: 0675 Country</para>
         /// </summary>
         public CodedWithExceptions Country { get; set; }
 
@@ -43,6 +44,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PDC.5 - Generic Name.
+        /// <para>Suggested: 0676 Generic Name</para>
         /// </summary>
         public CodedWithExceptions GenericName { get; set; }
 
@@ -63,6 +65,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PDC.9 - Product Code.
+        /// <para>Suggested: 0677 Product Code</para>
         /// </summary>
         public CodedWithExceptions ProductCode { get; set; }
 

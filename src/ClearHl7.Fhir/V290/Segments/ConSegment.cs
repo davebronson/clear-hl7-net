@@ -154,8 +154,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CON.25 - Relationship to Subject.
+        /// <para>Suggested: 0548 Signatory’s Relationship To Subject -&gt; ClearHl7.Fhir.Codes.V290.CodeSignatorysRelationshipToSubject</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0548</remarks>
         public IEnumerable<CodedWithExceptions> RelationshipToSubject { get; set; }
 
         /// <summary>

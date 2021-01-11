@@ -22,6 +22,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXO.1 - Requested Give Code.
+        /// <para>Suggested: 0747 Requested Give Code</para>
         /// </summary>
         public CodedWithExceptions RequestedGiveCode { get; set; }
 
@@ -37,21 +38,25 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXO.4 - Requested Give Units.
+        /// <para>Suggested: 0748 Requested Give Units</para>
         /// </summary>
         public CodedWithExceptions RequestedGiveUnits { get; set; }
 
         /// <summary>
         /// RXO.5 - Requested Dosage Form.
+        /// <para>Suggested: 0750 Requested Dosage Form</para>
         /// </summary>
         public CodedWithExceptions RequestedDosageForm { get; set; }
 
         /// <summary>
         /// RXO.6 - Provider's Pharmacy/Treatment Instructions.
+        /// <para>Suggested: 0751 Provider's Pharmacy/Treatment Instructions</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ProvidersPharmacyTreatmentInstructions { get; set; }
 
         /// <summary>
         /// RXO.7 - Provider's Administration Instructions.
+        /// <para>Suggested: 0718 Provider's Administration Instructions</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ProvidersAdministrationInstructions { get; set; }
 
@@ -68,6 +73,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXO.10 - Requested Dispense Code.
+        /// <para>Suggested: 0753 Requested Dispense Code</para>
         /// </summary>
         public CodedWithExceptions RequestedDispenseCode { get; set; }
 
@@ -78,6 +84,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXO.12 - Requested Dispense Units.
+        /// <para>Suggested: 0754 Requested Dispense Units</para>
         /// </summary>
         public CodedWithExceptions RequestedDispenseUnits { get; set; }
 
@@ -114,11 +121,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXO.19 - Requested Give Strength Units.
+        /// <para>Suggested: 0756 Requested Give Strength Units</para>
         /// </summary>
         public CodedWithExceptions RequestedGiveStrengthUnits { get; set; }
 
         /// <summary>
         /// RXO.20 - Indication.
+        /// <para>Suggested: 0694 Indication</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> Indication { get; set; }
 
@@ -129,6 +138,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXO.22 - Requested Give Rate Units.
+        /// <para>Suggested: 0760 Requested Give Rate Units</para>
         /// </summary>
         public CodedWithExceptions RequestedGiveRateUnits { get; set; }
 
@@ -139,6 +149,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXO.24 - Supplementary Code.
+        /// <para>Suggested: 0700 Supplementary Code</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> SupplementaryCode { get; set; }
 
@@ -149,6 +160,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXO.26 - Requested Drug Strength Volume Units.
+        /// <para>Suggested: 0764 Requested Drug Strength Volume Units</para>
         /// </summary>
         public CodedWithExceptions RequestedDrugStrengthVolumeUnits { get; set; }
 
@@ -175,12 +187,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXO.31 - Mood Code.
+        /// <para>Suggested: 0725 Mood Codes -&gt; ClearHl7.Fhir.Codes.V290.CodeMoodCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0725</remarks>
         public CodedWithNoExceptions MoodCode { get; set; }
 
         /// <summary>
         /// RXO.32 - Dispensing Pharmacy.
+        /// <para>Suggested: 0733 Dispensing Pharmacy</para>
         /// </summary>
         public CodedWithExceptions DispensingPharmacy { get; set; }
 

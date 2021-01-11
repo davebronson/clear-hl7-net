@@ -45,6 +45,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.5 - Producer ID.
+        /// <para>Suggested: 0631 Producer ID</para>
         /// </summary>
         public CodedWithExceptions ProducerId { get; set; }
 
@@ -55,6 +56,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.7 - Other Service/Test/Observation IDs for the Observation.
+        /// <para>Suggested: 0632 Other Service/Test/Observation IDs</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> OtherServiceTestObservationIdsForTheObservation { get; set; }
 
@@ -86,11 +88,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.13 - Identity of Instrument Used to Perform this Study.
+        /// <para>Suggested: 0633 Identity Of Instrument Used To Perform This Study</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> IdentityOfInstrumentUsedToPerformThisStudy { get; set; }
 
         /// <summary>
         /// OM1.14 - Coded Representation of Method.
+        /// <para>Suggested: 0635 Coded Representation of Method</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> CodedRepresentationOfMethod { get; set; }
 
@@ -102,6 +106,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.16 - Observation Producing Department/Section.
+        /// <para>Suggested: 0636 Observation Producing Department/Section</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ObservationProducingDepartmentSection { get; set; }
 
@@ -118,6 +123,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.19 - Report Subheader.
+        /// <para>Suggested: 0637 Report Subheader</para>
         /// </summary>
         public CodedWithExceptions ReportSubheader { get; set; }
 
@@ -160,6 +166,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.27 - Outside Site(s) Where Observation May Be Performed.
+        /// <para>Suggested: 0638 Outside Site(s) Where Observation May Be Performed</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> OutsideSitesWhereObservationMayBePerformed { get; set; }
 
@@ -181,6 +188,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.31 - Observations Required to Interpret this Observation.
+        /// <para>Suggested: 0639 Observations Required to Interpret this</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ObservationsRequiredToInterpretThisObservation { get; set; }
 
@@ -191,11 +199,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.33 - Contraindications to Observations.
+        /// <para>Suggested: 0640 Contraindications to Observations</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ContraindicationsToObservations { get; set; }
 
         /// <summary>
         /// OM1.34 - Reflex Tests/Observations.
+        /// <para>Suggested: 0641 Reflex Tests/Observations</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ReflexTestsObservations { get; set; }
 
@@ -206,6 +216,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.36 - Fixed Canned Message.
+        /// <para>Suggested: 0643 Fixed Canned Message</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> FixedCannedMessage { get; set; }
 
@@ -216,6 +227,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.38 - Procedure Medication.
+        /// <para>Suggested: 0644 Procedure Medication</para>
         /// </summary>
         public CodedWithExceptions ProcedureMedication { get; set; }
 
@@ -260,19 +272,20 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.46 - Target Anatomic Site Of Test.
+        /// <para>Suggested: 0645 Target Anatomic Site Of Test</para>
         /// </summary>
         public CodedWithExceptions TargetAnatomicSiteOfTest { get; set; }
 
         /// <summary>
         /// OM1.47 - Modality of Imaging Measurement.
+        /// <para>Suggested: 0910 Modality of Imaging Measurement</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0910</remarks>
         public CodedWithExceptions ModalityOfImagingMeasurement { get; set; }
 
         /// <summary>
         /// OM1.48 - Exclusive Test.
+        /// <para>Suggested: 0919 Exclusive Test -&gt; ClearHl7.Fhir.Codes.V290.CodeExclusiveTest</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0919</remarks>
         public string ExclusiveTest { get; set; }
 
         /// <summary>
@@ -293,6 +306,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.52 - Replacement Producer's Service/Test/Observation ID.
+        /// <para>Suggested: 0646 Replacement Producer's Service/Test/Observation ID</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ReplacementProducersServiceTestObservationId { get; set; }
 
@@ -313,6 +327,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.56 - Observation/Identifier associated with Producer's Service/Test/Observation ID.
+        /// <para>Suggested: 0647 Observation/Identifier associated with Producer’s Service/Test/Observation ID</para>
         /// </summary>
         public CodedWithExceptions ObservationIdAssociatedWithProducersServiceTestObservationId { get; set; }
 

@@ -36,6 +36,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CSP.4 - Study Phase Evaluability.
+        /// <para>Suggested: 0588 Study Phase Evaluability</para>
         /// </summary>
         public CodedWithExceptions StudyPhaseEvaluability { get; set; }
 

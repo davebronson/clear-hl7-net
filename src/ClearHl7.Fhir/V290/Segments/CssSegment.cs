@@ -23,6 +23,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CSS.1 - Study Scheduled Time Point.
+        /// <para>Suggested: 0595 Study Scheduled Time Point</para>
         /// </summary>
         public CodedWithExceptions StudyScheduledTimePoint { get; set; }
 
@@ -33,6 +34,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CSS.3 - Study Quality Control Codes.
+        /// <para>Suggested: 0596 Study Quality Control Codes</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> StudyQualityControlCodes { get; set; }
 

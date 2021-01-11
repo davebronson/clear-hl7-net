@@ -133,14 +133,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PR1.21 - DRG Procedure Determination Status.
+        /// <para>Suggested: 0761 DRG Procedure Determination Status -&gt; ClearHl7.Fhir.Codes.V290.CodeDrgProcedureDeterminationStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0761</remarks>
         public CodedWithExceptions DrgProcedureDeterminationStatus { get; set; }
 
         /// <summary>
         /// PR1.22 - DRG Procedure Relevance.
+        /// <para>Suggested: 0763 DRG Procedure Relevance -&gt; ClearHl7.Fhir.Codes.V290.CodeDrgProcedureRelevance</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0763</remarks>
         public CodedWithExceptions DrgProcedureRelevance { get; set; }
 
         /// <summary>

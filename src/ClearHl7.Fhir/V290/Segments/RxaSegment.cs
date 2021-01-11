@@ -54,16 +54,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXA.7 - Administered Units.
+        /// <para>Suggested: 0689 Administered Units</para>
         /// </summary>
         public CodedWithExceptions AdministeredUnits { get; set; }
 
         /// <summary>
         /// RXA.8 - Administered Dosage Form.
+        /// <para>Suggested: 0690 Administered Dosage Form</para>
         /// </summary>
         public CodedWithExceptions AdministeredDosageForm { get; set; }
 
         /// <summary>
         /// RXA.9 - Administration Notes.
+        /// <para>Suggested: 0691 Administration Notes</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> AdministrationNotes { get; set; }
 
@@ -89,6 +92,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXA.14 - Administered Strength Units.
+        /// <para>Suggested: 0692 Administered Strength Units</para>
         /// </summary>
         public CodedWithExceptions AdministeredStrengthUnits { get; set; }
 
@@ -109,11 +113,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXA.18 - Substance/Treatment Refusal Reason.
+        /// <para>Suggested: 0693 Substance/Treatment Refusal Reason</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> SubstanceTreatmentRefusalReason { get; set; }
 
         /// <summary>
         /// RXA.19 - Indication.
+        /// <para>Suggested: 0694 Indication</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> Indication { get; set; }
 
@@ -141,11 +147,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXA.24 - Administered Drug Strength Volume Units.
+        /// <para>Suggested: 0695 Administered Drug Strength Volume Units</para>
         /// </summary>
         public CodedWithExceptions AdministeredDrugStrengthVolumeUnits { get; set; }
 
         /// <summary>
         /// RXA.25 - Administered Barcode Identifier.
+        /// <para>Suggested: 0696 Administered Barcode Identifier</para>
         /// </summary>
         public CodedWithExceptions AdministeredBarcodeIdentifier { get; set; }
 

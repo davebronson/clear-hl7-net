@@ -73,8 +73,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// TCD.11 - Auto-Dilution Type.
+        /// <para>Suggested: 0945 Auto-Dilution Type</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0945</remarks>
         public CodedWithExceptions AutoDilutionType { get; set; }
 
         /// <summary>

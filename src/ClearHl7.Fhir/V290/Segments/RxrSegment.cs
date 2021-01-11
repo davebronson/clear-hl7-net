@@ -26,8 +26,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXR.2 - Administration Site.
+        /// <para>Suggested: 0550 Body Parts -&gt; ClearHl7.Fhir.Codes.V290.CodeBodyParts</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0550</remarks>
         public CodedWithExceptions AdministrationSite { get; set; }
 
         /// <summary>
@@ -44,6 +44,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXR.5 - Routing Instruction.
+        /// <para>Suggested: 0766 Routing Instruction</para>
         /// </summary>
         public CodedWithExceptions RoutingInstruction { get; set; }
 

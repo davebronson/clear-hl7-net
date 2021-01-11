@@ -36,8 +36,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// IPR.4 - IPR Status.
+        /// <para>Suggested: 0571 Invoice Processing Results Status -&gt; ClearHl7.Fhir.Codes.V290.CodeInvoiceProcessingResultsStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0571</remarks>
         public CodedWithExceptions IprStatus { get; set; }
 
         /// <summary>

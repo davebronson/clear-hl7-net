@@ -101,16 +101,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ORC.16 - Order Control Code Reason.
+        /// <para>Suggested: 0949 Order Control Code Reason</para>
         /// </summary>
         public CodedWithExceptions OrderControlCodeReason { get; set; }
 
         /// <summary>
         /// ORC.17 - Entering Organization.
+        /// <para>Suggested: 0666 Entering Organization</para>
         /// </summary>
         public CodedWithExceptions EnteringOrganization { get; set; }
 
         /// <summary>
         /// ORC.18 - Entering Device.
+        /// <para>Suggested: 0668 Entering Device</para>
         /// </summary>
         public CodedWithExceptions EnteringDevice { get; set; }
 
@@ -147,13 +150,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ORC.25 - Order Status Modifier.
+        /// <para>Suggested: 0950 Order Status Modifier</para>
         /// </summary>
         public CodedWithExceptions OrderStatusModifier { get; set; }
 
         /// <summary>
         /// ORC.26 - Advanced Beneficiary Notice Override Reason.
+        /// <para>Suggested: 0552 Advanced Beneficiary Notice Override Reason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0552</remarks>
         public CodedWithExceptions AdvancedBeneficiaryNoticeOverrideReason { get; set; }
 
         /// <summary>
@@ -196,8 +200,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ORC.34 - Order Workflow Profile.
+        /// <para>Suggested: 0934 Order Workflow Profile</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0934</remarks>
         public IEnumerable<CodedWithExceptions> OrderWorkflowProfile { get; set; }
 
         /// <summary>

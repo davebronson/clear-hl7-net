@@ -43,11 +43,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM4.5 - Container Units.
+        /// <para>Suggested: 0658 Container Units</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ContainerUnits { get; set; }
 
         /// <summary>
         /// OM4.6 - Specimen.
+        /// <para>Suggested: 0660 Specimen</para>
         /// </summary>
         public CodedWithExceptions Specimen { get; set; }
 
@@ -101,8 +103,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM4.16 - Specimen Preference.
+        /// <para>Suggested: 0920 Preferred Specimen/Attribute Status -&gt; ClearHl7.Fhir.Codes.V290.CodePreferredSpecimenAttributeStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0920</remarks>
         public string SpecimenPreference { get; set; }
 
         /// <summary>

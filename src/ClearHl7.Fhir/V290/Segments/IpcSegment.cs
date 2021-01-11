@@ -42,11 +42,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// IPC.5 - Modality.
+        /// <para>Suggested: 0604 Modality</para>
         /// </summary>
         public CodedWithExceptions Modality { get; set; }
 
         /// <summary>
         /// IPC.6 - Protocol Code.
+        /// <para>Suggested: 0605 Protocol Code</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ProtocolCode { get; set; }
 
@@ -57,6 +59,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// IPC.8 - Scheduled Procedure Step Location.
+        /// <para>Suggested: 0606 Scheduled Procedure Step Location</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ScheduledProcedureStepLocation { get; set; }
 

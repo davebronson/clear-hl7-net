@@ -284,8 +284,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// IN1.50 - Signature Code.
+        /// <para>Suggested: 0535 Signature Code -&gt; ClearHl7.Fhir.Codes.V290.CodeSignatureCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0535</remarks>
         public CodedWithExceptions SignatureCode { get; set; }
 
         /// <summary>

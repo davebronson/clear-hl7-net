@@ -175,8 +175,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// FT1.29 - NDC Code.
+        /// <para>Suggested: 0549 NDC Codes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0549</remarks>
         public CodedWithExceptions NdcCode { get; set; }
 
         /// <summary>
@@ -312,6 +312,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// FT1.56 - Service Reason Code.
+        /// <para>Suggested: 0964 Service Reason Code</para>
         /// </summary>
         public CodedWithExceptions ServiceReasonCode { get; set; }
 

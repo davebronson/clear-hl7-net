@@ -33,11 +33,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// BTX.3 - BC Component.
+        /// <para>Suggested: 0582 BP Component</para>
         /// </summary>
         public CodedWithNoExceptions BcComponent { get; set; }
 
         /// <summary>
         /// BTX.4 - BC Blood Group.
+        /// <para>Suggested: 0583 BC Blood Group</para>
         /// </summary>
         public CodedWithNoExceptions BcBloodGroup { get; set; }
 
@@ -69,6 +71,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// BTX.10 - BP Units.
+        /// <para>Suggested: 0584 BP Units</para>
         /// </summary>
         public CodedWithExceptions BpUnits { get; set; }
 

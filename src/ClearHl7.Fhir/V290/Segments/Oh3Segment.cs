@@ -31,14 +31,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OH3.3 - Occupation.
+        /// <para>Suggested: 0958 Occupation</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0958</remarks>
         public CodedWithExceptions Occupation { get; set; }
 
         /// <summary>
         /// OH3.4 - Industry.
+        /// <para>Suggested: 0955 Industry</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0955</remarks>
         public CodedWithExceptions Industry { get; set; }
 
         /// <summary>

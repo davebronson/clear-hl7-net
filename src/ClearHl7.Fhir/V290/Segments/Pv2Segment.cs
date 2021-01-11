@@ -202,8 +202,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PV2.34 - Military Partnership Code.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string MilitaryPartnershipCode { get; set; }
 
         /// <summary>
@@ -289,8 +289,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PV2.49 - Notify Clergy Code.
+        /// <para>Suggested: 0534 Notify Clergy Code -&gt; ClearHl7.Fhir.Codes.V290.CodeNotifyClergyCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0534</remarks>
         public IEnumerable<CodedWithExceptions> NotifyClergyCode { get; set; }
 
         /// <summary>

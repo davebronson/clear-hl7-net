@@ -22,6 +22,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PCR.1 - Implicated Product.
+        /// <para>Suggested: 0670 Implicated Product</para>
         /// </summary>
         public CodedWithExceptions ImplicatedProduct { get; set; }
 
@@ -33,6 +34,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PCR.3 - Product Class.
+        /// <para>Suggested: 0671 Product Class</para>
         /// </summary>
         public CodedWithExceptions ProductClass { get; set; }
 
@@ -69,6 +71,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PCR.10 - Indication For Product Use.
+        /// <para>Suggested: 0672 Indication For Product Use</para>
         /// </summary>
         public CodedWithExceptions IndicationForProductUse { get; set; }
 
@@ -91,6 +94,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PCR.14 - Product Evaluation Performed.
+        /// <para>Suggested: 0673 Product Evaluation Performed</para>
         /// </summary>
         public CodedWithExceptions ProductEvaluationPerformed { get; set; }
 
@@ -102,6 +106,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PCR.16 - Product Evaluation Results.
+        /// <para>Suggested: 0674 Product Evaluation Results</para>
         /// </summary>
         public CodedWithExceptions ProductEvaluationResults { get; set; }
 

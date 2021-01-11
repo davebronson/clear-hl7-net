@@ -29,7 +29,6 @@ namespace ClearHl7.Fhir.V290.Segments
         /// <summary>
         /// PRT.2 - Action Code.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0206</remarks>
         public string ActionCode { get; set; }
 
         /// <summary>
@@ -39,8 +38,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PRT.4 - Participation.
+        /// <para>Suggested: 0912 Participation -&gt; ClearHl7.Fhir.Codes.V290.CodeParticipation</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0912</remarks>
         public CodedWithExceptions Participation { get; set; }
 
         /// <summary>
@@ -131,6 +130,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PRT.22 - Participation Device Type.
+        /// <para>Suggested: 0961 Device Type</para>
         /// </summary>
         public CodedWithNoExceptions ParticipationDeviceType { get; set; }
 

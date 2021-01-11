@@ -32,14 +32,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ITM.3 - Item Status.
+        /// <para>Suggested: 0776 Item Status -&gt; ClearHl7.Fhir.Codes.V290.CodeItemStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0776</remarks>
         public CodedWithExceptions ItemStatus { get; set; }
 
         /// <summary>
         /// ITM.4 - Item Type.
+        /// <para>Suggested: 0778 Item Type -&gt; ClearHl7.Fhir.Codes.V290.CodeItemType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0778</remarks>
         public CodedWithExceptions ItemType { get; set; }
 
         /// <summary>
@@ -49,8 +49,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ITM.6 - Subject to Expiration Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions SubjectToExpirationIndicator { get; set; }
 
         /// <summary>
@@ -75,8 +75,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ITM.11 - Patient Chargeable Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions PatientChargeableIndicator { get; set; }
 
         /// <summary>
@@ -92,32 +92,32 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ITM.14 - Stocked Item Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions StockedItemIndicator { get; set; }
 
         /// <summary>
         /// ITM.15 - Supply Risk Codes.
+        /// <para>Suggested: 0871 Supply Risk Codes -&gt; ClearHl7.Fhir.Codes.V290.CodeSupplyRiskCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0871</remarks>
         public CodedWithExceptions SupplyRiskCodes { get; set; }
 
         /// <summary>
         /// ITM.16 - Approving Regulatory Agency.
+        /// <para>Suggested: 0790 Approving Regulatory Agency -&gt; ClearHl7.Fhir.Codes.V290.CodeApprovingRegulatoryAgency</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0790</remarks>
         public IEnumerable<ExtendedCompositeNameAndIdNumberForOrganizations> ApprovingRegulatoryAgency { get; set; }
 
         /// <summary>
         /// ITM.17 - Latex Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions LatexIndicator { get; set; }
 
         /// <summary>
         /// ITM.18 - Ruling Act.
+        /// <para>Suggested: 0793 Ruling Act -&gt; ClearHl7.Fhir.Codes.V290.CodeRulingAct</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0793</remarks>
         public IEnumerable<CodedWithExceptions> RulingAct { get; set; }
 
         /// <summary>
@@ -138,20 +138,20 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ITM.22 - Taxable Item Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions TaxableItemIndicator { get; set; }
 
         /// <summary>
         /// ITM.23 - Freight Charge Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions FreightChargeIndicator { get; set; }
 
         /// <summary>
         /// ITM.24 - Item Set Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions ItemSetIndicator { get; set; }
 
         /// <summary>
@@ -161,8 +161,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ITM.26 - Track Department Usage Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions TrackDepartmentUsageIndicator { get; set; }
 
         /// <summary>
@@ -185,14 +185,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ITM.30 - Hazardous Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions HazardousIndicator { get; set; }
 
         /// <summary>
         /// ITM.31 - Sterile Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions SterileIndicator { get; set; }
 
         /// <summary>

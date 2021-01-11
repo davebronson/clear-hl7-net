@@ -28,6 +28,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ODT.2 - Service Period.
+        /// <para>Suggested: 0627 Service Period</para> 
         /// </summary>
         public IEnumerable<CodedWithExceptions> ServicePeriod { get; set; }
 

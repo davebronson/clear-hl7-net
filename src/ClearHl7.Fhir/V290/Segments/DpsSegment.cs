@@ -29,8 +29,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DPS.2 - Procedure Code.
+        /// <para>Suggested: 0941 Procedure Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0941</remarks>
         public IEnumerable<CodedWithExceptions> ProcedureCode { get; set; }
 
         /// <summary>
@@ -45,8 +45,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DPS.5 - Type of Limitation.
+        /// <para>Suggested: 0940 Type of Limitation</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0940</remarks>
         public CodedWithNoExceptions TypeOfLimitation { get; set; }
 
         /// <summary>

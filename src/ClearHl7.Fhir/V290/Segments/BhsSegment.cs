@@ -93,11 +93,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// BHS.15 - Security Classification Tag.
+        /// <para>Suggested: 0952 Security Classification Tag</para>
         /// </summary>
         public CodedWithExceptions SecurityClassificationTag { get; set; }
 
         /// <summary>
         /// BHS.16 - Security Handling Instructions.
+        /// <para>Suggested: 0953 Security Handling Instructions</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> SecurityHandlingInstructions { get; set; }
 

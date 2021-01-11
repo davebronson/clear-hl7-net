@@ -54,16 +54,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXG.7 - Give Units.
+        /// <para>Suggested: 0715 Give Units</para>
         /// </summary>
         public CodedWithExceptions GiveUnits { get; set; }
 
         /// <summary>
         /// RXG.8 - Give Dosage Form.
+        /// <para>Suggested: 0716 Give Dosage Form</para>
         /// </summary>
         public CodedWithExceptions GiveDosageForm { get; set; }
 
         /// <summary>
         /// RXG.9 - Administration Notes.
+        /// <para>Suggested: 0691 Administration Notes</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> AdministrationNotes { get; set; }
 
@@ -86,6 +89,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXG.13 - Special Administration Instructions.
+        /// <para>Suggested: 0738 Special Administration Instructions</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> SpecialAdministrationInstructions { get; set; }
 
@@ -101,6 +105,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXG.16 - Give Rate Units.
+        /// <para>Suggested: 0722 Give Rate Units</para>
         /// </summary>
         public CodedWithExceptions GiveRateUnits { get; set; }
 
@@ -111,6 +116,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXG.18 - Give Strength Units.
+        /// <para>Suggested: 0723 Give Strength Units</para>
         /// </summary>
         public CodedWithExceptions GiveStrengthUnits { get; set; }
 
@@ -131,6 +137,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXG.22 - Indication.
+        /// <para>Suggested: 0694 Indication</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> Indication { get; set; }
 
@@ -141,11 +148,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXG.24 - Give Drug Strength Volume Units.
+        /// <para>Suggested: 0744 Give Drug Strength Volume Units</para>
         /// </summary>
         public CodedWithExceptions GiveDrugStrengthVolumeUnits { get; set; }
 
         /// <summary>
         /// RXG.25 - Give Barcode Identifier.
+        /// <para>Suggested: 0745 Give Barcode Identifier</para>
         /// </summary>
         public CodedWithExceptions GiveBarcodeIdentifier { get; set; }
 
@@ -157,6 +166,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXG.27 - Dispense to Pharmacy.
+        /// <para>Suggested: 0714 Dispense to Pharmacy</para>
         /// </summary>
         public CodedWithExceptions DispenseToPharmacy { get; set; }
 
@@ -187,6 +197,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXG.33 - Dispense Units.
+        /// <para>Suggested: 0746 Dispense Units</para>
         /// </summary>
         public CodedWithExceptions DispenseUnits { get; set; }
         

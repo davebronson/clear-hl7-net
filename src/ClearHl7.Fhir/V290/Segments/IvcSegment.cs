@@ -38,20 +38,20 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// IVC.4 - Invoice Control.
+        /// <para>Suggested: 0553 Invoice Control Code -&gt; ClearHl7.Fhir.Codes.V290.CodeInvoiceControlCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0553</remarks>
         public CodedWithExceptions InvoiceControl { get; set; }
 
         /// <summary>
         /// IVC.5 - Invoice Reason.
+        /// <para>Suggested: 0554 Invoice Reason Codes -&gt; ClearHl7.Fhir.Codes.V290.CodeInvoiceReasonCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0554</remarks>
         public CodedWithExceptions InvoiceReason { get; set; }
 
         /// <summary>
         /// IVC.6 - Invoice Type.
+        /// <para>Suggested: 0555 Invoice Type -&gt; ClearHl7.Fhir.Codes.V290.CodeInvoiceType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0555</remarks>
         public CodedWithExceptions InvoiceType { get; set; }
 
         /// <summary>
@@ -147,8 +147,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// IVC.25 - Benefit Group.
+        /// <para>Suggested: 0556 Benefit Group -&gt; ClearHl7.Fhir.Codes.V290.CodeBenefitGroup</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0556</remarks>
         public CodedWithExceptions BenefitGroup { get; set; }
 
         /// <summary>
@@ -163,14 +163,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// IVC.28 - Provider Tax Status.
+        /// <para>Suggested: 0572 Tax Status -&gt; ClearHl7.Fhir.Codes.V290.CodeTaxStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0572</remarks>
         public CodedWithExceptions ProviderTaxStatus { get; set; }
 
         /// <summary>
         /// IVC.29 - Payer Tax Status.
+        /// <para>Suggested: 0572 Tax Status -&gt; ClearHl7.Fhir.Codes.V290.CodeTaxStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0572</remarks>
         public CodedWithExceptions PayerTaxStatus { get; set; }
 
         /// <summary>

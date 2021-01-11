@@ -38,6 +38,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// MFE.4 - Primary Key Value - MFE.
+        /// <para>Suggested: 0608 Primary Key Value - MFE</para>
         /// </summary>
         public IEnumerable<string> PrimaryKeyValueMfe { get; set; }
 

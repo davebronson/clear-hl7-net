@@ -38,19 +38,20 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OMC.4 - Clinical Information Request.
+        /// <para>Suggested: 0664 Clinical Information Request</para>
         /// </summary>
         public CodedWithExceptions ClinicalInformationRequest { get; set; }
 
         /// <summary>
         /// OMC.5 - Collection Event/Process Step.
+        /// <para>Suggested: 0938 Collection Event/Process Step</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0938</remarks>
         public IEnumerable<CodedWithExceptions> CollectionEventProcessStep { get; set; }
 
         /// <summary>
         /// OMC.6 - Communication Location.
+        /// <para>Suggested: 0939 Communication Location</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0939</remarks>
         public CodedWithExceptions CommunicationLocation { get; set; }
 
         /// <summary>
@@ -78,6 +79,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OMC.11 - Answer Choices.
+        /// <para>Suggested: 0665 Answer Choices</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> AnswerChoices { get; set; }
 

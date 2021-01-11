@@ -28,6 +28,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXC.2 - Component Code.
+        /// <para>Suggested: 0697 Component Code</para>
         /// </summary>
         public CodedWithExceptions ComponentCode { get; set; }
 
@@ -38,6 +39,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXC.4 - Component Units.
+        /// <para>Suggested: 0698 Component Units</para>
         /// </summary>
         public CodedWithExceptions ComponentUnits { get; set; }
 
@@ -48,11 +50,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXC.6 - Component Strength Units.
+        /// <para>Suggested: 0699 Component Strength Units</para>
         /// </summary>
         public CodedWithExceptions ComponentStrengthUnits { get; set; }
 
         /// <summary>
         /// RXC.7 - Supplementary Code.
+        /// <para>Suggested: 0700 Supplementary Code</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> SupplementaryCode { get; set; }
 
@@ -63,6 +67,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXC.9 - Component Drug Strength Volume Units.
+        /// <para>Suggested: 0701 Component Drug Strength Volume Units</para>
         /// </summary>
         public CodedWithExceptions ComponentDrugStrengthVolumeUnits { get; set; }
 
@@ -73,6 +78,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXC.11 - Dispense Units.
+        /// <para>Suggested: 0703 Dispense Units</para>
         /// </summary>
         public CodedWithExceptions DispenseUnits { get; set; }
         

@@ -31,8 +31,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OH1.3 - Employment Status.
+        /// <para>Suggested: 0957 Employment Status</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0957</remarks>
         public CodedWithExceptions EmploymentStatus { get; set; }
 
         /// <summary>

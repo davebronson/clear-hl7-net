@@ -38,20 +38,20 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OH2.4 - Occupation.
+        /// <para>Suggested: 0958 Occupation</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0958</remarks>
         public CodedWithExceptions Occupation { get; set; }
 
         /// <summary>
         /// OH2.5 - Industry.
+        /// <para>Suggested: 0955 Industry</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0955</remarks>
         public CodedWithExceptions Industry { get; set; }
 
         /// <summary>
         /// OH2.6 - Work Classification.
+        /// <para>Suggested: 0959 Work Classification</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0959</remarks>
         public CodedWithExceptions WorkClassification { get; set; }
 
         /// <summary>
@@ -66,8 +66,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OH2.9 - Work Schedule.
+        /// <para>Suggested: 0954 Work Schedule</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0954</remarks>
         public CodedWithExceptions WorkSchedule { get; set; }
 
         /// <summary>
@@ -92,8 +92,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OH2.14 - Supervisory Level.
+        /// <para>Suggested: 0956 Supervisory Level</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0956</remarks>
         public CodedWithExceptions SupervisoryLevel { get; set; }
 
         /// <summary>

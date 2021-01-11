@@ -44,8 +44,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SPM.5 - Specimen Type Modifier.
+        /// <para>Suggested: 0541 Specimen Type Modifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0541</remarks>
         public IEnumerable<CodedWithExceptions> SpecimenTypeModifier { get; set; }
 
         /// <summary>
@@ -62,19 +62,20 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SPM.8 - Specimen Source Site.
+        /// <para>Suggested: 0784 Specimen Source Site</para>
         /// </summary>
         public CodedWithExceptions SpecimenSourceSite { get; set; }
 
         /// <summary>
         /// SPM.9 - Specimen Source Site Modifier.
+        /// <para>Suggested: 0542 Specimen Source Type Modifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0542</remarks>
         public IEnumerable<CodedWithExceptions> SpecimenSourceSiteModifier { get; set; }
 
         /// <summary>
         /// SPM.10 - Specimen Collection Site.
+        /// <para>Suggested: 0543 Specimen Collection Site</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0543</remarks>
         public CodedWithExceptions SpecimenCollectionSite { get; set; }
 
         /// <summary>
@@ -167,13 +168,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SPM.27 - Container Type.
+        /// <para>Suggested: 0785 Container Type</para>
         /// </summary>
         public CodedWithExceptions ContainerType { get; set; }
 
         /// <summary>
         /// SPM.28 - Container Condition.
+        /// <para>Suggested: 0544 Container Condition -&gt; ClearHl7.Fhir.Codes.V290.CodeContainerCondition</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0544</remarks>
         public CodedWithExceptions ContainerCondition { get; set; }
 
         /// <summary>

@@ -33,11 +33,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DEV.3 - Device Type.
+        /// <para>Suggested: 0961 Device Type</para>
         /// </summary>
         public IEnumerable<CodedWithNoExceptions> DeviceType { get; set; }
 
         /// <summary>
         /// DEV.4 - Device Status.
+        /// <para>Suggested: 0962 Device Status</para>
         /// </summary>
         public IEnumerable<CodedWithNoExceptions> DeviceStatus { get; set; }
 
@@ -88,6 +90,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DEV.14 - Safety Characteristics.
+        /// <para>Suggested: 0963 Safety Characteristics</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> SafetyCharacteristics { get; set; }
 
@@ -103,6 +106,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DEV.17 - Implantation Status.
+        /// <para>Suggested: 0795 Implantation Status</para>
         /// </summary>
         public CodedWithNoExceptions ImplantationStatus { get; set; }
 

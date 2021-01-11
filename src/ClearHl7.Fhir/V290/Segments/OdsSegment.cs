@@ -28,11 +28,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ODS.2 - Service Period.
+        /// <para>Suggested: 0627 Service Period</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ServicePeriod { get; set; }
 
         /// <summary>
         /// ODS.3 - Diet, Supplement, or Preference Code.
+        /// <para>Suggested: 0628 Diet, Supplement, Or Preference Code</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> DietSupplementOrPreferenceCode { get; set; }
 

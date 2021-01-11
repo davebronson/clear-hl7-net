@@ -35,7 +35,8 @@ namespace ClearHl7.Fhir.V290.Segments
         public DateTime? CombatZoneStartDate { get; set; }
 
         /// <summary>
-        /// OH4.4 - Combat Zone  End Date.
+        /// OH4.4 - Combat Zone End Date.
+        /// <para>Suggested: 0955 Industry</para>
         /// </summary>
         public DateTime? CombatZoneEndDate { get; set; }
 

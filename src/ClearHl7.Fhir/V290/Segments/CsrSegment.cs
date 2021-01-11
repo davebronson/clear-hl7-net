@@ -33,6 +33,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CSR.3 - Institution Registering the Patient.
+        /// <para>Suggested: 0589 Institution Registering The Patient</para>
         /// </summary>
         public CodedWithExceptions InstitutionRegisteringThePatient { get; set; }
 
@@ -68,6 +69,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CSR.10 - Patient Study Eligibility Status.
+        /// <para>Suggested: 0590 Patient Study Eligibility Status</para>
         /// </summary>
         public CodedWithExceptions PatientStudyEligibilityStatus { get; set; }
 
@@ -78,16 +80,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CSR.12 - Randomized Study Arm.
+        /// <para>Suggested: 0591 Randomized Study Arm</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> RandomizedStudyArm { get; set; }
 
         /// <summary>
         /// CSR.13 - Stratum for Study Randomization.
+        /// <para>Suggested: 0592 Stratum For Study Randomization</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> StratumForStudyRandomization { get; set; }
 
         /// <summary>
         /// CSR.14 - Patient Evaluability Status.
+        /// <para>Suggested: 0593 Patient Evaluability Status</para>
         /// </summary>
         public CodedWithExceptions PatientEvaluabilityStatus { get; set; }
 
@@ -98,6 +103,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CSR.16 - Reason Ended Study.
+        /// <para>Suggested: 0594 Reason Ended Study</para>
         /// </summary>
         public CodedWithExceptions ReasonEndedStudy { get; set; }
 

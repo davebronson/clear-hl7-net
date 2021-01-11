@@ -27,26 +27,31 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM3.2 - Preferred Coding System.
+        /// <para>Suggested: 0650 Preferred Coding System</para>
         /// </summary>
         public CodedWithExceptions PreferredCodingSystem { get; set; }
 
         /// <summary>
         /// OM3.3 - Valid Coded "Answers".
+        /// <para>Suggested: 0652 Valid Coded "Answers"</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ValidCodedAnswers { get; set; }
 
         /// <summary>
         /// OM3.4 - Normal Text/Codes for Categorical Observations.
+        /// <para>Suggested: 0654 Normal Text/Codes for Categorical Observations</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> NormalTextCodesForCategoricalObservations { get; set; }
 
         /// <summary>
         /// OM3.5 - Abnormal Text/Codes for Categorical Observations.
+        /// <para>Suggested: 0655 Abnormal Text/Codes for Categorical Observations</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> AbnormalTextCodesForCategoricalObservations { get; set; }
 
         /// <summary>
         /// OM3.6 - Critical Text/Codes for Categorical Observations.
+        /// <para>Suggested: 0656 Critical Text/Codes for Categorical Observations</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> CriticalTextCodesForCategoricalObservations { get; set; }
 

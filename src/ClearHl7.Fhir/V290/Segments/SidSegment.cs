@@ -20,6 +20,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SID.1 - Application/Method Identifier.
+        /// <para>Suggested: 0783 Application/Method Identifier</para>
         /// </summary>
         public CodedWithExceptions ApplicationMethodIdentifier { get; set; }
 

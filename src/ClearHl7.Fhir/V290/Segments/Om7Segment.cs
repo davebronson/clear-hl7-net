@@ -64,6 +64,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM7.9 - Test/Service Default Duration Units.
+        /// <para>Suggested: 0663 Test/Service Default Duration Units</para>
         /// </summary>
         public CodedWithExceptions TestServiceDefaultDurationUnits { get; set; }
 

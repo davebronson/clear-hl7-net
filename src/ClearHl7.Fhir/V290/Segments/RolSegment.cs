@@ -29,7 +29,6 @@ namespace ClearHl7.Fhir.V290.Segments
         /// <summary>
         /// ROL.2 - Action Code.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0206</remarks>
         public string ActionCode { get; set; }
 
         /// <summary>

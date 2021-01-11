@@ -27,6 +27,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM5.2 - Test/Observations Included Within an Ordered Test Battery.
+        /// <para>Suggested: 0662 Test/Observations Included Within an Ordered Test Battery</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> TestObservationsIncludedWithinAnOrderedTestBattery { get; set; }
 

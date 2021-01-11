@@ -36,6 +36,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RQ1.4 - Vendor ID.
+        /// <para>Suggested: 0683 Vendor ID</para>
         /// </summary>
         public CodedWithExceptions VendorId { get; set; }
 

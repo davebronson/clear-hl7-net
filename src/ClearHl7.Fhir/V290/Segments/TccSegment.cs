@@ -83,6 +83,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// TCC.13 - Units.
+        /// <para>Suggested: 0623 Units</para>
         /// </summary>
         public CodedWithExceptions Units { get; set; }
 

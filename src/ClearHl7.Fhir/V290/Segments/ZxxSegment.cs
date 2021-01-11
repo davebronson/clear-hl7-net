@@ -22,8 +22,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// Gets or sets the custom suffix for the Segment name.
+        /// <para>For example, providing a SegmentSuffix of "AB" will result in a Segment named "ZAB".</para>
         /// </summary>
-        /// <remarks>For example, providing a SegmentSuffix of "AB" will result in a Segment named "ZAB".</remarks>
         public string SegmentSuffix { get; set; } = "XX";
 
         /// <summary>

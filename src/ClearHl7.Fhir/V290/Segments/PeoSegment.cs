@@ -20,14 +20,16 @@ namespace ClearHl7.Fhir.V290.Segments
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
         /// </summary>
         public int Ordinal { get; set; }
-        
+
         /// <summary>
         /// PEO.1 - Event Identifiers Used.
+        /// <para>Suggested: 0678 Event Identifiers Used</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> EventIdentifiersUsed { get; set; }
 
         /// <summary>
         /// PEO.2 - Event Symptom/Diagnosis Code.
+        /// <para>Suggested: 0679 Event Symptom/Diagnosis Code</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> EventSymptomDiagnosisCode { get; set; }
 
@@ -113,6 +115,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PEO.18 - Cause Of Death.
+        /// <para>Suggested: 0680 Cause Of Death</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> CauseOfDeath { get; set; }
 

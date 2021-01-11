@@ -44,16 +44,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXE.5 - Give Units.
+        /// <para>Suggested: 0715 Give Units</para>
         /// </summary>
         public CodedWithExceptions GiveUnits { get; set; }
 
         /// <summary>
         /// RXE.6 - Give Dosage Form.
+        /// <para>Suggested: 0716 Give Dosage Form</para>
         /// </summary>
         public CodedWithExceptions GiveDosageForm { get; set; }
 
         /// <summary>
         /// RXE.7 - Provider's Administration Instructions.
+        /// <para>Suggested: 0718 Provider's Administration Instructions</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ProvidersAdministrationInstructions { get; set; }
 
@@ -75,6 +78,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXE.11 - Dispense Units.
+        /// <para>Suggested: 0720 Dispense Units</para>
         /// </summary>
         public CodedWithExceptions DispenseUnits { get; set; }
 
@@ -126,6 +130,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXE.21 - Special Dispensing Instructions.
+        /// <para>Suggested: 0706 Special Dispensing Instructions</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> SpecialDispensingInstructions { get; set; }
 
@@ -141,6 +146,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXE.24 - Give Rate Units.
+        /// <para>Suggested: 0722 Give Rate Units</para>
         /// </summary>
         public CodedWithExceptions GiveRateUnits { get; set; }
 
@@ -151,11 +157,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXE.26 - Give Strength Units.
+        /// <para>Suggested: 0723 Give Strength Units</para>
         /// </summary>
         public CodedWithExceptions GiveStrengthUnits { get; set; }
 
         /// <summary>
         /// RXE.27 - Give Indication.
+        /// <para>Suggested: 0724 Give Indication</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> GiveIndication { get; set; }
 
@@ -166,6 +174,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXE.29 - Dispense Package Size Unit.
+        /// <para>Suggested: 0709 Dispense Package Size Unit</para>
         /// </summary>
         public CodedWithExceptions DispensePackageSizeUnit { get; set; }
 
@@ -177,6 +186,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXE.31 - Supplementary Code.
+        /// <para>Suggested: 0700 Supplementary Code</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> SupplementaryCode { get; set; }
 
@@ -192,6 +202,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXE.34 - Give Drug Strength Volume Units.
+        /// <para>Suggested: 0729 Give Drug Strength Volume Units</para>
         /// </summary>
         public CodedWithExceptions GiveDrugStrengthVolumeUnits { get; set; }
 
@@ -209,11 +220,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXE.37 - Pharmaceutical Substance Alternative.
+        /// <para>Suggested: 0730 Pharmaceutical Substance Alternative</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> PharmaceuticalSubstanceAlternative { get; set; }
 
         /// <summary>
         /// RXE.38 - Pharmacy of Most Recent Fill.
+        /// <para>Suggested: 0732 Pharmacy of Most Recent Fill</para>
         /// </summary>
         public CodedWithExceptions PharmacyOfMostRecentFill { get; set; }
 
@@ -224,6 +237,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXE.40 - Dispensing Pharmacy.
+        /// <para>Suggested: 0733 Dispensing Pharmacy</para>
         /// </summary>
         public CodedWithExceptions DispensingPharmacy { get; set; }
 

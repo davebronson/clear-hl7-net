@@ -34,6 +34,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBX.3 - Observation Identifier.
+        /// <para>Suggested: 0622 Observation Indentifier</para>
         /// </summary>
         public CodedWithExceptions ObservationIdentifier { get; set; }
 
@@ -49,6 +50,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBX.6 - Units.
+        /// <para>Suggested: 0623 Units</para>
         /// </summary>
         public CodedWithExceptions Units { get; set; }
 
@@ -97,6 +99,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBX.15 - Producer's ID.
+        /// <para>Suggested: 0624 Producer’s ID</para>
         /// </summary>
         public CodedWithExceptions ProducersId { get; set; }
 
@@ -107,6 +110,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBX.17 - Observation Method.
+        /// <para>Suggested: 0626 Observation Method</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ObservationMethod { get; set; }
 
@@ -133,8 +137,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBX.22 - Mood Code.
+        /// <para>Suggested: 0725 Mood Codes -&gt; ClearHl7.Fhir.Codes.V290.CodeMoodCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0725</remarks>
         public CodedWithNoExceptions MoodCode { get; set; }
 
         /// <summary>
@@ -154,32 +158,32 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBX.26 - Patient Results Release Category.
+        /// <para>Suggested: 0909 Patient Results Release Categorization Scheme -&gt; ClearHl7.Fhir.Codes.V290.CodePatientResultsReleaseCategorizationScheme</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0909</remarks>
         public string PatientResultsReleaseCategory { get; set; }
 
         /// <summary>
         /// OBX.27 - Root Cause.
+        /// <para>Suggested: 0914 Root Cause -&gt; ClearHl7.Fhir.Codes.V290.CodeRootCause</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0914</remarks>
         public CodedWithExceptions RootCause { get; set; }
 
         /// <summary>
         /// OBX.28 - Local Process Control.
+        /// <para>Suggested: 0915 Local Process Control</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0915</remarks>
         public IEnumerable<CodedWithExceptions> LocalProcessControl { get; set; }
 
         /// <summary>
         /// OBX.29 - Observation Type.
+        /// <para>Suggested: 0936 Observation Type</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0936</remarks>
         public string ObservationType { get; set; }
 
         /// <summary>
         /// OBX.30 - Observation Sub-Type.
+        /// <para>Suggested: 0937 Observation Sub-Type</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0937</remarks>
         public string ObservationSubType { get; set; }
 
         /// <summary>
@@ -189,8 +193,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBX.32 - Observation Value Absent Reason.
+        /// <para>Suggested: 0960 Observation Value Absent Reason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0960</remarks>
         public IEnumerable<CodedWithExceptions> ObservationValueAbsentReason { get; set; }
 
         /// <summary>

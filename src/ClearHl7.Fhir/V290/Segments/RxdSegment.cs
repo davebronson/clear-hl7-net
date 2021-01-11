@@ -44,11 +44,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXD.5 - Actual Dispense Units.
+        /// <para>Suggested: 0704 Actual Dispense Units</para>
         /// </summary>
         public CodedWithExceptions ActualDispenseUnits { get; set; }
 
         /// <summary>
         /// RXD.6 - Actual Dosage Form.
+        /// <para>Suggested: 0705 Actual Dosage Form</para>
         /// </summary>
         public CodedWithExceptions ActualDosageForm { get; set; }
 
@@ -96,6 +98,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXD.15 - Special Dispensing Instructions.
+        /// <para>Suggested: 0706 Special Dispensing Instructions</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> SpecialDispensingInstructions { get; set; }
 
@@ -106,6 +109,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXD.17 - Actual Strength Unit.
+        /// <para>Suggested: 0707 Actual Strength Unit</para>
         /// </summary>
         public CodedWithExceptions ActualStrengthUnit { get; set; }
      
@@ -126,6 +130,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXD.21 - Indication.
+        /// <para>Suggested: 0694 Indication</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> Indication { get; set; }
 
@@ -136,6 +141,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXD.23 - Dispense Package Size Unit.
+        /// <para>Suggested: 0709 Dispense Package Size Unit</para>
         /// </summary>
         public CodedWithExceptions DispensePackageSizeUnit { get; set; }
 
@@ -147,16 +153,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXD.25 - Supplementary Code.
+        /// <para>Suggested: 0700 Supplementary Code</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> SupplementaryCode { get; set; }
 
         /// <summary>
         /// RXD.26 - Initiating Location.
+        /// <para>Suggested: 0711 Initiating Location</para>
         /// </summary>
         public CodedWithExceptions InitiatingLocation { get; set; }
 
         /// <summary>
         /// RXD.27 - Packaging/Assembly Location.
+        /// <para>Suggested: 0712 Packaging/Assembly Location</para>
         /// </summary>
         public CodedWithExceptions PackagingAssemblyLocation { get; set; }
 
@@ -167,11 +176,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXD.29 - Actual Drug Strength Volume Units.
+        /// <para>Suggested: 0713 Actual Drug Strength Volume Units</para>
         /// </summary>
         public CodedWithExceptions ActualDrugStrengthVolumeUnits { get; set; }
 
         /// <summary>
         /// RXD.30 - Dispense to Pharmacy.
+        /// <para>Suggested: 0714 Dispense to Pharmacy</para>
         /// </summary>
         public CodedWithExceptions DispenseToPharmacy { get; set; }
 

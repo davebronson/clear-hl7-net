@@ -88,14 +88,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DRG.13 - Grouper Status.
+        /// <para>Suggested: 0734 Grouper Status -&gt; ClearHl7.Fhir.Codes.V290.CodeGrouperStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0734</remarks>
         public CodedWithExceptions GrouperStatus { get; set; }
 
         /// <summary>
         /// DRG.14 - PCCL Value Code.
+        /// <para>Suggested: 0728 CCL Value -&gt; ClearHl7.Fhir.Codes.V290.CodeCclValue</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0728</remarks>
         public CodedWithExceptions PcclValueCode { get; set; }
 
         /// <summary>
@@ -110,8 +110,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DRG.17 - Status Patient.
+        /// <para>Suggested: 0739 DRG Status Patient -&gt; ClearHl7.Fhir.Codes.V290.CodeDrgStatusPatient</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0739</remarks>
         public CodedWithExceptions StatusPatient { get; set; }
 
         /// <summary>
@@ -126,8 +126,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DRG.20 - Status Financial Calculation.
+        /// <para>Suggested: 0742 DRG Status Financial Calculation -&gt; ClearHl7.Fhir.Codes.V290.CodeDrgStatusFinancialCalculation</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0742</remarks>
         public CodedWithExceptions StatusFinancialCalculation { get; set; }
 
         /// <summary>
@@ -157,50 +157,50 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DRG.26 - Status Gender.
+        /// <para>Suggested: 0749 DRG Grouping Status -&gt; ClearHl7.Fhir.Codes.V290.CodeDrgGroupingStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0749</remarks>
         public CodedWithExceptions StatusGender { get; set; }
 
         /// <summary>
         /// DRG.27 - Status Age.
+        /// <para>Suggested: 0749 DRG Grouping Status -&gt; ClearHl7.Fhir.Codes.V290.CodeDrgGroupingStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0749</remarks>
         public CodedWithExceptions StatusAge { get; set; }
 
         /// <summary>
         /// DRG.28 - Status Length of Stay.
+        /// <para>Suggested: 0749 DRG Grouping Status -&gt; ClearHl7.Fhir.Codes.V290.CodeDrgGroupingStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0749</remarks>
         public CodedWithExceptions StatusLengthOfStay { get; set; }
 
         /// <summary>
         /// DRG.29 - Status Same Day Flag.
+        /// <para>Suggested: 0749 DRG Grouping Status -&gt; ClearHl7.Fhir.Codes.V290.CodeDrgGroupingStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0749</remarks>
         public CodedWithExceptions StatusSameDayFlag { get; set; }
 
         /// <summary>
         /// DRG.30 - Status Separation Mode.
+        /// <para>Suggested: 0749 DRG Grouping Status -&gt; ClearHl7.Fhir.Codes.V290.CodeDrgGroupingStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0749</remarks>
         public CodedWithExceptions StatusSeparationMode { get; set; }
 
         /// <summary>
         /// DRG.31 - Status Weight at Birth.
+        /// <para>Suggested: 0755 Status Weight At Birth -&gt; ClearHl7.Fhir.Codes.V290.CodeStatusWeightAtBirth</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0755</remarks>
         public CodedWithExceptions StatusWeightAtBirth { get; set; }
 
         /// <summary>
         /// DRG.32 - Status Respiration Minutes.
+        /// <para>Suggested: 0757 DRG Status Respiration Minutes -&gt; ClearHl7.Fhir.Codes.V290.CodeDrgStatusRespirationMinutes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0757</remarks>
         public CodedWithExceptions StatusRespirationMinutes { get; set; }
 
         /// <summary>
         /// DRG.33 - Status Admission.
+        /// <para>Suggested: 0759 Status Admission -&gt; ClearHl7.Fhir.Codes.V290.CodeStatusAdmission</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0759</remarks>
         public CodedWithExceptions StatusAdmission { get; set; }
 
         /// <summary>

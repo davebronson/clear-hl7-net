@@ -65,8 +65,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// NTE.9 - Coded Comment.
+        /// <para>Suggested: 0611 Coded Comment</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0611</remarks>
         public IEnumerable<CodedWithExceptions> CodedComment { get; set; }
 
         /// <summary>

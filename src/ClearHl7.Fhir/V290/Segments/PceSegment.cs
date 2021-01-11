@@ -33,7 +33,6 @@ namespace ClearHl7.Fhir.V290.Segments
         /// PCE.3 - Transaction Code.
         /// <para>Suggested: 0132 Transaction Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0132</remarks>
         public CodedWithExceptions TransactionCode { get; set; }
 
         /// <summary>

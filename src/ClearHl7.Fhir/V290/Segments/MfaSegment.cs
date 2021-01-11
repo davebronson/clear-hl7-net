@@ -44,6 +44,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// MFA.5 - Primary Key Value - MFA.
+        /// <para>Suggested: 0607 Primary Key Value - MFA</para>
         /// </summary>
         public IEnumerable<string> PrimaryKeyValueMfa { get; set; }
 

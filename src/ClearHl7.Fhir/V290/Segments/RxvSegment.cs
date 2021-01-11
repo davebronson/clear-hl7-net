@@ -25,8 +25,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXV.2 - Bolus Type.
+        /// <para>Suggested: 0917 Bolus Type -&gt; ClearHl7.Fhir.Codes.V290.CodeBolusType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0917</remarks>
         public string BolusType { get; set; }
 
         /// <summary>
@@ -36,6 +36,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXV.4 - Bolus Dose Amount Units.
+        /// <para>Suggested: 0767 Bolus Dose Amount Units</para>
         /// </summary>
         public CodedWithExceptions BolusDoseAmountUnits { get; set; }
 
@@ -46,13 +47,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXV.6 - Bolus Dose Volume Units.
+        /// <para>Suggested: 0768 Bolus Dose Volume Units</para>
         /// </summary>
         public CodedWithExceptions BolusDoseVolumeUnits { get; set; }
 
         /// <summary>
         /// RXV.7 - PCA Type.
+        /// <para>Suggested: 0918 PCA Type -&gt; ClearHl7.Fhir.Codes.V290.CodePcaType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0918</remarks>
         public string PcaType { get; set; }
 
         /// <summary>
@@ -62,6 +64,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXV.9 - PCA Dose Amount Units.
+        /// <para>Suggested: 0769 PCA Dose Amount Units</para>
         /// </summary>
         public CodedWithExceptions PcaDoseAmountUnits { get; set; }
 
@@ -72,6 +75,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXV.11 - PCA Dose Amount Volume Units.
+        /// <para>Suggested: 0770 PCA Dose Amount Volume Units</para>
         /// </summary>
         public CodedWithExceptions PcaDoseAmountVolumeUnits { get; set; }
 
@@ -82,6 +86,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXV.13 - Max Dose Amount Units.
+        /// <para>Suggested: 0772 Max Dose Amount Units</para>
         /// </summary>
         public CodedWithExceptions MaxDoseAmountUnits { get; set; }
 
@@ -92,6 +97,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXV.15 - Max Dose Amount Volume Units.
+        /// <para>Suggested: 0773 Max Dose Amount Volume Units</para>
         /// </summary>
         public CodedWithExceptions MaxDoseAmountVolumeUnits { get; set; }
 
@@ -128,7 +134,6 @@ namespace ClearHl7.Fhir.V290.Segments
         /// <summary>
         /// RXV.22 - Action Code.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0206</remarks>
         public string ActionCode { get; set; }
         
         /// <summary>

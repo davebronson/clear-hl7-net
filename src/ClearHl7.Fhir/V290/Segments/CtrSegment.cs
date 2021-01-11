@@ -33,6 +33,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CTR.3 - Contract Status.
+        /// <para>Suggested: 0536 Certificate Status -&gt; ClearHl7.Fhir.Codes.V290.CodeCertificateStatus</para>
         /// </summary>
         public CodedWithExceptions ContractStatus { get; set; }
 
@@ -58,16 +59,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CTR.8 - Supplier Type.
+        /// <para>Suggested: 0946 Supplier Type</para>
         /// </summary>
         public CodedWithExceptions SupplierType { get; set; }
 
         /// <summary>
         /// CTR.9 - Contract Type.
+        /// <para>Suggested: 0965 Contract Type</para>
         /// </summary>
         public CodedWithExceptions ContractType { get; set; }
 
         /// <summary>
         /// CTR.10 - Free On Board Freight Terms.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions FreeOnBoardFreightTerms { get; set; }
 
@@ -78,6 +82,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CTR.12 - Fixed Price Contract Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions FixedPriceContractIndicator { get; set; }
 
@@ -108,6 +113,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CTR.18 - Pricing Tier Level.
+        /// <para>Suggested: 0966 Pricing Tier Level</para>
         /// </summary>
         public CodedWithExceptions PricingTierLevel { get; set; }
 
@@ -118,6 +124,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CTR.20 - Class of Trade.
+        /// <para>Suggested: 0947 Class of Trade</para>
         /// </summary>
         public CodedWithExceptions ClassOfTrade { get; set; }
 

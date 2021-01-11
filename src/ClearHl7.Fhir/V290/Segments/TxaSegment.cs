@@ -144,6 +144,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// TXA.24 - Folder Assignment.
+        /// <para>Suggested: 0791 Folder Assignment</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> FolderAssignment { get; set; }
 
@@ -164,8 +165,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// TXA.28 - Creating Specialty.
+        /// <para>Suggested: 0792 Creating Specialty</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0792</remarks>
         public CodedWithExceptions CreatingSpecialty { get; set; }
 
         /// <summary>

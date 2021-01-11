@@ -79,13 +79,14 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBR.12 - Danger Code.
+        /// <para>Suggested: 0614 Danger Code</para>
         /// </summary>
         public CodedWithExceptions DangerCode { get; set; }
 
         /// <summary>
         /// OBR.13 - Relevant Clinical Information.
+        /// <para>Suggested: 0916 Relevant Clinicial Information -&gt; ClearHl7.Fhir.Codes.V290.CodeRelevantClinicialInformation</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0916</remarks>
         public IEnumerable<CodedWithExceptions> RelevantClinicalInformation { get; set; }
 
         /// <summary>
@@ -178,6 +179,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBR.31 - Reason for Study.
+        /// <para>Suggested: 0951 Reason for Study</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ReasonForStudy { get; set; }
 
@@ -213,16 +215,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBR.38 - Transport Logistics of Collected Sample.
+        /// <para>Suggested: 0614 Transport Logistics Of Collected Sample</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> TransportLogisticsOfCollectedSample { get; set; }
 
         /// <summary>
         /// OBR.39 - Collector's Comment.
+        /// <para>Suggested: 0619 Collector’s Comment</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> CollectorsComment { get; set; }
 
         /// <summary>
         /// OBR.40 - Transport Arrangement Responsibility.
+        /// <para>Suggested: 0620 Transport Arrangement Responsibility</para>
         /// </summary>
         public CodedWithExceptions TransportArrangementResponsibility { get; set; }
 
@@ -240,6 +245,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBR.43 - Planned Patient Transport Comment.
+        /// <para>Suggested: 0621 Planned Patient Transport Comment</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> PlannedPatientTransportComment { get; set; }
 
@@ -259,14 +265,12 @@ namespace ClearHl7.Fhir.V290.Segments
         /// OBR.46 - Placer Supplemental Service Information.
         /// <para>Suggested: 0411 Supplemental Service Information Values -&gt; ClearHl7.Fhir.Codes.V290.CodeSupplementalServiceInformationValues</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0411</remarks>
         public IEnumerable<CodedWithExceptions> PlacerSupplementalServiceInformation { get; set; }
 
         /// <summary>
         /// OBR.47 - Filler Supplemental Service Information.
         /// <para>Suggested: 0411 Supplemental Service Information Values -&gt; ClearHl7.Fhir.Codes.V290.CodeSupplementalServiceInformationValues</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0411</remarks>
         public IEnumerable<CodedWithExceptions> FillerSupplementalServiceInformation { get; set; }
 
         /// <summary>

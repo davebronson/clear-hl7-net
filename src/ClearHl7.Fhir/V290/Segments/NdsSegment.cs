@@ -37,6 +37,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// NDS.4 - Notification Code.
+        /// <para>Suggested: 0610 Notification Code</para>
         /// </summary>
         public CodedWithExceptions NotificationCode { get; set; }
         

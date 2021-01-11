@@ -30,6 +30,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CTI.3 - Study Scheduled Time Point.
+        /// <para>Suggested: 0595 Study Scheduled Time Point</para>
         /// </summary>
         public CodedWithExceptions StudyScheduledTimePoint { get; set; }
 

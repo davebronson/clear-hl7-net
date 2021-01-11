@@ -135,8 +135,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CER.22 - Jurisdiction Breadth.
+        /// <para>Suggested: 0547 Jurisdictional Breadth -&gt; ClearHl7.Fhir.Codes.V290.CodeJurisdictionalBreadth</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0547</remarks>
         public IEnumerable<CodedWithExceptions> JurisdictionBreadth { get; set; }
 
         /// <summary>
@@ -181,8 +181,8 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CER.31 - Certificate Status Code.
+        /// <para>Suggested: 0536 Certificate Status -&gt; ClearHl7.Fhir.Codes.V290.CodeCertificateStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0536</remarks>
         public CodedWithExceptions CertificateStatusCode { get; set; }
 
         /// <summary>

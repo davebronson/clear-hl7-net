@@ -25,6 +25,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// REL.2 - Relationship Type.
+        /// <para>Suggested: 0948 Relationship Type</para>
         /// </summary>
         public CodedWithExceptions RelationshipType { get; set; }
 
