@@ -30,20 +30,20 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// NDL.4 - Point of Care.
+        /// <para>Suggested: 0302 Point Of Care</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0302</remarks>
         public string PointOfCare { get; set; }
 
         /// <summary>
         /// NDL.5 - Room.
+        /// <para>Suggested: 0303 Room</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0303</remarks>
         public string Room { get; set; }
 
         /// <summary>
         /// NDL.6 - Bed.
+        /// <para>Suggested: 0304 Bed</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0304</remarks>
         public string Bed { get; set; }
 
         /// <summary>
@@ -53,26 +53,26 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// NDL.8 - Location Status.
+        /// <para>Suggested: 0306 Location Status</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0306</remarks>
         public string LocationStatus { get; set; }
 
         /// <summary>
         /// NDL.9 - Patient Location Type.
+        /// <para>Suggested: 0305 Person Location Type -&gt; ClearHl7.Fhir.Codes.V290.CodePersonLocationType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0305</remarks>
         public string PatientLocationType { get; set; }
 
         /// <summary>
         /// NDL.10 - Building.
+        /// <para>Suggested: 0307 Building</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0307</remarks>
         public string Building { get; set; }
 
         /// <summary>
         /// NDL.11 - Floor.
+        /// <para>Suggested: 0308 Floor</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0308</remarks>
         public string Floor { get; set; }
 
         /// <summary>

@@ -25,8 +25,8 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// CWE.3 - Name of Coding System.
+        /// <para>Suggested: 0396 Coding System</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0396</remarks>
         public string NameOfCodingSystem { get; set; }
 
         /// <summary>
@@ -41,8 +41,8 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// CWE.6 - Name of Alternate Coding System.
+        /// <para>Suggested: 0396 Coding System</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0396</remarks>
         public string NameOfAlternateCodingSystem { get; set; }
 
         /// <summary>
@@ -72,8 +72,8 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// CWE.12 - Name of Second Alternate Coding System.
+        /// <para>Suggested: 0396 Coding System</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0396</remarks>
         public string NameOfSecondAlternateCodingSystem { get; set; }
 
         /// <summary>

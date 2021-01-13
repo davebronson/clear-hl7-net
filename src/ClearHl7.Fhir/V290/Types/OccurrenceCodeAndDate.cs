@@ -15,8 +15,8 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// OCD.1 - Occurrence Code.
+        /// <para>Suggested: 0350 Occurrence Code -&gt; ClearHl7.Fhir.Codes.V290.CodeOccurrenceCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0350</remarks>
         public CodedWithNoExceptions OccurrenceCode { get; set; }
 
         /// <summary>

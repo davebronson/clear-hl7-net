@@ -25,8 +25,8 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// SPD.3 - Eligible or Certified.
+        /// <para>Suggested: 0337 Certification Status -&gt; ClearHl7.Fhir.Codes.V290.CodeCertificationStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0337</remarks>
         public string EligibleOrCertified { get; set; }
 
         /// <summary>

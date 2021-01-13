@@ -19,6 +19,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// CQ.2 - Units.
+        /// <para>Suggested: 0794 Units</para>
         /// </summary>  
         public CodedWithExceptions Units { get; set; }
 

@@ -15,8 +15,8 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// FC.1 - Financial Class Code.
+        /// <para>Suggested: 0064 Financial Class Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0064</remarks>
         public CodedWithExceptions FinancialClassCode { get; set; }
 
         /// <summary>

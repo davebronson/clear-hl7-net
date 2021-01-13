@@ -14,8 +14,8 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// UVC.1 - Value Code.
+        /// <para>Suggested: 0153 Value Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0153</remarks>
         public CodedWithExceptions ValueCode { get; set; }
 
         /// <summary>
