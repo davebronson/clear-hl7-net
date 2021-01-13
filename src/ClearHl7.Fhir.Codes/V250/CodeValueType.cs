@@ -3,7 +3,7 @@ namespace ClearHl7.Fhir.Codes.V250
     /// <summary>
     /// HL7 Version 2 Table 0125 - Value Type.
     /// </summary>
-    /// </remarks>https://www.hl7.org/fhir/v2/0125</remarks>
+    /// <remarks>https://www.hl7.org/fhir/v2/0125</remarks>
     public enum CodeValueType
     {
         /// <summary>
