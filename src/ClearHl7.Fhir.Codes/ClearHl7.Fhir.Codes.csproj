@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1;net5.0</TargetFrameworks>
     <Authors>Dave Bronson</Authors>
-    <Copyright>Copyright © Dave Bronson 2020</Copyright>
+    <Copyright>Copyright © Dave Bronson 2020-2021</Copyright>
     <PackageProjectUrl>https://github.com/davebronson/clear-hl7-net</PackageProjectUrl>
     <Summary>Enumerated coded values for the FHIR HL7 standard</Summary>
     <PackageTags>hl7;hl7-builder;hl7-message;hl7-generating;hl7-fhir;fhir;dotnet;healthcare;code;codesystem</PackageTags>
@@ -13,7 +13,7 @@
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <ReleaseVersion>1.0</ReleaseVersion>
-    <PackageVersion>1.0.0-beta1</PackageVersion>
+    <PackageVersion>1.0.0</PackageVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <LangVersion>latest</LangVersion>
