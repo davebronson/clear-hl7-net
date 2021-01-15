@@ -3,9 +3,6 @@
 
 Understanding and programmatically building HL7 messages can be difficult.  clear-hl7-net takes pain out of this process by exposing an object hierarchy that is well structured, clearly named, and (most importantly) strongly-typed.
 
-## Important
-clear-hl7-net is functional and quickly approaching an official release.  However, as testing continues there is always a chance that minor breaking changes may be necessary.  Please proceed with this caution in mind.
-
 ## Getting Started
 ### Building clear-hl7-net
 1. Clone the source code: `git clone https://github.com/davebronson/clear-hl7-net.git`
