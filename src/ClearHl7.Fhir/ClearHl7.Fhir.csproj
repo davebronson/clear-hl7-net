@@ -9,11 +9,12 @@
     <PackageTags>hl7;hl7-builder;hl7-message;hl7-generating;hl7-fhir;fhir;dotnet;healthcare</PackageTags>
     <Title>ClearHL7.Fhir</Title>
     <Description>.NET HL7 message generation library for the FHIR Version 2.x standard</Description>
-    <PackageLicenseUrl>https://github.com/davebronson/clear-hl7-net/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageVersion>1.0.0</PackageVersion>
     <ReleaseVersion>1.0</ReleaseVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <LangVersion>latest</LangVersion>
