@@ -236,7 +236,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// STF.39 - Generic resource type or category.
-        /// <para>Suggested: 0771 Generic resource type or category</para>
+        /// <para>Suggested: 0771 Generic Resource Type Or Category</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> GenericResourceTypeOrCategory { get; set; }
 

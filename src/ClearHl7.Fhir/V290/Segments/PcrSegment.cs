@@ -88,7 +88,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PCR.13 - Product Available For Inspection.
-        /// <para>Suggested: 0246 Product Available for Inspection</para>
+        /// <para>Suggested: 0246 Product Available For Inspection</para>
         /// </summary>
         public CodedWithExceptions ProductAvailableForInspection { get; set; }
 

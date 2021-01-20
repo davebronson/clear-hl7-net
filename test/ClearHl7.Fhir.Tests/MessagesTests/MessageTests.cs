@@ -1,7 +1,7 @@
 ﻿using System;
-using ClearHl7.Fhir.V282;
-using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+using ClearHl7.Fhir.V290;
+using ClearHl7.Fhir.V290.Segments;
+using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.MessagesTests
@@ -89,7 +89,7 @@ namespace ClearHl7.Fhir.Tests.MessagesTests
                 }
             };
 
-            string expected = "MSH|^~\\&|Sender 1||Receiver 1||20201202144539|||||2.8.2\rIN1|15|MNO Healthcare|736HB^^^DES1&UID654&Type 5~AA876^^^LLL098&UID123&Type 7\rCDM||Code 1^ABC~Code 2^ZYX\r";
+            string expected = "MSH|^~\\&|Sender 1||Receiver 1||20201202144539|||||2.9\rIN1|15|MNO Healthcare|736HB^^^DES1&UID654&Type 5~AA876^^^LLL098&UID123&Type 7\rCDM||Code 1^ABC~Code 2^ZYX\r";
             string actual = message.ToDelimitedString();
 
             Assert.Equal(expected, actual);

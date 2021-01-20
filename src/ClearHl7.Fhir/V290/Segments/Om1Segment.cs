@@ -278,7 +278,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.47 - Modality of Imaging Measurement.
-        /// <para>Suggested: 0910 Modality of Imaging Measurement</para>
+        /// <para>Suggested: 0910 Modality Of Imaging Measurement</para>
         /// </summary>
         public CodedWithExceptions ModalityOfImagingMeasurement { get; set; }
 

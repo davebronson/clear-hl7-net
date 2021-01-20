@@ -83,7 +83,7 @@ namespace ClearHl7.Fhir.V290.Segments
         /// <summary>
         /// MSH.12 - Version ID.
         /// </summary>
-        public VersionIdentifier VersionId { get; set; } = new VersionIdentifier { VersionId = "2.8.2" };
+        public VersionIdentifier VersionId { get; set; } = new VersionIdentifier { VersionId = "2.9" };
 
         /// <summary>
         /// MSH.13 - Sequence Number.

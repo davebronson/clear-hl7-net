@@ -62,7 +62,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ORG.8 - Health Care Provider Area of Specialization Code.
-        /// <para>Suggested: 0454 Health Care Provider Area of Specialization</para>
+        /// <para>Suggested: 0454 Health Care Provider Area Of Specialization</para>
         /// </summary>
         public CodedWithExceptions HealthCareProviderAreaOfSpecializationCode { get; set; }
 

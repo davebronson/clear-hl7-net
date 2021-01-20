@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V282.Segments;
-using ClearHl7.Fhir.V282.Types;
+using ClearHl7.Fhir.V290.Segments;
+using ClearHl7.Fhir.V290.Types;
 using Xunit;
 
 namespace ClearHl7.Fhir.Tests.HelpersTests
