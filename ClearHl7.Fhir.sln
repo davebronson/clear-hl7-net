@@ -30,7 +30,7 @@ Global
 		Policies = $0
 		$0.StandardHeader = $1
 		$0.VersionControlPolicy = $2
-		version = 1.0
+		version = 1.1
 		description = .NET HL7 library
 	EndGlobalSection
 EndGlobal
