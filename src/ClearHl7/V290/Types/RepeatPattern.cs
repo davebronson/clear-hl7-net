@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 RPT - Repeat Pattern.
@@ -14,13 +14,13 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// RPT.1 - Repeat Pattern Code.
-        /// <para>Suggested: 0335 Repeat Pattern -&gt; ClearHl7.Fhir.Codes.V290.CodeRepeatPattern</para>
+        /// <para>Suggested: 0335 Repeat Pattern -&gt; ClearHl7.Codes.V290.CodeRepeatPattern</para>
         /// </summary>
         public CodedWithExceptions RepeatPatternCode { get; set; }
 
         /// <summary>
         /// RPT.2 - Calendar Alignment.
-        /// <para>Suggested: 0527 Calendar Alignment -&gt; ClearHl7.Fhir.Codes.V290.CodeCalendarAlignment</para>
+        /// <para>Suggested: 0527 Calendar Alignment -&gt; ClearHl7.Codes.V290.CodeCalendarAlignment</para>
         /// </summary>
         public string CalendarAlignment { get; set; }
 
@@ -46,13 +46,13 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// RPT.7 - Institution Specified Time.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string InstitutionSpecifiedTime { get; set; }
 
         /// <summary>
         /// RPT.8 - Event.
-        /// <para>Suggested: 0528 Event Related Period -&gt; ClearHl7.Fhir.Codes.V290.CodeEventRelatedPeriod</para>
+        /// <para>Suggested: 0528 Event Related Period -&gt; ClearHl7.Codes.V290.CodeEventRelatedPeriod</para>
         /// </summary>
         public string Event { get; set; }
 

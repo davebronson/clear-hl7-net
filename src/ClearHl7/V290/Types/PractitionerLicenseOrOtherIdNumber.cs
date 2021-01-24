@@ -1,7 +1,7 @@
 ﻿using System;
-using ClearHl7.Fhir.Helpers;
+using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 PLN - Practitioner License Or Other Id Number.
@@ -20,7 +20,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// PLN.2 - Type of ID Number.
-        /// <para>Suggested: 0338 Practitioner ID Number Type -&gt; ClearHl7.Fhir.Codes.V290.CodePractitionerIdNumberType</para>
+        /// <para>Suggested: 0338 Practitioner ID Number Type -&gt; ClearHl7.Codes.V290.CodePractitionerIdNumberType</para>
         /// </summary>
         public CodedWithExceptions TypeOfIdNumber { get; set; }
 

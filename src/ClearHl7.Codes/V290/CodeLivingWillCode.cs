@@ -1,4 +1,4 @@
-﻿namespace ClearHl7.Fhir.Codes.V290
+﻿namespace ClearHl7.Codes.V290
 {
     /// <summary>
     /// HL7 Version 2 Table 0315 - Living Will Code.

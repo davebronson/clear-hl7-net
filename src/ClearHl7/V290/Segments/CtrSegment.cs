@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment CTR - Contract Master Outbound.
@@ -33,7 +33,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CTR.3 - Contract Status.
-        /// <para>Suggested: 0536 Certificate Status -&gt; ClearHl7.Fhir.Codes.V290.CodeCertificateStatus</para>
+        /// <para>Suggested: 0536 Certificate Status -&gt; ClearHl7.Codes.V290.CodeCertificateStatus</para>
         /// </summary>
         public CodedWithExceptions ContractStatus { get; set; }
 
@@ -71,7 +71,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CTR.10 - Free On Board Freight Terms.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions FreeOnBoardFreightTerms { get; set; }
 
@@ -82,7 +82,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CTR.12 - Fixed Price Contract Indicator.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions FixedPriceContractIndicator { get; set; }
 

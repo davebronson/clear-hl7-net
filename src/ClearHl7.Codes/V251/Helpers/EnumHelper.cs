@@ -1,6 +1,6 @@
-using System;
+﻿using System;
 
-namespace ClearHl7.Fhir.Codes.V251.Helpers
+namespace ClearHl7.Codes.V251.Helpers
 {
     /// <summary>
     /// Provides helper methods for interacting with enumerations.

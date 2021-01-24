@@ -1,7 +1,7 @@
-﻿using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+﻿using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment LCH - Location Characteristic.
@@ -25,7 +25,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// LCH.2 - Segment Action Code.
-        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V290.CodeSegmentActionCode</para>
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Codes.V290.CodeSegmentActionCode</para>
         /// </summary>
         public string SegmentActionCode { get; set; }
 
@@ -36,13 +36,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// LCH.4 - Location Characteristic ID.
-        /// <para>Suggested: 0324 Location Characteristic ID -&gt; ClearHl7.Fhir.Codes.V290.CodeLocationCharacteristicId</para>
+        /// <para>Suggested: 0324 Location Characteristic ID -&gt; ClearHl7.Codes.V290.CodeLocationCharacteristicId</para>
         /// </summary>
         public CodedWithExceptions LocationCharacteristicId { get; set; }
 
         /// <summary>
         /// LCH.5 - Location Characteristic Value - LCH.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public CodedWithExceptions LocationCharacteristicValueLch { get; set; }
         

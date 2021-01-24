@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 CNN - Composite Id Number And Name Simplified.
@@ -44,7 +44,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// CNN.7 - Degree (e.g., MD).
-        /// <para>Suggested: 0360 Degree/License/Certificate -&gt; ClearHl7.Fhir.Codes.V290.CodeDegreeLicenseCertificate</para>
+        /// <para>Suggested: 0360 Degree/License/Certificate -&gt; ClearHl7.Codes.V290.CodeDegreeLicenseCertificate</para>
         /// </summary>
         public string Degree { get; set; }
 
@@ -56,7 +56,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// CNN.9 - Assigning Authority - Namespace ID.
-        /// <para>Suggested: 0363 Assigning Authority -&gt; ClearHl7.Fhir.Codes.V290.CodeAssigningAuthority</para>
+        /// <para>Suggested: 0363 Assigning Authority -&gt; ClearHl7.Codes.V290.CodeAssigningAuthority</para>
         /// </summary>
         public string AssigningAuthorityNamespaceId { get; set; }
 
@@ -67,7 +67,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// CNN.11 - Assigning Authority - Universal ID Type.
-        /// <para>Suggested: 0301 Universal ID Type -&gt; ClearHl7.Fhir.Codes.V290.CodeUniversalIdType</para>
+        /// <para>Suggested: 0301 Universal ID Type -&gt; ClearHl7.Codes.V290.CodeUniversalIdType</para>
         /// </summary>
         public string AssigningAuthorityUniversalIdType { get; set; }
 

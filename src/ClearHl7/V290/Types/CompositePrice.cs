@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 CP - Composite Price.
@@ -19,7 +19,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// CP.2 - Price Type.
-        /// <para>Suggested: 0205 Price Type -&gt; ClearHl7.Fhir.Codes.V290.CodePriceType</para>
+        /// <para>Suggested: 0205 Price Type -&gt; ClearHl7.Codes.V290.CodePriceType</para>
         /// </summary>
         public string PriceType { get; set; }
 
@@ -40,7 +40,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// CP.6 - Range Type.
-        /// <para>Suggested: 0298 CP Range Type -&gt; ClearHl7.Fhir.Codes.V290.CodeCpRangeType</para>
+        /// <para>Suggested: 0298 CP Range Type -&gt; ClearHl7.Codes.V290.CodeCpRangeType</para>
         /// </summary>
         public string RangeType { get; set; }
 

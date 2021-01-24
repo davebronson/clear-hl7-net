@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 PTA - Policy Type And Amount.
@@ -14,13 +14,13 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// PTA.1 - Policy Type.
-        /// <para>Suggested: 0147 Policy Type -&gt; ClearHl7.Fhir.Codes.V290.CodePolicyType</para>
+        /// <para>Suggested: 0147 Policy Type -&gt; ClearHl7.Codes.V290.CodePolicyType</para>
         /// </summary>
         public CodedWithExceptions PolicyType { get; set; }
 
         /// <summary>
         /// PTA.2 - Amount Class.
-        /// <para>Suggested: 0193 Amount Class -&gt; ClearHl7.Fhir.Codes.V290.CodeAmountClass</para>
+        /// <para>Suggested: 0193 Amount Class -&gt; ClearHl7.Codes.V290.CodeAmountClass</para>
         /// </summary>
         public CodedWithExceptions AmountClass { get; set; }
 

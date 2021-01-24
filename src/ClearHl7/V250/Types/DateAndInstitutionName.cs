@@ -1,7 +1,7 @@
 ﻿using System;
-using ClearHl7.Fhir.Helpers;
+using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V250.Types
+namespace ClearHl7.V250.Types
 {
     /// <summary>
     /// HL7 Version 2 DIN - Date And Institution Name.

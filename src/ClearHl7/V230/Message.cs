@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ClearHl7.Fhir.Helpers;
+using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V230
+namespace ClearHl7.V230
 {
     /// <summary>
     /// HL7 Version 2 Message.

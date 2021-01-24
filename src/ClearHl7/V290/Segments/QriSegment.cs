@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment QRI - Query Response Instance.
@@ -27,13 +27,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// QRI.2 - Match Reason Code.
-        /// <para>Suggested: 0392 Match Reason -&gt; ClearHl7.Fhir.Codes.V290.CodeMatchReason</para>
+        /// <para>Suggested: 0392 Match Reason -&gt; ClearHl7.Codes.V290.CodeMatchReason</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> MatchReasonCode { get; set; }
 
         /// <summary>
         /// QRI.3 - Algorithm Descriptor.
-        /// <para>Suggested: 0393 Match Algorithms -&gt; ClearHl7.Fhir.Codes.V290.CodeMatchAlgorithms</para>
+        /// <para>Suggested: 0393 Match Algorithms -&gt; ClearHl7.Codes.V290.CodeMatchAlgorithms</para>
         /// </summary>
         public CodedWithExceptions AlgorithmDescriptor { get; set; }
         

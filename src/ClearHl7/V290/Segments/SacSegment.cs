@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment SAC - Specimen Container Detail.
@@ -58,7 +58,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SAC.8 - Container Status.
-        /// <para>Suggested: 0370 Container Status -&gt; ClearHl7.Fhir.Codes.V290.CodeContainerStatus</para>
+        /// <para>Suggested: 0370 Container Status -&gt; ClearHl7.Codes.V290.CodeContainerStatus</para>
         /// </summary>
         public CodedWithExceptions ContainerStatus { get; set; }
 
@@ -161,13 +161,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SAC.27 - Additive.
-        /// <para>Suggested: 0371 Additive/Preservative -&gt; ClearHl7.Fhir.Codes.V290.CodeAdditivePreservative</para>
+        /// <para>Suggested: 0371 Additive/Preservative -&gt; ClearHl7.Codes.V290.CodeAdditivePreservative</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> Additive { get; set; }
 
         /// <summary>
         /// SAC.28 - Specimen Component.
-        /// <para>Suggested: 0372 Specimen Component -&gt; ClearHl7.Fhir.Codes.V290.CodeSpecimenComponent</para>
+        /// <para>Suggested: 0372 Specimen Component -&gt; ClearHl7.Codes.V290.CodeSpecimenComponent</para>
         /// </summary>
         public CodedWithExceptions SpecimenComponent { get; set; }
 
@@ -178,7 +178,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SAC.30 - Treatment.
-        /// <para>Suggested: 0373 Treatment -&gt; ClearHl7.Fhir.Codes.V290.CodeTreatment</para>
+        /// <para>Suggested: 0373 Treatment -&gt; ClearHl7.Codes.V290.CodeTreatment</para>
         /// </summary>
         public CodedWithExceptions Treatment { get; set; }
 
@@ -233,7 +233,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SAC.40 - System Induced Contaminants.
-        /// <para>Suggested: 0374 System Induced Contaminants -&gt; ClearHl7.Fhir.Codes.V290.CodeSystemInducedContaminants</para>
+        /// <para>Suggested: 0374 System Induced Contaminants -&gt; ClearHl7.Codes.V290.CodeSystemInducedContaminants</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> SystemInducedContaminants { get; set; }
 
@@ -245,19 +245,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SAC.42 - Artificial Blood.
-        /// <para>Suggested: 0375 Artificial Blood -&gt; ClearHl7.Fhir.Codes.V290.CodeArtificialBlood</para>
+        /// <para>Suggested: 0375 Artificial Blood -&gt; ClearHl7.Codes.V290.CodeArtificialBlood</para>
         /// </summary>
         public CodedWithExceptions ArtificialBlood { get; set; }
 
         /// <summary>
         /// SAC.43 - Special Handling Code.
-        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Fhir.Codes.V290.CodeSpecialHandlingCode</para>
+        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Codes.V290.CodeSpecialHandlingCode</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> SpecialHandlingCode { get; set; }
 
         /// <summary>
         /// SAC.44 - Other Environmental Factors.
-        /// <para>Suggested: 0377 Other Environmental Factors -&gt; ClearHl7.Fhir.Codes.V290.CodeOtherEnvironmentalFactors</para>
+        /// <para>Suggested: 0377 Other Environmental Factors -&gt; ClearHl7.Codes.V290.CodeOtherEnvironmentalFactors</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> OtherEnvironmentalFactors { get; set; }
 

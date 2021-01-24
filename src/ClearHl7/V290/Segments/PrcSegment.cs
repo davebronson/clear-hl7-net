@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment PRC - Pricing.
@@ -41,7 +41,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PRC.4 - Valid Patient Classes.
-        /// <para>Suggested: 0004 Patient Class -&gt; ClearHl7.Fhir.Codes.V290.CodePatientClass</para>
+        /// <para>Suggested: 0004 Patient Class -&gt; ClearHl7.Codes.V290.CodePatientClass</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ValidPatientClasses { get; set; }
 
@@ -87,7 +87,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PRC.13 - Price Override Flag.
-        /// <para>Suggested: 0268 Override -&gt; ClearHl7.Fhir.Codes.V290.CodeOverride</para>
+        /// <para>Suggested: 0268 Override -&gt; ClearHl7.Codes.V290.CodeOverride</para>
         /// </summary>
         public CodedWithExceptions PriceOverrideFlag { get; set; }
 
@@ -99,13 +99,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PRC.15 - Chargeable Flag.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string ChargeableFlag { get; set; }
 
         /// <summary>
         /// PRC.16 - Active/Inactive Flag.
-        /// <para>Suggested: 0183 Active/Inactive -&gt; ClearHl7.Fhir.Codes.V290.CodeActiveInactive</para>
+        /// <para>Suggested: 0183 Active/Inactive -&gt; ClearHl7.Codes.V290.CodeActiveInactive</para>
         /// </summary>
         public string ActiveInactiveFlag { get; set; }
 
@@ -116,7 +116,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PRC.18 - Charge on Indicator.
-        /// <para>Suggested: 0269 Charge On Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeChargeOnIndicator</para>
+        /// <para>Suggested: 0269 Charge On Indicator -&gt; ClearHl7.Codes.V290.CodeChargeOnIndicator</para>
         /// </summary>
         public CodedWithExceptions ChargeOnIndicator { get; set; }
         

@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 HD - Hierarchic Designator.
@@ -25,7 +25,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// HD.3 - Universal ID Type.
-        /// <para>Suggested: 0301 Universal ID Type -&gt; ClearHl7.Fhir.Codes.V290.CodeUniversalIdType</para>
+        /// <para>Suggested: 0301 Universal ID Type -&gt; ClearHl7.Codes.V290.CodeUniversalIdType</para>
         /// </summary>
         public string UniversalIdType { get; set; }
 

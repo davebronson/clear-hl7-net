@@ -1,7 +1,7 @@
-﻿using ClearHl7.Fhir.V271.Types;
+﻿using ClearHl7.V271.Types;
 using Xunit;
 
-namespace ClearHl7.Fhir.Tests.TypesTests
+namespace ClearHl7.Tests.TypesTests
 {
     public class LocationWithAddressVariationTwoTests
     {

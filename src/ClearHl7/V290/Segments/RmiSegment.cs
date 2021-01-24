@@ -1,8 +1,8 @@
 ﻿using System;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment RMI - Risk Management Incident.
@@ -21,7 +21,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RMI.1 - Risk Management Incident Code.
-        /// <para>Suggested: 0427 Risk Management Incident Code -&gt; ClearHl7.Fhir.Codes.V290.CodeRiskManagementIncidentCode</para>
+        /// <para>Suggested: 0427 Risk Management Incident Code -&gt; ClearHl7.Codes.V290.CodeRiskManagementIncidentCode</para>
         /// </summary>
         public CodedWithExceptions RiskManagementIncidentCode { get; set; }
 
@@ -32,7 +32,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RMI.3 - Incident Type Code.
-        /// <para>Suggested: 0428 Incident Type Code -&gt; ClearHl7.Fhir.Codes.V290.CodeIncidentTypeCode</para>
+        /// <para>Suggested: 0428 Incident Type Code -&gt; ClearHl7.Codes.V290.CodeIncidentTypeCode</para>
         /// </summary>
         public CodedWithExceptions IncidentTypeCode { get; set; }
         

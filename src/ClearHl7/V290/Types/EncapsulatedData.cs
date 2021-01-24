@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 ED - Encapsulated Data.
@@ -19,19 +19,19 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// ED.2 - Type of Data.
-        /// <para>Suggested: 0834 MIME Types -&gt; ClearHl7.Fhir.Codes.V290.CodeMimeTypes</para>
+        /// <para>Suggested: 0834 MIME Types -&gt; ClearHl7.Codes.V290.CodeMimeTypes</para>
         /// </summary>
         public string TypeOfData { get; set; }
 
         /// <summary>
         /// ED.3 - Data Subtype.
-        /// <para>Suggested: 0291 Subtype Of Referenced Data -&gt; ClearHl7.Fhir.Codes.V290.CodeSubtypeOfReferencedData</para>
+        /// <para>Suggested: 0291 Subtype Of Referenced Data -&gt; ClearHl7.Codes.V290.CodeSubtypeOfReferencedData</para>
         /// </summary>
         public string DataSubtype { get; set; }
 
         /// <summary>
         /// ED.4 - Encoding.
-        /// <para>Suggested: 0299 Encoding -&gt; ClearHl7.Fhir.Codes.V290.CodeEncoding</para>
+        /// <para>Suggested: 0299 Encoding -&gt; ClearHl7.Codes.V290.CodeEncoding</para>
         /// </summary>
         public string Encoding { get; set; }
 

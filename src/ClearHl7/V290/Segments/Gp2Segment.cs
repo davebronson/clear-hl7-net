@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment GP2 - Grouping Reimbursement - Procedure Line Item.
@@ -22,7 +22,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// GP2.1 - Revenue Code.
-        /// <para>Suggested: 0456 Revenue Code -&gt; ClearHl7.Fhir.Codes.V290.CodeRevenueCode</para>
+        /// <para>Suggested: 0456 Revenue Code -&gt; ClearHl7.Codes.V290.CodeRevenueCode</para>
         /// </summary>
         public CodedWithExceptions RevenueCode { get; set; }
 
@@ -38,13 +38,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// GP2.4 - Reimbursement Action Code.
-        /// <para>Suggested: 0459 Reimbursement Action Code -&gt; ClearHl7.Fhir.Codes.V290.CodeReimbursementActionCode</para>
+        /// <para>Suggested: 0459 Reimbursement Action Code -&gt; ClearHl7.Codes.V290.CodeReimbursementActionCode</para>
         /// </summary>
         public CodedWithExceptions ReimbursementActionCode { get; set; }
 
         /// <summary>
         /// GP2.5 - Denial or Rejection Code.
-        /// <para>Suggested: 0460 Denial Or Rejection Code -&gt; ClearHl7.Fhir.Codes.V290.CodeDenialOrRejectionCode</para>
+        /// <para>Suggested: 0460 Denial Or Rejection Code -&gt; ClearHl7.Codes.V290.CodeDenialOrRejectionCode</para>
         /// </summary>
         public CodedWithExceptions DenialOrRejectionCode { get; set; }
 
@@ -56,7 +56,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// GP2.7 - Ambulatory Payment Classification Code.
-        /// <para>Suggested: 0466 Ambulatory Payment Classification Code -&gt; ClearHl7.Fhir.Codes.V290.CodeAmbulatoryPaymentClassificationCode</para>
+        /// <para>Suggested: 0466 Ambulatory Payment Classification Code -&gt; ClearHl7.Codes.V290.CodeAmbulatoryPaymentClassificationCode</para>
         /// </summary>
         public CodedWithExceptions AmbulatoryPaymentClassificationCode { get; set; }
 
@@ -68,13 +68,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// GP2.9 - Payment Adjustment Code.
-        /// <para>Suggested: 0468 Payment Adjustment Code -&gt; ClearHl7.Fhir.Codes.V290.CodePaymentAdjustmentCode</para>
+        /// <para>Suggested: 0468 Payment Adjustment Code -&gt; ClearHl7.Codes.V290.CodePaymentAdjustmentCode</para>
         /// </summary>
         public CodedWithExceptions PaymentAdjustmentCode { get; set; }
 
         /// <summary>
         /// GP2.10 - Packaging Status Code.
-        /// <para>Suggested: 0469 Packaging Status Code -&gt; ClearHl7.Fhir.Codes.V290.CodePackagingStatusCode</para>
+        /// <para>Suggested: 0469 Packaging Status Code -&gt; ClearHl7.Codes.V290.CodePackagingStatusCode</para>
         /// </summary>
         public CodedWithExceptions PackagingStatusCode { get; set; }
 
@@ -85,7 +85,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// GP2.12 - Reimbursement Type Code.
-        /// <para>Suggested: 0470 Reimbursement Type Code -&gt; ClearHl7.Fhir.Codes.V290.CodeReimbursementTypeCode</para>
+        /// <para>Suggested: 0470 Reimbursement Type Code -&gt; ClearHl7.Codes.V290.CodeReimbursementTypeCode</para>
         /// </summary>
         public CodedWithExceptions ReimbursementTypeCode { get; set; }
 

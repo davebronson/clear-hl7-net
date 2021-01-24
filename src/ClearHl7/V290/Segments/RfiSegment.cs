@@ -1,7 +1,7 @@
 ﻿using System;
-using ClearHl7.Fhir.Helpers;
+using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment RFI - Request For Information.
@@ -30,7 +30,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RFI.3 - Patient Consent.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string PatientConsent { get; set; }
 

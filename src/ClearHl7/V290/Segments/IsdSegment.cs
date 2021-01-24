@@ -1,7 +1,7 @@
-﻿using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+﻿using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment ISD - Interaction Status Detail.
@@ -25,13 +25,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ISD.2 - Interaction Type Identifier.
-        /// <para>Suggested: 0368 Remote Control Command -&gt; ClearHl7.Fhir.Codes.V290.CodeRemoteControlCommand</para>
+        /// <para>Suggested: 0368 Remote Control Command -&gt; ClearHl7.Codes.V290.CodeRemoteControlCommand</para>
         /// </summary>
         public CodedWithExceptions InteractionTypeIdentifier { get; set; }
 
         /// <summary>
         /// ISD.3 - Interaction Active State.
-        /// <para>Suggested: 0387 Command Response -&gt; ClearHl7.Fhir.Codes.V290.CodeCommandResponse</para>
+        /// <para>Suggested: 0387 Command Response -&gt; ClearHl7.Codes.V290.CodeCommandResponse</para>
         /// </summary>
         public CodedWithExceptions InteractionActiveState { get; set; }
         

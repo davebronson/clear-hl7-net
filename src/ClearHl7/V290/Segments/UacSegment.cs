@@ -1,7 +1,7 @@
-﻿using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+﻿using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment UAC - User Authentication Credential Segment.
@@ -20,7 +20,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// UAC.1 - User Authentication Credential Type Code.
-        /// <para>Suggested: 0615 User Authentication Credential Type Code -&gt; ClearHl7.Fhir.Codes.V290.CodeUserAuthenticationCredentialTypeCode</para>
+        /// <para>Suggested: 0615 User Authentication Credential Type Code -&gt; ClearHl7.Codes.V290.CodeUserAuthenticationCredentialTypeCode</para>
         /// </summary>
         public CodedWithExceptions UserAuthenticationCredentialTypeCode { get; set; }
 

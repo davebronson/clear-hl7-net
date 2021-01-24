@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 PT - Processing Type.
@@ -14,13 +14,13 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// PT.1 - Processing ID.
-        /// <para>Suggested: 0103 Processing ID -&gt; ClearHl7.Fhir.Codes.V290.CodeProcessingId</para>
+        /// <para>Suggested: 0103 Processing ID -&gt; ClearHl7.Codes.V290.CodeProcessingId</para>
         /// </summary>
         public string ProcessingId { get; set; }
 
         /// <summary>
         /// PT.2 - Processing Mode.
-        /// <para>Suggested: 0207 Processing Mode -&gt; ClearHl7.Fhir.Codes.V290.CodeProcessingMode</para>
+        /// <para>Suggested: 0207 Processing Mode -&gt; ClearHl7.Codes.V290.CodeProcessingMode</para>
         /// </summary>
         public string ProcessingMode { get; set; }
 

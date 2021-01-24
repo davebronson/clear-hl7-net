@@ -1,7 +1,7 @@
 ﻿using System;
-using ClearHl7.Fhir.Helpers;
+using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V282.Types
+namespace ClearHl7.V282.Types
 {
     /// <summary>
     /// HL7 Version 2 XTN - Extended Telecommunication Number.

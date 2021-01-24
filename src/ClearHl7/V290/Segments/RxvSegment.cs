@@ -1,7 +1,7 @@
-﻿using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+﻿using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment RXV - Pharmacy Treatment Infusion.
@@ -25,7 +25,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXV.2 - Bolus Type.
-        /// <para>Suggested: 0917 Bolus Type -&gt; ClearHl7.Fhir.Codes.V290.CodeBolusType</para>
+        /// <para>Suggested: 0917 Bolus Type -&gt; ClearHl7.Codes.V290.CodeBolusType</para>
         /// </summary>
         public string BolusType { get; set; }
 
@@ -53,7 +53,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXV.7 - PCA Type.
-        /// <para>Suggested: 0918 PCA Type -&gt; ClearHl7.Fhir.Codes.V290.CodePcaType</para>
+        /// <para>Suggested: 0918 PCA Type -&gt; ClearHl7.Codes.V290.CodePcaType</para>
         /// </summary>
         public string PcaType { get; set; }
 

@@ -1,7 +1,7 @@
 ﻿using System;
-using ClearHl7.Fhir.Helpers;
+using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 PPN - Performing Person Time Stamp.
@@ -56,13 +56,13 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// PPN.9 - Assigning Authority.
-        /// <para>Suggested: 0363 Assigning Authority -&gt; ClearHl7.Fhir.Codes.V290.CodeAssigningAuthority</para>
+        /// <para>Suggested: 0363 Assigning Authority -&gt; ClearHl7.Codes.V290.CodeAssigningAuthority</para>
         /// </summary>
         public HierarchicDesignator AssigningAuthority { get; set; }
 
         /// <summary>
         /// PPN.10 - Name Type Code.
-        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Fhir.Codes.V290.CodeNameType</para>
+        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Codes.V290.CodeNameType</para>
         /// </summary>
         public string NameTypeCode { get; set; }
 
@@ -73,13 +73,13 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// PPN.12 - Check Digit Scheme.
-        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Fhir.Codes.V290.CodeCheckDigitScheme</para>
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Codes.V290.CodeCheckDigitScheme</para>
         /// </summary>
         public string CheckDigitScheme { get; set; }
 
         /// <summary>
         /// PPN.13 - Identifier Type Code.
-        /// <para>Suggested: 0203 Identifier Type -&gt; ClearHl7.Fhir.Codes.V290.CodeIdentifierType</para>
+        /// <para>Suggested: 0203 Identifier Type -&gt; ClearHl7.Codes.V290.CodeIdentifierType</para>
         /// </summary>
         public string IdentifierTypeCode { get; set; }
 
@@ -95,7 +95,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// PPN.16 - Name Representation Code.
-        /// <para>Suggested: 0465 Name/Address Representation -&gt; ClearHl7.Fhir.Codes.V290.CodeNameAddressRepresentation</para>
+        /// <para>Suggested: 0465 Name/Address Representation -&gt; ClearHl7.Codes.V290.CodeNameAddressRepresentation</para>
         /// </summary>
         public string NameRepresentationCode { get; set; }
 
@@ -112,7 +112,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// PPN.19 - Name Assembly Order.
-        /// <para>Suggested: 0444 Name Assembly Order -&gt; ClearHl7.Fhir.Codes.V290.CodeNameAssemblyOrder</para>
+        /// <para>Suggested: 0444 Name Assembly Order -&gt; ClearHl7.Codes.V290.CodeNameAssemblyOrder</para>
         /// </summary>
         public string NameAssemblyOrder { get; set; }
 
@@ -148,7 +148,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// PPN.26 - Security Check Scheme.
-        /// <para>Suggested: 0904 Security Check Scheme -&gt; ClearHl7.Fhir.Codes.V290.CodeSecurityCheckScheme</para>
+        /// <para>Suggested: 0904 Security Check Scheme -&gt; ClearHl7.Codes.V290.CodeSecurityCheckScheme</para>
         /// </summary>
         public string SecurityCheckScheme { get; set; }
 

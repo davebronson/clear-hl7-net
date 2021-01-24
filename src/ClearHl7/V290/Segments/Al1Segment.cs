@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment AL1 - Patient Allergy Information.
@@ -27,7 +27,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// AL1.2 - Allergen Type Code.
-        /// <para>Suggested: 0127 Allergen Type -&gt; ClearHl7.Fhir.Codes.V290.CodeAllergenType</para>
+        /// <para>Suggested: 0127 Allergen Type -&gt; ClearHl7.Codes.V290.CodeAllergenType</para>
         /// </summary>
         public CodedWithExceptions AllergenTypeCode { get; set; }
 
@@ -38,7 +38,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// AL1.4 - Allergy Severity Code.
-        /// <para>Suggested: 0128 Allergy Severity -&gt; ClearHl7.Fhir.Codes.V290.CodeAllergySeverity</para>
+        /// <para>Suggested: 0128 Allergy Severity -&gt; ClearHl7.Codes.V290.CodeAllergySeverity</para>
         /// </summary>
         public CodedWithExceptions AllergySeverityCode { get; set; }
 

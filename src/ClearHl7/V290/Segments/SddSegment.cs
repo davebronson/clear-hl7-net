@@ -1,7 +1,7 @@
-﻿using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+﻿using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment SDD - Sterilization Device Data.
@@ -35,13 +35,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SDD.4 - Device Data State.
-        /// <para>Suggested: 0667 Device Data State -&gt; ClearHl7.Fhir.Codes.V290.CodeDeviceDataState</para>
+        /// <para>Suggested: 0667 Device Data State -&gt; ClearHl7.Codes.V290.CodeDeviceDataState</para>
         /// </summary>
         public CodedWithExceptions DeviceDataState { get; set; }
 
         /// <summary>
         /// SDD.5 - Load Status.
-        /// <para>Suggested: 0669 Load Status -&gt; ClearHl7.Fhir.Codes.V290.CodeLoadStatus</para>
+        /// <para>Suggested: 0669 Load Status -&gt; ClearHl7.Codes.V290.CodeLoadStatus</para>
         /// </summary>
         public CodedWithExceptions LoadStatus { get; set; }
 

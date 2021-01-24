@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment LAN - Language Detail.
@@ -33,13 +33,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// LAN.3 - Language Ability Code.
-        /// <para>Suggested: 0403 Language Ability -&gt; ClearHl7.Fhir.Codes.V290.CodeLanguageAbility</para>
+        /// <para>Suggested: 0403 Language Ability -&gt; ClearHl7.Codes.V290.CodeLanguageAbility</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> LanguageAbilityCode { get; set; }
 
         /// <summary>
         /// LAN.4 - Language Proficiency Code.
-        /// <para>Suggested: 0404 Language Proficiency -&gt; ClearHl7.Fhir.Codes.V290.CodeLanguageProficiency</para>
+        /// <para>Suggested: 0404 Language Proficiency -&gt; ClearHl7.Codes.V290.CodeLanguageProficiency</para>
         /// </summary>
         public CodedWithExceptions LanguageProficiencyCode { get; set; }
         

@@ -1,7 +1,7 @@
 ﻿using System;
-using ClearHl7.Fhir.Helpers;
+using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment NST - Application Control Level Statistics.
@@ -20,7 +20,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// NST.1 - Statistics Available.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string StatisticsAvailable { get; set; }
 
@@ -31,7 +31,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// NST.3 - Source Type.
-        /// <para>Suggested: 0332 Source Type -&gt; ClearHl7.Fhir.Codes.V290.CodeSourceType</para>
+        /// <para>Suggested: 0332 Source Type -&gt; ClearHl7.Codes.V290.CodeSourceType</para>
         /// </summary>
         public string SourceType { get; set; }
 

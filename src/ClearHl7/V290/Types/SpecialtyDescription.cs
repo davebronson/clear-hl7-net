@@ -1,7 +1,7 @@
 ﻿using System;
-using ClearHl7.Fhir.Helpers;
+using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 SPD - Specialty Description.
@@ -25,7 +25,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// SPD.3 - Eligible or Certified.
-        /// <para>Suggested: 0337 Certification Status -&gt; ClearHl7.Fhir.Codes.V290.CodeCertificationStatus</para>
+        /// <para>Suggested: 0337 Certification Status -&gt; ClearHl7.Codes.V290.CodeCertificationStatus</para>
         /// </summary>
         public string EligibleOrCertified { get; set; }
 

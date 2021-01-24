@@ -1,7 +1,7 @@
-﻿using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+﻿using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment SCP - Sterilizer Configuration (Anti-Microbial Devices).
@@ -25,13 +25,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SCP.2 - Labor Calculation Type.
-        /// <para>Suggested: 0651 Labor Calculation Type -&gt; ClearHl7.Fhir.Codes.V290.CodeLaborCalculationType</para>
+        /// <para>Suggested: 0651 Labor Calculation Type -&gt; ClearHl7.Codes.V290.CodeLaborCalculationType</para>
         /// </summary>
         public CodedWithExceptions LaborCalculationType { get; set; }
 
         /// <summary>
         /// SCP.3 - Date Format.
-        /// <para>Suggested: 0653 Date Format -&gt; ClearHl7.Fhir.Codes.V290.CodeDateFormat</para>
+        /// <para>Suggested: 0653 Date Format -&gt; ClearHl7.Codes.V290.CodeDateFormat</para>
         /// </summary>
         public CodedWithExceptions DateFormat { get; set; }
 
@@ -52,13 +52,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SCP.7 - Device Type.
-        /// <para>Suggested: 0657 Device Type -&gt; ClearHl7.Fhir.Codes.V290.CodeDeviceType</para>
+        /// <para>Suggested: 0657 Device Type -&gt; ClearHl7.Codes.V290.CodeDeviceType</para>
         /// </summary>
         public CodedWithExceptions DeviceType { get; set; }
 
         /// <summary>
         /// SCP.8 - Lot Control.
-        /// <para>Suggested: 0659 Lot Control -&gt; ClearHl7.Fhir.Codes.V290.CodeLotControl</para>
+        /// <para>Suggested: 0659 Lot Control -&gt; ClearHl7.Codes.V290.CodeLotControl</para>
         /// </summary>
         public CodedWithExceptions LotControl { get; set; }
         

@@ -1,7 +1,7 @@
-﻿using ClearHl7.Fhir.V282.Segments;
+﻿using ClearHl7.V282.Segments;
 using Xunit;
 
-namespace ClearHl7.Fhir.Tests.SegmentsTests
+namespace ClearHl7.Tests.SegmentsTests
 {
     public class UrdSegmentTests
     {

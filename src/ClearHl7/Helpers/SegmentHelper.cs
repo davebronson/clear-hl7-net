@@ -3,7 +3,7 @@ using System.Collections;
 using System.Linq;
 using System.Reflection;
 
-namespace ClearHl7.Fhir.Helpers
+namespace ClearHl7.Helpers
 {
     /// <summary>
     /// Provides helper methods for interacting with HL7 Segments.

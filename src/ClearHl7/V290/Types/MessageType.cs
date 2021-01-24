@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 MSG - Message Type.
@@ -14,19 +14,19 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// MSG.1 - Message Code.
-        /// <para>Suggested: 0076 Message Type -&gt; ClearHl7.Fhir.Codes.V290.CodeMessageType</para>
+        /// <para>Suggested: 0076 Message Type -&gt; ClearHl7.Codes.V290.CodeMessageType</para>
         /// </summary>
         public string MessageCode { get; set; }
 
         /// <summary>
         /// MSG.2 - Trigger Event.
-        /// <para>Suggested: 0003 Event Type -&gt; ClearHl7.Fhir.Codes.V290.CodeEventType</para>
+        /// <para>Suggested: 0003 Event Type -&gt; ClearHl7.Codes.V290.CodeEventType</para>
         /// </summary>
         public string TriggerEvent { get; set; }
 
         /// <summary>
         /// MSG.3 - Message Structure.
-        /// <para>Suggested: 0354 Message Structure -&gt; ClearHl7.Fhir.Codes.V290.CodeMessageStructure</para>
+        /// <para>Suggested: 0354 Message Structure -&gt; ClearHl7.Codes.V290.CodeMessageStructure</para>
         /// </summary>
         public string MessageStructure { get; set; }
 

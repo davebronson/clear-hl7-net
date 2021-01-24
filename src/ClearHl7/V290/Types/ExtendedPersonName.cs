@@ -1,7 +1,7 @@
 ﻿using System;
-using ClearHl7.Fhir.Helpers;
+using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 XPN - Extended Person Name.
@@ -40,19 +40,19 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// XPN.6 - Degree (e.g., MD).
-        /// <para>Suggested: 0360 Degree/License/Certificate -&gt; ClearHl7.Fhir.Codes.V290.CodeDegreeLicenseCertificate</para>
+        /// <para>Suggested: 0360 Degree/License/Certificate -&gt; ClearHl7.Codes.V290.CodeDegreeLicenseCertificate</para>
         /// </summary>
         public string Degree { get; set; }
 
         /// <summary>
         /// XPN.7 - Name Type Code.
-        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Fhir.Codes.V290.CodeNameType</para>
+        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Codes.V290.CodeNameType</para>
         /// </summary>
         public string NameTypeCode { get; set; }
 
         /// <summary>
         /// XPN.8 - Name Representation Code.
-        /// <para>Suggested: 0465 Name/Address Representation -&gt; ClearHl7.Fhir.Codes.V290.CodeNameAddressRepresentation</para>
+        /// <para>Suggested: 0465 Name/Address Representation -&gt; ClearHl7.Codes.V290.CodeNameAddressRepresentation</para>
         /// </summary>
         public string NameRepresentationCode { get; set; }
 
@@ -69,7 +69,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// XPN.11 - Name Assembly Order.
-        /// <para>Suggested: 0444 Name Assembly Order -&gt; ClearHl7.Fhir.Codes.V290.CodeNameAssemblyOrder</para>
+        /// <para>Suggested: 0444 Name Assembly Order -&gt; ClearHl7.Codes.V290.CodeNameAssemblyOrder</para>
         /// </summary>
         public string NameAssemblyOrder { get; set; }
 

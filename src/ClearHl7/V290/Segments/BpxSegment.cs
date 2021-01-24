@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment BPX - Blood Product Dispense Status.
@@ -28,13 +28,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// BPX.2 - BP Dispense Status.
-        /// <para>Suggested: 0510 Blood Product Dispense Status -&gt; ClearHl7.Fhir.Codes.V290.CodeBloodProductDispenseStatus</para>
+        /// <para>Suggested: 0510 Blood Product Dispense Status -&gt; ClearHl7.Codes.V290.CodeBloodProductDispenseStatus</para>
         /// </summary>
         public CodedWithExceptions BpDispenseStatus { get; set; }
 
         /// <summary>
         /// BPX.3 - BP Status.
-        /// <para>Suggested: 0511 BP Observation Status Codes Interpretation -&gt; ClearHl7.Fhir.Codes.V290.CodeBpObservationStatusCodesInterpretation</para>
+        /// <para>Suggested: 0511 BP Observation Status Codes Interpretation -&gt; ClearHl7.Codes.V290.CodeBpObservationStatusCodesInterpretation</para>
         /// </summary>
         public string BpStatus { get; set; }
 

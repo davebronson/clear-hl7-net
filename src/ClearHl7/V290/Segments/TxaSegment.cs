@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment TXA - Transcription Document Header.
@@ -28,13 +28,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// TXA.2 - Document Type.
-        /// <para>Suggested: 0270 Document Type -&gt; ClearHl7.Fhir.Codes.V290.CodeDocumentType</para>
+        /// <para>Suggested: 0270 Document Type -&gt; ClearHl7.Codes.V290.CodeDocumentType</para>
         /// </summary>
         public CodedWithExceptions DocumentType { get; set; }
 
         /// <summary>
         /// TXA.3 - Document Content Presentation.
-        /// <para>Suggested: 0191 Type Of Referenced Data -&gt; ClearHl7.Fhir.Codes.V290.CodeTypeOfReferencedData</para>
+        /// <para>Suggested: 0191 Type Of Referenced Data -&gt; ClearHl7.Codes.V290.CodeTypeOfReferencedData</para>
         /// </summary>
         public string DocumentContentPresentation { get; set; }
 
@@ -105,25 +105,25 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// TXA.17 - Document Completion Status.
-        /// <para>Suggested: 0271 Document Completion Status -&gt; ClearHl7.Fhir.Codes.V290.CodeDocumentCompletionStatus</para>
+        /// <para>Suggested: 0271 Document Completion Status -&gt; ClearHl7.Codes.V290.CodeDocumentCompletionStatus</para>
         /// </summary>
         public string DocumentCompletionStatus { get; set; }
 
         /// <summary>
         /// TXA.18 - Document Confidentiality Status.
-        /// <para>Suggested: 0272 Document Confidentiality Status -&gt; ClearHl7.Fhir.Codes.V290.CodeDocumentConfidentialityStatus</para>
+        /// <para>Suggested: 0272 Document Confidentiality Status -&gt; ClearHl7.Codes.V290.CodeDocumentConfidentialityStatus</para>
         /// </summary>
         public string DocumentConfidentialityStatus { get; set; }
 
         /// <summary>
         /// TXA.19 - Document Availability Status.
-        /// <para>Suggested: 0273 Document Availability Status -&gt; ClearHl7.Fhir.Codes.V290.CodeDocumentAvailabilityStatus</para>
+        /// <para>Suggested: 0273 Document Availability Status -&gt; ClearHl7.Codes.V290.CodeDocumentAvailabilityStatus</para>
         /// </summary>
         public string DocumentAvailabilityStatus { get; set; }
 
         /// <summary>
         /// TXA.20 - Document Storage Status.
-        /// <para>Suggested: 0275 Document Storage Status -&gt; ClearHl7.Fhir.Codes.V290.CodeDocumentStorageStatus</para>
+        /// <para>Suggested: 0275 Document Storage Status -&gt; ClearHl7.Codes.V290.CodeDocumentStorageStatus</para>
         /// </summary>
         public string DocumentStorageStatus { get; set; }
 

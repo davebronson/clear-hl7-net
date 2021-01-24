@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V281.Segments
+namespace ClearHl7.V281.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment RDT - Table Row Data.

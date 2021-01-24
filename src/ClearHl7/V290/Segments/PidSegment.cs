@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment PID - Patient Identification.
@@ -43,7 +43,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PID.5 - Patient Name.
-        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Fhir.Codes.V290.CodeNameType</para>
+        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Codes.V290.CodeNameType</para>
         /// </summary>
         public IEnumerable<ExtendedPersonName> PatientName { get; set; }
 
@@ -59,7 +59,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PID.8 - Administrative Sex.
-        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Fhir.Codes.V290.CodeAdministrativeSex</para>
+        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Codes.V290.CodeAdministrativeSex</para>
         /// </summary>
         public CodedWithExceptions AdministrativeSex { get; set; }
 
@@ -70,7 +70,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PID.10 - Race.
-        /// <para>Suggested: 0005 Race -&gt; ClearHl7.Fhir.Codes.V290.CodeRace</para>
+        /// <para>Suggested: 0005 Race -&gt; ClearHl7.Codes.V290.CodeRace</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> Race { get; set; }
 
@@ -102,19 +102,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PID.16 - Marital Status.
-        /// <para>Suggested: 0002 Marital Status -&gt; ClearHl7.Fhir.Codes.V290.CodeMaritalStatus</para>
+        /// <para>Suggested: 0002 Marital Status -&gt; ClearHl7.Codes.V290.CodeMaritalStatus</para>
         /// </summary>
         public CodedWithExceptions MaritalStatus { get; set; }
 
         /// <summary>
         /// PID.17 - Religion.
-        /// <para>Suggested: 0006 Religion -&gt; ClearHl7.Fhir.Codes.V290.CodeReligion</para>
+        /// <para>Suggested: 0006 Religion -&gt; ClearHl7.Codes.V290.CodeReligion</para>
         /// </summary>
         public CodedWithExceptions Religion { get; set; }
 
         /// <summary>
         /// PID.18 - Patient Account Number.
-        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Fhir.Codes.V290.CodeCheckDigitScheme</para>
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Codes.V290.CodeCheckDigitScheme</para>
         /// </summary>
         public ExtendedCompositeIdWithCheckDigit PatientAccountNumber { get; set; }
 
@@ -130,13 +130,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PID.21 - Mother's Identifier.
-        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Fhir.Codes.V290.CodeCheckDigitScheme</para>
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Codes.V290.CodeCheckDigitScheme</para>
         /// </summary>
         public IEnumerable<ExtendedCompositeIdWithCheckDigit> MothersIdentifier { get; set; }
 
         /// <summary>
         /// PID.22 - Ethnic Group.
-        /// <para>Suggested: 0189 Ethnic Group -&gt; ClearHl7.Fhir.Codes.V290.CodeEthnicGroup</para>
+        /// <para>Suggested: 0189 Ethnic Group -&gt; ClearHl7.Codes.V290.CodeEthnicGroup</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> EthnicGroup { get; set; }
 
@@ -147,7 +147,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PID.24 - Multiple Birth Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string MultipleBirthIndicator { get; set; }
 
@@ -181,19 +181,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PID.30 - Patient Death Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string PatientDeathIndicator { get; set; }
 
         /// <summary>
         /// PID.31 - Identity Unknown Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string IdentityUnknownIndicator { get; set; }
 
         /// <summary>
         /// PID.32 - Identity Reliability Code.
-        /// <para>Suggested: 0445 Identity Reliability Code -&gt; ClearHl7.Fhir.Codes.V290.CodeIdentityReliabilityCode</para>
+        /// <para>Suggested: 0445 Identity Reliability Code -&gt; ClearHl7.Codes.V290.CodeIdentityReliabilityCode</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> IdentityReliabilityCode { get; set; }
 
@@ -225,7 +225,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PID.38 - Production Class Code.
-        /// <para>Suggested: 0429 Production Class Code -&gt; ClearHl7.Fhir.Codes.V290.CodeProductionClassCode</para>
+        /// <para>Suggested: 0429 Production Class Code -&gt; ClearHl7.Codes.V290.CodeProductionClassCode</para>
         /// </summary>
         public CodedWithExceptions ProductionClassCode { get; set; }
 

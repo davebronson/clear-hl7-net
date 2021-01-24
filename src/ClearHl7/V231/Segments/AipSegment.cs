@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V231.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V231.Types;
 
-namespace ClearHl7.Fhir.V231.Segments
+namespace ClearHl7.V231.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment AIP - Appointment Information - Personnel Resource.

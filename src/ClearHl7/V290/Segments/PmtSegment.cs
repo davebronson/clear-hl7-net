@@ -1,8 +1,8 @@
 ﻿using System;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment PMT - Payment Information.
@@ -36,7 +36,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PMT.4 - Payment Method.
-        /// <para>Suggested: 0570 Payment Method Code -&gt; ClearHl7.Fhir.Codes.V290.CodePaymentMethodCode</para>
+        /// <para>Suggested: 0570 Payment Method Code -&gt; ClearHl7.Codes.V290.CodePaymentMethodCode</para>
         /// </summary>
         public CodedWithExceptions PaymentMethod { get; set; }
 

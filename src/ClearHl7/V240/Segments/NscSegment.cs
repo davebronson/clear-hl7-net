@@ -1,7 +1,7 @@
-﻿using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V240.Types;
+﻿using ClearHl7.Helpers;
+using ClearHl7.V240.Types;
 
-namespace ClearHl7.Fhir.V240.Segments
+namespace ClearHl7.V240.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment NSC - Application Status Change.

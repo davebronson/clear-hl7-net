@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment OBX - Observation Result.
@@ -28,7 +28,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBX.2 - Value Type.
-        /// <para>Suggested: 0125 Value Type -&gt; ClearHl7.Fhir.Codes.V290.CodeValueType</para>
+        /// <para>Suggested: 0125 Value Type -&gt; ClearHl7.Codes.V290.CodeValueType</para>
         /// </summary>
         public string ValueType { get; set; }
 
@@ -72,13 +72,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBX.10 - Nature of Abnormal Test.
-        /// <para>Suggested: 0080 Nature Of Abnormal Testing -&gt; ClearHl7.Fhir.Codes.V290.CodeNatureOfAbnormalTesting</para>
+        /// <para>Suggested: 0080 Nature Of Abnormal Testing -&gt; ClearHl7.Codes.V290.CodeNatureOfAbnormalTesting</para>
         /// </summary>
         public IEnumerable<string> NatureOfAbnormalTest { get; set; }
 
         /// <summary>
         /// OBX.11 - Observation Result Status.
-        /// <para>Suggested: 0085 Observation Result Status Codes Interpretation -&gt; ClearHl7.Fhir.Codes.V290.CodeObservationResultStatusCodesInterpretation</para>
+        /// <para>Suggested: 0085 Observation Result Status Codes Interpretation -&gt; ClearHl7.Codes.V290.CodeObservationResultStatusCodesInterpretation</para>
         /// </summary>
         public string ObservationResultStatus { get; set; }
 
@@ -126,7 +126,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBX.20 - Observation Site.
-        /// <para>Suggested: 0163 Body Site -&gt; ClearHl7.Fhir.Codes.V290.CodeBodySite</para>
+        /// <para>Suggested: 0163 Body Site -&gt; ClearHl7.Codes.V290.CodeBodySite</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ObservationSite { get; set; }
 
@@ -137,7 +137,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBX.22 - Mood Code.
-        /// <para>Suggested: 0725 Mood Codes -&gt; ClearHl7.Fhir.Codes.V290.CodeMoodCodes</para>
+        /// <para>Suggested: 0725 Mood Codes -&gt; ClearHl7.Codes.V290.CodeMoodCodes</para>
         /// </summary>
         public CodedWithNoExceptions MoodCode { get; set; }
 
@@ -158,13 +158,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBX.26 - Patient Results Release Category.
-        /// <para>Suggested: 0909 Patient Results Release Categorization Scheme -&gt; ClearHl7.Fhir.Codes.V290.CodePatientResultsReleaseCategorizationScheme</para>
+        /// <para>Suggested: 0909 Patient Results Release Categorization Scheme -&gt; ClearHl7.Codes.V290.CodePatientResultsReleaseCategorizationScheme</para>
         /// </summary>
         public string PatientResultsReleaseCategory { get; set; }
 
         /// <summary>
         /// OBX.27 - Root Cause.
-        /// <para>Suggested: 0914 Root Cause -&gt; ClearHl7.Fhir.Codes.V290.CodeRootCause</para>
+        /// <para>Suggested: 0914 Root Cause -&gt; ClearHl7.Codes.V290.CodeRootCause</para>
         /// </summary>
         public CodedWithExceptions RootCause { get; set; }
 

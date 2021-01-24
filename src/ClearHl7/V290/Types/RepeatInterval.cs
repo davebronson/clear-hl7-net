@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 RI - Repeat Interval.
@@ -14,7 +14,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// RI.1 - Repeat Pattern.
-        /// <para>Suggested: 0335 Repeat Pattern -&gt; ClearHl7.Fhir.Codes.V290.CodeRepeatPattern</para>
+        /// <para>Suggested: 0335 Repeat Pattern -&gt; ClearHl7.Codes.V290.CodeRepeatPattern</para>
         /// </summary>
         public CodedWithExceptions RepeatPattern { get; set; }
 

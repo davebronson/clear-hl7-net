@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment MSA - Message Acknowledgment.
@@ -19,7 +19,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// MSA.1 - Acknowledgment Code.
-        /// <para>Suggested: 0008 Acknowledgment Code -&gt; ClearHl7.Fhir.Codes.V290.CodeAcknowledgmentCode</para>
+        /// <para>Suggested: 0008 Acknowledgment Code -&gt; ClearHl7.Codes.V290.CodeAcknowledgmentCode</para>
         /// </summary>
         public string AcknowledgmentCode { get; set; }
 
@@ -55,7 +55,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// MSA.8 - Message Waiting Priority.
-        /// <para>Suggested: 0520 Message Waiting Priority -&gt; ClearHl7.Fhir.Codes.V290.CodeMessageWaitingPriority</para>
+        /// <para>Suggested: 0520 Message Waiting Priority -&gt; ClearHl7.Codes.V290.CodeMessageWaitingPriority</para>
         /// </summary>
         public string MessageWaitingPriority { get; set; }
         

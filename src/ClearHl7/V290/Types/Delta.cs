@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 DLT - Delta.
@@ -24,7 +24,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// DLT.3 - Change Computation.
-        /// <para>Suggested: 0523 Computation Type -&gt; ClearHl7.Fhir.Codes.V290.CodeComputationType</para>
+        /// <para>Suggested: 0523 Computation Type -&gt; ClearHl7.Codes.V290.CodeComputationType</para>
         /// </summary>
         public string ChangeComputation { get; set; }
 

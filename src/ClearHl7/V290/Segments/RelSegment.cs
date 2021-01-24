@@ -1,7 +1,7 @@
-﻿using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+﻿using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment REL - Clinical Relationship Segment.
@@ -76,7 +76,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// REL.12 - Negation Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string NegationIndicator { get; set; }
 
@@ -97,19 +97,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// REL.16 - Separability Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string SeparabilityIndicator { get; set; }
 
         /// <summary>
         /// REL.17 - Source Information Instance Object Type.
-        /// <para>Suggested: 0203 Identifier Type -&gt; ClearHl7.Fhir.Codes.V290.CodeIdentifierType</para>
+        /// <para>Suggested: 0203 Identifier Type -&gt; ClearHl7.Codes.V290.CodeIdentifierType</para>
         /// </summary>
         public string SourceInformationInstanceObjectType { get; set; }
 
         /// <summary>
         /// REL.18 - Target Information Instance Object Type.
-        /// <para>Suggested: 0203 Identifier Type -&gt; ClearHl7.Fhir.Codes.V290.CodeIdentifierType</para>
+        /// <para>Suggested: 0203 Identifier Type -&gt; ClearHl7.Codes.V290.CodeIdentifierType</para>
         /// </summary>
         public string TargetInformationInstanceObjectType { get; set; }
 

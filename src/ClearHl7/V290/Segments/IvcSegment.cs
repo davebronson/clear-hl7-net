@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment IVC - Invoice Segment.
@@ -38,19 +38,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// IVC.4 - Invoice Control.
-        /// <para>Suggested: 0553 Invoice Control Code -&gt; ClearHl7.Fhir.Codes.V290.CodeInvoiceControlCode</para>
+        /// <para>Suggested: 0553 Invoice Control Code -&gt; ClearHl7.Codes.V290.CodeInvoiceControlCode</para>
         /// </summary>
         public CodedWithExceptions InvoiceControl { get; set; }
 
         /// <summary>
         /// IVC.5 - Invoice Reason.
-        /// <para>Suggested: 0554 Invoice Reason Codes -&gt; ClearHl7.Fhir.Codes.V290.CodeInvoiceReasonCodes</para>
+        /// <para>Suggested: 0554 Invoice Reason Codes -&gt; ClearHl7.Codes.V290.CodeInvoiceReasonCodes</para>
         /// </summary>
         public CodedWithExceptions InvoiceReason { get; set; }
 
         /// <summary>
         /// IVC.6 - Invoice Type.
-        /// <para>Suggested: 0555 Invoice Type -&gt; ClearHl7.Fhir.Codes.V290.CodeInvoiceType</para>
+        /// <para>Suggested: 0555 Invoice Type -&gt; ClearHl7.Codes.V290.CodeInvoiceType</para>
         /// </summary>
         public CodedWithExceptions InvoiceType { get; set; }
 
@@ -86,7 +86,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// IVC.13 - Last Invoice Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string LastInvoiceIndicator { get; set; }
 
@@ -147,7 +147,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// IVC.25 - Benefit Group.
-        /// <para>Suggested: 0556 Benefit Group -&gt; ClearHl7.Fhir.Codes.V290.CodeBenefitGroup</para>
+        /// <para>Suggested: 0556 Benefit Group -&gt; ClearHl7.Codes.V290.CodeBenefitGroup</para>
         /// </summary>
         public CodedWithExceptions BenefitGroup { get; set; }
 
@@ -163,13 +163,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// IVC.28 - Provider Tax Status.
-        /// <para>Suggested: 0572 Tax Status -&gt; ClearHl7.Fhir.Codes.V290.CodeTaxStatus</para>
+        /// <para>Suggested: 0572 Tax Status -&gt; ClearHl7.Codes.V290.CodeTaxStatus</para>
         /// </summary>
         public CodedWithExceptions ProviderTaxStatus { get; set; }
 
         /// <summary>
         /// IVC.29 - Payer Tax Status.
-        /// <para>Suggested: 0572 Tax Status -&gt; ClearHl7.Fhir.Codes.V290.CodeTaxStatus</para>
+        /// <para>Suggested: 0572 Tax Status -&gt; ClearHl7.Codes.V290.CodeTaxStatus</para>
         /// </summary>
         public CodedWithExceptions PayerTaxStatus { get; set; }
 

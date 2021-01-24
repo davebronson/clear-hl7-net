@@ -1,4 +1,4 @@
-﻿namespace ClearHl7.Fhir.Codes.V251
+﻿namespace ClearHl7.Codes.V251
 {
     /// <summary>
     /// HL7 Version 2 Table 0432 - Admission Level Of Care Code.

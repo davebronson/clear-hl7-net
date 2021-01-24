@@ -1,7 +1,7 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 using Xunit;
 
-namespace ClearHl7.Fhir.Tests.HelpersTests
+namespace ClearHl7.Tests.HelpersTests
 {
     public class StringHelperTests
     {

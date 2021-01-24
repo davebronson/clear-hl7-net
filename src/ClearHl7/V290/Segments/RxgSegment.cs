@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment RXG - Pharmacy Treatment Give.
@@ -72,7 +72,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXG.10 - Substitution Status.
-        /// <para>Suggested: 0167 Substitution Status -&gt; ClearHl7.Fhir.Codes.V290.CodeSubstitutionStatus</para>
+        /// <para>Suggested: 0167 Substitution Status -&gt; ClearHl7.Codes.V290.CodeSubstitutionStatus</para>
         /// </summary>
         public string SubstitutionStatus { get; set; }
 
@@ -83,7 +83,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXG.12 - Needs Human Review.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string NeedsHumanReview { get; set; }
 
@@ -160,7 +160,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXG.26 - Pharmacy Order Type.
-        /// <para>Suggested: 0480 Pharmacy Order Types -&gt; ClearHl7.Fhir.Codes.V290.CodePharmacyOrderTypes</para>
+        /// <para>Suggested: 0480 Pharmacy Order Types -&gt; ClearHl7.Codes.V290.CodePharmacyOrderTypes</para>
         /// </summary>
         public string PharmacyOrderType { get; set; }
 

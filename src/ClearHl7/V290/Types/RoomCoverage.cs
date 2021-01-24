@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 RMC - Room Coverage.
@@ -14,13 +14,13 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// RMC.1 - Room Type.
-        /// <para>Suggested: 0145 Room Type -&gt; ClearHl7.Fhir.Codes.V290.CodeRoomType</para>
+        /// <para>Suggested: 0145 Room Type -&gt; ClearHl7.Codes.V290.CodeRoomType</para>
         /// </summary>
         public CodedWithExceptions RoomType { get; set; }
 
         /// <summary>
         /// RMC.2 - Amount Type.
-        /// <para>Suggested: 0146 Amount Type -&gt; ClearHl7.Fhir.Codes.V290.CodeAmountType</para>
+        /// <para>Suggested: 0146 Amount Type -&gt; ClearHl7.Codes.V290.CodeAmountType</para>
         /// </summary>
         public CodedWithExceptions AmountType { get; set; }
 

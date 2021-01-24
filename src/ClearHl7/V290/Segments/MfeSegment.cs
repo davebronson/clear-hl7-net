@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment MFE - Master File Entry.
@@ -22,7 +22,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// MFE.1 - Record-Level Event Code.
-        /// <para>Suggested: 0180 Masterfile Action Code -&gt; ClearHl7.Fhir.Codes.V290.CodeMasterfileActionCode</para>
+        /// <para>Suggested: 0180 Masterfile Action Code -&gt; ClearHl7.Codes.V290.CodeMasterfileActionCode</para>
         /// </summary>
         public string RecordLevelEventCode { get; set; }
 
@@ -44,7 +44,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// MFE.5 - Primary Key Value Type.
-        /// <para>Suggested: 0355 Primary Key Value Type -&gt; ClearHl7.Fhir.Codes.V290.CodePrimaryKeyValueType</para>
+        /// <para>Suggested: 0355 Primary Key Value Type -&gt; ClearHl7.Codes.V290.CodePrimaryKeyValueType</para>
         /// </summary>
         public IEnumerable<string> PrimaryKeyValueType { get; set; }
 

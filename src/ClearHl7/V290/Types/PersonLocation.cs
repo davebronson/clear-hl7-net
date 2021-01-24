@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 PL - Person Location.
@@ -43,7 +43,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// PL.6 - Person Location Type.
-        /// <para>Suggested: 0305 Person Location Type -&gt; ClearHl7.Fhir.Codes.V290.CodePersonLocationType</para>
+        /// <para>Suggested: 0305 Person Location Type -&gt; ClearHl7.Codes.V290.CodePersonLocationType</para>
         /// </summary>
         public string PersonLocationType { get; set; }
 
@@ -71,7 +71,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// PL.11 - Assigning Authority for Location.
-        /// <para>Suggested: 0363 Assigning Authority -&gt; ClearHl7.Fhir.Codes.V290.CodeAssigningAuthority</para>
+        /// <para>Suggested: 0363 Assigning Authority -&gt; ClearHl7.Codes.V290.CodeAssigningAuthority</para>
         /// </summary>
         public HierarchicDesignator AssigningAuthorityForLocation { get; set; }
 

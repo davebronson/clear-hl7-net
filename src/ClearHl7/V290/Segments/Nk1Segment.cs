@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment NK1 - Next Of Kin   Associated Parties.
@@ -28,13 +28,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// NK1.2 - Name.
-        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Fhir.Codes.V290.CodeNameType</para>
+        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Codes.V290.CodeNameType</para>
         /// </summary>
         public IEnumerable<ExtendedPersonName> Name { get; set; }
 
         /// <summary>
         /// NK1.3 - Relationship.
-        /// <para>Suggested: 0063 Relationship -&gt; ClearHl7.Fhir.Codes.V290.CodeRelationship</para>
+        /// <para>Suggested: 0063 Relationship -&gt; ClearHl7.Codes.V290.CodeRelationship</para>
         /// </summary>
         public CodedWithExceptions Relationship { get; set; }
 
@@ -55,7 +55,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// NK1.7 - Contact Role.
-        /// <para>Suggested: 0131 Contact Role -&gt; ClearHl7.Fhir.Codes.V290.CodeContactRole</para>
+        /// <para>Suggested: 0131 Contact Role -&gt; ClearHl7.Codes.V290.CodeContactRole</para>
         /// </summary>
         public CodedWithExceptions ContactRole { get; set; }
 
@@ -91,13 +91,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// NK1.14 - Marital Status.
-        /// <para>Suggested: 0002 Marital Status -&gt; ClearHl7.Fhir.Codes.V290.CodeMaritalStatus</para>
+        /// <para>Suggested: 0002 Marital Status -&gt; ClearHl7.Codes.V290.CodeMaritalStatus</para>
         /// </summary>
         public CodedWithExceptions MaritalStatus { get; set; }
 
         /// <summary>
         /// NK1.15 - Administrative Sex.
-        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Fhir.Codes.V290.CodeAdministrativeSex</para>
+        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Codes.V290.CodeAdministrativeSex</para>
         /// </summary>
         public CodedWithExceptions AdministrativeSex { get; set; }
 
@@ -108,13 +108,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// NK1.17 - Living Dependency.
-        /// <para>Suggested: 0223 Living Dependency -&gt; ClearHl7.Fhir.Codes.V290.CodeLivingDependency</para>
+        /// <para>Suggested: 0223 Living Dependency -&gt; ClearHl7.Codes.V290.CodeLivingDependency</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> LivingDependency { get; set; }
 
         /// <summary>
         /// NK1.18 - Ambulatory Status.
-        /// <para>Suggested: 0009 Ambulatory Status -&gt; ClearHl7.Fhir.Codes.V290.CodeAmbulatoryStatus</para>
+        /// <para>Suggested: 0009 Ambulatory Status -&gt; ClearHl7.Codes.V290.CodeAmbulatoryStatus</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> AmbulatoryStatus { get; set; }
 
@@ -132,31 +132,31 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// NK1.21 - Living Arrangement.
-        /// <para>Suggested: 0220 Living Arrangement -&gt; ClearHl7.Fhir.Codes.V290.CodeLivingArrangement</para>
+        /// <para>Suggested: 0220 Living Arrangement -&gt; ClearHl7.Codes.V290.CodeLivingArrangement</para>
         /// </summary>
         public CodedWithExceptions LivingArrangement { get; set; }
 
         /// <summary>
         /// NK1.22 - Publicity Code.
-        /// <para>Suggested: 0215 Publicity Code -&gt; ClearHl7.Fhir.Codes.V290.CodePublicityCode</para>
+        /// <para>Suggested: 0215 Publicity Code -&gt; ClearHl7.Codes.V290.CodePublicityCode</para>
         /// </summary>
         public CodedWithExceptions PublicityCode { get; set; }
 
         /// <summary>
         /// NK1.23 - Protection Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string ProtectionIndicator { get; set; }
 
         /// <summary>
         /// NK1.24 - Student Indicator.
-        /// <para>Suggested: 0231 Student Status -&gt; ClearHl7.Fhir.Codes.V290.CodeStudentStatus</para>
+        /// <para>Suggested: 0231 Student Status -&gt; ClearHl7.Codes.V290.CodeStudentStatus</para>
         /// </summary>
         public CodedWithExceptions StudentIndicator { get; set; }
 
         /// <summary>
         /// NK1.25 - Religion.
-        /// <para>Suggested: 0006 Religion -&gt; ClearHl7.Fhir.Codes.V290.CodeReligion</para>
+        /// <para>Suggested: 0006 Religion -&gt; ClearHl7.Codes.V290.CodeReligion</para>
         /// </summary>
         public CodedWithExceptions Religion { get; set; }
 
@@ -173,7 +173,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// NK1.28 - Ethnic Group.
-        /// <para>Suggested: 0189 Ethnic Group -&gt; ClearHl7.Fhir.Codes.V290.CodeEthnicGroup</para>
+        /// <para>Suggested: 0189 Ethnic Group -&gt; ClearHl7.Codes.V290.CodeEthnicGroup</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> EthnicGroup { get; set; }
 
@@ -205,13 +205,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// NK1.34 - Job Status.
-        /// <para>Suggested: 0311 Job Status -&gt; ClearHl7.Fhir.Codes.V290.CodeJobStatus</para>
+        /// <para>Suggested: 0311 Job Status -&gt; ClearHl7.Codes.V290.CodeJobStatus</para>
         /// </summary>
         public CodedWithExceptions JobStatus { get; set; }
 
         /// <summary>
         /// NK1.35 - Race.
-        /// <para>Suggested: 0005 Race -&gt; ClearHl7.Fhir.Codes.V290.CodeRace</para>
+        /// <para>Suggested: 0005 Race -&gt; ClearHl7.Codes.V290.CodeRace</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> Race { get; set; }
 

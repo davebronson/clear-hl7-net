@@ -1,4 +1,4 @@
-﻿namespace ClearHl7.Fhir.Codes.V280
+﻿namespace ClearHl7.Codes.V280
 {
     /// <summary>
     /// HL7 Version 2 Table 0181 - MFN Record-Level Error Return.

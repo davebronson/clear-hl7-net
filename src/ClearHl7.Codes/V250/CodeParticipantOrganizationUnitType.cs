@@ -1,4 +1,4 @@
-﻿namespace ClearHl7.Fhir.Codes.V250
+﻿namespace ClearHl7.Codes.V250
 {
     /// <summary>
     /// HL7 Version 2 Table 0406 - Participant Organization Unit Type.

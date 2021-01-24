@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment EQU - Equipment Detail.
@@ -33,19 +33,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// EQU.3 - Equipment State.
-        /// <para>Suggested: 0365 Equipment State -&gt; ClearHl7.Fhir.Codes.V290.CodeEquipmentState</para>
+        /// <para>Suggested: 0365 Equipment State -&gt; ClearHl7.Codes.V290.CodeEquipmentState</para>
         /// </summary>
         public CodedWithExceptions EquipmentState { get; set; }
 
         /// <summary>
         /// EQU.4 - Local/Remote Control State.
-        /// <para>Suggested: 0366 Local/Remote Control State -&gt; ClearHl7.Fhir.Codes.V290.CodeLocalRemoteControlState</para>
+        /// <para>Suggested: 0366 Local/Remote Control State -&gt; ClearHl7.Codes.V290.CodeLocalRemoteControlState</para>
         /// </summary>
         public CodedWithExceptions LocalRemoteControlState { get; set; }
 
         /// <summary>
         /// EQU.5 - Alert Level.
-        /// <para>Suggested: 0367 Alert Level -&gt; ClearHl7.Fhir.Codes.V290.CodeAlertLevel</para>
+        /// <para>Suggested: 0367 Alert Level -&gt; ClearHl7.Codes.V290.CodeAlertLevel</para>
         /// </summary>
         public CodedWithExceptions AlertLevel { get; set; }
 

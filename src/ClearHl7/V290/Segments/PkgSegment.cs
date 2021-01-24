@@ -1,8 +1,8 @@
 ﻿using System;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment PKG - Item Packaging.
@@ -26,13 +26,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PKG.2 - Packaging Units.
-        /// <para>Suggested: 0818 Package -&gt; ClearHl7.Fhir.Codes.V290.CodePackage</para>
+        /// <para>Suggested: 0818 Package -&gt; ClearHl7.Codes.V290.CodePackage</para>
         /// </summary>
         public CodedWithExceptions PackagingUnits { get; set; }
 
         /// <summary>
         /// PKG.3 - Default Order Unit Of Measure Indicator.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions DefaultOrderUnitOfMeasureIndicator { get; set; }
 

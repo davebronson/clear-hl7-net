@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment DSC - Continuation Pointer.
@@ -24,7 +24,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DSC.2 - Continuation Style.
-        /// <para>Suggested: 0398 Continuation Style Code -&gt; ClearHl7.Fhir.Codes.V290.CodeContinuationStyleCode</para>
+        /// <para>Suggested: 0398 Continuation Style Code -&gt; ClearHl7.Codes.V290.CodeContinuationStyleCode</para>
         /// </summary>
         public string ContinuationStyle { get; set; }
         

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment OMC - Supporting Clinical Information.
@@ -27,7 +27,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OMC.2 - Segment Action Code.
-        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V290.CodeSegmentActionCode</para>
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Codes.V290.CodeSegmentActionCode</para>
         /// </summary>
         public string SegmentActionCode { get; set; }
 
@@ -56,7 +56,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OMC.7 - Answer Required.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string AnswerRequired { get; set; }
 
@@ -67,13 +67,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OMC.9 - Type of Answer.
-        /// <para>Suggested: 0125 Value Type -&gt; ClearHl7.Fhir.Codes.V290.CodeValueType</para>
+        /// <para>Suggested: 0125 Value Type -&gt; ClearHl7.Codes.V290.CodeValueType</para>
         /// </summary>
         public string TypeOfAnswer { get; set; }
 
         /// <summary>
         /// OMC.10 - Multiple Answers Allowed.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string MultipleAnswersAllowed { get; set; }
 

@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 AD - Address.
@@ -45,7 +45,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// AD.7 - Address Type.
-        /// <para>Suggested: 0190 Address Type -&gt; ClearHl7.Fhir.Codes.V290.CodeAddressType</para>
+        /// <para>Suggested: 0190 Address Type -&gt; ClearHl7.Codes.V290.CodeAddressType</para>
         /// </summary>
         public string AddressType { get; set; }
 

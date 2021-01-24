@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment OM4 - Observations That Require Specimens.
@@ -27,7 +27,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM4.2 - Derived Specimen.
-        /// <para>Suggested: 0170 Derived Specimen -&gt; ClearHl7.Fhir.Codes.V290.CodeDerivedSpecimen</para>
+        /// <para>Suggested: 0170 Derived Specimen -&gt; ClearHl7.Codes.V290.CodeDerivedSpecimen</para>
         /// </summary>
         public string DerivedSpecimen { get; set; }
 
@@ -55,7 +55,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM4.7 - Additive.
-        /// <para>Suggested: 0371 Additive/Preservative -&gt; ClearHl7.Fhir.Codes.V290.CodeAdditivePreservative</para>
+        /// <para>Suggested: 0371 Additive/Preservative -&gt; ClearHl7.Codes.V290.CodeAdditivePreservative</para>
         /// </summary>
         public CodedWithExceptions Additive { get; set; }
 
@@ -86,7 +86,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM4.13 - Specimen Priorities.
-        /// <para>Suggested: 0027 Priority -&gt; ClearHl7.Fhir.Codes.V290.CodePriority</para>
+        /// <para>Suggested: 0027 Priority -&gt; ClearHl7.Codes.V290.CodePriority</para>
         /// </summary>
         public IEnumerable<string> SpecimenPriorities { get; set; }
 
@@ -97,13 +97,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM4.15 - Specimen Handling Code.
-        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Fhir.Codes.V290.CodeSpecialHandlingCode</para>
+        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Codes.V290.CodeSpecialHandlingCode</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> SpecimenHandlingCode { get; set; }
 
         /// <summary>
         /// OM4.16 - Specimen Preference.
-        /// <para>Suggested: 0920 Preferred Specimen/Attribute Status -&gt; ClearHl7.Fhir.Codes.V290.CodePreferredSpecimenAttributeStatus</para>
+        /// <para>Suggested: 0920 Preferred Specimen/Attribute Status -&gt; ClearHl7.Codes.V290.CodePreferredSpecimenAttributeStatus</para>
         /// </summary>
         public string SpecimenPreference { get; set; }
 

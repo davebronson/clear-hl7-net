@@ -1,7 +1,7 @@
-﻿using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+﻿using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment QAK - Query Acknowledgment.
@@ -25,7 +25,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// QAK.2 - Query Response Status.
-        /// <para>Suggested: 0208 Query Response Status -&gt; ClearHl7.Fhir.Codes.V290.CodeQueryResponseStatus</para>
+        /// <para>Suggested: 0208 Query Response Status -&gt; ClearHl7.Codes.V290.CodeQueryResponseStatus</para>
         /// </summary>
         public string QueryResponseStatus { get; set; }
 

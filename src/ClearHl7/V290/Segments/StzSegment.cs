@@ -1,7 +1,7 @@
-﻿using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+﻿using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment STZ - Sterilization Parameter.
@@ -20,13 +20,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// STZ.1 - Sterilization Type.
-        /// <para>Suggested: 0806 Sterilization Type -&gt; ClearHl7.Fhir.Codes.V290.CodeSterilizationType</para>
+        /// <para>Suggested: 0806 Sterilization Type -&gt; ClearHl7.Codes.V290.CodeSterilizationType</para>
         /// </summary>
         public CodedWithExceptions SterilizationType { get; set; }
 
         /// <summary>
         /// STZ.2 - Sterilization Cycle.
-        /// <para>Suggested: 0702 Cycle Type -&gt; ClearHl7.Fhir.Codes.V290.CodeCycleType</para>
+        /// <para>Suggested: 0702 Cycle Type -&gt; ClearHl7.Codes.V290.CodeCycleType</para>
         /// </summary>
         public CodedWithExceptions SterilizationCycle { get; set; }
 

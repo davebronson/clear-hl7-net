@@ -1,4 +1,4 @@
-﻿namespace ClearHl7.Fhir.Codes.V260
+﻿namespace ClearHl7.Codes.V260
 {
     /// <summary>
     /// HL7 Version 2 Table 0490 - Specimen Reject Reason.

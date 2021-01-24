@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V280.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V280.Types;
 
-namespace ClearHl7.Fhir.V280.Segments
+namespace ClearHl7.V280.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment QRI - Query Response Instance.

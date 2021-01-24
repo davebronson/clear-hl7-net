@@ -1,4 +1,4 @@
-﻿namespace ClearHl7.Fhir.Codes.V282
+﻿namespace ClearHl7.Codes.V282
 {
     /// <summary>
     /// HL7 Version 2 Table 0924 - Cumulative Dosage Limit UoM.

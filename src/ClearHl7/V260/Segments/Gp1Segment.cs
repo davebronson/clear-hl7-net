@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V260.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V260.Types;
 
-namespace ClearHl7.Fhir.V260.Segments
+namespace ClearHl7.V260.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment GP1 - Grouping Reimbursement - Visit.

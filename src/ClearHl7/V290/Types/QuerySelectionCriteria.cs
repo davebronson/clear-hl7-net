@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 QSC - Query Selection Criteria.
@@ -19,7 +19,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// QSC.2 - Relational Operator.
-        /// <para>Suggested: 0209 Relational Operator -&gt; ClearHl7.Fhir.Codes.V290.CodeRelationalOperator</para>
+        /// <para>Suggested: 0209 Relational Operator -&gt; ClearHl7.Codes.V290.CodeRelationalOperator</para>
         /// </summary>
         public string RelationalOperator { get; set; }
 
@@ -30,7 +30,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// QSC.4 - Relational Conjunction.
-        /// <para>Suggested: 0210 Relational Conjunction -&gt; ClearHl7.Fhir.Codes.V290.CodeRelationalConjunction</para>
+        /// <para>Suggested: 0210 Relational Conjunction -&gt; ClearHl7.Codes.V290.CodeRelationalConjunction</para>
         /// </summary>
         public string RelationalConjunction { get; set; }
 

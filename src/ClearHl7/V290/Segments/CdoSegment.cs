@@ -1,7 +1,7 @@
-﻿using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+﻿using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment CDO - Cumulative Dosage.
@@ -35,7 +35,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CDO.4 - Cumulative Dosage Limit Time Interval.
-        /// <para>Suggested: 0924 Cumulative Dosage Limit UoM -&gt; ClearHl7.Fhir.Codes.V290.CodeCumulativeDosageLimitUom</para>
+        /// <para>Suggested: 0924 Cumulative Dosage Limit UoM -&gt; ClearHl7.Codes.V290.CodeCumulativeDosageLimitUom</para>
         /// </summary>
         public CompositeQuantityWithUnits CumulativeDosageLimitTimeInterval { get; set; }
 

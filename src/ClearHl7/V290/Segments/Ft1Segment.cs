@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment FT1 - Financial Transaction.
@@ -48,7 +48,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// FT1.6 - Transaction Type.
-        /// <para>Suggested: 0017 Transaction Type -&gt; ClearHl7.Fhir.Codes.V290.CodeTransactionType</para>
+        /// <para>Suggested: 0017 Transaction Type -&gt; ClearHl7.Codes.V290.CodeTransactionType</para>
         /// </summary>
         public CodedWithExceptions TransactionType { get; set; }
 
@@ -163,7 +163,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// FT1.27 - Advanced Beneficiary Notice Code.
-        /// <para>Suggested: 0339 Advanced Beneficiary Notice Code -&gt; ClearHl7.Fhir.Codes.V290.CodeAdvancedBeneficiaryNoticeCode</para>
+        /// <para>Suggested: 0339 Advanced Beneficiary Notice Code -&gt; ClearHl7.Codes.V290.CodeAdvancedBeneficiaryNoticeCode</para>
         /// </summary>
         public CodedWithExceptions AdvancedBeneficiaryNoticeCode { get; set; }
 
@@ -236,7 +236,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// FT1.41 - Revenue Code.
-        /// <para>Suggested: 0456 Revenue Code -&gt; ClearHl7.Fhir.Codes.V290.CodeRevenueCode</para>
+        /// <para>Suggested: 0456 Revenue Code -&gt; ClearHl7.Codes.V290.CodeRevenueCode</para>
         /// </summary>
         public CodedWithExceptions RevenueCode { get; set; }
 

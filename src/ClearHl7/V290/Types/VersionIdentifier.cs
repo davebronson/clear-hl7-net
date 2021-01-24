@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 VID - Version Identifier.
@@ -14,7 +14,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// VID.1 - Version ID.
-        /// <para>Suggested: 0104 Version ID -&gt; ClearHl7.Fhir.Codes.V290.CodeVersionId</para>
+        /// <para>Suggested: 0104 Version ID -&gt; ClearHl7.Codes.V290.CodeVersionId</para>
         /// </summary>
         public string VersionId { get; set; }
 

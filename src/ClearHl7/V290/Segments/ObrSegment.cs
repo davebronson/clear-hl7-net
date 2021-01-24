@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment OBR - Observation Request.
@@ -73,7 +73,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBR.11 - Specimen Action Code.
-        /// <para>Suggested: 0065 Specimen Action Code -&gt; ClearHl7.Fhir.Codes.V290.CodeSpecimenActionCode</para>
+        /// <para>Suggested: 0065 Specimen Action Code -&gt; ClearHl7.Codes.V290.CodeSpecimenActionCode</para>
         /// </summary>
         public string SpecimenActionCode { get; set; }
 
@@ -85,7 +85,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBR.13 - Relevant Clinical Information.
-        /// <para>Suggested: 0916 Relevant Clinicial Information -&gt; ClearHl7.Fhir.Codes.V290.CodeRelevantClinicialInformation</para>
+        /// <para>Suggested: 0916 Relevant Clinicial Information -&gt; ClearHl7.Codes.V290.CodeRelevantClinicialInformation</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> RelevantClinicalInformation { get; set; }
 
@@ -141,13 +141,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBR.24 - Diagnostic Serv Sect ID.
-        /// <para>Suggested: 0074 Diagnostic Service Section ID -&gt; ClearHl7.Fhir.Codes.V290.CodeDiagnosticServiceSectionId</para>
+        /// <para>Suggested: 0074 Diagnostic Service Section ID -&gt; ClearHl7.Codes.V290.CodeDiagnosticServiceSectionId</para>
         /// </summary>
         public string DiagnosticServSectId { get; set; }
 
         /// <summary>
         /// OBR.25 - Result Status.
-        /// <para>Suggested: 0123 Result Status -&gt; ClearHl7.Fhir.Codes.V290.CodeResultStatus</para>
+        /// <para>Suggested: 0123 Result Status -&gt; ClearHl7.Codes.V290.CodeResultStatus</para>
         /// </summary>
         public string ResultStatus { get; set; }
 
@@ -173,7 +173,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBR.30 - Transportation Mode.
-        /// <para>Suggested: 0124 Transportation Mode -&gt; ClearHl7.Fhir.Codes.V290.CodeTransportationMode</para>
+        /// <para>Suggested: 0124 Transportation Mode -&gt; ClearHl7.Codes.V290.CodeTransportationMode</para>
         /// </summary>
         public string TransportationMode { get; set; }
 
@@ -233,13 +233,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBR.41 - Transport Arranged.
-        /// <para>Suggested: 0224 Transport Arranged -&gt; ClearHl7.Fhir.Codes.V290.CodeTransportArranged</para>
+        /// <para>Suggested: 0224 Transport Arranged -&gt; ClearHl7.Codes.V290.CodeTransportArranged</para>
         /// </summary>
         public string TransportArranged { get; set; }
 
         /// <summary>
         /// OBR.42 - Escort Required.
-        /// <para>Suggested: 0225 Escort Required -&gt; ClearHl7.Fhir.Codes.V290.CodeEscortRequired</para>
+        /// <para>Suggested: 0225 Escort Required -&gt; ClearHl7.Codes.V290.CodeEscortRequired</para>
         /// </summary>
         public string EscortRequired { get; set; }
 
@@ -263,13 +263,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBR.46 - Placer Supplemental Service Information.
-        /// <para>Suggested: 0411 Supplemental Service Information Values -&gt; ClearHl7.Fhir.Codes.V290.CodeSupplementalServiceInformationValues</para>
+        /// <para>Suggested: 0411 Supplemental Service Information Values -&gt; ClearHl7.Codes.V290.CodeSupplementalServiceInformationValues</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> PlacerSupplementalServiceInformation { get; set; }
 
         /// <summary>
         /// OBR.47 - Filler Supplemental Service Information.
-        /// <para>Suggested: 0411 Supplemental Service Information Values -&gt; ClearHl7.Fhir.Codes.V290.CodeSupplementalServiceInformationValues</para>
+        /// <para>Suggested: 0411 Supplemental Service Information Values -&gt; ClearHl7.Codes.V290.CodeSupplementalServiceInformationValues</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> FillerSupplementalServiceInformation { get; set; }
 
@@ -281,7 +281,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OBR.49 - Result Handling.
-        /// <para>Suggested: 0507 Observation Result Handling -&gt; ClearHl7.Fhir.Codes.V290.CodeObservationResultHandling</para>
+        /// <para>Suggested: 0507 Observation Result Handling -&gt; ClearHl7.Codes.V290.CodeObservationResultHandling</para>
         /// </summary>
         public CodedWithExceptions ResultHandling { get; set; }
 

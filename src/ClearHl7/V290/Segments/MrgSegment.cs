@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment MRG - Merge Patient Information.
@@ -22,7 +22,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// MRG.1 - Prior Patient Identifier List.
-        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Fhir.Codes.V290.CodeCheckDigitScheme</para>
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Codes.V290.CodeCheckDigitScheme</para>
         /// </summary>
         public IEnumerable<ExtendedCompositeIdWithCheckDigit> PriorPatientIdentifierList { get; set; }
 
@@ -33,7 +33,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// MRG.3 - Prior Patient Account Number.
-        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Fhir.Codes.V290.CodeCheckDigitScheme</para>
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Codes.V290.CodeCheckDigitScheme</para>
         /// </summary>
         public ExtendedCompositeIdWithCheckDigit PriorPatientAccountNumber { get; set; }
 
@@ -44,19 +44,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// MRG.5 - Prior Visit Number.
-        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Fhir.Codes.V290.CodeCheckDigitScheme</para>
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Codes.V290.CodeCheckDigitScheme</para>
         /// </summary>
         public ExtendedCompositeIdWithCheckDigit PriorVisitNumber { get; set; }
 
         /// <summary>
         /// MRG.6 - Prior Alternate Visit ID.
-        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Fhir.Codes.V290.CodeCheckDigitScheme</para>
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Codes.V290.CodeCheckDigitScheme</para>
         /// </summary>
         public IEnumerable<ExtendedCompositeIdWithCheckDigit> PriorAlternateVisitId { get; set; }
 
         /// <summary>
         /// MRG.7 - Prior Patient Name.
-        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Fhir.Codes.V290.CodeNameType</para>
+        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Codes.V290.CodeNameType</para>
         /// </summary>
         public IEnumerable<ExtendedPersonName> PriorPatientName { get; set; }
         

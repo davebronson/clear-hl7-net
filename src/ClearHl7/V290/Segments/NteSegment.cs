@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment NTE - Notes And Comments.
@@ -28,7 +28,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// NTE.2 - Source of Comment.
-        /// <para>Suggested: 0105 Source Of Comment -&gt; ClearHl7.Fhir.Codes.V290.CodeSourceOfComment</para>
+        /// <para>Suggested: 0105 Source Of Comment -&gt; ClearHl7.Codes.V290.CodeSourceOfComment</para>
         /// </summary>
         public string SourceOfComment { get; set; }
 
@@ -39,7 +39,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// NTE.4 - Comment Type.
-        /// <para>Suggested: 0364 Comment Type -&gt; ClearHl7.Fhir.Codes.V290.CodeCommentType</para>
+        /// <para>Suggested: 0364 Comment Type -&gt; ClearHl7.Codes.V290.CodeCommentType</para>
         /// </summary>
         public CodedWithExceptions CommentType { get; set; }
 

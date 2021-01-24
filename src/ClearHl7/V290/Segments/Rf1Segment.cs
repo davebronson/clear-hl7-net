@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment RF1 - Referral Information.
@@ -23,31 +23,31 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RF1.1 - Referral Status.
-        /// <para>Suggested: 0283 Referral Status -&gt; ClearHl7.Fhir.Codes.V290.CodeReferralStatus</para>
+        /// <para>Suggested: 0283 Referral Status -&gt; ClearHl7.Codes.V290.CodeReferralStatus</para>
         /// </summary>
         public CodedWithExceptions ReferralStatus { get; set; }
 
         /// <summary>
         /// RF1.2 - Referral Priority.
-        /// <para>Suggested: 0280 Referral Priority -&gt; ClearHl7.Fhir.Codes.V290.CodeReferralPriority</para>
+        /// <para>Suggested: 0280 Referral Priority -&gt; ClearHl7.Codes.V290.CodeReferralPriority</para>
         /// </summary>
         public CodedWithExceptions ReferralPriority { get; set; }
 
         /// <summary>
         /// RF1.3 - Referral Type.
-        /// <para>Suggested: 0281 Referral Type -&gt; ClearHl7.Fhir.Codes.V290.CodeReferralType</para>
+        /// <para>Suggested: 0281 Referral Type -&gt; ClearHl7.Codes.V290.CodeReferralType</para>
         /// </summary>
         public CodedWithExceptions ReferralType { get; set; }
 
         /// <summary>
         /// RF1.4 - Referral Disposition.
-        /// <para>Suggested: 0282 Referral Disposition -&gt; ClearHl7.Fhir.Codes.V290.CodeReferralDisposition</para>
+        /// <para>Suggested: 0282 Referral Disposition -&gt; ClearHl7.Codes.V290.CodeReferralDisposition</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ReferralDisposition { get; set; }
 
         /// <summary>
         /// RF1.5 - Referral Category.
-        /// <para>Suggested: 0284 Referral Category -&gt; ClearHl7.Fhir.Codes.V290.CodeReferralCategory</para>
+        /// <para>Suggested: 0284 Referral Category -&gt; ClearHl7.Codes.V290.CodeReferralCategory</para>
         /// </summary>
         public CodedWithExceptions ReferralCategory { get; set; }
 
@@ -73,7 +73,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RF1.10 - Referral Reason.
-        /// <para>Suggested: 0336 Referral Reason -&gt; ClearHl7.Fhir.Codes.V290.CodeReferralReason</para>
+        /// <para>Suggested: 0336 Referral Reason -&gt; ClearHl7.Codes.V290.CodeReferralReason</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ReferralReason { get; set; }
 
@@ -150,7 +150,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RF1.25 - Action Code.
-        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V290.CodeSegmentActionCode</para>
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Codes.V290.CodeSegmentActionCode</para>
         /// </summary>
         public string ActionCode { get; set; }
         

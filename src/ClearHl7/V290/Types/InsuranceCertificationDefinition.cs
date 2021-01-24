@@ -1,7 +1,7 @@
 ﻿using System;
-using ClearHl7.Fhir.Helpers;
+using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 ICD - Insurance Certification Definition.
@@ -15,13 +15,13 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// ICD.1 - Certification Patient Type.
-        /// <para>Suggested: 0150 Certification Patient Type -&gt; ClearHl7.Fhir.Codes.V290.CodeCertificationPatientType</para>
+        /// <para>Suggested: 0150 Certification Patient Type -&gt; ClearHl7.Codes.V290.CodeCertificationPatientType</para>
         /// </summary>
         public CodedWithExceptions CertificationPatientType { get; set; }
 
         /// <summary>
         /// ICD.2 - Certification Required.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string CertificationRequired { get; set; }
 

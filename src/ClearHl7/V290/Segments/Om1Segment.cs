@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment OM1 - General Segment.
@@ -33,13 +33,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.3 - Permitted Data Types.
-        /// <para>Suggested: 0125 Value Type -&gt; ClearHl7.Fhir.Codes.V290.CodeValueType</para>
+        /// <para>Suggested: 0125 Value Type -&gt; ClearHl7.Codes.V290.CodeValueType</para>
         /// </summary>
         public IEnumerable<string> PermittedDataTypes { get; set; }
 
         /// <summary>
         /// OM1.4 - Specimen Required.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string SpecimenRequired { get; set; }
 
@@ -82,7 +82,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.12 - Orderability.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string Orderability { get; set; }
 
@@ -100,7 +100,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.15 - Portable Device Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string PortableDeviceIndicator { get; set; }
 
@@ -117,7 +117,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.18 - Nature of Service/Test/Observation.
-        /// <para>Suggested: 0174 Nature Of Service/Test/Observation -&gt; ClearHl7.Fhir.Codes.V290.CodeNatureOfServiceTestObservation</para>
+        /// <para>Suggested: 0174 Nature Of Service/Test/Observation -&gt; ClearHl7.Codes.V290.CodeNatureOfServiceTestObservation</para>
         /// </summary>
         public CodedWithExceptions NatureOfServiceTestObservation { get; set; }
 
@@ -154,13 +154,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.25 - Processing Priority.
-        /// <para>Suggested: 0168 Processing Priority -&gt; ClearHl7.Fhir.Codes.V290.CodeProcessingPriority</para>
+        /// <para>Suggested: 0168 Processing Priority -&gt; ClearHl7.Codes.V290.CodeProcessingPriority</para>
         /// </summary>
         public IEnumerable<string> ProcessingPriority { get; set; }
 
         /// <summary>
         /// OM1.26 - Reporting Priority.
-        /// <para>Suggested: 0169 Reporting Priority -&gt; ClearHl7.Fhir.Codes.V290.CodeReportingPriority</para>
+        /// <para>Suggested: 0169 Reporting Priority -&gt; ClearHl7.Codes.V290.CodeReportingPriority</para>
         /// </summary>
         public string ReportingPriority { get; set; }
 
@@ -182,7 +182,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.30 - Confidentiality Code.
-        /// <para>Suggested: 0177 Confidentiality Code -&gt; ClearHl7.Fhir.Codes.V290.CodeConfidentialityCode</para>
+        /// <para>Suggested: 0177 Confidentiality Code -&gt; ClearHl7.Codes.V290.CodeConfidentialityCode</para>
         /// </summary>
         public CodedWithExceptions ConfidentialityCode { get; set; }
 
@@ -248,25 +248,25 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.42 - Kind of Quantity Observed.
-        /// <para>Suggested: 0254 Kind of Quantity -&gt; ClearHl7.Fhir.Codes.V290.CodeKindOfQuantity</para>
+        /// <para>Suggested: 0254 Kind of Quantity -&gt; ClearHl7.Codes.V290.CodeKindOfQuantity</para>
         /// </summary>
         public CodedWithExceptions KindOfQuantityObserved { get; set; }
 
         /// <summary>
         /// OM1.43 - Point Versus Interval.
-        /// <para>Suggested: 0255 Duration Categories -&gt; ClearHl7.Fhir.Codes.V290.CodeDurationCategories</para>
+        /// <para>Suggested: 0255 Duration Categories -&gt; ClearHl7.Codes.V290.CodeDurationCategories</para>
         /// </summary>
         public CodedWithExceptions PointVersusInterval { get; set; }
 
         /// <summary>
         /// OM1.44 - Challenge Information.
-        /// <para>Suggested: 0256 Time Delay Post Challenge -&gt; ClearHl7.Fhir.Codes.V290.CodeTimeDelayPostChallenge</para>
+        /// <para>Suggested: 0256 Time Delay Post Challenge -&gt; ClearHl7.Codes.V290.CodeTimeDelayPostChallenge</para>
         /// </summary>
         public Text ChallengeInformation { get; set; }
 
         /// <summary>
         /// OM1.45 - Relationship Modifier.
-        /// <para>Suggested: 0258 Relationship Modifier -&gt; ClearHl7.Fhir.Codes.V290.CodeRelationshipModifier</para>
+        /// <para>Suggested: 0258 Relationship Modifier -&gt; ClearHl7.Codes.V290.CodeRelationshipModifier</para>
         /// </summary>
         public CodedWithExceptions RelationshipModifier { get; set; }
 
@@ -284,13 +284,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.48 - Exclusive Test.
-        /// <para>Suggested: 0919 Exclusive Test -&gt; ClearHl7.Fhir.Codes.V290.CodeExclusiveTest</para>
+        /// <para>Suggested: 0919 Exclusive Test -&gt; ClearHl7.Codes.V290.CodeExclusiveTest</para>
         /// </summary>
         public string ExclusiveTest { get; set; }
 
         /// <summary>
         /// OM1.49 - Diagnostic Serv Sect ID.
-        /// <para>Suggested: 0074 Diagnostic Service Section ID -&gt; ClearHl7.Fhir.Codes.V290.CodeDiagnosticServiceSectionId</para>
+        /// <para>Suggested: 0074 Diagnostic Service Section ID -&gt; ClearHl7.Codes.V290.CodeDiagnosticServiceSectionId</para>
         /// </summary>
         public string DiagnosticServSectId { get; set; }
 
@@ -338,7 +338,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// OM1.58 - Gender Restriction.
-        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Fhir.Codes.V290.CodeAdministrativeSex</para>
+        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Codes.V290.CodeAdministrativeSex</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> GenderRestriction { get; set; }
 

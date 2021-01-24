@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment GT1 - Guarantor.
@@ -63,7 +63,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// GT1.9 - Guarantor Administrative Sex.
-        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Fhir.Codes.V290.CodeAdministrativeSex</para>
+        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Codes.V290.CodeAdministrativeSex</para>
         /// </summary>
         public CodedWithExceptions GuarantorAdministrativeSex { get; set; }
 
@@ -75,7 +75,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// GT1.11 - Guarantor Relationship.
-        /// <para>Suggested: 0063 Relationship -&gt; ClearHl7.Fhir.Codes.V290.CodeRelationship</para>
+        /// <para>Suggested: 0063 Relationship -&gt; ClearHl7.Codes.V290.CodeRelationship</para>
         /// </summary>
         public CodedWithExceptions GuarantorRelationship { get; set; }
 
@@ -121,7 +121,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// GT1.20 - Guarantor Employment Status.
-        /// <para>Suggested: 0066 Employment Status -&gt; ClearHl7.Fhir.Codes.V290.CodeEmploymentStatus</para>
+        /// <para>Suggested: 0066 Employment Status -&gt; ClearHl7.Codes.V290.CodeEmploymentStatus</para>
         /// </summary>
         public CodedWithExceptions GuarantorEmploymentStatus { get; set; }
 
@@ -132,7 +132,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// GT1.22 - Guarantor Billing Hold Flag.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string GuarantorBillingHoldFlag { get; set; }
 
@@ -149,7 +149,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// GT1.25 - Guarantor Death Flag.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string GuarantorDeathFlag { get; set; }
 
@@ -176,7 +176,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// GT1.30 - Guarantor Marital Status Code.
-        /// <para>Suggested: 0002 Marital Status -&gt; ClearHl7.Fhir.Codes.V290.CodeMaritalStatus</para>
+        /// <para>Suggested: 0002 Marital Status -&gt; ClearHl7.Codes.V290.CodeMaritalStatus</para>
         /// </summary>
         public CodedWithExceptions GuarantorMaritalStatusCode { get; set; }
 
@@ -192,13 +192,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// GT1.33 - Living Dependency.
-        /// <para>Suggested: 0223 Living Dependency -&gt; ClearHl7.Fhir.Codes.V290.CodeLivingDependency</para>
+        /// <para>Suggested: 0223 Living Dependency -&gt; ClearHl7.Codes.V290.CodeLivingDependency</para>
         /// </summary>
         public CodedWithExceptions LivingDependency { get; set; }
 
         /// <summary>
         /// GT1.34 - Ambulatory Status.
-        /// <para>Suggested: 0009 Ambulatory Status -&gt; ClearHl7.Fhir.Codes.V290.CodeAmbulatoryStatus</para>
+        /// <para>Suggested: 0009 Ambulatory Status -&gt; ClearHl7.Codes.V290.CodeAmbulatoryStatus</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> AmbulatoryStatus { get; set; }
 
@@ -216,31 +216,31 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// GT1.37 - Living Arrangement.
-        /// <para>Suggested: 0220 Living Arrangement -&gt; ClearHl7.Fhir.Codes.V290.CodeLivingArrangement</para>
+        /// <para>Suggested: 0220 Living Arrangement -&gt; ClearHl7.Codes.V290.CodeLivingArrangement</para>
         /// </summary>
         public CodedWithExceptions LivingArrangement { get; set; }
 
         /// <summary>
         /// GT1.38 - Publicity Code.
-        /// <para>Suggested: 0215 Publicity Code -&gt; ClearHl7.Fhir.Codes.V290.CodePublicityCode</para>
+        /// <para>Suggested: 0215 Publicity Code -&gt; ClearHl7.Codes.V290.CodePublicityCode</para>
         /// </summary>
         public CodedWithExceptions PublicityCode { get; set; }
 
         /// <summary>
         /// GT1.39 - Protection Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string ProtectionIndicator { get; set; }
 
         /// <summary>
         /// GT1.40 - Student Indicator.
-        /// <para>Suggested: 0231 Student Status -&gt; ClearHl7.Fhir.Codes.V290.CodeStudentStatus</para>
+        /// <para>Suggested: 0231 Student Status -&gt; ClearHl7.Codes.V290.CodeStudentStatus</para>
         /// </summary>
         public CodedWithExceptions StudentIndicator { get; set; }
 
         /// <summary>
         /// GT1.41 - Religion.
-        /// <para>Suggested: 0006 Religion -&gt; ClearHl7.Fhir.Codes.V290.CodeReligion</para>
+        /// <para>Suggested: 0006 Religion -&gt; ClearHl7.Codes.V290.CodeReligion</para>
         /// </summary>
         public CodedWithExceptions Religion { get; set; }
 
@@ -257,7 +257,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// GT1.44 - Ethnic Group.
-        /// <para>Suggested: 0189 Ethnic Group -&gt; ClearHl7.Fhir.Codes.V290.CodeEthnicGroup</para>
+        /// <para>Suggested: 0189 Ethnic Group -&gt; ClearHl7.Codes.V290.CodeEthnicGroup</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> EthnicGroup { get; set; }
 
@@ -279,7 +279,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// GT1.48 - Contact Relationship.
-        /// <para>Suggested: 0063 Relationship -&gt; ClearHl7.Fhir.Codes.V290.CodeRelationship</para>
+        /// <para>Suggested: 0063 Relationship -&gt; ClearHl7.Codes.V290.CodeRelationship</para>
         /// </summary>
         public CodedWithExceptions ContactRelationship { get; set; }
 
@@ -306,7 +306,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// GT1.53 - Job Status.
-        /// <para>Suggested: 0311 Job Status -&gt; ClearHl7.Fhir.Codes.V290.CodeJobStatus</para>
+        /// <para>Suggested: 0311 Job Status -&gt; ClearHl7.Codes.V290.CodeJobStatus</para>
         /// </summary>
         public CodedWithExceptions JobStatus { get; set; }
 
@@ -317,7 +317,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// GT1.55 - Guarantor Race.
-        /// <para>Suggested: 0005 Race -&gt; ClearHl7.Fhir.Codes.V290.CodeRace</para>
+        /// <para>Suggested: 0005 Race -&gt; ClearHl7.Codes.V290.CodeRace</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> GuarantorRace { get; set; }
 

@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V281.Types
+namespace ClearHl7.V281.Types
 {
     /// <summary>
     /// HL7 Version 2 DDI - Daily Deductible Information.

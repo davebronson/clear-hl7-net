@@ -1,7 +1,7 @@
-﻿using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+﻿using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment TCC - Test Code Configuration.
@@ -60,19 +60,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// TCC.9 - Automatic Rerun Allowed.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string AutomaticRerunAllowed { get; set; }
 
         /// <summary>
         /// TCC.10 - Automatic Repeat Allowed.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string AutomaticRepeatAllowed { get; set; }
 
         /// <summary>
         /// TCC.11 - Automatic Reflex Allowed.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string AutomaticReflexAllowed { get; set; }
 
@@ -89,7 +89,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// TCC.14 - Processing Type.
-        /// <para>Suggested: 0388 Processing Type -&gt; ClearHl7.Fhir.Codes.V290.CodeProcessingType</para>
+        /// <para>Suggested: 0388 Processing Type -&gt; ClearHl7.Codes.V290.CodeProcessingType</para>
         /// </summary>
         public CodedWithExceptions ProcessingType { get; set; }
 

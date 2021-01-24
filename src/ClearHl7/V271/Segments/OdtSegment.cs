@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V271.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V271.Types;
 
-namespace ClearHl7.Fhir.V271.Segments
+namespace ClearHl7.V271.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment ODT - Diet Tray Instructions.

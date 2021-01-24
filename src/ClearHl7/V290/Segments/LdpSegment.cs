@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment LDP - Location Department.
@@ -34,25 +34,25 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// LDP.3 - Location Service.
-        /// <para>Suggested: 0069 Hospital Service -&gt; ClearHl7.Fhir.Codes.V290.CodeHospitalService</para>
+        /// <para>Suggested: 0069 Hospital Service -&gt; ClearHl7.Codes.V290.CodeHospitalService</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> LocationService { get; set; }
 
         /// <summary>
         /// LDP.4 - Specialty Type.
-        /// <para>Suggested: 0265 Specialty Type -&gt; ClearHl7.Fhir.Codes.V290.CodeSpecialtyType</para>
+        /// <para>Suggested: 0265 Specialty Type -&gt; ClearHl7.Codes.V290.CodeSpecialtyType</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> SpecialtyType { get; set; }
 
         /// <summary>
         /// LDP.5 - Valid Patient Classes.
-        /// <para>Suggested: 0004 Patient Class -&gt; ClearHl7.Fhir.Codes.V290.CodePatientClass</para>
+        /// <para>Suggested: 0004 Patient Class -&gt; ClearHl7.Codes.V290.CodePatientClass</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ValidPatientClasses { get; set; }
 
         /// <summary>
         /// LDP.6 - Active/Inactive Flag.
-        /// <para>Suggested: 0183 Active/Inactive -&gt; ClearHl7.Fhir.Codes.V290.CodeActiveInactive</para>
+        /// <para>Suggested: 0183 Active/Inactive -&gt; ClearHl7.Codes.V290.CodeActiveInactive</para>
         /// </summary>
         public string ActiveInactiveFlag { get; set; }
 
@@ -73,7 +73,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// LDP.10 - Visiting Hours.
-        /// <para>Suggested: 0267 Days Of The Week -&gt; ClearHl7.Fhir.Codes.V290.CodeDaysOfTheWeek</para>
+        /// <para>Suggested: 0267 Days Of The Week -&gt; ClearHl7.Codes.V290.CodeDaysOfTheWeek</para>
         /// </summary>
         public IEnumerable<VisitingHours> VisitingHours { get; set; }
 

@@ -1,7 +1,7 @@
-﻿using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+﻿using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment IAR - Allergy Reaction.
@@ -25,13 +25,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// IAR.2 - Allergy Severity Code.
-        /// <para>Suggested: 0128 Allergy Severity -&gt; ClearHl7.Fhir.Codes.V290.CodeAllergySeverity</para>
+        /// <para>Suggested: 0128 Allergy Severity -&gt; ClearHl7.Codes.V290.CodeAllergySeverity</para>
         /// </summary>
         public CodedWithExceptions AllergySeverityCode { get; set; }
 
         /// <summary>
         /// IAR.3 - Sensitivity to Causative Agent Code.
-        /// <para>Suggested: 0436 Sensitivity To Causative Agent Code -&gt; ClearHl7.Fhir.Codes.V290.CodeSensitivityToCausativeAgentCode</para>
+        /// <para>Suggested: 0436 Sensitivity To Causative Agent Code -&gt; ClearHl7.Codes.V290.CodeSensitivityToCausativeAgentCode</para>
         /// </summary>
         public CodedWithExceptions SensitivityToCausativeAgentCode { get; set; }
 

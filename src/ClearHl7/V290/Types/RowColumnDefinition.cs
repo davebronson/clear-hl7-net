@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 RCD - Row Column Definition.
@@ -19,7 +19,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// RCD.2 - HL7 Data Type.
-        /// <para>Suggested: 0440 Data Types -&gt; ClearHl7.Fhir.Codes.V290.CodeDataTypes</para>
+        /// <para>Suggested: 0440 Data Types -&gt; ClearHl7.Codes.V290.CodeDataTypes</para>
         /// </summary>
         public string Hl7DataType { get; set; }
 

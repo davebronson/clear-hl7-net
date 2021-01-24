@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment ORG - Practitioner Organization Unit.
@@ -33,13 +33,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ORG.3 - Organization Unit Type Code.
-        /// <para>Suggested: 0474 Practitioner Organization Unit Type -&gt; ClearHl7.Fhir.Codes.V290.CodePractitionerOrganizationUnitType</para>
+        /// <para>Suggested: 0474 Practitioner Organization Unit Type -&gt; ClearHl7.Codes.V290.CodePractitionerOrganizationUnitType</para>
         /// </summary>
         public CodedWithExceptions OrganizationUnitTypeCode { get; set; }
 
         /// <summary>
         /// ORG.4 - Primary Org Unit Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string PrimaryOrgUnitIndicator { get; set; }
 
@@ -73,19 +73,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ORG.10 - Employment Status Code.
-        /// <para>Suggested: 0066 Employment Status -&gt; ClearHl7.Fhir.Codes.V290.CodeEmploymentStatus</para>
+        /// <para>Suggested: 0066 Employment Status -&gt; ClearHl7.Codes.V290.CodeEmploymentStatus</para>
         /// </summary>
         public CodedWithExceptions EmploymentStatusCode { get; set; }
 
         /// <summary>
         /// ORG.11 - Board Approval Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string BoardApprovalIndicator { get; set; }
 
         /// <summary>
         /// ORG.12 - Primary Care Physician Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string PrimaryCarePhysicianIndicator { get; set; }
 

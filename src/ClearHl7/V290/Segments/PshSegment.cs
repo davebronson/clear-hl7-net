@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment PSH - Product Summary Header.
@@ -58,7 +58,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PSH.8 - Quantity Distributed Method.
-        /// <para>Suggested: 0329 Quantity Method -&gt; ClearHl7.Fhir.Codes.V290.CodeQuantityMethod</para>
+        /// <para>Suggested: 0329 Quantity Method -&gt; ClearHl7.Codes.V290.CodeQuantityMethod</para>
         /// </summary>
         public string QuantityDistributedMethod { get; set; }
 
@@ -74,7 +74,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PSH.11 - Quantity in Use Method.
-        /// <para>Suggested: 0329 Quantity Method -&gt; ClearHl7.Fhir.Codes.V290.CodeQuantityMethod</para>
+        /// <para>Suggested: 0329 Quantity Method -&gt; ClearHl7.Codes.V290.CodeQuantityMethod</para>
         /// </summary>
         public string QuantityInUseMethod { get; set; }
 

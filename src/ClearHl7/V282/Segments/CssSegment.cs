@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V282.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V282.Types;
 
-namespace ClearHl7.Fhir.V282.Segments
+namespace ClearHl7.V282.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment CSS - Clinical Study Data Schedule Segment.

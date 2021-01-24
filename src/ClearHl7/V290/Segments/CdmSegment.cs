@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment CDM - Charge Description Master.
@@ -43,7 +43,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CDM.5 - Description Override Indicator.
-        /// <para>Suggested: 0268 Override -&gt; ClearHl7.Fhir.Codes.V290.CodeOverride</para>
+        /// <para>Suggested: 0268 Override -&gt; ClearHl7.Codes.V290.CodeOverride</para>
         /// </summary>
         public CodedWithExceptions DescriptionOverrideIndicator { get; set; }
 
@@ -61,7 +61,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CDM.8 - Active/Inactive Flag.
-        /// <para>Suggested: 0183 Active/Inactive -&gt; ClearHl7.Fhir.Codes.V290.CodeActiveInactive</para>
+        /// <para>Suggested: 0183 Active/Inactive -&gt; ClearHl7.Codes.V290.CodeActiveInactive</para>
         /// </summary>
         public string ActiveInactiveFlag { get; set; }
 
@@ -88,7 +88,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CDM.13 - Room Fee Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string RoomFeeIndicator { get; set; }
 

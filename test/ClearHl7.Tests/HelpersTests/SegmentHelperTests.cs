@@ -1,10 +1,10 @@
 ﻿using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Segments;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Segments;
+using ClearHl7.V290.Types;
 using Xunit;
 
-namespace ClearHl7.Fhir.Tests.HelpersTests
+namespace ClearHl7.Tests.HelpersTests
 {
     public class SegmentHelperTests
     {

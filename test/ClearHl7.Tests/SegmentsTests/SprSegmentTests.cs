@@ -1,8 +1,8 @@
-﻿using ClearHl7.Fhir.V251.Segments;
-using ClearHl7.Fhir.V251.Types;
+﻿using ClearHl7.V251.Segments;
+using ClearHl7.V251.Types;
 using Xunit;
 
-namespace ClearHl7.Fhir.Tests.SegmentsTests
+namespace ClearHl7.Tests.SegmentsTests
 {
     public class SprSegmentTests
     {

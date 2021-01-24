@@ -1,7 +1,7 @@
-﻿using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+﻿using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment PYE - Payee Information.
@@ -25,13 +25,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PYE.2 - Payee Type.
-        /// <para>Suggested: 0557 Payee Type -&gt; ClearHl7.Fhir.Codes.V290.CodePayeeType</para>
+        /// <para>Suggested: 0557 Payee Type -&gt; ClearHl7.Codes.V290.CodePayeeType</para>
         /// </summary>
         public CodedWithExceptions PayeeType { get; set; }
 
         /// <summary>
         /// PYE.3 - Payee Relationship to Invoice (Patient).
-        /// <para>Suggested: 0558 Payee Relationship To Invoice -&gt; ClearHl7.Fhir.Codes.V290.CodePayeeRelationshipToInvoice</para>
+        /// <para>Suggested: 0558 Payee Relationship To Invoice -&gt; ClearHl7.Codes.V290.CodePayeeRelationshipToInvoice</para>
         /// </summary>
         public CodedWithExceptions PayeeRelationshipToInvoicePatient { get; set; }
 
@@ -52,7 +52,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PYE.7 - Payment Method.
-        /// <para>Suggested: 0570 Payment Method Code -&gt; ClearHl7.Fhir.Codes.V290.CodePaymentMethodCode</para>
+        /// <para>Suggested: 0570 Payment Method Code -&gt; ClearHl7.Codes.V290.CodePaymentMethodCode</para>
         /// </summary>
         public CodedWithExceptions PaymentMethod { get; set; }
         

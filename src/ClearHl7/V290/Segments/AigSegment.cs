@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment AIG - Appointment Information - General Resource.
@@ -28,7 +28,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// AIG.2 - Segment Action Code.
-        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V290.CodeSegmentActionCode</para>
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Codes.V290.CodeSegmentActionCode</para>
         /// </summary>
         public string SegmentActionCode { get; set; }
 
@@ -84,13 +84,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// AIG.13 - Allow Substitution Code.
-        /// <para>Suggested: 0279 Allow Substitution Codes -&gt; ClearHl7.Fhir.Codes.V290.CodeAllowSubstitutionCodes</para>
+        /// <para>Suggested: 0279 Allow Substitution Codes -&gt; ClearHl7.Codes.V290.CodeAllowSubstitutionCodes</para>
         /// </summary>
         public CodedWithExceptions AllowSubstitutionCode { get; set; }
 
         /// <summary>
         /// AIG.14 - Filler Status Code.
-        /// <para>Suggested: 0278 Filler Status Codes -&gt; ClearHl7.Fhir.Codes.V290.CodeFillerStatusCodes</para>
+        /// <para>Suggested: 0278 Filler Status Codes -&gt; ClearHl7.Codes.V290.CodeFillerStatusCodes</para>
         /// </summary>
         public CodedWithExceptions FillerStatusCode { get; set; }
 

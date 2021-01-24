@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V270.Types
+namespace ClearHl7.V270.Types
 {
     /// <summary>
     /// HL7 Version 2 PRL - Parent Result Link.

@@ -1,4 +1,4 @@
-﻿namespace ClearHl7.Fhir.Codes.V270.Helpers
+﻿namespace ClearHl7.Codes.V270.Helpers
 {
     /// <summary>
     /// Provides helper methods for interacting with enumerations.

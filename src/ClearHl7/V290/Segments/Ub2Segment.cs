@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment UB2 - Uniform Billing Data.
@@ -32,7 +32,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// UB2.3 - Condition Code (24-30).
-        /// <para>Suggested: 0043 Condition Code -&gt; ClearHl7.Fhir.Codes.V290.CodeConditionCode</para>
+        /// <para>Suggested: 0043 Condition Code -&gt; ClearHl7.Codes.V290.CodeConditionCode</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ConditionCode24To30 { get; set; }
 

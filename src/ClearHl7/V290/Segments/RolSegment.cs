@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment ROL - Role.
@@ -33,7 +33,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ROL.3 - Role-ROL.
-        /// <para>Suggested: 0443 Provider Role -&gt; ClearHl7.Fhir.Codes.V290.CodeProviderRole</para>
+        /// <para>Suggested: 0443 Provider Role -&gt; ClearHl7.Codes.V290.CodeProviderRole</para>
         /// </summary>
         public CodedWithExceptions RoleRol { get; set; }
 
@@ -69,7 +69,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ROL.10 - Organization Unit Type.
-        /// <para>Suggested: 0406 Participant Organization Unit Type -&gt; ClearHl7.Fhir.Codes.V290.CodeParticipantOrganizationUnitType</para>
+        /// <para>Suggested: 0406 Participant Organization Unit Type -&gt; ClearHl7.Codes.V290.CodeParticipantOrganizationUnitType</para>
         /// </summary>
         public CodedWithExceptions OrganizationUnitType { get; set; }
 

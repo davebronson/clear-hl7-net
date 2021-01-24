@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace ClearHl7.Fhir.Tests.FormatTests
+namespace ClearHl7.Tests.FormatTests
 {
     public class NumericFormatTests
     {

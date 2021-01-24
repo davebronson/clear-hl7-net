@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment GP1 - Grouping Reimbursement - Visit.
@@ -22,19 +22,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// GP1.1 - Type of Bill Code.
-        /// <para>Suggested: 0455 Type Of Bill Code -&gt; ClearHl7.Fhir.Codes.V290.CodeTypeOfBillCode</para>
+        /// <para>Suggested: 0455 Type Of Bill Code -&gt; ClearHl7.Codes.V290.CodeTypeOfBillCode</para>
         /// </summary>
         public CodedWithExceptions TypeOfBillCode { get; set; }
 
         /// <summary>
         /// GP1.2 - Revenue Code.
-        /// <para>Suggested: 0456 Revenue Code -&gt; ClearHl7.Fhir.Codes.V290.CodeRevenueCode</para>
+        /// <para>Suggested: 0456 Revenue Code -&gt; ClearHl7.Codes.V290.CodeRevenueCode</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> RevenueCode { get; set; }
 
         /// <summary>
         /// GP1.3 - Overall Claim Disposition Code.
-        /// <para>Suggested: 0457 Overall Claim Disposition Code -&gt; ClearHl7.Fhir.Codes.V290.CodeOverallClaimDispositionCode</para>
+        /// <para>Suggested: 0457 Overall Claim Disposition Code -&gt; ClearHl7.Codes.V290.CodeOverallClaimDispositionCode</para>
         /// </summary>
         public CodedWithExceptions OverallClaimDispositionCode { get; set; }
 

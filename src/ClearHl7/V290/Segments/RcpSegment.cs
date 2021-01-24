@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment RCP - Response Control Parameter.
@@ -23,19 +23,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RCP.1 - Query Priority.
-        /// <para>Suggested: 0091 Query Priority -&gt; ClearHl7.Fhir.Codes.V290.CodeQueryPriority</para>
+        /// <para>Suggested: 0091 Query Priority -&gt; ClearHl7.Codes.V290.CodeQueryPriority</para>
         /// </summary>
         public string QueryPriority { get; set; }
 
         /// <summary>
         /// RCP.2 - Quantity Limited Request.
-        /// <para>Suggested: 0126 Quantity Limited Request -&gt; ClearHl7.Fhir.Codes.V290.CodeQuantityLimitedRequest</para>
+        /// <para>Suggested: 0126 Quantity Limited Request -&gt; ClearHl7.Codes.V290.CodeQuantityLimitedRequest</para>
         /// </summary>
         public CompositeQuantityWithUnits QuantityLimitedRequest { get; set; }
 
         /// <summary>
         /// RCP.3 - Response Modality.
-        /// <para>Suggested: 0394 Response Modality -&gt; ClearHl7.Fhir.Codes.V290.CodeResponseModality</para>
+        /// <para>Suggested: 0394 Response Modality -&gt; ClearHl7.Codes.V290.CodeResponseModality</para>
         /// </summary>
         public CodedWithNoExceptions ResponseModality { get; set; }
 
@@ -46,7 +46,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RCP.5 - Modify Indicator.
-        /// <para>Suggested: 0395 Modify Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeModifyIndicator</para>
+        /// <para>Suggested: 0395 Modify Indicator -&gt; ClearHl7.Codes.V290.CodeModifyIndicator</para>
         /// </summary>
         public string ModifyIndicator { get; set; }
 
@@ -57,7 +57,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RCP.7 - Segment group inclusion.
-        /// <para>Suggested: 0391 Segment Group -&gt; ClearHl7.Fhir.Codes.V290.CodeSegmentGroup</para>
+        /// <para>Suggested: 0391 Segment Group -&gt; ClearHl7.Codes.V290.CodeSegmentGroup</para>
         /// </summary>
         public IEnumerable<string> SegmentGroupInclusion { get; set; }
         

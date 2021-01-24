@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 SCV - Scheduling Class Value Pair.
@@ -14,7 +14,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// SCV.1 - Parameter Class.
-        /// <para>Suggested: 0294 Time Selection Criteria Parameter Class Codes -&gt; ClearHl7.Fhir.Codes.V290.CodeTimeSelectionCriteriaParameterClassCodes</para>
+        /// <para>Suggested: 0294 Time Selection Criteria Parameter Class Codes -&gt; ClearHl7.Codes.V290.CodeTimeSelectionCriteriaParameterClassCodes</para>
         /// </summary>
         public CodedWithExceptions ParameterClass { get; set; }
 

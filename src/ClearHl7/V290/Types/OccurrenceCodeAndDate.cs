@@ -1,7 +1,7 @@
 ﻿using System;
-using ClearHl7.Fhir.Helpers;
+using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 OCD - Occurrence Code And Date.
@@ -15,7 +15,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// OCD.1 - Occurrence Code.
-        /// <para>Suggested: 0350 Occurrence Code -&gt; ClearHl7.Fhir.Codes.V290.CodeOccurrenceCode</para>
+        /// <para>Suggested: 0350 Occurrence Code -&gt; ClearHl7.Codes.V290.CodeOccurrenceCode</para>
         /// </summary>
         public CodedWithNoExceptions OccurrenceCode { get; set; }
 

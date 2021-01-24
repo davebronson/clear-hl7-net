@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment SHP - Shipment.
@@ -33,7 +33,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SHP.3 - Shipment Status.
-        /// <para>Suggested: 0905 Shipment Status -&gt; ClearHl7.Fhir.Codes.V290.CodeShipmentStatus</para>
+        /// <para>Suggested: 0905 Shipment Status -&gt; ClearHl7.Codes.V290.CodeShipmentStatus</para>
         /// </summary>
         public CodedWithExceptions ShipmentStatus { get; set; }
 
@@ -49,13 +49,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SHP.6 - Shipment Priority.
-        /// <para>Suggested: 0906 ActPriority -&gt; ClearHl7.Fhir.Codes.V290.CodeActPriority</para>
+        /// <para>Suggested: 0906 ActPriority -&gt; ClearHl7.Codes.V290.CodeActPriority</para>
         /// </summary>
         public CodedWithExceptions ShipmentPriority { get; set; }
 
         /// <summary>
         /// SHP.7 - Shipment Confidentiality.
-        /// <para>Suggested: 0907 Confidentiality -&gt; ClearHl7.Fhir.Codes.V290.CodeConfidentiality</para>
+        /// <para>Suggested: 0907 Confidentiality -&gt; ClearHl7.Codes.V290.CodeConfidentiality</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ShipmentConfidentiality { get; set; }
 
@@ -66,19 +66,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// SHP.9 - Shipment Condition.
-        /// <para>Suggested: 0544 Container Condition -&gt; ClearHl7.Fhir.Codes.V290.CodeContainerCondition</para>
+        /// <para>Suggested: 0544 Container Condition -&gt; ClearHl7.Codes.V290.CodeContainerCondition</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ShipmentCondition { get; set; }
 
         /// <summary>
         /// SHP.10 - Shipment Handling Code.
-        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Fhir.Codes.V290.CodeSpecialHandlingCode</para>
+        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Codes.V290.CodeSpecialHandlingCode</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ShipmentHandlingCode { get; set; }
 
         /// <summary>
         /// SHP.11 - Shipment Risk Code.
-        /// <para>Suggested: 0489 Risk Codes -&gt; ClearHl7.Fhir.Codes.V290.CodeRiskCodes</para>
+        /// <para>Suggested: 0489 Risk Codes -&gt; ClearHl7.Codes.V290.CodeRiskCodes</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ShipmentRiskCode { get; set; }
 

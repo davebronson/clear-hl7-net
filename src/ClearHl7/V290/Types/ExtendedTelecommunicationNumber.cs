@@ -1,7 +1,7 @@
 ﻿using System;
-using ClearHl7.Fhir.Helpers;
+using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 XTN - Extended Telecommunication Number.
@@ -20,13 +20,13 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// XTN.2 - Telecommunication Use Code.
-        /// <para>Suggested: 0201 Telecommunication Use Code -&gt; ClearHl7.Fhir.Codes.V290.CodeTelecommunicationUseCode</para>
+        /// <para>Suggested: 0201 Telecommunication Use Code -&gt; ClearHl7.Codes.V290.CodeTelecommunicationUseCode</para>
         /// </summary>
         public string TelecommunicationUseCode { get; set; }
 
         /// <summary>
         /// XTN.3 - Telecommunication Equipment Type.
-        /// <para>Suggested: 0202 Telecommunication Equipment Type -&gt; ClearHl7.Fhir.Codes.V290.CodeTelecommunicationEquipmentType</para>
+        /// <para>Suggested: 0202 Telecommunication Equipment Type -&gt; ClearHl7.Codes.V290.CodeTelecommunicationEquipmentType</para>
         /// </summary>
         public string TelecommunicationEquipmentType { get; set; }
 
@@ -87,13 +87,13 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// XTN.15 - Expiration Reason.
-        /// <para>Suggested: 0868 Telecommunication Expiration Reason -&gt; ClearHl7.Fhir.Codes.V290.CodeTelecommunicationExpirationReason</para>
+        /// <para>Suggested: 0868 Telecommunication Expiration Reason -&gt; ClearHl7.Codes.V290.CodeTelecommunicationExpirationReason</para>
         /// </summary>
         public CodedWithExceptions ExpirationReason { get; set; }
 
         /// <summary>
         /// XTN.16 - Protection Code.
-        /// <para>Suggested: 0618 Protection Code -&gt; ClearHl7.Fhir.Codes.V290.CodeProtectionCode</para>
+        /// <para>Suggested: 0618 Protection Code -&gt; ClearHl7.Codes.V290.CodeProtectionCode</para>
         /// </summary>
         public CodedWithExceptions ProtectionCode { get; set; }
 

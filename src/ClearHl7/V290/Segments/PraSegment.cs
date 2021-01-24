@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment PRA - Practitioner Detail.
@@ -41,19 +41,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PRA.4 - Provider Billing.
-        /// <para>Suggested: 0187 Provider Billing -&gt; ClearHl7.Fhir.Codes.V290.CodeProviderBilling</para>
+        /// <para>Suggested: 0187 Provider Billing -&gt; ClearHl7.Codes.V290.CodeProviderBilling</para>
         /// </summary>
         public string ProviderBilling { get; set; }
 
         /// <summary>
         /// PRA.5 - Specialty.
-        /// <para>Suggested: 0337 Certification Status -&gt; ClearHl7.Fhir.Codes.V290.CodeCertificationStatus</para>
+        /// <para>Suggested: 0337 Certification Status -&gt; ClearHl7.Codes.V290.CodeCertificationStatus</para>
         /// </summary>
         public IEnumerable<SpecialtyDescription> Specialty { get; set; }
 
         /// <summary>
         /// PRA.6 - Practitioner ID Numbers.
-        /// <para>Suggested: 0338 Practitioner ID Number Type -&gt; ClearHl7.Fhir.Codes.V290.CodePractitionerIdNumberType</para>
+        /// <para>Suggested: 0338 Practitioner ID Number Type -&gt; ClearHl7.Codes.V290.CodePractitionerIdNumberType</para>
         /// </summary>
         public IEnumerable<PractitionerLicenseOrOtherIdNumber> PractitionerIdNumbers { get; set; }
 
@@ -80,7 +80,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PRA.11 - Government Reimbursement Billing Eligibility.
-        /// <para>Suggested: 0401 Government Reimbursement Program -&gt; ClearHl7.Fhir.Codes.V290.CodeGovernmentReimbursementProgram</para>
+        /// <para>Suggested: 0401 Government Reimbursement Program -&gt; ClearHl7.Codes.V290.CodeGovernmentReimbursementProgram</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> GovernmentReimbursementBillingEligibility { get; set; }
 

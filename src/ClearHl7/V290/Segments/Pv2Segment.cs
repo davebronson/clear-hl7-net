@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment PV2 - Patient Visit - Additional Information.
@@ -54,7 +54,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PV2.7 - Visit User Code.
-        /// <para>Suggested: 0130 Visit User Code -&gt; ClearHl7.Fhir.Codes.V290.CodeVisitUserCode</para>
+        /// <para>Suggested: 0130 Visit User Code -&gt; ClearHl7.Codes.V290.CodeVisitUserCode</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> VisitUserCode { get; set; }
 
@@ -95,13 +95,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PV2.15 - Employment Illness Related Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string EmploymentIllnessRelatedIndicator { get; set; }
 
         /// <summary>
         /// PV2.16 - Purge Status Code.
-        /// <para>Suggested: 0213 Purge Status Code -&gt; ClearHl7.Fhir.Codes.V290.CodePurgeStatusCode</para>
+        /// <para>Suggested: 0213 Purge Status Code -&gt; ClearHl7.Codes.V290.CodePurgeStatusCode</para>
         /// </summary>
         public CodedWithExceptions PurgeStatusCode { get; set; }
 
@@ -112,13 +112,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PV2.18 - Special Program Code.
-        /// <para>Suggested: 0214 Special Program Code -&gt; ClearHl7.Fhir.Codes.V290.CodeSpecialProgramCode</para>
+        /// <para>Suggested: 0214 Special Program Code -&gt; ClearHl7.Codes.V290.CodeSpecialProgramCode</para>
         /// </summary>
         public CodedWithExceptions SpecialProgramCode { get; set; }
 
         /// <summary>
         /// PV2.19 - Retention Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string RetentionIndicator { get; set; }
 
@@ -129,13 +129,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PV2.21 - Visit Publicity Code.
-        /// <para>Suggested: 0215 Publicity Code -&gt; ClearHl7.Fhir.Codes.V290.CodePublicityCode</para>
+        /// <para>Suggested: 0215 Publicity Code -&gt; ClearHl7.Codes.V290.CodePublicityCode</para>
         /// </summary>
         public CodedWithExceptions VisitPublicityCode { get; set; }
 
         /// <summary>
         /// PV2.22 - Visit Protection Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string VisitProtectionIndicator { get; set; }
 
@@ -146,13 +146,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PV2.24 - Patient Status Code.
-        /// <para>Suggested: 0216 Patient Status Code -&gt; ClearHl7.Fhir.Codes.V290.CodePatientStatusCode</para>
+        /// <para>Suggested: 0216 Patient Status Code -&gt; ClearHl7.Codes.V290.CodePatientStatusCode</para>
         /// </summary>
         public CodedWithExceptions PatientStatusCode { get; set; }
 
         /// <summary>
         /// PV2.25 - Visit Priority Code.
-        /// <para>Suggested: 0217 Visit Priority Code -&gt; ClearHl7.Fhir.Codes.V290.CodeVisitPriorityCode</para>
+        /// <para>Suggested: 0217 Visit Priority Code -&gt; ClearHl7.Codes.V290.CodeVisitPriorityCode</para>
         /// </summary>
         public CodedWithExceptions VisitPriorityCode { get; set; }
 
@@ -191,7 +191,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PV2.32 - Billing Media Code.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string BillingMediaCode { get; set; }
 
@@ -202,73 +202,73 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PV2.34 - Military Partnership Code.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string MilitaryPartnershipCode { get; set; }
 
         /// <summary>
         /// PV2.35 - Military Non-Availability Code.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string MilitaryNonAvailabilityCode { get; set; }
 
         /// <summary>
         /// PV2.36 - Newborn Baby Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string NewbornBabyIndicator { get; set; }
 
         /// <summary>
         /// PV2.37 - Baby Detained Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string BabyDetainedIndicator { get; set; }
 
         /// <summary>
         /// PV2.38 - Mode of Arrival Code.
-        /// <para>Suggested: 0430 Mode Of Arrival Code -&gt; ClearHl7.Fhir.Codes.V290.CodeModeOfArrivalCode</para>
+        /// <para>Suggested: 0430 Mode Of Arrival Code -&gt; ClearHl7.Codes.V290.CodeModeOfArrivalCode</para>
         /// </summary>
         public CodedWithExceptions ModeOfArrivalCode { get; set; }
 
         /// <summary>
         /// PV2.39 - Recreational Drug Use Code.
-        /// <para>Suggested: 0431 Recreational Drug Use Code -&gt; ClearHl7.Fhir.Codes.V290.CodeRecreationalDrugUseCode</para>
+        /// <para>Suggested: 0431 Recreational Drug Use Code -&gt; ClearHl7.Codes.V290.CodeRecreationalDrugUseCode</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> RecreationalDrugUseCode { get; set; }
 
         /// <summary>
         /// PV2.40 - Admission Level of Care Code.
-        /// <para>Suggested: 0432 Admission Level Of Care Code -&gt; ClearHl7.Fhir.Codes.V290.CodeAdmissionLevelOfCareCode</para>
+        /// <para>Suggested: 0432 Admission Level Of Care Code -&gt; ClearHl7.Codes.V290.CodeAdmissionLevelOfCareCode</para>
         /// </summary>
         public CodedWithExceptions AdmissionLevelOfCareCode { get; set; }
 
         /// <summary>
         /// PV2.41 - Precaution Code.
-        /// <para>Suggested: 0433 Precaution Code -&gt; ClearHl7.Fhir.Codes.V290.CodePrecautionCode</para>
+        /// <para>Suggested: 0433 Precaution Code -&gt; ClearHl7.Codes.V290.CodePrecautionCode</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> PrecautionCode { get; set; }
 
         /// <summary>
         /// PV2.42 - Patient Condition Code.
-        /// <para>Suggested: 0434 Patient Condition Code -&gt; ClearHl7.Fhir.Codes.V290.CodePatientConditionCode</para>
+        /// <para>Suggested: 0434 Patient Condition Code -&gt; ClearHl7.Codes.V290.CodePatientConditionCode</para>
         /// </summary>
         public CodedWithExceptions PatientConditionCode { get; set; }
 
         /// <summary>
         /// PV2.43 - Living Will Code.
-        /// <para>Suggested: 0315 Living Will Code -&gt; ClearHl7.Fhir.Codes.V290.CodeLivingWillCode</para>
+        /// <para>Suggested: 0315 Living Will Code -&gt; ClearHl7.Codes.V290.CodeLivingWillCode</para>
         /// </summary>
         public CodedWithExceptions LivingWillCode { get; set; }
 
         /// <summary>
         /// PV2.44 - Organ Donor Code.
-        /// <para>Suggested: 0316 Organ Donor Code -&gt; ClearHl7.Fhir.Codes.V290.CodeOrganDonorCode</para>
+        /// <para>Suggested: 0316 Organ Donor Code -&gt; ClearHl7.Codes.V290.CodeOrganDonorCode</para>
         /// </summary>
         public CodedWithExceptions OrganDonorCode { get; set; }
 
         /// <summary>
         /// PV2.45 - Advance Directive Code.
-        /// <para>Suggested: 0435 Advance Directive Code -&gt; ClearHl7.Fhir.Codes.V290.CodeAdvanceDirectiveCode</para>
+        /// <para>Suggested: 0435 Advance Directive Code -&gt; ClearHl7.Codes.V290.CodeAdvanceDirectiveCode</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> AdvanceDirectiveCode { get; set; }
 
@@ -289,7 +289,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PV2.49 - Notify Clergy Code.
-        /// <para>Suggested: 0534 Notify Clergy Code -&gt; ClearHl7.Fhir.Codes.V290.CodeNotifyClergyCode</para>
+        /// <para>Suggested: 0534 Notify Clergy Code -&gt; ClearHl7.Codes.V290.CodeNotifyClergyCode</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> NotifyClergyCode { get; set; }
 

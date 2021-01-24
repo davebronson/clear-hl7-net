@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment TQ2 - Timing Quantity Relationship.
@@ -27,7 +27,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// TQ2.2 - Sequence/Results Flag.
-        /// <para>Suggested: 0503 Sequence/Results Flag -&gt; ClearHl7.Fhir.Codes.V290.CodeSequenceResultsFlag</para>
+        /// <para>Suggested: 0503 Sequence/Results Flag -&gt; ClearHl7.Codes.V290.CodeSequenceResultsFlag</para>
         /// </summary>
         public string SequenceResultsFlag { get; set; }
 
@@ -48,13 +48,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// TQ2.6 - Sequence Condition Code.
-        /// <para>Suggested: 0504 Sequence Condition Code -&gt; ClearHl7.Fhir.Codes.V290.CodeSequenceConditionCode</para>
+        /// <para>Suggested: 0504 Sequence Condition Code -&gt; ClearHl7.Codes.V290.CodeSequenceConditionCode</para>
         /// </summary>
         public string SequenceConditionCode { get; set; }
 
         /// <summary>
         /// TQ2.7 - Cyclic Entry/Exit Indicator.
-        /// <para>Suggested: 0505 Cyclic Entry/Exit Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeCyclicEntryExitIndicator</para>
+        /// <para>Suggested: 0505 Cyclic Entry/Exit Indicator -&gt; ClearHl7.Codes.V290.CodeCyclicEntryExitIndicator</para>
         /// </summary>
         public string CyclicEntryExitIndicator { get; set; }
 
@@ -70,7 +70,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// TQ2.10 - Special Service Request Relationship.
-        /// <para>Suggested: 0506 Service Request Relationship -&gt; ClearHl7.Fhir.Codes.V290.CodeServiceRequestRelationship</para>
+        /// <para>Suggested: 0506 Service Request Relationship -&gt; ClearHl7.Codes.V290.CodeServiceRequestRelationship</para>
         /// </summary>
         public string SpecialServiceRequestRelationship { get; set; }
         

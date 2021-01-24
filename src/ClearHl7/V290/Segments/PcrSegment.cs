@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment PCR - Possible Causal Relationship.
@@ -100,7 +100,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PCR.15 - Product Evaluation Status.
-        /// <para>Suggested: 0247 Status of Evaluation -&gt; ClearHl7.Fhir.Codes.V290.CodeStatusOfEvaluation</para>
+        /// <para>Suggested: 0247 Status of Evaluation -&gt; ClearHl7.Codes.V290.CodeStatusOfEvaluation</para>
         /// </summary>
         public CodedWithExceptions ProductEvaluationStatus { get; set; }
 
@@ -112,7 +112,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PCR.17 - Evaluated Product Source.
-        /// <para>Suggested: 0248 Product Source -&gt; ClearHl7.Fhir.Codes.V290.CodeProductSource</para>
+        /// <para>Suggested: 0248 Product Source -&gt; ClearHl7.Codes.V290.CodeProductSource</para>
         /// </summary>
         public string EvaluatedProductSource { get; set; }
 
@@ -123,31 +123,31 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PCR.19 - Device Operator Qualifications.
-        /// <para>Suggested: 0242 Primary Observer’s Qualification -&gt; ClearHl7.Fhir.Codes.V290.CodePrimaryObserversQualification</para>
+        /// <para>Suggested: 0242 Primary Observer’s Qualification -&gt; ClearHl7.Codes.V290.CodePrimaryObserversQualification</para>
         /// </summary>
         public string DeviceOperatorQualifications { get; set; }
 
         /// <summary>
         /// PCR.20 - Relatedness Assessment.
-        /// <para>Suggested: 0250 Relatedness Assessment -&gt; ClearHl7.Fhir.Codes.V290.CodeRelatednessAssessment</para>
+        /// <para>Suggested: 0250 Relatedness Assessment -&gt; ClearHl7.Codes.V290.CodeRelatednessAssessment</para>
         /// </summary>
         public string RelatednessAssessment { get; set; }
 
         /// <summary>
         /// PCR.21 - Action Taken In Response To The Event.
-        /// <para>Suggested: 0251 Action Taken In Response To The Event -&gt; ClearHl7.Fhir.Codes.V290.CodeActionTakenInResponseToTheEvent</para>
+        /// <para>Suggested: 0251 Action Taken In Response To The Event -&gt; ClearHl7.Codes.V290.CodeActionTakenInResponseToTheEvent</para>
         /// </summary>
         public IEnumerable<string> ActionTakenInResponseToTheEvent { get; set; }
 
         /// <summary>
         /// PCR.22 - Event Causality Observations.
-        /// <para>Suggested: 0252 Causality Observations -&gt; ClearHl7.Fhir.Codes.V290.CodeCausalityObservations</para>
+        /// <para>Suggested: 0252 Causality Observations -&gt; ClearHl7.Codes.V290.CodeCausalityObservations</para>
         /// </summary>
         public IEnumerable<string> EventCausalityObservations { get; set; }
 
         /// <summary>
         /// PCR.23 - Indirect Exposure Mechanism.
-        /// <para>Suggested: 0253 Indirect Exposure Mechanism -&gt; ClearHl7.Fhir.Codes.V290.CodeIndirectExposureMechanism</para>
+        /// <para>Suggested: 0253 Indirect Exposure Mechanism -&gt; ClearHl7.Codes.V290.CodeIndirectExposureMechanism</para>
         /// </summary>
         public IEnumerable<string> IndirectExposureMechanism { get; set; }
         

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment DON - Donation.
@@ -54,25 +54,25 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DON.7 - Intended Procedure Type.
-        /// <para>Suggested: 0933 Intended Procedure Type -&gt; ClearHl7.Fhir.Codes.V290.CodeIntendedProcedureType</para>
+        /// <para>Suggested: 0933 Intended Procedure Type -&gt; ClearHl7.Codes.V290.CodeIntendedProcedureType</para>
         /// </summary>
         public IEnumerable<CodedWithNoExceptions> IntendedProcedureType { get; set; }
 
         /// <summary>
         /// DON.8 - Actual Procedure Type.
-        /// <para>Suggested: 0933 Intended Procedure Type -&gt; ClearHl7.Fhir.Codes.V290.CodeIntendedProcedureType</para>
+        /// <para>Suggested: 0933 Intended Procedure Type -&gt; ClearHl7.Codes.V290.CodeIntendedProcedureType</para>
         /// </summary>
         public IEnumerable<CodedWithNoExceptions> ActualProcedureType { get; set; }
 
         /// <summary>
         /// DON.9 - Donor Eligibility Flag.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string DonorEligibilityFlag { get; set; }
 
         /// <summary>
         /// DON.10 - Donor Eligibility Procedure Type.
-        /// <para>Suggested: 0933 Intended Procedure Type -&gt; ClearHl7.Fhir.Codes.V290.CodeIntendedProcedureType</para>
+        /// <para>Suggested: 0933 Intended Procedure Type -&gt; ClearHl7.Codes.V290.CodeIntendedProcedureType</para>
         /// </summary>
         public IEnumerable<CodedWithNoExceptions> DonorEligibilityProcedureType { get; set; }
 
@@ -83,25 +83,25 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DON.12 - Process Interruption.
-        /// <para>Suggested: 0923 Process Interruption -&gt; ClearHl7.Fhir.Codes.V290.CodeProcessInterruption</para>
+        /// <para>Suggested: 0923 Process Interruption -&gt; ClearHl7.Codes.V290.CodeProcessInterruption</para>
         /// </summary>
         public CodedWithNoExceptions ProcessInterruption { get; set; }
 
         /// <summary>
         /// DON.13 - Process Interruption Reason.
-        /// <para>Suggested: 0935 Process Interruption Reason -&gt; ClearHl7.Fhir.Codes.V290.CodeProcessInterruptionReason</para>
+        /// <para>Suggested: 0935 Process Interruption Reason -&gt; ClearHl7.Codes.V290.CodeProcessInterruptionReason</para>
         /// </summary>
         public CodedWithNoExceptions ProcessInterruptionReason { get; set; }
 
         /// <summary>
         /// DON.14 - Phlebotomy Issue.
-        /// <para>Suggested: 0925 Phlebotomy Issue -&gt; ClearHl7.Fhir.Codes.V290.CodePhlebotomyIssue</para>
+        /// <para>Suggested: 0925 Phlebotomy Issue -&gt; ClearHl7.Codes.V290.CodePhlebotomyIssue</para>
         /// </summary>
         public IEnumerable<CodedWithNoExceptions> PhlebotomyIssue { get; set; }
 
         /// <summary>
         /// DON.15 - Intended Recipient Blood Relative.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string IntendedRecipientBloodRelative { get; set; }
 
@@ -132,13 +132,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DON.21 - Phlebotomy Status.
-        /// <para>Suggested: 0926 Phlebotomy Status -&gt; ClearHl7.Fhir.Codes.V290.CodePhlebotomyStatus</para>
+        /// <para>Suggested: 0926 Phlebotomy Status -&gt; ClearHl7.Codes.V290.CodePhlebotomyStatus</para>
         /// </summary>
         public CodedWithNoExceptions PhlebotomyStatus { get; set; }
 
         /// <summary>
         /// DON.22 - Arm Stick.
-        /// <para>Suggested: 0927 Arm Stick -&gt; ClearHl7.Fhir.Codes.V290.CodeArmStick</para>
+        /// <para>Suggested: 0927 Arm Stick -&gt; ClearHl7.Codes.V290.CodeArmStick</para>
         /// </summary>
         public CodedWithNoExceptions ArmStick { get; set; }
 
@@ -164,7 +164,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DON.27 - Donor Reaction.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string DonorReaction { get; set; }
 

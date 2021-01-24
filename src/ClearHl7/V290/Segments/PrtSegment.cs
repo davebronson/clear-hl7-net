@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment PRT - Participation Information.
@@ -38,7 +38,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PRT.4 - Participation.
-        /// <para>Suggested: 0912 Participation -&gt; ClearHl7.Fhir.Codes.V290.CodeParticipation</para>
+        /// <para>Suggested: 0912 Participation -&gt; ClearHl7.Codes.V290.CodeParticipation</para>
         /// </summary>
         public CodedWithExceptions Participation { get; set; }
 
@@ -54,7 +54,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PRT.7 - Participant Organization Unit Type.
-        /// <para>Suggested: 0406 Participant Organization Unit Type -&gt; ClearHl7.Fhir.Codes.V290.CodeParticipantOrganizationUnitType</para>
+        /// <para>Suggested: 0406 Participant Organization Unit Type -&gt; ClearHl7.Codes.V290.CodeParticipantOrganizationUnitType</para>
         /// </summary>
         public CodedWithExceptions ParticipantOrganizationUnitType { get; set; }
 
@@ -136,7 +136,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PRT.23 - Preferred Method Of Contact.
-        /// <para>Suggested: 0185 Preferred Method Of Contact -&gt; ClearHl7.Fhir.Codes.V290.CodePreferredMethodOfContact</para>
+        /// <para>Suggested: 0185 Preferred Method Of Contact -&gt; ClearHl7.Codes.V290.CodePreferredMethodOfContact</para>
         /// </summary>
         public CodedWithExceptions PreferredMethodOfContact { get; set; }
 

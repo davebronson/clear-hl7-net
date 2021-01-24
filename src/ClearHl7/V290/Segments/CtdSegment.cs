@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment CTD - Contact Data.
@@ -22,7 +22,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CTD.1 - Contact Role.
-        /// <para>Suggested: 0131 Contact Role -&gt; ClearHl7.Fhir.Codes.V290.CodeContactRole</para>
+        /// <para>Suggested: 0131 Contact Role -&gt; ClearHl7.Codes.V290.CodeContactRole</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ContactRole { get; set; }
 
@@ -48,7 +48,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// CTD.6 - Preferred Method of Contact.
-        /// <para>Suggested: 0185 Preferred Method Of Contact -&gt; ClearHl7.Fhir.Codes.V290.CodePreferredMethodOfContact</para>
+        /// <para>Suggested: 0185 Preferred Method Of Contact -&gt; ClearHl7.Codes.V290.CodePreferredMethodOfContact</para>
         /// </summary>
         public CodedWithExceptions PreferredMethodOfContact { get; set; }
 

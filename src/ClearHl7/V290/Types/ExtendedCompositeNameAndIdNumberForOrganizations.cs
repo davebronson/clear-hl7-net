@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 XON - Extended Composite Name And Identification Number For Organizations.
@@ -19,7 +19,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// XON.2 - Organization Name Type Code.
-        /// <para>Suggested: 0204 Organizational Name Type -&gt; ClearHl7.Fhir.Codes.V290.CodeOrganizationalNameType</para>
+        /// <para>Suggested: 0204 Organizational Name Type -&gt; ClearHl7.Codes.V290.CodeOrganizationalNameType</para>
         /// </summary>
         public CodedWithExceptions OrganizationNameTypeCode { get; set; }
 
@@ -40,13 +40,13 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// XON.6 - Assigning Authority.
-        /// <para>Suggested: 0363 Assigning Authority -&gt; ClearHl7.Fhir.Codes.V290.CodeAssigningAuthority</para>
+        /// <para>Suggested: 0363 Assigning Authority -&gt; ClearHl7.Codes.V290.CodeAssigningAuthority</para>
         /// </summary>
         public HierarchicDesignator AssigningAuthority { get; set; }
 
         /// <summary>
         /// XON.7 - Identifier Type Code.
-        /// <para>Suggested: 0203 Identifier Type -&gt; ClearHl7.Fhir.Codes.V290.CodeIdentifierType</para>
+        /// <para>Suggested: 0203 Identifier Type -&gt; ClearHl7.Codes.V290.CodeIdentifierType</para>
         /// </summary>
         public string IdentifierTypeCode { get; set; }
 
@@ -57,7 +57,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// XON.9 - Name Representation Code.
-        /// <para>Suggested: 0465 Name/Address Representation -&gt; ClearHl7.Fhir.Codes.V290.CodeNameAddressRepresentation</para>
+        /// <para>Suggested: 0465 Name/Address Representation -&gt; ClearHl7.Codes.V290.CodeNameAddressRepresentation</para>
         /// </summary>
         public string NameRepresentationCode { get; set; }
 

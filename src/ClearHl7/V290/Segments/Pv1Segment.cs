@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment PV1 - Patient Visit.
@@ -28,7 +28,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PV1.2 - Patient Class.
-        /// <para>Suggested: 0004 Patient Class -&gt; ClearHl7.Fhir.Codes.V290.CodePatientClass</para>
+        /// <para>Suggested: 0004 Patient Class -&gt; ClearHl7.Codes.V290.CodePatientClass</para>
         /// </summary>
         public CodedWithExceptions PatientClass { get; set; }
 
@@ -39,7 +39,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PV1.4 - Admission Type.
-        /// <para>Suggested: 0007 Admission Type -&gt; ClearHl7.Fhir.Codes.V290.CodeAdmissionType</para>
+        /// <para>Suggested: 0007 Admission Type -&gt; ClearHl7.Codes.V290.CodeAdmissionType</para>
         /// </summary>
         public CodedWithExceptions AdmissionType { get; set; }
 
@@ -72,7 +72,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PV1.10 - Hospital Service.
-        /// <para>Suggested: 0069 Hospital Service -&gt; ClearHl7.Fhir.Codes.V290.CodeHospitalService</para>
+        /// <para>Suggested: 0069 Hospital Service -&gt; ClearHl7.Codes.V290.CodeHospitalService</para>
         /// </summary>
         public CodedWithExceptions HospitalService { get; set; }
 
@@ -89,19 +89,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PV1.13 - Re-admission Indicator.
-        /// <para>Suggested: 0092 Re-Admission Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeReadmissionIndicator</para>
+        /// <para>Suggested: 0092 Re-Admission Indicator -&gt; ClearHl7.Codes.V290.CodeReadmissionIndicator</para>
         /// </summary>
         public CodedWithExceptions ReadmissionIndicator { get; set; }
 
         /// <summary>
         /// PV1.14 - Admit Source.
-        /// <para>Suggested: 0023 Admit Source -&gt; ClearHl7.Fhir.Codes.V290.CodeAdmitSource</para>
+        /// <para>Suggested: 0023 Admit Source -&gt; ClearHl7.Codes.V290.CodeAdmitSource</para>
         /// </summary>
         public CodedWithExceptions AdmitSource { get; set; }
 
         /// <summary>
         /// PV1.15 - Ambulatory Status.
-        /// <para>Suggested: 0009 Ambulatory Status -&gt; ClearHl7.Fhir.Codes.V290.CodeAmbulatoryStatus</para>
+        /// <para>Suggested: 0009 Ambulatory Status -&gt; ClearHl7.Codes.V290.CodeAmbulatoryStatus</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> AmbulatoryStatus { get; set; }
 
@@ -243,7 +243,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PV1.40 - Bed Status.
-        /// <para>Suggested: 0116 Bed Status -&gt; ClearHl7.Fhir.Codes.V290.CodeBedStatus</para>
+        /// <para>Suggested: 0116 Bed Status -&gt; ClearHl7.Codes.V290.CodeBedStatus</para>
         /// </summary>
         public CodedWithExceptions BedStatus { get; set; }
 
@@ -295,13 +295,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PV1.50 - Alternate Visit ID.
-        /// <para>Suggested: 0203 Identifier Type -&gt; ClearHl7.Fhir.Codes.V290.CodeIdentifierType</para>
+        /// <para>Suggested: 0203 Identifier Type -&gt; ClearHl7.Codes.V290.CodeIdentifierType</para>
         /// </summary>
         public IEnumerable<ExtendedCompositeIdWithCheckDigit> AlternateVisitId { get; set; }
 
         /// <summary>
         /// PV1.51 - Visit Indicator.
-        /// <para>Suggested: 0326 Visit Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeVisitIndicator</para>
+        /// <para>Suggested: 0326 Visit Indicator -&gt; ClearHl7.Codes.V290.CodeVisitIndicator</para>
         /// </summary>
         public CodedWithExceptions VisitIndicator { get; set; }
 

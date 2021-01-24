@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment BTX - Blood Product Transfusion Disposition.
@@ -77,13 +77,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// BTX.11 - BP Transfusion/Disposition Status.
-        /// <para>Suggested: 0513 Blood Product Transfusion/Disposition Status -&gt; ClearHl7.Fhir.Codes.V290.CodeBloodProductTransfusionDispositionStatus</para>
+        /// <para>Suggested: 0513 Blood Product Transfusion/Disposition Status -&gt; ClearHl7.Codes.V290.CodeBloodProductTransfusionDispositionStatus</para>
         /// </summary>
         public CodedWithExceptions BpTransfusionDispositionStatus { get; set; }
 
         /// <summary>
         /// BTX.12 - BP Message Status.
-        /// <para>Suggested: 0511 BP Observation Status Codes Interpretation -&gt; ClearHl7.Fhir.Codes.V290.CodeBpObservationStatusCodesInterpretation</para>
+        /// <para>Suggested: 0511 BP Observation Status Codes Interpretation -&gt; ClearHl7.Codes.V290.CodeBpObservationStatusCodesInterpretation</para>
         /// </summary>
         public string BpMessageStatus { get; set; }
 
@@ -114,7 +114,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// BTX.18 - BP Adverse Reaction Type.
-        /// <para>Suggested: 0514 Transfusion Adverse Reaction -&gt; ClearHl7.Fhir.Codes.V290.CodeTransfusionAdverseReaction</para>
+        /// <para>Suggested: 0514 Transfusion Adverse Reaction -&gt; ClearHl7.Codes.V290.CodeTransfusionAdverseReaction</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> BpAdverseReactionType { get; set; }
 

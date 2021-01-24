@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace ClearHl7.Fhir.Helpers
+namespace ClearHl7.Helpers
 {
     /// <summary>
     /// Provides static string helper methods.

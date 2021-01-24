@@ -1,8 +1,8 @@
 ﻿using System;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V270.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V270.Types;
 
-namespace ClearHl7.Fhir.V270.Segments
+namespace ClearHl7.V270.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment NDS - Notification Detail.

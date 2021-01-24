@@ -1,7 +1,7 @@
 ﻿using System;
-using ClearHl7.Fhir.Helpers;
+using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 VH - Visiting Hours.
@@ -15,13 +15,13 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// VH.1 - Start Day Range.
-        /// <para>Suggested: 0267 Days Of The Week -&gt; ClearHl7.Fhir.Codes.V290.CodeDaysOfTheWeek</para>
+        /// <para>Suggested: 0267 Days Of The Week -&gt; ClearHl7.Codes.V290.CodeDaysOfTheWeek</para>
         /// </summary>
         public string StartDayRange { get; set; }
 
         /// <summary>
         /// VH.2 - End Day Range.
-        /// <para>Suggested: 0267 Days Of The Week -&gt; ClearHl7.Fhir.Codes.V290.CodeDaysOfTheWeek</para>
+        /// <para>Suggested: 0267 Days Of The Week -&gt; ClearHl7.Codes.V290.CodeDaysOfTheWeek</para>
         /// </summary>
         public string EndDayRange { get; set; }
 

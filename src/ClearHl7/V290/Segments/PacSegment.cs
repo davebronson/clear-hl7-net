@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment PAC - Shipment Package.
@@ -48,19 +48,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PAC.6 - Package Condition.
-        /// <para>Suggested: 0544 Container Condition -&gt; ClearHl7.Fhir.Codes.V290.CodeContainerCondition</para>
+        /// <para>Suggested: 0544 Container Condition -&gt; ClearHl7.Codes.V290.CodeContainerCondition</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> PackageCondition { get; set; }
 
         /// <summary>
         /// PAC.7 - Package Handling Code.
-        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Fhir.Codes.V290.CodeSpecialHandlingCode</para>
+        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Codes.V290.CodeSpecialHandlingCode</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> PackageHandlingCode { get; set; }
 
         /// <summary>
         /// PAC.8 - Package Risk Code.
-        /// <para>Suggested: 0489 Risk Codes -&gt; ClearHl7.Fhir.Codes.V290.CodeRiskCodes</para>
+        /// <para>Suggested: 0489 Risk Codes -&gt; ClearHl7.Codes.V290.CodeRiskCodes</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> PackageRiskCode { get; set; }
 

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment DB1 - Disability.
@@ -28,7 +28,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DB1.2 - Disabled Person Code.
-        /// <para>Suggested: 0334 Disabled Person Code -&gt; ClearHl7.Fhir.Codes.V290.CodeDisabledPersonCode</para>
+        /// <para>Suggested: 0334 Disabled Person Code -&gt; ClearHl7.Codes.V290.CodeDisabledPersonCode</para>
         /// </summary>
         public CodedWithExceptions DisabledPersonCode { get; set; }
 
@@ -39,7 +39,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// DB1.4 - Disability Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string DisabilityIndicator { get; set; }
 

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment INV - Inventory Detail.
@@ -29,13 +29,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// INV.2 - Substance Status.
-        /// <para>Suggested: 0383 Substance Status -&gt; ClearHl7.Fhir.Codes.V290.CodeSubstanceStatus</para>
+        /// <para>Suggested: 0383 Substance Status -&gt; ClearHl7.Codes.V290.CodeSubstanceStatus</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> SubstanceStatus { get; set; }
 
         /// <summary>
         /// INV.3 - Substance Type.
-        /// <para>Suggested: 0384 Substance Type -&gt; ClearHl7.Fhir.Codes.V290.CodeSubstanceType</para>
+        /// <para>Suggested: 0384 Substance Type -&gt; ClearHl7.Codes.V290.CodeSubstanceType</para>
         /// </summary>
         public CodedWithExceptions SubstanceType { get; set; }
 

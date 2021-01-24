@@ -1,4 +1,4 @@
-﻿namespace ClearHl7.Fhir
+﻿namespace ClearHl7
 {
     /// <summary>
     /// Library constants.

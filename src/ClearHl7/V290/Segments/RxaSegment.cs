@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment RXA - Pharmacy Treatment Administration.
@@ -125,13 +125,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXA.20 - Completion Status.
-        /// <para>Suggested: 0322 Completion Status -&gt; ClearHl7.Fhir.Codes.V290.CodeCompletionStatus</para>
+        /// <para>Suggested: 0322 Completion Status -&gt; ClearHl7.Codes.V290.CodeCompletionStatus</para>
         /// </summary>
         public string CompletionStatus { get; set; }
 
         /// <summary>
         /// RXA.21 - Action Code - RXA.
-        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V290.CodeSegmentActionCode</para>
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Codes.V290.CodeSegmentActionCode</para>
         /// </summary>
         public string ActionCodeRxa { get; set; }
 
@@ -159,7 +159,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// RXA.26 - Pharmacy Order Type.
-        /// <para>Suggested: 0480 Pharmacy Order Types -&gt; ClearHl7.Fhir.Codes.V290.CodePharmacyOrderTypes</para>
+        /// <para>Suggested: 0480 Pharmacy Order Types -&gt; ClearHl7.Codes.V290.CodePharmacyOrderTypes</para>
         /// </summary>
         public string PharmacyOrderType { get; set; }
 

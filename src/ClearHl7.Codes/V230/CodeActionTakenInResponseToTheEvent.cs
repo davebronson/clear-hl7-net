@@ -1,4 +1,4 @@
-﻿namespace ClearHl7.Fhir.Codes.V230
+﻿namespace ClearHl7.Codes.V230
 {
     /// <summary>
     /// HL7 Version 2 Table 0251 - Action Taken In Response To The Event.

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment PES - Product Experience Sender.
@@ -73,19 +73,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// PES.11 - Event Report Timing/Type.
-        /// <para>Suggested: 0234 Report Timing -&gt; ClearHl7.Fhir.Codes.V290.CodeReportTiming</para>
+        /// <para>Suggested: 0234 Report Timing -&gt; ClearHl7.Codes.V290.CodeReportTiming</para>
         /// </summary>
         public IEnumerable<string> EventReportTimingType { get; set; }
 
         /// <summary>
         /// PES.12 - Event Report Source.
-        /// <para>Suggested: 0235 Report Source -&gt; ClearHl7.Fhir.Codes.V290.CodeReportSource</para>
+        /// <para>Suggested: 0235 Report Source -&gt; ClearHl7.Codes.V290.CodeReportSource</para>
         /// </summary>
         public string EventReportSource { get; set; }
 
         /// <summary>
         /// PES.13 - Event Reported To.
-        /// <para>Suggested: 0236 Event Reported To -&gt; ClearHl7.Fhir.Codes.V290.CodeEventReportedTo</para>
+        /// <para>Suggested: 0236 Event Reported To -&gt; ClearHl7.Codes.V290.CodeEventReportedTo</para>
         /// </summary>
         public IEnumerable<string> EventReportedTo { get; set; }
         

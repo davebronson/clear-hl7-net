@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment BPO - Blood Product Order.
@@ -34,7 +34,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// BPO.3 - BP Processing Requirements.
-        /// <para>Suggested: 0508 Blood Product Processing Requirements -&gt; ClearHl7.Fhir.Codes.V290.CodeBloodProductProcessingRequirements</para>
+        /// <para>Suggested: 0508 Blood Product Processing Requirements -&gt; ClearHl7.Codes.V290.CodeBloodProductProcessingRequirements</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> BpProcessingRequirements { get; set; }
 
@@ -92,7 +92,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// BPO.14 - BP Informed Consent Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V290.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeYesNoIndicator</para>
         /// </summary>
         public string BpInformedConsentIndicator { get; set; }
 

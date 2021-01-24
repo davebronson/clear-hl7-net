@@ -1,7 +1,7 @@
 ﻿using System;
-using ClearHl7.Fhir.Helpers;
+using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 CCD - Charge Code and Date.
@@ -15,7 +15,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// CCD.1 - Invocation Event.
-        /// <para>Suggested: 0100 Invocation Event -&gt; ClearHl7.Fhir.Codes.V290.CodeInvocationEvent</para>
+        /// <para>Suggested: 0100 Invocation Event -&gt; ClearHl7.Codes.V290.CodeInvocationEvent</para>
         /// </summary>
         public string InvocationEvent { get; set; }
 

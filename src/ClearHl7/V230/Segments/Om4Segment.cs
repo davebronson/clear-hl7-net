@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V230.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V230.Types;
 
-namespace ClearHl7.Fhir.V230.Segments
+namespace ClearHl7.V230.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment OM4 - Observations That Require Specimens.

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment TQ1 - Timing Quantity.
@@ -63,7 +63,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// TQ1.9 - Priority.
-        /// <para>Suggested: 0485 Extended Priority Codes -&gt; ClearHl7.Fhir.Codes.V290.CodeExtendedPriorityCodes</para>
+        /// <para>Suggested: 0485 Extended Priority Codes -&gt; ClearHl7.Codes.V290.CodeExtendedPriorityCodes</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> Priority { get; set; }
 
@@ -79,7 +79,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// TQ1.12 - Conjunction.
-        /// <para>Suggested: 0472 TQ Conjunction ID -&gt; ClearHl7.Fhir.Codes.V290.CodeTqConjunctionId</para>
+        /// <para>Suggested: 0472 TQ Conjunction ID -&gt; ClearHl7.Codes.V290.CodeTqConjunctionId</para>
         /// </summary>
         public string Conjunction { get; set; }
 

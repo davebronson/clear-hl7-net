@@ -1,7 +1,7 @@
-﻿using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+﻿using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment NSC - Application Status Change.
@@ -20,7 +20,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// NSC.1 - Application Change Type.
-        /// <para>Suggested: 0409 Application Change Type -&gt; ClearHl7.Fhir.Codes.V290.CodeApplicationChangeType</para>
+        /// <para>Suggested: 0409 Application Change Type -&gt; ClearHl7.Codes.V290.CodeApplicationChangeType</para>
         /// </summary>
         public CodedWithExceptions ApplicationChangeType { get; set; }
 

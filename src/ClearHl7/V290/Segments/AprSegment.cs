@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment APR - Appointment Preferences.
@@ -22,19 +22,19 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// APR.1 - Time Selection Criteria.
-        /// <para>Suggested: 0294 Time Selection Criteria Parameter Class Codes -&gt; ClearHl7.Fhir.Codes.V290.CodeTimeSelectionCriteriaParameterClassCodes</para>
+        /// <para>Suggested: 0294 Time Selection Criteria Parameter Class Codes -&gt; ClearHl7.Codes.V290.CodeTimeSelectionCriteriaParameterClassCodes</para>
         /// </summary>
         public IEnumerable<SchedulingClassValuePair> TimeSelectionCriteria { get; set; }
 
         /// <summary>
         /// APR.2 - Resource Selection Criteria.
-        /// <para>Suggested: 0294 Time Selection Criteria Parameter Class Codes -&gt; ClearHl7.Fhir.Codes.V290.CodeTimeSelectionCriteriaParameterClassCodes</para>
+        /// <para>Suggested: 0294 Time Selection Criteria Parameter Class Codes -&gt; ClearHl7.Codes.V290.CodeTimeSelectionCriteriaParameterClassCodes</para>
         /// </summary>
         public IEnumerable<SchedulingClassValuePair> ResourceSelectionCriteria { get; set; }
 
         /// <summary>
         /// APR.3 - Location Selection Criteria.
-        /// <para>Suggested: 0294 Time Selection Criteria Parameter Class Codes -&gt; ClearHl7.Fhir.Codes.V290.CodeTimeSelectionCriteriaParameterClassCodes</para>
+        /// <para>Suggested: 0294 Time Selection Criteria Parameter Class Codes -&gt; ClearHl7.Codes.V290.CodeTimeSelectionCriteriaParameterClassCodes</para>
         /// </summary>
         public IEnumerable<SchedulingClassValuePair> LocationSelectionCriteria { get; set; }
 

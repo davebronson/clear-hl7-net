@@ -1,8 +1,8 @@
 ﻿using System;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment EQP - Equipment Log Service.
@@ -21,7 +21,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// EQP.1 - Event type.
-        /// <para>Suggested: 0450 Event Type -&gt; ClearHl7.Fhir.Codes.V290.CodeEventType</para>
+        /// <para>Suggested: 0450 Event Type -&gt; ClearHl7.Codes.V290.CodeEventType</para>
         /// </summary>
         public CodedWithExceptions EventType { get; set; }
 

@@ -1,7 +1,7 @@
 ﻿using System;
-using ClearHl7.Fhir.Helpers;
+using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V240.Types
+namespace ClearHl7.V240.Types
 {
     /// <summary>
     /// HL7 Version 2 CX - Extended Composite Id With Check Digit.

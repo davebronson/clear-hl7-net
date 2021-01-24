@@ -1,7 +1,7 @@
-﻿using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+﻿using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment BLG - Billing.
@@ -20,13 +20,13 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// BLG.1 - When to Charge.
-        /// <para>Suggested: 0100 Invocation Event -&gt; ClearHl7.Fhir.Codes.V290.CodeInvocationEvent</para>
+        /// <para>Suggested: 0100 Invocation Event -&gt; ClearHl7.Codes.V290.CodeInvocationEvent</para>
         /// </summary>
         public ChargeCodeAndDate WhenToCharge { get; set; }
 
         /// <summary>
         /// BLG.2 - Charge Type.
-        /// <para>Suggested: 0122 Charge Type -&gt; ClearHl7.Fhir.Codes.V290.CodeChargeType</para>
+        /// <para>Suggested: 0122 Charge Type -&gt; ClearHl7.Codes.V290.CodeChargeType</para>
         /// </summary>
         public string ChargeType { get; set; }
 
@@ -37,7 +37,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// BLG.4 - Charge Type Reason.
-        /// <para>Suggested: 0475 Charge Type Reason -&gt; ClearHl7.Fhir.Codes.V290.CodeChargeTypeReason</para>
+        /// <para>Suggested: 0475 Charge Type Reason -&gt; ClearHl7.Codes.V290.CodeChargeTypeReason</para>
         /// </summary>
         public CodedWithExceptions ChargeTypeReason { get; set; }
 

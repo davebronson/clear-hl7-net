@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ClearHl7.Fhir.Helpers;
-using ClearHl7.Fhir.V290.Types;
+using ClearHl7.Helpers;
+using ClearHl7.V290.Types;
 
-namespace ClearHl7.Fhir.V290.Segments
+namespace ClearHl7.V290.Segments
 {
     /// <summary>
     /// HL7 Version 2 Segment ODS - Dietary Orders, Supplements, And Preferences.
@@ -22,7 +22,7 @@ namespace ClearHl7.Fhir.V290.Segments
 
         /// <summary>
         /// ODS.1 - Type.
-        /// <para>Suggested: 0159 Diet Code Specification Type -&gt; ClearHl7.Fhir.Codes.V290.CodeDietCodeSpecificationType</para>
+        /// <para>Suggested: 0159 Diet Code Specification Type -&gt; ClearHl7.Codes.V290.CodeDietCodeSpecificationType</para>
         /// </summary>
         public string Type { get; set; }
 

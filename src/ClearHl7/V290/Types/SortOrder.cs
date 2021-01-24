@@ -1,6 +1,6 @@
-﻿using ClearHl7.Fhir.Helpers;
+﻿using ClearHl7.Helpers;
 
-namespace ClearHl7.Fhir.V290.Types
+namespace ClearHl7.V290.Types
 {
     /// <summary>
     /// HL7 Version 2 SRT - Sort Order.
@@ -19,7 +19,7 @@ namespace ClearHl7.Fhir.V290.Types
 
         /// <summary>
         /// SRT.2 - Sequencing.
-        /// <para>Suggested: 0397 Sequencing -&gt; ClearHl7.Fhir.Codes.V290.CodeSequencing</para>
+        /// <para>Suggested: 0397 Sequencing -&gt; ClearHl7.Codes.V290.CodeSequencing</para>
         /// </summary>
         public string Sequencing { get; set; }
 
