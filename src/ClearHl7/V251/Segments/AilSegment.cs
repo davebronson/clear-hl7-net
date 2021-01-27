@@ -38,7 +38,7 @@ namespace ClearHl7.V251.Segments
         public IEnumerable<PersonLocation> LocationResourceId { get; set; }
 
         /// <summary>
-        /// AIL.4 - Location Type - AIL. { get; set; }
+        /// AIL.4 - Location Type - AIL.
         /// </summary>
         /// <remarks>https://www.hl7.org/fhir/v2/0305</remarks>
         public CodedElement LocationTypeAil { get; set; }

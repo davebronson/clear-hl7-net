@@ -58,14 +58,14 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// SAC.8 - Container Status.
+        /// <para>Suggested: 0370 Container Status -&gt; ClearHl7.Fhir.Codes.V282.CodeContainerStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0370</remarks>
         public CodedWithExceptions ContainerStatus { get; set; }
 
         /// <summary>
         /// SAC.9 - Carrier Type.
+        /// <para>Suggested: 0378 Carrier Type</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0378</remarks>
         public CodedWithExceptions CarrierType { get; set; }
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// SAC.12 - Tray Type - SAC.
+        /// <para>Suggested: 0379 Tray Type</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0379</remarks>
         public CodedWithExceptions TrayTypeSac { get; set; }
 
         /// <summary>
@@ -146,26 +146,26 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// SAC.25 - Separator Type.
+        /// <para>Suggested: 0380 Separator Type</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0380</remarks>
         public CodedWithExceptions SeparatorType { get; set; }
 
         /// <summary>
         /// SAC.26 - Cap Type.
+        /// <para>Suggested: 0381 Cap Type</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0381</remarks>
         public CodedWithExceptions CapType { get; set; }
 
         /// <summary>
         /// SAC.27 - Additive.
+        /// <para>Suggested: 0371 Additive/Preservative -&gt; ClearHl7.Fhir.Codes.V282.CodeAdditivePreservative</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0371</remarks>
         public IEnumerable<CodedWithExceptions> Additive { get; set; }
 
         /// <summary>
         /// SAC.28 - Specimen Component.
+        /// <para>Suggested: 0372 Specimen Component -&gt; ClearHl7.Fhir.Codes.V282.CodeSpecimenComponent</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0372</remarks>
         public CodedWithExceptions SpecimenComponent { get; set; }
 
         /// <summary>
@@ -175,8 +175,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// SAC.30 - Treatment.
+        /// <para>Suggested: 0373 Treatment -&gt; ClearHl7.Fhir.Codes.V282.CodeTreatment</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0373</remarks>
         public CodedWithExceptions Treatment { get; set; }
 
         /// <summary>
@@ -226,32 +226,32 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// SAC.40 - System Induced Contaminants.
+        /// <para>Suggested: 0374 System Induced Contaminants -&gt; ClearHl7.Fhir.Codes.V282.CodeSystemInducedContaminants</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0374</remarks>
         public IEnumerable<CodedWithExceptions> SystemInducedContaminants { get; set; }
 
         /// <summary>
         /// SAC.41 - Drug Interference.
+        /// <para>Suggested: 0382 Drug Interference</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0382</remarks>
         public IEnumerable<CodedWithExceptions> DrugInterference { get; set; }
 
         /// <summary>
         /// SAC.42 - Artificial Blood.
+        /// <para>Suggested: 0375 Artificial Blood -&gt; ClearHl7.Fhir.Codes.V282.CodeArtificialBlood</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0375</remarks>
         public CodedWithExceptions ArtificialBlood { get; set; }
 
         /// <summary>
         /// SAC.43 - Special Handling Code.
+        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Fhir.Codes.V282.CodeSpecialHandlingCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0376</remarks>
         public IEnumerable<CodedWithExceptions> SpecialHandlingCode { get; set; }
 
         /// <summary>
         /// SAC.44 - Other Environmental Factors.
+        /// <para>Suggested: 0377 Other Environmental Factors -&gt; ClearHl7.Fhir.Codes.V282.CodeOtherEnvironmentalFactors</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0377</remarks>
         public IEnumerable<CodedWithExceptions> OtherEnvironmentalFactors { get; set; }
         
         /// <summary>

@@ -25,14 +25,14 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// QAK.2 - Query Response Status.
+        /// <para>Suggested: 0208 Query Response Status -&gt; ClearHl7.Fhir.Codes.V282.CodeQueryResponseStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0208</remarks>
         public string QueryResponseStatus { get; set; }
 
         /// <summary>
         /// QAK.3 - Message Query Name.
+        /// <para>Suggested: 0471 Query Name</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0471</remarks>
         public CodedWithExceptions MessageQueryName { get; set; }
 
         /// <summary>

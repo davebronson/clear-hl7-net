@@ -33,8 +33,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// PDA.3 - Death Certified Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string DeathCertifiedIndicator { get; set; }
 
         /// <summary>
@@ -49,8 +49,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// PDA.6 - Autopsy Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string AutopsyIndicator { get; set; }
 
         /// <summary>
@@ -65,8 +65,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// PDA.9 - Coroner Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string CoronerIndicator { get; set; }
         
         /// <summary>

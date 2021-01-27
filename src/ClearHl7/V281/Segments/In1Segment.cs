@@ -28,8 +28,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN1.2 - Health Plan ID.
+        /// <para>Suggested: 0072 Insurance Plan ID</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0072</remarks>
         public CodedWithExceptions HealthPlanId { get; set; }
 
         /// <summary>
@@ -94,8 +94,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN1.15 - Plan Type.
+        /// <para>Suggested: 0086 Plan ID</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0086</remarks>
         public CodedWithExceptions PlanType { get; set; }
 
         /// <summary>
@@ -105,8 +105,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN1.17 - Insured's Relationship To Patient.
+        /// <para>Suggested: 0063 Relationship -&gt; ClearHl7.Fhir.Codes.V281.CodeRelationship</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0063</remarks>
         public CodedWithExceptions InsuredsRelationshipToPatient { get; set; }
 
         /// <summary>
@@ -121,14 +121,14 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN1.20 - Assignment Of Benefits.
+        /// <para>Suggested: 0135 Assignment Of Benefits -&gt; ClearHl7.Fhir.Codes.V281.CodeAssignmentOfBenefits</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0135</remarks>
         public CodedWithExceptions AssignmentOfBenefits { get; set; }
 
         /// <summary>
         /// IN1.21 - Coordination Of Benefits.
+        /// <para>Suggested: 0173 Coordination Of Benefits -&gt; ClearHl7.Fhir.Codes.V281.CodeCoordinationOfBenefits</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0173</remarks>
         public CodedWithExceptions CoordinationOfBenefits { get; set; }
 
         /// <summary>
@@ -138,8 +138,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN1.23 - Notice Of Admission Flag.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string NoticeOfAdmissionFlag { get; set; }
 
         /// <summary>
@@ -149,8 +149,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN1.25 - Report Of Eligibility Flag.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string ReportOfEligibilityFlag { get; set; }
 
         /// <summary>
@@ -160,8 +160,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN1.27 - Release Information Code.
+        /// <para>Suggested: 0093 Release Information</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0093</remarks>
         public CodedWithExceptions ReleaseInformationCode { get; set; }
 
         /// <summary>
@@ -181,14 +181,14 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN1.31 - Type Of Agreement Code.
+        /// <para>Suggested: 0098 Type Of Agreement -&gt; ClearHl7.Fhir.Codes.V281.CodeTypeOfAgreement</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0098</remarks>
         public CodedWithExceptions TypeOfAgreementCode { get; set; }
 
         /// <summary>
         /// IN1.32 - Billing Status.
+        /// <para>Suggested: 0022 Billing Status</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0022</remarks>
         public CodedWithExceptions BillingStatus { get; set; }
 
         /// <summary>
@@ -203,8 +203,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN1.35 - Company Plan Code.
+        /// <para>Suggested: 0042 Company Plan Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0042</remarks>
         public CodedWithExceptions CompanyPlanCode { get; set; }
 
         /// <summary>
@@ -239,14 +239,14 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN1.42 - Insured's Employment Status.
+        /// <para>Suggested: 0066 Employment Status -&gt; ClearHl7.Fhir.Codes.V281.CodeEmploymentStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0066</remarks>
         public CodedWithExceptions InsuredsEmploymentStatus { get; set; }
 
         /// <summary>
         /// IN1.43 - Insured's Administrative Sex.
+        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Fhir.Codes.V281.CodeAdministrativeSex</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0001</remarks>
         public CodedWithExceptions InsuredsAdministrativeSex { get; set; }
 
         /// <summary>
@@ -261,20 +261,20 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN1.46 - Prior Insurance Plan ID.
+        /// <para>Suggested: 0072 Insurance Plan ID</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0072</remarks>
         public CodedWithExceptions PriorInsurancePlanId { get; set; }
 
         /// <summary>
         /// IN1.47 - Coverage Type.
+        /// <para>Suggested: 0309 Coverage Type -&gt; ClearHl7.Fhir.Codes.V281.CodeCoverageType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0309</remarks>
         public CodedWithExceptions CoverageType { get; set; }
 
         /// <summary>
         /// IN1.48 - Handicap.
+        /// <para>Suggested: 0295 Handicap</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0295</remarks>
         public CodedWithExceptions Handicap { get; set; }
 
         /// <summary>
@@ -284,8 +284,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN1.50 - Signature Code.
+        /// <para>Suggested: 0535 Signature Code -&gt; ClearHl7.Fhir.Codes.V281.CodeSignatureCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0535</remarks>
         public CodedWithExceptions SignatureCode { get; set; }
 
         /// <summary>
@@ -300,8 +300,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN1.53 - VIP Indicator.
+        /// <para>Suggested: 0099 VIP Indicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0099</remarks>
         public CodedWithExceptions VipIndicator { get; set; }
 
         /// <summary>
@@ -311,8 +311,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN1.55 - Insurance Action Code.
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V281.CodeSegmentActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0206</remarks>
         public string InsuranceActionCode { get; set; }
         
         /// <summary>

@@ -28,8 +28,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// AIL.2 - Segment Action Code.
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V282.CodeSegmentActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0206</remarks>
         public string SegmentActionCode { get; set; }
 
         /// <summary>
@@ -38,9 +38,9 @@ namespace ClearHl7.V282.Segments
         public IEnumerable<PersonLocation> LocationResourceId { get; set; }
 
         /// <summary>
-        /// AIL.4 - Location Type - AIL. { get; set; }
+        /// AIL.4 - Location Type - AIL.
+        /// <para>Suggested: 0305 Person Location Type -&gt; ClearHl7.Fhir.Codes.V282.CodePersonLocationType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0305</remarks>
         public CodedWithExceptions LocationTypeAil { get; set; }
 
         /// <summary>
@@ -75,14 +75,14 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// AIL.11 - Allow Substitution Code.
+        /// <para>Suggested: 0279 Allow Substitution Codes -&gt; ClearHl7.Fhir.Codes.V282.CodeAllowSubstitutionCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0279</remarks>
         public CodedWithExceptions AllowSubstitutionCode { get; set; }
 
         /// <summary>
         /// AIL.12 - Filler Status Code.
+        /// <para>Suggested: 0278 Filler Status Codes -&gt; ClearHl7.Fhir.Codes.V282.CodeFillerStatusCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0278</remarks>
         public CodedWithExceptions FillerStatusCode { get; set; }
 
         /// <summary>

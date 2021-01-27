@@ -28,8 +28,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OBX.2 - Value Type.
+        /// <para>Suggested: 0125 Value Type -&gt; ClearHl7.Fhir.Codes.V282.CodeValueType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0125</remarks>
         public string ValueType { get; set; }
 
         /// <summary>
@@ -59,8 +59,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OBX.8 - Interpretation Codes.
+        /// <para>Suggested: 0078 Interpretation Codes -&gt; ClearHl7.Fhir.Codes.V282.CodeInterpretationCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0078</remarks>
         public IEnumerable<CodedWithExceptions> InterpretationCodes { get; set; }
 
         /// <summary>
@@ -70,14 +70,14 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OBX.10 - Nature of Abnormal Test.
+        /// <para>Suggested: 0080 Nature Of Abnormal Testing -&gt; ClearHl7.Fhir.Codes.V282.CodeNatureOfAbnormalTesting</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0080</remarks>
         public IEnumerable<string> NatureOfAbnormalTest { get; set; }
 
         /// <summary>
         /// OBX.11 - Observation Result Status.
+        /// <para>Suggested: 0085 Observation Result Status Codes Interpretation -&gt; ClearHl7.Fhir.Codes.V282.CodeObservationResultStatusCodesInterpretation</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0085</remarks>
         public string ObservationResultStatus { get; set; }
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OBX.20 - Observation Site.
+        /// <para>Suggested: 0163 Body Site -&gt; ClearHl7.Fhir.Codes.V282.CodeBodySite</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0163</remarks>
         public IEnumerable<CodedWithExceptions> ObservationSite { get; set; }
 
         /// <summary>
@@ -133,8 +133,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OBX.22 - Mood Code.
+        /// <para>Suggested: 0725 Mood Codes -&gt; ClearHl7.Fhir.Codes.V282.CodeMoodCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0725</remarks>
         public CodedWithNoExceptions MoodCode { get; set; }
 
         /// <summary>
@@ -154,32 +154,32 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OBX.26 - Patient Results Release Category.
+        /// <para>Suggested: 0909 Patient Results Release Categorization Scheme -&gt; ClearHl7.Fhir.Codes.V282.CodePatientResultsReleaseCategorizationScheme</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0909</remarks>
         public string PatientResultsReleaseCategory { get; set; }
 
         /// <summary>
         /// OBX.27 - Root Cause.
+        /// <para>Suggested: 0914 Root Cause -&gt; ClearHl7.Fhir.Codes.V282.CodeRootCause</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0914</remarks>
         public CodedWithExceptions RootCause { get; set; }
 
         /// <summary>
         /// OBX.28 - Local Process Control.
+        /// <para>Suggested: 0915 Local Process Control</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0915</remarks>
         public IEnumerable<CodedWithExceptions> LocalProcessControl { get; set; }
 
         /// <summary>
         /// OBX.29 - Observation Type.
+        /// <para>Suggested: 0936 Observation Type</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0936</remarks>
         public string ObservationType { get; set; }
 
         /// <summary>
         /// OBX.30 - Observation Sub-Type.
+        /// <para>Suggested: 0937 Observation Sub-Type</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0937</remarks>
         public string ObservationSubType { get; set; }
         
         /// <summary>

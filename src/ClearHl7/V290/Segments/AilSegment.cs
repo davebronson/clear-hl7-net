@@ -38,7 +38,7 @@ namespace ClearHl7.V290.Segments
         public IEnumerable<PersonLocation> LocationResourceId { get; set; }
 
         /// <summary>
-        /// AIL.4 - Location Type - AIL. { get; set; }
+        /// AIL.4 - Location Type - AIL.
         /// <para>Suggested: 0305 Person Location Type -&gt; ClearHl7.Codes.V290.CodePersonLocationType</para>
         /// </summary>
         public CodedWithExceptions LocationTypeAil { get; set; }

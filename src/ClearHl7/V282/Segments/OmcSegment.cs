@@ -27,8 +27,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OMC.2 - Segment Action Code.
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V282.CodeSegmentActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0206</remarks>
         public string SegmentActionCode { get; set; }
 
         /// <summary>
@@ -43,20 +43,20 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OMC.5 - Collection Event/Process Step.
+        /// <para>Suggested: 0938 Collection Event/Process Step</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0938</remarks>
         public IEnumerable<CodedWithExceptions> CollectionEventProcessStep { get; set; }
 
         /// <summary>
         /// OMC.6 - Communication Location.
+        /// <para>Suggested: 0939 Communication Location</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0939</remarks>
         public CodedWithExceptions CommunicationLocation { get; set; }
 
         /// <summary>
         /// OMC.7 - Answer Required.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string AnswerRequired { get; set; }
 
         /// <summary>
@@ -66,14 +66,14 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OMC.9 - Type of Answer.
+        /// <para>Suggested: 0125 Value Type -&gt; ClearHl7.Fhir.Codes.V282.CodeValueType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0125</remarks>
         public string TypeOfAnswer { get; set; }
 
         /// <summary>
         /// OMC.10 - Multiple Answers Allowed.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string MultipleAnswersAllowed { get; set; }
 
         /// <summary>

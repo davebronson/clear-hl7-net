@@ -20,6 +20,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// UAC.1 - User Authentication Credential Type Code.
+        /// <para>Suggested: 0615 User Authentication Credential Type Code -&gt; ClearHl7.Fhir.Codes.V282.CodeUserAuthenticationCredentialTypeCode</para>
         /// </summary>
         public CodedWithExceptions UserAuthenticationCredentialTypeCode { get; set; }
 

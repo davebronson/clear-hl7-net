@@ -27,20 +27,20 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// ARV.2 - Access Restriction Action Code.
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V282.CodeSegmentActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0206</remarks>
         public CodedWithNoExceptions AccessRestrictionActionCode { get; set; }
 
         /// <summary>
         /// ARV.3 - Access Restriction Value.
+        /// <para>Suggested: 0717 Access Restriction Value -&gt; ClearHl7.Fhir.Codes.V282.CodeAccessRestrictionValue</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0717</remarks>
         public CodedWithExceptions AccessRestrictionValue { get; set; }
 
         /// <summary>
         /// ARV.4 - Access Restriction Reason.
+        /// <para>Suggested: 0719 Access Restriction Reason Code -&gt; ClearHl7.Fhir.Codes.V282.CodeAccessRestrictionReasonCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0719</remarks>
         public IEnumerable<CodedWithExceptions> AccessRestrictionReason { get; set; }
 
         /// <summary>

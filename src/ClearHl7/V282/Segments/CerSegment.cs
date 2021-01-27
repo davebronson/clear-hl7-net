@@ -53,20 +53,20 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// CER.7 - Granting Country.
+        /// <para>Suggested: 0399 Country Code -&gt; https://www.iso.org/iso-3166-country-codes.html</para>
         /// </summary>
-        /// <remarks>https://www.iso.org/iso-3166-country-codes.html</remarks>
         public string GrantingCountry { get; set; }
 
         /// <summary>
         /// CER.8 - Granting State/Province.
+        /// <para>Suggested: 0347 State/Province</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0347</remarks>
         public CodedWithExceptions GrantingStateProvince { get; set; }
 
         /// <summary>
         /// CER.9 - Granting County/Parish.
+        /// <para>Suggested: 0289 County/Parish</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0289</remarks>
         public CodedWithExceptions GrantingCountyParish { get; set; }
 
         /// <summary>
@@ -106,8 +106,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// CER.17 - Basic Constraint.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string BasicConstraint { get; set; }
 
         /// <summary>
@@ -117,26 +117,26 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// CER.19 - Jurisdiction Country.
+        /// <para>Suggested: 0399 Country Code -&gt; https://www.iso.org/iso-3166-country-codes.html</para>
         /// </summary>
-        /// <remarks>https://www.iso.org/iso-3166-country-codes.html</remarks>
         public string JurisdictionCountry { get; set; }
 
         /// <summary>
         /// CER.20 - Jurisdiction State/Province.
+        /// <para>Suggested: 0347 State/Province</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0347</remarks>
         public CodedWithExceptions JurisdictionStateProvince { get; set; }
 
         /// <summary>
         /// CER.21 - Jurisdiction County/Parish.
+        /// <para>Suggested: 0289 County/Parish</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0289</remarks>
         public CodedWithExceptions JurisdictionCountyParish { get; set; }
 
         /// <summary>
         /// CER.22 - Jurisdiction Breadth.
+        /// <para>Suggested: 0547 Jurisdictional Breadth -&gt; ClearHl7.Fhir.Codes.V282.CodeJurisdictionalBreadth</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0547</remarks>
         public IEnumerable<CodedWithExceptions> JurisdictionBreadth { get; set; }
 
         /// <summary>
@@ -181,8 +181,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// CER.31 - Certificate Status Code.
+        /// <para>Suggested: 0536 Certificate Status -&gt; ClearHl7.Fhir.Codes.V282.CodeCertificateStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0536</remarks>
         public CodedWithExceptions CertificateStatusCode { get; set; }
 
         /// <summary>

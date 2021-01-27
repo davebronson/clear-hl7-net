@@ -20,8 +20,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// QPD.1 - Message Query Name.
+        /// <para>Suggested: 0471 Query Name</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0471</remarks>
         public CodedWithExceptions MessageQueryName { get; set; }
 
         /// <summary>

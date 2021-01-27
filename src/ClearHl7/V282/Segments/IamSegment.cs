@@ -27,8 +27,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IAM.2 - Allergen Type Code.
+        /// <para>Suggested: 0127 Allergen Type -&gt; ClearHl7.Fhir.Codes.V282.CodeAllergenType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0127</remarks>
         public CodedWithExceptions AllergenTypeCode { get; set; }
 
         /// <summary>
@@ -38,8 +38,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IAM.4 - Allergy Severity Code.
+        /// <para>Suggested: 0128 Allergy Severity -&gt; ClearHl7.Fhir.Codes.V282.CodeAllergySeverity</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0128</remarks>
         public CodedWithExceptions AllergySeverityCode { get; set; }
 
         /// <summary>
@@ -49,8 +49,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IAM.6 - Allergy Action Code.
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V282.CodeSegmentActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0206</remarks>
         public CodedWithNoExceptions AllergyActionCode { get; set; }
 
         /// <summary>
@@ -65,8 +65,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IAM.9 - Sensitivity to Causative Agent Code.
+        /// <para>Suggested: 0436 Sensitivity To Causative Agent Code -&gt; ClearHl7.Fhir.Codes.V282.CodeSensitivityToCausativeAgentCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0436</remarks>
         public CodedWithExceptions SensitivityToCausativeAgentCode { get; set; }
 
         /// <summary>
@@ -96,20 +96,20 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IAM.15 - Relationship to Patient Code.
+        /// <para>Suggested: 0063 Relationship -&gt; ClearHl7.Fhir.Codes.V282.CodeRelationship</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0063</remarks>
         public CodedWithExceptions RelationshipToPatientCode { get; set; }
 
         /// <summary>
         /// IAM.16 - Alert Device Code.
+        /// <para>Suggested: 0437 Alert Device Code -&gt; ClearHl7.Fhir.Codes.V282.CodeAlertDeviceCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0437</remarks>
         public CodedWithExceptions AlertDeviceCode { get; set; }
 
         /// <summary>
         /// IAM.17 - Allergy Clinical Status Code.
+        /// <para>Suggested: 0438 Allergy Clinical Status -&gt; ClearHl7.Fhir.Codes.V282.CodeAllergyClinicalStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0438</remarks>
         public CodedWithExceptions AllergyClinicalStatusCode { get; set; }
 
         /// <summary>

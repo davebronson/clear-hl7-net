@@ -22,8 +22,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// MRG.1 - Prior Patient Identifier List.
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Fhir.Codes.V282.CodeCheckDigitScheme</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0061</remarks>
         public IEnumerable<ExtendedCompositeIdWithCheckDigit> PriorPatientIdentifierList { get; set; }
 
         /// <summary>
@@ -33,8 +33,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// MRG.3 - Prior Patient Account Number.
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Fhir.Codes.V282.CodeCheckDigitScheme</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0061</remarks>
         public ExtendedCompositeIdWithCheckDigit PriorPatientAccountNumber { get; set; }
 
         /// <summary>
@@ -44,20 +44,20 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// MRG.5 - Prior Visit Number.
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Fhir.Codes.V282.CodeCheckDigitScheme</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0061</remarks>
         public ExtendedCompositeIdWithCheckDigit PriorVisitNumber { get; set; }
 
         /// <summary>
         /// MRG.6 - Prior Alternate Visit ID.
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Fhir.Codes.V282.CodeCheckDigitScheme</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0061</remarks>
         public IEnumerable<ExtendedCompositeIdWithCheckDigit> PriorAlternateVisitId { get; set; }
 
         /// <summary>
         /// MRG.7 - Prior Patient Name.
+        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Fhir.Codes.V282.CodeNameType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0200</remarks>
         public IEnumerable<ExtendedPersonName> PriorPatientName { get; set; }
         
         /// <summary>

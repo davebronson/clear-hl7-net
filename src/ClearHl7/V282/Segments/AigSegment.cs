@@ -28,8 +28,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// AIG.2 - Segment Action Code.
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V282.CodeSegmentActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0206</remarks>
         public string SegmentActionCode { get; set; }
 
         /// <summary>
@@ -84,14 +84,14 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// AIG.13 - Allow Substitution Code.
+        /// <para>Suggested: 0279 Allow Substitution Codes -&gt; ClearHl7.Fhir.Codes.V282.CodeAllowSubstitutionCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0279</remarks>
         public CodedWithExceptions AllowSubstitutionCode { get; set; }
 
         /// <summary>
         /// AIG.14 - Filler Status Code.
+        /// <para>Suggested: 0278 Filler Status Codes -&gt; ClearHl7.Fhir.Codes.V282.CodeFillerStatusCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0278</remarks>
         public CodedWithExceptions FillerStatusCode { get; set; }
 
         /// <summary>

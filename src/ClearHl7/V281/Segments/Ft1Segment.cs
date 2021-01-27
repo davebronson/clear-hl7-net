@@ -48,14 +48,14 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// FT1.6 - Transaction Type.
+        /// <para>Suggested: 0017 Transaction Type -&gt; ClearHl7.Fhir.Codes.V281.CodeTransactionType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0017</remarks>
         public CodedWithExceptions TransactionType { get; set; }
 
         /// <summary>
         /// FT1.7 - Transaction Code.
+        /// <para>Suggested: 0132 Transaction Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0132</remarks>
         public CodedWithExceptions TransactionCode { get; set; }
 
         /// <summary>
@@ -85,14 +85,14 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// FT1.13 - Department Code.
+        /// <para>Suggested: 0049 Department Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0049</remarks>
         public CodedWithExceptions DepartmentCode { get; set; }
 
         /// <summary>
         /// FT1.14 - Health Plan ID.
+        /// <para>Suggested: 0072 Insurance Plan ID</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0072</remarks>
         public CodedWithExceptions HealthPlanId { get; set; }
 
         /// <summary>
@@ -107,26 +107,26 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// FT1.17 - Fee Schedule.
+        /// <para>Suggested: 0024 Fee Schedule</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0024</remarks>
         public CodedWithExceptions FeeSchedule { get; set; }
 
         /// <summary>
         /// FT1.18 - Patient Type.
+        /// <para>Suggested: 0018 Patient Type</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0018</remarks>
         public CodedWithExceptions PatientType { get; set; }
 
         /// <summary>
         /// FT1.19 - Diagnosis Code - FT1.
+        /// <para>Suggested: 0051 Diagnosis Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0051</remarks>
         public IEnumerable<CodedWithExceptions> DiagnosisCodeFt1 { get; set; }
 
         /// <summary>
         /// FT1.20 - Performed By Code.
+        /// <para>Suggested: 0084 Performed By</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0084</remarks>
         public IEnumerable<ExtendedCompositeIdNumberAndNameForPersons> PerformedByCode { get; set; }
 
         /// <summary>
@@ -151,32 +151,32 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// FT1.25 - Procedure Code.
+        /// <para>Suggested: 0088 Procedure Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0088</remarks>
         public CodedWithNoExceptions ProcedureCode { get; set; }
 
         /// <summary>
         /// FT1.26 - Procedure Code Modifier.
+        /// <para>Suggested: 0340 Procedure Code Modifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0340</remarks>
         public IEnumerable<CodedWithNoExceptions> ProcedureCodeModifier { get; set; }
 
         /// <summary>
         /// FT1.27 - Advanced Beneficiary Notice Code.
+        /// <para>Suggested: 0339 Advanced Beneficiary Notice Code -&gt; ClearHl7.Fhir.Codes.V281.CodeAdvancedBeneficiaryNoticeCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0339</remarks>
         public CodedWithExceptions AdvancedBeneficiaryNoticeCode { get; set; }
 
         /// <summary>
         /// FT1.28 - Medically Necessary Duplicate Procedure Reason.
+        /// <para>Suggested: 0476 Medically Necessary Duplicate Procedure Reason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0476</remarks>
         public CodedWithExceptions MedicallyNecessaryDuplicateProcedureReason { get; set; }
 
         /// <summary>
         /// FT1.29 - NDC Code.
+        /// <para>Suggested: 0549 NDC Codes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0549</remarks>
         public CodedWithExceptions NdcCode { get; set; }
 
         /// <summary>
@@ -236,8 +236,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// FT1.41 - Revenue Code.
+        /// <para>Suggested: 0456 Revenue Code -&gt; ClearHl7.Fhir.Codes.V281.CodeRevenueCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0456</remarks>
         public CodedWithExceptions RevenueCode { get; set; }
 
         /// <summary>

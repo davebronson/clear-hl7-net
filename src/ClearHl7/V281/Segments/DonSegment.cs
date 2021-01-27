@@ -48,32 +48,32 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// DON.6 - Donation Duration Units.
+        /// <para>Suggested: 0932 Donation Duration Units</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0932</remarks>
         public CodedWithNoExceptions DonationDurationUnits { get; set; }
 
         /// <summary>
         /// DON.7 - Intended Procedure Type.
+        /// <para>Suggested: 0933 Intended Procedure Type -&gt; ClearHl7.Fhir.Codes.V281.CodeIntendedProcedureType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0933</remarks>
         public IEnumerable<CodedWithNoExceptions> IntendedProcedureType { get; set; }
 
         /// <summary>
         /// DON.8 - Actual Procedure Type.
+        /// <para>Suggested: 0933 Intended Procedure Type -&gt; ClearHl7.Fhir.Codes.V281.CodeIntendedProcedureType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0933</remarks>
         public IEnumerable<CodedWithNoExceptions> ActualProcedureType { get; set; }
 
         /// <summary>
         /// DON.9 - Donor Eligibility Flag.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string DonorEligibilityFlag { get; set; }
 
         /// <summary>
         /// DON.10 - Donor Eligibility Procedure Type.
+        /// <para>Suggested: 0933 Intended Procedure Type -&gt; ClearHl7.Fhir.Codes.V281.CodeIntendedProcedureType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0933</remarks>
         public IEnumerable<CodedWithNoExceptions> DonorEligibilityProcedureType { get; set; }
 
         /// <summary>
@@ -83,26 +83,26 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// DON.12 - Process Interruption.
+        /// <para>Suggested: 0923 Process Interruption -&gt; ClearHl7.Fhir.Codes.V281.CodeProcessInterruption</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0923</remarks>
         public CodedWithNoExceptions ProcessInterruption { get; set; }
 
         /// <summary>
         /// DON.13 - Process Interruption Reason.
+        /// <para>Suggested: 0935 Process Interruption Reason -&gt; ClearHl7.Fhir.Codes.V281.CodeProcessInterruptionReason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0935</remarks>
         public CodedWithNoExceptions ProcessInterruptionReason { get; set; }
 
         /// <summary>
         /// DON.14 - Phlebotomy Issue.
+        /// <para>Suggested: 0925 Phlebotomy Issue -&gt; ClearHl7.Fhir.Codes.V281.CodePhlebotomyIssue</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0925</remarks>
         public IEnumerable<CodedWithNoExceptions> PhlebotomyIssue { get; set; }
 
         /// <summary>
         /// DON.15 - Intended Recipient Blood Relative.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string IntendedRecipientBloodRelative { get; set; }
 
         /// <summary>
@@ -132,14 +132,14 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// DON.21 - Phlebotomy Status.
+        /// <para>Suggested: 0926 Phlebotomy Status -&gt; ClearHl7.Fhir.Codes.V281.CodePhlebotomyStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0926</remarks>
         public CodedWithNoExceptions PhlebotomyStatus { get; set; }
 
         /// <summary>
         /// DON.22 - Arm Stick.
+        /// <para>Suggested: 0927 Arm Stick -&gt; ClearHl7.Fhir.Codes.V281.CodeArmStick</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0927</remarks>
         public CodedWithNoExceptions ArmStick { get; set; }
 
         /// <summary>
@@ -164,8 +164,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// DON.27 - Donor Reaction.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string DonorReaction { get; set; }
 
         /// <summary>

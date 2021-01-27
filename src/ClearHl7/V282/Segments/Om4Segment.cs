@@ -27,8 +27,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OM4.2 - Derived Specimen.
+        /// <para>Suggested: 0170 Derived Specimen -&gt; ClearHl7.Fhir.Codes.V282.CodeDerivedSpecimen</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0170</remarks>
         public string DerivedSpecimen { get; set; }
 
         /// <summary>
@@ -53,8 +53,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OM4.7 - Additive.
+        /// <para>Suggested: 0371 Additive/Preservative -&gt; ClearHl7.Fhir.Codes.V282.CodeAdditivePreservative</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0371</remarks>
         public CodedWithExceptions Additive { get; set; }
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OM4.13 - Specimen Priorities.
+        /// <para>Suggested: 0027 Priority -&gt; ClearHl7.Fhir.Codes.V282.CodePriority</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0027</remarks>
         public IEnumerable<string> SpecimenPriorities { get; set; }
 
         /// <summary>
@@ -95,14 +95,14 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OM4.15 - Specimen Handling Code.
+        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Fhir.Codes.V282.CodeSpecialHandlingCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0376</remarks>
         public IEnumerable<CodedWithExceptions> SpecimenHandlingCode { get; set; }
 
         /// <summary>
         /// OM4.16 - Specimen Preference.
+        /// <para>Suggested: 0920 Preferred Specimen/Attribute Status -&gt; ClearHl7.Fhir.Codes.V282.CodePreferredSpecimenAttributeStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0920</remarks>
         public string SpecimenPreference { get; set; }
 
         /// <summary>

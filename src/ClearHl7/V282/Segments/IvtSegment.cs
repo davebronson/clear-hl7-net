@@ -47,8 +47,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IVT.6 - Item Status.
+        /// <para>Suggested: 0625 Item Status Codes -&gt; ClearHl7.Fhir.Codes.V282.CodeItemStatusCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0625</remarks>
         public CodedWithExceptions ItemStatus { get; set; }
 
         /// <summary>
@@ -58,8 +58,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IVT.8 - Order Packaging.
+        /// <para>Suggested: 0818 Package -&gt; ClearHl7.Fhir.Codes.V282.CodePackage</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0818</remarks>
         public CodedWithExceptions OrderPackaging { get; set; }
 
         /// <summary>
@@ -74,14 +74,14 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IVT.11 - Patient Chargeable Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions PatientChargeableIndicator { get; set; }
 
         /// <summary>
         /// IVT.12 - Transaction Code.
+        /// <para>Suggested: 0132 Transaction Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0132</remarks>
         public CodedWithExceptions TransactionCode { get; set; }
 
         /// <summary>
@@ -91,26 +91,26 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IVT.14 - Item Importance Code.
+        /// <para>Suggested: 0634 Item Importance Codes -&gt; ClearHl7.Fhir.Codes.V282.CodeItemImportanceCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0634</remarks>
         public CodedWithExceptions ItemImportanceCode { get; set; }
 
         /// <summary>
         /// IVT.15 - Stocked Item Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions StockedItemIndicator { get; set; }
 
         /// <summary>
         /// IVT.16 - Consignment Item Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions ConsignmentItemIndicator { get; set; }
 
         /// <summary>
         /// IVT.17 - Reusable Item Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions ReusableItemIndicator { get; set; }
 
         /// <summary>
@@ -130,8 +130,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IVT.21 - Recommended Reorder Theory.
+        /// <para>Suggested: 0642 Reorder Theory Codes -&gt; ClearHl7.Fhir.Codes.V282.CodeReorderTheoryCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0642</remarks>
         public CodedWithExceptions RecommendedReorderTheory { get; set; }
 
         /// <summary>
@@ -156,8 +156,8 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IVT.26 - Operating Room Par Level Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions OperatingRoomParLevelIndicator { get; set; }
         
         /// <summary>

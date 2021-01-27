@@ -28,14 +28,14 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// TXA.2 - Document Type.
+        /// <para>Suggested: 0270 Document Type -&gt; ClearHl7.Fhir.Codes.V282.CodeDocumentType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0270</remarks>
         public CodedWithExceptions DocumentType { get; set; }
 
         /// <summary>
         /// TXA.3 - Document Content Presentation.
+        /// <para>Suggested: 0191 Type Of Referenced Data -&gt; ClearHl7.Fhir.Codes.V282.CodeTypeOfReferencedData</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0191</remarks>
         public string DocumentContentPresentation { get; set; }
 
         /// <summary>
@@ -105,26 +105,26 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// TXA.17 - Document Completion Status.
+        /// <para>Suggested: 0271 Document Completion Status -&gt; ClearHl7.Fhir.Codes.V282.CodeDocumentCompletionStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0271</remarks>
         public string DocumentCompletionStatus { get; set; }
 
         /// <summary>
         /// TXA.18 - Document Confidentiality Status.
+        /// <para>Suggested: 0272 Document Confidentiality Status -&gt; ClearHl7.Fhir.Codes.V282.CodeDocumentConfidentialityStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0272</remarks>
         public string DocumentConfidentialityStatus { get; set; }
 
         /// <summary>
         /// TXA.19 - Document Availability Status.
+        /// <para>Suggested: 0273 Document Availability Status -&gt; ClearHl7.Fhir.Codes.V282.CodeDocumentAvailabilityStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0273</remarks>
         public string DocumentAvailabilityStatus { get; set; }
 
         /// <summary>
         /// TXA.20 - Document Storage Status.
+        /// <para>Suggested: 0275 Document Storage Status -&gt; ClearHl7.Fhir.Codes.V282.CodeDocumentStorageStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0275</remarks>
         public string DocumentStorageStatus { get; set; }
 
         /// <summary>
