@@ -30,7 +30,7 @@ Several published versions exist for the HL7 Version 2.x messaging standard.  cl
 * 2.8
 * 2.81
 * 2.82
-* 2.90
+* 2.9
 
 Use the matching namespace to target your desired HL7 version:
 ```csharp
