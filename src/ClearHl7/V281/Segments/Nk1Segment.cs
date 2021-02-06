@@ -28,14 +28,14 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// NK1.2 - Name.
+        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Fhir.Codes.V281.CodeNameType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0200</remarks>
         public IEnumerable<ExtendedPersonName> Name { get; set; }
 
         /// <summary>
         /// NK1.3 - Relationship.
+        /// <para>Suggested: 0063 Relationship -&gt; ClearHl7.Fhir.Codes.V281.CodeRelationship</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0063</remarks>
         public CodedWithExceptions Relationship { get; set; }
 
         /// <summary>
@@ -55,8 +55,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// NK1.7 - Contact Role.
+        /// <para>Suggested: 0131 Contact Role -&gt; ClearHl7.Fhir.Codes.V281.CodeContactRole</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0131</remarks>
         public CodedWithExceptions ContactRole { get; set; }
 
         /// <summary>
@@ -91,14 +91,14 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// NK1.14 - Marital Status.
+        /// <para>Suggested: 0002 Marital Status -&gt; ClearHl7.Fhir.Codes.V281.CodeMaritalStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0002</remarks>
         public CodedWithExceptions MaritalStatus { get; set; }
 
         /// <summary>
         /// NK1.15 - Administrative Sex.
+        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Fhir.Codes.V281.CodeAdministrativeSex</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0001</remarks>
         public CodedWithExceptions AdministrativeSex { get; set; }
 
         /// <summary>
@@ -108,56 +108,56 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// NK1.17 - Living Dependency.
+        /// <para>Suggested: 0223 Living Dependency -&gt; ClearHl7.Fhir.Codes.V281.CodeLivingDependency</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0223</remarks>
         public IEnumerable<CodedWithExceptions> LivingDependency { get; set; }
 
         /// <summary>
         /// NK1.18 - Ambulatory Status.
+        /// <para>Suggested: 0009 Ambulatory Status -&gt; ClearHl7.Fhir.Codes.V281.CodeAmbulatoryStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0009</remarks>
         public IEnumerable<CodedWithExceptions> AmbulatoryStatus { get; set; }
 
         /// <summary>
         /// NK1.19 - Citizenship.
+        /// <para>Suggested: 0171 Citizenship</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0171</remarks>
         public IEnumerable<CodedWithExceptions> Citizenship { get; set; }
 
         /// <summary>
         /// NK1.20 - Primary Language.
+        /// <para>Suggested: 0296 Primary Language</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0296</remarks>
         public CodedWithExceptions PrimaryLanguage { get; set; }
 
         /// <summary>
         /// NK1.21 - Living Arrangement.
+        /// <para>Suggested: 0220 Living Arrangement -&gt; ClearHl7.Fhir.Codes.V281.CodeLivingArrangement</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0220</remarks>
         public CodedWithExceptions LivingArrangement { get; set; }
 
         /// <summary>
         /// NK1.22 - Publicity Code.
+        /// <para>Suggested: 0215 Publicity Code -&gt; ClearHl7.Fhir.Codes.V281.CodePublicityCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0215</remarks>
         public CodedWithExceptions PublicityCode { get; set; }
 
         /// <summary>
         /// NK1.23 - Protection Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string ProtectionIndicator { get; set; }
 
         /// <summary>
         /// NK1.24 - Student Indicator.
+        /// <para>Suggested: 0231 Student Status -&gt; ClearHl7.Fhir.Codes.V281.CodeStudentStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0231</remarks>
         public CodedWithExceptions StudentIndicator { get; set; }
 
         /// <summary>
         /// NK1.25 - Religion.
+        /// <para>Suggested: 0006 Religion -&gt; ClearHl7.Fhir.Codes.V281.CodeReligion</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0006</remarks>
         public CodedWithExceptions Religion { get; set; }
 
         /// <summary>
@@ -167,20 +167,20 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// NK1.27 - Nationality.
+        /// <para>Suggested: 0212 Nationality</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0212</remarks>
         public CodedWithExceptions Nationality { get; set; }
 
         /// <summary>
         /// NK1.28 - Ethnic Group.
+        /// <para>Suggested: 0189 Ethnic Group -&gt; ClearHl7.Fhir.Codes.V281.CodeEthnicGroup</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0189</remarks>
         public IEnumerable<CodedWithExceptions> EthnicGroup { get; set; }
 
         /// <summary>
         /// NK1.29 - Contact Reason.
+        /// <para>Suggested: 0222 Contact Reason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0222</remarks>
         public IEnumerable<CodedWithExceptions> ContactReason { get; set; }
 
         /// <summary>
@@ -205,20 +205,20 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// NK1.34 - Job Status.
+        /// <para>Suggested: 0311 Job Status -&gt; ClearHl7.Fhir.Codes.V281.CodeJobStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0311</remarks>
         public CodedWithExceptions JobStatus { get; set; }
 
         /// <summary>
         /// NK1.35 - Race.
+        /// <para>Suggested: 0005 Race -&gt; ClearHl7.Fhir.Codes.V281.CodeRace</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0005</remarks>
         public IEnumerable<CodedWithExceptions> Race { get; set; }
 
         /// <summary>
         /// NK1.36 - Handicap.
+        /// <para>Suggested: 0295 Handicap</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0295</remarks>
         public CodedWithExceptions Handicap { get; set; }
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// NK1.39 - VIP Indicator.
+        /// <para>Suggested: 0099 VIP Indicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0099</remarks>
         public CodedWithExceptions VipIndicator { get; set; }
 
         /// <summary>

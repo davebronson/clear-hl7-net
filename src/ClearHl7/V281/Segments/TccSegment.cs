@@ -60,20 +60,20 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// TCC.9 - Automatic Rerun Allowed.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string AutomaticRerunAllowed { get; set; }
 
         /// <summary>
         /// TCC.10 - Automatic Repeat Allowed.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string AutomaticRepeatAllowed { get; set; }
 
         /// <summary>
         /// TCC.11 - Automatic Reflex Allowed.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string AutomaticReflexAllowed { get; set; }
 
         /// <summary>
@@ -88,8 +88,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// TCC.14 - Processing Type.
+        /// <para>Suggested: 0388 Processing Type -&gt; ClearHl7.Fhir.Codes.V281.CodeProcessingType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0388</remarks>
         public CodedWithExceptions ProcessingType { get; set; }
 
         /// <summary>

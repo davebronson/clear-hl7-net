@@ -27,20 +27,20 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ORG.2 - Organization Unit Code.
+        /// <para>Suggested: 0405 Organization Unit</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0405</remarks>
         public CodedWithExceptions OrganizationUnitCode { get; set; }
 
         /// <summary>
         /// ORG.3 - Organization Unit Type Code.
+        /// <para>Suggested: 0474 Practitioner Organization Unit Type -&gt; ClearHl7.Fhir.Codes.V281.CodePractitionerOrganizationUnitType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0474</remarks>
         public CodedWithExceptions OrganizationUnitTypeCode { get; set; }
 
         /// <summary>
         /// ORG.4 - Primary Org Unit Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string PrimaryOrgUnitIndicator { get; set; }
 
         /// <summary>
@@ -50,20 +50,20 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ORG.6 - Health Care Provider Type Code.
+        /// <para>Suggested: 0452 Health Care Provider Type Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0452</remarks>
         public CodedWithExceptions HealthCareProviderTypeCode { get; set; }
 
         /// <summary>
         /// ORG.7 - Health Care Provider Classification Code.
+        /// <para>Suggested: 0453 Health Care Provider Classification</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0453</remarks>
         public CodedWithExceptions HealthCareProviderClassificationCode { get; set; }
 
         /// <summary>
         /// ORG.8 - Health Care Provider Area of Specialization Code.
+        /// <para>Suggested: 0454 Health Care Provider Area Of Specialization</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0454</remarks>
         public CodedWithExceptions HealthCareProviderAreaOfSpecializationCode { get; set; }
 
         /// <summary>
@@ -73,26 +73,26 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ORG.10 - Employment Status Code.
+        /// <para>Suggested: 0066 Employment Status -&gt; ClearHl7.Fhir.Codes.V281.CodeEmploymentStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0066</remarks>
         public CodedWithExceptions EmploymentStatusCode { get; set; }
 
         /// <summary>
         /// ORG.11 - Board Approval Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string BoardApprovalIndicator { get; set; }
 
         /// <summary>
         /// ORG.12 - Primary Care Physician Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string PrimaryCarePhysicianIndicator { get; set; }
 
         /// <summary>
         /// ORG.13 - Cost Center Code.
+        /// <para>Suggested: 0539 Cost Center Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0539</remarks>
         public IEnumerable<CodedWithExceptions> CostCenterCode { get; set; }
         
         /// <summary>

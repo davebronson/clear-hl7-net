@@ -33,8 +33,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// PR1.3 - Procedure Code.
+        /// <para>Suggested: 0088 Procedure Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0088</remarks>
         public CodedWithNoExceptions ProcedureCode { get; set; }
 
         /// <summary>
@@ -49,8 +49,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// PR1.6 - Procedure Functional Type.
+        /// <para>Suggested: 0230 Procedure Functional Type -&gt; ClearHl7.Fhir.Codes.V281.CodeProcedureFunctionalType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0230</remarks>
         public CodedWithExceptions ProcedureFunctionalType { get; set; }
 
         /// <summary>
@@ -65,8 +65,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// PR1.9 - Anesthesia Code.
+        /// <para>Suggested: 0019 Anesthesia Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0019</remarks>
         public CodedWithExceptions AnesthesiaCode { get; set; }
 
         /// <summary>
@@ -86,38 +86,38 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// PR1.13 - Consent Code.
+        /// <para>Suggested: 0059 Consent Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0059</remarks>
         public CodedWithExceptions ConsentCode { get; set; }
 
         /// <summary>
         /// PR1.14 - Procedure Priority.
+        /// <para>Suggested: 0418 Procedure Priority -&gt; ClearHl7.Fhir.Codes.V281.CodeProcedurePriority</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0418</remarks>
         public decimal? ProcedurePriority { get; set; }
 
         /// <summary>
         /// PR1.15 - Associated Diagnosis Code.
+        /// <para>Suggested: 0051 Diagnosis Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0051</remarks>
         public CodedWithExceptions AssociatedDiagnosisCode { get; set; }
 
         /// <summary>
         /// PR1.16 - Procedure Code Modifier.
+        /// <para>Suggested: 0340 Procedure Code Modifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0340</remarks>
         public IEnumerable<CodedWithNoExceptions> ProcedureCodeModifier { get; set; }
 
         /// <summary>
         /// PR1.17 - Procedure DRG Type.
+        /// <para>Suggested: 0416 Procedure DRG Type -&gt; ClearHl7.Fhir.Codes.V281.CodeProcedureDrgType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0416</remarks>
         public CodedWithExceptions ProcedureDrgType { get; set; }
 
         /// <summary>
         /// PR1.18 - Tissue Type Code.
+        /// <para>Suggested: 0417 Tissue Type Code -&gt; ClearHl7.Fhir.Codes.V281.CodeTissueTypeCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0417</remarks>
         public IEnumerable<CodedWithExceptions> TissueTypeCode { get; set; }
 
         /// <summary>
@@ -127,20 +127,20 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// PR1.20 - Procedure Action Code.
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V281.CodeSegmentActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0206</remarks>
         public string ProcedureActionCode { get; set; }
 
         /// <summary>
         /// PR1.21 - DRG Procedure Determination Status.
+        /// <para>Suggested: 0761 DRG Procedure Determination Status -&gt; ClearHl7.Fhir.Codes.V281.CodeDrgProcedureDeterminationStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0761</remarks>
         public CodedWithExceptions DrgProcedureDeterminationStatus { get; set; }
 
         /// <summary>
         /// PR1.22 - DRG Procedure Relevance.
+        /// <para>Suggested: 0763 DRG Procedure Relevance -&gt; ClearHl7.Fhir.Codes.V281.CodeDrgProcedureRelevance</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0763</remarks>
         public CodedWithExceptions DrgProcedureRelevance { get; set; }
 
         /// <summary>
@@ -150,8 +150,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// PR1.24 - Respiratory Within Surgery.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string RespiratoryWithinSurgery { get; set; }
 
         /// <summary>

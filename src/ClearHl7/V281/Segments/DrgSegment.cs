@@ -72,6 +72,7 @@ namespace ClearHl7.V281.Segments
         /// <summary>
         /// DRG.10 - Confidential Indicator.
         /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// </summary>
         public string ConfidentialIndicator { get; set; }
 
         /// <summary>

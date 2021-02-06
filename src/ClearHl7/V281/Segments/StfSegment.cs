@@ -28,8 +28,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// STF.2 - Staff Identifier List.
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Fhir.Codes.V281.CodeCheckDigitScheme</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0061</remarks>
         public IEnumerable<ExtendedCompositeIdWithCheckDigit> StaffIdentifierList { get; set; }
 
         /// <summary>
@@ -39,14 +39,14 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// STF.4 - Staff Type.
+        /// <para>Suggested: 0182 Staff Type</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0182</remarks>
         public IEnumerable<CodedWithExceptions> StaffType { get; set; }
 
         /// <summary>
         /// STF.5 - Administrative Sex.
+        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Fhir.Codes.V281.CodeAdministrativeSex</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0001</remarks>
         public CodedWithExceptions AdministrativeSex { get; set; }
 
         /// <summary>
@@ -56,20 +56,20 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// STF.7 - Active/Inactive Flag.
+        /// <para>Suggested: 0183 Active/Inactive -&gt; ClearHl7.Fhir.Codes.V281.CodeActiveInactive</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0183</remarks>
         public string ActiveInactiveFlag { get; set; }
 
         /// <summary>
         /// STF.8 - Department.
+        /// <para>Suggested: 0184 Department</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0184</remarks>
         public IEnumerable<CodedWithExceptions> Department { get; set; }
 
         /// <summary>
         /// STF.9 - Hospital Service - STF.
+        /// <para>Suggested: 0069 Hospital Service -&gt; ClearHl7.Fhir.Codes.V281.CodeHospitalService</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0069</remarks>
         public IEnumerable<CodedWithExceptions> HospitalServiceStf { get; set; }
 
         /// <summary>
@@ -84,14 +84,14 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// STF.12 - Institution Activation Date.
+        /// <para>Suggested: 0537 Institution</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0537</remarks>
         public IEnumerable<DateAndInstitutionName> InstitutionActivationDate { get; set; }
 
         /// <summary>
         /// STF.13 - Institution Inactivation Date.
+        /// <para>Suggested: 0537 Institution</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0537</remarks>
         public IEnumerable<DateAndInstitutionName> InstitutionInactivationDate { get; set; }
 
         /// <summary>
@@ -106,14 +106,14 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// STF.16 - Preferred Method of Contact.
+        /// <para>Suggested: 0185 Preferred Method Of Contact -&gt; ClearHl7.Fhir.Codes.V281.CodePreferredMethodOfContact</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0185</remarks>
         public CodedWithExceptions PreferredMethodOfContact { get; set; }
 
         /// <summary>
         /// STF.17 - Marital Status.
+        /// <para>Suggested: 0002 Marital Status -&gt; ClearHl7.Fhir.Codes.V281.CodeMaritalStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0002</remarks>
         public CodedWithExceptions MaritalStatus { get; set; }
 
         /// <summary>
@@ -128,14 +128,14 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// STF.20 - Employment Status Code.
+        /// <para>Suggested: 0066 Employment Status -&gt; ClearHl7.Fhir.Codes.V281.CodeEmploymentStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0066</remarks>
         public CodedWithExceptions EmploymentStatusCode { get; set; }
 
         /// <summary>
         /// STF.21 - Additional Insured on Auto.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string AdditionalInsuredOnAuto { get; set; }
 
         /// <summary>
@@ -145,8 +145,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// STF.23 - Copy Auto Ins.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string CopyAutoIns { get; set; }
 
         /// <summary>
@@ -166,26 +166,26 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// STF.27 - Race.
+        /// <para>Suggested: 0005 Race -&gt; ClearHl7.Fhir.Codes.V281.CodeRace</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0005</remarks>
         public CodedWithExceptions Race { get; set; }
 
         /// <summary>
         /// STF.28 - Ethnic Group.
+        /// <para>Suggested: 0189 Ethnic Group -&gt; ClearHl7.Fhir.Codes.V281.CodeEthnicGroup</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0189</remarks>
         public CodedWithExceptions EthnicGroup { get; set; }
 
         /// <summary>
         /// STF.29 - Re-activation Approval Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string ReactivationApprovalIndicator { get; set; }
 
         /// <summary>
         /// STF.30 - Citizenship.
+        /// <para>Suggested: 0171 Citizenship</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0171</remarks>
         public IEnumerable<CodedWithExceptions> Citizenship { get; set; }
 
         /// <summary>
@@ -195,14 +195,14 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// STF.32 - Death Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string DeathIndicator { get; set; }
 
         /// <summary>
         /// STF.33 - Institution Relationship Type Code.
+        /// <para>Suggested: 0538 Institution Relationship Type -&gt; ClearHl7.Fhir.Codes.V281.CodeInstitutionRelationshipType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0538</remarks>
         public CodedWithExceptions InstitutionRelationshipTypeCode { get; set; }
 
         /// <summary>
@@ -217,32 +217,32 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// STF.36 - Cost Center Code.
+        /// <para>Suggested: 0539 Cost Center Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0539</remarks>
         public IEnumerable<CodedWithExceptions> CostCenterCode { get; set; }
 
         /// <summary>
         /// STF.37 - Generic Classification Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string GenericClassificationIndicator { get; set; }
 
         /// <summary>
         /// STF.38 - Inactive Reason Code.
+        /// <para>Suggested: 0540 Inactive Reason Code -&gt; ClearHl7.Fhir.Codes.V281.CodeInactiveReasonCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0540</remarks>
         public CodedWithExceptions InactiveReasonCode { get; set; }
 
         /// <summary>
         /// STF.39 - Generic resource type or category.
+        /// <para>Suggested: 0771 Generic Resource Type Or Category</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0771</remarks>
         public IEnumerable<CodedWithExceptions> GenericResourceTypeOrCategory { get; set; }
 
         /// <summary>
         /// STF.40 - Religion.
+        /// <para>Suggested: 0006 Religion -&gt; ClearHl7.Fhir.Codes.V281.CodeReligion</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0006</remarks>
         public CodedWithExceptions Religion { get; set; }
 
         /// <summary>

@@ -36,8 +36,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// PMT.4 - Payment Method.
+        /// <para>Suggested: 0570 Payment Method Code -&gt; ClearHl7.Fhir.Codes.V281.CodePaymentMethodCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0570</remarks>
         public CodedWithExceptions PaymentMethod { get; set; }
 
         /// <summary>

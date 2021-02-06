@@ -33,8 +33,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// SHP.3 - Shipment Status.
+        /// <para>Suggested: 0905 Shipment Status -&gt; ClearHl7.Fhir.Codes.V281.CodeShipmentStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0905</remarks>
         public CodedWithExceptions ShipmentStatus { get; set; }
 
         /// <summary>
@@ -49,14 +49,14 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// SHP.6 - Shipment Priority.
+        /// <para>Suggested: 0906 ActPriority -&gt; ClearHl7.Fhir.Codes.V281.CodeActPriority</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0906</remarks>
         public CodedWithExceptions ShipmentPriority { get; set; }
 
         /// <summary>
         /// SHP.7 - Shipment Confidentiality.
+        /// <para>Suggested: 0907 Confidentiality -&gt; ClearHl7.Fhir.Codes.V281.CodeConfidentiality</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0907</remarks>
         public IEnumerable<CodedWithExceptions> ShipmentConfidentiality { get; set; }
 
         /// <summary>
@@ -66,20 +66,20 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// SHP.9 - Shipment Condition.
+        /// <para>Suggested: 0544 Container Condition -&gt; ClearHl7.Fhir.Codes.V281.CodeContainerCondition</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0544</remarks>
         public IEnumerable<CodedWithExceptions> ShipmentCondition { get; set; }
 
         /// <summary>
         /// SHP.10 - Shipment Handling Code.
+        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Fhir.Codes.V281.CodeSpecialHandlingCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0376</remarks>
         public IEnumerable<CodedWithExceptions> ShipmentHandlingCode { get; set; }
 
         /// <summary>
         /// SHP.11 - Shipment Risk Code.
+        /// <para>Suggested: 0489 Risk Codes -&gt; ClearHl7.Fhir.Codes.V281.CodeRiskCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0489</remarks>
         public IEnumerable<CodedWithExceptions> ShipmentRiskCode { get; set; }
         
         /// <summary>

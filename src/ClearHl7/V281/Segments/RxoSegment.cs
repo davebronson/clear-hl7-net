@@ -62,8 +62,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// RXO.9 - Allow Substitutions.
+        /// <para>Suggested: 0161 Allow Substitution -&gt; ClearHl7.Fhir.Codes.V281.CodeAllowSubstitution</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0161</remarks>
         public string AllowSubstitutions { get; set; }
 
         /// <summary>
@@ -98,8 +98,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// RXO.16 - Needs Human Review.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string NeedsHumanReview { get; set; }
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// RXO.27 - Pharmacy Order Type.
+        /// <para>Suggested: 0480 Pharmacy Order Types -&gt; ClearHl7.Fhir.Codes.V281.CodePharmacyOrderTypes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0480</remarks>
         public string PharmacyOrderType { get; set; }
 
         /// <summary>
@@ -175,8 +175,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// RXO.31 - Mood Code.
+        /// <para>Suggested: 0725 Mood Codes -&gt; ClearHl7.Fhir.Codes.V281.CodeMoodCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0725</remarks>
         public CodedWithNoExceptions MoodCode { get; set; }
 
         /// <summary>

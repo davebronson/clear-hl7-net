@@ -22,8 +22,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// MFA.1 - Record-Level Event Code.
+        /// <para>Suggested: 0180 Masterfile Action Code -&gt; ClearHl7.Fhir.Codes.V281.CodeMasterfileActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0180</remarks>
         public string RecordLevelEventCode { get; set; }
 
         /// <summary>
@@ -38,8 +38,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// MFA.4 - MFN Record Level Error Return.
+        /// <para>Suggested: 0181 MFN Record-Level Error Return -&gt; ClearHl7.Fhir.Codes.V281.CodeMfnRecordLevelErrorReturn</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0181</remarks>
         public CodedWithExceptions MfnRecordLevelErrorReturn { get; set; }
 
         /// <summary>
@@ -49,8 +49,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// MFA.6 - Primary Key Value Type - MFA.
+        /// <para>Suggested: 0355 Primary Key Value Type -&gt; ClearHl7.Fhir.Codes.V281.CodePrimaryKeyValueType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0355</remarks>
         public IEnumerable<string> PrimaryKeyValueTypeMfa { get; set; }
         
         /// <summary>

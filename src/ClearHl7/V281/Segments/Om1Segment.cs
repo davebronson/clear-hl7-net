@@ -33,14 +33,14 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM1.3 - Permitted Data Types.
+        /// <para>Suggested: 0125 Value Type -&gt; ClearHl7.Fhir.Codes.V281.CodeValueType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0125</remarks>
         public IEnumerable<string> PermittedDataTypes { get; set; }
 
         /// <summary>
         /// OM1.4 - Specimen Required.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string SpecimenRequired { get; set; }
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM1.12 - Orderability.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string Orderability { get; set; }
 
         /// <summary>
@@ -96,8 +96,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM1.15 - Portable Device Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string PortableDeviceIndicator { get; set; }
 
         /// <summary>
@@ -112,8 +112,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM1.18 - Nature of Service/Test/Observation.
+        /// <para>Suggested: 0174 Nature Of Service/Test/Observation -&gt; ClearHl7.Fhir.Codes.V281.CodeNatureOfServiceTestObservation</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0174</remarks>
         public CodedWithExceptions NatureOfServiceTestObservation { get; set; }
 
         /// <summary>
@@ -148,14 +148,14 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM1.25 - Processing Priority.
+        /// <para>Suggested: 0168 Processing Priority -&gt; ClearHl7.Fhir.Codes.V281.CodeProcessingPriority</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0168</remarks>
         public IEnumerable<string> ProcessingPriority { get; set; }
 
         /// <summary>
         /// OM1.26 - Reporting Priority.
+        /// <para>Suggested: 0169 Reporting Priority -&gt; ClearHl7.Fhir.Codes.V281.CodeReportingPriority</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0169</remarks>
         public string ReportingPriority { get; set; }
 
         /// <summary>
@@ -175,8 +175,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM1.30 - Confidentiality Code.
+        /// <para>Suggested: 0177 Confidentiality Code -&gt; ClearHl7.Fhir.Codes.V281.CodeConfidentialityCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0177</remarks>
         public CodedWithExceptions ConfidentialityCode { get; set; }
 
         /// <summary>
@@ -236,26 +236,26 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM1.42 - Kind of Quantity Observed.
+        /// <para>Suggested: 0254 Kind Of Quantity -&gt; ClearHl7.Fhir.Codes.V281.CodeKindOfQuantity</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0254</remarks>
         public CodedWithExceptions KindOfQuantityObserved { get; set; }
 
         /// <summary>
         /// OM1.43 - Point Versus Interval.
+        /// <para>Suggested: 0255 Duration Categories -&gt; ClearHl7.Fhir.Codes.V281.CodeDurationCategories</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0255</remarks>
         public CodedWithExceptions PointVersusInterval { get; set; }
 
         /// <summary>
         /// OM1.44 - Challenge Information.
+        /// <para>Suggested: 0256 Time Delay Post Challenge -&gt; ClearHl7.Fhir.Codes.V281.CodeTimeDelayPostChallenge</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0256</remarks>
         public Text ChallengeInformation { get; set; }
 
         /// <summary>
         /// OM1.45 - Relationship Modifier.
+        /// <para>Suggested: 0258 Relationship Modifier -&gt; ClearHl7.Fhir.Codes.V281.CodeRelationshipModifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0258</remarks>
         public CodedWithExceptions RelationshipModifier { get; set; }
 
         /// <summary>
@@ -265,20 +265,20 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM1.47 - Modality of Imaging Measurement.
+        /// <para>Suggested: 0910 Modality Of Imaging Measurement</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0910</remarks>
         public CodedWithExceptions ModalityOfImagingMeasurement { get; set; }
 
         /// <summary>
         /// OM1.48 - Exclusive Test.
+        /// <para>Suggested: 0919 Exclusive Test -&gt; ClearHl7.Fhir.Codes.V281.CodeExclusiveTest</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0919</remarks>
         public string ExclusiveTest { get; set; }
 
         /// <summary>
         /// OM1.49 - Diagnostic Serv Sect ID.
+        /// <para>Suggested: 0074 Diagnostic Service Section ID -&gt; ClearHl7.Fhir.Codes.V281.CodeDiagnosticServiceSectionId</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0074</remarks>
         public string DiagnosticServSectId { get; set; }
 
         /// <summary>

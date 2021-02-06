@@ -28,8 +28,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// PRT.2 - Action Code.
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V281.CodeSegmentActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0206</remarks>
         public string ActionCode { get; set; }
 
         /// <summary>
@@ -39,8 +39,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// PRT.4 - Participation.
+        /// <para>Suggested: 0912 Participation -&gt; ClearHl7.Fhir.Codes.V281.CodeParticipation</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0912</remarks>
         public CodedWithExceptions Participation { get; set; }
 
         /// <summary>
@@ -55,8 +55,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// PRT.7 - Participant Organization Unit Type.
+        /// <para>Suggested: 0406 Participant Organization Unit Type -&gt; ClearHl7.Fhir.Codes.V281.CodeParticipantOrganizationUnitType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0406</remarks>
         public CodedWithExceptions ParticipantOrganizationUnitType { get; set; }
 
         /// <summary>

@@ -33,8 +33,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM7.3 - Category Identifier.
+        /// <para>Suggested: 0412 Category Identifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0412</remarks>
         public IEnumerable<CodedWithExceptions> CategoryIdentifier { get; set; }
 
         /// <summary>
@@ -74,14 +74,14 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM7.11 - Consent Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string ConsentIndicator { get; set; }
 
         /// <summary>
         /// OM7.12 - Consent Identifier.
+        /// <para>Suggested: 0413 Consent Identifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0413</remarks>
         public CodedWithExceptions ConsentIdentifier { get; set; }
 
         /// <summary>
@@ -101,8 +101,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM7.16 - Consent Interval Units.
+        /// <para>Suggested: 0414 Units Of Time</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0414</remarks>
         public CodedWithExceptions ConsentIntervalUnits { get; set; }
 
         /// <summary>
@@ -112,8 +112,8 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM7.18 - Consent Waiting Period Units.
+        /// <para>Suggested: 0414 Units Of Time</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0414</remarks>
         public CodedWithExceptions ConsentWaitingPeriodUnits { get; set; }
 
         /// <summary>
@@ -133,14 +133,14 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM7.22 - Formulary Status.
+        /// <para>Suggested: 0473 Formulary Status -&gt; ClearHl7.Fhir.Codes.V281.CodeFormularyStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0473</remarks>
         public CodedWithExceptions FormularyStatus { get; set; }
 
         /// <summary>
         /// OM7.23 - Special Order Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string SpecialOrderIndicator { get; set; }
 
         /// <summary>
