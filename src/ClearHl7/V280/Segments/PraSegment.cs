@@ -28,32 +28,32 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PRA.2 - Practitioner Group.
+        /// <para>Suggested: 0358 Practitioner Group</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0358</remarks>
         public IEnumerable<CodedWithExceptions> PractitionerGroup { get; set; }
 
         /// <summary>
         /// PRA.3 - Practitioner Category.
+        /// <para>Suggested: 0186 Practitioner Category</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0186</remarks>
         public IEnumerable<CodedWithExceptions> PractitionerCategory { get; set; }
 
         /// <summary>
         /// PRA.4 - Provider Billing.
+        /// <para>Suggested: 0187 Provider Billing -&gt; ClearHl7.Fhir.Codes.V280.CodeProviderBilling</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0187</remarks>
         public string ProviderBilling { get; set; }
 
         /// <summary>
         /// PRA.5 - Specialty.
+        /// <para>Suggested: 0337 Certification Status -&gt; ClearHl7.Fhir.Codes.V280.CodeCertificationStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0337</remarks>
         public IEnumerable<SpecialtyDescription> Specialty { get; set; }
 
         /// <summary>
         /// PRA.6 - Practitioner ID Numbers.
+        /// <para>Suggested: 0338 Practitioner ID Number Type -&gt; ClearHl7.Fhir.Codes.V280.CodePractitionerIdNumberType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0338</remarks>
         public IEnumerable<PractitionerLicenseOrOtherIdNumber> PractitionerIdNumbers { get; set; }
 
         /// <summary>
@@ -68,8 +68,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PRA.9 - Institution.
+        /// <para>Suggested: 0537 Institution</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0537</remarks>
         public CodedWithExceptions Institution { get; set; }
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PRA.11 - Government Reimbursement Billing Eligibility.
+        /// <para>Suggested: 0401 Government Reimbursement Program -&gt; ClearHl7.Fhir.Codes.V280.CodeGovernmentReimbursementProgram</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0401</remarks>
         public IEnumerable<CodedWithExceptions> GovernmentReimbursementBillingEligibility { get; set; }
 
         /// <summary>

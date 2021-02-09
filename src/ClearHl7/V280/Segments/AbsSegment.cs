@@ -21,20 +21,20 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// ABS.1 - Discharge Care Provider.
+        /// <para>Suggested: 0010 Physician ID</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0010</remarks>
         public ExtendedCompositeIdNumberAndNameForPersons DischargeCareProvider { get; set; }
 
         /// <summary>
         /// ABS.2 - Transfer Medical Service Code.
+        /// <para>Suggested: 0069 Hospital Service -&gt; ClearHl7.Fhir.Codes.V280.CodeHospitalService</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0069</remarks>
         public CodedWithExceptions TransferMedicalServiceCode { get; set; }
 
         /// <summary>
         /// ABS.3 - Severity of Illness Code.
+        /// <para>Suggested: 0421 Severity Of Illness Code -&gt; ClearHl7.Fhir.Codes.V280.CodeSeverityOfIllnessCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0421</remarks>
         public CodedWithExceptions SeverityOfIllnessCode { get; set; }
 
         /// <summary>
@@ -49,8 +49,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// ABS.6 - Triage Code.
+        /// <para>Suggested: 0422 Triage Code -&gt; ClearHl7.Fhir.Codes.V280.CodeTriageCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0422</remarks>
         public CodedWithExceptions TriageCode { get; set; }
 
         /// <summary>
@@ -65,20 +65,20 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// ABS.9 - Case Category Code.
+        /// <para>Suggested: 0423 Case Category Code -&gt; ClearHl7.Fhir.Codes.V280.CodeCaseCategoryCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0423</remarks>
         public CodedWithExceptions CaseCategoryCode { get; set; }
 
         /// <summary>
         /// ABS.10 - Caesarian Section Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string CaesarianSectionIndicator { get; set; }
 
         /// <summary>
         /// ABS.11 - Gestation Category Code.
+        /// <para>Suggested: 0424 Gestation Category Code -&gt; ClearHl7.Fhir.Codes.V280.CodeGestationCategoryCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0424</remarks>
         public CodedWithExceptions GestationCategoryCode { get; set; }
 
         /// <summary>
@@ -88,14 +88,14 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// ABS.13 - Newborn Code.
+        /// <para>Suggested: 0425 Newborn Code -&gt; ClearHl7.Fhir.Codes.V280.CodeNewbornCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0425</remarks>
         public CodedWithExceptions NewbornCode { get; set; }
 
         /// <summary>
         /// ABS.14 - Stillborn Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string StillbornIndicator { get; set; }
 
         /// <summary>

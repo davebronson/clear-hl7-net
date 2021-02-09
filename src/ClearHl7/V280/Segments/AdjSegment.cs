@@ -36,8 +36,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// ADJ.4 - Adjustment Category.
+        /// <para>Suggested: 0564 Adjustment Category Code -&gt; ClearHl7.Fhir.Codes.V280.CodeAdjustmentCategoryCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0564</remarks>
         public CodedWithExceptions AdjustmentCategory { get; set; }
 
         /// <summary>
@@ -47,14 +47,14 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// ADJ.6 - Adjustment Quantity.
+        /// <para>Suggested: 0560 Quantity Units</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0560</remarks>
         public CompositeQuantityWithUnits AdjustmentQuantity { get; set; }
 
         /// <summary>
         /// ADJ.7 - Adjustment Reason PA.
+        /// <para>Suggested: 0565 Provider Adjustment Reason Code -&gt; ClearHl7.Fhir.Codes.V280.CodeProviderAdjustmentReasonCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0565</remarks>
         public CodedWithExceptions AdjustmentReasonPa { get; set; }
 
         /// <summary>
@@ -74,8 +74,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// ADJ.11 - Adjustment Action.
+        /// <para>Suggested: 0569 Adjustment Action -&gt; ClearHl7.Fhir.Codes.V280.CodeAdjustmentAction</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0569</remarks>
         public CodedWithExceptions AdjustmentAction { get; set; }
 
         /// <summary>

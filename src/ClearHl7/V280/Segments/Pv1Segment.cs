@@ -28,8 +28,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PV1.2 - Patient Class.
+        /// <para>Suggested: 0004 Patient Class  -&gt; ClearHl7.Fhir.Codes.V280.CodePatientClass</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0004</remarks>
         public CodedWithExceptions PatientClass { get; set; }
 
         /// <summary>
@@ -39,8 +39,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PV1.4 - Admission Type.
+        /// <para>Suggested: 0007 Admission Type -&gt; ClearHl7.Fhir.Codes.V280.CodeAdmissionType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0007</remarks>
         public CodedWithExceptions AdmissionType { get; set; }
 
         /// <summary>
@@ -55,14 +55,14 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PV1.7 - Attending Doctor.
+        /// <para>Suggested: 0010 Physician ID</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0010</remarks>
         public IEnumerable<ExtendedCompositeIdNumberAndNameForPersons> AttendingDoctor { get; set; }
 
         /// <summary>
         /// PV1.8 - Referring Doctor.
+        /// <para>Suggested: 0010 Physician ID</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0010</remarks>
         public IEnumerable<ExtendedCompositeIdNumberAndNameForPersons> ReferringDoctor { get; set; }
 
         /// <summary>
@@ -72,8 +72,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PV1.10 - Hospital Service.
+        /// <para>Suggested: 0069 Hospital Service -&gt; ClearHl7.Fhir.Codes.V280.CodeHospitalService</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0069</remarks>
         public CodedWithExceptions HospitalService { get; set; }
 
         /// <summary>
@@ -83,44 +83,44 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PV1.12 - Preadmit Test Indicator.
+        /// <para>Suggested: 0087 Pre-Admit Test Indicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0087</remarks>
         public CodedWithExceptions PreadmitTestIndicator { get; set; }
 
         /// <summary>
         /// PV1.13 - Re-admission Indicator.
+        /// <para>Suggested: 0092 Re-Admission Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeReadmissionIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0092</remarks>
         public CodedWithExceptions ReadmissionIndicator { get; set; }
 
         /// <summary>
         /// PV1.14 - Admit Source.
+        /// <para>Suggested: 0023 Admit Source -&gt; ClearHl7.Fhir.Codes.V280.CodeAdmitSource</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0023</remarks>
         public CodedWithExceptions AdmitSource { get; set; }
 
         /// <summary>
         /// PV1.15 - Ambulatory Status.
+        /// <para>Suggested: 0009 Ambulatory Status -&gt; ClearHl7.Fhir.Codes.V280.CodeAmbulatoryStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0009</remarks>
         public IEnumerable<CodedWithExceptions> AmbulatoryStatus { get; set; }
 
         /// <summary>
         /// PV1.16 - VIP Indicator.
+        /// <para>Suggested: 0099 VIP Indicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0099</remarks>
         public CodedWithExceptions VipIndicator { get; set; }
 
         /// <summary>
         /// PV1.17 - Admitting Doctor.
+        /// <para>Suggested: 0010 Physician ID</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0010</remarks>
         public IEnumerable<ExtendedCompositeIdNumberAndNameForPersons> AdmittingDoctor { get; set; }
 
         /// <summary>
         /// PV1.18 - Patient Type.
+        /// <para>Suggested: 0018 Patient Type</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0018</remarks>
         public CodedWithExceptions PatientType { get; set; }
 
         /// <summary>
@@ -130,32 +130,32 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PV1.20 - Financial Class.
+        /// <para>Suggested: 0064 Financial Class</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0064</remarks>
         public IEnumerable<FinancialClass> FinancialClass { get; set; }
 
         /// <summary>
         /// PV1.21 - Charge Price Indicator.
+        /// <para>Suggested: 0032 Charge/Price Indicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0032</remarks>
         public CodedWithExceptions ChargePriceIndicator { get; set; }
 
         /// <summary>
         /// PV1.22 - Courtesy Code.
+        /// <para>Suggested: 0045 Courtesy Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0045</remarks>
         public CodedWithExceptions CourtesyCode { get; set; }
 
         /// <summary>
         /// PV1.23 - Credit Rating.
+        /// <para>Suggested: 0046 Credit Rating</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0046</remarks>
         public CodedWithExceptions CreditRating { get; set; }
 
         /// <summary>
         /// PV1.24 - Contract Code.
+        /// <para>Suggested: 0044 Contract Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0044</remarks>
         public IEnumerable<CodedWithExceptions> ContractCode { get; set; }
 
         /// <summary>
@@ -175,14 +175,14 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PV1.28 - Interest Code.
+        /// <para>Suggested: 0073 Interest Rate Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0073</remarks>
         public CodedWithExceptions InterestCode { get; set; }
 
         /// <summary>
         /// PV1.29 - Transfer to Bad Debt Code.
+        /// <para>Suggested: 0110 Transfer To Bad Debt Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0110</remarks>
         public CodedWithExceptions TransferToBadDebtCode { get; set; }
 
         /// <summary>
@@ -192,8 +192,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PV1.31 - Bad Debt Agency Code.
+        /// <para>Suggested: 0021 Bad Debt Agency Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0021</remarks>
         public CodedWithExceptions BadDebtAgencyCode { get; set; }
 
         /// <summary>
@@ -208,8 +208,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PV1.34 - Delete Account Indicator.
+        /// <para>Suggested: 0111 Delete Account Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0111</remarks>
         public CodedWithExceptions DeleteAccountIndicator { get; set; }
 
         /// <summary>
@@ -219,38 +219,38 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PV1.36 - Discharge Disposition.
+        /// <para>Suggested: 0112 Discharge Disposition</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0112</remarks>
         public CodedWithExceptions DischargeDisposition { get; set; }
 
         /// <summary>
         /// PV1.37 - Discharged to Location.
+        /// <para>Suggested: 0113 Discharged to Location</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0113</remarks>
         public DischargeToLocationAndDate DischargedToLocation { get; set; }
 
         /// <summary>
         /// PV1.38 - Diet Type.
+        /// <para>Suggested: 0114 Diet Type</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0114</remarks>
         public CodedWithExceptions DietType { get; set; }
 
         /// <summary>
         /// PV1.39 - Servicing Facility.
+        /// <para>Suggested: 0115 Servicing Facility</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0115</remarks>
         public CodedWithExceptions ServicingFacility { get; set; }
 
         /// <summary>
         /// PV1.40 - Bed Status.
+        /// <para>Suggested: 0116 Bed Status -&gt; ClearHl7.Fhir.Codes.V280.CodeBedStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0116</remarks>
         public CodedWithExceptions BedStatus { get; set; }
 
         /// <summary>
         /// PV1.41 - Account Status.
+        /// <para>Suggested: 0117 Account Status</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0117</remarks>
         public CodedWithExceptions AccountStatus { get; set; }
 
         /// <summary>
@@ -295,14 +295,14 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PV1.50 - Alternate Visit ID.
+        /// <para>Suggested: 0203 Identifier Type -&gt; ClearHl7.Fhir.Codes.V280.CodeIdentifierType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0203</remarks>
         public IEnumerable<ExtendedCompositeIdWithCheckDigit> AlternateVisitId { get; set; }
 
         /// <summary>
         /// PV1.51 - Visit Indicator.
+        /// <para>Suggested: 0326 Visit Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeVisitIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0326</remarks>
         public CodedWithExceptions VisitIndicator { get; set; }
 
         /// <summary>

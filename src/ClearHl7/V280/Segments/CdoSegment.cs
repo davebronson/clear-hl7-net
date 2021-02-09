@@ -25,8 +25,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// CDO.2 - Action Code.
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V280.CodeSegmentActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0206</remarks>
         public string ActionCode { get; set; }
 
         /// <summary>
@@ -36,8 +36,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// CDO.4 - Cumulative Dosage Limit Time Interval.
+        /// <para>Suggested: 0924 Cumulative Dosage Limit UoM -&gt; ClearHl7.Fhir.Codes.V280.CodeCumulativeDosageLimitUom</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0924</remarks>
         public CompositeQuantityWithUnits CumulativeDosageLimitTimeInterval { get; set; }
 
         /// <summary>

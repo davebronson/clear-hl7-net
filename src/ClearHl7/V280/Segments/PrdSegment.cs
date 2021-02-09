@@ -23,8 +23,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PRD.1 - Provider Role.
+        /// <para>Suggested: 0286 Provider Role</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0286</remarks>
         public IEnumerable<CodedWithExceptions> ProviderRole { get; set; }
 
         /// <summary>
@@ -49,14 +49,14 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PRD.6 - Preferred Method of Contact.
+        /// <para>Suggested: 0185 Preferred Method Of Contact -&gt; ClearHl7.Fhir.Codes.V280.CodePreferredMethodOfContact</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0185</remarks>
         public CodedWithExceptions PreferredMethodOfContact { get; set; }
 
         /// <summary>
         /// PRD.7 - Provider Identifiers.
+        /// <para>Suggested: 0338 Practitioner ID Number Type -&gt; ClearHl7.Fhir.Codes.V280.CodePractitionerIdNumberType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0338</remarks>
         public IEnumerable<PractitionerLicenseOrOtherIdNumber> ProviderIdentifiers { get; set; }
 
         /// <summary>
@@ -91,8 +91,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PRD.14 - Provider Organization Method of Contact.
+        /// <para>Suggested: 0185 Preferred Method Of Contact -&gt; ClearHl7.Fhir.Codes.V280.CodePreferredMethodOfContact</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0185</remarks>
         public CodedWithExceptions ProviderOrganizationMethodOfContact { get; set; }
         
         /// <summary>

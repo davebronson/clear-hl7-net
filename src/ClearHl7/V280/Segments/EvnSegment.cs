@@ -38,14 +38,14 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// EVN.4 - Event Reason Code.
+        /// <para>Suggested: 0062 Event Reason -&gt; ClearHl7.Fhir.Codes.V280.CodeEventReason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0062</remarks>
         public CodedWithExceptions EventReasonCode { get; set; }
 
         /// <summary>
         /// EVN.5 - Operator ID.
+        /// <para>Suggested: 0188 Operator ID</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0188</remarks>
         public IEnumerable<ExtendedCompositeIdNumberAndNameForPersons> OperatorId { get; set; }
 
         /// <summary>

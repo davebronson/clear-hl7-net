@@ -30,8 +30,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// BUI.3 - Blood Unit Type.
+        /// <para>Suggested: 0566 Blood Unit Type -&gt; ClearHl7.Fhir.Codes.V280.CodeBloodUnitType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0566</remarks>
         public CodedWithExceptions BloodUnitType { get; set; }
 
         /// <summary>
@@ -41,8 +41,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// BUI.5 - Weight Units.
+        /// <para>Suggested: 0929 Weight Units</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0929</remarks>
         public CodedWithNoExceptions WeightUnits { get; set; }
 
         /// <summary>
@@ -52,8 +52,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// BUI.7 - Volume Units.
+        /// <para>Suggested: 0930 Volume Units</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0930</remarks>
         public CodedWithNoExceptions VolumeUnits { get; set; }
 
         /// <summary>
@@ -78,8 +78,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// BUI.12 - Transport Temperature Units.
+        /// <para>Suggested: 0931 Transport Temperature Units</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0931</remarks>
         public CodedWithNoExceptions TransportTemperatureUnits { get; set; }
 
         /// <summary>

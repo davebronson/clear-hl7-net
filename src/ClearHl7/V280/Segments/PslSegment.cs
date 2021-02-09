@@ -46,20 +46,20 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PSL.6 - Product/Service Line Item Status.
+        /// <para>Suggested: 0559 Product/Service Status -&gt; ClearHl7.Fhir.Codes.V280.CodeProductServiceStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0559</remarks>
         public CodedWithExceptions ProductServiceLineItemStatus { get; set; }
 
         /// <summary>
         /// PSL.7 - Product/Service Code.
+        /// <para>Suggested: 0879 Product/Service Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0879</remarks>
         public CodedWithExceptions ProductServiceCode { get; set; }
 
         /// <summary>
         /// PSL.8 - Product/Service Code Modifier.
+        /// <para>Suggested: 0880 Product/Service Code Modifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0880</remarks>
         public CodedWithExceptions ProductServiceCodeModifier { get; set; }
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PSL.12 - Product/Service Quantity.
+        /// <para>Suggested: 0560 Quantity Units</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0560</remarks>
         public CompositeQuantityWithUnits ProductServiceQuantity { get; set; }
 
         /// <summary>
@@ -105,8 +105,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PSL.17 - Product/Service Clarification Code Type.
+        /// <para>Suggested: 0561 Product/Services Clarification Codes -&gt; ClearHl7.Fhir.Codes.V280.CodeProductServicesClarificationCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0561</remarks>
         public CodedWithExceptions ProductServiceClarificationCodeType { get; set; }
 
         /// <summary>
@@ -121,20 +121,20 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PSL.20 - Processing Consideration Code.
+        /// <para>Suggested: 0562 Processing Consideration Codes -&gt; ClearHl7.Fhir.Codes.V280.CodeProcessingConsiderationCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0562</remarks>
         public CodedWithExceptions ProcessingConsiderationCode { get; set; }
 
         /// <summary>
         /// PSL.21 - Restricted Disclosure Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public string RestrictedDisclosureIndicator { get; set; }
 
         /// <summary>
         /// PSL.22 - Related Product/Service Code Indicator.
+        /// <para>Suggested: 0879 Product/Service Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0879</remarks>
         public CodedWithExceptions RelatedProductServiceCodeIndicator { get; set; }
 
         /// <summary>
@@ -179,20 +179,20 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PSL.31 - Role Executing Physician.
+        /// <para>Suggested: 0881 Role Executing Physician -&gt; ClearHl7.Fhir.Codes.V280.CodeRoleExecutingPhysician</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0881</remarks>
         public CodedWithExceptions RoleExecutingPhysician { get; set; }
 
         /// <summary>
         /// PSL.32 - Medical Role Executing Physician.
+        /// <para>Suggested: 0882 Medical Role Executing Physician -&gt; ClearHl7.Fhir.Codes.V280.CodeMedicalRoleExecutingPhysician</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0882</remarks>
         public CodedWithExceptions MedicalRoleExecutingPhysician { get; set; }
 
         /// <summary>
         /// PSL.33 - Side of body.
+        /// <para>Suggested: 0894 Side Of Body -&gt; ClearHl7.Fhir.Codes.V280.CodeSideOfBody</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0894</remarks>
         public CodedWithExceptions SideOfBody { get; set; }
 
         /// <summary>
@@ -262,8 +262,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PSL.47 - Validation.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string Validation { get; set; }
 
         /// <summary>

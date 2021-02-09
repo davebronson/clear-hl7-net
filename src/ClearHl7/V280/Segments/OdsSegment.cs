@@ -22,8 +22,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// ODS.1 - Type.
+        /// <para>Suggested: 0159 Diet Code Specification Type -&gt; ClearHl7.Fhir.Codes.V280.CodeDietCodeSpecificationType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0159</remarks>
         public string Type { get; set; }
 
         /// <summary>

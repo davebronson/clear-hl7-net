@@ -22,26 +22,26 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// GP1.1 - Type of Bill Code.
+        /// <para>Suggested: 0455 Type Of Bill Code -&gt; ClearHl7.Fhir.Codes.V280.CodeTypeOfBillCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0455</remarks>
         public CodedWithExceptions TypeOfBillCode { get; set; }
 
         /// <summary>
         /// GP1.2 - Revenue Code.
+        /// <para>Suggested: 0456 Revenue Code -&gt; ClearHl7.Fhir.Codes.V280.CodeRevenueCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0456</remarks>
         public IEnumerable<CodedWithExceptions> RevenueCode { get; set; }
 
         /// <summary>
         /// GP1.3 - Overall Claim Disposition Code.
+        /// <para>Suggested: 0457 Overall Claim Disposition Code -&gt; ClearHl7.Fhir.Codes.V280.CodeOverallClaimDispositionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0457</remarks>
         public CodedWithExceptions OverallClaimDispositionCode { get; set; }
 
         /// <summary>
         /// GP1.4 - OCE Edits per Visit Code.
+        /// <para>Suggested: 0458 OCE Edit Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0458</remarks>
         public IEnumerable<CodedWithExceptions> OceEditsPerVisitCode { get; set; }
 
         /// <summary>

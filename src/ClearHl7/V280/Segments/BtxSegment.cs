@@ -43,8 +43,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// BTX.5 - CP Commercial Product.
+        /// <para>Suggested: 0512 Commercial Product</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0512</remarks>
         public CodedWithExceptions CpCommercialProduct { get; set; }
 
         /// <summary>
@@ -74,14 +74,14 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// BTX.11 - BP Transfusion/Disposition Status.
+        /// <para>Suggested: 0513 Blood Product Transfusion/Disposition Status -&gt; ClearHl7.Fhir.Codes.V280.CodeBloodProductTransfusionDispositionStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0513</remarks>
         public CodedWithExceptions BpTransfusionDispositionStatus { get; set; }
 
         /// <summary>
         /// BTX.12 - BP Message Status.
+        /// <para>Suggested: 0511 BP Observation Status Codes Interpretation -&gt; ClearHl7.Fhir.Codes.V280.CodeBpObservationStatusCodesInterpretation</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0511</remarks>
         public string BpMessageStatus { get; set; }
 
         /// <summary>
@@ -111,14 +111,14 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// BTX.18 - BP Adverse Reaction Type.
+        /// <para>Suggested: 0514 Transfusion Adverse Reaction -&gt; ClearHl7.Fhir.Codes.V280.CodeTransfusionAdverseReaction</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0514</remarks>
         public IEnumerable<CodedWithExceptions> BpAdverseReactionType { get; set; }
 
         /// <summary>
         /// BTX.19 - BP Transfusion Interrupted Reason.
+        /// <para>Suggested: 0515 Transfusion Interrupted Reason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0515</remarks>
         public CodedWithExceptions BpTransfusionInterruptedReason { get; set; }
 
         /// <summary>

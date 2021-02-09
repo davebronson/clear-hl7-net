@@ -20,8 +20,8 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// NSC.1 - Application Change Type.
+        /// <para>Suggested: 0409 Application Change Type -&gt; ClearHl7.Fhir.Codes.V280.CodeApplicationChangeType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0409</remarks>
         public CodedWithExceptions ApplicationChangeType { get; set; }
 
         /// <summary>
@@ -36,14 +36,14 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// NSC.4 - Current Application.
+        /// <para>Suggested: 0361 Application</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0361</remarks>
         public HierarchicDesignator CurrentApplication { get; set; }
 
         /// <summary>
         /// NSC.5 - Current Facility.
+        /// <para>Suggested: 0362 Facility</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0362</remarks>
         public HierarchicDesignator CurrentFacility { get; set; }
 
         /// <summary>
@@ -58,14 +58,14 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// NSC.8 - New Application.
+        /// <para>Suggested: 0361 Application</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0361</remarks>
         public HierarchicDesignator NewApplication { get; set; }
 
         /// <summary>
         /// NSC.9 - New Facility.
+        /// <para>Suggested: 0362 Facility</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0362</remarks>
         public HierarchicDesignator NewFacility { get; set; }
         
         /// <summary>
