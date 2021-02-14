@@ -63,7 +63,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// TQ1.9 - Priority.
-        /// <para>Suggested: 0485 Extended Priority Codes -&gt; ClearHl7.Fhir.Codes.V281.CodeExtendedPriorityCodes</para>
+        /// <para>Suggested: 0485 Extended Priority Codes -&gt; ClearHl7.Codes.V281.CodeExtendedPriorityCodes</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> Priority { get; set; }
 
@@ -79,7 +79,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// TQ1.12 - Conjunction.
-        /// <para>Suggested: 0472 TQ Conjunction ID -&gt; ClearHl7.Fhir.Codes.V281.CodeTqConjunctionId</para>
+        /// <para>Suggested: 0472 TQ Conjunction ID -&gt; ClearHl7.Codes.V281.CodeTqConjunctionId</para>
         /// </summary>
         public string Conjunction { get; set; }
 

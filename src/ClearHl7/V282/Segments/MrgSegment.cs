@@ -22,7 +22,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// MRG.1 - Prior Patient Identifier List.
-        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Fhir.Codes.V282.CodeCheckDigitScheme</para>
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Codes.V282.CodeCheckDigitScheme</para>
         /// </summary>
         public IEnumerable<ExtendedCompositeIdWithCheckDigit> PriorPatientIdentifierList { get; set; }
 
@@ -33,7 +33,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// MRG.3 - Prior Patient Account Number.
-        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Fhir.Codes.V282.CodeCheckDigitScheme</para>
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Codes.V282.CodeCheckDigitScheme</para>
         /// </summary>
         public ExtendedCompositeIdWithCheckDigit PriorPatientAccountNumber { get; set; }
 
@@ -44,19 +44,19 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// MRG.5 - Prior Visit Number.
-        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Fhir.Codes.V282.CodeCheckDigitScheme</para>
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Codes.V282.CodeCheckDigitScheme</para>
         /// </summary>
         public ExtendedCompositeIdWithCheckDigit PriorVisitNumber { get; set; }
 
         /// <summary>
         /// MRG.6 - Prior Alternate Visit ID.
-        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Fhir.Codes.V282.CodeCheckDigitScheme</para>
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Codes.V282.CodeCheckDigitScheme</para>
         /// </summary>
         public IEnumerable<ExtendedCompositeIdWithCheckDigit> PriorAlternateVisitId { get; set; }
 
         /// <summary>
         /// MRG.7 - Prior Patient Name.
-        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Fhir.Codes.V282.CodeNameType</para>
+        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Codes.V282.CodeNameType</para>
         /// </summary>
         public IEnumerable<ExtendedPersonName> PriorPatientName { get; set; }
         

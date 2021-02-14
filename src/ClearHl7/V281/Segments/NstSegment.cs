@@ -20,7 +20,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// NST.1 - Statistics Available.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string StatisticsAvailable { get; set; }
 
@@ -31,7 +31,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// NST.3 - Source Type.
-        /// <para>Suggested: 0332 Source Type -&gt; ClearHl7.Fhir.Codes.V281.CodeSourceType</para>
+        /// <para>Suggested: 0332 Source Type -&gt; ClearHl7.Codes.V281.CodeSourceType</para>
         /// </summary>
         public string SourceType { get; set; }
 

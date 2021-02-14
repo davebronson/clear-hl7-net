@@ -49,7 +49,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// DG1.6 - Diagnosis Type.
-        /// <para>Suggested: 0052 Diagnosis Type -&gt; ClearHl7.Fhir.Codes.V282.CodeDiagnosisType</para>
+        /// <para>Suggested: 0052 Diagnosis Type -&gt; ClearHl7.Codes.V282.CodeDiagnosisType</para>
         /// </summary>
         public CodedWithExceptions DiagnosisType { get; set; }
 
@@ -67,7 +67,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// DG1.9 - DRG Approval Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string DrgApprovalIndicator { get; set; }
 
@@ -79,7 +79,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// DG1.11 - Outlier Type.
-        /// <para>Suggested: 0083 Outlier Type -&gt; ClearHl7.Fhir.Codes.V282.CodeOutlierType</para>
+        /// <para>Suggested: 0083 Outlier Type -&gt; ClearHl7.Codes.V282.CodeOutlierType</para>
         /// </summary>
         public CodedWithExceptions OutlierType { get; set; }
 
@@ -100,7 +100,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// DG1.15 - Diagnosis Priority.
-        /// <para>Suggested: 0359 Diagnosis Priority -&gt; ClearHl7.Fhir.Codes.V282.CodeDiagnosisPriority</para>
+        /// <para>Suggested: 0359 Diagnosis Priority -&gt; ClearHl7.Codes.V282.CodeDiagnosisPriority</para>
         /// </summary>
         public decimal? DiagnosisPriority { get; set; }
 
@@ -111,13 +111,13 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// DG1.17 - Diagnosis Classification.
-        /// <para>Suggested: 0228 Diagnosis Classification -&gt; ClearHl7.Fhir.Codes.V282.CodeDiagnosisClassification</para>
+        /// <para>Suggested: 0228 Diagnosis Classification -&gt; ClearHl7.Codes.V282.CodeDiagnosisClassification</para>
         /// </summary>
         public CodedWithExceptions DiagnosisClassification { get; set; }
 
         /// <summary>
         /// DG1.18 - Confidential Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string ConfidentialIndicator { get; set; }
 
@@ -133,7 +133,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// DG1.21 - Diagnosis Action Code.
-        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V282.CodeSegmentActionCode</para>
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Codes.V282.CodeSegmentActionCode</para>
         /// </summary>
         public string DiagnosisActionCode { get; set; }
 
@@ -144,25 +144,25 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// DG1.23 - DRG CCL Value Code.
-        /// <para>Suggested: 0728 CCL Value -&gt; ClearHl7.Fhir.Codes.V282.CodeCclValue</para>
+        /// <para>Suggested: 0728 CCL Value -&gt; ClearHl7.Codes.V282.CodeCclValue</para>
         /// </summary>
         public CodedWithExceptions DrgCclValueCode { get; set; }
 
         /// <summary>
         /// DG1.24 - DRG Grouping Usage.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string DrgGroupingUsage { get; set; }
 
         /// <summary>
         /// DG1.25 - DRG Diagnosis Determination Status.
-        /// <para>Suggested: 0731 DRG Diagnosis Determination Status -&gt; ClearHl7.Fhir.Codes.V282.CodeDrgDiagnosisDeterminationStatus</para>
+        /// <para>Suggested: 0731 DRG Diagnosis Determination Status -&gt; ClearHl7.Codes.V282.CodeDrgDiagnosisDeterminationStatus</para>
         /// </summary>
         public CodedWithExceptions DrgDiagnosisDeterminationStatus { get; set; }
 
         /// <summary>
         /// DG1.26 - Present On Admission(POA) Indicator.
-        /// <para>Suggested: 0895 Present On Admission (POA) Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodePresentOnAdmissionIndicator</para>
+        /// <para>Suggested: 0895 Present On Admission (POA) Indicator -&gt; ClearHl7.Codes.V282.CodePresentOnAdmissionIndicator</para>
         /// </summary>
         public CodedWithExceptions PresentOnAdmissionPoaIndicator { get; set; }
 

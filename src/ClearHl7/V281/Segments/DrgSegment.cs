@@ -32,7 +32,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// DRG.3 - DRG Approval Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string DrgApprovalIndicator { get; set; }
 
@@ -44,7 +44,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// DRG.5 - Outlier Type.
-        /// <para>Suggested: 0083 Outlier Type -&gt; ClearHl7.Fhir.Codes.V281.CodeOutlierType</para>
+        /// <para>Suggested: 0083 Outlier Type -&gt; ClearHl7.Codes.V281.CodeOutlierType</para>
         /// </summary>
         public CodedWithExceptions OutlierType { get; set; }
 
@@ -71,13 +71,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// DRG.10 - Confidential Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string ConfidentialIndicator { get; set; }
 
         /// <summary>
         /// DRG.11 - DRG Transfer Type.
-        /// <para>Suggested: 0415 Transfer Type -&gt; ClearHl7.Fhir.Codes.V281.CodeTransferType</para>
+        /// <para>Suggested: 0415 Transfer Type -&gt; ClearHl7.Codes.V281.CodeTransferType</para>
         /// </summary>
         public CodedWithExceptions DrgTransferType { get; set; }
 
@@ -88,13 +88,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// DRG.13 - Grouper Status.
-        /// <para>Suggested: 0734 Grouper Status -&gt; ClearHl7.Fhir.Codes.V281.CodeGrouperStatus</para>
+        /// <para>Suggested: 0734 Grouper Status -&gt; ClearHl7.Codes.V281.CodeGrouperStatus</para>
         /// </summary>
         public CodedWithExceptions GrouperStatus { get; set; }
 
         /// <summary>
         /// DRG.14 - PCCL Value Code.
-        /// <para>Suggested: 0728 CCL Value -&gt; ClearHl7.Fhir.Codes.V281.CodeCclValue</para>
+        /// <para>Suggested: 0728 CCL Value -&gt; ClearHl7.Codes.V281.CodeCclValue</para>
         /// </summary>
         public CodedWithExceptions PcclValueCode { get; set; }
 
@@ -110,7 +110,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// DRG.17 - Status Patient.
-        /// <para>Suggested: 0739 DRG Status Patient -&gt; ClearHl7.Fhir.Codes.V281.CodeDrgStatusPatient</para>
+        /// <para>Suggested: 0739 DRG Status Patient -&gt; ClearHl7.Codes.V281.CodeDrgStatusPatient</para>
         /// </summary>
         public CodedWithExceptions StatusPatient { get; set; }
 
@@ -126,7 +126,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// DRG.20 - Status Financial Calculation.
-        /// <para>Suggested: 0742 DRG Status Financial Calculation -&gt; ClearHl7.Fhir.Codes.V281.CodeDrgStatusFinancialCalculation</para>
+        /// <para>Suggested: 0742 DRG Status Financial Calculation -&gt; ClearHl7.Codes.V281.CodeDrgStatusFinancialCalculation</para>
         /// </summary>
         public CodedWithExceptions StatusFinancialCalculation { get; set; }
 
@@ -157,49 +157,49 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// DRG.26 - Status Gender.
-        /// <para>Suggested: 0749 DRG Grouping Status -&gt; ClearHl7.Fhir.Codes.V281.CodeDrgGroupingStatus</para>
+        /// <para>Suggested: 0749 DRG Grouping Status -&gt; ClearHl7.Codes.V281.CodeDrgGroupingStatus</para>
         /// </summary>
         public CodedWithExceptions StatusGender { get; set; }
 
         /// <summary>
         /// DRG.27 - Status Age.
-        /// <para>Suggested: 0749 DRG Grouping Status -&gt; ClearHl7.Fhir.Codes.V281.CodeDrgGroupingStatus</para>
+        /// <para>Suggested: 0749 DRG Grouping Status -&gt; ClearHl7.Codes.V281.CodeDrgGroupingStatus</para>
         /// </summary>
         public CodedWithExceptions StatusAge { get; set; }
 
         /// <summary>
         /// DRG.28 - Status Length of Stay.
-        /// <para>Suggested: 0749 DRG Grouping Status -&gt; ClearHl7.Fhir.Codes.V281.CodeDrgGroupingStatus</para>
+        /// <para>Suggested: 0749 DRG Grouping Status -&gt; ClearHl7.Codes.V281.CodeDrgGroupingStatus</para>
         /// </summary>
         public CodedWithExceptions StatusLengthOfStay { get; set; }
 
         /// <summary>
         /// DRG.29 - Status Same Day Flag.
-        /// <para>Suggested: 0749 DRG Grouping Status -&gt; ClearHl7.Fhir.Codes.V281.CodeDrgGroupingStatus</para>
+        /// <para>Suggested: 0749 DRG Grouping Status -&gt; ClearHl7.Codes.V281.CodeDrgGroupingStatus</para>
         /// </summary>
         public CodedWithExceptions StatusSameDayFlag { get; set; }
 
         /// <summary>
         /// DRG.30 - Status Separation Mode.
-        /// <para>Suggested: 0749 DRG Grouping Status -&gt; ClearHl7.Fhir.Codes.V281.CodeDrgGroupingStatus</para>
+        /// <para>Suggested: 0749 DRG Grouping Status -&gt; ClearHl7.Codes.V281.CodeDrgGroupingStatus</para>
         /// </summary>
         public CodedWithExceptions StatusSeparationMode { get; set; }
 
         /// <summary>
         /// DRG.31 - Status Weight at Birth.
-        /// <para>Suggested: 0755 Status Weight At Birth -&gt; ClearHl7.Fhir.Codes.V281.CodeStatusWeightAtBirth</para>
+        /// <para>Suggested: 0755 Status Weight At Birth -&gt; ClearHl7.Codes.V281.CodeStatusWeightAtBirth</para>
         /// </summary>
         public CodedWithExceptions StatusWeightAtBirth { get; set; }
 
         /// <summary>
         /// DRG.32 - Status Respiration Minutes.
-        /// <para>Suggested: 0757 DRG Status Respiration Minutes -&gt; ClearHl7.Fhir.Codes.V281.CodeDrgStatusRespirationMinutes</para>
+        /// <para>Suggested: 0757 DRG Status Respiration Minutes -&gt; ClearHl7.Codes.V281.CodeDrgStatusRespirationMinutes</para>
         /// </summary>
         public CodedWithExceptions StatusRespirationMinutes { get; set; }
 
         /// <summary>
         /// DRG.33 - Status Admission.
-        /// <para>Suggested: 0759 Status Admission -&gt; ClearHl7.Fhir.Codes.V281.CodeStatusAdmission</para>
+        /// <para>Suggested: 0759 Status Admission -&gt; ClearHl7.Codes.V281.CodeStatusAdmission</para>
         /// </summary>
         public CodedWithExceptions StatusAdmission { get; set; }
 

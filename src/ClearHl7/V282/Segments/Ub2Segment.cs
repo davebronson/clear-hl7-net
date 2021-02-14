@@ -32,7 +32,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// UB2.3 - Condition Code (24-30).
-        /// <para>Suggested: 0043 Condition Code -&gt; ClearHl7.Fhir.Codes.V282.CodeConditionCode</para>
+        /// <para>Suggested: 0043 Condition Code -&gt; ClearHl7.Codes.V282.CodeConditionCode</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ConditionCode24To30 { get; set; }
 

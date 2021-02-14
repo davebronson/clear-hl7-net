@@ -38,7 +38,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// RXG.4 - Give Code.
-        /// <para>Suggested: 0292 Vaccines Administered -&gt; ClearHl7.Fhir.Codes.V281.CodeVaccinesAdministered</para>
+        /// <para>Suggested: 0292 Vaccines Administered -&gt; ClearHl7.Codes.V281.CodeVaccinesAdministered</para>
         /// </summary>
         public CodedWithExceptions GiveCode { get; set; }
 
@@ -69,7 +69,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// RXG.10 - Substitution Status.
-        /// <para>Suggested: 0167 Substitution Status -&gt; ClearHl7.Fhir.Codes.V281.CodeSubstitutionStatus</para>
+        /// <para>Suggested: 0167 Substitution Status -&gt; ClearHl7.Codes.V281.CodeSubstitutionStatus</para>
         /// </summary>
         public string SubstitutionStatus { get; set; }
 
@@ -80,7 +80,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// RXG.12 - Needs Human Review.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string NeedsHumanReview { get; set; }
 
@@ -151,7 +151,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// RXG.26 - Pharmacy Order Type.
-        /// <para>Suggested: 0480 Pharmacy Order Types -&gt; ClearHl7.Fhir.Codes.V281.CodePharmacyOrderTypes</para>
+        /// <para>Suggested: 0480 Pharmacy Order Types -&gt; ClearHl7.Codes.V281.CodePharmacyOrderTypes</para>
         /// </summary>
         public string PharmacyOrderType { get; set; }
 

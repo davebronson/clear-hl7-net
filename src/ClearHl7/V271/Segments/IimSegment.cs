@@ -63,8 +63,8 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// IIM.9 - Inventory Received Quantity Unit.
+        /// <para>Suggested: 0818 Package -&gt; ClearHl7.Codes.V271.CodePackage</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0818</remarks>
         public CodedWithExceptions InventoryReceivedQuantityUnit { get; set; }
 
         /// <summary>
@@ -84,19 +84,20 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// IIM.13 - Inventory On Hand Quantity Unit.
+        /// <para>Suggested: 0818 Package -&gt; ClearHl7.Codes.V271.CodePackage</para>
         /// </summary>
         public CodedWithExceptions InventoryOnHandQuantityUnit { get; set; }
 
         /// <summary>
         /// IIM.14 - Procedure Code.
+        /// <para>Suggested: 0088 Procedure Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0088</remarks>
         public CodedWithNoExceptions ProcedureCode { get; set; }
 
         /// <summary>
         /// IIM.15 - Procedure Code Modifier.
+        /// <para>Suggested: 0340 Procedure Code Modifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0340</remarks>
         public IEnumerable<CodedWithNoExceptions> ProcedureCodeModifier { get; set; }
         
         /// <summary>

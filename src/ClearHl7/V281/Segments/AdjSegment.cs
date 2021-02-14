@@ -36,7 +36,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ADJ.4 - Adjustment Category.
-        /// <para>Suggested: 0564 Adjustment Category Code -&gt; ClearHl7.Fhir.Codes.V281.CodeAdjustmentCategoryCode</para>
+        /// <para>Suggested: 0564 Adjustment Category Code -&gt; ClearHl7.Codes.V281.CodeAdjustmentCategoryCode</para>
         /// </summary>
         public CodedWithExceptions AdjustmentCategory { get; set; }
 
@@ -53,7 +53,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ADJ.7 - Adjustment Reason PA.
-        /// <para>Suggested: 0565 Provider Adjustment Reason Code -&gt; ClearHl7.Fhir.Codes.V281.CodeProviderAdjustmentReasonCode</para>
+        /// <para>Suggested: 0565 Provider Adjustment Reason Code -&gt; ClearHl7.Codes.V281.CodeProviderAdjustmentReasonCode</para>
         /// </summary>
         public CodedWithExceptions AdjustmentReasonPa { get; set; }
 
@@ -74,7 +74,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ADJ.11 - Adjustment Action.
-        /// <para>Suggested: 0569 Adjustment Action -&gt; ClearHl7.Fhir.Codes.V281.CodeAdjustmentAction</para>
+        /// <para>Suggested: 0569 Adjustment Action -&gt; ClearHl7.Codes.V281.CodeAdjustmentAction</para>
         /// </summary>
         public CodedWithExceptions AdjustmentAction { get; set; }
 

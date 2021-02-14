@@ -27,13 +27,13 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// ECD.2 - Remote Control Command.
-        /// <para>Suggested: 0368 Remote Control Command -&gt; ClearHl7.Fhir.Codes.V280.CodeRemoteControlCommand</para>
+        /// <para>Suggested: 0368 Remote Control Command -&gt; ClearHl7.Codes.V280.CodeRemoteControlCommand</para>
         /// </summary>
         public CodedWithExceptions RemoteControlCommand { get; set; }
 
         /// <summary>
         /// ECD.3 - Response Required.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeYesNoIndicator</para>
         /// </summary>
         public string ResponseRequired { get; set; }
 

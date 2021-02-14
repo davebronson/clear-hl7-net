@@ -43,7 +43,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// RXA.5 - Administered Code.
-        /// <para>Suggested: 0292 Vaccines Administered -&gt; ClearHl7.Fhir.Codes.V281.CodeVaccinesAdministered</para>
+        /// <para>Suggested: 0292 Vaccines Administered -&gt; ClearHl7.Codes.V281.CodeVaccinesAdministered</para>
         /// </summary>
         public CodedWithExceptions AdministeredCode { get; set; }
 
@@ -119,13 +119,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// RXA.20 - Completion Status.
-        /// <para>Suggested: 0322 Completion Status -&gt; ClearHl7.Fhir.Codes.V281.CodeCompletionStatus</para>
+        /// <para>Suggested: 0322 Completion Status -&gt; ClearHl7.Codes.V281.CodeCompletionStatus</para>
         /// </summary>
         public string CompletionStatus { get; set; }
 
         /// <summary>
         /// RXA.21 - Action Code - RXA.
-        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V281.CodeSegmentActionCode</para>
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Codes.V281.CodeSegmentActionCode</para>
         /// </summary>
         public string ActionCodeRxa { get; set; }
 
@@ -151,7 +151,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// RXA.26 - Pharmacy Order Type.
-        /// <para>Suggested: 0480 Pharmacy Order Types -&gt; ClearHl7.Fhir.Codes.V281.CodePharmacyOrderTypes</para>
+        /// <para>Suggested: 0480 Pharmacy Order Types -&gt; ClearHl7.Codes.V281.CodePharmacyOrderTypes</para>
         /// </summary>
         public string PharmacyOrderType { get; set; }
 

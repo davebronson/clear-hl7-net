@@ -30,7 +30,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// BUI.3 - Blood Unit Type.
-        /// <para>Suggested: 0566 Blood Unit Type -&gt; ClearHl7.Fhir.Codes.V280.CodeBloodUnitType</para>
+        /// <para>Suggested: 0566 Blood Unit Type -&gt; ClearHl7.Codes.V280.CodeBloodUnitType</para>
         /// </summary>
         public CodedWithExceptions BloodUnitType { get; set; }
 

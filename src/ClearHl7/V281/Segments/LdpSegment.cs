@@ -34,25 +34,25 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// LDP.3 - Location Service.
-        /// <para>Suggested: 0069 Hospital Service -&gt; ClearHl7.Fhir.Codes.V281.CodeHospitalService</para>
+        /// <para>Suggested: 0069 Hospital Service -&gt; ClearHl7.Codes.V281.CodeHospitalService</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> LocationService { get; set; }
 
         /// <summary>
         /// LDP.4 - Specialty Type.
-        /// <para>Suggested: 0265 Specialty Type -&gt; ClearHl7.Fhir.Codes.V281.CodeSpecialtyType</para>
+        /// <para>Suggested: 0265 Specialty Type -&gt; ClearHl7.Codes.V281.CodeSpecialtyType</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> SpecialtyType { get; set; }
 
         /// <summary>
         /// LDP.5 - Valid Patient Classes.
-        /// <para>Suggested: 0004 Patient Class  -&gt; ClearHl7.Fhir.Codes.V281.CodePatientClass</para>
+        /// <para>Suggested: 0004 Patient Class  -&gt; ClearHl7.Codes.V281.CodePatientClass</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ValidPatientClasses { get; set; }
 
         /// <summary>
         /// LDP.6 - Active/Inactive Flag.
-        /// <para>Suggested: 0183 Active/Inactive -&gt; ClearHl7.Fhir.Codes.V281.CodeActiveInactive</para>
+        /// <para>Suggested: 0183 Active/Inactive -&gt; ClearHl7.Codes.V281.CodeActiveInactive</para>
         /// </summary>
         public string ActiveInactiveFlag { get; set; }
 
@@ -73,7 +73,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// LDP.10 - Visiting Hours.
-        /// <para>Suggested: 0267 Days Of The Week -&gt; ClearHl7.Fhir.Codes.V281.CodeDaysOfTheWeek</para>
+        /// <para>Suggested: 0267 Days Of The Week -&gt; ClearHl7.Codes.V281.CodeDaysOfTheWeek</para>
         /// </summary>
         public IEnumerable<VisitingHours> VisitingHours { get; set; }
 

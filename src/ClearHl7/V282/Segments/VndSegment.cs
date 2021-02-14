@@ -40,7 +40,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// VND.5 - Primary Vendor Indicator.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions PrimaryVendorIndicator { get; set; }
         

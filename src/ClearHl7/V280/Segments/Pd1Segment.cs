@@ -23,19 +23,19 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PD1.1 - Living Dependency.
-        /// <para>Suggested: 0223 Living Dependency -&gt; ClearHl7.Fhir.Codes.V280.CodeLivingDependency</para>
+        /// <para>Suggested: 0223 Living Dependency -&gt; ClearHl7.Codes.V280.CodeLivingDependency</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> LivingDependency { get; set; }
 
         /// <summary>
         /// PD1.2 - Living Arrangement.
-        /// <para>Suggested: 0220 Living Arrangement -&gt; ClearHl7.Fhir.Codes.V280.CodeLivingArrangement</para>
+        /// <para>Suggested: 0220 Living Arrangement -&gt; ClearHl7.Codes.V280.CodeLivingArrangement</para>
         /// </summary>
         public CodedWithExceptions LivingArrangement { get; set; }
 
         /// <summary>
         /// PD1.3 - Patient Primary Facility.
-        /// <para>Suggested: 0204 Organizational Name Type -&gt; ClearHl7.Fhir.Codes.V280.CodeOrganizationalNameType</para>
+        /// <para>Suggested: 0204 Organizational Name Type -&gt; ClearHl7.Codes.V280.CodeOrganizationalNameType</para>
         /// </summary>
         public IEnumerable<ExtendedCompositeNameAndIdNumberForOrganizations> PatientPrimaryFacility { get; set; }
 
@@ -46,7 +46,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PD1.5 - Student Indicator.
-        /// <para>Suggested: 0231 Student Status -&gt; ClearHl7.Fhir.Codes.V280.CodeStudentStatus</para>
+        /// <para>Suggested: 0231 Student Status -&gt; ClearHl7.Codes.V280.CodeStudentStatus</para>
         /// </summary>
         public CodedWithExceptions StudentIndicator { get; set; }
 
@@ -58,19 +58,19 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PD1.7 - Living Will Code.
-        /// <para>Suggested: 0315 Living Will Code -&gt; ClearHl7.Fhir.Codes.V280.CodeLivingWillCode</para>
+        /// <para>Suggested: 0315 Living Will Code -&gt; ClearHl7.Codes.V280.CodeLivingWillCode</para>
         /// </summary>
         public CodedWithExceptions LivingWillCode { get; set; }
 
         /// <summary>
         /// PD1.8 - Organ Donor Code.
-        /// <para>Suggested: 0316 Organ Donor Code -&gt; ClearHl7.Fhir.Codes.V280.CodeOrganDonorCode</para>
+        /// <para>Suggested: 0316 Organ Donor Code -&gt; ClearHl7.Codes.V280.CodeOrganDonorCode</para>
         /// </summary>
         public CodedWithExceptions OrganDonorCode { get; set; }
 
         /// <summary>
         /// PD1.9 - Separate Bill.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeYesNoIndicator</para>
         /// </summary>
         public string SeparateBill { get; set; }
 
@@ -81,13 +81,13 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PD1.11 - Publicity Code.
-        /// <para>Suggested: 0215 Publicity Code -&gt; ClearHl7.Fhir.Codes.V280.CodePublicityCode</para>
+        /// <para>Suggested: 0215 Publicity Code -&gt; ClearHl7.Codes.V280.CodePublicityCode</para>
         /// </summary>
         public CodedWithExceptions PublicityCode { get; set; }
 
         /// <summary>
         /// PD1.12 - Protection Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeYesNoIndicator</para>
         /// </summary>
         public string ProtectionIndicator { get; set; }
 
@@ -103,13 +103,13 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PD1.15 - Advance Directive Code.
-        /// <para>Suggested: 0435 Advance Directive Code -&gt; ClearHl7.Fhir.Codes.V280.CodeAdvanceDirectiveCode</para>
+        /// <para>Suggested: 0435 Advance Directive Code -&gt; ClearHl7.Codes.V280.CodeAdvanceDirectiveCode</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> AdvanceDirectiveCode { get; set; }
 
         /// <summary>
         /// PD1.16 - Immunization Registry Status.
-        /// <para>Suggested: 0441 Immunization Registry Status -&gt; ClearHl7.Fhir.Codes.V280.CodeImmunizationRegistryStatus</para>
+        /// <para>Suggested: 0441 Immunization Registry Status -&gt; ClearHl7.Codes.V280.CodeImmunizationRegistryStatus</para>
         /// </summary>
         public CodedWithExceptions ImmunizationRegistryStatus { get; set; }
 
@@ -125,19 +125,19 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PD1.19 - Military Branch.
-        /// <para>Suggested: 0140 Military Service -&gt; ClearHl7.Fhir.Codes.V280.CodeMilitaryService</para>
+        /// <para>Suggested: 0140 Military Service -&gt; ClearHl7.Codes.V280.CodeMilitaryService</para>
         /// </summary>
         public CodedWithExceptions MilitaryBranch { get; set; }
 
         /// <summary>
         /// PD1.20 - Military Rank/Grade.
-        /// <para>Suggested: 0141 Military Rank/Grade -&gt; ClearHl7.Fhir.Codes.V280.CodeMilitaryRankGrade</para>
+        /// <para>Suggested: 0141 Military Rank/Grade -&gt; ClearHl7.Codes.V280.CodeMilitaryRankGrade</para>
         /// </summary>
         public CodedWithExceptions MilitaryRankGrade { get; set; }
 
         /// <summary>
         /// PD1.21 - Military Status.
-        /// <para>Suggested: 0142 Military Status -&gt; ClearHl7.Fhir.Codes.V280.CodeMilitaryStatus</para>
+        /// <para>Suggested: 0142 Military Status -&gt; ClearHl7.Codes.V280.CodeMilitaryStatus</para>
         /// </summary>
         public CodedWithExceptions MilitaryStatus { get; set; }
 

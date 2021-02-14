@@ -49,13 +49,13 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// PRD.6 - Preferred Method of Contact.
-        /// <para>Suggested: 0185 Preferred Method Of Contact -&gt; ClearHl7.Fhir.Codes.V282.CodePreferredMethodOfContact</para>
+        /// <para>Suggested: 0185 Preferred Method Of Contact -&gt; ClearHl7.Codes.V282.CodePreferredMethodOfContact</para>
         /// </summary>
         public CodedWithExceptions PreferredMethodOfContact { get; set; }
 
         /// <summary>
         /// PRD.7 - Provider Identifiers.
-        /// <para>Suggested: 0338 Practitioner ID Number Type -&gt; ClearHl7.Fhir.Codes.V282.CodePractitionerIdNumberType</para>
+        /// <para>Suggested: 0338 Practitioner ID Number Type -&gt; ClearHl7.Codes.V282.CodePractitionerIdNumberType</para>
         /// </summary>
         public IEnumerable<PractitionerLicenseOrOtherIdNumber> ProviderIdentifiers { get; set; }
 
@@ -91,7 +91,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// PRD.14 - Provider Organization Method of Contact.
-        /// <para>Suggested: 0185 Preferred Method Of Contact -&gt; ClearHl7.Fhir.Codes.V282.CodePreferredMethodOfContact</para>
+        /// <para>Suggested: 0185 Preferred Method Of Contact -&gt; ClearHl7.Codes.V282.CodePreferredMethodOfContact</para>
         /// </summary>
         public CodedWithExceptions ProviderOrganizationMethodOfContact { get; set; }
         

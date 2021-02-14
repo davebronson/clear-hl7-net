@@ -106,7 +106,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// CER.17 - Basic Constraint.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string BasicConstraint { get; set; }
 
@@ -135,7 +135,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// CER.22 - Jurisdiction Breadth.
-        /// <para>Suggested: 0547 Jurisdictional Breadth -&gt; ClearHl7.Fhir.Codes.V282.CodeJurisdictionalBreadth</para>
+        /// <para>Suggested: 0547 Jurisdictional Breadth -&gt; ClearHl7.Codes.V282.CodeJurisdictionalBreadth</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> JurisdictionBreadth { get; set; }
 
@@ -181,7 +181,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// CER.31 - Certificate Status Code.
-        /// <para>Suggested: 0536 Certificate Status -&gt; ClearHl7.Fhir.Codes.V282.CodeCertificateStatus</para>
+        /// <para>Suggested: 0536 Certificate Status -&gt; ClearHl7.Codes.V282.CodeCertificateStatus</para>
         /// </summary>
         public CodedWithExceptions CertificateStatusCode { get; set; }
 

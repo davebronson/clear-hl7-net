@@ -26,13 +26,13 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PKG.2 - Packaging Units.
-        /// <para>Suggested: 0818 Package -&gt; ClearHl7.Fhir.Codes.V280.CodePackage</para>
+        /// <para>Suggested: 0818 Package -&gt; ClearHl7.Codes.V280.CodePackage</para>
         /// </summary>
         public CodedWithExceptions PackagingUnits { get; set; }
 
         /// <summary>
         /// PKG.3 - Default Order Unit Of Measure Indicator.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions DefaultOrderUnitOfMeasureIndicator { get; set; }
 

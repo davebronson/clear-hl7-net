@@ -68,7 +68,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// SCD.10 - Device Status.
-        /// <para>Suggested: 0682 Device Status -&gt; ClearHl7.Fhir.Codes.V280.CodeDeviceStatus</para>
+        /// <para>Suggested: 0682 Device Status -&gt; ClearHl7.Codes.V280.CodeDeviceStatus</para>
         /// </summary>
         public CodedWithExceptions DeviceStatus { get; set; }
 
@@ -114,37 +114,37 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// SCD.19 - Abort Cycle.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions AbortCycle { get; set; }
 
         /// <summary>
         /// SCD.20 - Alarm.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions Alarm { get; set; }
 
         /// <summary>
         /// SCD.21 - Long in Charge Phase.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions LongInChargePhase { get; set; }
 
         /// <summary>
         /// SCD.22 - Long in Exhaust Phase.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions LongInExhaustPhase { get; set; }
 
         /// <summary>
         /// SCD.23 - Long in Fast Exhaust Phase.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions LongInFastExhaustPhase { get; set; }
 
         /// <summary>
         /// SCD.24 - Reset.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions Reset { get; set; }
 
@@ -155,19 +155,19 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// SCD.26 - Door Open.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions DoorOpen { get; set; }
 
         /// <summary>
         /// SCD.27 - Reading Failure.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions ReadingFailure { get; set; }
 
         /// <summary>
         /// SCD.28 - Cycle Type.
-        /// <para>Suggested: 0702 Cycle Type -&gt; ClearHl7.Fhir.Codes.V280.CodeCycleType</para>
+        /// <para>Suggested: 0702 Cycle Type -&gt; ClearHl7.Codes.V280.CodeCycleType</para>
         /// </summary>
         public CodedWithExceptions CycleType { get; set; }
 

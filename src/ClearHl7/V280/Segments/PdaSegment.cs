@@ -33,7 +33,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PDA.3 - Death Certified Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeYesNoIndicator</para>
         /// </summary>
         public string DeathCertifiedIndicator { get; set; }
 
@@ -49,7 +49,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PDA.6 - Autopsy Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeYesNoIndicator</para>
         /// </summary>
         public string AutopsyIndicator { get; set; }
 
@@ -65,7 +65,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PDA.9 - Coroner Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeYesNoIndicator</para>
         /// </summary>
         public string CoronerIndicator { get; set; }
         

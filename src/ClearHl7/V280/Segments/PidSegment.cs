@@ -43,7 +43,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PID.5 - Patient Name.
-        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Fhir.Codes.V280.CodeNameType</para>
+        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Codes.V280.CodeNameType</para>
         /// </summary>
         public IEnumerable<ExtendedPersonName> PatientName { get; set; }
 
@@ -59,7 +59,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PID.8 - Administrative Sex.
-        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Fhir.Codes.V280.CodeAdministrativeSex</para>
+        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Codes.V280.CodeAdministrativeSex</para>
         /// </summary>
         public CodedWithExceptions AdministrativeSex { get; set; }
 
@@ -70,7 +70,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PID.10 - Race.
-        /// <para>Suggested: 0005 Race -&gt; ClearHl7.Fhir.Codes.V280.CodeRace</para>
+        /// <para>Suggested: 0005 Race -&gt; ClearHl7.Codes.V280.CodeRace</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> Race { get; set; }
 
@@ -102,13 +102,13 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PID.16 - Marital Status.
-        /// <para>Suggested: 0002 Marital Status -&gt; ClearHl7.Fhir.Codes.V280.CodeMaritalStatus</para>
+        /// <para>Suggested: 0002 Marital Status -&gt; ClearHl7.Codes.V280.CodeMaritalStatus</para>
         /// </summary>
         public CodedWithExceptions MaritalStatus { get; set; }
 
         /// <summary>
         /// PID.17 - Religion.
-        /// <para>Suggested: 0006 Religion -&gt; ClearHl7.Fhir.Codes.V280.CodeReligion</para>
+        /// <para>Suggested: 0006 Religion -&gt; ClearHl7.Codes.V280.CodeReligion</para>
         /// </summary>
         public CodedWithExceptions Religion { get; set; }
 
@@ -134,7 +134,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PID.22 - Ethnic Group.
-        /// <para>Suggested: 0189 Ethnic Group -&gt; ClearHl7.Fhir.Codes.V280.CodeEthnicGroup</para>
+        /// <para>Suggested: 0189 Ethnic Group -&gt; ClearHl7.Codes.V280.CodeEthnicGroup</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> EthnicGroup { get; set; }
 
@@ -145,7 +145,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PID.24 - Multiple Birth Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeYesNoIndicator</para>
         /// </summary>
         public string MultipleBirthIndicator { get; set; }
 
@@ -179,19 +179,19 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PID.30 - Patient Death Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeYesNoIndicator</para>
         /// </summary>
         public string PatientDeathIndicator { get; set; }
 
         /// <summary>
         /// PID.31 - Identity Unknown Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeYesNoIndicator</para>
         /// </summary>
         public string IdentityUnknownIndicator { get; set; }
 
         /// <summary>
         /// PID.32 - Identity Reliability Code.
-        /// <para>Suggested: 0445 Identity Reliability Code -&gt; ClearHl7.Fhir.Codes.V280.CodeIdentityReliabilityCode</para>
+        /// <para>Suggested: 0445 Identity Reliability Code -&gt; ClearHl7.Codes.V280.CodeIdentityReliabilityCode</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> IdentityReliabilityCode { get; set; }
 
@@ -223,7 +223,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PID.38 - Production Class Code.
-        /// <para>Suggested: 0429 Production Class Code -&gt; ClearHl7.Fhir.Codes.V280.CodeProductionClassCode</para>
+        /// <para>Suggested: 0429 Production Class Code -&gt; ClearHl7.Codes.V280.CodeProductionClassCode</para>
         /// </summary>
         public CodedWithExceptions ProductionClassCode { get; set; }
 

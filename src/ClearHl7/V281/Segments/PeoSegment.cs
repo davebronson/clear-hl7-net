@@ -58,31 +58,31 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// PEO.8 - Event Qualification.
-        /// <para>Suggested: 0237 Event Qualification -&gt; ClearHl7.Fhir.Codes.V281.CodeEventQualification</para>
+        /// <para>Suggested: 0237 Event Qualification -&gt; ClearHl7.Codes.V281.CodeEventQualification</para>
         /// </summary>
         public IEnumerable<string> EventQualification { get; set; }
 
         /// <summary>
         /// PEO.9 - Event Serious.
-        /// <para>Suggested: 0238 Event Seriousness -&gt; ClearHl7.Fhir.Codes.V281.CodeEventSeriousness</para>
+        /// <para>Suggested: 0238 Event Seriousness -&gt; ClearHl7.Codes.V281.CodeEventSeriousness</para>
         /// </summary>
         public string EventSerious { get; set; }
 
         /// <summary>
         /// PEO.10 - Event Expected.
-        /// <para>Suggested: 0239 Event Expected -&gt; ClearHl7.Fhir.Codes.V281.CodeEventExpected</para>
+        /// <para>Suggested: 0239 Event Expected -&gt; ClearHl7.Codes.V281.CodeEventExpected</para>
         /// </summary>
         public string EventExpected { get; set; }
 
         /// <summary>
         /// PEO.11 - Event Outcome.
-        /// <para>Suggested: 0240 Event Consequence -&gt; ClearHl7.Fhir.Codes.V281.CodeEventConsequence</para>
+        /// <para>Suggested: 0240 Event Consequence -&gt; ClearHl7.Codes.V281.CodeEventConsequence</para>
         /// </summary>
         public IEnumerable<string> EventOutcome { get; set; }
 
         /// <summary>
         /// PEO.12 - Patient Outcome.
-        /// <para>Suggested: 0241 Patient Outcome -&gt; ClearHl7.Fhir.Codes.V281.CodePatientOutcome</para>
+        /// <para>Suggested: 0241 Patient Outcome -&gt; ClearHl7.Codes.V281.CodePatientOutcome</para>
         /// </summary>
         public string PatientOutcome { get; set; }
 
@@ -133,13 +133,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// PEO.22 - Primary Observer's Qualification.
-        /// <para>Suggested: 0242 Primary Observer's Qualification -&gt; ClearHl7.Fhir.Codes.V281.CodePrimaryObserversQualification</para>
+        /// <para>Suggested: 0242 Primary Observer's Qualification -&gt; ClearHl7.Codes.V281.CodePrimaryObserversQualification</para>
         /// </summary>
         public string PrimaryObserversQualification { get; set; }
 
         /// <summary>
         /// PEO.23 - Confirmation Provided By.
-        /// <para>Suggested: 0242 Primary Observer's Qualification -&gt; ClearHl7.Fhir.Codes.V281.CodePrimaryObserversQualification</para>
+        /// <para>Suggested: 0242 Primary Observer's Qualification -&gt; ClearHl7.Codes.V281.CodePrimaryObserversQualification</para>
         /// </summary>
         public string ConfirmationProvidedBy { get; set; }
 
@@ -150,7 +150,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// PEO.25 - Primary Observer's identity May Be Divulged.
-        /// <para>Suggested: 0243 Identity May Be Divulged -&gt; ClearHl7.Fhir.Codes.V281.CodeIdentityMayBeDivulged</para>
+        /// <para>Suggested: 0243 Identity May Be Divulged -&gt; ClearHl7.Codes.V281.CodeIdentityMayBeDivulged</para>
         /// </summary>
         public string PrimaryObserversIdentityMayBeDivulged { get; set; }
 

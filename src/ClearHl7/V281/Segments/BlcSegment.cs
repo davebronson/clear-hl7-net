@@ -20,7 +20,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// BLC.1 - Blood Product Code.
-        /// <para>Suggested: 0426 Blood Product Code -&gt; ClearHl7.Fhir.Codes.V281.CodeBloodProductCode</para>
+        /// <para>Suggested: 0426 Blood Product Code -&gt; ClearHl7.Codes.V281.CodeBloodProductCode</para>
         /// </summary>
         public CodedWithExceptions BloodProductCode { get; set; }
 

@@ -97,13 +97,13 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// MSH.15 - Accept Acknowledgment Type.
-        /// <para>Suggested: 0155 Accept/Application Acknowledgment Conditions -&gt; ClearHl7.Fhir.Codes.V282.CodeAcceptApplicationAcknowledgmentConditions</para>
+        /// <para>Suggested: 0155 Accept/Application Acknowledgment Conditions -&gt; ClearHl7.Codes.V282.CodeAcceptApplicationAcknowledgmentConditions</para>
         /// </summary>
         public string AcceptAcknowledgmentType { get; set; }
 
         /// <summary>
         /// MSH.16 - Application Acknowledgment Type.
-        /// <para>Suggested: 0155 Accept/Application Acknowledgment Conditions -&gt; ClearHl7.Fhir.Codes.V282.CodeAcceptApplicationAcknowledgmentConditions</para>
+        /// <para>Suggested: 0155 Accept/Application Acknowledgment Conditions -&gt; ClearHl7.Codes.V282.CodeAcceptApplicationAcknowledgmentConditions</para>
         /// </summary>
         public string ApplicationAcknowledgmentType { get; set; }
 
@@ -115,7 +115,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// MSH.18 - Character Set.
-        /// <para>Suggested: 0211 Alternate Character Sets -&gt; ClearHl7.Fhir.Codes.V282.CodeAlternateCharacterSets</para>
+        /// <para>Suggested: 0211 Alternate Character Sets -&gt; ClearHl7.Codes.V282.CodeAlternateCharacterSets</para>
         /// </summary>
         public IEnumerable<string> CharacterSet { get; set; }
 
@@ -126,7 +126,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// MSH.20 - Alternate Character Set Handling Scheme.
-        /// <para>Suggested: 0356 Alternate Character Set Handling Scheme -&gt; ClearHl7.Fhir.Codes.V282.CodeAlternateCharacterSetHandlingScheme</para>
+        /// <para>Suggested: 0356 Alternate Character Set Handling Scheme -&gt; ClearHl7.Codes.V282.CodeAlternateCharacterSetHandlingScheme</para>
         /// </summary>
         public string AlternateCharacterSetHandlingScheme { get; set; }
 

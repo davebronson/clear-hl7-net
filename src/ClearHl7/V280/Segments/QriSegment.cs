@@ -27,13 +27,13 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// QRI.2 - Match Reason Code.
-        /// <para>Suggested: 0392 Match Reason -&gt; ClearHl7.Fhir.Codes.V280.CodeMatchReason</para>
+        /// <para>Suggested: 0392 Match Reason -&gt; ClearHl7.Codes.V280.CodeMatchReason</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> MatchReasonCode { get; set; }
 
         /// <summary>
         /// QRI.3 - Algorithm Descriptor.
-        /// <para>Suggested: 0393 Match Algorithms -&gt; ClearHl7.Fhir.Codes.V280.CodeMatchAlgorithms</para>
+        /// <para>Suggested: 0393 Match Algorithms -&gt; ClearHl7.Codes.V280.CodeMatchAlgorithms</para>
         /// </summary>
         public CodedWithExceptions AlgorithmDescriptor { get; set; }
         

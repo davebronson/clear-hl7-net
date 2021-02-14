@@ -22,7 +22,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// MFE.1 - Record-Level Event Code.
-        /// <para>Suggested: 0180 Masterfile Action Code -&gt; ClearHl7.Fhir.Codes.V280.CodeMasterfileActionCode</para>
+        /// <para>Suggested: 0180 Masterfile Action Code -&gt; ClearHl7.Codes.V280.CodeMasterfileActionCode</para>
         /// </summary>
         public string RecordLevelEventCode { get; set; }
 
@@ -43,7 +43,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// MFE.5 - Primary Key Value Type.
-        /// <para>Suggested: 0355 Primary Key Value Type -&gt; ClearHl7.Fhir.Codes.V280.CodePrimaryKeyValueType</para>
+        /// <para>Suggested: 0355 Primary Key Value Type -&gt; ClearHl7.Codes.V280.CodePrimaryKeyValueType</para>
         /// </summary>
         public IEnumerable<string> PrimaryKeyValueType { get; set; }
 

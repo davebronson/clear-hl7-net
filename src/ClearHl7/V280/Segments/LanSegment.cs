@@ -33,13 +33,13 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// LAN.3 - Language Ability Code.
-        /// <para>Suggested: 0403 Language Ability -&gt; ClearHl7.Fhir.Codes.V280.CodeLanguageAbility</para>
+        /// <para>Suggested: 0403 Language Ability -&gt; ClearHl7.Codes.V280.CodeLanguageAbility</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> LanguageAbilityCode { get; set; }
 
         /// <summary>
         /// LAN.4 - Language Proficiency Code.
-        /// <para>Suggested: 0404 Language Proficiency -&gt; ClearHl7.Fhir.Codes.V280.CodeLanguageProficiency</para>
+        /// <para>Suggested: 0404 Language Proficiency -&gt; ClearHl7.Codes.V280.CodeLanguageProficiency</para>
         /// </summary>
         public CodedWithExceptions LanguageProficiencyCode { get; set; }
         

@@ -44,7 +44,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN2.5 - Mail Claim Party.
-        /// <para>Suggested: 0137 Mail Claim Party -&gt; ClearHl7.Fhir.Codes.V281.CodeMailClaimParty</para>
+        /// <para>Suggested: 0137 Mail Claim Party -&gt; ClearHl7.Codes.V281.CodeMailClaimParty</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> MailClaimParty { get; set; }
 
@@ -91,19 +91,19 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN2.14 - Military Service.
-        /// <para>Suggested: 0140 Military Service -&gt; ClearHl7.Fhir.Codes.V281.CodeMilitaryService</para>
+        /// <para>Suggested: 0140 Military Service -&gt; ClearHl7.Codes.V281.CodeMilitaryService</para>
         /// </summary>
         public CodedWithExceptions MilitaryService { get; set; }
 
         /// <summary>
         /// IN2.15 - Military Rank/Grade.
-        /// <para>Suggested: 0141 Military Rank/Grade -&gt; ClearHl7.Fhir.Codes.V281.CodeMilitaryRankGrade</para>
+        /// <para>Suggested: 0141 Military Rank/Grade -&gt; ClearHl7.Codes.V281.CodeMilitaryRankGrade</para>
         /// </summary>
         public CodedWithExceptions MilitaryRankGrade { get; set; }
 
         /// <summary>
         /// IN2.16 - Military Status.
-        /// <para>Suggested: 0142 Military Status -&gt; ClearHl7.Fhir.Codes.V281.CodeMilitaryStatus</para>
+        /// <para>Suggested: 0142 Military Status -&gt; ClearHl7.Codes.V281.CodeMilitaryStatus</para>
         /// </summary>
         public CodedWithExceptions MilitaryStatus { get; set; }
 
@@ -114,19 +114,19 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN2.18 - Military Non-Avail Cert On File.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string MilitaryNonAvailCertOnFile { get; set; }
 
         /// <summary>
         /// IN2.19 - Baby Coverage.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string BabyCoverage { get; set; }
 
         /// <summary>
         /// IN2.20 - Combine Baby Bill.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string CombineBabyBill { get; set; }
 
@@ -163,7 +163,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN2.27 - Eligibility Source.
-        /// <para>Suggested: 0144 Eligibility Source -&gt; ClearHl7.Fhir.Codes.V281.CodeEligibilitySource</para>
+        /// <para>Suggested: 0144 Eligibility Source -&gt; ClearHl7.Codes.V281.CodeEligibilitySource</para>
         /// </summary>
         public CodedWithExceptions EligibilitySource { get; set; }
 
@@ -184,13 +184,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN2.31 - Living Dependency.
-        /// <para>Suggested: 0223 Living Dependency -&gt; ClearHl7.Fhir.Codes.V281.CodeLivingDependency</para>
+        /// <para>Suggested: 0223 Living Dependency -&gt; ClearHl7.Codes.V281.CodeLivingDependency</para>
         /// </summary>
         public CodedWithExceptions LivingDependency { get; set; }
 
         /// <summary>
         /// IN2.32 - Ambulatory Status.
-        /// <para>Suggested: 0009 Ambulatory Status -&gt; ClearHl7.Fhir.Codes.V281.CodeAmbulatoryStatus</para>
+        /// <para>Suggested: 0009 Ambulatory Status -&gt; ClearHl7.Codes.V281.CodeAmbulatoryStatus</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> AmbulatoryStatus { get; set; }
 
@@ -208,31 +208,31 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN2.35 - Living Arrangement.
-        /// <para>Suggested: 0220 Living Arrangement -&gt; ClearHl7.Fhir.Codes.V281.CodeLivingArrangement</para>
+        /// <para>Suggested: 0220 Living Arrangement -&gt; ClearHl7.Codes.V281.CodeLivingArrangement</para>
         /// </summary>
         public CodedWithExceptions LivingArrangement { get; set; }
 
         /// <summary>
         /// IN2.36 - Publicity Code.
-        /// <para>Suggested: 0215 Publicity Code -&gt; ClearHl7.Fhir.Codes.V281.CodePublicityCode</para>
+        /// <para>Suggested: 0215 Publicity Code -&gt; ClearHl7.Codes.V281.CodePublicityCode</para>
         /// </summary>
         public CodedWithExceptions PublicityCode { get; set; }
 
         /// <summary>
         /// IN2.37 - Protection Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string ProtectionIndicator { get; set; }
 
         /// <summary>
         /// IN2.38 - Student Indicator.
-        /// <para>Suggested: 0231 Student Status -&gt; ClearHl7.Fhir.Codes.V281.CodeStudentStatus</para>
+        /// <para>Suggested: 0231 Student Status -&gt; ClearHl7.Codes.V281.CodeStudentStatus</para>
         /// </summary>
         public CodedWithExceptions StudentIndicator { get; set; }
 
         /// <summary>
         /// IN2.39 - Religion.
-        /// <para>Suggested: 0006 Religion -&gt; ClearHl7.Fhir.Codes.V281.CodeReligion</para>
+        /// <para>Suggested: 0006 Religion -&gt; ClearHl7.Codes.V281.CodeReligion</para>
         /// </summary>
         public CodedWithExceptions Religion { get; set; }
 
@@ -249,13 +249,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN2.42 - Ethnic Group.
-        /// <para>Suggested: 0189 Ethnic Group -&gt; ClearHl7.Fhir.Codes.V281.CodeEthnicGroup</para>
+        /// <para>Suggested: 0189 Ethnic Group -&gt; ClearHl7.Codes.V281.CodeEthnicGroup</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> EthnicGroup { get; set; }
 
         /// <summary>
         /// IN2.43 - Marital Status.
-        /// <para>Suggested: 0002 Marital Status -&gt; ClearHl7.Fhir.Codes.V281.CodeMaritalStatus</para>
+        /// <para>Suggested: 0002 Marital Status -&gt; ClearHl7.Codes.V281.CodeMaritalStatus</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> MaritalStatus { get; set; }
 
@@ -281,7 +281,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN2.48 - Job Status.
-        /// <para>Suggested: 0311 Job Status -&gt; ClearHl7.Fhir.Codes.V281.CodeJobStatus</para>
+        /// <para>Suggested: 0311 Job Status -&gt; ClearHl7.Codes.V281.CodeJobStatus</para>
         /// </summary>
         public CodedWithExceptions JobStatus { get; set; }
 
@@ -329,7 +329,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN2.57 - Insurance Co Contact Reason.
-        /// <para>Suggested: 0232 Insurance Company Contact Reason -&gt; ClearHl7.Fhir.Codes.V281.CodeInsuranceCompanyContactReason</para>
+        /// <para>Suggested: 0232 Insurance Company Contact Reason -&gt; ClearHl7.Codes.V281.CodeInsuranceCompanyContactReason</para>
         /// </summary>
         public CodedWithExceptions InsuranceCoContactReason { get; set; }
 
@@ -357,7 +357,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN2.62 - Guarantor's Relationship to Insured.
-        /// <para>Suggested: 0063 Relationship -&gt; ClearHl7.Fhir.Codes.V281.CodeRelationship</para>
+        /// <para>Suggested: 0063 Relationship -&gt; ClearHl7.Codes.V281.CodeRelationship</para>
         /// </summary>
         public CodedWithExceptions GuarantorsRelationshipToInsured { get; set; }
 
@@ -379,19 +379,19 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN2.66 - Suspend Flag.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string SuspendFlag { get; set; }
 
         /// <summary>
         /// IN2.67 - Copay Limit Flag.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string CopayLimitFlag { get; set; }
 
         /// <summary>
         /// IN2.68 - Stoploss Limit Flag.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string StoplossLimitFlag { get; set; }
 
@@ -407,13 +407,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// IN2.71 - Race.
-        /// <para>Suggested: 0005 Race -&gt; ClearHl7.Fhir.Codes.V281.CodeRace</para>
+        /// <para>Suggested: 0005 Race -&gt; ClearHl7.Codes.V281.CodeRace</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> Race { get; set; }
 
         /// <summary>
         /// IN2.72 - Patient's Relationship to Insured.
-        /// <para>Suggested: 0344 Patient's Relationship to Insured -&gt; ClearHl7.Fhir.Codes.V281.CodePatientsRelationshiptoInsured</para>
+        /// <para>Suggested: 0344 Patient's Relationship to Insured -&gt; ClearHl7.Codes.V281.CodePatientsRelationshiptoInsured</para>
         /// </summary>
         public CodedWithExceptions PatientsRelationshipToInsured { get; set; }
         

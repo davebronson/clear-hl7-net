@@ -28,7 +28,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// DB1.2 - Disabled Person Code.
-        /// <para>Suggested: 0334 Disabled Person Code -&gt; ClearHl7.Fhir.Codes.V280.CodeDisabledPersonCode</para>
+        /// <para>Suggested: 0334 Disabled Person Code -&gt; ClearHl7.Codes.V280.CodeDisabledPersonCode</para>
         /// </summary>
         public CodedWithExceptions DisabledPersonCode { get; set; }
 
@@ -39,7 +39,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// DB1.4 - Disability Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeYesNoIndicator</para>
         /// </summary>
         public string DisabilityIndicator { get; set; }
 

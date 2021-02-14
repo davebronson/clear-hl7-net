@@ -74,73 +74,73 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// PM1.11 - Patient DOB Required.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string PatientDobRequired { get; set; }
 
         /// <summary>
         /// PM1.12 - Patient Gender Required.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string PatientGenderRequired { get; set; }
 
         /// <summary>
         /// PM1.13 - Patient Relationship Required.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string PatientRelationshipRequired { get; set; }
 
         /// <summary>
         /// PM1.14 - Patient Signature Required.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string PatientSignatureRequired { get; set; }
 
         /// <summary>
         /// PM1.15 - Diagnosis Required.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string DiagnosisRequired { get; set; }
 
         /// <summary>
         /// PM1.16 - Service Required.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string ServiceRequired { get; set; }
 
         /// <summary>
         /// PM1.17 - Patient Name Required.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string PatientNameRequired { get; set; }
 
         /// <summary>
         /// PM1.18 - Patient Address Required.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string PatientAddressRequired { get; set; }
 
         /// <summary>
         /// PM1.19 - Subscribers Name Required.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string SubscribersNameRequired { get; set; }
 
         /// <summary>
         /// PM1.20 - Workman's Comp Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string WorkmansCompIndicator { get; set; }
 
         /// <summary>
         /// PM1.21 - Bill Type Required.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string BillTypeRequired { get; set; }
 
         /// <summary>
         /// PM1.22 - Commercial Carrier Name and Address Required.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string CommercialCarrierNameAndAddressRequired { get; set; }
 

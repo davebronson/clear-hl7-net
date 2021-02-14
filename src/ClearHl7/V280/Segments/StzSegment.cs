@@ -20,13 +20,13 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// STZ.1 - Sterilization Type.
-        /// <para>Suggested: 0806 Sterilization Type -&gt; ClearHl7.Fhir.Codes.V280.CodeSterilizationType</para>
+        /// <para>Suggested: 0806 Sterilization Type -&gt; ClearHl7.Codes.V280.CodeSterilizationType</para>
         /// </summary>
         public CodedWithExceptions SterilizationType { get; set; }
 
         /// <summary>
         /// STZ.2 - Sterilization Cycle.
-        /// <para>Suggested: 0702 Cycle Type -&gt; ClearHl7.Fhir.Codes.V280.CodeCycleType</para>
+        /// <para>Suggested: 0702 Cycle Type -&gt; ClearHl7.Codes.V280.CodeCycleType</para>
         /// </summary>
         public CodedWithExceptions SterilizationCycle { get; set; }
 

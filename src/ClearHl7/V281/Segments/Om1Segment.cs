@@ -33,13 +33,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM1.3 - Permitted Data Types.
-        /// <para>Suggested: 0125 Value Type -&gt; ClearHl7.Fhir.Codes.V281.CodeValueType</para>
+        /// <para>Suggested: 0125 Value Type -&gt; ClearHl7.Codes.V281.CodeValueType</para>
         /// </summary>
         public IEnumerable<string> PermittedDataTypes { get; set; }
 
         /// <summary>
         /// OM1.4 - Specimen Required.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string SpecimenRequired { get; set; }
 
@@ -80,7 +80,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM1.12 - Orderability.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string Orderability { get; set; }
 
@@ -96,7 +96,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM1.15 - Portable Device Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string PortableDeviceIndicator { get; set; }
 
@@ -112,7 +112,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM1.18 - Nature of Service/Test/Observation.
-        /// <para>Suggested: 0174 Nature Of Service/Test/Observation -&gt; ClearHl7.Fhir.Codes.V281.CodeNatureOfServiceTestObservation</para>
+        /// <para>Suggested: 0174 Nature Of Service/Test/Observation -&gt; ClearHl7.Codes.V281.CodeNatureOfServiceTestObservation</para>
         /// </summary>
         public CodedWithExceptions NatureOfServiceTestObservation { get; set; }
 
@@ -148,13 +148,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM1.25 - Processing Priority.
-        /// <para>Suggested: 0168 Processing Priority -&gt; ClearHl7.Fhir.Codes.V281.CodeProcessingPriority</para>
+        /// <para>Suggested: 0168 Processing Priority -&gt; ClearHl7.Codes.V281.CodeProcessingPriority</para>
         /// </summary>
         public IEnumerable<string> ProcessingPriority { get; set; }
 
         /// <summary>
         /// OM1.26 - Reporting Priority.
-        /// <para>Suggested: 0169 Reporting Priority -&gt; ClearHl7.Fhir.Codes.V281.CodeReportingPriority</para>
+        /// <para>Suggested: 0169 Reporting Priority -&gt; ClearHl7.Codes.V281.CodeReportingPriority</para>
         /// </summary>
         public string ReportingPriority { get; set; }
 
@@ -175,7 +175,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM1.30 - Confidentiality Code.
-        /// <para>Suggested: 0177 Confidentiality Code -&gt; ClearHl7.Fhir.Codes.V281.CodeConfidentialityCode</para>
+        /// <para>Suggested: 0177 Confidentiality Code -&gt; ClearHl7.Codes.V281.CodeConfidentialityCode</para>
         /// </summary>
         public CodedWithExceptions ConfidentialityCode { get; set; }
 
@@ -236,25 +236,25 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM1.42 - Kind of Quantity Observed.
-        /// <para>Suggested: 0254 Kind Of Quantity -&gt; ClearHl7.Fhir.Codes.V281.CodeKindOfQuantity</para>
+        /// <para>Suggested: 0254 Kind Of Quantity -&gt; ClearHl7.Codes.V281.CodeKindOfQuantity</para>
         /// </summary>
         public CodedWithExceptions KindOfQuantityObserved { get; set; }
 
         /// <summary>
         /// OM1.43 - Point Versus Interval.
-        /// <para>Suggested: 0255 Duration Categories -&gt; ClearHl7.Fhir.Codes.V281.CodeDurationCategories</para>
+        /// <para>Suggested: 0255 Duration Categories -&gt; ClearHl7.Codes.V281.CodeDurationCategories</para>
         /// </summary>
         public CodedWithExceptions PointVersusInterval { get; set; }
 
         /// <summary>
         /// OM1.44 - Challenge Information.
-        /// <para>Suggested: 0256 Time Delay Post Challenge -&gt; ClearHl7.Fhir.Codes.V281.CodeTimeDelayPostChallenge</para>
+        /// <para>Suggested: 0256 Time Delay Post Challenge -&gt; ClearHl7.Codes.V281.CodeTimeDelayPostChallenge</para>
         /// </summary>
         public Text ChallengeInformation { get; set; }
 
         /// <summary>
         /// OM1.45 - Relationship Modifier.
-        /// <para>Suggested: 0258 Relationship Modifier -&gt; ClearHl7.Fhir.Codes.V281.CodeRelationshipModifier</para>
+        /// <para>Suggested: 0258 Relationship Modifier -&gt; ClearHl7.Codes.V281.CodeRelationshipModifier</para>
         /// </summary>
         public CodedWithExceptions RelationshipModifier { get; set; }
 
@@ -271,13 +271,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM1.48 - Exclusive Test.
-        /// <para>Suggested: 0919 Exclusive Test -&gt; ClearHl7.Fhir.Codes.V281.CodeExclusiveTest</para>
+        /// <para>Suggested: 0919 Exclusive Test -&gt; ClearHl7.Codes.V281.CodeExclusiveTest</para>
         /// </summary>
         public string ExclusiveTest { get; set; }
 
         /// <summary>
         /// OM1.49 - Diagnostic Serv Sect ID.
-        /// <para>Suggested: 0074 Diagnostic Service Section ID -&gt; ClearHl7.Fhir.Codes.V281.CodeDiagnosticServiceSectionId</para>
+        /// <para>Suggested: 0074 Diagnostic Service Section ID -&gt; ClearHl7.Codes.V281.CodeDiagnosticServiceSectionId</para>
         /// </summary>
         public string DiagnosticServSectId { get; set; }
 

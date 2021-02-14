@@ -27,7 +27,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// FAC.2 - Facility Type.
-        /// <para>Suggested: 0331 Facility Type -&gt; ClearHl7.Fhir.Codes.V282.CodeFacilityType</para>
+        /// <para>Suggested: 0331 Facility Type -&gt; ClearHl7.Codes.V282.CodeFacilityType</para>
         /// </summary>
         public string FacilityType { get; set; }
 

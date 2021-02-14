@@ -46,7 +46,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// PSL.6 - Product/Service Line Item Status.
-        /// <para>Suggested: 0559 Product/Service Status -&gt; ClearHl7.Fhir.Codes.V281.CodeProductServiceStatus</para>
+        /// <para>Suggested: 0559 Product/Service Status -&gt; ClearHl7.Codes.V281.CodeProductServiceStatus</para>
         /// </summary>
         public CodedWithExceptions ProductServiceLineItemStatus { get; set; }
 
@@ -105,7 +105,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// PSL.17 - Product/Service Clarification Code Type.
-        /// <para>Suggested: 0561 Product/Services Clarification Codes -&gt; ClearHl7.Fhir.Codes.V281.CodeProductServicesClarificationCodes</para>
+        /// <para>Suggested: 0561 Product/Services Clarification Codes -&gt; ClearHl7.Codes.V281.CodeProductServicesClarificationCodes</para>
         /// </summary>
         public CodedWithExceptions ProductServiceClarificationCodeType { get; set; }
 
@@ -121,13 +121,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// PSL.20 - Processing Consideration Code.
-        /// <para>Suggested: 0562 Processing Consideration Codes -&gt; ClearHl7.Fhir.Codes.V281.CodeProcessingConsiderationCodes</para>
+        /// <para>Suggested: 0562 Processing Consideration Codes -&gt; ClearHl7.Codes.V281.CodeProcessingConsiderationCodes</para>
         /// </summary>
         public CodedWithExceptions ProcessingConsiderationCode { get; set; }
 
         /// <summary>
         /// PSL.21 - Restricted Disclosure Indicator.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public string RestrictedDisclosureIndicator { get; set; }
 
@@ -179,19 +179,19 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// PSL.31 - Role Executing Physician.
-        /// <para>Suggested: 0881 Role Executing Physician -&gt; ClearHl7.Fhir.Codes.V281.CodeRoleExecutingPhysician</para>
+        /// <para>Suggested: 0881 Role Executing Physician -&gt; ClearHl7.Codes.V281.CodeRoleExecutingPhysician</para>
         /// </summary>
         public CodedWithExceptions RoleExecutingPhysician { get; set; }
 
         /// <summary>
         /// PSL.32 - Medical Role Executing Physician.
-        /// <para>Suggested: 0882 Medical Role Executing Physician -&gt; ClearHl7.Fhir.Codes.V281.CodeMedicalRoleExecutingPhysician</para>
+        /// <para>Suggested: 0882 Medical Role Executing Physician -&gt; ClearHl7.Codes.V281.CodeMedicalRoleExecutingPhysician</para>
         /// </summary>
         public CodedWithExceptions MedicalRoleExecutingPhysician { get; set; }
 
         /// <summary>
         /// PSL.33 - Side of body.
-        /// <para>Suggested: 0894 Side Of Body -&gt; ClearHl7.Fhir.Codes.V281.CodeSideOfBody</para>
+        /// <para>Suggested: 0894 Side Of Body -&gt; ClearHl7.Codes.V281.CodeSideOfBody</para>
         /// </summary>
         public CodedWithExceptions SideOfBody { get; set; }
 
@@ -262,7 +262,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// PSL.47 - Validation.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string Validation { get; set; }
 

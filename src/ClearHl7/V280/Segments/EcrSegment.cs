@@ -23,7 +23,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// ECR.1 - Command Response.
-        /// <para>Suggested: 0387 Command Response -&gt; ClearHl7.Fhir.Codes.V280.CodeCommandResponse</para>
+        /// <para>Suggested: 0387 Command Response -&gt; ClearHl7.Codes.V280.CodeCommandResponse</para>
         /// </summary>
         public CodedWithExceptions CommandResponse { get; set; }
 

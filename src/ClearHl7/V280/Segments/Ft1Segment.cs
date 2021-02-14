@@ -48,7 +48,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// FT1.6 - Transaction Type.
-        /// <para>Suggested: 0017 Transaction Type -&gt; ClearHl7.Fhir.Codes.V280.CodeTransactionType</para>
+        /// <para>Suggested: 0017 Transaction Type -&gt; ClearHl7.Codes.V280.CodeTransactionType</para>
         /// </summary>
         public CodedWithExceptions TransactionType { get; set; }
 
@@ -163,7 +163,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// FT1.27 - Advanced Beneficiary Notice Code.
-        /// <para>Suggested: 0339 Advanced Beneficiary Notice Code -&gt; ClearHl7.Fhir.Codes.V280.CodeAdvancedBeneficiaryNoticeCode</para>
+        /// <para>Suggested: 0339 Advanced Beneficiary Notice Code -&gt; ClearHl7.Codes.V280.CodeAdvancedBeneficiaryNoticeCode</para>
         /// </summary>
         public CodedWithExceptions AdvancedBeneficiaryNoticeCode { get; set; }
 
@@ -236,7 +236,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// FT1.41 - Revenue Code.
-        /// <para>Suggested: 0456 Revenue Code -&gt; ClearHl7.Fhir.Codes.V280.CodeRevenueCode</para>
+        /// <para>Suggested: 0456 Revenue Code -&gt; ClearHl7.Codes.V280.CodeRevenueCode</para>
         /// </summary>
         public CodedWithExceptions RevenueCode { get; set; }
 

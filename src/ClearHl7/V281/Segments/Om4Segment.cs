@@ -27,7 +27,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM4.2 - Derived Specimen.
-        /// <para>Suggested: 0170 Derived Specimen -&gt; ClearHl7.Fhir.Codes.V281.CodeDerivedSpecimen</para>
+        /// <para>Suggested: 0170 Derived Specimen -&gt; ClearHl7.Codes.V281.CodeDerivedSpecimen</para>
         /// </summary>
         public string DerivedSpecimen { get; set; }
 
@@ -53,7 +53,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM4.7 - Additive.
-        /// <para>Suggested: 0371 Additive/Preservative -&gt; ClearHl7.Fhir.Codes.V281.CodeAdditivePreservative</para>
+        /// <para>Suggested: 0371 Additive/Preservative -&gt; ClearHl7.Codes.V281.CodeAdditivePreservative</para>
         /// </summary>
         public CodedWithExceptions Additive { get; set; }
 
@@ -84,7 +84,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM4.13 - Specimen Priorities.
-        /// <para>Suggested: 0027 Priority -&gt; ClearHl7.Fhir.Codes.V281.CodePriority</para>
+        /// <para>Suggested: 0027 Priority -&gt; ClearHl7.Codes.V281.CodePriority</para>
         /// </summary>
         public IEnumerable<string> SpecimenPriorities { get; set; }
 
@@ -95,13 +95,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// OM4.15 - Specimen Handling Code.
-        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Fhir.Codes.V281.CodeSpecialHandlingCode</para>
+        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Codes.V281.CodeSpecialHandlingCode</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> SpecimenHandlingCode { get; set; }
 
         /// <summary>
         /// OM4.16 - Specimen Preference.
-        /// <para>Suggested: 0920 Preferred Specimen/Attribute Status -&gt; ClearHl7.Fhir.Codes.V281.CodePreferredSpecimenAttributeStatus</para>
+        /// <para>Suggested: 0920 Preferred Specimen/Attribute Status -&gt; ClearHl7.Codes.V281.CodePreferredSpecimenAttributeStatus</para>
         /// </summary>
         public string SpecimenPreference { get; set; }
 

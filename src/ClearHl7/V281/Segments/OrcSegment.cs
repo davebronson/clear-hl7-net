@@ -23,7 +23,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ORC.1 - Order Control.
-        /// <para>Suggested: 0119 Order Control Codes -&gt; ClearHl7.Fhir.Codes.V281.CodeOrderControlCodes</para>
+        /// <para>Suggested: 0119 Order Control Codes -&gt; ClearHl7.Codes.V281.CodeOrderControlCodes</para>
         /// </summary>
         public string OrderControl { get; set; }
 
@@ -44,13 +44,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ORC.5 - Order Status.
-        /// <para>Suggested: 0038 Order Status -&gt; ClearHl7.Fhir.Codes.V281.CodeOrderStatus</para>
+        /// <para>Suggested: 0038 Order Status -&gt; ClearHl7.Codes.V281.CodeOrderStatus</para>
         /// </summary>
         public string OrderStatus { get; set; }
 
         /// <summary>
         /// ORC.6 - Response Flag.
-        /// <para>Suggested: 0121 Response Flag -&gt; ClearHl7.Fhir.Codes.V281.CodeResponseFlag</para>
+        /// <para>Suggested: 0121 Response Flag -&gt; ClearHl7.Codes.V281.CodeResponseFlag</para>
         /// </summary>
         public string ResponseFlag { get; set; }
 
@@ -121,7 +121,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ORC.20 - Advanced Beneficiary Notice Code.
-        /// <para>Suggested: 0339 Advanced Beneficiary Notice Code -&gt; ClearHl7.Fhir.Codes.V281.CodeAdvancedBeneficiaryNoticeCode</para>
+        /// <para>Suggested: 0339 Advanced Beneficiary Notice Code -&gt; ClearHl7.Codes.V281.CodeAdvancedBeneficiaryNoticeCode</para>
         /// </summary>
         public CodedWithExceptions AdvancedBeneficiaryNoticeCode { get; set; }
 
@@ -163,19 +163,19 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ORC.28 - Confidentiality Code.
-        /// <para>Suggested: 0177 Confidentiality Code -&gt; ClearHl7.Fhir.Codes.V281.CodeConfidentialityCode</para>
+        /// <para>Suggested: 0177 Confidentiality Code -&gt; ClearHl7.Codes.V281.CodeConfidentialityCode</para>
         /// </summary>
         public CodedWithExceptions ConfidentialityCode { get; set; }
 
         /// <summary>
         /// ORC.29 - Order Type.
-        /// <para>Suggested: 0482 Order Type -&gt; ClearHl7.Fhir.Codes.V281.CodeOrderType</para>
+        /// <para>Suggested: 0482 Order Type -&gt; ClearHl7.Codes.V281.CodeOrderType</para>
         /// </summary>
         public CodedWithExceptions OrderType { get; set; }
 
         /// <summary>
         /// ORC.30 - Enterer Authorization Mode.
-        /// <para>Suggested: 0483 Authorization Mode -&gt; ClearHl7.Fhir.Codes.V281.CodeAuthorizationMode</para>
+        /// <para>Suggested: 0483 Authorization Mode -&gt; ClearHl7.Codes.V281.CodeAuthorizationMode</para>
         /// </summary>
         public CodedWithNoExceptions EntererAuthorizationMode { get; set; }
 

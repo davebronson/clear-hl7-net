@@ -105,7 +105,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IN1.17 - Insured's Relationship To Patient.
-        /// <para>Suggested: 0063 Relationship -&gt; ClearHl7.Fhir.Codes.V282.CodeRelationship</para>
+        /// <para>Suggested: 0063 Relationship -&gt; ClearHl7.Codes.V282.CodeRelationship</para>
         /// </summary>
         public CodedWithExceptions InsuredsRelationshipToPatient { get; set; }
 
@@ -121,13 +121,13 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IN1.20 - Assignment Of Benefits.
-        /// <para>Suggested: 0135 Assignment Of Benefits -&gt; ClearHl7.Fhir.Codes.V282.CodeAssignmentOfBenefits</para>
+        /// <para>Suggested: 0135 Assignment Of Benefits -&gt; ClearHl7.Codes.V282.CodeAssignmentOfBenefits</para>
         /// </summary>
         public CodedWithExceptions AssignmentOfBenefits { get; set; }
 
         /// <summary>
         /// IN1.21 - Coordination Of Benefits.
-        /// <para>Suggested: 0173 Coordination Of Benefits -&gt; ClearHl7.Fhir.Codes.V282.CodeCoordinationOfBenefits</para>
+        /// <para>Suggested: 0173 Coordination Of Benefits -&gt; ClearHl7.Codes.V282.CodeCoordinationOfBenefits</para>
         /// </summary>
         public CodedWithExceptions CoordinationOfBenefits { get; set; }
 
@@ -138,7 +138,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IN1.23 - Notice Of Admission Flag.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string NoticeOfAdmissionFlag { get; set; }
 
@@ -149,7 +149,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IN1.25 - Report Of Eligibility Flag.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string ReportOfEligibilityFlag { get; set; }
 
@@ -181,7 +181,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IN1.31 - Type Of Agreement Code.
-        /// <para>Suggested: 0098 Type Of Agreement -&gt; ClearHl7.Fhir.Codes.V282.CodeTypeOfAgreement</para>
+        /// <para>Suggested: 0098 Type Of Agreement -&gt; ClearHl7.Codes.V282.CodeTypeOfAgreement</para>
         /// </summary>
         public CodedWithExceptions TypeOfAgreementCode { get; set; }
 
@@ -239,13 +239,13 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IN1.42 - Insured's Employment Status.
-        /// <para>Suggested: 0066 Employment Status -&gt; ClearHl7.Fhir.Codes.V282.CodeEmploymentStatus</para>
+        /// <para>Suggested: 0066 Employment Status -&gt; ClearHl7.Codes.V282.CodeEmploymentStatus</para>
         /// </summary>
         public CodedWithExceptions InsuredsEmploymentStatus { get; set; }
 
         /// <summary>
         /// IN1.43 - Insured's Administrative Sex.
-        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Fhir.Codes.V282.CodeAdministrativeSex</para>
+        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Codes.V282.CodeAdministrativeSex</para>
         /// </summary>
         public CodedWithExceptions InsuredsAdministrativeSex { get; set; }
 
@@ -267,7 +267,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IN1.47 - Coverage Type.
-        /// <para>Suggested: 0309 Coverage Type -&gt; ClearHl7.Fhir.Codes.V282.CodeCoverageType</para>
+        /// <para>Suggested: 0309 Coverage Type -&gt; ClearHl7.Codes.V282.CodeCoverageType</para>
         /// </summary>
         public CodedWithExceptions CoverageType { get; set; }
 
@@ -284,7 +284,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IN1.50 - Signature Code.
-        /// <para>Suggested: 0535 Signature Code -&gt; ClearHl7.Fhir.Codes.V282.CodeSignatureCode</para>
+        /// <para>Suggested: 0535 Signature Code -&gt; ClearHl7.Codes.V282.CodeSignatureCode</para>
         /// </summary>
         public CodedWithExceptions SignatureCode { get; set; }
 
@@ -311,7 +311,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IN1.55 - Insurance Action Code.
-        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V282.CodeSegmentActionCode</para>
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Codes.V282.CodeSegmentActionCode</para>
         /// </summary>
         public string InsuranceActionCode { get; set; }
         

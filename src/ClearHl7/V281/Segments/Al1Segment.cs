@@ -27,7 +27,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// AL1.2 - Allergen Type Code.
-        /// <para>Suggested: 0127 Allergen Type -&gt; ClearHl7.Fhir.Codes.V281.CodeAllergenType</para>
+        /// <para>Suggested: 0127 Allergen Type -&gt; ClearHl7.Codes.V281.CodeAllergenType</para>
         /// </summary>
         public CodedWithExceptions AllergenTypeCode { get; set; }
 
@@ -38,7 +38,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// AL1.4 - Allergy Severity Code.
-        /// <para>Suggested: 0128 Allergy Severity -&gt; ClearHl7.Fhir.Codes.V281.CodeAllergySeverity</para>
+        /// <para>Suggested: 0128 Allergy Severity -&gt; ClearHl7.Codes.V281.CodeAllergySeverity</para>
         /// </summary>
         public CodedWithExceptions AllergySeverityCode { get; set; }
 

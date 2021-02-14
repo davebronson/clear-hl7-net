@@ -22,7 +22,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// ODS.1 - Type.
-        /// <para>Suggested: 0159 Diet Code Specification Type -&gt; ClearHl7.Fhir.Codes.V280.CodeDietCodeSpecificationType</para>
+        /// <para>Suggested: 0159 Diet Code Specification Type -&gt; ClearHl7.Codes.V280.CodeDietCodeSpecificationType</para>
         /// </summary>
         public string Type { get; set; }
 

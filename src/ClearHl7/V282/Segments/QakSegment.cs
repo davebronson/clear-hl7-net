@@ -25,7 +25,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// QAK.2 - Query Response Status.
-        /// <para>Suggested: 0208 Query Response Status -&gt; ClearHl7.Fhir.Codes.V282.CodeQueryResponseStatus</para>
+        /// <para>Suggested: 0208 Query Response Status -&gt; ClearHl7.Codes.V282.CodeQueryResponseStatus</para>
         /// </summary>
         public string QueryResponseStatus { get; set; }
 

@@ -20,7 +20,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OVR.1 - Business Rule Override Type.
-        /// <para>Suggested: 0518 Override Type -&gt; ClearHl7.Fhir.Codes.V282.CodeOverrideType</para>
+        /// <para>Suggested: 0518 Override Type -&gt; ClearHl7.Codes.V282.CodeOverrideType</para>
         /// </summary>
         public CodedWithExceptions BusinessRuleOverrideType { get; set; }
 

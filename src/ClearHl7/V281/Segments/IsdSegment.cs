@@ -25,13 +25,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ISD.2 - Interaction Type Identifier.
-        /// <para>Suggested: 0368 Remote Control Command -&gt; ClearHl7.Fhir.Codes.V281.CodeRemoteControlCommand</para>
+        /// <para>Suggested: 0368 Remote Control Command -&gt; ClearHl7.Codes.V281.CodeRemoteControlCommand</para>
         /// </summary>
         public CodedWithExceptions InteractionTypeIdentifier { get; set; }
 
         /// <summary>
         /// ISD.3 - Interaction Active State.
-        /// <para>Suggested: 0387 Command Response -&gt; ClearHl7.Fhir.Codes.V281.CodeCommandResponse</para>
+        /// <para>Suggested: 0387 Command Response -&gt; ClearHl7.Codes.V281.CodeCommandResponse</para>
         /// </summary>
         public CodedWithExceptions InteractionActiveState { get; set; }
         

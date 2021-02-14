@@ -25,7 +25,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// NPU.2 - Bed Status.
-        /// <para>Suggested: 0116 Bed Status -&gt; ClearHl7.Fhir.Codes.V282.CodeBedStatus</para>
+        /// <para>Suggested: 0116 Bed Status -&gt; ClearHl7.Codes.V282.CodeBedStatus</para>
         /// </summary>
         public CodedWithExceptions BedStatus { get; set; }
         

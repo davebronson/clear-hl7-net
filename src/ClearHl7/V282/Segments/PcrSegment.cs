@@ -96,7 +96,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// PCR.15 - Product Evaluation Status.
-        /// <para>Suggested: 0247 Status Of Evaluation -&gt; ClearHl7.Fhir.Codes.V282.CodeStatusOfEvaluation</para>
+        /// <para>Suggested: 0247 Status Of Evaluation -&gt; ClearHl7.Codes.V282.CodeStatusOfEvaluation</para>
         /// </summary>
         public CodedWithExceptions ProductEvaluationStatus { get; set; }
 
@@ -107,7 +107,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// PCR.17 - Evaluated Product Source.
-        /// <para>Suggested: 0248 Product Source -&gt; ClearHl7.Fhir.Codes.V282.CodeProductSource</para>
+        /// <para>Suggested: 0248 Product Source -&gt; ClearHl7.Codes.V282.CodeProductSource</para>
         /// </summary>
         public string EvaluatedProductSource { get; set; }
 
@@ -118,31 +118,31 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// PCR.19 - Device Operator Qualifications.
-        /// <para>Suggested: 0242 Primary Observer's Qualification -&gt; ClearHl7.Fhir.Codes.V282.CodePrimaryObserversQualification</para>
+        /// <para>Suggested: 0242 Primary Observer's Qualification -&gt; ClearHl7.Codes.V282.CodePrimaryObserversQualification</para>
         /// </summary>
         public string DeviceOperatorQualifications { get; set; }
 
         /// <summary>
         /// PCR.20 - Relatedness Assessment.
-        /// <para>Suggested: 0250 Relatedness Assessment -&gt; ClearHl7.Fhir.Codes.V282.CodeRelatednessAssessment</para>
+        /// <para>Suggested: 0250 Relatedness Assessment -&gt; ClearHl7.Codes.V282.CodeRelatednessAssessment</para>
         /// </summary>
         public string RelatednessAssessment { get; set; }
 
         /// <summary>
         /// PCR.21 - Action Taken In Response To The Event.
-        /// <para>Suggested: 0251 Action Taken In Response To The Event -&gt; ClearHl7.Fhir.Codes.V282.CodeActionTakenInResponseToTheEvent</para>
+        /// <para>Suggested: 0251 Action Taken In Response To The Event -&gt; ClearHl7.Codes.V282.CodeActionTakenInResponseToTheEvent</para>
         /// </summary>
         public IEnumerable<string> ActionTakenInResponseToTheEvent { get; set; }
 
         /// <summary>
         /// PCR.22 - Event Causality Observations.
-        /// <para>Suggested: 0252 Causality Observations -&gt; ClearHl7.Fhir.Codes.V282.CodeCausalityObservations</para>
+        /// <para>Suggested: 0252 Causality Observations -&gt; ClearHl7.Codes.V282.CodeCausalityObservations</para>
         /// </summary>
         public IEnumerable<string> EventCausalityObservations { get; set; }
 
         /// <summary>
         /// PCR.23 - Indirect Exposure Mechanism.
-        /// <para>Suggested: 0253 Indirect Exposure Mechanism -&gt; ClearHl7.Fhir.Codes.V282.CodeIndirectExposureMechanism</para>
+        /// <para>Suggested: 0253 Indirect Exposure Mechanism -&gt; ClearHl7.Codes.V282.CodeIndirectExposureMechanism</para>
         /// </summary>
         public IEnumerable<string> IndirectExposureMechanism { get; set; }
         

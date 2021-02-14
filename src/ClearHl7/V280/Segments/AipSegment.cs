@@ -28,7 +28,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// AIP.2 - Segment Action Code.
-        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V280.CodeSegmentActionCode</para>
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Codes.V280.CodeSegmentActionCode</para>
         /// </summary>
         public string SegmentActionCode { get; set; }
 
@@ -75,13 +75,13 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// AIP.11 - Allow Substitution Code.
-        /// <para>Suggested: 0279 Allow Substitution Codes -&gt; ClearHl7.Fhir.Codes.V280.CodeAllowSubstitutionCodes</para>
+        /// <para>Suggested: 0279 Allow Substitution Codes -&gt; ClearHl7.Codes.V280.CodeAllowSubstitutionCodes</para>
         /// </summary>
         public CodedWithExceptions AllowSubstitutionCode { get; set; }
 
         /// <summary>
         /// AIP.12 - Filler Status Code.
-        /// <para>Suggested: 0278 Filler Status Codes -&gt; ClearHl7.Fhir.Codes.V280.CodeFillerStatusCodes</para>
+        /// <para>Suggested: 0278 Filler Status Codes -&gt; ClearHl7.Codes.V280.CodeFillerStatusCodes</para>
         /// </summary>
         public CodedWithExceptions FillerStatusCode { get; set; }
 

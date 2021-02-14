@@ -52,13 +52,13 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// ARQ.7 - Appointment Reason.
-        /// <para>Suggested: 0276 Appointment Reason Codes -&gt; ClearHl7.Fhir.Codes.V280.CodeAppointmentReasonCodes</para>
+        /// <para>Suggested: 0276 Appointment Reason Codes -&gt; ClearHl7.Codes.V280.CodeAppointmentReasonCodes</para>
         /// </summary>
         public CodedWithExceptions AppointmentReason { get; set; }
 
         /// <summary>
         /// ARQ.8 - Appointment Type.
-        /// <para>Suggested: 0277 Appointment Type Codes -&gt; ClearHl7.Fhir.Codes.V280.CodeAppointmentTypeCodes</para>
+        /// <para>Suggested: 0277 Appointment Type Codes -&gt; ClearHl7.Codes.V280.CodeAppointmentTypeCodes</para>
         /// </summary>
         public CodedWithExceptions AppointmentType { get; set; }
 

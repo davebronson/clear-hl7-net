@@ -45,19 +45,19 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// TCD.6 - Automatic Repeat Allowed.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string AutomaticRepeatAllowed { get; set; }
 
         /// <summary>
         /// TCD.7 - Reflex Allowed.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string ReflexAllowed { get; set; }
 
         /// <summary>
         /// TCD.8 - Analyte Repeat Status.
-        /// <para>Suggested: 0389 Analyte Repeat Status -&gt; ClearHl7.Fhir.Codes.V282.CodeAnalyteRepeatStatus</para>
+        /// <para>Suggested: 0389 Analyte Repeat Status -&gt; ClearHl7.Codes.V282.CodeAnalyteRepeatStatus</para>
         /// </summary>
         public CodedWithExceptions AnalyteRepeatStatus { get; set; }
         

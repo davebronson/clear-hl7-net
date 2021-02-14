@@ -23,7 +23,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// GOL.1 - Action Code.
-        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V280.CodeSegmentActionCode</para>
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Codes.V280.CodeSegmentActionCode</para>
         /// </summary>
         public string ActionCode { get; set; }
 
@@ -129,7 +129,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// GOL.22 - Mood Code.
-        /// <para>Suggested: 0725 Mood Codes -&gt; ClearHl7.Fhir.Codes.V280.CodeMoodCodes</para>
+        /// <para>Suggested: 0725 Mood Codes -&gt; ClearHl7.Codes.V280.CodeMoodCodes</para>
         /// </summary>
         public CodedWithNoExceptions MoodCode { get; set; }
         

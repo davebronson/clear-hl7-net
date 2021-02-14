@@ -33,13 +33,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ORG.3 - Organization Unit Type Code.
-        /// <para>Suggested: 0474 Practitioner Organization Unit Type -&gt; ClearHl7.Fhir.Codes.V281.CodePractitionerOrganizationUnitType</para>
+        /// <para>Suggested: 0474 Practitioner Organization Unit Type -&gt; ClearHl7.Codes.V281.CodePractitionerOrganizationUnitType</para>
         /// </summary>
         public CodedWithExceptions OrganizationUnitTypeCode { get; set; }
 
         /// <summary>
         /// ORG.4 - Primary Org Unit Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string PrimaryOrgUnitIndicator { get; set; }
 
@@ -73,19 +73,19 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ORG.10 - Employment Status Code.
-        /// <para>Suggested: 0066 Employment Status -&gt; ClearHl7.Fhir.Codes.V281.CodeEmploymentStatus</para>
+        /// <para>Suggested: 0066 Employment Status -&gt; ClearHl7.Codes.V281.CodeEmploymentStatus</para>
         /// </summary>
         public CodedWithExceptions EmploymentStatusCode { get; set; }
 
         /// <summary>
         /// ORG.11 - Board Approval Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string BoardApprovalIndicator { get; set; }
 
         /// <summary>
         /// ORG.12 - Primary Care Physician Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string PrimaryCarePhysicianIndicator { get; set; }
 

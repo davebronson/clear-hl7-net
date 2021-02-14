@@ -46,13 +46,13 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// RQ1.6 - Taxable.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string Taxable { get; set; }
 
         /// <summary>
         /// RQ1.7 - Substitute Allowed.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string SubstituteAllowed { get; set; }
         

@@ -22,7 +22,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// GP2.1 - Revenue Code.
-        /// <para>Suggested: 0456 Revenue Code -&gt; ClearHl7.Fhir.Codes.V282.CodeRevenueCode</para>
+        /// <para>Suggested: 0456 Revenue Code -&gt; ClearHl7.Codes.V282.CodeRevenueCode</para>
         /// </summary>
         public CodedWithExceptions RevenueCode { get; set; }
 
@@ -38,13 +38,13 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// GP2.4 - Reimbursement Action Code.
-        /// <para>Suggested: 0459 Reimbursement Action Code -&gt; ClearHl7.Fhir.Codes.V282.CodeReimbursementActionCode</para>
+        /// <para>Suggested: 0459 Reimbursement Action Code -&gt; ClearHl7.Codes.V282.CodeReimbursementActionCode</para>
         /// </summary>
         public CodedWithExceptions ReimbursementActionCode { get; set; }
 
         /// <summary>
         /// GP2.5 - Denial or Rejection Code.
-        /// <para>Suggested: 0460 Denial Or Rejection Code -&gt; ClearHl7.Fhir.Codes.V282.CodeDenialOrRejectionCode</para>
+        /// <para>Suggested: 0460 Denial Or Rejection Code -&gt; ClearHl7.Codes.V282.CodeDenialOrRejectionCode</para>
         /// </summary>
         public CodedWithExceptions DenialOrRejectionCode { get; set; }
 
@@ -56,7 +56,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// GP2.7 - Ambulatory Payment Classification Code.
-        /// <para>Suggested: 0466 Ambulatory Payment Classification Code -&gt; ClearHl7.Fhir.Codes.V282.CodeAmbulatoryPaymentClassificationCode</para>
+        /// <para>Suggested: 0466 Ambulatory Payment Classification Code -&gt; ClearHl7.Codes.V282.CodeAmbulatoryPaymentClassificationCode</para>
         /// </summary>
         public CodedWithExceptions AmbulatoryPaymentClassificationCode { get; set; }
 
@@ -68,13 +68,13 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// GP2.9 - Payment Adjustment Code.
-        /// <para>Suggested: 0468 Payment Adjustment Code -&gt; ClearHl7.Fhir.Codes.V282.CodePaymentAdjustmentCode</para>
+        /// <para>Suggested: 0468 Payment Adjustment Code -&gt; ClearHl7.Codes.V282.CodePaymentAdjustmentCode</para>
         /// </summary>
         public CodedWithExceptions PaymentAdjustmentCode { get; set; }
 
         /// <summary>
         /// GP2.10 - Packaging Status Code.
-        /// <para>Suggested: 0469 Packaging Status Code -&gt; ClearHl7.Fhir.Codes.V282.CodePackagingStatusCode</para>
+        /// <para>Suggested: 0469 Packaging Status Code -&gt; ClearHl7.Codes.V282.CodePackagingStatusCode</para>
         /// </summary>
         public CodedWithExceptions PackagingStatusCode { get; set; }
 
@@ -85,7 +85,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// GP2.12 - Reimbursement Type Code.
-        /// <para>Suggested: 0470 Reimbursement Type Code -&gt; ClearHl7.Fhir.Codes.V282.CodeReimbursementTypeCode</para>
+        /// <para>Suggested: 0470 Reimbursement Type Code -&gt; ClearHl7.Codes.V282.CodeReimbursementTypeCode</para>
         /// </summary>
         public CodedWithExceptions ReimbursementTypeCode { get; set; }
 

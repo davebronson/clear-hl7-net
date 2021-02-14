@@ -28,7 +28,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// RXD.2 - Dispense/Give Code.
-        /// <para>Suggested: 0292 Vaccines Administered -&gt; ClearHl7.Fhir.Codes.V280.CodeVaccinesAdministered</para>
+        /// <para>Suggested: 0292 Vaccines Administered -&gt; ClearHl7.Codes.V280.CodeVaccinesAdministered</para>
         /// </summary>
         public CodedWithExceptions DispenseGiveCode { get; set; }
 
@@ -74,7 +74,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// RXD.11 - Substitution Status.
-        /// <para>Suggested: 0167 Substitution Status -&gt; ClearHl7.Fhir.Codes.V280.CodeSubstitutionStatus</para>
+        /// <para>Suggested: 0167 Substitution Status -&gt; ClearHl7.Codes.V280.CodeSubstitutionStatus</para>
         /// </summary>
         public string SubstitutionStatus { get; set; }
 
@@ -90,7 +90,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// RXD.14 - Needs Human Review.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeYesNoIndicator</para>
         /// </summary>
         public string NeedsHumanReview { get; set; }
 
@@ -141,7 +141,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// RXD.24 - Dispense Package Method.
-        /// <para>Suggested: 0321 Dispense Method -&gt; ClearHl7.Fhir.Codes.V280.CodeDispenseMethod</para>
+        /// <para>Suggested: 0321 Dispense Method -&gt; ClearHl7.Codes.V280.CodeDispenseMethod</para>
         /// </summary>
         public string DispensePackageMethod { get; set; }
 
@@ -182,13 +182,13 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// RXD.32 - Pharmacy Order Type.
-        /// <para>Suggested: 0480 Pharmacy Order Types -&gt; ClearHl7.Fhir.Codes.V280.CodePharmacyOrderTypes</para>
+        /// <para>Suggested: 0480 Pharmacy Order Types -&gt; ClearHl7.Codes.V280.CodePharmacyOrderTypes</para>
         /// </summary>
         public string PharmacyOrderType { get; set; }
 
         /// <summary>
         /// RXD.33 - Dispense Type.
-        /// <para>Suggested: 0484 Dispense Type -&gt; ClearHl7.Fhir.Codes.V280.CodeDispenseType</para>
+        /// <para>Suggested: 0484 Dispense Type -&gt; ClearHl7.Codes.V280.CodeDispenseType</para>
         /// </summary>
         public CodedWithExceptions DispenseType { get; set; }
 

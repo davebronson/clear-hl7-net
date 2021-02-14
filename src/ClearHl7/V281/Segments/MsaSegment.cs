@@ -19,7 +19,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// MSA.1 - Acknowledgment Code.
-        /// <para>Suggested: 0008 Acknowledgment Code -&gt; ClearHl7.Fhir.Codes.V281.CodeAcknowledgmentCode</para>
+        /// <para>Suggested: 0008 Acknowledgment Code -&gt; ClearHl7.Codes.V281.CodeAcknowledgmentCode</para>
         /// </summary>
         public string AcknowledgmentCode { get; set; }
 
@@ -55,7 +55,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// MSA.8 - Message Waiting Priority.
-        /// <para>Suggested: 0520 Message Waiting Priority -&gt; ClearHl7.Fhir.Codes.V281.CodeMessageWaitingPriority</para>
+        /// <para>Suggested: 0520 Message Waiting Priority -&gt; ClearHl7.Codes.V281.CodeMessageWaitingPriority</para>
         /// </summary>
         public string MessageWaitingPriority { get; set; }
         

@@ -35,13 +35,13 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// SDD.4 - Device Data State.
-        /// <para>Suggested: 0667 Device Data State -&gt; ClearHl7.Fhir.Codes.V280.CodeDeviceDataState</para>
+        /// <para>Suggested: 0667 Device Data State -&gt; ClearHl7.Codes.V280.CodeDeviceDataState</para>
         /// </summary>
         public CodedWithExceptions DeviceDataState { get; set; }
 
         /// <summary>
         /// SDD.5 - Load Status.
-        /// <para>Suggested: 0669 Load Status -&gt; ClearHl7.Fhir.Codes.V280.CodeLoadStatus</para>
+        /// <para>Suggested: 0669 Load Status -&gt; ClearHl7.Codes.V280.CodeLoadStatus</para>
         /// </summary>
         public CodedWithExceptions LoadStatus { get; set; }
 

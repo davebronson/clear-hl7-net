@@ -28,7 +28,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// CON.2 - Consent Type.
-        /// <para>Suggested: 0496 Consent Type -&gt; ClearHl7.Fhir.Codes.V281.CodeConsentType</para>
+        /// <para>Suggested: 0496 Consent Type -&gt; ClearHl7.Codes.V281.CodeConsentType</para>
         /// </summary>
         public CodedWithExceptions ConsentType { get; set; }
 
@@ -69,13 +69,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// CON.10 - Consent Mode.
-        /// <para>Suggested: 0497 Consent Mode -&gt; ClearHl7.Fhir.Codes.V281.CodeConsentMode</para>
+        /// <para>Suggested: 0497 Consent Mode -&gt; ClearHl7.Codes.V281.CodeConsentMode</para>
         /// </summary>
         public CodedWithNoExceptions ConsentMode { get; set; }
 
         /// <summary>
         /// CON.11 - Consent Status.
-        /// <para>Suggested: 0498 Consent Status -&gt; ClearHl7.Fhir.Codes.V281.CodeConsentStatus</para>
+        /// <para>Suggested: 0498 Consent Status -&gt; ClearHl7.Codes.V281.CodeConsentStatus</para>
         /// </summary>
         public CodedWithNoExceptions ConsentStatus { get; set; }
 
@@ -101,13 +101,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// CON.16 - Subject Competence Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string SubjectCompetenceIndicator { get; set; }
 
         /// <summary>
         /// CON.17 - Translator Assistance Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string TranslatorAssistanceIndicator { get; set; }
 
@@ -119,31 +119,31 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// CON.19 - Informational Material Supplied Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string InformationalMaterialSuppliedIndicator { get; set; }
 
         /// <summary>
         /// CON.20 - Consent Bypass Reason.
-        /// <para>Suggested: 0499 Consent Bypass Reason -&gt; ClearHl7.Fhir.Codes.V281.CodeConsentBypassReason</para>
+        /// <para>Suggested: 0499 Consent Bypass Reason -&gt; ClearHl7.Codes.V281.CodeConsentBypassReason</para>
         /// </summary>
         public CodedWithExceptions ConsentBypassReason { get; set; }
 
         /// <summary>
         /// CON.21 - Consent Disclosure Level.
-        /// <para>Suggested: 0500 Consent Disclosure Level -&gt; ClearHl7.Fhir.Codes.V281.CodeConsentDisclosureLevel</para>
+        /// <para>Suggested: 0500 Consent Disclosure Level -&gt; ClearHl7.Codes.V281.CodeConsentDisclosureLevel</para>
         /// </summary>
         public string ConsentDisclosureLevel { get; set; }
 
         /// <summary>
         /// CON.22 - Consent Non-disclosure Reason.
-        /// <para>Suggested: 0501 Consent Non-Disclosure Reason -&gt; ClearHl7.Fhir.Codes.V281.CodeConsentNonDisclosureReason</para>
+        /// <para>Suggested: 0501 Consent Non-Disclosure Reason -&gt; ClearHl7.Codes.V281.CodeConsentNonDisclosureReason</para>
         /// </summary>
         public CodedWithExceptions ConsentNonDisclosureReason { get; set; }
 
         /// <summary>
         /// CON.23 - Non-subject Consenter Reason.
-        /// <para>Suggested: 0502 Non-Subject Consenter Reason -&gt; ClearHl7.Fhir.Codes.V281.CodeNonSubjectConsenterReason</para>
+        /// <para>Suggested: 0502 Non-Subject Consenter Reason -&gt; ClearHl7.Codes.V281.CodeNonSubjectConsenterReason</para>
         /// </summary>
         public CodedWithExceptions NonSubjectConsenterReason { get; set; }
 
@@ -154,7 +154,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// CON.25 - Relationship to Subject.
-        /// <para>Suggested: 0548 Signatory's Relationship To Subject -&gt; ClearHl7.Fhir.Codes.V281.CodeSignatorysRelationshipToSubject</para>
+        /// <para>Suggested: 0548 Signatory's Relationship To Subject -&gt; ClearHl7.Codes.V281.CodeSignatorysRelationshipToSubject</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> RelationshipToSubject { get; set; }
 

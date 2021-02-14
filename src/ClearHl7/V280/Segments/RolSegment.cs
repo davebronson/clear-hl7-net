@@ -28,13 +28,13 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// ROL.2 - Action Code.
-        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V280.CodeSegmentActionCode</para>
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Codes.V280.CodeSegmentActionCode</para>
         /// </summary>
         public string ActionCode { get; set; }
 
         /// <summary>
         /// ROL.3 - Role-ROL.
-        /// <para>Suggested: 0443 Provider Role -&gt; ClearHl7.Fhir.Codes.V280.CodeProviderRole</para>
+        /// <para>Suggested: 0443 Provider Role -&gt; ClearHl7.Codes.V280.CodeProviderRole</para>
         /// </summary>
         public CodedWithExceptions RoleRol { get; set; }
 
@@ -70,7 +70,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// ROL.10 - Organization Unit Type.
-        /// <para>Suggested: 0406 Participant Organization Unit Type -&gt; ClearHl7.Fhir.Codes.V280.CodeParticipantOrganizationUnitType</para>
+        /// <para>Suggested: 0406 Participant Organization Unit Type -&gt; ClearHl7.Codes.V280.CodeParticipantOrganizationUnitType</para>
         /// </summary>
         public CodedWithExceptions OrganizationUnitType { get; set; }
 

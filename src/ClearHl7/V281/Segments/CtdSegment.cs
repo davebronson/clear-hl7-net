@@ -22,7 +22,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// CTD.1 - Contact Role.
-        /// <para>Suggested: 0131 Contact Role -&gt; ClearHl7.Fhir.Codes.V281.CodeContactRole</para>
+        /// <para>Suggested: 0131 Contact Role -&gt; ClearHl7.Codes.V281.CodeContactRole</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ContactRole { get; set; }
 
@@ -48,13 +48,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// CTD.6 - Preferred Method of Contact.
-        /// <para>Suggested: 0185 Preferred Method Of Contact -&gt; ClearHl7.Fhir.Codes.V281.CodePreferredMethodOfContact</para>
+        /// <para>Suggested: 0185 Preferred Method Of Contact -&gt; ClearHl7.Codes.V281.CodePreferredMethodOfContact</para>
         /// </summary>
         public CodedWithExceptions PreferredMethodOfContact { get; set; }
 
         /// <summary>
         /// CTD.7 - Contact Identifiers.
-        /// <para>Suggested: 0338 Practitioner ID Number Type -&gt; ClearHl7.Fhir.Codes.V281.CodePractitionerIdNumberType</para>
+        /// <para>Suggested: 0338 Practitioner ID Number Type -&gt; ClearHl7.Codes.V281.CodePractitionerIdNumberType</para>
         /// </summary>
         public IEnumerable<PractitionerLicenseOrOtherIdNumber> ContactIdentifiers { get; set; }
 

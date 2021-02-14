@@ -47,7 +47,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IVT.6 - Item Status.
-        /// <para>Suggested: 0625 Item Status Codes -&gt; ClearHl7.Fhir.Codes.V282.CodeItemStatusCodes</para>
+        /// <para>Suggested: 0625 Item Status Codes -&gt; ClearHl7.Codes.V282.CodeItemStatusCodes</para>
         /// </summary>
         public CodedWithExceptions ItemStatus { get; set; }
 
@@ -58,7 +58,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IVT.8 - Order Packaging.
-        /// <para>Suggested: 0818 Package -&gt; ClearHl7.Fhir.Codes.V282.CodePackage</para>
+        /// <para>Suggested: 0818 Package -&gt; ClearHl7.Codes.V282.CodePackage</para>
         /// </summary>
         public CodedWithExceptions OrderPackaging { get; set; }
 
@@ -74,7 +74,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IVT.11 - Patient Chargeable Indicator.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions PatientChargeableIndicator { get; set; }
 
@@ -91,25 +91,25 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IVT.14 - Item Importance Code.
-        /// <para>Suggested: 0634 Item Importance Codes -&gt; ClearHl7.Fhir.Codes.V282.CodeItemImportanceCodes</para>
+        /// <para>Suggested: 0634 Item Importance Codes -&gt; ClearHl7.Codes.V282.CodeItemImportanceCodes</para>
         /// </summary>
         public CodedWithExceptions ItemImportanceCode { get; set; }
 
         /// <summary>
         /// IVT.15 - Stocked Item Indicator.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions StockedItemIndicator { get; set; }
 
         /// <summary>
         /// IVT.16 - Consignment Item Indicator.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions ConsignmentItemIndicator { get; set; }
 
         /// <summary>
         /// IVT.17 - Reusable Item Indicator.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions ReusableItemIndicator { get; set; }
 
@@ -130,7 +130,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IVT.21 - Recommended Reorder Theory.
-        /// <para>Suggested: 0642 Reorder Theory Codes -&gt; ClearHl7.Fhir.Codes.V282.CodeReorderTheoryCodes</para>
+        /// <para>Suggested: 0642 Reorder Theory Codes -&gt; ClearHl7.Codes.V282.CodeReorderTheoryCodes</para>
         /// </summary>
         public CodedWithExceptions RecommendedReorderTheory { get; set; }
 
@@ -156,7 +156,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// IVT.26 - Operating Room Par Level Indicator.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions OperatingRoomParLevelIndicator { get; set; }
         

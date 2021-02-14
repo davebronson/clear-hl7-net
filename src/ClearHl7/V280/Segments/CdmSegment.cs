@@ -43,7 +43,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// CDM.5 - Description Override Indicator.
-        /// <para>Suggested: 0268 Override -&gt; ClearHl7.Fhir.Codes.V280.CodeOverride</para>
+        /// <para>Suggested: 0268 Override -&gt; ClearHl7.Codes.V280.CodeOverride</para>
         /// </summary>
         public CodedWithExceptions DescriptionOverrideIndicator { get; set; }
 
@@ -61,7 +61,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// CDM.8 - Active/Inactive Flag.
-        /// <para>Suggested: 0183 Active/Inactive -&gt; ClearHl7.Fhir.Codes.V280.CodeActiveInactive</para>
+        /// <para>Suggested: 0183 Active/Inactive -&gt; ClearHl7.Codes.V280.CodeActiveInactive</para>
         /// </summary>
         public string ActiveInactiveFlag { get; set; }
 
@@ -88,7 +88,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// CDM.13 - Room Fee Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeYesNoIndicator</para>
         /// </summary>
         public string RoomFeeIndicator { get; set; }
 

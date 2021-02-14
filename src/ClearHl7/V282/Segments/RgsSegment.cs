@@ -25,7 +25,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// RGS.2 - Segment Action Code.
-        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V282.CodeSegmentActionCode</para>
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Codes.V282.CodeSegmentActionCode</para>
         /// </summary>
         public string SegmentActionCode { get; set; }
 

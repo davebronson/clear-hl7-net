@@ -28,7 +28,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// EDU.2 - Academic Degree.
-        /// <para>Suggested: 0360 Degree/License/Certificate -&gt; ClearHl7.Fhir.Codes.V282.CodeDegreeLicenseCertificate</para>
+        /// <para>Suggested: 0360 Degree/License/Certificate -&gt; ClearHl7.Codes.V282.CodeDegreeLicenseCertificate</para>
         /// </summary>
         public CodedWithExceptions AcademicDegree { get; set; }
 
@@ -54,7 +54,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// EDU.7 - School Type Code.
-        /// <para>Suggested: 0402 School Type -&gt; ClearHl7.Fhir.Codes.V282.CodeSchoolType</para>
+        /// <para>Suggested: 0402 School Type -&gt; ClearHl7.Codes.V282.CodeSchoolType</para>
         /// </summary>
         public CodedWithExceptions SchoolTypeCode { get; set; }
 

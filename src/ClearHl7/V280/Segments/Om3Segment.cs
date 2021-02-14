@@ -52,7 +52,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// OM3.7 - Value Type.
-        /// <para>Suggested: 0125 Value Type -&gt; ClearHl7.Fhir.Codes.V280.CodeValueType</para>
+        /// <para>Suggested: 0125 Value Type -&gt; ClearHl7.Codes.V280.CodeValueType</para>
         /// </summary>
         public string ValueType { get; set; }
         

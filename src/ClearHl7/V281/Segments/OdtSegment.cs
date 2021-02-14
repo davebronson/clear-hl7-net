@@ -22,7 +22,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ODT.1 - Tray Type.
-        /// <para>Suggested: 0160 Tray Type -&gt; ClearHl7.Fhir.Codes.V281.CodeTrayType</para>
+        /// <para>Suggested: 0160 Tray Type -&gt; ClearHl7.Codes.V281.CodeTrayType</para>
         /// </summary>
         public CodedWithExceptions TrayType { get; set; }
 

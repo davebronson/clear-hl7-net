@@ -28,13 +28,13 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// BPX.2 - BP Dispense Status.
-        /// <para>Suggested: 0510 Blood Product Dispense Status -&gt; ClearHl7.Fhir.Codes.V282.CodeBloodProductDispenseStatus</para>
+        /// <para>Suggested: 0510 Blood Product Dispense Status -&gt; ClearHl7.Codes.V282.CodeBloodProductDispenseStatus</para>
         /// </summary>
         public CodedWithExceptions BpDispenseStatus { get; set; }
 
         /// <summary>
         /// BPX.3 - BP Status.
-        /// <para>Suggested: 0511 BP Observation Status Codes Interpretation -&gt; ClearHl7.Fhir.Codes.V282.CodeBpObservationStatusCodesInterpretation</para>
+        /// <para>Suggested: 0511 BP Observation Status Codes Interpretation -&gt; ClearHl7.Codes.V282.CodeBpObservationStatusCodesInterpretation</para>
         /// </summary>
         public string BpStatus { get; set; }
 

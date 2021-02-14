@@ -48,19 +48,19 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PAC.6 - Package Condition.
-        /// <para>Suggested: 0544 Container Condition -&gt; ClearHl7.Fhir.Codes.V280.CodeContainerCondition</para>
+        /// <para>Suggested: 0544 Container Condition -&gt; ClearHl7.Codes.V280.CodeContainerCondition</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> PackageCondition { get; set; }
 
         /// <summary>
         /// PAC.7 - Package Handling Code.
-        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Fhir.Codes.V280.CodeSpecialHandlingCode</para>
+        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Codes.V280.CodeSpecialHandlingCode</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> PackageHandlingCode { get; set; }
 
         /// <summary>
         /// PAC.8 - Package Risk Code.
-        /// <para>Suggested: 0489 Risk Codes -&gt; ClearHl7.Fhir.Codes.V280.CodeRiskCodes</para>
+        /// <para>Suggested: 0489 Risk Codes -&gt; ClearHl7.Codes.V280.CodeRiskCodes</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> PackageRiskCode { get; set; }
         

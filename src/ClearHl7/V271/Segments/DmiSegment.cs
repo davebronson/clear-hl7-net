@@ -20,14 +20,14 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// DMI.1 - Diagnostic Related Group.
+        /// <para>Suggested: 0055 Diagnosis Related Group</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0055</remarks>
         public CodedWithNoExceptions DiagnosticRelatedGroup { get; set; }
 
         /// <summary>
         /// DMI.2 - Major Diagnostic Category.
+        /// <para>Suggested: 0118 Major Diagnostic Category</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0118</remarks>
         public CodedWithNoExceptions MajorDiagnosticCategory { get; set; }
 
         /// <summary>

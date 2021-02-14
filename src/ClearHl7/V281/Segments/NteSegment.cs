@@ -27,7 +27,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// NTE.2 - Source of Comment.
-        /// <para>Suggested: 0105 Source Of Comment -&gt; ClearHl7.Fhir.Codes.V281.CodeSourceOfComment</para>
+        /// <para>Suggested: 0105 Source Of Comment -&gt; ClearHl7.Codes.V281.CodeSourceOfComment</para>
         /// </summary>
         public string SourceOfComment { get; set; }
 
@@ -38,7 +38,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// NTE.4 - Comment Type.
-        /// <para>Suggested: 0364 Comment Type -&gt; ClearHl7.Fhir.Codes.V281.CodeCommentType</para>
+        /// <para>Suggested: 0364 Comment Type -&gt; ClearHl7.Codes.V281.CodeCommentType</para>
         /// </summary>
         public CodedWithExceptions CommentType { get; set; }
 

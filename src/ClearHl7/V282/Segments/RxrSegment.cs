@@ -20,25 +20,25 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// RXR.1 - Route.
-        /// <para>Suggested: 0162 Route Of Administration -&gt; ClearHl7.Fhir.Codes.V282.CodeRouteOfAdministration</para>
+        /// <para>Suggested: 0162 Route Of Administration -&gt; ClearHl7.Codes.V282.CodeRouteOfAdministration</para>
         /// </summary>
         public CodedWithExceptions Route { get; set; }
 
         /// <summary>
         /// RXR.2 - Administration Site.
-        /// <para>Suggested: 0550 Body Parts -&gt; ClearHl7.Fhir.Codes.V282.CodeBodyParts</para>
+        /// <para>Suggested: 0550 Body Parts -&gt; ClearHl7.Codes.V282.CodeBodyParts</para>
         /// </summary>
         public CodedWithExceptions AdministrationSite { get; set; }
 
         /// <summary>
         /// RXR.3 - Administration Device.
-        /// <para>Suggested: 0164 Administration Device -&gt; ClearHl7.Fhir.Codes.V282.CodeAdministrationDevice</para>
+        /// <para>Suggested: 0164 Administration Device -&gt; ClearHl7.Codes.V282.CodeAdministrationDevice</para>
         /// </summary>
         public CodedWithExceptions AdministrationDevice { get; set; }
 
         /// <summary>
         /// RXR.4 - Administration Method.
-        /// <para>Suggested: 0165 Administration Method -&gt; ClearHl7.Fhir.Codes.V282.CodeAdministrationMethod</para>
+        /// <para>Suggested: 0165 Administration Method -&gt; ClearHl7.Codes.V282.CodeAdministrationMethod</para>
         /// </summary>
         public CodedWithExceptions AdministrationMethod { get; set; }
 
@@ -49,7 +49,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// RXR.6 - Administration Site Modifier.
-        /// <para>Suggested: 0495 Body Site Modifier -&gt; ClearHl7.Fhir.Codes.V282.CodeBodySiteModifier</para>
+        /// <para>Suggested: 0495 Body Site Modifier -&gt; ClearHl7.Codes.V282.CodeBodySiteModifier</para>
         /// </summary>
         public CodedWithExceptions AdministrationSiteModifier { get; set; }
         

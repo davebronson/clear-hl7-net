@@ -29,13 +29,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// INV.2 - Substance Status.
-        /// <para>Suggested: 0383 Substance Status -&gt; ClearHl7.Fhir.Codes.V281.CodeSubstanceStatus</para>
+        /// <para>Suggested: 0383 Substance Status -&gt; ClearHl7.Codes.V281.CodeSubstanceStatus</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> SubstanceStatus { get; set; }
 
         /// <summary>
         /// INV.3 - Substance Type.
-        /// <para>Suggested: 0384 Substance Type -&gt; ClearHl7.Fhir.Codes.V281.CodeSubstanceType</para>
+        /// <para>Suggested: 0384 Substance Type -&gt; ClearHl7.Codes.V281.CodeSubstanceType</para>
         /// </summary>
         public CodedWithExceptions SubstanceType { get; set; }
 

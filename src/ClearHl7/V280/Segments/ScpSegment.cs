@@ -25,13 +25,13 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// SCP.2 - Labor Calculation Type.
-        /// <para>Suggested: 0651 Labor Calculation Type -&gt; ClearHl7.Fhir.Codes.V280.CodeLaborCalculationType</para>
+        /// <para>Suggested: 0651 Labor Calculation Type -&gt; ClearHl7.Codes.V280.CodeLaborCalculationType</para>
         /// </summary>
         public CodedWithExceptions LaborCalculationType { get; set; }
 
         /// <summary>
         /// SCP.3 - Date Format.
-        /// <para>Suggested: 0653 Date Format -&gt; ClearHl7.Fhir.Codes.V280.CodeDateFormat</para>
+        /// <para>Suggested: 0653 Date Format -&gt; ClearHl7.Codes.V280.CodeDateFormat</para>
         /// </summary>
         public CodedWithExceptions DateFormat { get; set; }
 
@@ -52,13 +52,13 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// SCP.7 - Device Type.
-        /// <para>Suggested: 0657 Device Type -&gt; ClearHl7.Fhir.Codes.V280.CodeDeviceType</para>
+        /// <para>Suggested: 0657 Device Type -&gt; ClearHl7.Codes.V280.CodeDeviceType</para>
         /// </summary>
         public CodedWithExceptions DeviceType { get; set; }
 
         /// <summary>
         /// SCP.8 - Lot Control.
-        /// <para>Suggested: 0659 Lot Control -&gt; ClearHl7.Fhir.Codes.V280.CodeLotControl</para>
+        /// <para>Suggested: 0659 Lot Control -&gt; ClearHl7.Codes.V280.CodeLotControl</para>
         /// </summary>
         public CodedWithExceptions LotControl { get; set; }
         

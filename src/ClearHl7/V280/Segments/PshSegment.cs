@@ -58,7 +58,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PSH.8 - Quantity Distributed Method.
-        /// <para>Suggested: 0329 Quantity Method -&gt; ClearHl7.Fhir.Codes.V280.CodeQuantityMethod</para>
+        /// <para>Suggested: 0329 Quantity Method -&gt; ClearHl7.Codes.V280.CodeQuantityMethod</para>
         /// </summary>
         public string QuantityDistributedMethod { get; set; }
 
@@ -74,7 +74,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PSH.11 - Quantity in Use Method.
-        /// <para>Suggested: 0329 Quantity Method -&gt; ClearHl7.Fhir.Codes.V280.CodeQuantityMethod</para>
+        /// <para>Suggested: 0329 Quantity Method -&gt; ClearHl7.Codes.V280.CodeQuantityMethod</para>
         /// </summary>
         public string QuantityInUseMethod { get; set; }
 

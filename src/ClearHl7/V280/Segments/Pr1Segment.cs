@@ -49,7 +49,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PR1.6 - Procedure Functional Type.
-        /// <para>Suggested: 0230 Procedure Functional Type -&gt; ClearHl7.Fhir.Codes.V280.CodeProcedureFunctionalType</para>
+        /// <para>Suggested: 0230 Procedure Functional Type -&gt; ClearHl7.Codes.V280.CodeProcedureFunctionalType</para>
         /// </summary>
         public CodedWithExceptions ProcedureFunctionalType { get; set; }
 
@@ -92,7 +92,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PR1.14 - Procedure Priority.
-        /// <para>Suggested: 0418 Procedure Priority -&gt; ClearHl7.Fhir.Codes.V280.CodeProcedurePriority</para>
+        /// <para>Suggested: 0418 Procedure Priority -&gt; ClearHl7.Codes.V280.CodeProcedurePriority</para>
         /// </summary>
         public decimal? ProcedurePriority { get; set; }
 
@@ -110,13 +110,13 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PR1.17 - Procedure DRG Type.
-        /// <para>Suggested: 0416 Procedure DRG Type -&gt; ClearHl7.Fhir.Codes.V280.CodeProcedureDrgType</para>
+        /// <para>Suggested: 0416 Procedure DRG Type -&gt; ClearHl7.Codes.V280.CodeProcedureDrgType</para>
         /// </summary>
         public CodedWithExceptions ProcedureDrgType { get; set; }
 
         /// <summary>
         /// PR1.18 - Tissue Type Code.
-        /// <para>Suggested: 0417 Tissue Type Code -&gt; ClearHl7.Fhir.Codes.V280.CodeTissueTypeCode</para>
+        /// <para>Suggested: 0417 Tissue Type Code -&gt; ClearHl7.Codes.V280.CodeTissueTypeCode</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> TissueTypeCode { get; set; }
 
@@ -127,19 +127,19 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PR1.20 - Procedure Action Code.
-        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V280.CodeSegmentActionCode</para>
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Codes.V280.CodeSegmentActionCode</para>
         /// </summary>
         public string ProcedureActionCode { get; set; }
 
         /// <summary>
         /// PR1.21 - DRG Procedure Determination Status.
-        /// <para>Suggested: 0761 DRG Procedure Determination Status -&gt; ClearHl7.Fhir.Codes.V280.CodeDrgProcedureDeterminationStatus</para>
+        /// <para>Suggested: 0761 DRG Procedure Determination Status -&gt; ClearHl7.Codes.V280.CodeDrgProcedureDeterminationStatus</para>
         /// </summary>
         public CodedWithExceptions DrgProcedureDeterminationStatus { get; set; }
 
         /// <summary>
         /// PR1.22 - DRG Procedure Relevance.
-        /// <para>Suggested: 0763 DRG Procedure Relevance -&gt; ClearHl7.Fhir.Codes.V280.CodeDrgProcedureRelevance</para>
+        /// <para>Suggested: 0763 DRG Procedure Relevance -&gt; ClearHl7.Codes.V280.CodeDrgProcedureRelevance</para>
         /// </summary>
         public CodedWithExceptions DrgProcedureRelevance { get; set; }
 
@@ -150,7 +150,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PR1.24 - Respiratory Within Surgery.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeYesNoIndicator</para>
         /// </summary>
         public string RespiratoryWithinSurgery { get; set; }
 

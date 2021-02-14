@@ -23,19 +23,19 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// RCP.1 - Query Priority.
-        /// <para>Suggested: 0091 Query Priority -&gt; ClearHl7.Fhir.Codes.V281.CodeQueryPriority</para>
+        /// <para>Suggested: 0091 Query Priority -&gt; ClearHl7.Codes.V281.CodeQueryPriority</para>
         /// </summary>
         public string QueryPriority { get; set; }
 
         /// <summary>
         /// RCP.2 - Quantity Limited Request.
-        /// <para>Suggested: 0126 Quantity Limited Request -&gt; ClearHl7.Fhir.Codes.V281.CodeQuantityLimitedRequest</para>
+        /// <para>Suggested: 0126 Quantity Limited Request -&gt; ClearHl7.Codes.V281.CodeQuantityLimitedRequest</para>
         /// </summary>
         public CompositeQuantityWithUnits QuantityLimitedRequest { get; set; }
 
         /// <summary>
         /// RCP.3 - Response Modality.
-        /// <para>Suggested: 0394 Response Modality -&gt; ClearHl7.Fhir.Codes.V281.CodeResponseModality</para>
+        /// <para>Suggested: 0394 Response Modality -&gt; ClearHl7.Codes.V281.CodeResponseModality</para>
         /// </summary>
         public CodedWithNoExceptions ResponseModality { get; set; }
 
@@ -46,7 +46,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// RCP.5 - Modify Indicator.
-        /// <para>Suggested: 0395 Modify Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeModifyIndicator</para>
+        /// <para>Suggested: 0395 Modify Indicator -&gt; ClearHl7.Codes.V281.CodeModifyIndicator</para>
         /// </summary>
         public string ModifyIndicator { get; set; }
 
@@ -57,7 +57,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// RCP.7 - Segment group inclusion.
-        /// <para>Suggested: 0391 Segment Group -&gt; ClearHl7.Fhir.Codes.V281.CodeSegmentGroup</para>
+        /// <para>Suggested: 0391 Segment Group -&gt; ClearHl7.Codes.V281.CodeSegmentGroup</para>
         /// </summary>
         public IEnumerable<string> SegmentGroupInclusion { get; set; }
         

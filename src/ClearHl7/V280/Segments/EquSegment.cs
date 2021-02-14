@@ -33,19 +33,19 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// EQU.3 - Equipment State.
-        /// <para>Suggested: 0365 Equipment State -&gt; ClearHl7.Fhir.Codes.V280.CodeEquipmentState</para>
+        /// <para>Suggested: 0365 Equipment State -&gt; ClearHl7.Codes.V280.CodeEquipmentState</para>
         /// </summary>
         public CodedWithExceptions EquipmentState { get; set; }
 
         /// <summary>
         /// EQU.4 - Local/Remote Control State.
-        /// <para>Suggested: 0366 Local/Remote Control State -&gt; ClearHl7.Fhir.Codes.V280.CodeLocalRemoteControlState</para>
+        /// <para>Suggested: 0366 Local/Remote Control State -&gt; ClearHl7.Codes.V280.CodeLocalRemoteControlState</para>
         /// </summary>
         public CodedWithExceptions LocalRemoteControlState { get; set; }
 
         /// <summary>
         /// EQU.5 - Alert Level.
-        /// <para>Suggested: 0367 Alert Level -&gt; ClearHl7.Fhir.Codes.V280.CodeAlertLevel</para>
+        /// <para>Suggested: 0367 Alert Level -&gt; ClearHl7.Codes.V280.CodeAlertLevel</para>
         /// </summary>
         public CodedWithExceptions AlertLevel { get; set; }
         

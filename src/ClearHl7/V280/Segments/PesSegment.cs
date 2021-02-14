@@ -73,19 +73,19 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PES.11 - Event Report Timing/Type.
-        /// <para>Suggested: 0234 Report Timing -&gt; ClearHl7.Fhir.Codes.V280.CodeReportTiming</para>
+        /// <para>Suggested: 0234 Report Timing -&gt; ClearHl7.Codes.V280.CodeReportTiming</para>
         /// </summary>
         public IEnumerable<string> EventReportTimingType { get; set; }
 
         /// <summary>
         /// PES.12 - Event Report Source.
-        /// <para>Suggested: 0235 Report Source -&gt; ClearHl7.Fhir.Codes.V280.CodeReportSource</para>
+        /// <para>Suggested: 0235 Report Source -&gt; ClearHl7.Codes.V280.CodeReportSource</para>
         /// </summary>
         public string EventReportSource { get; set; }
 
         /// <summary>
         /// PES.13 - Event Reported To.
-        /// <para>Suggested: 0236 Event Reported To -&gt; ClearHl7.Fhir.Codes.V280.CodeEventReportedTo</para>
+        /// <para>Suggested: 0236 Event Reported To -&gt; ClearHl7.Codes.V280.CodeEventReportedTo</para>
         /// </summary>
         public IEnumerable<string> EventReportedTo { get; set; }
         

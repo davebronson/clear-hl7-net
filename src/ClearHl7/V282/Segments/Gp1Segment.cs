@@ -22,19 +22,19 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// GP1.1 - Type of Bill Code.
-        /// <para>Suggested: 0455 Type Of Bill Code -&gt; ClearHl7.Fhir.Codes.V282.CodeTypeOfBillCode</para>
+        /// <para>Suggested: 0455 Type Of Bill Code -&gt; ClearHl7.Codes.V282.CodeTypeOfBillCode</para>
         /// </summary>
         public CodedWithExceptions TypeOfBillCode { get; set; }
 
         /// <summary>
         /// GP1.2 - Revenue Code.
-        /// <para>Suggested: 0456 Revenue Code -&gt; ClearHl7.Fhir.Codes.V282.CodeRevenueCode</para>
+        /// <para>Suggested: 0456 Revenue Code -&gt; ClearHl7.Codes.V282.CodeRevenueCode</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> RevenueCode { get; set; }
 
         /// <summary>
         /// GP1.3 - Overall Claim Disposition Code.
-        /// <para>Suggested: 0457 Overall Claim Disposition Code -&gt; ClearHl7.Fhir.Codes.V282.CodeOverallClaimDispositionCode</para>
+        /// <para>Suggested: 0457 Overall Claim Disposition Code -&gt; ClearHl7.Codes.V282.CodeOverallClaimDispositionCode</para>
         /// </summary>
         public CodedWithExceptions OverallClaimDispositionCode { get; set; }
 

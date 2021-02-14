@@ -28,7 +28,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// AIS.2 - Segment Action Code.
-        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V282.CodeSegmentActionCode</para>
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Codes.V282.CodeSegmentActionCode</para>
         /// </summary>
         public string SegmentActionCode { get; set; }
 
@@ -64,25 +64,25 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// AIS.9 - Allow Substitution Code.
-        /// <para>Suggested: 0279 Allow Substitution Codes -&gt; ClearHl7.Fhir.Codes.V282.CodeAllowSubstitutionCodes</para>
+        /// <para>Suggested: 0279 Allow Substitution Codes -&gt; ClearHl7.Codes.V282.CodeAllowSubstitutionCodes</para>
         /// </summary>
         public CodedWithExceptions AllowSubstitutionCode { get; set; }
 
         /// <summary>
         /// AIS.10 - Filler Status Code.
-        /// <para>Suggested: 0278 Filler Status Codes -&gt; ClearHl7.Fhir.Codes.V282.CodeFillerStatusCodes</para>
+        /// <para>Suggested: 0278 Filler Status Codes -&gt; ClearHl7.Codes.V282.CodeFillerStatusCodes</para>
         /// </summary>
         public CodedWithExceptions FillerStatusCode { get; set; }
 
         /// <summary>
         /// AIS.11 - Placer Supplemental Service Information.
-        /// <para>Suggested: 0411 Supplemental Service Information Values -&gt; ClearHl7.Fhir.Codes.V282.CodeSupplementalServiceInformationValues</para>
+        /// <para>Suggested: 0411 Supplemental Service Information Values -&gt; ClearHl7.Codes.V282.CodeSupplementalServiceInformationValues</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> PlacerSupplementalServiceInformation { get; set; }
 
         /// <summary>
         /// AIS.12 - Filler Supplemental Service Information.
-        /// <para>Suggested: 0411 Supplemental Service Information Values -&gt; ClearHl7.Fhir.Codes.V282.CodeSupplementalServiceInformationValues</para>
+        /// <para>Suggested: 0411 Supplemental Service Information Values -&gt; ClearHl7.Codes.V282.CodeSupplementalServiceInformationValues</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> FillerSupplementalServiceInformation { get; set; }
 

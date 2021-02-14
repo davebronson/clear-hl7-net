@@ -30,7 +30,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// RFI.3 - Patient Consent.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string PatientConsent { get; set; }
 

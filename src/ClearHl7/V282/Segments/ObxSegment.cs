@@ -28,7 +28,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OBX.2 - Value Type.
-        /// <para>Suggested: 0125 Value Type -&gt; ClearHl7.Fhir.Codes.V282.CodeValueType</para>
+        /// <para>Suggested: 0125 Value Type -&gt; ClearHl7.Codes.V282.CodeValueType</para>
         /// </summary>
         public string ValueType { get; set; }
 
@@ -59,7 +59,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OBX.8 - Interpretation Codes.
-        /// <para>Suggested: 0078 Interpretation Codes -&gt; ClearHl7.Fhir.Codes.V282.CodeInterpretationCodes</para>
+        /// <para>Suggested: 0078 Interpretation Codes -&gt; ClearHl7.Codes.V282.CodeInterpretationCodes</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> InterpretationCodes { get; set; }
 
@@ -70,13 +70,13 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OBX.10 - Nature of Abnormal Test.
-        /// <para>Suggested: 0080 Nature Of Abnormal Testing -&gt; ClearHl7.Fhir.Codes.V282.CodeNatureOfAbnormalTesting</para>
+        /// <para>Suggested: 0080 Nature Of Abnormal Testing -&gt; ClearHl7.Codes.V282.CodeNatureOfAbnormalTesting</para>
         /// </summary>
         public IEnumerable<string> NatureOfAbnormalTest { get; set; }
 
         /// <summary>
         /// OBX.11 - Observation Result Status.
-        /// <para>Suggested: 0085 Observation Result Status Codes Interpretation -&gt; ClearHl7.Fhir.Codes.V282.CodeObservationResultStatusCodesInterpretation</para>
+        /// <para>Suggested: 0085 Observation Result Status Codes Interpretation -&gt; ClearHl7.Codes.V282.CodeObservationResultStatusCodesInterpretation</para>
         /// </summary>
         public string ObservationResultStatus { get; set; }
 
@@ -122,7 +122,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OBX.20 - Observation Site.
-        /// <para>Suggested: 0163 Body Site -&gt; ClearHl7.Fhir.Codes.V282.CodeBodySite</para>
+        /// <para>Suggested: 0163 Body Site -&gt; ClearHl7.Codes.V282.CodeBodySite</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ObservationSite { get; set; }
 
@@ -133,7 +133,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OBX.22 - Mood Code.
-        /// <para>Suggested: 0725 Mood Codes -&gt; ClearHl7.Fhir.Codes.V282.CodeMoodCodes</para>
+        /// <para>Suggested: 0725 Mood Codes -&gt; ClearHl7.Codes.V282.CodeMoodCodes</para>
         /// </summary>
         public CodedWithNoExceptions MoodCode { get; set; }
 
@@ -154,13 +154,13 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OBX.26 - Patient Results Release Category.
-        /// <para>Suggested: 0909 Patient Results Release Categorization Scheme -&gt; ClearHl7.Fhir.Codes.V282.CodePatientResultsReleaseCategorizationScheme</para>
+        /// <para>Suggested: 0909 Patient Results Release Categorization Scheme -&gt; ClearHl7.Codes.V282.CodePatientResultsReleaseCategorizationScheme</para>
         /// </summary>
         public string PatientResultsReleaseCategory { get; set; }
 
         /// <summary>
         /// OBX.27 - Root Cause.
-        /// <para>Suggested: 0914 Root Cause -&gt; ClearHl7.Fhir.Codes.V282.CodeRootCause</para>
+        /// <para>Suggested: 0914 Root Cause -&gt; ClearHl7.Codes.V282.CodeRootCause</para>
         /// </summary>
         public CodedWithExceptions RootCause { get; set; }
 

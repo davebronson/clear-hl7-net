@@ -28,7 +28,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// AIL.2 - Segment Action Code.
-        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V281.CodeSegmentActionCode</para>
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Codes.V281.CodeSegmentActionCode</para>
         /// </summary>
         public string SegmentActionCode { get; set; }
 
@@ -39,7 +39,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// AIL.4 - Location Type - AIL.
-        /// <para>Suggested: 0305 Person Location Type -&gt; ClearHl7.Fhir.Codes.V281.CodePersonLocationType</para>
+        /// <para>Suggested: 0305 Person Location Type -&gt; ClearHl7.Codes.V281.CodePersonLocationType</para>
         /// </summary>
         public CodedWithExceptions LocationTypeAil { get; set; }
 
@@ -75,13 +75,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// AIL.11 - Allow Substitution Code.
-        /// <para>Suggested: 0279 Allow Substitution Codes -&gt; ClearHl7.Fhir.Codes.V281.CodeAllowSubstitutionCodes</para>
+        /// <para>Suggested: 0279 Allow Substitution Codes -&gt; ClearHl7.Codes.V281.CodeAllowSubstitutionCodes</para>
         /// </summary>
         public CodedWithExceptions AllowSubstitutionCode { get; set; }
 
         /// <summary>
         /// AIL.12 - Filler Status Code.
-        /// <para>Suggested: 0278 Filler Status Codes -&gt; ClearHl7.Fhir.Codes.V281.CodeFillerStatusCodes</para>
+        /// <para>Suggested: 0278 Filler Status Codes -&gt; ClearHl7.Codes.V281.CodeFillerStatusCodes</para>
         /// </summary>
         public CodedWithExceptions FillerStatusCode { get; set; }
 

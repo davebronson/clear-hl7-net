@@ -27,7 +27,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// TQ2.2 - Sequence/Results Flag.
-        /// <para>Suggested: 0503 Sequence/Results Flag -&gt; ClearHl7.Fhir.Codes.V280.CodeSequenceResultsFlag</para>
+        /// <para>Suggested: 0503 Sequence/Results Flag -&gt; ClearHl7.Codes.V280.CodeSequenceResultsFlag</para>
         /// </summary>
         public string SequenceResultsFlag { get; set; }
 
@@ -48,13 +48,13 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// TQ2.6 - Sequence Condition Code.
-        /// <para>Suggested: 0504 Sequence Condition Code -&gt; ClearHl7.Fhir.Codes.V280.CodeSequenceConditionCode</para>
+        /// <para>Suggested: 0504 Sequence Condition Code -&gt; ClearHl7.Codes.V280.CodeSequenceConditionCode</para>
         /// </summary>
         public string SequenceConditionCode { get; set; }
 
         /// <summary>
         /// TQ2.7 - Cyclic Entry/Exit Indicator.
-        /// <para>Suggested: 0505 Cyclic Entry/Exit Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeCyclicEntryExitIndicator</para>
+        /// <para>Suggested: 0505 Cyclic Entry/Exit Indicator -&gt; ClearHl7.Codes.V280.CodeCyclicEntryExitIndicator</para>
         /// </summary>
         public string CyclicEntryExitIndicator { get; set; }
 
@@ -70,7 +70,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// TQ2.10 - Special Service Request Relationship.
-        /// <para>Suggested: 0506 Service Request Relationship -&gt; ClearHl7.Fhir.Codes.V280.CodeServiceRequestRelationship</para>
+        /// <para>Suggested: 0506 Service Request Relationship -&gt; ClearHl7.Codes.V280.CodeServiceRequestRelationship</para>
         /// </summary>
         public string SpecialServiceRequestRelationship { get; set; }
         

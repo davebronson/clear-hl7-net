@@ -45,13 +45,13 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// ACC.5 - Accident Job Related Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeYesNoIndicator</para>
         /// </summary>
         public string AccidentJobRelatedIndicator { get; set; }
 
         /// <summary>
         /// ACC.6 - Accident Death Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeYesNoIndicator</para>
         /// </summary>
         public string AccidentDeathIndicator { get; set; }
 
@@ -72,7 +72,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// ACC.10 - Police Notified Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V280.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V280.CodeYesNoIndicator</para>
         /// </summary>
         public string PoliceNotifiedIndicator { get; set; }
 

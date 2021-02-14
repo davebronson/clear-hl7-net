@@ -21,7 +21,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// EQP.1 - Event type.
-        /// <para>Suggested: 0450 Event Type -&gt; ClearHl7.Fhir.Codes.V282.CodeEventType</para>
+        /// <para>Suggested: 0450 Event Type -&gt; ClearHl7.Codes.V282.CodeEventType</para>
         /// </summary>
         public CodedWithExceptions EventType { get; set; }
 

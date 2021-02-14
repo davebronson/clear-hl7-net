@@ -28,7 +28,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// STF.2 - Staff Identifier List.
-        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Fhir.Codes.V281.CodeCheckDigitScheme</para>
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Codes.V281.CodeCheckDigitScheme</para>
         /// </summary>
         public IEnumerable<ExtendedCompositeIdWithCheckDigit> StaffIdentifierList { get; set; }
 
@@ -45,7 +45,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// STF.5 - Administrative Sex.
-        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Fhir.Codes.V281.CodeAdministrativeSex</para>
+        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Codes.V281.CodeAdministrativeSex</para>
         /// </summary>
         public CodedWithExceptions AdministrativeSex { get; set; }
 
@@ -56,7 +56,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// STF.7 - Active/Inactive Flag.
-        /// <para>Suggested: 0183 Active/Inactive -&gt; ClearHl7.Fhir.Codes.V281.CodeActiveInactive</para>
+        /// <para>Suggested: 0183 Active/Inactive -&gt; ClearHl7.Codes.V281.CodeActiveInactive</para>
         /// </summary>
         public string ActiveInactiveFlag { get; set; }
 
@@ -68,7 +68,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// STF.9 - Hospital Service - STF.
-        /// <para>Suggested: 0069 Hospital Service -&gt; ClearHl7.Fhir.Codes.V281.CodeHospitalService</para>
+        /// <para>Suggested: 0069 Hospital Service -&gt; ClearHl7.Codes.V281.CodeHospitalService</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> HospitalServiceStf { get; set; }
 
@@ -106,13 +106,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// STF.16 - Preferred Method of Contact.
-        /// <para>Suggested: 0185 Preferred Method Of Contact -&gt; ClearHl7.Fhir.Codes.V281.CodePreferredMethodOfContact</para>
+        /// <para>Suggested: 0185 Preferred Method Of Contact -&gt; ClearHl7.Codes.V281.CodePreferredMethodOfContact</para>
         /// </summary>
         public CodedWithExceptions PreferredMethodOfContact { get; set; }
 
         /// <summary>
         /// STF.17 - Marital Status.
-        /// <para>Suggested: 0002 Marital Status -&gt; ClearHl7.Fhir.Codes.V281.CodeMaritalStatus</para>
+        /// <para>Suggested: 0002 Marital Status -&gt; ClearHl7.Codes.V281.CodeMaritalStatus</para>
         /// </summary>
         public CodedWithExceptions MaritalStatus { get; set; }
 
@@ -128,13 +128,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// STF.20 - Employment Status Code.
-        /// <para>Suggested: 0066 Employment Status -&gt; ClearHl7.Fhir.Codes.V281.CodeEmploymentStatus</para>
+        /// <para>Suggested: 0066 Employment Status -&gt; ClearHl7.Codes.V281.CodeEmploymentStatus</para>
         /// </summary>
         public CodedWithExceptions EmploymentStatusCode { get; set; }
 
         /// <summary>
         /// STF.21 - Additional Insured on Auto.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string AdditionalInsuredOnAuto { get; set; }
 
@@ -145,7 +145,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// STF.23 - Copy Auto Ins.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string CopyAutoIns { get; set; }
 
@@ -166,19 +166,19 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// STF.27 - Race.
-        /// <para>Suggested: 0005 Race -&gt; ClearHl7.Fhir.Codes.V281.CodeRace</para>
+        /// <para>Suggested: 0005 Race -&gt; ClearHl7.Codes.V281.CodeRace</para>
         /// </summary>
         public CodedWithExceptions Race { get; set; }
 
         /// <summary>
         /// STF.28 - Ethnic Group.
-        /// <para>Suggested: 0189 Ethnic Group -&gt; ClearHl7.Fhir.Codes.V281.CodeEthnicGroup</para>
+        /// <para>Suggested: 0189 Ethnic Group -&gt; ClearHl7.Codes.V281.CodeEthnicGroup</para>
         /// </summary>
         public CodedWithExceptions EthnicGroup { get; set; }
 
         /// <summary>
         /// STF.29 - Re-activation Approval Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string ReactivationApprovalIndicator { get; set; }
 
@@ -195,13 +195,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// STF.32 - Death Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string DeathIndicator { get; set; }
 
         /// <summary>
         /// STF.33 - Institution Relationship Type Code.
-        /// <para>Suggested: 0538 Institution Relationship Type -&gt; ClearHl7.Fhir.Codes.V281.CodeInstitutionRelationshipType</para>
+        /// <para>Suggested: 0538 Institution Relationship Type -&gt; ClearHl7.Codes.V281.CodeInstitutionRelationshipType</para>
         /// </summary>
         public CodedWithExceptions InstitutionRelationshipTypeCode { get; set; }
 
@@ -223,13 +223,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// STF.37 - Generic Classification Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string GenericClassificationIndicator { get; set; }
 
         /// <summary>
         /// STF.38 - Inactive Reason Code.
-        /// <para>Suggested: 0540 Inactive Reason Code -&gt; ClearHl7.Fhir.Codes.V281.CodeInactiveReasonCode</para>
+        /// <para>Suggested: 0540 Inactive Reason Code -&gt; ClearHl7.Codes.V281.CodeInactiveReasonCode</para>
         /// </summary>
         public CodedWithExceptions InactiveReasonCode { get; set; }
 
@@ -241,7 +241,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// STF.40 - Religion.
-        /// <para>Suggested: 0006 Religion -&gt; ClearHl7.Fhir.Codes.V281.CodeReligion</para>
+        /// <para>Suggested: 0006 Religion -&gt; ClearHl7.Codes.V281.CodeReligion</para>
         /// </summary>
         public CodedWithExceptions Religion { get; set; }
 

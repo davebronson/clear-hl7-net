@@ -31,7 +31,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// NDS.3 - Notification Alert Severity.
-        /// <para>Suggested: 0367 Alert Level -&gt; ClearHl7.Fhir.Codes.V282.CodeAlertLevel</para>
+        /// <para>Suggested: 0367 Alert Level -&gt; ClearHl7.Codes.V282.CodeAlertLevel</para>
         /// </summary>
         public CodedWithExceptions NotificationAlertSeverity { get; set; }
 

@@ -38,7 +38,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// EVN.4 - Event Reason Code.
-        /// <para>Suggested: 0062 Event Reason -&gt; ClearHl7.Fhir.Codes.V281.CodeEventReason</para>
+        /// <para>Suggested: 0062 Event Reason -&gt; ClearHl7.Codes.V281.CodeEventReason</para>
         /// </summary>
         public CodedWithExceptions EventReasonCode { get; set; }
 

@@ -27,7 +27,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// LRL.2 - Segment Action Code.
-        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V280.CodeSegmentActionCode</para>
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Codes.V280.CodeSegmentActionCode</para>
         /// </summary>
         public string SegmentActionCode { get; set; }
 
@@ -38,7 +38,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// LRL.4 - Location Relationship ID.
-        /// <para>Suggested: 0325 Location Relationship ID -&gt; ClearHl7.Fhir.Codes.V280.CodeLocationRelationshipId</para>
+        /// <para>Suggested: 0325 Location Relationship ID -&gt; ClearHl7.Codes.V280.CodeLocationRelationshipId</para>
         /// </summary>
         public CodedWithExceptions LocationRelationshipId { get; set; }
 

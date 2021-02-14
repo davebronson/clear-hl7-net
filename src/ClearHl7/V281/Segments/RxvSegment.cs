@@ -25,7 +25,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// RXV.2 - Bolus Type.
-        /// <para>Suggested: 0917 Bolus Type -&gt; ClearHl7.Fhir.Codes.V281.CodeBolusType</para>
+        /// <para>Suggested: 0917 Bolus Type -&gt; ClearHl7.Codes.V281.CodeBolusType</para>
         /// </summary>
         public string BolusType { get; set; }
 
@@ -51,7 +51,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// RXV.7 - PCA Type.
-        /// <para>Suggested: 0918 PCA Type -&gt; ClearHl7.Fhir.Codes.V281.CodePcaType</para>
+        /// <para>Suggested: 0918 PCA Type -&gt; ClearHl7.Codes.V281.CodePcaType</para>
         /// </summary>
         public string PcaType { get; set; }
 
@@ -127,7 +127,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// RXV.22 - Action Code.
-        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V281.CodeSegmentActionCode</para>
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Codes.V281.CodeSegmentActionCode</para>
         /// </summary>
         public string ActionCode { get; set; }
         

@@ -27,13 +27,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ABS.2 - Transfer Medical Service Code.
-        /// <para>Suggested: 0069 Hospital Service -&gt; ClearHl7.Fhir.Codes.V281.CodeHospitalService</para>
+        /// <para>Suggested: 0069 Hospital Service -&gt; ClearHl7.Codes.V281.CodeHospitalService</para>
         /// </summary>
         public CodedWithExceptions TransferMedicalServiceCode { get; set; }
 
         /// <summary>
         /// ABS.3 - Severity of Illness Code.
-        /// <para>Suggested: 0421 Severity Of Illness Code -&gt; ClearHl7.Fhir.Codes.V281.CodeSeverityOfIllnessCode</para>
+        /// <para>Suggested: 0421 Severity Of Illness Code -&gt; ClearHl7.Codes.V281.CodeSeverityOfIllnessCode</para>
         /// </summary>
         public CodedWithExceptions SeverityOfIllnessCode { get; set; }
 
@@ -49,7 +49,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ABS.6 - Triage Code.
-        /// <para>Suggested: 0422 Triage Code -&gt; ClearHl7.Fhir.Codes.V281.CodeTriageCode</para>
+        /// <para>Suggested: 0422 Triage Code -&gt; ClearHl7.Codes.V281.CodeTriageCode</para>
         /// </summary>
         public CodedWithExceptions TriageCode { get; set; }
 
@@ -65,19 +65,19 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ABS.9 - Case Category Code.
-        /// <para>Suggested: 0423 Case Category Code -&gt; ClearHl7.Fhir.Codes.V281.CodeCaseCategoryCode</para>
+        /// <para>Suggested: 0423 Case Category Code -&gt; ClearHl7.Codes.V281.CodeCaseCategoryCode</para>
         /// </summary>
         public CodedWithExceptions CaseCategoryCode { get; set; }
 
         /// <summary>
         /// ABS.10 - Caesarian Section Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string CaesarianSectionIndicator { get; set; }
 
         /// <summary>
         /// ABS.11 - Gestation Category Code.
-        /// <para>Suggested: 0424 Gestation Category Code -&gt; ClearHl7.Fhir.Codes.V281.CodeGestationCategoryCode</para>
+        /// <para>Suggested: 0424 Gestation Category Code -&gt; ClearHl7.Codes.V281.CodeGestationCategoryCode</para>
         /// </summary>
         public CodedWithExceptions GestationCategoryCode { get; set; }
 
@@ -88,13 +88,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ABS.13 - Newborn Code.
-        /// <para>Suggested: 0425 Newborn Code -&gt; ClearHl7.Fhir.Codes.V281.CodeNewbornCode</para>
+        /// <para>Suggested: 0425 Newborn Code -&gt; ClearHl7.Codes.V281.CodeNewbornCode</para>
         /// </summary>
         public CodedWithExceptions NewbornCode { get; set; }
 
         /// <summary>
         /// ABS.14 - Stillborn Indicator.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
         public string StillbornIndicator { get; set; }
 

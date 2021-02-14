@@ -32,13 +32,13 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ITM.3 - Item Status.
-        /// <para>Suggested: 0776 Item Status -&gt; ClearHl7.Fhir.Codes.V281.CodeItemStatus</para>
+        /// <para>Suggested: 0776 Item Status -&gt; ClearHl7.Codes.V281.CodeItemStatus</para>
         /// </summary>
         public CodedWithExceptions ItemStatus { get; set; }
 
         /// <summary>
         /// ITM.4 - Item Type.
-        /// <para>Suggested: 0778 Item Type -&gt; ClearHl7.Fhir.Codes.V281.CodeItemType</para>
+        /// <para>Suggested: 0778 Item Type -&gt; ClearHl7.Codes.V281.CodeItemType</para>
         /// </summary>
         public CodedWithExceptions ItemType { get; set; }
 
@@ -49,7 +49,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ITM.6 - Subject to Expiration Indicator.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions SubjectToExpirationIndicator { get; set; }
 
@@ -75,7 +75,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ITM.11 - Patient Chargeable Indicator.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions PatientChargeableIndicator { get; set; }
 
@@ -92,31 +92,31 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ITM.14 - Stocked Item Indicator.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions StockedItemIndicator { get; set; }
 
         /// <summary>
         /// ITM.15 - Supply Risk Codes.
-        /// <para>Suggested: 0871 Supply Risk Codes -&gt; ClearHl7.Fhir.Codes.V281.CodeSupplyRiskCodes</para>
+        /// <para>Suggested: 0871 Supply Risk Codes -&gt; ClearHl7.Codes.V281.CodeSupplyRiskCodes</para>
         /// </summary>
         public CodedWithExceptions SupplyRiskCodes { get; set; }
 
         /// <summary>
         /// ITM.16 - Approving Regulatory Agency.
-        /// <para>Suggested: 0790 Approving Regulatory Agency -&gt; ClearHl7.Fhir.Codes.V281.CodeApprovingRegulatoryAgency</para>
+        /// <para>Suggested: 0790 Approving Regulatory Agency -&gt; ClearHl7.Codes.V281.CodeApprovingRegulatoryAgency</para>
         /// </summary>
         public IEnumerable<ExtendedCompositeNameAndIdNumberForOrganizations> ApprovingRegulatoryAgency { get; set; }
 
         /// <summary>
         /// ITM.17 - Latex Indicator.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions LatexIndicator { get; set; }
 
         /// <summary>
         /// ITM.18 - Ruling Act.
-        /// <para>Suggested: 0793 Ruling Act -&gt; ClearHl7.Fhir.Codes.V281.CodeRulingAct</para>
+        /// <para>Suggested: 0793 Ruling Act -&gt; ClearHl7.Codes.V281.CodeRulingAct</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> RulingAct { get; set; }
 
@@ -138,19 +138,19 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ITM.22 - Taxable Item Indicator.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions TaxableItemIndicator { get; set; }
 
         /// <summary>
         /// ITM.23 - Freight Charge Indicator.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions FreightChargeIndicator { get; set; }
 
         /// <summary>
         /// ITM.24 - Item Set Indicator.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions ItemSetIndicator { get; set; }
 
@@ -161,7 +161,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ITM.26 - Track Department Usage Indicator.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions TrackDepartmentUsageIndicator { get; set; }
 
@@ -179,19 +179,19 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ITM.29 - Special Handling Code.
-        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Fhir.Codes.V281.CodeSpecialHandlingCode</para>
+        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Codes.V281.CodeSpecialHandlingCode</para>
         /// </summary>
         public CodedWithExceptions SpecialHandlingCode { get; set; }
 
         /// <summary>
         /// ITM.30 - Hazardous Indicator.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions HazardousIndicator { get; set; }
 
         /// <summary>
         /// ITM.31 - Sterile Indicator.
-        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V281.CodeExpandedYesNoIndicator</para>
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions SterileIndicator { get; set; }
 
@@ -202,7 +202,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// ITM.33 - United Nations Standard Products and Services Code (UNSPSC).
-        /// <para>Suggested: 0396 Coding System -&gt; ClearHl7.Fhir.Codes.V281.CodeCodingSystem</para>
+        /// <para>Suggested: 0396 Coding System -&gt; ClearHl7.Codes.V281.CodeCodingSystem</para>
         /// </summary>
         public CodedWithExceptions UnitedNationsStandardProductsAndServicesCode { get; set; }
         

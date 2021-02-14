@@ -32,7 +32,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// LOC.3 - Location Type - LOC.
-        /// <para>Suggested: 0260 Patient Location Type -&gt; ClearHl7.Fhir.Codes.V280.CodePatientLocationType</para>
+        /// <para>Suggested: 0260 Patient Location Type -&gt; ClearHl7.Codes.V280.CodePatientLocationType</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> LocationTypeLoc { get; set; }
 
@@ -59,13 +59,13 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// LOC.8 - Location Equipment.
-        /// <para>Suggested: 0261 Location Equipment -&gt; ClearHl7.Fhir.Codes.V280.CodeLocationEquipment</para>
+        /// <para>Suggested: 0261 Location Equipment -&gt; ClearHl7.Codes.V280.CodeLocationEquipment</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> LocationEquipment { get; set; }
 
         /// <summary>
         /// LOC.9 - Location Service Code.
-        /// <para>Suggested: 0442 Location Service Code -&gt; ClearHl7.Fhir.Codes.V280.CodeLocationServiceCode</para>
+        /// <para>Suggested: 0442 Location Service Code -&gt; ClearHl7.Codes.V280.CodeLocationServiceCode</para>
         /// </summary>
         public CodedWithExceptions LocationServiceCode { get; set; }
         

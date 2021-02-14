@@ -20,13 +20,13 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// BLG.1 - When to Charge.
-        /// <para>Suggested: 0100 Invocation Event -&gt; ClearHl7.Fhir.Codes.V282.CodeInvocationEvent</para>
+        /// <para>Suggested: 0100 Invocation Event -&gt; ClearHl7.Codes.V282.CodeInvocationEvent</para>
         /// </summary>
         public ChargeCodeAndDate WhenToCharge { get; set; }
 
         /// <summary>
         /// BLG.2 - Charge Type.
-        /// <para>Suggested: 0122 Charge Type -&gt; ClearHl7.Fhir.Codes.V282.CodeChargeType</para>
+        /// <para>Suggested: 0122 Charge Type -&gt; ClearHl7.Codes.V282.CodeChargeType</para>
         /// </summary>
         public string ChargeType { get; set; }
 
@@ -37,7 +37,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// BLG.4 - Charge Type Reason.
-        /// <para>Suggested: 0475 Charge Type Reason -&gt; ClearHl7.Fhir.Codes.V282.CodeChargeTypeReason</para>
+        /// <para>Suggested: 0475 Charge Type Reason -&gt; ClearHl7.Codes.V282.CodeChargeTypeReason</para>
         /// </summary>
         public CodedWithExceptions ChargeTypeReason { get; set; }
 

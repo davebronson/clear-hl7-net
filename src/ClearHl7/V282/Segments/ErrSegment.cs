@@ -32,13 +32,13 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// ERR.3 - HL7 Error Code.
-        /// <para>Suggested: 0357 Message Error Condition Codes -&gt; ClearHl7.Fhir.Codes.V282.CodeMessageErrorConditionCodes</para>
+        /// <para>Suggested: 0357 Message Error Condition Codes -&gt; ClearHl7.Codes.V282.CodeMessageErrorConditionCodes</para>
         /// </summary>
         public CodedWithExceptions Hl7ErrorCode { get; set; }
 
         /// <summary>
         /// ERR.4 - Severity.
-        /// <para>Suggested: 0516 Error Severity -&gt; ClearHl7.Fhir.Codes.V282.CodeErrorSeverity</para>
+        /// <para>Suggested: 0516 Error Severity -&gt; ClearHl7.Codes.V282.CodeErrorSeverity</para>
         /// </summary>
         public string Severity { get; set; }
 
@@ -65,13 +65,13 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// ERR.9 - Inform Person Indicator.
-        /// <para>Suggested: 0517 Inform Person Code -&gt; ClearHl7.Fhir.Codes.V282.CodeInformPersonCode</para>
+        /// <para>Suggested: 0517 Inform Person Code -&gt; ClearHl7.Codes.V282.CodeInformPersonCode</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> InformPersonIndicator { get; set; }
 
         /// <summary>
         /// ERR.10 - Override Type.
-        /// <para>Suggested: 0518 Override Type -&gt; ClearHl7.Fhir.Codes.V282.CodeOverrideType</para>
+        /// <para>Suggested: 0518 Override Type -&gt; ClearHl7.Codes.V282.CodeOverrideType</para>
         /// </summary>
         public CodedWithExceptions OverrideType { get; set; }
 

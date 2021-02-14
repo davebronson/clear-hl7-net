@@ -27,7 +27,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OMC.2 - Segment Action Code.
-        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Fhir.Codes.V282.CodeSegmentActionCode</para>
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Codes.V282.CodeSegmentActionCode</para>
         /// </summary>
         public string SegmentActionCode { get; set; }
 
@@ -55,7 +55,7 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OMC.7 - Answer Required.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string AnswerRequired { get; set; }
 
@@ -66,13 +66,13 @@ namespace ClearHl7.V282.Segments
 
         /// <summary>
         /// OMC.9 - Type of Answer.
-        /// <para>Suggested: 0125 Value Type -&gt; ClearHl7.Fhir.Codes.V282.CodeValueType</para>
+        /// <para>Suggested: 0125 Value Type -&gt; ClearHl7.Codes.V282.CodeValueType</para>
         /// </summary>
         public string TypeOfAnswer { get; set; }
 
         /// <summary>
         /// OMC.10 - Multiple Answers Allowed.
-        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Fhir.Codes.V282.CodeYesNoIndicator</para>
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V282.CodeYesNoIndicator</para>
         /// </summary>
         public string MultipleAnswersAllowed { get; set; }
 

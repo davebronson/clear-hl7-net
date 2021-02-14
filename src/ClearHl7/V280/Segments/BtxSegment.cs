@@ -74,13 +74,13 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// BTX.11 - BP Transfusion/Disposition Status.
-        /// <para>Suggested: 0513 Blood Product Transfusion/Disposition Status -&gt; ClearHl7.Fhir.Codes.V280.CodeBloodProductTransfusionDispositionStatus</para>
+        /// <para>Suggested: 0513 Blood Product Transfusion/Disposition Status -&gt; ClearHl7.Codes.V280.CodeBloodProductTransfusionDispositionStatus</para>
         /// </summary>
         public CodedWithExceptions BpTransfusionDispositionStatus { get; set; }
 
         /// <summary>
         /// BTX.12 - BP Message Status.
-        /// <para>Suggested: 0511 BP Observation Status Codes Interpretation -&gt; ClearHl7.Fhir.Codes.V280.CodeBpObservationStatusCodesInterpretation</para>
+        /// <para>Suggested: 0511 BP Observation Status Codes Interpretation -&gt; ClearHl7.Codes.V280.CodeBpObservationStatusCodesInterpretation</para>
         /// </summary>
         public string BpMessageStatus { get; set; }
 
@@ -111,7 +111,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// BTX.18 - BP Adverse Reaction Type.
-        /// <para>Suggested: 0514 Transfusion Adverse Reaction -&gt; ClearHl7.Fhir.Codes.V280.CodeTransfusionAdverseReaction</para>
+        /// <para>Suggested: 0514 Transfusion Adverse Reaction -&gt; ClearHl7.Codes.V280.CodeTransfusionAdverseReaction</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> BpAdverseReactionType { get; set; }
 

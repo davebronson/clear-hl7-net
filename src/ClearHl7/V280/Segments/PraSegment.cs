@@ -40,19 +40,19 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PRA.4 - Provider Billing.
-        /// <para>Suggested: 0187 Provider Billing -&gt; ClearHl7.Fhir.Codes.V280.CodeProviderBilling</para>
+        /// <para>Suggested: 0187 Provider Billing -&gt; ClearHl7.Codes.V280.CodeProviderBilling</para>
         /// </summary>
         public string ProviderBilling { get; set; }
 
         /// <summary>
         /// PRA.5 - Specialty.
-        /// <para>Suggested: 0337 Certification Status -&gt; ClearHl7.Fhir.Codes.V280.CodeCertificationStatus</para>
+        /// <para>Suggested: 0337 Certification Status -&gt; ClearHl7.Codes.V280.CodeCertificationStatus</para>
         /// </summary>
         public IEnumerable<SpecialtyDescription> Specialty { get; set; }
 
         /// <summary>
         /// PRA.6 - Practitioner ID Numbers.
-        /// <para>Suggested: 0338 Practitioner ID Number Type -&gt; ClearHl7.Fhir.Codes.V280.CodePractitionerIdNumberType</para>
+        /// <para>Suggested: 0338 Practitioner ID Number Type -&gt; ClearHl7.Codes.V280.CodePractitionerIdNumberType</para>
         /// </summary>
         public IEnumerable<PractitionerLicenseOrOtherIdNumber> PractitionerIdNumbers { get; set; }
 
@@ -79,7 +79,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// PRA.11 - Government Reimbursement Billing Eligibility.
-        /// <para>Suggested: 0401 Government Reimbursement Program -&gt; ClearHl7.Fhir.Codes.V280.CodeGovernmentReimbursementProgram</para>
+        /// <para>Suggested: 0401 Government Reimbursement Program -&gt; ClearHl7.Codes.V280.CodeGovernmentReimbursementProgram</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> GovernmentReimbursementBillingEligibility { get; set; }
 
