@@ -25,14 +25,14 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// PCE.2 - Cost Center Account Number.
+        /// <para>Suggested: 0319 Department Cost Center</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0319</remarks>
         public ExtendedCompositeIdWithCheckDigit CostCenterAccountNumber { get; set; }
 
         /// <summary>
         /// PCE.3 - Transaction Code.
+        /// <para>Suggested: 0132 Transaction Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0132</remarks>
         public CodedWithExceptions TransactionCode { get; set; }
 
         /// <summary>

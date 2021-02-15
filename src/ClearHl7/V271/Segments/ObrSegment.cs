@@ -73,8 +73,8 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// OBR.11 - Specimen Action Code.
+        /// <para>Suggested: 0065 Specimen Action Code -&gt; ClearHl7.Codes.V271.CodeSpecimenActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0065</remarks>
         public string SpecimenActionCode { get; set; }
 
         /// <summary>
@@ -139,14 +139,14 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// OBR.24 - Diagnostic Serv Sect ID.
+        /// <para>Suggested: 0074 Diagnostic Service Section ID -&gt; ClearHl7.Codes.V271.CodeDiagnosticServiceSectionId</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0074</remarks>
         public string DiagnosticServSectId { get; set; }
 
         /// <summary>
         /// OBR.25 - Result Status.
+        /// <para>Suggested: 0123 Result Status -&gt; ClearHl7.Codes.V271.CodeResultStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0123</remarks>
         public string ResultStatus { get; set; }
 
         /// <summary>
@@ -171,8 +171,8 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// OBR.30 - Transportation Mode.
+        /// <para>Suggested: 0124 Transportation Mode -&gt; ClearHl7.Codes.V271.CodeTransportationMode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0124</remarks>
         public string TransportationMode { get; set; }
 
         /// <summary>
@@ -227,14 +227,14 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// OBR.41 - Transport Arranged.
+        /// <para>Suggested: 0224 Transport Arranged -&gt; ClearHl7.Codes.V271.CodeTransportArranged</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0224</remarks>
         public string TransportArranged { get; set; }
 
         /// <summary>
         /// OBR.42 - Escort Required.
+        /// <para>Suggested: 0225 Escort Required -&gt; ClearHl7.Codes.V271.CodeEscortRequired</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0225</remarks>
         public string EscortRequired { get; set; }
 
         /// <summary>
@@ -244,38 +244,38 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// OBR.44 - Procedure Code.
+        /// <para>Suggested: 0088 Procedure Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0088</remarks>
         public CodedWithNoExceptions ProcedureCode { get; set; }
 
         /// <summary>
         /// OBR.45 - Procedure Code Modifier.
+        /// <para>Suggested: 0340 Procedure Code Modifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0340</remarks>
         public IEnumerable<CodedWithNoExceptions> ProcedureCodeModifier { get; set; }
 
         /// <summary>
         /// OBR.46 - Placer Supplemental Service Information.
+        /// <para>Suggested: 0411 Supplemental Service Information Values -&gt; ClearHl7.Codes.V271.CodeSupplementalServiceInformationValues</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0411</remarks>
         public IEnumerable<CodedWithExceptions> PlacerSupplementalServiceInformation { get; set; }
 
         /// <summary>
         /// OBR.47 - Filler Supplemental Service Information.
+        /// <para>Suggested: 0411 Supplemental Service Information Values -&gt; ClearHl7.Codes.V271.CodeSupplementalServiceInformationValues</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0411</remarks>
         public IEnumerable<CodedWithExceptions> FillerSupplementalServiceInformation { get; set; }
 
         /// <summary>
         /// OBR.48 - Medically Necessary Duplicate Procedure Reason.
+        /// <para>Suggested: 0476 Medically Necessary Duplicate Procedure Reason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0476</remarks>
         public CodedWithExceptions MedicallyNecessaryDuplicateProcedureReason { get; set; }
 
         /// <summary>
         /// OBR.49 - Result Handling.
+        /// <para>Suggested: 0507 Observation Result Handling -&gt; ClearHl7.Codes.V271.CodeObservationResultHandling</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0507</remarks>
         public CodedWithExceptions ResultHandling { get; set; }
 
         /// <summary>

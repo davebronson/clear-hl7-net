@@ -25,8 +25,8 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// LCH.2 - Segment Action Code.
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Codes.V271.CodeSegmentActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0206</remarks>
         public string SegmentActionCode { get; set; }
 
         /// <summary>
@@ -36,14 +36,14 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// LCH.4 - Location Characteristic ID.
+        /// <para>Suggested: 0324 Location Characteristic ID -&gt; ClearHl7.Codes.V271.CodeLocationCharacteristicId</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0324</remarks>
         public CodedWithExceptions LocationCharacteristicId { get; set; }
 
         /// <summary>
         /// LCH.5 - Location Characteristic Value - LCH.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V271.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public CodedWithExceptions LocationCharacteristicValueLch { get; set; }
         
         /// <summary>

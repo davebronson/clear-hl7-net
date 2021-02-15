@@ -43,8 +43,8 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// PID.5 - Patient Name.
+        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Codes.V271.CodeNameType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0200</remarks>
         public IEnumerable<ExtendedPersonName> PatientName { get; set; }
 
         /// <summary>
@@ -59,8 +59,8 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// PID.8 - Administrative Sex.
+        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Codes.V271.CodeAdministrativeSex</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0001</remarks>
         public CodedWithExceptions AdministrativeSex { get; set; }
 
         /// <summary>
@@ -70,8 +70,8 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// PID.10 - Race.
+        /// <para>Suggested: 0005 Race -&gt; ClearHl7.Codes.V271.CodeRace</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0005</remarks>
         public IEnumerable<CodedWithExceptions> Race { get; set; }
 
         /// <summary>
@@ -96,26 +96,25 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// PID.15 - Primary Language.
-        /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0296</remarks>
+        /// <para>Suggested: 0296 Primary Language</para>
         public CodedWithExceptions PrimaryLanguage { get; set; }
 
         /// <summary>
         /// PID.16 - Marital Status.
+        /// <para>Suggested: 0002 Marital Status -&gt; ClearHl7.Codes.V271.CodeMaritalStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0002</remarks>
         public CodedWithExceptions MaritalStatus { get; set; }
 
         /// <summary>
         /// PID.17 - Religion.
+        /// <para>Suggested: 0006 Religion -&gt; ClearHl7.Codes.V271.CodeReligion</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0006</remarks>
         public CodedWithExceptions Religion { get; set; }
 
         /// <summary>
         /// PID.18 - Patient Account Number.
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Codes.V271.CodeCheckDigitScheme</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0061</remarks>
         public ExtendedCompositeIdWithCheckDigit PatientAccountNumber { get; set; }
 
         /// <summary>
@@ -130,14 +129,14 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// PID.21 - Mother's Identifier.
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Codes.V271.CodeCheckDigitScheme</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0061</remarks>
         public IEnumerable<ExtendedCompositeIdWithCheckDigit> MothersIdentifier { get; set; }
 
         /// <summary>
         /// PID.22 - Ethnic Group.
+        /// <para>Suggested: 0189 Ethnic Group -&gt; ClearHl7.Codes.V271.CodeEthnicGroup</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0189</remarks>
         public IEnumerable<CodedWithExceptions> EthnicGroup { get; set; }
 
         /// <summary>
@@ -147,8 +146,8 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// PID.24 - Multiple Birth Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V271.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string MultipleBirthIndicator { get; set; }
 
         /// <summary>
@@ -158,20 +157,20 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// PID.26 - Citizenship.
+        /// <para>Suggested: 0171 Citizenship</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0171</remarks>
         public IEnumerable<CodedWithExceptions> Citizenship { get; set; }
 
         /// <summary>
         /// PID.27 - Veterans Military Status.
+        /// <para>Suggested: 0172 Veterans Military Status</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0172</remarks>
         public CodedWithExceptions VeteransMilitaryStatus { get; set; }
 
         /// <summary>
         /// PID.28 - Nationality.
+        /// <para>Suggested: 0212 Nationality</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0212</remarks>
         public CodedWithExceptions Nationality { get; set; }
 
         /// <summary>
@@ -181,20 +180,20 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// PID.30 - Patient Death Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V271.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string PatientDeathIndicator { get; set; }
 
         /// <summary>
         /// PID.31 - Identity Unknown Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V271.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string IdentityUnknownIndicator { get; set; }
 
         /// <summary>
         /// PID.32 - Identity Reliability Code.
+        /// <para>Suggested: 0445 Identity Reliability Code -&gt; ClearHl7.Codes.V271.CodeIdentityReliabilityCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0445</remarks>
         public IEnumerable<CodedWithExceptions> IdentityReliabilityCode { get; set; }
 
         /// <summary>
@@ -209,14 +208,14 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// PID.35 - Taxonomic Classification Code.
+        /// <para>Suggested: 0446 Species Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0446</remarks>
         public CodedWithExceptions TaxonomicClassificationCode { get; set; }
 
         /// <summary>
         /// PID.36 - Breed Code.
+        /// <para>Suggested: 0447 Breed Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0447</remarks>
         public CodedWithExceptions BreedCode { get; set; }
 
         /// <summary>
@@ -226,14 +225,14 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// PID.38 - Production Class Code.
+        /// <para>Suggested: 0429 Production Class Code -&gt; ClearHl7.Codes.V271.CodeProductionClassCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0429</remarks>
         public CodedWithExceptions ProductionClassCode { get; set; }
 
         /// <summary>
         /// PID.39 - Tribal Citizenship.
+        /// <para>Suggested: 0171 Citizenship</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0171</remarks>
         public IEnumerable<CodedWithExceptions> TribalCitizenship { get; set; }
 
         /// <summary>

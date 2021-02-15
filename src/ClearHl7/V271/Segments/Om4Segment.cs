@@ -26,8 +26,8 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// OM4.2 - Derived Specimen.
+        /// <para>Suggested: 0170 Derived Specimen -&gt; ClearHl7.Codes.V271.CodeDerivedSpecimen</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0170</remarks>
         public string DerivedSpecimen { get; set; }
 
         /// <summary>
@@ -52,8 +52,8 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// OM4.7 - Additive.
+        /// <para>Suggested: 0371 Additive/Preservative -&gt; ClearHl7.Codes.V271.CodeAdditivePreservative</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0371</remarks>
         public CodedWithExceptions Additive { get; set; }
 
         /// <summary>
@@ -83,8 +83,8 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// OM4.13 - Specimen Priorities.
+        /// <para>Suggested: 0027 Priority -&gt; ClearHl7.Codes.V271.CodePriority</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0027</remarks>
         public IEnumerable<string> SpecimenPriorities { get; set; }
 
         /// <summary>
