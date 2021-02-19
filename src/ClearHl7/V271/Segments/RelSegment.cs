@@ -75,8 +75,8 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// REL.12 - Negation Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V271.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string NegationIndicator { get; set; }
 
         /// <summary>
@@ -96,8 +96,8 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// REL.16 - Separability Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V271.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string SeparabilityIndicator { get; set; }
                 
         /// <summary>

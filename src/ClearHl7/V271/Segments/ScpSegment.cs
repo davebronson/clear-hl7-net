@@ -25,14 +25,14 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// SCP.2 - Labor Calculation Type.
+        /// <para>Suggested: 0651 Labor Calculation Type -&gt; ClearHl7.Codes.V271.CodeLaborCalculationType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0651</remarks>
         public CodedWithExceptions LaborCalculationType { get; set; }
 
         /// <summary>
         /// SCP.3 - Date Format.
+        /// <para>Suggested: 0653 Date Format -&gt; ClearHl7.Codes.V271.CodeDateFormat</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0653</remarks>
         public CodedWithExceptions DateFormat { get; set; }
 
         /// <summary>
@@ -52,14 +52,14 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// SCP.7 - Device Type.
+        /// <para>Suggested: 0657 Device Type -&gt; ClearHl7.Codes.V271.CodeDeviceType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0657</remarks>
         public CodedWithExceptions DeviceType { get; set; }
 
         /// <summary>
         /// SCP.8 - Lot Control.
+        /// <para>Suggested: 0659 Lot Control -&gt; ClearHl7.Codes.V271.CodeLotControl</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0659</remarks>
         public CodedWithExceptions LotControl { get; set; }
         
         /// <summary>

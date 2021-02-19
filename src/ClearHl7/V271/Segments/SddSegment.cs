@@ -35,14 +35,14 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// SDD.4 - Device Data State.
+        /// <para>Suggested: 0667 Device Data State -&gt; ClearHl7.Codes.V271.CodeDeviceDataState</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0667</remarks>
         public CodedWithExceptions DeviceDataState { get; set; }
 
         /// <summary>
         /// SDD.5 - Load Status.
+        /// <para>Suggested: 0669 Load Status -&gt; ClearHl7.Codes.V271.CodeLoadStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0669</remarks>
         public CodedWithExceptions LoadStatus { get; set; }
 
         /// <summary>

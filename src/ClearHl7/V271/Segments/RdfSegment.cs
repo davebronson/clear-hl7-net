@@ -27,8 +27,8 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// RDF.2 - Column Description.
+        /// <para>Suggested: 0440 Data Types -&gt; ClearHl7.Codes.V271.CodeDataTypes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0440</remarks>
         public IEnumerable<RowColumnDefinition> ColumnDescription { get; set; }
         
         /// <summary>

@@ -52,14 +52,14 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// SCH.7 - Appointment Reason.
+        /// <para>Suggested: 0276 Appointment Reason Codes -&gt; ClearHl7.Codes.V271.CodeAppointmentReasonCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0276</remarks>
         public CodedWithExceptions AppointmentReason { get; set; }
 
         /// <summary>
         /// SCH.8 - Appointment Type.
+        /// <para>Suggested: 0277 Appointment Type Codes -&gt; ClearHl7.Codes.V271.CodeAppointmentTypeCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0277</remarks>
         public CodedWithExceptions AppointmentType { get; set; }
 
         /// <summary>
@@ -144,8 +144,8 @@ namespace ClearHl7.V271.Segments
 
         /// <summary>
         /// SCH.25 - Filler Status Code.
+        /// <para>Suggested: 0278 Filler Status Codes -&gt; ClearHl7.Codes.V271.CodeFillerStatusCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0278</remarks>
         public CodedWithExceptions FillerStatusCode { get; set; }
 
         /// <summary>
