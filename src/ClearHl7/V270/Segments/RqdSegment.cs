@@ -51,14 +51,14 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// RQD.7 - Cost Center Account Number.
+        /// <para>Suggested: 0319 Department Cost Center</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0319</remarks>
         public ExtendedCompositeIdWithCheckDigit CostCenterAccountNumber { get; set; }
 
         /// <summary>
         /// RQD.8 - Item Natural Account Code.
+        /// <para>Suggested: 0320 Item Natural Account Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0320</remarks>
         public CodedWithExceptions ItemNaturalAccountCode { get; set; }
 
         /// <summary>

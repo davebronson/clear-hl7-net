@@ -1,7 +1,9 @@
 # clear-hl7-net
-.NET HL7 message generation library for the Version 2.x standard
+.NET message generation library for the HL7® Version 2.x standard
 
 Understanding and programmatically building HL7 messages can be difficult.  clear-hl7-net takes pain out of this process by exposing an object hierarchy that is well structured, clearly named, and (most importantly) strongly-typed.
+
+HL7®, and FHIR® are the registered trademarks of Health Level Seven International and their use of these trademarks does not constitute an endorsement by HL7.
 
 ## Getting Started
 ### Building clear-hl7-net

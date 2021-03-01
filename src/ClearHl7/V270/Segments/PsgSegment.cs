@@ -35,8 +35,8 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// PSG.4 - Adjudicate as Group.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V270.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string AdjudicateAsGroup { get; set; }
 
         /// <summary>

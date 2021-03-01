@@ -5,10 +5,10 @@
     <Authors>Dave Bronson</Authors>
     <Copyright>Copyright © Dave Bronson 2020-2021</Copyright>
     <PackageProjectUrl>https://github.com/davebronson/clear-hl7-net</PackageProjectUrl>
-    <Summary>Enumerated coded values for the HL7 standard</Summary>
+    <Summary>Enumerated coded values for the HL7® standard</Summary>
     <PackageTags>hl7;hl7-builder;hl7-message;hl7-generating;dotnet;healthcare;code;codesystem</PackageTags>
     <Title>ClearHL7.Codes</Title>
-    <Description>Enumerated coded values for the HL7 standard</Description>
+    <Description>Enumerated coded values for the HL7® standard</Description>
     <PackageLicenseUrl></PackageLicenseUrl>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>

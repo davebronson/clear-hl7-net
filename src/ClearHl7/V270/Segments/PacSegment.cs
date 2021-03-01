@@ -42,26 +42,26 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// PAC.5 - Package Type.
+        /// <para>Suggested: 0908 Package Type</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0908</remarks>
         public CodedWithExceptions PackageType { get; set; }
 
         /// <summary>
         /// PAC.6 - Package Condition.
+        /// <para>Suggested: 0544 Container Condition -&gt; ClearHl7.Codes.V270.CodeContainerCondition</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0544</remarks>
         public IEnumerable<CodedWithExceptions> PackageCondition { get; set; }
 
         /// <summary>
         /// PAC.7 - Package Handling Code.
+        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Codes.V270.CodeSpecialHandlingCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0376</remarks>
         public IEnumerable<CodedWithExceptions> PackageHandlingCode { get; set; }
 
         /// <summary>
         /// PAC.8 - Package Risk Code.
+        /// <para>Suggested: 0489 Risk Codes -&gt; ClearHl7.Codes.V270.CodeRiskCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0489</remarks>
         public IEnumerable<CodedWithExceptions> PackageRiskCode { get; set; }
         
         /// <summary>

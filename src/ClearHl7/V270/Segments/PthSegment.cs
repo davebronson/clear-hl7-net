@@ -21,8 +21,8 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// PTH.1 - Action Code.
+        /// <para>Suggested: 0287 Problem/Goal Action Code -&gt; ClearHl7.Codes.V270.CodeProblemGoalActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0287</remarks>
         public string ActionCode { get; set; }
 
         /// <summary>
@@ -52,8 +52,8 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// PTH.7 - Mood Code.
+        /// <para>Suggested: 0725 Mood Codes -&gt; ClearHl7.Codes.V270.CodeMoodCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0725</remarks>
         public CodedWithNoExceptions MoodCode { get; set; }
         
         /// <summary>

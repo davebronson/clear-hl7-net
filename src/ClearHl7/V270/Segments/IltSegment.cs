@@ -46,8 +46,8 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// ILT.6 - Inventory Received Quantity Unit.
+        /// <para>Suggested: 0818 Package -&gt; ClearHl7.Codes.V270.CodePackage</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0818</remarks>
         public CodedWithExceptions InventoryReceivedQuantityUnit { get; set; }
 
         /// <summary>
@@ -67,8 +67,8 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// ILT.10 - Inventory On Hand Quantity Unit.
+        /// <para>Suggested: 0818 Package -&gt; ClearHl7.Codes.V270.CodePackage</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0818</remarks>
         public CodedWithExceptions InventoryOnHandQuantityUnit { get; set; }
         
         /// <summary>

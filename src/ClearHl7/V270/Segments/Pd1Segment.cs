@@ -23,20 +23,20 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// PD1.1 - Living Dependency.
+        /// <para>Suggested: 0223 Living Dependency -&gt; ClearHl7.Codes.V270.CodeLivingDependency</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0223</remarks>
         public IEnumerable<CodedWithExceptions> LivingDependency { get; set; }
 
         /// <summary>
         /// PD1.2 - Living Arrangement.
+        /// <para>Suggested: 0220 Living Arrangement -&gt; ClearHl7.Codes.V270.CodeLivingArrangement</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0220</remarks>
         public CodedWithExceptions LivingArrangement { get; set; }
 
         /// <summary>
         /// PD1.3 - Patient Primary Facility.
+        /// <para>Suggested: 0204 Organizational Name Type -&gt; ClearHl7.Codes.V270.CodeOrganizationalNameType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0204</remarks>
         public IEnumerable<ExtendedCompositeNameAndIdNumberForOrganizations> PatientPrimaryFacility { get; set; }
 
         /// <summary>
@@ -46,32 +46,32 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// PD1.5 - Student Indicator.
+        /// <para>Suggested: 0231 Student Status -&gt; ClearHl7.Codes.V270.CodeStudentStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0231</remarks>
         public CodedWithExceptions StudentIndicator { get; set; }
 
         /// <summary>
         /// PD1.6 - Handicap.
+        /// <para>Suggested: 0295 Handicap</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0295</remarks>
         public CodedWithExceptions Handicap { get; set; }
 
         /// <summary>
         /// PD1.7 - Living Will Code.
+        /// <para>Suggested: 0315 Living Will Code -&gt; ClearHl7.Codes.V270.CodeLivingWillCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0315</remarks>
         public CodedWithExceptions LivingWillCode { get; set; }
 
         /// <summary>
         /// PD1.8 - Organ Donor Code.
+        /// <para>Suggested: 0316 Organ Donor Code -&gt; ClearHl7.Codes.V270.CodeOrganDonorCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0316</remarks>
         public CodedWithExceptions OrganDonorCode { get; set; }
 
         /// <summary>
         /// PD1.9 - Separate Bill.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V270.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string SeparateBill { get; set; }
 
         /// <summary>
@@ -81,14 +81,14 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// PD1.11 - Publicity Code.
+        /// <para>Suggested: 0215 Publicity Code -&gt; ClearHl7.Codes.V270.CodePublicityCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0215</remarks>
         public CodedWithExceptions PublicityCode { get; set; }
 
         /// <summary>
         /// PD1.12 - Protection Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V270.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string ProtectionIndicator { get; set; }
 
         /// <summary>
@@ -103,14 +103,14 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// PD1.15 - Advance Directive Code.
+        /// <para>Suggested: 0435 Advance Directive Code -&gt; ClearHl7.Codes.V270.CodeAdvanceDirectiveCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0435</remarks>
         public IEnumerable<CodedWithExceptions> AdvanceDirectiveCode { get; set; }
 
         /// <summary>
         /// PD1.16 - Immunization Registry Status.
+        /// <para>Suggested: 0441 Immunization Registry Status -&gt; ClearHl7.Codes.V270.CodeImmunizationRegistryStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0441</remarks>
         public CodedWithExceptions ImmunizationRegistryStatus { get; set; }
 
         /// <summary>
@@ -125,20 +125,20 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// PD1.19 - Military Branch.
+        /// <para>Suggested: 0140 Military Service -&gt; ClearHl7.Codes.V270.CodeMilitaryService</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0140</remarks>
         public CodedWithExceptions MilitaryBranch { get; set; }
 
         /// <summary>
         /// PD1.20 - Military Rank/Grade.
+        /// <para>Suggested: 0141 Military Rank/Grade -&gt; ClearHl7.Codes.V270.CodeMilitaryRankGrade</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0141</remarks>
         public CodedWithExceptions MilitaryRankGrade { get; set; }
 
         /// <summary>
         /// PD1.21 - Military Status.
+        /// <para>Suggested: 0142 Military Status -&gt; ClearHl7.Codes.V270.CodeMilitaryStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0142</remarks>
         public CodedWithExceptions MilitaryStatus { get; set; }
 
         /// <summary>

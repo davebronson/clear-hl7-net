@@ -33,8 +33,8 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// BPO.3 - BP Processing Requirements.
+        /// <para>Suggested: 0508 Blood Product Processing Requirements -&gt; ClearHl7.Codes.V270.CodeBloodProductProcessingRequirements</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0508</remarks>
         public IEnumerable<CodedWithExceptions> BpProcessingRequirements { get; set; }
 
         /// <summary>
@@ -84,14 +84,14 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// BPO.13 - BP Indication for Use.
+        /// <para>Suggested: 0509 Indication for Use</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0509</remarks>
         public IEnumerable<CodedWithExceptions> BpIndicationForUse { get; set; }
 
         /// <summary>
         /// BPO.14 - BP Informed Consent Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V270.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string BpInformedConsentIndicator { get; set; }
 
         /// <summary>

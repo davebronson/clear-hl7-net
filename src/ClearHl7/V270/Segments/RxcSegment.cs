@@ -22,8 +22,8 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// RXC.1 - RX Component Type.
+        /// <para>Suggested: 0166 RX Component Type -&gt; ClearHl7.Codes.V270.CodeRXComponentType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0166</remarks>
         public string RxComponentType { get; set; }
 
         /// <summary>

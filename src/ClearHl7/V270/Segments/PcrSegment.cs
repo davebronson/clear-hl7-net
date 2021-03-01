@@ -27,8 +27,8 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// PCR.2 - Generic Product.
+        /// <para>Suggested: 0249 Generic Product</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0249</remarks>
         public string GenericProduct { get; set; }
 
         /// <summary>
@@ -63,8 +63,8 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// PCR.9 - Single Use Device.
+        /// <para>Suggested: 0244 Single Use Device</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0244</remarks>
         public CodedWithExceptions SingleUseDevice { get; set; }
 
         /// <summary>
@@ -74,8 +74,8 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// PCR.11 - Product Problem.
+        /// <para>Suggested: 0245 Product Problem</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0245</remarks>
         public CodedWithExceptions ProductProblem { get; set; }
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// PCR.13 - Product Available For Inspection.
+        /// <para>Suggested: 0246 Product Available For Inspection</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0246</remarks>
         public CodedWithExceptions ProductAvailableForInspection { get; set; }
 
         /// <summary>
@@ -96,8 +96,8 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// PCR.15 - Product Evaluation Status.
+        /// <para>Suggested: 0247 Status Of Evaluation -&gt; ClearHl7.Codes.V270.CodeStatusOfEvaluation</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0247</remarks>
         public CodedWithExceptions ProductEvaluationStatus { get; set; }
 
         /// <summary>
@@ -107,8 +107,8 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// PCR.17 - Evaluated Product Source.
+        /// <para>Suggested: 0248 Product Source -&gt; ClearHl7.Codes.V270.CodeProductSource</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0248</remarks>
         public string EvaluatedProductSource { get; set; }
 
         /// <summary>
@@ -118,32 +118,32 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// PCR.19 - Device Operator Qualifications.
+        /// <para>Suggested: 0242 Primary Observer's Qualification -&gt; ClearHl7.Codes.V270.CodePrimaryObserversQualification</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0242</remarks>
         public string DeviceOperatorQualifications { get; set; }
 
         /// <summary>
         /// PCR.20 - Relatedness Assessment.
+        /// <para>Suggested: 0250 Relatedness Assessment -&gt; ClearHl7.Codes.V270.CodeRelatednessAssessment</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0250</remarks>
         public string RelatednessAssessment { get; set; }
 
         /// <summary>
         /// PCR.21 - Action Taken In Response To The Event.
+        /// <para>Suggested: 0251 Action Taken In Response To The Event -&gt; ClearHl7.Codes.V270.CodeActionTakenInResponseToTheEvent</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0251</remarks>
         public IEnumerable<string> ActionTakenInResponseToTheEvent { get; set; }
 
         /// <summary>
         /// PCR.22 - Event Causality Observations.
+        /// <para>Suggested: 0252 Causality Observations -&gt; ClearHl7.Codes.V270.CodeCausalityObservations</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0252</remarks>
         public IEnumerable<string> EventCausalityObservations { get; set; }
 
         /// <summary>
         /// PCR.23 - Indirect Exposure Mechanism.
+        /// <para>Suggested: 0253 Indirect Exposure Mechanism -&gt; ClearHl7.Codes.V270.CodeIndirectExposureMechanism</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0253</remarks>
         public IEnumerable<string> IndirectExposureMechanism { get; set; }
         
         /// <summary>

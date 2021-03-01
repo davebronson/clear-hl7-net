@@ -25,14 +25,14 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// IAR.2 - Allergy Severity Code.
+        /// <para>Suggested: 0128 Allergy Severity -&gt; ClearHl7.Codes.V270.CodeAllergySeverity</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0128</remarks>
         public CodedWithExceptions AllergySeverityCode { get; set; }
 
         /// <summary>
         /// IAR.3 - Sensitivity to Causative Agent Code.
+        /// <para>Suggested: 0436 Sensitivity To Causative Agent Code -&gt; ClearHl7.Codes.V270.CodeSensitivityToCausativeAgentCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0436</remarks>
         public CodedWithExceptions SensitivityToCausativeAgentCode { get; set; }
 
         /// <summary>

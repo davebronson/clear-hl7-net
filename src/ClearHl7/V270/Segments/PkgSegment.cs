@@ -26,14 +26,14 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// PKG.2 - Packaging Units.
+        /// <para>Suggested: 0818 Package -&gt; ClearHl7.Codes.V270.CodePackage</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0818</remarks>
         public CodedWithExceptions PackagingUnits { get; set; }
 
         /// <summary>
         /// PKG.3 - Default Order Unit Of Measure Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V270.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions DefaultOrderUnitOfMeasureIndicator { get; set; }
 
         /// <summary>

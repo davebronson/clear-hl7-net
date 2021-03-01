@@ -28,14 +28,14 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// BPX.2 - BP Dispense Status.
+        /// <para>Suggested: 0510 Blood Product Dispense Status -&gt; ClearHl7.Codes.V270.CodeBloodProductDispenseStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0510</remarks>
         public CodedWithExceptions BpDispenseStatus { get; set; }
 
         /// <summary>
         /// BPX.3 - BP Status.
+        /// <para>Suggested: 0511 BP Observation Status Codes Interpretation -&gt; ClearHl7.Codes.V270.CodeBpObservationStatusCodesInterpretation</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0511</remarks>
         public string BpStatus { get; set; }
 
         /// <summary>
@@ -60,8 +60,8 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// BPX.8 - CP Commercial Product.
+        /// <para>Suggested: 0512 Commercial Product</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0512</remarks>
         public CodedWithExceptions CpCommercialProduct { get; set; }
 
         /// <summary>

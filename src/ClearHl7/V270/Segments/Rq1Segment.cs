@@ -25,8 +25,8 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// RQ1.2 - Manufacturer Identifier.
+        /// <para>Suggested: 0385 Manufacturer Identifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0385</remarks>
         public CodedWithExceptions ManufacturerIdentifier { get; set; }
 
         /// <summary>
@@ -46,14 +46,14 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// RQ1.6 - Taxable.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V270.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string Taxable { get; set; }
 
         /// <summary>
         /// RQ1.7 - Substitute Allowed.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V270.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string SubstituteAllowed { get; set; }
         
         /// <summary>
