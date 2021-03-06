@@ -35,8 +35,8 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// SID.4 - Substance Manufacturer Identifier.
+        /// <para>Suggested: 0385 Manufacturer Identifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0385</remarks>
         public CodedWithExceptions SubstanceManufacturerIdentifier { get; set; }
         
         /// <summary>

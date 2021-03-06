@@ -47,6 +47,7 @@ namespace ClearHl7.V270.Segments
         /// <summary>
         /// PSL.6 - Product/Service Line Item Status.
         /// <para>Suggested: 0559 Product/Service Status -&gt; ClearHl7.Codes.V270.CodeProductServiceStatus</para>
+        /// </summary>
         public CodedWithExceptions ProductServiceLineItemStatus { get; set; }
 
         /// <summary>

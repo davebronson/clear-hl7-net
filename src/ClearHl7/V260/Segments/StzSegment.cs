@@ -20,8 +20,8 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// STZ.1 - Sterilization Type.
+        /// <para>Suggested: 0806 Sterilization Type -&gt; ClearHl7.Codes.V260.CodeSterilizationType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0806</remarks>
         public CodedWithExceptions SterilizationType { get; set; }
 
         /// <summary>
@@ -31,14 +31,14 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// STZ.3 - Maintenance Cycle.
+        /// <para>Suggested: 0809 Maintenance Cycle</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0809</remarks>
         public CodedWithExceptions MaintenanceCycle { get; set; }
 
         /// <summary>
         /// STZ.4 - Maintenance Type.
+        /// <para>Suggested: 0811 Maintenance Type</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0811</remarks>
         public CodedWithExceptions MaintenanceType { get; set; }
         
         /// <summary>

@@ -52,6 +52,7 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// MRG.7 - Prior Patient Name.
+        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Codes.V260.CodeNameType</para>
         /// </summary>
         public IEnumerable<ExtendedPersonName> PriorPatientName { get; set; }
         

@@ -25,14 +25,14 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// PYE.2 - Payee Type.
+        /// <para>Suggested: 0557 Payee Type -&gt; ClearHl7.Codes.V260.CodePayeeType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0557</remarks>
         public string PayeeType { get; set; }
 
         /// <summary>
         /// PYE.3 - Payee Relationship to Invoice (Patient).
+        /// <para>Suggested: 0558 Payee Relationship To Invoice -&gt; ClearHl7.Codes.V260.CodePayeeRelationshipToInvoice</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0558</remarks>
         public string PayeeRelationshipToInvoicePatient { get; set; }
 
         /// <summary>
@@ -52,8 +52,8 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// PYE.7 - Payment Method.
+        /// <para>Suggested: 0570 Payment Method Code -&gt; ClearHl7.Codes.V260.CodePaymentMethodCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0570</remarks>
         public string PaymentMethod { get; set; }
         
         /// <summary>

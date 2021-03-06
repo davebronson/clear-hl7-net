@@ -97,6 +97,7 @@ namespace ClearHl7.V271.Segments
         /// <summary>
         /// PID.15 - Primary Language.
         /// <para>Suggested: 0296 Primary Language</para>
+        /// </summary>
         public CodedWithExceptions PrimaryLanguage { get; set; }
 
         /// <summary>

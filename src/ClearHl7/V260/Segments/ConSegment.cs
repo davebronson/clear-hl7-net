@@ -28,8 +28,8 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// CON.2 - Consent Type.
+        /// <para>Suggested: 0496 Consent Type -&gt; ClearHl7.Codes.V260.CodeConsentType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0496</remarks>
         public CodedWithExceptions ConsentType { get; set; }
 
         /// <summary>
@@ -69,14 +69,14 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// CON.10 - Consent Mode.
+        /// <para>Suggested: 0497 Consent Mode -&gt; ClearHl7.Codes.V260.CodeConsentMode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0497</remarks>
         public CodedWithNoExceptions ConsentMode { get; set; }
 
         /// <summary>
         /// CON.11 - Consent Status.
+        /// <para>Suggested: 0498 Consent Status -&gt; ClearHl7.Codes.V260.CodeConsentStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0498</remarks>
         public CodedWithNoExceptions ConsentStatus { get; set; }
 
         /// <summary>
@@ -101,50 +101,50 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// CON.16 - Subject Competence Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string SubjectCompetenceIndicator { get; set; }
 
         /// <summary>
         /// CON.17 - Translator Assistance Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string TranslatorAssistanceIndicator { get; set; }
 
         /// <summary>
         /// CON.18 - Language Translated To.
+        /// <para>Suggested: 0296 Primary Language</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0296</remarks>
         public CodedWithExceptions LanguageTranslatedTo { get; set; }
 
         /// <summary>
         /// CON.19 - Informational Material Supplied Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string InformationalMaterialSuppliedIndicator { get; set; }
 
         /// <summary>
         /// CON.20 - Consent Bypass Reason.
+        /// <para>Suggested: 0499 Consent Bypass Reason -&gt; ClearHl7.Codes.V260.CodeConsentBypassReason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0499</remarks>
         public CodedWithExceptions ConsentBypassReason { get; set; }
 
         /// <summary>
         /// CON.21 - Consent Disclosure Level.
+        /// <para>Suggested: 0500 Consent Disclosure Level -&gt; ClearHl7.Codes.V260.CodeConsentDisclosureLevel</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0500</remarks>
         public string ConsentDisclosureLevel { get; set; }
 
         /// <summary>
         /// CON.22 - Consent Non-disclosure Reason.
+        /// <para>Suggested: 0501 Consent Non-Disclosure Reason -&gt; ClearHl7.Codes.V260.CodeConsentNonDisclosureReason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0501</remarks>
         public CodedWithExceptions ConsentNonDisclosureReason { get; set; }
 
         /// <summary>
         /// CON.23 - Non-subject Consenter Reason.
+        /// <para>Suggested: 0502 Non-Subject Consenter Reason -&gt; ClearHl7.Codes.V260.CodeNonSubjectConsenterReason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0502</remarks>
         public CodedWithExceptions NonSubjectConsenterReason { get; set; }
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// CON.25 - Relationship to Subject.
+        /// <para>Suggested: 0548 Signatory's Relationship To Subject -&gt; ClearHl7.Codes.V260.CodeSignatorysRelationshipToSubject</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0548</remarks>
         public IEnumerable<string> RelationshipToSubject { get; set; }
 
         /// <summary>

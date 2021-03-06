@@ -68,8 +68,8 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// PDC.10 - Marketing Basis.
+        /// <para>Suggested: 0330 Marketing Basis -&gt; ClearHl7.Codes.V260.CodeMarketingBasis</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0330</remarks>
         public string MarketingBasis { get; set; }
 
         /// <summary>

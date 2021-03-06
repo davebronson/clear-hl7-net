@@ -68,8 +68,8 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// SCD.10 - Device Status.
+        /// <para>Suggested: 0682 Device Status -&gt; ClearHl7.Codes.V260.CodeDeviceStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0682</remarks>
         public CodedWithExceptions DeviceStatus { get; set; }
 
         /// <summary>
@@ -114,38 +114,38 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// SCD.19 - Abort Cycle.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions AbortCycle { get; set; }
 
         /// <summary>
         /// SCD.20 - Alarm.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions Alarm { get; set; }
 
         /// <summary>
         /// SCD.21 - Long in Charge Phase.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions LongInChargePhase { get; set; }
 
         /// <summary>
         /// SCD.22 - Long in Exhaust Phase.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions LongInExhaustPhase { get; set; }
 
         /// <summary>
         /// SCD.23 - Long in Fast Exhaust Phase.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions LongInFastExhaustPhase { get; set; }
 
         /// <summary>
         /// SCD.24 - Reset.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions Reset { get; set; }
 
         /// <summary>
@@ -155,20 +155,20 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// SCD.26 - Door Open.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions DoorOpen { get; set; }
 
         /// <summary>
         /// SCD.27 - Reading Failure.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions ReadingFailure { get; set; }
 
         /// <summary>
         /// SCD.28 - Cycle Type.
+        /// <para>Suggested: 0702 Cycle Type -&gt; ClearHl7.Codes.V260.CodeCycleType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0702</remarks>
         public CodedWithExceptions CycleType { get; set; }
 
         /// <summary>
@@ -188,8 +188,8 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// SCD.32 - Procedure Code.
+        /// <para>Suggested: 0088 Procedure Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0088</remarks>
         public CodedWithNoExceptions ProcedureCode { get; set; }
 
         /// <summary>
@@ -199,8 +199,8 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// SCD.34 - Attending Doctor.
+        /// <para>Suggested: 0010 Physician ID</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0010</remarks>
         public ExtendedCompositeIdNumberAndNameForPersons AttendingDoctor { get; set; }
 
         /// <summary>

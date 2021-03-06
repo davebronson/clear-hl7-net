@@ -32,14 +32,14 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// ITM.3 - Item Status.
+        /// <para>Suggested: 0776 Item Status -&gt; ClearHl7.Codes.V260.CodeItemStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0776</remarks>
         public CodedWithExceptions ItemStatus { get; set; }
 
         /// <summary>
         /// ITM.4 - Item Type.
+        /// <para>Suggested: 0778 Item Type -&gt; ClearHl7.Codes.V260.CodeItemType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0778</remarks>
         public CodedWithExceptions ItemType { get; set; }
 
         /// <summary>
@@ -49,8 +49,8 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// ITM.6 - Subject to Expiration Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions SubjectToExpirationIndicator { get; set; }
 
         /// <summary>
@@ -75,14 +75,14 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// ITM.11 - Patient Chargeable Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions PatientChargeableIndicator { get; set; }
 
         /// <summary>
         /// ITM.12 - Transaction Code.
+        /// <para>Suggested: 0132 Transaction Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0132</remarks>
         public CodedWithExceptions TransactionCode { get; set; }
 
         /// <summary>
@@ -92,38 +92,38 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// ITM.14 - Stocked Item Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions StockedItemIndicator { get; set; }
 
         /// <summary>
         /// ITM.15 - Supply Risk Codes.
+        /// <para>Suggested: 0871 Supply Risk Codes -&gt; ClearHl7.Codes.V260.CodeSupplyRiskCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0871</remarks>
         public CodedWithExceptions SupplyRiskCodes { get; set; }
 
         /// <summary>
         /// ITM.16 - Approving Regulatory Agency.
+        /// <para>Suggested: 0790 Approving Regulatory Agency -&gt; ClearHl7.Codes.V260.CodeApprovingRegulatoryAgency</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0790</remarks>
         public IEnumerable<ExtendedCompositeNameAndIdNumberForOrganizations> ApprovingRegulatoryAgency { get; set; }
 
         /// <summary>
         /// ITM.17 - Latex Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions LatexIndicator { get; set; }
 
         /// <summary>
         /// ITM.18 - Ruling Act.
+        /// <para>Suggested: 0793 Ruling Act -&gt; ClearHl7.Codes.V260.CodeRulingAct</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0793</remarks>
         public IEnumerable<CodedWithExceptions> RulingAct { get; set; }
 
         /// <summary>
         /// ITM.19 - Item Natural Account Code.
+        /// <para>Suggested: 0320 Item Natural Account Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0320</remarks>
         public string ItemNaturalAccountCode { get; set; }
 
         /// <summary>
@@ -138,20 +138,20 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// ITM.22 - Taxable Item Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions TaxableItemIndicator { get; set; }
 
         /// <summary>
         /// ITM.23 - Freight Charge Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions FreightChargeIndicator { get; set; }
 
         /// <summary>
         /// ITM.24 - Item Set Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions ItemSetIndicator { get; set; }
 
         /// <summary>
@@ -161,26 +161,26 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// ITM.26 - Track Department Usage Indicator.
+        /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeExpandedYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0532</remarks>
         public CodedWithNoExceptions TrackDepartmentUsageIndicator { get; set; }
 
         /// <summary>
         /// ITM.27 - Procedure Code.
+        /// <para>Suggested: 0088 Procedure Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0088</remarks>
         public CodedWithNoExceptions ProcedureCode { get; set; }
 
         /// <summary>
         /// ITM.28 - Procedure Code Modifier.
+        /// <para>Suggested: 0340 Procedure Code Modifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0340</remarks>
         public IEnumerable<CodedWithNoExceptions> ProcedureCodeModifier { get; set; }
 
         /// <summary>
         /// ITM.29 - Special Handling Code.
+        /// <para>Suggested: 0376 Special Handling Code -&gt; ClearHl7.Codes.V260.CodeSpecialHandlingCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0376</remarks>
         public CodedWithExceptions SpecialHandlingCode { get; set; }
 
         /// <summary>

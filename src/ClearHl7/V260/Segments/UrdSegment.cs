@@ -28,8 +28,8 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// URD.2 - Report Priority.
+        /// <para>Suggested: 0109 Report Priority</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0109</remarks>
         public string ReportPriority { get; set; }
 
         /// <summary>
@@ -39,8 +39,8 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// URD.4 - R/U What Subject Definition.
+        /// <para>Suggested: 0048 What Subject Filter</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0048</remarks>
         public IEnumerable<CodedWithExceptions> RuWhatSubjectDefinition { get; set; }
 
         /// <summary>
@@ -55,8 +55,8 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// URD.7 - R/U Results Level.
+        /// <para>Suggested: 0108 Query Results Level</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0108</remarks>
         public string RuResultsLevel { get; set; }
 
         /// <summary>

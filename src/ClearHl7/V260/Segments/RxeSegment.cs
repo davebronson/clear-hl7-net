@@ -28,8 +28,8 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// RXE.2 - Give Code.
+        /// <para>Suggested: 0292 Vaccines Administered -&gt; ClearHl7.Codes.V260.CodeVaccinesAdministered</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0292</remarks>
         public CodedWithExceptions GiveCode { get; set; }
 
         /// <summary>
@@ -64,8 +64,8 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// RXE.9 - Substitution Status.
+        /// <para>Suggested: 0167 Substitution Status -&gt; ClearHl7.Codes.V260.CodeSubstitutionStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0167</remarks>
         public string SubstitutionStatus { get; set; }
 
         /// <summary>
@@ -120,8 +120,8 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// RXE.20 - Needs Human Review.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string NeedsHumanReview { get; set; }
 
         /// <summary>
@@ -171,8 +171,8 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// RXE.30 - Dispense Package Method.
+        /// <para>Suggested: 0321 Dispense Method -&gt; ClearHl7.Codes.V260.CodeDispenseMethod</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0321</remarks>
         public string DispensePackageMethod { get; set; }
 
         /// <summary>
@@ -197,14 +197,14 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// RXE.35 - Controlled Substance Schedule.
+        /// <para>Suggested: 0477 Controlled Substance Schedule -&gt; ClearHl7.Codes.V260.CodeControlledSubstanceSchedule</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0477</remarks>
         public CodedWithExceptions ControlledSubstanceSchedule { get; set; }
 
         /// <summary>
         /// RXE.36 - Formulary Status.
+        /// <para>Suggested: 0478 Formulary Status -&gt; ClearHl7.Codes.V260.CodeFormularyStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0478</remarks>
         public string FormularyStatus { get; set; }
 
         /// <summary>
@@ -244,8 +244,8 @@ namespace ClearHl7.V260.Segments
 
         /// <summary>
         /// RXE.44 - Pharmacy Order Type.
+        /// <para>Suggested: 0480 Pharmacy Order Types -&gt; ClearHl7.Codes.V260.CodePharmacyOrderTypes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0480</remarks>
         public string PharmacyOrderType { get; set; }
 
         /// <summary>
