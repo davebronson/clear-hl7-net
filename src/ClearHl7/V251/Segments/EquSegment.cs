@@ -31,20 +31,20 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// EQU.3 - Equipment State.
+        /// <para>Suggested: 0365 Equipment State -&gt; ClearHl7.Codes.V251.CodeEquipmentState</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0365</remarks>
         public CodedElement EquipmentState { get; set; }
 
         /// <summary>
         /// EQU.4 - Local/Remote Control State.
+        /// <para>Suggested: 0366 Local/Remote Control State -&gt; ClearHl7.Codes.V251.CodeLocalRemoteControlState</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0366</remarks>
         public CodedElement LocalRemoteControlState { get; set; }
 
         /// <summary>
         /// EQU.5 - Alert Level.
+        /// <para>Suggested: 0367 Alert Level -&gt; ClearHl7.Codes.V251.CodeAlertLevel</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0367</remarks>
         public CodedElement AlertLevel { get; set; }
         
         /// <summary>

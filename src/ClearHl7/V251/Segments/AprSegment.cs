@@ -22,20 +22,19 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// APR.1 - Time Selection Criteria.
+        /// <para>Suggested: 0294 Time Selection Criteria Parameter Class Codes -&gt; ClearHl7.Codes.V251.CodeTimeSelectionCriteriaParameterClassCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0294</remarks>
         public IEnumerable<SchedulingClassValuePair> TimeSelectionCriteria { get; set; }
 
         /// <summary>
-        /// APR.2 - Resource Selection Criteria.
+        /// APR.2 - Resource Selection Criteria<para>Suggested: 0294 Time Selection Criteria Parameter Class Codes -&gt; ClearHl7.Codes.V251.CodeTimeSelectionCriteriaParameterClassCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0294</remarks>
         public IEnumerable<SchedulingClassValuePair> ResourceSelectionCriteria { get; set; }
 
         /// <summary>
         /// APR.3 - Location Selection Criteria.
+        /// <para>Suggested: 0294 Time Selection Criteria Parameter Class Codes -&gt; ClearHl7.Codes.V251.CodeTimeSelectionCriteriaParameterClassCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0294</remarks>
         public IEnumerable<SchedulingClassValuePair> LocationSelectionCriteria { get; set; }
 
         /// <summary>

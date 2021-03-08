@@ -28,32 +28,32 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// LDP.2 - Location Department.
+        /// <para>Suggested: 0264 Location Department</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0264</remarks>
         public CodedElement LocationDepartment { get; set; }
 
         /// <summary>
         /// LDP.3 - Location Service.
+        /// <para>Suggested: 0069 Hospital Service -&gt; ClearHl7.Codes.V251.CodeHospitalService</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0069</remarks>
         public IEnumerable<string> LocationService { get; set; }
 
         /// <summary>
         /// LDP.4 - Specialty Type.
+        /// <para>Suggested: 0265 Specialty Type -&gt; ClearHl7.Codes.V251.CodeSpecialtyType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0265</remarks>
         public IEnumerable<CodedElement> SpecialtyType { get; set; }
 
         /// <summary>
         /// LDP.5 - Valid Patient Classes.
+        /// <para>Suggested: 0004 Patient Class  -&gt; ClearHl7.Codes.V251.CodePatientClass</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0004</remarks>
         public IEnumerable<string> ValidPatientClasses { get; set; }
 
         /// <summary>
         /// LDP.6 - Active/Inactive Flag.
+        /// <para>Suggested: 0183 Active/Inactive -&gt; ClearHl7.Codes.V251.CodeActiveInactive</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0183</remarks>
         public string ActiveInactiveFlag { get; set; }
 
         /// <summary>
@@ -73,8 +73,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// LDP.10 - Visiting Hours.
+        /// <para>Suggested: 0267 Days Of The Week -&gt; ClearHl7.Codes.V251.CodeDaysOfTheWeek</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0267</remarks>
         public IEnumerable<VisitingHours> VisitingHours { get; set; }
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// LDP.12 - Location Cost Center.
+        /// <para>Suggested: 0462 Location Cost Center</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0462</remarks>
         public CodedElement LocationCostCenter { get; set; }
         
         /// <summary>

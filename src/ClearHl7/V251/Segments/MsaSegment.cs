@@ -20,8 +20,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// MSA.1 - Acknowledgment Code.
+        /// <para>Suggested: 0008 Acknowledgment Code -&gt; ClearHl7.Codes.V251.CodeAcknowledgmentCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0008</remarks>
         public string AcknowledgmentCode { get; set; }
 
         /// <summary>
@@ -46,8 +46,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// MSA.6 - Error Condition.
+        /// <para>Suggested: 0357 Message Error Condition Codes -&gt; ClearHl7.Codes.V251.CodeMessageErrorConditionCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0357</remarks>
         public CodedElement ErrorCondition { get; set; }
 
         /// <summary>

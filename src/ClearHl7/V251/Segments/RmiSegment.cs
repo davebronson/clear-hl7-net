@@ -21,8 +21,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// RMI.1 - Risk Management Incident Code.
+        /// <para>Suggested: 0427 Risk Management Incident Code -&gt; ClearHl7.Codes.V251.CodeRiskManagementIncidentCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0427</remarks>
         public CodedElement RiskManagementIncidentCode { get; set; }
 
         /// <summary>
@@ -32,8 +32,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// RMI.3 - Incident Type Code.
+        /// <para>Suggested: 0428 Incident Type Code -&gt; ClearHl7.Codes.V251.CodeIncidentTypeCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0428</remarks>
         public CodedElement IncidentTypeCode { get; set; }
         
         /// <summary>

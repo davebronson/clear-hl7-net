@@ -26,14 +26,14 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// QRI.2 - Match Reason Code.
+        /// <para>Suggested: 0392 Match Reason -&gt; ClearHl7.Codes.V251.CodeMatchReason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0392</remarks>
         public IEnumerable<string> MatchReasonCode { get; set; }
 
         /// <summary>
         /// QRI.3 - Algorithm Descriptor.
+        /// <para>Suggested: 0393 Match Algorithms -&gt; ClearHl7.Codes.V251.CodeMatchAlgorithms</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0393</remarks>
         public CodedElement AlgorithmDescriptor { get; set; }
         
         /// <summary>

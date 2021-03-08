@@ -23,20 +23,20 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// MFI.1 - Master File Identifier.
+        /// <para>Suggested: 0175 Master File Identifier Code -&gt; ClearHl7.Codes.V251.CodeMasterFileIdentifierCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0175</remarks>
         public CodedElement MasterFileIdentifier { get; set; }
 
         /// <summary>
         /// MFI.2 - Master File Application Identifier.
+        /// <para>Suggested: 0361 Application</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0361</remarks>
         public IEnumerable<HierarchicDesignator> MasterFileApplicationIdentifier { get; set; }
 
         /// <summary>
         /// MFI.3 - File-Level Event Code.
+        /// <para>Suggested: 0178 File Level Event Code -&gt; ClearHl7.Codes.V251.CodeFileLevelEventCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0178</remarks>
         public string FileLevelEventCode { get; set; }
 
         /// <summary>
@@ -51,8 +51,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// MFI.6 - Response Level Code.
+        /// <para>Suggested: 0179 Response Level -&gt; ClearHl7.Codes.V251.CodeResponseLevel</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0179</remarks>
         public string ResponseLevelCode { get; set; }
         
         /// <summary>

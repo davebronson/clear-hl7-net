@@ -20,26 +20,26 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// RXR.1 - Route.
+        /// <para>Suggested: 0162 Route Of Administration -&gt; ClearHl7.Codes.V251.CodeRouteOfAdministration</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0162</remarks>
         public CodedElement Route { get; set; }
 
         /// <summary>
         /// RXR.2 - Administration Site.
+        /// <para>Suggested: 0163 Body Site -&gt; ClearHl7.Codes.V251.CodeBodySite</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0163</remarks>
         public CodedWithExceptions AdministrationSite { get; set; }
 
         /// <summary>
         /// RXR.3 - Administration Device.
+        /// <para>Suggested: 0164 Administration Device -&gt; ClearHl7.Codes.V251.CodeAdministrationDevice</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0164</remarks>
         public CodedElement AdministrationDevice { get; set; }
 
         /// <summary>
         /// RXR.4 - Administration Method.
+        /// <para>Suggested: 0165 Administration Method -&gt; ClearHl7.Codes.V251.CodeAdministrationMethod</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0165</remarks>
         public CodedWithExceptions AdministrationMethod { get; set; }
 
         /// <summary>
@@ -49,8 +49,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// RXR.6 - Administration Site Modifier.
+        /// <para>Suggested: 0495 Body Site Modifier -&gt; ClearHl7.Codes.V251.CodeBodySiteModifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0495</remarks>
         public CodedWithExceptions AdministrationSiteModifier { get; set; }
         
         /// <summary>

@@ -28,8 +28,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// AIS.2 - Segment Action Code.
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Codes.V251.CodeSegmentActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0206</remarks>
         public string SegmentActionCode { get; set; }
 
         /// <summary>
@@ -64,26 +64,26 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// AIS.9 - Allow Substitution Code.
+        /// <para>Suggested: 0279 Allow Substitution Codes -&gt; ClearHl7.Codes.V251.CodeAllowSubstitutionCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0279</remarks>
         public string AllowSubstitutionCode { get; set; }
 
         /// <summary>
         /// AIS.10 - Filler Status Code.
+        /// <para>Suggested: 0278 Filler Status Codes -&gt; ClearHl7.Codes.V251.CodeFillerStatusCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0278</remarks>
         public CodedElement FillerStatusCode { get; set; }
 
         /// <summary>
         /// AIS.11 - Placer Supplemental Service Information.
+        /// <para>Suggested: 0411 Supplemental Service Information Values -&gt; ClearHl7.Codes.V251.CodeSupplementalServiceInformationValues</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0411</remarks>
         public IEnumerable<CodedElement> PlacerSupplementalServiceInformation { get; set; }
 
         /// <summary>
         /// AIS.12 - Filler Supplemental Service Information.
+        /// <para>Suggested: 0411 Supplemental Service Information Values -&gt; ClearHl7.Codes.V251.CodeSupplementalServiceInformationValues</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0411</remarks>
         public IEnumerable<CodedElement> FillerSupplementalServiceInformation { get; set; }
 
         /// <summary>

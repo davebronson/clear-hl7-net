@@ -32,8 +32,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// UB2.3 - Condition Code (24-30).
+        /// <para>Suggested: 0043 Condition Code -&gt; ClearHl7.Codes.V251.CodeConditionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0043</remarks>
         public IEnumerable<string> ConditionCode24To30 { get; set; }
 
         /// <summary>

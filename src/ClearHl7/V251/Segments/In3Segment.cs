@@ -38,8 +38,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// IN3.4 - Certification Required.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V251.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string CertificationRequired { get; set; }
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// IN3.12 - Non-Concur Code/Description.
+        /// <para>Suggested: 0233 Non-Concur Code/Description</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0233</remarks>
         public CodedElement NonConcurCodeDescription { get; set; }
 
         /// <summary>
@@ -90,8 +90,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// IN3.14 - Physician Reviewer.
+        /// <para>Suggested: 0010 Physician ID</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0010</remarks>
         public IEnumerable<ExtendedCompositeIdNumberAndNameForPersons> PhysicianReviewer { get; set; }
 
         /// <summary>
@@ -106,14 +106,14 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// IN3.17 - Appeal Reason.
+        /// <para>Suggested: 0345 Appeal Reason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0345</remarks>
         public CodedElement AppealReason { get; set; }
 
         /// <summary>
         /// IN3.18 - Certification Agency.
+        /// <para>Suggested: 0346 Certification Agency</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0346</remarks>
         public CodedElement CertificationAgency { get; set; }
 
         /// <summary>
@@ -138,20 +138,20 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// IN3.23 - Second Opinion Status.
+        /// <para>Suggested: 0151 Second Opinion Status</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0151</remarks>
         public string SecondOpinionStatus { get; set; }
 
         /// <summary>
         /// IN3.24 - Second Opinion Documentation Received.
+        /// <para>Suggested: 0152 Second Opinion Documentation Received</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0152</remarks>
         public IEnumerable<string> SecondOpinionDocumentationReceived { get; set; }
 
         /// <summary>
         /// IN3.25 - Second Opinion Physician.
+        /// <para>Suggested: 0010 Physician ID</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0010</remarks>
         public IEnumerable<ExtendedCompositeIdNumberAndNameForPersons> SecondOpinionPhysician { get; set; }
 
         /// <summary>

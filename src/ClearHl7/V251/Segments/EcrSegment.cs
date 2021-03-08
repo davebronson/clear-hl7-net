@@ -23,8 +23,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// ECR.1 - Command Response.
+        /// <para>Suggested: 0387 Command Response -&gt; ClearHl7.Codes.V251.CodeCommandResponse</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0387</remarks>
         public CodedElement CommandResponse { get; set; }
 
         /// <summary>

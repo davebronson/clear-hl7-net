@@ -24,8 +24,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// DSC.2 - Continuation Style.
+        /// <para>Suggested: 0398 Continuation Style Code -&gt; ClearHl7.Codes.V251.CodeContinuationStyleCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0398</remarks>
         public string ContinuationStyle { get; set; }
         
         /// <summary>

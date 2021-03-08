@@ -21,8 +21,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// PTH.1 - Action Code.
+        /// <para>Suggested: 0287 Problem/Goal Action Code -&gt; ClearHl7.Codes.V251.CodeProblemGoalActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0287</remarks>
         public string ActionCode { get; set; }
 
         /// <summary>

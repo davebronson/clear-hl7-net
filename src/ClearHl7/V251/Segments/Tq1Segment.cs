@@ -33,8 +33,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// TQ1.3 - Repeat Pattern.
+        /// <para>Suggested: 0335 Repeat Pattern -&gt; ClearHl7.Codes.V251.CodeRepeatPattern</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0335</remarks>
         public IEnumerable<RepeatPattern> RepeatPattern { get; set; }
 
         /// <summary>
@@ -64,8 +64,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// TQ1.9 - Priority.
+        /// <para>Suggested: 0485 Extended Priority Codes -&gt; ClearHl7.Codes.V251.CodeExtendedPriorityCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0485</remarks>
         public IEnumerable<CodedWithExceptions> Priority { get; set; }
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// TQ1.12 - Conjunction.
+        /// <para>Suggested: 0427 Risk Management Incident Code -&gt; ClearHl7.Codes.V251.CodeRiskManagementIncidentCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0427</remarks>
         public string Conjunction { get; set; }
 
         /// <summary>

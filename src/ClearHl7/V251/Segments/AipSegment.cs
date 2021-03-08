@@ -28,8 +28,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// AIP.2 - Segment Action Code.
+        /// <para>Suggested: 0206 Segment Action Code -&gt; ClearHl7.Codes.V251.CodeSegmentActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0206</remarks>
         public string SegmentActionCode { get; set; }
 
         /// <summary>
@@ -39,8 +39,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// AIP.4 - Resource Type.
+        /// <para>Suggested: 0182 Staff Type</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0182</remarks>
         public CodedElement ResourceType { get; set; }
 
         /// <summary>
@@ -75,14 +75,14 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// AIP.11 - Allow Substitution Code.
+        /// <para>Suggested: 0279 Allow Substitution Codes -&gt; ClearHl7.Codes.V251.CodeAllowSubstitutionCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0279</remarks>
         public string AllowSubstitutionCode { get; set; }
 
         /// <summary>
         /// AIP.12 - Filler Status Code.
+        /// <para>Suggested: 0278 Filler Status Codes -&gt; ClearHl7.Codes.V251.CodeFillerStatusCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0278</remarks>
         public CodedElement FillerStatusCode { get; set; }
 
         /// <summary>

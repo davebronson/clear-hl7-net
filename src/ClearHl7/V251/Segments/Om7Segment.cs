@@ -33,8 +33,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// OM7.3 - Category Identifier.
+        /// <para>Suggested: 0412 Category Identifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0412</remarks>
         public IEnumerable<CodedElement> CategoryIdentifier { get; set; }
 
         /// <summary>
@@ -69,19 +69,20 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// OM7.10 - Test/Service Default Frequency.
+        /// <para>Suggested: 0335 Repeat Pattern -&gt; ClearHl7.Codes.V251.CodeRepeatPattern</para>
         /// </summary>
         public string TestServiceDefaultFrequency { get; set; }
 
         /// <summary>
         /// OM7.11 - Consent Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V251.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string ConsentIndicator { get; set; }
 
         /// <summary>
         /// OM7.12 - Consent Identifier.
+        /// <para>Suggested: 0413 Consent Identifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0413</remarks>
         public CodedElement ConsentIdentifier { get; set; }
 
         /// <summary>
@@ -101,8 +102,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// OM7.16 - Consent Interval Units.
+        /// <para>Suggested: 0414 Units Of Time</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0414</remarks>
         public CodedElement ConsentIntervalUnits { get; set; }
 
         /// <summary>
@@ -112,8 +113,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// OM7.18 - Consent Waiting Period Units.
+        /// <para>Suggested: 0414 Units Of Time</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0414</remarks>
         public CodedElement ConsentWaitingPeriodUnits { get; set; }
 
         /// <summary>
@@ -133,20 +134,20 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// OM7.22 - Formulary Status.
+        /// <para>Suggested: 0473 Formulary Status -&gt; ClearHl7.Codes.V251.CodeFormularyStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0473</remarks>
         public string FormularyStatus { get; set; }
 
         /// <summary>
         /// OM7.23 - Special Order Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V251.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string SpecialOrderIndicator { get; set; }
 
         /// <summary>
         /// OM7.24 - Primary Key Value - CDM.
+        /// <para>Suggested: 0132 Transaction Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0132</remarks>
         public IEnumerable<CodedElement> PrimaryKeyValueCdm { get; set; }
 
         /// <summary>

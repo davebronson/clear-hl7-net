@@ -28,8 +28,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// PV2.2 - Accommodation Code.
+        /// <para>Suggested: 0129 Accomodation Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0129</remarks>
         public CodedElement AccommodationCode { get; set; }
 
         /// <summary>
@@ -54,8 +54,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// PV2.7 - Visit User Code.
+        /// <para>Suggested: 0130 Visit User Code -&gt; ClearHl7.Codes.V251.CodeVisitUserCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0130</remarks>
         public IEnumerable<string> VisitUserCode { get; set; }
 
         /// <summary>
@@ -95,14 +95,14 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// PV2.15 - Employment Illness Related Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V251.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string EmploymentIllnessRelatedIndicator { get; set; }
 
         /// <summary>
         /// PV2.16 - Purge Status Code.
+        /// <para>Suggested: 0213 Purge Status Code -&gt; ClearHl7.Codes.V251.CodePurgeStatusCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0213</remarks>
         public string PurgeStatusCode { get; set; }
 
         /// <summary>
@@ -112,14 +112,14 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// PV2.18 - Special Program Code.
+        /// <para>Suggested: 0214 Special Program Code -&gt; ClearHl7.Codes.V251.CodeSpecialProgramCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0214</remarks>
         public string SpecialProgramCode { get; set; }
 
         /// <summary>
         /// PV2.19 - Retention Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V251.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string RetentionIndicator { get; set; }
 
         /// <summary>
@@ -129,14 +129,14 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// PV2.21 - Visit Publicity Code.
+        /// <para>Suggested: 0215 Publicity Code -&gt; ClearHl7.Codes.V251.CodePublicityCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0215</remarks>
         public string VisitPublicityCode { get; set; }
 
         /// <summary>
         /// PV2.22 - Visit Protection Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V251.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string VisitProtectionIndicator { get; set; }
 
         /// <summary>
@@ -146,14 +146,14 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// PV2.24 - Patient Status Code.
+        /// <para>Suggested: 0216 Patient Status Code -&gt; ClearHl7.Codes.V251.CodePatientStatusCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0216</remarks>
         public string PatientStatusCode { get; set; }
 
         /// <summary>
         /// PV2.25 - Visit Priority Code.
+        /// <para>Suggested: 0217 Visit Priority Code -&gt; ClearHl7.Codes.V251.CodeVisitPriorityCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0217</remarks>
         public string VisitPriorityCode { get; set; }
 
         /// <summary>
@@ -163,8 +163,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// PV2.27 - Expected Discharge Disposition.
+        /// <para>Suggested: 0112 Discharge Disposition</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0112</remarks>
         public string ExpectedDischargeDisposition { get; set; }
 
         /// <summary>
@@ -179,20 +179,20 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// PV2.30 - Patient Charge Adjustment Code.
+        /// <para>Suggested: 0218 Patient Charge Adjustment</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0218</remarks>
         public CodedElement PatientChargeAdjustmentCode { get; set; }
 
         /// <summary>
         /// PV2.31 - Recurring Service Code.
+        /// <para>Suggested: 0219 Recurring Service Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0219</remarks>
         public string RecurringServiceCode { get; set; }
 
         /// <summary>
         /// PV2.32 - Billing Media Code.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V251.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string BillingMediaCode { get; set; }
 
         /// <summary>
@@ -202,74 +202,74 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// PV2.34 - Military Partnership Code.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V251.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string MilitaryPartnershipCode { get; set; }
 
         /// <summary>
         /// PV2.35 - Military Non-Availability Code.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V251.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string MilitaryNonAvailabilityCode { get; set; }
 
         /// <summary>
         /// PV2.36 - Newborn Baby Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V251.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string NewbornBabyIndicator { get; set; }
 
         /// <summary>
         /// PV2.37 - Baby Detained Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V251.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string BabyDetainedIndicator { get; set; }
 
         /// <summary>
         /// PV2.38 - Mode of Arrival Code.
+        /// <para>Suggested: 0430 Mode Of Arrival Code -&gt; ClearHl7.Codes.V251.CodeModeOfArrivalCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0430</remarks>
         public CodedElement ModeOfArrivalCode { get; set; }
 
         /// <summary>
         /// PV2.39 - Recreational Drug Use Code.
+        /// <para>Suggested: 0431 Recreational Drug Use Code -&gt; ClearHl7.Codes.V251.CodeRecreationalDrugUseCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0431</remarks>
         public IEnumerable<CodedElement> RecreationalDrugUseCode { get; set; }
 
         /// <summary>
         /// PV2.40 - Admission Level of Care Code.
+        /// <para>Suggested: 0432 Admission Level Of Care Code -&gt; ClearHl7.Codes.V251.CodeAdmissionLevelOfCareCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0432</remarks>
         public CodedElement AdmissionLevelOfCareCode { get; set; }
 
         /// <summary>
         /// PV2.41 - Precaution Code.
+        /// <para>Suggested: 0433 Precaution Code -&gt; ClearHl7.Codes.V251.CodePrecautionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0433</remarks>
         public IEnumerable<CodedElement> PrecautionCode { get; set; }
 
         /// <summary>
         /// PV2.42 - Patient Condition Code.
+        /// <para>Suggested: 0434 Patient Condition Code -&gt; ClearHl7.Codes.V251.CodePatientConditionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0434</remarks>
         public CodedElement PatientConditionCode { get; set; }
 
         /// <summary>
         /// PV2.43 - Living Will Code.
+        /// <para>Suggested: 0315 Living Will Code -&gt; ClearHl7.Codes.V251.CodeLivingWillCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0315</remarks>
         public string LivingWillCode { get; set; }
 
         /// <summary>
         /// PV2.44 - Organ Donor Code.
+        /// <para>Suggested: 0316 Organ Donor Code -&gt; ClearHl7.Codes.V251.CodeOrganDonorCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0316</remarks>
         public string OrganDonorCode { get; set; }
 
         /// <summary>
         /// PV2.45 - Advance Directive Code.
+        /// <para>Suggested: 0435 Advance Directive Code -&gt; ClearHl7.Codes.V251.CodeAdvanceDirectiveCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0435</remarks>
         public IEnumerable<CodedElement> AdvanceDirectiveCode { get; set; }
 
         /// <summary>
@@ -289,8 +289,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// PV2.49 - Notify Clergy Code.
+        /// <para>Suggested: 0534 Notify Clergy Code -&gt; ClearHl7.Codes.V251.CodeNotifyClergyCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0534</remarks>
         public IEnumerable<string> NotifyClergyCode { get; set; }
 
         /// <summary>

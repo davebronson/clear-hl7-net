@@ -28,8 +28,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// RXD.2 - Dispense/Give Code.
+        /// <para>Suggested: 0292 Vaccines Administered -&gt; ClearHl7.Codes.V251.CodeVaccinesAdministered</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0292</remarks>
         public CodedElement DispenseGiveCode { get; set; }
 
         /// <summary>
@@ -74,8 +74,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// RXD.11 - Substitution Status.
+        /// <para>Suggested: 0167 Substitution Status -&gt; ClearHl7.Codes.V251.CodeSubstitutionStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0167</remarks>
         public string SubstitutionStatus { get; set; }
 
         /// <summary>
@@ -90,8 +90,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// RXD.14 - Needs Human Review.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V251.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string NeedsHumanReview { get; set; }
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// RXD.20 - Substance Manufacturer Name.
+        /// <para>Suggested: 0227 Manufacturers Of Vaccines (code=MVX) -&gt; ClearHl7.Codes.V251.CodeManufacturersOfVaccines</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0227</remarks>
         public IEnumerable<CodedElement> SubstanceManufacturerName { get; set; }
 
         /// <summary>
@@ -142,8 +142,8 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// RXD.24 - Dispense Package Method.
+        /// <para>Suggested: 0321 Dispense Method -&gt; ClearHl7.Codes.V251.CodeDispenseMethod</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0321</remarks>
         public string DispensePackageMethod { get; set; }
 
         /// <summary>
@@ -183,14 +183,14 @@ namespace ClearHl7.V251.Segments
 
         /// <summary>
         /// RXD.32 - Pharmacy Order Type.
+        /// <para>Suggested: 0480 Pharmacy Order Types -&gt; ClearHl7.Codes.V251.CodePharmacyOrderTypes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0480</remarks>
         public string PharmacyOrderType { get; set; }
 
         /// <summary>
         /// RXD.33 - Dispense Type.
+        /// <para>Suggested: 0484 Dispense Type -&gt; ClearHl7.Codes.V251.CodeDispenseType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0484</remarks>
         public CodedWithExceptions DispenseType { get; set; }
 
         /// <summary>
