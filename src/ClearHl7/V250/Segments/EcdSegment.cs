@@ -27,14 +27,14 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// ECD.2 - Remote Control Command.
+        /// <para>Suggested: 0368 Remote Control Command -&gt; ClearHl7.Codes.V250.CodeRemoteControlCommand</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0368</remarks>
         public CodedElement RemoteControlCommand { get; set; }
 
         /// <summary>
         /// ECD.3 - Response Required.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V250.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string ResponseRequired { get; set; }
 
         /// <summary>

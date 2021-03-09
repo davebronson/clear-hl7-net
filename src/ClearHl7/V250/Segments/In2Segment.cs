@@ -38,14 +38,14 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// IN2.4 - Employer Information Data.
+        /// <para>Suggested: 0139 Employer Information Data</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0139</remarks>
         public string EmployerInformationData { get; set; }
 
         /// <summary>
         /// IN2.5 - Mail Claim Party.
+        /// <para>Suggested: 0137 Mail Claim Party -&gt; ClearHl7.Codes.V250.CodeMailClaimParty</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0137</remarks>
         public IEnumerable<string> MailClaimParty { get; set; }
 
         /// <summary>
@@ -75,8 +75,8 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// IN2.11 - Dependent Of Military Recipient.
+        /// <para>Suggested: 0342 Military Recipient</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0342</remarks>
         public CodedElement DependentOfMilitaryRecipient { get; set; }
 
         /// <summary>
@@ -91,20 +91,20 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// IN2.14 - Military Service.
+        /// <para>Suggested: 0140 Military Service -&gt; ClearHl7.Codes.V250.CodeMilitaryService</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0140</remarks>
         public string MilitaryService { get; set; }
 
         /// <summary>
         /// IN2.15 - Military Rank/Grade.
+        /// <para>Suggested: 0141 Military Rank/Grade -&gt; ClearHl7.Codes.V250.CodeMilitaryRankGrade</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0141</remarks>
         public string MilitaryRankGrade { get; set; }
 
         /// <summary>
         /// IN2.16 - Military Status.
+        /// <para>Suggested: 0142 Military Status -&gt; ClearHl7.Codes.V250.CodeMilitaryStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0142</remarks>
         public string MilitaryStatus { get; set; }
 
         /// <summary>
@@ -114,20 +114,20 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// IN2.18 - Military Non-Avail Cert On File.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V250.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string MilitaryNonAvailCertOnFile { get; set; }
 
         /// <summary>
         /// IN2.19 - Baby Coverage.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V250.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string BabyCoverage { get; set; }
 
         /// <summary>
         /// IN2.20 - Combine Baby Bill.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V250.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string CombineBabyBill { get; set; }
 
         /// <summary>
@@ -147,8 +147,8 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// IN2.24 - Non-Covered Insurance Code.
+        /// <para>Suggested: 0143 Non-Covered Insurance Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0143</remarks>
         public IEnumerable<string> NonCoveredInsuranceCode { get; set; }
 
         /// <summary>
@@ -163,8 +163,8 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// IN2.27 - Eligibility Source.
+        /// <para>Suggested: 0144 Eligibility Source -&gt; ClearHl7.Codes.V250.CodeEligibilitySource</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0144</remarks>
         public string EligibilitySource { get; set; }
 
         /// <summary>
@@ -184,56 +184,56 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// IN2.31 - Living Dependency.
+        /// <para>Suggested: 0223 Living Dependency -&gt; ClearHl7.Codes.V250.CodeLivingDependency</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0223</remarks>
         public string LivingDependency { get; set; }
 
         /// <summary>
         /// IN2.32 - Ambulatory Status.
+        /// <para>Suggested: 0009 Ambulatory Status -&gt; ClearHl7.Codes.V250.CodeAmbulatoryStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0009</remarks>
         public IEnumerable<string> AmbulatoryStatus { get; set; }
 
         /// <summary>
         /// IN2.33 - Citizenship.
+        /// <para>Suggested: 0171 Citizenship</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0171</remarks>
         public IEnumerable<CodedElement> Citizenship { get; set; }
 
         /// <summary>
         /// IN2.34 - Primary Language.
+        /// <para>Suggested: 0296 Primary Language</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0296</remarks>
         public CodedElement PrimaryLanguage { get; set; }
 
         /// <summary>
         /// IN2.35 - Living Arrangement.
+        /// <para>Suggested: 0220 Living Arrangement -&gt; ClearHl7.Codes.V250.CodeLivingArrangement</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0220</remarks>
         public string LivingArrangement { get; set; }
 
         /// <summary>
         /// IN2.36 - Publicity Code.
+        /// <para>Suggested: 0215 Publicity Code -&gt; ClearHl7.Codes.V250.CodePublicityCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0215</remarks>
         public CodedElement PublicityCode { get; set; }
 
         /// <summary>
         /// IN2.37 - Protection Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V250.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string ProtectionIndicator { get; set; }
 
         /// <summary>
         /// IN2.38 - Student Indicator.
+        /// <para>Suggested: 0231 Student Status -&gt; ClearHl7.Codes.V250.CodeStudentStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0231</remarks>
         public string StudentIndicator { get; set; }
 
         /// <summary>
         /// IN2.39 - Religion.
+        /// <para>Suggested: 0006 Religion -&gt; ClearHl7.Codes.V250.CodeReligion</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0006</remarks>
         public CodedElement Religion { get; set; }
 
         /// <summary>
@@ -243,20 +243,20 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// IN2.41 - Nationality.
+        /// <para>Suggested: 0212 Nationality</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0212</remarks>
         public CodedElement Nationality { get; set; }
 
         /// <summary>
         /// IN2.42 - Ethnic Group.
+        /// <para>Suggested: 0189 Ethnic Group -&gt; ClearHl7.Codes.V250.CodeEthnicGroup</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0189</remarks>
         public IEnumerable<CodedElement> EthnicGroup { get; set; }
 
         /// <summary>
         /// IN2.43 - Marital Status.
+        /// <para>Suggested: 0002 Marital Status -&gt; ClearHl7.Codes.V250.CodeMaritalStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0002</remarks>
         public IEnumerable<CodedElement> MaritalStatus { get; set; }
 
         /// <summary>
@@ -281,8 +281,8 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// IN2.48 - Job Status.
+        /// <para>Suggested: 0311 Job Status -&gt; ClearHl7.Codes.V250.CodeJobStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0311</remarks>
         public string JobStatus { get; set; }
 
         /// <summary>
@@ -297,8 +297,8 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// IN2.51 - Employer Contact Reason.
+        /// <para>Suggested: 0222 Contact Reason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0222</remarks>
         public string EmployerContactReason { get; set; }
 
         /// <summary>
@@ -313,8 +313,8 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// IN2.54 - Insured's Contact Person Reason.
+        /// <para>Suggested: 0222 Contact Reason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0222</remarks>
         public IEnumerable<string> InsuredsContactPersonReason { get; set; }
 
         /// <summary>
@@ -329,8 +329,8 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// IN2.57 - Insurance Co Contact Reason.
+        /// <para>Suggested: 0232 Insurance Company Contact Reason -&gt; ClearHl7.Codes.V250.CodeInsuranceCompanyContactReason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0232</remarks>
         public string InsuranceCoContactReason { get; set; }
 
         /// <summary>
@@ -340,14 +340,14 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// IN2.59 - Policy Scope.
+        /// <para>Suggested: 0312 Policy Scope</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0312</remarks>
         public string PolicyScope { get; set; }
 
         /// <summary>
         /// IN2.60 - Policy Source.
+        /// <para>Suggested: 0313 Policy Source</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0313</remarks>
         public string PolicySource { get; set; }
 
         /// <summary>
@@ -357,8 +357,8 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// IN2.62 - Guarantor's Relationship to Insured.
+        /// <para>Suggested: 0063 Relationship -&gt; ClearHl7.Codes.V250.CodeRelationship</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0063</remarks>
         public CodedElement GuarantorsRelationshipToInsured { get; set; }
 
         /// <summary>
@@ -373,26 +373,26 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// IN2.65 - Military Handicapped Program.
+        /// <para>Suggested: 0343 Military Handicapped Program Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0343</remarks>
         public CodedElement MilitaryHandicappedProgram { get; set; }
 
         /// <summary>
         /// IN2.66 - Suspend Flag.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V250.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string SuspendFlag { get; set; }
 
         /// <summary>
         /// IN2.67 - Copay Limit Flag.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V250.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string CopayLimitFlag { get; set; }
 
         /// <summary>
         /// IN2.68 - Stoploss Limit Flag.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V250.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string StoplossLimitFlag { get; set; }
 
         /// <summary>
@@ -407,14 +407,14 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// IN2.71 - Race.
+        /// <para>Suggested: 0005 Race -&gt; ClearHl7.Codes.V250.CodeRace</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0005</remarks>
         public IEnumerable<CodedElement> Race { get; set; }
 
         /// <summary>
         /// IN2.72 - Patient's Relationship to Insured.
+        /// <para>Suggested: 0344 Patient's Relationship to Insured -&gt; ClearHl7.Codes.V250.CodePatientsRelationshiptoInsured</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0344</remarks>
         public CodedElement PatientsRelationshipToInsured { get; set; }
         
         /// <summary>

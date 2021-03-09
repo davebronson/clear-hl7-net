@@ -22,8 +22,8 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// CDM.1 - Primary Key Value - CDM.
+        /// <para>Suggested: 0132 Transaction Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0132</remarks>
         public CodedElement PrimaryKeyValueCdm { get; set; }
 
         /// <summary>
@@ -43,8 +43,8 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// CDM.5 - Description Override Indicator.
+        /// <para>Suggested: 0268 Override -&gt; ClearHl7.Codes.V250.CodeOverride</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0268</remarks>
         public string DescriptionOverrideIndicator { get; set; }
 
         /// <summary>
@@ -55,20 +55,20 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// CDM.7 - Procedure Code.
+        /// <para>Suggested: 0088 Procedure Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0088</remarks>
         public IEnumerable<CodedElement> ProcedureCode { get; set; }
 
         /// <summary>
         /// CDM.8 - Active/Inactive Flag.
+        /// <para>Suggested: 0183 Active/Inactive -&gt; ClearHl7.Codes.V250.CodeActiveInactive</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0183</remarks>
         public string ActiveInactiveFlag { get; set; }
 
         /// <summary>
         /// CDM.9 - Inventory Number.
+        /// <para>Suggested: 0463 Inventory Number</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0463</remarks>
         public IEnumerable<CodedElement> InventoryNumber { get; set; }
 
         /// <summary>
@@ -88,8 +88,8 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// CDM.13 - Room Fee Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V250.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string RoomFeeIndicator { get; set; }
 
         /// <summary>

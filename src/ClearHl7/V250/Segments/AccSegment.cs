@@ -26,8 +26,8 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// ACC.2 - Accident Code.
+        /// <para>Suggested: 0050 Accident Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0050</remarks>
         public CodedElement AccidentCode { get; set; }
 
         /// <summary>
@@ -37,20 +37,20 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// ACC.4 - Auto Accident State.
+        /// <para>Suggested: 0347 State/Province</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0347</remarks>
         public CodedElement AutoAccidentState { get; set; }
 
         /// <summary>
         /// ACC.5 - Accident Job Related Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V250.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string AccidentJobRelatedIndicator { get; set; }
 
         /// <summary>
         /// ACC.6 - Accident Death Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V250.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string AccidentDeathIndicator { get; set; }
 
         /// <summary>
@@ -70,8 +70,8 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// ACC.10 - Police Notified Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V250.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string PoliceNotifiedIndicator { get; set; }
 
         /// <summary>

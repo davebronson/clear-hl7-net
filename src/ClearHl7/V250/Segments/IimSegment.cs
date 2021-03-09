@@ -88,14 +88,14 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// IIM.14 - Procedure Code.
+        /// <para>Suggested: 0088 Procedure Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0088</remarks>
         public CodedElement ProcedureCode { get; set; }
 
         /// <summary>
         /// IIM.15 - Procedure Code Modifier.
+        /// <para>Suggested: 0340 Procedure Code Modifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0340</remarks>
         public IEnumerable<CodedElement> ProcedureCodeModifier { get; set; }
         
         /// <summary>

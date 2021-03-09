@@ -20,8 +20,8 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// NSC.1 - Application Change Type.
+        /// <para>Suggested: 0409 Application Change Type -&gt; ClearHl7.Codes.V250.CodeApplicationChangeType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0409</remarks>
         public string ApplicationChangeType { get; set; }
 
         /// <summary>

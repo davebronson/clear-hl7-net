@@ -27,20 +27,20 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// LAN.2 - Language Code.
+        /// <para>Suggested: 0296 Primary Language</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0296</remarks>
         public CodedElement LanguageCode { get; set; }
 
         /// <summary>
         /// LAN.3 - Language Ability Code.
+        /// <para>Suggested: 0403 Language Ability -&gt; ClearHl7.Codes.V250.CodeLanguageAbility</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0403</remarks>
         public IEnumerable<CodedElement> LanguageAbilityCode { get; set; }
 
         /// <summary>
         /// LAN.4 - Language Proficiency Code.
+        /// <para>Suggested: 0404 Language Proficiency -&gt; ClearHl7.Codes.V250.CodeLanguageProficiency</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0404</remarks>
         public CodedElement LanguageProficiencyCode { get; set; }
         
         /// <summary>

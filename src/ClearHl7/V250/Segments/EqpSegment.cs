@@ -20,9 +20,9 @@ namespace ClearHl7.V250.Segments
         public int Ordinal { get; set; }
 
         /// <summary>
-        /// EQP.1 - Event type.
+        /// EQP.1 - Event Type.
+        /// <para>Suggested: 0450 Event Type -&gt; ClearHl7.Codes.V250.CodeEventType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0450</remarks>
         public CodedElement EventType { get; set; }
 
         /// <summary>

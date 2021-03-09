@@ -23,26 +23,26 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// PRC.1 - Primary Key Value - PRC.
+        /// <para>Suggested: 0132 Transaction Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0132</remarks>
         public CodedElement PrimaryKeyValuePrc { get; set; }
 
         /// <summary>
         /// PRC.2 - Facility ID - PRC.
+        /// <para>Suggested: 0464 Facility ID</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0464</remarks>
         public IEnumerable<CodedElement> FacilityIdPrc { get; set; }
 
         /// <summary>
         /// PRC.3 - Department.
+        /// <para>Suggested: 0184 Department</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0184</remarks>
         public IEnumerable<CodedElement> Department { get; set; }
 
         /// <summary>
         /// PRC.4 - Valid Patient Classes.
+        /// <para>Suggested: 0004 Patient Class  -&gt; ClearHl7.Codes.V250.CodePatientClass</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0004</remarks>
         public IEnumerable<string> ValidPatientClasses { get; set; }
 
         /// <summary>
@@ -87,26 +87,26 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// PRC.13 - Price Override Flag.
+        /// <para>Suggested: 0268 Override -&gt; ClearHl7.Codes.V250.CodeOverride</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0268</remarks>
         public string PriceOverrideFlag { get; set; }
 
         /// <summary>
         /// PRC.14 - Billing Category.
+        /// <para>Suggested: 0293 Billing Category</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0293</remarks>
         public IEnumerable<CodedElement> BillingCategory { get; set; }
 
         /// <summary>
         /// PRC.15 - Chargeable Flag.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V250.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string ChargeableFlag { get; set; }
 
         /// <summary>
         /// PRC.16 - Active/Inactive Flag.
+        /// <para>Suggested: 0183 Active/Inactive -&gt; ClearHl7.Codes.V250.CodeActiveInactive</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0183</remarks>
         public string ActiveInactiveFlag { get; set; }
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// PRC.18 - Charge on Indicator.
+        /// <para>Suggested: 0269 Charge On Indicator -&gt; ClearHl7.Codes.V250.CodeChargeOnIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0269</remarks>
         public string ChargeOnIndicator { get; set; }
         
         /// <summary>
