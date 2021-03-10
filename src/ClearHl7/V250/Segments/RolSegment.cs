@@ -28,14 +28,14 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// ROL.2 - Action Code.
+        /// <para>Suggested: 0287 Problem/Goal Action Code -&gt; ClearHl7.Codes.V250.CodeProblemGoalActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0287</remarks>
         public string ActionCode { get; set; }
 
         /// <summary>
         /// ROL.3 - Role-ROL.
+        /// <para>Suggested: 0443 Provider Role -&gt; ClearHl7.Codes.V250.CodeProviderRole</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0443</remarks>
         public CodedElement RoleRol { get; set; }
 
         /// <summary>
@@ -70,8 +70,8 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// ROL.10 - Organization Unit Type.
+        /// <para>Suggested: 0406 Participant Organization Unit Type -&gt; ClearHl7.Codes.V250.CodeParticipantOrganizationUnitType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0406</remarks>
         public CodedElement OrganizationUnitType { get; set; }
 
         /// <summary>

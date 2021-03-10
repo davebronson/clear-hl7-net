@@ -27,8 +27,8 @@ namespace ClearHl7.V250.Segments
 
         /// <summary>
         /// VTQ.2 - Query/Response Format Code.
+        /// <para>Suggested: 0106 Query/Response Format Code -&gt; ClearHl7.Codes.V250.CodeQueryResponseFormatCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0106</remarks>
         public string QueryResponseFormatCode { get; set; }
 
         /// <summary>
