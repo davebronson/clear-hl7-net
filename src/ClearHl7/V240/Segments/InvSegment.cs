@@ -23,20 +23,20 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// INV.1 - Substance Identifier.
+        /// <para>Suggested: 0451 Substance Identifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0451</remarks>
         public CodedElement SubstanceIdentifier { get; set; }
 
         /// <summary>
         /// INV.2 - Substance Status.
+        /// <para>Suggested: 0383 Substance Status -&gt; ClearHl7.Codes.V240.CodeSubstanceStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0383</remarks>
         public IEnumerable<CodedElement> SubstanceStatus { get; set; }
 
         /// <summary>
         /// INV.3 - Substance Type.
+        /// <para>Suggested: 0384 Substance Type -&gt; ClearHl7.Codes.V240.CodeSubstanceType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0384</remarks>
         public CodedElement SubstanceType { get; set; }
 
         /// <summary>
@@ -106,14 +106,14 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// INV.17 - Manufacturer Identifier.
+        /// <para>Suggested: 0385 Manufacturer Identifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0385</remarks>
         public CodedElement ManufacturerIdentifier { get; set; }
 
         /// <summary>
         /// INV.18 - Supplier Identifier.
+        /// <para>Suggested: 0386 Supplier Identifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0386</remarks>
         public CodedElement SupplierIdentifier { get; set; }
 
         /// <summary>

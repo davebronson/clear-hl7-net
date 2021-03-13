@@ -73,8 +73,8 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// OBR.11 - Specimen Action Code.
+        /// <para>Suggested: 0065 Specimen Action Code -&gt; ClearHl7.Codes.V240.CodeSpecimenActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0065</remarks>
         public string SpecimenActionCode { get; set; }
 
         /// <summary>
@@ -94,6 +94,7 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// OBR.15 - Specimen Source.
+        /// <para>Suggested: 0070 Specimen Source Codes -&gt; ClearHl7.Codes.V240.CodeSpecimenSourceCodes</para>
         /// </summary>
         public SpecimentSource SpecimenSource { get; set; }
 
@@ -139,14 +140,14 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// OBR.24 - Diagnostic Serv Sect ID.
+        /// <para>Suggested: 0074 Diagnostic Service Section ID -&gt; ClearHl7.Codes.V240.CodeDiagnosticServiceSectionId</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0074</remarks>
         public string DiagnosticServSectId { get; set; }
 
         /// <summary>
         /// OBR.25 - Result Status.
+        /// <para>Suggested: 0123 Result Status -&gt; ClearHl7.Codes.V240.CodeResultStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0123</remarks>
         public string ResultStatus { get; set; }
 
         /// <summary>
@@ -171,8 +172,8 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// OBR.30 - Transportation Mode.
+        /// <para>Suggested: 0124 Transportation Mode -&gt; ClearHl7.Codes.V240.CodeTransportationMode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0124</remarks>
         public string TransportationMode { get; set; }
 
         /// <summary>
@@ -227,14 +228,14 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// OBR.41 - Transport Arranged.
+        /// <para>Suggested: 0224 Transport Arranged -&gt; ClearHl7.Codes.V240.CodeTransportArranged</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0224</remarks>
         public string TransportArranged { get; set; }
 
         /// <summary>
         /// OBR.42 - Escort Required.
+        /// <para>Suggested: 0225 Escort Required -&gt; ClearHl7.Codes.V240.CodeEscortRequired</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0225</remarks>
         public string EscortRequired { get; set; }
 
         /// <summary>
@@ -244,26 +245,26 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// OBR.44 - Procedure Code.
+        /// <para>Suggested: 0088 Procedure Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0088</remarks>
         public CodedElement ProcedureCode { get; set; }
 
         /// <summary>
         /// OBR.45 - Procedure Code Modifier.
+        /// <para>Suggested: 0340 Procedure Code Modifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0340</remarks>
         public IEnumerable<CodedElement> ProcedureCodeModifier { get; set; }
 
         /// <summary>
         /// OBR.46 - Placer Supplemental Service Information.
+        /// <para>Suggested: 0411 Supplemental Service Information Values</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0411</remarks>
         public IEnumerable<CodedElement> PlacerSupplementalServiceInformation { get; set; }
 
         /// <summary>
         /// OBR.47 - Filler Supplemental Service Information.
+        /// <para>Suggested: 0411 Supplemental Service Information Values</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0411</remarks>
         public IEnumerable<CodedElement> FillerSupplementalServiceInformation { get; set; }
 
         /// <summary>

@@ -21,8 +21,8 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// DRG.1 - Diagnostic Related Group.
+        /// <para>Suggested: 0055 Diagnosis Related Group</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0055</remarks>
         public CodedElement DiagnosticRelatedGroup { get; set; }
 
         /// <summary>
@@ -32,20 +32,20 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// DRG.3 - DRG Approval Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V240.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string DrgApprovalIndicator { get; set; }
 
         /// <summary>
         /// DRG.4 - DRG Grouper Review Code.
+        /// <para>Suggested: 0056 DRG Grouper Review Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0056</remarks>
         public string DrgGrouperReviewCode { get; set; }
 
         /// <summary>
         /// DRG.5 - Outlier Type.
+        /// <para>Suggested: 0083 Outlier Type -&gt; ClearHl7.Codes.V240.CodeOutlierType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0083</remarks>
         public CodedElement OutlierType { get; set; }
 
         /// <summary>
@@ -60,8 +60,8 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// DRG.8 - DRG Payor.
+        /// <para>Suggested: 0229 DRG Payor -&gt; ClearHl7.Codes.V240.CodeDrgPayor</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0229</remarks>
         public string DrgPayor { get; set; }
 
         /// <summary>
@@ -71,14 +71,14 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// DRG.10 - Confidential Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V240.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string ConfidentialIndicator { get; set; }
 
         /// <summary>
         /// DRG.11 - DRG Transfer Type.
+        /// <para>Suggested: 0415 Transfer Type -&gt; ClearHl7.Codes.V240.CodeTransferType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0415</remarks>
         public string DrgTransferType { get; set; }
 
         /// <summary>

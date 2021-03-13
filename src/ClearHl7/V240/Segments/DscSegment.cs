@@ -24,8 +24,8 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// DSC.2 - Continuation Style.
+        /// <para>Suggested: 0415 Transfer Type -&gt; ClearHl7.Codes.V240.CodeTransferType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0398</remarks>
         public string ContinuationStyle { get; set; }
         
         /// <summary>

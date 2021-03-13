@@ -58,32 +58,32 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// PEO.8 - Event Qualification.
+        /// <para>Suggested: 0237 Event Qualification -&gt; ClearHl7.Codes.V240.CodeEventQualification</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0237</remarks>
         public IEnumerable<string> EventQualification { get; set; }
 
         /// <summary>
         /// PEO.9 - Event Serious.
+        /// <para>Suggested: 0238 Event Seriousness -&gt; ClearHl7.Codes.V240.CodeEventSeriousness</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0238</remarks>
         public string EventSerious { get; set; }
 
         /// <summary>
         /// PEO.10 - Event Expected.
+        /// <para>Suggested: 0239 Event Expected -&gt; ClearHl7.Codes.V240.CodeEventExpected</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0239</remarks>
         public string EventExpected { get; set; }
 
         /// <summary>
         /// PEO.11 - Event Outcome.
+        /// <para>Suggested: 0240 Event Consequence -&gt; ClearHl7.Codes.V240.CodeEventConsequence</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0240</remarks>
         public IEnumerable<string> EventOutcome { get; set; }
 
         /// <summary>
         /// PEO.12 - Patient Outcome.
+        /// <para>Suggested: 0241 Patient Outcome -&gt; ClearHl7.Codes.V240.CodePatientOutcome</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0241</remarks>
         public string PatientOutcome { get; set; }
 
         /// <summary>
@@ -133,14 +133,14 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// PEO.22 - Primary Observer's Qualification.
+        /// <para>Suggested: 0242 Primary Observer's Qualification -&gt; ClearHl7.Codes.V240.CodePrimaryObserversQualification</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0242</remarks>
         public string PrimaryObserversQualification { get; set; }
 
         /// <summary>
         /// PEO.23 - Confirmation Provided By.
+        /// <para>Suggested: 0242 Primary Observer's Qualification -&gt; ClearHl7.Codes.V240.CodePrimaryObserversQualification</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0242</remarks>
         public string ConfirmationProvidedBy { get; set; }
 
         /// <summary>
@@ -149,9 +149,9 @@ namespace ClearHl7.V240.Segments
         public DateTime? PrimaryObserverAwareDateTime { get; set; }
 
         /// <summary>
-        /// PEO.25 - Primary Observer's identity May Be Divulged.
+        /// PEO.25 - Primary Observer's Identity May Be Divulged.
+        /// <para>Suggested: 0243 Identity May Be Divulged -&gt; ClearHl7.Codes.V240.CodeIdentityMayBeDivulged</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0243</remarks>
         public string PrimaryObserversIdentityMayBeDivulged { get; set; }
 
         /// <summary>

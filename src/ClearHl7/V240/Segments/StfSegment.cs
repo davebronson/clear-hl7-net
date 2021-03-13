@@ -38,14 +38,14 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// STF.4 - Staff Type.
+        /// <para>Suggested: 0182 Staff Type</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0182</remarks>
         public IEnumerable<string> StaffType { get; set; }
 
         /// <summary>
         /// STF.5 - Administrative Sex.
+        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Codes.V240.CodeAdministrativeSex</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0001</remarks>
         public string AdministrativeSex { get; set; }
 
         /// <summary>
@@ -55,20 +55,20 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// STF.7 - Active/Inactive Flag.
+        /// <para>Suggested: 0183 Active/Inactive -&gt; ClearHl7.Codes.V240.CodeActiveInactive</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0183</remarks>
         public string ActiveInactiveFlag { get; set; }
 
         /// <summary>
         /// STF.8 - Department.
+        /// <para>Suggested: 0184 Department</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0184</remarks>
         public IEnumerable<CodedElement> Department { get; set; }
 
         /// <summary>
         /// STF.9 - Hospital Service - STF.
+        /// <para>Suggested: 0069 Hospital Service -&gt; ClearHl7.Codes.V240.CodeHospitalService</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0069</remarks>
         public IEnumerable<CodedElement> HospitalServiceStf { get; set; }
 
         /// <summary>
@@ -84,13 +84,11 @@ namespace ClearHl7.V240.Segments
         /// <summary>
         /// STF.12 - Institution Activation Date.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0537</remarks>
         public IEnumerable<DateAndInstitutionName> InstitutionActivationDate { get; set; }
 
         /// <summary>
         /// STF.13 - Institution Inactivation Date.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0537</remarks>
         public IEnumerable<DateAndInstitutionName> InstitutionInactivationDate { get; set; }
 
         /// <summary>
@@ -105,14 +103,14 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// STF.16 - Preferred Method of Contact.
+        /// <para>Suggested: 0185 Preferred Method Of Contact -&gt; ClearHl7.Codes.V240.CodePreferredMethodOfContact</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0185</remarks>
         public CodedElement PreferredMethodOfContact { get; set; }
 
         /// <summary>
         /// STF.17 - Marital Status.
+        /// <para>Suggested: 0002 Marital Status -&gt; ClearHl7.Codes.V240.CodeMaritalStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0002</remarks>
         public CodedElement MaritalStatus { get; set; }
 
         /// <summary>
@@ -122,19 +120,20 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// STF.19 - Job Code/Class.
+        /// <para>Suggested: 0327 Job Code/Class</para>
         /// </summary>
         public JobCodeClass JobCodeClass { get; set; }
 
         /// <summary>
         /// STF.20 - Employment Status Code.
+        /// <para>Suggested: 0066 Employment Status -&gt; ClearHl7.Codes.V240.CodeEmploymentStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0066</remarks>
         public string EmploymentStatusCode { get; set; }
 
         /// <summary>
         /// STF.21 - Additional Insured on Auto.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V240.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string AdditionalInsuredOnAuto { get; set; }
 
         /// <summary>
@@ -144,8 +143,8 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// STF.23 - Copy Auto Ins.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V240.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string CopyAutoIns { get; set; }
 
         /// <summary>
@@ -165,20 +164,20 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// STF.27 - Race.
+        /// <para>Suggested: 0005 Race -&gt; ClearHl7.Codes.V240.CodeRace</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0005</remarks>
         public CodedElement Race { get; set; }
 
         /// <summary>
         /// STF.28 - Ethnic Group.
+        /// <para>Suggested: 0189 Ethnic Group -&gt; ClearHl7.Codes.V240.CodeEthnicGroup</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0189</remarks>
         public CodedElement EthnicGroup { get; set; }
 
         /// <summary>
         /// STF.29 - Re-activation Approval Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V240.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string ReactivationApprovalIndicator { get; set; }
 
         /// <summary>

@@ -28,8 +28,8 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// RXE.2 - Give Code.
+        /// <para>Suggested: 0292 Vaccines Administered -&gt; ClearHl7.Codes.V240.CodeVaccinesAdministered</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0292</remarks>
         public CodedElement GiveCode { get; set; }
 
         /// <summary>
@@ -64,8 +64,8 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// RXE.9 - Substitution Status.
+        /// <para>Suggested: 0167 Substitution Status -&gt; ClearHl7.Codes.V240.CodeSubstitutionStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0167</remarks>
         public string SubstitutionStatus { get; set; }
 
         /// <summary>
@@ -120,8 +120,8 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// RXE.20 - Needs Human Review.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V240.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string NeedsHumanReview { get; set; }
 
         /// <summary>
@@ -171,8 +171,8 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// RXE.30 - Dispense Package Method.
+        /// <para>Suggested: 0321 Dispense Method -&gt; ClearHl7.Codes.V240.CodeDispenseMethod</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0321</remarks>
         public string DispensePackageMethod { get; set; }
 
         /// <summary>

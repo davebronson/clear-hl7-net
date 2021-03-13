@@ -62,8 +62,8 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// RXO.9 - Allow Substitutions.
+        /// <para>Suggested: 0161 Allow Substitution -&gt; ClearHl7.Codes.V240.CodeAllowSubstitution</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0161</remarks>
         public string AllowSubstitutions { get; set; }
 
         /// <summary>
@@ -98,8 +98,8 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// RXO.16 - Needs Human Review.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V240.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string NeedsHumanReview { get; set; }
 
         /// <summary>

@@ -28,14 +28,14 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// DG1.2 - Diagnosis Coding Method.
+        /// <para>Suggested: 0053 Diagnosis Coding Method</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0053</remarks>
         public string DiagnosisCodingMethod { get; set; }
 
         /// <summary>
         /// DG1.3 - Diagnosis Code - DG1.
+        /// <para>Suggested: 0051 Diagnosis Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0051</remarks>
         public CodedElement DiagnosisCodeDg1 { get; set; }
 
         /// <summary>
@@ -50,38 +50,38 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// DG1.6 - Diagnosis Type.
+        /// <para>Suggested: 0052 Diagnosis Type -&gt; ClearHl7.Codes.V240.CodeDiagnosisType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0052</remarks>
         public string DiagnosisType { get; set; }
 
         /// <summary>
         /// DG1.7 - Major Diagnostic Category.
+        /// <para>Suggested: 0118 Major Diagnostic Category</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0118</remarks>
         public CodedElement MajorDiagnosticCategory { get; set; }
 
         /// <summary>
         /// DG1.8 - Diagnostic Related Group.
+        /// <para>Suggested: 0055 Diagnosis Related Group</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0055</remarks>
         public CodedElement DiagnosticRelatedGroup { get; set; }
 
         /// <summary>
         /// DG1.9 - DRG Approval Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V240.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string DrgApprovalIndicator { get; set; }
 
         /// <summary>
         /// DG1.10 - DRG Grouper Review Code.
+        /// <para>Suggested: 0056 DRG Grouper Review Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0056</remarks>
         public string DrgGrouperReviewCode { get; set; }
 
         /// <summary>
         /// DG1.11 - Outlier Type.
+        /// <para>Suggested: 0083 Outlier Type -&gt; ClearHl7.Codes.V240.CodeOutlierType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0083</remarks>
         public CodedElement OutlierType { get; set; }
 
         /// <summary>
@@ -101,8 +101,8 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// DG1.15 - Diagnosis Priority.
+        /// <para>Suggested: 0359 Diagnosis Priority -&gt; ClearHl7.Codes.V240.CodeDiagnosisPriority</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0359</remarks>
         public string DiagnosisPriority { get; set; }
 
         /// <summary>
@@ -112,14 +112,14 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// DG1.17 - Diagnosis Classification.
+        /// <para>Suggested: 0228 Diagnosis Classification -&gt; ClearHl7.Codes.V240.CodeDiagnosisClassification</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0228</remarks>
         public string DiagnosisClassification { get; set; }
 
         /// <summary>
         /// DG1.18 - Confidential Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V240.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string ConfidentialIndicator { get; set; }
 
         /// <summary>

@@ -52,14 +52,14 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// ARQ.7 - Appointment Reason.
+        /// <para>Suggested: 0276 Appointment Reason Codes -&gt; ClearHl7.Codes.V240.CodeAppointmentReasonCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0276</remarks>
         public CodedElement AppointmentReason { get; set; }
 
         /// <summary>
         /// ARQ.8 - Appointment Type.
+        /// <para>Suggested: 0277 Appointment Type Codes -&gt; ClearHl7.Codes.V240.CodeAppointmentTypeCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0277</remarks>
         public CodedElement AppointmentType { get; set; }
 
         /// <summary>

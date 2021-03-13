@@ -47,20 +47,20 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// URS.6 - R/U Which Date/Time Qualifier.
+        /// <para>Suggested: 0156 Which Date/Time Qualifier -&gt; ClearHl7.Codes.V240.CodeWhichDateTimeQualifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0156</remarks>
         public IEnumerable<string> RuWhichDateTimeQualifier { get; set; }
 
         /// <summary>
         /// URS.7 - R/U Which Date/Time Status Qualifier.
+        /// <para>Suggested: 0157 Which Date/Time Status Qualifier -&gt; ClearHl7.Codes.V240.CodeWhichDateTimeStatusQualifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0157</remarks>
         public IEnumerable<string> RuWhichDateTimeStatusQualifier { get; set; }
 
         /// <summary>
         /// URS.8 - R/U Date/Time Selection Qualifier.
+        /// <para>Suggested: 0158 Date/Time Selection Qualifier -&gt; ClearHl7.Codes.V240.CodeDateTimeSelectionQualifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0158</remarks>
         public IEnumerable<string> RuDateTimeSelectionQualifier { get; set; }
 
         /// <summary>

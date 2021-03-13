@@ -21,8 +21,8 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// GP2.1 - Revenue Code.
+        /// <para>Suggested: 0456 Revenue Code -&gt; ClearHl7.Codes.V240.CodeRevenueCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0456</remarks>
         public string RevenueCode { get; set; }
 
         /// <summary>
@@ -37,44 +37,44 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// GP2.4 - Reimbursement Action Code.
+        /// <para>Suggested: 0459 Reimbursement Action Code -&gt; ClearHl7.Codes.V240.CodeReimbursementActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0459</remarks>
         public string ReimbursementActionCode { get; set; }
 
         /// <summary>
         /// GP2.5 - Denial or Rejection Code.
+        /// <para>Suggested: 0460 Denial Or Rejection Code -&gt; ClearHl7.Codes.V240.CodeDenialOrRejectionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0460</remarks>
         public string DenialOrRejectionCode { get; set; }
 
         /// <summary>
         /// GP2.6 - OCE Edit Code.
+        /// <para>Suggested: 0458 OCE Edit Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0458</remarks>
         public IEnumerable<string> OceEditCode { get; set; }
 
         /// <summary>
         /// GP2.7 - Ambulatory Payment Classification Code.
+        /// <para>Suggested: 0466 Ambulatory Payment Classification Code -&gt; ClearHl7.Codes.V240.CodeAmbulatoryPaymentClassificationCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0466</remarks>
         public CodedElement AmbulatoryPaymentClassificationCode { get; set; }
 
         /// <summary>
         /// GP2.8 - Modifier Edit Code.
+        /// <para>Suggested: 0467 Modifier Edit Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0467</remarks>
         public IEnumerable<string> ModifierEditCode { get; set; }
 
         /// <summary>
         /// GP2.9 - Payment Adjustment Code.
+        /// <para>Suggested: 0468 Payment Adjustment Code -&gt; ClearHl7.Codes.V240.CodePaymentAdjustmentCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0468</remarks>
         public string PaymentAdjustmentCode { get; set; }
 
         /// <summary>
         /// GP2.10 - Packaging Status Code.
+        /// <para>Suggested: 0469 Packaging Status Code -&gt; ClearHl7.Codes.V240.CodePackagingStatusCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0469</remarks>
         public string PackagingStatusCode { get; set; }
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// GP2.12 - Reimbursement Type Code.
+        /// <para>Suggested: 0470 Reimbursement Type Code -&gt; ClearHl7.Codes.V240.CodeReimbursementTypeCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0470</remarks>
         public string ReimbursementTypeCode { get; set; }
 
         /// <summary>

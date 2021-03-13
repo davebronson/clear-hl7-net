@@ -20,8 +20,8 @@ namespace ClearHl7.V240.Segments
 
         /// <summary>
         /// BLC.1 - Blood Product Code.
+        /// <para>Suggested: 0426 Blood Product Code -&gt; ClearHl7.Codes.V240.CodeBloodProductCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0426</remarks>
         public CodedElement BloodProductCode { get; set; }
 
         /// <summary>
