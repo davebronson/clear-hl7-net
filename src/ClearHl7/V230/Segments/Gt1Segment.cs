@@ -63,20 +63,20 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// GT1.9 - Guarantor Administrative Sex.
+        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Codes.V230.CodeAdministrativeSex</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0001</remarks>
         public string GuarantorAdministrativeSex { get; set; }
 
         /// <summary>
         /// GT1.10 - Guarantor Type.
+        /// <para>Suggested: 0068 Guarantor Type</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0068</remarks>
         public string GuarantorType { get; set; }
 
         /// <summary>
         /// GT1.11 - Guarantor Relationship.
+        /// <para>Suggested: 0063 Relationship</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0063</remarks>
         public CodedElement GuarantorRelationship { get; set; }
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// GT1.20 - Guarantor Employment Status.
+        /// <para>Suggested: 0066 Employment Status</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0066</remarks>
         public string GuarantorEmploymentStatus { get; set; }
 
         /// <summary>
@@ -132,14 +132,13 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// GT1.22 - Guarantor Billing Hold Flag.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V230.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string GuarantorBillingHoldFlag { get; set; }
 
         /// <summary>
         /// GT1.23 - Guarantor Credit Rating Code.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0341</remarks>
         public CodedElement GuarantorCreditRatingCode { get; set; }
 
         /// <summary>
@@ -149,14 +148,14 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// GT1.25 - Guarantor Death Flag.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V230.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string GuarantorDeathFlag { get; set; }
 
         /// <summary>
         /// GT1.26 - Guarantor Charge Adjustment Code.
+        /// <para>Suggested: 0218 Patient Charge Adjustment</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0218</remarks>
         public CodedElement GuarantorChargeAdjustmentCode { get; set; }
 
         /// <summary>
@@ -176,8 +175,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// GT1.30 - Guarantor Marital Status Code.
+        /// <para>Suggested: 0002 Marital Status -&gt; ClearHl7.Codes.V230.CodeMaritalStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0002</remarks>
         public CodedElement GuarantorMaritalStatusCode { get; set; }
 
         /// <summary>
@@ -192,56 +191,56 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// GT1.33 - Living Dependency.
+        /// <para>Suggested: 0223 Living Dependency -&gt; ClearHl7.Codes.V230.CodeLivingDependency</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0223</remarks>
         public string LivingDependency { get; set; }
 
         /// <summary>
         /// GT1.34 - Ambulatory Status.
+        /// <para>Suggested: 0009 Ambulatory Status -&gt; ClearHl7.Codes.V230.CodeAmbulatoryStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0009</remarks>
         public IEnumerable<string> AmbulatoryStatus { get; set; }
 
         /// <summary>
         /// GT1.35 - Citizenship.
+        /// <para>Suggested: 0171 Citizenship</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0171</remarks>
         public IEnumerable<string> Citizenship { get; set; }
 
         /// <summary>
         /// GT1.36 - Primary Language.
+        /// <para>Suggested: 0296 Primary Language</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0296</remarks>
         public CodedElement PrimaryLanguage { get; set; }
 
         /// <summary>
         /// GT1.37 - Living Arrangement.
+        /// <para>Suggested: 0220 Living Arrangement -&gt; ClearHl7.Codes.V230.CodeLivingArrangement</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0220</remarks>
         public string LivingArrangement { get; set; }
 
         /// <summary>
         /// GT1.38 - Publicity Code.
+        /// <para>Suggested: 0215 Publicity Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0215</remarks>
         public CodedElement PublicityCode { get; set; }
 
         /// <summary>
         /// GT1.39 - Protection Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V230.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string ProtectionIndicator { get; set; }
 
         /// <summary>
         /// GT1.40 - Student Indicator.
+        /// <para>Suggested: 0231 Student Status -&gt; ClearHl7.Codes.V230.CodeStudentStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0231</remarks>
         public string StudentIndicator { get; set; }
 
         /// <summary>
         /// GT1.41 - Religion.
+        /// <para>Suggested: 0006 Religion -&gt; ClearHl7.Codes.V230.CodeReligion</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0006</remarks>
         public string Religion { get; set; }
 
         /// <summary>
@@ -251,14 +250,14 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// GT1.43 - Nationality.
+        /// <para>Suggested: 0212 Nationality</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0212</remarks>
         public CodedElement Nationality { get; set; }
 
         /// <summary>
         /// GT1.44 - Ethnic Group.
+        /// <para>Suggested: 0189 Ethnic Group</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0189</remarks>
         public string EthnicGroup { get; set; }
 
         /// <summary>
@@ -273,14 +272,14 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// GT1.47 - Contact Reason.
+        /// <para>Suggested: 0222 Contact Reason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0222</remarks>
         public CodedElement ContactReason { get; set; }
 
         /// <summary>
         /// GT1.48 - Contact Relationship.
+        /// <para>Suggested: 0063 Relationship</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0063</remarks>
         public string ContactRelationship { get; set; }
 
         /// <summary>
@@ -300,26 +299,25 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// GT1.52 - Handicap.
+        /// <para>Suggested: 0310 Handicap</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0310</remarks>
         public string Handicap { get; set; }
 
         /// <summary>
         /// GT1.53 - Job Status.
+        /// <para>Suggested: 0311 Job Status</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0311</remarks>
         public string JobStatus { get; set; }
 
         /// <summary>
         /// GT1.54 - Guarantor Financial Class.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0064</remarks>
         public FinancialClass GuarantorFinancialClass { get; set; }
 
         /// <summary>
         /// GT1.55 - Guarantor Race.
+        /// <para>Suggested: 0005 Race -&gt; ClearHl7.Codes.V230.CodeRace</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0005</remarks>
         public string GuarantorRace { get; set; }
 
         /// <summary>

@@ -28,14 +28,14 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// QRD.2 - Query Format Code.
+        /// <para>Suggested: 0106 Query/Response Format Code -&gt; ClearHl7.Codes.V230.CodeQueryResponseFormatCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0106</remarks>
         public string QueryFormatCode { get; set; }
 
         /// <summary>
         /// QRD.3 - Query Priority.
+        /// <para>Suggested: 0091 Query Priority -&gt; ClearHl7.Codes.V230.CodeQueryPriority</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0091</remarks>
         public string QueryPriority { get; set; }
 
         /// <summary>
@@ -45,8 +45,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// QRD.5 - Deferred Response Type.
+        /// <para>Suggested: 0107 Deferred Response Type -&gt; ClearHl7.Codes.V230.CodeDeferredResponseType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0107</remarks>
         public string DeferredResponseType { get; set; }
 
         /// <summary>
@@ -56,8 +56,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// QRD.7 - Quantity Limited Request.
+        /// <para>Suggested: 0126 Quantity Limited Request -&gt; ClearHl7.Codes.V230.CodeQuantityLimitedRequest</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0126</remarks>
         public CompositeQuantityWithUnits QuantityLimitedRequest { get; set; }
 
         /// <summary>
@@ -67,8 +67,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// QRD.9 - What Subject Filter.
+        /// <para>Suggested: 0048 What Subject Filter -&gt; ClearHl7.Codes.V230.CodeWhatSubjectFilter</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0048</remarks>
         public IEnumerable<CodedElement> WhatSubjectFilter { get; set; }
 
         /// <summary>
@@ -83,8 +83,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// QRD.12 - Query Results Level.
+        /// <para>Suggested: 0108 Query Results Level -&gt; ClearHl7.Codes.V230.CodeQueryResultsLevel</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0108</remarks>
         public string QueryResultsLevel { get; set; }
 
         /// <summary>

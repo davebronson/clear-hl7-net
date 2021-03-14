@@ -33,26 +33,26 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// PRA.3 - Practitioner Category.
+        /// <para>Suggested: 0186 Practitioner Category</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0186</remarks>
         public IEnumerable<string> PractitionerCategory { get; set; }
 
         /// <summary>
         /// PRA.4 - Provider Billing.
+        /// <para>Suggested: 0187 Provider Billing -&gt; ClearHl7.Codes.V230.CodeProviderBilling</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0187</remarks>
         public string ProviderBilling { get; set; }
 
         /// <summary>
         /// PRA.5 - Specialty.
+        /// <para>Suggested: 0337 Certification Status -&gt; ClearHl7.Codes.V230.CodeCertificationStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0337</remarks>
         public IEnumerable<SpecialtyDescription> Specialty { get; set; }
 
         /// <summary>
         /// PRA.6 - Practitioner ID Numbers.
+        /// <para>Suggested: 0338 Practitioner ID Number Type -&gt; ClearHl7.Codes.V230.CodePractitionerIdNumberType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0338</remarks>
         public IEnumerable<PractitionerLicenseOrOtherIdNumber> PractitionerIdNumbers { get; set; }
 
         /// <summary>

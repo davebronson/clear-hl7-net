@@ -77,8 +77,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// MSH.12 - Version ID.
+        /// <para>Suggested: 0104 Version ID -&gt; ClearHl7.Codes.V230.CodeVersionId</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0104</remarks>
         public string VersionId { get; set; } = "2.3";
 
         /// <summary>
@@ -93,26 +93,25 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// MSH.15 - Accept Acknowledgment Type.
+        /// <para>Suggested: 0155 Accept/Application Acknowledgment Conditions -&gt; ClearHl7.Codes.V230.CodeAcceptApplicationAcknowledgmentConditions</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0155</remarks>
         public string AcceptAcknowledgmentType { get; set; }
 
         /// <summary>
         /// MSH.16 - Application Acknowledgment Type.
+        /// <para>Suggested: 0155 Accept/Application Acknowledgment Conditions -&gt; ClearHl7.Codes.V230.CodeAcceptApplicationAcknowledgmentConditions</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0155</remarks>
         public string ApplicationAcknowledgmentType { get; set; }
 
         /// <summary>
         /// MSH.17 - Country Code.
         /// </summary>
-        /// <remarks>https://www.iso.org/iso-3166-country-codes.html</remarks>
         public string CountryCode { get; set; }
 
         /// <summary>
         /// MSH.18 - Character Set.
+        /// <para>Suggested: 0211 Alternate Character Sets -&gt; ClearHl7.Codes.V230.CodeAlternateCharacterSets</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0211</remarks>
         public IEnumerable<string> CharacterSet { get; set; }
 
         /// <summary>

@@ -20,8 +20,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// MSA.1 - Acknowledgment Code.
+        /// <para>Suggested: 0008 Acknowledgment Code -&gt; ClearHl7.Codes.V230.CodeAcknowledgmentCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0008</remarks>
         public string AcknowledgmentCode { get; set; }
 
         /// <summary>
@@ -41,8 +41,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// MSA.5 - Delayed Acknowledgment Type.
+        /// <para>Suggested: 0102 Delayed Acknowledgment Type -&gt; ClearHl7.Codes.V230.CodeDelayedAcknowledgmentType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0102</remarks>
         public string DelayedAcknowledgmentType { get; set; }
 
         /// <summary>

@@ -53,8 +53,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// UB1.7 - Condition Code.
+        /// <para>Suggested: 0043 Condition Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0043</remarks>
         public IEnumerable<string> ConditionCode { get; set; }
 
         /// <summary>
@@ -69,8 +69,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// UB1.10 - Value Amount &amp; Code.
+        /// <para>Suggested: 0153 Value Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0153</remarks>
         public IEnumerable<ValueCodeAndAmount> ValueAmountCode { get; set; }
 
         /// <summary>
@@ -81,13 +81,11 @@ namespace ClearHl7.V230.Segments
         /// <summary>
         /// UB1.12 - Special Program Indicator.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0348</remarks>
         public CodedElement SpecialProgramIndicator { get; set; }
 
         /// <summary>
         /// UB1.13 - PSRO/UR Approval Indicator.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0349</remarks>
         public CodedElement PsroUrApprovalIndicator { get; set; }
 
         /// <summary>
@@ -108,7 +106,6 @@ namespace ClearHl7.V230.Segments
         /// <summary>
         /// UB1.17 - Occurrence Span.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0351</remarks>
         public CodedElement OccurrenceSpan { get; set; }
 
         /// <summary>

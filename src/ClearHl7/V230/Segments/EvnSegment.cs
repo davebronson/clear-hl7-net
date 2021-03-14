@@ -21,8 +21,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// EVN.1 - Event Type Code.
+        /// <para>Suggested: 0003 Event Type Code -&gt; ClearHl7.Codes.V230.CodeEventTypeCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0003</remarks>
         public string EventTypeCode { get; set; }
 
         /// <summary>
@@ -37,14 +37,14 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// EVN.4 - Event Reason Code.
+        /// <para>Suggested: 0062 Event Reason -&gt; ClearHl7.Codes.V230.CodeEventReason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0062</remarks>
         public string EventReasonCode { get; set; }
 
         /// <summary>
         /// EVN.5 - Operator ID.
+        /// <para>Suggested: 0188 Operator ID</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0188</remarks>
         public ExtendedCompositeIdNumberAndNameForPersons OperatorId { get; set; }
 
         /// <summary>

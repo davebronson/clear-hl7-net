@@ -25,8 +25,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// NTE.2 - Source of Comment.
+        /// <para>Suggested: 0105 Source Of Comment -&gt; ClearHl7.Codes.V230.CodeSourceOfComment</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0105</remarks>
         public string SourceOfComment { get; set; }
 
         /// <summary>

@@ -22,8 +22,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// CDM.1 - Primary Key Value - CDM.
+        /// <para>Suggested: 0132 Transaction Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0132</remarks>
         public CodedElement PrimaryKeyValueCdm { get; set; }
 
         /// <summary>
@@ -43,8 +43,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// CDM.5 - Description Override Indicator.
+        /// <para>Suggested: 0268 Override -&gt; ClearHl7.Codes.V230.CodeOverride</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0268</remarks>
         public string DescriptionOverrideIndicator { get; set; }
 
         /// <summary>
@@ -59,8 +59,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// CDM.8 - Active/Inactive Flag.
+        /// <para>Suggested: 0183 Active/Inactive -&gt; ClearHl7.Codes.V230.CodeActiveInactive</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0183</remarks>
         public string ActiveInactiveFlag { get; set; }
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// CDM.13 - Room Fee Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V230.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string RoomFeeIndicator { get; set; }
 
         /// <summary>

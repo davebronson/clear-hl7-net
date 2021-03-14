@@ -73,8 +73,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// OBR.11 - Specimen Action Code.
+        /// <para>Suggested: 0065 Specimen Action Code -&gt; ClearHl7.Codes.V230.CodeSpecimenActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0065</remarks>
         public string SpecimenActionCode { get; set; }
 
         /// <summary>
@@ -94,6 +94,7 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// OBR.15 - Specimen Source.
+        /// <para>Suggested: 0070 Specimen Source Codes -&gt; ClearHl7.Codes.V230.CodeSpecimenSourceCodes</para>
         /// </summary>
         public SpecimentSource SpecimenSource { get; set; }
 
@@ -139,14 +140,14 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// OBR.24 - Diagnostic Serv Sect ID.
+        /// <para>Suggested: 0074 Diagnostic Service Section ID -&gt; ClearHl7.Codes.V230.CodeDiagnosticServiceSectionId</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0074</remarks>
         public string DiagnosticServSectId { get; set; }
 
         /// <summary>
         /// OBR.25 - Result Status.
+        /// <para>Suggested: 0123 Result Status -&gt; ClearHl7.Codes.V230.CodeResultStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0123</remarks>
         public string ResultStatus { get; set; }
 
         /// <summary>
@@ -171,8 +172,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// OBR.30 - Transportation Mode.
+        /// <para>Suggested: 0124 Transportation Mode -&gt; ClearHl7.Codes.V230.CodeTransportationMode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0124</remarks>
         public string TransportationMode { get; set; }
 
         /// <summary>
@@ -227,14 +228,14 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// OBR.41 - Transport Arranged.
+        /// <para>Suggested: 0224 Transport Arranged -&gt; ClearHl7.Codes.V230.CodeTransportArranged</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0224</remarks>
         public string TransportArranged { get; set; }
 
         /// <summary>
         /// OBR.42 - Escort Required.
+        /// <para>Suggested: 0225 Escort Required -&gt; ClearHl7.Codes.V230.CodeEscortRequired</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0225</remarks>
         public string EscortRequired { get; set; }
 
         /// <summary>

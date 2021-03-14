@@ -23,8 +23,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// PRD.1 - Provider Role.
+        /// <para>Suggested: 0286 Provider Role -&gt; ClearHl7.Codes.V230.CodeProviderRole</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0286</remarks>
         public IEnumerable<CodedElement> ProviderRole { get; set; }
 
         /// <summary>
@@ -49,8 +49,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// PRD.6 - Preferred Method of Contact.
+        /// <para>Suggested: 0185 Preferred Method Of Contact -&gt; ClearHl7.Codes.V230.CodePreferredMethodOfContact</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0185</remarks>
         public CodedElement PreferredMethodOfContact { get; set; }
 
         /// <summary>

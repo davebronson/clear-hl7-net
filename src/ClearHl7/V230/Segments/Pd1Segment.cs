@@ -22,14 +22,14 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// PD1.1 - Living Dependency.
+        /// <para>Suggested: 0223 Living Dependency -&gt; ClearHl7.Codes.V230.CodeLivingDependency</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0223</remarks>
         public IEnumerable<string> LivingDependency { get; set; }
 
         /// <summary>
         /// PD1.2 - Living Arrangement.
+        /// <para>Suggested: 0220 Living Arrangement -&gt; ClearHl7.Codes.V230.CodeLivingArrangement</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0220</remarks>
         public string LivingArrangement { get; set; }
 
         /// <summary>
@@ -44,32 +44,32 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// PD1.5 - Student Indicator.
+        /// <para>Suggested: 0231 Student Status -&gt; ClearHl7.Codes.V230.CodeStudentStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0231</remarks>
         public string StudentIndicator { get; set; }
 
         /// <summary>
         /// PD1.6 - Handicap.
+        /// <para>Suggested: 0295 Handicap</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0295</remarks>
         public string Handicap { get; set; }
 
         /// <summary>
         /// PD1.7 - Living Will Code.
+        /// <para>Suggested: 0315 Living Will Code -&gt; ClearHl7.Codes.V230.CodeLivingWillCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0315</remarks>
         public string LivingWillCode { get; set; }
 
         /// <summary>
         /// PD1.8 - Organ Donor Code.
+        /// <para>Suggested: 0316 Organ Donor Code -&gt; ClearHl7.Codes.V230.CodeOrganDonorCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0316</remarks>
         public string OrganDonorCode { get; set; }
 
         /// <summary>
         /// PD1.9 - Separate Bill.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V230.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string SeparateBill { get; set; }
 
         /// <summary>
@@ -79,14 +79,14 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// PD1.11 - Publicity Code.
+        /// <para>Suggested: 0125 Value Type -&gt; ClearHl7.Codes.V230.CodeValueType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0215</remarks>
         public CodedElement PublicityCode { get; set; }
 
         /// <summary>
         /// PD1.12 - Protection Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V230.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string ProtectionIndicator { get; set; }
 
         /// <summary>

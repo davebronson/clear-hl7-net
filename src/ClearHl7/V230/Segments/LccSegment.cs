@@ -27,8 +27,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// LCC.2 - Location Department.
+        /// <para>Suggested: 0264 Location Department</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0264</remarks>
         public string LocationDepartment { get; set; }
 
         /// <summary>
@@ -38,8 +38,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// LCC.4 - Charge Code.
+        /// <para>Suggested: 0132 Transaction Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0132</remarks>
         public IEnumerable<CodedElement> ChargeCode { get; set; }
         
         /// <summary>

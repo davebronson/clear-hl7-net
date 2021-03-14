@@ -58,8 +58,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// PID.8 - Administrative Sex.
+        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Codes.V230.CodeAdministrativeSex</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0001</remarks>
         public string AdministrativeSex { get; set; }
 
         /// <summary>
@@ -69,8 +69,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// PID.10 - Race.
+        /// <para>Suggested: 0005 Race -&gt; ClearHl7.Codes.V230.CodeRace</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0005</remarks>
         public string Race { get; set; }
 
         /// <summary>
@@ -95,20 +95,20 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// PID.15 - Primary Language.
+        /// <para>Suggested: 0296 Primary Language</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0296</remarks>
         public CodedElement PrimaryLanguage { get; set; }
 
         /// <summary>
         /// PID.16 - Marital Status.
+        /// <para>Suggested: 0002 Marital Status -&gt; ClearHl7.Codes.V230.CodeMaritalStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0002</remarks>
         public CodedElement MaritalStatus { get; set; }
 
         /// <summary>
         /// PID.17 - Religion.
+        /// <para>Suggested: 0006 Religion -&gt; ClearHl7.Codes.V230.CodeReligion</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0006</remarks>
         public CodedElement Religion { get; set; }
 
         /// <summary>
@@ -133,8 +133,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// PID.22 - Ethnic Group.
+        /// <para>Suggested: 0189 Ethnic Group</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0189</remarks>
         public string EthnicGroup { get; set; }
 
         /// <summary>
@@ -144,8 +144,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// PID.24 - Multiple Birth Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V230.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string MultipleBirthIndicator { get; set; }
 
         /// <summary>
@@ -155,20 +155,20 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// PID.26 - Citizenship.
+        /// <para>Suggested: 0171 Citizenship</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0171</remarks>
         public IEnumerable<string> Citizenship { get; set; }
 
         /// <summary>
         /// PID.27 - Veterans Military Status.
+        /// <para>Suggested: 0172 Veterans Military Status</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0172</remarks>
         public CodedElement VeteransMilitaryStatus { get; set; }
 
         /// <summary>
         /// PID.28 - Nationality.
+        /// <para>Suggested: 0212 Nationality</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0212</remarks>
         public CodedElement Nationality { get; set; }
 
         /// <summary>
@@ -178,8 +178,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// PID.30 - Patient Death Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V230.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string PatientDeathIndicator { get; set; }
 
         /// <summary>

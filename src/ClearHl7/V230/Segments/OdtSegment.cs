@@ -22,8 +22,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// ODT.1 - Tray Type.
+        /// <para>Suggested: 0160 Tray Type -&gt; ClearHl7.Codes.V230.CodeTrayType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0160</remarks>
         public CodedElement TrayType { get; set; }
 
         /// <summary>

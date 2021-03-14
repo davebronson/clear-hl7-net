@@ -38,12 +38,13 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// IN3.4 - Certification Required.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V230.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string CertificationRequired { get; set; }
 
         /// <summary>
         /// IN3.5 - Penalty.
+        /// <para>Suggested: 0148 Money Or Percentage Indicator -&gt; ClearHl7.Codes.V230.CodeMoneyOrPercentageIndicator</para>
         /// </summary>
         public MoneyOrPercentage Penalty { get; set; }
 
@@ -74,13 +75,14 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// IN3.11 - Days.
+        /// <para>Suggested: 0149 Day Type -&gt; ClearHl7.Codes.V230.CodeDayType</para>
         /// </summary>
         public DayTypeAndNumber Days { get; set; }
 
         /// <summary>
         /// IN3.12 - Non-Concur Code/Description.
+        /// <para>Suggested: 0233 Non-Concur Code/Description</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0233</remarks>
         public CodedElement NonConcurCodeDescription { get; set; }
 
         /// <summary>
@@ -120,6 +122,7 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// IN3.20 - Pre-Certification Requirement.
+        /// <para>Suggested: 0150 Certification Patient Type -&gt; ClearHl7.Codes.V230.CodeCertificationPatientType</para>
         /// </summary>
         public IEnumerable<PreCertificationRequired> PreCertificationRequirement { get; set; }
 
@@ -135,14 +138,14 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// IN3.23 - Second Opinion Status.
+        /// <para>Suggested: 0151 Second Opinion Status</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0151</remarks>
         public string SecondOpinionStatus { get; set; }
 
         /// <summary>
         /// IN3.24 - Second Opinion Documentation Received.
+        /// <para>Suggested: 0152 Second Opinion Documentation Received</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0152</remarks>
         public IEnumerable<string> SecondOpinionDocumentationReceived { get; set; }
 
         /// <summary>

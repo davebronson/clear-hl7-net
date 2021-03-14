@@ -22,8 +22,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// APR.1 - Time Selection Criteria.
+        /// <para>Suggested: 0294 Time Selection Criteria Parameter Class Codes -&gt; ClearHl7.Codes.V230.CodeTimeSelectionCriteriaParameterClassCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0294</remarks>
         public IEnumerable<SchedulingClassValuePair> TimeSelectionCriteria { get; set; }
 
         /// <summary>

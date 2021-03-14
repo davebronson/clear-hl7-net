@@ -27,8 +27,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// PCR.2 - Generic Product.
+        /// <para>Suggested: 0239 Event Expected -&gt; ClearHl7.Codes.V230.CodeEventExpected</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0249</remarks>
         public string GenericProduct { get; set; }
 
         /// <summary>
@@ -63,8 +63,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// PCR.9 - Single Use Device.
+        /// <para>Suggested: 0239 Event Expected -&gt; ClearHl7.Codes.V230.CodeEventExpected</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0239</remarks>
         public string SingleUseDevice { get; set; }
 
         /// <summary>
@@ -74,8 +74,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// PCR.11 - Product Problem.
+        /// <para>Suggested: 0239 Event Expected -&gt; ClearHl7.Codes.V230.CodeEventExpected</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0239</remarks>
         public string ProductProblem { get; set; }
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// PCR.13 - Product Available For Inspection.
+        /// <para>Suggested: 0239 Event Expected -&gt; ClearHl7.Codes.V230.CodeEventExpected</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0239</remarks>
         public string ProductAvailableForInspection { get; set; }
 
         /// <summary>
@@ -96,8 +96,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// PCR.15 - Product Evaluation Status.
+        /// <para>Suggested: 0247 Status Of Evaluation -&gt; ClearHl7.Codes.V230.CodeStatusOfEvaluation</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0247</remarks>
         public CodedElement ProductEvaluationStatus { get; set; }
 
         /// <summary>
@@ -107,8 +107,8 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// PCR.17 - Evaluated Product Source.
+        /// <para>Suggested: 0248 Product Source -&gt; ClearHl7.Codes.V230.CodeProductSource</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0248</remarks>
         public string EvaluatedProductSource { get; set; }
 
         /// <summary>
@@ -118,32 +118,32 @@ namespace ClearHl7.V230.Segments
 
         /// <summary>
         /// PCR.19 - Device Operator Qualifications.
+        /// <para>Suggested: 0242 Primary Observer's Qualification -&gt; ClearHl7.Codes.V230.CodePrimaryObserversQualification</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0242</remarks>
         public string DeviceOperatorQualifications { get; set; }
 
         /// <summary>
         /// PCR.20 - Relatedness Assessment.
+        /// <para>Suggested: 0250 Relatedness Assessment -&gt; ClearHl7.Codes.V230.CodeRelatednessAssessment</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0250</remarks>
         public string RelatednessAssessment { get; set; }
 
         /// <summary>
         /// PCR.21 - Action Taken In Response To The Event.
+        /// <para>Suggested: 0251 Action Taken In Response To The Event -&gt; ClearHl7.Codes.V230.CodeActionTakenInResponseToTheEvent</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0251</remarks>
         public IEnumerable<string> ActionTakenInResponseToTheEvent { get; set; }
 
         /// <summary>
         /// PCR.22 - Event Causality Observations.
+        /// <para>Suggested: 0232 Insurance Company Contact Reason -&gt; ClearHl7.Codes.V230.CodeInsuranceCompanyContactReason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0232</remarks>
         public IEnumerable<string> EventCausalityObservations { get; set; }
 
         /// <summary>
         /// PCR.23 - Indirect Exposure Mechanism.
+        /// <para>Suggested: 0253 Indirect Exposure Mechanism -&gt; ClearHl7.Codes.V230.CodeIndirectExposureMechanism</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0253</remarks>
         public IEnumerable<string> IndirectExposureMechanism { get; set; }
         
         /// <summary>
