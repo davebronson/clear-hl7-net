@@ -20,14 +20,14 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// BLG.1 - When to Charge.
+        /// <para>Suggested: 0100 Invocation Event -&gt; ClearHl7.Codes.V231.CodeInvocationEvent</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0100</remarks>
         public string WhenToCharge { get; set; }
 
         /// <summary>
         /// BLG.2 - Charge Type.
+        /// <para>Suggested: 0122 Charge Type -&gt; ClearHl7.Codes.V231.CodeChargeType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0122</remarks>
         public string ChargeType { get; set; }
 
         /// <summary>

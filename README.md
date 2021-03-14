@@ -3,7 +3,7 @@
 
 Understanding and programmatically building HL7 messages can be difficult.  clear-hl7-net takes pain out of this process by exposing an object hierarchy that is well structured, clearly named, and (most importantly) strongly-typed.
 
-HL7® is the registered trademark of Health Level Seven International, and the use of this trademarks does not constitute an endorsement by HL7.
+HL7® is the registered trademark of Health Level Seven International, and the use of this trademark does not constitute an endorsement by HL7.
 
 ## Getting Started
 ### Building clear-hl7-net

@@ -22,8 +22,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// CTD.1 - Contact Role.
+        /// <para>Suggested: 0131 Contact Role</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0131</remarks>
         public IEnumerable<CodedElement> ContactRole { get; set; }
 
         /// <summary>
@@ -48,8 +48,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// CTD.6 - Preferred Method of Contact.
+        /// <para>Suggested: 0185 Preferred Method Of Contact -&gt; ClearHl7.Codes.V231.CodePreferredMethodOfContact</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0185</remarks>
         public CodedElement PreferredMethodOfContact { get; set; }
 
         /// <summary>

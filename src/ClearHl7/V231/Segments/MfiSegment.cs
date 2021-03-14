@@ -21,8 +21,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// MFI.1 - Master File Identifier.
+        /// <para>Suggested: 0175 Master File Identifier Code -&gt; ClearHl7.Codes.V231.CodeMasterFileIdentifierCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0175</remarks>
         public CodedElement MasterFileIdentifier { get; set; }
 
         /// <summary>
@@ -32,8 +32,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// MFI.3 - File-Level Event Code.
+        /// <para>Suggested: 0178 File Level Event Code -&gt; ClearHl7.Codes.V231.CodeFileLevelEventCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0178</remarks>
         public string FileLevelEventCode { get; set; }
 
         /// <summary>
@@ -48,8 +48,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// MFI.6 - Response Level Code.
+        /// <para>Suggested: 0179 Response Level -&gt; ClearHl7.Codes.V231.CodeResponseLevel</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0179</remarks>
         public string ResponseLevelCode { get; set; }
         
         /// <summary>

@@ -28,8 +28,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// PV2.2 - Accommodation Code.
+        /// <para>Suggested: 0129 Accomodation Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0129</remarks>
         public CodedElement AccommodationCode { get; set; }
 
         /// <summary>
@@ -54,8 +54,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// PV2.7 - Visit User Code.
+        /// <para>Suggested: 0130 Visit User Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0130</remarks>
         public string VisitUserCode { get; set; }
 
         /// <summary>
@@ -95,14 +95,14 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// PV2.15 - Employment Illness Related Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V231.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string EmploymentIllnessRelatedIndicator { get; set; }
 
         /// <summary>
         /// PV2.16 - Purge Status Code.
+        /// <para>Suggested: 0213 Purge Status Code -&gt; ClearHl7.Codes.V231.CodePurgeStatusCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0213</remarks>
         public string PurgeStatusCode { get; set; }
 
         /// <summary>
@@ -112,14 +112,14 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// PV2.18 - Special Program Code.
+        /// <para>Suggested: 0214 Special Program Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0214</remarks>
         public string SpecialProgramCode { get; set; }
 
         /// <summary>
         /// PV2.19 - Retention Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V231.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string RetentionIndicator { get; set; }
 
         /// <summary>
@@ -129,14 +129,14 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// PV2.21 - Visit Publicity Code.
+        /// <para>Suggested: 0215 Publicity Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0215</remarks>
         public string VisitPublicityCode { get; set; }
 
         /// <summary>
         /// PV2.22 - Visit Protection Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V231.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string VisitProtectionIndicator { get; set; }
 
         /// <summary>
@@ -146,14 +146,14 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// PV2.24 - Patient Status Code.
+        /// <para>Suggested: 0216 Patient Status Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0216</remarks>
         public string PatientStatusCode { get; set; }
 
         /// <summary>
         /// PV2.25 - Visit Priority Code.
+        /// <para>Suggested: 0217 Visit Priority Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0217</remarks>
         public string VisitPriorityCode { get; set; }
 
         /// <summary>
@@ -163,8 +163,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// PV2.27 - Expected Discharge Disposition.
+        /// <para>Suggested: 0112 Discharge Disposition</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0112</remarks>
         public string ExpectedDischargeDisposition { get; set; }
 
         /// <summary>
@@ -179,20 +179,20 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// PV2.30 - Patient Charge Adjustment Code.
+        /// <para>Suggested: 0218 Patient Charge Adjustment</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0218</remarks>
         public CodedElement PatientChargeAdjustmentCode { get; set; }
 
         /// <summary>
         /// PV2.31 - Recurring Service Code.
+        /// <para>Suggested: 0219 Recurring Service Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0219</remarks>
         public string RecurringServiceCode { get; set; }
 
         /// <summary>
         /// PV2.32 - Billing Media Code.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V231.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string BillingMediaCode { get; set; }
 
         /// <summary>
@@ -202,26 +202,26 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// PV2.34 - Military Partnership Code.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V231.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string MilitaryPartnershipCode { get; set; }
 
         /// <summary>
         /// PV2.35 - Military Non-Availability Code.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V231.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string MilitaryNonAvailabilityCode { get; set; }
 
         /// <summary>
         /// PV2.36 - Newborn Baby Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V231.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string NewbornBabyIndicator { get; set; }
 
         /// <summary>
         /// PV2.37 - Baby Detained Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V231.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string BabyDetainedIndicator { get; set; }
 
         /// <summary>

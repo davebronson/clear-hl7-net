@@ -32,8 +32,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// UB2.3 - Condition Code (24-30).
+        /// <para>Suggested: 0043 Condition Code -&gt; ClearHl7.Codes.V231.CodeConditionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0043</remarks>
         public IEnumerable<string> ConditionCode24To30 { get; set; }
 
         /// <summary>
@@ -48,16 +48,19 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// UB2.6 - Value Amount &amp; Code (39-41).
+        /// <para>Suggested: 0153 Value Code -&gt; ClearHl7.Codes.V231.CodeValueCode</para>
         /// </summary>
         public IEnumerable<ValueCodeAndAmount> ValueAmountCode39To41 { get; set; }
 
         /// <summary>
         /// UB2.7 - Occurrence Code &amp; Date (32-35).
+        /// <para>Suggested: 0350 Occurrence Code -&gt; ClearHl7.Codes.V231.CodeOccurrenceCode</para>
         /// </summary>
         public IEnumerable<OccurrenceCodeAndDate> OccurrenceCodeDate32To35 { get; set; }
 
         /// <summary>
         /// UB2.8 - Occurrence Span Code/Dates (36).
+        /// <para>Suggested: 0351 Occurrence Span -&gt; ClearHl7.Codes.V231.CodeOccurrenceSpan</para>
         /// </summary>
         public IEnumerable<OccurrenceSpanCodeAndDate> OccurrenceSpanCodeDates36 { get; set; }
 

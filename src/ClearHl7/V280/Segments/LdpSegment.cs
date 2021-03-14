@@ -46,7 +46,7 @@ namespace ClearHl7.V280.Segments
 
         /// <summary>
         /// LDP.5 - Valid Patient Classes.
-        /// <para>Suggested: 0004 Patient Class  -&gt; ClearHl7.Codes.V280.CodePatientClass</para>
+        /// <para>Suggested: 0004 Patient Class -&gt; ClearHl7.Codes.V280.CodePatientClass</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ValidPatientClasses { get; set; }
 

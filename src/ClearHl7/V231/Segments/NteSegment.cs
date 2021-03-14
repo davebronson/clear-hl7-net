@@ -26,8 +26,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// NTE.2 - Source of Comment.
+        /// <para>Suggested: 0105 Source Of Comment -&gt; ClearHl7.Codes.V231.CodeSourceOfComment</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0105</remarks>
         public string SourceOfComment { get; set; }
 
         /// <summary>
@@ -38,7 +38,6 @@ namespace ClearHl7.V231.Segments
         /// <summary>
         /// NTE.4 - Comment Type.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0364</remarks>
         public CodedElement CommentType { get; set; }
 
         /// <summary>

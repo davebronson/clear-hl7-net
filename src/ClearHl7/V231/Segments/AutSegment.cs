@@ -21,14 +21,14 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// AUT.1 - Authorizing Payor, Plan ID.
+        /// <para>Suggested: 0072 Insurance Plan ID</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0072</remarks>
         public CodedElement AuthorizingPayorPlanId { get; set; }
 
         /// <summary>
         /// AUT.2 - Authorizing Payor, Company ID.
+        /// <para>Suggested: 0285 Insurance Company ID Codes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0285</remarks>
         public CodedElement AuthorizingPayorCompanyId { get; set; }
 
         /// <summary>

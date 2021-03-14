@@ -28,8 +28,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// OBX.2 - Value Type.
+        /// <para>Suggested: 0125 Value Type -&gt; ClearHl7.Codes.V231.CodeValueType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0125</remarks>
         public string ValueType { get; set; }
 
         /// <summary>
@@ -59,8 +59,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// OBX.8 - Interpretation Codes.
+        /// <para>Suggested: 0078 Interpretation Codes -&gt; ClearHl7.Codes.V231.CodeInterpretationCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0078</remarks>
         public IEnumerable<string> InterpretationCodes { get; set; }
 
         /// <summary>
@@ -70,14 +70,14 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// OBX.10 - Nature of Abnormal Test.
+        /// <para>Suggested: 0080 Nature Of Abnormal Testing -&gt; ClearHl7.Codes.V231.CodeNatureOfAbnormalTesting</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0080</remarks>
         public string NatureOfAbnormalTest { get; set; }
 
         /// <summary>
         /// OBX.11 - Observation Result Status.
+        /// <para>Suggested: 0085 Observation Result Status Codes Interpretation -&gt; ClearHl7.Codes.V231.CodeObservationResultStatusCodesInterpretation</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0085</remarks>
         public string ObservationResultStatus { get; set; }
 
         /// <summary>

@@ -38,8 +38,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// RXG.4 - Give Code.
+        /// <para>Suggested: 0292 Vaccines Administered -&gt; ClearHl7.Codes.V231.CodeVaccinesAdministered</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0292</remarks>
         public CodedElement GiveCode { get; set; }
 
         /// <summary>
@@ -69,8 +69,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// RXG.10 - Substitution Status.
+        /// <para>Suggested: 0167 Substitution Status -&gt; ClearHl7.Codes.V231.CodeSubstitutionStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0167</remarks>
         public string SubstitutionStatus { get; set; }
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// RXG.12 - Needs Human Review.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V231.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string NeedsHumanReview { get; set; }
 
         /// <summary>
@@ -126,8 +126,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// RXG.21 - Substance Manufacturer Name.
+        /// <para>Suggested: 0227 Manufacturers Of Vaccines (code=MVX) -&gt; ClearHl7.Codes.V231.CodeManufacturersOfVaccines</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0227</remarks>
         public IEnumerable<CodedElement> SubstanceManufacturerName { get; set; }
 
         /// <summary>

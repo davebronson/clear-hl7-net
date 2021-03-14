@@ -27,8 +27,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// AL1.2 - Allergen Type Code.
+        /// <para>Suggested: 0127 Allergen Type -&gt; ClearHl7.Codes.V231.CodeAllergenType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0127</remarks>
         public string AllergenTypeCode { get; set; }
 
         /// <summary>
@@ -38,8 +38,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// AL1.4 - Allergy Severity Code.
+        /// <para>Suggested: 0128 Allergy Severity -&gt; ClearHl7.Codes.V231.CodeAllergySeverity</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0128</remarks>
         public string AllergySeverityCode { get; set; }
 
         /// <summary>

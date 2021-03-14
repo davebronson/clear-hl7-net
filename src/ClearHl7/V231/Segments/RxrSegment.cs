@@ -20,26 +20,26 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// RXR.1 - Route.
+        /// <para>Suggested: 0162 Route Of Administration -&gt; ClearHl7.Codes.V231.CodeRouteOfAdministration</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0162</remarks>
         public CodedElement Route { get; set; }
 
         /// <summary>
         /// RXR.2 - Administration Site.
+        /// <para>Suggested: 0163 Body Site -&gt; ClearHl7.Codes.V231.CodeBodySite</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0163</remarks>
         public CodedElement AdministrationSite { get; set; }
 
         /// <summary>
         /// RXR.3 - Administration Device.
+        /// <para>Suggested: 0164 Administration Device -&gt; ClearHl7.Codes.V231.CodeAdministrationDevice</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0164</remarks>
         public CodedElement AdministrationDevice { get; set; }
 
         /// <summary>
         /// RXR.4 - Administration Method.
+        /// <para>Suggested: 0165 Administration Method -&gt; ClearHl7.Codes.V231.CodeAdministrationMethod</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0165</remarks>
         public CodedElement AdministrationMethod { get; set; }
 
         /// <summary>

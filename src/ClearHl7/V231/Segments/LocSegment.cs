@@ -32,8 +32,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// LOC.3 - Location Type - LOC.
+        /// <para>Suggested: 0260 Patient Location Type -&gt; ClearHl7.Codes.V231.CodePatientLocationType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0260</remarks>
         public IEnumerable<string> LocationTypeLoc { get; set; }
 
         /// <summary>
@@ -58,8 +58,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// LOC.8 - Location Equipment.
+        /// <para>Suggested: 0261 Location Equipment -&gt; ClearHl7.Codes.V231.CodeLocationEquipment</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0261</remarks>
         public IEnumerable<string> LocationEquipment { get; set; }
 
         /// <summary>

@@ -28,14 +28,14 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// PR1.2 - Procedure Coding Method.
+        /// <para>Suggested: 0089 Procedure Coding Method</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0089</remarks>
         public string ProcedureCodingMethod { get; set; }
 
         /// <summary>
         /// PR1.3 - Procedure Code.
+        /// <para>Suggested: 0088 Procedure Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0088</remarks>
         public CodedElement ProcedureCode { get; set; }
 
         /// <summary>
@@ -50,8 +50,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// PR1.6 - Procedure Functional Type.
+        /// <para>Suggested: 0230 Procedure Functional Type -&gt; ClearHl7.Codes.V231.CodeProcedureFunctionalType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0230</remarks>
         public string ProcedureFunctionalType { get; set; }
 
         /// <summary>
@@ -61,13 +61,14 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// PR1.8 - Anesthesiologist.
+        /// <para>Suggested: 0010 Physician ID</para>
         /// </summary>
         public IEnumerable<ExtendedCompositeIdNumberAndNameForPersons> Anesthesiologist { get; set; }
 
         /// <summary>
         /// PR1.9 - Anesthesia Code.
+        /// <para>Suggested: 0019 Anesthesia Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0019</remarks>
         public string AnesthesiaCode { get; set; }
 
         /// <summary>
@@ -77,18 +78,20 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// PR1.11 - Surgeon.
+        /// <para>Suggested: 0010 Physician ID</para>
         /// </summary>
         public IEnumerable<ExtendedCompositeIdNumberAndNameForPersons> Surgeon { get; set; }
 
         /// <summary>
         /// PR1.12 - Procedure Practitioner.
+        /// <para>Suggested: 0010 Physician ID</para>
         /// </summary>
         public IEnumerable<ExtendedCompositeIdNumberAndNameForPersons> ProcedurePractitioner { get; set; }
 
         /// <summary>
         /// PR1.13 - Consent Code.
+        /// <para>Suggested: 0059 Consent Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0059</remarks>
         public CodedElement ConsentCode { get; set; }
 
         /// <summary>
@@ -98,14 +101,14 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// PR1.15 - Associated Diagnosis Code.
+        /// <para>Suggested: 0051 Diagnosis Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0051</remarks>
         public CodedElement AssociatedDiagnosisCode { get; set; }
 
         /// <summary>
         /// PR1.16 - Procedure Code Modifier.
+        /// <para>Suggested: 0340 Procedure Code Modifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0340</remarks>
         public IEnumerable<CodedElement> ProcedureCodeModifier { get; set; }
 
         /// <summary>

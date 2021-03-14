@@ -41,7 +41,7 @@ namespace ClearHl7.V281.Segments
 
         /// <summary>
         /// PRC.4 - Valid Patient Classes.
-        /// <para>Suggested: 0004 Patient Class  -&gt; ClearHl7.Codes.V281.CodePatientClass</para>
+        /// <para>Suggested: 0004 Patient Class -&gt; ClearHl7.Codes.V281.CodePatientClass</para>
         /// </summary>
         public IEnumerable<CodedWithExceptions> ValidPatientClasses { get; set; }
 

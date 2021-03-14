@@ -28,8 +28,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// ROL.2 - Action Code.
+        /// <para>Suggested: 0287 Problem/Goal Action Code -&gt; ClearHl7.Codes.V231.CodeProblemGoalActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0287</remarks>
         public string ActionCode { get; set; }
 
         /// <summary>

@@ -23,8 +23,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// ORC.1 - Order Control.
+        /// <para>Suggested: 0119 Order Control Codes -&gt; ClearHl7.Codes.V231.CodeOrderControlCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0119</remarks>
         public string OrderControl { get; set; }
 
         /// <summary>
@@ -44,14 +44,14 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// ORC.5 - Order Status.
+        /// <para>Suggested: 0038 Order Status -&gt; ClearHl7.Codes.V231.CodeOrderStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0038</remarks>
         public string OrderStatus { get; set; }
 
         /// <summary>
         /// ORC.6 - Response Flag.
+        /// <para>Suggested: 0121 Response Flag -&gt; ClearHl7.Codes.V231.CodeResponseFlag</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0121</remarks>
         public string ResponseFlag { get; set; }
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// ORC.20 - Advanced Beneficiary Notice Code.
+        /// <para>Suggested: 0339 Advanced Beneficiary Notice Code -&gt; ClearHl7.Codes.V231.CodeAdvancedBeneficiaryNoticeCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0339</remarks>
         public CodedElement AdvancedBeneficiaryNoticeCode { get; set; }
 
         /// <summary>

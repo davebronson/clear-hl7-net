@@ -19,8 +19,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// NSC.1 - Application Change Type.
+        /// <para>Suggested: 0333 Driver's License Issuing Authority</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0333</remarks>
         public string ApplicationChangeType { get; set; }
 
         /// <summary>

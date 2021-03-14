@@ -32,26 +32,26 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// MSH.3 - Sending Application.
+        /// <para>Suggested: 0361 Application</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0361</remarks>
         public HierarchicDesignator SendingApplication { get; set; }
 
         /// <summary>
         /// MSH.4 - Sending Facility.
+        /// <para>Suggested: 0362 Facility</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0362</remarks>
         public HierarchicDesignator SendingFacility { get; set; }
 
         /// <summary>
         /// MSH.5 - Receiving Application.
+        /// <para>Suggested: 0361 Application</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0361</remarks>
         public HierarchicDesignator ReceivingApplication { get; set; }
 
         /// <summary>
         /// MSH.6 - Receiving Facility.
+        /// <para>Suggested: 0362 Facility</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0362</remarks>
         public HierarchicDesignator ReceivingFacility { get; set; }
 
         /// <summary>
@@ -66,6 +66,7 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// MSH.9 - Message Type.
+        /// <para>Suggested: 0076 Message Type -&gt; ClearHl7.Codes.V231.CodeMessageType</para>
         /// </summary>
         public MessageType MessageType { get; set; }
 
@@ -81,6 +82,7 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// MSH.12 - Version ID.
+        /// <para>Suggested: 0104 Version ID -&gt; ClearHl7.Codes.V231.CodeVersionId</para>
         /// </summary>
         public VersionIdentifier VersionId { get; set; } = new VersionIdentifier { VersionId = "2.3.1" };
 
@@ -96,26 +98,25 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// MSH.15 - Accept Acknowledgment Type.
+        /// <para>Suggested: 0155 Accept/Application Acknowledgment Conditions -&gt; ClearHl7.Codes.V231.CodeAcceptApplicationAcknowledgmentConditions</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0155</remarks>
         public string AcceptAcknowledgmentType { get; set; }
 
         /// <summary>
         /// MSH.16 - Application Acknowledgment Type.
+        /// <para>Suggested: 0155 Accept/Application Acknowledgment Conditions -&gt; ClearHl7.Codes.V231.CodeAcceptApplicationAcknowledgmentConditions</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0155</remarks>
         public string ApplicationAcknowledgmentType { get; set; }
 
         /// <summary>
         /// MSH.17 - Country Code.
         /// </summary>
-        /// <remarks>https://www.iso.org/iso-3166-country-codes.html</remarks>
         public string CountryCode { get; set; }
 
         /// <summary>
         /// MSH.18 - Character Set.
+        /// <para>Suggested: 0211 Alternate Character Sets -&gt; ClearHl7.Codes.V231.CodeAlternateCharacterSets</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0211</remarks>
         public IEnumerable<string> CharacterSet { get; set; }
 
         /// <summary>
@@ -125,8 +126,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// MSH.20 - Alternate Character Set Handling Scheme.
+        /// <para>Suggested: 0356 Alternate Character Set Handling Scheme -&gt; ClearHl7.Codes.V231.CodeAlternateCharacterSetHandlingScheme</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0356</remarks>
         public string AlternateCharacterSetHandlingScheme { get; set; }
 
         /// <summary>

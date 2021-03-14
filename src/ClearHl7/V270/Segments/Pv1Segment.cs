@@ -28,7 +28,7 @@ namespace ClearHl7.V270.Segments
 
         /// <summary>
         /// PV1.2 - Patient Class.
-        /// <para>Suggested: 0004 Patient Class  -&gt; ClearHl7.Codes.V270.CodePatientClass</para>
+        /// <para>Suggested: 0004 Patient Class -&gt; ClearHl7.Codes.V270.CodePatientClass</para>
         /// </summary>
         public CodedWithExceptions PatientClass { get; set; }
 

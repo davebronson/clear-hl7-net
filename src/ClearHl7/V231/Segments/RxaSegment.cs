@@ -43,8 +43,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// RXA.5 - Administered Code.
+        /// <para>Suggested: 0292 Vaccines Administered -&gt; ClearHl7.Codes.V231.CodeVaccinesAdministered</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0292</remarks>
         public CodedElement AdministeredCode { get; set; }
 
         /// <summary>
@@ -104,8 +104,8 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// RXA.17 - Substance Manufacturer Name.
+        /// <para>Suggested: 0227 Manufacturers Of Vaccines (code=MVX) -&gt; ClearHl7.Codes.V231.CodeManufacturersOfVaccines</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0227</remarks>
         public IEnumerable<CodedElement> SubstanceManufacturerName { get; set; }
 
         /// <summary>
@@ -120,14 +120,14 @@ namespace ClearHl7.V231.Segments
 
         /// <summary>
         /// RXA.20 - Completion Status.
+        /// <para>Suggested: 0322 Completion Status -&gt; ClearHl7.Codes.V231.CodeCompletionStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0322</remarks>
         public string CompletionStatus { get; set; }
 
         /// <summary>
         /// RXA.21 - Action Code - RXA.
+        /// <para>Suggested: 0323 Action Code -&gt; ClearHl7.Codes.V231.CodeActionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0323</remarks>
         public string ActionCodeRxa { get; set; }
 
         /// <summary>
