@@ -14,14 +14,14 @@ namespace ClearHl7.V282.Types
 
         /// <summary>
         /// VID.1 - Version ID.
+        /// <para>Suggested: 0104 Version ID -&gt; ClearHl7.Codes.V282.CodeVersionId</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0104</remarks>
         public string VersionId { get; set; }
 
         /// <summary>
         /// VID.2 - Internationalization Code.
+        /// <para>Suggested: 0399 Country Code -&gt; https://www.iso.org/iso-3166-country-codes.html</para>
         /// </summary>
-        /// <remarks>https://www.iso.org/iso-3166-country-codes.html</remarks>
         public CodedWithExceptions InternationalizationCode { get; set; }
 
         /// <summary>

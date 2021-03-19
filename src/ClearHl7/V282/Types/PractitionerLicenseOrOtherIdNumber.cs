@@ -20,12 +20,12 @@ namespace ClearHl7.V282.Types
 
         /// <summary>
         /// PLN.2 - Type of ID Number.
+        /// <para>Suggested: 0338 Practitioner ID Number Type -&gt; ClearHl7.Codes.V282.CodePractitionerIdNumberType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0338</remarks>
         public CodedWithExceptions TypeOfIdNumber { get; set; }
 
         /// <summary>
-        /// PLN.3 - State/other Qualifying Information.
+        /// PLN.3 - State/Other Qualifying Information.
         /// </summary>
         public string StateOtherQualifyingInformation { get; set; }
 

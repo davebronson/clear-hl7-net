@@ -14,8 +14,8 @@ namespace ClearHl7.V282.Types
 
         /// <summary>
         /// SCV.1 - Parameter Class.
+        /// <para>Suggested: 0294 Time Selection Criteria Parameter Class Codes -&gt; ClearHl7.Codes.V282.CodeTimeSelectionCriteriaParameterClassCodes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0294</remarks>
         public CodedWithExceptions ParameterClass { get; set; }
 
         /// <summary>

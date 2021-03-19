@@ -24,8 +24,8 @@ namespace ClearHl7.V282.Types
 
         /// <summary>
         /// DLT.3 - Change Computation.
+        /// <para>Suggested: 0523 Computation Type -&gt; ClearHl7.Codes.V282.CodeComputationType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0523</remarks>
         public string ChangeComputation { get; set; }
 
         /// <summary>
