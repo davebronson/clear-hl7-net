@@ -15,8 +15,8 @@ namespace ClearHl7.V281.Types
 
         /// <summary>
         /// CCD.1 - Invocation Event.
+        /// <para>Suggested: 0100 Invocation Event -&gt; ClearHl7.Codes.V281.CodeInvocationEvent</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0100</remarks>
         public string InvocationEvent { get; set; }
 
         /// <summary>

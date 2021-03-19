@@ -19,8 +19,8 @@ namespace ClearHl7.V281.Types
 
         /// <summary>
         /// MO.2 - Denomination.
+        /// <para>Suggested: 0913 Denomination</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0913</remarks>
         public string Denomination { get; set; }
 
         /// <summary>

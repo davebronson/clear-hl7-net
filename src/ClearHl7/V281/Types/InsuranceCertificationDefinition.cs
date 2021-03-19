@@ -15,14 +15,14 @@ namespace ClearHl7.V281.Types
 
         /// <summary>
         /// ICD.1 - Certification Patient Type.
+        /// <para>Suggested: 0150 Certification Patient Type -&gt; ClearHl7.Codes.V281.CodeCertificationPatientType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0150</remarks>
         public CodedWithExceptions CertificationPatientType { get; set; }
 
         /// <summary>
         /// ICD.2 - Certification Required.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V281.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string CertificationRequired { get; set; }
 
         /// <summary>

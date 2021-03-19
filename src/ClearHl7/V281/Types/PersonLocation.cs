@@ -14,20 +14,20 @@ namespace ClearHl7.V281.Types
 
         /// <summary>
         /// PL.1 - Point of Care.
+        /// <para>Suggested: 0302 Point Of Care</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0302</remarks>
         public HierarchicDesignator PointOfCare { get; set; }
 
         /// <summary>
         /// PL.2 - Room.
+        /// <para>Suggested: 0303 Room</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0303</remarks>
         public HierarchicDesignator Room { get; set; }
 
         /// <summary>
         /// PL.3 - Bed.
+        /// <para>Suggested: 0304 Bed</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0304</remarks>
         public HierarchicDesignator Bed { get; set; }
 
         /// <summary>
@@ -37,26 +37,26 @@ namespace ClearHl7.V281.Types
 
         /// <summary>
         /// PL.5 - Location Status.
+        /// <para>Suggested: 0306 Location Status</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0306</remarks>
         public string LocationStatus { get; set; }
 
         /// <summary>
         /// PL.6 - Person Location Type.
+        /// <para>Suggested: 0305 Person Location Type -&gt; ClearHl7.Codes.V281.CodePersonLocationType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0305</remarks>
         public string PersonLocationType { get; set; }
 
         /// <summary>
         /// PL.7 - Building.
+        /// <para>Suggested: 0307 Building</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0307</remarks>
         public HierarchicDesignator Building { get; set; }
 
         /// <summary>
         /// PL.8 - Floor.
+        /// <para>Suggested: 0308 Floor</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0308</remarks>
         public HierarchicDesignator Floor { get; set; }
 
         /// <summary>
@@ -71,8 +71,8 @@ namespace ClearHl7.V281.Types
 
         /// <summary>
         /// PL.11 - Assigning Authority for Location.
+        /// <para>Suggested: 0363 Assigning Authority -&gt; ClearHl7.Codes.V281.CodeAssigningAuthority</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0363</remarks>
         public HierarchicDesignator AssigningAuthorityForLocation { get; set; }
 
         /// <summary>

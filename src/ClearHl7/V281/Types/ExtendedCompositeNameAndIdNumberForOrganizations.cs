@@ -19,8 +19,8 @@ namespace ClearHl7.V281.Types
 
         /// <summary>
         /// XON.2 - Organization Name Type Code.
+        /// <para>Suggested: 0204 Organizational Name Type -&gt; ClearHl7.Codes.V281.CodeOrganizationalNameType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0204</remarks>
         public CodedWithExceptions OrganizationNameTypeCode { get; set; }
 
         /// <summary>
@@ -40,14 +40,14 @@ namespace ClearHl7.V281.Types
 
         /// <summary>
         /// XON.6 - Assigning Authority.
+        /// <para>Suggested: 0363 Assigning Authority -&gt; ClearHl7.Codes.V281.CodeAssigningAuthority</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0363</remarks>
         public HierarchicDesignator AssigningAuthority { get; set; }
 
         /// <summary>
         /// XON.7 - Identifier Type Code.
+        /// <para>Suggested: 0203 Identifier Type -&gt; ClearHl7.Codes.V281.CodeIdentifierType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0203</remarks>
         public string IdentifierTypeCode { get; set; }
 
         /// <summary>
@@ -57,8 +57,8 @@ namespace ClearHl7.V281.Types
 
         /// <summary>
         /// XON.9 - Name Representation Code.
+        /// <para>Suggested: 0465 Name/Address Representation -&gt; ClearHl7.Codes.V281.CodeNameAddressRepresentation</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0465</remarks>
         public string NameRepresentationCode { get; set; }
 
         /// <summary>
