@@ -14,8 +14,8 @@ namespace ClearHl7.V260.Types
 
         /// <summary>
         /// DTN.1 - Day Type.
+        /// <para>Suggested: 0149 Day Type -&gt; ClearHl7.Codes.V260.CodeDayType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0149</remarks>
         public string DayType { get; set; }
 
         /// <summary>

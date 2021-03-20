@@ -19,8 +19,8 @@ namespace ClearHl7.V260.Types
 
         /// <summary>
         /// QSC.2 - Relational Operator.
+        /// <para>Suggested: 0209 Relational Operator -&gt; ClearHl7.Codes.V260.CodeRelationalOperator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0209</remarks>
         public string RelationalOperator { get; set; }
 
         /// <summary>
@@ -30,8 +30,8 @@ namespace ClearHl7.V260.Types
 
         /// <summary>
         /// QSC.4 - Relational Conjunction.
+        /// <para>Suggested: 0210 Relational Conjunction -&gt; ClearHl7.Codes.V260.CodeRelationalConjunction</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0210</remarks>
         public string RelationalConjunction { get; set; }
 
         /// <summary>

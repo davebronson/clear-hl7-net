@@ -14,14 +14,20 @@ namespace ClearHl7.Tests.TypesTests
         {
             IType hl7Type = new OrderSequenceDefinition
             {
-                OccurrenceCode = new CodedWithNoExceptions
-                {
-                    Identifier = "1"
-                },
-                OccurrenceDate = new DateTime(2020, 2, 2)
+                SequenceResultsFlag = "1",
+                PlacerOrderNumberEntityIdentifier = "2",
+                PlacerOrderNumberNamespaceId = "3",
+                FillerOrderNumberEntityIdentifier = "4",
+                FillerOrderNumberNamespaceId = "5",
+                SequenceConditionValue = "6",
+                MaximumNumberOfRepeats = 7M,
+                PlacerOrderNumberUniversalId = "8",
+                PlacerOrderNumberUniversalIdType = "9",
+                FillerOrderNumberUniversalId = "10",
+                FillerOrderNumberUniversalIdType = "11"
             };
 
-            string expected = "1^20200202";
+            string expected = "1^2^3^4^5^6^7^8^9^10^11";
             string actual = hl7Type.ToDelimitedString();
 
             Assert.Equal(expected, actual);

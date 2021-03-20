@@ -37,10 +37,7 @@ namespace ClearHl7.Tests.TypesTests
                 Conjunction = "9",
                 OrderSequencing = new OrderSequenceDefinition
                 {
-                    OccurrenceCode = new CodedWithNoExceptions
-                    {
-                        Identifier = "10"
-                    },
+                    SequenceResultsFlag = "10"
                 },
                 OccurrenceDuration = new CodedWithExceptions
                 {

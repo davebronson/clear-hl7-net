@@ -14,15 +14,64 @@ namespace ClearHl7.V260.Types
         public bool IsSubcomponent { get; set; }
 
         /// <summary>
-        /// OSD.1 - Occurrence Code.
+        /// OSD.1 - Sequence/Results Flag.
+        /// <para>Suggested: 0524 Sequence Condition</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0350</remarks>
-        public CodedWithNoExceptions OccurrenceCode { get; set; }
+        public string SequenceResultsFlag { get; set; }
 
         /// <summary>
-        /// OSD.2 - Occurrence Date.
+        /// OSD.2 - Placer Order Number: Entity Identifier.
         /// </summary>
-        public DateTime? OccurrenceDate { get; set; }
+        public string PlacerOrderNumberEntityIdentifier { get; set; }
+
+        /// <summary>
+        /// OSD.3 - Placer Order Number: Namespace ID.
+        /// <para>Suggested: 0363 Assigning Authority -&gt; ClearHl7.Codes.V260.CodeAssigningAuthority</para>
+        /// </summary>
+        public string PlacerOrderNumberNamespaceId { get; set; }
+
+        /// <summary>
+        /// OSD.4 - Filler Order Number: Entity Identifier.
+        /// </summary>
+        public string FillerOrderNumberEntityIdentifier { get; set; }
+
+        /// <summary>
+        /// OSD.5 - Filler Order Number: Namespace ID.
+        /// <para>Suggested: 0363 Assigning Authority -&gt; ClearHl7.Codes.V260.CodeAssigningAuthority</para>
+        /// </summary>
+        public string FillerOrderNumberNamespaceId { get; set; }
+
+        /// <summary>
+        /// OSD.6 - Sequence Condition Value.
+        /// </summary>
+        public string SequenceConditionValue { get; set; }
+
+        /// <summary>
+        /// OSD.7 - Maximum Number of Repeats.
+        /// </summary>
+        public decimal? MaximumNumberOfRepeats { get; set; }
+
+        /// <summary>
+        /// OSD.8 - Placer Order Number: Universal ID.
+        /// </summary>
+        public string PlacerOrderNumberUniversalId { get; set; }
+
+        /// <summary>
+        /// OSD.9 - Placer Order Number: Universal ID Type.
+        /// <para>Suggested: 0301 Universal ID Type -&gt; ClearHl7.Codes.V260.CodeUniversalIdType</para>
+        /// </summary>
+        public string PlacerOrderNumberUniversalIdType { get; set; }
+
+        /// <summary>
+        /// OSD.10 - Filler Order Number: Universal ID.
+        /// </summary>
+        public string FillerOrderNumberUniversalId { get; set; }
+
+        /// <summary>
+        /// OSD.11 - Filler Order Number: Universal ID Type.
+        /// <para>Suggested: 0301 Universal ID Type -&gt; ClearHl7.Codes.V260.CodeUniversalIdType</para>
+        /// </summary>
+        public string FillerOrderNumberUniversalIdType { get; set; }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.
@@ -35,9 +84,18 @@ namespace ClearHl7.V260.Types
 
             return string.Format(
                                 culture,
-                                StringHelper.StringFormatSequence(0, 2, separator),
-                                OccurrenceCode?.ToDelimitedString(),
-                                OccurrenceDate.HasValue ? OccurrenceDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
+                                StringHelper.StringFormatSequence(0, 11, separator),
+                                SequenceResultsFlag,
+                                PlacerOrderNumberEntityIdentifier,
+                                PlacerOrderNumberNamespaceId,
+                                FillerOrderNumberEntityIdentifier,
+                                FillerOrderNumberNamespaceId,
+                                SequenceConditionValue,
+                                MaximumNumberOfRepeats.HasValue ? MaximumNumberOfRepeats.Value.ToString(Consts.NumericFormat, culture) : null,
+                                PlacerOrderNumberUniversalId,
+                                PlacerOrderNumberUniversalIdType,
+                                FillerOrderNumberUniversalId,
+                                FillerOrderNumberUniversalIdType
                                 ).TrimEnd(separator.ToCharArray());
         }
     }

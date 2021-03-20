@@ -19,8 +19,8 @@ namespace ClearHl7.V260.Types
 
         /// <summary>
         /// SPS.2 - Additives.
+        /// <para>Suggested: 0371 Additive/Preservative -&gt; ClearHl7.Codes.V260.CodeAdditivePreservative</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0371</remarks>
         public CodedWithExceptions Additives { get; set; }
 
         /// <summary>
@@ -30,14 +30,14 @@ namespace ClearHl7.V260.Types
 
         /// <summary>
         /// SPS.4 - Body Site.
+        /// <para>Suggested: 0163 Body Site -&gt; ClearHl7.Codes.V260.CodeBodySite</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0163</remarks>
         public CodedWithExceptions BodySite { get; set; }
 
         /// <summary>
         /// SPS.5 - Site Modifier.
+        /// <para>Suggested: 0495 Body Site Modifier -&gt; ClearHl7.Codes.V260.CodeBodySiteModifier</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0495</remarks>
         public CodedWithExceptions SiteModifier { get; set; }
 
         /// <summary>
@@ -47,8 +47,8 @@ namespace ClearHl7.V260.Types
 
         /// <summary>
         /// SPS.7 - Specimen Role.
+        /// <para>Suggested: 0369 Specimen Role -&gt; ClearHl7.Codes.V260.CodeSpecimenRole</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0369</remarks>
         public CodedWithExceptions SpecimenRole { get; set; }
 
         /// <summary>

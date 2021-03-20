@@ -14,14 +14,14 @@ namespace ClearHl7.V260.Types
 
         /// <summary>
         /// RMC.1 - Room Type.
+        /// <para>Suggested: 0145 Room Type -&gt; ClearHl7.Codes.V260.CodeRoomType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0145</remarks>
         public string RoomType { get; set; }
 
         /// <summary>
         /// RMC.2 - Amount Type.
+        /// <para>Suggested: 0146 Amount Type -&gt; ClearHl7.Codes.V260.CodeAmountType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0146</remarks>
         public string AmountType { get; set; }
 
         /// <summary>

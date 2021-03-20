@@ -40,14 +40,14 @@ namespace ClearHl7.V260.Types
 
         /// <summary>
         /// XAD.6 - Country.
+        /// <para>Suggested: 0399 Country Code -&gt; https://www.iso.org/iso-3166-country-codes.html</para>
         /// </summary>
-        /// <remarks>https://www.iso.org/iso-3166-country-codes.html</remarks>
         public string Country { get; set; }
 
         /// <summary>
         /// XAD.7 - Address Type.
+        /// <para>Suggested: 0190 Address Type -&gt; ClearHl7.Codes.V260.CodeAddressType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0190</remarks>
         public string AddressType { get; set; }
 
         /// <summary>
@@ -57,20 +57,20 @@ namespace ClearHl7.V260.Types
 
         /// <summary>
         /// XAD.9 - County/Parish Code.
+        /// <para>Suggested: 0289 County/Parish Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0289</remarks>
         public CodedWithExceptions CountyParishCode { get; set; }
 
         /// <summary>
         /// XAD.10 - Census Tract.
+        /// <para>Suggested: 0288 Census Tract</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0288</remarks>
         public string CensusTract { get; set; }
 
         /// <summary>
         /// XAD.11 - Address Representation Code.
+        /// <para>Suggested: 0465 Name/Address Representation -&gt; ClearHl7.Codes.V260.CodeNameAddressRepresentation</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0465</remarks>
         public string AddressRepresentationCode { get; set; }
 
         /// <summary>
@@ -90,26 +90,26 @@ namespace ClearHl7.V260.Types
 
         /// <summary>
         /// XAD.15 - Expiration Reason.
+        /// <para>Suggested: 0616 Address Expiration Reason -&gt; ClearHl7.Codes.V260.CodeAddressExpirationReason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0616</remarks>
         public CodedWithExceptions ExpirationReason { get; set; }
 
         /// <summary>
         /// XAD.16 - Temporary Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string TemporaryIndicator { get; set; }
 
         /// <summary>
         /// XAD.17 - Bad Address Indicator.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V260.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string BadAddressIndicator { get; set; }
 
         /// <summary>
         /// XAD.18 - Address Usage.
+        /// <para>Suggested: 0617 Address Usage -&gt; ClearHl7.Codes.V260.CodeAddressUsage</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0617</remarks>
         public string AddressUsage { get; set; }
 
         /// <summary>
@@ -129,8 +129,8 @@ namespace ClearHl7.V260.Types
 
         /// <summary>
         /// XAD.22 - Protection Code.
+        /// <para>Suggested: 0618 Protection Code -&gt; ClearHl7.Codes.V260.CodeProtectionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0618</remarks>
         public CodedWithExceptions ProtectionCode { get; set; }
 
         /// <summary>
