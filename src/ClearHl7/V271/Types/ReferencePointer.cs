@@ -24,14 +24,14 @@ namespace ClearHl7.V271.Types
 
         /// <summary>
         /// RP.3 - Type of Data.
+        /// <para>Suggested: 0834 MIME Types -&gt; ClearHl7.Codes.V271.CodeMimeTypes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0834</remarks>
         public string TypeOfData { get; set; }
 
         /// <summary>
         /// RP.4 - Subtype.
+        /// <para>Suggested: 0291 Subtype Of Referenced Data -&gt; ClearHl7.Codes.V271.CodeSubtypeOfReferencedData</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0291</remarks>
         public string Subtype { get; set; }
 
         /// <summary>

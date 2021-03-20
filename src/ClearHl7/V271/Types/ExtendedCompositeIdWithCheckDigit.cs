@@ -25,20 +25,20 @@ namespace ClearHl7.V271.Types
 
         /// <summary>
         /// CX.3 - Check Digit Scheme.
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Codes.V271.CodeCheckDigitScheme</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0061</remarks>
         public string CheckDigitScheme { get; set; }
 
         /// <summary>
         /// CX.4 - Assigning Authority.
+        /// <para>Suggested: 0363 Assigning Authority -&gt; ClearHl7.Codes.V271.CodeAssigningAuthority</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0363</remarks>
         public HierarchicDesignator AssigningAuthority { get; set; }
 
         /// <summary>
         /// CX.5 - Identifier Type Code.
+        /// <para>Suggested: 0203 Identifier Type -&gt; ClearHl7.Codes.V271.CodeIdentifierType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0203</remarks>
         public string IdentifierTypeCode { get; set; }
 
         /// <summary>
@@ -73,8 +73,8 @@ namespace ClearHl7.V271.Types
 
         /// <summary>
         /// CX.12 - Security Check Scheme.
+        /// <para>Suggested: 0904 Security Check Scheme -&gt; ClearHl7.Codes.V271.CodeSecurityCheckScheme</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0904</remarks>
         public string SecurityCheckScheme { get; set; }
 
         /// <summary>

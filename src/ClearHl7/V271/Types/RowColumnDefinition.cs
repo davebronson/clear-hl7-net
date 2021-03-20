@@ -19,8 +19,8 @@ namespace ClearHl7.V271.Types
 
         /// <summary>
         /// RCD.2 - HL7 Data Type.
+        /// <para>Suggested: 0440 Data Types -&gt; ClearHl7.Codes.V271.CodeDataTypes</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0440</remarks>
         public string Hl7DataType { get; set; }
 
         /// <summary>

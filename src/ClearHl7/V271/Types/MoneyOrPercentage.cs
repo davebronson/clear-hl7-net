@@ -14,8 +14,8 @@ namespace ClearHl7.V271.Types
 
         /// <summary>
         /// MOP.1 - Money or Percentage Indicator.
+        /// <para>Suggested: 0148 Money Or Percentage Indicator -&gt; ClearHl7.Codes.V271.CodeMoneyOrPercentageIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0148</remarks>
         public string MoneyOrPercentageIndicator { get; set; }
 
         /// <summary>
@@ -25,8 +25,8 @@ namespace ClearHl7.V271.Types
 
         /// <summary>
         /// MOP.3 - Monetary Denomination.
+        /// <para>Suggested: 0913 Denomination</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0913</remarks>
         public string MonetaryDenomination { get; set; }
 
         /// <summary>
