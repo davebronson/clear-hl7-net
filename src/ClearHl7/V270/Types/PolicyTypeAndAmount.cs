@@ -14,14 +14,14 @@ namespace ClearHl7.V270.Types
 
         /// <summary>
         /// PTA.1 - Policy Type.
+        /// <para>Suggested: 0147 Policy Type -&gt; ClearHl7.Codes.V270.CodePolicyType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0147</remarks>
         public CodedWithExceptions PolicyType { get; set; }
 
         /// <summary>
         /// PTA.2 - Amount Class.
+        /// <para>Suggested: 0193 Amount Class -&gt; ClearHl7.Codes.V270.CodeAmountClass</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0193</remarks>
         public CodedWithExceptions AmountClass { get; set; }
 
         /// <summary>
