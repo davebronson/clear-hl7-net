@@ -14,8 +14,8 @@ namespace ClearHl7.V251.Types
 
         /// <summary>
         /// OSD.1 - Sequence/Results Flag.
+        /// <para>Suggested: 0524 Sequence Condition -&gt; ClearHl7.Codes.V251.CodeSequenceCondition</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0524</remarks>
         public string SequenceResultsFlag { get; set; }
 
         /// <summary>
@@ -25,8 +25,8 @@ namespace ClearHl7.V251.Types
 
         /// <summary>
         /// OSD.3 - Placer Order Number: Namespace ID.
+        /// <para>Suggested: 0363 Assigning Authority -&gt; ClearHl7.Codes.V251.CodeAssigningAuthority</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0363</remarks>
         public string PlacerOrderNumberNamespaceId { get; set; }
 
         /// <summary>
@@ -36,8 +36,8 @@ namespace ClearHl7.V251.Types
 
         /// <summary>
         /// OSD.5 - Filler Order Number: Namespace ID.
+        /// <para>Suggested: 0363 Assigning Authority -&gt; ClearHl7.Codes.V251.CodeAssigningAuthority</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0363</remarks>
         public string FillerOrderNumberNamespaceId { get; set; }
 
         /// <summary>
@@ -57,8 +57,8 @@ namespace ClearHl7.V251.Types
 
         /// <summary>
         /// OSD.9 - Placer Order Number: Universal ID Type.
+        /// <para>Suggested: 0301 Universal ID Type -&gt; ClearHl7.Codes.V251.CodeUniversalIdType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0301</remarks>
         public string PlacerOrderNumberUniversalIdType { get; set; }
 
         /// <summary>
@@ -68,8 +68,8 @@ namespace ClearHl7.V251.Types
 
         /// <summary>
         /// OSD.11 - Filler Order Number: Universal ID Type.
+        /// <para>Suggested: 0301 Universal ID Type -&gt; ClearHl7.Codes.V251.CodeUniversalIdType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0301</remarks>
         public string FillerOrderNumberUniversalIdType { get; set; }
 
         /// <summary>

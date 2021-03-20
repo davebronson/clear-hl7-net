@@ -20,8 +20,8 @@ namespace ClearHl7.V251.Types
 
         /// <summary>
         /// DIN.2 - Institution Name.
+        /// <para>Suggested: 0531 Institution Name</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0531</remarks>
         public CodedElement InstitutionName { get; set; }
 
         /// <summary>

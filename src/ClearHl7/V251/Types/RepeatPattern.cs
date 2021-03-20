@@ -14,14 +14,14 @@ namespace ClearHl7.V251.Types
 
         /// <summary>
         /// RPT.1 - Repeat Pattern Code.
+        /// <para>Suggested: 0335 Repeat Pattern -&gt; ClearHl7.Codes.V251.CodeRepeatPattern</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0335</remarks>
         public CodedWithExceptions RepeatPatternCode { get; set; }
 
         /// <summary>
         /// RPT.2 - Calendar Alignment.
+        /// <para>Suggested: 0527 Calendar Alignment -&gt; ClearHl7.Codes.V251.CodeCalendarAlignment</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0527</remarks>
         public string CalendarAlignment { get; set; }
 
         /// <summary>
@@ -46,14 +46,14 @@ namespace ClearHl7.V251.Types
 
         /// <summary>
         /// RPT.7 - Institution Specified Time.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V251.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string InstitutionSpecifiedTime { get; set; }
 
         /// <summary>
         /// RPT.8 - Event.
+        /// <para>Suggested: 0528 Event Related Period -&gt; ClearHl7.Codes.V251.CodeEventRelatedPeriod</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0528</remarks>
         public string Event { get; set; }
 
         /// <summary>

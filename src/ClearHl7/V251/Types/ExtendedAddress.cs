@@ -40,14 +40,14 @@ namespace ClearHl7.V251.Types
 
         /// <summary>
         /// XAD.6 - Country.
+        /// <para>Suggested: 0399 Country Code -&gt; https://www.iso.org/iso-3166-country-codes.html</para>
         /// </summary>
-        /// <remarks>https://www.iso.org/iso-3166-country-codes.html</remarks>
         public string Country { get; set; }
 
         /// <summary>
         /// XAD.7 - Address Type.
+        /// <para>Suggested: 0190 Address Type -&gt; ClearHl7.Codes.V251.CodeAddressType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0190</remarks>
         public string AddressType { get; set; }
 
         /// <summary>
@@ -57,20 +57,20 @@ namespace ClearHl7.V251.Types
 
         /// <summary>
         /// XAD.9 - County/Parish Code.
+        /// <para>Suggested: 0289 County/Parish Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0289</remarks>
         public string CountyParishCode { get; set; }
 
         /// <summary>
         /// XAD.10 - Census Tract.
+        /// <para>Suggested: 0288 Census Tract</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0288</remarks>
         public string CensusTract { get; set; }
 
         /// <summary>
         /// XAD.11 - Address Representation Code.
+        /// <para>Suggested: 0465 Name/Address Representation -&gt; ClearHl7.Codes.V251.CodeNameAddressRepresentation</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0465</remarks>
         public string AddressRepresentationCode { get; set; }
 
         /// <summary>
