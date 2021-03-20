@@ -19,8 +19,8 @@ namespace ClearHl7.V280.Types
 
         /// <summary>
         /// CP.2 - Price Type.
+        /// <para>Suggested: 0205 Price Type -&gt; ClearHl7.Codes.V280.CodePriceType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0205</remarks>
         public string PriceType { get; set; }
 
         /// <summary>
@@ -40,8 +40,8 @@ namespace ClearHl7.V280.Types
 
         /// <summary>
         /// CP.6 - Range Type.
+        /// <para>Suggested: 0298 CP Range Type -&gt; ClearHl7.Codes.V280.CodeCpRangeType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0298</remarks>
         public string RangeType { get; set; }
 
         /// <summary>

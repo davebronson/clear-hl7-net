@@ -14,8 +14,8 @@ namespace ClearHl7.V280.Types
 
         /// <summary>
         /// DTN.1 - Day Type.
+        /// <para>Suggested: 0149 Day Type -&gt; ClearHl7.Codes.V280.CodeDayType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0149</remarks>
         public CodedWithExceptions DayType { get; set; }
 
         /// <summary>

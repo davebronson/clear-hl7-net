@@ -14,8 +14,8 @@ namespace ClearHl7.V280.Types
 
         /// <summary>
         /// HD.1 - Namespace ID.
+        /// <para>Suggested: 0300 Namespace Id</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0300</remarks>
         public string NamespaceId { get; set; }
 
         /// <summary>
@@ -25,8 +25,8 @@ namespace ClearHl7.V280.Types
 
         /// <summary>
         /// HD.3 - Universal ID Type.
+        /// <para>Suggested: 0301 Universal ID Type -&gt; ClearHl7.Codes.V280.CodeUniversalIdType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0301</remarks>
         public string UniversalIdType { get; set; }
 
         /// <summary>

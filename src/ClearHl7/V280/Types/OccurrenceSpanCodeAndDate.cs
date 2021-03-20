@@ -15,8 +15,8 @@ namespace ClearHl7.V280.Types
 
         /// <summary>
         /// OSP.1 - Occurrence Span Code.
+        /// <para>Suggested: 0351 Occurrence Span -&gt; ClearHl7.Codes.V280.CodeOccurrenceSpan</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0351</remarks>
         public CodedWithNoExceptions OccurrenceSpanCode { get; set; }
 
         /// <summary>

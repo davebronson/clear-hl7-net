@@ -20,14 +20,14 @@ namespace ClearHl7.V280.Types
 
         /// <summary>
         /// XTN.2 - Telecommunication Use Code.
+        /// <para>Suggested: 0201 Telecommunication Use Code -&gt; ClearHl7.Codes.V280.CodeTelecommunicationUseCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0201</remarks>
         public string TelecommunicationUseCode { get; set; }
 
         /// <summary>
         /// XTN.3 - Telecommunication Equipment Type.
+        /// <para>Suggested: 0202 Telecommunication Equipment Type -&gt; ClearHl7.Codes.V280.CodeTelecommunicationEquipmentType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0202</remarks>
         public string TelecommunicationEquipmentType { get; set; }
 
         /// <summary>
@@ -87,14 +87,14 @@ namespace ClearHl7.V280.Types
 
         /// <summary>
         /// XTN.15 - Expiration Reason.
+        /// <para>Suggested: 0868 Telecommunication Expiration Reason -&gt; ClearHl7.Codes.V280.CodeTelecommunicationExpirationReason</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0868</remarks>
         public CodedWithExceptions ExpirationReason { get; set; }
 
         /// <summary>
         /// XTN.16 - Protection Code.
+        /// <para>Suggested: 0618 Protection Code -&gt; ClearHl7.Codes.V280.CodeProtectionCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0618</remarks>
         public CodedWithExceptions ProtectionCode { get; set; }
 
         /// <summary>

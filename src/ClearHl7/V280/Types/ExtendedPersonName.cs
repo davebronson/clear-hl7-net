@@ -41,25 +41,24 @@ namespace ClearHl7.V280.Types
         /// <summary>
         /// XPN.6 - Degree (e.g., MD).
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0360</remarks>
         public string Degree { get; set; }
 
         /// <summary>
         /// XPN.7 - Name Type Code.
+        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Codes.V280.CodeNameType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0200</remarks>
         public string NameTypeCode { get; set; }
 
         /// <summary>
         /// XPN.8 - Name Representation Code.
+        /// <para>Suggested: 0465 Name/Address Representation -&gt; ClearHl7.Codes.V280.CodeNameAddressRepresentation</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0465</remarks>
         public string NameRepresentationCode { get; set; }
 
         /// <summary>
         /// XPN.9 - Name Context.
+        /// <para>Suggested: 0448 Name Context</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0448</remarks>
         public CodedWithExceptions NameContext { get; set; }
 
         /// <summary>
@@ -69,8 +68,8 @@ namespace ClearHl7.V280.Types
 
         /// <summary>
         /// XPN.11 - Name Assembly Order.
+        /// <para>Suggested: 0444 Name Assembly Order -&gt; ClearHl7.Codes.V280.CodeNameAssemblyOrder</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0444</remarks>
         public string NameAssemblyOrder { get; set; }
 
         /// <summary>

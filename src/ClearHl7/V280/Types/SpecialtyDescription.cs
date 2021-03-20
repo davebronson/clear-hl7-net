@@ -25,8 +25,8 @@ namespace ClearHl7.V280.Types
 
         /// <summary>
         /// SPD.3 - Eligible or Certified.
+        /// <para>Suggested: 0337 Certification Status -&gt; ClearHl7.Codes.V280.CodeCertificationStatus</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0337</remarks>
         public string EligibleOrCertified { get; set; }
 
         /// <summary>
