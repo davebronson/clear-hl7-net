@@ -45,19 +45,17 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// CN.7 - Degree (e.g., MD).
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0360</remarks>
         public string Degree { get; set; }
 
         /// <summary>
         /// CN.8 - Source Table.
+        /// <para>Suggested: 0297 Source Table</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0297</remarks>
         public string SourceTable { get; set; }
 
         /// <summary>
         /// CN.9 - Assigning Authority.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0363</remarks>
         public HierarchicDesignator AssigningAuthority { get; set; }
 
         /// <summary>

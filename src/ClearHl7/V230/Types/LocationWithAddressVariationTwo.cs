@@ -14,20 +14,20 @@ namespace ClearHl7.V230.Types
 
         /// <summary>
         /// LA2.1 - Point of Care.
+        /// <para>Suggested: 0302 Point Of Care</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0302</remarks>
         public string PointOfCare { get; set; }
 
         /// <summary>
         /// LA2.2 - Room.
+        /// <para>Suggested: 0303 Room</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0303</remarks>
         public string Room { get; set; }
 
         /// <summary>
         /// LA2.3 - Bed.
+        /// <para>Suggested: 0304 Bed</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0304</remarks>
         public string Bed { get; set; }
 
         /// <summary>
@@ -37,26 +37,26 @@ namespace ClearHl7.V230.Types
 
         /// <summary>
         /// LA2.5 - Location Status.
+        /// <para>Suggested: 0306 Location Status</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0306</remarks>
         public string LocationStatus { get; set; }
 
         /// <summary>
         /// LA2.6 - Patient Location Type.
+        /// <para>Suggested: 0305 Person Location Type</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0305</remarks>
         public string PatientLocationType { get; set; }
 
         /// <summary>
         /// LA2.7 - Building.
+        /// <para>Suggested: 0307 Building</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0307</remarks>
         public string Building { get; set; }
 
         /// <summary>
         /// LA2.8 - Floor.
+        /// <para>Suggested: 0308 Floor</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0308</remarks>
         public string Floor { get; set; }
 
         /// <summary>
@@ -86,14 +86,14 @@ namespace ClearHl7.V230.Types
 
         /// <summary>
         /// LA2.14 - Country.
+        /// <para>Suggested: 0399 Country Code -&gt; https://www.iso.org/iso-3166-country-codes.html</para>
         /// </summary>
-        /// <remarks>https://www.iso.org/iso-3166-country-codes.html</remarks>
         public string Country { get; set; }
 
         /// <summary>
         /// LA2.15 - Address Type.
+        /// <para>Suggested: 0190 Address Type -&gt; ClearHl7.Codes.V230.CodeAddressType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0190</remarks>
         public string AddressType { get; set; }
 
         /// <summary>

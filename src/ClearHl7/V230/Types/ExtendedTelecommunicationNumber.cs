@@ -19,14 +19,14 @@ namespace ClearHl7.V230.Types
 
         /// <summary>
         /// XTN.2 - Telecommunication Use Code.
+        /// <para>Suggested: 0201 Telecommunication Use Code -&gt; ClearHl7.Codes.V230.CodeTelecommunicationUseCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0201</remarks>
         public string TelecommunicationUseCode { get; set; }
 
         /// <summary>
         /// XTN.3 - Telecommunication Equipment Type.
+        /// <para>Suggested: 0202 Telecommunication Equipment Type -&gt; ClearHl7.Codes.V230.CodeTelecommunicationEquipmentType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0202</remarks>
         public string TelecommunicationEquipmentType { get; set; }
 
         /// <summary>

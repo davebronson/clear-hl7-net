@@ -19,8 +19,8 @@ namespace ClearHl7.V230.Types
 
         /// <summary>
         /// XON.2 - Organization Name Type Code.
+        /// <para>Suggested: 0204 Organizational Name Type -&gt; ClearHl7.Codes.V230.CodeOrganizationalNameType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0204</remarks>
         public string OrganizationNameTypeCode { get; set; }
 
         /// <summary>
@@ -35,20 +35,19 @@ namespace ClearHl7.V230.Types
 
         /// <summary>
         /// XON.5 - Check Digit Scheme.
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Codes.V230.CodeCheckDigitScheme</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0061</remarks>
         public string CheckDigitScheme { get; set; }
 
         /// <summary>
         /// XON.6 - Assigning Authority.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0363</remarks>
         public HierarchicDesignator AssigningAuthority { get; set; }
 
         /// <summary>
         /// XON.7 - Identifier Type Code.
+        /// <para>Suggested: 0203 Identifier Type -&gt; ClearHl7.Codes.V230.CodeIdentifierType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0203</remarks>
         public string IdentifierTypeCode { get; set; }
 
         /// <summary>

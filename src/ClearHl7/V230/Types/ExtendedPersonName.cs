@@ -40,19 +40,18 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// XPN.6 - Degree (e.g., MD).
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0360</remarks>
         public string Degree { get; set; }
 
         /// <summary>
         /// XPN.7 - Name Type Code.
+        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Codes.V230.CodeNameType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0200</remarks>
         public string NameTypeCode { get; set; }
 
         /// <summary>
         /// XPN.8 - Name Representation Code.
+        /// <para>Suggested: 4000 Name/Address Representation</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0465</remarks>
         public string NameRepresentationCode { get; set; }
 
         /// <summary>

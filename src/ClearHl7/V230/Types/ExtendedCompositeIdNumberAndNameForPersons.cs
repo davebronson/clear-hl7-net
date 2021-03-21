@@ -45,25 +45,23 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// XCN.7 - Degree (e.g., MD).
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0360</remarks>
         public string Degree { get; set; }
 
         /// <summary>
         /// XCN.8 - Source Table.
+        /// <para>Suggested: 0297 Source Table</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0297</remarks>
         public string SourceTable { get; set; }
 
         /// <summary>
         /// XCN.9 - Assigning Authority.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0363</remarks>
         public HierarchicDesignator AssigningAuthority { get; set; }
 
         /// <summary>
         /// XCN.10 - Name Type Code.
+        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Codes.V230.CodeNameType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0200</remarks>
         public string NameTypeCode { get; set; }
 
         /// <summary>
@@ -73,14 +71,14 @@ namespace ClearHl7.V230.Types
 
         /// <summary>
         /// XCN.12 - Check Digit Scheme.
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Codes.V230.CodeCheckDigitScheme</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0061</remarks>
         public string CheckDigitScheme { get; set; }
 
         /// <summary>
         /// XCN.13 - Identifier Type Code.
+        /// <para>Suggested: 0203 Identifier Type -&gt; ClearHl7.Codes.V230.CodeIdentifierType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0203</remarks>
         public string IdentifierTypeCode { get; set; }
 
         /// <summary>

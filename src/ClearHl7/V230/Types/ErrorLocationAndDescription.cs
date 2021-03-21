@@ -29,6 +29,7 @@ namespace ClearHl7.V230.Types
 
         /// <summary>
         /// ELD.4 - Code Identifying Error.
+        /// <para>Suggested: 0357 Message Error Condition Codes</para>
         /// </summary>
         public CodedElement CodeIdentifyingError { get; set; }
 

@@ -14,14 +14,14 @@ namespace ClearHl7.V230.Types
 
         /// <summary>
         /// PT.1 - Processing ID.
+        /// <para>Suggested: 0103 Processing ID -&gt; ClearHl7.Codes.V230.CodeProcessingId</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0103</remarks>
         public string ProcessingId { get; set; }
 
         /// <summary>
         /// PT.2 - Processing Mode.
+        /// <para>Suggested: 0207 Processing Mode -&gt; ClearHl7.Codes.V230.CodeProcessingMode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0207</remarks>
         public string ProcessingMode { get; set; }
 
         /// <summary>
