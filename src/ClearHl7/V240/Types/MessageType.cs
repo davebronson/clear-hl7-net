@@ -14,20 +14,20 @@ namespace ClearHl7.V240.Types
 
         /// <summary>
         /// MSG.1 - Message Code.
+        /// <para>Suggested: 0076 Message Type -&gt; ClearHl7.Codes.V240.CodeMessageType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0076</remarks>
         public string MessageCode { get; set; }
 
         /// <summary>
         /// MSG.2 - Trigger Event.
+        /// <para>Suggested: 0003 Event Type Code -&gt; ClearHl7.Codes.V240.CodeEventTypeCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0003</remarks>
         public string TriggerEvent { get; set; }
 
         /// <summary>
         /// MSG.3 - Message Structure.
+        /// <para>Suggested: 0354 Message Structure -&gt; ClearHl7.Codes.V240.CodeMessageStructure</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0354</remarks>
         public string MessageStructure { get; set; }
 
         /// <summary>

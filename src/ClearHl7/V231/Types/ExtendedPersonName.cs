@@ -39,20 +39,20 @@ namespace ClearHl7.V231.Types
 
         /// <summary>
         /// XPN.6 - Degree (e.g., MD).
+        /// <para>Suggested: 0360 Degree/License/Certificate -&gt; ClearHl7.Codes.V231.CodeDegreeLicenseCertificate</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0360</remarks>
         public string Degree { get; set; }
 
         /// <summary>
         /// XPN.7 - Name Type Code.
+        /// <para>Suggested: 0200 Name Type -&gt; ClearHl7.Codes.V231.CodeNameType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0200</remarks>
         public string NameTypeCode { get; set; }
 
         /// <summary>
         /// XPN.8 - Name Representation Code.
+        /// <para>Suggested: 4000 Name/Address Representation -&gt; ClearHl7.Codes.V231.CodeNameAddressRepresentation</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0465</remarks>
         public string NameRepresentationCode { get; set; }
 
         /// <summary>

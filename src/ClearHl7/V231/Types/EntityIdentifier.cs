@@ -19,8 +19,8 @@ namespace ClearHl7.V231.Types
 
         /// <summary>
         /// EI.2 - Namespace ID.
+        /// <para>Suggested: 0300 Namespace Id</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0363</remarks>
         public string NamespaceId { get; set; }
 
         /// <summary>
@@ -30,8 +30,8 @@ namespace ClearHl7.V231.Types
 
         /// <summary>
         /// EI.4 - Universal ID Type.
+        /// <para>Suggested: 0301 Universal ID Type -&gt; ClearHl7.Codes.V231.CodeUniversalIdType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0301</remarks>
         public string UniversalIdType { get; set; }
 
         /// <summary>

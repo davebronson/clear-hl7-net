@@ -14,13 +14,13 @@ namespace ClearHl7.V240.Types
 
         /// <summary>
         /// SPS.1 - Specimen Source Name or Code.
+        /// <para>Suggested: 0070 Specimen Source Codes -&gt; ClearHl7.Codes.V240.CodeSpecimenSourceCodes</para>
         /// </summary>
         public CodedElement SpecimenSourceNameOrCode { get; set; }
 
         /// <summary>
         /// SPS.2 - Additives.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0371</remarks>
         public CodedWithExceptions Additives { get; set; }
 
         /// <summary>
@@ -30,14 +30,13 @@ namespace ClearHl7.V240.Types
 
         /// <summary>
         /// SPS.4 - Body Site.
+        /// <para>Suggested: 0163 Body Site -&gt; ClearHl7.Codes.V240.CodeBodySite</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0163</remarks>
         public CodedElement BodySite { get; set; }
 
         /// <summary>
         /// SPS.5 - Site Modifier.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0495</remarks>
         public CodedElement SiteModifier { get; set; }
 
         /// <summary>
@@ -47,8 +46,8 @@ namespace ClearHl7.V240.Types
 
         /// <summary>
         /// SPS.7 - Specimen Role.
+        /// <para>Suggested: 0369 Specimen Role -&gt; ClearHl7.Codes.V240.CodeSpecimenRole</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0369</remarks>
         public CodedElement SpecimenRole { get; set; }
 
         /// <summary>

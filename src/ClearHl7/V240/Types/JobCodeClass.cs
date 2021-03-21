@@ -14,14 +14,14 @@ namespace ClearHl7.V240.Types
 
         /// <summary>
         /// JCC.1 - Job Code.
+        /// <para>Suggested: 0327 Job Code</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0327</remarks>
         public string JobCode { get; set; }
 
         /// <summary>
         /// JCC.2 - Job Class.
+        /// <para>Suggested: 0328 Job Class</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0328</remarks>
         public string JobClass { get; set; }
 
         /// <summary>

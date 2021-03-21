@@ -39,14 +39,14 @@ namespace ClearHl7.V231.Types
 
         /// <summary>
         /// AD.6 - Country.
+        /// <para>Suggested: 0399 Country Code -&gt; https://www.iso.org/iso-3166-country-codes.html</para>
         /// </summary>
-        /// <remarks>https://www.iso.org/iso-3166-country-codes.html</remarks>
         public string Country { get; set; }
 
         /// <summary>
         /// AD.7 - Address Type.
+        /// <para>Suggested: 0190 Address Type -&gt; ClearHl7.Codes.V231.CodeAddressType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0190</remarks>
         public string AddressType { get; set; }
 
         /// <summary>

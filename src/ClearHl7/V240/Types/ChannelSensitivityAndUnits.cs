@@ -29,8 +29,8 @@ namespace ClearHl7.V240.Types
 
         /// <summary>
         /// CSU.4 - Unit of Measure Coding System.
+        /// <para>Suggested: 0396 Coding System -&gt; ClearHl7.Codes.V240.CodeCodingSystem</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0396</remarks>
         public string UnitOfMeasureCodingSystem { get; set; }
 
         /// <summary>
@@ -45,8 +45,8 @@ namespace ClearHl7.V240.Types
 
         /// <summary>
         /// CSU.7 - Alternate Unit of Measure Coding System.
+        /// <para>Suggested: 0396 Coding System -&gt; ClearHl7.Codes.V240.CodeCodingSystem</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0396</remarks>
         public string AlternateUnitOfMeasureCodingSystem { get; set; }
 
         /// <summary>

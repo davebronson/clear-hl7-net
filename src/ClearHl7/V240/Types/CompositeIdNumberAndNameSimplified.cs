@@ -44,20 +44,20 @@ namespace ClearHl7.V240.Types
 
         /// <summary>
         /// CNN.7 - Degree (e.g., MD).
+        /// <para>Suggested: 0360 Degree/License/Certificate -&gt; ClearHl7.Codes.V240.CodeDegreeLicenseCertificate</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0360</remarks>
         public string Degree { get; set; }
 
         /// <summary>
         /// CNN.8 - Source Table.
+        /// <para>Suggested: 0297 Source Table</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0297</remarks>
         public string SourceTable { get; set; }
 
         /// <summary>
         /// CNN.9 - Assigning Authority - Namespace ID.
+        /// <para>Suggested: 0363 Assigning Authority</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0363</remarks>
         public string AssigningAuthorityNamespaceId { get; set; }
 
         /// <summary>
@@ -67,8 +67,8 @@ namespace ClearHl7.V240.Types
 
         /// <summary>
         /// CNN.11 - Assigning Authority - Universal ID Type.
+        /// <para>Suggested: 0301 Universal ID Type -&gt; ClearHl7.Codes.V240.CodeUniversalIdType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0301</remarks>
         public string AssigningAuthorityUniversalIdType { get; set; }
 
         /// <summary>

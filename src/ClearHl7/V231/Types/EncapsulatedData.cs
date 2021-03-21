@@ -19,20 +19,20 @@ namespace ClearHl7.V231.Types
 
         /// <summary>
         /// ED.2 - Type of Data.
+        /// <para>Suggested: 0191 Type Of Referenced Data -&gt; ClearHl7.Codes.V231.CodeTypeOfReferencedData</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0191</remarks>
         public string TypeOfData { get; set; }
 
         /// <summary>
         /// ED.3 - Data Subtype.
+        /// <para>Suggested: 0291 Subtype Of Referenced Data -&gt; ClearHl7.Codes.V231.CodeSubtypeOfReferencedData</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0291</remarks>
         public string DataSubtype { get; set; }
 
         /// <summary>
         /// ED.4 - Encoding.
+        /// <para>Suggested: 0299 Encoding -&gt; ClearHl7.Codes.V231.CodeEncoding</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0299</remarks>
         public string Encoding { get; set; }
 
         /// <summary>

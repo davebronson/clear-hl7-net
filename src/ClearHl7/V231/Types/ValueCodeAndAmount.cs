@@ -14,8 +14,8 @@ namespace ClearHl7.V231.Types
 
         /// <summary>
         /// UVC.1 - Value Code.
+        /// <para>Suggested: 0153 Value Code -&gt; ClearHl7.Codes.V231.CodeValueCode</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0153</remarks>
         public CodedWithNoExceptions ValueCode { get; set; }
 
         /// <summary>

@@ -39,8 +39,8 @@ namespace ClearHl7.V240.Types
 
         /// <summary>
         /// PN.6 - Degree.
+        /// <para>Suggested: 0360 Degree/License/Certificate -&gt; ClearHl7.Codes.V240.CodeDegreeLicenseCertificate</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0360</remarks>
         public string Degree { get; set; }
 
         /// <summary>

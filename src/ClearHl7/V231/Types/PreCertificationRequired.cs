@@ -15,14 +15,14 @@ namespace ClearHl7.V231.Types
 
         /// <summary>
         /// PCF.1 - Pre-certification Patient Type.
+        /// <para>Suggested: 0150 Certification Patient Type -&gt; ClearHl7.Codes.V231.CodeCertificationPatientType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0150</remarks>
         public string PreCertificationPatientType { get; set; }
 
         /// <summary>
         /// PCF.2 - Pre-Certification Required.
+        /// <para>Suggested: 0136 Yes/No Indicator -&gt; ClearHl7.Codes.V231.CodeYesNoIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string PreCertificationIsRequired { get; set; }
 
         /// <summary>

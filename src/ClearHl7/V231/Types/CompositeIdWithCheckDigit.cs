@@ -24,14 +24,13 @@ namespace ClearHl7.V231.Types
 
         /// <summary>
         /// CK.3 - Code Identifying The Check Digit Scheme Employed.
+        /// <para>Suggested: 0061 Check Digit Scheme -&gt; ClearHl7.Codes.V231.CodeCheckDigitScheme</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0061</remarks>
         public string CodeIdentifyingTheCheckDigitSchemeEmployed { get; set; }
 
         /// <summary>
         /// CK.4 - Assigning Authority.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0363</remarks>
         public HierarchicDesignator AssigningAuthority { get; set; }
 
         /// <summary>

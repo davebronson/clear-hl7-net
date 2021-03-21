@@ -14,8 +14,8 @@ namespace ClearHl7.V240.Types
 
         /// <summary>
         /// RI.1 - Repeat Pattern.
+        /// <para>Suggested: 0335 Repeat Pattern -&gt; ClearHl7.Codes.V240.CodeRepeatPattern</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0335</remarks>
         public string RepeatPattern { get; set; }
 
         /// <summary>

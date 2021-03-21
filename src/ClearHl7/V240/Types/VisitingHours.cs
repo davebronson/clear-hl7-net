@@ -15,14 +15,14 @@ namespace ClearHl7.V240.Types
 
         /// <summary>
         /// VH.1 - Start Day Range.
+        /// <para>Suggested: 0267 Days Of The Week -&gt; ClearHl7.Codes.V240.CodeDaysOfTheWeek</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0267</remarks>
         public string StartDayRange { get; set; }
 
         /// <summary>
         /// VH.2 - End Day Range.
+        /// <para>Suggested: 0267 Days Of The Week -&gt; ClearHl7.Codes.V240.CodeDaysOfTheWeek</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0267</remarks>
         public string EndDayRange { get; set; }
 
         /// <summary>

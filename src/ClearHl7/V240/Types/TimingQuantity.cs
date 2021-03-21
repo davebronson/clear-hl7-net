@@ -55,8 +55,8 @@ namespace ClearHl7.V240.Types
 
         /// <summary>
         /// TQ.9 - Conjunction.
+        /// <para>Suggested: 0472 TQ Conjunction ID -&gt; ClearHl7.Codes.V240.CodeTqConjunctionId</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0472</remarks>
         public string Conjunction { get; set; }
 
         /// <summary>
