@@ -21,7 +21,6 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// PLN.2 - Type of ID Number.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0338</remarks>
         public string TypeOfIdNumber { get; set; }
 
         /// <summary>

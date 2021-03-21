@@ -20,7 +20,6 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// SPS.2 - Additives.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0371</remarks>
         public CodedWithExceptions Additives { get; set; }
 
         /// <summary>
@@ -31,13 +30,11 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// SPS.4 - Body Site.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0163</remarks>
         public CodedElement BodySite { get; set; }
 
         /// <summary>
         /// SPS.5 - Site Modifier.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0495</remarks>
         public CodedElement SiteModifier { get; set; }
 
         /// <summary>
@@ -48,7 +45,6 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// SPS.7 - Specimen Role.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0369</remarks>
         public CodedElement SpecimenRole { get; set; }
 
         /// <summary>

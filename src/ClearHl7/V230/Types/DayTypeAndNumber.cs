@@ -15,7 +15,6 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// DTN.1 - Day Type.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0149</remarks>
         public string DayType { get; set; }
 
         /// <summary>

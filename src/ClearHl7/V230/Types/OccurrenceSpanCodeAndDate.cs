@@ -16,7 +16,6 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// OSP.1 - Occurrence Span Code.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0351</remarks>
         public CodedWithNoExceptions OccurrenceSpanCode { get; set; }
 
         /// <summary>

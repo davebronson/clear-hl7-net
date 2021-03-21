@@ -73,7 +73,6 @@ namespace ClearHl7.V280.Segments
         /// ERR.10 - Override Type.
         /// <para>Suggested: 0518 Override Type -&gt; ClearHl7.Codes.V280.CodeOverrideType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0518</remarks>
         public CodedWithExceptions OverrideType { get; set; }
 
         /// <summary>

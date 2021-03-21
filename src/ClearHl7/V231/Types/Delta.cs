@@ -25,7 +25,6 @@ namespace ClearHl7.V231.Types
         /// <summary>
         /// DLT.3 - Change Computation.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0523</remarks>
         public string ChangeComputation { get; set; }
 
         /// <summary>

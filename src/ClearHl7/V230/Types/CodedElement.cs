@@ -25,7 +25,6 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// CE.3 - Name of Coding System.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0396</remarks>
         public string NameOfCodingSystem { get; set; }
 
         /// <summary>
@@ -41,7 +40,6 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// CE.6 - Name of Alternate Coding System.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0396</remarks>
         public string NameOfAlternateCodingSystem { get; set; }
 
         /// <summary>

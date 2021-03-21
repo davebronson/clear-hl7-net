@@ -15,7 +15,6 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// OSD.1 - Sequence/Results Flag.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0524</remarks>
         public string SequenceResultsFlag { get; set; }
 
         /// <summary>
@@ -26,7 +25,6 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// OSD.3 - Placer Order Number: Namespace ID.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0363</remarks>
         public string PlacerOrderNumberNamespaceId { get; set; }
 
         /// <summary>
@@ -37,7 +35,6 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// OSD.5 - Filler Order Number: Namespace ID.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0363</remarks>
         public string FillerOrderNumberNamespaceId { get; set; }
 
         /// <summary>
@@ -58,7 +55,6 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// OSD.9 - Placer Order Number: Universal ID Type.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0301</remarks>
         public string PlacerOrderNumberUniversalIdType { get; set; }
 
         /// <summary>
@@ -69,7 +65,6 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// OSD.11 - Filler Order Number: Universal ID Type.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0301</remarks>
         public string FillerOrderNumberUniversalIdType { get; set; }
 
         /// <summary>

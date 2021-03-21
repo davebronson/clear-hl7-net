@@ -40,7 +40,6 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// PN.6 - Degree.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0360</remarks>
         public string Degree { get; set; }
 
         /// <summary>

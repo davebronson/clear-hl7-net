@@ -15,7 +15,6 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// SCV.1 - Parameter Class.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0294</remarks>
         public string ParameterClass { get; set; }
 
         /// <summary>

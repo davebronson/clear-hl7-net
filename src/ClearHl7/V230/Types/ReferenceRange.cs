@@ -20,7 +20,6 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// RFR.2 - Administrative Sex.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0001</remarks>
         public string AdministrativeSex { get; set; }
 
         /// <summary>

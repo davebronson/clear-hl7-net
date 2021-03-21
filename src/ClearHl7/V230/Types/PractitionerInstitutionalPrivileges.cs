@@ -16,13 +16,11 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// PIP.1 - Privilege.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0525</remarks>
         public CodedElement Privilege { get; set; }
 
         /// <summary>
         /// PIP.2 - Privilege Class.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0526</remarks>
         public CodedElement PrivilegeClass { get; set; }
 
         /// <summary>

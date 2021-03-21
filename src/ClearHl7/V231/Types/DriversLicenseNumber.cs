@@ -21,7 +21,6 @@ namespace ClearHl7.V231.Types
         /// <summary>
         /// DLN.2 - Issuing State, Province, Country.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0333</remarks>
         public string IssuingStateProvinceCountry { get; set; }
 
         /// <summary>

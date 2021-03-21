@@ -26,7 +26,6 @@ namespace ClearHl7.V250.Types
         /// <summary>
         /// MOP.3 - Monetary Denomination.
         /// </summary>
-        /// <remarks>https://www.iso.org/iso-4217-currency-codes.html</remarks>
         public string MonetaryDenomination { get; set; }
 
         /// <summary>

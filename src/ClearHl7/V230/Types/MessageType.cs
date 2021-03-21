@@ -15,19 +15,16 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// MSG.1 - Message Code.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0076</remarks>
         public string MessageCode { get; set; }
 
         /// <summary>
         /// MSG.2 - Trigger Event.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0003</remarks>
         public string TriggerEvent { get; set; }
 
         /// <summary>
         /// MSG.3 - Message Structure.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0354</remarks>
         public string MessageStructure { get; set; }
 
         /// <summary>

@@ -15,7 +15,6 @@ namespace ClearHl7.V250.Types
         /// <summary>
         /// SCV.1 - Parameter Class.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0294</remarks>
         public CodedWithExceptions ParameterClass { get; set; }
 
         /// <summary>

@@ -19,7 +19,7 @@ namespace ClearHl7.V270.Types
 
         /// <summary>
         /// MO.2 - Denomination.
-        /// <para>Suggested: 0913 Denomination</para>
+        /// <para>Suggested: 0913 Currency Code -&gt; https://www.iso.org/iso-4217-currency-codes.html</para>
         /// </summary>
         public string Denomination { get; set; }
 

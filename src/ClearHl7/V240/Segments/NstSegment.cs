@@ -32,7 +32,6 @@ namespace ClearHl7.V240.Segments
         /// <summary>
         /// NST.3 - Source Type.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0332</remarks>
         public string SourceType { get; set; }
 
         /// <summary>

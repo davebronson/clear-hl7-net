@@ -15,13 +15,11 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// PTA.1 - Policy Type.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0147</remarks>
         public string PolicyType { get; set; }
 
         /// <summary>
         /// PTA.2 - Amount Class.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0193</remarks>
         public string AmountClass { get; set; }
 
         /// <summary>

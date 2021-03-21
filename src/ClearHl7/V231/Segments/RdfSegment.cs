@@ -28,7 +28,6 @@ namespace ClearHl7.V231.Segments
         /// <summary>
         /// RDF.2 - Column Description.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0440</remarks>
         public IEnumerable<RowColumnDefinition> ColumnDescription { get; set; }
         
         /// <summary>

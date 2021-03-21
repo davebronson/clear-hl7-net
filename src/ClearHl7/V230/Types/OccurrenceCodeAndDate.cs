@@ -16,7 +16,6 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// OCD.1 - Occurrence Code.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0350</remarks>
         public CodedWithNoExceptions OccurrenceCode { get; set; }
 
         /// <summary>

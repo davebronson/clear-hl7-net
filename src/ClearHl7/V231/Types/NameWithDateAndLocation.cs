@@ -16,7 +16,7 @@ namespace ClearHl7.V231.Types
         /// <summary>
         /// NDL.1 - Name.
         /// </summary>
-        public CompositeIdNumberAndNameSimplified Name { get; set; }
+        public CompositeIdNumberAndName Name { get; set; }
 
         /// <summary>
         /// NDL.2 - Start Date/time.

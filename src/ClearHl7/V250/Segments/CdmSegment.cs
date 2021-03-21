@@ -50,7 +50,6 @@ namespace ClearHl7.V250.Segments
         /// <summary>
         /// CDM.6 - Exploding Charges.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0132</remarks>
         public IEnumerable<CodedElement> ExplodingCharges { get; set; }
 
         /// <summary>

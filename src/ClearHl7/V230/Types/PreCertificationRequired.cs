@@ -16,13 +16,11 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// PCF.1 - Pre-certification Patient Type.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0150</remarks>
         public string PreCertificationPatientType { get; set; }
 
         /// <summary>
         /// PCF.2 - Pre-Certification Required.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0136</remarks>
         public string PreCertificationIsRequired { get; set; }
 
         /// <summary>

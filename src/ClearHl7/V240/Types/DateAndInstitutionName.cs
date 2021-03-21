@@ -21,7 +21,6 @@ namespace ClearHl7.V240.Types
         /// <summary>
         /// DIN.2 - Institution Name.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0531</remarks>
         public CodedElement InstitutionName { get; set; }
 
         /// <summary>

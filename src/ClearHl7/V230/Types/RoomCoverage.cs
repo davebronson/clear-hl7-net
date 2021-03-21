@@ -15,13 +15,11 @@ namespace ClearHl7.V230.Types
         /// <summary>
         /// RMC.1 - Room Type.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0145</remarks>
         public string RoomType { get; set; }
 
         /// <summary>
         /// RMC.2 - Amount Type.
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0146</remarks>
         public string AmountType { get; set; }
 
         /// <summary>
