@@ -24,8 +24,8 @@ namespace ClearHl7.V250.Types
 
         /// <summary>
         /// CF.3 - Name of Coding System.
+        /// <para>Suggested: 0396 Coding System -&gt; ClearHl7.Codes.V250.CodeCodingSystem</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0396</remarks>
         public string NameOfCodingSystem { get; set; }
 
         /// <summary>
@@ -40,8 +40,8 @@ namespace ClearHl7.V250.Types
 
         /// <summary>
         /// CF.6 - Name of Alternate Coding System.
+        /// <para>Suggested: 0396 Coding System -&gt; ClearHl7.Codes.V250.CodeCodingSystem</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0396</remarks>
         public string NameOfAlternateCodingSystem { get; set; }
 
         /// <summary>

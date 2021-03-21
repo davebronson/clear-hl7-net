@@ -20,8 +20,8 @@ namespace ClearHl7.V250.Types
 
         /// <summary>
         /// PLN.2 - Type of ID Number.
+        /// <para>Suggested: 0338 Practitioner ID Number Type -&gt; ClearHl7.Codes.V250.CodePractitionerIdNumberType</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0338</remarks>
         public string TypeOfIdNumber { get; set; }
 
         /// <summary>

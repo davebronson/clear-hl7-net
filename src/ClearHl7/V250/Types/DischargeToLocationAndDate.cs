@@ -15,8 +15,8 @@ namespace ClearHl7.V250.Types
 
         /// <summary>
         /// DLD.1 - Discharge to Location.
+        /// <para>Suggested: 0113 Discharge To Location</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0113</remarks>
         public string DischargeToLocation { get; set; }
 
         /// <summary>

@@ -19,8 +19,8 @@ namespace ClearHl7.V250.Types
 
         /// <summary>
         /// SRT.2 - Sequencing.
+        /// <para>Suggested: 0397 Sequencing -&gt; ClearHl7.Codes.V250.CodeSequencing</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0397</remarks>
         public string Sequencing { get; set; }
 
         /// <summary>

@@ -15,14 +15,14 @@ namespace ClearHl7.V250.Types
 
         /// <summary>
         /// PIP.1 - Privilege.
+        /// <para>Suggested: 0525 Privilege</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0525</remarks>
         public CodedElement Privilege { get; set; }
 
         /// <summary>
         /// PIP.2 - Privilege Class.
+        /// <para>Suggested: 0526 Privilege Class</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0526</remarks>
         public CodedElement PrivilegeClass { get; set; }
 
         /// <summary>

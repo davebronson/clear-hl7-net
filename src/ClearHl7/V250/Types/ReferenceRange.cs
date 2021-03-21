@@ -19,8 +19,8 @@ namespace ClearHl7.V250.Types
 
         /// <summary>
         /// RFR.2 - Administrative Sex.
+        /// <para>Suggested: 0001 Administrative Sex -&gt; ClearHl7.Codes.V250.CodeAdministrativeSex</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0001</remarks>
         public string AdministrativeSex { get; set; }
 
         /// <summary>

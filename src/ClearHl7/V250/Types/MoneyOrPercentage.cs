@@ -14,8 +14,8 @@ namespace ClearHl7.V250.Types
 
         /// <summary>
         /// MOP.1 - Money or Percentage Indicator.
+        /// <para>Suggested: 0148 Money Or Percentage Indicator -&gt; ClearHl7.Codes.V250.CodeMoneyOrPercentageIndicator</para>
         /// </summary>
-        /// <remarks>https://www.hl7.org/fhir/v2/0148</remarks>
         public string MoneyOrPercentageIndicator { get; set; }
 
         /// <summary>
