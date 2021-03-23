@@ -181,13 +181,12 @@ var message = new Message
 
 // Call ToDelimitedString() on the Message object to serialize the structure into HL7 'pipehat' format
 string output = message.ToDelimitedString();
-```
-Outputs the following:
-```
-MSH|^~\&|Company EHR|Company ABC|HIE Application|State HIE|20201209022616||ADT^A01^ADT_A01|1234567890|P^T|2.8.2
-PID|1||P12345^^^^PI~A98765^^^^PT||Anderson^Andy||19500101045200||||123 Main Street^^Anywhere^FL^33333~987 1st Avenue^^Somewhere^FL^33333|||||||||||||||||||N||||||||||777-888-9999^^PH~333-444-5555^^CP
-PV1||I||E|||||||||R||A2~A5~A6~B3|||||||||||||||||||||||||||||20200101133512||1432.87
-ZPD|GREEN|^^^andy.anderson@somewhere.com|Code1234|Anderson \T\ Sons \R\ Piano \T\ Drywall Repair
+
+// Outputs the following:
+//     MSH|^~\&|Company EHR|Company ABC|HIE Application|State HIE|20201209022616||ADT^A01^ADT_A01|1234567890|P^T|2.8.2
+//     PID|1||P12345^^^^PI~A98765^^^^PT||Anderson^Andy||19500101045200||||123 Main Street^^Anywhere^FL^33333~987 1st Avenue^^Somewhere^FL^33333|||||||||||||||||||N||||||||||777-888-9999^^PH~333-444-5555^^CP
+//     PV1||I||E|||||||||R||A2~A5~A6~B3|||||||||||||||||||||||||||||20200101133512||1432.87
+//     ZPD|GREEN|^^^andy.anderson@somewhere.com|Code1234|Anderson \T\ Sons \R\ Piano \T\ Drywall Repair
 ```
 
 ## Customizing
