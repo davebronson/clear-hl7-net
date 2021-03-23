@@ -9,11 +9,11 @@
     <PackageTags>hl7;hl7-builder;hl7-message;hl7-generating;dotnet;healthcare;code;codesystem</PackageTags>
     <Title>ClearHL7.Codes</Title>
     <Description>Enumerated coded values for the HL7® standard</Description>
-    <PackageLicenseUrl></PackageLicenseUrl>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageVersion>1.2.0</PackageVersion>
+    <PackageVersion>1.3.0</PackageVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <ReleaseVersion>1.3</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <LangVersion>latest</LangVersion>

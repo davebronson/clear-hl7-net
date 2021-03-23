@@ -9,12 +9,11 @@
     <PackageTags>hl7;hl7-builder;hl7-message;hl7-generating;dotnet;healthcare</PackageTags>
     <Title>ClearHL7</Title>
     <Description>.NET HL7® message generation library for the Version 2.x standard</Description>
-    <PackageLicenseUrl></PackageLicenseUrl>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageVersion>1.2.0</PackageVersion>
+    <PackageVersion>1.3.0</PackageVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <ReleaseVersion>1.2</ReleaseVersion>
+    <ReleaseVersion>1.3</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <LangVersion>latest</LangVersion>
