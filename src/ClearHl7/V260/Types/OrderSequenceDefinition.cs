@@ -1,5 +1,4 @@
-﻿using System;
-using ClearHl7.Helpers;
+﻿using ClearHl7.Helpers;
 
 namespace ClearHl7.V260.Types
 {
