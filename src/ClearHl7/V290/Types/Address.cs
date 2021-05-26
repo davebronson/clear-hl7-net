@@ -1,4 +1,5 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V290.Types
 {
@@ -53,6 +54,28 @@ namespace ClearHl7.V290.Types
         /// AD.8 - Other Geographic Designation.
         /// </summary>
         public string OtherGeographicDesignation { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public Address FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+            
+            StreetAddress = segments.ElementAtOrDefault(0);
+            OtherDesignation = segments.ElementAtOrDefault(1);
+            City = segments.ElementAtOrDefault(2);
+            StateOrProvince = segments.ElementAtOrDefault(3);
+            ZipOrPostalCode = segments.ElementAtOrDefault(4);
+            Country = segments.ElementAtOrDefault(5);
+            AddressType = segments.ElementAtOrDefault(6);
+            OtherGeographicDesignation = segments.ElementAtOrDefault(7);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.
