@@ -1,4 +1,5 @@
 ﻿using ClearHl7.V290.Types;
+using FluentAssertions;
 using Xunit;
 
 namespace ClearHl7.Tests.TypesTests
@@ -6,7 +7,24 @@ namespace ClearHl7.Tests.TypesTests
     public class HierarchicDesignatorTests
     {
         /// <summary>
-        /// Validates that ToDelimitedString() returns output with all fields populated and in the correct sequence.
+        /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
+        {
+            HierarchicDesignator expected = new()
+            {
+                NamespaceId = "1",
+                UniversalId = "2",
+                UniversalIdType = "3"
+            };
+            HierarchicDesignator actual = new HierarchicDesignator().FromDelimitedString("1^2^3");
+
+            expected.Should().BeEquivalentTo(actual);
+        }
+
+        /// <summary>
+        /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>
         [Fact]
         public void ToDelimitedString_WithAllProperties_ReturnsCorrectlySequencedFields()

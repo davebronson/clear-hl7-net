@@ -1,4 +1,5 @@
 ﻿using ClearHl7.V290.Types;
+using FluentAssertions;
 using Xunit;
 
 namespace ClearHl7.Tests.TypesTests
@@ -6,7 +7,56 @@ namespace ClearHl7.Tests.TypesTests
     public class PersonLocationTests
     {
         /// <summary>
-        /// Validates that ToDelimitedString() returns output with all fields populated and in the correct sequence.
+        /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
+        {
+            PersonLocation expected = new()
+            {
+                PointOfCare = new HierarchicDesignator
+                {
+                    NamespaceId = "1"
+                },
+                Room = new HierarchicDesignator
+                {
+                    NamespaceId = "2"
+                },
+                Bed = new HierarchicDesignator
+                {
+                    NamespaceId = "3"
+                },
+                Facility = new HierarchicDesignator
+                {
+                    NamespaceId = "4"
+                },
+                LocationStatus = "5",
+                PersonLocationType = "6",
+                Building = new HierarchicDesignator
+                {
+                    NamespaceId = "7"
+                },
+                Floor = new HierarchicDesignator
+                {
+                    NamespaceId = "8"
+                },
+                LocationDescription = "9",
+                ComprehensiveLocationIdentifier = new EntityIdentifier
+                {
+                    EntityId = "10"
+                },
+                AssigningAuthorityForLocation = new HierarchicDesignator
+                {
+                    NamespaceId = "11"
+                }
+            };
+            PersonLocation actual = new PersonLocation().FromDelimitedString("1^2^3^4^5^6^7^8^9^10^11");
+
+            expected.Should().BeEquivalentTo(actual);
+        }
+
+        /// <summary>
+        /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>
         [Fact]
         public void ToDelimitedString_WithAllProperties_ReturnsCorrectlySequencedFields()

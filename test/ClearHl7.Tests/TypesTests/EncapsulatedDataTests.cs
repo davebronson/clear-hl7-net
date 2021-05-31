@@ -1,4 +1,5 @@
 ﻿using ClearHl7.V290.Types;
+using FluentAssertions;
 using Xunit;
 
 namespace ClearHl7.Tests.TypesTests
@@ -6,7 +7,32 @@ namespace ClearHl7.Tests.TypesTests
     public class EncapsulatedDataTests
     {
         /// <summary>
-        /// Validates that ToDelimitedString() returns output with all fields populated and in the correct sequence.
+        /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
+        {
+            EncapsulatedData expected = new()
+            {
+                SourceApplication = new HierarchicDesignator
+                {
+                    NamespaceId = "1"
+                },
+                TypeOfData = "2",
+                DataSubtype = "3",
+                Encoding = "4",
+                Data = new Text
+                {
+                    Value = "5"
+                }
+            };
+            EncapsulatedData actual = new EncapsulatedData().FromDelimitedString("1^2^3^4^5");
+
+            expected.Should().BeEquivalentTo(actual);
+        }
+
+        /// <summary>
+        /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>
         [Fact]
         public void ToDelimitedString_WithAllProperties_ReturnsCorrectlySequencedFields()

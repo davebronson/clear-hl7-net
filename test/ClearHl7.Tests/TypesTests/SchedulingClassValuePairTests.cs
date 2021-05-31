@@ -1,4 +1,5 @@
 ﻿using ClearHl7.V290.Types;
+using FluentAssertions;
 using Xunit;
 
 namespace ClearHl7.Tests.TypesTests
@@ -6,7 +7,26 @@ namespace ClearHl7.Tests.TypesTests
     public class SchedulingClassValuePairTests
     {
         /// <summary>
-        /// Validates that ToDelimitedString() returns output with all fields populated and in the correct sequence.
+        /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
+        {
+            SchedulingClassValuePair expected = new()
+            {
+                ParameterClass = new CodedWithExceptions
+                {
+                    Identifier = "1"
+                },
+                ParameterValue = "2"
+            };
+            SchedulingClassValuePair actual = new SchedulingClassValuePair().FromDelimitedString("1^2");
+
+            expected.Should().BeEquivalentTo(actual);
+        }
+
+        /// <summary>
+        /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>
         [Fact]
         public void ToDelimitedString_WithAllProperties_ReturnsCorrectlySequencedFields()

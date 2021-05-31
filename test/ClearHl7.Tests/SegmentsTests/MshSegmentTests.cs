@@ -8,7 +8,7 @@ namespace ClearHl7.Tests.SegmentsTests
     public class MshSegmentTests
     {
         /// <summary>
-        /// Validates that ToDelimitedString() returns output with all fields populated and in the correct sequence.
+        /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>
         /// <remarks>Assumes usage of the standard delimiter characters.</remarks>
         [Fact]

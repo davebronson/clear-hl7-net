@@ -1,5 +1,6 @@
 ﻿using System;
 using ClearHl7.V290.Types;
+using FluentAssertions;
 using Xunit;
 
 namespace ClearHl7.Tests.TypesTests
@@ -7,7 +8,26 @@ namespace ClearHl7.Tests.TypesTests
     public class DateAndInstitutionNameTests
     {
         /// <summary>
-        /// Validates that ToDelimitedString() returns output with all fields populated and in the correct sequence.
+        /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
+        {
+            DateAndInstitutionName expected = new()
+            {
+                Date = new DateTime(2020, 1, 1),
+                InstitutionName = new CodedWithExceptions
+                {
+                    Identifier = "2"
+                }
+            };
+            DateAndInstitutionName actual = new DateAndInstitutionName().FromDelimitedString("20200101^2");
+
+            expected.Should().BeEquivalentTo(actual);
+        }
+
+        /// <summary>
+        /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>
         [Fact]
         public void ToDelimitedString_WithAllProperties_ReturnsCorrectlySequencedFields()

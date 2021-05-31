@@ -1,4 +1,6 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Extensions;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V290.Types
 {
@@ -31,6 +33,24 @@ namespace ClearHl7.V290.Types
         /// OG.4 - Identifier.
         /// </summary>
         public string Identifier { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public ObservationGrouper FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            OriginalSubIdentifier = segments.ElementAtOrDefault(0);
+            Group = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
+            Sequence = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
+            Identifier = segments.ElementAtOrDefault(3);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

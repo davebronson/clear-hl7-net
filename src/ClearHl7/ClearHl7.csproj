@@ -23,4 +23,7 @@
     <DebugType></DebugType>
     <DocumentationFile>bin\Release\netstandard2.0\ClearHl7.xml</DocumentationFile>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
 </Project>

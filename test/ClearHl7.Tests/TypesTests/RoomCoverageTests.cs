@@ -1,4 +1,5 @@
 ﻿using ClearHl7.V290.Types;
+using FluentAssertions;
 using Xunit;
 
 namespace ClearHl7.Tests.TypesTests
@@ -6,7 +7,34 @@ namespace ClearHl7.Tests.TypesTests
     public class RoomCoverageTests
     {
         /// <summary>
-        /// Validates that ToDelimitedString() returns output with all fields populated and in the correct sequence.
+        /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
+        {
+            RoomCoverage expected = new()
+            {
+                RoomType = new CodedWithExceptions
+                {
+                    Identifier = "1"
+                },
+                AmountType = new CodedWithExceptions
+                {
+                    Identifier = "2"
+                },
+                CoverageAmount = 3,
+                MoneyOrPercentage = new MoneyOrPercentage
+                {
+                    MoneyOrPercentageIndicator = "4"
+                }
+            };
+            RoomCoverage actual = new RoomCoverage().FromDelimitedString("1^2^3^4");
+
+            expected.Should().BeEquivalentTo(actual);
+        }
+
+        /// <summary>
+        /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>
         [Fact]
         public void ToDelimitedString_WithAllProperties_ReturnsCorrectlySequencedFields()

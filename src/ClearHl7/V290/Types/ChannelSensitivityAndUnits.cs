@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 
 namespace ClearHl7.V290.Types
@@ -130,6 +132,43 @@ namespace ClearHl7.V290.Types
         /// CSU.23 - Alternate Unit of Measure Value Set Version ID.
         /// </summary>
         public string AlternateUnitOfMeasureValueSetVersionIdAdditional { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public ChannelSensitivityAndUnits FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            ChannelSensitivity = segments.ElementAtOrDefault(0)?.ToNullableDecimal();
+            UnitOfMeasureIdentifier = segments.ElementAtOrDefault(1);
+            UnitOfMeasureDescription = segments.ElementAtOrDefault(2);
+            UnitOfMeasureCodingSystem = segments.ElementAtOrDefault(3);
+            AlternateUnitOfMeasureIdentifier = segments.ElementAtOrDefault(4);
+            AlternateUnitOfMeasureDescription = segments.ElementAtOrDefault(5);
+            AlternateUnitOfMeasureCodingSystem = segments.ElementAtOrDefault(6);
+            UnitOfMeasureCodingSystemVersionId = segments.ElementAtOrDefault(7);
+            AlternateUnitOfMeasureCodingSystemVersionId = segments.ElementAtOrDefault(8);
+            OriginalText = segments.ElementAtOrDefault(9);
+            SecondAlternateUnitOfMeasureIdentifier = segments.ElementAtOrDefault(10);
+            SecondAlternateUnitOfMeasureText = segments.ElementAtOrDefault(11);
+            NameOfSecondAlternateUnitOfMeasureCodingSystem = segments.ElementAtOrDefault(12);
+            SecondAlternateUnitOfMeasureCodingSystemVersionId = segments.ElementAtOrDefault(13);
+            UnitOfMeasureCodingSystemOid = segments.ElementAtOrDefault(14);
+            UnitOfMeasureValueSetOid = segments.ElementAtOrDefault(15);
+            UnitOfMeasureValueSetVersionId = segments.ElementAtOrDefault(16)?.ToNullableDateTime();
+            AlternateUnitOfMeasureCodingSystemOid = segments.ElementAtOrDefault(17);
+            AlternateUnitOfMeasureValueSetOid = segments.ElementAtOrDefault(18);
+            AlternateUnitOfMeasureValueSetVersionId = segments.ElementAtOrDefault(19)?.ToNullableDateTime();
+            AlternateUnitOfMeasureCodingSystemOidAdditional = segments.ElementAtOrDefault(20);
+            AlternateUnitOfMeasureValueSetOidAdditional = segments.ElementAtOrDefault(21);
+            AlternateUnitOfMeasureValueSetVersionIdAdditional = segments.ElementAtOrDefault(22);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

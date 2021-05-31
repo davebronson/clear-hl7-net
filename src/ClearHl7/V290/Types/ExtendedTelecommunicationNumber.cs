@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 
 namespace ClearHl7.V290.Types
@@ -106,6 +108,38 @@ namespace ClearHl7.V290.Types
         /// XTN.18 - Preference Order.
         /// </summary>
         public decimal? PreferenceOrder { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public ExtendedTelecommunicationNumber FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            TelephoneNumber = segments.ElementAtOrDefault(0);
+            TelecommunicationUseCode = segments.ElementAtOrDefault(1);
+            TelecommunicationEquipmentType = segments.ElementAtOrDefault(2);
+            CommunicationAddress = segments.ElementAtOrDefault(3);
+            CountryCode = segments.ElementAtOrDefault(4)?.ToNullableInt();
+            AreaCityCode = segments.ElementAtOrDefault(5)?.ToNullableInt();
+            LocalNumber = segments.ElementAtOrDefault(6)?.ToNullableInt();
+            Extension = segments.ElementAtOrDefault(7)?.ToNullableInt();
+            AnyText = segments.ElementAtOrDefault(8);
+            ExtensionPrefix = segments.ElementAtOrDefault(9);
+            SpeedDialCode = segments.ElementAtOrDefault(10);
+            UnformattedTelephoneNumber = segments.ElementAtOrDefault(11);
+            EffectiveStartDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
+            ExpirationDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
+            ExpirationReason = segments.Length > 14 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
+            ProtectionCode = segments.Length > 15 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
+            SharedTelecommunicationIdentifier = segments.Length > 16 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
+            PreferenceOrder = segments.ElementAtOrDefault(17)?.ToNullableDecimal();
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

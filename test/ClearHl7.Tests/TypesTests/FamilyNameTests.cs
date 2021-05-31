@@ -1,4 +1,5 @@
 ﻿using ClearHl7.V290.Types;
+using FluentAssertions;
 using Xunit;
 
 namespace ClearHl7.Tests.TypesTests
@@ -6,7 +7,26 @@ namespace ClearHl7.Tests.TypesTests
     public class FamilyNameTests
     {
         /// <summary>
-        /// Validates that ToDelimitedString() returns output with all fields populated and in the correct sequence.
+        /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
+        {
+            FamilyName expected = new()
+            {
+                Surname = "1",
+                OwnSurnamePrefix = "2",
+                OwnSurname = "3",
+                SurnamePrefixFromPartnerSpouse = "4",
+                SurnameFromPartnerSpouse = "5"
+            };
+            FamilyName actual = new FamilyName().FromDelimitedString("1^2^3^4^5");
+
+            expected.Should().BeEquivalentTo(actual);
+        }
+
+        /// <summary>
+        /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>
         [Fact]
         public void ToDelimitedString_WithAllProperties_ReturnsCorrectlySequencedFields()
