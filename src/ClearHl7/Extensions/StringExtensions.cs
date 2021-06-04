@@ -12,12 +12,13 @@ namespace ClearHl7.Extensions
         /// Converts the specified string representation of a date to its DateTime equivalent, if possible.
         /// </summary>
         /// <param name="input">A string containing the value to convert.</param>
+        /// <param name="format">The expected format of the date represented within the input string.</param>
         /// <returns>A DateTime.</returns>
-        public static DateTime ToDateTime(this string input)
+        public static DateTime ToDateTime(this string input, string format)
         {
             if (string.IsNullOrEmpty(input)) { return DateTime.MinValue; }
 
-            DateTime.TryParse(input, CultureInfo.CurrentCulture, DateTimeStyles.None, out DateTime returnValue);
+            DateTime.TryParseExact(input, format, CultureInfo.CurrentCulture, DateTimeStyles.None, out DateTime returnValue);
 
             return returnValue;
         }
@@ -26,12 +27,13 @@ namespace ClearHl7.Extensions
         /// Converts the specified string representation of a date to its nullable DateTime equivalent, if possible.
         /// </summary>
         /// <param name="input">A string containing the value to convert.</param>
+        /// <param name="format">The expected format of the date represented within the input string.</param>
         /// <returns>A DateTime, or null if a null or zero-length input is provided.</returns>
-        public static DateTime? ToNullableDateTime(this string input)
+        public static DateTime? ToNullableDateTime(this string input, string format)
         {
             if (string.IsNullOrEmpty(input)) { return null; }
 
-            DateTime.TryParse(input, CultureInfo.CurrentCulture, DateTimeStyles.None, out DateTime returnValue);
+            DateTime.TryParseExact(input, format, CultureInfo.CurrentCulture, DateTimeStyles.None, out DateTime returnValue);
 
             return returnValue;
         }
