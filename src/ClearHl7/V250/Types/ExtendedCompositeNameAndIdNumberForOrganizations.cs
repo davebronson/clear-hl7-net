@@ -1,4 +1,6 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Extensions;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V250.Types
 {
@@ -66,6 +68,30 @@ namespace ClearHl7.V250.Types
         /// XON.10 - Organization Identifier.
         /// </summary>
         public string OrganizationIdentifier { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public ExtendedCompositeNameAndIdNumberForOrganizations FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            OrganizationName = segments.ElementAtOrDefault(0);
+            OrganizationNameTypeCode = segments.ElementAtOrDefault(1);
+            IdNumber = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
+            IdentifierCheckDigit = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
+            CheckDigitScheme = segments.ElementAtOrDefault(4);
+            AssigningAuthority = segments.Length > 5 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            IdentifierTypeCode = segments.ElementAtOrDefault(6);
+            AssigningFacility = segments.Length > 7 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
+            NameRepresentationCode = segments.ElementAtOrDefault(8);
+            OrganizationIdentifier = segments.ElementAtOrDefault(9);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

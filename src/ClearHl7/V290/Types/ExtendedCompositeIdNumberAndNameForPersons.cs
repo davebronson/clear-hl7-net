@@ -160,28 +160,28 @@ namespace ClearHl7.V290.Types
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
             PersonIdentifier = segments.ElementAtOrDefault(0);
-            FamilyName = segments.Length > 1 ? new FamilyName().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            FamilyName = segments.Length > 1 ? new FamilyName { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
             GivenName = segments.ElementAtOrDefault(2);
             SecondAndFurtherGivenNamesOrInitialsThereof = segments.ElementAtOrDefault(3);
             Suffix = segments.ElementAtOrDefault(4);
             Prefix = segments.ElementAtOrDefault(5);
             Degree = segments.ElementAtOrDefault(6);
-            SourceTable = segments.Length > 7 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
-            AssigningAuthority = segments.Length > 8 ? new HierarchicDesignator().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+            SourceTable = segments.Length > 7 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
+            AssigningAuthority = segments.Length > 8 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
             NameTypeCode = segments.ElementAtOrDefault(9);
             IdentifierCheckDigit = segments.ElementAtOrDefault(10);
             CheckDigitScheme = segments.ElementAtOrDefault(11);
             IdentifierTypeCode = segments.ElementAtOrDefault(12);
-            AssigningFacility = segments.Length > 13 ? new HierarchicDesignator().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
+            AssigningFacility = segments.Length > 13 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
             NameRepresentationCode = segments.ElementAtOrDefault(14);
-            NameContext = segments.Length > 15 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
-            NameValidityRange = segments.Length > 16 ? new DateTimeRange().FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
+            NameContext = segments.Length > 15 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
+            NameValidityRange = segments.Length > 16 ? new DateTimeRange { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
             NameAssemblyOrder = segments.ElementAtOrDefault(17);
-            EffectiveDate = segments.ElementAtOrDefault(18)?.ToNullableDateTime();
-            ExpirationDate = segments.ElementAtOrDefault(19)?.ToNullableDateTime();
+            EffectiveDate = segments.ElementAtOrDefault(18)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ExpirationDate = segments.ElementAtOrDefault(19)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             ProfessionalSuffix = segments.ElementAtOrDefault(20);
-            AssigningJurisdiction = segments.Length > 21 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
-            AssigningAgencyOrDepartment = segments.Length > 22 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
+            AssigningJurisdiction = segments.Length > 21 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
+            AssigningAgencyOrDepartment = segments.Length > 22 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
             SecurityCheck = segments.ElementAtOrDefault(23);
             SecurityCheckScheme = segments.ElementAtOrDefault(24);
 

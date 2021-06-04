@@ -17,6 +17,7 @@ namespace ClearHl7.Tests.TypesTests
                 Quantity = 1,
                 Units = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "2"
                 }
             };

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 
 namespace ClearHl7.V270.Types
@@ -125,6 +127,42 @@ namespace ClearHl7.V270.Types
         /// CWE.22 - Second Alternate Value Set Version ID.
         /// </summary>
         public DateTime? SecondAlternateValueSetVersionId { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public CodedWithExceptions FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            Identifier = segments.ElementAtOrDefault(0);
+            Text = segments.ElementAtOrDefault(1);
+            NameOfCodingSystem = segments.ElementAtOrDefault(2);
+            AlternateIdentifier = segments.ElementAtOrDefault(3);
+            AlternateText = segments.ElementAtOrDefault(4);
+            NameOfAlternateCodingSystem = segments.ElementAtOrDefault(5);
+            CodingSystemVersionId = segments.ElementAtOrDefault(6);
+            AlternateCodingSystemVersionId = segments.ElementAtOrDefault(7);
+            OriginalText = segments.ElementAtOrDefault(8);
+            SecondAlternateIdentifier = segments.ElementAtOrDefault(9);
+            SecondAlternateText = segments.ElementAtOrDefault(10);
+            NameOfSecondAlternateCodingSystem = segments.ElementAtOrDefault(11);
+            SecondAlternateCodingSystemVersionId = segments.ElementAtOrDefault(12);
+            CodingSystemOid = segments.ElementAtOrDefault(13);
+            ValueSetOid = segments.ElementAtOrDefault(14);
+            ValueSetVersionId = segments.ElementAtOrDefault(15)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            AlternateCodingSystemOid = segments.ElementAtOrDefault(16);
+            AlternateValueSetOid = segments.ElementAtOrDefault(17);
+            AlternateValueSetVersionId = segments.ElementAtOrDefault(18)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            SecondAlternateCodingSystemOid = segments.ElementAtOrDefault(19);
+            SecondAlternateValueSetOid = segments.ElementAtOrDefault(20);
+            SecondAlternateValueSetVersionId = segments.ElementAtOrDefault(21)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

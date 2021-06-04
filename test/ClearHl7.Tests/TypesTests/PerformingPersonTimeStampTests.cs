@@ -18,6 +18,7 @@ namespace ClearHl7.Tests.TypesTests
                 PersonIdentifier = "1",
                 FamilyName = new FamilyName
                 {
+                    IsSubcomponent = true,
                     Surname = "2"
                 },
                 GivenName = "3",
@@ -27,10 +28,12 @@ namespace ClearHl7.Tests.TypesTests
                 Degree = "7",
                 SourceTable = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "8"
                 },
                 AssigningAuthority = new HierarchicDesignator
                 {
+                    IsSubcomponent = true,
                     NamespaceId = "9"
                 },
                 NameTypeCode = "10",
@@ -39,12 +42,14 @@ namespace ClearHl7.Tests.TypesTests
                 IdentifierTypeCode = "13",
                 AssigningFacility = new HierarchicDesignator
                 {
+                    IsSubcomponent = true,
                     NamespaceId = "14"
                 },
                 DateTimeActionPerformed = new DateTime(2020, 1, 15, 1, 15, 15),
                 NameRepresentationCode = "16",
                 NameContext = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "17"
                 },
                 NameValidityRange = "18",
@@ -54,10 +59,12 @@ namespace ClearHl7.Tests.TypesTests
                 ProfessionalSuffix = "22",
                 AssigningJurisdiction = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "23"
                 },
                 AssigningAgencyOrDepartment = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "24"
                 },
                 SecurityCheck = "25",

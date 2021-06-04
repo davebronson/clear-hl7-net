@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 
 namespace ClearHl7.V281.Types
@@ -29,6 +31,23 @@ namespace ClearHl7.V281.Types
         /// ICD.3 - Date/Time Certification Required.
         /// </summary>
         public DateTime? DateTimeCertificationRequired { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public InsuranceCertificationDefinition FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            CertificationPatientType = segments.Length > 0 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            CertificationRequired = segments.ElementAtOrDefault(1);
+            DateTimeCertificationRequired = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

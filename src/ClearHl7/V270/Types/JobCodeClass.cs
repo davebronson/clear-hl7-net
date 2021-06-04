@@ -1,4 +1,5 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V270.Types
 {
@@ -28,6 +29,23 @@ namespace ClearHl7.V270.Types
         /// JCC.3 - Job Description Text.
         /// </summary>
         public Text JobDescriptionText { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public JobCodeClass FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            JobCode = segments.Length > 0 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            JobClass = segments.Length > 1 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            JobDescriptionText = segments.Length > 2 ? new Text { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

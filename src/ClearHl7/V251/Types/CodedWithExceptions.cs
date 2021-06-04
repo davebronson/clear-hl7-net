@@ -1,4 +1,5 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V251.Types
 {
@@ -58,6 +59,29 @@ namespace ClearHl7.V251.Types
         /// CWE.9 - Original Text.
         /// </summary>
         public string OriginalText { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public CodedWithExceptions FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            Identifier = segments.ElementAtOrDefault(0);
+            Text = segments.ElementAtOrDefault(1);
+            NameOfCodingSystem = segments.ElementAtOrDefault(2);
+            AlternateIdentifier = segments.ElementAtOrDefault(3);
+            AlternateText = segments.ElementAtOrDefault(4);
+            NameOfAlternateCodingSystem = segments.ElementAtOrDefault(5);
+            CodingSystemVersionId = segments.ElementAtOrDefault(6);
+            AlternateCodingSystemVersionId = segments.ElementAtOrDefault(7);
+            OriginalText = segments.ElementAtOrDefault(8);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

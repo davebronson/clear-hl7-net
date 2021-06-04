@@ -16,14 +16,17 @@ namespace ClearHl7.Tests.TypesTests
             {
                 JobCode = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "1"
                 },
                 JobClass = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "2"
                 },
                 JobDescriptionText = new Text
                 {
+                    IsSubcomponent = true,
                     Value = "3"
                 }
             };

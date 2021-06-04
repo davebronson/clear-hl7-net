@@ -17,6 +17,7 @@ namespace ClearHl7.Tests.TypesTests
                 OrganizationName = "1",
                 OrganizationNameTypeCode = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "2"
                 },
                 IdNumber = 3,
@@ -24,11 +25,13 @@ namespace ClearHl7.Tests.TypesTests
                 CheckDigitScheme = "5",
                 AssigningAuthority = new HierarchicDesignator
                 {
+                    IsSubcomponent = true,
                     NamespaceId = "6"
                 },
                 IdentifierTypeCode = "7",
                 AssigningFacility = new HierarchicDesignator
                 {
+                    IsSubcomponent = true,
                     NamespaceId = "8"
                 },
                 NameRepresentationCode = "9",

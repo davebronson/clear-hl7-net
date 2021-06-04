@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 
 namespace ClearHl7.V270.Types
@@ -23,6 +25,22 @@ namespace ClearHl7.V270.Types
         /// <para>Suggested: 0531 Institution Name</para>
         /// </summary>
         public CodedWithExceptions InstitutionName { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public DateAndInstitutionName FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            Date = segments.ElementAtOrDefault(0)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            InstitutionName = segments.Length > 1 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

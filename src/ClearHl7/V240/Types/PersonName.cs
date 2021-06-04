@@ -1,4 +1,5 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V240.Types
 {
@@ -42,6 +43,26 @@ namespace ClearHl7.V240.Types
         /// <para>Suggested: 0360 Degree/License/Certificate -&gt; ClearHl7.Codes.V240.CodeDegreeLicenseCertificate</para>
         /// </summary>
         public string Degree { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public PersonName FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            FamilyName = segments.ElementAtOrDefault(0);
+            GivenName = segments.ElementAtOrDefault(1);
+            SecondAndFurtherGivenNamesOrInitialsThereof = segments.ElementAtOrDefault(2);
+            Suffix = segments.ElementAtOrDefault(3);
+            Prefix = segments.ElementAtOrDefault(4);
+            Degree = segments.ElementAtOrDefault(5);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

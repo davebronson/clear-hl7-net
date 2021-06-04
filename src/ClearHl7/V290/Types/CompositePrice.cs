@@ -56,11 +56,11 @@ namespace ClearHl7.V290.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            Price = segments.Length > 0 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            Price = segments.Length > 0 ? new Money { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
             PriceType = segments.ElementAtOrDefault(1);
             FromValue = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
             ToValue = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
-            RangeUnits = segments.Length > 4 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            RangeUnits = segments.Length > 4 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
             RangeType = segments.ElementAtOrDefault(5);
 
             return this;

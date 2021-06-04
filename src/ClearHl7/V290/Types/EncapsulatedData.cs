@@ -51,11 +51,11 @@ namespace ClearHl7.V290.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            SourceApplication = segments.Length > 0 ? new HierarchicDesignator().FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            SourceApplication = segments.Length > 0 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
             TypeOfData = segments.ElementAtOrDefault(1);
             DataSubtype = segments.ElementAtOrDefault(2);
             Encoding = segments.ElementAtOrDefault(3);
-            Data = segments.Length > 4 ? new Text().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            Data = segments.Length > 4 ? new Text { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
 
             return this;
         }

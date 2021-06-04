@@ -41,9 +41,9 @@ namespace ClearHl7.V290.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            OccurrenceSpanCode = segments.Length > 0 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
-            OccurrenceSpanStartDate = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
-            OccurrenceSpanStopDate = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
+            OccurrenceSpanCode = segments.Length > 0 ? new CodedWithNoExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            OccurrenceSpanStartDate = segments.ElementAtOrDefault(1)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            OccurrenceSpanStopDate = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
 
             return this;
         }

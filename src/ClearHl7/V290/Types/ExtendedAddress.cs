@@ -150,7 +150,7 @@ namespace ClearHl7.V290.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            StreetAddress = segments.Length > 0 ? new StreetAddress().FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            StreetAddress = segments.Length > 0 ? new StreetAddress { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
             OtherDesignation = segments.ElementAtOrDefault(1);
             City = segments.ElementAtOrDefault(2);
             StateOrProvince = segments.ElementAtOrDefault(3);
@@ -158,21 +158,21 @@ namespace ClearHl7.V290.Types
             Country = segments.ElementAtOrDefault(5);
             AddressType = segments.ElementAtOrDefault(6);
             OtherGeographicDesignation = segments.ElementAtOrDefault(7);
-            CountyParishCode = segments.Length > 8 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
-            CensusTract = segments.Length > 9 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            CountyParishCode = segments.Length > 8 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+            CensusTract = segments.Length > 9 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
             AddressRepresentationCode = segments.ElementAtOrDefault(10);
-            AddressValidityRange = segments.Length > 11 ? new DateTimeRange().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
-            EffectiveDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
-            ExpirationDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
-            ExpirationReason = segments.Length > 14 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
+            AddressValidityRange = segments.Length > 11 ? new DateTimeRange { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+            EffectiveDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ExpirationDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ExpirationReason = segments.Length > 14 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
             TemporaryIndicator = segments.ElementAtOrDefault(15);
             BadAddressIndicator = segments.ElementAtOrDefault(16);
             AddressUsage = segments.ElementAtOrDefault(17);
             Addressee = segments.ElementAtOrDefault(18);
             Comment = segments.ElementAtOrDefault(19);
             PreferenceOrder = segments.ElementAtOrDefault(20)?.ToNullableDecimal();
-            ProtectionCode = segments.Length > 21 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
-            AddressIdentifier = segments.Length > 22 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
+            ProtectionCode = segments.Length > 21 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
+            AddressIdentifier = segments.Length > 22 ? new EntityIdentifier { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
 
             return this;
         }

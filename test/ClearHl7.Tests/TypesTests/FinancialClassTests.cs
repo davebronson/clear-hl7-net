@@ -17,6 +17,7 @@ namespace ClearHl7.Tests.TypesTests
             {
                 FinancialClassCode = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "1"
                 },
                 EffectiveDate = new DateTime(2020, 1, 1, 0, 0, 22)

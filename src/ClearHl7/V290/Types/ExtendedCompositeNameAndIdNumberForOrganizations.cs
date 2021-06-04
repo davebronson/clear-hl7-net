@@ -79,13 +79,13 @@ namespace ClearHl7.V290.Types
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
             OrganizationName = segments.ElementAtOrDefault(0);
-            OrganizationNameTypeCode = segments.Length > 1 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            OrganizationNameTypeCode = segments.Length > 1 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
             IdNumber = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
             IdentifierCheckDigit = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
             CheckDigitScheme = segments.ElementAtOrDefault(4);
-            AssigningAuthority = segments.Length > 5 ? new HierarchicDesignator().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            AssigningAuthority = segments.Length > 5 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
             IdentifierTypeCode = segments.ElementAtOrDefault(6);
-            AssigningFacility = segments.Length > 7 ? new HierarchicDesignator().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
+            AssigningFacility = segments.Length > 7 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
             NameRepresentationCode = segments.ElementAtOrDefault(8);
             OrganizationIdentifier = segments.ElementAtOrDefault(9);
 

@@ -1,4 +1,5 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V250.Types
 {
@@ -50,6 +51,27 @@ namespace ClearHl7.V250.Types
         /// <para>Suggested: 0369 Specimen Role -&gt; ClearHl7.Codes.V250.CodeSpecimenRole</para>
         /// </summary>
         public CodedWithExceptions SpecimenRole { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public SpecimentSource FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            SpecimenSourceNameOrCode = segments.Length > 0 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            Additives = segments.Length > 1 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            SpecimenCollectionMethod = segments.Length > 2 ? new Text { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            BodySite = segments.Length > 3 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            SiteModifier = segments.Length > 4 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            CollectionMethodModifierCode = segments.Length > 5 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            SpecimenRole = segments.Length > 6 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

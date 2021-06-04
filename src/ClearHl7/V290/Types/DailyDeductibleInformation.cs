@@ -40,7 +40,7 @@ namespace ClearHl7.V290.Types
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
             DelayDays = segments.ElementAtOrDefault(0)?.ToNullableDecimal();
-            MonetaryAmount = segments.Length > 1 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            MonetaryAmount = segments.Length > 1 ? new Money { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
             NumberOfDays = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
 
             return this;

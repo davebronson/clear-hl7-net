@@ -1,4 +1,5 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V251.Types
 {
@@ -33,6 +34,24 @@ namespace ClearHl7.V251.Types
         /// <para>Suggested: 0210 Relational Conjunction -&gt; ClearHl7.Codes.V251.CodeRelationalConjunction</para>
         /// </summary>
         public string RelationalConjunction { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public QuerySelectionCriteria FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            SegmentFieldName = segments.ElementAtOrDefault(0);
+            RelationalOperator = segments.ElementAtOrDefault(1);
+            Value = segments.ElementAtOrDefault(2);
+            RelationalConjunction = segments.ElementAtOrDefault(3);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

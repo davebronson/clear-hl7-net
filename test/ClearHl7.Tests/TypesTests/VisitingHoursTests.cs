@@ -13,12 +13,14 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
+            DateTime today = DateTime.Today;
+
             VisitingHours expected = new()
             {
                 StartDayRange = "1",
                 EndDayRange = "2",
-                StartHourRange = new DateTime(2020, 1, 1, 3, 33, 0),
-                EndHourRange = new DateTime(2020, 1, 1, 4, 44, 4)
+                StartHourRange = new DateTime(today.Year, today.Month, today.Day, 3, 33, 0),
+                EndHourRange = new DateTime(today.Year, today.Month, today.Day, 4, 44, 4)
             };
             VisitingHours actual = new VisitingHours().FromDelimitedString("1^2^033300^044404");
 
@@ -31,12 +33,14 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void ToDelimitedString_WithAllProperties_ReturnsCorrectlySequencedFields()
         {
+            DateTime today = DateTime.Today;
+
             IType hl7Type = new VisitingHours
             {
                 StartDayRange = "1",
                 EndDayRange = "2",
-                StartHourRange = new DateTime(2020, 1, 1, 3, 33, 0),
-                EndHourRange = new DateTime(2020, 1, 1, 4, 44, 4)
+                StartHourRange = new DateTime(today.Year, today.Month, today.Day, 3, 33, 0),
+                EndHourRange = new DateTime(today.Year, today.Month, today.Day, 4, 44, 4)
             };
 
             string expected = "1^2^033300^044404";

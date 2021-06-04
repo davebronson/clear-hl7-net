@@ -1,4 +1,5 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V251.Types
 {
@@ -28,6 +29,23 @@ namespace ClearHl7.V251.Types
         /// <para>Suggested: 0301 Universal ID Type -&gt; ClearHl7.Codes.V251.CodeUniversalIdType</para>
         /// </summary>
         public string UniversalIdType { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public HierarchicDesignator FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            NamespaceId = segments.ElementAtOrDefault(0);
+            UniversalId = segments.ElementAtOrDefault(1);
+            UniversalIdType = segments.ElementAtOrDefault(2);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

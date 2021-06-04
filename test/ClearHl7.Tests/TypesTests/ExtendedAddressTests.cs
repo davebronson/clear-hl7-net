@@ -17,6 +17,7 @@ namespace ClearHl7.Tests.TypesTests
             {
                 StreetAddress = new StreetAddress
                 {
+                    IsSubcomponent = true,
                     StreetOrMailingAddress = "1"
                 },
                 OtherDesignation = "2",
@@ -28,21 +29,25 @@ namespace ClearHl7.Tests.TypesTests
                 OtherGeographicDesignation = "8",
                 CountyParishCode = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "9"
                 },
                 CensusTract = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "10"
                 },
                 AddressRepresentationCode = "11",
                 AddressValidityRange = new DateTimeRange
                 {
+                    IsSubcomponent = true,
                     RangeStartDateTime = new DateTime(2020, 12, 12, 0, 0, 12)
                 },
                 EffectiveDate = new DateTime(2020, 1, 13, 0, 0, 13),
                 ExpirationDate = new DateTime(2020, 1, 14, 0, 0, 14),
                 ExpirationReason = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "15"
                 },
                 TemporaryIndicator = "16",
@@ -53,10 +58,12 @@ namespace ClearHl7.Tests.TypesTests
                 PreferenceOrder = 21,
                 ProtectionCode = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "22"
                 },
                 AddressIdentifier = new EntityIdentifier
                 {
+                    IsSubcomponent = true,
                     EntityId = "23"
                 }
             };

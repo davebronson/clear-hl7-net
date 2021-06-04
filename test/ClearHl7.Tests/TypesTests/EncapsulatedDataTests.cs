@@ -16,6 +16,7 @@ namespace ClearHl7.Tests.TypesTests
             {
                 SourceApplication = new HierarchicDesignator
                 {
+                    IsSubcomponent = true,
                     NamespaceId = "1"
                 },
                 TypeOfData = "2",
@@ -23,6 +24,7 @@ namespace ClearHl7.Tests.TypesTests
                 Encoding = "4",
                 Data = new Text
                 {
+                    IsSubcomponent = true,
                     Value = "5"
                 }
             };

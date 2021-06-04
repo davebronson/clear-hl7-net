@@ -31,14 +31,17 @@ namespace ClearHl7.Tests.TypesTests
                 ExpirationDate = new DateTime(2020, 1, 14, 0, 0, 14),
                 ExpirationReason = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "15"
                 },
                 ProtectionCode = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "16"
                 },
                 SharedTelecommunicationIdentifier = new EntityIdentifier
                 {
+                    IsSubcomponent = true,
                     EntityId = "17"
                 },
                 PreferenceOrder = 18

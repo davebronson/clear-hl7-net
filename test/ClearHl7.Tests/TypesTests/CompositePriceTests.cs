@@ -16,6 +16,7 @@ namespace ClearHl7.Tests.TypesTests
             {
                 Price = new Money
                 {
+                    IsSubcomponent = true,
                     Quantity = 1
                 },
                 PriceType = "2",
@@ -23,6 +24,7 @@ namespace ClearHl7.Tests.TypesTests
                 ToValue = 4,
                 RangeUnits = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "5"
                 },
                 RangeType = "6"

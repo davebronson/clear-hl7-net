@@ -17,6 +17,7 @@ namespace ClearHl7.Tests.TypesTests
                 DelayDays = 1,
                 MonetaryAmount = new Money
                 {
+                    IsSubcomponent = true,
                     Quantity = 2
                 },
                 NumberOfDays = 3

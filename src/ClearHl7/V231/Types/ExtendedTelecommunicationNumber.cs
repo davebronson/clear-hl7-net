@@ -1,4 +1,6 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Extensions;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V231.Types
 {
@@ -58,6 +60,29 @@ namespace ClearHl7.V231.Types
         /// XTN.9 - Any Text.
         /// </summary>
         public string AnyText { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public ExtendedTelecommunicationNumber FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            TelephoneNumber = segments.ElementAtOrDefault(0);
+            TelecommunicationUseCode = segments.ElementAtOrDefault(1);
+            TelecommunicationEquipmentType = segments.ElementAtOrDefault(2);
+            CommunicationAddress = segments.ElementAtOrDefault(3);
+            CountryCode = segments.ElementAtOrDefault(4)?.ToNullableInt();
+            AreaCityCode = segments.ElementAtOrDefault(5)?.ToNullableInt();
+            LocalNumber = segments.ElementAtOrDefault(6)?.ToNullableInt();
+            Extension = segments.ElementAtOrDefault(7)?.ToNullableInt();
+            AnyText = segments.ElementAtOrDefault(8);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

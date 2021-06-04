@@ -49,8 +49,8 @@ namespace ClearHl7.V290.Types
 
             StartDayRange = segments.ElementAtOrDefault(0);
             EndDayRange = segments.ElementAtOrDefault(1);
-            StartHourRange = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
-            EndHourRange = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
+            StartHourRange = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.TimeFormatPrecisionSecond);
+            EndHourRange = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.TimeFormatPrecisionSecond);
 
             return this;
         }

@@ -16,6 +16,7 @@ namespace ClearHl7.Tests.TypesTests
             {
                 DayType = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "1"
                 },
                 NumberOfDays = 2

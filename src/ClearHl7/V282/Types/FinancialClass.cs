@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 
 namespace ClearHl7.V282.Types
@@ -23,6 +25,22 @@ namespace ClearHl7.V282.Types
         /// FC.2 - Effective Date.
         /// </summary>
         public DateTime? EffectiveDate { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public FinancialClass FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            FinancialClassCode = segments.Length > 0 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            EffectiveDate = segments.ElementAtOrDefault(1)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

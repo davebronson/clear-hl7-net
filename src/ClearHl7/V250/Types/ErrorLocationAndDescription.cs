@@ -1,4 +1,6 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Extensions;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V250.Types
 {
@@ -32,6 +34,24 @@ namespace ClearHl7.V250.Types
         /// <para>Suggested: 0357 Message Error Condition Codes -&gt; ClearHl7.Codes.V250.CodeMessageErrorConditionCodes</para>
         /// </summary>
         public CodedElement CodeIdentifyingError { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public ErrorLocationAndDescription FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            SegmentId = segments.ElementAtOrDefault(0);
+            SegmentSequence = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
+            FieldPosition = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
+            CodeIdentifyingError = segments.Length > 3 ? new CodedElement { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

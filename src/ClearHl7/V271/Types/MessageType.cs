@@ -1,4 +1,5 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V271.Types
 {
@@ -29,6 +30,23 @@ namespace ClearHl7.V271.Types
         /// <para>Suggested: 0354 Message Structure -&gt; ClearHl7.Codes.V271.CodeMessageStructure</para>
         /// </summary>
         public string MessageStructure { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public MessageType FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            MessageCode = segments.ElementAtOrDefault(0);
+            TriggerEvent = segments.ElementAtOrDefault(1);
+            MessageStructure = segments.ElementAtOrDefault(2);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

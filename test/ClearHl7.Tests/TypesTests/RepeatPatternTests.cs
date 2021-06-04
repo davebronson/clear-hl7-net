@@ -16,6 +16,7 @@ namespace ClearHl7.Tests.TypesTests
             {
                 RepeatPatternCode = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "1"
                 },
                 CalendarAlignment = "2",
@@ -24,6 +25,7 @@ namespace ClearHl7.Tests.TypesTests
                 PeriodQuantity = 5,
                 PeriodUnits = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "6"
                 },
                 InstitutionSpecifiedTime = "7",
@@ -31,6 +33,7 @@ namespace ClearHl7.Tests.TypesTests
                 EventOffsetQuantity = 9,
                 EventOffsetUnits = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "10"
                 },
                 GeneralTimingSpecification = "11"

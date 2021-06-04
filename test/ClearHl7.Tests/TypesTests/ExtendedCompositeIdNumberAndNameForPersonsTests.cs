@@ -18,6 +18,7 @@ namespace ClearHl7.Tests.TypesTests
                 PersonIdentifier = "1",
                 FamilyName = new FamilyName
                 {
+                    IsSubcomponent = true,
                     Surname = "2"
                 },
                 GivenName = "3",
@@ -27,10 +28,12 @@ namespace ClearHl7.Tests.TypesTests
                 Degree = "7",
                 SourceTable = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "8"
                 },
                 AssigningAuthority = new HierarchicDesignator
                 {
+                    IsSubcomponent = true,
                     NamespaceId = "9"
                 },
                 NameTypeCode = "10",
@@ -39,15 +42,18 @@ namespace ClearHl7.Tests.TypesTests
                 IdentifierTypeCode = "13",
                 AssigningFacility = new HierarchicDesignator
                 {
+                    IsSubcomponent = true,
                     NamespaceId = "14"
                 },
                 NameRepresentationCode = "15",
                 NameContext = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "16"
                 },
                 NameValidityRange = new DateTimeRange
                 {
+                    IsSubcomponent = true,
                     RangeStartDateTime = new DateTime(2020, 1, 17, 0, 0, 17)
                 },
                 NameAssemblyOrder = "18",
@@ -56,10 +62,12 @@ namespace ClearHl7.Tests.TypesTests
                 ProfessionalSuffix = "21",
                 AssigningJurisdiction = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "22"
                 },
                 AssigningAgencyOrDepartment = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "23"
                 },
                 SecurityCheck = "24",

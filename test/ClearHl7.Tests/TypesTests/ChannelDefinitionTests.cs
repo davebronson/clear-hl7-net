@@ -16,23 +16,28 @@ namespace ClearHl7.Tests.TypesTests
             {
                 ChannelIdentifier = new ChannelIdentifier
                 {
+                    IsSubcomponent = true,
                     ChannelNumber = 1
                 },
                 WaveformSource = new WaveformSource
                 {
+                    IsSubcomponent = true,
                     SourceOneName = "2"
                 },
                 ChannelSensitivityAndUnits = new ChannelSensitivityAndUnits
                 {
+                    IsSubcomponent = true,
                     ChannelSensitivity = 3
                 },
                 ChannelCalibrationParameters = new ChannelCalibrationParameters
                 {
+                    IsSubcomponent = true,
                     ChannelCalibrationSensitivityCorrectionFactor = 4
                 },
                 ChannelSamplingFrequency = 5,
                 MinimumAndMaximumDataValues = new NumericRange
                 {
+                    IsSubcomponent = true,
                     LowValue = 6
                 }
             };

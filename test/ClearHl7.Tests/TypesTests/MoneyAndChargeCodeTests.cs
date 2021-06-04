@@ -16,10 +16,12 @@ namespace ClearHl7.Tests.TypesTests
             {
                 MonetaryAmount = new Money
                 {
+                    IsSubcomponent = true,
                     Quantity = 1
                 },
                 ChargeCode = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "2"
                 }
             };

@@ -41,7 +41,7 @@ namespace ClearHl7.V290.Types
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
             AuthorizationNumber = segments.ElementAtOrDefault(0);
-            Date = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
+            Date = segments.ElementAtOrDefault(1)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
             Source = segments.ElementAtOrDefault(2);
             
             return this;

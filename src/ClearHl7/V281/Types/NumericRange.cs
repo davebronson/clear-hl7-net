@@ -1,4 +1,6 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Extensions;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V281.Types
 {
@@ -21,6 +23,22 @@ namespace ClearHl7.V281.Types
         /// NR.2 - High Value.
         /// </summary>
         public decimal? HighValue { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public NumericRange FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            LowValue = segments.ElementAtOrDefault(0)?.ToNullableDecimal();
+            HighValue = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

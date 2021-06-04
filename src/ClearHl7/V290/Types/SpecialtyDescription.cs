@@ -49,7 +49,7 @@ namespace ClearHl7.V290.Types
             SpecialtyName = segments.ElementAtOrDefault(0);
             GoverningBoard = segments.ElementAtOrDefault(1);
             EligibleOrCertified = segments.ElementAtOrDefault(2);
-            DateOfCertification = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
+            DateOfCertification = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
 
             return this;
         }

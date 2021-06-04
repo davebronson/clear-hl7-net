@@ -1,4 +1,6 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Extensions;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V230.Types
 {
@@ -41,6 +43,26 @@ namespace ClearHl7.V230.Types
         /// MA.6 - Sample N From Channel N.
         /// </summary>
         public decimal? SampleNFromChannelN { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public MultiplexedArray FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            Sample1FromChannel1 = segments.ElementAtOrDefault(0)?.ToNullableDecimal();
+            Sample1FromChannel2 = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
+            Sample1FromChannelN = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
+            Sample2FromChannel1 = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
+            Sample2FromChannelN = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
+            SampleNFromChannelN = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

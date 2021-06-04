@@ -33,8 +33,8 @@ namespace ClearHl7.V290.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            PlacerAssignedIdentifier = segments.Length > 0 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
-            FillerAssignedIdentifier = segments.Length > 1 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            PlacerAssignedIdentifier = segments.Length > 0 ? new EntityIdentifier { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            FillerAssignedIdentifier = segments.Length > 1 ? new EntityIdentifier { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
 
             return this;
         }

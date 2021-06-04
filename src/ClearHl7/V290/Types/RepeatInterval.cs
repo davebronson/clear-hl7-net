@@ -34,7 +34,7 @@ namespace ClearHl7.V290.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            RepeatPattern = segments.Length > 0 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            RepeatPattern = segments.Length > 0 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
             ExplicitTimeInterval = segments.ElementAtOrDefault(1);
 
             return this;

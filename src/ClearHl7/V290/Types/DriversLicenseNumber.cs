@@ -42,8 +42,8 @@ namespace ClearHl7.V290.Types
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
             LicenseNumber = segments.ElementAtOrDefault(0);
-            IssuingStateProvinceCountry = segments.Length > 1 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            ExpirationDate = segments.ElementAtOrDefault(2).ToNullableDateTime();
+            IssuingStateProvinceCountry = segments.Length > 1 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            ExpirationDate = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
 
             return this;
         }

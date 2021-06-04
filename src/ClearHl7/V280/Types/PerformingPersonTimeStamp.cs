@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 
 namespace ClearHl7.V280.Types
@@ -151,6 +153,46 @@ namespace ClearHl7.V280.Types
         /// <para>Suggested: 0904 Security Check Scheme -&gt; ClearHl7.Codes.V280.CodeSecurityCheckScheme</para>
         /// </summary>
         public string SecurityCheckScheme { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public PerformingPersonTimeStamp FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            PersonIdentifier = segments.ElementAtOrDefault(0);
+            FamilyName = segments.Length > 1 ? new FamilyName { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            GivenName = segments.ElementAtOrDefault(2);
+            SecondAndFurtherGivenNamesOrInitialsThereof = segments.ElementAtOrDefault(3);
+            Suffix = segments.ElementAtOrDefault(4);
+            Prefix = segments.ElementAtOrDefault(5);
+            Degree = segments.ElementAtOrDefault(6);
+            SourceTable = segments.Length > 7 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
+            AssigningAuthority = segments.Length > 8 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+            NameTypeCode = segments.ElementAtOrDefault(9);
+            IdentifierCheckDigit = segments.ElementAtOrDefault(10);
+            CheckDigitScheme = segments.ElementAtOrDefault(11);
+            IdentifierTypeCode = segments.ElementAtOrDefault(12);
+            AssigningFacility = segments.Length > 13 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
+            DateTimeActionPerformed = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            NameRepresentationCode = segments.ElementAtOrDefault(15);
+            NameContext = segments.Length > 16 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
+            NameValidityRange = segments.ElementAtOrDefault(17);
+            NameAssemblyOrder = segments.ElementAtOrDefault(18);
+            EffectiveDate = segments.ElementAtOrDefault(19)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ExpirationDate = segments.ElementAtOrDefault(20)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ProfessionalSuffix = segments.ElementAtOrDefault(21);
+            AssigningJurisdiction = segments.Length > 22 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
+            AssigningAgencyOrDepartment = segments.Length > 23 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(23)) : null;
+            SecurityCheck = segments.ElementAtOrDefault(24);
+            SecurityCheckScheme = segments.ElementAtOrDefault(25);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

@@ -1,4 +1,6 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Extensions;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V271.Types
 {
@@ -41,6 +43,26 @@ namespace ClearHl7.V271.Types
         /// CD.6 - Minimum and Maximum Data Values.
         /// </summary>
         public NumericRange MinimumAndMaximumDataValues{ get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public ChannelDefinition FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            ChannelIdentifier = segments.Length > 0 ? new ChannelIdentifier { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            WaveformSource = segments.Length > 1 ? new WaveformSource { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            ChannelSensitivityAndUnits = segments.Length > 2 ? new ChannelSensitivityAndUnits { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            ChannelCalibrationParameters = segments.Length > 3 ? new ChannelCalibrationParameters { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            ChannelSamplingFrequency = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
+            MinimumAndMaximumDataValues = segments.Length > 5 ? new NumericRange { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

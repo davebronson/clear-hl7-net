@@ -1,4 +1,5 @@
 ﻿using ClearHl7.V260.Types;
+using FluentAssertions;
 using Xunit;
 
 namespace ClearHl7.Tests.TypesTests
@@ -6,7 +7,56 @@ namespace ClearHl7.Tests.TypesTests
     public class SpecimentSourceTests
     {
         /// <summary>
-        /// Validates that ToDelimitedString() returns output with all fields populated and in the correct sequence.
+        /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
+        {
+            SpecimentSource expected = new()
+            {
+                SpecimenSourceNameOrCode = new CodedWithExceptions
+                {
+                    IsSubcomponent = true,
+                    Identifier = "1"
+                },
+                Additives = new CodedWithExceptions
+                {
+                    IsSubcomponent = true,
+                    Identifier = "2"
+                },
+                SpecimenCollectionMethod = new Text
+                {
+                    IsSubcomponent = true,
+                    Value = "3"
+                },
+                BodySite = new CodedWithExceptions
+                {
+                    IsSubcomponent = true,
+                    Identifier = "4"
+                },
+                SiteModifier = new CodedWithExceptions
+                {
+                    IsSubcomponent = true,
+                    Identifier = "5"
+                },
+                CollectionMethodModifierCode = new CodedWithExceptions
+                {
+                    IsSubcomponent = true,
+                    Identifier = "6"
+                },
+                SpecimenRole = new CodedWithExceptions
+                {
+                    IsSubcomponent = true,
+                    Identifier = "7"
+                }
+            };
+            SpecimentSource actual = new SpecimentSource().FromDelimitedString("1^2^3^4^5^6^7");
+
+            expected.Should().BeEquivalentTo(actual);
+        }
+
+        /// <summary>
+        /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>
         [Fact]
         public void ToDelimitedString_WithAllProperties_ReturnsCorrectlySequencedFields()

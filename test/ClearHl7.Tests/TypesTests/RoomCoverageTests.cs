@@ -16,15 +16,18 @@ namespace ClearHl7.Tests.TypesTests
             {
                 RoomType = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "1"
                 },
                 AmountType = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "2"
                 },
                 CoverageAmount = 3,
                 MoneyOrPercentage = new MoneyOrPercentage
                 {
+                    IsSubcomponent = true,
                     MoneyOrPercentageIndicator = "4"
                 }
             };

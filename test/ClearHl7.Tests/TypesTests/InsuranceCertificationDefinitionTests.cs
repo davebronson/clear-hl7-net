@@ -17,6 +17,7 @@ namespace ClearHl7.Tests.TypesTests
             {
                 CertificationPatientType = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "1"
                 },
                 CertificationRequired = "2",

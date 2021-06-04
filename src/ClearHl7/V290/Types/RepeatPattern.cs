@@ -83,16 +83,16 @@ namespace ClearHl7.V290.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            RepeatPatternCode = segments.Length > 0 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            RepeatPatternCode = segments.Length > 0 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
             CalendarAlignment = segments.ElementAtOrDefault(1);
             PhaseRangeBeginValue = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
             PhaseRangeEndValue = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
             PeriodQuantity = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
-            PeriodUnits = segments.Length > 5 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            PeriodUnits = segments.Length > 5 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
             InstitutionSpecifiedTime = segments.ElementAtOrDefault(6);
             Event = segments.ElementAtOrDefault(7);
             EventOffsetQuantity = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
-            EventOffsetUnits = segments.Length > 9 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            EventOffsetUnits = segments.Length > 9 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
             GeneralTimingSpecification = segments.ElementAtOrDefault(10);
 
             return this;

@@ -86,17 +86,17 @@ namespace ClearHl7.V290.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            PointOfCare = segments.Length > 0 ? new HierarchicDesignator().FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
-            Room = segments.Length > 1 ? new HierarchicDesignator().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            Bed = segments.Length > 2 ? new HierarchicDesignator().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            Facility = segments.Length > 3 ? new HierarchicDesignator().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
-            LocationStatus = segments.Length > 4 ? segments.ElementAtOrDefault(4) : null;
+            PointOfCare = segments.Length > 0 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            Room = segments.Length > 1 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            Bed = segments.Length > 2 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            Facility = segments.Length > 3 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            LocationStatus = segments.ElementAtOrDefault(4);
             PersonLocationType = segments.ElementAtOrDefault(5);
-            Building = segments.Length > 6 ? new HierarchicDesignator().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
-            Floor = segments.Length > 7 ? new HierarchicDesignator().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
+            Building = segments.Length > 6 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            Floor = segments.Length > 7 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
             LocationDescription = segments.ElementAtOrDefault(8);
-            ComprehensiveLocationIdentifier = segments.Length > 9 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
-            AssigningAuthorityForLocation = segments.Length > 10 ? new HierarchicDesignator().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
+            ComprehensiveLocationIdentifier = segments.Length > 9 ? new EntityIdentifier { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            AssigningAuthorityForLocation = segments.Length > 10 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
 
             return this;
         }

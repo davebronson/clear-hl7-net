@@ -1,4 +1,5 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V231.Types
 {
@@ -54,6 +55,28 @@ namespace ClearHl7.V231.Types
         /// <para>Suggested: 4000 Name/Address Representation -&gt; ClearHl7.Codes.V231.CodeNameAddressRepresentation</para>
         /// </summary>
         public string NameRepresentationCode { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public ExtendedPersonName FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            FamilyName = segments.ElementAtOrDefault(0);
+            GivenName = segments.ElementAtOrDefault(1);
+            SecondAndFurtherGivenNamesOrInitialsThereof = segments.ElementAtOrDefault(2);
+            Suffix = segments.ElementAtOrDefault(3);
+            Prefix = segments.ElementAtOrDefault(4);
+            Degree = segments.ElementAtOrDefault(5);
+            NameTypeCode = segments.ElementAtOrDefault(6);
+            NameRepresentationCode = segments.ElementAtOrDefault(7);
+            
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

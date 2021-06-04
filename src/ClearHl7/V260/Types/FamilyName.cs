@@ -1,4 +1,5 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V260.Types
 {
@@ -36,6 +37,25 @@ namespace ClearHl7.V260.Types
         /// FN.5 - Surname from Partner/Spouse.
         /// </summary>
         public string SurnameFromPartnerSpouse { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public FamilyName FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            Surname = segments.ElementAtOrDefault(0);
+            OwnSurnamePrefix = segments.ElementAtOrDefault(1);
+            OwnSurname = segments.ElementAtOrDefault(2);
+            SurnamePrefixFromPartnerSpouse = segments.ElementAtOrDefault(3);
+            SurnameFromPartnerSpouse = segments.ElementAtOrDefault(4);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

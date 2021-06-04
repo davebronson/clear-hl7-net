@@ -92,13 +92,13 @@ namespace ClearHl7.V290.Types
             IdNumber = segments.ElementAtOrDefault(0);
             IdentifierCheckDigit = segments.ElementAtOrDefault(1);
             CheckDigitScheme = segments.ElementAtOrDefault(2);
-            AssigningAuthority = segments.Length > 3 ? new HierarchicDesignator().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            AssigningAuthority = segments.Length > 3 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
             IdentifierTypeCode = segments.ElementAtOrDefault(4);
-            AssigningFacility = segments.Length > 5 ? new HierarchicDesignator().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
-            EffectiveDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
-            ExpirationDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
-            AssigningJurisdiction = segments.Length > 8 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
-            AssigningAgencyOrDepartment = segments.Length > 9 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            AssigningFacility = segments.Length > 5 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            EffectiveDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            ExpirationDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            AssigningJurisdiction = segments.Length > 8 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+            AssigningAgencyOrDepartment = segments.Length > 9 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
             SecurityCheck = segments.ElementAtOrDefault(10);
             SecurityCheckScheme = segments.ElementAtOrDefault(11);
 

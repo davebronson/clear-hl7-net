@@ -16,6 +16,7 @@ namespace ClearHl7.Tests.TypesTests
             {
                 ParameterClass = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "1"
                 },
                 ParameterValue = "2"

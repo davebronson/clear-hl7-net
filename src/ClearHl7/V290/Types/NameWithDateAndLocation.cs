@@ -87,13 +87,13 @@ namespace ClearHl7.V290.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            Name = segments.Length > 0 ? new CompositeIdNumberAndNameSimplified().FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
-            StartDateTime = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
-            EndDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
+            Name = segments.Length > 0 ? new CompositeIdNumberAndNameSimplified { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            StartDateTime = segments.ElementAtOrDefault(1)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EndDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             PointOfCare = segments.ElementAtOrDefault(3);
             Room = segments.ElementAtOrDefault(4);
             Bed = segments.ElementAtOrDefault(5);
-            Facility = segments.Length > 6 ? new HierarchicDesignator().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            Facility = segments.Length > 6 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
             LocationStatus = segments.ElementAtOrDefault(7);
             PatientLocationType = segments.ElementAtOrDefault(8);
             Building = segments.ElementAtOrDefault(9);

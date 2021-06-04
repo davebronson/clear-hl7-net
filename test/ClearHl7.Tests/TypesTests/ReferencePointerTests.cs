@@ -17,6 +17,7 @@ namespace ClearHl7.Tests.TypesTests
                 Pointer = "1",
                 ApplicationId = new HierarchicDesignator
                 {
+                    IsSubcomponent = true,
                     NamespaceId = "2"
                 },
                 TypeOfData = "3",

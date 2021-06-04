@@ -1,4 +1,5 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V240.Types
 {
@@ -70,6 +71,31 @@ namespace ClearHl7.V240.Types
         /// <para>Suggested: 0301 Universal ID Type -&gt; ClearHl7.Codes.V240.CodeUniversalIdType</para>
         /// </summary>
         public string AssigningAuthorityUniversalIdType { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public CompositeIdNumberAndNameSimplified FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            IdNumber = segments.ElementAtOrDefault(0);
+            FamilyName = segments.ElementAtOrDefault(1);
+            GivenName = segments.ElementAtOrDefault(2);
+            SecondAndFurtherGivenNamesOrInitialsThereof = segments.ElementAtOrDefault(3);
+            Suffix = segments.ElementAtOrDefault(4);
+            Prefix = segments.ElementAtOrDefault(5);
+            Degree = segments.ElementAtOrDefault(6);
+            SourceTable = segments.ElementAtOrDefault(7);
+            AssigningAuthorityNamespaceId = segments.ElementAtOrDefault(8);
+            AssigningAuthorityUniversalId = segments.ElementAtOrDefault(9);
+            AssigningAuthorityUniversalIdType = segments.ElementAtOrDefault(10);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

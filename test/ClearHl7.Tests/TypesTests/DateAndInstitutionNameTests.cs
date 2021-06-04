@@ -18,6 +18,7 @@ namespace ClearHl7.Tests.TypesTests
                 Date = new DateTime(2020, 1, 1),
                 InstitutionName = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "2"
                 }
             };

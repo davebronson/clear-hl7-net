@@ -131,11 +131,11 @@ namespace ClearHl7.V290.Types
             ExtensionPrefix = segments.ElementAtOrDefault(9);
             SpeedDialCode = segments.ElementAtOrDefault(10);
             UnformattedTelephoneNumber = segments.ElementAtOrDefault(11);
-            EffectiveStartDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
-            ExpirationDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
-            ExpirationReason = segments.Length > 14 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
-            ProtectionCode = segments.Length > 15 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
-            SharedTelecommunicationIdentifier = segments.Length > 16 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
+            EffectiveStartDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ExpirationDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ExpirationReason = segments.Length > 14 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
+            ProtectionCode = segments.Length > 15 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
+            SharedTelecommunicationIdentifier = segments.Length > 16 ? new EntityIdentifier { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
             PreferenceOrder = segments.ElementAtOrDefault(17)?.ToNullableDecimal();
 
             return this;

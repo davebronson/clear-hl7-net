@@ -45,10 +45,10 @@ namespace ClearHl7.V290.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            ValueCode = segments.Length > 0 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
-            ValueAmount = segments.Length > 1 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            ValueCode = segments.Length > 0 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            ValueAmount = segments.Length > 1 ? new Money { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
             NonMonetaryValueAmountQuantity = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
-            NonMonetaryValueAmountUnits = segments.Length > 3 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            NonMonetaryValueAmountUnits = segments.Length > 3 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
 
             return this;
         }

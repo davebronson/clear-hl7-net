@@ -20,21 +20,25 @@ namespace ClearHl7.Tests.TypesTests
                 CheckDigitScheme = "3",
                 AssigningAuthority = new HierarchicDesignator
                 {
+                    IsSubcomponent = true,
                     NamespaceId = "4"
                 },
                 IdentifierTypeCode = "5",
                 AssigningFacility = new HierarchicDesignator
                 {
+                    IsSubcomponent = true,
                     NamespaceId = "6"
                 },
                 EffectiveDate = new DateTime(2020, 7, 7),
                 ExpirationDate = new DateTime(2020, 8, 8),
                 AssigningJurisdiction = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "9"
                 },
                 AssigningAgencyOrDepartment = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "10"
                 },
                 SecurityCheck = "11",

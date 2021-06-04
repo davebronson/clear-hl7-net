@@ -17,6 +17,7 @@ namespace ClearHl7.Tests.TypesTests
             {
                 DischargeToLocation = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "1"
                 },
                 EffectiveDate = new DateTime(2020, 2, 2, 0, 0, 2)

@@ -17,16 +17,19 @@ namespace ClearHl7.Tests.TypesTests
             {
                 Privilege = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "1"
                 },
                 PrivilegeClass = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "2"
                 },
                 ExpirationDate = new DateTime(2020, 3, 3),
                 ActivationDate = new DateTime(2020, 4, 4),
                 Facility = new EntityIdentifier
                 {
+                    IsSubcomponent = true,
                     EntityId = "5"
                 }
             };

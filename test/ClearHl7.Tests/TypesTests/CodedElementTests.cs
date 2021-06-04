@@ -1,4 +1,5 @@
 ﻿using ClearHl7.V260.Types;
+using FluentAssertions;
 using Xunit;
 
 namespace ClearHl7.Tests.TypesTests
@@ -6,7 +7,27 @@ namespace ClearHl7.Tests.TypesTests
     public class CodedElementTests
     {
         /// <summary>
-        /// Validates that ToDelimitedString() returns output with all fields populated and in the correct sequence.
+        /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
+        {
+            CodedElement expected = new()
+            {
+                Identifier = "1",
+                Text = "2",
+                NameOfCodingSystem = "3",
+                AlternateIdentifier = "4",
+                AlternateText = "5",
+                NameOfAlternateCodingSystem = "6"
+            };
+            CodedElement actual = new CodedElement().FromDelimitedString("1^2^3^4^5^6");
+
+            expected.Should().BeEquivalentTo(actual);
+        }
+
+        /// <summary>
+        /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>
         [Fact]
         public void ToDelimitedString_WithAllProperties_ReturnsCorrectlySequencedFields()

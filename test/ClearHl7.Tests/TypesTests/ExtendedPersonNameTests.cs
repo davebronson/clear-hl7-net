@@ -17,6 +17,7 @@ namespace ClearHl7.Tests.TypesTests
             {
                 FamilyName = new FamilyName
                 {
+                    IsSubcomponent = true,
                     Surname = "1"
                 },
                 GivenName = "2",
@@ -28,10 +29,12 @@ namespace ClearHl7.Tests.TypesTests
                 NameRepresentationCode = "8",
                 NameContext = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "9"
                 },
                 NameValidityRange = new DateTimeRange
                 {
+                    IsSubcomponent = true,
                     RangeStartDateTime = new DateTime(2020, 10, 10, 0, 0, 10)
                 },
                 NameAssemblyOrder = "11",

@@ -16,10 +16,12 @@ namespace ClearHl7.Tests.TypesTests
             {
                 PlacerAssignedIdentifier = new EntityIdentifier
                 {
+                    IsSubcomponent = true,
                     EntityId = "1"
                 },
                 FillerAssignedIdentifier = new EntityIdentifier
                 {
+                    IsSubcomponent = true,
                     EntityId = "2"
                 }
             };

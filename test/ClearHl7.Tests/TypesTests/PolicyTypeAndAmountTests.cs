@@ -16,15 +16,18 @@ namespace ClearHl7.Tests.TypesTests
             {
                 PolicyType = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "1"
                 },
                 AmountClass = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "2"
                 },
                 MoneyOrPercentageQuantity = 3,
                 MoneyOrPercentage = new MoneyOrPercentage
                 {
+                    IsSubcomponent = true,
                     MoneyOrPercentageIndicator = "4"
                 }
             };

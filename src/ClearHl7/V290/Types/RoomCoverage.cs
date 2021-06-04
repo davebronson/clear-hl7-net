@@ -46,10 +46,10 @@ namespace ClearHl7.V290.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            RoomType = segments.Length > 0 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
-            AmountType = segments.Length > 1 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            RoomType = segments.Length > 0 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            AmountType = segments.Length > 1 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
             CoverageAmount = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
-            MoneyOrPercentage = segments.Length > 3 ? new MoneyOrPercentage().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            MoneyOrPercentage = segments.Length > 3 ? new MoneyOrPercentage { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
 
             return this;
         }

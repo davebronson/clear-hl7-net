@@ -59,13 +59,13 @@ namespace ClearHl7.V290.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            NumericRange = segments.Length > 0 ? new NumericRange().FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
-            AdministrativeSex = segments.Length > 1 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            AgeRange = segments.Length > 2 ? new NumericRange().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            GestationalAgeRange = segments.Length > 3 ? new NumericRange().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            NumericRange = segments.Length > 0 ? new NumericRange { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            AdministrativeSex = segments.Length > 1 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            AgeRange = segments.Length > 2 ? new NumericRange { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            GestationalAgeRange = segments.Length > 3 ? new NumericRange { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
             Species = segments.ElementAtOrDefault(4);
             RaceSubspecies = segments.ElementAtOrDefault(5);
-            Conditions = segments.Length > 6 ? new Text().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            Conditions = segments.Length > 6 ? new Text { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
 
             return this;
         }

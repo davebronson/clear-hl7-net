@@ -1,4 +1,5 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V250.Types
 {
@@ -63,6 +64,29 @@ namespace ClearHl7.V250.Types
         /// LA1.9 - Address.
         /// </summary>
         public Address Address { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public LocationWithAddressVariationOne FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            PointOfCare = segments.ElementAtOrDefault(0);
+            Room = segments.ElementAtOrDefault(1);
+            Bed = segments.ElementAtOrDefault(2);
+            Facility = segments.Length > 3 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            LocationStatus = segments.ElementAtOrDefault(4);
+            PatientLocationType = segments.ElementAtOrDefault(5);
+            Building = segments.ElementAtOrDefault(6);
+            Floor = segments.ElementAtOrDefault(7);
+            Address = segments.Length > 8 ? new Address { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

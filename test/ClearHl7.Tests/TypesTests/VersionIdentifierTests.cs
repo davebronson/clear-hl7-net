@@ -17,10 +17,12 @@ namespace ClearHl7.Tests.TypesTests
                 VersionId = "1",
                 InternationalizationCode = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "2"
                 },
                 InternationalVersionId = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "3"
                 }
             };

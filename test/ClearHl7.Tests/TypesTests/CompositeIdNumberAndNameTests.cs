@@ -1,4 +1,5 @@
 ﻿using ClearHl7.V240.Types;
+using FluentAssertions;
 using Xunit;
 
 namespace ClearHl7.Tests.TypesTests
@@ -6,7 +7,34 @@ namespace ClearHl7.Tests.TypesTests
     public class CompositeIdNumberAndNameTests
     {
         /// <summary>
-        /// Validates that ToDelimitedString() returns output with all fields populated and in the correct sequence.
+        /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
+        {
+            CompositeIdNumberAndName expected = new()
+            {
+                IdNumber = "1",
+                FamilyName = "2",
+                GivenName = "3",
+                SecondAndFurtherGivenNamesOrInitialsThereof = "4",
+                Suffix = "5",
+                Prefix = "6",
+                Degree = "7",
+                SourceTable = "8",
+                AssigningAuthority = new HierarchicDesignator
+                {
+                    IsSubcomponent = true,
+                    NamespaceId = "9"
+                }
+            };
+            CompositeIdNumberAndName actual = new CompositeIdNumberAndName().FromDelimitedString("1^2^3^4^5^6^7^8^9");
+
+            expected.Should().BeEquivalentTo(actual);
+        }
+
+        /// <summary>
+        /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>
         [Fact]
         public void ToDelimitedString_WithAllProperties_ReturnsCorrectlySequencedFields()

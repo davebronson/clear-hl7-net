@@ -17,6 +17,7 @@ namespace ClearHl7.Tests.TypesTests
             {
                 OccurrenceSpanCode = new CodedWithNoExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "1"
                 },
                 OccurrenceSpanStartDate = new DateTime(2020, 2, 2, 2, 22, 0),

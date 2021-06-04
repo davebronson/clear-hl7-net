@@ -1,4 +1,6 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Extensions;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V250.Types
 {
@@ -27,6 +29,23 @@ namespace ClearHl7.V250.Types
         /// MOP.3 - Monetary Denomination.
         /// </summary>
         public string MonetaryDenomination { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public MoneyOrPercentage FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            MoneyOrPercentageIndicator = segments.ElementAtOrDefault(0);
+            MoneyOrPercentageQuantity = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
+            MonetaryDenomination = segments.ElementAtOrDefault(2);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

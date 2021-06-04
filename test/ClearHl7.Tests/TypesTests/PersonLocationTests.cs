@@ -16,37 +16,45 @@ namespace ClearHl7.Tests.TypesTests
             {
                 PointOfCare = new HierarchicDesignator
                 {
+                    IsSubcomponent = true,
                     NamespaceId = "1"
                 },
                 Room = new HierarchicDesignator
                 {
+                    IsSubcomponent = true,
                     NamespaceId = "2"
                 },
                 Bed = new HierarchicDesignator
                 {
+                    IsSubcomponent = true,
                     NamespaceId = "3"
                 },
                 Facility = new HierarchicDesignator
                 {
+                    IsSubcomponent = true,
                     NamespaceId = "4"
                 },
                 LocationStatus = "5",
                 PersonLocationType = "6",
                 Building = new HierarchicDesignator
                 {
+                    IsSubcomponent = true,
                     NamespaceId = "7"
                 },
                 Floor = new HierarchicDesignator
                 {
+                    IsSubcomponent = true,
                     NamespaceId = "8"
                 },
                 LocationDescription = "9",
                 ComprehensiveLocationIdentifier = new EntityIdentifier
                 {
+                    IsSubcomponent = true,
                     EntityId = "10"
                 },
                 AssigningAuthorityForLocation = new HierarchicDesignator
                 {
+                    IsSubcomponent = true,
                     NamespaceId = "11"
                 }
             };

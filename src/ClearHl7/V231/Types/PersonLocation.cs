@@ -1,4 +1,5 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V231.Types
 {
@@ -63,6 +64,29 @@ namespace ClearHl7.V231.Types
         /// PL.9 - Location Description.
         /// </summary>
         public string LocationDescription { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public PersonLocation FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            PointOfCare = segments.ElementAtOrDefault(0);
+            Room = segments.ElementAtOrDefault(1);
+            Bed = segments.ElementAtOrDefault(2);
+            Facility = segments.Length > 3 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            LocationStatus = segments.ElementAtOrDefault(4);
+            PersonLocationType = segments.ElementAtOrDefault(5);
+            Building = segments.ElementAtOrDefault(6);
+            Floor = segments.ElementAtOrDefault(7);
+            LocationDescription = segments.ElementAtOrDefault(8);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

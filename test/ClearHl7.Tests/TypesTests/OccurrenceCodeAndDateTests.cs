@@ -17,6 +17,7 @@ namespace ClearHl7.Tests.TypesTests
             {
                 OccurrenceCode = new CodedWithNoExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "1"
                 },
                 OccurrenceDate = new DateTime(2020, 2, 22)

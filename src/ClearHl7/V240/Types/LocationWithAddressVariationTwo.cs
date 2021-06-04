@@ -1,4 +1,5 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V240.Types
 {
@@ -100,6 +101,36 @@ namespace ClearHl7.V240.Types
         /// LA2.16 - Other Geographic Designation .
         /// </summary>
         public string OtherGeographicDesignation { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public LocationWithAddressVariationTwo FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            PointOfCare = segments.ElementAtOrDefault(0);
+            Room = segments.ElementAtOrDefault(1);
+            Bed = segments.ElementAtOrDefault(2);
+            Facility = segments.Length > 3 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            LocationStatus = segments.ElementAtOrDefault(4);
+            PatientLocationType = segments.ElementAtOrDefault(5);
+            Building = segments.ElementAtOrDefault(6);
+            Floor = segments.ElementAtOrDefault(7);
+            StreetAddress = segments.ElementAtOrDefault(8);
+            OtherDesignation = segments.ElementAtOrDefault(9);
+            City = segments.ElementAtOrDefault(10);
+            StateOrProvince = segments.ElementAtOrDefault(11);
+            ZipOrPostalCode = segments.ElementAtOrDefault(12);
+            Country = segments.ElementAtOrDefault(13);
+            AddressType = segments.ElementAtOrDefault(14);
+            OtherGeographicDesignation = segments.ElementAtOrDefault(15);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

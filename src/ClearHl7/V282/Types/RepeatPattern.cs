@@ -1,4 +1,6 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Extensions;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V282.Types
 {
@@ -70,6 +72,31 @@ namespace ClearHl7.V282.Types
         /// RPT.11 - General Timing Specification.
         /// </summary>
         public string GeneralTimingSpecification { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public RepeatPattern FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            RepeatPatternCode = segments.Length > 0 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            CalendarAlignment = segments.ElementAtOrDefault(1);
+            PhaseRangeBeginValue = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
+            PhaseRangeEndValue = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
+            PeriodQuantity = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
+            PeriodUnits = segments.Length > 5 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            InstitutionSpecifiedTime = segments.ElementAtOrDefault(6);
+            Event = segments.ElementAtOrDefault(7);
+            EventOffsetQuantity = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
+            EventOffsetUnits = segments.Length > 9 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            GeneralTimingSpecification = segments.ElementAtOrDefault(10);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

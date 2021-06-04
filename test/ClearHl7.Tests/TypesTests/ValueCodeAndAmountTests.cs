@@ -16,15 +16,18 @@ namespace ClearHl7.Tests.TypesTests
             {
                 ValueCode = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "1"
                 },
                 ValueAmount = new Money
                 {
+                    IsSubcomponent = true,
                     Quantity = 2
                 },
                 NonMonetaryValueAmountQuantity = 3,
                 NonMonetaryValueAmountUnits = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "4"
                 }
             };

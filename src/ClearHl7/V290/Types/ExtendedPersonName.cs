@@ -105,7 +105,7 @@ namespace ClearHl7.V290.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            FamilyName = segments.Length > 0 ? new FamilyName().FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            FamilyName = segments.Length > 0 ? new FamilyName { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
             GivenName = segments.ElementAtOrDefault(1);
             SecondAndFurtherGivenNamesOrInitialsThereof = segments.ElementAtOrDefault(2);
             Suffix = segments.ElementAtOrDefault(3);
@@ -113,11 +113,11 @@ namespace ClearHl7.V290.Types
             Degree = segments.ElementAtOrDefault(5);
             NameTypeCode = segments.ElementAtOrDefault(6);
             NameRepresentationCode = segments.ElementAtOrDefault(7);
-            NameContext = segments.Length > 8 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
-            NameValidityRange = segments.Length > 9 ? new DateTimeRange().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            NameContext = segments.Length > 8 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+            NameValidityRange = segments.Length > 9 ? new DateTimeRange { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
             NameAssemblyOrder = segments.ElementAtOrDefault(10);
-            EffectiveDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime();
-            ExpirationDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
+            EffectiveDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ExpirationDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             ProfessionalSuffix = segments.ElementAtOrDefault(13);
             CalledBy = segments.ElementAtOrDefault(14);
 

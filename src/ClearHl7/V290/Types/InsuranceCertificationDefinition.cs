@@ -42,9 +42,9 @@ namespace ClearHl7.V290.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            CertificationPatientType = segments.Length > 0 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            CertificationPatientType = segments.Length > 0 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
             CertificationRequired = segments.ElementAtOrDefault(1);
-            DateTimeCertificationRequired = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
+            DateTimeCertificationRequired = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
 
             return this;
         }

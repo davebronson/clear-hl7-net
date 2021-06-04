@@ -45,7 +45,7 @@ namespace ClearHl7.V290.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            NormalRange = segments.Length > 0 ? new NumericRange().FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            NormalRange = segments.Length > 0 ? new NumericRange { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
             NumericThreshold = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
             ChangeComputation = segments.ElementAtOrDefault(2);
             DaysRetained = segments.ElementAtOrDefault(3)?.ToNullableDecimal();

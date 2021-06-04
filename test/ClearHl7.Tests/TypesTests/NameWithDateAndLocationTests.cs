@@ -17,6 +17,7 @@ namespace ClearHl7.Tests.TypesTests
             {
                 Name = new CompositeIdNumberAndNameSimplified
                 {
+                    IsSubcomponent = true,
                     IdNumber = "1"
                 },
                 StartDateTime = new DateTime(2020, 2, 2, 00, 00, 2),
@@ -26,6 +27,7 @@ namespace ClearHl7.Tests.TypesTests
                 Bed = "6",
                 Facility = new HierarchicDesignator
                 {
+                    IsSubcomponent = true,
                     NamespaceId = "7"
                 },
                 LocationStatus = "8",

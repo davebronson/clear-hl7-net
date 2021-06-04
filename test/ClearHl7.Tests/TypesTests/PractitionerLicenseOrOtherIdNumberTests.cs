@@ -18,6 +18,7 @@ namespace ClearHl7.Tests.TypesTests
                 IdNumber = "1",
                 TypeOfIdNumber = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "2"
                 },
                 StateOtherQualifyingInformation = "3",

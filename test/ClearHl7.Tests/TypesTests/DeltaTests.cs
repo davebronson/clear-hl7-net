@@ -16,6 +16,7 @@ namespace ClearHl7.Tests.TypesTests
             {
                 NormalRange = new NumericRange
                 {
+                    IsSubcomponent = true,
                     LowValue = 1
                 },
                 NumericThreshold = 2,

@@ -47,9 +47,9 @@ namespace ClearHl7.V290.Types
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
             IdNumber = segments.ElementAtOrDefault(0);
-            TypeOfIdNumber = segments.Length > 1 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            TypeOfIdNumber = segments.Length > 1 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
             StateOtherQualifyingInformation = segments.ElementAtOrDefault(2);
-            ExpirationDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
+            ExpirationDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
 
             return this;
         }

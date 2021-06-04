@@ -54,12 +54,12 @@ namespace ClearHl7.V290.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            ChannelIdentifier = segments.Length > 0 ? new ChannelIdentifier().FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
-            WaveformSource = segments.Length > 1 ? new WaveformSource().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            ChannelSensitivityAndUnits = segments.Length > 2 ? new ChannelSensitivityAndUnits().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            ChannelCalibrationParameters = segments.Length > 3 ? new ChannelCalibrationParameters().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            ChannelIdentifier = segments.Length > 0 ? new ChannelIdentifier { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            WaveformSource = segments.Length > 1 ? new WaveformSource { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            ChannelSensitivityAndUnits = segments.Length > 2 ? new ChannelSensitivityAndUnits { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            ChannelCalibrationParameters = segments.Length > 3 ? new ChannelCalibrationParameters { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
             ChannelSamplingFrequency = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
-            MinimumAndMaximumDataValues = segments.Length > 5 ? new NumericRange().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            MinimumAndMaximumDataValues = segments.Length > 5 ? new NumericRange { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
 
             return this;
         }

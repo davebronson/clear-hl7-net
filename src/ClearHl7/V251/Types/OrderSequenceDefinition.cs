@@ -1,4 +1,6 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Extensions;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V251.Types
 {
@@ -71,6 +73,31 @@ namespace ClearHl7.V251.Types
         /// <para>Suggested: 0301 Universal ID Type -&gt; ClearHl7.Codes.V251.CodeUniversalIdType</para>
         /// </summary>
         public string FillerOrderNumberUniversalIdType { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public OrderSequenceDefinition FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            SequenceResultsFlag = segments.ElementAtOrDefault(0);
+            PlacerOrderNumberEntityIdentifier = segments.ElementAtOrDefault(1);
+            PlacerOrderNumberNamespaceId = segments.ElementAtOrDefault(2);
+            FillerOrderNumberEntityIdentifier = segments.ElementAtOrDefault(3);
+            FillerOrderNumberNamespaceId = segments.ElementAtOrDefault(4);
+            SequenceConditionValue = segments.ElementAtOrDefault(5);
+            MaximumNumberOfRepeats = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
+            PlacerOrderNumberUniversalId = segments.ElementAtOrDefault(7);
+            PlacerOrderNumberUniversalIdType = segments.ElementAtOrDefault(8);
+            FillerOrderNumberUniversalId = segments.ElementAtOrDefault(9);
+            FillerOrderNumberUniversalIdType = segments.ElementAtOrDefault(10);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

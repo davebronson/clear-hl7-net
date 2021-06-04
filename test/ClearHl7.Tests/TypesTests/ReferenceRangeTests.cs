@@ -16,24 +16,29 @@ namespace ClearHl7.Tests.TypesTests
             {
                 NumericRange = new NumericRange
                 {
+                    IsSubcomponent = true,
                     LowValue = 1
                 },
                 AdministrativeSex = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "2"
                 },
                 AgeRange = new NumericRange
                 {
+                    IsSubcomponent = true,
                     LowValue = 3
                 },
                 GestationalAgeRange = new NumericRange
                 {
+                    IsSubcomponent = true,
                     LowValue = 4
                 },
                 Species = "5",
                 RaceSubspecies = "6",
                 Conditions = new Text
                 {
+                    IsSubcomponent = true,
                     Value = "7"
                 }
             };

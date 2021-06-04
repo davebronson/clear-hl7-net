@@ -1,4 +1,6 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Extensions;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V231.Types
 {
@@ -71,6 +73,31 @@ namespace ClearHl7.V231.Types
         /// <para>Suggested: 4000 Name/Address Representation -&gt; ClearHl7.Codes.V231.CodeNameAddressRepresentation</para>
         /// </summary>
         public string AddressRepresentationCode { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public ExtendedAddress FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            StreetAddress = segments.ElementAtOrDefault(0);
+            OtherDesignation = segments.ElementAtOrDefault(1);
+            City = segments.ElementAtOrDefault(2);
+            StateOrProvince = segments.ElementAtOrDefault(3);
+            ZipOrPostalCode = segments.ElementAtOrDefault(4);
+            Country = segments.ElementAtOrDefault(5);
+            AddressType = segments.ElementAtOrDefault(6);
+            OtherGeographicDesignation = segments.ElementAtOrDefault(7);
+            CountyParishCode = segments.ElementAtOrDefault(8);
+            CensusTract = segments.ElementAtOrDefault(9);
+            AddressRepresentationCode = segments.ElementAtOrDefault(10);
+            
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

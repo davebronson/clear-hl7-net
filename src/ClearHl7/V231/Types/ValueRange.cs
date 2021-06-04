@@ -1,4 +1,5 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V231.Types
 {
@@ -21,6 +22,22 @@ namespace ClearHl7.V231.Types
         /// VR.2 - Last Data Code Value.
         /// </summary>
         public string LastDataCodeValue { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public ValueRange FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            FirstDataCodeValue = segments.ElementAtOrDefault(0);
+            LastDataCodeValue = segments.ElementAtOrDefault(1);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

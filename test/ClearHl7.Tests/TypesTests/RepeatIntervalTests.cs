@@ -16,6 +16,7 @@ namespace ClearHl7.Tests.TypesTests
             {
                 RepeatPattern = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "1"
                 },
                 ExplicitTimeInterval = "2"

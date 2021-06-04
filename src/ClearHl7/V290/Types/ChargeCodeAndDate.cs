@@ -37,7 +37,7 @@ namespace ClearHl7.V290.Types
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
             InvocationEvent = segments.ElementAtOrDefault(0);
-            Datetime = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
+            Datetime = segments.ElementAtOrDefault(1)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
 
             return this;
         }

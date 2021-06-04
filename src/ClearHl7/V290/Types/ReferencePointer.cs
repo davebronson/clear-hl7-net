@@ -46,7 +46,7 @@ namespace ClearHl7.V290.Types
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
             Pointer = segments.ElementAtOrDefault(0);
-            ApplicationId = segments.Length > 1 ? new HierarchicDesignator().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            ApplicationId = segments.Length > 1 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
             TypeOfData = segments.ElementAtOrDefault(2);
             Subtype = segments.ElementAtOrDefault(3);
 

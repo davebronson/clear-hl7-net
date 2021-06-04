@@ -18,6 +18,7 @@ namespace ClearHl7.Tests.TypesTests
                 LicenseNumber = "1",
                 IssuingStateProvinceCountry = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "2"
                 },
                 ExpirationDate = new DateTime(2020, 3, 3)

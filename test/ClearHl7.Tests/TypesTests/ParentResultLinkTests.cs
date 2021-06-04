@@ -16,11 +16,13 @@ namespace ClearHl7.Tests.TypesTests
             {
                 ParentObservationIdentifier = new CodedWithExceptions
                 {
+                    IsSubcomponent = true,
                     Identifier = "1"
                 },
                 ParentObservationSubIdentifier = "2",
                 ParentObservationValueDescriptor = new Text
                 {
+                    IsSubcomponent = true,
                     Value = "3"
                 }
             };

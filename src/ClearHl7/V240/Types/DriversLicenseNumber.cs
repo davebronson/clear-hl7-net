@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 
 namespace ClearHl7.V240.Types
@@ -28,6 +30,23 @@ namespace ClearHl7.V240.Types
         /// DLN.3 - Expiration Date.
         /// </summary>
         public DateTime? ExpirationDate { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public DriversLicenseNumber FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            LicenseNumber = segments.ElementAtOrDefault(0);
+            IssuingStateProvinceCountry = segments.ElementAtOrDefault(1);
+            ExpirationDate = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.

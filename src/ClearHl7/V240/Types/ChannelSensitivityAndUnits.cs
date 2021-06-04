@@ -1,4 +1,6 @@
-﻿using ClearHl7.Helpers;
+﻿using System.Linq;
+using ClearHl7.Extensions;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.V240.Types
 {
@@ -48,6 +50,27 @@ namespace ClearHl7.V240.Types
         /// <para>Suggested: 0396 Coding System -&gt; ClearHl7.Codes.V240.CodeCodingSystem</para>
         /// </summary>
         public string AlternateUnitOfMeasureCodingSystem { get; set; }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        public ChannelSensitivityAndUnits FromDelimitedString(string delimitedString)
+        {
+            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+
+            ChannelSensitivity = segments.ElementAtOrDefault(0)?.ToNullableDecimal();
+            UnitOfMeasureIdentifier = segments.ElementAtOrDefault(1);
+            UnitOfMeasureDescription = segments.ElementAtOrDefault(2);
+            UnitOfMeasureCodingSystem = segments.ElementAtOrDefault(3);
+            AlternateUnitOfMeasureIdentifier = segments.ElementAtOrDefault(4);
+            AlternateUnitOfMeasureDescription = segments.ElementAtOrDefault(5);
+            AlternateUnitOfMeasureCodingSystem = segments.ElementAtOrDefault(6);
+
+            return this;
+        }
 
         /// <summary>
         /// Returns a delimited string representation of this instance.
