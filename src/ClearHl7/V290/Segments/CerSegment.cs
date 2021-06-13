@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -186,12 +188,66 @@ namespace ClearHl7.V290.Segments
         public CodedWithExceptions CertificateStatusCode { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public CerSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            SetIdCer = segments.ElementAtOrDefault(1)?.ToNullableUInt();
+            SerialNumber = segments.ElementAtOrDefault(2);
+            Version = segments.ElementAtOrDefault(3);
+            GrantingAuthority = segments.Length > 4 ? new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            IssuingAuthority = segments.Length > 5 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            Signature = segments.Length > 6 ? new EncapsulatedData().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            GrantingCountry = segments.ElementAtOrDefault(7);
+            GrantingStateProvince = segments.Length > 8 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+            GrantingCountyParish = segments.Length > 9 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            CertificateType = segments.Length > 10 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
+            CertificateDomain = segments.Length > 11 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+            SubjectId = segments.Length > 12 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
+            SubjectName = segments.ElementAtOrDefault(13);
+            SubjectDirectoryAttributeExtension = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            SubjectPublicKeyInfo = segments.Length > 15 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
+            AuthorityKeyIdentifier = segments.Length > 16 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
+            BasicConstraint = segments.ElementAtOrDefault(17);
+            CrlDistributionPoint = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            JurisdictionCountry = segments.ElementAtOrDefault(19);
+            JurisdictionStateProvince = segments.Length > 20 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(20)) : null;
+            JurisdictionCountyParish = segments.Length > 21 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
+            JurisdictionBreadth = segments.Length > 22 ? segments.ElementAtOrDefault(22).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            GrantingDate = segments.ElementAtOrDefault(23)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            IssuingDate = segments.ElementAtOrDefault(24)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ActivationDate = segments.ElementAtOrDefault(25)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            InactivationDate = segments.ElementAtOrDefault(26)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ExpirationDate = segments.ElementAtOrDefault(27)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            RenewalDate = segments.ElementAtOrDefault(28)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            RevocationDate = segments.ElementAtOrDefault(29)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            RevocationReasonCode = segments.Length > 30 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(30)) : null;
+            CertificateStatusCode = segments.Length > 31 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(31)) : null;
+
+            return this;
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

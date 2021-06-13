@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -135,12 +137,56 @@ namespace ClearHl7.V290.Segments
         public string ActionCode { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public BtxSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            SetIdBtx = segments.ElementAtOrDefault(1)?.ToNullableUInt();
+            BcDonationId = segments.Length > 2 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            BcComponent = segments.Length > 3 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            BcBloodGroup = segments.Length > 4 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            CpCommercialProduct = segments.Length > 5 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            CpManufacturer = segments.Length > 6 ? new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            CpLotNumber = segments.Length > 7 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
+            BpQuantity = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
+            BpAmount = segments.ElementAtOrDefault(9)?.ToNullableDecimal();
+            BpUnits = segments.Length > 10 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
+            BpTransfusionDispositionStatus = segments.Length > 11 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+            BpMessageStatus = segments.ElementAtOrDefault(12);
+            BpDateTimeOfStatus = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            BpTransfusionAdministrator = segments.Length > 14 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
+            BpTransfusionVerifier = segments.Length > 15 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
+            BpTransfusionStartDateTimeOfStatus = segments.ElementAtOrDefault(16)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            BpTransfusionEndDateTimeOfStatus = segments.ElementAtOrDefault(17)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            BpAdverseReactionType = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            BpTransfusionInterruptedReason = segments.Length > 19 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(19)) : null;
+            BpUniqueId = segments.Length > 20 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(20)) : null;
+            ActionCode = segments.ElementAtOrDefault(21);
+
+            return this;
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

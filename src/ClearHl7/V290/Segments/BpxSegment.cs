@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -140,12 +142,57 @@ namespace ClearHl7.V290.Segments
         public string ActionCode { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public BpxSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            SetIdBpx = segments.ElementAtOrDefault(1)?.ToNullableUInt();
+            BpDispenseStatus = segments.Length > 2 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            BpStatus = segments.ElementAtOrDefault(3);
+            BpDateTimeOfStatus = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            BcDonationId = segments.Length > 5 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            BcComponent = segments.Length > 6 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            BcDonationTypeIntendedUse = segments.Length > 7 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
+            CpCommercialProduct = segments.Length > 8 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+            CpManufacturer = segments.Length > 9 ? new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            CpLotNumber = segments.Length > 10 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
+            BpBloodGroup = segments.Length > 11 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+            BcSpecialTesting = segments.Length > 12 ? segments.ElementAtOrDefault(12).Split(separator).Select(x => new CodedWithNoExceptions().FromDelimitedString(x)) : null;
+            BpExpirationDateTime = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            BpQuantity = segments.ElementAtOrDefault(14)?.ToNullableDecimal();
+            BpAmount = segments.ElementAtOrDefault(15)?.ToNullableDecimal();
+            BpUnits = segments.Length > 16 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
+            BpUniqueId = segments.Length > 17 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
+            BpActualDispensedToLocation = segments.Length > 18 ? new PersonLocation().FromDelimitedString(segments.ElementAtOrDefault(18)) : null;
+            BpActualDispensedToAddress = segments.Length > 19 ? new ExtendedAddress().FromDelimitedString(segments.ElementAtOrDefault(19)) : null;
+            BpDispensedToReceiver = segments.Length > 20 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(20)) : null;
+            BpDispensingIndividual = segments.Length > 21 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
+            ActionCode = segments.ElementAtOrDefault(22);
+
+            return this;
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

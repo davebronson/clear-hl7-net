@@ -1,12 +1,62 @@
 ﻿using System;
 using ClearHl7.V290.Segments;
 using ClearHl7.V290.Types;
+using FluentAssertions;
 using Xunit;
 
 namespace ClearHl7.Tests.SegmentsTests
 {
     public class AccSegmentTests
     {
+        /// <summary>
+        /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
+        {
+            AccSegment expected = new()
+            {
+                AccidentDateTime = new DateTime(2020, 1, 1, 0, 0, 1),
+                AccidentCode = new CodedWithExceptions
+                {
+                    Identifier = "2"
+                },
+                AccidentLocation = "3",
+                AutoAccidentState = new CodedWithExceptions
+                {
+                    Identifier = "4"
+                },
+                AccidentJobRelatedIndicator = "5",
+                AccidentDeathIndicator = "6",
+                EnteredBy = new ExtendedCompositeIdNumberAndNameForPersons
+                {
+                    PersonIdentifier = "7"
+                },
+                AccidentDescription = "8",
+                BroughtInBy = "9",
+                PoliceNotifiedIndicator = "10",
+                AccidentAddress = new ExtendedAddress
+                {
+                    StreetAddress = new StreetAddress
+                    {
+                        IsSubcomponent = true,
+                        StreetOrMailingAddress = "11"
+                    }
+                },
+                DegreeOfPatientLiability = 12,
+                AccidentIdentifier = new EntityIdentifier[]
+                {
+                    new EntityIdentifier
+                    {
+                        EntityId = "13"
+                    }
+                }
+            };
+            AccSegment actual = new AccSegment().FromDelimitedString("ACC|20200101000001|2|3|4|5|6|7|8|9|10|11|12|13");
+
+            expected.Should().BeEquivalentTo(actual);
+        }
+
         /// <summary>
         /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>

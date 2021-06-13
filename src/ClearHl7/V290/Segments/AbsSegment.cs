@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -112,12 +113,12 @@ namespace ClearHl7.V290.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, System.Globalization.CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
-            // run a test to ensure that ABS's types and subtypes get properly populated (several layers deep)
+            
             DischargeCareProvider = segments.Length > 1 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
             TransferMedicalServiceCode = segments.Length > 2 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
             SeverityOfIllnessCode = segments.Length > 3 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
@@ -142,7 +143,7 @@ namespace ClearHl7.V290.Segments
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
