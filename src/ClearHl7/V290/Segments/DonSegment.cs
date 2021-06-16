@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -204,12 +206,69 @@ namespace ClearHl7.V290.Segments
         public string ActionCode { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public DonSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            DonationIdentificationNumberDin = segments.Length > 1 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            DonationType = segments.Length > 2 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            PhlebotomyStartDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            PhlebotomyEndDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DonationDuration = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
+            DonationDurationUnits = segments.Length > 6 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            IntendedProcedureType = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => new CodedWithNoExceptions().FromDelimitedString(x)) : null;
+            ActualProcedureType = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => new CodedWithNoExceptions().FromDelimitedString(x)) : null;
+            DonorEligibilityFlag = segments.ElementAtOrDefault(9);
+            DonorEligibilityProcedureType = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => new CodedWithNoExceptions().FromDelimitedString(x)) : null;
+            DonorEligibilityDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ProcessInterruption = segments.Length > 12 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
+            ProcessInterruptionReason = segments.Length > 13 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
+            PhlebotomyIssue = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => new CodedWithNoExceptions().FromDelimitedString(x)) : null;
+            IntendedRecipientBloodRelative = segments.ElementAtOrDefault(15);
+            IntendedRecipientName = segments.Length > 16 ? new ExtendedPersonName().FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
+            IntendedRecipientDob = segments.ElementAtOrDefault(17)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            IntendedRecipientFacility = segments.Length > 18 ? new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(segments.ElementAtOrDefault(18)) : null;
+            IntendedRecipientProcedureDate = segments.ElementAtOrDefault(19)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            IntendedRecipientOrderingProvider = segments.Length > 20 ? new ExtendedPersonName().FromDelimitedString(segments.ElementAtOrDefault(20)) : null;
+            PhlebotomyStatus = segments.Length > 21 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
+            ArmStick = segments.Length > 22 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
+            BleedStartPhlebotomist = segments.Length > 23 ? new ExtendedPersonName().FromDelimitedString(segments.ElementAtOrDefault(23)) : null;
+            BleedEndPhlebotomist = segments.Length > 24 ? new ExtendedPersonName().FromDelimitedString(segments.ElementAtOrDefault(24)) : null;
+            AphaeresisTypeMachine = segments.ElementAtOrDefault(25);
+            AphaeresisMachineSerialNumber = segments.ElementAtOrDefault(26);
+            DonorReaction = segments.ElementAtOrDefault(27);
+            FinalReviewStaffId = segments.Length > 28 ? new ExtendedPersonName().FromDelimitedString(segments.ElementAtOrDefault(28)) : null;
+            FinalReviewDateTime = segments.ElementAtOrDefault(29)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            NumberOfTubesCollected = segments.ElementAtOrDefault(30)?.ToNullableDecimal();
+            DonationSampleIdentifier = segments.Length > 31 ? segments.ElementAtOrDefault(31).Split(separator).Select(x => new EntityIdentifier().FromDelimitedString(x)) : null;
+            DonationAcceptStaff = segments.Length > 32 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(32)) : null;
+            DonationMaterialReviewStaff = segments.Length > 33 ? segments.ElementAtOrDefault(33).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
+            ActionCode = segments.ElementAtOrDefault(34);
+
+            return this;
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

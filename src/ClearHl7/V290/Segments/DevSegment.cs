@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -111,12 +113,52 @@ namespace ClearHl7.V290.Segments
         public CodedWithNoExceptions ImplantationStatus { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public DevSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            ActionCode = segments.ElementAtOrDefault(1);
+            UniqueDeviceIdentifier = segments.Length > 2 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            DeviceType = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => new CodedWithNoExceptions().FromDelimitedString(x)) : null;
+            DeviceStatus = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => new CodedWithNoExceptions().FromDelimitedString(x)) : null;
+            ManufacturerDistributor = segments.Length > 5 ? new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            BrandName = segments.ElementAtOrDefault(6);
+            ModelIdentifier = segments.ElementAtOrDefault(7);
+            CatalogueIdentifier = segments.ElementAtOrDefault(8);
+            UdiDeviceIdentifier = segments.Length > 9 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            DeviceLotNumber = segments.ElementAtOrDefault(10);
+            DeviceSerialNumber = segments.ElementAtOrDefault(11);
+            DeviceManufactureDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DeviceExpiryDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            SafetyCharacteristics = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            DeviceDonationIdentification = segments.Length > 15 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
+            SoftwareVersionNumber = segments.ElementAtOrDefault(16);
+            ImplantationStatus = segments.Length > 17 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
+            
+            return this;
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

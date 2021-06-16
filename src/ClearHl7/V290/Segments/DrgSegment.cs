@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Globalization;
+using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -204,12 +207,67 @@ namespace ClearHl7.V290.Segments
         public CodedWithExceptions StatusAdmission { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public DrgSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            DiagnosticRelatedGroup = segments.Length > 1 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            DrgAssignedDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DrgApprovalIndicator = segments.ElementAtOrDefault(3);
+            DrgGrouperReviewCode = segments.Length > 4 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            OutlierType = segments.Length > 5 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            OutlierDays = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
+            OutlierCost = segments.Length > 7 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
+            DrgPayor = segments.Length > 8 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+            OutlierReimbursement = segments.Length > 9 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            ConfidentialIndicator = segments.ElementAtOrDefault(10);
+            DrgTransferType = segments.Length > 11 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+            NameOfCoder = segments.Length > 12 ? new ExtendedPersonName().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
+            GrouperStatus = segments.Length > 13 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
+            PcclValueCode = segments.Length > 14 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
+            EffectiveWeight = segments.ElementAtOrDefault(15)?.ToNullableDecimal();
+            MonetaryAmount = segments.Length > 16 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
+            StatusPatient = segments.Length > 17 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
+            GrouperSoftwareName = segments.ElementAtOrDefault(18);
+            GrouperSoftwareVersion = segments.ElementAtOrDefault(19);
+            StatusFinancialCalculation = segments.Length > 20 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(20)) : null;
+            RelativeDiscountSurcharge = segments.Length > 21 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
+            BasicCharge = segments.Length > 22 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
+            TotalCharge = segments.Length > 23 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(23)) : null;
+            DiscountSurcharge = segments.Length > 24 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(24)) : null;
+            CalculatedDays = segments.ElementAtOrDefault(25)?.ToNullableDecimal();
+            StatusGender = segments.Length > 26 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(26)) : null;
+            StatusAge = segments.Length > 27 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(27)) : null;
+            StatusLengthOfStay = segments.Length > 28 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(28)) : null;
+            StatusSameDayFlag = segments.Length > 29 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(29)) : null;
+            StatusSeparationMode = segments.Length > 30 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(30)) : null;
+            StatusWeightAtBirth = segments.Length > 31 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(31)) : null;
+            StatusRespirationMinutes = segments.Length > 32 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(32)) : null;
+            StatusAdmission = segments.Length > 33 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(33)) : null;
+            
+            return this;
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
