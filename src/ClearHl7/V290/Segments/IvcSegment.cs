@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -177,14 +179,67 @@ namespace ClearHl7.V290.Segments
         /// IVC.30 - Sales Tax ID.
         /// </summary>
         public string SalesTaxId { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public IvcSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            ProviderInvoiceNumber = segments.Length > 1 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            PayerInvoiceNumber = segments.Length > 2 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            ContractAgreementNumber = segments.Length > 3 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            InvoiceControl = segments.Length > 4 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            InvoiceReason = segments.Length > 5 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            InvoiceType = segments.Length > 6 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            InvoiceDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            InvoiceAmount = segments.Length > 8 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+            PaymentTerms = segments.ElementAtOrDefault(9);
+            ProviderOrganization = segments.Length > 10 ? new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
+            PayerOrganization = segments.Length > 11 ? new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+            Attention = segments.Length > 12 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
+            LastInvoiceIndicator = segments.ElementAtOrDefault(13);
+            InvoiceBookingPeriod = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            Origin = segments.ElementAtOrDefault(15);
+            InvoiceFixedAmount = segments.Length > 16 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
+            SpecialCosts = segments.Length > 17 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
+            AmountForDoctorsTreatment = segments.Length > 18 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(18)) : null;
+            ResponsiblePhysician = segments.Length > 19 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(19)) : null;
+            CostCenter = segments.Length > 20 ? new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(segments.ElementAtOrDefault(20)) : null;
+            InvoicePrepaidAmount = segments.Length > 21 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
+            TotalInvoiceAmountWithoutPrepaidAmount = segments.Length > 22 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
+            TotalAmountOfVat = segments.Length > 23 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(23)) : null;
+            VatRatesApplied = segments.Length > 24 ? segments.ElementAtOrDefault(24).Split(separator).Select(x => x.ToDecimal()) : null;
+            BenefitGroup = segments.Length > 25 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(25)) : null;
+            ProviderTaxId = segments.ElementAtOrDefault(26);
+            PayerTaxId = segments.ElementAtOrDefault(27);
+            ProviderTaxStatus = segments.Length > 28 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(28)) : null;
+            PayerTaxStatus = segments.Length > 29 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(29)) : null;
+            SalesTaxId = segments.ElementAtOrDefault(30);
+            
+            return this;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

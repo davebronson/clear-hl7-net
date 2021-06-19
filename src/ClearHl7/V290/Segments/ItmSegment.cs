@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -233,12 +236,73 @@ namespace ClearHl7.V290.Segments
         public string FieldLevelEventCode { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public ItmSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            ItemIdentifier = segments.Length > 1 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            ItemDescription = segments.ElementAtOrDefault(2);
+            ItemStatus = segments.Length > 3 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            ItemType = segments.Length > 4 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            ItemCategory = segments.Length > 5 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            SubjectToExpirationIndicator = segments.Length > 6 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            ManufacturerIdentifier = segments.Length > 7 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
+            ManufacturerName = segments.ElementAtOrDefault(8);
+            ManufacturerCatalogNumber = segments.ElementAtOrDefault(9);
+            ManufacturerLabelerIdentificationCode = segments.Length > 10 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
+            PatientChargeableIndicator = segments.Length > 11 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+            TransactionCode = segments.Length > 12 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
+            TransactionAmountUnit = segments.Length > 13 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
+            StockedItemIndicator = segments.Length > 14 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
+            SupplyRiskCodes = segments.Length > 15 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
+            ApprovingRegulatoryAgency = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(x)) : null;
+            LatexIndicator = segments.Length > 17 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
+            RulingAct = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            ItemNaturalAccountCode = segments.Length > 19 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(19)) : null;
+            ApprovedToBuyQuantity = segments.ElementAtOrDefault(20)?.ToNullableDecimal();
+            ApprovedToBuyPrice = segments.Length > 21 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
+            TaxableItemIndicator = segments.Length > 22 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
+            FreightChargeIndicator = segments.Length > 23 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(23)) : null;
+            ItemSetIndicator = segments.Length > 24 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(24)) : null;
+            ItemSetIdentifier = segments.Length > 25 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(25)) : null;
+            TrackDepartmentUsageIndicator = segments.Length > 26 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(26)) : null;
+            ProcedureCode = segments.Length > 27 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(27)) : null;
+            ProcedureCodeModifier = segments.Length > 28 ? segments.ElementAtOrDefault(28).Split(separator).Select(x => new CodedWithNoExceptions().FromDelimitedString(x)) : null;
+            SpecialHandlingCode = segments.Length > 29 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(29)) : null;
+            HazardousIndicator = segments.Length > 30 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(30)) : null;
+            SterileIndicator = segments.Length > 31 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(31)) : null;
+            MaterialDataSafetySheetNumber = segments.Length > 32 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(32)) : null;
+            UnitedNationsStandardProductsAndServicesCode = segments.Length > 33 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(33)) : null;
+            ContractDate = segments.Length > 34 ? new DateTimeRange().FromDelimitedString(segments.ElementAtOrDefault(34)) : null;
+            ManufacturerContactName = segments.Length > 35 ? new ExtendedPersonName().FromDelimitedString(segments.ElementAtOrDefault(35)) : null;
+            ManufacturerContactInformation = segments.Length > 36 ? new ExtendedTelecommunicationNumber().FromDelimitedString(segments.ElementAtOrDefault(36)) : null;
+            ClassOfTrade = segments.ElementAtOrDefault(37);
+            FieldLevelEventCode = segments.ElementAtOrDefault(38);
+            
+            return this;
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

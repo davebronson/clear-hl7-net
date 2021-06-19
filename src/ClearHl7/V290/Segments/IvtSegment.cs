@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -159,14 +162,63 @@ namespace ClearHl7.V290.Segments
         /// <para>Suggested: 0532 Expanded Yes/No Indicator -&gt; ClearHl7.Codes.V290.CodeExpandedYesNoIndicator</para>
         /// </summary>
         public CodedWithNoExceptions OperatingRoomParLevelIndicator { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public IvtSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            SetIdIvt = segments.ElementAtOrDefault(1)?.ToNullableUInt();
+            InventoryLocationIdentifier = segments.Length > 2 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            InventoryLocationName = segments.ElementAtOrDefault(3);
+            SourceLocationIdentifier = segments.Length > 4 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            SourceLocationName = segments.ElementAtOrDefault(5);
+            ItemStatus = segments.Length > 6 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            BinLocationIdentifier = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => new EntityIdentifier().FromDelimitedString(x)) : null;
+            OrderPackaging = segments.Length > 8 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+            IssuePackaging = segments.Length > 9 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            DefaultInventoryAssetAccount = segments.Length > 10 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
+            PatientChargeableIndicator = segments.Length > 11 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+            TransactionCode = segments.Length > 12 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
+            TransactionAmountUnit = segments.Length > 13 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
+            ItemImportanceCode = segments.Length > 14 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
+            StockedItemIndicator = segments.Length > 15 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
+            ConsignmentItemIndicator = segments.Length > 16 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
+            ReusableItemIndicator = segments.Length > 17 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
+            ReusableCost = segments.Length > 18 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(18)) : null;
+            SubstituteItemIdentifier = segments.Length > 19 ? segments.ElementAtOrDefault(19).Split(separator).Select(x => new EntityIdentifier().FromDelimitedString(x)) : null;
+            LatexFreeSubstituteItemIdentifier = segments.Length > 20 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(20)) : null;
+            RecommendedReorderTheory = segments.Length > 21 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
+            RecommendedSafetyStockDays = segments.ElementAtOrDefault(22)?.ToNullableDecimal();
+            RecommendedMaximumDaysInventory = segments.ElementAtOrDefault(23)?.ToNullableDecimal();
+            RecommendedOrderPoint = segments.ElementAtOrDefault(24)?.ToNullableDecimal();
+            RecommendedOrderAmount = segments.ElementAtOrDefault(25)?.ToNullableDecimal();
+            OperatingRoomParLevelIndicator = segments.Length > 26 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(26)) : null;
+            
+            return this;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

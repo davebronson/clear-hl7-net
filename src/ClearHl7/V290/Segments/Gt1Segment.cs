@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -331,14 +333,94 @@ namespace ClearHl7.V290.Segments
         /// <para>Suggested: 0099 VIP Indicator</para>
         /// </summary>
         public CodedWithExceptions VipIndicator { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public Gt1Segment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            SetIdGt1 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
+            GuarantorNumber = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(x)) : null;
+            GuarantorName = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => new ExtendedPersonName().FromDelimitedString(x)) : null;
+            GuarantorSpouseName = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => new ExtendedPersonName().FromDelimitedString(x)) : null;
+            GuarantorAddress = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => new ExtendedAddress().FromDelimitedString(x)) : null;
+            GuarantorPhNumHome = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => new ExtendedTelecommunicationNumber().FromDelimitedString(x)) : null;
+            GuarantorPhNumBusiness = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => new ExtendedTelecommunicationNumber().FromDelimitedString(x)) : null;
+            GuarantorDateTimeOfBirth = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            GuarantorAdministrativeSex = segments.Length > 9 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            GuarantorType = segments.Length > 10 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
+            GuarantorRelationship = segments.Length > 11 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+            GuarantorSsn = segments.ElementAtOrDefault(12);
+            GuarantorDateBegin = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            GuarantorDateEnd = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            GuarantorPriority = segments.ElementAtOrDefault(15)?.ToNullableDecimal();
+            GuarantorEmployerName = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => new ExtendedPersonName().FromDelimitedString(x)) : null;
+            GuarantorEmployerAddress = segments.Length > 17 ? segments.ElementAtOrDefault(17).Split(separator).Select(x => new ExtendedAddress().FromDelimitedString(x)) : null;
+            GuarantorEmployerPhoneNumber = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => new ExtendedTelecommunicationNumber().FromDelimitedString(x)) : null;
+            GuarantorEmployeeIdNumber = segments.Length > 19 ? segments.ElementAtOrDefault(19).Split(separator).Select(x => new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(x)) : null;
+            GuarantorEmploymentStatus = segments.Length > 20 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(20)) : null;
+            GuarantorOrganizationName = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(x)) : null;
+            GuarantorBillingHoldFlag = segments.ElementAtOrDefault(22);
+            GuarantorCreditRatingCode = segments.Length > 23 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(23)) : null;
+            GuarantorDeathDateAndTime = segments.ElementAtOrDefault(24)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            GuarantorDeathFlag = segments.ElementAtOrDefault(25);
+            GuarantorChargeAdjustmentCode = segments.Length > 26 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(26)) : null;
+            GuarantorHouseholdAnnualIncome = segments.Length > 27 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(27)) : null;
+            GuarantorHouseholdSize = segments.ElementAtOrDefault(28)?.ToNullableDecimal();
+            GuarantorEmployerIdNumber = segments.Length > 29 ? segments.ElementAtOrDefault(29).Split(separator).Select(x => new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(x)) : null;
+            GuarantorMaritalStatusCode = segments.Length > 30 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(30)) : null;
+            GuarantorHireEffectiveDate = segments.ElementAtOrDefault(31)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            EmploymentStopDate = segments.ElementAtOrDefault(32)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            LivingDependency = segments.Length > 33 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(33)) : null;
+            AmbulatoryStatus = segments.Length > 34 ? segments.ElementAtOrDefault(34).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            Citizenship = segments.Length > 35 ? segments.ElementAtOrDefault(35).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            PrimaryLanguage = segments.Length > 36 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(36)) : null;
+            LivingArrangement = segments.Length > 37 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(37)) : null;
+            PublicityCode = segments.Length > 38 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(38)) : null;
+            ProtectionIndicator = segments.ElementAtOrDefault(39);
+            StudentIndicator = segments.Length > 40 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(40)) : null;
+            Religion = segments.Length > 41 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(41)) : null;
+            MothersMaidenName = segments.Length > 42 ? segments.ElementAtOrDefault(42).Split(separator).Select(x => new ExtendedPersonName().FromDelimitedString(x)) : null;
+            Nationality = segments.Length > 43 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(43)) : null;
+            EthnicGroup = segments.Length > 44 ? segments.ElementAtOrDefault(44).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            ContactPersonsName = segments.Length > 45 ? segments.ElementAtOrDefault(45).Split(separator).Select(x => new ExtendedPersonName().FromDelimitedString(x)) : null;
+            ContactPersonsTelephoneNumber = segments.Length > 46 ? segments.ElementAtOrDefault(46).Split(separator).Select(x => new ExtendedTelecommunicationNumber().FromDelimitedString(x)) : null;
+            ContactReason = segments.Length > 47 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(47)) : null;
+            ContactRelationship = segments.Length > 48 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(48)) : null;
+            JobTitle = segments.ElementAtOrDefault(49);
+            JobCodeClass = segments.Length > 50 ? new JobCodeClass().FromDelimitedString(segments.ElementAtOrDefault(50)) : null;
+            GuarantorEmployersOrganizationName = segments.Length > 51 ? segments.ElementAtOrDefault(51).Split(separator).Select(x => new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(x)) : null;
+            Handicap = segments.Length > 52 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(52)) : null;
+            JobStatus = segments.Length > 53 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(53)) : null;
+            GuarantorFinancialClass = segments.Length > 54 ? new FinancialClass().FromDelimitedString(segments.ElementAtOrDefault(54)) : null;
+            GuarantorRace = segments.Length > 55 ? segments.ElementAtOrDefault(55).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            GuarantorBirthPlace = segments.ElementAtOrDefault(56);
+            VipIndicator = segments.Length > 57 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(57)) : null;
+
+            return this;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
