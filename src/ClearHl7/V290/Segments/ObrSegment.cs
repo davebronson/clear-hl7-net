@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -316,12 +318,90 @@ namespace ClearHl7.V290.Segments
         public string ActionCode { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public ObrSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            SetIdObr = segments.ElementAtOrDefault(1)?.ToNullableUInt();
+            PlacerOrderNumber = segments.Length > 2 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            FillerOrderNumber = segments.Length > 3 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            UniversalServiceIdentifier = segments.Length > 4 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            Priority = segments.ElementAtOrDefault(5);
+            RequestedDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ObservationDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ObservationEndDateTime = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            CollectionVolume = segments.Length > 9 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            CollectorIdentifier = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
+            SpecimenActionCode = segments.ElementAtOrDefault(11);
+            DangerCode = segments.Length > 12 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
+            RelevantClinicalInformation = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            SpecimenReceivedDateTime = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            SpecimenSource = segments.ElementAtOrDefault(15);
+            OrderingProvider = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
+            OrderCallbackPhoneNumber = segments.Length > 17 ? segments.ElementAtOrDefault(17).Split(separator).Select(x => new ExtendedTelecommunicationNumber().FromDelimitedString(x)) : null;
+            PlacerField1 = segments.ElementAtOrDefault(18);
+            PlacerField2 = segments.ElementAtOrDefault(19);
+            FillerField1 = segments.ElementAtOrDefault(20);
+            FillerField2 = segments.ElementAtOrDefault(21);
+            ResultsRptStatusChngDateTime = segments.ElementAtOrDefault(22)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ChargeToPractice = segments.Length > 23 ? new MoneyAndChargeCode().FromDelimitedString(segments.ElementAtOrDefault(23)) : null;
+            DiagnosticServSectId = segments.ElementAtOrDefault(24);
+            ResultStatus = segments.ElementAtOrDefault(25);
+            ParentResult = segments.Length > 26 ? new ParentResultLink().FromDelimitedString(segments.ElementAtOrDefault(26)) : null;
+            QuantityTiming = segments.Length > 27 ? segments.ElementAtOrDefault(27).Split(separator) : null;
+            ResultCopiesTo = segments.Length > 28 ? segments.ElementAtOrDefault(28).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
+            ParentResultsObservationIdentifier = segments.Length > 29 ? new EntityIdentifierPair().FromDelimitedString(segments.ElementAtOrDefault(29)) : null;
+            TransportationMode = segments.ElementAtOrDefault(30);
+            ReasonForStudy = segments.Length > 31 ? segments.ElementAtOrDefault(31).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            PrincipalResultInterpreter = segments.Length > 32 ? new NameWithDateAndLocation().FromDelimitedString(segments.ElementAtOrDefault(32)) : null;
+            AssistantResultInterpreter = segments.Length > 33 ? segments.ElementAtOrDefault(33).Split(separator).Select(x => new NameWithDateAndLocation().FromDelimitedString(x)) : null;
+            Technician = segments.Length > 34 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => new NameWithDateAndLocation().FromDelimitedString(x)) : null;
+            Transcriptionist = segments.Length > 35 ? segments.ElementAtOrDefault(35).Split(separator).Select(x => new NameWithDateAndLocation().FromDelimitedString(x)) : null;
+            ScheduledDateTime = segments.ElementAtOrDefault(36)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            NumberOfSampleContainers = segments.ElementAtOrDefault(37)?.ToNullableDecimal();
+            TransportLogisticsOfCollectedSample = segments.Length > 38 ? segments.ElementAtOrDefault(38).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            CollectorsComment = segments.Length > 39 ? segments.ElementAtOrDefault(39).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            TransportArrangementResponsibility = segments.Length > 40 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(40)) : null;
+            TransportArranged = segments.ElementAtOrDefault(41);
+            EscortRequired = segments.ElementAtOrDefault(42);
+            PlannedPatientTransportComment = segments.Length > 43 ? segments.ElementAtOrDefault(43).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            ProcedureCode = segments.Length > 44 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(44)) : null;
+            ProcedureCodeModifier = segments.Length > 45 ? segments.ElementAtOrDefault(45).Split(separator).Select(x => new CodedWithNoExceptions().FromDelimitedString(x)) : null;
+            PlacerSupplementalServiceInformation = segments.Length > 46 ? segments.ElementAtOrDefault(46).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            FillerSupplementalServiceInformation = segments.Length > 47 ? segments.ElementAtOrDefault(47).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            MedicallyNecessaryDuplicateProcedureReason = segments.Length > 48 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(48)) : null;
+            ResultHandling = segments.Length > 49 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(49)) : null;
+            ParentUniversalServiceIdentifier = segments.Length > 50 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(50)) : null;
+            ObservationGroupId = segments.Length > 51 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(51)) : null;
+            ParentObservationGroupId = segments.Length > 52 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(52)) : null;
+            AlternatePlacerOrderNumber = segments.Length > 53 ? segments.ElementAtOrDefault(53).Split(separator).Select(x => new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(x)) : null;
+            ParentOrder = segments.Length > 54 ? segments.ElementAtOrDefault(54).Split(separator).Select(x => new EntityIdentifierPair().FromDelimitedString(x)) : null;
+            ActionCode = segments.ElementAtOrDefault(55);
+
+            return this;
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

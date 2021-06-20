@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -203,12 +205,68 @@ namespace ClearHl7.V290.Segments
         public IEnumerable<EntityIdentifierPair> ObservationRelatedSpecimenIdentifier { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public ObxSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            SetIdObx = segments.ElementAtOrDefault(1)?.ToNullableUInt();
+            ValueType = segments.ElementAtOrDefault(2);
+            ObservationIdentifier = segments.Length > 3 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            ObservationSubId = segments.Length > 4 ? new ObservationGrouper().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            ObservationValue = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator) : null;
+            Units = segments.Length > 6 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            ReferencesRange = segments.ElementAtOrDefault(7);
+            InterpretationCodes = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            Probability = segments.ElementAtOrDefault(9)?.ToNullableDecimal();
+            NatureOfAbnormalTest = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator) : null;
+            ObservationResultStatus = segments.ElementAtOrDefault(11);
+            EffectiveDateOfReferenceRange = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            UserDefinedAccessChecks = segments.ElementAtOrDefault(13);
+            DateTimeOfTheObservation = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ProducersId = segments.Length > 15 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
+            ResponsibleObserver = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
+            ObservationMethod = segments.Length > 17 ? segments.ElementAtOrDefault(17).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            EquipmentInstanceIdentifier = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => new EntityIdentifier().FromDelimitedString(x)) : null;
+            DateTimeOfTheAnalysis = segments.ElementAtOrDefault(19)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ObservationSite = segments.Length > 20 ? segments.ElementAtOrDefault(20).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            ObservationInstanceIdentifier = segments.Length > 21 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
+            MoodCode = segments.Length > 22 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
+            PerformingOrganizationName = segments.Length > 23 ? new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(segments.ElementAtOrDefault(23)) : null;
+            PerformingOrganizationAddress = segments.Length > 24 ? new ExtendedAddress().FromDelimitedString(segments.ElementAtOrDefault(24)) : null;
+            PerformingOrganizationMedicalDirector = segments.Length > 25 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(25)) : null;
+            PatientResultsReleaseCategory = segments.ElementAtOrDefault(26);
+            RootCause = segments.Length > 27 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(27)) : null;
+            LocalProcessControl = segments.Length > 28 ? segments.ElementAtOrDefault(28).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            ObservationType = segments.ElementAtOrDefault(29);
+            ObservationSubType = segments.ElementAtOrDefault(30);
+            ActionCode = segments.ElementAtOrDefault(31);
+            ObservationValueAbsentReason = segments.Length > 32 ? segments.ElementAtOrDefault(32).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            ObservationRelatedSpecimenIdentifier = segments.Length > 33 ? segments.ElementAtOrDefault(33).Split(separator).Select(x => new EntityIdentifierPair().FromDelimitedString(x)) : null;
+            
+            return this;
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

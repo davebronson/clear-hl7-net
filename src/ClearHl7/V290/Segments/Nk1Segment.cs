@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -246,14 +248,78 @@ namespace ClearHl7.V290.Segments
         /// NK1.41 - Contact Person's Telecommunication Information.
         /// </summary>
         public ExtendedTelecommunicationNumber ContactPersonsTelecommunicationInformation { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public Nk1Segment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            SetIdNk1 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
+            Name = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => new ExtendedPersonName().FromDelimitedString(x)) : null;
+            Relationship = segments.Length > 3 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            Address = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => new ExtendedAddress().FromDelimitedString(x)) : null;
+            PhoneNumber = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => new ExtendedTelecommunicationNumber().FromDelimitedString(x)) : null;
+            BusinessPhoneNumber = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => new ExtendedTelecommunicationNumber().FromDelimitedString(x)) : null;
+            ContactRole = segments.Length > 7 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
+            StartDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            EndDate = segments.ElementAtOrDefault(9)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            NextOfKinAssociatedPartiesJobTitle = segments.ElementAtOrDefault(10);
+            NextOfKinAssociatedPartiesJobCodeClass = segments.Length > 11 ? new JobCodeClass().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+            NextOfKinAssociatedPartiesEmployeeNumber = segments.Length > 12 ? new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
+            OrganizationNameNk1 = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(x)) : null;
+            MaritalStatus = segments.Length > 14 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
+            AdministrativeSex = segments.Length > 15 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
+            DateTimeOfBirth = segments.ElementAtOrDefault(16)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            LivingDependency = segments.Length > 17 ? segments.ElementAtOrDefault(17).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            AmbulatoryStatus = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            Citizenship = segments.Length > 19 ? segments.ElementAtOrDefault(19).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            PrimaryLanguage = segments.Length > 20 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(20)) : null;
+            LivingArrangement = segments.Length > 21 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
+            PublicityCode = segments.Length > 22 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
+            ProtectionIndicator = segments.ElementAtOrDefault(23);
+            StudentIndicator = segments.Length > 24 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(24)) : null;
+            Religion = segments.Length > 25 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(25)) : null;
+            MothersMaidenName = segments.Length > 26 ? segments.ElementAtOrDefault(26).Split(separator).Select(x => new ExtendedPersonName().FromDelimitedString(x)) : null;
+            Nationality = segments.Length > 27 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(27)) : null;
+            EthnicGroup = segments.Length > 28 ? segments.ElementAtOrDefault(28).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            ContactReason = segments.Length > 29 ? segments.ElementAtOrDefault(29).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            ContactPersonsName = segments.Length > 30 ? segments.ElementAtOrDefault(30).Split(separator).Select(x => new ExtendedPersonName().FromDelimitedString(x)) : null;
+            ContactPersonsTelephoneNumber = segments.Length > 31 ? segments.ElementAtOrDefault(31).Split(separator).Select(x => new ExtendedTelecommunicationNumber().FromDelimitedString(x)) : null;
+            ContactPersonsAddress = segments.Length > 32 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => new ExtendedAddress().FromDelimitedString(x)) : null;
+            NextOfKinAssociatedPartysIdentifiers = segments.Length > 33 ? segments.ElementAtOrDefault(33).Split(separator).Select(x => new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(x)) : null;
+            JobStatus = segments.Length > 34 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(34)) : null;
+            Race = segments.Length > 35 ? segments.ElementAtOrDefault(35).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            Handicap = segments.Length > 36 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(36)) : null;
+            ContactPersonSocialSecurityNumber = segments.ElementAtOrDefault(37);
+            NextOfKinBirthPlace = segments.ElementAtOrDefault(38);
+            VipIndicator = segments.Length > 39 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(39)) : null;
+            NextOfKinTelecommunicationInformation = segments.Length > 40 ? new ExtendedTelecommunicationNumber().FromDelimitedString(segments.ElementAtOrDefault(40)) : null;
+            ContactPersonsTelecommunicationInformation = segments.Length > 41 ? new ExtendedTelecommunicationNumber().FromDelimitedString(segments.ElementAtOrDefault(41)) : null;
+            
+            return this;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

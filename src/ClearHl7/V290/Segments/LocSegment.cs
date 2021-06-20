@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
@@ -68,14 +70,46 @@ namespace ClearHl7.V290.Segments
         /// <para>Suggested: 0442 Location Service Code -&gt; ClearHl7.Codes.V290.CodeLocationServiceCode</para>
         /// </summary>
         public CodedWithExceptions LocationServiceCode { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public LocSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            PrimaryKeyValueLoc = segments.Length > 1 ? new PersonLocation().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            LocationDescription = segments.ElementAtOrDefault(2);
+            LocationTypeLoc = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            OrganizationNameLoc = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(x)) : null;
+            LocationAddress = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => new ExtendedAddress().FromDelimitedString(x)) : null;
+            LocationPhone = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => new ExtendedTelecommunicationNumber().FromDelimitedString(x)) : null;
+            LicenseNumber = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            LocationEquipment = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            LocationServiceCode = segments.Length > 9 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            
+            return this;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

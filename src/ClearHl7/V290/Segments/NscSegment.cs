@@ -1,4 +1,7 @@
-﻿using ClearHl7.Helpers;
+﻿using System;
+using System.Globalization;
+using System.Linq;
+using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
 namespace ClearHl7.V290.Segments
@@ -67,14 +70,45 @@ namespace ClearHl7.V290.Segments
         /// <para>Suggested: 0362 Facility</para>
         /// </summary>
         public HierarchicDesignator NewFacility { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public NscSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            ApplicationChangeType = segments.Length > 1 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            CurrentCpu = segments.ElementAtOrDefault(2);
+            CurrentFileserver = segments.ElementAtOrDefault(3);
+            CurrentApplication = segments.Length > 4 ? new HierarchicDesignator().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            CurrentFacility = segments.Length > 5 ? new HierarchicDesignator().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            NewCpu = segments.ElementAtOrDefault(6);
+            NewFileserver = segments.ElementAtOrDefault(7);
+            NewApplication = segments.Length > 8 ? new HierarchicDesignator().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+            NewFacility = segments.Length > 9 ? new HierarchicDesignator().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            
+            return this;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
