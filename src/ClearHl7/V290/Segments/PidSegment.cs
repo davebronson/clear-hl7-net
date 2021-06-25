@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -239,14 +241,77 @@ namespace ClearHl7.V290.Segments
         /// PID.40 - Patient Telecommunication Information.
         /// </summary>
         public IEnumerable<ExtendedTelecommunicationNumber> PatientTelecommunicationInformation { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public PidSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            SetIdPid = segments.ElementAtOrDefault(1)?.ToNullableUInt();
+            PatientId = segments.ElementAtOrDefault(2);
+            PatientIdentifierList = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(x)) : null;
+            AlternatePatientIdPid = segments.ElementAtOrDefault(4);
+            PatientName = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => new ExtendedPersonName().FromDelimitedString(x)) : null;
+            MothersMaidenName = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => new ExtendedPersonName().FromDelimitedString(x)) : null;
+            DateTimeOfBirth = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            AdministrativeSex = segments.Length > 8 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+            PatientAlias = segments.ElementAtOrDefault(9);
+            Race = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            PatientAddress = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => new ExtendedAddress().FromDelimitedString(x)) : null;
+            CountyCode = segments.ElementAtOrDefault(12);
+            PhoneNumberHome = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => new ExtendedTelecommunicationNumber().FromDelimitedString(x)) : null;
+            PhoneNumberBusiness = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => new ExtendedTelecommunicationNumber().FromDelimitedString(x)) : null;
+            PrimaryLanguage = segments.Length > 15 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
+            MaritalStatus = segments.Length > 16 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
+            Religion = segments.Length > 17 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
+            PatientAccountNumber = segments.Length > 18 ? new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(segments.ElementAtOrDefault(18)) : null;
+            SsnNumberPatient = segments.ElementAtOrDefault(19);
+            DriversLicenseNumberPatient = segments.ElementAtOrDefault(20);
+            MothersIdentifier = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(x)) : null;
+            EthnicGroup = segments.Length > 22 ? segments.ElementAtOrDefault(22).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            BirthPlace = segments.ElementAtOrDefault(23);
+            MultipleBirthIndicator = segments.ElementAtOrDefault(24);
+            BirthOrder = segments.ElementAtOrDefault(25)?.ToNullableDecimal();
+            Citizenship = segments.Length > 26 ? segments.ElementAtOrDefault(26).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            VeteransMilitaryStatus = segments.Length > 27 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(27)) : null;
+            Nationality = segments.Length > 28 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(28)) : null;
+            PatientDeathDateAndTime = segments.ElementAtOrDefault(29)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            PatientDeathIndicator = segments.ElementAtOrDefault(30);
+            IdentityUnknownIndicator = segments.ElementAtOrDefault(31);
+            IdentityReliabilityCode = segments.Length > 32 ? segments.ElementAtOrDefault(32).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            LastUpdateDateTime = segments.ElementAtOrDefault(33)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            LastUpdateFacility = segments.Length > 34 ? new HierarchicDesignator().FromDelimitedString(segments.ElementAtOrDefault(34)) : null;
+            TaxonomicClassificationCode = segments.Length > 35 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(35)) : null;
+            BreedCode = segments.Length > 36 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(36)) : null;
+            Strain = segments.ElementAtOrDefault(37);
+            ProductionClassCode = segments.Length > 38 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(38)) : null;
+            TribalCitizenship = segments.Length > 39 ? segments.ElementAtOrDefault(39).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            PatientTelecommunicationInformation = segments.Length > 40 ? segments.ElementAtOrDefault(40).Split(separator).Select(x => new ExtendedTelecommunicationNumber().FromDelimitedString(x)) : null;
+            
+            return this;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -319,14 +321,91 @@ namespace ClearHl7.V290.Segments
         /// PV1.54 - Service Episode Identifier.
         /// </summary>
         public ExtendedCompositeIdWithCheckDigit ServiceEpisodeIdentifier { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public Pv1Segment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            SetIdPv1 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
+            PatientClass = segments.Length > 2 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            AssignedPatientLocation = segments.Length > 3 ? new PersonLocation().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            AdmissionType = segments.Length > 4 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            PreadmitNumber = segments.Length > 5 ? new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            PriorPatientLocation = segments.Length > 6 ? new PersonLocation().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            AttendingDoctor = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
+            ReferringDoctor = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
+            ConsultingDoctor = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
+            HospitalService = segments.Length > 10 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
+            TemporaryLocation = segments.Length > 11 ? new PersonLocation().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+            PreadmitTestIndicator = segments.Length > 12 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
+            ReadmissionIndicator = segments.Length > 13 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
+            AdmitSource = segments.Length > 14 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
+            AmbulatoryStatus = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            VipIndicator = segments.Length > 16 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
+            AdmittingDoctor = segments.Length > 17 ? segments.ElementAtOrDefault(17).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
+            PatientType = segments.Length > 18 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(18)) : null;
+            VisitNumber = segments.Length > 19 ? new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(segments.ElementAtOrDefault(19)) : null;
+            FinancialClass = segments.Length > 20 ? segments.ElementAtOrDefault(20).Split(separator).Select(x => new FinancialClass().FromDelimitedString(x)) : null;
+            ChargePriceIndicator = segments.Length > 21 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
+            CourtesyCode = segments.Length > 22 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
+            CreditRating = segments.Length > 23 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(23)) : null;
+            ContractCode = segments.Length > 24 ? segments.ElementAtOrDefault(24).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            ContractEffectiveDate = segments.Length > 25 ? segments.ElementAtOrDefault(25).Split(separator).Select(x => x.ToDateTime(Consts.DateFormatPrecisionDay)) : null;
+            ContractAmount = segments.Length > 26 ? segments.ElementAtOrDefault(26).Split(separator).Select(x => x.ToDecimal()) : null;
+            ContractPeriod = segments.Length > 27 ? segments.ElementAtOrDefault(27).Split(separator).Select(x => x.ToDecimal()) : null;
+            InterestCode = segments.Length > 28 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(28)) : null;
+            TransferToBadDebtCode = segments.Length > 29 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(29)) : null;
+            TransferToBadDebtDate = segments.ElementAtOrDefault(30)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            BadDebtAgencyCode = segments.Length > 31 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(31)) : null;
+            BadDebtTransferAmount = segments.Length > 32 ? segments.ElementAtOrDefault(32)?.ToNullableDecimal() : null;
+            BadDebtRecoveryAmount = segments.Length > 33 ? segments.ElementAtOrDefault(33)?.ToNullableDecimal() : null;
+            DeleteAccountIndicator = segments.Length > 34 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(34)) : null;
+            DeleteAccountDate = segments.ElementAtOrDefault(35)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            DischargeDisposition = segments.Length > 36 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(36)) : null;
+            DischargedToLocation = segments.Length > 37 ? new DischargeToLocationAndDate().FromDelimitedString(segments.ElementAtOrDefault(37)) : null;
+            DietType = segments.Length > 38 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(38)) : null;
+            ServicingFacility = segments.Length > 39 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(39)) : null;
+            BedStatus = segments.Length > 40 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(40)) : null;
+            AccountStatus = segments.Length > 41 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(41)) : null;
+            PendingLocation = segments.Length > 42 ? new PersonLocation().FromDelimitedString(segments.ElementAtOrDefault(42)) : null;
+            PriorTemporaryLocation = segments.Length > 43 ? new PersonLocation().FromDelimitedString(segments.ElementAtOrDefault(43)) : null;
+            AdmitDateTime = segments.ElementAtOrDefault(44)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DischargeDateTime = segments.ElementAtOrDefault(45)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            CurrentPatientBalance = segments.ElementAtOrDefault(46)?.ToNullableDecimal();
+            TotalCharges = segments.ElementAtOrDefault(47)?.ToNullableDecimal();
+            TotalAdjustments = segments.ElementAtOrDefault(48)?.ToNullableDecimal();
+            TotalPayments = segments.ElementAtOrDefault(49)?.ToNullableDecimal();
+            AlternateVisitId = segments.Length > 50 ? segments.ElementAtOrDefault(50).Split(separator).Select(x => new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(x)) : null;
+            VisitIndicator = segments.Length > 51 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(51)) : null;
+            OtherHealthcareProvider = segments.Length > 52 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(52)) : null;
+            ServiceEpisodeDescription = segments.ElementAtOrDefault(53);
+            ServiceEpisodeIdentifier = segments.Length > 54 ? new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(segments.ElementAtOrDefault(54)) : null;
+
+            return this;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

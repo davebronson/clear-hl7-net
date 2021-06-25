@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -158,14 +160,62 @@ namespace ClearHl7.V290.Segments
         /// PR1.25 - Parent Procedure ID.
         /// </summary>
         public EntityIdentifier ParentProcedureId { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public Pr1Segment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            SetIdPr1 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
+            ProcedureCodingMethod = segments.ElementAtOrDefault(2);
+            ProcedureCode = segments.Length > 3 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            ProcedureDescription = segments.ElementAtOrDefault(4);
+            ProcedureDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ProcedureFunctionalType = segments.Length > 6 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            ProcedureMinutes = segments.ElementAtOrDefault(7)?.ToNullableDecimal();
+            Anesthesiologist = segments.Length > 8 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+            AnesthesiaCode = segments.Length > 9 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            AnesthesiaMinutes = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
+            Surgeon = segments.Length > 11 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+            ProcedurePractitioner = segments.Length > 12 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
+            ConsentCode = segments.Length > 13 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
+            ProcedurePriority = segments.ElementAtOrDefault(14)?.ToNullableDecimal();
+            AssociatedDiagnosisCode = segments.Length > 15 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
+            ProcedureCodeModifier = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => new CodedWithNoExceptions().FromDelimitedString(x)) : null;
+            ProcedureDrgType = segments.Length > 17 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
+            TissueTypeCode = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            ProcedureIdentifier = segments.Length > 19 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(19)) : null;
+            ProcedureActionCode = segments.ElementAtOrDefault(20);
+            DrgProcedureDeterminationStatus = segments.Length > 21 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
+            DrgProcedureRelevance = segments.Length > 22 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
+            TreatingOrganizationalUnit = segments.Length > 23 ? segments.ElementAtOrDefault(23).Split(separator).Select(x => new PersonLocation().FromDelimitedString(x)) : null;
+            RespiratoryWithinSurgery = segments.ElementAtOrDefault(24);
+            ParentProcedureId = segments.Length > 25 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(25)) : null;
+            
+            return this;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

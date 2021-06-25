@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -150,14 +153,60 @@ namespace ClearHl7.V290.Segments
         /// <para>Suggested: 0253 Indirect Exposure Mechanism -&gt; ClearHl7.Codes.V290.CodeIndirectExposureMechanism</para>
         /// </summary>
         public IEnumerable<string> IndirectExposureMechanism { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public PcrSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            ImplicatedProduct = segments.Length > 1 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            GenericProduct = segments.ElementAtOrDefault(2);
+            ProductClass = segments.Length > 3 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            TotalDurationOfTherapy = segments.Length > 4 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            ProductManufactureDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ProductExpirationDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ProductImplantationDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ProductExplantationDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            SingleUseDevice = segments.Length > 9 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            IndicationForProductUse = segments.Length > 10 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
+            ProductProblem = segments.Length > 11 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+            ProductSerialLotNumber = segments.Length > 12 ? segments.ElementAtOrDefault(12).Split(separator) : null;
+            ProductAvailableForInspection = segments.Length > 13 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
+            ProductEvaluationPerformed = segments.Length > 14 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
+            ProductEvaluationStatus = segments.Length > 15 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
+            ProductEvaluationResults = segments.Length > 16 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
+            EvaluatedProductSource = segments.ElementAtOrDefault(17);
+            DateProductReturnedToManufacturer = segments.ElementAtOrDefault(18)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DeviceOperatorQualifications = segments.ElementAtOrDefault(19);
+            RelatednessAssessment = segments.ElementAtOrDefault(20);
+            ActionTakenInResponseToTheEvent = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator) : null;
+            EventCausalityObservations = segments.Length > 22 ? segments.ElementAtOrDefault(22).Split(separator) : null;
+            IndirectExposureMechanism = segments.Length > 23 ? segments.ElementAtOrDefault(23).Split(separator) : null;
+            
+            return this;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

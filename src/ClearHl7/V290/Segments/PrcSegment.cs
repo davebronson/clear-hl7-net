@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -119,14 +121,55 @@ namespace ClearHl7.V290.Segments
         /// <para>Suggested: 0269 Charge On Indicator -&gt; ClearHl7.Codes.V290.CodeChargeOnIndicator</para>
         /// </summary>
         public CodedWithExceptions ChargeOnIndicator { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public PrcSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            PrimaryKeyValuePrc = segments.Length > 1 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            FacilityIdPrc = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            Department = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            ValidPatientClasses = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            Price = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => new CompositePrice().FromDelimitedString(x)) : null;
+            Formula = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator) : null;
+            MinimumQuantity = segments.ElementAtOrDefault(7)?.ToNullableDecimal();
+            MaximumQuantity = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
+            MinimumPrice = segments.Length > 9 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            MaximumPrice = segments.Length > 10 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
+            EffectiveStartDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EffectiveEndDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            PriceOverrideFlag = segments.Length > 13 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
+            BillingCategory = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            ChargeableFlag = segments.ElementAtOrDefault(15);
+            ActiveInactiveFlag = segments.ElementAtOrDefault(16);
+            Cost = segments.Length > 17 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
+            ChargeOnIndicator = segments.Length > 18 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(18)) : null;
+            
+            return this;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

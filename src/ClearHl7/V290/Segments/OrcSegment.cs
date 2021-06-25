@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -225,12 +227,73 @@ namespace ClearHl7.V290.Segments
         public EntityIdentifier FillerOrderGroupNumber { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public OrcSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            OrderControl = segments.ElementAtOrDefault(1);
+            PlacerOrderNumber = segments.Length > 2 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            FillerOrderNumber = segments.Length > 3 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            PlacerGroupNumber = segments.Length > 4 ? new EntityIdentifierPair().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            OrderStatus = segments.ElementAtOrDefault(5);
+            ResponseFlag = segments.ElementAtOrDefault(6);
+            QuantityTiming = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator) : null;
+            ParentOrder = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => new EntityIdentifierPair().FromDelimitedString(x)) : null;
+            DateTimeOfTransaction = segments.ElementAtOrDefault(9)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EnteredBy = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
+            VerifiedBy = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
+            OrderingProvider = segments.Length > 12 ? segments.ElementAtOrDefault(12).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
+            EnterersLocation = segments.Length > 13 ? new PersonLocation().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
+            CallBackPhoneNumber = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => new ExtendedTelecommunicationNumber().FromDelimitedString(x)) : null;
+            OrderEffectiveDateTime = segments.ElementAtOrDefault(15)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            OrderControlCodeReason = segments.Length > 16 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
+            EnteringOrganization = segments.Length > 17 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
+            EnteringDevice = segments.Length > 18 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(18)) : null;
+            ActionBy = segments.Length > 19 ? segments.ElementAtOrDefault(19).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
+            AdvancedBeneficiaryNoticeCode = segments.Length > 20 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(20)) : null;
+            OrderingFacilityName = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(x)) : null;
+            OrderingFacilityAddress = segments.Length > 22 ? segments.ElementAtOrDefault(22).Split(separator).Select(x => new ExtendedAddress().FromDelimitedString(x)) : null;
+            OrderingFacilityPhoneNumber = segments.Length > 23 ? segments.ElementAtOrDefault(23).Split(separator).Select(x => new ExtendedTelecommunicationNumber().FromDelimitedString(x)) : null;
+            OrderingProviderAddress = segments.Length > 24 ? segments.ElementAtOrDefault(24).Split(separator).Select(x => new ExtendedAddress().FromDelimitedString(x)) : null;
+            OrderStatusModifier = segments.Length > 25 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(25)) : null;
+            AdvancedBeneficiaryNoticeOverrideReason = segments.Length > 26 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(26)) : null;
+            FillersExpectedAvailabilityDateTime = segments.ElementAtOrDefault(27)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ConfidentialityCode = segments.Length > 28 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(28)) : null;
+            OrderType = segments.Length > 29 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(29)) : null;
+            EntererAuthorizationMode = segments.Length > 30 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(30)) : null;
+            ParentUniversalServiceIdentifier = segments.Length > 31 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(31)) : null;
+            AdvancedBeneficiaryNoticeDate = segments.ElementAtOrDefault(32)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            AlternatePlacerOrderNumber = segments.Length > 33 ? segments.ElementAtOrDefault(33).Split(separator).Select(x => new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(x)) : null;
+            OrderWorkflowProfile = segments.Length > 34 ? segments.ElementAtOrDefault(34).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            ActionCode = segments.ElementAtOrDefault(35);
+            OrderStatusDateRange = segments.Length > 36 ? new DateTimeRange().FromDelimitedString(segments.ElementAtOrDefault(36)) : null;
+            OrderCreationDateTime = segments.ElementAtOrDefault(37)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            FillerOrderGroupNumber = segments.Length > 38 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(38)) : null;
+            
+            return this;
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -153,14 +155,61 @@ namespace ClearHl7.V290.Segments
         /// PM1.24 - Group Number Pattern.
         /// </summary>
         public string GroupNumberPattern { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public Pm1Segment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            HealthPlanId = segments.Length > 1 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            InsuranceCompanyId = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(x)) : null;
+            InsuranceCompanyName = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(x)) : null;
+            InsuranceCompanyAddress = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => new ExtendedAddress().FromDelimitedString(x)) : null;
+            InsuranceCoContactPerson = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => new ExtendedPersonName().FromDelimitedString(x)) : null;
+            InsuranceCoPhoneNumber = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => new ExtendedTelecommunicationNumber().FromDelimitedString(x)) : null;
+            GroupNumber = segments.ElementAtOrDefault(7);
+            GroupName = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(x)) : null;
+            PlanEffectiveDate = segments.ElementAtOrDefault(9)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            PlanExpirationDate = segments.ElementAtOrDefault(10)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            PatientDobRequired = segments.ElementAtOrDefault(11);
+            PatientGenderRequired = segments.ElementAtOrDefault(12);
+            PatientRelationshipRequired = segments.ElementAtOrDefault(13);
+            PatientSignatureRequired = segments.ElementAtOrDefault(14);
+            DiagnosisRequired = segments.ElementAtOrDefault(15);
+            ServiceRequired = segments.ElementAtOrDefault(16);
+            PatientNameRequired = segments.ElementAtOrDefault(17);
+            PatientAddressRequired = segments.ElementAtOrDefault(18);
+            SubscribersNameRequired = segments.ElementAtOrDefault(19);
+            WorkmansCompIndicator = segments.ElementAtOrDefault(20);
+            BillTypeRequired = segments.ElementAtOrDefault(21);
+            CommercialCarrierNameAndAddressRequired = segments.ElementAtOrDefault(22);
+            PolicyNumberPattern = segments.ElementAtOrDefault(23);
+            GroupNumberPattern = segments.ElementAtOrDefault(24);
+            
+            return this;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

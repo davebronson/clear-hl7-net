@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -163,14 +165,65 @@ namespace ClearHl7.V290.Segments
         /// <para>Suggested: 0725 Mood Codes -&gt; ClearHl7.Codes.V290.CodeMoodCodes</para>
         /// </summary>
         public CodedWithNoExceptions MoodCode { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public PrbSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            ActionCode = segments.ElementAtOrDefault(1);
+            ActionDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ProblemId = segments.Length > 3 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            ProblemInstanceId = segments.Length > 4 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            EpisodeOfCareId = segments.Length > 5 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            ProblemListPriority = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
+            ProblemEstablishedDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            AnticipatedProblemResolutionDateTime = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ActualProblemResolutionDateTime = segments.ElementAtOrDefault(9)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ProblemClassification = segments.Length > 10 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
+            ProblemManagementDiscipline = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            ProblemPersistence = segments.Length > 12 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
+            ProblemConfirmationStatus = segments.Length > 13 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
+            ProblemLifeCycleStatus = segments.Length > 14 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
+            ProblemLifeCycleStatusDateTime = segments.ElementAtOrDefault(15)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ProblemDateOfOnset = segments.ElementAtOrDefault(16)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ProblemOnsetText = segments.ElementAtOrDefault(17);
+            ProblemRanking = segments.Length > 18 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(18)) : null;
+            CertaintyOfProblem = segments.Length > 19 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(19)) : null;
+            ProbabilityOfProblem01 = segments.ElementAtOrDefault(20)?.ToNullableDecimal();
+            IndividualAwarenessOfProblem = segments.Length > 21 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
+            ProblemPrognosis = segments.Length > 22 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
+            IndividualAwarenessOfPrognosis = segments.Length > 23 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(23)) : null;
+            FamilySignificantOtherAwarenessOfProblemPrognosis = segments.ElementAtOrDefault(24);
+            SecuritySensitivity = segments.Length > 25 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(25)) : null;
+            ProblemSeverity = segments.Length > 26 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(26)) : null;
+            ProblemPerspective = segments.Length > 27 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(27)) : null;
+            MoodCode = segments.Length > 28 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(28)) : null;
+            
+            return this;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
