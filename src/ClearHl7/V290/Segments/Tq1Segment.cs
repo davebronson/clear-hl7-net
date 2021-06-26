@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -92,14 +94,51 @@ namespace ClearHl7.V290.Segments
         /// TQ1.14 - Total occurrences.
         /// </summary>
         public decimal? TotalOccurrences { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public Tq1Segment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            SetIdTq1 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
+            Quantity = segments.Length > 2 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            RepeatPattern = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => new RepeatPattern().FromDelimitedString(x)) : null;
+            ExplicitTime = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => x.ToDateTime(Consts.TimeFormatPrecisionSecond)) : null;
+            RelativeTimeAndUnits = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => new CompositeQuantityWithUnits().FromDelimitedString(x)) : null;
+            ServiceDuration = segments.Length > 6 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            StartDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EndDateTime = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            Priority = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            ConditionText = segments.Length > 10 ? new Text().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
+            TextInstruction = segments.Length > 11 ? new Text().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+            Conjunction = segments.ElementAtOrDefault(12);
+            OccurrenceDuration = segments.Length > 13 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
+            TotalOccurrences = segments.ElementAtOrDefault(14)?.ToNullableDecimal();
+            
+            return this;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

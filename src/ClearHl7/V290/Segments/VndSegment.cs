@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -77,12 +80,46 @@ namespace ClearHl7.V290.Segments
         public CodedWithNoExceptions PricingTierLevel { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public VndSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            SetIdVnd = segments.ElementAtOrDefault(1)?.ToNullableUInt();
+            VendorIdentifier = segments.Length > 2 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            VendorName = segments.ElementAtOrDefault(3);
+            VendorCatalogNumber = segments.Length > 4 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            PrimaryVendorIndicator = segments.Length > 5 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            Corporation = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => new EntityIdentifier().FromDelimitedString(x)) : null;
+            PrimaryContact = segments.Length > 7 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
+            ContractAdjustment = segments.Length > 8 ? new MoneyOrPercentage().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+            AssociatedContractId = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => new EntityIdentifier().FromDelimitedString(x)) : null;
+            ClassOfTrade = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator) : null;
+            PricingTierLevel = segments.Length > 11 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+            
+            return this;
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
