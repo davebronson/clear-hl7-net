@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -177,14 +179,66 @@ namespace ClearHl7.V290.Segments
         /// RXA.29 - Administered Tag Identifier.
         /// </summary>
         public IEnumerable<EntityIdentifier> AdministeredTagIdentifier { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public RxaSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            GiveSubIdCounter = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
+            AdministrationSubIdCounter = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
+            DateTimeStartOfAdministration = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeEndOfAdministration = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            AdministeredCode = segments.Length > 5 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            AdministeredAmount = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
+            AdministeredUnits = segments.Length > 7 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
+            AdministeredDosageForm = segments.Length > 8 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+            AdministrationNotes = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            AdministeringProvider = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
+            AdministeredAtLocation = segments.ElementAtOrDefault(11);
+            AdministeredPerTimeUnit = segments.ElementAtOrDefault(12);
+            AdministeredStrength = segments.ElementAtOrDefault(13)?.ToNullableDecimal();
+            AdministeredStrengthUnits = segments.Length > 14 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
+            SubstanceLotNumber = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator) : null;
+            SubstanceExpirationDate = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => x.ToDateTime(Consts.DateTimeFormatPrecisionSecond)) : null;
+            SubstanceManufacturerName = segments.Length > 17 ? segments.ElementAtOrDefault(17).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            SubstanceTreatmentRefusalReason = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            Indication = segments.Length > 19 ? segments.ElementAtOrDefault(19).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            CompletionStatus = segments.ElementAtOrDefault(20);
+            ActionCodeRxa = segments.ElementAtOrDefault(21);
+            SystemEntryDateTime = segments.ElementAtOrDefault(22)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            AdministeredDrugStrengthVolume = segments.ElementAtOrDefault(23)?.ToNullableDecimal();
+            AdministeredDrugStrengthVolumeUnits = segments.Length > 24 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(24)) : null;
+            AdministeredBarcodeIdentifier = segments.Length > 25 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(25)) : null;
+            PharmacyOrderType = segments.ElementAtOrDefault(26);
+            AdministerAt = segments.Length > 27 ? new PersonLocation().FromDelimitedString(segments.ElementAtOrDefault(27)) : null;
+            AdministeredAtAddress = segments.Length > 28 ? new ExtendedAddress().FromDelimitedString(segments.ElementAtOrDefault(28)) : null;
+            AdministeredTagIdentifier = segments.Length > 29 ? segments.ElementAtOrDefault(29).Split(separator).Select(x => new EntityIdentifier().FromDelimitedString(x)) : null;
+            
+            return this;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

@@ -1,4 +1,8 @@
-﻿using ClearHl7.Helpers;
+﻿using System;
+using System.Globalization;
+using System.Linq;
+using ClearHl7.Extensions;
+using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
 namespace ClearHl7.V290.Segments
@@ -135,14 +139,58 @@ namespace ClearHl7.V290.Segments
         /// RXV.22 - Action Code.
         /// </summary>
         public string ActionCode { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public RxvSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            SetIdRxv = segments.ElementAtOrDefault(1)?.ToNullableUInt();
+            BolusType = segments.ElementAtOrDefault(2);
+            BolusDoseAmount = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
+            BolusDoseAmountUnits = segments.Length > 4 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            BolusDoseVolume = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
+            BolusDoseVolumeUnits = segments.Length > 6 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            PcaType = segments.ElementAtOrDefault(7);
+            PcaDoseAmount = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
+            PcaDoseAmountUnits = segments.Length > 9 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            PcaDoseAmountVolume = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
+            PcaDoseAmountVolumeUnits = segments.Length > 11 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+            MaxDoseAmount = segments.ElementAtOrDefault(12)?.ToNullableDecimal();
+            MaxDoseAmountUnits = segments.Length > 13 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
+            MaxDoseAmountVolume = segments.ElementAtOrDefault(14)?.ToNullableDecimal();
+            MaxDoseAmountVolumeUnits = segments.Length > 15 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
+            MaxDosePerTime = segments.Length > 16 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
+            LockoutInterval = segments.Length > 17 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
+            SyringeManufacturer = segments.Length > 18 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(18)) : null;
+            SyringeModelNumber = segments.Length > 19 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(19)) : null;
+            SyringeSize = segments.ElementAtOrDefault(20)?.ToNullableDecimal();
+            SyringeSizeUnits = segments.Length > 21 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
+            ActionCode = segments.ElementAtOrDefault(22);
+            
+            return this;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

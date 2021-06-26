@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -212,14 +214,72 @@ namespace ClearHl7.V290.Segments
         /// RXD.35 - Dispense Tag Identifier.
         /// </summary>
         public IEnumerable<EntityIdentifier> DispenseTagIdentifier { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public RxdSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            DispenseSubIdCounter = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
+            DispenseGiveCode = segments.Length > 2 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            DateTimeDispensed = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
+            ActualDispenseAmount = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
+            ActualDispenseUnits = segments.Length > 5 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            ActualDosageForm = segments.Length > 6 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            PrescriptionNumber = segments.ElementAtOrDefault(7);
+            NumberOfRefillsRemaining = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
+            DispenseNotes = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator) : null;
+            DispensingProvider = segments.Length > 10 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
+            SubstitutionStatus = segments.ElementAtOrDefault(11);
+            TotalDailyDose = segments.Length > 12 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
+            DispenseToLocation = segments.ElementAtOrDefault(13);
+            NeedsHumanReview = segments.ElementAtOrDefault(14);
+            SpecialDispensingInstructions = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            ActualStrength = segments.ElementAtOrDefault(16)?.ToNullableDecimal();
+            ActualStrengthUnit = segments.Length > 17 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
+            SubstanceLotNumber = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator) : null;
+            SubstanceExpirationDate = segments.Length > 19 ? segments.ElementAtOrDefault(19).Split(separator).Select(x => x.ToDateTime()) : null;
+            SubstanceManufacturerName = segments.Length > 20 ? segments.ElementAtOrDefault(20).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            Indication = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            DispensePackageSize = segments.ElementAtOrDefault(22)?.ToNullableDecimal();
+            DispensePackageSizeUnit = segments.Length > 23 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(23)) : null;
+            DispensePackageMethod = segments.ElementAtOrDefault(24);
+            SupplementaryCode = segments.Length > 25 ? segments.ElementAtOrDefault(25).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            InitiatingLocation = segments.Length > 26 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(26)) : null;
+            PackagingAssemblyLocation = segments.Length > 27 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(27)) : null;
+            ActualDrugStrengthVolume = segments.ElementAtOrDefault(28)?.ToNullableDecimal();
+            ActualDrugStrengthVolumeUnits = segments.Length > 29 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(29)) : null;
+            DispenseToPharmacy = segments.Length > 30 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(30)) : null;
+            DispenseToPharmacyAddress = segments.Length > 31 ? new ExtendedAddress().FromDelimitedString(segments.ElementAtOrDefault(31)) : null;
+            PharmacyOrderType = segments.ElementAtOrDefault(32);
+            DispenseType = segments.Length > 33 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(33)) : null;
+            PharmacyPhoneNumber = segments.Length > 34 ? segments.ElementAtOrDefault(34).Split(separator).Select(x => new ExtendedTelecommunicationNumber().FromDelimitedString(x)) : null;
+            DispenseTagIdentifier = segments.Length > 35 ? segments.ElementAtOrDefault(35).Split(separator).Select(x => new EntityIdentifier().FromDelimitedString(x)) : null;
+            
+            return this;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

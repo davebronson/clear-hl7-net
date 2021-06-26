@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V290.Types;
 
@@ -215,12 +217,70 @@ namespace ClearHl7.V290.Segments
         public string ActionCode { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public SpmSegment FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            SetIdSpm = segments.ElementAtOrDefault(1)?.ToNullableUInt();
+            SpecimenId = segments.Length > 2 ? new EntityIdentifierPair().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            SpecimenParentIds = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => new EntityIdentifierPair().FromDelimitedString(x)) : null;
+            SpecimenType = segments.Length > 4 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            SpecimenTypeModifier = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            SpecimenAdditives = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            SpecimenCollectionMethod = segments.Length > 7 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
+            SpecimenSourceSite = segments.Length > 8 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+            SpecimenSourceSiteModifier = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            SpecimenCollectionSite = segments.Length > 10 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
+            SpecimenRole = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            SpecimenCollectionAmount = segments.Length > 12 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
+            GroupedSpecimenCount = segments.ElementAtOrDefault(13)?.ToNullableDecimal();
+            SpecimenDescription = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator) : null;
+            SpecimenHandlingCode = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            SpecimenRiskCode = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            SpecimenCollectionDateTime = segments.Length > 17 ? new DateTimeRange().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
+            SpecimenReceivedDateTime = segments.ElementAtOrDefault(18)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            SpecimenExpirationDateTime = segments.ElementAtOrDefault(19)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            SpecimenAvailability = segments.ElementAtOrDefault(20);
+            SpecimenRejectReason = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            SpecimenQuality = segments.Length > 22 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
+            SpecimenAppropriateness = segments.Length > 23 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(23)) : null;
+            SpecimenCondition = segments.Length > 24 ? segments.ElementAtOrDefault(24).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            SpecimenCurrentQuantity = segments.Length > 25 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(25)) : null;
+            NumberOfSpecimenContainers = segments.ElementAtOrDefault(26)?.ToNullableDecimal();
+            ContainerType = segments.Length > 27 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(27)) : null;
+            ContainerCondition = segments.Length > 28 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(28)) : null;
+            SpecimenChildRole = segments.Length > 29 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(29)) : null;
+            AccessionId = segments.Length > 30 ? segments.ElementAtOrDefault(30).Split(separator).Select(x => new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(x)) : null;
+            OtherSpecimenId = segments.Length > 31 ? segments.ElementAtOrDefault(31).Split(separator).Select(x => new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(x)) : null;
+            ShipmentId = segments.Length > 32 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(32)) : null;
+            CultureStartDateTime = segments.ElementAtOrDefault(33)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            CultureFinalDateTime = segments.ElementAtOrDefault(34)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ActionCode = segments.ElementAtOrDefault(35);
+            
+            return this;
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
