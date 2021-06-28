@@ -1,11 +1,57 @@
 ﻿using ClearHl7.V290.Segments;
 using ClearHl7.V290.Types;
+using FluentAssertions;
 using Xunit;
 
 namespace ClearHl7.Tests.SegmentsTests
 {
     public class Tq2SegmentTests
     {
+        /// <summary>
+        /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
+        {
+            ISegment expected = new Tq2Segment
+            {
+                SetIdTq2 = 1,
+                SequenceResultsFlag = "2",
+                RelatedPlacerNumber = new EntityIdentifier[]
+                {
+                    new EntityIdentifier
+                    {
+                        EntityId = "3"
+                    }
+                },
+                RelatedFillerNumber = new EntityIdentifier[]
+                {
+                    new EntityIdentifier
+                    {
+                        EntityId = "4"
+                    }
+                },
+                RelatedPlacerGroupNumber = new EntityIdentifier[]
+                {
+                    new EntityIdentifier
+                    {
+                        EntityId = "5"
+                    }
+                },
+                SequenceConditionCode = "6",
+                CyclicEntryExitIndicator = "7",
+                SequenceConditionTimeInterval = new CompositeQuantityWithUnits
+                {
+                    Quantity = 8
+                },
+                CyclicGroupMaximumNumberOfRepeats = 9,
+                SpecialServiceRequestRelationship = "10"
+            };
+            ISegment actual = new Tq2Segment().FromDelimitedString("TQ2|1|2|3|4|5|6|7|8|9|10");
+
+            expected.Should().BeEquivalentTo(actual);
+        }
+
         /// <summary>
         /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>

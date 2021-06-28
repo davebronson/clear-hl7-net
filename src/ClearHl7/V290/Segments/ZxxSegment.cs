@@ -46,14 +46,24 @@ namespace ClearHl7.V290.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (!segments.First().StartsWith("Z", StringComparison.CurrentCultureIgnoreCase))
                 {
-                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: 'Z[XX]{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
+            SegmentSuffix = segments.Length > 0 ? segments.FirstOrDefault().Substring(1) : SegmentSuffix;
             SegmentItems = segments.Length > 1 ? segments.ElementAtOrDefault(1).Split(separator).Select(x => new Text().FromDelimitedString(x)) : null;
-            
+
+            //for (int i = 1; i < SegmentItems.Count(); i++)
+            //{
+            //    SegmentItems.ElementAt(i).FromDelimitedString(segments.ElementAtOrDefault(i));
+            //}
+            //foreach (IType item in SegmentItems)
+            //{
+            //    item.FromDelimitedString(segments.ElementAtOrDefault(1));
+            //}
+
             return this;
         }
 

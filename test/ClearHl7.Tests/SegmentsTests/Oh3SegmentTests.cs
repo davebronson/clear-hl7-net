@@ -1,12 +1,44 @@
 ﻿using System;
 using ClearHl7.V290.Segments;
 using ClearHl7.V290.Types;
+using FluentAssertions;
 using Xunit;
 
 namespace ClearHl7.Tests.SegmentsTests
 {
     public class Oh3SegmentTests
     {
+        /// <summary>
+        /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
+        {
+            ISegment expected = new Oh3Segment
+            {
+                SetId = 1,
+                ActionCode = "2",
+                Occupation = new CodedWithExceptions
+                {
+                    Identifier = "3"
+                },
+                Industry = new CodedWithExceptions
+                {
+                    Identifier = "4"
+                },
+                UsualOccupationDurationYears = 5,
+                StartYear = new DateTime(2020, 6, 6),
+                EnteredDate = new DateTime(2020, 7, 7),
+                WorkUniqueIdentifier = new EntityIdentifier
+                {
+                    EntityId = "8"
+                }
+            };
+            ISegment actual = new Oh3Segment().FromDelimitedString("OH3|1|2|3|4|5|20200606|20200707|8");
+
+            expected.Should().BeEquivalentTo(actual);
+        }
+
         /// <summary>
         /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>

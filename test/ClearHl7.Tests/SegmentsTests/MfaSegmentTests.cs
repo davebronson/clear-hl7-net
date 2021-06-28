@@ -1,12 +1,42 @@
 ﻿using System;
 using ClearHl7.V290.Segments;
 using ClearHl7.V290.Types;
+using FluentAssertions;
 using Xunit;
 
 namespace ClearHl7.Tests.SegmentsTests
 {
     public class MfaSegmentTests
     {
+        /// <summary>
+        /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
+        {
+            ISegment expected = new MfaSegment
+            {
+                RecordLevelEventCode = "1",
+                MfnControlId = "2",
+                EventCompletionDateTime = new DateTime(2020, 3, 3, 0, 0, 3),
+                MfnRecordLevelErrorReturn = new CodedWithExceptions
+                {
+                    Identifier = "4"
+                },
+                PrimaryKeyValueMfa = new string[]
+                {
+                    "5"
+                },
+                PrimaryKeyValueTypeMfa = new string[]
+                {
+                    "6"
+                }
+            };
+            ISegment actual = new MfaSegment().FromDelimitedString("MFA|1|2|20200303000003|4|5|6");
+
+            expected.Should().BeEquivalentTo(actual);
+        }
+
         /// <summary>
         /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>

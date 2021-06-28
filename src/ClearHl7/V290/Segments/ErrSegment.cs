@@ -94,7 +94,7 @@ namespace ClearHl7.V290.Segments
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
         /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public AbsSegment FromDelimitedString(string delimitedString)
+        public ErrSegment FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();

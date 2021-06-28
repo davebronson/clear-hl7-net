@@ -1,12 +1,46 @@
 ﻿using System;
 using ClearHl7.V290.Segments;
 using ClearHl7.V290.Types;
+using FluentAssertions;
 using Xunit;
 
 namespace ClearHl7.Tests.SegmentsTests
 {
     public class EvnSegmentTests
     {
+        /// <summary>
+        /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
+        {
+            ISegment expected = new EvnSegment
+            {
+                EventTypeCode = "1",
+                RecordedDateTime = new DateTime(2020, 2, 2, 0, 0, 2),
+                DateTimePlannedEvent = new DateTime(2020, 3, 3, 0, 0, 3),
+                EventReasonCode = new CodedWithExceptions
+                {
+                    Identifier = "4"
+                },
+                OperatorId = new ExtendedCompositeIdNumberAndNameForPersons[]
+                {
+                    new ExtendedCompositeIdNumberAndNameForPersons
+                    {
+                        PersonIdentifier = "5"
+                    }
+                },
+                EventOccurred = new DateTime(2020, 6, 6, 0, 0, 6),
+                EventFacility = new HierarchicDesignator
+                {
+                    NamespaceId = "7"
+                }
+            };
+            ISegment actual = new EvnSegment().FromDelimitedString("EVN|1|20200202000002|20200303000003|4|5|20200606000006|7");
+
+            expected.Should().BeEquivalentTo(actual);
+        }
+
         /// <summary>
         /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>

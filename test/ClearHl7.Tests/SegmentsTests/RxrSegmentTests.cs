@@ -1,11 +1,50 @@
 ﻿using ClearHl7.V290.Segments;
 using ClearHl7.V290.Types;
+using FluentAssertions;
 using Xunit;
 
 namespace ClearHl7.Tests.SegmentsTests
 {
     public class RxrSegmentTests
     {
+        /// <summary>
+        /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
+        {
+            ISegment expected = new RxrSegment
+            {
+                Route = new CodedWithExceptions
+                {
+                    Identifier = "1"
+                },
+                AdministrationSite = new CodedWithExceptions
+                {
+                    Identifier = "2"
+                },
+                AdministrationDevice = new CodedWithExceptions
+                {
+                    Identifier = "3"
+                },
+                AdministrationMethod = new CodedWithExceptions
+                {
+                    Identifier = "4"
+                },
+                RoutingInstruction = new CodedWithExceptions
+                {
+                    Identifier = "5"
+                },
+                AdministrationSiteModifier = new CodedWithExceptions
+                {
+                    Identifier = "6"
+                }
+            };
+            ISegment actual = new RxrSegment().FromDelimitedString("RXR|1|2|3|4|5|6");
+
+            expected.Should().BeEquivalentTo(actual);
+        }
+
         /// <summary>
         /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>

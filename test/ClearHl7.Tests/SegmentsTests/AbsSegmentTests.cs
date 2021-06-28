@@ -14,7 +14,7 @@ namespace ClearHl7.Tests.SegmentsTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            AbsSegment expected = new()
+            ISegment expected = new AbsSegment
             {
                 DischargeCareProvider = new ExtendedCompositeIdNumberAndNameForPersons
                 {
@@ -58,7 +58,7 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 StillbornIndicator = "14"
             };
-            AbsSegment actual = new AbsSegment().FromDelimitedString("ABS|1|2|3|20200401000000|5|6|20200701000000|8|9|10|11|12|13|14");
+            ISegment actual = new AbsSegment().FromDelimitedString("ABS|1|2|3|20200401000000|5|6|20200701000000|8|9|10|11|12|13|14");
 
             expected.Should().BeEquivalentTo(actual);
         }

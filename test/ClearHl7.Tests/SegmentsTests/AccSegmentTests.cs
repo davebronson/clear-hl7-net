@@ -14,7 +14,7 @@ namespace ClearHl7.Tests.SegmentsTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            AccSegment expected = new()
+            ISegment expected = new AccSegment
             {
                 AccidentDateTime = new DateTime(2020, 1, 1, 0, 0, 1),
                 AccidentCode = new CodedWithExceptions
@@ -52,7 +52,7 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            AccSegment actual = new AccSegment().FromDelimitedString("ACC|20200101000001|2|3|4|5|6|7|8|9|10|11|12|13");
+            ISegment actual = new AccSegment().FromDelimitedString("ACC|20200101000001|2|3|4|5|6|7|8|9|10|11|12|13");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -1,12 +1,66 @@
 ﻿using System;
 using ClearHl7.V290.Segments;
 using ClearHl7.V290.Types;
+using FluentAssertions;
 using Xunit;
 
 namespace ClearHl7.Tests.SegmentsTests
 {
     public class AilSegmentTests
     {
+        /// <summary>
+        /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
+        {
+            ISegment expected = new AilSegment
+            {
+                SetIdAil = 1,
+                SegmentActionCode = "2",
+                LocationResourceId = new PersonLocation[]
+                {
+                    new PersonLocation
+                    {
+                        PointOfCare = new HierarchicDesignator
+                        {
+                            NamespaceId = "3"
+                        }
+                    }
+                },
+                LocationTypeAil = new CodedWithExceptions
+                {
+                    Identifier = "4"
+                },
+                LocationGroup = new CodedWithExceptions
+                {
+                    Identifier = "5"
+                },
+                StartDateTime = new DateTime(2020, 6, 6, 0, 0, 6),
+                StartDateTimeOffset = 7,
+                StartDateTimeOffsetUnits = new CodedWithNoExceptions
+                {
+                    Identifier = "8"
+                },
+                Duration = 9,
+                DurationUnits = new CodedWithNoExceptions
+                {
+                    Identifier = "10"
+                },
+                AllowSubstitutionCode = new CodedWithExceptions
+                {
+                    Identifier = "11"
+                },
+                FillerStatusCode = new CodedWithExceptions
+                {
+                    Identifier = "12"
+                }
+            };
+            ISegment actual = new AilSegment().FromDelimitedString("AIL|1|2|3|4|5|20200606000006|7|8|9|10|11|12");
+
+            expected.Should().BeEquivalentTo(actual);
+        }
+
         /// <summary>
         /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>

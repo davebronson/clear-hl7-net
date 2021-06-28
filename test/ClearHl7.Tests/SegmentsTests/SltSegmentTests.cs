@@ -1,11 +1,40 @@
 ﻿using ClearHl7.V290.Segments;
 using ClearHl7.V290.Types;
+using FluentAssertions;
 using Xunit;
 
 namespace ClearHl7.Tests.SegmentsTests
 {
     public class SltSegmentTests
     {
+        /// <summary>
+        /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
+        {
+            ISegment expected = new SltSegment
+            {
+                DeviceNumber = new EntityIdentifier
+                {
+                    EntityId = "1"
+                },
+                DeviceName = "2",
+                LotNumber = new EntityIdentifier
+                {
+                    EntityId = "3"
+                },
+                ItemIdentifier = new EntityIdentifier
+                {
+                    EntityId = "4"
+                },
+                BarCode = "5"
+            };
+            ISegment actual = new SltSegment().FromDelimitedString("SLT|1|2|3|4|5");
+
+            expected.Should().BeEquivalentTo(actual);
+        }
+
         /// <summary>
         /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>

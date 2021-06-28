@@ -1,12 +1,53 @@
 ﻿using System;
 using ClearHl7.V290.Segments;
 using ClearHl7.V290.Types;
+using FluentAssertions;
 using Xunit;
 
 namespace ClearHl7.Tests.SegmentsTests
 {
     public class IprSegmentTests
     {
+        /// <summary>
+        /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
+        {
+            ISegment expected = new IprSegment
+            {
+                IprIdentifier = new EntityIdentifier
+                {
+                    EntityId = "1"
+                },
+                ProviderCrossReferenceIdentifier = new EntityIdentifier
+                {
+                    EntityId = "2"
+                },
+                PayerCrossReferenceIdentifier = new EntityIdentifier
+                {
+                    EntityId = "3"
+                },
+                IprStatus = new CodedWithExceptions
+                {
+                    Identifier = "4"
+                },
+                IprDateTime = new DateTime(2020, 5, 5, 0, 0, 5),
+                AdjudicatedPaidAmount = new CompositePrice
+                {
+                    Price = new Money
+                    {
+                        Quantity = 6
+                    }
+                },
+                ExpectedPaymentDateTime = new DateTime(2020, 7, 7, 0, 0, 7),
+                IprChecksum = "8"
+            };
+            ISegment actual = new IprSegment().FromDelimitedString("IPR|1|2|3|4|20200505000005|6|20200707000007|8");
+
+            expected.Should().BeEquivalentTo(actual);
+        }
+
         /// <summary>
         /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>

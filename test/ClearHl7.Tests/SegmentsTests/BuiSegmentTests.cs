@@ -1,11 +1,60 @@
 ﻿using ClearHl7.V290.Segments;
 using ClearHl7.V290.Types;
+using FluentAssertions;
 using Xunit;
 
 namespace ClearHl7.Tests.SegmentsTests
 {
     public class BuiSegmentTests
     {
+        /// <summary>
+        /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
+        {
+            ISegment expected = new BuiSegment
+            {
+                SetIdBui = 1,
+                BloodUnitIdentifier = new EntityIdentifier
+                {
+                    EntityId = "2"
+                },
+                BloodUnitType = new CodedWithExceptions
+                {
+                    Identifier = "3"
+                },
+                BloodUnitWeight = 4,
+                WeightUnits = new CodedWithNoExceptions
+                {
+                    Identifier = "5"
+                },
+                BloodUnitVolume = 6,
+                VolumeUnits = new CodedWithNoExceptions
+                {
+                    Identifier = "7"
+                },
+                ContainerCatalogNumber = "8",
+                ContainerLotNumber = "9",
+                ContainerManufacturer = new ExtendedCompositeNameAndIdNumberForOrganizations
+                {
+                    OrganizationName = "10"
+                },
+                TransportTemperature = new NumericRange
+                {
+                    LowValue = 11
+                },
+                TransportTemperatureUnits = new CodedWithNoExceptions
+                {
+                    Identifier = "12"
+                },
+                ActionCode = "13"
+            };
+            ISegment actual = new BuiSegment().FromDelimitedString("BUI|1|2|3|4|5|6|7|8|9|10|11|12|13");
+
+            expected.Should().BeEquivalentTo(actual);
+        }
+
         /// <summary>
         /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>
