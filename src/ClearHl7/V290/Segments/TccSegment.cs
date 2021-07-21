@@ -106,9 +106,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public TccSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
 
@@ -120,23 +119,21 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
-            UniversalServiceIdentifier = segments.Length > 1 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            EquipmentTestApplicationIdentifier = segments.Length > 2 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            UniversalServiceIdentifier = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
+            EquipmentTestApplicationIdentifier = segments.Length > 2 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(2), false) : null;
             SpecimenSource = segments.ElementAtOrDefault(3);
-            AutoDilutionFactorDefault = segments.Length > 4 ? new StructuredNumeric().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
-            RerunDilutionFactorDefault = segments.Length > 5 ? new StructuredNumeric().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
-            PreDilutionFactorDefault = segments.Length > 6 ? new StructuredNumeric().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
-            EndogenousContentOfPreDilutionDiluent = segments.Length > 7 ? new StructuredNumeric().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
+            AutoDilutionFactorDefault = segments.Length > 4 ? TypeHelper.Deserialize<StructuredNumeric>(segments.ElementAtOrDefault(4), false) : null;
+            RerunDilutionFactorDefault = segments.Length > 5 ? TypeHelper.Deserialize<StructuredNumeric>(segments.ElementAtOrDefault(5), false) : null;
+            PreDilutionFactorDefault = segments.Length > 6 ? TypeHelper.Deserialize<StructuredNumeric>(segments.ElementAtOrDefault(6), false) : null;
+            EndogenousContentOfPreDilutionDiluent = segments.Length > 7 ? TypeHelper.Deserialize<StructuredNumeric>(segments.ElementAtOrDefault(7), false) : null;
             InventoryLimitsWarningLevel = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
             AutomaticRerunAllowed = segments.ElementAtOrDefault(9);
             AutomaticRepeatAllowed = segments.ElementAtOrDefault(10);
             AutomaticReflexAllowed = segments.ElementAtOrDefault(11);
-            EquipmentDynamicRange = segments.Length > 12 ? new StructuredNumeric().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
-            Units = segments.Length > 13 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
-            ProcessingType = segments.Length > 14 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
-            TestCriticality = segments.Length > 15 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
-            
-            return this;
+            EquipmentDynamicRange = segments.Length > 12 ? TypeHelper.Deserialize<StructuredNumeric>(segments.ElementAtOrDefault(12), false) : null;
+            Units = segments.Length > 13 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(13), false) : null;
+            ProcessingType = segments.Length > 14 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(14), false) : null;
+            TestCriticality = segments.Length > 15 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(15), false) : null;
         }
 
         /// <summary>

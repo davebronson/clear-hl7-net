@@ -70,9 +70,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public ScpSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
 
@@ -85,15 +84,13 @@ namespace ClearHl7.V290.Segments
             }
 
             NumberOfDecontaminationSterilizationDevices = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
-            LaborCalculationType = segments.Length > 2 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            DateFormat = segments.Length > 3 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
-            DeviceNumber = segments.Length > 4 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            LaborCalculationType = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
+            DateFormat = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
+            DeviceNumber = segments.Length > 4 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(4), false) : null;
             DeviceName = segments.ElementAtOrDefault(5);
             DeviceModelName = segments.ElementAtOrDefault(6);
-            DeviceType = segments.Length > 7 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
-            LotControl = segments.Length > 8 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
-            
-            return this;
+            DeviceType = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(7), false) : null;
+            LotControl = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
         }
 
         /// <summary>

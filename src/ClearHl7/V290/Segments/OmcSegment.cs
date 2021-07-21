@@ -100,9 +100,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public OmcSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -117,19 +116,17 @@ namespace ClearHl7.V290.Segments
 
             SequenceNumberTestObservationMasterFile = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
             SegmentActionCode = segments.ElementAtOrDefault(2);
-            SegmentUniqueKey = segments.Length > 3 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
-            ClinicalInformationRequest = segments.Length > 4 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
-            CollectionEventProcessStep = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            CommunicationLocation = segments.Length > 6 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            SegmentUniqueKey = segments.Length > 3 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(3), false) : null;
+            ClinicalInformationRequest = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
+            CollectionEventProcessStep = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            CommunicationLocation = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
             AnswerRequired = segments.ElementAtOrDefault(7);
             HintHelpText = segments.ElementAtOrDefault(8);
             TypeOfAnswer = segments.ElementAtOrDefault(9);
             MultipleAnswersAllowed = segments.ElementAtOrDefault(10);
-            AnswerChoices = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            AnswerChoices = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             CharacterLimit = segments.ElementAtOrDefault(12)?.ToNullableDecimal();
             NumberOfDecimals = segments.ElementAtOrDefault(13)?.ToNullableDecimal();
-            
-            return this;
         }
 
         /// <summary>

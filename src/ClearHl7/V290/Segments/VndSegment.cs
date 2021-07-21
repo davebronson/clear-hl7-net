@@ -83,9 +83,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public VndSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -99,18 +98,16 @@ namespace ClearHl7.V290.Segments
             }
 
             SetIdVnd = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            VendorIdentifier = segments.Length > 2 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            VendorIdentifier = segments.Length > 2 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(2), false) : null;
             VendorName = segments.ElementAtOrDefault(3);
-            VendorCatalogNumber = segments.Length > 4 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
-            PrimaryVendorIndicator = segments.Length > 5 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
-            Corporation = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => new EntityIdentifier().FromDelimitedString(x)) : null;
-            PrimaryContact = segments.Length > 7 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
-            ContractAdjustment = segments.Length > 8 ? new MoneyOrPercentage().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
-            AssociatedContractId = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => new EntityIdentifier().FromDelimitedString(x)) : null;
+            VendorCatalogNumber = segments.Length > 4 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(4), false) : null;
+            PrimaryVendorIndicator = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(5), false) : null;
+            Corporation = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
+            PrimaryContact = segments.Length > 7 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(7), false) : null;
+            ContractAdjustment = segments.Length > 8 ? TypeHelper.Deserialize<MoneyOrPercentage>(segments.ElementAtOrDefault(8), false) : null;
+            AssociatedContractId = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
             ClassOfTrade = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator) : null;
-            PricingTierLevel = segments.Length > 11 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
-            
-            return this;
+            PricingTierLevel = segments.Length > 11 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(11), false) : null;
         }
 
         /// <summary>

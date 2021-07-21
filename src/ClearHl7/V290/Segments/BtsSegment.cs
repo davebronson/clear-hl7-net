@@ -41,9 +41,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public BtsSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -59,8 +58,6 @@ namespace ClearHl7.V290.Segments
             BatchMessageCount = segments.ElementAtOrDefault(1);
             BatchComment = segments.ElementAtOrDefault(2);
             BatchTotals = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => x.ToDecimal()) : null;
-
-            return this;
         }
 
         /// <summary>

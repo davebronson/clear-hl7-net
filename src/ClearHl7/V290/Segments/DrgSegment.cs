@@ -210,9 +210,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public DrgSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
 
@@ -224,41 +223,39 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
-            DiagnosticRelatedGroup = segments.Length > 1 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            DiagnosticRelatedGroup = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(1), false) : null;
             DrgAssignedDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             DrgApprovalIndicator = segments.ElementAtOrDefault(3);
-            DrgGrouperReviewCode = segments.Length > 4 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
-            OutlierType = segments.Length > 5 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            DrgGrouperReviewCode = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
+            OutlierType = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
             OutlierDays = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
-            OutlierCost = segments.Length > 7 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
-            DrgPayor = segments.Length > 8 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
-            OutlierReimbursement = segments.Length > 9 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            OutlierCost = segments.Length > 7 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(7), false) : null;
+            DrgPayor = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
+            OutlierReimbursement = segments.Length > 9 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(9), false) : null;
             ConfidentialIndicator = segments.ElementAtOrDefault(10);
-            DrgTransferType = segments.Length > 11 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
-            NameOfCoder = segments.Length > 12 ? new ExtendedPersonName().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
-            GrouperStatus = segments.Length > 13 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
-            PcclValueCode = segments.Length > 14 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
+            DrgTransferType = segments.Length > 11 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(11), false) : null;
+            NameOfCoder = segments.Length > 12 ? TypeHelper.Deserialize<ExtendedPersonName>(segments.ElementAtOrDefault(12), false) : null;
+            GrouperStatus = segments.Length > 13 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(13), false) : null;
+            PcclValueCode = segments.Length > 14 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(14), false) : null;
             EffectiveWeight = segments.ElementAtOrDefault(15)?.ToNullableDecimal();
-            MonetaryAmount = segments.Length > 16 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
-            StatusPatient = segments.Length > 17 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
+            MonetaryAmount = segments.Length > 16 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(16), false) : null;
+            StatusPatient = segments.Length > 17 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(17), false) : null;
             GrouperSoftwareName = segments.ElementAtOrDefault(18);
             GrouperSoftwareVersion = segments.ElementAtOrDefault(19);
-            StatusFinancialCalculation = segments.Length > 20 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(20)) : null;
-            RelativeDiscountSurcharge = segments.Length > 21 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
-            BasicCharge = segments.Length > 22 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
-            TotalCharge = segments.Length > 23 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(23)) : null;
-            DiscountSurcharge = segments.Length > 24 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(24)) : null;
+            StatusFinancialCalculation = segments.Length > 20 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(20), false) : null;
+            RelativeDiscountSurcharge = segments.Length > 21 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(21), false) : null;
+            BasicCharge = segments.Length > 22 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(22), false) : null;
+            TotalCharge = segments.Length > 23 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(23), false) : null;
+            DiscountSurcharge = segments.Length > 24 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(24), false) : null;
             CalculatedDays = segments.ElementAtOrDefault(25)?.ToNullableDecimal();
-            StatusGender = segments.Length > 26 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(26)) : null;
-            StatusAge = segments.Length > 27 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(27)) : null;
-            StatusLengthOfStay = segments.Length > 28 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(28)) : null;
-            StatusSameDayFlag = segments.Length > 29 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(29)) : null;
-            StatusSeparationMode = segments.Length > 30 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(30)) : null;
-            StatusWeightAtBirth = segments.Length > 31 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(31)) : null;
-            StatusRespirationMinutes = segments.Length > 32 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(32)) : null;
-            StatusAdmission = segments.Length > 33 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(33)) : null;
-            
-            return this;
+            StatusGender = segments.Length > 26 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(26), false) : null;
+            StatusAge = segments.Length > 27 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(27), false) : null;
+            StatusLengthOfStay = segments.Length > 28 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(28), false) : null;
+            StatusSameDayFlag = segments.Length > 29 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(29), false) : null;
+            StatusSeparationMode = segments.Length > 30 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(30), false) : null;
+            StatusWeightAtBirth = segments.Length > 31 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(31), false) : null;
+            StatusRespirationMinutes = segments.Length > 32 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(32), false) : null;
+            StatusAdmission = segments.Length > 33 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(33), false) : null;
         }
 
         /// <summary>

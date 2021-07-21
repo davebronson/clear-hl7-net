@@ -68,9 +68,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public Oh3Segment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
 
@@ -84,14 +83,12 @@ namespace ClearHl7.V290.Segments
 
             SetId = segments.ElementAtOrDefault(1)?.ToNullableUInt();
             ActionCode = segments.ElementAtOrDefault(2);
-            Occupation = segments.Length > 3 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
-            Industry = segments.Length > 4 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            Occupation = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
+            Industry = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
             UsualOccupationDurationYears = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
             StartYear = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
             EnteredDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            WorkUniqueIdentifier = segments.Length > 8 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
-            
-            return this;
+            WorkUniqueIdentifier = segments.Length > 8 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(8), false) : null;
         }
 
         /// <summary>

@@ -105,8 +105,7 @@ namespace ClearHl7.V231.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public PerformingPersonTimeStamp FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
@@ -119,16 +118,34 @@ namespace ClearHl7.V231.Types
             Prefix = segments.ElementAtOrDefault(5);
             Degree = segments.ElementAtOrDefault(6);
             SourceTable = segments.ElementAtOrDefault(7);
-            AssigningAuthority = segments.Length > 8 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+
+            if (segments.Length > 8)
+            {
+                AssigningAuthority = new HierarchicDesignator { IsSubcomponent = true };
+                AssigningAuthority.FromDelimitedString(segments.ElementAtOrDefault(8));
+            }
+            else
+            {
+                AssigningAuthority = null;
+            }
+
             NameTypeCode = segments.ElementAtOrDefault(9);
             IdentifierCheckDigit = segments.ElementAtOrDefault(10);
             CheckDigitScheme = segments.ElementAtOrDefault(11);
             IdentifierTypeCode = segments.ElementAtOrDefault(12);
-            AssigningFacility = segments.Length > 13 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
+
+            if (segments.Length > 13)
+            {
+                AssigningFacility = new HierarchicDesignator { IsSubcomponent = true };
+                AssigningFacility.FromDelimitedString(segments.ElementAtOrDefault(13));
+            }
+            else
+            {
+                AssigningFacility = null;
+            }
+
             DateTimeActionPerformed = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             NameRepresentationCode = segments.ElementAtOrDefault(15);
-            
-            return this;
         }
 
         /// <summary>

@@ -48,8 +48,7 @@ namespace ClearHl7.V290.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public MessageLocation FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
@@ -60,8 +59,6 @@ namespace ClearHl7.V290.Types
             FieldRepetition = segments.ElementAtOrDefault(3)?.ToNullableUInt();
             ComponentNumber = segments.ElementAtOrDefault(4)?.ToNullableUInt();
             SubComponentNumber = segments.ElementAtOrDefault(5)?.ToNullableUInt();
-
-            return this;
         }
 
         /// <summary>

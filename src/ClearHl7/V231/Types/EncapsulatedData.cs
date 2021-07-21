@@ -45,19 +45,25 @@ namespace ClearHl7.V231.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public EncapsulatedData FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            SourceApplication = segments.Length > 0 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            if (segments.Length > 0)
+            {
+                SourceApplication = new HierarchicDesignator { IsSubcomponent = true };
+                SourceApplication.FromDelimitedString(segments.ElementAtOrDefault(0));
+            }
+            else
+            {
+                SourceApplication = null;
+            }
+
             TypeOfData = segments.ElementAtOrDefault(1);
             DataSubtype = segments.ElementAtOrDefault(2);
             Encoding = segments.ElementAtOrDefault(3);
             Data = segments.ElementAtOrDefault(4);
-
-            return this;
         }
 
         /// <summary>

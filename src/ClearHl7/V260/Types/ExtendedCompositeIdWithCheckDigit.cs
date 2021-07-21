@@ -72,8 +72,7 @@ namespace ClearHl7.V260.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public ExtendedCompositeIdWithCheckDigit FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
@@ -81,15 +80,51 @@ namespace ClearHl7.V260.Types
             IdNumber = segments.ElementAtOrDefault(0);
             IdentifierCheckDigit = segments.ElementAtOrDefault(1);
             CheckDigitScheme = segments.ElementAtOrDefault(2);
-            AssigningAuthority = segments.Length > 3 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+
+            if (segments.Length > 3)
+            {
+                AssigningAuthority = new HierarchicDesignator { IsSubcomponent = true };
+                AssigningAuthority.FromDelimitedString(segments.ElementAtOrDefault(3));
+            }
+            else
+            {
+                AssigningAuthority = null;
+            }
+
             IdentifierTypeCode = segments.ElementAtOrDefault(4);
-            AssigningFacility = segments.Length > 5 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+
+            if (segments.Length > 5)
+            {
+                AssigningFacility = new HierarchicDesignator { IsSubcomponent = true };
+                AssigningFacility.FromDelimitedString(segments.ElementAtOrDefault(5));
+            }
+            else
+            {
+                AssigningFacility = null;
+            }
+
             EffectiveDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
             ExpirationDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            AssigningJurisdiction = segments.Length > 8 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
-            AssigningAgencyOrDepartment = segments.Length > 9 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
 
-            return this;
+            if (segments.Length > 8)
+            {
+                AssigningJurisdiction = new CodedWithExceptions { IsSubcomponent = true };
+                AssigningJurisdiction.FromDelimitedString(segments.ElementAtOrDefault(8));
+            }
+            else
+            {
+                AssigningJurisdiction = null;
+            }
+
+            if (segments.Length > 9)
+            {
+                AssigningAgencyOrDepartment = new CodedWithExceptions { IsSubcomponent = true };
+                AssigningAgencyOrDepartment.FromDelimitedString(segments.ElementAtOrDefault(9));
+            }
+            else
+            {
+                AssigningAgencyOrDepartment = null;
+            }
         }
 
         /// <summary>

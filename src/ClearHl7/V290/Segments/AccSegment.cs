@@ -97,9 +97,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public AccSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -113,20 +112,18 @@ namespace ClearHl7.V290.Segments
             }
 
             AccidentDateTime = segments.ElementAtOrDefault(1)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            AccidentCode = segments.Length > 2 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            AccidentCode = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
             AccidentLocation = segments.ElementAtOrDefault(3);
-            AutoAccidentState = segments.Length > 4 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            AutoAccidentState = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
             AccidentJobRelatedIndicator = segments.ElementAtOrDefault(5);
             AccidentDeathIndicator = segments.ElementAtOrDefault(6);
-            EnteredBy = segments.Length > 7 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
+            EnteredBy = segments.Length > 7 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(7), false) : null;
             AccidentDescription = segments.ElementAtOrDefault(8);
             BroughtInBy = segments.ElementAtOrDefault(9);
             PoliceNotifiedIndicator = segments.ElementAtOrDefault(10);
-            AccidentAddress = segments.Length > 11 ? new ExtendedAddress().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+            AccidentAddress = segments.Length > 11 ? TypeHelper.Deserialize<ExtendedAddress>(segments.ElementAtOrDefault(11), false) : null;
             DegreeOfPatientLiability = segments.ElementAtOrDefault(12)?.ToNullableDecimal();
-            AccidentIdentifier = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => new EntityIdentifier().FromDelimitedString(x)) : null;
-
-            return this;
+            AccidentIdentifier = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
         }
 
         /// <summary>

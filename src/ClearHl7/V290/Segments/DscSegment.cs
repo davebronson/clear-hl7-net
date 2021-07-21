@@ -35,9 +35,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public DscSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
 
@@ -51,8 +50,6 @@ namespace ClearHl7.V290.Segments
 
             ContinuationPointer = segments.ElementAtOrDefault(1);
             ContinuationStyle = segments.ElementAtOrDefault(2);
-            
-            return this;
         }
 
         /// <summary>

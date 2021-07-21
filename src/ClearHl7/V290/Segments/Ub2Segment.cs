@@ -113,9 +113,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public Ub2Segment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -130,12 +129,12 @@ namespace ClearHl7.V290.Segments
 
             SetIdUb2 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
             CoInsuranceDays9 = segments.ElementAtOrDefault(2);
-            ConditionCode24To30 = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            ConditionCode24To30 = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             CoveredDays7 = segments.ElementAtOrDefault(4);
             NonCoveredDays8 = segments.ElementAtOrDefault(5);
-            ValueAmountCode39To41 = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => new ValueCodeAndAmount().FromDelimitedString(x)) : null;
-            OccurrenceCodeDate32To35 = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => new OccurrenceCodeAndDate().FromDelimitedString(x)) : null;
-            OccurrenceSpanCodeDates36 = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => new OccurrenceSpanCodeAndDate().FromDelimitedString(x)) : null;
+            ValueAmountCode39To41 = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<ValueCodeAndAmount>(x, false)) : null;
+            OccurrenceCodeDate32To35 = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<OccurrenceCodeAndDate>(x, false)) : null;
+            OccurrenceSpanCodeDates36 = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => TypeHelper.Deserialize<OccurrenceSpanCodeAndDate>(x, false)) : null;
             UniformBillingLocator2State = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator) : null;
             UniformBillingLocator11State = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator) : null;
             UniformBillingLocator31National = segments.ElementAtOrDefault(11);
@@ -145,8 +144,6 @@ namespace ClearHl7.V290.Segments
             UniformBillingLocator57Sational = segments.ElementAtOrDefault(15);
             UniformBillingLocator78State = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator) : null;
             SpecialVisitCount = segments.ElementAtOrDefault(17)?.ToNullableDecimal();
-            
-            return this;
         }
 
         /// <summary>

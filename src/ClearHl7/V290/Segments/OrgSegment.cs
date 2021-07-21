@@ -102,9 +102,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public OrgSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -118,20 +117,18 @@ namespace ClearHl7.V290.Segments
             }
 
             SetIdOrg = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            OrganizationUnitCode = segments.Length > 2 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            OrganizationUnitTypeCode = segments.Length > 3 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            OrganizationUnitCode = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
+            OrganizationUnitTypeCode = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
             PrimaryOrgUnitIndicator = segments.ElementAtOrDefault(4);
-            PractitionerOrgUnitIdentifier = segments.Length > 5 ? new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
-            HealthCareProviderTypeCode = segments.Length > 6 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
-            HealthCareProviderClassificationCode = segments.Length > 7 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
-            HealthCareProviderAreaOfSpecializationCode = segments.Length > 8 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
-            EffectiveDateRange = segments.Length > 9 ? new DateTimeRange().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
-            EmploymentStatusCode = segments.Length > 10 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
+            PractitionerOrgUnitIdentifier = segments.Length > 5 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(5), false) : null;
+            HealthCareProviderTypeCode = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
+            HealthCareProviderClassificationCode = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(7), false) : null;
+            HealthCareProviderAreaOfSpecializationCode = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
+            EffectiveDateRange = segments.Length > 9 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(9), false) : null;
+            EmploymentStatusCode = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(10), false) : null;
             BoardApprovalIndicator = segments.ElementAtOrDefault(11);
             PrimaryCarePhysicianIndicator = segments.ElementAtOrDefault(12);
-            CostCenterCode = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            
-            return this;
+            CostCenterCode = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
         }
 
         /// <summary>

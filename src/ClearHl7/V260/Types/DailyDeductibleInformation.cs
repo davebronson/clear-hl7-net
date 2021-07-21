@@ -33,17 +33,24 @@ namespace ClearHl7.V260.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public DailyDeductibleInformation FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
             DelayDays = segments.ElementAtOrDefault(0)?.ToNullableDecimal();
-            MonetaryAmount = segments.Length > 1 ? new Money { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            NumberOfDays = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
 
-            return this;
+            if (segments.Length > 1)
+            {
+                MonetaryAmount = new Money { IsSubcomponent = true };
+                MonetaryAmount.FromDelimitedString(segments.ElementAtOrDefault(1));
+            }
+            else
+            {
+                MonetaryAmount = null;
+            }
+
+            NumberOfDays = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
         }
 
         /// <summary>

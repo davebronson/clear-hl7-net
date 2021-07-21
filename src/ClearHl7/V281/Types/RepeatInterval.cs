@@ -28,16 +28,22 @@ namespace ClearHl7.V281.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public RepeatInterval FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            RepeatPattern = segments.Length > 0 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
-            ExplicitTimeInterval = segments.ElementAtOrDefault(1);
+            if (segments.Length > 0)
+            {
+                RepeatPattern = new CodedWithExceptions { IsSubcomponent = true };
+                RepeatPattern.FromDelimitedString(segments.ElementAtOrDefault(0));
+            }
+            else
+            {
+                RepeatPattern = null;
+            }
 
-            return this;
+            ExplicitTimeInterval = segments.ElementAtOrDefault(1);
         }
 
         /// <summary>

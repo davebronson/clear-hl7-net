@@ -34,17 +34,40 @@ namespace ClearHl7.V270.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public JobCodeClass FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            JobCode = segments.Length > 0 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
-            JobClass = segments.Length > 1 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            JobDescriptionText = segments.Length > 2 ? new Text { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            if (segments.Length > 0)
+            {
+                JobCode = new CodedWithExceptions { IsSubcomponent = true };
+                JobCode.FromDelimitedString(segments.ElementAtOrDefault(0));
+            }
+            else
+            {
+                JobCode = null;
+            }
 
-            return this;
+            if (segments.Length > 1)
+            {
+                JobClass = new CodedWithExceptions { IsSubcomponent = true };
+                JobClass.FromDelimitedString(segments.ElementAtOrDefault(1));
+            }
+            else
+            {
+                JobClass = null;
+            }
+
+            if (segments.Length > 2)
+            {
+                JobDescriptionText = new Text { IsSubcomponent = true };
+                JobDescriptionText.FromDelimitedString(segments.ElementAtOrDefault(2));
+            }
+            else
+            {
+                JobDescriptionText = null;
+            }
         }
 
         /// <summary>

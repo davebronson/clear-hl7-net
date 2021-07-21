@@ -38,9 +38,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public RdfSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -54,9 +53,7 @@ namespace ClearHl7.V290.Segments
             }
 
             NumberOfColumnsPerRow = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
-            ColumnDescription = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => new RowColumnDefinition().FromDelimitedString(x)) : null;
-            
-            return this;
+            ColumnDescription = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => TypeHelper.Deserialize<RowColumnDefinition>(x, false)) : null;
         }
 
         /// <summary>

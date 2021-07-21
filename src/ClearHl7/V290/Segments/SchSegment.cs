@@ -170,9 +170,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public SchSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -185,36 +184,34 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
-            PlacerAppointmentId = segments.Length > 1 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            FillerAppointmentId = segments.Length > 2 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            PlacerAppointmentId = segments.Length > 1 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(1), false) : null;
+            FillerAppointmentId = segments.Length > 2 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(2), false) : null;
             OccurrenceNumber = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
-            PlacerGroupNumber = segments.Length > 4 ? new EntityIdentifierPair().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
-            ScheduleId = segments.Length > 5 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
-            EventReason = segments.Length > 6 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
-            AppointmentReason = segments.Length > 7 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
-            AppointmentType = segments.Length > 8 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+            PlacerGroupNumber = segments.Length > 4 ? TypeHelper.Deserialize<EntityIdentifierPair>(segments.ElementAtOrDefault(4), false) : null;
+            ScheduleId = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
+            EventReason = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
+            AppointmentReason = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(7), false) : null;
+            AppointmentType = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
             AppointmentDuration = segments.ElementAtOrDefault(9)?.ToNullableDecimal();
-            AppointmentDurationUnits = segments.Length > 10 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
+            AppointmentDurationUnits = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(10), false) : null;
             AppointmentTimingQuantity = segments.ElementAtOrDefault(11);
-            PlacerContactPerson = segments.Length > 12 ? segments.ElementAtOrDefault(12).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
-            PlacerContactPhoneNumber = segments.Length > 13 ? new ExtendedTelecommunicationNumber().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
-            PlacerContactAddress = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => new ExtendedAddress().FromDelimitedString(x)) : null;
-            PlacerContactLocation = segments.Length > 15 ? new PersonLocation().FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
-            FillerContactPerson = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
-            FillerContactPhoneNumber = segments.Length > 17 ? new ExtendedTelecommunicationNumber().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
-            FillerContactAddress = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => new ExtendedAddress().FromDelimitedString(x)) : null;
-            FillerContactLocation = segments.Length > 19 ? new PersonLocation().FromDelimitedString(segments.ElementAtOrDefault(19)) : null;
-            EnteredByPerson = segments.Length > 20 ? segments.ElementAtOrDefault(20).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
-            EnteredByPhoneNumber = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => new ExtendedTelecommunicationNumber().FromDelimitedString(x)) : null;
-            EnteredByLocation = segments.Length > 22 ? new PersonLocation().FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
-            ParentPlacerAppointmentId = segments.Length > 23 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(23)) : null;
-            ParentFillerAppointmentId = segments.Length > 24 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(24)) : null;
-            FillerStatusCode = segments.Length > 25 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(25)) : null;
-            PlacerOrderNumber = segments.Length > 26 ? segments.ElementAtOrDefault(26).Split(separator).Select(x => new EntityIdentifier().FromDelimitedString(x)) : null;
-            FillerOrderNumber = segments.Length > 27 ? segments.ElementAtOrDefault(27).Split(separator).Select(x => new EntityIdentifier().FromDelimitedString(x)) : null;
-            AlternatePlacerOrderGroupNumber = segments.Length > 28 ? new EntityIdentifierPair().FromDelimitedString(segments.ElementAtOrDefault(28)) : null;
-            
-            return this;
+            PlacerContactPerson = segments.Length > 12 ? segments.ElementAtOrDefault(12).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            PlacerContactPhoneNumber = segments.Length > 13 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments.ElementAtOrDefault(13), false) : null;
+            PlacerContactAddress = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
+            PlacerContactLocation = segments.Length > 15 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(15), false) : null;
+            FillerContactPerson = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            FillerContactPhoneNumber = segments.Length > 17 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments.ElementAtOrDefault(17), false) : null;
+            FillerContactAddress = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
+            FillerContactLocation = segments.Length > 19 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(19), false) : null;
+            EnteredByPerson = segments.Length > 20 ? segments.ElementAtOrDefault(20).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            EnteredByPhoneNumber = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
+            EnteredByLocation = segments.Length > 22 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(22), false) : null;
+            ParentPlacerAppointmentId = segments.Length > 23 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(23), false) : null;
+            ParentFillerAppointmentId = segments.Length > 24 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(24), false) : null;
+            FillerStatusCode = segments.Length > 25 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(25), false) : null;
+            PlacerOrderNumber = segments.Length > 26 ? segments.ElementAtOrDefault(26).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
+            FillerOrderNumber = segments.Length > 27 ? segments.ElementAtOrDefault(27).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
+            AlternatePlacerOrderGroupNumber = segments.Length > 28 ? TypeHelper.Deserialize<EntityIdentifierPair>(segments.ElementAtOrDefault(28), false) : null;
         }
 
         /// <summary>

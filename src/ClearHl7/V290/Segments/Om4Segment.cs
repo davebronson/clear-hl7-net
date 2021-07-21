@@ -124,9 +124,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public Om4Segment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -141,24 +140,22 @@ namespace ClearHl7.V290.Segments
 
             SequenceNumberTestObservationMasterFile = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
             DerivedSpecimen = segments.ElementAtOrDefault(2);
-            ContainerDescription = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => new Text().FromDelimitedString(x)) : null;
+            ContainerDescription = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<Text>(x, false)) : null;
             ContainerVolume = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => x.ToDecimal()) : null;
-            ContainerUnits = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            Specimen = segments.Length > 6 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
-            Additive = segments.Length > 7 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
-            Preparation = segments.Length > 8 ? new Text().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
-            SpecialHandlingRequirements = segments.Length > 9 ? new Text().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
-            NormalCollectionVolume = segments.Length > 10 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
-            MinimumCollectionVolume = segments.Length > 11 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
-            SpecimenRequirements = segments.Length > 12 ? new Text().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
+            ContainerUnits = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            Specimen = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
+            Additive = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(7), false) : null;
+            Preparation = segments.Length > 8 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(8), false) : null;
+            SpecialHandlingRequirements = segments.Length > 9 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(9), false) : null;
+            NormalCollectionVolume = segments.Length > 10 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(10), false) : null;
+            MinimumCollectionVolume = segments.Length > 11 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(11), false) : null;
+            SpecimenRequirements = segments.Length > 12 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(12), false) : null;
             SpecimenPriorities = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator) : null;
-            SpecimenRetentionTime = segments.Length > 14 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
-            SpecimenHandlingCode = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            SpecimenRetentionTime = segments.Length > 14 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(14), false) : null;
+            SpecimenHandlingCode = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             SpecimenPreference = segments.ElementAtOrDefault(16);
             PreferredSpecimenAttribtureSequenceId = segments.ElementAtOrDefault(17)?.ToNullableDecimal();
-            TaxonomicClassificationCode = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            
-            return this;
+            TaxonomicClassificationCode = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
         }
 
         /// <summary>

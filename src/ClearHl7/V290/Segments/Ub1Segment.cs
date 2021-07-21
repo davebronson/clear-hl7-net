@@ -142,9 +142,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public Ub1Segment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -166,22 +165,20 @@ namespace ClearHl7.V290.Segments
             ConditionCode = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator) : null;
             CoveredDays = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
             NonCoveredDays = segments.ElementAtOrDefault(9)?.ToNullableDecimal();
-            ValueAmountCode = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => new ValueCodeAndAmount().FromDelimitedString(x)) : null;
+            ValueAmountCode = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<ValueCodeAndAmount>(x, false)) : null;
             NumberOfGraceDays = segments.ElementAtOrDefault(11)?.ToNullableDecimal();
-            SpecialProgramIndicator = segments.Length > 12 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
-            PsroUrApprovalIndicator = segments.Length > 13 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
+            SpecialProgramIndicator = segments.Length > 12 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(12), false) : null;
+            PsroUrApprovalIndicator = segments.Length > 13 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(13), false) : null;
             PsroUrApprovedStayFm = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
             PsroUrApprovedStayTo = segments.ElementAtOrDefault(15)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            Occurrence = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => new OccurrenceCodeAndDate().FromDelimitedString(x)) : null;
-            OccurrenceSpan = segments.Length > 17 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
+            Occurrence = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<OccurrenceCodeAndDate>(x, false)) : null;
+            OccurrenceSpan = segments.Length > 17 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(17), false) : null;
             OccurSpanStartDate = segments.ElementAtOrDefault(18)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
             OccurSpanEndDate = segments.ElementAtOrDefault(19)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
             Ub82Locator2 = segments.ElementAtOrDefault(20);
             Ub82Locator9 = segments.ElementAtOrDefault(21);
             Ub82Locator27 = segments.ElementAtOrDefault(22);
             Ub82Locator45 = segments.ElementAtOrDefault(23);
-            
-            return this;
         }
 
         /// <summary>

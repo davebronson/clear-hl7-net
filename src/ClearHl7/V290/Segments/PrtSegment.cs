@@ -152,9 +152,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public PrtSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -167,32 +166,30 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
-            ParticipationInstanceId = segments.Length > 1 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            ParticipationInstanceId = segments.Length > 1 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(1), false) : null;
             ActionCode = segments.ElementAtOrDefault(2);
-            ActionReason = segments.Length > 3 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
-            Participation = segments.Length > 4 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
-            ParticipationPerson = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
-            ParticipationPersonProviderType = segments.Length > 6 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
-            ParticipantOrganizationUnitType = segments.Length > 7 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
-            ParticipationOrganization = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(x)) : null;
-            ParticipantLocation = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => new PersonLocation().FromDelimitedString(x)) : null;
-            ParticipationDevice = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => new EntityIdentifier().FromDelimitedString(x)) : null;
+            ActionReason = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
+            Participation = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
+            ParticipationPerson = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            ParticipationPersonProviderType = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
+            ParticipantOrganizationUnitType = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(7), false) : null;
+            ParticipationOrganization = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
+            ParticipantLocation = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<PersonLocation>(x, false)) : null;
+            ParticipationDevice = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
             ParticipationBeginDateTimeArrivalTime = segments.ElementAtOrDefault(11)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             ParticipationEndDateTimeDepartureTime = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ParticipationQualitativeDuration = segments.Length > 13 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
-            ParticipationAddress = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => new ExtendedAddress().FromDelimitedString(x)) : null;
-            ParticipantTelecommunicationAddress = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => new ExtendedTelecommunicationNumber().FromDelimitedString(x)) : null;
-            ParticipantDeviceIdentifier = segments.Length > 16 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
+            ParticipationQualitativeDuration = segments.Length > 13 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(13), false) : null;
+            ParticipationAddress = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
+            ParticipantTelecommunicationAddress = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
+            ParticipantDeviceIdentifier = segments.Length > 16 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(16), false) : null;
             ParticipantDeviceManufactureDate = segments.ElementAtOrDefault(17)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             ParticipantDeviceExpiryDate = segments.ElementAtOrDefault(18)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             ParticipantDeviceLotNumber = segments.ElementAtOrDefault(19);
             ParticipantDeviceSerialNumber = segments.ElementAtOrDefault(20);
-            ParticipantDeviceDonationIdentification = segments.Length > 21 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
-            ParticipationDeviceType = segments.Length > 22 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
-            PreferredMethodOfContact = segments.Length > 23 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(23)) : null;
-            ContactIdentifiers = segments.Length > 24 ? segments.ElementAtOrDefault(24).Split(separator).Select(x => new PractitionerLicenseOrOtherIdNumber().FromDelimitedString(x)) : null;
-            
-            return this;
+            ParticipantDeviceDonationIdentification = segments.Length > 21 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(21), false) : null;
+            ParticipationDeviceType = segments.Length > 22 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(22), false) : null;
+            PreferredMethodOfContact = segments.Length > 23 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(23), false) : null;
+            ContactIdentifiers = segments.Length > 24 ? segments.ElementAtOrDefault(24).Split(separator).Select(x => TypeHelper.Deserialize<PractitionerLicenseOrOtherIdNumber>(x, false)) : null;
         }
 
         /// <summary>

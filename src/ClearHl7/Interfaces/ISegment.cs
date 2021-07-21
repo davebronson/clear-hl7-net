@@ -15,6 +15,13 @@
         /// </summary>
         int Ordinal { get; }
 
+        ///// <summary>
+        ///// Initializes properties of this instance with values parsed from the given delimited string.
+        ///// </summary>
+        ///// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        ///// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        //void FromDelimitedString(string delimitedString);
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>

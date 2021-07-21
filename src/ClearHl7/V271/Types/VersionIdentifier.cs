@@ -34,17 +34,32 @@ namespace ClearHl7.V271.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public VersionIdentifier FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
             VersionId = segments.ElementAtOrDefault(0);
-            InternationalizationCode = segments.Length > 1 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            InternationalVersionId = segments.Length > 2 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
 
-            return this;
+            if (segments.Length > 1)
+            {
+                InternationalizationCode = new CodedWithExceptions { IsSubcomponent = true };
+                InternationalizationCode.FromDelimitedString(segments.ElementAtOrDefault(1));
+            }
+            else
+            {
+                InternationalizationCode = null;
+            }
+
+            if (segments.Length > 2)
+            {
+                InternationalVersionId = new CodedWithExceptions { IsSubcomponent = true };
+                InternationalVersionId.FromDelimitedString(segments.ElementAtOrDefault(2));
+            }
+            else
+            {
+                InternationalVersionId = null;
+            }
         }
 
         /// <summary>

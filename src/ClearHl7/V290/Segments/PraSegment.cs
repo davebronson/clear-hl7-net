@@ -95,9 +95,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public PraSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -110,20 +109,18 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
-            PrimaryKeyValuePra = segments.Length > 1 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            PractitionerGroup = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            PractitionerCategory = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            PrimaryKeyValuePra = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
+            PractitionerGroup = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            PractitionerCategory = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             ProviderBilling = segments.ElementAtOrDefault(4);
-            Specialty = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => new SpecialtyDescription().FromDelimitedString(x)) : null;
-            PractitionerIdNumbers = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => new PractitionerLicenseOrOtherIdNumber().FromDelimitedString(x)) : null;
-            Privileges = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => new PractitionerInstitutionalPrivileges().FromDelimitedString(x)) : null;
+            Specialty = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<SpecialtyDescription>(x, false)) : null;
+            PractitionerIdNumbers = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<PractitionerLicenseOrOtherIdNumber>(x, false)) : null;
+            Privileges = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<PractitionerInstitutionalPrivileges>(x, false)) : null;
             DateEnteredPractice = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            Institution = segments.Length > 9 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            Institution = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), false) : null;
             DateLeftPractice = segments.ElementAtOrDefault(10)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            GovernmentReimbursementBillingEligibility = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            GovernmentReimbursementBillingEligibility = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             SetIdPra = segments.ElementAtOrDefault(12)?.ToNullableUInt();
-            
-            return this;
         }
 
         /// <summary>

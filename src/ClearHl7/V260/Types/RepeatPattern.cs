@@ -77,13 +77,21 @@ namespace ClearHl7.V260.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public RepeatPattern FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            RepeatPatternCode = segments.Length > 0 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            if (segments.Length > 0)
+            {
+                RepeatPatternCode = new CodedWithExceptions { IsSubcomponent = true };
+                RepeatPatternCode.FromDelimitedString(segments.ElementAtOrDefault(0));
+            }
+            else
+            {
+                RepeatPatternCode = null;
+            }
+
             CalendarAlignment = segments.ElementAtOrDefault(1);
             PhaseRangeBeginValue = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
             PhaseRangeEndValue = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
@@ -94,8 +102,6 @@ namespace ClearHl7.V260.Types
             EventOffsetQuantity = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
             EventOffsetUnits = segments.ElementAtOrDefault(9);
             GeneralTimingSpecification = segments.ElementAtOrDefault(10);
-
-            return this;
         }
 
         /// <summary>

@@ -39,8 +39,7 @@ namespace ClearHl7.V271.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public QuerySelectionCriteria FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
@@ -49,8 +48,6 @@ namespace ClearHl7.V271.Types
             RelationalOperator = segments.ElementAtOrDefault(1);
             Value = segments.ElementAtOrDefault(2);
             RelationalConjunction = segments.ElementAtOrDefault(3);
-
-            return this;
         }
 
         /// <summary>

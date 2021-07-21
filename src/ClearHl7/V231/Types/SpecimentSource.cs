@@ -53,21 +53,80 @@ namespace ClearHl7.V231.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public SpecimentSource FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            SpecimenSourceNameOrCode = segments.Length > 0 ? new CodedElement { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
-            Additives = segments.Length > 1 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            SpecimenCollectionMethod = segments.Length > 2 ? new Text { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            BodySite = segments.Length > 3 ? new CodedElement { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
-            SiteModifier = segments.Length > 4 ? new CodedElement { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
-            CollectionMethodModifierCode = segments.Length > 5 ? new CodedElement { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
-            SpecimenRole = segments.Length > 6 ? new CodedElement { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            if (segments.Length > 0)
+            {
+                SpecimenSourceNameOrCode = new CodedElement { IsSubcomponent = true };
+                SpecimenSourceNameOrCode.FromDelimitedString(segments.ElementAtOrDefault(0));
+            }
+            else
+            {
+                SpecimenSourceNameOrCode = null;
+            }
 
-            return this;
+            if (segments.Length > 1)
+            {
+                Additives = new CodedWithExceptions { IsSubcomponent = true };
+                Additives.FromDelimitedString(segments.ElementAtOrDefault(1));
+            }
+            else
+            {
+                Additives = null;
+            }
+
+            if (segments.Length > 2)
+            {
+                SpecimenCollectionMethod = new Text { IsSubcomponent = true };
+                SpecimenCollectionMethod.FromDelimitedString(segments.ElementAtOrDefault(2));
+            }
+            else
+            {
+                SpecimenCollectionMethod = null;
+            }
+
+            if (segments.Length > 3)
+            {
+                BodySite = new CodedElement { IsSubcomponent = true };
+                BodySite.FromDelimitedString(segments.ElementAtOrDefault(3));
+            }
+            else
+            {
+                BodySite = null;
+            }
+
+            if (segments.Length > 4)
+            {
+                SiteModifier = new CodedElement { IsSubcomponent = true };
+                SiteModifier.FromDelimitedString(segments.ElementAtOrDefault(4));
+            }
+            else
+            {
+                SiteModifier = null;
+            }
+
+            if (segments.Length > 5)
+            {
+                CollectionMethodModifierCode = new CodedElement { IsSubcomponent = true };
+                CollectionMethodModifierCode.FromDelimitedString(segments.ElementAtOrDefault(5));
+            }
+            else
+            {
+                CollectionMethodModifierCode = null;
+            }
+
+            if (segments.Length > 6)
+            {
+                SpecimenRole = new CodedElement { IsSubcomponent = true };
+                SpecimenRole.FromDelimitedString(segments.ElementAtOrDefault(6));
+            }
+            else
+            {
+                SpecimenRole = null;
+            }
         }
 
         /// <summary>

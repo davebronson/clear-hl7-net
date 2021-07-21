@@ -38,8 +38,7 @@ namespace ClearHl7.V250.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public StructuredNumeric FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
@@ -48,8 +47,6 @@ namespace ClearHl7.V250.Types
             Num1 = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
             SeparatorSuffix = segments.ElementAtOrDefault(2);
             Num2 = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
-
-            return this;
         }
 
         /// <summary>

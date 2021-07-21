@@ -92,9 +92,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public ErrSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -108,19 +107,17 @@ namespace ClearHl7.V290.Segments
             }
 
             ErrorCodeAndLocation = segments.ElementAtOrDefault(1);
-            ErrorLocation = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => new MessageLocation().FromDelimitedString(x)) : null;
-            Hl7ErrorCode = segments.Length > 3 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            ErrorLocation = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => TypeHelper.Deserialize<MessageLocation>(x, false)) : null;
+            Hl7ErrorCode = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
             Severity = segments.ElementAtOrDefault(4);
-            ApplicationErrorCode = segments.Length > 5 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            ApplicationErrorCode = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
             ApplicationErrorParameter = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator) : null;
-            DiagnosticInformation = segments.Length > 7 ? new Text().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
-            UserMessage = segments.Length > 8 ? new Text().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
-            InformPersonIndicator = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            OverrideType = segments.Length > 10 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
-            OverrideReasonCode = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            HelpDeskContactPoint = segments.Length > 12 ? segments.ElementAtOrDefault(12).Split(separator).Select(x => new ExtendedTelecommunicationNumber().FromDelimitedString(x)) : null;
-            
-            return this;
+            DiagnosticInformation = segments.Length > 7 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(7), false) : null;
+            UserMessage = segments.Length > 8 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(8), false) : null;
+            InformPersonIndicator = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            OverrideType = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(10), false) : null;
+            OverrideReasonCode = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            HelpDeskContactPoint = segments.Length > 12 ? segments.ElementAtOrDefault(12).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
         }
 
         /// <summary>

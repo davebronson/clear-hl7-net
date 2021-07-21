@@ -79,9 +79,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public Om2Segment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -95,17 +94,15 @@ namespace ClearHl7.V290.Segments
             }
 
             SequenceNumberTestObservationMasterFile = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
-            UnitsOfMeasure = segments.Length > 2 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            UnitsOfMeasure = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
             RangeOfDecimalPrecision = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => x.ToDecimal()) : null;
-            CorrespondingSiUnitsOfMeasure = segments.Length > 4 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
-            SiConversionFactor = segments.Length > 5 ? new Text().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
-            ReferenceNormalRangeForOrdinalAndContinuousObservations = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => new ReferenceRange().FromDelimitedString(x)) : null;
-            CriticalRangeForOrdinalAndContinuousObservations = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => new ReferenceRange().FromDelimitedString(x)) : null;
-            AbsoluteRangeForOrdinalAndContinuousObservations = segments.Length > 8 ? new ReferenceRange().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
-            DeltaCheckCriteria = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => new Delta().FromDelimitedString(x)) : null;
+            CorrespondingSiUnitsOfMeasure = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
+            SiConversionFactor = segments.Length > 5 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(5), false) : null;
+            ReferenceNormalRangeForOrdinalAndContinuousObservations = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<ReferenceRange>(x, false)) : null;
+            CriticalRangeForOrdinalAndContinuousObservations = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<ReferenceRange>(x, false)) : null;
+            AbsoluteRangeForOrdinalAndContinuousObservations = segments.Length > 8 ? TypeHelper.Deserialize<ReferenceRange>(segments.ElementAtOrDefault(8), false) : null;
+            DeltaCheckCriteria = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<Delta>(x, false)) : null;
             MinimumMeaningfulIncrements = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
-            
-            return this;
         }
 
         /// <summary>

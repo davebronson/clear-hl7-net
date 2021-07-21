@@ -322,9 +322,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public Ft1Segment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -338,63 +337,61 @@ namespace ClearHl7.V290.Segments
             }
 
             SetIdFt1 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            TransactionId = segments.Length > 2 ? new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            TransactionId = segments.Length > 2 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(2), false) : null;
             TransactionBatchId = segments.ElementAtOrDefault(3);
-            TransactionDate = segments.Length > 4 ? new DateTimeRange().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            TransactionDate = segments.Length > 4 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(4), false) : null;
             TransactionPostingDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            TransactionType = segments.Length > 6 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
-            TransactionCode = segments.Length > 7 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
+            TransactionType = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
+            TransactionCode = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(7), false) : null;
             TransactionDescription = segments.ElementAtOrDefault(8);
             TransactionDescriptionAlt = segments.ElementAtOrDefault(9);
             TransactionQuantity = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
-            TransactionAmountExtended = segments.Length > 11 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
-            TransactionAmountUnit = segments.Length > 12 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
-            DepartmentCode = segments.Length > 13 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
-            HealthPlanId = segments.Length > 14 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
-            InsuranceAmount = segments.Length > 15 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
-            AssignedPatientLocation = segments.Length > 16 ? new PersonLocation().FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
-            FeeSchedule = segments.Length > 17 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
-            PatientType = segments.Length > 18 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(18)) : null;
-            DiagnosisCodeFt1 = segments.Length > 19 ? segments.ElementAtOrDefault(19).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            PerformedByCode = segments.Length > 20 ? segments.ElementAtOrDefault(20).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
-            OrderedByCode = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
-            UnitCost = segments.Length > 22 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
-            FillerOrderNumber = segments.Length > 23 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(23)) : null;
-            EnteredByCode = segments.Length > 24 ? segments.ElementAtOrDefault(24).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
-            ProcedureCode = segments.Length > 25 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(25)) : null;
-            ProcedureCodeModifier = segments.Length > 26 ? segments.ElementAtOrDefault(26).Split(separator).Select(x => new CodedWithNoExceptions().FromDelimitedString(x)) : null;
-            AdvancedBeneficiaryNoticeCode = segments.Length > 27 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(27)) : null;
-            MedicallyNecessaryDuplicateProcedureReason = segments.Length > 28 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(28)) : null;
-            NdcCode = segments.Length > 29 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(29)) : null;
-            PaymentReferenceId = segments.Length > 30 ? new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(segments.ElementAtOrDefault(30)) : null;
+            TransactionAmountExtended = segments.Length > 11 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(11), false) : null;
+            TransactionAmountUnit = segments.Length > 12 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(12), false) : null;
+            DepartmentCode = segments.Length > 13 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(13), false) : null;
+            HealthPlanId = segments.Length > 14 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(14), false) : null;
+            InsuranceAmount = segments.Length > 15 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(15), false) : null;
+            AssignedPatientLocation = segments.Length > 16 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(16), false) : null;
+            FeeSchedule = segments.Length > 17 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(17), false) : null;
+            PatientType = segments.Length > 18 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(18), false) : null;
+            DiagnosisCodeFt1 = segments.Length > 19 ? segments.ElementAtOrDefault(19).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            PerformedByCode = segments.Length > 20 ? segments.ElementAtOrDefault(20).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            OrderedByCode = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            UnitCost = segments.Length > 22 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(22), false) : null;
+            FillerOrderNumber = segments.Length > 23 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(23), false) : null;
+            EnteredByCode = segments.Length > 24 ? segments.ElementAtOrDefault(24).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            ProcedureCode = segments.Length > 25 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(25), false) : null;
+            ProcedureCodeModifier = segments.Length > 26 ? segments.ElementAtOrDefault(26).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithNoExceptions>(x, false)) : null;
+            AdvancedBeneficiaryNoticeCode = segments.Length > 27 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(27), false) : null;
+            MedicallyNecessaryDuplicateProcedureReason = segments.Length > 28 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(28), false) : null;
+            NdcCode = segments.Length > 29 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(29), false) : null;
+            PaymentReferenceId = segments.Length > 30 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(30), false) : null;
             TransactionReferenceKey = segments.Length > 31 ? segments.ElementAtOrDefault(31).Split(separator).Select(x => x.ToUInt()) : null;
-            PerformingFacility = segments.Length > 32 ? segments.ElementAtOrDefault(32).Split(separator).Select(x => new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(x)) : null;
-            OrderingFacility = segments.Length > 33 ? new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(segments.ElementAtOrDefault(33)) : null;
-            ItemNumber = segments.Length > 34 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(34)) : null;
+            PerformingFacility = segments.Length > 32 ? segments.ElementAtOrDefault(32).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
+            OrderingFacility = segments.Length > 33 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(33), false) : null;
+            ItemNumber = segments.Length > 34 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(34), false) : null;
             ModelNumber = segments.ElementAtOrDefault(35);
-            SpecialProcessingCode = segments.Length > 36 ? segments.ElementAtOrDefault(36).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            ClinicCode = segments.Length > 37 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(37)) : null;
-            ReferralNumber = segments.Length > 38 ? new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(segments.ElementAtOrDefault(38)) : null;
-            AuthorizationNumber = segments.Length > 39 ? new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(segments.ElementAtOrDefault(39)) : null;
-            ServiceProviderTaxonomyCode = segments.Length > 40 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(40)) : null;
-            RevenueCode = segments.Length > 41 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(41)) : null;
+            SpecialProcessingCode = segments.Length > 36 ? segments.ElementAtOrDefault(36).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            ClinicCode = segments.Length > 37 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(37), false) : null;
+            ReferralNumber = segments.Length > 38 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(38), false) : null;
+            AuthorizationNumber = segments.Length > 39 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(39), false) : null;
+            ServiceProviderTaxonomyCode = segments.Length > 40 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(40), false) : null;
+            RevenueCode = segments.Length > 41 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(41), false) : null;
             PrescriptionNumber = segments.ElementAtOrDefault(42);
-            NdcQtyAndUom = segments.Length > 43 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(43)) : null;
-            DmeCertificateOfMedicalNecessityTransmissionCode = segments.Length > 44 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(44)) : null;
-            DmeCertificationTypeCode = segments.Length > 45 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(45)) : null;
+            NdcQtyAndUom = segments.Length > 43 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(43), false) : null;
+            DmeCertificateOfMedicalNecessityTransmissionCode = segments.Length > 44 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(44), false) : null;
+            DmeCertificationTypeCode = segments.Length > 45 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(45), false) : null;
             DmeDurationValue = segments.ElementAtOrDefault(46)?.ToNullableDecimal();
             DmeCertificationRevisionDate = segments.ElementAtOrDefault(47)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
             DmeInitialCertificationDate = segments.ElementAtOrDefault(48)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
             DmeLastCertificationDate = segments.ElementAtOrDefault(49)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
             DmeLengthOfMedicalNecessityDays = segments.ElementAtOrDefault(50)?.ToNullableDecimal();
-            DmeRentalPrice = segments.Length > 51 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(51)) : null;
-            DmePurchasePrice = segments.Length > 52 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(52)) : null;
-            DmeFrequencyCode = segments.Length > 53 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(53)) : null;
+            DmeRentalPrice = segments.Length > 51 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(51), false) : null;
+            DmePurchasePrice = segments.Length > 52 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(52), false) : null;
+            DmeFrequencyCode = segments.Length > 53 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(53), false) : null;
             DmeCertificationConditionIndicator = segments.ElementAtOrDefault(54);
-            DmeConditionIndicatorCode = segments.Length > 55 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            ServiceReasonCode = segments.Length > 56 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(56)) : null;
-
-            return this;
+            DmeConditionIndicatorCode = segments.Length > 55 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            ServiceReasonCode = segments.Length > 56 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(56), false) : null;
         }
 
         /// <summary>

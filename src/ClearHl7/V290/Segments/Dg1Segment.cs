@@ -172,9 +172,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public Dg1Segment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -189,32 +188,30 @@ namespace ClearHl7.V290.Segments
 
             SetIdDg1 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
             DiagnosisCodingMethod = segments.ElementAtOrDefault(2);
-            DiagnosisCodeDg1 = segments.Length > 3 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            DiagnosisCodeDg1 = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
             DiagnosisDescription = segments.ElementAtOrDefault(4);
             DiagnosisDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            DiagnosisType = segments.Length > 6 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
-            MajorDiagnosticCategory = segments.Length > 7 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
-            DiagnosticRelatedGroup = segments.Length > 8 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+            DiagnosisType = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
+            MajorDiagnosticCategory = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(7), false) : null;
+            DiagnosticRelatedGroup = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(8), false) : null;
             DrgApprovalIndicator = segments.ElementAtOrDefault(9);
-            DrgGrouperReviewCode = segments.Length > 10 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
-            OutlierType = segments.Length > 11 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+            DrgGrouperReviewCode = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(10), false) : null;
+            OutlierType = segments.Length > 11 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(11), false) : null;
             OutlierDays = segments.ElementAtOrDefault(12)?.ToNullableDecimal();
-            OutlierCost = segments.Length > 13 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
+            OutlierCost = segments.Length > 13 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(13), false) : null;
             GrouperVersionAndType = segments.ElementAtOrDefault(14);
             DiagnosisPriority = segments.ElementAtOrDefault(15)?.ToNullableDecimal();
-            DiagnosingClinician = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
-            DiagnosisClassification = segments.Length > 17 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
+            DiagnosingClinician = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            DiagnosisClassification = segments.Length > 17 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(17), false) : null;
             ConfidentialIndicator = segments.ElementAtOrDefault(18);
             AttestationDateTime = segments.ElementAtOrDefault(19)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            DiagnosisIdentifier = segments.Length > 20 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(20)) : null;
+            DiagnosisIdentifier = segments.Length > 20 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(20), false) : null;
             DiagnosisActionCode = segments.ElementAtOrDefault(21);
-            ParentDiagnosis = segments.Length > 22 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
-            DrgCclValueCode = segments.Length > 23 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(23)) : null;
+            ParentDiagnosis = segments.Length > 22 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(22), false) : null;
+            DrgCclValueCode = segments.Length > 23 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(23), false) : null;
             DrgGroupingUsage = segments.ElementAtOrDefault(24);
-            DrgDiagnosisDeterminationStatus = segments.Length > 25 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(25)) : null;
-            PresentOnAdmissionPoaIndicator = segments.Length > 26 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(26)) : null;
-
-            return this;
+            DrgDiagnosisDeterminationStatus = segments.Length > 25 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(25), false) : null;
+            PresentOnAdmissionPoaIndicator = segments.Length > 26 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(26), false) : null;
         }
 
         /// <summary>

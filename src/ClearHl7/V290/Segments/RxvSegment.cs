@@ -144,9 +144,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public RxvSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
 
@@ -161,27 +160,25 @@ namespace ClearHl7.V290.Segments
             SetIdRxv = segments.ElementAtOrDefault(1)?.ToNullableUInt();
             BolusType = segments.ElementAtOrDefault(2);
             BolusDoseAmount = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
-            BolusDoseAmountUnits = segments.Length > 4 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            BolusDoseAmountUnits = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
             BolusDoseVolume = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
-            BolusDoseVolumeUnits = segments.Length > 6 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            BolusDoseVolumeUnits = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
             PcaType = segments.ElementAtOrDefault(7);
             PcaDoseAmount = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
-            PcaDoseAmountUnits = segments.Length > 9 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            PcaDoseAmountUnits = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), false) : null;
             PcaDoseAmountVolume = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
-            PcaDoseAmountVolumeUnits = segments.Length > 11 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+            PcaDoseAmountVolumeUnits = segments.Length > 11 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(11), false) : null;
             MaxDoseAmount = segments.ElementAtOrDefault(12)?.ToNullableDecimal();
-            MaxDoseAmountUnits = segments.Length > 13 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
+            MaxDoseAmountUnits = segments.Length > 13 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(13), false) : null;
             MaxDoseAmountVolume = segments.ElementAtOrDefault(14)?.ToNullableDecimal();
-            MaxDoseAmountVolumeUnits = segments.Length > 15 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
-            MaxDosePerTime = segments.Length > 16 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
-            LockoutInterval = segments.Length > 17 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
-            SyringeManufacturer = segments.Length > 18 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(18)) : null;
-            SyringeModelNumber = segments.Length > 19 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(19)) : null;
+            MaxDoseAmountVolumeUnits = segments.Length > 15 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(15), false) : null;
+            MaxDosePerTime = segments.Length > 16 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(16), false) : null;
+            LockoutInterval = segments.Length > 17 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(17), false) : null;
+            SyringeManufacturer = segments.Length > 18 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(18), false) : null;
+            SyringeModelNumber = segments.Length > 19 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(19), false) : null;
             SyringeSize = segments.ElementAtOrDefault(20)?.ToNullableDecimal();
-            SyringeSizeUnits = segments.Length > 21 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
+            SyringeSizeUnits = segments.Length > 21 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(21), false) : null;
             ActionCode = segments.ElementAtOrDefault(22);
-            
-            return this;
         }
 
         /// <summary>

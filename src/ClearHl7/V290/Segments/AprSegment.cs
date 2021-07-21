@@ -55,9 +55,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public AprSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -70,13 +69,11 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
-            TimeSelectionCriteria = segments.Length > 1 ? segments.ElementAtOrDefault(1).Split(separator).Select(x => new SchedulingClassValuePair().FromDelimitedString(x)) : null;
-            ResourceSelectionCriteria = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => new SchedulingClassValuePair().FromDelimitedString(x)) : null;
-            LocationSelectionCriteria = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => new SchedulingClassValuePair().FromDelimitedString(x)) : null;
+            TimeSelectionCriteria = segments.Length > 1 ? segments.ElementAtOrDefault(1).Split(separator).Select(x => TypeHelper.Deserialize<SchedulingClassValuePair>(x, false)) : null;
+            ResourceSelectionCriteria = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => TypeHelper.Deserialize<SchedulingClassValuePair>(x, false)) : null;
+            LocationSelectionCriteria = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<SchedulingClassValuePair>(x, false)) : null;
             SlotSpacingCriteria = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
-            FillerOverrideCriteria = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => new SchedulingClassValuePair().FromDelimitedString(x)) : null;
-
-            return this;
+            FillerOverrideCriteria = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<SchedulingClassValuePair>(x, false)) : null;
         }
 
         /// <summary>

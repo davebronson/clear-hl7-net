@@ -67,9 +67,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public RcpSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -83,14 +82,12 @@ namespace ClearHl7.V290.Segments
             }
 
             QueryPriority = segments.ElementAtOrDefault(1);
-            QuantityLimitedRequest = segments.Length > 2 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            ResponseModality = segments.Length > 3 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            QuantityLimitedRequest = segments.Length > 2 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(2), false) : null;
+            ResponseModality = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(3), false) : null;
             ExecutionAndDeliveryTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             ModifyIndicator = segments.ElementAtOrDefault(5);
-            SortByField = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => new SortOrder().FromDelimitedString(x)) : null;
+            SortByField = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<SortOrder>(x, false)) : null;
             SegmentGroupInclusion = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator) : null;
-            
-            return this;
         }
 
         /// <summary>

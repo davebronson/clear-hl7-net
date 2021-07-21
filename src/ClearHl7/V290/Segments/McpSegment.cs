@@ -51,9 +51,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public McpSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
 
@@ -66,12 +65,10 @@ namespace ClearHl7.V290.Segments
             }
 
             SetIdMcp = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            ProducersServiceTestObservationId = segments.Length > 2 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            UniversalServicePriceRangeLowValue = segments.Length > 3 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
-            UniversalServicePriceRangeHighValue = segments.Length > 4 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            ProducersServiceTestObservationId = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
+            UniversalServicePriceRangeLowValue = segments.Length > 3 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(3), false) : null;
+            UniversalServicePriceRangeHighValue = segments.Length > 4 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(4), false) : null;
             ReasonForUniversalServiceCostRange = segments.ElementAtOrDefault(5);
-            
-            return this;
         }
 
         /// <summary>

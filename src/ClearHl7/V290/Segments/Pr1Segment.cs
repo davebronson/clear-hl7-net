@@ -165,9 +165,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public Pr1Segment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -182,31 +181,29 @@ namespace ClearHl7.V290.Segments
 
             SetIdPr1 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
             ProcedureCodingMethod = segments.ElementAtOrDefault(2);
-            ProcedureCode = segments.Length > 3 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            ProcedureCode = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(3), false) : null;
             ProcedureDescription = segments.ElementAtOrDefault(4);
             ProcedureDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ProcedureFunctionalType = segments.Length > 6 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            ProcedureFunctionalType = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
             ProcedureMinutes = segments.ElementAtOrDefault(7)?.ToNullableDecimal();
-            Anesthesiologist = segments.Length > 8 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
-            AnesthesiaCode = segments.Length > 9 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            Anesthesiologist = segments.Length > 8 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(8), false) : null;
+            AnesthesiaCode = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), false) : null;
             AnesthesiaMinutes = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
-            Surgeon = segments.Length > 11 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
-            ProcedurePractitioner = segments.Length > 12 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
-            ConsentCode = segments.Length > 13 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
+            Surgeon = segments.Length > 11 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(11), false) : null;
+            ProcedurePractitioner = segments.Length > 12 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(12), false) : null;
+            ConsentCode = segments.Length > 13 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(13), false) : null;
             ProcedurePriority = segments.ElementAtOrDefault(14)?.ToNullableDecimal();
-            AssociatedDiagnosisCode = segments.Length > 15 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
-            ProcedureCodeModifier = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => new CodedWithNoExceptions().FromDelimitedString(x)) : null;
-            ProcedureDrgType = segments.Length > 17 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
-            TissueTypeCode = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            ProcedureIdentifier = segments.Length > 19 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(19)) : null;
+            AssociatedDiagnosisCode = segments.Length > 15 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(15), false) : null;
+            ProcedureCodeModifier = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithNoExceptions>(x, false)) : null;
+            ProcedureDrgType = segments.Length > 17 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(17), false) : null;
+            TissueTypeCode = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            ProcedureIdentifier = segments.Length > 19 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(19), false) : null;
             ProcedureActionCode = segments.ElementAtOrDefault(20);
-            DrgProcedureDeterminationStatus = segments.Length > 21 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
-            DrgProcedureRelevance = segments.Length > 22 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
-            TreatingOrganizationalUnit = segments.Length > 23 ? segments.ElementAtOrDefault(23).Split(separator).Select(x => new PersonLocation().FromDelimitedString(x)) : null;
+            DrgProcedureDeterminationStatus = segments.Length > 21 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(21), false) : null;
+            DrgProcedureRelevance = segments.Length > 22 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(22), false) : null;
+            TreatingOrganizationalUnit = segments.Length > 23 ? segments.ElementAtOrDefault(23).Split(separator).Select(x => TypeHelper.Deserialize<PersonLocation>(x, false)) : null;
             RespiratoryWithinSurgery = segments.ElementAtOrDefault(24);
-            ParentProcedureId = segments.Length > 25 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(25)) : null;
-            
-            return this;
+            ParentProcedureId = segments.Length > 25 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(25), false) : null;
         }
 
         /// <summary>

@@ -58,9 +58,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public QakSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
 
@@ -74,12 +73,10 @@ namespace ClearHl7.V290.Segments
 
             QueryTag = segments.ElementAtOrDefault(1);
             QueryResponseStatus = segments.ElementAtOrDefault(2);
-            MessageQueryName = segments.Length > 3 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            MessageQueryName = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
             HitCountTotal = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
             ThisPayload = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
             HitsRemaining = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
-            
-            return this;
         }
 
         /// <summary>

@@ -44,33 +44,6 @@ namespace ClearHl7.V251.Segments
         public IEnumerable<QueryInputParameterList> InputParameterList { get; set; }
 
         /// <summary>
-        /// Initializes properties of this instance with values parsed from the given delimited string.
-        /// </summary>
-        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public SprSegment FromDelimitedString(string delimitedString)
-        {
-            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
-            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
-
-            if (segments.Length > 0)
-            {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
-                {
-                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
-                }
-            }
-
-            QueryTag = segments.ElementAtOrDefault(1);
-            QueryResponseFormatCode = segments.ElementAtOrDefault(2);
-            StoredProcedureName = segments.Length > 3 ? new CodedElement().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
-            InputParameterList = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => new QueryInputParameterList().FromDelimitedString(x)) : null;
-            
-            return this;
-        }
-
-        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>

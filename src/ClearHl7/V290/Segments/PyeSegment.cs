@@ -64,9 +64,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public PyeSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
 
@@ -79,14 +78,12 @@ namespace ClearHl7.V290.Segments
             }
 
             SetIdPye = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            PayeeType = segments.Length > 2 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            PayeeRelationshipToInvoicePatient = segments.Length > 3 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
-            PayeeIdentificationList = segments.Length > 4 ? new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
-            PayeePersonName = segments.Length > 5 ? new ExtendedPersonName().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
-            PayeeAddress = segments.Length > 6 ? new ExtendedAddress().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
-            PaymentMethod = segments.Length > 7 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
-            
-            return this;
+            PayeeType = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
+            PayeeRelationshipToInvoicePatient = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
+            PayeeIdentificationList = segments.Length > 4 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(4), false) : null;
+            PayeePersonName = segments.Length > 5 ? TypeHelper.Deserialize<ExtendedPersonName>(segments.ElementAtOrDefault(5), false) : null;
+            PayeeAddress = segments.Length > 6 ? TypeHelper.Deserialize<ExtendedAddress>(segments.ElementAtOrDefault(6), false) : null;
+            PaymentMethod = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(7), false) : null;
         }
 
         /// <summary>

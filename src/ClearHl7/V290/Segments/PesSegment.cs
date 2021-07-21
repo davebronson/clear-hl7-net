@@ -95,9 +95,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public PesSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -110,11 +109,11 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
-            SenderOrganizationName = segments.Length > 1 ? segments.ElementAtOrDefault(1).Split(separator).Select(x => new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(x)) : null;
-            SenderIndividualName = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
-            SenderAddress = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => new ExtendedAddress().FromDelimitedString(x)) : null;
-            SenderTelephone = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => new ExtendedTelecommunicationNumber().FromDelimitedString(x)) : null;
-            SenderEventIdentifier = segments.Length > 5 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            SenderOrganizationName = segments.Length > 1 ? segments.ElementAtOrDefault(1).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
+            SenderIndividualName = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            SenderAddress = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
+            SenderTelephone = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
+            SenderEventIdentifier = segments.Length > 5 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(5), false) : null;
             SenderSequenceNumber = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
             SenderEventDescription = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator) : null;
             SenderComment = segments.ElementAtOrDefault(8);
@@ -123,8 +122,6 @@ namespace ClearHl7.V290.Segments
             EventReportTimingType = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator) : null;
             EventReportSource = segments.ElementAtOrDefault(12);
             EventReportedTo = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator) : null;
-            
-            return this;
         }
 
         /// <summary>

@@ -52,9 +52,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public AffSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -68,12 +67,10 @@ namespace ClearHl7.V290.Segments
             }
 
             SetIdAff = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            ProfessionalOrganization = segments.Length > 2 ? new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            ProfessionalOrganizationAddress = segments.Length > 3 ? new ExtendedAddress().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
-            ProfessionalOrganizationAffiliationDateRange = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => new DateTimeRange().FromDelimitedString(x)) : null;
+            ProfessionalOrganization = segments.Length > 2 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(2), false) : null;
+            ProfessionalOrganizationAddress = segments.Length > 3 ? TypeHelper.Deserialize<ExtendedAddress>(segments.ElementAtOrDefault(3), false) : null;
+            ProfessionalOrganizationAffiliationDateRange = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => TypeHelper.Deserialize<DateTimeRange>(x, false)) : null;
             ProfessionalAffiliationAdditionalInformation = segments.ElementAtOrDefault(5);
-            
-            return this;
         }
 
         /// <summary>

@@ -94,13 +94,21 @@ namespace ClearHl7.V250.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public ExtendedAddress FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            StreetAddress = segments.Length > 0 ? new StreetAddress { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            if (segments.Length > 0)
+            {
+                StreetAddress = new StreetAddress { IsSubcomponent = true };
+                StreetAddress.FromDelimitedString(segments.ElementAtOrDefault(0));
+            }
+            else
+            {
+                StreetAddress = null;
+            }
+
             OtherDesignation = segments.ElementAtOrDefault(1);
             City = segments.ElementAtOrDefault(2);
             StateOrProvince = segments.ElementAtOrDefault(3);
@@ -111,11 +119,19 @@ namespace ClearHl7.V250.Types
             CountyParishCode = segments.ElementAtOrDefault(8);
             CensusTract = segments.ElementAtOrDefault(9);
             AddressRepresentationCode = segments.ElementAtOrDefault(10);
-            AddressValidityRange = segments.Length > 11 ? new DateTimeRange { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+
+            if (segments.Length > 11)
+            {
+                AddressValidityRange = new DateTimeRange { IsSubcomponent = true };
+                AddressValidityRange.FromDelimitedString(segments.ElementAtOrDefault(11));
+            }
+            else
+            {
+                AddressValidityRange = null;
+            }
+
             EffectiveDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             ExpirationDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-
-            return this;
         }
 
         /// <summary>

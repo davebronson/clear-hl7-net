@@ -54,9 +54,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public EcdSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -70,12 +69,10 @@ namespace ClearHl7.V290.Segments
             }
 
             ReferenceCommandNumber = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
-            RemoteControlCommand = segments.Length > 2 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            RemoteControlCommand = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
             ResponseRequired = segments.ElementAtOrDefault(3);
             RequestedCompletionTime = segments.ElementAtOrDefault(4);
-            Parameters = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => new Text().FromDelimitedString(x)) : null;
-            
-            return this;
+            Parameters = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<Text>(x, false)) : null;
         }
 
         /// <summary>

@@ -51,9 +51,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public PssSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
 
@@ -65,13 +64,11 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
-            ProviderProductServiceSectionNumber = segments.Length > 1 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            PayerProductServiceSectionNumber = segments.Length > 2 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            ProviderProductServiceSectionNumber = segments.Length > 1 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(1), false) : null;
+            PayerProductServiceSectionNumber = segments.Length > 2 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(2), false) : null;
             ProductServiceSectionSequenceNumber = segments.ElementAtOrDefault(3)?.ToNullableUInt();
-            BilledAmount = segments.Length > 4 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            BilledAmount = segments.Length > 4 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(4), false) : null;
             SectionDescriptionOrHeading = segments.ElementAtOrDefault(5);
-            
-            return this;
         }
 
         /// <summary>

@@ -37,9 +37,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public ZxxSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -52,19 +51,10 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
+            // TODO:  Means to provide the collection of ITypes to be used when building SegmentItems
+
             SegmentSuffix = segments.Length > 0 ? segments.FirstOrDefault().Substring(1) : SegmentSuffix;
-            SegmentItems = segments.Length > 1 ? segments.ElementAtOrDefault(1).Split(separator).Select(x => new Text().FromDelimitedString(x)) : null;
-
-            //for (int i = 1; i < SegmentItems.Count(); i++)
-            //{
-            //    SegmentItems.ElementAt(i).FromDelimitedString(segments.ElementAtOrDefault(i));
-            //}
-            //foreach (IType item in SegmentItems)
-            //{
-            //    item.FromDelimitedString(segments.ElementAtOrDefault(1));
-            //}
-
-            return this;
+            SegmentItems = segments.Length > 1 ? segments.ElementAtOrDefault(1).Split(separator).Select(x => TypeHelper.Deserialize<Text>(x, false)) : null;
         }
 
         /// <summary>

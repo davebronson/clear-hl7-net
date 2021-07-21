@@ -82,9 +82,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public ArvSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -98,17 +97,15 @@ namespace ClearHl7.V290.Segments
             }
 
             SetId = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            AccessRestrictionActionCode = segments.Length > 2 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            AccessRestrictionValue = segments.Length > 3 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
-            AccessRestrictionReason = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            AccessRestrictionActionCode = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(2), false) : null;
+            AccessRestrictionValue = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
+            AccessRestrictionReason = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             SpecialAccessRestrictionInstructions = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator) : null;
-            AccessRestrictionDateRange = segments.Length > 6 ? new DateTimeRange().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
-            SecurityClassificationTag = segments.Length > 7 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
-            SecurityHandlingInstructions = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            AccessRestrictionMessageLocation = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => new MessageLocation().FromDelimitedString(x)) : null;
-            AccessRestrictionInstanceIdentifier = segments.Length > 10 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
-
-            return this;
+            AccessRestrictionDateRange = segments.Length > 6 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(6), false) : null;
+            SecurityClassificationTag = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(7), false) : null;
+            SecurityHandlingInstructions = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            AccessRestrictionMessageLocation = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<MessageLocation>(x, false)) : null;
+            AccessRestrictionInstanceIdentifier = segments.Length > 10 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(10), false) : null;
         }
 
         /// <summary>

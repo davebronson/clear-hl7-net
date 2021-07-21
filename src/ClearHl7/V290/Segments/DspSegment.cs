@@ -51,9 +51,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public DspSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
 
@@ -67,11 +66,9 @@ namespace ClearHl7.V290.Segments
 
             SetIdDsp = segments.ElementAtOrDefault(1)?.ToNullableUInt();
             DisplayLevel = segments.ElementAtOrDefault(2)?.ToNullableUInt();
-            DataLine = segments.Length > 3 ? new Text().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            DataLine = segments.Length > 3 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(3), false) : null;
             LogicalBreakPoint = segments.ElementAtOrDefault(4);
-            ResultId = segments.Length > 5 ? new Text().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
-            
-            return this;
+            ResultId = segments.Length > 5 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(5), false) : null;
         }
 
         /// <summary>

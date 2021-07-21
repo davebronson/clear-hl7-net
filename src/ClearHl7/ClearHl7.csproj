@@ -12,6 +12,7 @@
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageVersion>1.3.0</PackageVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <ReleaseVersion>1.3</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <LangVersion>latest</LangVersion>

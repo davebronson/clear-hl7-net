@@ -220,9 +220,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public SpmSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -236,42 +235,40 @@ namespace ClearHl7.V290.Segments
             }
 
             SetIdSpm = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            SpecimenId = segments.Length > 2 ? new EntityIdentifierPair().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            SpecimenParentIds = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => new EntityIdentifierPair().FromDelimitedString(x)) : null;
-            SpecimenType = segments.Length > 4 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
-            SpecimenTypeModifier = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            SpecimenAdditives = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            SpecimenCollectionMethod = segments.Length > 7 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
-            SpecimenSourceSite = segments.Length > 8 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
-            SpecimenSourceSiteModifier = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            SpecimenCollectionSite = segments.Length > 10 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
-            SpecimenRole = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            SpecimenCollectionAmount = segments.Length > 12 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
+            SpecimenId = segments.Length > 2 ? TypeHelper.Deserialize<EntityIdentifierPair>(segments.ElementAtOrDefault(2), false) : null;
+            SpecimenParentIds = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifierPair>(x, false)) : null;
+            SpecimenType = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
+            SpecimenTypeModifier = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            SpecimenAdditives = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            SpecimenCollectionMethod = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(7), false) : null;
+            SpecimenSourceSite = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
+            SpecimenSourceSiteModifier = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            SpecimenCollectionSite = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(10), false) : null;
+            SpecimenRole = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            SpecimenCollectionAmount = segments.Length > 12 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(12), false) : null;
             GroupedSpecimenCount = segments.ElementAtOrDefault(13)?.ToNullableDecimal();
             SpecimenDescription = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator) : null;
-            SpecimenHandlingCode = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            SpecimenRiskCode = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            SpecimenCollectionDateTime = segments.Length > 17 ? new DateTimeRange().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
+            SpecimenHandlingCode = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            SpecimenRiskCode = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            SpecimenCollectionDateTime = segments.Length > 17 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(17), false) : null;
             SpecimenReceivedDateTime = segments.ElementAtOrDefault(18)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             SpecimenExpirationDateTime = segments.ElementAtOrDefault(19)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             SpecimenAvailability = segments.ElementAtOrDefault(20);
-            SpecimenRejectReason = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            SpecimenQuality = segments.Length > 22 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
-            SpecimenAppropriateness = segments.Length > 23 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(23)) : null;
-            SpecimenCondition = segments.Length > 24 ? segments.ElementAtOrDefault(24).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            SpecimenCurrentQuantity = segments.Length > 25 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(25)) : null;
+            SpecimenRejectReason = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            SpecimenQuality = segments.Length > 22 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(22), false) : null;
+            SpecimenAppropriateness = segments.Length > 23 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(23), false) : null;
+            SpecimenCondition = segments.Length > 24 ? segments.ElementAtOrDefault(24).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            SpecimenCurrentQuantity = segments.Length > 25 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(25), false) : null;
             NumberOfSpecimenContainers = segments.ElementAtOrDefault(26)?.ToNullableDecimal();
-            ContainerType = segments.Length > 27 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(27)) : null;
-            ContainerCondition = segments.Length > 28 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(28)) : null;
-            SpecimenChildRole = segments.Length > 29 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(29)) : null;
-            AccessionId = segments.Length > 30 ? segments.ElementAtOrDefault(30).Split(separator).Select(x => new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(x)) : null;
-            OtherSpecimenId = segments.Length > 31 ? segments.ElementAtOrDefault(31).Split(separator).Select(x => new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(x)) : null;
-            ShipmentId = segments.Length > 32 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(32)) : null;
+            ContainerType = segments.Length > 27 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(27), false) : null;
+            ContainerCondition = segments.Length > 28 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(28), false) : null;
+            SpecimenChildRole = segments.Length > 29 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(29), false) : null;
+            AccessionId = segments.Length > 30 ? segments.ElementAtOrDefault(30).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
+            OtherSpecimenId = segments.Length > 31 ? segments.ElementAtOrDefault(31).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
+            ShipmentId = segments.Length > 32 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(32), false) : null;
             CultureStartDateTime = segments.ElementAtOrDefault(33)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             CultureFinalDateTime = segments.ElementAtOrDefault(34)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             ActionCode = segments.ElementAtOrDefault(35);
-            
-            return this;
         }
 
         /// <summary>

@@ -27,16 +27,30 @@ namespace ClearHl7.V231.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public ChargeToPractise FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            DollarAmount = segments.Length > 0 ? new Money { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
-            ChargeCode = segments.Length > 1 ? new CodedElement { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            if (segments.Length > 0)
+            {
+                DollarAmount = new Money { IsSubcomponent = true };
+                DollarAmount.FromDelimitedString(segments.ElementAtOrDefault(0));
+            }
+            else
+            {
+                DollarAmount = null;
+            }
 
-            return this;
+            if (segments.Length > 1)
+            {
+                ChargeCode = new CodedElement { IsSubcomponent = true };
+                ChargeCode.FromDelimitedString(segments.ElementAtOrDefault(1));
+            }
+            else
+            {
+                ChargeCode = null;
+            }
         }
 
         /// <summary>

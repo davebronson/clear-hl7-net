@@ -113,8 +113,7 @@ namespace ClearHl7.V270.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public ExtendedTelecommunicationNumber FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
@@ -133,12 +132,38 @@ namespace ClearHl7.V270.Types
             UnformattedTelephoneNumber = segments.ElementAtOrDefault(11);
             EffectiveStartDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             ExpirationDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ExpirationReason = segments.Length > 14 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
-            ProtectionCode = segments.Length > 15 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
-            SharedTelecommunicationIdentifier = segments.Length > 16 ? new EntityIdentifier { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
-            PreferenceOrder = segments.ElementAtOrDefault(17)?.ToNullableDecimal();
 
-            return this;
+            if (segments.Length > 14)
+            {
+                ExpirationReason = new CodedWithExceptions { IsSubcomponent = true };
+                ExpirationReason.FromDelimitedString(segments.ElementAtOrDefault(14));
+            }
+            else
+            {
+                ExpirationReason = null;
+            }
+
+            if (segments.Length > 15)
+            {
+                ProtectionCode = new CodedWithExceptions { IsSubcomponent = true };
+                ProtectionCode.FromDelimitedString(segments.ElementAtOrDefault(15));
+            }
+            else
+            {
+                ProtectionCode = null;
+            }
+
+            if (segments.Length > 16)
+            {
+                SharedTelecommunicationIdentifier = new EntityIdentifier { IsSubcomponent = true };
+                SharedTelecommunicationIdentifier.FromDelimitedString(segments.ElementAtOrDefault(16));
+            }
+            else
+            {
+                SharedTelecommunicationIdentifier = null;
+            }
+
+            PreferenceOrder = segments.ElementAtOrDefault(17)?.ToNullableDecimal();
         }
 
         /// <summary>

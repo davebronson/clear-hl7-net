@@ -144,13 +144,21 @@ namespace ClearHl7.V260.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public ExtendedAddress FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            StreetAddress = segments.Length > 0 ? new StreetAddress { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            if (segments.Length > 0)
+            {
+                StreetAddress = new StreetAddress { IsSubcomponent = true };
+                StreetAddress.FromDelimitedString(segments.ElementAtOrDefault(0));
+            }
+            else
+            {
+                StreetAddress = null;
+            }
+
             OtherDesignation = segments.ElementAtOrDefault(1);
             City = segments.ElementAtOrDefault(2);
             StateOrProvince = segments.ElementAtOrDefault(3);
@@ -158,23 +166,69 @@ namespace ClearHl7.V260.Types
             Country = segments.ElementAtOrDefault(5);
             AddressType = segments.ElementAtOrDefault(6);
             OtherGeographicDesignation = segments.ElementAtOrDefault(7);
-            CountyParishCode = segments.Length > 8 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+
+            if (segments.Length > 8)
+            {
+                CountyParishCode = new CodedWithExceptions { IsSubcomponent = true };
+                CountyParishCode.FromDelimitedString(segments.ElementAtOrDefault(8));
+            }
+            else
+            {
+                CountyParishCode = null;
+            }
+
             CensusTract = segments.ElementAtOrDefault(9);
             AddressRepresentationCode = segments.ElementAtOrDefault(10);
-            AddressValidityRange = segments.Length > 11 ? new DateTimeRange { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+
+            if (segments.Length > 11)
+            {
+                AddressValidityRange = new DateTimeRange { IsSubcomponent = true };
+                AddressValidityRange.FromDelimitedString(segments.ElementAtOrDefault(11));
+            }
+            else
+            {
+                AddressValidityRange = null;
+            }
+
             EffectiveDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             ExpirationDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ExpirationReason = segments.Length > 14 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
+
+            if (segments.Length > 14)
+            {
+                ExpirationReason = new CodedWithExceptions { IsSubcomponent = true };
+                ExpirationReason.FromDelimitedString(segments.ElementAtOrDefault(14));
+            }
+            else
+            {
+                ExpirationReason = null;
+            }
+
             TemporaryIndicator = segments.ElementAtOrDefault(15);
             BadAddressIndicator = segments.ElementAtOrDefault(16);
             AddressUsage = segments.ElementAtOrDefault(17);
             Addressee = segments.ElementAtOrDefault(18);
             Comment = segments.ElementAtOrDefault(19);
             PreferenceOrder = segments.ElementAtOrDefault(20)?.ToNullableDecimal();
-            ProtectionCode = segments.Length > 21 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
-            AddressIdentifier = segments.Length > 22 ? new EntityIdentifier { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
 
-            return this;
+            if (segments.Length > 21)
+            {
+                ProtectionCode = new CodedWithExceptions { IsSubcomponent = true };
+                ProtectionCode.FromDelimitedString(segments.ElementAtOrDefault(21));
+            }
+            else
+            {
+                ProtectionCode = null;
+            }
+
+            if (segments.Length > 22)
+            {
+                AddressIdentifier = new EntityIdentifier { IsSubcomponent = true };
+                AddressIdentifier.FromDelimitedString(segments.ElementAtOrDefault(22));
+            }
+            else
+            {
+                AddressIdentifier = null;
+            }
         }
 
         /// <summary>

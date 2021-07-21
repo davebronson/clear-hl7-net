@@ -46,19 +46,43 @@ namespace ClearHl7.V260.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public PractitionerInstitutionalPrivileges FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            Privilege = segments.Length > 0 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
-            PrivilegeClass = segments.Length > 1 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            if (segments.Length > 0)
+            {
+                Privilege = new CodedWithExceptions { IsSubcomponent = true };
+                Privilege.FromDelimitedString(segments.ElementAtOrDefault(0));
+            }
+            else
+            {
+                Privilege = null;
+            }
+
+            if (segments.Length > 1)
+            {
+                PrivilegeClass = new CodedWithExceptions { IsSubcomponent = true };
+                PrivilegeClass.FromDelimitedString(segments.ElementAtOrDefault(1));
+            }
+            else
+            {
+                PrivilegeClass = null;
+            }
+
             ExpirationDate = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
             ActivationDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            Facility = segments.Length > 4 ? new EntityIdentifier { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
 
-            return this;
+            if (segments.Length > 4)
+            {
+                Facility = new EntityIdentifier { IsSubcomponent = true };
+                Facility.FromDelimitedString(segments.ElementAtOrDefault(4));
+            }
+            else
+            {
+                Facility = null;
+            }
         }
 
         /// <summary>

@@ -39,8 +39,7 @@ namespace ClearHl7.V231.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public CompositeIdWithCheckDigit FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
@@ -48,9 +47,16 @@ namespace ClearHl7.V231.Types
             IdNumber = segments.ElementAtOrDefault(0)?.ToNullableDecimal();
             CheckDigit = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
             CodeIdentifyingTheCheckDigitSchemeEmployed = segments.ElementAtOrDefault(2);
-            AssigningAuthority = segments.Length > 3 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
 
-            return this;
+            if (segments.Length > 3)
+            {
+                AssigningAuthority = new HierarchicDesignator { IsSubcomponent = true };
+                AssigningAuthority.FromDelimitedString(segments.ElementAtOrDefault(3));
+            }
+            else
+            {
+                AssigningAuthority = null;
+            }
         }
 
         /// <summary>

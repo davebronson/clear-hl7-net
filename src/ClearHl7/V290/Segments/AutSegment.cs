@@ -181,9 +181,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public AutSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -196,37 +195,35 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
-            AuthorizingPayorPlanId = segments.Length > 1 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            AuthorizingPayorCompanyId = segments.Length > 2 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            AuthorizingPayorPlanId = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
+            AuthorizingPayorCompanyId = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
             AuthorizingPayorCompanyName = segments.ElementAtOrDefault(3);
             AuthorizationEffectiveDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             AuthorizationExpirationDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            AuthorizationIdentifier = segments.Length > 6 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
-            ReimbursementLimit = segments.Length > 7 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
-            RequestedNumberOfTreatments = segments.Length > 8 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
-            AuthorizedNumberOfTreatments = segments.Length > 9 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            AuthorizationIdentifier = segments.Length > 6 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(6), false) : null;
+            ReimbursementLimit = segments.Length > 7 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(7), false) : null;
+            RequestedNumberOfTreatments = segments.Length > 8 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(8), false) : null;
+            AuthorizedNumberOfTreatments = segments.Length > 9 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(9), false) : null;
             ProcessDate = segments.ElementAtOrDefault(10)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            RequestedDisciplines = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            AuthorizedDisciplines = segments.Length > 12 ? segments.ElementAtOrDefault(12).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            AuthorizationReferralType = segments.Length > 13 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
-            ApprovalStatus = segments.Length > 14 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
+            RequestedDisciplines = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            AuthorizedDisciplines = segments.Length > 12 ? segments.ElementAtOrDefault(12).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            AuthorizationReferralType = segments.Length > 13 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(13), false) : null;
+            ApprovalStatus = segments.Length > 14 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(14), false) : null;
             PlannedTreatmentStopDate = segments.ElementAtOrDefault(15)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ClinicalService = segments.Length > 16 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(16)) : null;
+            ClinicalService = segments.Length > 16 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(16), false) : null;
             ReasonText = segments.ElementAtOrDefault(17);
-            NumberOfAuthorizedTreatmentsUnits = segments.Length > 18 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(18)) : null;
-            NumberOfUsedTreatmentsUnits = segments.Length > 19 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(19)) : null;
-            NumberOfScheduleTreatmentsUnits = segments.Length > 20 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(20)) : null;
-            EncounterType = segments.Length > 21 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(21)) : null;
-            RemainingBenefitAmount = segments.Length > 22 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
-            AuthorizedProvider = segments.Length > 23 ? new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(segments.ElementAtOrDefault(23)) : null;
-            AuthorizedHealthProfessional = segments.Length > 24 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(24)) : null;
+            NumberOfAuthorizedTreatmentsUnits = segments.Length > 18 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(18), false) : null;
+            NumberOfUsedTreatmentsUnits = segments.Length > 19 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(19), false) : null;
+            NumberOfScheduleTreatmentsUnits = segments.Length > 20 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(20), false) : null;
+            EncounterType = segments.Length > 21 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(21), false) : null;
+            RemainingBenefitAmount = segments.Length > 22 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(22), false) : null;
+            AuthorizedProvider = segments.Length > 23 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(23), false) : null;
+            AuthorizedHealthProfessional = segments.Length > 24 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(24), false) : null;
             SourceText = segments.ElementAtOrDefault(25);
             SourceDate = segments.ElementAtOrDefault(26)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            SourcePhone = segments.Length > 27 ? new ExtendedTelecommunicationNumber().FromDelimitedString(segments.ElementAtOrDefault(27)) : null;
+            SourcePhone = segments.Length > 27 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments.ElementAtOrDefault(27), false) : null;
             Comment = segments.ElementAtOrDefault(28);
             ActionCode = segments.ElementAtOrDefault(29);
-
-            return this;
         }
 
         /// <summary>

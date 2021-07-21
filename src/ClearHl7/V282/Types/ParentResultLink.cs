@@ -32,17 +32,40 @@ namespace ClearHl7.V282.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public ParentResultLink FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            ParentObservationIdentifier = segments.Length > 0 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
-            ParentObservationSubIdentifier = segments.Length > 1 ? new ObservationGrouper { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            ParentObservationValueDescriptor = segments.Length > 2 ? new Text { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            if (segments.Length > 0)
+            {
+                ParentObservationIdentifier = new CodedWithExceptions { IsSubcomponent = true };
+                ParentObservationIdentifier.FromDelimitedString(segments.ElementAtOrDefault(0));
+            }
+            else
+            {
+                ParentObservationIdentifier = null;
+            }
 
-            return this;
+            if (segments.Length > 1)
+            {
+                ParentObservationSubIdentifier = new ObservationGrouper { IsSubcomponent = true };
+                ParentObservationSubIdentifier.FromDelimitedString(segments.ElementAtOrDefault(1));
+            }
+            else
+            {
+                ParentObservationSubIdentifier = null;
+            }
+
+            if (segments.Length > 2)
+            {
+                ParentObservationValueDescriptor = new Text { IsSubcomponent = true };
+                ParentObservationValueDescriptor.FromDelimitedString(segments.ElementAtOrDefault(2));
+            }
+            else
+            {
+                ParentObservationValueDescriptor = null;
+            }
         }
 
         /// <summary>

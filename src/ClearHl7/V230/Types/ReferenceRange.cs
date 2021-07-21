@@ -52,21 +52,55 @@ namespace ClearHl7.V230.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public ReferenceRange FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            NumericRange = segments.Length > 0 ? new NumericRange { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            if (segments.Length > 0)
+            {
+                NumericRange = new NumericRange { IsSubcomponent = true };
+                NumericRange.FromDelimitedString(segments.ElementAtOrDefault(0));
+            }
+            else
+            {
+                NumericRange = null;
+            }
+
             AdministrativeSex = segments.ElementAtOrDefault(1);
-            AgeRange = segments.Length > 2 ? new NumericRange { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            GestationalAgeRange = segments.Length > 3 ? new NumericRange { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+
+            if (segments.Length > 2)
+            {
+                AgeRange = new NumericRange { IsSubcomponent = true };
+                AgeRange.FromDelimitedString(segments.ElementAtOrDefault(2));
+            }
+            else
+            {
+                AgeRange = null;
+            }
+
+            if (segments.Length > 3)
+            {
+                GestationalAgeRange = new NumericRange { IsSubcomponent = true };
+                GestationalAgeRange.FromDelimitedString(segments.ElementAtOrDefault(3));
+            }
+            else
+            {
+                GestationalAgeRange = null;
+            }
+
             Species = segments.ElementAtOrDefault(4);
             RaceSubspecies = segments.ElementAtOrDefault(5);
-            Conditions = segments.Length > 6 ? new Text { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
 
-            return this;
+            if (segments.Length > 6)
+            {
+                Conditions = new Text { IsSubcomponent = true };
+                Conditions.FromDelimitedString(segments.ElementAtOrDefault(6));
+            }
+            else
+            {
+                Conditions = null;
+            }
         }
 
         /// <summary>

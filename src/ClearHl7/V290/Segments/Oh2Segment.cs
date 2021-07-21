@@ -123,9 +123,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public Oh2Segment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -141,23 +140,21 @@ namespace ClearHl7.V290.Segments
             SetId = segments.ElementAtOrDefault(1)?.ToNullableUInt();
             ActionCode = segments.ElementAtOrDefault(2);
             EnteredDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            Occupation = segments.Length > 4 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
-            Industry = segments.Length > 5 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
-            WorkClassification = segments.Length > 6 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            Occupation = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
+            Industry = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
+            WorkClassification = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
             JobStartDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
             JobEndDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            WorkSchedule = segments.Length > 9 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            WorkSchedule = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), false) : null;
             AverageHoursWorkedPerDay = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
             AverageDaysWorkedPerWeek = segments.ElementAtOrDefault(11)?.ToNullableDecimal();
-            EmployerOrganization = segments.Length > 12 ? new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
-            EmployerAddress = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => new ExtendedAddress().FromDelimitedString(x)) : null;
-            SupervisoryLevel = segments.Length > 14 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
+            EmployerOrganization = segments.Length > 12 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(12), false) : null;
+            EmployerAddress = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
+            SupervisoryLevel = segments.Length > 14 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(14), false) : null;
             JobDuties = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator) : null;
             OccupationalHazards = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator) : null;
-            JobUniqueIdentifier = segments.Length > 17 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
-            CurrentJobIndicator = segments.Length > 18 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(18)) : null;
-            
-            return this;
+            JobUniqueIdentifier = segments.Length > 17 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(17), false) : null;
+            CurrentJobIndicator = segments.Length > 18 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(18), false) : null;
         }
 
         /// <summary>

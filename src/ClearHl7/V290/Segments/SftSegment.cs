@@ -56,9 +56,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public SftSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
 
@@ -70,14 +69,12 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
-            SoftwareVendorOrganization = segments.Length > 1 ? new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            SoftwareVendorOrganization = segments.Length > 1 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(1), false) : null;
             SoftwareCertifiedVersionOrReleaseNumber = segments.ElementAtOrDefault(2);
             SoftwareProductName = segments.ElementAtOrDefault(3);
             SoftwareBinaryId = segments.ElementAtOrDefault(4);
-            SoftwareProductInformation = segments.Length > 5 ? new Text().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            SoftwareProductInformation = segments.Length > 5 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(5), false) : null;
             SoftwareInstallDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            
-            return this;
         }
 
         /// <summary>

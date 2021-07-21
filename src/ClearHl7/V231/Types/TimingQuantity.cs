@@ -79,26 +79,70 @@ namespace ClearHl7.V231.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public TimingQuantity FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            Quantity = segments.Length > 0 ? new CompositeQuantityWithUnits { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
-            Interval = segments.Length > 1 ? new RepeatInterval { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            if (segments.Length > 0)
+            {
+                Quantity = new CompositeQuantityWithUnits { IsSubcomponent = true };
+                Quantity.FromDelimitedString(segments.ElementAtOrDefault(0));
+            }
+            else
+            {
+                Quantity = null;
+            }
+
+            if (segments.Length > 1)
+            {
+                Interval = new RepeatInterval { IsSubcomponent = true };
+                Interval.FromDelimitedString(segments.ElementAtOrDefault(1));
+            }
+            else
+            {
+                Interval = null;
+            }
+
             Duration = segments.ElementAtOrDefault(2);
             StartDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             EndDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             Priority = segments.ElementAtOrDefault(5);
             Condition = segments.ElementAtOrDefault(6);
-            Text = segments.Length > 7 ? new Text { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
-            Conjunction = segments.ElementAtOrDefault(8);
-            OrderSequencing = segments.Length > 9 ? new OrderSequenceDefinition { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
-            OccurrenceDuration = segments.Length > 10 ? new CodedElement { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
-            TotalOccurrences = segments.ElementAtOrDefault(11)?.ToNullableDecimal();
 
-            return this;
+            if (segments.Length > 7)
+            {
+                Text = new Text { IsSubcomponent = true };
+                Text.FromDelimitedString(segments.ElementAtOrDefault(7));
+            }
+            else
+            {
+                Text = null;
+            }
+
+            Conjunction = segments.ElementAtOrDefault(8);
+
+            if (segments.Length > 9)
+            {
+                OrderSequencing = new OrderSequenceDefinition { IsSubcomponent = true };
+                OrderSequencing.FromDelimitedString(segments.ElementAtOrDefault(9));
+            }
+            else
+            {
+                OrderSequencing = null;
+            }
+
+            if (segments.Length > 10)
+            {
+                OccurrenceDuration = new CodedElement { IsSubcomponent = true };
+                OccurrenceDuration.FromDelimitedString(segments.ElementAtOrDefault(10));
+            }
+            else
+            {
+                OccurrenceDuration = null;
+            }
+
+            TotalOccurrences = segments.ElementAtOrDefault(11)?.ToNullableDecimal();
         }
 
         /// <summary>

@@ -61,9 +61,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public MfiSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -76,14 +75,12 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
-            MasterFileIdentifier = segments.Length > 1 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            MasterFileApplicationIdentifier = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => new HierarchicDesignator().FromDelimitedString(x)) : null;
+            MasterFileIdentifier = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
+            MasterFileApplicationIdentifier = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => TypeHelper.Deserialize<HierarchicDesignator>(x, false)) : null;
             FileLevelEventCode = segments.ElementAtOrDefault(3);
             EnteredDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             EffectiveDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             ResponseLevelCode = segments.ElementAtOrDefault(6);
-            
-            return this;
         }
 
         /// <summary>

@@ -106,9 +106,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public PdcSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -121,23 +120,21 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
-            ManufacturerDistributor = segments.Length > 1 ? segments.ElementAtOrDefault(1).Split(separator).Select(x => new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(x)) : null;
-            Country = segments.Length > 2 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            ManufacturerDistributor = segments.Length > 1 ? segments.ElementAtOrDefault(1).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
+            Country = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
             BrandName = segments.ElementAtOrDefault(3);
             DeviceFamilyName = segments.ElementAtOrDefault(4);
-            GenericName = segments.Length > 5 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            GenericName = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
             ModelIdentifier = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator) : null;
             CatalogueIdentifier = segments.ElementAtOrDefault(7);
             OtherIdentifier = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator) : null;
-            ProductCode = segments.Length > 9 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            ProductCode = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), false) : null;
             MarketingBasis = segments.ElementAtOrDefault(10);
             MarketingApprovalId = segments.ElementAtOrDefault(11);
-            LabeledShelfLife = segments.Length > 12 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
-            ExpectedShelfLife = segments.Length > 13 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
+            LabeledShelfLife = segments.Length > 12 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(12), false) : null;
+            ExpectedShelfLife = segments.Length > 13 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(13), false) : null;
             DateFirstMarketed = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             DateLastMarketed = segments.ElementAtOrDefault(15)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            
-            return this;
         }
 
         /// <summary>

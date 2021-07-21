@@ -121,9 +121,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public RelSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
 
@@ -136,25 +135,23 @@ namespace ClearHl7.V290.Segments
             }
 
             SetIdRel = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            RelationshipType = segments.Length > 2 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            ThisRelationshipInstanceIdentifier = segments.Length > 3 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
-            SourceInformationInstanceIdentifier = segments.Length > 4 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
-            TargetInformationInstanceIdentifier = segments.Length > 5 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
-            AssertingEntityInstanceId = segments.Length > 6 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
-            AssertingPerson = segments.Length > 7 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
-            AssertingOrganization = segments.Length > 8 ? new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
-            AssertorAddress = segments.Length > 9 ? new ExtendedAddress().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
-            AssertorContact = segments.Length > 10 ? new ExtendedTelecommunicationNumber().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
-            AssertionDateRange = segments.Length > 11 ? new DateTimeRange().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
+            RelationshipType = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
+            ThisRelationshipInstanceIdentifier = segments.Length > 3 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(3), false) : null;
+            SourceInformationInstanceIdentifier = segments.Length > 4 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(4), false) : null;
+            TargetInformationInstanceIdentifier = segments.Length > 5 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(5), false) : null;
+            AssertingEntityInstanceId = segments.Length > 6 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(6), false) : null;
+            AssertingPerson = segments.Length > 7 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(7), false) : null;
+            AssertingOrganization = segments.Length > 8 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(8), false) : null;
+            AssertorAddress = segments.Length > 9 ? TypeHelper.Deserialize<ExtendedAddress>(segments.ElementAtOrDefault(9), false) : null;
+            AssertorContact = segments.Length > 10 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments.ElementAtOrDefault(10), false) : null;
+            AssertionDateRange = segments.Length > 11 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(11), false) : null;
             NegationIndicator = segments.ElementAtOrDefault(12);
-            CertaintyOfRelationship = segments.Length > 13 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
+            CertaintyOfRelationship = segments.Length > 13 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(13), false) : null;
             PriorityNo = segments.ElementAtOrDefault(14)?.ToNullableDecimal();
             PrioritySequenceNoRelPreferenceForConsideration = segments.ElementAtOrDefault(15)?.ToNullableDecimal();
             SeparabilityIndicator = segments.ElementAtOrDefault(16);
             SourceInformationInstanceObjectType = segments.ElementAtOrDefault(17);
             TargetInformationInstanceObjectType = segments.ElementAtOrDefault(18);
-            
-            return this;
         }
 
         /// <summary>

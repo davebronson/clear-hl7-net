@@ -85,9 +85,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public TcdSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
 
@@ -99,19 +98,17 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
-            UniversalServiceIdentifier = segments.Length > 1 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            AutoDilutionFactor = segments.Length > 2 ? new StructuredNumeric().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            RerunDilutionFactor = segments.Length > 3 ? new StructuredNumeric().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
-            PreDilutionFactor = segments.Length > 4 ? new StructuredNumeric().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
-            EndogenousContentOfPreDilutionDiluent = segments.Length > 5 ? new StructuredNumeric().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            UniversalServiceIdentifier = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
+            AutoDilutionFactor = segments.Length > 2 ? TypeHelper.Deserialize<StructuredNumeric>(segments.ElementAtOrDefault(2), false) : null;
+            RerunDilutionFactor = segments.Length > 3 ? TypeHelper.Deserialize<StructuredNumeric>(segments.ElementAtOrDefault(3), false) : null;
+            PreDilutionFactor = segments.Length > 4 ? TypeHelper.Deserialize<StructuredNumeric>(segments.ElementAtOrDefault(4), false) : null;
+            EndogenousContentOfPreDilutionDiluent = segments.Length > 5 ? TypeHelper.Deserialize<StructuredNumeric>(segments.ElementAtOrDefault(5), false) : null;
             AutomaticRepeatAllowed = segments.ElementAtOrDefault(6);
             ReflexAllowed = segments.ElementAtOrDefault(7);
-            AnalyteRepeatStatus = segments.Length > 8 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
-            SpecimenConsumptionQuantity = segments.Length > 9 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            AnalyteRepeatStatus = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
+            SpecimenConsumptionQuantity = segments.Length > 9 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(9), false) : null;
             PoolSize = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
-            AutoDilutionType = segments.Length > 11 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
-            
-            return this;
+            AutoDilutionType = segments.Length > 11 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(11), false) : null;
         }
 
         /// <summary>

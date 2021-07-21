@@ -40,18 +40,42 @@ namespace ClearHl7.V281.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public RoomCoverage FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            RoomType = segments.Length > 0 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
-            AmountType = segments.Length > 1 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            CoverageAmount = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
-            MoneyOrPercentage = segments.Length > 3 ? new MoneyOrPercentage { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            if (segments.Length > 0)
+            {
+                RoomType = new CodedWithExceptions { IsSubcomponent = true };
+                RoomType.FromDelimitedString(segments.ElementAtOrDefault(0));
+            }
+            else
+            {
+                RoomType = null;
+            }
 
-            return this;
+            if (segments.Length > 1)
+            {
+                AmountType = new CodedWithExceptions { IsSubcomponent = true };
+                AmountType.FromDelimitedString(segments.ElementAtOrDefault(1));
+            }
+            else
+            {
+                AmountType = null;
+            }
+
+            CoverageAmount = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
+
+            if (segments.Length > 3)
+            {
+                MoneyOrPercentage = new MoneyOrPercentage { IsSubcomponent = true };
+                MoneyOrPercentage.FromDelimitedString(segments.ElementAtOrDefault(3));
+            }
+            else
+            {
+                MoneyOrPercentage = null;
+            }
         }
 
         /// <summary>

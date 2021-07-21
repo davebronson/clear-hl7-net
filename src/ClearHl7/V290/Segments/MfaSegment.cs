@@ -61,9 +61,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public MfaSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -79,11 +78,9 @@ namespace ClearHl7.V290.Segments
             RecordLevelEventCode = segments.ElementAtOrDefault(1);
             MfnControlId = segments.ElementAtOrDefault(2);
             EventCompletionDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            MfnRecordLevelErrorReturn = segments.Length > 4 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
+            MfnRecordLevelErrorReturn = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
             PrimaryKeyValueMfa = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator) : null;
             PrimaryKeyValueTypeMfa = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator) : null;
-            
-            return this;
         }
 
         /// <summary>

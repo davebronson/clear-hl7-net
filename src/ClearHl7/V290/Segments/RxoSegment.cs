@@ -224,9 +224,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public RxoSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -239,44 +238,42 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
-            RequestedGiveCode = segments.Length > 1 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            RequestedGiveCode = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
             RequestedGiveAmountMinimum = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
             RequestedGiveAmountMaximum = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
-            RequestedGiveUnits = segments.Length > 4 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
-            RequestedDosageForm = segments.Length > 5 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
-            ProvidersPharmacyTreatmentInstructions = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            ProvidersAdministrationInstructions = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            RequestedGiveUnits = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
+            RequestedDosageForm = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
+            ProvidersPharmacyTreatmentInstructions = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            ProvidersAdministrationInstructions = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             DeliverToLocation = segments.ElementAtOrDefault(8);
             AllowSubstitutions = segments.ElementAtOrDefault(9);
-            RequestedDispenseCode = segments.Length > 10 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
+            RequestedDispenseCode = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(10), false) : null;
             RequestedDispenseAmount = segments.ElementAtOrDefault(11)?.ToNullableDecimal();
-            RequestedDispenseUnits = segments.Length > 12 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
+            RequestedDispenseUnits = segments.Length > 12 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(12), false) : null;
             NumberOfRefills = segments.ElementAtOrDefault(13)?.ToNullableDecimal();
-            OrderingProvidersDeaNumber = segments.Length > 14 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
-            PharmacistTreatmentSuppliersVerifierId = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(x)) : null;
+            OrderingProvidersDeaNumber = segments.Length > 14 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(14), false) : null;
+            PharmacistTreatmentSuppliersVerifierId = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             NeedsHumanReview = segments.ElementAtOrDefault(16);
             RequestedGivePerTimeUnit = segments.ElementAtOrDefault(17);
             RequestedGiveStrength = segments.ElementAtOrDefault(18)?.ToNullableDecimal();
-            RequestedGiveStrengthUnits = segments.Length > 19 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(19)) : null;
-            Indication = segments.Length > 20 ? segments.ElementAtOrDefault(20).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            RequestedGiveStrengthUnits = segments.Length > 19 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(19), false) : null;
+            Indication = segments.Length > 20 ? segments.ElementAtOrDefault(20).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             RequestedGiveRateAmount = segments.ElementAtOrDefault(21);
-            RequestedGiveRateUnits = segments.Length > 22 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(22)) : null;
-            TotalDailyDose = segments.Length > 23 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(23)) : null;
-            SupplementaryCode = segments.Length > 24 ? segments.ElementAtOrDefault(24).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            RequestedGiveRateUnits = segments.Length > 22 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(22), false) : null;
+            TotalDailyDose = segments.Length > 23 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(23), false) : null;
+            SupplementaryCode = segments.Length > 24 ? segments.ElementAtOrDefault(24).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             RequestedDrugStrengthVolume = segments.ElementAtOrDefault(25)?.ToNullableDecimal();
-            RequestedDrugStrengthVolumeUnits = segments.Length > 26 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(26)) : null;
+            RequestedDrugStrengthVolumeUnits = segments.Length > 26 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(26), false) : null;
             PharmacyOrderType = segments.ElementAtOrDefault(27);
             DispensingInterval = segments.ElementAtOrDefault(28)?.ToNullableDecimal();
-            MedicationInstanceIdentifier = segments.Length > 29 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(29)) : null;
-            SegmentInstanceIdentifier = segments.Length > 30 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(30)) : null;
-            MoodCode = segments.Length > 31 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(31)) : null;
-            DispensingPharmacy = segments.Length > 32 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(32)) : null;
-            DispensingPharmacyAddress = segments.Length > 33 ? new ExtendedAddress().FromDelimitedString(segments.ElementAtOrDefault(33)) : null;
-            DeliverToPatientLocation = segments.Length > 34 ? new PersonLocation().FromDelimitedString(segments.ElementAtOrDefault(34)) : null;
-            DeliverToAddress = segments.Length > 35 ? new ExtendedAddress().FromDelimitedString(segments.ElementAtOrDefault(35)) : null;
-            PharmacyPhoneNumber = segments.Length > 36 ? segments.ElementAtOrDefault(36).Split(separator).Select(x => new ExtendedTelecommunicationNumber().FromDelimitedString(x)) : null;
-            
-            return this;
+            MedicationInstanceIdentifier = segments.Length > 29 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(29), false) : null;
+            SegmentInstanceIdentifier = segments.Length > 30 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(30), false) : null;
+            MoodCode = segments.Length > 31 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(31), false) : null;
+            DispensingPharmacy = segments.Length > 32 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(32), false) : null;
+            DispensingPharmacyAddress = segments.Length > 33 ? TypeHelper.Deserialize<ExtendedAddress>(segments.ElementAtOrDefault(33), false) : null;
+            DeliverToPatientLocation = segments.Length > 34 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(34), false) : null;
+            DeliverToAddress = segments.Length > 35 ? TypeHelper.Deserialize<ExtendedAddress>(segments.ElementAtOrDefault(35), false) : null;
+            PharmacyPhoneNumber = segments.Length > 36 ? segments.ElementAtOrDefault(36).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
         }
 
         /// <summary>

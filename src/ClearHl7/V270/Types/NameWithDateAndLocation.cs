@@ -81,25 +81,41 @@ namespace ClearHl7.V270.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public NameWithDateAndLocation FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            Name = segments.Length > 0 ? new CompositeIdNumberAndNameSimplified { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            if (segments.Length > 0)
+            {
+                Name = new CompositeIdNumberAndNameSimplified { IsSubcomponent = true };
+                Name.FromDelimitedString(segments.ElementAtOrDefault(0));
+            }
+            else
+            {
+                Name = null;
+            }
+
             StartDateTime = segments.ElementAtOrDefault(1)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             EndDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             PointOfCare = segments.ElementAtOrDefault(3);
             Room = segments.ElementAtOrDefault(4);
             Bed = segments.ElementAtOrDefault(5);
-            Facility = segments.Length > 6 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+
+            if (segments.Length > 6)
+            {
+                Facility = new HierarchicDesignator { IsSubcomponent = true };
+                Facility.FromDelimitedString(segments.ElementAtOrDefault(6));
+            }
+            else
+            {
+                Facility = null;
+            }
+
             LocationStatus = segments.ElementAtOrDefault(7);
             PatientLocationType = segments.ElementAtOrDefault(8);
             Building = segments.ElementAtOrDefault(9);
             Floor = segments.ElementAtOrDefault(10);
-
-            return this;
         }
 
         /// <summary>

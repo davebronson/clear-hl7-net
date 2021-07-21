@@ -83,9 +83,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public PkgSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
 
@@ -98,18 +97,16 @@ namespace ClearHl7.V290.Segments
             }
 
             SetIdPkg = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            PackagingUnits = segments.Length > 2 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            DefaultOrderUnitOfMeasureIndicator = segments.Length > 3 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            PackagingUnits = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
+            DefaultOrderUnitOfMeasureIndicator = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(3), false) : null;
             PackageQuantity = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
-            Price = segments.Length > 5 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
-            FutureItemPrice = segments.Length > 6 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            Price = segments.Length > 5 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(5), false) : null;
+            FutureItemPrice = segments.Length > 6 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(6), false) : null;
             FutureItemPriceEffectiveDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            GlobalTradeItemNumber = segments.Length > 8 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
-            ContractPrice = segments.Length > 9 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            GlobalTradeItemNumber = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
+            ContractPrice = segments.Length > 9 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(9), false) : null;
             QuantityOfEach = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
-            VendorCatalogNumber = segments.Length > 11 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
-            
-            return this;
+            VendorCatalogNumber = segments.Length > 11 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(11), false) : null;
         }
 
         /// <summary>

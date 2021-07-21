@@ -28,16 +28,22 @@ namespace ClearHl7.V240.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public SchedulingClassValuePair FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            ParameterClass = segments.Length > 0 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
-            ParameterValue = segments.ElementAtOrDefault(1);
+            if (segments.Length > 0)
+            {
+                ParameterClass = new CodedWithExceptions { IsSubcomponent = true };
+                ParameterClass.FromDelimitedString(segments.ElementAtOrDefault(0));
+            }
+            else
+            {
+                ParameterClass = null;
+            }
 
-            return this;
+            ParameterValue = segments.ElementAtOrDefault(1);
         }
 
         /// <summary>

@@ -295,9 +295,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public SacSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -310,57 +309,55 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
-            ExternalAccessionIdentifier = segments.Length > 1 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            AccessionIdentifier = segments.Length > 2 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            ContainerIdentifier = segments.Length > 3 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
-            PrimaryParentContainerIdentifier = segments.Length > 4 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
-            EquipmentContainerIdentifier = segments.Length > 5 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            ExternalAccessionIdentifier = segments.Length > 1 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(1), false) : null;
+            AccessionIdentifier = segments.Length > 2 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(2), false) : null;
+            ContainerIdentifier = segments.Length > 3 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(3), false) : null;
+            PrimaryParentContainerIdentifier = segments.Length > 4 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(4), false) : null;
+            EquipmentContainerIdentifier = segments.Length > 5 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(5), false) : null;
             SpecimenSource = segments.ElementAtOrDefault(6);
             RegistrationDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ContainerStatus = segments.Length > 8 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
-            CarrierType = segments.Length > 9 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
-            CarrierIdentifier = segments.Length > 10 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
-            PositionInCarrier = segments.Length > 11 ? new NumericArray().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
-            TrayTypeSac = segments.Length > 12 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
-            TrayIdentifier = segments.Length > 13 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
-            PositionInTray = segments.Length > 14 ? new NumericArray().FromDelimitedString(segments.ElementAtOrDefault(14)) : null;
-            Location = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            ContainerStatus = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
+            CarrierType = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), false) : null;
+            CarrierIdentifier = segments.Length > 10 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(10), false) : null;
+            PositionInCarrier = segments.Length > 11 ? TypeHelper.Deserialize<NumericArray>(segments.ElementAtOrDefault(11), false) : null;
+            TrayTypeSac = segments.Length > 12 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(12), false) : null;
+            TrayIdentifier = segments.Length > 13 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(13), false) : null;
+            PositionInTray = segments.Length > 14 ? TypeHelper.Deserialize<NumericArray>(segments.ElementAtOrDefault(14), false) : null;
+            Location = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             ContainerHeight = segments.ElementAtOrDefault(16)?.ToNullableDecimal();
             ContainerDiameter = segments.ElementAtOrDefault(17)?.ToNullableDecimal();
             BarrierDelta = segments.ElementAtOrDefault(18)?.ToNullableDecimal();
             BottomDelta = segments.ElementAtOrDefault(19)?.ToNullableDecimal();
-            ContainerHeightDiameterDeltaUnits = segments.Length > 20 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(20)) : null;
+            ContainerHeightDiameterDeltaUnits = segments.Length > 20 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(20), false) : null;
             ContainerVolume = segments.ElementAtOrDefault(21)?.ToNullableDecimal();
             AvailableSpecimenVolume = segments.ElementAtOrDefault(22)?.ToNullableDecimal();
             InitialSpecimenVolume = segments.ElementAtOrDefault(23)?.ToNullableDecimal();
-            VolumeUnits = segments.Length > 24 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(24)) : null;
-            SeparatorType = segments.Length > 25 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(25)) : null;
-            CapType = segments.Length > 26 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(26)) : null;
-            Additive = segments.Length > 27 ? segments.ElementAtOrDefault(27).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            SpecimenComponent = segments.Length > 28 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(28)) : null;
-            DilutionFactor = segments.Length > 29 ? new StructuredNumeric().FromDelimitedString(segments.ElementAtOrDefault(29)) : null;
-            Treatment = segments.Length > 30 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(30)) : null;
-            Temperature = segments.Length > 31 ? new StructuredNumeric().FromDelimitedString(segments.ElementAtOrDefault(31)) : null;
+            VolumeUnits = segments.Length > 24 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(24), false) : null;
+            SeparatorType = segments.Length > 25 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(25), false) : null;
+            CapType = segments.Length > 26 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(26), false) : null;
+            Additive = segments.Length > 27 ? segments.ElementAtOrDefault(27).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            SpecimenComponent = segments.Length > 28 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(28), false) : null;
+            DilutionFactor = segments.Length > 29 ? TypeHelper.Deserialize<StructuredNumeric>(segments.ElementAtOrDefault(29), false) : null;
+            Treatment = segments.Length > 30 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(30), false) : null;
+            Temperature = segments.Length > 31 ? TypeHelper.Deserialize<StructuredNumeric>(segments.ElementAtOrDefault(31), false) : null;
             HemolysisIndex = segments.ElementAtOrDefault(32)?.ToNullableDecimal();
-            HemolysisIndexUnits = segments.Length > 33 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(33)) : null;
+            HemolysisIndexUnits = segments.Length > 33 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(33), false) : null;
             LipemiaIndex = segments.ElementAtOrDefault(34)?.ToNullableDecimal();
-            LipemiaIndexUnits = segments.Length > 35 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(35)) : null;
+            LipemiaIndexUnits = segments.Length > 35 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(35), false) : null;
             IcterusIndex = segments.ElementAtOrDefault(36)?.ToNullableDecimal();
-            IcterusIndexUnits = segments.Length > 37 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(37)) : null;
+            IcterusIndexUnits = segments.Length > 37 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(37), false) : null;
             FibrinIndex = segments.ElementAtOrDefault(38)?.ToNullableDecimal();
-            FibrinIndexUnits = segments.Length > 39 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(39)) : null;
-            SystemInducedContaminants = segments.Length > 40 ? segments.ElementAtOrDefault(40).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            DrugInterference = segments.Length > 41 ? segments.ElementAtOrDefault(41).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            ArtificialBlood = segments.Length > 42 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(42)) : null;
-            SpecialHandlingCode = segments.Length > 43 ? segments.ElementAtOrDefault(43).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            OtherEnvironmentalFactors = segments.Length > 44 ? segments.ElementAtOrDefault(44).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            ContainerLength = segments.Length > 45 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(45)) : null;
-            ContainerWidth = segments.Length > 46 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(46)) : null;
-            ContainerForm = segments.Length > 47 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(47)) : null;
-            ContainerMaterial = segments.Length > 48 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(48)) : null;
-            ContainerCommonName = segments.Length > 49 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(49)) : null;
-            
-            return this;
+            FibrinIndexUnits = segments.Length > 39 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(39), false) : null;
+            SystemInducedContaminants = segments.Length > 40 ? segments.ElementAtOrDefault(40).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            DrugInterference = segments.Length > 41 ? segments.ElementAtOrDefault(41).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            ArtificialBlood = segments.Length > 42 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(42), false) : null;
+            SpecialHandlingCode = segments.Length > 43 ? segments.ElementAtOrDefault(43).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            OtherEnvironmentalFactors = segments.Length > 44 ? segments.ElementAtOrDefault(44).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            ContainerLength = segments.Length > 45 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(45), false) : null;
+            ContainerWidth = segments.Length > 46 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(46), false) : null;
+            ContainerForm = segments.Length > 47 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(47), false) : null;
+            ContainerMaterial = segments.Length > 48 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(48), false) : null;
+            ContainerCommonName = segments.Length > 49 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(49), false) : null;
         }
 
         /// <summary>

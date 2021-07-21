@@ -81,9 +81,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public Tq2Segment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -98,16 +97,14 @@ namespace ClearHl7.V290.Segments
 
             SetIdTq2 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
             SequenceResultsFlag = segments.ElementAtOrDefault(2);
-            RelatedPlacerNumber = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => new EntityIdentifier().FromDelimitedString(x)) : null;
-            RelatedFillerNumber = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => new EntityIdentifier().FromDelimitedString(x)) : null;
-            RelatedPlacerGroupNumber = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => new EntityIdentifier().FromDelimitedString(x)) : null;
+            RelatedPlacerNumber = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
+            RelatedFillerNumber = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
+            RelatedPlacerGroupNumber = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
             SequenceConditionCode = segments.ElementAtOrDefault(6);
             CyclicEntryExitIndicator = segments.ElementAtOrDefault(7);
-            SequenceConditionTimeInterval = segments.Length > 8 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+            SequenceConditionTimeInterval = segments.Length > 8 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(8), false) : null;
             CyclicGroupMaximumNumberOfRepeats = segments.ElementAtOrDefault(9)?.ToNullableDecimal();
             SpecialServiceRequestRelationship = segments.ElementAtOrDefault(10);
-            
-            return this;
         }
 
         /// <summary>

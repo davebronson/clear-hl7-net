@@ -102,9 +102,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public BpoSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -118,21 +117,19 @@ namespace ClearHl7.V290.Segments
             }
 
             SetIdBpo = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            BpUniversalServiceIdentifier = segments.Length > 2 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            BpProcessingRequirements = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            BpUniversalServiceIdentifier = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
+            BpProcessingRequirements = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             BpQuantity = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
             BpAmount = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
-            BpUnits = segments.Length > 6 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
+            BpUnits = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
             BpIntendedUseDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            BpIntendedDispenseFromLocation = segments.Length > 8 ? new PersonLocation().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
-            BpIntendedDispenseFromAddress = segments.Length > 9 ? new ExtendedAddress().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            BpIntendedDispenseFromLocation = segments.Length > 8 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(8), false) : null;
+            BpIntendedDispenseFromAddress = segments.Length > 9 ? TypeHelper.Deserialize<ExtendedAddress>(segments.ElementAtOrDefault(9), false) : null;
             BpRequestedDispenseDateTime = segments.ElementAtOrDefault(10)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            BpRequestedDispenseToLocation = segments.Length > 11 ? new PersonLocation().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
-            BpRequestedDispenseToAddress = segments.Length > 12 ? new ExtendedAddress().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
-            BpIndicationForUse = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            BpRequestedDispenseToLocation = segments.Length > 11 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(11), false) : null;
+            BpRequestedDispenseToAddress = segments.Length > 12 ? TypeHelper.Deserialize<ExtendedAddress>(segments.ElementAtOrDefault(12), false) : null;
+            BpIndicationForUse = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             BpInformedConsentIndicator = segments.ElementAtOrDefault(14);
-
-            return this;
         }
 
         /// <summary>

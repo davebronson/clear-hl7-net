@@ -99,9 +99,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public PshSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -119,17 +118,15 @@ namespace ClearHl7.V290.Segments
             ReportDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             ReportIntervalStartDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             ReportIntervalEndDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            QuantityManufactured = segments.Length > 6 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
-            QuantityDistributed = segments.Length > 7 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
+            QuantityManufactured = segments.Length > 6 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(6), false) : null;
+            QuantityDistributed = segments.Length > 7 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(7), false) : null;
             QuantityDistributedMethod = segments.ElementAtOrDefault(8);
             QuantityDistributedComment = segments.ElementAtOrDefault(9);
-            QuantityInUse = segments.Length > 10 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
+            QuantityInUse = segments.Length > 10 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(10), false) : null;
             QuantityInUseMethod = segments.ElementAtOrDefault(11);
             QuantityInUseComment = segments.ElementAtOrDefault(12);
             NumberOfProductExperienceReportsFiledByFacility = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => x.ToDecimal()) : null;
             NumberOfProductExperienceReportsFiledByDistributor = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => x.ToDecimal()) : null;
-            
-            return this;
         }
 
         /// <summary>

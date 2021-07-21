@@ -75,9 +75,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public PdaSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -90,17 +89,15 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
-            DeathCauseCode = segments.Length > 1 ? segments.ElementAtOrDefault(1).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            DeathLocation = segments.Length > 2 ? new PersonLocation().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            DeathCauseCode = segments.Length > 1 ? segments.ElementAtOrDefault(1).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            DeathLocation = segments.Length > 2 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(2), false) : null;
             DeathCertifiedIndicator = segments.ElementAtOrDefault(3);
             DeathCertificateSignedDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            DeathCertifiedBy = segments.Length > 5 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            DeathCertifiedBy = segments.Length > 5 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(5), false) : null;
             AutopsyIndicator = segments.ElementAtOrDefault(6);
-            AutopsyStartAndEndDateTime = segments.Length > 7 ? new DateTimeRange().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
-            AutopsyPerformedBy = segments.Length > 8 ? new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
+            AutopsyStartAndEndDateTime = segments.Length > 7 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(7), false) : null;
+            AutopsyPerformedBy = segments.Length > 8 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(8), false) : null;
             CoronerIndicator = segments.ElementAtOrDefault(9);
-            
-            return this;
         }
 
         /// <summary>

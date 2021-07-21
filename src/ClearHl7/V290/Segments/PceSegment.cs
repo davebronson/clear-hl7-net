@@ -48,9 +48,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public PceSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
 
@@ -63,11 +62,9 @@ namespace ClearHl7.V290.Segments
             }
 
             SetIdPce = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            CostCenterAccountNumber = segments.Length > 2 ? new ExtendedCompositeIdWithCheckDigit().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            TransactionCode = segments.Length > 3 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
-            TransactionAmountUnit = segments.Length > 4 ? new CompositePrice().FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
-            
-            return this;
+            CostCenterAccountNumber = segments.Length > 2 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(2), false) : null;
+            TransactionCode = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
+            TransactionAmountUnit = segments.Length > 4 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(4), false) : null;
         }
 
         /// <summary>

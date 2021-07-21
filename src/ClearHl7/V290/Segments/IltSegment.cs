@@ -76,9 +76,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public IltSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
 
@@ -95,13 +94,11 @@ namespace ClearHl7.V290.Segments
             InventoryExpirationDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             InventoryReceivedDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             InventoryReceivedQuantity = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
-            InventoryReceivedQuantityUnit = segments.Length > 6 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
-            InventoryReceivedItemCost = segments.Length > 7 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
+            InventoryReceivedQuantityUnit = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
+            InventoryReceivedItemCost = segments.Length > 7 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(7), false) : null;
             InventoryOnHandDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             InventoryOnHandQuantity = segments.ElementAtOrDefault(9)?.ToNullableDecimal();
-            InventoryOnHandQuantityUnit = segments.Length > 10 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
-            
-            return this;
+            InventoryOnHandQuantityUnit = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(10), false) : null;
         }
 
         /// <summary>

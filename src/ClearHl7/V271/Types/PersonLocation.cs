@@ -80,25 +80,95 @@ namespace ClearHl7.V271.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public PersonLocation FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            PointOfCare = segments.Length > 0 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
-            Room = segments.Length > 1 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            Bed = segments.Length > 2 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            Facility = segments.Length > 3 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            if (segments.Length > 0)
+            {
+                PointOfCare = new HierarchicDesignator { IsSubcomponent = true };
+                PointOfCare.FromDelimitedString(segments.ElementAtOrDefault(0));
+            }
+            else
+            {
+                PointOfCare = null;
+            }
+
+            if (segments.Length > 1)
+            {
+                Room = new HierarchicDesignator { IsSubcomponent = true };
+                Room.FromDelimitedString(segments.ElementAtOrDefault(1));
+            }
+            else
+            {
+                Room = null;
+            }
+
+            if (segments.Length > 2)
+            {
+                Bed = new HierarchicDesignator { IsSubcomponent = true };
+                Bed.FromDelimitedString(segments.ElementAtOrDefault(2));
+            }
+            else
+            {
+                Bed = null;
+            }
+
+            if (segments.Length > 3)
+            {
+                Facility = new HierarchicDesignator { IsSubcomponent = true };
+                Facility.FromDelimitedString(segments.ElementAtOrDefault(3));
+            }
+            else
+            {
+                Facility = null;
+            }
+
             LocationStatus = segments.ElementAtOrDefault(4);
             PersonLocationType = segments.ElementAtOrDefault(5);
-            Building = segments.Length > 6 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
-            Floor = segments.Length > 7 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
-            LocationDescription = segments.ElementAtOrDefault(8);
-            ComprehensiveLocationIdentifier = segments.Length > 9 ? new EntityIdentifier { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
-            AssigningAuthorityForLocation = segments.Length > 10 ? new HierarchicDesignator { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
 
-            return this;
+            if (segments.Length > 6)
+            {
+                Building = new HierarchicDesignator { IsSubcomponent = true };
+                Building.FromDelimitedString(segments.ElementAtOrDefault(6));
+            }
+            else
+            {
+                Building = null;
+            }
+
+            if (segments.Length > 7)
+            {
+                Floor = new HierarchicDesignator { IsSubcomponent = true };
+                Floor.FromDelimitedString(segments.ElementAtOrDefault(7));
+            }
+            else
+            {
+                Floor = null;
+            }
+
+            LocationDescription = segments.ElementAtOrDefault(8);
+
+            if (segments.Length > 9)
+            {
+                ComprehensiveLocationIdentifier = new EntityIdentifier { IsSubcomponent = true };
+                ComprehensiveLocationIdentifier.FromDelimitedString(segments.ElementAtOrDefault(9));
+            }
+            else
+            {
+                ComprehensiveLocationIdentifier = null;
+            }
+
+            if (segments.Length > 10)
+            {
+                AssigningAuthorityForLocation = new HierarchicDesignator { IsSubcomponent = true };
+                AssigningAuthorityForLocation.FromDelimitedString(segments.ElementAtOrDefault(10));
+            }
+            else
+            {
+                AssigningAuthorityForLocation = null;
+            }
         }
 
         /// <summary>

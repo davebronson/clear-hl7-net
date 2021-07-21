@@ -65,8 +65,7 @@ namespace ClearHl7.V230.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public ExtendedTelecommunicationNumber FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
@@ -80,8 +79,6 @@ namespace ClearHl7.V230.Types
             LocalNumber = segments.ElementAtOrDefault(6)?.ToNullableInt();
             Extension = segments.ElementAtOrDefault(7)?.ToNullableInt();
             AnyText = segments.ElementAtOrDefault(8);
-
-            return this;
         }
 
         /// <summary>

@@ -126,9 +126,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public PrcSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -141,26 +140,24 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
-            PrimaryKeyValuePrc = segments.Length > 1 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            FacilityIdPrc = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            Department = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            ValidPatientClasses = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            Price = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => new CompositePrice().FromDelimitedString(x)) : null;
+            PrimaryKeyValuePrc = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
+            FacilityIdPrc = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            Department = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            ValidPatientClasses = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            Price = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<CompositePrice>(x, false)) : null;
             Formula = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator) : null;
             MinimumQuantity = segments.ElementAtOrDefault(7)?.ToNullableDecimal();
             MaximumQuantity = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
-            MinimumPrice = segments.Length > 9 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
-            MaximumPrice = segments.Length > 10 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
+            MinimumPrice = segments.Length > 9 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(9), false) : null;
+            MaximumPrice = segments.Length > 10 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(10), false) : null;
             EffectiveStartDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             EffectiveEndDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            PriceOverrideFlag = segments.Length > 13 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(13)) : null;
-            BillingCategory = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            PriceOverrideFlag = segments.Length > 13 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(13), false) : null;
+            BillingCategory = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             ChargeableFlag = segments.ElementAtOrDefault(15);
             ActiveInactiveFlag = segments.ElementAtOrDefault(16);
-            Cost = segments.Length > 17 ? new Money().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
-            ChargeOnIndicator = segments.Length > 18 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(18)) : null;
-            
-            return this;
+            Cost = segments.Length > 17 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(17), false) : null;
+            ChargeOnIndicator = segments.Length > 18 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(18), false) : null;
         }
 
         /// <summary>

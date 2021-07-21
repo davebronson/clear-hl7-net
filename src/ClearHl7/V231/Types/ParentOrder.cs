@@ -27,16 +27,30 @@ namespace ClearHl7.V231.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public ParentOrder FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            PlacerAssignedIdentifier = segments.Length > 0 ? new EntityIdentifier { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
-            FillerAssignedIdentifier = segments.Length > 1 ? new EntityIdentifier { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
+            if (segments.Length > 0)
+            {
+                PlacerAssignedIdentifier = new EntityIdentifier { IsSubcomponent = true };
+                PlacerAssignedIdentifier.FromDelimitedString(segments.ElementAtOrDefault(0));
+            }
+            else
+            {
+                PlacerAssignedIdentifier = null;
+            }
 
-            return this;
+            if (segments.Length > 1)
+            {
+                FillerAssignedIdentifier = new EntityIdentifier { IsSubcomponent = true };
+                FillerAssignedIdentifier.FromDelimitedString(segments.ElementAtOrDefault(1));
+            }
+            else
+            {
+                FillerAssignedIdentifier = null;
+            }
         }
 
         /// <summary>

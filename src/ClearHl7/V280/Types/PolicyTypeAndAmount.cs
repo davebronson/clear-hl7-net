@@ -40,18 +40,42 @@ namespace ClearHl7.V280.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public PolicyTypeAndAmount FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            PolicyType = segments.Length > 0 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
-            AmountClass = segments.Length > 1 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            MoneyOrPercentageQuantity = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
-            MoneyOrPercentage = segments.Length > 3 ? new MoneyOrPercentage { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            if (segments.Length > 0)
+            {
+                PolicyType = new CodedWithExceptions { IsSubcomponent = true };
+                PolicyType.FromDelimitedString(segments.ElementAtOrDefault(0));
+            }
+            else
+            {
+                PolicyType = null;
+            }
 
-            return this;
+            if (segments.Length > 1)
+            {
+                AmountClass = new CodedWithExceptions { IsSubcomponent = true };
+                AmountClass.FromDelimitedString(segments.ElementAtOrDefault(1));
+            }
+            else
+            {
+                AmountClass = null;
+            }
+
+            MoneyOrPercentageQuantity = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
+
+            if (segments.Length > 3)
+            {
+                MoneyOrPercentage = new MoneyOrPercentage { IsSubcomponent = true };
+                MoneyOrPercentage.FromDelimitedString(segments.ElementAtOrDefault(3));
+            }
+            else
+            {
+                MoneyOrPercentage = null;
+            }
         }
 
         /// <summary>

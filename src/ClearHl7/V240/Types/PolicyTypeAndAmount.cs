@@ -35,8 +35,7 @@ namespace ClearHl7.V240.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public PolicyTypeAndAmount FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
@@ -44,8 +43,6 @@ namespace ClearHl7.V240.Types
             PolicyType = segments.ElementAtOrDefault(0);
             AmountClass = segments.ElementAtOrDefault(1);
             MoneyOrPercentageQuantity = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
-            
-            return this;
         }
 
         /// <summary>

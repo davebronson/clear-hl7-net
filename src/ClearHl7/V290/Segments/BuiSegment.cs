@@ -95,9 +95,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public BuiSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
 
@@ -110,20 +109,18 @@ namespace ClearHl7.V290.Segments
             }
 
             SetIdBui = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            BloodUnitIdentifier = segments.Length > 2 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            BloodUnitType = segments.Length > 3 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            BloodUnitIdentifier = segments.Length > 2 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(2), false) : null;
+            BloodUnitType = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
             BloodUnitWeight = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
-            WeightUnits = segments.Length > 5 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            WeightUnits = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(5), false) : null;
             BloodUnitVolume = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
-            VolumeUnits = segments.Length > 7 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(7)) : null;
+            VolumeUnits = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(7), false) : null;
             ContainerCatalogNumber = segments.ElementAtOrDefault(8);
             ContainerLotNumber = segments.ElementAtOrDefault(9);
-            ContainerManufacturer = segments.Length > 10 ? new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(segments.ElementAtOrDefault(10)) : null;
-            TransportTemperature = segments.Length > 11 ? new NumericRange().FromDelimitedString(segments.ElementAtOrDefault(11)) : null;
-            TransportTemperatureUnits = segments.Length > 12 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(12)) : null;
+            ContainerManufacturer = segments.Length > 10 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(10), false) : null;
+            TransportTemperature = segments.Length > 11 ? TypeHelper.Deserialize<NumericRange>(segments.ElementAtOrDefault(11), false) : null;
+            TransportTemperatureUnits = segments.Length > 12 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(12), false) : null;
             ActionCode = segments.ElementAtOrDefault(13);
-
-            return this;
         }
 
         /// <summary>

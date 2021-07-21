@@ -50,20 +50,36 @@ namespace ClearHl7.V270.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public CompositePrice FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            Price = segments.Length > 0 ? new Money { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            if (segments.Length > 0)
+            {
+                Price = new Money { IsSubcomponent = true };
+                Price.FromDelimitedString(segments.ElementAtOrDefault(0));
+            }
+            else
+            {
+                Price = null;
+            }
+
             PriceType = segments.ElementAtOrDefault(1);
             FromValue = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
             ToValue = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
-            RangeUnits = segments.Length > 4 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(4)) : null;
-            RangeType = segments.ElementAtOrDefault(5);
 
-            return this;
+            if (segments.Length > 4)
+            {
+                RangeUnits = new CodedWithExceptions { IsSubcomponent = true };
+                RangeUnits.FromDelimitedString(segments.ElementAtOrDefault(4));
+            }
+            else
+            {
+                RangeUnits = null;
+            }
+
+            RangeType = segments.ElementAtOrDefault(5);
         }
 
         /// <summary>

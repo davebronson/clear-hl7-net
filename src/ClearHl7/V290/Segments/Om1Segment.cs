@@ -353,9 +353,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public Om1Segment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -369,24 +368,24 @@ namespace ClearHl7.V290.Segments
             }
 
             SequenceNumberTestObservationMasterFile = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
-            ProducersServiceTestObservationId = segments.Length > 2 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
+            ProducersServiceTestObservationId = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
             PermittedDataTypes = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator) : null;
             SpecimenRequired = segments.ElementAtOrDefault(4);
-            ProducerId = segments.Length > 5 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
-            ObservationDescription = segments.Length > 6 ? new Text().FromDelimitedString(segments.ElementAtOrDefault(6)) : null;
-            OtherServiceTestObservationIdsForTheObservation = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            ProducerId = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
+            ObservationDescription = segments.Length > 6 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(6), false) : null;
+            OtherServiceTestObservationIdsForTheObservation = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             OtherNames = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator) : null;
             PreferredReportNameForTheObservation = segments.ElementAtOrDefault(9);
             PreferredShortNameOrMnemonicForTheObservation = segments.ElementAtOrDefault(10);
             PreferredLongNameForTheObservation = segments.ElementAtOrDefault(11);
             Orderability = segments.ElementAtOrDefault(12);
-            IdentityOfInstrumentUsedToPerformThisStudy = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            CodedRepresentationOfMethod = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
+            IdentityOfInstrumentUsedToPerformThisStudy = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            CodedRepresentationOfMethod = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             PortableDeviceIndicator = segments.ElementAtOrDefault(15);
-            ObservationProducingDepartmentSection = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            TelephoneNumberOfSection = segments.Length > 17 ? new ExtendedTelecommunicationNumber().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
-            NatureOfServiceTestObservation = segments.Length > 18 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(18)) : null;
-            ReportSubheader = segments.Length > 19 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(19)) : null;
+            ObservationProducingDepartmentSection = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            TelephoneNumberOfSection = segments.Length > 17 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments.ElementAtOrDefault(17), false) : null;
+            NatureOfServiceTestObservation = segments.Length > 18 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(18), false) : null;
+            ReportSubheader = segments.Length > 19 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(19), false) : null;
             ReportDisplayOrder = segments.ElementAtOrDefault(20);
             DateTimeStampForAnyChangeInDefinitionForTheObservation = segments.ElementAtOrDefault(21)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             EffectiveDateTimeOfChange = segments.ElementAtOrDefault(22)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
@@ -394,41 +393,39 @@ namespace ClearHl7.V290.Segments
             ProcessingTime = segments.ElementAtOrDefault(24)?.ToNullableDecimal();
             ProcessingPriority = segments.Length > 25 ? segments.ElementAtOrDefault(25).Split(separator) : null;
             ReportingPriority = segments.ElementAtOrDefault(26);
-            OutsideSitesWhereObservationMayBePerformed = segments.Length > 27 ? segments.ElementAtOrDefault(27).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            AddressOfOutsideSites = segments.Length > 28 ? segments.ElementAtOrDefault(28).Split(separator).Select(x => new ExtendedAddress().FromDelimitedString(x)) : null;
-            PhoneNumberOfOutsideSite = segments.Length > 29 ? new ExtendedTelecommunicationNumber().FromDelimitedString(segments.ElementAtOrDefault(29)) : null;
-            ConfidentialityCode = segments.Length > 30 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(30)) : null;
-            ObservationsRequiredToInterpretThisObservation = segments.Length > 31 ? segments.ElementAtOrDefault(31).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            InterpretationOfObservations = segments.Length > 32 ? new Text().FromDelimitedString(segments.ElementAtOrDefault(32)) : null;
-            ContraindicationsToObservations = segments.Length > 33 ? segments.ElementAtOrDefault(33).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            ReflexTestsObservations = segments.Length > 34 ? segments.ElementAtOrDefault(34).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            RulesThatTriggerReflexTesting = segments.Length > 35 ? segments.ElementAtOrDefault(35).Split(separator).Select(x => new Text().FromDelimitedString(x)) : null;
-            FixedCannedMessage = segments.Length > 36 ? segments.ElementAtOrDefault(36).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            PatientPreparation = segments.Length > 37 ? segments.ElementAtOrDefault(37).Split(separator).Select(x => new Text().FromDelimitedString(x)) : null;
-            ProcedureMedication = segments.Length > 38 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(38)) : null;
-            FactorsThatMayAffectTheObservation = segments.Length > 39 ? new Text().FromDelimitedString(segments.ElementAtOrDefault(39)) : null;
+            OutsideSitesWhereObservationMayBePerformed = segments.Length > 27 ? segments.ElementAtOrDefault(27).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            AddressOfOutsideSites = segments.Length > 28 ? segments.ElementAtOrDefault(28).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
+            PhoneNumberOfOutsideSite = segments.Length > 29 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments.ElementAtOrDefault(29), false) : null;
+            ConfidentialityCode = segments.Length > 30 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(30), false) : null;
+            ObservationsRequiredToInterpretThisObservation = segments.Length > 31 ? segments.ElementAtOrDefault(31).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            InterpretationOfObservations = segments.Length > 32 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(32), false) : null;
+            ContraindicationsToObservations = segments.Length > 33 ? segments.ElementAtOrDefault(33).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            ReflexTestsObservations = segments.Length > 34 ? segments.ElementAtOrDefault(34).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            RulesThatTriggerReflexTesting = segments.Length > 35 ? segments.ElementAtOrDefault(35).Split(separator).Select(x => TypeHelper.Deserialize<Text>(x, false)) : null;
+            FixedCannedMessage = segments.Length > 36 ? segments.ElementAtOrDefault(36).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            PatientPreparation = segments.Length > 37 ? segments.ElementAtOrDefault(37).Split(separator).Select(x => TypeHelper.Deserialize<Text>(x, false)) : null;
+            ProcedureMedication = segments.Length > 38 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(38), false) : null;
+            FactorsThatMayAffectTheObservation = segments.Length > 39 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(39), false) : null;
             ServiceTestObservationPerformanceSchedule = segments.Length > 40 ? segments.ElementAtOrDefault(40).Split(separator) : null;
-            DescriptionOfTestMethods = segments.Length > 41 ? new Text().FromDelimitedString(segments.ElementAtOrDefault(41)) : null;
-            KindOfQuantityObserved = segments.Length > 42 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(42)) : null;
-            PointVersusInterval = segments.Length > 43 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(43)) : null;
-            ChallengeInformation = segments.Length > 44 ? new Text().FromDelimitedString(segments.ElementAtOrDefault(44)) : null;
-            RelationshipModifier = segments.Length > 45 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(45)) : null;
-            TargetAnatomicSiteOfTest = segments.Length > 46 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(46)) : null;
-            ModalityOfImagingMeasurement = segments.Length > 47 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(47)) : null;
+            DescriptionOfTestMethods = segments.Length > 41 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(41), false) : null;
+            KindOfQuantityObserved = segments.Length > 42 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(42), false) : null;
+            PointVersusInterval = segments.Length > 43 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(43), false) : null;
+            ChallengeInformation = segments.Length > 44 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(44), false) : null;
+            RelationshipModifier = segments.Length > 45 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(45), false) : null;
+            TargetAnatomicSiteOfTest = segments.Length > 46 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(46), false) : null;
+            ModalityOfImagingMeasurement = segments.Length > 47 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(47), false) : null;
             ExclusiveTest = segments.ElementAtOrDefault(48);
             DiagnosticServSectId = segments.ElementAtOrDefault(49);
-            TaxonomicClassificationCode = segments.Length > 50 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(50)) : null;
+            TaxonomicClassificationCode = segments.Length > 50 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(50), false) : null;
             OtherNamesB = segments.Length > 51 ? segments.ElementAtOrDefault(51).Split(separator) : null;
-            ReplacementProducersServiceTestObservationId = segments.Length > 52 ? segments.ElementAtOrDefault(52).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            PriorResultsInstructions = segments.Length > 53 ? segments.ElementAtOrDefault(53).Split(separator).Select(x => new Text().FromDelimitedString(x)) : null;
-            SpecialInstructions = segments.Length > 54 ? new Text().FromDelimitedString(segments.ElementAtOrDefault(54)) : null;
-            TestCategory = segments.Length > 55 ? segments.ElementAtOrDefault(55).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            ObservationIdAssociatedWithProducersServiceTestObservationId = segments.Length > 56 ? new CodedWithExceptions().FromDelimitedString(segments.ElementAtOrDefault(56)) : null;
-            TypicalTurnAroundTimeWithUnits = segments.Length > 57 ? new CompositeQuantityWithUnits().FromDelimitedString(segments.ElementAtOrDefault(57)) : null;
-            GenderRestriction = segments.Length > 58 ? segments.ElementAtOrDefault(58).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            AgeRestriction = segments.Length > 59 ? segments.ElementAtOrDefault(59).Split(separator).Select(x => new NumericRange().FromDelimitedString(x)) : null;
-
-            return this;
+            ReplacementProducersServiceTestObservationId = segments.Length > 52 ? segments.ElementAtOrDefault(52).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            PriorResultsInstructions = segments.Length > 53 ? segments.ElementAtOrDefault(53).Split(separator).Select(x => TypeHelper.Deserialize<Text>(x, false)) : null;
+            SpecialInstructions = segments.Length > 54 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(54), false) : null;
+            TestCategory = segments.Length > 55 ? segments.ElementAtOrDefault(55).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            ObservationIdAssociatedWithProducersServiceTestObservationId = segments.Length > 56 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(56), false) : null;
+            TypicalTurnAroundTimeWithUnits = segments.Length > 57 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(57), false) : null;
+            GenderRestriction = segments.Length > 58 ? segments.ElementAtOrDefault(58).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            AgeRestriction = segments.Length > 59 ? segments.ElementAtOrDefault(59).Split(separator).Select(x => TypeHelper.Deserialize<NumericRange>(x, false)) : null;
         }
 
         /// <summary>

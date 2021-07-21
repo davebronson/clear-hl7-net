@@ -116,9 +116,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public DevSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
             char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
@@ -132,24 +131,22 @@ namespace ClearHl7.V290.Segments
             }
 
             ActionCode = segments.ElementAtOrDefault(1);
-            UniqueDeviceIdentifier = segments.Length > 2 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            DeviceType = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => new CodedWithNoExceptions().FromDelimitedString(x)) : null;
-            DeviceStatus = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => new CodedWithNoExceptions().FromDelimitedString(x)) : null;
-            ManufacturerDistributor = segments.Length > 5 ? new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            UniqueDeviceIdentifier = segments.Length > 2 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(2), false) : null;
+            DeviceType = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithNoExceptions>(x, false)) : null;
+            DeviceStatus = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithNoExceptions>(x, false)) : null;
+            ManufacturerDistributor = segments.Length > 5 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(5), false) : null;
             BrandName = segments.ElementAtOrDefault(6);
             ModelIdentifier = segments.ElementAtOrDefault(7);
             CatalogueIdentifier = segments.ElementAtOrDefault(8);
-            UdiDeviceIdentifier = segments.Length > 9 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+            UdiDeviceIdentifier = segments.Length > 9 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(9), false) : null;
             DeviceLotNumber = segments.ElementAtOrDefault(10);
             DeviceSerialNumber = segments.ElementAtOrDefault(11);
             DeviceManufactureDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             DeviceExpiryDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            SafetyCharacteristics = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => new CodedWithExceptions().FromDelimitedString(x)) : null;
-            DeviceDonationIdentification = segments.Length > 15 ? new EntityIdentifier().FromDelimitedString(segments.ElementAtOrDefault(15)) : null;
+            SafetyCharacteristics = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            DeviceDonationIdentification = segments.Length > 15 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(15), false) : null;
             SoftwareVersionNumber = segments.ElementAtOrDefault(16);
-            ImplantationStatus = segments.Length > 17 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(17)) : null;
-            
-            return this;
+            ImplantationStatus = segments.Length > 17 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(17), false) : null;
         }
 
         /// <summary>

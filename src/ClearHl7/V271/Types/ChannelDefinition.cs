@@ -48,20 +48,62 @@ namespace ClearHl7.V271.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public ChannelDefinition FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            ChannelIdentifier = segments.Length > 0 ? new ChannelIdentifier { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
-            WaveformSource = segments.Length > 1 ? new WaveformSource { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            ChannelSensitivityAndUnits = segments.Length > 2 ? new ChannelSensitivityAndUnits { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            ChannelCalibrationParameters = segments.Length > 3 ? new ChannelCalibrationParameters { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
-            ChannelSamplingFrequency = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
-            MinimumAndMaximumDataValues = segments.Length > 5 ? new NumericRange { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(5)) : null;
+            if (segments.Length > 0)
+            {
+                ChannelIdentifier = new ChannelIdentifier { IsSubcomponent = true };
+                ChannelIdentifier.FromDelimitedString(segments.ElementAtOrDefault(0));
+            }
+            else
+            {
+                ChannelIdentifier = null;
+            }
 
-            return this;
+            if (segments.Length > 1)
+            {
+                WaveformSource = new WaveformSource { IsSubcomponent = true };
+                WaveformSource.FromDelimitedString(segments.ElementAtOrDefault(1));
+            }
+            else
+            {
+                WaveformSource = null;
+            }
+
+            if (segments.Length > 2)
+            {
+                ChannelSensitivityAndUnits = new ChannelSensitivityAndUnits { IsSubcomponent = true };
+                ChannelSensitivityAndUnits.FromDelimitedString(segments.ElementAtOrDefault(2));
+            }
+            else
+            {
+                ChannelIdentifier = null;
+            }
+
+            if (segments.Length > 3)
+            {
+                ChannelCalibrationParameters = new ChannelCalibrationParameters { IsSubcomponent = true };
+                ChannelCalibrationParameters.FromDelimitedString(segments.ElementAtOrDefault(3));
+            }
+            else
+            {
+                ChannelCalibrationParameters = null;
+            }
+
+            ChannelSamplingFrequency = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
+
+            if (segments.Length > 5)
+            {
+                MinimumAndMaximumDataValues = new NumericRange { IsSubcomponent = true };
+                MinimumAndMaximumDataValues.FromDelimitedString(segments.ElementAtOrDefault(5));
+            }
+            else
+            {
+                MinimumAndMaximumDataValues = null;
+            }
         }
 
         /// <summary>

@@ -99,13 +99,21 @@ namespace ClearHl7.V290.Types
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
-        public ExtendedPersonName FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            FamilyName = segments.Length > 0 ? new FamilyName { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(0)) : null;
+            if (segments.Length > 0)
+            {
+                FamilyName = new FamilyName { IsSubcomponent = true };
+                FamilyName.FromDelimitedString(segments.ElementAtOrDefault(0));
+            }
+            else
+            {
+                FamilyName = null;
+            }
+
             GivenName = segments.ElementAtOrDefault(1);
             SecondAndFurtherGivenNamesOrInitialsThereof = segments.ElementAtOrDefault(2);
             Suffix = segments.ElementAtOrDefault(3);
@@ -113,15 +121,32 @@ namespace ClearHl7.V290.Types
             Degree = segments.ElementAtOrDefault(5);
             NameTypeCode = segments.ElementAtOrDefault(6);
             NameRepresentationCode = segments.ElementAtOrDefault(7);
-            NameContext = segments.Length > 8 ? new CodedWithExceptions { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(8)) : null;
-            NameValidityRange = segments.Length > 9 ? new DateTimeRange { IsSubcomponent = true }.FromDelimitedString(segments.ElementAtOrDefault(9)) : null;
+
+            if (segments.Length > 8)
+            {
+                NameContext = new CodedWithExceptions { IsSubcomponent = true };
+                NameContext.FromDelimitedString(segments.ElementAtOrDefault(8));
+            }
+            else
+            {
+                NameContext = null;
+            }
+
+            if (segments.Length > 9)
+            {
+                NameValidityRange = new DateTimeRange { IsSubcomponent = true };
+                NameValidityRange.FromDelimitedString(segments.ElementAtOrDefault(9));
+            }
+            else
+            {
+                NameValidityRange = null;
+            }
+
             NameAssemblyOrder = segments.ElementAtOrDefault(10);
             EffectiveDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             ExpirationDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             ProfessionalSuffix = segments.ElementAtOrDefault(13);
             CalledBy = segments.ElementAtOrDefault(14);
-
-            return this;
         }
 
         /// <summary>

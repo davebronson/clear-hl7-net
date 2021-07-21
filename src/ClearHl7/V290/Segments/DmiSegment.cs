@@ -53,9 +53,8 @@ namespace ClearHl7.V290.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        public DmiSegment FromDelimitedString(string delimitedString)
+        public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
 
@@ -67,13 +66,11 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
-            DiagnosticRelatedGroup = segments.Length > 1 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(1)) : null;
-            MajorDiagnosticCategory = segments.Length > 2 ? new CodedWithNoExceptions().FromDelimitedString(segments.ElementAtOrDefault(2)) : null;
-            LowerAndUpperTrimPoints = segments.Length > 3 ? new NumericRange().FromDelimitedString(segments.ElementAtOrDefault(3)) : null;
+            DiagnosticRelatedGroup = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(1), false) : null;
+            MajorDiagnosticCategory = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(2), false) : null;
+            LowerAndUpperTrimPoints = segments.Length > 3 ? TypeHelper.Deserialize<NumericRange>(segments.ElementAtOrDefault(3), false) : null;
             AverageLengthOfStay = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
             RelativeWeight = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
-
-            return this;
         }
 
         /// <summary>
