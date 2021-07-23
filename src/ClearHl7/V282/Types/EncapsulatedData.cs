@@ -50,29 +50,11 @@ namespace ClearHl7.V282.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            if (segments.Length > 0)
-            {
-                SourceApplication = new HierarchicDesignator { IsSubcomponent = true };
-                SourceApplication.FromDelimitedString(segments.ElementAtOrDefault(0));
-            }
-            else
-            {
-                SourceApplication = null;
-            }
-
+            SourceApplication = segments.Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(0), true) : null;
             TypeOfData = segments.ElementAtOrDefault(1);
             DataSubtype = segments.ElementAtOrDefault(2);
             Encoding = segments.ElementAtOrDefault(3);
-
-            if (segments.Length > 4)
-            {
-                Data = new Text { IsSubcomponent = true };
-                Data.FromDelimitedString(segments.ElementAtOrDefault(4));
-            }
-            else
-            {
-                Data = null;
-            }
+            Data = segments.Length > 4 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(4), true) : null;
         }
 
         /// <summary>

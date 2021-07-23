@@ -33,16 +33,7 @@ namespace ClearHl7.V282.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            if (segments.Length > 0)
-            {
-                RepeatPattern = new CodedWithExceptions { IsSubcomponent = true };
-                RepeatPattern.FromDelimitedString(segments.ElementAtOrDefault(0));
-            }
-            else
-            {
-                RepeatPattern = null;
-            }
-
+            RepeatPattern = segments.Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(0), true) : null;
             ExplicitTimeInterval = segments.ElementAtOrDefault(1);
         }
 

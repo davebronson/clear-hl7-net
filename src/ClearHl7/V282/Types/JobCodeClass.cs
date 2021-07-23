@@ -39,35 +39,9 @@ namespace ClearHl7.V282.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            if (segments.Length > 0)
-            {
-                JobCode = new CodedWithExceptions { IsSubcomponent = true };
-                JobCode.FromDelimitedString(segments.ElementAtOrDefault(0));
-            }
-            else
-            {
-                JobCode = null;
-            }
-
-            if (segments.Length > 1)
-            {
-                JobClass = new CodedWithExceptions { IsSubcomponent = true };
-                JobClass.FromDelimitedString(segments.ElementAtOrDefault(1));
-            }
-            else
-            {
-                JobClass = null;
-            }
-
-            if (segments.Length > 2)
-            {
-                JobDescriptionText = new Text { IsSubcomponent = true };
-                JobDescriptionText.FromDelimitedString(segments.ElementAtOrDefault(2));
-            }
-            else
-            {
-                JobDescriptionText = null;
-            }
+            JobCode = segments.Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(0), true) : null;
+            JobClass = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), true) : null;
+            JobDescriptionText = segments.Length > 2 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(2), true) : null;
         }
 
         /// <summary>

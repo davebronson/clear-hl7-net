@@ -91,52 +91,13 @@ namespace ClearHl7.V281.Types
             IdNumber = segments.ElementAtOrDefault(0);
             IdentifierCheckDigit = segments.ElementAtOrDefault(1);
             CheckDigitScheme = segments.ElementAtOrDefault(2);
-
-            if (segments.Length > 3)
-            {
-                AssigningAuthority = new HierarchicDesignator { IsSubcomponent = true };
-                AssigningAuthority.FromDelimitedString(segments.ElementAtOrDefault(3));
-            }
-            else
-            {
-                AssigningAuthority = null;
-            }
-
+            AssigningAuthority = segments.Length > 3 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(3), true) : null;
             IdentifierTypeCode = segments.ElementAtOrDefault(4);
-
-            if (segments.Length > 5)
-            {
-                AssigningFacility = new HierarchicDesignator { IsSubcomponent = true };
-                AssigningFacility.FromDelimitedString(segments.ElementAtOrDefault(5));
-            }
-            else
-            {
-                AssigningFacility = null;
-            }
-
+            AssigningFacility = segments.Length > 5 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(5), true) : null;
             EffectiveDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
             ExpirationDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-
-            if (segments.Length > 8)
-            {
-                AssigningJurisdiction = new CodedWithExceptions { IsSubcomponent = true };
-                AssigningJurisdiction.FromDelimitedString(segments.ElementAtOrDefault(8));
-            }
-            else
-            {
-                AssigningJurisdiction = null;
-            }
-
-            if (segments.Length > 9)
-            {
-                AssigningAgencyOrDepartment = new CodedWithExceptions { IsSubcomponent = true };
-                AssigningAgencyOrDepartment.FromDelimitedString(segments.ElementAtOrDefault(9));
-            }
-            else
-            {
-                AssigningAgencyOrDepartment = null;
-            }
-
+            AssigningJurisdiction = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), true) : null;
+            AssigningAgencyOrDepartment = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), true) : null;
             SecurityCheck = segments.ElementAtOrDefault(10);
             SecurityCheckScheme = segments.ElementAtOrDefault(11);
         }

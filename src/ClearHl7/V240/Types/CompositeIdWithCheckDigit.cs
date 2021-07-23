@@ -47,16 +47,7 @@ namespace ClearHl7.V240.Types
             IdNumber = segments.ElementAtOrDefault(0)?.ToNullableDecimal();
             CheckDigit = segments.ElementAtOrDefault(1);
             CodeIdentifyingTheCheckDigitSchemeEmployed = segments.ElementAtOrDefault(2);
-
-            if (segments.Length > 3)
-            {
-                AssigningAuthority = new HierarchicDesignator { IsSubcomponent = true };
-                AssigningAuthority.FromDelimitedString(segments.ElementAtOrDefault(3));
-            }
-            else
-            {
-                AssigningAuthority = null;
-            }
+            AssigningAuthority = segments.Length > 3 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(3), true) : null;
         }
 
         /// <summary>

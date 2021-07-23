@@ -35,16 +35,7 @@ namespace ClearHl7.V251.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            if (segments.Length > 0)
-            {
-                OccurrenceCode = new CodedWithNoExceptions { IsSubcomponent = true };
-                OccurrenceCode.FromDelimitedString(segments.ElementAtOrDefault(0));
-            }
-            else
-            {
-                OccurrenceCode = null;
-            }
-
+            OccurrenceCode = segments.Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(0), true) : null;
             OccurrenceDate = segments.ElementAtOrDefault(1)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
         }
 

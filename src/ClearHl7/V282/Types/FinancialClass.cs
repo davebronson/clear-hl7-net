@@ -35,16 +35,7 @@ namespace ClearHl7.V282.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            if (segments.Length > 0)
-            {
-                FinancialClassCode = new CodedWithExceptions { IsSubcomponent = true };
-                FinancialClassCode.FromDelimitedString(segments.ElementAtOrDefault(0));
-            }
-            else
-            {
-                FinancialClassCode = null;
-            }
-
+            FinancialClassCode = segments.Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(0), true) : null;
             EffectiveDate = segments.ElementAtOrDefault(1)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
         }
 

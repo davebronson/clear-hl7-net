@@ -36,16 +36,7 @@ namespace ClearHl7.V282.Types
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
             Date = segments.ElementAtOrDefault(0)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-
-            if (segments.Length > 1)
-            {
-                InstitutionName = new CodedWithExceptions { IsSubcomponent = true };
-                InstitutionName.FromDelimitedString(segments.ElementAtOrDefault(1));
-            }
-            else
-            {
-                InstitutionName = null;
-            }
+            InstitutionName = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), true) : null;
         }
 
         /// <summary>

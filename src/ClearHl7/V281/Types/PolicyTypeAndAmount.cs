@@ -45,37 +45,10 @@ namespace ClearHl7.V281.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            if (segments.Length > 0)
-            {
-                PolicyType = new CodedWithExceptions { IsSubcomponent = true };
-                PolicyType.FromDelimitedString(segments.ElementAtOrDefault(0));
-            }
-            else
-            {
-                PolicyType = null;
-            }
-
-            if (segments.Length > 1)
-            {
-                AmountClass = new CodedWithExceptions { IsSubcomponent = true };
-                AmountClass.FromDelimitedString(segments.ElementAtOrDefault(1));
-            }
-            else
-            {
-                AmountClass = null;
-            }
-
+            PolicyType = segments.Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(0), true) : null;
+            AmountClass = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), true) : null;
             MoneyOrPercentageQuantity = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
-
-            if (segments.Length > 3)
-            {
-                MoneyOrPercentage = new MoneyOrPercentage { IsSubcomponent = true };
-                MoneyOrPercentage.FromDelimitedString(segments.ElementAtOrDefault(3));
-            }
-            else
-            {
-                MoneyOrPercentage = null;
-            }
+            MoneyOrPercentage = segments.Length > 3 ? TypeHelper.Deserialize<MoneyOrPercentage>(segments.ElementAtOrDefault(3), true) : null;
         }
 
         /// <summary>

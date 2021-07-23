@@ -33,16 +33,7 @@ namespace ClearHl7.V240.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            if (segments.Length > 0)
-            {
-                ParameterClass = new CodedWithExceptions { IsSubcomponent = true };
-                ParameterClass.FromDelimitedString(segments.ElementAtOrDefault(0));
-            }
-            else
-            {
-                ParameterClass = null;
-            }
-
+            ParameterClass = segments.Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(0), true) : null;
             ParameterValue = segments.ElementAtOrDefault(1);
         }
 

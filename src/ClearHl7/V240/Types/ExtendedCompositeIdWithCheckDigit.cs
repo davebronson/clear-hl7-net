@@ -69,29 +69,9 @@ namespace ClearHl7.V240.Types
             IdNumber = segments.ElementAtOrDefault(0);
             IdentifierCheckDigit = segments.ElementAtOrDefault(1);
             CheckDigitScheme = segments.ElementAtOrDefault(2);
-
-            if (segments.Length > 3)
-            {
-                AssigningAuthority = new HierarchicDesignator { IsSubcomponent = true };
-                AssigningAuthority.FromDelimitedString(segments.ElementAtOrDefault(3));
-            }
-            else
-            {
-                AssigningAuthority = null;
-            }
-
+            AssigningAuthority = segments.Length > 3 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(3), true) : null;
             IdentifierTypeCode = segments.ElementAtOrDefault(4);
-
-            if (segments.Length > 5)
-            {
-                AssigningFacility = new HierarchicDesignator { IsSubcomponent = true };
-                AssigningFacility.FromDelimitedString(segments.ElementAtOrDefault(5));
-            }
-            else
-            {
-                AssigningFacility = null;
-            }
-
+            AssigningFacility = segments.Length > 5 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(5), true) : null;
             EffectiveDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
             ExpirationDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
         }

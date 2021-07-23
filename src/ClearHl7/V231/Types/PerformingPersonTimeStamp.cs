@@ -118,32 +118,12 @@ namespace ClearHl7.V231.Types
             Prefix = segments.ElementAtOrDefault(5);
             Degree = segments.ElementAtOrDefault(6);
             SourceTable = segments.ElementAtOrDefault(7);
-
-            if (segments.Length > 8)
-            {
-                AssigningAuthority = new HierarchicDesignator { IsSubcomponent = true };
-                AssigningAuthority.FromDelimitedString(segments.ElementAtOrDefault(8));
-            }
-            else
-            {
-                AssigningAuthority = null;
-            }
-
+            AssigningAuthority = segments.Length > 8 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(8), true) : null;
             NameTypeCode = segments.ElementAtOrDefault(9);
             IdentifierCheckDigit = segments.ElementAtOrDefault(10);
             CheckDigitScheme = segments.ElementAtOrDefault(11);
             IdentifierTypeCode = segments.ElementAtOrDefault(12);
-
-            if (segments.Length > 13)
-            {
-                AssigningFacility = new HierarchicDesignator { IsSubcomponent = true };
-                AssigningFacility.FromDelimitedString(segments.ElementAtOrDefault(13));
-            }
-            else
-            {
-                AssigningFacility = null;
-            }
-
+            AssigningFacility = segments.Length > 13 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(13), true) : null;
             DateTimeActionPerformed = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             NameRepresentationCode = segments.ElementAtOrDefault(15);
         }

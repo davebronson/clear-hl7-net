@@ -41,16 +41,7 @@ namespace ClearHl7.V271.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            if (segments.Length > 0)
-            {
-                CertificationPatientType = new CodedWithExceptions { IsSubcomponent = true };
-                CertificationPatientType.FromDelimitedString(segments.ElementAtOrDefault(0));
-            }
-            else
-            {
-                CertificationPatientType = null;
-            }
-
+            CertificationPatientType = segments.Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(0), true) : null;
             CertificationRequired = segments.ElementAtOrDefault(1);
             DateTimeCertificationRequired = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
         }

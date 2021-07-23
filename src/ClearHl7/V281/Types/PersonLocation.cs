@@ -85,90 +85,17 @@ namespace ClearHl7.V281.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            if (segments.Length > 0)
-            {
-                PointOfCare = new HierarchicDesignator { IsSubcomponent = true };
-                PointOfCare.FromDelimitedString(segments.ElementAtOrDefault(0));
-            }
-            else
-            {
-                PointOfCare = null;
-            }
-
-            if (segments.Length > 1)
-            {
-                Room = new HierarchicDesignator { IsSubcomponent = true };
-                Room.FromDelimitedString(segments.ElementAtOrDefault(1));
-            }
-            else
-            {
-                Room = null;
-            }
-
-            if (segments.Length > 2)
-            {
-                Bed = new HierarchicDesignator { IsSubcomponent = true };
-                Bed.FromDelimitedString(segments.ElementAtOrDefault(2));
-            }
-            else
-            {
-                Bed = null;
-            }
-
-            if (segments.Length > 3)
-            {
-                Facility = new HierarchicDesignator { IsSubcomponent = true };
-                Facility.FromDelimitedString(segments.ElementAtOrDefault(3));
-            }
-            else
-            {
-                Facility = null;
-            }
-
+            PointOfCare = segments.Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(0), true) : null;
+            Room = segments.Length > 1 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(1), true) : null;
+            Bed = segments.Length > 2 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(2), true) : null;
+            Facility = segments.Length > 3 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(3), true) : null;
             LocationStatus = segments.ElementAtOrDefault(4);
             PersonLocationType = segments.ElementAtOrDefault(5);
-
-            if (segments.Length > 6)
-            {
-                Building = new HierarchicDesignator { IsSubcomponent = true };
-                Building.FromDelimitedString(segments.ElementAtOrDefault(6));
-            }
-            else
-            {
-                Building = null;
-            }
-
-            if (segments.Length > 7)
-            {
-                Floor = new HierarchicDesignator { IsSubcomponent = true };
-                Floor.FromDelimitedString(segments.ElementAtOrDefault(7));
-            }
-            else
-            {
-                Floor = null;
-            }
-
+            Building = segments.Length > 6 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(6), true) : null;
+            Floor = segments.Length > 7 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(7), true) : null;
             LocationDescription = segments.ElementAtOrDefault(8);
-
-            if (segments.Length > 9)
-            {
-                ComprehensiveLocationIdentifier = new EntityIdentifier { IsSubcomponent = true };
-                ComprehensiveLocationIdentifier.FromDelimitedString(segments.ElementAtOrDefault(9));
-            }
-            else
-            {
-                ComprehensiveLocationIdentifier = null;
-            }
-
-            if (segments.Length > 10)
-            {
-                AssigningAuthorityForLocation = new HierarchicDesignator { IsSubcomponent = true };
-                AssigningAuthorityForLocation.FromDelimitedString(segments.ElementAtOrDefault(10));
-            }
-            else
-            {
-                AssigningAuthorityForLocation = null;
-            }
+            ComprehensiveLocationIdentifier = segments.Length > 9 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(9), true) : null;
+            AssigningAuthorityForLocation = segments.Length > 10 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(10), true) : null;
         }
 
         /// <summary>

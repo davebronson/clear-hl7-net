@@ -82,16 +82,7 @@ namespace ClearHl7.V250.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            if (segments.Length > 0)
-            {
-                RepeatPatternCode = new CodedWithExceptions { IsSubcomponent = true };
-                RepeatPatternCode.FromDelimitedString(segments.ElementAtOrDefault(0));
-            }
-            else
-            {
-                RepeatPatternCode = null;
-            }
-
+            RepeatPatternCode = segments.Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(0), true) : null;
             CalendarAlignment = segments.ElementAtOrDefault(1);
             PhaseRangeBeginValue = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
             PhaseRangeEndValue = segments.ElementAtOrDefault(3)?.ToNullableDecimal();

@@ -77,17 +77,7 @@ namespace ClearHl7.V240.Types
             PointOfCare = segments.ElementAtOrDefault(0);
             Room = segments.ElementAtOrDefault(1);
             Bed = segments.ElementAtOrDefault(2);
-
-            if (segments.Length > 3)
-            {
-                Facility = new HierarchicDesignator { IsSubcomponent = true };
-                Facility.FromDelimitedString(segments.ElementAtOrDefault(3));
-            }
-            else
-            {
-                Facility = null;
-            }
-
+            Facility = segments.Length > 3 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(3), true) : null;
             LocationStatus = segments.ElementAtOrDefault(4);
             PersonLocationType = segments.ElementAtOrDefault(5);
             Building = segments.ElementAtOrDefault(6);

@@ -87,42 +87,14 @@ namespace ClearHl7.V251.Types
             PointOfCare = segments.ElementAtOrDefault(0);
             Room = segments.ElementAtOrDefault(1);
             Bed = segments.ElementAtOrDefault(2);
-
-            if (segments.Length > 3)
-            {
-                Facility = new HierarchicDesignator { IsSubcomponent = true };
-                Facility.FromDelimitedString(segments.ElementAtOrDefault(3));
-            }
-            else
-            {
-                Facility = null;
-            }
-
+            Facility = segments.Length > 3 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(3), true) : null;
             LocationStatus = segments.ElementAtOrDefault(4);
             PersonLocationType = segments.ElementAtOrDefault(5);
             Building = segments.ElementAtOrDefault(6);
             Floor = segments.ElementAtOrDefault(7);
             LocationDescription = segments.ElementAtOrDefault(8);
-
-            if (segments.Length > 9)
-            {
-                ComprehensiveLocationIdentifier = new EntityIdentifier { IsSubcomponent = true };
-                ComprehensiveLocationIdentifier.FromDelimitedString(segments.ElementAtOrDefault(9));
-            }
-            else
-            {
-                ComprehensiveLocationIdentifier = null;
-            }
-
-            if (segments.Length > 10)
-            {
-                AssigningAuthorityForLocation = new HierarchicDesignator { IsSubcomponent = true };
-                AssigningAuthorityForLocation.FromDelimitedString(segments.ElementAtOrDefault(10));
-            }
-            else
-            {
-                AssigningAuthorityForLocation = null;
-            }
+            ComprehensiveLocationIdentifier = segments.Length > 9 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(9), true) : null;
+            AssigningAuthorityForLocation = segments.Length > 10 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(10), true) : null;
         }
 
         /// <summary>

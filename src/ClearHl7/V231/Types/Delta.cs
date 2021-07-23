@@ -43,16 +43,7 @@ namespace ClearHl7.V231.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            if (segments.Length > 0)
-            {
-                NormalRange = new NumericRange { IsSubcomponent = true };
-                NormalRange.FromDelimitedString(segments.ElementAtOrDefault(0));
-            }
-            else
-            {
-                NormalRange = null;
-            }
-
+            NormalRange = segments.Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments.ElementAtOrDefault(0), true) : null;
             NumericThreshold = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
             ChangeComputation = segments.ElementAtOrDefault(2);
             DaysRetained = segments.ElementAtOrDefault(3)?.ToNullableDecimal();

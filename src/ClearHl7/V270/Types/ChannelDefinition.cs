@@ -53,57 +53,12 @@ namespace ClearHl7.V270.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            if (segments.Length > 0)
-            {
-                ChannelIdentifier = new ChannelIdentifier { IsSubcomponent = true };
-                ChannelIdentifier.FromDelimitedString(segments.ElementAtOrDefault(0));
-            }
-            else
-            {
-                ChannelIdentifier = null;
-            }
-
-            if (segments.Length > 1)
-            {
-                WaveformSource = new WaveformSource { IsSubcomponent = true };
-                WaveformSource.FromDelimitedString(segments.ElementAtOrDefault(1));
-            }
-            else
-            {
-                WaveformSource = null;
-            }
-
-            if (segments.Length > 2)
-            {
-                ChannelSensitivityAndUnits = new ChannelSensitivityAndUnits { IsSubcomponent = true };
-                ChannelSensitivityAndUnits.FromDelimitedString(segments.ElementAtOrDefault(2));
-            }
-            else
-            {
-                ChannelIdentifier = null;
-            }
-
-            if (segments.Length > 3)
-            {
-                ChannelCalibrationParameters = new ChannelCalibrationParameters { IsSubcomponent = true };
-                ChannelCalibrationParameters.FromDelimitedString(segments.ElementAtOrDefault(3));
-            }
-            else
-            {
-                ChannelCalibrationParameters = null;
-            }
-
+            ChannelIdentifier = segments.Length > 0 ? TypeHelper.Deserialize<ChannelIdentifier>(segments.ElementAtOrDefault(0), true) : null;
+            WaveformSource = segments.Length > 1 ? TypeHelper.Deserialize<WaveformSource>(segments.ElementAtOrDefault(1), true) : null;
+            ChannelSensitivityAndUnits = segments.Length > 2 ? TypeHelper.Deserialize<ChannelSensitivityAndUnits>(segments.ElementAtOrDefault(2), true) : null;
+            ChannelCalibrationParameters = segments.Length > 3 ? TypeHelper.Deserialize<ChannelCalibrationParameters>(segments.ElementAtOrDefault(3), true) : null;
             ChannelSamplingFrequency = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
-
-            if (segments.Length > 5)
-            {
-                MinimumAndMaximumDataValues = new NumericRange { IsSubcomponent = true };
-                MinimumAndMaximumDataValues.FromDelimitedString(segments.ElementAtOrDefault(5));
-            }
-            else
-            {
-                MinimumAndMaximumDataValues = null;
-            }
+            MinimumAndMaximumDataValues = segments.Length > 5 ? TypeHelper.Deserialize<NumericRange>(segments.ElementAtOrDefault(5), true) : null;
         }
 
         /// <summary>

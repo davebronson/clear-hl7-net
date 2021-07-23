@@ -83,29 +83,9 @@ namespace ClearHl7.V250.Types
             IdNumber = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
             IdentifierCheckDigit = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
             CheckDigitScheme = segments.ElementAtOrDefault(4);
-
-            if (segments.Length > 5)
-            {
-                AssigningAuthority = new HierarchicDesignator { IsSubcomponent = true };
-                AssigningAuthority.FromDelimitedString(segments.ElementAtOrDefault(5));
-            }
-            else
-            {
-                AssigningAuthority = null;
-            }
-
+            AssigningAuthority = segments.Length > 5 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(5), true) : null;
             IdentifierTypeCode = segments.ElementAtOrDefault(6);
-
-            if (segments.Length > 7)
-            {
-                AssigningFacility = new HierarchicDesignator { IsSubcomponent = true };
-                AssigningFacility.FromDelimitedString(segments.ElementAtOrDefault(7));
-            }
-            else
-            {
-                AssigningFacility = null;
-            }
-
+            AssigningFacility = segments.Length > 7 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(7), true) : null;
             NameRepresentationCode = segments.ElementAtOrDefault(8);
             OrganizationIdentifier = segments.ElementAtOrDefault(9);
         }

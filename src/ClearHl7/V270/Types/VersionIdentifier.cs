@@ -40,26 +40,8 @@ namespace ClearHl7.V270.Types
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
             VersionId = segments.ElementAtOrDefault(0);
-
-            if (segments.Length > 1)
-            {
-                InternationalizationCode = new CodedWithExceptions { IsSubcomponent = true };
-                InternationalizationCode.FromDelimitedString(segments.ElementAtOrDefault(1));
-            }
-            else
-            {
-                InternationalizationCode = null;
-            }
-
-            if (segments.Length > 2)
-            {
-                InternationalVersionId = new CodedWithExceptions { IsSubcomponent = true };
-                InternationalVersionId.FromDelimitedString(segments.ElementAtOrDefault(2));
-            }
-            else
-            {
-                InternationalVersionId = null;
-            }
+            InternationalizationCode = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), true) : null;
+            InternationalVersionId = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), true) : null;
         }
 
         /// <summary>

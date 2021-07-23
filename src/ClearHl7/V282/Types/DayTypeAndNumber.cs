@@ -34,16 +34,7 @@ namespace ClearHl7.V282.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            if (segments.Length > 0)
-            {
-                DayType = new CodedWithExceptions { IsSubcomponent = true };
-                DayType.FromDelimitedString(segments.ElementAtOrDefault(0));
-            }
-            else
-            {
-                DayType = null;
-            }
-
+            DayType = segments.Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(0), true) : null;
             NumberOfDays = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
         }
 

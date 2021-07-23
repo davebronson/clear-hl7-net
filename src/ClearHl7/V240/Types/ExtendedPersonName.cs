@@ -83,16 +83,7 @@ namespace ClearHl7.V240.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            if (segments.Length > 0)
-            {
-                FamilyName = new FamilyName { IsSubcomponent = true };
-                FamilyName.FromDelimitedString(segments.ElementAtOrDefault(0));
-            }
-            else
-            {
-                FamilyName = null;
-            }
-
+            FamilyName = segments.Length > 0 ? TypeHelper.Deserialize<FamilyName>(segments.ElementAtOrDefault(0), true) : null;
             GivenName = segments.ElementAtOrDefault(1);
             SecondAndFurtherGivenNamesOrInitialsThereof = segments.ElementAtOrDefault(2);
             Suffix = segments.ElementAtOrDefault(3);
@@ -100,27 +91,8 @@ namespace ClearHl7.V240.Types
             Degree = segments.ElementAtOrDefault(5);
             NameTypeCode = segments.ElementAtOrDefault(6);
             NameRepresentationCode = segments.ElementAtOrDefault(7);
-
-            if (segments.Length > 8)
-            {
-                NameContext = new CodedElement { IsSubcomponent = true };
-                NameContext.FromDelimitedString(segments.ElementAtOrDefault(8));
-            }
-            else
-            {
-                NameContext = null;
-            }
-
-            if (segments.Length > 9)
-            {
-                NameValidityRange = new DateTimeRange { IsSubcomponent = true };
-                NameValidityRange.FromDelimitedString(segments.ElementAtOrDefault(9));
-            }
-            else
-            {
-                NameValidityRange = null;
-            }
-
+            NameContext = segments.Length > 8 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(8), true) : null;
+            NameValidityRange = segments.Length > 9 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(9), true) : null;
             NameAssemblyOrder = segments.ElementAtOrDefault(10);
         }
 

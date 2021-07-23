@@ -34,16 +34,7 @@ namespace ClearHl7.V231.Types
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
             Quantity = segments.ElementAtOrDefault(0)?.ToNullableDecimal();
-
-            if (segments.Length > 1)
-            {
-                Units = new CodedElement { IsSubcomponent = true };
-                Units.FromDelimitedString(segments.ElementAtOrDefault(1));
-            }
-            else
-            {
-                Units = null;
-            }
+            Units = segments.Length > 1 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(1), true) : null;
         }
 
         /// <summary>

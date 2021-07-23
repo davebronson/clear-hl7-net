@@ -46,17 +46,7 @@ namespace ClearHl7.V281.Types
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
             IdNumber = segments.ElementAtOrDefault(0);
-
-            if (segments.Length > 1)
-            {
-                TypeOfIdNumber = new CodedWithExceptions { IsSubcomponent = true };
-                TypeOfIdNumber.FromDelimitedString(segments.ElementAtOrDefault(1));
-            }
-            else
-            {
-                TypeOfIdNumber = null;
-            }
-
+            TypeOfIdNumber = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), true) : null;
             StateOtherQualifyingInformation = segments.ElementAtOrDefault(2);
             ExpirationDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
         }

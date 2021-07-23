@@ -99,16 +99,7 @@ namespace ClearHl7.V251.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            if (segments.Length > 0)
-            {
-                StreetAddress = new StreetAddress { IsSubcomponent = true };
-                StreetAddress.FromDelimitedString(segments.ElementAtOrDefault(0));
-            }
-            else
-            {
-                StreetAddress = null;
-            }
-
+            StreetAddress = segments.Length > 0 ? TypeHelper.Deserialize<StreetAddress>(segments.ElementAtOrDefault(0), true) : null;
             OtherDesignation = segments.ElementAtOrDefault(1);
             City = segments.ElementAtOrDefault(2);
             StateOrProvince = segments.ElementAtOrDefault(3);
@@ -119,17 +110,7 @@ namespace ClearHl7.V251.Types
             CountyParishCode = segments.ElementAtOrDefault(8);
             CensusTract = segments.ElementAtOrDefault(9);
             AddressRepresentationCode = segments.ElementAtOrDefault(10);
-
-            if (segments.Length > 11)
-            {
-                AddressValidityRange = new DateTimeRange { IsSubcomponent = true };
-                AddressValidityRange.FromDelimitedString(segments.ElementAtOrDefault(11));
-            }
-            else
-            {
-                AddressValidityRange = null;
-            }
-
+            AddressValidityRange = segments.Length > 11 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(11), true) : null;
             EffectiveDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             ExpirationDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
         }

@@ -85,64 +85,17 @@ namespace ClearHl7.V251.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            if (segments.Length > 0)
-            {
-                Quantity = new CompositeQuantityWithUnits { IsSubcomponent = true };
-                Quantity.FromDelimitedString(segments.ElementAtOrDefault(0));
-            }
-            else
-            {
-                Quantity = null;
-            }
-
-            if (segments.Length > 1)
-            {
-                Interval = new RepeatInterval { IsSubcomponent = true };
-                Interval.FromDelimitedString(segments.ElementAtOrDefault(1));
-            }
-            else
-            {
-                Interval = null;
-            }
-
+            Quantity = segments.Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(0), true) : null;
+            Interval = segments.Length > 1 ? TypeHelper.Deserialize<RepeatInterval>(segments.ElementAtOrDefault(1), true) : null;
             Duration = segments.ElementAtOrDefault(2);
             StartDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             EndDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             Priority = segments.ElementAtOrDefault(5);
             Condition = segments.ElementAtOrDefault(6);
-
-            if (segments.Length > 7)
-            {
-                Text = new Text { IsSubcomponent = true };
-                Text.FromDelimitedString(segments.ElementAtOrDefault(7));
-            }
-            else
-            {
-                Text = null;
-            }
-
+            Text = segments.Length > 7 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(7), true) : null;
             Conjunction = segments.ElementAtOrDefault(8);
-
-            if (segments.Length > 9)
-            {
-                OrderSequencing = new OrderSequenceDefinition { IsSubcomponent = true };
-                OrderSequencing.FromDelimitedString(segments.ElementAtOrDefault(9));
-            }
-            else
-            {
-                OrderSequencing = null;
-            }
-
-            if (segments.Length > 10)
-            {
-                OccurrenceDuration = new CodedElement { IsSubcomponent = true };
-                OccurrenceDuration.FromDelimitedString(segments.ElementAtOrDefault(10));
-            }
-            else
-            {
-                OccurrenceDuration = null;
-            }
-
+            OrderSequencing = segments.Length > 9 ? TypeHelper.Deserialize<OrderSequenceDefinition>(segments.ElementAtOrDefault(9), true) : null;
+            OccurrenceDuration = segments.Length > 10 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(10), true) : null;
             TotalOccurrences = segments.ElementAtOrDefault(11)?.ToNullableDecimal();
         }
 

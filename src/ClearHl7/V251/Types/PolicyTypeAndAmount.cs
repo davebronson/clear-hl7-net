@@ -48,16 +48,7 @@ namespace ClearHl7.V251.Types
             PolicyType = segments.ElementAtOrDefault(0);
             AmountClass = segments.ElementAtOrDefault(1);
             MoneyOrPercentageQuantity = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
-
-            if (segments.Length > 3)
-            {
-                MoneyOrPercentage = new MoneyOrPercentage { IsSubcomponent = true };
-                MoneyOrPercentage.FromDelimitedString(segments.ElementAtOrDefault(3));
-            }
-            else
-            {
-                MoneyOrPercentage = null;
-            }
+            MoneyOrPercentage = segments.Length > 3 ? TypeHelper.Deserialize<MoneyOrPercentage>(segments.ElementAtOrDefault(3), true) : null;
         }
 
         /// <summary>

@@ -132,37 +132,9 @@ namespace ClearHl7.V290.Types
             UnformattedTelephoneNumber = segments.ElementAtOrDefault(11);
             EffectiveStartDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             ExpirationDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-
-            if (segments.Length > 14)
-            {
-                ExpirationReason = new CodedWithExceptions { IsSubcomponent = true };
-                ExpirationReason.FromDelimitedString(segments.ElementAtOrDefault(14));
-            }
-            else
-            {
-                ExpirationReason = null;
-            }
-
-            if (segments.Length > 15)
-            {
-                ProtectionCode = new CodedWithExceptions { IsSubcomponent = true };
-                ProtectionCode.FromDelimitedString(segments.ElementAtOrDefault(15));
-            }
-            else
-            {
-                ProtectionCode = null;
-            }
-
-            if (segments.Length > 16)
-            {
-                SharedTelecommunicationIdentifier = new EntityIdentifier { IsSubcomponent = true };
-                SharedTelecommunicationIdentifier.FromDelimitedString(segments.ElementAtOrDefault(16));
-            }
-            else
-            {
-                SharedTelecommunicationIdentifier = null;
-            }
-
+            ExpirationReason = segments.Length > 14 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(14), true) : null;
+            ProtectionCode = segments.Length > 15 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(15), true) : null;
+            SharedTelecommunicationIdentifier = segments.Length > 16 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(16), true) : null;
             PreferenceOrder = segments.ElementAtOrDefault(17)?.ToNullableDecimal();
         }
 

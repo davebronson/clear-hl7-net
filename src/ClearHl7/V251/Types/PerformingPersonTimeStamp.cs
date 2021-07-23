@@ -154,96 +154,29 @@ namespace ClearHl7.V251.Types
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
             PersonIdentifier = segments.ElementAtOrDefault(0);
-
-            if (segments.Length > 1)
-            {
-                FamilyName = new FamilyName { IsSubcomponent = true };
-                FamilyName.FromDelimitedString(segments.ElementAtOrDefault(1));
-            }
-            else
-            {
-                FamilyName = null;
-            }
-
+            FamilyName = segments.Length > 1 ? TypeHelper.Deserialize<FamilyName>(segments.ElementAtOrDefault(1), true) : null;
             GivenName = segments.ElementAtOrDefault(2);
             SecondAndFurtherGivenNamesOrInitialsThereof = segments.ElementAtOrDefault(3);
             Suffix = segments.ElementAtOrDefault(4);
             Prefix = segments.ElementAtOrDefault(5);
             Degree = segments.ElementAtOrDefault(6);
             SourceTable = segments.ElementAtOrDefault(7);
-
-            if (segments.Length > 8)
-            {
-                AssigningAuthority = new HierarchicDesignator { IsSubcomponent = true };
-                AssigningAuthority.FromDelimitedString(segments.ElementAtOrDefault(8));
-            }
-            else
-            {
-                AssigningAuthority = null;
-            }
-
+            AssigningAuthority = segments.Length > 8 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(8), true) : null;
             NameTypeCode = segments.ElementAtOrDefault(9);
             IdentifierCheckDigit = segments.ElementAtOrDefault(10);
             CheckDigitScheme = segments.ElementAtOrDefault(11);
             IdentifierTypeCode = segments.ElementAtOrDefault(12);
-
-            if (segments.Length > 13)
-            {
-                AssigningFacility = new HierarchicDesignator { IsSubcomponent = true };
-                AssigningFacility.FromDelimitedString(segments.ElementAtOrDefault(13));
-            }
-            else
-            {
-                AssigningFacility = null;
-            }
-
+            AssigningFacility = segments.Length > 13 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(13), true) : null;
             DateTimeActionPerformed = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             NameRepresentationCode = segments.ElementAtOrDefault(15);
-
-            if (segments.Length > 16)
-            {
-                NameContext = new CodedElement { IsSubcomponent = true };
-                NameContext.FromDelimitedString(segments.ElementAtOrDefault(16));
-            }
-            else
-            {
-                NameContext = null;
-            }
-
-            if (segments.Length > 17)
-            {
-                NameValidityRange = new DateTimeRange { IsSubcomponent = true };
-                NameValidityRange.FromDelimitedString(segments.ElementAtOrDefault(17));
-            }
-            else
-            {
-                NameValidityRange = null;
-            }
-
+            NameContext = segments.Length > 16 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(16), true) : null;
+            NameValidityRange = segments.Length > 17 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(17), true) : null;
             NameAssemblyOrder = segments.ElementAtOrDefault(18);
             EffectiveDate = segments.ElementAtOrDefault(19)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             ExpirationDate = segments.ElementAtOrDefault(20)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
             ProfessionalSuffix = segments.ElementAtOrDefault(21);
-
-            if (segments.Length > 22)
-            {
-                AssigningJurisdiction = new CodedWithExceptions { IsSubcomponent = true };
-                AssigningJurisdiction.FromDelimitedString(segments.ElementAtOrDefault(22));
-            }
-            else
-            {
-                AssigningJurisdiction = null;
-            }
-
-            if (segments.Length > 23)
-            {
-                AssigningAgencyOrDepartment = new CodedWithExceptions { IsSubcomponent = true };
-                AssigningAgencyOrDepartment.FromDelimitedString(segments.ElementAtOrDefault(23));
-            }
-            else
-            {
-                AssigningAgencyOrDepartment = null;
-            }
+            AssigningJurisdiction = segments.Length > 22 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(22), true) : null;
+            AssigningAgencyOrDepartment = segments.Length > 23 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(23), true) : null;
         }
 
         /// <summary>

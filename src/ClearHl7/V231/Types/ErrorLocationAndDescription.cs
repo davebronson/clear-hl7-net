@@ -47,16 +47,7 @@ namespace ClearHl7.V231.Types
             SegmentId = segments.ElementAtOrDefault(0);
             SegmentSequence = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
             FieldPosition = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
-
-            if (segments.Length > 3)
-            {
-                CodeIdentifyingError = new CodedElement { IsSubcomponent = true };
-                CodeIdentifyingError.FromDelimitedString(segments.ElementAtOrDefault(3));
-            }
-            else
-            {
-                CodeIdentifyingError = null;
-            }
+            CodeIdentifyingError = segments.Length > 3 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(3), true) : null;
         }
 
         /// <summary>

@@ -58,58 +58,13 @@ namespace ClearHl7.V270.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            if (segments.Length > 0)
-            {
-                NumericRange = new NumericRange { IsSubcomponent = true };
-                NumericRange.FromDelimitedString(segments.ElementAtOrDefault(0));
-            }
-            else
-            {
-                NumericRange = null;
-            }
-
-            if (segments.Length > 1)
-            {
-                AdministrativeSex = new CodedWithExceptions { IsSubcomponent = true };
-                AdministrativeSex.FromDelimitedString(segments.ElementAtOrDefault(1));
-            }
-            else
-            {
-                AdministrativeSex = null;
-            }
-
-            if (segments.Length > 2)
-            {
-                AgeRange = new NumericRange { IsSubcomponent = true };
-                AgeRange.FromDelimitedString(segments.ElementAtOrDefault(2));
-            }
-            else
-            {
-                AgeRange = null;
-            }
-
-            if (segments.Length > 3)
-            {
-                GestationalAgeRange = new NumericRange { IsSubcomponent = true };
-                GestationalAgeRange.FromDelimitedString(segments.ElementAtOrDefault(3));
-            }
-            else
-            {
-                GestationalAgeRange = null;
-            }
-
+            NumericRange = segments.Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments.ElementAtOrDefault(0), true) : null;
+            AdministrativeSex = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), true) : null;
+            AgeRange = segments.Length > 2 ? TypeHelper.Deserialize<NumericRange>(segments.ElementAtOrDefault(2), true) : null;
+            GestationalAgeRange = segments.Length > 3 ? TypeHelper.Deserialize<NumericRange>(segments.ElementAtOrDefault(3), true) : null;
             Species = segments.ElementAtOrDefault(4);
             RaceSubspecies = segments.ElementAtOrDefault(5);
-
-            if (segments.Length > 6)
-            {
-                Conditions = new Text { IsSubcomponent = true };
-                Conditions.FromDelimitedString(segments.ElementAtOrDefault(6));
-            }
-            else
-            {
-                Conditions = null;
-            }
+            Conditions = segments.Length > 6 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(6), true) : null;
         }
 
         /// <summary>

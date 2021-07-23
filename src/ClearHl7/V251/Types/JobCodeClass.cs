@@ -41,16 +41,7 @@ namespace ClearHl7.V251.Types
 
             JobCode = segments.ElementAtOrDefault(0);
             JobClass = segments.ElementAtOrDefault(1);
-
-            if (segments.Length > 2)
-            {
-                JobDescriptionText = new Text { IsSubcomponent = true };
-                JobDescriptionText.FromDelimitedString(segments.ElementAtOrDefault(2));
-            }
-            else
-            {
-                JobDescriptionText = null;
-            }
+            JobDescriptionText = segments.Length > 2 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(2), true) : null;
         }
 
         /// <summary>

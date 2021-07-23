@@ -77,16 +77,7 @@ namespace ClearHl7.V231.Types
             Prefix = segments.ElementAtOrDefault(5);
             Degree = segments.ElementAtOrDefault(6);
             SourceTable = segments.ElementAtOrDefault(7);
-
-            if (segments.Length > 8)
-            {
-                AssigningAuthority = new HierarchicDesignator { IsSubcomponent = true };
-                AssigningAuthority.FromDelimitedString(segments.ElementAtOrDefault(8));
-            }
-            else
-            {
-                AssigningAuthority = null;
-            }
+            AssigningAuthority = segments.Length > 8 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(8), true) : null;
         }
 
         /// <summary>

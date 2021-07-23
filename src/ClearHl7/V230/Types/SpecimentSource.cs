@@ -57,75 +57,13 @@ namespace ClearHl7.V230.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            if (segments.Length > 0)
-            {
-                SpecimenSourceNameOrCode = new CodedElement { IsSubcomponent = true };
-                SpecimenSourceNameOrCode.FromDelimitedString(segments.ElementAtOrDefault(0));
-            }
-            else
-            {
-                SpecimenSourceNameOrCode = null;
-            }
-
-            if (segments.Length > 1)
-            {
-                Additives = new CodedWithExceptions { IsSubcomponent = true };
-                Additives.FromDelimitedString(segments.ElementAtOrDefault(1));
-            }
-            else
-            {
-                Additives = null;
-            }
-
-            if (segments.Length > 2)
-            {
-                SpecimenCollectionMethod = new Text { IsSubcomponent = true };
-                SpecimenCollectionMethod.FromDelimitedString(segments.ElementAtOrDefault(2));
-            }
-            else
-            {
-                SpecimenCollectionMethod = null;
-            }
-
-            if (segments.Length > 3)
-            {
-                BodySite = new CodedElement { IsSubcomponent = true };
-                BodySite.FromDelimitedString(segments.ElementAtOrDefault(3));
-            }
-            else
-            {
-                BodySite = null;
-            }
-
-            if (segments.Length > 4)
-            {
-                SiteModifier = new CodedElement { IsSubcomponent = true };
-                SiteModifier.FromDelimitedString(segments.ElementAtOrDefault(4));
-            }
-            else
-            {
-                SiteModifier = null;
-            }
-
-            if (segments.Length > 5)
-            {
-                CollectionMethodModifierCode = new CodedElement { IsSubcomponent = true };
-                CollectionMethodModifierCode.FromDelimitedString(segments.ElementAtOrDefault(5));
-            }
-            else
-            {
-                CollectionMethodModifierCode = null;
-            }
-
-            if (segments.Length > 6)
-            {
-                SpecimenRole = new CodedElement { IsSubcomponent = true };
-                SpecimenRole.FromDelimitedString(segments.ElementAtOrDefault(6));
-            }
-            else
-            {
-                SpecimenRole = null;
-            }
+            SpecimenSourceNameOrCode = segments.Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(0), true) : null;
+            Additives = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), true) : null;
+            SpecimenCollectionMethod = segments.Length > 2 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(2), true) : null;
+            BodySite = segments.Length > 3 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(3), true) : null;
+            SiteModifier = segments.Length > 4 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(4), true) : null;
+            CollectionMethodModifierCode = segments.Length > 5 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(5), true) : null;
+            SpecimenRole = segments.Length > 6 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(6), true) : null;
         }
 
         /// <summary>

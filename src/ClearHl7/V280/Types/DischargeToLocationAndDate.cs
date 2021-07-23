@@ -35,16 +35,7 @@ namespace ClearHl7.V280.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            if (segments.Length > 0)
-            {
-                DischargeToLocation = new CodedWithExceptions { IsSubcomponent = true };
-                DischargeToLocation.FromDelimitedString(segments.ElementAtOrDefault(0));
-            }
-            else
-            {
-                DischargeToLocation = null;
-            }
-
+            DischargeToLocation = segments.Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(0), true) : null;
             EffectiveDate = segments.ElementAtOrDefault(1)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
         }
 

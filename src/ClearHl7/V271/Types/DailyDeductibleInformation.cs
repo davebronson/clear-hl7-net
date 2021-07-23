@@ -39,17 +39,7 @@ namespace ClearHl7.V271.Types
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
             DelayDays = segments.ElementAtOrDefault(0)?.ToNullableDecimal();
-
-            if (segments.Length > 1)
-            {
-                MonetaryAmount = new Money { IsSubcomponent = true };
-                MonetaryAmount.FromDelimitedString(segments.ElementAtOrDefault(1));
-            }
-            else
-            {
-                MonetaryAmount = null;
-            }
-
+            MonetaryAmount = segments.Length > 1 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(1), true) : null;
             NumberOfDays = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
         }
 
