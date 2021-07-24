@@ -12,13 +12,15 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            MoneyOrPercentage expected = new()
+            IType expected = new MoneyOrPercentage
             {
                 MoneyOrPercentageIndicator = "1",
                 MoneyOrPercentageQuantity = 2,
                 MonetaryDenomination = "3"
             };
-            MoneyOrPercentage actual = new MoneyOrPercentage().FromDelimitedString("1^2^3");
+
+            IType actual = new MoneyOrPercentage();
+            actual.FromDelimitedString("1^2^3");
 
             expected.Should().BeEquivalentTo(actual);
         }

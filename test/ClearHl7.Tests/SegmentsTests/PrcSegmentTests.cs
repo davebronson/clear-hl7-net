@@ -89,7 +89,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "18"
                 }
             };
-            ISegment actual = new PrcSegment().FromDelimitedString("PRC|1|2|3|4|5|6|7|8|9|10|20201111000011|20201212000012|13|14|15|16|17|18");
+
+            ISegment actual = new PrcSegment();
+            actual.FromDelimitedString("PRC|1|2|3|4|5|6|7|8|9|10|20201111000011|20201212000012|13|14|15|16|17|18");
 
             expected.Should().BeEquivalentTo(actual);
         }

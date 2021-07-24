@@ -12,12 +12,14 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            ChannelIdentifier expected = new()
+            IType expected = new ChannelIdentifier
             {
                 ChannelNumber = 1,
                 ChannelName = "2"
             };
-            ChannelIdentifier actual = new ChannelIdentifier().FromDelimitedString("1^2");
+
+            IType actual = new ChannelIdentifier();
+            actual.FromDelimitedString("1^2");
 
             expected.Should().BeEquivalentTo(actual);
         }

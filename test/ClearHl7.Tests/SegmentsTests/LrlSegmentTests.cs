@@ -46,7 +46,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new LrlSegment().FromDelimitedString("LRL|1|2|3|4|5|6");
+
+            ISegment actual = new LrlSegment();
+            actual.FromDelimitedString("LRL|1|2|3|4|5|6");
 
             expected.Should().BeEquivalentTo(actual);
         }

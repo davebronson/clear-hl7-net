@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            CompositeIdWithCheckDigit expected = new()
+            IType expected = new CompositeIdWithCheckDigit
             {
                 IdNumber = 1,
                 CheckDigit = "2",
@@ -23,7 +23,9 @@ namespace ClearHl7.Tests.TypesTests
                     NamespaceId = "4"
                 }
             };
-            CompositeIdWithCheckDigit actual = new CompositeIdWithCheckDigit().FromDelimitedString("1^2^3^4");
+
+            IType actual = new CompositeIdWithCheckDigit();
+            actual.FromDelimitedString("1^2^3^4");
 
             expected.Should().BeEquivalentTo(actual);
         }

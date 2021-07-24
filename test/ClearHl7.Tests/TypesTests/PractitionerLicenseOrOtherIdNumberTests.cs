@@ -13,7 +13,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            PractitionerLicenseOrOtherIdNumber expected = new()
+            IType expected = new PractitionerLicenseOrOtherIdNumber
             {
                 IdNumber = "1",
                 TypeOfIdNumber = new CodedWithExceptions
@@ -24,7 +24,9 @@ namespace ClearHl7.Tests.TypesTests
                 StateOtherQualifyingInformation = "3",
                 ExpirationDate = new DateTime(2020, 4, 4)
             };
-            PractitionerLicenseOrOtherIdNumber actual = new PractitionerLicenseOrOtherIdNumber().FromDelimitedString("1^2^3^20200404");
+
+            IType actual = new PractitionerLicenseOrOtherIdNumber();
+            actual.FromDelimitedString("1^2^3^20200404");
 
             expected.Should().BeEquivalentTo(actual);
         }

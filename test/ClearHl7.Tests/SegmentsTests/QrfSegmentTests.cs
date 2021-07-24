@@ -16,7 +16,9 @@ namespace ClearHl7.Tests.SegmentsTests
             {
                 SegmentString = "1"
             };
-            ISegment actual = new QrfSegment().FromDelimitedString("QRF|1");
+
+            ISegment actual = new QrfSegment();
+            actual.FromDelimitedString("QRF|1");
 
             expected.Should().BeEquivalentTo(actual);
         }

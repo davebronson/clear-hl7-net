@@ -29,7 +29,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new EcrSegment().FromDelimitedString("ECR|1|20200202000002|3");
+
+            ISegment actual = new EcrSegment();
+            actual.FromDelimitedString("ECR|1|20200202000002|3");
 
             expected.Should().BeEquivalentTo(actual);
         }

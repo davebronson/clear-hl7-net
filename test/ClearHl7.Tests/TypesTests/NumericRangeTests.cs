@@ -12,12 +12,14 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            NumericRange expected = new()
+            IType expected = new NumericRange
             {
                 LowValue = 1,
                 HighValue = 2
             };
-            NumericRange actual = new NumericRange().FromDelimitedString("1^2");
+
+            IType actual = new NumericRange();
+            actual.FromDelimitedString("1^2");
 
             expected.Should().BeEquivalentTo(actual);
         }

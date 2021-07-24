@@ -70,7 +70,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new ErrSegment().FromDelimitedString("ERR|1|2|3|4|5|6|7|8|9|10|11|12");
+
+            ISegment actual = new ErrSegment();
+            actual.FromDelimitedString("ERR|1|2|3|4|5|6|7|8|9|10|11|12");
 
             expected.Should().BeEquivalentTo(actual);
         }

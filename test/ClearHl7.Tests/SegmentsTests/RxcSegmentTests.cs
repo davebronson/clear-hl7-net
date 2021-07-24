@@ -48,7 +48,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "11"
                 }
             };
-            ISegment actual = new RxcSegment().FromDelimitedString("RXC|1|2|3|4|5|6|7|8|9|10|11");
+
+            ISegment actual = new RxcSegment();
+            actual.FromDelimitedString("RXC|1|2|3|4|5|6|7|8|9|10|11");
 
             expected.Should().BeEquivalentTo(actual);
         }

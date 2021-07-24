@@ -118,7 +118,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new RxaSegment().FromDelimitedString("RXA|1|2|20200303000003|20200404000004|5|6|7|8|9|10|11|12|13|14|15|20200116000016|17|18|19|20|21|20200122000022|23|24|25|26|27|28|29");
+
+            ISegment actual = new RxaSegment();
+            actual.FromDelimitedString("RXA|1|2|20200303000003|20200404000004|5|6|7|8|9|10|11|12|13|14|15|20200116000016|17|18|19|20|21|20200122000022|23|24|25|26|27|28|29");
 
             expected.Should().BeEquivalentTo(actual);
         }

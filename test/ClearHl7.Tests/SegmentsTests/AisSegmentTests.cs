@@ -56,7 +56,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new AisSegment().FromDelimitedString("AIS|1|2|3|20200404000004|5|6|7|8|9|10|11|12");
+
+            ISegment actual = new AisSegment();
+            actual.FromDelimitedString("AIS|1|2|3|20200404000004|5|6|7|8|9|10|11|12");
 
             expected.Should().BeEquivalentTo(actual);
         }

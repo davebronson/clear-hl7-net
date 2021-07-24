@@ -12,14 +12,16 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            NumericArray expected = new()
+            IType expected = new NumericArray
             {
                 Value1 = 1,
                 Value2 = 2,
                 Value3 = 3,
                 Value4 = 4
             };
-            NumericArray actual = new NumericArray().FromDelimitedString("1^2^3^4");
+
+            IType actual = new NumericArray();
+            actual.FromDelimitedString("1^2^3^4");
 
             expected.Should().BeEquivalentTo(actual);
         }

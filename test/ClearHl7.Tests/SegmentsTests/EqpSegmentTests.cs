@@ -25,7 +25,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 EndDateTime = new DateTime(2020, 4, 4, 0, 0, 4),
                 TransactionData = "5"
             };
-            ISegment actual = new EqpSegment().FromDelimitedString("EQP|1|2|20200303000003|20200404000004|5");
+
+            ISegment actual = new EqpSegment();
+            actual.FromDelimitedString("EQP|1|2|20200303000003|20200404000004|5");
 
             expected.Should().BeEquivalentTo(actual);
         }

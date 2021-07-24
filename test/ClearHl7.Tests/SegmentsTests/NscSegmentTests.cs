@@ -40,7 +40,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     NamespaceId = "9"
                 }
             };
-            ISegment actual = new NscSegment().FromDelimitedString("NSC|1|2|3|4|5|6|7|8|9");
+
+            ISegment actual = new NscSegment();
+            actual.FromDelimitedString("NSC|1|2|3|4|5|6|7|8|9");
 
             expected.Should().BeEquivalentTo(actual);
         }

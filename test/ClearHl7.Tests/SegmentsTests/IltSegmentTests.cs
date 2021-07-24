@@ -36,7 +36,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "10"
                 }
             };
-            ISegment actual = new IltSegment().FromDelimitedString("ILT|1|2|20200303000003|20200404000004|5|6|7|20200808000008|9|10");
+
+            ISegment actual = new IltSegment();
+            actual.FromDelimitedString("ILT|1|2|20200303000003|20200404000004|5|6|7|20200808000008|9|10");
 
             expected.Should().BeEquivalentTo(actual);
         }

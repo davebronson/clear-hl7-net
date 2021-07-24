@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            PersonName expected = new()
+            IType expected = new PersonName
             {
                 FamilyName = "1",
                 GivenName = "2",
@@ -21,7 +21,9 @@ namespace ClearHl7.Tests.TypesTests
                 Prefix = "5",
                 Degree = "6"
             };
-            PersonName actual = new PersonName().FromDelimitedString("1^2^3^4^5^6");
+
+            IType actual = new PersonName();
+            actual.FromDelimitedString("1^2^3^4^5^6");
 
             expected.Should().BeEquivalentTo(actual);
         }

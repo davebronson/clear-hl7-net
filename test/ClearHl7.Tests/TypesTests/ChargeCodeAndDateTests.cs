@@ -13,12 +13,13 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            ChargeCodeAndDate expected = new()
+            IType expected = new ChargeCodeAndDate
             {
                 InvocationEvent = "1",
                 Datetime = new DateTime(2020, 2, 1, 0, 0, 0)
             };
-            ChargeCodeAndDate actual = new ChargeCodeAndDate().FromDelimitedString("1^20200201000000");
+            IType actual = new ChargeCodeAndDate();
+            actual.FromDelimitedString("1^20200201000000");
 
             expected.Should().BeEquivalentTo(actual);
         }

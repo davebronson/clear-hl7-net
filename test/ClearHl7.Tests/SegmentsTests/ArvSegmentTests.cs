@@ -63,7 +63,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     EntityId = "10"
                 }
             };
-            ISegment actual = new ArvSegment().FromDelimitedString("ARV|1|2|3|4|5|20200606000006|7|8|9|10");
+
+            ISegment actual = new ArvSegment();
+            actual.FromDelimitedString("ARV|1|2|3|4|5|20200606000006|7|8|9|10");
 
             expected.Should().BeEquivalentTo(actual);
         }

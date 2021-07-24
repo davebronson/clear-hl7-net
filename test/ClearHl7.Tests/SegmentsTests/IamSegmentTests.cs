@@ -113,7 +113,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     OrganizationName = "30"
                 }
             };
-            ISegment actual = new IamSegment().FromDelimitedString("IAM|1|2|3|4|5|6|7|8|9|10|20201111|12|20200113000013|14|15|16|17|18|19|20200120000020|21|20200122000022|23|20200124000024|25|20200126000026|27|28|29|30");
+
+            ISegment actual = new IamSegment();
+            actual.FromDelimitedString("IAM|1|2|3|4|5|6|7|8|9|10|20201111|12|20200113000013|14|15|16|17|18|19|20200120000020|21|20200122000022|23|20200124000024|25|20200126000026|27|28|29|30");
 
             expected.Should().BeEquivalentTo(actual);
         }

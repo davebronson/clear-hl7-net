@@ -12,13 +12,15 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            ChannelCalibrationParameters expected = new()
+            IType expected = new ChannelCalibrationParameters
             {
                 ChannelCalibrationSensitivityCorrectionFactor = 1,
                 ChannelCalibrationBaseline = 2,
                 ChannelCalibrationTimeSkew = 3
             };
-            ChannelCalibrationParameters actual = new ChannelCalibrationParameters().FromDelimitedString("1^2^3");
+
+            IType actual = new ChannelCalibrationParameters();
+            actual.FromDelimitedString("1^2^3");
 
             expected.Should().BeEquivalentTo(actual);
         }

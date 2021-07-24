@@ -46,7 +46,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     14
                 }
             };
-            ISegment actual = new PshSegment().FromDelimitedString("PSH|1|2|20200303000003|20200404000004|20200505000005|6|7|8|9|10|11|12|13|14");
+
+            ISegment actual = new PshSegment();
+            actual.FromDelimitedString("PSH|1|2|20200303000003|20200404000004|20200505000005|6|7|8|9|10|11|12|13|14");
 
             expected.Should().BeEquivalentTo(actual);
         }

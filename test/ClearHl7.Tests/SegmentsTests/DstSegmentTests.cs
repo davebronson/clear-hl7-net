@@ -27,7 +27,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new DstSegment().FromDelimitedString("DST|1|2");
+
+            ISegment actual = new DstSegment();
+            actual.FromDelimitedString("DST|1|2");
 
             expected.Should().BeEquivalentTo(actual);
         }

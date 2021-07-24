@@ -112,7 +112,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 Comment = "28",
                 ActionCode = "29"
             };
-            ISegment actual = new AutSegment().FromDelimitedString("AUT|1|2|3|20200404000004|20200505000005|6|7|8|9|20201010000010|11|12|13|14|20200115000015|16|17|18|19|20|21|22|23|24|25|20200126000026|27|28|29");
+
+            ISegment actual = new AutSegment();
+            actual.FromDelimitedString("AUT|1|2|3|20200404000004|20200505000005|6|7|8|9|20201010000010|11|12|13|14|20200115000015|16|17|18|19|20|21|22|23|24|25|20200126000026|27|28|29");
 
             expected.Should().BeEquivalentTo(actual);
         }

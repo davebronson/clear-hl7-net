@@ -95,7 +95,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     EntityId = "21"
                 }
             };
-            ISegment actual = new CtrSegment().FromDelimitedString("CTR|1|2|3|20200404000004|20200505000005|6|7|8|9|10|20201111000011|12|13|14|15|16|17|18|19|20|21");
+
+            ISegment actual = new CtrSegment();
+            actual.FromDelimitedString("CTR|1|2|3|20200404000004|20200505000005|6|7|8|9|10|20201111000011|12|13|14|15|16|17|18|19|20|21");
 
             expected.Should().BeEquivalentTo(actual);
         }

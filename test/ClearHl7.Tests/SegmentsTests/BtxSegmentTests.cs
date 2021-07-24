@@ -80,7 +80,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 ActionCode = "21"
             };
-            ISegment actual = new BtxSegment().FromDelimitedString("BTX|1|2|3|4|5|6|7|8|9|10|11|12|20200113000013|14|15|20200116000016|20200117000017|18|19|20|21");
+
+            ISegment actual = new BtxSegment();
+            actual.FromDelimitedString("BTX|1|2|3|4|5|6|7|8|9|10|11|12|20200113000013|14|15|20200116000016|20200117000017|18|19|20|21");
 
             expected.Should().BeEquivalentTo(actual);
         }

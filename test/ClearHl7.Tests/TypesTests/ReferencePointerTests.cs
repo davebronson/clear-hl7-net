@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            ReferencePointer expected = new()
+            IType expected = new ReferencePointer
             {
                 Pointer = "1",
                 ApplicationId = new HierarchicDesignator
@@ -23,7 +23,9 @@ namespace ClearHl7.Tests.TypesTests
                 TypeOfData = "3",
                 Subtype = "4"
             };
-            ReferencePointer actual = new ReferencePointer().FromDelimitedString("1^2^3^4");
+
+            IType actual = new ReferencePointer();
+            actual.FromDelimitedString("1^2^3^4");
 
             expected.Should().BeEquivalentTo(actual);
         }

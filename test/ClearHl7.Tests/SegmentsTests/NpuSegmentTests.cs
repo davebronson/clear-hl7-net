@@ -27,7 +27,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "2"
                 }
             };
-            ISegment actual = new NpuSegment().FromDelimitedString("NPU|1|2");
+
+            ISegment actual = new NpuSegment();
+            actual.FromDelimitedString("NPU|1|2");
 
             expected.Should().BeEquivalentTo(actual);
         }

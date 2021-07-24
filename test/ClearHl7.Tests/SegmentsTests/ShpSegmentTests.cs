@@ -71,7 +71,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 ActionCode = "12"
             };
-            ISegment actual = new ShpSegment().FromDelimitedString("SHP|1|2|3|20200404000004|5|6|7|8|9|10|11|12");
+
+            ISegment actual = new ShpSegment();
+            actual.FromDelimitedString("SHP|1|2|3|20200404000004|5|6|7|8|9|10|11|12");
 
             expected.Should().BeEquivalentTo(actual);
         }

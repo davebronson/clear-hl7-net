@@ -71,7 +71,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 SourceInformationInstanceObjectType = "17",
                 TargetInformationInstanceObjectType = "18"
             };
-            ISegment actual = new RelSegment().FromDelimitedString("REL|1|2|3|4|5|6|7|8|9|10|20201111000011|12|13|14|15|16|17|18");
+
+            ISegment actual = new RelSegment();
+            actual.FromDelimitedString("REL|1|2|3|4|5|6|7|8|9|10|20201111000011|12|13|14|15|16|17|18");
 
             expected.Should().BeEquivalentTo(actual);
         }

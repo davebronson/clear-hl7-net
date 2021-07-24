@@ -21,7 +21,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Value = "2"
                 }
             };
-            ISegment actual = new Om6Segment().FromDelimitedString("OM6|1|2");
+
+            ISegment actual = new Om6Segment();
+            actual.FromDelimitedString("OM6|1|2");
 
             expected.Should().BeEquivalentTo(actual);
         }

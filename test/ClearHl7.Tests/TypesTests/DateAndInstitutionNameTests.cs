@@ -13,7 +13,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            DateAndInstitutionName expected = new()
+            IType expected = new DateAndInstitutionName
             {
                 Date = new DateTime(2020, 1, 1),
                 InstitutionName = new CodedWithExceptions
@@ -22,7 +22,9 @@ namespace ClearHl7.Tests.TypesTests
                     Identifier = "2"
                 }
             };
-            DateAndInstitutionName actual = new DateAndInstitutionName().FromDelimitedString("20200101^2");
+
+            IType actual = new DateAndInstitutionName();
+            actual.FromDelimitedString("20200101^2");
 
             expected.Should().BeEquivalentTo(actual);
         }

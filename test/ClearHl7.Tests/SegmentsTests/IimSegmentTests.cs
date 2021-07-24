@@ -62,7 +62,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new IimSegment().FromDelimitedString("IIM|1|2|3|20200404000004|5|6|20200707000007|8|9|10|20201111000011|12|13|14|15");
+
+            ISegment actual = new IimSegment();
+            actual.FromDelimitedString("IIM|1|2|3|20200404000004|5|6|20200707000007|8|9|10|20201111000011|12|13|14|15");
 
             expected.Should().BeEquivalentTo(actual);
         }

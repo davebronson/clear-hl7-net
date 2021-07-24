@@ -15,14 +15,16 @@ namespace ClearHl7.Tests.TypesTests
         {
             DateTime today = DateTime.Today;
 
-            VisitingHours expected = new()
+            IType expected = new VisitingHours
             {
                 StartDayRange = "1",
                 EndDayRange = "2",
                 StartHourRange = new DateTime(today.Year, today.Month, today.Day, 3, 33, 0),
                 EndHourRange = new DateTime(today.Year, today.Month, today.Day, 4, 44, 4)
             };
-            VisitingHours actual = new VisitingHours().FromDelimitedString("1^2^033300^044404");
+
+            IType actual = new VisitingHours();
+            actual.FromDelimitedString("1^2^033300^044404");
 
             expected.Should().BeEquivalentTo(actual);
         }

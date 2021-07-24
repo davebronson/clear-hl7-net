@@ -13,7 +13,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            ExtendedCompositeIdNumberAndNameForPersons expected = new()
+            IType expected = new ExtendedCompositeIdNumberAndNameForPersons
             {
                 PersonIdentifier = "1",
                 FamilyName = new FamilyName
@@ -73,7 +73,9 @@ namespace ClearHl7.Tests.TypesTests
                 SecurityCheck = "24",
                 SecurityCheckScheme = "25"
             };
-            ExtendedCompositeIdNumberAndNameForPersons actual = new ExtendedCompositeIdNumberAndNameForPersons().FromDelimitedString("1^2^3^4^5^6^7^8^9^10^11^12^13^14^15^16^20200117000017^18^20200119000019^20200120000020^21^22^23^24^25");
+
+            IType actual = new ExtendedCompositeIdNumberAndNameForPersons();
+            actual.FromDelimitedString("1^2^3^4^5^6^7^8^9^10^11^12^13^14^15^16^20200117000017^18^20200119000019^20200120000020^21^22^23^24^25");
 
             expected.Should().BeEquivalentTo(actual);
         }

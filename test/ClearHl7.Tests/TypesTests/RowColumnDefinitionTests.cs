@@ -12,13 +12,15 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            RowColumnDefinition expected = new()
+            IType expected = new RowColumnDefinition
             {
                 SegmentFieldName = "1",
                 Hl7DataType = "2",
                 MaximumColumnWidth = 3
             };
-            RowColumnDefinition actual = new RowColumnDefinition().FromDelimitedString("1^2^3");
+
+            IType actual = new RowColumnDefinition();
+            actual.FromDelimitedString("1^2^3");
 
             expected.Should().BeEquivalentTo(actual);
         }

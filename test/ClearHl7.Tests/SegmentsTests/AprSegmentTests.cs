@@ -57,7 +57,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new AprSegment().FromDelimitedString("APR|1|2|3|4|5");
+
+            ISegment actual = new AprSegment();
+            actual.FromDelimitedString("APR|1|2|3|4|5");
 
             expected.Should().BeEquivalentTo(actual);
         }

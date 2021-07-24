@@ -28,7 +28,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 TextInstruction = "3"
             };
-            ISegment actual = new OdtSegment().FromDelimitedString("ODT|1|2|3");
+
+            ISegment actual = new OdtSegment();
+            actual.FromDelimitedString("ODT|1|2|3");
 
             expected.Should().BeEquivalentTo(actual);
         }

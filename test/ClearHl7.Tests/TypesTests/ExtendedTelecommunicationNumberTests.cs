@@ -13,7 +13,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            ExtendedTelecommunicationNumber expected = new()
+            IType expected = new ExtendedTelecommunicationNumber
             {
                 TelephoneNumber = "1",
                 TelecommunicationUseCode = "2",
@@ -46,7 +46,9 @@ namespace ClearHl7.Tests.TypesTests
                 },
                 PreferenceOrder = 18
             };
-            ExtendedTelecommunicationNumber actual = new ExtendedTelecommunicationNumber().FromDelimitedString("1^2^3^4^5^6^7^8^9^10^11^12^20200113000013^20200114000014^15^16^17^18");
+
+            IType actual = new ExtendedTelecommunicationNumber();
+            actual.FromDelimitedString("1^2^3^4^5^6^7^8^9^10^11^12^20200113000013^20200114000014^15^16^17^18");
 
             expected.Should().BeEquivalentTo(actual);
         }

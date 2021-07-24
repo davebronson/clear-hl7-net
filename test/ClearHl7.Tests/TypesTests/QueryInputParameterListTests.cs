@@ -12,12 +12,14 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            QueryInputParameterList expected = new()
+            IType expected = new QueryInputParameterList
             {
                 SegmentFieldName = "1",
                 Values = "2"
             };
-            QueryInputParameterList actual = new QueryInputParameterList().FromDelimitedString("1^2");
+
+            IType actual = new QueryInputParameterList();
+            actual.FromDelimitedString("1^2");
 
             expected.Should().BeEquivalentTo(actual);
         }

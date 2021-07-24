@@ -29,7 +29,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "6"
                 }
             };
-            ISegment actual = new CnsSegment().FromDelimitedString("CNS|1|2|20200303000003|20200404000004|5|6");
+
+            ISegment actual = new CnsSegment();
+            actual.FromDelimitedString("CNS|1|2|20200303000003|20200404000004|5|6");
 
             expected.Should().BeEquivalentTo(actual);
         }

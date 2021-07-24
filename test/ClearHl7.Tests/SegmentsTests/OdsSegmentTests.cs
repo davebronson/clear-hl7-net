@@ -35,7 +35,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     "4"
                 }
             };
-            ISegment actual = new OdsSegment().FromDelimitedString("ODS|1|2|3|4");
+
+            ISegment actual = new OdsSegment();
+            actual.FromDelimitedString("ODS|1|2|3|4");
 
             expected.Should().BeEquivalentTo(actual);
         }

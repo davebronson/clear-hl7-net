@@ -13,13 +13,15 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            PreCertificationRequired expected = new()
+            IType expected = new PreCertificationRequired
             {
                 PreCertificationPatientType = "1",
                 PreCertificationIsRequired = "2",
                 PreCertificationWindow = new DateTime(2020, 3, 3, 0, 0, 3)
             };
-            PreCertificationRequired actual = new PreCertificationRequired().FromDelimitedString("1^2^20200303000003");
+
+            IType actual = new PreCertificationRequired();
+            actual.FromDelimitedString("1^2^20200303000003");
 
             expected.Should().BeEquivalentTo(actual);
         }

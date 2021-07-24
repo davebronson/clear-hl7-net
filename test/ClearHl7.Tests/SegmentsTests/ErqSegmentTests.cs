@@ -25,7 +25,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     SegmentFieldName = "3"
                 }
             };
-            ISegment actual = new ErqSegment().FromDelimitedString("ERQ|1|2|3");
+
+            ISegment actual = new ErqSegment();
+            actual.FromDelimitedString("ERQ|1|2|3");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            CompositeQuantityWithUnits expected = new()
+            IType expected = new CompositeQuantityWithUnits
             {
                 Quantity = 1,
                 Units = new CodedWithExceptions
@@ -21,7 +21,9 @@ namespace ClearHl7.Tests.TypesTests
                     Identifier = "2"
                 }
             };
-            CompositeQuantityWithUnits actual = new CompositeQuantityWithUnits().FromDelimitedString("1^2");
+
+            IType actual = new CompositeQuantityWithUnits();
+            actual.FromDelimitedString("1^2");
 
             expected.Should().BeEquivalentTo(actual);
         }

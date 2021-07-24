@@ -176,7 +176,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 Validation = "47",
                 Comment = "48"
             };
-            ISegment actual = new PslSegment().FromDelimitedString("PSL|1|2|3|4|5|6|7|8|9|20201010000010|20201111000011|12|13|14|15|16|17|18|19|20|21|22|23|24|25|20200126000026|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48");
+
+            ISegment actual = new PslSegment();
+            actual.FromDelimitedString("PSL|1|2|3|4|5|6|7|8|9|20201010000010|20201111000011|12|13|14|15|16|17|18|19|20|21|22|23|24|25|20200126000026|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41|42|43|44|45|46|47|48");
 
             expected.Should().BeEquivalentTo(actual);
         }

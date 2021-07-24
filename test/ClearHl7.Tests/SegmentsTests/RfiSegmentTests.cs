@@ -20,7 +20,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 PatientConsent = "3",
                 DateAdditionalInformationWasSubmitted = new DateTime(2020, 4, 4, 0, 0, 4)
             };
-            ISegment actual = new RfiSegment().FromDelimitedString("RFI|20200101000001|20200202000002|3|20200404000004");
+
+            ISegment actual = new RfiSegment();
+            actual.FromDelimitedString("RFI|20200101000001|20200202000002|3|20200404000004");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -13,13 +13,15 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            AuthorizationInformation expected = new()
+            IType expected = new AuthorizationInformation
             {
                 AuthorizationNumber = "1",
                 Date = new DateTime(2020, 2, 1),
                 Source = "3"
             };
-            AuthorizationInformation actual = new AuthorizationInformation().FromDelimitedString("1^20200201^3");
+
+            IType actual = new AuthorizationInformation();
+            actual.FromDelimitedString("1^20200201^3");
 
             expected.Should().BeEquivalentTo(actual);
         }

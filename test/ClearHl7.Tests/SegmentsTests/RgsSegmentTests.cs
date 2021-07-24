@@ -22,7 +22,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "3"
                 }
             };
-            ISegment actual = new RgsSegment().FromDelimitedString("RGS|1|2|3");
+
+            ISegment actual = new RgsSegment();
+            actual.FromDelimitedString("RGS|1|2|3");
 
             expected.Should().BeEquivalentTo(actual);
         }

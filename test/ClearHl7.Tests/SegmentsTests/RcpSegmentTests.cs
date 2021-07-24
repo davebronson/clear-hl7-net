@@ -39,7 +39,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     "7"
                 }
             };
-            ISegment actual = new RcpSegment().FromDelimitedString("RCP|1|2|3|20200404000004|5|6|7");
+
+            ISegment actual = new RcpSegment();
+            actual.FromDelimitedString("RCP|1|2|3|20200404000004|5|6|7");
 
             expected.Should().BeEquivalentTo(actual);
         }

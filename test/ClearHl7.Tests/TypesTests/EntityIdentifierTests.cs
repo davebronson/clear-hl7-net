@@ -12,14 +12,16 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            EntityIdentifier expected = new()
+            IType expected = new EntityIdentifier
             {
                 EntityId = "1",
                 NamespaceId = "2",
                 UniversalId = "3",
                 UniversalIdType = "4"
             };
-            EntityIdentifier actual = new EntityIdentifier().FromDelimitedString("1^2^3^4");
+
+            IType actual = new EntityIdentifier();
+            actual.FromDelimitedString("1^2^3^4");
 
             expected.Should().BeEquivalentTo(actual);
         }

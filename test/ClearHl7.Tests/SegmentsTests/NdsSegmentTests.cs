@@ -27,7 +27,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "4"
                 }
             };
-            ISegment actual = new NdsSegment().FromDelimitedString("NDS|1|20200202000002|3|4");
+
+            ISegment actual = new NdsSegment();
+            actual.FromDelimitedString("NDS|1|20200202000002|3|4");
 
             expected.Should().BeEquivalentTo(actual);
         }

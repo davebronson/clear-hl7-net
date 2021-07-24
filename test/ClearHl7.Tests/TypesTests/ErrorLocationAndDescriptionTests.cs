@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            ErrorLocationAndDescription expected = new()
+            IType expected = new ErrorLocationAndDescription
             {
                 SegmentId = "1",
                 SegmentSequence = 2,
@@ -23,7 +23,9 @@ namespace ClearHl7.Tests.TypesTests
                     Identifier = "4"
                 }
             };
-            ErrorLocationAndDescription actual = new ErrorLocationAndDescription().FromDelimitedString("1^2^3^4");
+
+            IType actual = new ErrorLocationAndDescription();
+            actual.FromDelimitedString("1^2^3^4");
 
             expected.Should().BeEquivalentTo(actual);
         }

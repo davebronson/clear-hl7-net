@@ -12,13 +12,15 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            MessageType expected = new()
+            IType expected = new MessageType
             {
                 MessageCode = "1",
                 TriggerEvent = "2",
                 MessageStructure = "3"
             };
-            MessageType actual = new MessageType().FromDelimitedString("1^2^3");
+
+            IType actual = new MessageType();
+            actual.FromDelimitedString("1^2^3");
 
             expected.Should().BeEquivalentTo(actual);
         }

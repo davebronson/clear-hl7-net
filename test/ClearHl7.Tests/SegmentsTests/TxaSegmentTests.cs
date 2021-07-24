@@ -117,7 +117,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "28"
                 }
             };
-            ISegment actual = new TxaSegment().FromDelimitedString("TXA|1|2|3|20200404000004|5|20200606000006|20200707000007|20200808000008|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|20200126000026|27|28");
+
+            ISegment actual = new TxaSegment();
+            actual.FromDelimitedString("TXA|1|2|3|20200404000004|5|20200606000006|20200707000007|20200808000008|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|20200126000026|27|28");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            ExtendedCompositeNameAndIdNumberForOrganizations expected = new()
+            IType expected = new ExtendedCompositeNameAndIdNumberForOrganizations
             {
                 OrganizationName = "1",
                 OrganizationNameTypeCode = new CodedWithExceptions
@@ -37,7 +37,9 @@ namespace ClearHl7.Tests.TypesTests
                 NameRepresentationCode = "9",
                 OrganizationIdentifier = "10"
             };
-            ExtendedCompositeNameAndIdNumberForOrganizations actual = new ExtendedCompositeNameAndIdNumberForOrganizations().FromDelimitedString("1^2^3^4^5^6^7^8^9^10");
+
+            IType actual = new ExtendedCompositeNameAndIdNumberForOrganizations();
+            actual.FromDelimitedString("1^2^3^4^5^6^7^8^9^10");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -29,7 +29,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 SoftwareInstallDate = new DateTime(2020, 6, 6, 0, 0, 6)
             };
-            ISegment actual = new SftSegment().FromDelimitedString("SFT|1|2|3|4|5|20200606000006");
+
+            ISegment actual = new SftSegment();
+            actual.FromDelimitedString("SFT|1|2|3|4|5|20200606000006");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -36,7 +36,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "5"
                 }
             };
-            ISegment actual = new LchSegment().FromDelimitedString("LCH|1|2|3|4|5");
+
+            ISegment actual = new LchSegment();
+            actual.FromDelimitedString("LCH|1|2|3|4|5");
 
             expected.Should().BeEquivalentTo(actual);
         }

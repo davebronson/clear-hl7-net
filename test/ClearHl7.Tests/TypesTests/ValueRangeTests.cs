@@ -12,12 +12,14 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            ValueRange expected = new()
+            IType expected = new ValueRange
             {
                 FirstDataCodeValue = "1",
                 LastDataCodeValue = "2"
             };
-            ValueRange actual = new ValueRange().FromDelimitedString("1^2");
+
+            IType actual = new ValueRange();
+            actual.FromDelimitedString("1^2");
 
             expected.Should().BeEquivalentTo(actual);
         }

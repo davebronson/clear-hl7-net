@@ -60,7 +60,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new OrgSegment().FromDelimitedString("ORG|1|2|3|4|5|6|7|8|20200909000009|10|11|12|13");
+
+            ISegment actual = new OrgSegment();
+            actual.FromDelimitedString("ORG|1|2|3|4|5|6|7|8|20200909000009|10|11|12|13");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -30,7 +30,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 ReasonForUniversalServiceCostRange = "5"
             };
-            ISegment actual = new McpSegment().FromDelimitedString("MCP|1|2|3|4|5");
+
+            ISegment actual = new McpSegment();
+            actual.FromDelimitedString("MCP|1|2|3|4|5");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -36,7 +36,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "7"
                 }
             };
-            ISegment actual = new PthSegment().FromDelimitedString("PTH|1|2|3|20200404000004|5|20200606000006|7");
+
+            ISegment actual = new PthSegment();
+            actual.FromDelimitedString("PTH|1|2|3|20200404000004|5|20200606000006|7");
 
             expected.Should().BeEquivalentTo(actual);
         }

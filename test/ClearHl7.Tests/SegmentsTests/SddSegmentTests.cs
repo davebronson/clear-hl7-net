@@ -35,7 +35,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 ControlCode = 6,
                 OperatorName = "7"
             };
-            ISegment actual = new SddSegment().FromDelimitedString("SDD|1|2|3|4|5|6|7");
+
+            ISegment actual = new SddSegment();
+            actual.FromDelimitedString("SDD|1|2|3|4|5|6|7");
 
             expected.Should().BeEquivalentTo(actual);
         }

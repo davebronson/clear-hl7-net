@@ -16,7 +16,9 @@ namespace ClearHl7.Tests.SegmentsTests
             {
                 ColumnValue = "1"
             };
-            ISegment actual = new RdtSegment().FromDelimitedString("RDT|1");
+
+            ISegment actual = new RdtSegment();
+            actual.FromDelimitedString("RDT|1");
 
             expected.Should().BeEquivalentTo(actual);
         }

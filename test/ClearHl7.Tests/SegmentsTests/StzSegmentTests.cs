@@ -32,7 +32,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "4"
                 }
             };
-            ISegment actual = new StzSegment().FromDelimitedString("STZ|1|2|3|4");
+
+            ISegment actual = new StzSegment();
+            actual.FromDelimitedString("STZ|1|2|3|4");
 
             expected.Should().BeEquivalentTo(actual);
         }

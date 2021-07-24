@@ -71,7 +71,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 ActionCode = "22"
             };
-            ISegment actual = new RxvSegment().FromDelimitedString("RXV|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22");
+
+            ISegment actual = new RxvSegment();
+            actual.FromDelimitedString("RXV|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -13,12 +13,14 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            DateTimeRange expected = new()
+            IType expected = new DateTimeRange
             {
                 RangeStartDateTime = new DateTime(2020, 1, 1, 0, 0, 11),
                 RangeEndDateTime = new DateTime(2020, 2, 2, 0, 0, 22)
             };
-            DateTimeRange actual = new DateTimeRange().FromDelimitedString("20200101000011^20200202000022");
+
+            IType actual = new DateTimeRange();
+            actual.FromDelimitedString("20200101000011^20200202000022");
 
             expected.Should().BeEquivalentTo(actual);
         }

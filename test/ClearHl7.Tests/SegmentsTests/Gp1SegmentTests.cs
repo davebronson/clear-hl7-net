@@ -45,7 +45,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new Gp1Segment().FromDelimitedString("GP1|1|2|3|4|5");
+
+            ISegment actual = new Gp1Segment();
+            actual.FromDelimitedString("GP1|1|2|3|4|5");
 
             expected.Should().BeEquivalentTo(actual);
         }

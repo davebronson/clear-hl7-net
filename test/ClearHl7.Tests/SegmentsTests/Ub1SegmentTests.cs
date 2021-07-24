@@ -70,7 +70,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 Ub82Locator27 = "22",
                 Ub82Locator45 = "23"
             };
-            ISegment actual = new Ub1Segment().FromDelimitedString("UB1|1|2|3|4|5|6|7|8|9|10|11|12|13|20200114|20200115|16|17|20200118|20200119|20|21|22|23");
+
+            ISegment actual = new Ub1Segment();
+            actual.FromDelimitedString("UB1|1|2|3|4|5|6|7|8|9|10|11|12|13|20200114|20200115|16|17|20200118|20200119|20|21|22|23");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -32,7 +32,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new PceSegment().FromDelimitedString("PCE|1|2|3|4");
+
+            ISegment actual = new PceSegment();
+            actual.FromDelimitedString("PCE|1|2|3|4");
 
             expected.Should().BeEquivalentTo(actual);
         }

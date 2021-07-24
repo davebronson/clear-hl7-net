@@ -27,7 +27,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "4"
                 }
             };
-            ISegment actual = new CspSegment().FromDelimitedString("CSP|1|20200202000002|20200303000003|4");
+
+            ISegment actual = new CspSegment();
+            actual.FromDelimitedString("CSP|1|20200202000002|20200303000003|4");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -61,7 +61,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "15"
                 }
             };
-            ISegment actual = new TccSegment().FromDelimitedString("TCC|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15");
+
+            ISegment actual = new TccSegment();
+            actual.FromDelimitedString("TCC|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15");
 
             expected.Should().BeEquivalentTo(actual);
         }

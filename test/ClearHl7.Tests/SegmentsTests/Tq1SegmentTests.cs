@@ -70,7 +70,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 TotalOccurrences = 14
             };
-            ISegment actual = new Tq1Segment().FromDelimitedString("TQ1|1|2|3|000004|5|6|20200707000007|20200808000008|9|10|11|12|13|14");
+
+            ISegment actual = new Tq1Segment();
+            actual.FromDelimitedString("TQ1|1|2|3|000004|5|6|20200707000007|20200808000008|9|10|11|12|13|14");
 
             expected.Should().BeEquivalentTo(actual);
         }

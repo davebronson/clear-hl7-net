@@ -13,7 +13,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            TimingQuantity expected = new()
+            IType expected = new TimingQuantity
             {
                 Quantity = new CompositeQuantityWithUnits
                 {
@@ -52,7 +52,9 @@ namespace ClearHl7.Tests.TypesTests
                 },
                 TotalOccurrences = 12
             };
-            TimingQuantity actual = new TimingQuantity().FromDelimitedString("1^2^3^20200404000004^20200505000005^6^7^8^9^10^11^12");
+
+            IType actual = new TimingQuantity();
+            actual.FromDelimitedString("1^2^3^20200404000004^20200505000005^6^7^8^9^10^11^12");
 
             expected.Should().BeEquivalentTo(actual);
         }

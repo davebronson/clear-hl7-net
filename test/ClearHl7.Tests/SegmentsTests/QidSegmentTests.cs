@@ -21,7 +21,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "2"
                 }
             };
-            ISegment actual = new QidSegment().FromDelimitedString("QID|1|2");
+
+            ISegment actual = new QidSegment();
+            actual.FromDelimitedString("QID|1|2");
 
             expected.Should().BeEquivalentTo(actual);
         }

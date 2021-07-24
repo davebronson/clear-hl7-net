@@ -93,7 +93,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 ActionCode = "22"
             };
-            ISegment actual = new BpxSegment().FromDelimitedString("BPX|1|2|3|20200404000004|5|6|7|8|9|10|11|12|20200113000013|14|15|16|17|18|19|20|21|22");
+
+            ISegment actual = new BpxSegment();
+            actual.FromDelimitedString("BPX|1|2|3|20200404000004|5|6|7|8|9|10|11|12|20200113000013|14|15|16|17|18|19|20|21|22");
 
             expected.Should().BeEquivalentTo(actual);
         }

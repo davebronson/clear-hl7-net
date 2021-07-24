@@ -41,7 +41,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new NteSegment().FromDelimitedString("NTE|1|2|3|4|5|20200606000006|20200707000007|20200808000008|9");
+
+            ISegment actual = new NteSegment();
+            actual.FromDelimitedString("NTE|1|2|3|4|5|20200606000006|20200707000007|20200808000008|9");
 
             expected.Should().BeEquivalentTo(actual);
         }

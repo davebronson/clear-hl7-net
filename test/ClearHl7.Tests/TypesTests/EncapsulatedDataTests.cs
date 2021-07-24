@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            EncapsulatedData expected = new()
+            IType expected = new EncapsulatedData
             {
                 SourceApplication = new HierarchicDesignator
                 {
@@ -28,7 +28,9 @@ namespace ClearHl7.Tests.TypesTests
                     Value = "5"
                 }
             };
-            EncapsulatedData actual = new EncapsulatedData().FromDelimitedString("1^2^3^4^5");
+
+            IType actual = new EncapsulatedData();
+            actual.FromDelimitedString("1^2^3^4^5");
 
             expected.Should().BeEquivalentTo(actual);
         }

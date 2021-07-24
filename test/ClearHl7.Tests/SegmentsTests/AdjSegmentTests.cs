@@ -65,7 +65,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     OrganizationName = "15"
                 }
             };
-            ISegment actual = new AdjSegment().FromDelimitedString("ADJ|1|2|3|4|5|6|7|8|9|10|11|12|13|20200114000014|15");
+
+            ISegment actual = new AdjSegment();
+            actual.FromDelimitedString("ADJ|1|2|3|4|5|6|7|8|9|10|11|12|13|20200114000014|15");
 
             expected.Should().BeEquivalentTo(actual);
         }

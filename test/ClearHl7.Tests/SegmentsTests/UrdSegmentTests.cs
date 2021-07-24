@@ -16,7 +16,9 @@ namespace ClearHl7.Tests.SegmentsTests
             {
                 SegmentString = "1"
             };
-            ISegment actual = new UrdSegment().FromDelimitedString("URD|1");
+
+            ISegment actual = new UrdSegment();
+            actual.FromDelimitedString("URD|1");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -47,7 +47,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 CyclicGroupMaximumNumberOfRepeats = 9,
                 SpecialServiceRequestRelationship = "10"
             };
-            ISegment actual = new Tq2Segment().FromDelimitedString("TQ2|1|2|3|4|5|6|7|8|9|10");
+
+            ISegment actual = new Tq2Segment();
+            actual.FromDelimitedString("TQ2|1|2|3|4|5|6|7|8|9|10");
 
             expected.Should().BeEquivalentTo(actual);
         }

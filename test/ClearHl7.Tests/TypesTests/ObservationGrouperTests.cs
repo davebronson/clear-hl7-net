@@ -19,7 +19,9 @@ namespace ClearHl7.Tests.TypesTests
                 Sequence = 3,
                 Identifier = "4"
             };
-            ObservationGrouper actual = new ObservationGrouper().FromDelimitedString("1^2^3^4");
+
+            IType actual = new ObservationGrouper();
+            actual.FromDelimitedString("1^2^3^4");
 
             expected.Should().BeEquivalentTo(actual);
         }

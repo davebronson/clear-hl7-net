@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            ChargeToPractise expected = new()
+            IType expected = new ChargeToPractise
             {
                 DollarAmount = new Money
                 {
@@ -25,7 +25,9 @@ namespace ClearHl7.Tests.TypesTests
                     Identifier = "2"
                 }
             };
-            ChargeToPractise actual = new ChargeToPractise().FromDelimitedString("1^2");
+
+            IType actual = new ChargeToPractise();
+            actual.FromDelimitedString("1^2");
 
             expected.Should().BeEquivalentTo(actual);
         }

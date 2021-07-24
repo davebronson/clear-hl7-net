@@ -38,7 +38,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     "6"
                 }
             };
-            ISegment actual = new VarSegment().FromDelimitedString("VAR|1|20200202000002|20200303000003|4|5|6");
+
+            ISegment actual = new VarSegment();
+            actual.FromDelimitedString("VAR|1|20200202000002|20200303000003|4|5|6");
 
             expected.Should().BeEquivalentTo(actual);
         }

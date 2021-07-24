@@ -13,7 +13,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            ExtendedAddress expected = new()
+            IType expected = new ExtendedAddress
             {
                 StreetAddress = new StreetAddress
                 {
@@ -67,7 +67,9 @@ namespace ClearHl7.Tests.TypesTests
                     EntityId = "23"
                 }
             };
-            ExtendedAddress actual = new ExtendedAddress().FromDelimitedString("1^2^3^4^5^6^7^8^9^10^11^20201212000012^20200113000013^20200114000014^15^16^17^18^19^20^21^22^23");
+
+            IType actual = new ExtendedAddress();
+            actual.FromDelimitedString("1^2^3^4^5^6^7^8^9^10^11^20201212000012^20200113000013^20200114000014^15^16^17^18^19^20^21^22^23");
 
             expected.Should().BeEquivalentTo(actual);
         }

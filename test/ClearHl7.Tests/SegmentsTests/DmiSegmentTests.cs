@@ -30,7 +30,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 AverageLengthOfStay = 4,
                 RelativeWeight = 5
             };
-            ISegment actual = new DmiSegment().FromDelimitedString("DMI|1|2|3|4|5");
+
+            ISegment actual = new DmiSegment();
+            actual.FromDelimitedString("DMI|1|2|3|4|5");
 
             expected.Should().BeEquivalentTo(actual);
         }

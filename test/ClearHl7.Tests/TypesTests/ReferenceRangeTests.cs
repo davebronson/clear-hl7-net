@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            ReferenceRange expected = new()
+            IType expected = new ReferenceRange
             {
                 NumericRange = new NumericRange
                 {
@@ -42,7 +42,9 @@ namespace ClearHl7.Tests.TypesTests
                     Value = "7"
                 }
             };
-            ReferenceRange actual = new ReferenceRange().FromDelimitedString("1^2^3^4^5^6^7");
+
+            IType actual = new ReferenceRange();
+            actual.FromDelimitedString("1^2^3^4^5^6^7");
 
             expected.Should().BeEquivalentTo(actual);
         }

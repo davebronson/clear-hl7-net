@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            CompositeIdNumberAndName expected = new()
+            IType expected = new CompositeIdNumberAndName
             {
                 IdNumber = "1",
                 FamilyName = "2",
@@ -28,7 +28,9 @@ namespace ClearHl7.Tests.TypesTests
                     NamespaceId = "9"
                 }
             };
-            CompositeIdNumberAndName actual = new CompositeIdNumberAndName().FromDelimitedString("1^2^3^4^5^6^7^8^9");
+
+            IType actual = new CompositeIdNumberAndName();
+            actual.FromDelimitedString("1^2^3^4^5^6^7^8^9");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -56,7 +56,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 ScheduledStationAeTitle = "9",
                 ActionCode = "10"
             };
-            ISegment actual = new IpcSegment().FromDelimitedString("IPC|1|2|3|4|5|6|7|8|9|10");
+
+            ISegment actual = new IpcSegment();
+            actual.FromDelimitedString("IPC|1|2|3|4|5|6|7|8|9|10");
 
             expected.Should().BeEquivalentTo(actual);
         }

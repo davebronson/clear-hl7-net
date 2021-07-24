@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            PolicyTypeAndAmount expected = new()
+            IType expected = new PolicyTypeAndAmount
             {
                 PolicyType = new CodedWithExceptions
                 {
@@ -31,7 +31,9 @@ namespace ClearHl7.Tests.TypesTests
                     MoneyOrPercentageIndicator = "4"
                 }
             };
-            PolicyTypeAndAmount actual = new PolicyTypeAndAmount().FromDelimitedString("1^2^3^4");
+
+            IType actual = new PolicyTypeAndAmount();
+            actual.FromDelimitedString("1^2^3^4");
 
             expected.Should().BeEquivalentTo(actual);
         }

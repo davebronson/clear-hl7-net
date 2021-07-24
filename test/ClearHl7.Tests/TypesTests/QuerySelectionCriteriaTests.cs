@@ -12,14 +12,16 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            QuerySelectionCriteria expected = new()
+            IType expected = new QuerySelectionCriteria
             {
                 SegmentFieldName = "1",
                 RelationalOperator = "2",
                 Value = "3",
                 RelationalConjunction = "4"
             };
-            QuerySelectionCriteria actual = new QuerySelectionCriteria().FromDelimitedString("1^2^3^4");
+
+            IType actual = new QuerySelectionCriteria();
+            actual.FromDelimitedString("1^2^3^4");
 
             expected.Should().BeEquivalentTo(actual);
         }

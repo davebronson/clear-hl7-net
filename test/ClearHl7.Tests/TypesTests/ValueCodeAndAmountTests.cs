@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            ValueCodeAndAmount expected = new()
+            IType expected = new ValueCodeAndAmount
             {
                 ValueCode = new CodedWithExceptions
                 {
@@ -31,7 +31,9 @@ namespace ClearHl7.Tests.TypesTests
                     Identifier = "4"
                 }
             };
-            ValueCodeAndAmount actual = new ValueCodeAndAmount().FromDelimitedString("1^2^3^4");
+
+            IType actual = new ValueCodeAndAmount();
+            actual.FromDelimitedString("1^2^3^4");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -29,7 +29,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 Taxable = "6",
                 SubstituteAllowed = "7"
             };
-            ISegment actual = new Rq1Segment().FromDelimitedString("RQ1|1|2|3|4|5|6|7");
+
+            ISegment actual = new Rq1Segment();
+            actual.FromDelimitedString("RQ1|1|2|3|4|5|6|7");
 
             expected.Should().BeEquivalentTo(actual);
         }

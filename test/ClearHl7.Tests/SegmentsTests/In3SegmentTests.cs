@@ -135,7 +135,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 OnlineVerificationResultCheckDigit = "31"
             };
-            ISegment actual = new In3Segment().FromDelimitedString("IN3|1|2|3|4|5|20200606000006|20200707000007|8|20200909|20201010|11|12|20200113000013|14|15|16|17|18|19|20|21|20200202|23|24|25|26|27|20200128000028|29|30|31");
+
+            ISegment actual = new In3Segment();
+            actual.FromDelimitedString("IN3|1|2|3|4|5|20200606000006|20200707000007|8|20200909|20201010|11|12|20200113000013|14|15|16|17|18|19|20|21|20200202|23|24|25|26|27|20200128000028|29|30|31");
 
             expected.Should().BeEquivalentTo(actual);
         }

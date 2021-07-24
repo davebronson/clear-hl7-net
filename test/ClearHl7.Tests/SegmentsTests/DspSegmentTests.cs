@@ -27,7 +27,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Value = "5"
                 }
             };
-            ISegment actual = new DspSegment().FromDelimitedString("DSP|1|2|3|4|5");
+
+            ISegment actual = new DspSegment();
+            actual.FromDelimitedString("DSP|1|2|3|4|5");
 
             expected.Should().BeEquivalentTo(actual);
         }

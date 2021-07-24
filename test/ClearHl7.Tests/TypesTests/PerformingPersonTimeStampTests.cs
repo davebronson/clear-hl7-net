@@ -13,7 +13,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            PerformingPersonTimeStamp expected = new()
+            IType expected = new PerformingPersonTimeStamp
             {
                 PersonIdentifier = "1",
                 FamilyName = new FamilyName
@@ -70,7 +70,9 @@ namespace ClearHl7.Tests.TypesTests
                 SecurityCheck = "25",
                 SecurityCheckScheme = "26"
             };
-            PerformingPersonTimeStamp actual = new PerformingPersonTimeStamp().FromDelimitedString("1^2^3^4^5^6^7^8^9^10^11^12^13^14^20200115011515^16^17^18^19^20200120012000^20200121012110^22^23^24^25^26");
+
+            IType actual = new PerformingPersonTimeStamp();
+            actual.FromDelimitedString("1^2^3^4^5^6^7^8^9^10^11^12^13^14^20200115011515^16^17^18^19^20200120012000^20200121012110^22^23^24^25^26");
 
             expected.Should().BeEquivalentTo(actual);
         }

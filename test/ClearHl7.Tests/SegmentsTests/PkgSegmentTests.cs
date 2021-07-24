@@ -55,7 +55,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     EntityId = "11"
                 }
             };
-            ISegment actual = new PkgSegment().FromDelimitedString("PKG|1|2|3|4|5|6|20200707000007|8|9|10|11");
+
+            ISegment actual = new PkgSegment();
+            actual.FromDelimitedString("PKG|1|2|3|4|5|6|20200707000007|8|9|10|11");
 
             expected.Should().BeEquivalentTo(actual);
         }

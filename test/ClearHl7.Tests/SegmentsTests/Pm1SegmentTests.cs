@@ -86,7 +86,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 PolicyNumberPattern = "23",
                 GroupNumberPattern = "24"
             };
-            ISegment actual = new Pm1Segment().FromDelimitedString("PM1|1|2|3|4|5|6|7|8|20200909|20201010|11|12|13|14|15|16|17|18|19|20|21|22|23|24");
+
+            ISegment actual = new Pm1Segment();
+            actual.FromDelimitedString("PM1|1|2|3|4|5|6|7|8|20200909|20201010|11|12|13|14|15|16|17|18|19|20|21|22|23|24");
 
             expected.Should().BeEquivalentTo(actual);
         }

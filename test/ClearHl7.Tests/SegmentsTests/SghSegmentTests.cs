@@ -17,7 +17,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 SetIdSgh = 1,
                 SegmentGroupName = "2"
             };
-            ISegment actual = new SghSegment().FromDelimitedString("SGH|1|2");
+
+            ISegment actual = new SghSegment();
+            actual.FromDelimitedString("SGH|1|2");
 
             expected.Should().BeEquivalentTo(actual);
         }

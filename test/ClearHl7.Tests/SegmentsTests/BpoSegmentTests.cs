@@ -73,7 +73,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 BpInformedConsentIndicator = "14"
             };
-            ISegment actual = new BpoSegment().FromDelimitedString("BPO|1|2|3|4|5|6|20200707000007|8|9|20201010000010|11|12|13|14");
+
+            ISegment actual = new BpoSegment();
+            actual.FromDelimitedString("BPO|1|2|3|4|5|6|20200707000007|8|9|20201010000010|11|12|13|14");
 
             expected.Should().BeEquivalentTo(actual);
         }

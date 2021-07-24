@@ -37,7 +37,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 ProfessionalAffiliationAdditionalInformation = "5"
             };
-            ISegment actual = new AffSegment().FromDelimitedString("AFF|1|2|3|20200404000004|5");
+
+            ISegment actual = new AffSegment();
+            actual.FromDelimitedString("AFF|1|2|3|20200404000004|5");
 
             expected.Should().BeEquivalentTo(actual);
         }

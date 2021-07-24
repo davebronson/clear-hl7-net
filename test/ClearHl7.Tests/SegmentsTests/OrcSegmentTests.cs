@@ -193,7 +193,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     EntityId = "38"
                 }
             };
-            ISegment actual = new OrcSegment().FromDelimitedString("ORC|1|2|3|4|5|6|7|8|20200909000009|10|11|12|13|14|20200115000015|16|17|18|19|20|21|22|23|24|25|26|20200127000027|28|29|30|31|20200302|33|34|35|20200306000036|20200307000037|38");
+
+            ISegment actual = new OrcSegment();
+            actual.FromDelimitedString("ORC|1|2|3|4|5|6|7|8|20200909000009|10|11|12|13|14|20200115000015|16|17|18|19|20|21|22|23|24|25|26|20200127000027|28|29|30|31|20200302|33|34|35|20200306000036|20200307000037|38");
 
             expected.Should().BeEquivalentTo(actual);
         }

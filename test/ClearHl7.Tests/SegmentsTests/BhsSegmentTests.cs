@@ -64,7 +64,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     "17"
                 }
             };
-            ISegment actual = new BhsSegment().FromDelimitedString("BHS|1|2|3|4|5|6|20200707000007|8|9|10|11|12|13|14|15|16|17");
+
+            ISegment actual = new BhsSegment();
+            actual.FromDelimitedString("BHS|1|2|3|4|5|6|20200707000007|8|9|10|11|12|13|14|15|16|17");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -29,7 +29,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 ActionCode = "4"
             };
-            ISegment actual = new CtiSegment().FromDelimitedString("CTI|1|2|3|4");
+
+            ISegment actual = new CtiSegment();
+            actual.FromDelimitedString("CTI|1|2|3|4");
 
             expected.Should().BeEquivalentTo(actual);
         }

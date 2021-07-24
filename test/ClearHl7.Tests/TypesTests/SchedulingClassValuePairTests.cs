@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            SchedulingClassValuePair expected = new()
+            IType expected = new SchedulingClassValuePair
             {
                 ParameterClass = new CodedWithExceptions
                 {
@@ -21,7 +21,9 @@ namespace ClearHl7.Tests.TypesTests
                 },
                 ParameterValue = "2"
             };
-            SchedulingClassValuePair actual = new SchedulingClassValuePair().FromDelimitedString("1^2");
+
+            IType actual = new SchedulingClassValuePair();
+            actual.FromDelimitedString("1^2");
 
             expected.Should().BeEquivalentTo(actual);
         }

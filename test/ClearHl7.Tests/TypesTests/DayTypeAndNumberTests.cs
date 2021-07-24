@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            DayTypeAndNumber expected = new()
+            IType expected = new DayTypeAndNumber
             {
                 DayType = new CodedWithExceptions
                 {
@@ -21,7 +21,9 @@ namespace ClearHl7.Tests.TypesTests
                 },
                 NumberOfDays = 2
             };
-            DayTypeAndNumber actual = new DayTypeAndNumber().FromDelimitedString("1^2");
+
+            IType actual = new DayTypeAndNumber();
+            actual.FromDelimitedString("1^2");
 
             expected.Should().BeEquivalentTo(actual);
         }

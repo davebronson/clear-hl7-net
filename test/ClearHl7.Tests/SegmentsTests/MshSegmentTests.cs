@@ -103,7 +103,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     "28"
                 }
             };
-            ISegment actual = new MshSegment().FromDelimitedString("MSH|^~\\&|3|4|5|6|20200707000007|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28");
+
+            ISegment actual = new MshSegment();
+            actual.FromDelimitedString("MSH|^~\\&|3|4|5|6|20200707000007|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28");
 
             expected.Should().BeEquivalentTo(actual);
         }

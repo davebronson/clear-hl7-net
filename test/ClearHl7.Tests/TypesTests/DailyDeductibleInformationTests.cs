@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            DailyDeductibleInformation expected = new()
+            IType expected = new DailyDeductibleInformation
             {
                 DelayDays = 1,
                 MonetaryAmount = new Money
@@ -22,7 +22,9 @@ namespace ClearHl7.Tests.TypesTests
                 },
                 NumberOfDays = 3
             };
-            DailyDeductibleInformation actual = new DailyDeductibleInformation().FromDelimitedString("1^2^3");
+
+            IType actual = new DailyDeductibleInformation();
+            actual.FromDelimitedString("1^2^3");
 
             expected.Should().BeEquivalentTo(actual);
         }

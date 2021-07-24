@@ -12,12 +12,14 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            SortOrder expected = new()
+            IType expected = new SortOrder
             {
                 SortByField = "1",
                 Sequencing = "2"
             };
-            SortOrder actual = new SortOrder().FromDelimitedString("1^2");
+
+            IType actual = new SortOrder();
+            actual.FromDelimitedString("1^2");
 
             expected.Should().BeEquivalentTo(actual);
         }

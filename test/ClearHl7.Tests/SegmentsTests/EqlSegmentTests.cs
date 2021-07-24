@@ -23,7 +23,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 EqlQueryStatement = "4"
             };
-            ISegment actual = new EqlSegment().FromDelimitedString("EQL|1|2|3|4");
+
+            ISegment actual = new EqlSegment();
+            actual.FromDelimitedString("EQL|1|2|3|4");
 
             expected.Should().BeEquivalentTo(actual);
         }

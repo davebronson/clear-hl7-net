@@ -13,7 +13,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            OccurrenceSpanCodeAndDate expected = new()
+            IType expected = new OccurrenceSpanCodeAndDate
             {
                 OccurrenceSpanCode = new CodedWithNoExceptions
                 {
@@ -23,7 +23,9 @@ namespace ClearHl7.Tests.TypesTests
                 OccurrenceSpanStartDate = new DateTime(2020, 2, 2, 2, 22, 0),
                 OccurrenceSpanStopDate = new DateTime(2020, 3, 3, 3, 33, 28)
             };
-            OccurrenceSpanCodeAndDate actual = new OccurrenceSpanCodeAndDate().FromDelimitedString("1^20200202022200^20200303033328");
+
+            IType actual = new OccurrenceSpanCodeAndDate();
+            actual.FromDelimitedString("1^20200202022200^20200303033328");
 
             expected.Should().BeEquivalentTo(actual);
         }

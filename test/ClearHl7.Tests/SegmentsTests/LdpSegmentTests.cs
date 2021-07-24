@@ -68,7 +68,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "12"
                 }
             };
-            ISegment actual = new LdpSegment().FromDelimitedString("LDP|1|2|3|4|5|6|20200707000007|20200808000008|9|10|11|12");
+
+            ISegment actual = new LdpSegment();
+            actual.FromDelimitedString("LDP|1|2|3|4|5|6|20200707000007|20200808000008|9|10|11|12");
 
             expected.Should().BeEquivalentTo(actual);
         }

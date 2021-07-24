@@ -12,13 +12,15 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            HierarchicDesignator expected = new()
+            IType expected = new HierarchicDesignator
             {
                 NamespaceId = "1",
                 UniversalId = "2",
                 UniversalIdType = "3"
             };
-            HierarchicDesignator actual = new HierarchicDesignator().FromDelimitedString("1^2^3");
+
+            IType actual = new HierarchicDesignator();
+            actual.FromDelimitedString("1^2^3");
 
             expected.Should().BeEquivalentTo(actual);
         }

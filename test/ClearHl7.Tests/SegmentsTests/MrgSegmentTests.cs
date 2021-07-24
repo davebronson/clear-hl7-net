@@ -50,7 +50,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new MrgSegment().FromDelimitedString("MRG|1|2|3|4|5|6|7");
+
+            ISegment actual = new MrgSegment();
+            actual.FromDelimitedString("MRG|1|2|3|4|5|6|7");
 
             expected.Should().BeEquivalentTo(actual);
         }

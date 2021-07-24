@@ -111,7 +111,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "31"
                 }
             };
-            ISegment actual = new CerSegment().FromDelimitedString("CER|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|20200123000023|20200124000024|20200125000025|20200126000026|20200127000027|20200128000028|20200129000029|30|31");
+
+            ISegment actual = new CerSegment();
+            actual.FromDelimitedString("CER|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|20200123000023|20200124000024|20200125000025|20200126000026|20200127000027|20200128000028|20200129000029|30|31");
 
             expected.Should().BeEquivalentTo(actual);
         }

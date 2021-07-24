@@ -74,7 +74,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 SetIdPra = 12
             };
-            ISegment actual = new PraSegment().FromDelimitedString("PRA|1|2|3|4|5|6|7|20200808|9|20201010|11|12");
+
+            ISegment actual = new PraSegment();
+            actual.FromDelimitedString("PRA|1|2|3|4|5|6|7|20200808|9|20201010|11|12");
 
             expected.Should().BeEquivalentTo(actual);
         }

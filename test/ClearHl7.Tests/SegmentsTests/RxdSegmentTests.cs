@@ -142,7 +142,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new RxdSegment().FromDelimitedString("RXD|1|2|20200303000003|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|20200119000019|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35");
+
+            ISegment actual = new RxdSegment();
+            actual.FromDelimitedString("RXD|1|2|20200303000003|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|20200119000019|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35");
 
             expected.Should().BeEquivalentTo(actual);
         }

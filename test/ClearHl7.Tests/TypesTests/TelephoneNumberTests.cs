@@ -12,11 +12,13 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            TelephoneNumber expected = new()
+            IType expected = new TelephoneNumber
             {
                 Value = "1"
             };
-            TelephoneNumber actual = new TelephoneNumber().FromDelimitedString("1");
+
+            IType actual = new TelephoneNumber();
+            actual.FromDelimitedString("1");
 
             expected.Should().BeEquivalentTo(actual);
         }

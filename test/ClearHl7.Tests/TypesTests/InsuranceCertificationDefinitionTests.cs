@@ -13,7 +13,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            InsuranceCertificationDefinition expected = new()
+            IType expected = new InsuranceCertificationDefinition
             {
                 CertificationPatientType = new CodedWithExceptions
                 {
@@ -23,7 +23,9 @@ namespace ClearHl7.Tests.TypesTests
                 CertificationRequired = "2",
                 DateTimeCertificationRequired = new DateTime(2020, 3, 3, 0, 0, 33)
             };
-            InsuranceCertificationDefinition actual = new InsuranceCertificationDefinition().FromDelimitedString("1^2^20200303000033");
+
+            IType actual = new InsuranceCertificationDefinition();
+            actual.FromDelimitedString("1^2^20200303000033");
 
             expected.Should().BeEquivalentTo(actual);
         }

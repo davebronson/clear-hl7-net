@@ -223,7 +223,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     TelephoneNumber = "41"
                 }
             };
-            ISegment actual = new Nk1Segment().FromDelimitedString("NK1|1|2|3|4|5|6|7|20200808|20200909|10|11|12|13|14|15|20200116000016|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41");
+
+            ISegment actual = new Nk1Segment();
+            actual.FromDelimitedString("NK1|1|2|3|4|5|6|7|20200808|20200909|10|11|12|13|14|15|20200116000016|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|39|40|41");
 
             expected.Should().BeEquivalentTo(actual);
         }

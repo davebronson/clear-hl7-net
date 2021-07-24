@@ -69,7 +69,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     "13"
                 }
             };
-            ISegment actual = new PesSegment().FromDelimitedString("PES|1|2|3|4|5|6|7|8|20200909000009|20201010000010|11|12|13");
+
+            ISegment actual = new PesSegment();
+            actual.FromDelimitedString("PES|1|2|3|4|5|6|7|8|20200909000009|20201010000010|11|12|13");
 
             expected.Should().BeEquivalentTo(actual);
         }

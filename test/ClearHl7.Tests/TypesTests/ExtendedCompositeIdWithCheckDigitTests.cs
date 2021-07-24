@@ -13,7 +13,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            ExtendedCompositeIdWithCheckDigit expected = new()
+            IType expected = new ExtendedCompositeIdWithCheckDigit
             {
                 IdNumber = "1",
                 IdentifierCheckDigit = "2",
@@ -44,7 +44,9 @@ namespace ClearHl7.Tests.TypesTests
                 SecurityCheck = "11",
                 SecurityCheckScheme = "12"
             };
-            ExtendedCompositeIdWithCheckDigit actual = new ExtendedCompositeIdWithCheckDigit().FromDelimitedString("1^2^3^4^5^6^20200707^20200808^9^10^11^12");
+
+            IType actual = new ExtendedCompositeIdWithCheckDigit();
+            actual.FromDelimitedString("1^2^3^4^5^6^20200707^20200808^9^10^11^12");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -29,7 +29,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new Cm2Segment().FromDelimitedString("CM2|1|2|3|4");
+
+            ISegment actual = new Cm2Segment();
+            actual.FromDelimitedString("CM2|1|2|3|4");
 
             expected.Should().BeEquivalentTo(actual);
         }

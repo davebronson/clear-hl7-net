@@ -49,7 +49,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "7"
                 }
             };
-            PyeSegment actual = new PyeSegment().FromDelimitedString("PYE|1|2|3|4|5|6|7");
+
+            PyeSegment actual = new PyeSegment();
+            actual.FromDelimitedString("PYE|1|2|3|4|5|6|7");
 
             expected.Should().BeEquivalentTo(actual);
         }

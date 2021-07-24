@@ -32,7 +32,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "4"
                 }
             };
-            ISegment actual = new LanSegment().FromDelimitedString("LAN|1|2|3|4");
+
+            ISegment actual = new LanSegment();
+            actual.FromDelimitedString("LAN|1|2|3|4");
 
             expected.Should().BeEquivalentTo(actual);
         }

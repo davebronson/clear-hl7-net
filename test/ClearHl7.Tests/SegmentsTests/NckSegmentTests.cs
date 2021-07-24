@@ -17,7 +17,9 @@ namespace ClearHl7.Tests.SegmentsTests
             {
                 SystemDateTime = new DateTime(2020, 1, 1, 0, 0, 1)
             };
-            ISegment actual = new NckSegment().FromDelimitedString("NCK|20200101000001");
+
+            ISegment actual = new NckSegment();
+            actual.FromDelimitedString("NCK|20200101000001");
 
             expected.Should().BeEquivalentTo(actual);
         }

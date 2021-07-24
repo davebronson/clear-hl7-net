@@ -13,7 +13,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            OccurrenceCodeAndDate expected = new()
+            IType expected = new OccurrenceCodeAndDate
             {
                 OccurrenceCode = new CodedWithNoExceptions
                 {
@@ -22,7 +22,9 @@ namespace ClearHl7.Tests.TypesTests
                 },
                 OccurrenceDate = new DateTime(2020, 2, 22)
             };
-            OccurrenceCodeAndDate actual = new OccurrenceCodeAndDate().FromDelimitedString("1^20200222");
+
+            IType actual = new OccurrenceCodeAndDate();
+            actual.FromDelimitedString("1^20200222");
 
             expected.Should().BeEquivalentTo(actual);
         }

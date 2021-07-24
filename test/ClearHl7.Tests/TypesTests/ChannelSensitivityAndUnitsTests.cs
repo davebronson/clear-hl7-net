@@ -13,7 +13,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            ChannelSensitivityAndUnits expected = new()
+            IType expected = new ChannelSensitivityAndUnits
             {
                 ChannelSensitivity = 1,
                 UnitOfMeasureIdentifier = "2",
@@ -39,7 +39,9 @@ namespace ClearHl7.Tests.TypesTests
                 AlternateUnitOfMeasureValueSetOidAdditional = "22",
                 AlternateUnitOfMeasureValueSetVersionIdAdditional = "23"
             };
-            ChannelSensitivityAndUnits actual = new ChannelSensitivityAndUnits().FromDelimitedString("1^2^3^4^5^6^7^8^9^10^11^12^13^14^15^16^20200107^18^19^20200201^21^22^23");
+
+            IType actual = new ChannelSensitivityAndUnits();
+            actual.FromDelimitedString("1^2^3^4^5^6^7^8^9^10^11^12^13^14^15^16^20200107^18^19^20200201^21^22^23");
 
             expected.Should().BeEquivalentTo(actual);
         }

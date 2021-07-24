@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            ParentOrder expected = new()
+            IType expected = new ParentOrder
             {
                 PlacerAssignedIdentifier = new EntityIdentifier
                 {
@@ -25,7 +25,9 @@ namespace ClearHl7.Tests.TypesTests
                     EntityId = "2"
                 }
             };
-            ParentOrder actual = new ParentOrder().FromDelimitedString("1^2");
+
+            IType actual = new ParentOrder();
+            actual.FromDelimitedString("1^2");
 
             expected.Should().BeEquivalentTo(actual);
         }

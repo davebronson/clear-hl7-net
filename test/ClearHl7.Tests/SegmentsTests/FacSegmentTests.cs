@@ -85,7 +85,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     TelephoneNumber = "12"
                 }
             };
-            ISegment actual = new FacSegment().FromDelimitedString("FAC|1|2|3|4|5|6|7|8|9|10|11|12");
+
+            ISegment actual = new FacSegment();
+            actual.FromDelimitedString("FAC|1|2|3|4|5|6|7|8|9|10|11|12");
 
             expected.Should().BeEquivalentTo(actual);
         }

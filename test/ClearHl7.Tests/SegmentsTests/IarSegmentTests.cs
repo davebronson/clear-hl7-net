@@ -29,7 +29,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 Management = "4"
             };
-            ISegment actual = new IarSegment().FromDelimitedString("IAR|1|2|3|4");
+
+            ISegment actual = new IarSegment();
+            actual.FromDelimitedString("IAR|1|2|3|4");
 
             expected.Should().BeEquivalentTo(actual);
         }

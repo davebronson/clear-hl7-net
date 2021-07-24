@@ -109,7 +109,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "14"
                 }
             };
-            ISegment actual = new PrdSegment().FromDelimitedString("PRD|1|2|3|4|5|6|7|20200808000008|20200909000009|10|11|12|13|14");
+
+            ISegment actual = new PrdSegment();
+            actual.FromDelimitedString("PRD|1|2|3|4|5|6|7|20200808000008|20200909000009|10|11|12|13|14");
 
             expected.Should().BeEquivalentTo(actual);
         }

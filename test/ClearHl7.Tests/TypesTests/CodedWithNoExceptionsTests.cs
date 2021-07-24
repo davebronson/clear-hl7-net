@@ -13,7 +13,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            CodedWithNoExceptions expected = new()
+            IType expected = new CodedWithNoExceptions
             {
                 Identifier = "1",
                 Text = "2",
@@ -38,7 +38,9 @@ namespace ClearHl7.Tests.TypesTests
                 SecondAlternateValueSetOid = "21",
                 SecondAlternateValueSetVersionId = new DateTime(2020, 1, 22)
             };
-            CodedWithNoExceptions actual = new CodedWithNoExceptions().FromDelimitedString("1^2^3^4^5^6^7^8^9^10^11^12^13^14^15^20200116^17^18^20200119^20^21^20200122");
+
+            IType actual = new CodedWithNoExceptions();
+            actual.FromDelimitedString("1^2^3^4^5^6^7^8^9^10^11^12^13^14^15^20200116^17^18^20200119^20^21^20200122");
 
             expected.Should().BeEquivalentTo(actual);
         }

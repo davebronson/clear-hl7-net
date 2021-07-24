@@ -29,7 +29,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new CssSegment().FromDelimitedString("CSS|1|20200202000002|3");
+
+            ISegment actual = new CssSegment();
+            actual.FromDelimitedString("CSS|1|20200202000002|3");
 
             expected.Should().BeEquivalentTo(actual);
         }

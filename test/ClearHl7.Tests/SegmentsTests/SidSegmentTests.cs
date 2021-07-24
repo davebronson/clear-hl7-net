@@ -26,7 +26,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "4"
                 }
             };
-            ISegment actual = new SidSegment().FromDelimitedString("SID|1|2|3|4");
+
+            ISegment actual = new SidSegment();
+            actual.FromDelimitedString("SID|1|2|3|4");
 
             expected.Should().BeEquivalentTo(actual);
         }

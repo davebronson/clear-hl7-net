@@ -23,7 +23,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new ZxxSegment().FromDelimitedString("ZXX|1");
+
+            ISegment actual = new ZxxSegment();
+            actual.FromDelimitedString("ZXX|1");
 
             expected.Should().BeEquivalentTo(actual);
         }

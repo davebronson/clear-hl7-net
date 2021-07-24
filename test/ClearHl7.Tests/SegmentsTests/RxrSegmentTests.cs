@@ -40,7 +40,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "6"
                 }
             };
-            ISegment actual = new RxrSegment().FromDelimitedString("RXR|1|2|3|4|5|6");
+
+            ISegment actual = new RxrSegment();
+            actual.FromDelimitedString("RXR|1|2|3|4|5|6");
 
             expected.Should().BeEquivalentTo(actual);
         }

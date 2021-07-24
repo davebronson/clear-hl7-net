@@ -29,7 +29,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new SprSegment().FromDelimitedString("SPR|1|2|3|4");
+
+            ISegment actual = new SprSegment();
+            actual.FromDelimitedString("SPR|1|2|3|4");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -17,7 +17,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 FileBatchCount = 1,
                 FileTrailerComment = "2"
             };
-            ISegment actual = new FtsSegment().FromDelimitedString("FTS|1|2");
+
+            ISegment actual = new FtsSegment();
+            actual.FromDelimitedString("FTS|1|2");
 
             expected.Should().BeEquivalentTo(actual);
         }

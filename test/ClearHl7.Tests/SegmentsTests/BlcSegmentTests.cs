@@ -24,7 +24,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Quantity = 2
                 }
             };
-            ISegment actual = new BlcSegment().FromDelimitedString("BLC|1|2");
+
+            ISegment actual = new BlcSegment();
+            actual.FromDelimitedString("BLC|1|2");
 
             expected.Should().BeEquivalentTo(actual);
         }

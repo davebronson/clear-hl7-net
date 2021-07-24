@@ -47,7 +47,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 CoronerIndicator = "9"
             };
-            ISegment actual = new PdaSegment().FromDelimitedString("PDA|1|2|3|20200404000004|5|6|20200707000007|8|9");
+
+            ISegment actual = new PdaSegment();
+            actual.FromDelimitedString("PDA|1|2|3|20200404000004|5|6|20200707000007|8|9");
 
             expected.Should().BeEquivalentTo(actual);
         }

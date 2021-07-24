@@ -12,12 +12,14 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            ProcessingType expected = new()
+            IType expected = new ProcessingType
             {
                 ProcessingId = "1",
                 ProcessingMode = "2"
             };
-            ProcessingType actual = new ProcessingType().FromDelimitedString("1^2");
+            
+            IType actual = new ProcessingType();
+            actual.FromDelimitedString("1^2");
 
             expected.Should().BeEquivalentTo(actual);
         }

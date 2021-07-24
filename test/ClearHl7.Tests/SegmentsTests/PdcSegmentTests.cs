@@ -59,7 +59,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 DateFirstMarketed = new DateTime(2020, 1, 14, 0, 0, 14),
                 DateLastMarketed = new DateTime(2020, 1, 15, 0, 0, 15)
             };
-            ISegment actual = new PdcSegment().FromDelimitedString("PDC|1|2|3|4|5|6|7|8|9|10|11|12|13|20200114000014|20200115000015");
+
+            ISegment actual = new PdcSegment();
+            actual.FromDelimitedString("PDC|1|2|3|4|5|6|7|8|9|10|11|12|13|20200114000014|20200115000015");
 
             expected.Should().BeEquivalentTo(actual);
         }

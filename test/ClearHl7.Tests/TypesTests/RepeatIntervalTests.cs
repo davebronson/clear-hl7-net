@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            RepeatInterval expected = new()
+            IType expected = new RepeatInterval
             {
                 RepeatPattern = new CodedWithExceptions
                 {
@@ -21,7 +21,9 @@ namespace ClearHl7.Tests.TypesTests
                 },
                 ExplicitTimeInterval = "2"
             };
-            RepeatInterval actual = new RepeatInterval().FromDelimitedString("1^2");
+
+            IType actual = new RepeatInterval();
+            actual.FromDelimitedString("1^2");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -38,7 +38,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 ExpectedDateTimeOfTheNextStatusChange = new DateTime(2020, 6, 6, 0, 0, 6)
             };
-            ISegment actual = new EquSegment().FromDelimitedString("EQU|1|20200202000002|3|4|5|20200606000006");
+
+            ISegment actual = new EquSegment();
+            actual.FromDelimitedString("EQU|1|20200202000002|3|4|5|20200606000006");
 
             expected.Should().BeEquivalentTo(actual);
         }

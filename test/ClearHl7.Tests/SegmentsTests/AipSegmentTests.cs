@@ -53,7 +53,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "12"
                 }
             };
-            ISegment actual = new AipSegment().FromDelimitedString("AIP|1|2|3|4|5|20200606000006|7|8|9|10|11|12");
+
+            ISegment actual = new AipSegment();
+            actual.FromDelimitedString("AIP|1|2|3|4|5|20200606000006|7|8|9|10|11|12");
 
             expected.Should().BeEquivalentTo(actual);
         }

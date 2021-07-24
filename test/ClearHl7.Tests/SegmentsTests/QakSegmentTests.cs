@@ -25,7 +25,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 ThisPayload = 5,
                 HitsRemaining = 6
             };
-            ISegment actual = new QakSegment().FromDelimitedString("QAK|1|2|3|4|5|6");
+
+            ISegment actual = new QakSegment();
+            actual.FromDelimitedString("QAK|1|2|3|4|5|6");
 
             expected.Should().BeEquivalentTo(actual);
         }

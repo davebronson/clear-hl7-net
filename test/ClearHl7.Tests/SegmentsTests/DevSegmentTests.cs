@@ -67,7 +67,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "17"
                 }
             };
-            ISegment actual = new DevSegment().FromDelimitedString("DEV|1|2|3|4|5|6|7|8|9|10|11|20201212000012|20200113000013|14|15|16|17");
+
+            ISegment actual = new DevSegment();
+            actual.FromDelimitedString("DEV|1|2|3|4|5|6|7|8|9|10|11|20201212000012|20200113000013|14|15|16|17");
 
             expected.Should().BeEquivalentTo(actual);
         }

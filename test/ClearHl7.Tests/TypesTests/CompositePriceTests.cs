@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            CompositePrice expected = new()
+            IType expected = new CompositePrice
             {
                 Price = new Money
                 {
@@ -29,7 +29,9 @@ namespace ClearHl7.Tests.TypesTests
                 },
                 RangeType = "6"
             };
-            CompositePrice actual = new CompositePrice().FromDelimitedString("1^2^3^4^5^6");
+
+            IType actual = new CompositePrice();
+            actual.FromDelimitedString("1^2^3^4^5^6");
 
             expected.Should().BeEquivalentTo(actual);
         }

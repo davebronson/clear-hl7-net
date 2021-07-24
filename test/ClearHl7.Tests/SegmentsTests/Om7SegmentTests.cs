@@ -92,7 +92,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new Om7Segment().FromDelimitedString("OM7|1|2|3|4|5|20200606000006|20200707000007|8|9|10|11|12|20200113000013|20200114000014|15|16|17|18|20200119000019|20|21|22|23|24");
+
+            ISegment actual = new Om7Segment();
+            actual.FromDelimitedString("OM7|1|2|3|4|5|20200606000006|20200707000007|8|9|10|11|12|20200113000013|20200114000014|15|16|17|18|20200119000019|20|21|22|23|24");
 
             expected.Should().BeEquivalentTo(actual);
         }

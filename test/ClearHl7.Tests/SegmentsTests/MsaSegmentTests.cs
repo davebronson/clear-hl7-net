@@ -23,7 +23,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 MessageWaitingNumber = 7,
                 MessageWaitingPriority = "8"
             };
-            ISegment actual = new MsaSegment().FromDelimitedString("MSA|1|2|3|4|5|6|7|8");
+
+            ISegment actual = new MsaSegment();
+            actual.FromDelimitedString("MSA|1|2|3|4|5|6|7|8");
 
             expected.Should().BeEquivalentTo(actual);
         }

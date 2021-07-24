@@ -12,14 +12,16 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            StructuredNumeric expected = new()
+            IType expected = new StructuredNumeric
             {
                 Comparator = "1",
                 Num1 = 2,
                 SeparatorSuffix = "3",
                 Num2 = 4
             };
-            StructuredNumeric actual = new StructuredNumeric().FromDelimitedString("1^2^3^4");
+
+            IType actual = new StructuredNumeric();
+            actual.FromDelimitedString("1^2^3^4");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -36,7 +36,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     NamespaceId = "7"
                 }
             };
-            ISegment actual = new EvnSegment().FromDelimitedString("EVN|1|20200202000002|20200303000003|4|5|20200606000006|7");
+
+            ISegment actual = new EvnSegment();
+            actual.FromDelimitedString("EVN|1|20200202000002|20200303000003|4|5|20200606000006|7");
 
             expected.Should().BeEquivalentTo(actual);
         }

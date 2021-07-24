@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            CodedElement expected = new()
+            IType expected = new CodedElement
             {
                 Identifier = "1",
                 Text = "2",
@@ -21,7 +21,9 @@ namespace ClearHl7.Tests.TypesTests
                 AlternateText = "5",
                 NameOfAlternateCodingSystem = "6"
             };
-            CodedElement actual = new CodedElement().FromDelimitedString("1^2^3^4^5^6");
+
+            IType actual = new CodedElement();
+            actual.FromDelimitedString("1^2^3^4^5^6");
 
             expected.Should().BeEquivalentTo(actual);
         }

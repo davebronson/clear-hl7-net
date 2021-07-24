@@ -134,7 +134,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 SalesTaxId = "30"
             };
-            ISegment actual = new IvcSegment().FromDelimitedString("IVC|1|2|3|4|5|6|20200707000007|8|9|10|11|12|13|20200114000014|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30");
+
+            ISegment actual = new IvcSegment();
+            actual.FromDelimitedString("IVC|1|2|3|4|5|6|20200707000007|8|9|10|11|12|13|20200114000014|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -30,7 +30,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new EcdSegment().FromDelimitedString("ECD|1|2|3|4|5");
+
+            ISegment actual = new EcdSegment();
+            actual.FromDelimitedString("ECD|1|2|3|4|5");
 
             expected.Should().BeEquivalentTo(actual);
         }

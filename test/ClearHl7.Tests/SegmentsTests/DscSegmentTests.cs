@@ -17,7 +17,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 ContinuationPointer = "1",
                 ContinuationStyle = "2"
             };
-            ISegment actual = new DscSegment().FromDelimitedString("DSC|1|2");
+
+            ISegment actual = new DscSegment();
+            actual.FromDelimitedString("DSC|1|2");
 
             expected.Should().BeEquivalentTo(actual);
         }

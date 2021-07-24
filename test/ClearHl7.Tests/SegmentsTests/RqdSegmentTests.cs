@@ -48,7 +48,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 DateNeeded = new DateTime(2020, 10, 10)
             };
-            ISegment actual = new RqdSegment().FromDelimitedString("RQD|1|2|3|4|5|6|7|8|9|20201010");
+
+            ISegment actual = new RqdSegment();
+            actual.FromDelimitedString("RQD|1|2|3|4|5|6|7|8|9|20201010");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -13,14 +13,16 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            SpecialtyDescription expected = new()
+            IType expected = new SpecialtyDescription
             {
                 SpecialtyName = "1",
                 GoverningBoard = "2",
                 EligibleOrCertified = "3",
                 DateOfCertification = new DateTime(2020, 4, 4)
             };
-            SpecialtyDescription actual = new SpecialtyDescription().FromDelimitedString("1^2^3^20200404");
+
+            IType actual = new SpecialtyDescription();
+            actual.FromDelimitedString("1^2^3^20200404");
 
             expected.Should().BeEquivalentTo(actual);
         }

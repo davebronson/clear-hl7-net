@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            LocationWithAddressVariationOne expected = new()
+            IType expected = new LocationWithAddressVariationOne
             {
                 PointOfCare = "1",
                 Room = "2",
@@ -32,7 +32,9 @@ namespace ClearHl7.Tests.TypesTests
                     StreetAddress = "9"
                 }
             };
-            LocationWithAddressVariationOne actual = new LocationWithAddressVariationOne().FromDelimitedString("1^2^3^4^5^6^7^8^9");
+
+            IType actual = new LocationWithAddressVariationOne();
+            actual.FromDelimitedString("1^2^3^4^5^6^7^8^9");
 
             expected.Should().BeEquivalentTo(actual);
         }

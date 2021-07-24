@@ -13,7 +13,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            DriversLicenseNumber expected = new()
+            IType expected = new DriversLicenseNumber
             {
                 LicenseNumber = "1",
                 IssuingStateProvinceCountry = new CodedWithExceptions
@@ -23,7 +23,9 @@ namespace ClearHl7.Tests.TypesTests
                 },
                 ExpirationDate = new DateTime(2020, 3, 3)
             };
-            DriversLicenseNumber actual = new DriversLicenseNumber().FromDelimitedString("1^2^20200303");
+
+            IType actual = new DriversLicenseNumber();
+            actual.FromDelimitedString("1^2^20200303");
 
             expected.Should().BeEquivalentTo(actual);
         }

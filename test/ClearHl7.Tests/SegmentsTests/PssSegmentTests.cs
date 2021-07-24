@@ -33,7 +33,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 SectionDescriptionOrHeading = "5"
             };
-            ISegment actual = new PssSegment().FromDelimitedString("PSS|1|2|3|4|5");
+
+            ISegment actual = new PssSegment();
+            actual.FromDelimitedString("PSS|1|2|3|4|5");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -13,7 +13,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            NameWithDateAndLocation expected = new()
+            IType expected = new NameWithDateAndLocation
             {
                 Name = new CompositeIdNumberAndNameSimplified
                 {
@@ -35,7 +35,9 @@ namespace ClearHl7.Tests.TypesTests
                 Building = "10",
                 Floor = "11"
             };
-            NameWithDateAndLocation actual = new NameWithDateAndLocation().FromDelimitedString("1^20200202000002^20200303000033^4^5^6^7^8^9^10^11");
+
+            IType actual = new NameWithDateAndLocation();
+            actual.FromDelimitedString("1^20200202000002^20200303000033^4^5^6^7^8^9^10^11");
 
             expected.Should().BeEquivalentTo(actual);
         }

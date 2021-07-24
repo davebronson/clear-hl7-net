@@ -21,7 +21,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     3
                 }
             };
-            ISegment actual = new BtsSegment().FromDelimitedString("BTS|1|2|3");
+
+            ISegment actual = new BtsSegment();
+            actual.FromDelimitedString("BTS|1|2|3");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -13,7 +13,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            PractitionerInstitutionalPrivileges expected = new()
+            IType expected = new PractitionerInstitutionalPrivileges
             {
                 Privilege = new CodedWithExceptions
                 {
@@ -33,7 +33,9 @@ namespace ClearHl7.Tests.TypesTests
                     EntityId = "5"
                 }
             };
-            PractitionerInstitutionalPrivileges actual = new PractitionerInstitutionalPrivileges().FromDelimitedString("1^2^20200303^20200404^5");
+
+            IType actual = new PractitionerInstitutionalPrivileges();
+            actual.FromDelimitedString("1^2^20200303^20200404^5");
 
             expected.Should().BeEquivalentTo(actual);
         }

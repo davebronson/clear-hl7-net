@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            RepeatPattern expected = new()
+            IType expected = new RepeatPattern
             {
                 RepeatPatternCode = new CodedWithExceptions
                 {
@@ -38,7 +38,9 @@ namespace ClearHl7.Tests.TypesTests
                 },
                 GeneralTimingSpecification = "11"
             };
-            RepeatPattern actual = new RepeatPattern().FromDelimitedString("1^2^3^4^5^6^7^8^9^10^11");
+
+            IType actual = new RepeatPattern();
+            actual.FromDelimitedString("1^2^3^4^5^6^7^8^9^10^11");
 
             expected.Should().BeEquivalentTo(actual);
         }

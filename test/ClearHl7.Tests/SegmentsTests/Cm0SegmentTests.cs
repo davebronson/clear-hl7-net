@@ -61,7 +61,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new Cm0Segment().FromDelimitedString("CM0|1|2|3|4|5|20200606|7|20200808|9|10|11");
+
+            ISegment actual = new Cm0Segment();
+            actual.FromDelimitedString("CM0|1|2|3|4|5|20200606|7|20200808|9|10|11");
 
             expected.Should().BeEquivalentTo(actual);
         }

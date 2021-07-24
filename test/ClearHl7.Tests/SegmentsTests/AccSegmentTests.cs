@@ -52,7 +52,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new AccSegment().FromDelimitedString("ACC|20200101000001|2|3|4|5|6|7|8|9|10|11|12|13");
+
+            ISegment actual = new AccSegment();
+            actual.FromDelimitedString("ACC|20200101000001|2|3|4|5|6|7|8|9|10|11|12|13");
 
             expected.Should().BeEquivalentTo(actual);
         }

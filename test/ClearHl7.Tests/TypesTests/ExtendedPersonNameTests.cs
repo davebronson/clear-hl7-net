@@ -13,7 +13,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            ExtendedPersonName expected = new()
+            IType expected = new ExtendedPersonName
             {
                 FamilyName = new FamilyName
                 {
@@ -43,7 +43,9 @@ namespace ClearHl7.Tests.TypesTests
                 ProfessionalSuffix = "14",
                 CalledBy = "15"
             };
-            ExtendedPersonName actual = new ExtendedPersonName().FromDelimitedString("1^2^3^4^5^6^7^8^9^20201010000010^11^20201212000012^20200113000013^14^15");
+
+            IType actual = new ExtendedPersonName();
+            actual.FromDelimitedString("1^2^3^4^5^6^7^8^9^20201010000010^11^20201212000012^20200113000013^14^15");
 
             expected.Should().BeEquivalentTo(actual);
         }

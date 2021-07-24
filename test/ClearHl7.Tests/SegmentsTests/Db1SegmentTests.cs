@@ -34,7 +34,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 DisabilityReturnToWorkDate = new DateTime(2020, 7, 7),
                 DisabilityUnableToWorkDate = new DateTime(2020, 8, 8)
             };
-            ISegment actual = new Db1Segment().FromDelimitedString("DB1|1|2|3|4|20200505|20200606|20200707|20200808");
+
+            ISegment actual = new Db1Segment();
+            actual.FromDelimitedString("DB1|1|2|3|4|20200505|20200606|20200707|20200808");
 
             expected.Should().BeEquivalentTo(actual);
         }

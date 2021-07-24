@@ -119,7 +119,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new PrtSegment().FromDelimitedString("PRT|1|2|3|4|5|6|7|8|9|10|20201111000011|20201212000012|13|14|15|16|20200117000017|20200118000018|19|20|21|22|23|24");
+
+            ISegment actual = new PrtSegment();
+            actual.FromDelimitedString("PRT|1|2|3|4|5|6|7|8|9|10|20201111000011|20201212000012|13|14|15|16|20200117000017|20200118000018|19|20|21|22|23|24");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -35,7 +35,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 IdentificationDate = new DateTime(2020, 6, 6)
             };
-            ISegment actual = new Al1Segment().FromDelimitedString("AL1|1|2|3|4|5|20200606");
+
+            ISegment actual = new Al1Segment();
+            actual.FromDelimitedString("AL1|1|2|3|4|5|20200606");
 
             expected.Should().BeEquivalentTo(actual);
         }

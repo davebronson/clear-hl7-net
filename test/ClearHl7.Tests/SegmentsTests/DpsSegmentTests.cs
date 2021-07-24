@@ -34,7 +34,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "5"
                 }
             };
-            ISegment actual = new DpsSegment().FromDelimitedString("DPS|1|2|20200303000003|20200404000004|5");
+
+            ISegment actual = new DpsSegment();
+            actual.FromDelimitedString("DPS|1|2|20200303000003|20200404000004|5");
 
             expected.Should().BeEquivalentTo(actual);
         }

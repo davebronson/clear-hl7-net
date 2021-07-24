@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            SpecimentSource expected = new()
+            IType expected = new SpecimentSource
             {
                 SpecimenSourceNameOrCode = new CodedWithExceptions
                 {
@@ -50,7 +50,9 @@ namespace ClearHl7.Tests.TypesTests
                     Identifier = "7"
                 }
             };
-            SpecimentSource actual = new SpecimentSource().FromDelimitedString("1^2^3^4^5^6^7");
+
+            IType actual = new SpecimentSource();
+            actual.FromDelimitedString("1^2^3^4^5^6^7");
 
             expected.Should().BeEquivalentTo(actual);
         }

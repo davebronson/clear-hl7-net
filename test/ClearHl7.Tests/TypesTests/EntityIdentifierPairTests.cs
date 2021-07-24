@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            EntityIdentifierPair expected = new()
+            IType expected = new EntityIdentifierPair
             {
                 PlacerAssignedIdentifier = new EntityIdentifier
                 {
@@ -25,7 +25,9 @@ namespace ClearHl7.Tests.TypesTests
                     EntityId = "2"
                 }
             };
-            EntityIdentifierPair actual = new EntityIdentifierPair().FromDelimitedString("1^2");
+
+            IType actual = new EntityIdentifierPair();
+            actual.FromDelimitedString("1^2");
 
             expected.Should().BeEquivalentTo(actual);
         }

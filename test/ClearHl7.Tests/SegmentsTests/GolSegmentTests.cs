@@ -84,7 +84,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "22"
                 }
             };
-            ISegment actual = new GolSegment().FromDelimitedString("GOL|1|20200202000002|3|4|5|6|20200707000007|20200808000008|9|10|11|20201212000012|20200113000013|20200114000014|15|16|17|18|20200119000019|20|21|22");
+
+            ISegment actual = new GolSegment();
+            actual.FromDelimitedString("GOL|1|20200202000002|3|4|5|6|20200707000007|20200808000008|9|10|11|20201212000012|20200113000013|20200114000014|15|16|17|18|20200119000019|20|21|22");
 
             expected.Should().BeEquivalentTo(actual);
         }

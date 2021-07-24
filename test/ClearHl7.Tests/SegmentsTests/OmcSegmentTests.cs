@@ -50,7 +50,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 CharacterLimit = 12,
                 NumberOfDecimals = 13
             };
-            ISegment actual = new OmcSegment().FromDelimitedString("OMC|1|2|3|4|5|6|7|8|9|10|11|12|13");
+
+            ISegment actual = new OmcSegment();
+            actual.FromDelimitedString("OMC|1|2|3|4|5|6|7|8|9|10|11|12|13");
 
             expected.Should().BeEquivalentTo(actual);
         }

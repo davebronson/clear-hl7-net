@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            FamilyName expected = new()
+            IType expected = new FamilyName
             {
                 Surname = "1",
                 OwnSurnamePrefix = "2",
@@ -20,7 +20,9 @@ namespace ClearHl7.Tests.TypesTests
                 SurnamePrefixFromPartnerSpouse = "4",
                 SurnameFromPartnerSpouse = "5"
             };
-            FamilyName actual = new FamilyName().FromDelimitedString("1^2^3^4^5");
+
+            IType actual = new FamilyName();
+            actual.FromDelimitedString("1^2^3^4^5");
 
             expected.Should().BeEquivalentTo(actual);
         }

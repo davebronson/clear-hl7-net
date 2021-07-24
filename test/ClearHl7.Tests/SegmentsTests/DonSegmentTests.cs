@@ -144,7 +144,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 ActionCode = "34"
             };
-            ISegment actual = new DonSegment().FromDelimitedString("DON|1|2|20200303000003|20200404000004|5|6|7|8|9|10|20201111000011|12|13|14|15|16|20200117000017|18|20200119000019|20|21|22|23|24|25|26|27|28|20200129000029|30|31|32|33|34");
+
+            ISegment actual = new DonSegment();
+            actual.FromDelimitedString("DON|1|2|20200303000003|20200404000004|5|6|7|8|9|10|20201111000011|12|13|14|15|16|20200117000017|18|20200119000019|20|21|22|23|24|25|26|27|28|20200129000029|30|31|32|33|34");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -41,7 +41,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new LccSegment().FromDelimitedString("LCC|1|2|3|4");
+
+            ISegment actual = new LccSegment();
+            actual.FromDelimitedString("LCC|1|2|3|4");
 
             expected.Should().BeEquivalentTo(actual);
         }

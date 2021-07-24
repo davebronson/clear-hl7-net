@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            VersionIdentifier expected = new()
+            IType expected = new VersionIdentifier
             {
                 VersionId = "1",
                 InternationalizationCode = new CodedWithExceptions
@@ -26,7 +26,9 @@ namespace ClearHl7.Tests.TypesTests
                     Identifier = "3"
                 }
             };
-            VersionIdentifier actual = new VersionIdentifier().FromDelimitedString("1^2^3");
+
+            IType actual = new VersionIdentifier();
+            actual.FromDelimitedString("1^2^3");
 
             expected.Should().BeEquivalentTo(actual);
         }

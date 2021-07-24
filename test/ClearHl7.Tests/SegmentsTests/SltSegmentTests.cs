@@ -30,7 +30,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 BarCode = "5"
             };
-            ISegment actual = new SltSegment().FromDelimitedString("SLT|1|2|3|4|5");
+
+            ISegment actual = new SltSegment();
+            actual.FromDelimitedString("SLT|1|2|3|4|5");
 
             expected.Should().BeEquivalentTo(actual);
         }

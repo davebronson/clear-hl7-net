@@ -13,7 +13,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            DischargeToLocationAndDate expected = new()
+            IType expected = new DischargeToLocationAndDate
             {
                 DischargeToLocation = new CodedWithExceptions
                 {
@@ -22,7 +22,9 @@ namespace ClearHl7.Tests.TypesTests
                 },
                 EffectiveDate = new DateTime(2020, 2, 2, 0, 0, 2)
             };
-            DischargeToLocationAndDate actual = new DischargeToLocationAndDate().FromDelimitedString("1^20200202000002");
+
+            IType actual = new DischargeToLocationAndDate();
+            actual.FromDelimitedString("1^20200202000002");
 
             expected.Should().BeEquivalentTo(actual);
         }

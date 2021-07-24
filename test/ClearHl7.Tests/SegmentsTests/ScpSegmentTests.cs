@@ -39,7 +39,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "8"
                 }
             };
-            ISegment actual = new ScpSegment().FromDelimitedString("SCP|1|2|3|4|5|6|7|8");
+
+            ISegment actual = new ScpSegment();
+            actual.FromDelimitedString("SCP|1|2|3|4|5|6|7|8");
 
             expected.Should().BeEquivalentTo(actual);
         }

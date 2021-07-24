@@ -12,12 +12,14 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            WaveformSource expected = new()
+            IType expected = new WaveformSource
             {
                 SourceOneName = "1",
                 SourceTwoName = "2"
             };
-            WaveformSource actual = new WaveformSource().FromDelimitedString("1^2");
+
+            IType actual = new WaveformSource();
+            actual.FromDelimitedString("1^2");
 
             expected.Should().BeEquivalentTo(actual);
         }

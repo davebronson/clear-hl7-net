@@ -31,7 +31,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 ReceiveTimeouts = 14,
                 ApplicationControlLevelErrors = 15
             };
-            ISegment actual = new NstSegment().FromDelimitedString("NST|1|2|3|20200404000004|20200505000005|6|7|8|9|10|11|12|13|14|15");
+
+            ISegment actual = new NstSegment();
+            actual.FromDelimitedString("NST|1|2|3|20200404000004|20200505000005|6|7|8|9|10|11|12|13|14|15");
 
             expected.Should().BeEquivalentTo(actual);
         }

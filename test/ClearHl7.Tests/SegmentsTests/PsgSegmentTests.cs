@@ -34,7 +34,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 ProductServiceGroupDescription = "6"
             };
-            ISegment actual = new PsgSegment().FromDelimitedString("PSG|1|2|3|4|5|6");
+
+            ISegment actual = new PsgSegment();
+            actual.FromDelimitedString("PSG|1|2|3|4|5|6");
 
             expected.Should().BeEquivalentTo(actual);
         }

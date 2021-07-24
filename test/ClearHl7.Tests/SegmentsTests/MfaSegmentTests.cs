@@ -32,7 +32,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     "6"
                 }
             };
-            ISegment actual = new MfaSegment().FromDelimitedString("MFA|1|2|20200303000003|4|5|6");
+
+            ISegment actual = new MfaSegment();
+            actual.FromDelimitedString("MFA|1|2|20200303000003|4|5|6");
 
             expected.Should().BeEquivalentTo(actual);
         }

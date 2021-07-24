@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            RoomCoverage expected = new()
+            IType expected = new RoomCoverage
             {
                 RoomType = new CodedWithExceptions
                 {
@@ -31,7 +31,9 @@ namespace ClearHl7.Tests.TypesTests
                     MoneyOrPercentageIndicator = "4"
                 }
             };
-            RoomCoverage actual = new RoomCoverage().FromDelimitedString("1^2^3^4");
+
+            IType actual = new RoomCoverage();
+            actual.FromDelimitedString("1^2^3^4");
 
             expected.Should().BeEquivalentTo(actual);
         }

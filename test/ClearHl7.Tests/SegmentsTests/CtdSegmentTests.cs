@@ -68,7 +68,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new CtdSegment().FromDelimitedString("CTD|1|2|3|4|5|6|7");
+
+            ISegment actual = new CtdSegment();
+            actual.FromDelimitedString("CTD|1|2|3|4|5|6|7");
 
             expected.Should().BeEquivalentTo(actual);
         }

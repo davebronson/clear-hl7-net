@@ -27,7 +27,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new UacSegment().FromDelimitedString("UAC|1|2");
+
+            ISegment actual = new UacSegment();
+            actual.FromDelimitedString("UAC|1|2");
 
             expected.Should().BeEquivalentTo(actual);
         }

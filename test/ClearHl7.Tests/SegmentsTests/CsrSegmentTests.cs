@@ -85,7 +85,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 ActionCode = "17"
             };
-            ISegment actual = new CsrSegment().FromDelimitedString("CSR|1|2|3|4|5|20200606000006|7|8|20200909000009|10|20201111000011|12|13|14|20200115000015|16|17");
+
+            ISegment actual = new CsrSegment();
+            actual.FromDelimitedString("CSR|1|2|3|4|5|20200606000006|7|8|20200909000009|10|20201111000011|12|13|14|20200115000015|16|17");
 
             expected.Should().BeEquivalentTo(actual);
         }

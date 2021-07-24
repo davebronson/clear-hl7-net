@@ -74,7 +74,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "18"
                 }
             };
-            ISegment actual = new Oh2Segment().FromDelimitedString("OH2|1|2|20200303|4|5|6|20200707|20200808|9|10|11|12|13|14|15|16|17|18");
+
+            ISegment actual = new Oh2Segment();
+            actual.FromDelimitedString("OH2|1|2|20200303|4|5|6|20200707|20200808|9|10|11|12|13|14|15|16|17|18");
 
             expected.Should().BeEquivalentTo(actual);
         }

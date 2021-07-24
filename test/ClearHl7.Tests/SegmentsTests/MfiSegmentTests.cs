@@ -32,7 +32,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 EffectiveDateTime = new DateTime(2020, 5, 5, 0, 0, 5),
                 ResponseLevelCode = "6"
             };
-            ISegment actual = new MfiSegment().FromDelimitedString("MFI|1|2|3|20200404000004|20200505000005|6");
+
+            ISegment actual = new MfiSegment();
+            actual.FromDelimitedString("MFI|1|2|3|20200404000004|20200505000005|6");
 
             expected.Should().BeEquivalentTo(actual);
         }

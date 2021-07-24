@@ -71,7 +71,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 MinimumMeaningfulIncrements = 10
             };
-            ISegment actual = new Om2Segment().FromDelimitedString("OM2|1|2|3|4|5|6|7|8|9|10");
+
+            ISegment actual = new Om2Segment();
+            actual.FromDelimitedString("OM2|1|2|3|4|5|6|7|8|9|10");
 
             expected.Should().BeEquivalentTo(actual);
         }

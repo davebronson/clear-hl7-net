@@ -177,7 +177,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new PidSegment().FromDelimitedString("PID|1|2|3|4|5|6|20200707000007|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|20200129000029|30|31|32|20200303000033|34|35|36|37|38|39|40");
+
+            ISegment actual = new PidSegment();
+            actual.FromDelimitedString("PID|1|2|3|4|5|6|20200707000007|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|20200129000029|30|31|32|20200303000033|34|35|36|37|38|39|40");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            JobCodeClass expected = new()
+            IType expected = new JobCodeClass
             {
                 JobCode = new CodedWithExceptions
                 {
@@ -30,7 +30,9 @@ namespace ClearHl7.Tests.TypesTests
                     Value = "3"
                 }
             };
-            JobCodeClass actual = new JobCodeClass().FromDelimitedString("1^2^3");
+
+            IType actual = new JobCodeClass();
+            actual.FromDelimitedString("1^2^3");
 
             expected.Should().BeEquivalentTo(actual);
         }

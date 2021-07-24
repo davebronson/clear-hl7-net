@@ -82,7 +82,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     "23"
                 }
             };
-            ISegment actual = new PcrSegment().FromDelimitedString("PCR|1|2|3|4|20200505000005|20200606000006|20200707000007|20200808000008|9|10|11|12|13|14|15|16|17|20200118000018|19|20|21|22|23");
+
+            ISegment actual = new PcrSegment();
+            actual.FromDelimitedString("PCR|1|2|3|4|20200505000005|20200606000006|20200707000007|20200808000008|9|10|11|12|13|14|15|16|17|20200118000018|19|20|21|22|23");
 
             expected.Should().BeEquivalentTo(actual);
         }

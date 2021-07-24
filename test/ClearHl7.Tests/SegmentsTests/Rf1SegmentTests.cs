@@ -99,7 +99,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 Comment = "24",
                 ActionCode = "25"
             };
-            ISegment actual = new Rf1Segment().FromDelimitedString("RF1|1|2|3|4|5|6|20200707000007|20200808000008|20200909000009|10|11|12|20200113000013|14|15|16|17|18|19|20|21|20200122000022|23|24|25");
+
+            ISegment actual = new Rf1Segment();
+            actual.FromDelimitedString("RF1|1|2|3|4|5|6|20200707000007|20200808000008|20200909000009|10|11|12|20200113000013|14|15|16|17|18|19|20|21|20200122000022|23|24|25");
 
             expected.Should().BeEquivalentTo(actual);
         }

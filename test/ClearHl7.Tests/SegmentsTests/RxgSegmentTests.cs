@@ -131,7 +131,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "33"
                 }
             };
-            ISegment actual = new RxgSegment().FromDelimitedString("RXG|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20200120000020|21|22|23|24|25|26|27|28|29|30|31|32|33");
+
+            ISegment actual = new RxgSegment();
+            actual.FromDelimitedString("RXG|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20200120000020|21|22|23|24|25|26|27|28|29|30|31|32|33");
 
             expected.Should().BeEquivalentTo(actual);
         }

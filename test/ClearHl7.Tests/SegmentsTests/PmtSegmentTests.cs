@@ -53,7 +53,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 EsrCodeLine = "12"
             };
-            ISegment actual = new PmtSegment().FromDelimitedString("PMT|1|20200202000002|20200303000003|4|20200505000005|6|7|8|9|10|11|12");
+
+            ISegment actual = new PmtSegment();
+            actual.FromDelimitedString("PMT|1|20200202000002|20200303000003|4|20200505000005|6|7|8|9|10|11|12");
 
             expected.Should().BeEquivalentTo(actual);
         }

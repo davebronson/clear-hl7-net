@@ -26,7 +26,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "3"
                 }
             };
-            ISegment actual = new RmiSegment().FromDelimitedString("RMI|1|20200202000002|3");
+
+            ISegment actual = new RmiSegment();
+            actual.FromDelimitedString("RMI|1|20200202000002|3");
 
             expected.Should().BeEquivalentTo(actual);
         }

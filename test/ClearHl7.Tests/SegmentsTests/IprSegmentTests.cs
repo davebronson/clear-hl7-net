@@ -43,7 +43,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 ExpectedPaymentDateTime = new DateTime(2020, 7, 7, 0, 0, 7),
                 IprChecksum = "8"
             };
-            ISegment actual = new IprSegment().FromDelimitedString("IPR|1|2|3|4|20200505000005|6|20200707000007|8");
+
+            ISegment actual = new IprSegment();
+            actual.FromDelimitedString("IPR|1|2|3|4|20200505000005|6|20200707000007|8");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -33,7 +33,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     PersonIdentifier = "7"
                 }
             };
-            ISegment actual = new MfeSegment().FromDelimitedString("MFE|1|2|20200303000003|4|5|20200606000006|7");
+
+            ISegment actual = new MfeSegment();
+            actual.FromDelimitedString("MFE|1|2|20200303000003|4|5|20200606000006|7");
 
             expected.Should().BeEquivalentTo(actual);
         }

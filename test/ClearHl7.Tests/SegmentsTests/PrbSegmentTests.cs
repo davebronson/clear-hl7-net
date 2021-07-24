@@ -99,7 +99,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "28"
                 }
             };
-            ISegment actual = new PrbSegment().FromDelimitedString("PRB|1|20200202000002|3|4|5|6|20200707000007|20200808000008|20200909000009|10|11|12|13|14|20200115000015|20200116000016|17|18|19|20|21|22|23|24|25|26|27|28");
+
+            ISegment actual = new PrbSegment();
+            actual.FromDelimitedString("PRB|1|20200202000002|3|4|5|6|20200707000007|20200808000008|20200909000009|10|11|12|13|14|20200115000015|20200116000016|17|18|19|20|21|22|23|24|25|26|27|28");
 
             expected.Should().BeEquivalentTo(actual);
         }

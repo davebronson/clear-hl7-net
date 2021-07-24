@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            ChannelDefinition expected = new()
+            IType expected = new ChannelDefinition
             {
                 ChannelIdentifier = new ChannelIdentifier
                 {
@@ -41,7 +41,9 @@ namespace ClearHl7.Tests.TypesTests
                     LowValue = 6
                 }
             };
-            ChannelDefinition actual = new ChannelDefinition().FromDelimitedString("1^2^3^4^5^6");
+
+            IType actual = new ChannelDefinition();
+            actual.FromDelimitedString("1^2^3^4^5^6");
 
             expected.Should().BeEquivalentTo(actual);
         }

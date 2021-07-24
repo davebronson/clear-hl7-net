@@ -88,7 +88,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new Om4Segment().FromDelimitedString("OM4|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18");
+
+            ISegment actual = new Om4Segment();
+            actual.FromDelimitedString("OM4|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18");
 
             expected.Should().BeEquivalentTo(actual);
         }

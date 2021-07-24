@@ -30,7 +30,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     SegmentFieldName = "5"
                 }
             };
-            ISegment actual = new VtqSegment().FromDelimitedString("VTQ|1|2|3|4|5");
+
+            ISegment actual = new VtqSegment();
+            actual.FromDelimitedString("VTQ|1|2|3|4|5");
 
             expected.Should().BeEquivalentTo(actual);
         }

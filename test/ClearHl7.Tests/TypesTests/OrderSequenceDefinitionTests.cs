@@ -13,7 +13,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            OrderSequenceDefinition expected = new()
+            IType expected = new OrderSequenceDefinition
             {
                 SequenceResultsFlag = "1",
                 PlacerOrderNumberEntityIdentifier = "2",
@@ -27,7 +27,9 @@ namespace ClearHl7.Tests.TypesTests
                 FillerOrderNumberUniversalId = "10",
                 FillerOrderNumberUniversalIdType = "11"
             };
-            OrderSequenceDefinition actual = new OrderSequenceDefinition().FromDelimitedString("1^2^3^4^5^6^7^8^9^10^11");
+
+            IType actual = new OrderSequenceDefinition();
+            actual.FromDelimitedString("1^2^3^4^5^6^7^8^9^10^11");
 
             expected.Should().BeEquivalentTo(actual);
         }

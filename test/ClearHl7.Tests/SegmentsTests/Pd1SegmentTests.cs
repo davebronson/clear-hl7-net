@@ -103,7 +103,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 AdvanceDirectiveLastVerifiedDate = new DateTime(2020, 1, 22),
                 RetirementDate = new DateTime(2020, 1, 23)
             };
-            ISegment actual = new Pd1Segment().FromDelimitedString("PD1|1|2|3|4|5|6|7|8|9|10|11|12|20200113|14|15|16|20200117|20200118|19|20|21|20200122|20200123");
+
+            ISegment actual = new Pd1Segment();
+            actual.FromDelimitedString("PD1|1|2|3|4|5|6|7|8|9|10|11|12|20200113|14|15|16|20200117|20200118|19|20|21|20200122|20200123");
 
             expected.Should().BeEquivalentTo(actual);
         }

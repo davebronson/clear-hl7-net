@@ -50,7 +50,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 ValueType = "7"
             };
-            ISegment actual = new Om3Segment().FromDelimitedString("OM3|1|2|3|4|5|6|7");
+
+            ISegment actual = new Om3Segment();
+            actual.FromDelimitedString("OM3|1|2|3|4|5|6|7");
 
             expected.Should().BeEquivalentTo(actual);
         }

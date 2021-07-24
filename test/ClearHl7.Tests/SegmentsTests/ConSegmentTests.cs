@@ -96,7 +96,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new ConSegment().FromDelimitedString("CON|1|2|3|4|5|6|7|8|9|10|11|20200112000012|20200113000013|20200114000014|20200115000015|16|17|18|19|20|21|22|23|24|25");
+
+            ISegment actual = new ConSegment();
+            actual.FromDelimitedString("CON|1|2|3|4|5|6|7|8|9|10|11|20200112000012|20200113000013|20200114000014|20200115000015|16|17|18|19|20|21|22|23|24|25");
 
             expected.Should().BeEquivalentTo(actual);
         }

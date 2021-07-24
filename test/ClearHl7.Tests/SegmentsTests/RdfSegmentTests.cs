@@ -24,7 +24,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new RdfSegment().FromDelimitedString("RDF|1|2");
+
+            ISegment actual = new RdfSegment();
+            actual.FromDelimitedString("RDF|1|2");
 
             expected.Should().BeEquivalentTo(actual);
         }

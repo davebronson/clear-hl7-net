@@ -50,7 +50,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 ActionCode = "13"
             };
-            ISegment actual = new BuiSegment().FromDelimitedString("BUI|1|2|3|4|5|6|7|8|9|10|11|12|13");
+
+            ISegment actual = new BuiSegment();
+            actual.FromDelimitedString("BUI|1|2|3|4|5|6|7|8|9|10|11|12|13");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -82,7 +82,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     OrganizationName = "14"
                 }
             };
-            ISegment actual = new RolSegment().FromDelimitedString("ROL|1|2|3|4|20200505000005|20200606000006|7|8|9|10|11|12|13|14");
+
+            ISegment actual = new RolSegment();
+            actual.FromDelimitedString("ROL|1|2|3|4|20200505000005|20200606000006|7|8|9|10|11|12|13|14");
 
             expected.Should().BeEquivalentTo(actual);
         }

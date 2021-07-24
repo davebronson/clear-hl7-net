@@ -53,7 +53,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 }
             };
-            ISegment actual = new EduSegment().FromDelimitedString("EDU|1|2|20200303000003|20200404000004|20200505|6|7|8|9");
+
+            ISegment actual = new EduSegment();
+            actual.FromDelimitedString("EDU|1|2|20200303000003|20200404000004|20200505|6|7|8|9");
 
             expected.Should().BeEquivalentTo(actual);
         }

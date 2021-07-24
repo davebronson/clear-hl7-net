@@ -81,7 +81,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 PayRatePerServiceUnit = 14
             };
-            ISegment actual = new Gp2Segment().FromDelimitedString("GP2|1|2|3|4|5|6|7|8|9|10|11|12|13|14");
+
+            ISegment actual = new Gp2Segment();
+            actual.FromDelimitedString("GP2|1|2|3|4|5|6|7|8|9|10|11|12|13|14");
 
             expected.Should().BeEquivalentTo(actual);
         }

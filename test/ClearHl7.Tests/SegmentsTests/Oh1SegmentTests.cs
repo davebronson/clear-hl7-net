@@ -30,7 +30,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     EntityId = "7"
                 }
             };
-            ISegment actual = new Oh1Segment().FromDelimitedString("OH1|1|2|3|20200404|20200505|20200606|7");
+
+            ISegment actual = new Oh1Segment();
+            actual.FromDelimitedString("OH1|1|2|3|20200404|20200505|20200606|7");
 
             expected.Should().BeEquivalentTo(actual);
         }

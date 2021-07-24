@@ -22,7 +22,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 DescriptionOfStudyPhase = "3"
             };
-            ISegment actual = new Cm1Segment().FromDelimitedString("CM1|1|2|3");
+
+            ISegment actual = new Cm1Segment();
+            actual.FromDelimitedString("CM1|1|2|3");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -26,7 +26,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Quantity = 4
                 }
             };
-            ISegment actual = new CdoSegment().FromDelimitedString("CDO|1|2|3|4");
+
+            ISegment actual = new CdoSegment();
+            actual.FromDelimitedString("CDO|1|2|3|4");
 
             expected.Should().BeEquivalentTo(actual);
         }

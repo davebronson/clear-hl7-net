@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            ParentResultLink expected = new()
+            IType expected = new ParentResultLink
             {
                 ParentObservationIdentifier = new CodedWithExceptions
                 {
@@ -26,7 +26,9 @@ namespace ClearHl7.Tests.TypesTests
                     Value = "3"
                 }
             };
-            ParentResultLink actual = new ParentResultLink().FromDelimitedString("1^2^3");
+
+            IType actual = new ParentResultLink();
+            actual.FromDelimitedString("1^2^3");
 
             expected.Should().BeEquivalentTo(actual);
         }

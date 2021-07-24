@@ -12,14 +12,16 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            MultiplexedArray expected = new()
+            IType expected = new MultiplexedArray
             {
                 SampleYFromChannel1 = 1,
                 SampleYFromChannel2 = 2,
                 SampleYFromChannel3 = 3,
                 SampleYFromChannel4 = 4
             };
-            MultiplexedArray actual = new MultiplexedArray().FromDelimitedString("1^2^3^4");
+
+            IType actual = new MultiplexedArray();
+            actual.FromDelimitedString("1^2^3^4");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -13,7 +13,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            FinancialClass expected = new()
+            IType expected = new FinancialClass
             {
                 FinancialClassCode = new CodedWithExceptions
                 {
@@ -22,7 +22,9 @@ namespace ClearHl7.Tests.TypesTests
                 },
                 EffectiveDate = new DateTime(2020, 1, 1, 0, 0, 22)
             };
-            FinancialClass actual = new FinancialClass().FromDelimitedString("1^20200101000022");
+
+            IType actual = new FinancialClass();
+            actual.FromDelimitedString("1^20200101000022");
 
             expected.Should().BeEquivalentTo(actual);
         }

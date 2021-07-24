@@ -22,7 +22,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 QueryTag = "2",
                 UserParametersInSuccessiveFields = "3"
             };
-            ISegment actual = new QpdSegment().FromDelimitedString("QPD|1|2|3");
+
+            ISegment actual = new QpdSegment();
+            actual.FromDelimitedString("QPD|1|2|3");
 
             expected.Should().BeEquivalentTo(actual);
         }

@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            Delta expected = new()
+            IType expected = new Delta
             {
                 NormalRange = new NumericRange
                 {
@@ -23,7 +23,9 @@ namespace ClearHl7.Tests.TypesTests
                 ChangeComputation = "3",
                 DaysRetained = 4
             };
-            Delta actual = new Delta().FromDelimitedString("1^2^3^4");
+
+            IType actual = new Delta();
+            actual.FromDelimitedString("1^2^3^4");
 
             expected.Should().BeEquivalentTo(actual);
         }

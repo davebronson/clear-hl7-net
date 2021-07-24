@@ -12,12 +12,14 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            Money expected = new()
+            IType expected = new Money
             {
                 Quantity = 1,
                 Denomination = "2"
             };
-            Money actual = new Money().FromDelimitedString("1^2");
+
+            IType actual = new Money();
+            actual.FromDelimitedString("1^2");
 
             expected.Should().BeEquivalentTo(actual);
         }

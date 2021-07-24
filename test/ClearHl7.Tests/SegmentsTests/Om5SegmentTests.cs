@@ -25,7 +25,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 ObservationIdSuffixes = "3"
             };
-            ISegment actual = new Om5Segment().FromDelimitedString("OM5|1|2|3");
+
+            ISegment actual = new Om5Segment();
+            actual.FromDelimitedString("OM5|1|2|3");
 
             expected.Should().BeEquivalentTo(actual);
         }

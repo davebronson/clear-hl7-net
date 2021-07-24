@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            CompositeIdNumberAndNameSimplified expected = new()
+            IType expected = new CompositeIdNumberAndNameSimplified
             {
                 IdNumber = "1",
                 FamilyName = "2",
@@ -26,7 +26,9 @@ namespace ClearHl7.Tests.TypesTests
                 AssigningAuthorityUniversalId = "10",
                 AssigningAuthorityUniversalIdType = "11"
             };
-            CompositeIdNumberAndNameSimplified actual = new CompositeIdNumberAndNameSimplified().FromDelimitedString("1^2^3^4^5^6^7^8^9^10^11");
+
+            IType actual = new CompositeIdNumberAndNameSimplified();
+            actual.FromDelimitedString("1^2^3^4^5^6^7^8^9^10^11");
 
             expected.Should().BeEquivalentTo(actual);
         }

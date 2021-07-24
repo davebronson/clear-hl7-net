@@ -16,7 +16,9 @@ namespace ClearHl7.Tests.SegmentsTests
             {
                 AddendumContinuationPointer = "1"
             };
-            ISegment actual = new AddSegment().FromDelimitedString("ADD|1");
+
+            ISegment actual = new AddSegment();
+            actual.FromDelimitedString("ADD|1");
 
             expected.Should().BeEquivalentTo(actual);
         }

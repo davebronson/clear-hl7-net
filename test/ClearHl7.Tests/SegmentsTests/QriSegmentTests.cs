@@ -28,7 +28,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Identifier = "3"
                 }
             };
-            ISegment actual = new QriSegment().FromDelimitedString("QRI|1|2|3");
+
+            ISegment actual = new QriSegment();
+            actual.FromDelimitedString("QRI|1|2|3");
 
             expected.Should().BeEquivalentTo(actual);
         }

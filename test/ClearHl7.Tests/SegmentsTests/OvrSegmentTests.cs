@@ -36,7 +36,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     PersonIdentifier = "5"
                 }
             };
-            ISegment actual = new OvrSegment().FromDelimitedString("OVR|1|2|3|4|5");
+
+            ISegment actual = new OvrSegment();
+            actual.FromDelimitedString("OVR|1|2|3|4|5");
 
             expected.Should().BeEquivalentTo(actual);
         }

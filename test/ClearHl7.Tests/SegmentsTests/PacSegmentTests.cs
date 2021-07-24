@@ -55,7 +55,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 },
                 ActionCode = "9"
             };
-            ISegment actual = new PacSegment().FromDelimitedString("PAC|1|2|3|4|5|6|7|8|9");
+
+            ISegment actual = new PacSegment();
+            actual.FromDelimitedString("PAC|1|2|3|4|5|6|7|8|9");
 
             expected.Should().BeEquivalentTo(actual);
         }

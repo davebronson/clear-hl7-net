@@ -114,7 +114,9 @@ namespace ClearHl7.Tests.SegmentsTests
                 PrimaryObserverAwareDateTime = new DateTime(2020, 1, 24, 0, 0, 24),
                 PrimaryObserversIdentityMayBeDivulged = "25"
             };
-            ISegment actual = new PeoSegment().FromDelimitedString("PEO|1|2|20200303000003|20200404000004|20200505000005|20200606000006|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|20200124000024|25");
+
+            ISegment actual = new PeoSegment();
+            actual.FromDelimitedString("PEO|1|2|20200303000003|20200404000004|20200505000005|20200606000006|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|20200124000024|25");
 
             expected.Should().BeEquivalentTo(actual);
         }

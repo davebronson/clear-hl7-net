@@ -87,7 +87,9 @@ namespace ClearHl7.Tests.SegmentsTests
                     Quantity = 22
                 }
             };
-            ISegment actual = new InvSegment().FromDelimitedString("INV|1|2|3|4|5|6|7|8|9|10|11|20201212000012|20200113000013|14|15|16|17|18|19|20|21|22");
+
+            ISegment actual = new InvSegment();
+            actual.FromDelimitedString("INV|1|2|3|4|5|6|7|8|9|10|11|20201212000012|20200113000013|14|15|16|17|18|19|20|21|22");
 
             expected.Should().BeEquivalentTo(actual);
         }

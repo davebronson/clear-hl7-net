@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            PersonLocation expected = new()
+            IType expected = new PersonLocation
             {
                 PointOfCare = new HierarchicDesignator
                 {
@@ -58,7 +58,9 @@ namespace ClearHl7.Tests.TypesTests
                     NamespaceId = "11"
                 }
             };
-            PersonLocation actual = new PersonLocation().FromDelimitedString("1^2^3^4^5^6^7^8^9^10^11");
+
+            IType actual = new PersonLocation();
+            actual.FromDelimitedString("1^2^3^4^5^6^7^8^9^10^11");
 
             expected.Should().BeEquivalentTo(actual);
         }
