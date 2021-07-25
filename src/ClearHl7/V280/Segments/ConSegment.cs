@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V280.Types;
 
@@ -159,12 +161,57 @@ namespace ClearHl7.V280.Segments
         public IEnumerable<CodedWithExceptions> RelationshipToSubject { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public void FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            SetIdCon = segments.ElementAtOrDefault(1)?.ToNullableUInt();
+            ConsentType = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
+            ConsentFormIdAndVersion = segments.ElementAtOrDefault(3);
+            ConsentFormNumber = segments.Length > 4 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(4), false) : null;
+            ConsentText = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator) : null;
+            SubjectSpecificConsentText = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator) : null;
+            ConsentBackgroundInformation = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator) : null;
+            SubjectSpecificConsentBackgroundText = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator) : null;
+            ConsenterImposedLimitations = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator) : null;
+            ConsentMode = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(10), false) : null;
+            ConsentStatus = segments.Length > 11 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(11), false) : null;
+            ConsentDiscussionDateTime = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ConsentDecisionDateTime = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ConsentEffectiveDateTime = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ConsentEndDateTime = segments.ElementAtOrDefault(15)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            SubjectCompetenceIndicator = segments.ElementAtOrDefault(16);
+            TranslatorAssistanceIndicator = segments.ElementAtOrDefault(17);
+            LanguageTranslatedTo = segments.Length > 18 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(18), false) : null;
+            InformationalMaterialSuppliedIndicator = segments.ElementAtOrDefault(19);
+            ConsentBypassReason = segments.Length > 20 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(20), false) : null;
+            ConsentDisclosureLevel = segments.ElementAtOrDefault(21);
+            ConsentNonDisclosureReason = segments.Length > 22 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(22), false) : null;
+            NonSubjectConsenterReason = segments.Length > 23 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(23), false) : null;
+            ConsenterId = segments.Length > 24 ? segments.ElementAtOrDefault(24).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
+            RelationshipToSubject = segments.Length > 25 ? segments.ElementAtOrDefault(25).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
