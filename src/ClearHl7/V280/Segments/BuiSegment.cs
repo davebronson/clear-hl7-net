@@ -1,4 +1,8 @@
-﻿using ClearHl7.Helpers;
+﻿using System;
+using System.Globalization;
+using System.Linq;
+using ClearHl7.Extensions;
+using ClearHl7.Helpers;
 using ClearHl7.V280.Types;
 
 namespace ClearHl7.V280.Segments
@@ -83,12 +87,43 @@ namespace ClearHl7.V280.Segments
         public CodedWithNoExceptions TransportTemperatureUnits { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public void FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            SetIdBui = segments.ElementAtOrDefault(1)?.ToNullableUInt();
+            BloodUnitIdentifier = segments.Length > 2 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(2), false) : null;
+            BloodUnitType = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
+            BloodUnitWeight = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
+            WeightUnits = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(5), false) : null;
+            BloodUnitVolume = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
+            VolumeUnits = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(7), false) : null;
+            ContainerCatalogNumber = segments.ElementAtOrDefault(8);
+            ContainerLotNumber = segments.ElementAtOrDefault(9);
+            ContainerManufacturer = segments.Length > 10 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(10), false) : null;
+            TransportTemperature = segments.Length > 11 ? TypeHelper.Deserialize<NumericRange>(segments.ElementAtOrDefault(11), false) : null;
+            TransportTemperatureUnits = segments.Length > 12 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(12), false) : null;
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
