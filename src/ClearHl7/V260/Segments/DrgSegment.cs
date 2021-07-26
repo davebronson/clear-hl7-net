@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Globalization;
+using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V260.Types;
 
@@ -204,12 +207,64 @@ namespace ClearHl7.V260.Segments
         public string StatusAdmission { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public void FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            DiagnosticRelatedGroup = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(1), false) : null;
+            DrgAssignedDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DrgApprovalIndicator = segments.ElementAtOrDefault(3);
+            DrgGrouperReviewCode = segments.ElementAtOrDefault(4);
+            OutlierType = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
+            OutlierDays = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
+            OutlierCost = segments.Length > 7 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(7), false) : null;
+            DrgPayor = segments.ElementAtOrDefault(8);
+            OutlierReimbursement = segments.Length > 9 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(9), false) : null;
+            ConfidentialIndicator = segments.ElementAtOrDefault(10);
+            DrgTransferType = segments.ElementAtOrDefault(11);
+            NameOfCoder = segments.Length > 12 ? TypeHelper.Deserialize<ExtendedPersonName>(segments.ElementAtOrDefault(12), false) : null;
+            GrouperStatus = segments.Length > 13 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(13), false) : null;
+            PcclValueCode = segments.Length > 14 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(14), false) : null;
+            EffectiveWeight = segments.ElementAtOrDefault(15)?.ToNullableDecimal();
+            MonetaryAmount = segments.Length > 16 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(16), false) : null;
+            StatusPatient = segments.ElementAtOrDefault(17);
+            GrouperSoftwareName = segments.ElementAtOrDefault(18);
+            GrouperSoftwareVersion = segments.ElementAtOrDefault(19);
+            StatusFinancialCalculation = segments.ElementAtOrDefault(20);
+            RelativeDiscountSurcharge = segments.Length > 21 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(21), false) : null;
+            BasicCharge = segments.Length > 22 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(22), false) : null;
+            TotalCharge = segments.Length > 23 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(23), false) : null;
+            DiscountSurcharge = segments.Length > 24 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(24), false) : null;
+            CalculatedDays = segments.ElementAtOrDefault(25)?.ToNullableDecimal();
+            StatusGender = segments.ElementAtOrDefault(26);
+            StatusAge = segments.ElementAtOrDefault(27);
+            StatusLengthOfStay = segments.ElementAtOrDefault(28);
+            StatusSameDayFlag = segments.ElementAtOrDefault(29);
+            StatusSeparationMode = segments.ElementAtOrDefault(30);
+            StatusWeightAtBirth = segments.ElementAtOrDefault(31);
+            StatusRespirationMinutes = segments.ElementAtOrDefault(32);
+            StatusAdmission = segments.ElementAtOrDefault(33);
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
