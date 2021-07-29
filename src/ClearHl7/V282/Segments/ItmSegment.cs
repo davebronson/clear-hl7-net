@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V282.Types;
 
@@ -205,14 +208,67 @@ namespace ClearHl7.V282.Segments
         /// <para>Suggested: 0396 Coding System -&gt; ClearHl7.Codes.V282.CodeCodingSystem</para>
         /// </summary>
         public CodedWithExceptions UnitedNationsStandardProductsAndServicesCode { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public void FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            ItemIdentifier = segments.Length > 1 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(1), false) : null;
+            ItemDescription = segments.ElementAtOrDefault(2);
+            ItemStatus = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
+            ItemType = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
+            ItemCategory = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
+            SubjectToExpirationIndicator = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(6), false) : null;
+            ManufacturerIdentifier = segments.Length > 7 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(7), false) : null;
+            ManufacturerName = segments.ElementAtOrDefault(8);
+            ManufacturerCatalogNumber = segments.ElementAtOrDefault(9);
+            ManufacturerLabelerIdentificationCode = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(10), false) : null;
+            PatientChargeableIndicator = segments.Length > 11 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(11), false) : null;
+            TransactionCode = segments.Length > 12 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(12), false) : null;
+            TransactionAmountUnit = segments.Length > 13 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(13), false) : null;
+            StockedItemIndicator = segments.Length > 14 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(14), false) : null;
+            SupplyRiskCodes = segments.Length > 15 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(15), false) : null;
+            ApprovingRegulatoryAgency = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
+            LatexIndicator = segments.Length > 17 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(17), false) : null;
+            RulingAct = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            ItemNaturalAccountCode = segments.Length > 19 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(19), false) : null;
+            ApprovedToBuyQuantity = segments.ElementAtOrDefault(20)?.ToNullableDecimal();
+            ApprovedToBuyPrice = segments.Length > 21 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(21), false) : null;
+            TaxableItemIndicator = segments.Length > 22 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(22), false) : null;
+            FreightChargeIndicator = segments.Length > 23 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(23), false) : null;
+            ItemSetIndicator = segments.Length > 24 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(24), false) : null;
+            ItemSetIdentifier = segments.Length > 25 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(25), false) : null;
+            TrackDepartmentUsageIndicator = segments.Length > 26 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(26), false) : null;
+            ProcedureCode = segments.Length > 27 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(27), false) : null;
+            ProcedureCodeModifier = segments.Length > 28 ? segments.ElementAtOrDefault(28).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithNoExceptions>(x, false)) : null;
+            SpecialHandlingCode = segments.Length > 29 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(29), false) : null;
+            HazardousIndicator = segments.Length > 30 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(30), false) : null;
+            SterileIndicator = segments.Length > 31 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(31), false) : null;
+            MaterialDataSafetySheetNumber = segments.Length > 32 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(32), false) : null;
+            UnitedNationsStandardProductsAndServicesCode = segments.Length > 33 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(33), false) : null;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

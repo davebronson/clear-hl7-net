@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V271.Types;
 
@@ -177,14 +179,64 @@ namespace ClearHl7.V271.Segments
         /// IVC.30 - Sales Tax ID.
         /// </summary>
         public string SalesTaxId { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public void FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            ProviderInvoiceNumber = segments.Length > 1 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(1), false) : null;
+            PayerInvoiceNumber = segments.Length > 2 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(2), false) : null;
+            ContractAgreementNumber = segments.Length > 3 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(3), false) : null;
+            InvoiceControl = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
+            InvoiceReason = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
+            InvoiceType = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
+            InvoiceDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            InvoiceAmount = segments.Length > 8 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(8), false) : null;
+            PaymentTerms = segments.ElementAtOrDefault(9);
+            ProviderOrganization = segments.Length > 10 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(10), false) : null;
+            PayerOrganization = segments.Length > 11 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(11), false) : null;
+            Attention = segments.Length > 12 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(12), false) : null;
+            LastInvoiceIndicator = segments.ElementAtOrDefault(13);
+            InvoiceBookingPeriod = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            Origin = segments.ElementAtOrDefault(15);
+            InvoiceFixedAmount = segments.Length > 16 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(16), false) : null;
+            SpecialCosts = segments.Length > 17 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(17), false) : null;
+            AmountForDoctorsTreatment = segments.Length > 18 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(18), false) : null;
+            ResponsiblePhysician = segments.Length > 19 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(19), false) : null;
+            CostCenter = segments.Length > 20 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(20), false) : null;
+            InvoicePrepaidAmount = segments.Length > 21 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(21), false) : null;
+            TotalInvoiceAmountWithoutPrepaidAmount = segments.Length > 22 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(22), false) : null;
+            TotalAmountOfVat = segments.Length > 23 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(23), false) : null;
+            VatRatesApplied = segments.Length > 24 ? segments.ElementAtOrDefault(24).Split(separator).Select(x => x.ToDecimal()) : null;
+            BenefitGroup = segments.Length > 25 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(25), false) : null;
+            ProviderTaxId = segments.ElementAtOrDefault(26);
+            PayerTaxId = segments.ElementAtOrDefault(27);
+            ProviderTaxStatus = segments.Length > 28 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(28), false) : null;
+            PayerTaxStatus = segments.Length > 29 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(29), false) : null;
+            SalesTaxId = segments.ElementAtOrDefault(30);
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
