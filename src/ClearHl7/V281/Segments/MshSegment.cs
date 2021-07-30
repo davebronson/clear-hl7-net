@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V281.Types;
 
@@ -154,14 +156,59 @@ namespace ClearHl7.V281.Segments
         /// MSH.25 - Receiving Network Address.
         /// </summary>
         public HierarchicDesignator ReceivingNetworkAddress { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public void FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            //FieldSeparator = ;
+            //EncodingCharacters = ;
+            SendingApplication = segments.Length > 3 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(3), false) : null;
+            SendingFacility = segments.Length > 4 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(4), false) : null;
+            ReceivingApplication = segments.Length > 5 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(5), false) : null;
+            ReceivingFacility = segments.Length > 6 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(6), false) : null;
+            DateTimeOfMessage = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            Security = segments.ElementAtOrDefault(8);
+            MessageType = segments.Length > 9 ? TypeHelper.Deserialize<MessageType>(segments.ElementAtOrDefault(9), false) : null;
+            MessageControlId = segments.ElementAtOrDefault(10);
+            ProcessingId = segments.Length > 11 ? TypeHelper.Deserialize<ProcessingType>(segments.ElementAtOrDefault(11), false) : null;
+            VersionId = segments.Length > 12 ? TypeHelper.Deserialize<VersionIdentifier>(segments.ElementAtOrDefault(12), false) : null;
+            SequenceNumber = segments.ElementAtOrDefault(13)?.ToNullableDecimal();
+            ContinuationPointer = segments.ElementAtOrDefault(14);
+            AcceptAcknowledgmentType = segments.ElementAtOrDefault(15);
+            ApplicationAcknowledgmentType = segments.ElementAtOrDefault(16);
+            CountryCode = segments.ElementAtOrDefault(17);
+            CharacterSet = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator) : null;
+            PrincipalLanguageOfMessage = segments.Length > 19 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(19), false) : null;
+            AlternateCharacterSetHandlingScheme = segments.ElementAtOrDefault(20);
+            MessageProfileIdentifier = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
+            SendingResponsibleOrganization = segments.Length > 22 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(22), false) : null;
+            ReceivingResponsibleOrganization = segments.Length > 23 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(23), false) : null;
+            SendingNetworkAddress = segments.Length > 24 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(24), false) : null;
+            ReceivingNetworkAddress = segments.Length > 25 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(25), false) : null;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
