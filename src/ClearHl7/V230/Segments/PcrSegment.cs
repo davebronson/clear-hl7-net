@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V230.Types;
 
@@ -145,14 +148,57 @@ namespace ClearHl7.V230.Segments
         /// <para>Suggested: 0253 Indirect Exposure Mechanism -&gt; ClearHl7.Codes.V230.CodeIndirectExposureMechanism</para>
         /// </summary>
         public IEnumerable<string> IndirectExposureMechanism { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public void FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            ImplicatedProduct = segments.Length > 1 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(1), false) : null;
+            GenericProduct = segments.ElementAtOrDefault(2);
+            ProductClass = segments.Length > 3 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(3), false) : null;
+            TotalDurationOfTherapy = segments.Length > 4 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(4), false) : null;
+            ProductManufactureDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ProductExpirationDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ProductImplantationDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ProductExplantationDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            SingleUseDevice = segments.ElementAtOrDefault(9);
+            IndicationForProductUse = segments.Length > 10 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(10), false) : null;
+            ProductProblem = segments.ElementAtOrDefault(11);
+            ProductSerialLotNumber = segments.Length > 12 ? segments.ElementAtOrDefault(12).Split(separator) : null;
+            ProductAvailableForInspection = segments.ElementAtOrDefault(13);
+            ProductEvaluationPerformed = segments.Length > 14 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(14), false) : null;
+            ProductEvaluationStatus = segments.Length > 15 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(15), false) : null;
+            ProductEvaluationResults = segments.Length > 16 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(16), false) : null;
+            EvaluatedProductSource = segments.ElementAtOrDefault(17);
+            DateProductReturnedToManufacturer = segments.ElementAtOrDefault(18)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DeviceOperatorQualifications = segments.ElementAtOrDefault(19);
+            RelatednessAssessment = segments.ElementAtOrDefault(20);
+            ActionTakenInResponseToTheEvent = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator) : null;
+            EventCausalityObservations = segments.Length > 22 ? segments.ElementAtOrDefault(22).Split(separator) : null;
+            IndirectExposureMechanism = segments.Length > 23 ? segments.ElementAtOrDefault(23).Split(separator) : null;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
