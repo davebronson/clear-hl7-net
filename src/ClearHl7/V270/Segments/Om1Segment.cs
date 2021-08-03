@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V270.Types;
 
@@ -270,12 +272,79 @@ namespace ClearHl7.V270.Segments
         public CodedWithExceptions ModalityOfImagingMeasurement { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public void FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            SequenceNumberTestObservationMasterFile = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
+            ProducersServiceTestObservationId = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
+            PermittedDataTypes = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator) : null;
+            SpecimenRequired = segments.ElementAtOrDefault(4);
+            ProducerId = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
+            ObservationDescription = segments.Length > 6 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(6), false) : null;
+            OtherServiceTestObservationIdsForTheObservation = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(7), false) : null;
+            OtherNames = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator) : null;
+            PreferredReportNameForTheObservation = segments.ElementAtOrDefault(9);
+            PreferredShortNameOrMnemonicForTheObservation = segments.ElementAtOrDefault(10);
+            PreferredLongNameForTheObservation = segments.ElementAtOrDefault(11);
+            Orderability = segments.ElementAtOrDefault(12);
+            IdentityOfInstrumentUsedToPerformThisStudy = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            CodedRepresentationOfMethod = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            PortableDeviceIndicator = segments.ElementAtOrDefault(15);
+            ObservationProducingDepartmentSection = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            TelephoneNumberOfSection = segments.Length > 17 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments.ElementAtOrDefault(17), false) : null;
+            NatureOfServiceTestObservation = segments.Length > 18 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(18), false) : null;
+            ReportSubheader = segments.Length > 19 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(19), false) : null;
+            ReportDisplayOrder = segments.ElementAtOrDefault(20);
+            DateTimeStampForAnyChangeInDefinitionForTheObservation = segments.ElementAtOrDefault(21)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EffectiveDateTimeOfChange = segments.ElementAtOrDefault(22)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            TypicalTurnAroundTime = segments.ElementAtOrDefault(23)?.ToNullableDecimal();
+            ProcessingTime = segments.ElementAtOrDefault(24)?.ToNullableDecimal();
+            ProcessingPriority = segments.Length > 25 ? segments.ElementAtOrDefault(25).Split(separator) : null;
+            ReportingPriority = segments.ElementAtOrDefault(26);
+            OutsideSitesWhereObservationMayBePerformed = segments.Length > 27 ? segments.ElementAtOrDefault(27).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            AddressOfOutsideSites = segments.Length > 28 ? segments.ElementAtOrDefault(28).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
+            PhoneNumberOfOutsideSite = segments.Length > 29 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments.ElementAtOrDefault(29), false) : null;
+            ConfidentialityCode = segments.Length > 30 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(30), false) : null;
+            ObservationsRequiredToInterpretThisObservation = segments.Length > 31 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(31), false) : null;
+            InterpretationOfObservations = segments.Length > 32 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(32), false) : null;
+            ContraindicationsToObservations = segments.Length > 33 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(33), false) : null;
+            ReflexTestsObservations = segments.Length > 34 ? segments.ElementAtOrDefault(34).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            RulesThatTriggerReflexTesting = segments.Length > 35 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(35), false) : null;
+            FixedCannedMessage = segments.Length > 36 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(36), false) : null;
+            PatientPreparation = segments.Length > 37 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(37), false) : null;
+            ProcedureMedication = segments.Length > 38 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(38), false) : null;
+            FactorsThatMayAffectTheObservation = segments.Length > 39 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(39), false) : null;
+            ServiceTestObservationPerformanceSchedule = segments.Length > 40 ? segments.ElementAtOrDefault(40).Split(separator) : null;
+            DescriptionOfTestMethods = segments.Length > 41 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(41), false) : null;
+            KindOfQuantityObserved = segments.Length > 42 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(42), false) : null;
+            PointVersusInterval = segments.Length > 43 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(43), false) : null;
+            ChallengeInformation = segments.Length > 44 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(44), false) : null;
+            RelationshipModifier = segments.Length > 45 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(45), false) : null;
+            TargetAnatomicSiteOfTest = segments.Length > 46 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(46), false) : null;
+            ModalityOfImagingMeasurement = segments.Length > 47 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(47), false) : null;
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

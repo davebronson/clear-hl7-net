@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V250.Types;
 
@@ -279,12 +281,81 @@ namespace ClearHl7.V250.Segments
         public string ResultHandling { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public void FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            SetIdObr = segments.ElementAtOrDefault(1)?.ToNullableUInt();
+            PlacerOrderNumber = segments.Length > 2 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(2), false) : null;
+            FillerOrderNumber = segments.Length > 3 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(3), false) : null;
+            UniversalServiceIdentifier = segments.Length > 4 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(4), false) : null;
+            Priority = segments.ElementAtOrDefault(5);
+            RequestedDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ObservationDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ObservationEndDateTime = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            CollectionVolume = segments.Length > 9 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(9), false) : null;
+            CollectorIdentifier = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            SpecimenActionCode = segments.ElementAtOrDefault(11);
+            DangerCode = segments.Length > 12 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(12), false) : null;
+            RelevantClinicalInformation = segments.ElementAtOrDefault(13);
+            SpecimenReceivedDateTime = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            SpecimenSource = segments.Length > 15 ? TypeHelper.Deserialize<SpecimentSource>(segments.ElementAtOrDefault(15), false) : null;
+            OrderingProvider = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            OrderCallbackPhoneNumber = segments.Length > 17 ? segments.ElementAtOrDefault(17).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
+            PlacerField1 = segments.ElementAtOrDefault(18);
+            PlacerField2 = segments.ElementAtOrDefault(19);
+            FillerField1 = segments.ElementAtOrDefault(20);
+            FillerField2 = segments.ElementAtOrDefault(21);
+            ResultsRptStatusChngDateTime = segments.ElementAtOrDefault(22)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ChargeToPractice = segments.Length > 23 ? TypeHelper.Deserialize<MoneyAndChargeCode>(segments.ElementAtOrDefault(23), false) : null;
+            DiagnosticServSectId = segments.ElementAtOrDefault(24);
+            ResultStatus = segments.ElementAtOrDefault(25);
+            ParentResult = segments.Length > 26 ? TypeHelper.Deserialize<ParentResultLink>(segments.ElementAtOrDefault(26), false) : null;
+            QuantityTiming = segments.Length > 27 ? segments.ElementAtOrDefault(27).Split(separator).Select(x => TypeHelper.Deserialize<TimingQuantity>(x, false)) : null;
+            ResultCopiesTo = segments.Length > 28 ? segments.ElementAtOrDefault(28).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            ParentResultsObservationIdentifier = segments.Length > 29 ? TypeHelper.Deserialize<EntityIdentifierPair>(segments.ElementAtOrDefault(29), false) : null;
+            TransportationMode = segments.ElementAtOrDefault(30);
+            ReasonForStudy = segments.Length > 31 ? segments.ElementAtOrDefault(31).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            PrincipalResultInterpreter = segments.Length > 32 ? TypeHelper.Deserialize<NameWithDateAndLocation>(segments.ElementAtOrDefault(32), false) : null;
+            AssistantResultInterpreter = segments.Length > 33 ? segments.ElementAtOrDefault(33).Split(separator).Select(x => TypeHelper.Deserialize<NameWithDateAndLocation>(x, false)) : null;
+            Technician = segments.Length > 34 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => TypeHelper.Deserialize<NameWithDateAndLocation>(x, false)) : null;
+            Transcriptionist = segments.Length > 35 ? segments.ElementAtOrDefault(35).Split(separator).Select(x => TypeHelper.Deserialize<NameWithDateAndLocation>(x, false)) : null;
+            ScheduledDateTime = segments.ElementAtOrDefault(36)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            NumberOfSampleContainers = segments.ElementAtOrDefault(37)?.ToNullableDecimal();
+            TransportLogisticsOfCollectedSample = segments.Length > 38 ? segments.ElementAtOrDefault(38).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            CollectorsComment = segments.Length > 39 ? segments.ElementAtOrDefault(39).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            TransportArrangementResponsibility = segments.Length > 40 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(40), false) : null;
+            TransportArranged = segments.ElementAtOrDefault(41);
+            EscortRequired = segments.ElementAtOrDefault(42);
+            PlannedPatientTransportComment = segments.Length > 43 ? segments.ElementAtOrDefault(43).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            ProcedureCode = segments.Length > 44 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(44), false) : null;
+            ProcedureCodeModifier = segments.Length > 45 ? segments.ElementAtOrDefault(45).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            PlacerSupplementalServiceInformation = segments.Length > 46 ? segments.ElementAtOrDefault(46).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            FillerSupplementalServiceInformation = segments.Length > 47 ? segments.ElementAtOrDefault(47).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            MedicallyNecessaryDuplicateProcedureReason = segments.Length > 48 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(48), false) : null;
+            ResultHandling = segments.ElementAtOrDefault(49);
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

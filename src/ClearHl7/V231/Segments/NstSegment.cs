@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Globalization;
+using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 
 namespace ClearHl7.V231.Segments
@@ -93,14 +96,48 @@ namespace ClearHl7.V231.Segments
         /// NST.15 - Application control-level Errors.
         /// </summary>
         public decimal? ApplicationControlLevelErrors { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public void FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            StatisticsAvailable = segments.ElementAtOrDefault(1);
+            SourceIdentifier = segments.ElementAtOrDefault(2);
+            SourceType = segments.ElementAtOrDefault(3);
+            StatisticsStart = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            StatisticsEnd = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ReceiveCharacterCount = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
+            SendCharacterCount = segments.ElementAtOrDefault(7)?.ToNullableDecimal();
+            MessagesReceived = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
+            MessagesSent = segments.ElementAtOrDefault(9)?.ToNullableDecimal();
+            ChecksumErrorsReceived = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
+            LengthErrorsReceived = segments.ElementAtOrDefault(11)?.ToNullableDecimal();
+            OtherErrorsReceived = segments.ElementAtOrDefault(12)?.ToNullableDecimal();
+            ConnectTimeouts = segments.ElementAtOrDefault(13)?.ToNullableDecimal();
+            ReceiveTimeouts = segments.ElementAtOrDefault(14)?.ToNullableDecimal();
+            ApplicationControlLevelErrors = segments.ElementAtOrDefault(15)?.ToNullableDecimal();
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

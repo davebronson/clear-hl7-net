@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V282.Types;
 
@@ -114,14 +117,52 @@ namespace ClearHl7.V282.Segments
         /// OM4.18 - Taxonomic Classification Code.
         /// </summary>
         public IEnumerable<CodedWithExceptions> TaxonomicClassificationCode { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public void FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            SequenceNumberTestObservationMasterFile = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
+            DerivedSpecimen = segments.ElementAtOrDefault(2);
+            ContainerDescription = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<Text>(x, false)) : null;
+            ContainerVolume = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => x.ToDecimal()) : null;
+            ContainerUnits = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            Specimen = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
+            Additive = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(7), false) : null;
+            Preparation = segments.Length > 8 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(8), false) : null;
+            SpecialHandlingRequirements = segments.Length > 9 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(9), false) : null;
+            NormalCollectionVolume = segments.Length > 10 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(10), false) : null;
+            MinimumCollectionVolume = segments.Length > 11 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(11), false) : null;
+            SpecimenRequirements = segments.Length > 12 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(12), false) : null;
+            SpecimenPriorities = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator) : null;
+            SpecimenRetentionTime = segments.Length > 14 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(14), false) : null;
+            SpecimenHandlingCode = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            SpecimenPreference = segments.ElementAtOrDefault(16);
+            PreferredSpecimenAttribtureSequenceId = segments.ElementAtOrDefault(17)?.ToNullableDecimal();
+            TaxonomicClassificationCode = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
