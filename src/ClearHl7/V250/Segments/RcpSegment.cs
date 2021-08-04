@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V250.Types;
 
@@ -59,14 +61,41 @@ namespace ClearHl7.V250.Segments
         /// RCP.7 - Segment group inclusion.
         /// </summary>
         public IEnumerable<string> SegmentGroupInclusion { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public void FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            QueryPriority = segments.ElementAtOrDefault(1);
+            QuantityLimitedRequest = segments.Length > 2 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(2), false) : null;
+            ResponseModality = segments.Length > 3 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(3), false) : null;
+            ExecutionAndDeliveryTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ModifyIndicator = segments.ElementAtOrDefault(5);
+            SortByField = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<SortOrder>(x, false)) : null;
+            SegmentGroupInclusion = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator) : null;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
