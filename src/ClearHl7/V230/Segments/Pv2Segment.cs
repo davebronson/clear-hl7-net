@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V230.Types;
 
@@ -225,12 +227,69 @@ namespace ClearHl7.V230.Segments
         public string BabyDetainedIndicator { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public void FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            PriorPendingLocation = segments.Length > 1 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(1), false) : null;
+            AccommodationCode = segments.Length > 2 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(2), false) : null;
+            AdmitReason = segments.Length > 3 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(3), false) : null;
+            TransferReason = segments.Length > 4 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(4), false) : null;
+            PatientValuables = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator) : null;
+            PatientValuablesLocation = segments.ElementAtOrDefault(6);
+            VisitUserCode = segments.ElementAtOrDefault(7);
+            ExpectedAdmitDateTime = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ExpectedDischargeDateTime = segments.ElementAtOrDefault(9)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EstimatedLengthOfInpatientStay = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
+            ActualLengthOfInpatientStay = segments.ElementAtOrDefault(11)?.ToNullableDecimal();
+            VisitDescription = segments.ElementAtOrDefault(12);
+            ReferralSourceCode = segments.Length > 13 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(13), false) : null;
+            PreviousServiceDate = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            EmploymentIllnessRelatedIndicator = segments.ElementAtOrDefault(15);
+            PurgeStatusCode = segments.ElementAtOrDefault(16);
+            PurgeStatusDate = segments.ElementAtOrDefault(17)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            SpecialProgramCode = segments.ElementAtOrDefault(18);
+            RetentionIndicator = segments.ElementAtOrDefault(19);
+            ExpectedNumberOfInsurancePlans = segments.ElementAtOrDefault(20)?.ToNullableDecimal();
+            VisitPublicityCode = segments.ElementAtOrDefault(21);
+            VisitProtectionIndicator = segments.ElementAtOrDefault(22);
+            ClinicOrganizationName = segments.Length > 23 ? segments.ElementAtOrDefault(23).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
+            PatientStatusCode = segments.ElementAtOrDefault(24);
+            VisitPriorityCode = segments.ElementAtOrDefault(25);
+            PreviousTreatmentDate = segments.ElementAtOrDefault(26)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            ExpectedDischargeDisposition = segments.ElementAtOrDefault(27);
+            SignatureOnFileDate = segments.ElementAtOrDefault(28)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            FirstSimilarIllnessDate = segments.ElementAtOrDefault(29)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            PatientChargeAdjustmentCode = segments.ElementAtOrDefault(30);
+            RecurringServiceCode = segments.ElementAtOrDefault(31);
+            BillingMediaCode = segments.ElementAtOrDefault(32);
+            ExpectedSurgeryDateAndTime = segments.ElementAtOrDefault(33)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            MilitaryPartnershipCode = segments.ElementAtOrDefault(34);
+            MilitaryNonAvailabilityCode = segments.ElementAtOrDefault(35);
+            NewbornBabyIndicator = segments.ElementAtOrDefault(36);
+            BabyDetainedIndicator = segments.ElementAtOrDefault(37);
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

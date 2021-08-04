@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V271.Types;
 
@@ -92,14 +94,48 @@ namespace ClearHl7.V271.Segments
         /// PSH.14 - Number of Product Experience Reports Filed by Distributor.
         /// </summary>
         public IEnumerable<decimal> NumberOfProductExperienceReportsFiledByDistributor { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public void FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            ReportType = segments.ElementAtOrDefault(1);
+            ReportFormIdentifier = segments.ElementAtOrDefault(2);
+            ReportDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ReportIntervalStartDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ReportIntervalEndDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            QuantityManufactured = segments.Length > 6 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(6), false) : null;
+            QuantityDistributed = segments.Length > 7 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(7), false) : null;
+            QuantityDistributedMethod = segments.ElementAtOrDefault(8);
+            QuantityDistributedComment = segments.ElementAtOrDefault(9);
+            QuantityInUse = segments.Length > 10 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(10), false) : null;
+            QuantityInUseMethod = segments.ElementAtOrDefault(11);
+            QuantityInUseComment = segments.ElementAtOrDefault(12);
+            NumberOfProductExperienceReportsFiledByFacility = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => x.ToDecimal()) : null;
+            NumberOfProductExperienceReportsFiledByDistributor = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => x.ToDecimal()) : null;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
