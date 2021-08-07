@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V260.Types;
 
@@ -200,12 +203,67 @@ namespace ClearHl7.V260.Segments
         public ExtendedAddress DeliverToAddress { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public void FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            RequestedGiveCode = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
+            RequestedGiveAmountMinimum = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
+            RequestedGiveAmountMaximum = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
+            RequestedGiveUnits = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
+            RequestedDosageForm = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
+            ProvidersPharmacyTreatmentInstructions = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            ProvidersAdministrationInstructions = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            DeliverToLocation = segments.Length > 8 ? TypeHelper.Deserialize<LocationWithAddressVariationOne>(segments.ElementAtOrDefault(8), false) : null;
+            AllowSubstitutions = segments.ElementAtOrDefault(9);
+            RequestedDispenseCode = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(10), false) : null;
+            RequestedDispenseAmount = segments.ElementAtOrDefault(11)?.ToNullableDecimal();
+            RequestedDispenseUnits = segments.Length > 12 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(12), false) : null;
+            NumberOfRefills = segments.ElementAtOrDefault(13)?.ToNullableDecimal();
+            OrderingProvidersDeaNumber = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            PharmacistTreatmentSuppliersVerifierId = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            NeedsHumanReview = segments.ElementAtOrDefault(16);
+            RequestedGivePerTimeUnit = segments.ElementAtOrDefault(17);
+            RequestedGiveStrength = segments.ElementAtOrDefault(18)?.ToNullableDecimal();
+            RequestedGiveStrengthUnits = segments.Length > 19 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(19), false) : null;
+            Indication = segments.Length > 20 ? segments.ElementAtOrDefault(20).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            RequestedGiveRateAmount = segments.ElementAtOrDefault(21);
+            RequestedGiveRateUnits = segments.Length > 22 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(22), false) : null;
+            TotalDailyDose = segments.Length > 23 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(23), false) : null;
+            SupplementaryCode = segments.Length > 24 ? segments.ElementAtOrDefault(24).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            RequestedDrugStrengthVolume = segments.ElementAtOrDefault(25)?.ToNullableDecimal();
+            RequestedDrugStrengthVolumeUnits = segments.Length > 26 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(26), false) : null;
+            PharmacyOrderType = segments.ElementAtOrDefault(27);
+            DispensingInterval = segments.ElementAtOrDefault(28)?.ToNullableDecimal();
+            MedicationInstanceIdentifier = segments.Length > 29 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(29), false) : null;
+            SegmentInstanceIdentifier = segments.Length > 30 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(30), false) : null;
+            MoodCode = segments.Length > 31 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(31), false) : null;
+            DispensingPharmacy = segments.Length > 32 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(32), false) : null;
+            DispensingPharmacyAddress = segments.Length > 33 ? TypeHelper.Deserialize<ExtendedAddress>(segments.ElementAtOrDefault(33), false) : null;
+            DeliverToPatientLocation = segments.Length > 34 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(34), false) : null;
+            DeliverToAddress = segments.Length > 35 ? TypeHelper.Deserialize<ExtendedAddress>(segments.ElementAtOrDefault(35), false) : null;
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

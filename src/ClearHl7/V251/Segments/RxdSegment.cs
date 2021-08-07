@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V251.Types;
 
@@ -194,12 +196,65 @@ namespace ClearHl7.V251.Segments
         public CodedWithExceptions DispenseType { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public void FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            DispenseSubIdCounter = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
+            DispenseGiveCode = segments.Length > 2 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(2), false) : null;
+            DateTimeDispensed = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ActualDispenseAmount = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
+            ActualDispenseUnits = segments.Length > 5 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(5), false) : null;
+            ActualDosageForm = segments.Length > 6 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(6), false) : null;
+            PrescriptionNumber = segments.ElementAtOrDefault(7);
+            NumberOfRefillsRemaining = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
+            DispenseNotes = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator) : null;
+            DispensingProvider = segments.Length > 10 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            SubstitutionStatus = segments.ElementAtOrDefault(11);
+            TotalDailyDose = segments.Length > 12 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(12), false) : null;
+            DispenseToLocation = segments.Length > 13 ? TypeHelper.Deserialize<LocationWithAddressVariationTwo>(segments.ElementAtOrDefault(13), false) : null;
+            NeedsHumanReview = segments.ElementAtOrDefault(14);
+            SpecialDispensingInstructions = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            ActualStrength = segments.ElementAtOrDefault(16)?.ToNullableDecimal();
+            ActualStrengthUnit = segments.Length > 17 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(17), false) : null;
+            SubstanceLotNumber = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator) : null;
+            SubstanceExpirationDate = segments.Length > 19 ? segments.ElementAtOrDefault(19).Split(separator).Select(x => x.ToDateTime(Consts.DateTimeFormatPrecisionSecond)) : null;
+            SubstanceManufacturerName = segments.Length > 20 ? segments.ElementAtOrDefault(20).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            Indication = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            DispensePackageSize = segments.ElementAtOrDefault(22)?.ToNullableDecimal();
+            DispensePackageSizeUnit = segments.Length > 23 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(23), false) : null;
+            DispensePackageMethod = segments.ElementAtOrDefault(24);
+            SupplementaryCode = segments.Length > 25 ? segments.ElementAtOrDefault(25).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            InitiatingLocation = segments.Length > 26 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(26), false) : null;
+            PackagingAssemblyLocation = segments.Length > 27 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(27), false) : null;
+            ActualDrugStrengthVolume = segments.ElementAtOrDefault(28)?.ToNullableDecimal();
+            ActualDrugStrengthVolumeUnits = segments.Length > 29 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(29), false) : null;
+            DispenseToPharmacy = segments.Length > 30 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(30), false) : null;
+            DispenseToPharmacyAddress = segments.Length > 31 ? TypeHelper.Deserialize<ExtendedAddress>(segments.ElementAtOrDefault(31), false) : null;
+            PharmacyOrderType = segments.ElementAtOrDefault(32);
+            DispenseType = segments.Length > 33 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(33), false) : null;
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
