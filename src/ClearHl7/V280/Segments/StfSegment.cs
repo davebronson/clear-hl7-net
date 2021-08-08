@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V280.Types;
 
@@ -249,14 +251,75 @@ namespace ClearHl7.V280.Segments
         /// STF.41 - Signature.
         /// </summary>
         public EncapsulatedData Signature { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public void FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            PrimaryKeyValueStf = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
+            StaffIdentifierList = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
+            StaffName = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
+            StaffType = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            AdministrativeSex = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
+            DateTimeOfBirth = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ActiveInactiveFlag = segments.ElementAtOrDefault(7);
+            Department = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            HospitalServiceStf = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            Phone = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
+            OfficeHomeAddressBirthplace = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
+            InstitutionActivationDate = segments.Length > 12 ? segments.ElementAtOrDefault(12).Split(separator).Select(x => TypeHelper.Deserialize<DateAndInstitutionName>(x, false)) : null;
+            InstitutionInactivationDate = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => TypeHelper.Deserialize<DateAndInstitutionName>(x, false)) : null;
+            BackupPersonId = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            EmailAddress = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator) : null;
+            PreferredMethodOfContact = segments.Length > 16 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(16), false) : null;
+            MaritalStatus = segments.Length > 17 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(17), false) : null;
+            JobTitle = segments.ElementAtOrDefault(18);
+            JobCodeClass = segments.Length > 19 ? TypeHelper.Deserialize<JobCodeClass>(segments.ElementAtOrDefault(19), false) : null;
+            EmploymentStatusCode = segments.Length > 20 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(20), false) : null;
+            AdditionalInsuredOnAuto = segments.ElementAtOrDefault(21);
+            DriversLicenseNumberStaff = segments.Length > 22 ? TypeHelper.Deserialize<DriversLicenseNumber>(segments.ElementAtOrDefault(22), false) : null;
+            CopyAutoIns = segments.ElementAtOrDefault(23);
+            AutoInsExpires = segments.ElementAtOrDefault(24)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            DateLastDmvReview = segments.ElementAtOrDefault(25)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            DateNextDmvReview = segments.ElementAtOrDefault(26)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            Race = segments.Length > 27 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(27), false) : null;
+            EthnicGroup = segments.Length > 28 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(28), false) : null;
+            ReactivationApprovalIndicator = segments.ElementAtOrDefault(29);
+            Citizenship = segments.Length > 30 ? segments.ElementAtOrDefault(30).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            DateTimeOfDeath = segments.ElementAtOrDefault(31)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DeathIndicator = segments.ElementAtOrDefault(32);
+            InstitutionRelationshipTypeCode = segments.Length > 33 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(33), false) : null;
+            InstitutionRelationshipPeriod = segments.Length > 34 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(34), false) : null;
+            ExpectedReturnDate = segments.ElementAtOrDefault(35)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            CostCenterCode = segments.Length > 36 ? segments.ElementAtOrDefault(36).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            GenericClassificationIndicator = segments.ElementAtOrDefault(37);
+            InactiveReasonCode = segments.Length > 38 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(38), false) : null;
+            GenericResourceTypeOrCategory = segments.Length > 39 ? segments.ElementAtOrDefault(39).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            Religion = segments.Length > 40 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(40), false) : null;
+            Signature = segments.Length > 41 ? TypeHelper.Deserialize<EncapsulatedData>(segments.ElementAtOrDefault(41), false) : null;
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,
