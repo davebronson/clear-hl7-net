@@ -176,8 +176,6 @@ namespace ClearHl7.V282.Segments
             ParticipantDeviceSerialNumber = segments.ElementAtOrDefault(20);
             ParticipantDeviceDonationIdentification = segments.Length > 21 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(21), false) : null;
             ParticipationDeviceType = segments.Length > 22 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(22), false) : null;
-            PreferredMethodOfContact = segments.Length > 23 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(23), false) : null;
-            ContactIdentifiers = segments.Length > 24 ? segments.ElementAtOrDefault(24).Split(separator).Select(x => TypeHelper.Deserialize<PractitionerLicenseOrOtherIdNumber>(x, false)) : null;
         }
 
         /// <summary>

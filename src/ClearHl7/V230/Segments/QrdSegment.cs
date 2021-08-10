@@ -117,7 +117,7 @@ namespace ClearHl7.V230.Segments
             WhoSubjectFilter = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             WhatSubjectFilter = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null; ;
             WhatDepartmentDataCode = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null; ;
-            WhatDataCodeValueQual = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<ValueRange>(x, false)) : null; ;
+            WhatDataCodeValueQual = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator) : null; ;
             QueryResultsLevel = segments.ElementAtOrDefault(12);
         }
 

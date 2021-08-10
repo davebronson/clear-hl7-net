@@ -85,12 +85,12 @@ namespace ClearHl7.V230.Segments
             ApplicationChangeType = segments.ElementAtOrDefault(1);
             CurrentCpu = segments.ElementAtOrDefault(2);
             CurrentFileserver = segments.ElementAtOrDefault(3);
-            CurrentApplication = segments.Length > 4 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(4), false) : null;
-            CurrentFacility = segments.Length > 5 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(5), false) : null;
+            CurrentApplication = segments.ElementAtOrDefault(4);
+            CurrentFacility = segments.ElementAtOrDefault(5);
             NewCpu = segments.ElementAtOrDefault(6);
             NewFileserver = segments.ElementAtOrDefault(7);
-            NewApplication = segments.Length > 8 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(8), false) : null;
-            NewFacility = segments.Length > 9 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(9), false) : null;
+            NewApplication = segments.ElementAtOrDefault(8);
+            NewFacility = segments.ElementAtOrDefault(9);
         }
 
         /// <summary>

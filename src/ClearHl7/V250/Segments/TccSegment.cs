@@ -1,4 +1,8 @@
-﻿using ClearHl7.Helpers;
+﻿using System;
+using System.Globalization;
+using System.Linq;
+using ClearHl7.Extensions;
+using ClearHl7.Helpers;
 using ClearHl7.V250.Types;
 
 namespace ClearHl7.V250.Segments
@@ -93,12 +97,45 @@ namespace ClearHl7.V250.Segments
         public CodedElement ProcessingType { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public void FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            UniversalServiceIdentifier = segments.Length > 1 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(1), false) : null;
+            EquipmentTestApplicationIdentifier = segments.Length > 2 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(2), false) : null;
+            SpecimenSource = segments.Length > 3 ? TypeHelper.Deserialize<SpecimentSource>(segments.ElementAtOrDefault(3), false) : null;
+            AutoDilutionFactorDefault = segments.Length > 4 ? TypeHelper.Deserialize<StructuredNumeric>(segments.ElementAtOrDefault(4), false) : null;
+            RerunDilutionFactorDefault = segments.Length > 5 ? TypeHelper.Deserialize<StructuredNumeric>(segments.ElementAtOrDefault(5), false) : null;
+            PreDilutionFactorDefault = segments.Length > 6 ? TypeHelper.Deserialize<StructuredNumeric>(segments.ElementAtOrDefault(6), false) : null;
+            EndogenousContentOfPreDilutionDiluent = segments.Length > 7 ? TypeHelper.Deserialize<StructuredNumeric>(segments.ElementAtOrDefault(7), false) : null;
+            InventoryLimitsWarningLevel = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
+            AutomaticRerunAllowed = segments.ElementAtOrDefault(9);
+            AutomaticRepeatAllowed = segments.ElementAtOrDefault(10);
+            AutomaticReflexAllowed = segments.ElementAtOrDefault(11);
+            EquipmentDynamicRange = segments.Length > 12 ? TypeHelper.Deserialize<StructuredNumeric>(segments.ElementAtOrDefault(12), false) : null;
+            Units = segments.Length > 13 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(13), false) : null;
+            ProcessingType = segments.Length > 14 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(14), false) : null;
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

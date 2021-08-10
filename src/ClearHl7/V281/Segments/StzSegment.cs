@@ -1,4 +1,7 @@
-﻿using ClearHl7.Helpers;
+﻿using System;
+using System.Globalization;
+using System.Linq;
+using ClearHl7.Helpers;
 using ClearHl7.V281.Types;
 
 namespace ClearHl7.V281.Segments

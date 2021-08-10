@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V251.Types;
 
@@ -139,14 +141,57 @@ namespace ClearHl7.V251.Segments
         /// UB1.23 - UB-82 Locator 45.
         /// </summary>
         public string Ub82Locator45 { get; set; }
-        
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        public void FromDelimitedString(string delimitedString)
+        {
+            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
+            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+
+            if (segments.Length > 0)
+            {
+                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                {
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                }
+            }
+
+            SetIdUb1 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
+            BloodDeductible = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
+            BloodFurnishedPints = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
+            BloodReplacedPints = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
+            BloodNotReplacedPints = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
+            CoInsuranceDays = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
+            ConditionCode = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator) : null;
+            CoveredDays = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
+            NonCoveredDays = segments.ElementAtOrDefault(9)?.ToNullableDecimal();
+            ValueAmountCode = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<ValueCodeAndAmount>(x, false)) : null;
+            NumberOfGraceDays = segments.ElementAtOrDefault(11)?.ToNullableDecimal();
+            SpecialProgramIndicator = segments.Length > 12 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(12), false) : null;
+            PsroUrApprovalIndicator = segments.Length > 13 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(13), false) : null;
+            PsroUrApprovedStayFm = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            PsroUrApprovedStayTo = segments.ElementAtOrDefault(15)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            Occurrence = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<OccurrenceCodeAndDate>(x, false)) : null;
+            OccurrenceSpan = segments.Length > 17 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(17), false) : null;
+            OccurSpanStartDate = segments.ElementAtOrDefault(18)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            OccurSpanEndDate = segments.ElementAtOrDefault(19)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            Ub82Locator2 = segments.ElementAtOrDefault(20);
+            Ub82Locator9 = segments.ElementAtOrDefault(21);
+            Ub82Locator27 = segments.ElementAtOrDefault(22);
+            Ub82Locator45 = segments.ElementAtOrDefault(23);
+        }
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
 
             return string.Format(
                                 culture,

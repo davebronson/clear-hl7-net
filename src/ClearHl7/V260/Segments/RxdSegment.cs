@@ -246,7 +246,6 @@ namespace ClearHl7.V260.Segments
             DispenseToPharmacyAddress = segments.Length > 31 ? TypeHelper.Deserialize<ExtendedAddress>(segments.ElementAtOrDefault(31), false) : null;
             PharmacyOrderType = segments.ElementAtOrDefault(32);
             DispenseType = segments.Length > 33 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(33), false) : null;
-            PharmacyPhoneNumber = segments.Length > 34 ? segments.ElementAtOrDefault(34).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
         }
 
         /// <summary>

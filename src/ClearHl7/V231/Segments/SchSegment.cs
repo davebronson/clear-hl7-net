@@ -194,8 +194,6 @@ namespace ClearHl7.V231.Segments
             ParentPlacerAppointmentId = segments.Length > 23 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(23), false) : null;
             ParentFillerAppointmentId = segments.Length > 24 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(24), false) : null;
             FillerStatusCode = segments.Length > 25 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(25), false) : null;
-            PlacerOrderNumber = segments.Length > 26 ? segments.ElementAtOrDefault(26).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
-            FillerOrderNumber = segments.Length > 27 ? segments.ElementAtOrDefault(27).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
         }
 
         /// <summary>

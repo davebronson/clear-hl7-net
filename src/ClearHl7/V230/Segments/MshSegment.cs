@@ -151,7 +151,7 @@ namespace ClearHl7.V230.Segments
             MessageType = segments.Length > 9 ? TypeHelper.Deserialize<MessageType>(segments.ElementAtOrDefault(9), false) : null;
             MessageControlId = segments.ElementAtOrDefault(10);
             ProcessingId = segments.Length > 11 ? TypeHelper.Deserialize<ProcessingType>(segments.ElementAtOrDefault(11), false) : null;
-            VersionId = segments.Length > 12 ? TypeHelper.Deserialize<VersionIdentifier>(segments.ElementAtOrDefault(12), false) : null;
+            VersionId = segments.ElementAtOrDefault(12);
             SequenceNumber = segments.ElementAtOrDefault(13)?.ToNullableDecimal();
             ContinuationPointer = segments.ElementAtOrDefault(14);
             AcceptAcknowledgmentType = segments.ElementAtOrDefault(15);
