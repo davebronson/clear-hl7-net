@@ -28,14 +28,14 @@ namespace ClearHl7.Extensions
         /// </summary>
         /// <param name="input">A string containing the value to convert.</param>
         /// <param name="format">The expected format of the date represented within the input string.</param>
-        /// <returns>A DateTime, or null if a null or zero-length input is provided.</returns>
+        /// <returns>A DateTime, or null if the input provided is cannot be converted to a DateTime that follows the provided format.</returns>
         public static DateTime? ToNullableDateTime(this string input, string format)
         {
             if (string.IsNullOrEmpty(input)) { return null; }
 
-            DateTime.TryParseExact(input, format, CultureInfo.CurrentCulture, DateTimeStyles.None, out DateTime returnValue);
+            bool success = DateTime.TryParseExact(input, format, CultureInfo.CurrentCulture, DateTimeStyles.None, out DateTime returnValue);
 
-            return returnValue;
+            return success ? returnValue : null;
         }
 
         /// <summary>
@@ -56,14 +56,14 @@ namespace ClearHl7.Extensions
         /// Converts the specified string representation of a number to its nullable 32-bit unsigned integer equivalent, if possible.
         /// </summary>
         /// <param name="input">A string containing the value to convert.</param>
-        /// <returns>A uint, or null if a null or zero-length input is provided.</returns>
+        /// <returns>A uint, or null if the input provided is cannot be converted to a UInt.</returns>
         public static uint? ToNullableUInt(this string input)
         {
             if (string.IsNullOrEmpty(input)) { return null; }
 
-            uint.TryParse(input, NumberStyles.Integer, CultureInfo.CurrentCulture, out uint returnValue);
+            bool success = uint.TryParse(input, NumberStyles.Integer, CultureInfo.CurrentCulture, out uint returnValue);
 
-            return returnValue;
+            return success ? returnValue : null;
         }
 
         /// <summary>
@@ -84,14 +84,14 @@ namespace ClearHl7.Extensions
         /// Converts the specified string representation of a number to its nullable 32-bit signed integer equivalent, if possible.
         /// </summary>
         /// <param name="input">A string containing the value to convert.</param>
-        /// <returns>An int, or null if a null or zero-length input is provided.</returns>
+        /// <returns>An int, or null if the input provided is cannot be converted to an int.</returns>
         public static int? ToNullableInt(this string input)
         {
             if (string.IsNullOrEmpty(input)) { return null; }
 
-            int.TryParse(input, NumberStyles.Integer, CultureInfo.CurrentCulture, out int returnValue);
+            bool success = int.TryParse(input, NumberStyles.Integer, CultureInfo.CurrentCulture, out int returnValue);
 
-            return returnValue;
+            return success ? returnValue : null;
         }
 
         /// <summary>
@@ -112,14 +112,14 @@ namespace ClearHl7.Extensions
         /// Converts the specified string representation of a number to its nullable decimal equivalent, if possible.
         /// </summary>
         /// <param name="input">A string containing the value to convert.</param>
-        /// <returns>A decimal, or null if a null or zero-length input is provided.</returns>
+        /// <returns>A decimal, or null if the input provided is cannot be converted to a decimal.</returns>
         public static decimal? ToNullableDecimal(this string input)
         {
             if (string.IsNullOrEmpty(input)) { return null; }
 
-            decimal.TryParse(input, NumberStyles.Number, CultureInfo.CurrentCulture, out decimal returnValue);
+            bool success = decimal.TryParse(input, NumberStyles.Number, CultureInfo.CurrentCulture, out decimal returnValue);
 
-            return returnValue;
+            return success ? returnValue : null;
         }
     }
 }
