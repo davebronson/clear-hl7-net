@@ -74,11 +74,11 @@ namespace ClearHl7.V230.Segments
             }
 
             EventTypeCode = segments.ElementAtOrDefault(1);
-            RecordedDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            DateTimePlannedEvent = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            RecordedDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
+            DateTimePlannedEvent = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
             EventReasonCode = segments.ElementAtOrDefault(4);
             OperatorId = segments.Length > 5 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(5), false) : null;
-            EventOccurred = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EventOccurred = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
         }
 
         /// <summary>

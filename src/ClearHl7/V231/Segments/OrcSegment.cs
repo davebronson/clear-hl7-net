@@ -173,13 +173,13 @@ namespace ClearHl7.V231.Segments
             ResponseFlag = segments.ElementAtOrDefault(6);
             QuantityTiming = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<TimingQuantity>(x, false)) : null;
             ParentOrder = segments.Length > 8 ? TypeHelper.Deserialize<ParentOrder>(segments.ElementAtOrDefault(8), false) : null;
-            DateTimeOfTransaction = segments.ElementAtOrDefault(9)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeOfTransaction = segments.ElementAtOrDefault(9)?.ToNullableDateTime();
             EnteredBy = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             VerifiedBy = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             OrderingProvider = segments.Length > 12 ? segments.ElementAtOrDefault(12).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             EnterersLocation = segments.Length > 13 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(13), false) : null;
             CallBackPhoneNumber = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
-            OrderEffectiveDateTime = segments.ElementAtOrDefault(15)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            OrderEffectiveDateTime = segments.ElementAtOrDefault(15)?.ToNullableDateTime();
             OrderControlCodeReason = segments.Length > 16 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(16), false) : null;
             EnteringOrganization = segments.Length > 17 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(17), false) : null;
             EnteringDevice = segments.Length > 18 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(18), false) : null;

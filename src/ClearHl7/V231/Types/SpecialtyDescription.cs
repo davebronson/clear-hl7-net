@@ -48,7 +48,7 @@ namespace ClearHl7.V231.Types
             SpecialtyName = segments.ElementAtOrDefault(0);
             GoverningBoard = segments.ElementAtOrDefault(1);
             EligibleOrCertified = segments.ElementAtOrDefault(2);
-            DateOfCertification = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            DateOfCertification = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
         }
 
         /// <summary>

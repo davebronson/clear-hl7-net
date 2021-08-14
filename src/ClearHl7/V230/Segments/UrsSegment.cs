@@ -90,8 +90,8 @@ namespace ClearHl7.V230.Segments
             }
 
             RuWhereSubjectDefinition = segments.Length > 1 ? segments.ElementAtOrDefault(1).Split(separator) : null;
-            RuWhenDataStartDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            RuWhenDataEndDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            RuWhenDataStartDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
+            RuWhenDataEndDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
             RuWhatUserQualifier = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator) : null;
             RuOtherResultsSubjectDefinition = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator) : null;
             RuWhichDateTimeQualifier = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator) : null;

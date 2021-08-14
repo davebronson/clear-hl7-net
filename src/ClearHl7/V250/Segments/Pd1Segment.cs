@@ -172,12 +172,12 @@ namespace ClearHl7.V250.Segments
             DuplicatePatient = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
             PublicityCode = segments.Length > 11 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(11), false) : null;
             ProtectionIndicator = segments.ElementAtOrDefault(12);
-            ProtectionIndicatorEffectiveDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            ProtectionIndicatorEffectiveDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
             PlaceOfWorship = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
             AdvanceDirectiveCode = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
             ImmunizationRegistryStatus = segments.ElementAtOrDefault(16);
-            ImmunizationRegistryStatusEffectiveDate = segments.ElementAtOrDefault(17)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            PublicityCodeEffectiveDate = segments.ElementAtOrDefault(18)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            ImmunizationRegistryStatusEffectiveDate = segments.ElementAtOrDefault(17)?.ToNullableDateTime();
+            PublicityCodeEffectiveDate = segments.ElementAtOrDefault(18)?.ToNullableDateTime();
             MilitaryBranch = segments.ElementAtOrDefault(19);
             MilitaryRankGrade = segments.ElementAtOrDefault(20);
             MilitaryStatus = segments.ElementAtOrDefault(21);

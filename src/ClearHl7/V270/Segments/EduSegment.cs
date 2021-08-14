@@ -92,7 +92,7 @@ namespace ClearHl7.V270.Segments
             AcademicDegree = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
             AcademicDegreeProgramDateRange = segments.Length > 3 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(3), false) : null;
             AcademicDegreeProgramParticipationDateRange = segments.Length > 4 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(4), false) : null;
-            AcademicDegreeGrantedDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            AcademicDegreeGrantedDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
             School = segments.Length > 6 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(6), false) : null;
             SchoolTypeCode = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(7), false) : null;
             SchoolAddress = segments.Length > 8 ? TypeHelper.Deserialize<ExtendedAddress>(segments.ElementAtOrDefault(8), false) : null;

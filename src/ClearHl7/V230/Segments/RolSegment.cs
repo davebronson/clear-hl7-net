@@ -85,8 +85,8 @@ namespace ClearHl7.V230.Segments
             ActionCode = segments.ElementAtOrDefault(2);
             RoleRol = segments.Length > 3 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(3), false) : null;
             RolePerson = segments.Length > 4 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(4), false) : null;
-            RoleBeginDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            RoleEndDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            RoleBeginDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
+            RoleEndDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
             RoleDuration = segments.Length > 7 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(7), false) : null;
             RoleActionReason = segments.Length > 8 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(8), false) : null;
         }

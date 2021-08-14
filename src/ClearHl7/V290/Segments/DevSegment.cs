@@ -141,8 +141,8 @@ namespace ClearHl7.V290.Segments
             UdiDeviceIdentifier = segments.Length > 9 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(9), false) : null;
             DeviceLotNumber = segments.ElementAtOrDefault(10);
             DeviceSerialNumber = segments.ElementAtOrDefault(11);
-            DeviceManufactureDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            DeviceExpiryDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DeviceManufactureDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
+            DeviceExpiryDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
             SafetyCharacteristics = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             DeviceDonationIdentification = segments.Length > 15 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(15), false) : null;
             SoftwareVersionNumber = segments.ElementAtOrDefault(16);

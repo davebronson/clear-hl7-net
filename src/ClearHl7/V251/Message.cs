@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using ClearHl7.Helpers;
+using ClearHl7.V251.Segments;
 
 namespace ClearHl7.V251
 {
@@ -21,7 +24,7 @@ namespace ClearHl7.V251
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            StringBuilder output = new StringBuilder();
+            StringBuilder output = new();
             SegmentHelper segmentHelper = Configuration.AutoSetSubcomponentFlags ? new SegmentHelper() : null;
 
             if (Segments?.Any() == true)

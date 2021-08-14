@@ -94,13 +94,13 @@ namespace ClearHl7.V231.Segments
             AuthorizingPayorPlanId = segments.Length > 1 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(1), false) : null;
             AuthorizingPayorCompanyId = segments.Length > 2 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(2), false) : null;
             AuthorizingPayorCompanyName = segments.ElementAtOrDefault(3);
-            AuthorizationEffectiveDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            AuthorizationExpirationDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            AuthorizationEffectiveDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
+            AuthorizationExpirationDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
             AuthorizationIdentifier = segments.Length > 6 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(6), false) : null;
             ReimbursementLimit = segments.Length > 7 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(7), false) : null;
             RequestedNumberOfTreatments = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
             AuthorizedNumberOfTreatments = segments.ElementAtOrDefault(9)?.ToNullableDecimal();
-            ProcessDate = segments.ElementAtOrDefault(10)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ProcessDate = segments.ElementAtOrDefault(10)?.ToNullableDateTime();
         }
 
         /// <summary>

@@ -157,8 +157,8 @@ namespace ClearHl7.V271.Segments
             AvailableQuantity = segments.ElementAtOrDefault(9)?.ToNullableDecimal();
             ConsumptionQuantity = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
             QuantityUnits = segments.Length > 11 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(11), false) : null;
-            ExpirationDateTime = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            FirstUsedDateTime = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ExpirationDateTime = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
+            FirstUsedDateTime = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
             OnBoardStabilityDuration = segments.ElementAtOrDefault(14);
             TestFluidIdentifiers = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             ManufacturerLotNumber = segments.ElementAtOrDefault(16);

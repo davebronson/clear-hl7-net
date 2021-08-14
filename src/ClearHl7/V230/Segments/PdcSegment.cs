@@ -130,8 +130,8 @@ namespace ClearHl7.V230.Segments
             MarketingApprovalId = segments.ElementAtOrDefault(11);
             LabeledShelfLife = segments.Length > 12 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(12), false) : null;
             ExpectedShelfLife = segments.Length > 13 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(13), false) : null;
-            DateFirstMarketed = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            DateLastMarketed = segments.ElementAtOrDefault(15)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateFirstMarketed = segments.ElementAtOrDefault(14)?.ToNullableDateTime();
+            DateLastMarketed = segments.ElementAtOrDefault(15)?.ToNullableDateTime();
         }
 
         /// <summary>

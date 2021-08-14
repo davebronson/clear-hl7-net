@@ -238,7 +238,7 @@ namespace ClearHl7.V271.Segments
                 }
             }
 
-            CycleStartTime = segments.ElementAtOrDefault(1)?.ToNullableDateTime(Consts.TimeFormatPrecisionSecond);
+            CycleStartTime = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
             CycleCount = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
             TempMax = segments.Length > 3 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(3), false) : null;
             TempMin = segments.Length > 4 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(4), false) : null;
@@ -248,12 +248,12 @@ namespace ClearHl7.V271.Segments
             ExhaustTime = segments.Length > 8 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(8), false) : null;
             TotalCycleTime = segments.Length > 9 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(9), false) : null;
             DeviceStatus = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(10), false) : null;
-            CycleStartDateTime = segments.ElementAtOrDefault(11)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            CycleStartDateTime = segments.ElementAtOrDefault(11)?.ToNullableDateTime();
             DryTime = segments.Length > 12 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(12), false) : null;
             LeakRate = segments.Length > 13 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(13), false) : null;
             ControlTemperature = segments.Length > 14 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(14), false) : null;
             SterilizerTemperature = segments.Length > 15 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(15), false) : null;
-            CycleCompleteTime = segments.ElementAtOrDefault(16)?.ToNullableDateTime(Consts.TimeFormatPrecisionSecond);
+            CycleCompleteTime = segments.ElementAtOrDefault(16)?.ToNullableDateTime();
             UnderTemperature = segments.Length > 17 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(17), false) : null;
             OverTemperature = segments.Length > 18 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(18), false) : null;
             AbortCycle = segments.Length > 19 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(19), false) : null;

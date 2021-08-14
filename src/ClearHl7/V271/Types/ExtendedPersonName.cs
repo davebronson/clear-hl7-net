@@ -114,8 +114,8 @@ namespace ClearHl7.V271.Types
             NameContext = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), true) : null;
             NameValidityRange = segments.Length > 9 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(9), true) : null;
             NameAssemblyOrder = segments.ElementAtOrDefault(10);
-            EffectiveDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ExpirationDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EffectiveDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime();
+            ExpirationDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
             ProfessionalSuffix = segments.ElementAtOrDefault(13);
             CalledBy = segments.ElementAtOrDefault(14);
         }

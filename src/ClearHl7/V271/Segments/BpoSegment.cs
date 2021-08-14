@@ -120,10 +120,10 @@ namespace ClearHl7.V271.Segments
             BpQuantity = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
             BpAmount = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
             BpUnits = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
-            BpIntendedUseDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            BpIntendedUseDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
             BpIntendedDispenseFromLocation = segments.Length > 8 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(8), false) : null;
             BpIntendedDispenseFromAddress = segments.Length > 9 ? TypeHelper.Deserialize<ExtendedAddress>(segments.ElementAtOrDefault(9), false) : null;
-            BpRequestedDispenseDateTime = segments.ElementAtOrDefault(10)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            BpRequestedDispenseDateTime = segments.ElementAtOrDefault(10)?.ToNullableDateTime();
             BpRequestedDispenseToLocation = segments.Length > 11 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(11), false) : null;
             BpRequestedDispenseToAddress = segments.Length > 12 ? TypeHelper.Deserialize<ExtendedAddress>(segments.ElementAtOrDefault(12), false) : null;
             BpIndicationForUse = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;

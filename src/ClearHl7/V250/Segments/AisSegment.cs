@@ -109,7 +109,7 @@ namespace ClearHl7.V250.Segments
             SetIdAis = segments.ElementAtOrDefault(1)?.ToNullableUInt();
             SegmentActionCode = segments.ElementAtOrDefault(2);
             UniversalServiceIdentifier = segments.Length > 3 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(3), false) : null;
-            StartDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            StartDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
             StartDateTimeOffset = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
             StartDateTimeOffsetUnits = segments.Length > 6 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(6), false) : null;
             Duration = segments.ElementAtOrDefault(7)?.ToNullableDecimal();

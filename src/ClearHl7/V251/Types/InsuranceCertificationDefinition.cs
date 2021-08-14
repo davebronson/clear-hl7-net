@@ -43,7 +43,7 @@ namespace ClearHl7.V251.Types
 
             CertificationPatientType = segments.ElementAtOrDefault(0);
             CertificationRequired = segments.ElementAtOrDefault(1);
-            DateTimeCertificationRequired = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeCertificationRequired = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
         }
 
         /// <summary>

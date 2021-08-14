@@ -178,16 +178,16 @@ namespace ClearHl7.V270.Segments
             DuplicatePatient = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
             PublicityCode = segments.Length > 11 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(11), false) : null;
             ProtectionIndicator = segments.ElementAtOrDefault(12);
-            ProtectionIndicatorEffectiveDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            ProtectionIndicatorEffectiveDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
             PlaceOfWorship = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
             AdvanceDirectiveCode = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             ImmunizationRegistryStatus = segments.Length > 16 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(16), false) : null;
-            ImmunizationRegistryStatusEffectiveDate = segments.ElementAtOrDefault(17)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            PublicityCodeEffectiveDate = segments.ElementAtOrDefault(18)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            ImmunizationRegistryStatusEffectiveDate = segments.ElementAtOrDefault(17)?.ToNullableDateTime();
+            PublicityCodeEffectiveDate = segments.ElementAtOrDefault(18)?.ToNullableDateTime();
             MilitaryBranch = segments.Length > 19 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(19), false) : null;
             MilitaryRankGrade = segments.Length > 20 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(20), false) : null;
             MilitaryStatus = segments.Length > 21 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(21), false) : null;
-            AdvanceDirectiveLastVerifiedDate = segments.ElementAtOrDefault(22)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            AdvanceDirectiveLastVerifiedDate = segments.ElementAtOrDefault(22)?.ToNullableDateTime();
         }
 
         /// <summary>

@@ -121,10 +121,10 @@ namespace ClearHl7.V251.Segments
             DischargeCareProvider = segments.Length > 1 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(1), false) : null;
             TransferMedicalServiceCode = segments.Length > 2 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(2), false) : null;
             SeverityOfIllnessCode = segments.Length > 3 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(3), false) : null;
-            DateTimeOfAttestation = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeOfAttestation = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
             AttestedBy = segments.Length > 5 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(5), false) : null;
             TriageCode = segments.Length > 6 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(6), false) : null;
-            AbstractCompletionDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            AbstractCompletionDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
             AbstractedBy = segments.Length > 8 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(8), false) : null;
             CaseCategoryCode = segments.Length > 9 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(9), false) : null;
             CaesarianSectionIndicator = segments.ElementAtOrDefault(10);

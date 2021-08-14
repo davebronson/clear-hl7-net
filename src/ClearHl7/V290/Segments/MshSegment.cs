@@ -195,32 +195,32 @@ namespace ClearHl7.V290.Segments
 
             //FieldSeparator = ;
             //EncodingCharacters = ;
-            SendingApplication = segments.Length > 3 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(3), false) : null;
-            SendingFacility = segments.Length > 4 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(4), false) : null;
-            ReceivingApplication = segments.Length > 5 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(5), false) : null;
-            ReceivingFacility = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<HierarchicDesignator>(x, false)) : null;
-            DateTimeOfMessage = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            Security = segments.ElementAtOrDefault(8);
-            MessageType = segments.Length > 9 ? TypeHelper.Deserialize<MessageType>(segments.ElementAtOrDefault(9), false) : null;
-            MessageControlId = segments.ElementAtOrDefault(10);
-            ProcessingId = segments.Length > 11 ? TypeHelper.Deserialize<ProcessingType>(segments.ElementAtOrDefault(11), false) : null;
-            VersionId = segments.Length > 12 ? TypeHelper.Deserialize<VersionIdentifier>(segments.ElementAtOrDefault(12), false) : null;
-            SequenceNumber = segments.ElementAtOrDefault(13)?.ToNullableDecimal();
-            ContinuationPointer = segments.ElementAtOrDefault(14);
-            AcceptAcknowledgmentType = segments.ElementAtOrDefault(15);
-            ApplicationAcknowledgmentType = segments.ElementAtOrDefault(16);
-            CountryCode = segments.ElementAtOrDefault(17);
-            CharacterSet = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator) : null;
-            PrincipalLanguageOfMessage = segments.Length > 19 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(19), false) : null;
-            AlternateCharacterSetHandlingScheme = segments.ElementAtOrDefault(20);
-            MessageProfileIdentifier = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
-            SendingResponsibleOrganization = segments.Length > 22 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(22), false) : null;
-            ReceivingResponsibleOrganization = segments.Length > 23 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(23), false) : null;
-            SendingNetworkAddress = segments.Length > 24 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(24), false) : null;
-            ReceivingNetworkAddress = segments.Length > 25 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(25), false) : null;
-            SecurityClassificationTag = segments.Length > 26 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(26), false) : null;
-            SecurityHandlingInstructions = segments.Length > 27 ? segments.ElementAtOrDefault(27).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            SpecialAccessRestrictionInstructions = segments.Length > 28 ? segments.ElementAtOrDefault(28).Split(separator) : null;
+            SendingApplication = segments.Length > 2 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(2), false) : null;
+            SendingFacility = segments.Length > 3 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(3), false) : null;
+            ReceivingApplication = segments.Length > 4 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(4), false) : null;
+            ReceivingFacility = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<HierarchicDesignator>(x, false)) : null;
+            DateTimeOfMessage = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
+            Security = segments.ElementAtOrDefault(7);
+            MessageType = segments.Length > 8 ? TypeHelper.Deserialize<MessageType>(segments.ElementAtOrDefault(8), false) : null;
+            MessageControlId = segments.ElementAtOrDefault(9);
+            ProcessingId = segments.Length > 10 ? TypeHelper.Deserialize<ProcessingType>(segments.ElementAtOrDefault(10), false) : null;
+            VersionId = segments.Length > 11 ? TypeHelper.Deserialize<VersionIdentifier>(segments.ElementAtOrDefault(11), false) : null;
+            SequenceNumber = segments.ElementAtOrDefault(12)?.ToNullableDecimal();
+            ContinuationPointer = segments.ElementAtOrDefault(13);
+            AcceptAcknowledgmentType = segments.ElementAtOrDefault(14);
+            ApplicationAcknowledgmentType = segments.ElementAtOrDefault(15);
+            CountryCode = segments.ElementAtOrDefault(16);
+            CharacterSet = segments.Length > 17 ? segments.ElementAtOrDefault(17).Split(separator) : null;
+            PrincipalLanguageOfMessage = segments.Length > 18 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(18), false) : null;
+            AlternateCharacterSetHandlingScheme = segments.ElementAtOrDefault(19);
+            MessageProfileIdentifier = segments.Length > 20 ? segments.ElementAtOrDefault(20).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
+            SendingResponsibleOrganization = segments.Length > 21 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(21), false) : null;
+            ReceivingResponsibleOrganization = segments.Length > 22 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(22), false) : null;
+            SendingNetworkAddress = segments.Length > 23 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(23), false) : null;
+            ReceivingNetworkAddress = segments.Length > 24 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(24), false) : null;
+            SecurityClassificationTag = segments.Length > 25 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(25), false) : null;
+            SecurityHandlingInstructions = segments.Length > 26 ? segments.ElementAtOrDefault(26).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            SpecialAccessRestrictionInstructions = segments.Length > 27 ? segments.ElementAtOrDefault(27).Split(separator) : null;
         }
 
         /// <summary>

@@ -90,8 +90,8 @@ namespace ClearHl7.V231.Segments
             }
 
             WhereSubjectFilter = segments.Length > 1 ? segments.ElementAtOrDefault(1).Split(separator) : null;
-            WhenDataStartDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            WhenDataEndDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            WhenDataStartDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
+            WhenDataEndDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
             WhatUserQualifier = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator) : null;
             OtherQrySubjectFilter = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator) : null;
             WhichDateTimeQualifier = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator) : null;

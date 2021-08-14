@@ -74,7 +74,7 @@ namespace ClearHl7.V271.Segments
             SoftwareProductName = segments.ElementAtOrDefault(3);
             SoftwareBinaryId = segments.ElementAtOrDefault(4);
             SoftwareProductInformation = segments.Length > 5 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(5), false) : null;
-            SoftwareInstallDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            SoftwareInstallDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
         }
 
         /// <summary>

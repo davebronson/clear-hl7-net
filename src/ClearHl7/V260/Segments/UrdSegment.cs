@@ -79,7 +79,7 @@ namespace ClearHl7.V260.Segments
                 }
             }
 
-            RuDateTime = segments.ElementAtOrDefault(1)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            RuDateTime = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
             ReportPriority = segments.ElementAtOrDefault(2);
             RuWhoSubjectDefinition = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             RuWhatSubjectDefinition = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;

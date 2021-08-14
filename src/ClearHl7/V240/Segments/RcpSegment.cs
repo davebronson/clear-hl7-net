@@ -83,7 +83,7 @@ namespace ClearHl7.V240.Segments
             QueryPriority = segments.ElementAtOrDefault(1);
             QuantityLimitedRequest = segments.Length > 2 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(2), false) : null;
             ResponseModality = segments.Length > 3 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(3), false) : null;
-            ExecutionAndDeliveryTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ExecutionAndDeliveryTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
             ModifyIndicator = segments.ElementAtOrDefault(5);
             SortByField = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<SortOrder>(x, false)) : null;
             SegmentGroupInclusion = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator) : null;

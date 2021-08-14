@@ -53,8 +53,8 @@ namespace ClearHl7.V260.Types
 
             Privilege = segments.Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(0), true) : null;
             PrivilegeClass = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), true) : null;
-            ExpirationDate = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            ActivationDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            ExpirationDate = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
+            ActivationDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
             Facility = segments.Length > 4 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(4), true) : null;
         }
 

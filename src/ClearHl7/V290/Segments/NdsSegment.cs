@@ -62,7 +62,7 @@ namespace ClearHl7.V290.Segments
             }
 
             NotificationReferenceNumber = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
-            NotificationDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            NotificationDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
             NotificationAlertSeverity = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
             NotificationCode = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
         }

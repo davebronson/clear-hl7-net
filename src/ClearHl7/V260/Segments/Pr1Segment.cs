@@ -167,7 +167,7 @@ namespace ClearHl7.V260.Segments
             ProcedureCodingMethod = segments.ElementAtOrDefault(2);
             ProcedureCode = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(3), false) : null;
             ProcedureDescription = segments.ElementAtOrDefault(4);
-            ProcedureDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ProcedureDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
             ProcedureFunctionalType = segments.ElementAtOrDefault(6);
             ProcedureMinutes = segments.ElementAtOrDefault(7)?.ToNullableDecimal();
             Anesthesiologist = segments.Length > 8 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(8), false) : null;

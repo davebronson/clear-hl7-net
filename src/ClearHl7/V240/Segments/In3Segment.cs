@@ -182,14 +182,14 @@ namespace ClearHl7.V240.Segments
             CertifiedBy = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             CertificationRequired = segments.ElementAtOrDefault(4);
             Penalty = segments.Length > 5 ? TypeHelper.Deserialize<MoneyOrPercentage>(segments.ElementAtOrDefault(5), false) : null;
-            CertificationDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            CertificationModifyDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            CertificationDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
+            CertificationModifyDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
             Operator = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            CertificationBeginDate = segments.ElementAtOrDefault(9)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            CertificationEndDate = segments.ElementAtOrDefault(10)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            CertificationBeginDate = segments.ElementAtOrDefault(9)?.ToNullableDateTime();
+            CertificationEndDate = segments.ElementAtOrDefault(10)?.ToNullableDateTime();
             Days = segments.Length > 11 ? TypeHelper.Deserialize<DayTypeAndNumber>(segments.ElementAtOrDefault(11), false) : null;
             NonConcurCodeDescription = segments.Length > 12 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(12), false) : null;
-            NonConcurEffectiveDateTime = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            NonConcurEffectiveDateTime = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
             PhysicianReviewer = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             CertificationContact = segments.ElementAtOrDefault(15);
             CertificationContactPhoneNumber = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
@@ -198,7 +198,7 @@ namespace ClearHl7.V240.Segments
             CertificationAgencyPhoneNumber = segments.Length > 19 ? segments.ElementAtOrDefault(19).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
             PreCertificationRequirement = segments.Length > 20 ? segments.ElementAtOrDefault(20).Split(separator).Select(x => TypeHelper.Deserialize<PreCertificationRequired>(x, false)) : null;
             CaseManager = segments.ElementAtOrDefault(21);
-            SecondOpinionDate = segments.ElementAtOrDefault(22)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            SecondOpinionDate = segments.ElementAtOrDefault(22)?.ToNullableDateTime();
             SecondOpinionStatus = segments.ElementAtOrDefault(23);
             SecondOpinionDocumentationReceived = segments.Length > 24 ? segments.ElementAtOrDefault(24).Split(separator) : null;
             SecondOpinionPhysician = segments.Length > 25 ? segments.ElementAtOrDefault(25).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;

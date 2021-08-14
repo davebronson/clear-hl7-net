@@ -130,8 +130,8 @@ namespace ClearHl7.V270.Types
             ExtensionPrefix = segments.ElementAtOrDefault(9);
             SpeedDialCode = segments.ElementAtOrDefault(10);
             UnformattedTelephoneNumber = segments.ElementAtOrDefault(11);
-            EffectiveStartDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ExpirationDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EffectiveStartDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
+            ExpirationDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
             ExpirationReason = segments.Length > 14 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(14), true) : null;
             ProtectionCode = segments.Length > 15 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(15), true) : null;
             SharedTelecommunicationIdentifier = segments.Length > 16 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(16), true) : null;

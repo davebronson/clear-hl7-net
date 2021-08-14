@@ -205,7 +205,7 @@ namespace ClearHl7.V240.Segments
             StaffName = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
             StaffType = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator) : null;
             AdministrativeSex = segments.ElementAtOrDefault(5);
-            DateTimeOfBirth = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeOfBirth = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
             ActiveInactiveFlag = segments.ElementAtOrDefault(7);
             Department = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
             HospitalServiceStf = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
@@ -223,9 +223,9 @@ namespace ClearHl7.V240.Segments
             AdditionalInsuredOnAuto = segments.ElementAtOrDefault(21);
             DriversLicenseNumberStaff = segments.Length > 22 ? TypeHelper.Deserialize<DriversLicenseNumber>(segments.ElementAtOrDefault(22), false) : null;
             CopyAutoIns = segments.ElementAtOrDefault(23);
-            AutoInsExpires = segments.ElementAtOrDefault(24)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            DateLastDmvReview = segments.ElementAtOrDefault(25)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            DateNextDmvReview = segments.ElementAtOrDefault(26)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            AutoInsExpires = segments.ElementAtOrDefault(24)?.ToNullableDateTime();
+            DateLastDmvReview = segments.ElementAtOrDefault(25)?.ToNullableDateTime();
+            DateNextDmvReview = segments.ElementAtOrDefault(26)?.ToNullableDateTime();
             Race = segments.Length > 27 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(27), false) : null;
             EthnicGroup = segments.Length > 28 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(28), false) : null;
             ReactivationApprovalIndicator = segments.ElementAtOrDefault(29);

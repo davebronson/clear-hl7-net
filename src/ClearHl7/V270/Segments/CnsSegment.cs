@@ -71,8 +71,8 @@ namespace ClearHl7.V270.Segments
 
             StartingNotificationReferenceNumber = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
             EndingNotificationReferenceNumber = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
-            StartingNotificationDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            EndingNotificationDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            StartingNotificationDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
+            EndingNotificationDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
             StartingNotificationCode = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
             EndingNotificationCode = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
         }

@@ -167,13 +167,13 @@ namespace ClearHl7.V250.Types
             CheckDigitScheme = segments.ElementAtOrDefault(11);
             IdentifierTypeCode = segments.ElementAtOrDefault(12);
             AssigningFacility = segments.Length > 13 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(13), true) : null;
-            DateTimeActionPerformed = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeActionPerformed = segments.ElementAtOrDefault(14)?.ToNullableDateTime();
             NameRepresentationCode = segments.ElementAtOrDefault(15);
             NameContext = segments.Length > 16 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(16), true) : null;
             NameValidityRange = segments.Length > 17 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(17), true) : null;
             NameAssemblyOrder = segments.ElementAtOrDefault(18);
-            EffectiveDate = segments.ElementAtOrDefault(19)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ExpirationDate = segments.ElementAtOrDefault(20)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EffectiveDate = segments.ElementAtOrDefault(19)?.ToNullableDateTime();
+            ExpirationDate = segments.ElementAtOrDefault(20)?.ToNullableDateTime();
             ProfessionalSuffix = segments.ElementAtOrDefault(21);
             AssigningJurisdiction = segments.Length > 22 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(22), true) : null;
             AssigningAgencyOrDepartment = segments.Length > 23 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(23), true) : null;

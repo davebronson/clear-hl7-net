@@ -116,11 +116,11 @@ namespace ClearHl7.V281.Segments
             SetIdTq1 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
             Quantity = segments.Length > 2 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(2), false) : null;
             RepeatPattern = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<RepeatPattern>(x, false)) : null;
-            ExplicitTime = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => x.ToDateTime(Consts.TimeFormatPrecisionSecond)) : null;
+            ExplicitTime = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => x.ToDateTime()) : null;
             RelativeTimeAndUnits = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<CompositeQuantityWithUnits>(x, false)) : null;
             ServiceDuration = segments.Length > 6 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(6), false) : null;
-            StartDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            EndDateTime = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            StartDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
+            EndDateTime = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
             Priority = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             ConditionText = segments.Length > 10 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(10), false) : null;
             TextInstruction = segments.Length > 11 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(11), false) : null;

@@ -158,16 +158,16 @@ namespace ClearHl7.V251.Segments
             ActionReason = segments.ElementAtOrDefault(8);
             SensitivityToCausativeAgentCode = segments.Length > 9 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(9), false) : null;
             AllergenGroupCodeMnemonicDescription = segments.Length > 10 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(10), false) : null;
-            OnsetDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            OnsetDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime();
             OnsetDateText = segments.ElementAtOrDefault(12);
-            ReportedDateTime = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ReportedDateTime = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
             ReportedBy = segments.Length > 14 ? TypeHelper.Deserialize<ExtendedPersonName>(segments.ElementAtOrDefault(14), false) : null;
             RelationshipToPatientCode = segments.Length > 15 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(15), false) : null;
             AlertDeviceCode = segments.Length > 16 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(16), false) : null;
             AllergyClinicalStatusCode = segments.Length > 17 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(17), false) : null;
             StatusedByPerson = segments.Length > 18 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(18), false) : null;
             StatusedByOrganization = segments.Length > 19 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(19), false) : null;
-            StatusedAtDateTime = segments.ElementAtOrDefault(20)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            StatusedAtDateTime = segments.ElementAtOrDefault(20)?.ToNullableDateTime();
         }
 
         /// <summary>

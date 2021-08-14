@@ -59,10 +59,10 @@ namespace ClearHl7.V270.Segments
                 }
             }
 
-            RequestDate = segments.ElementAtOrDefault(1)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ResponseDueDate = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            RequestDate = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
+            ResponseDueDate = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
             PatientConsent = segments.ElementAtOrDefault(3);
-            DateAdditionalInformationWasSubmitted = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateAdditionalInformationWasSubmitted = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
         }
 
         /// <summary>

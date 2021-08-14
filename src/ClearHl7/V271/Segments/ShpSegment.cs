@@ -105,7 +105,7 @@ namespace ClearHl7.V271.Segments
             ShipmentId = segments.Length > 1 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(1), false) : null;
             InternalShipmentId = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
             ShipmentStatus = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
-            ShipmentStatusDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ShipmentStatusDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
             ShipmentStatusReason = segments.Length > 5 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(5), false) : null;
             ShipmentPriority = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
             ShipmentConfidentiality = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;

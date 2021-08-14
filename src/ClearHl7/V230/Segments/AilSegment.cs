@@ -107,7 +107,7 @@ namespace ClearHl7.V230.Segments
             LocationResourceId = segments.Length > 3 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(3), false) : null;
             LocationTypeAil = segments.Length > 4 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(4), false) : null;
             LocationGroup = segments.Length > 5 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(5), false) : null;
-            StartDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            StartDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
             StartDateTimeOffset = segments.ElementAtOrDefault(7)?.ToNullableDecimal();
             StartDateTimeOffsetUnits = segments.Length > 8 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(8), false) : null;
             Duration = segments.ElementAtOrDefault(9)?.ToNullableDecimal();

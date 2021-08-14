@@ -152,13 +152,13 @@ namespace ClearHl7.V270.Types
             SecondAlternateCodingSystemVersionId = segments.ElementAtOrDefault(12);
             CodingSystemOid = segments.ElementAtOrDefault(13);
             ValueSetOid = segments.ElementAtOrDefault(14);
-            ValueSetVersionId = segments.ElementAtOrDefault(15)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            ValueSetVersionId = segments.ElementAtOrDefault(15)?.ToNullableDateTime();
             AlternateCodingSystemOid = segments.ElementAtOrDefault(16);
             AlternateValueSetOid = segments.ElementAtOrDefault(17);
-            AlternateValueSetVersionId = segments.ElementAtOrDefault(18)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            AlternateValueSetVersionId = segments.ElementAtOrDefault(18)?.ToNullableDateTime();
             SecondAlternateCodingSystemOid = segments.ElementAtOrDefault(19);
             SecondAlternateValueSetOid = segments.ElementAtOrDefault(20);
-            SecondAlternateValueSetVersionId = segments.ElementAtOrDefault(21)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            SecondAlternateValueSetVersionId = segments.ElementAtOrDefault(21)?.ToNullableDateTime();
         }
 
         /// <summary>

@@ -88,8 +88,8 @@ namespace ClearHl7.V260.Types
             Quantity = segments.Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(0), true) : null;
             Interval = segments.Length > 1 ? TypeHelper.Deserialize<RepeatInterval>(segments.ElementAtOrDefault(1), true) : null;
             Duration = segments.ElementAtOrDefault(2);
-            StartDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            EndDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            StartDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
+            EndDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
             Priority = segments.ElementAtOrDefault(5);
             Condition = segments.ElementAtOrDefault(6);
             Text = segments.Length > 7 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(7), true) : null;

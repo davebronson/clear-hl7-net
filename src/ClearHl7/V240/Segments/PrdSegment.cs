@@ -95,8 +95,8 @@ namespace ClearHl7.V240.Segments
             ProviderCommunicationInformation = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
             PreferredMethodOfContact = segments.Length > 6 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(6), false) : null;
             ProviderIdentifiers = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<PractitionerLicenseOrOtherIdNumber>(x, false)) : null;
-            EffectiveStartDateOfProviderRole = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            EffectiveEndDateOfProviderRole = segments.ElementAtOrDefault(9)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EffectiveStartDateOfProviderRole = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
+            EffectiveEndDateOfProviderRole = segments.ElementAtOrDefault(9)?.ToNullableDateTime();
         }
 
         /// <summary>

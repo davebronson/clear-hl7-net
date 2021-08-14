@@ -387,8 +387,8 @@ namespace ClearHl7.V290.Segments
             NatureOfServiceTestObservation = segments.Length > 18 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(18), false) : null;
             ReportSubheader = segments.Length > 19 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(19), false) : null;
             ReportDisplayOrder = segments.ElementAtOrDefault(20);
-            DateTimeStampForAnyChangeInDefinitionForTheObservation = segments.ElementAtOrDefault(21)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            EffectiveDateTimeOfChange = segments.ElementAtOrDefault(22)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeStampForAnyChangeInDefinitionForTheObservation = segments.ElementAtOrDefault(21)?.ToNullableDateTime();
+            EffectiveDateTimeOfChange = segments.ElementAtOrDefault(22)?.ToNullableDateTime();
             TypicalTurnAroundTime = segments.ElementAtOrDefault(23)?.ToNullableDecimal();
             ProcessingTime = segments.ElementAtOrDefault(24)?.ToNullableDecimal();
             ProcessingPriority = segments.Length > 25 ? segments.ElementAtOrDefault(25).Split(separator) : null;

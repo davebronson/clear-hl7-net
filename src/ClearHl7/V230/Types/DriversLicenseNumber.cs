@@ -41,7 +41,7 @@ namespace ClearHl7.V230.Types
 
             LicenseNumber = segments.ElementAtOrDefault(0);
             IssuingStateProvinceCountry = segments.ElementAtOrDefault(1);
-            ExpirationDate = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            ExpirationDate = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
         }
 
         /// <summary>

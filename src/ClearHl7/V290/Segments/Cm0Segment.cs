@@ -101,9 +101,9 @@ namespace ClearHl7.V290.Segments
             AlternateStudyId = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
             TitleOfStudy = segments.ElementAtOrDefault(4);
             ChairmanOfStudy = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            LastIrbApprovalDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            LastIrbApprovalDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
             TotalAccrualToDate = segments.ElementAtOrDefault(7)?.ToNullableDecimal();
-            LastAccrualDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            LastAccrualDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
             ContactForStudy = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             ContactsTelephoneNumber = segments.Length > 10 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments.ElementAtOrDefault(10), false) : null;
             ContactsAddress = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;

@@ -308,15 +308,15 @@ namespace ClearHl7.V260.Segments
             FillerOrderNumber = segments.Length > 3 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(3), false) : null;
             UniversalServiceIdentifier = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
             Priority = segments.ElementAtOrDefault(5);
-            RequestedDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ObservationDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ObservationEndDateTime = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            RequestedDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
+            ObservationDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
+            ObservationEndDateTime = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
             CollectionVolume = segments.Length > 9 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(9), false) : null;
             CollectorIdentifier = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             SpecimenActionCode = segments.ElementAtOrDefault(11);
             DangerCode = segments.Length > 12 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(12), false) : null;
             RelevantClinicalInformation = segments.ElementAtOrDefault(13);
-            SpecimenReceivedDateTime = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            SpecimenReceivedDateTime = segments.ElementAtOrDefault(14)?.ToNullableDateTime();
             SpecimenSource = segments.ElementAtOrDefault(15);
             OrderingProvider = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             OrderCallbackPhoneNumber = segments.Length > 17 ? segments.ElementAtOrDefault(17).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
@@ -324,7 +324,7 @@ namespace ClearHl7.V260.Segments
             PlacerField2 = segments.ElementAtOrDefault(19);
             FillerField1 = segments.ElementAtOrDefault(20);
             FillerField2 = segments.ElementAtOrDefault(21);
-            ResultsRptStatusChngDateTime = segments.ElementAtOrDefault(22)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ResultsRptStatusChngDateTime = segments.ElementAtOrDefault(22)?.ToNullableDateTime();
             ChargeToPractice = segments.Length > 23 ? TypeHelper.Deserialize<MoneyAndChargeCode>(segments.ElementAtOrDefault(23), false) : null;
             DiagnosticServSectId = segments.ElementAtOrDefault(24);
             ResultStatus = segments.ElementAtOrDefault(25);
@@ -338,7 +338,7 @@ namespace ClearHl7.V260.Segments
             AssistantResultInterpreter = segments.Length > 33 ? segments.ElementAtOrDefault(33).Split(separator).Select(x => TypeHelper.Deserialize<NameWithDateAndLocation>(x, false)) : null;
             Technician = segments.Length > 34 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => TypeHelper.Deserialize<NameWithDateAndLocation>(x, false)) : null;
             Transcriptionist = segments.Length > 35 ? segments.ElementAtOrDefault(35).Split(separator).Select(x => TypeHelper.Deserialize<NameWithDateAndLocation>(x, false)) : null;
-            ScheduledDateTime = segments.ElementAtOrDefault(36)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ScheduledDateTime = segments.ElementAtOrDefault(36)?.ToNullableDateTime();
             NumberOfSampleContainers = segments.ElementAtOrDefault(37)?.ToNullableDecimal();
             TransportLogisticsOfCollectedSample = segments.Length > 38 ? segments.ElementAtOrDefault(38).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             CollectorsComment = segments.Length > 39 ? segments.ElementAtOrDefault(39).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;

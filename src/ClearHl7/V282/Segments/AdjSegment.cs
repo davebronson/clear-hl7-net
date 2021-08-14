@@ -131,7 +131,7 @@ namespace ClearHl7.V282.Segments
             AdjustmentAction = segments.Length > 11 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(11), false) : null;
             ProviderAdjustmentNumberCrossReference = segments.Length > 12 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(12), false) : null;
             ProviderProductServiceLineItemNumberCrossReference = segments.Length > 13 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(13), false) : null;
-            AdjustmentDate = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            AdjustmentDate = segments.ElementAtOrDefault(14)?.ToNullableDateTime();
             ResponsibleOrganization = segments.Length > 15 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(15), false) : null;
         }
 

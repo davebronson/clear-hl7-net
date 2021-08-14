@@ -173,7 +173,7 @@ namespace ClearHl7.V230.Segments
             GiveStrength = segments.ElementAtOrDefault(17)?.ToNullableDecimal();
             GiveStrengthUnits = segments.Length > 18 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(18), false) : null;
             SubstanceLotNumber = segments.Length > 19 ? segments.ElementAtOrDefault(19).Split(separator) : null;
-            SubstanceExpirationDate = segments.Length > 20 ? segments.ElementAtOrDefault(20).Split(separator).Select(x => x.ToDateTime(Consts.DateTimeFormatPrecisionSecond)) : null;
+            SubstanceExpirationDate = segments.Length > 20 ? segments.ElementAtOrDefault(20).Split(separator).Select(x => x.ToDateTime()) : null;
             SubstanceManufacturerName = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
             Indication = segments.Length > 22 ? segments.ElementAtOrDefault(22).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
         }

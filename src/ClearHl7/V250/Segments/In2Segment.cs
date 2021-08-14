@@ -453,7 +453,7 @@ namespace ClearHl7.V250.Segments
             MilitaryService = segments.ElementAtOrDefault(14);
             MilitaryRankGrade = segments.ElementAtOrDefault(15);
             MilitaryStatus = segments.ElementAtOrDefault(16);
-            MilitaryRetireDate = segments.ElementAtOrDefault(17)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            MilitaryRetireDate = segments.ElementAtOrDefault(17)?.ToNullableDateTime();
             MilitaryNonAvailCertOnFile = segments.ElementAtOrDefault(18);
             BabyCoverage = segments.ElementAtOrDefault(19);
             CombineBabyBill = segments.ElementAtOrDefault(20);
@@ -480,8 +480,8 @@ namespace ClearHl7.V250.Segments
             Nationality = segments.Length > 41 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(41), false) : null;
             EthnicGroup = segments.Length > 42 ? segments.ElementAtOrDefault(42).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
             MaritalStatus = segments.Length > 43 ? segments.ElementAtOrDefault(43).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            InsuredsEmploymentStartDate = segments.ElementAtOrDefault(44)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            EmploymentStopDate = segments.ElementAtOrDefault(45)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            InsuredsEmploymentStartDate = segments.ElementAtOrDefault(44)?.ToNullableDateTime();
+            EmploymentStopDate = segments.ElementAtOrDefault(45)?.ToNullableDateTime();
             JobTitle = segments.ElementAtOrDefault(46);
             JobCodeClass = segments.Length > 47 ? TypeHelper.Deserialize<JobCodeClass>(segments.ElementAtOrDefault(47), false) : null;
             JobStatus = segments.ElementAtOrDefault(48);
@@ -491,8 +491,8 @@ namespace ClearHl7.V250.Segments
             InsuredsContactPersonsName = segments.Length > 52 ? segments.ElementAtOrDefault(52).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
             InsuredsContactPersonPhoneNumber = segments.Length > 53 ? segments.ElementAtOrDefault(53).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
             InsuredsContactPersonReason = segments.Length > 54 ? segments.ElementAtOrDefault(54).Split(separator) : null;
-            RelationshipToThePatientStartDate = segments.ElementAtOrDefault(55)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            RelationshipToThePatientStopDate = segments.Length > 56 ? segments.ElementAtOrDefault(56).Split(separator).Select(x => x.ToDateTime(Consts.DateFormatPrecisionDay)) : null;
+            RelationshipToThePatientStartDate = segments.ElementAtOrDefault(55)?.ToNullableDateTime();
+            RelationshipToThePatientStopDate = segments.Length > 56 ? segments.ElementAtOrDefault(56).Split(separator).Select(x => x.ToDateTime()) : null;
             InsuranceCoContactReason = segments.ElementAtOrDefault(57);
             InsuranceCoContactPhoneNumber = segments.Length > 58 ? segments.ElementAtOrDefault(58).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
             PolicyScope = segments.ElementAtOrDefault(59);

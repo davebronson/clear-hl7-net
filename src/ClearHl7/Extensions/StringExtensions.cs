@@ -8,17 +8,29 @@ namespace ClearHl7.Extensions
     /// </summary>
     public static class StringExtensions
     {
+        private static string[] ValidDateTimeFormats = {
+            Consts.DateTimeFormatPrecisionSecond,
+            Consts.DateFormatPrecisionDay,
+
+            Consts.DateTimeFormatPrecisionMinute,
+            Consts.DateTimeFormatPrecisionHour,
+            Consts.DateFormatPrecisionMonth,
+            Consts.DateFormatPrecisionYear,
+            Consts.TimeFormatPrecisionSecond,
+            Consts.TimeFormatPrecisionMinute,
+            Consts.TimeFormatPrecisionHour
+        };
+
         /// <summary>
         /// Converts the specified string representation of a date to its DateTime equivalent, if possible.
         /// </summary>
         /// <param name="input">A string containing the value to convert.</param>
-        /// <param name="format">The expected format of the date represented within the input string.</param>
         /// <returns>A DateTime.</returns>
-        public static DateTime ToDateTime(this string input, string format)
+        public static DateTime ToDateTime(this string input)
         {
             if (string.IsNullOrEmpty(input)) { return DateTime.MinValue; }
 
-            DateTime.TryParseExact(input, format, CultureInfo.CurrentCulture, DateTimeStyles.None, out DateTime returnValue);
+            DateTime.TryParseExact(input, ValidDateTimeFormats, CultureInfo.CurrentCulture, DateTimeStyles.None, out DateTime returnValue);
 
             return returnValue;
         }
@@ -27,13 +39,12 @@ namespace ClearHl7.Extensions
         /// Converts the specified string representation of a date to its nullable DateTime equivalent, if possible.
         /// </summary>
         /// <param name="input">A string containing the value to convert.</param>
-        /// <param name="format">The expected format of the date represented within the input string.</param>
         /// <returns>A DateTime, or null if the input provided is cannot be converted to a DateTime that follows the provided format.</returns>
-        public static DateTime? ToNullableDateTime(this string input, string format)
+        public static DateTime? ToNullableDateTime(this string input)
         {
             if (string.IsNullOrEmpty(input)) { return null; }
 
-            bool success = DateTime.TryParseExact(input, format, CultureInfo.CurrentCulture, DateTimeStyles.None, out DateTime returnValue);
+            bool success = DateTime.TryParseExact(input, ValidDateTimeFormats, CultureInfo.CurrentCulture, DateTimeStyles.None, out DateTime returnValue);
 
             return success ? returnValue : null;
         }

@@ -72,7 +72,7 @@ namespace ClearHl7.V230.Segments
                 }
             }
 
-            AccidentDateTime = segments.ElementAtOrDefault(1)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            AccidentDateTime = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
             AccidentCode = segments.Length > 2 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(2), false) : null;
             AccidentLocation = segments.ElementAtOrDefault(3);
             AutoAccidentState = segments.Length > 4 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(4), false) : null;

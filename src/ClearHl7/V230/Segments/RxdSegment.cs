@@ -167,7 +167,7 @@ namespace ClearHl7.V230.Segments
 
             DispenseSubIdCounter = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
             DispenseGiveCode = segments.Length > 2 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(2), false) : null;
-            DateTimeDispensed = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeDispensed = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
             ActualDispenseAmount = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
             ActualDispenseUnits = segments.Length > 5 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(5), false) : null;
             ActualDosageForm = segments.Length > 6 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(6), false) : null;
@@ -183,7 +183,7 @@ namespace ClearHl7.V230.Segments
             ActualStrength = segments.ElementAtOrDefault(16)?.ToNullableDecimal();
             ActualStrengthUnit = segments.Length > 17 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(17), false) : null;
             SubstanceLotNumber = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator) : null;
-            SubstanceExpirationDate = segments.Length > 19 ? segments.ElementAtOrDefault(19).Split(separator).Select(x => x.ToDateTime(Consts.DateTimeFormatPrecisionSecond)) : null;
+            SubstanceExpirationDate = segments.Length > 19 ? segments.ElementAtOrDefault(19).Split(separator).Select(x => x.ToDateTime()) : null;
             SubstanceManufacturerName = segments.Length > 20 ? segments.ElementAtOrDefault(20).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
             Indication = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
             DispensePackageSize = segments.ElementAtOrDefault(22)?.ToNullableDecimal();

@@ -117,8 +117,8 @@ namespace ClearHl7.V271.Segments
             SenderSequenceNumber = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
             SenderEventDescription = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator) : null;
             SenderComment = segments.ElementAtOrDefault(8);
-            SenderAwareDateTime = segments.ElementAtOrDefault(9)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            EventReportDate = segments.ElementAtOrDefault(10)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            SenderAwareDateTime = segments.ElementAtOrDefault(9)?.ToNullableDateTime();
+            EventReportDate = segments.ElementAtOrDefault(10)?.ToNullableDateTime();
             EventReportTimingType = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator) : null;
             EventReportSource = segments.ElementAtOrDefault(12);
             EventReportedTo = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator) : null;

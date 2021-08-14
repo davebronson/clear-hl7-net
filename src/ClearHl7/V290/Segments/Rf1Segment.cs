@@ -180,13 +180,13 @@ namespace ClearHl7.V290.Segments
             ReferralDisposition = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             ReferralCategory = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
             OriginatingReferralIdentifier = segments.Length > 6 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(6), false) : null;
-            EffectiveDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ExpirationDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ProcessDate = segments.ElementAtOrDefault(9)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EffectiveDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
+            ExpirationDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
+            ProcessDate = segments.ElementAtOrDefault(9)?.ToNullableDateTime();
             ReferralReason = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             ExternalReferralIdentifier = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
             ReferralDocumentationCompletionStatus = segments.Length > 12 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(12), false) : null;
-            PlannedTreatmentStopDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            PlannedTreatmentStopDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
             ReferralReasonText = segments.ElementAtOrDefault(14);
             NumberOfAuthorizedTreatmentsUnits = segments.Length > 15 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(15), false) : null;
             NumberOfUsedTreatmentsUnits = segments.Length > 16 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(16), false) : null;
@@ -195,7 +195,7 @@ namespace ClearHl7.V290.Segments
             AuthorizedProvider = segments.Length > 19 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(19), false) : null;
             AuthorizedHealthProfessional = segments.Length > 20 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(20), false) : null;
             SourceText = segments.ElementAtOrDefault(21);
-            SourceDate = segments.ElementAtOrDefault(22)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            SourceDate = segments.ElementAtOrDefault(22)?.ToNullableDateTime();
             SourcePhone = segments.Length > 23 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments.ElementAtOrDefault(23), false) : null;
             Comment = segments.ElementAtOrDefault(24);
             ActionCode = segments.ElementAtOrDefault(25);

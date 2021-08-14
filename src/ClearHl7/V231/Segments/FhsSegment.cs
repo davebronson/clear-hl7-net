@@ -104,7 +104,7 @@ namespace ClearHl7.V231.Segments
             FileSendingFacility = segments.ElementAtOrDefault(4);
             FileReceivingApplication = segments.ElementAtOrDefault(5);
             FileReceivingFacility = segments.ElementAtOrDefault(6);
-            FileCreationDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            FileCreationDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
             FileSecurity = segments.ElementAtOrDefault(8);
             FileNameId = segments.ElementAtOrDefault(9);
             FileHeaderComment = segments.ElementAtOrDefault(10);

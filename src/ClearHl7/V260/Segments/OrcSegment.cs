@@ -212,13 +212,13 @@ namespace ClearHl7.V260.Segments
             ResponseFlag = segments.ElementAtOrDefault(6);
             QuantityTiming = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<TimingQuantity>(x, false)) : null;
             ParentOrder = segments.Length > 8 ? TypeHelper.Deserialize<EntityIdentifierPair>(segments.ElementAtOrDefault(8), false) : null;
-            DateTimeOfTransaction = segments.ElementAtOrDefault(9)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeOfTransaction = segments.ElementAtOrDefault(9)?.ToNullableDateTime();
             EnteredBy = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             VerifiedBy = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             OrderingProvider = segments.Length > 12 ? segments.ElementAtOrDefault(12).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             EnterersLocation = segments.Length > 13 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(13), false) : null;
             CallBackPhoneNumber = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
-            OrderEffectiveDateTime = segments.ElementAtOrDefault(15)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            OrderEffectiveDateTime = segments.ElementAtOrDefault(15)?.ToNullableDateTime();
             OrderControlCodeReason = segments.Length > 16 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(16), false) : null;
             EnteringOrganization = segments.Length > 17 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(17), false) : null;
             EnteringDevice = segments.Length > 18 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(18), false) : null;
@@ -230,7 +230,7 @@ namespace ClearHl7.V260.Segments
             OrderingProviderAddress = segments.Length > 24 ? segments.ElementAtOrDefault(24).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
             OrderStatusModifier = segments.Length > 25 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(25), false) : null;
             AdvancedBeneficiaryNoticeOverrideReason = segments.Length > 26 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(26), false) : null;
-            FillersExpectedAvailabilityDateTime = segments.ElementAtOrDefault(27)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            FillersExpectedAvailabilityDateTime = segments.ElementAtOrDefault(27)?.ToNullableDateTime();
             ConfidentialityCode = segments.Length > 28 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(28), false) : null;
             OrderType = segments.Length > 29 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(29), false) : null;
             EntererAuthorizationMode = segments.Length > 30 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(30), false) : null;

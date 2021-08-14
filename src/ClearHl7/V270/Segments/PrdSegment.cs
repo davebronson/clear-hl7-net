@@ -122,8 +122,8 @@ namespace ClearHl7.V270.Segments
             ProviderCommunicationInformation = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
             PreferredMethodOfContact = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
             ProviderIdentifiers = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<PractitionerLicenseOrOtherIdNumber>(x, false)) : null;
-            EffectiveStartDateOfProviderRole = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            EffectiveEndDateOfProviderRole = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => x.ToDateTime(Consts.DateTimeFormatPrecisionSecond)) : null;
+            EffectiveStartDateOfProviderRole = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
+            EffectiveEndDateOfProviderRole = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => x.ToDateTime()) : null;
             ProviderOrganizationNameAndIdentifier = segments.Length > 10 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(10), false) : null;
             ProviderOrganizationAddress = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
             ProviderOrganizationLocationInformation = segments.Length > 12 ? segments.ElementAtOrDefault(12).Split(separator).Select(x => TypeHelper.Deserialize<PersonLocation>(x, false)) : null;

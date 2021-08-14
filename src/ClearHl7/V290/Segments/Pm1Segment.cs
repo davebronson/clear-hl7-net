@@ -182,8 +182,8 @@ namespace ClearHl7.V290.Segments
             InsuranceCoPhoneNumber = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
             GroupNumber = segments.ElementAtOrDefault(7);
             GroupName = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
-            PlanEffectiveDate = segments.ElementAtOrDefault(9)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            PlanExpirationDate = segments.ElementAtOrDefault(10)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            PlanEffectiveDate = segments.ElementAtOrDefault(9)?.ToNullableDateTime();
+            PlanExpirationDate = segments.ElementAtOrDefault(10)?.ToNullableDateTime();
             PatientDobRequired = segments.ElementAtOrDefault(11);
             PatientGenderRequired = segments.ElementAtOrDefault(12);
             PatientRelationshipRequired = segments.ElementAtOrDefault(13);

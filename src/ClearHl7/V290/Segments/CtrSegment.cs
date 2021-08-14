@@ -156,14 +156,14 @@ namespace ClearHl7.V290.Segments
             ContractIdentifier = segments.Length > 1 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(1), false) : null;
             ContractDescription = segments.ElementAtOrDefault(2);
             ContractStatus = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
-            EffectiveDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ExpirationDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EffectiveDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
+            ExpirationDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
             ContractOwnerName = segments.Length > 6 ? TypeHelper.Deserialize<ExtendedPersonName>(segments.ElementAtOrDefault(6), false) : null;
             ContractOriginatorName = segments.Length > 7 ? TypeHelper.Deserialize<ExtendedPersonName>(segments.ElementAtOrDefault(7), false) : null;
             SupplierType = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
             ContractType = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), false) : null;
             FreeOnBoardFreightTerms = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(10), false) : null;
-            PriceProtectionDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            PriceProtectionDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime();
             FixedPriceContractIndicator = segments.Length > 12 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(12), false) : null;
             GroupPurchasingOrganization = segments.Length > 13 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(13), false) : null;
             MaximumMarkup = segments.Length > 14 ? TypeHelper.Deserialize<MoneyOrPercentage>(segments.ElementAtOrDefault(14), false) : null;

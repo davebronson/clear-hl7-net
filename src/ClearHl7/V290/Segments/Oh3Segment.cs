@@ -86,8 +86,8 @@ namespace ClearHl7.V290.Segments
             Occupation = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
             Industry = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
             UsualOccupationDurationYears = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
-            StartYear = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            EnteredDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            StartYear = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
+            EnteredDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
             WorkUniqueIdentifier = segments.Length > 8 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(8), false) : null;
         }
 

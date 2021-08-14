@@ -251,8 +251,8 @@ namespace ClearHl7.V290.Segments
             SpecimenHandlingCode = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             SpecimenRiskCode = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             SpecimenCollectionDateTime = segments.Length > 17 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(17), false) : null;
-            SpecimenReceivedDateTime = segments.ElementAtOrDefault(18)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            SpecimenExpirationDateTime = segments.ElementAtOrDefault(19)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            SpecimenReceivedDateTime = segments.ElementAtOrDefault(18)?.ToNullableDateTime();
+            SpecimenExpirationDateTime = segments.ElementAtOrDefault(19)?.ToNullableDateTime();
             SpecimenAvailability = segments.ElementAtOrDefault(20);
             SpecimenRejectReason = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             SpecimenQuality = segments.Length > 22 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(22), false) : null;
@@ -266,8 +266,8 @@ namespace ClearHl7.V290.Segments
             AccessionId = segments.Length > 30 ? segments.ElementAtOrDefault(30).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
             OtherSpecimenId = segments.Length > 31 ? segments.ElementAtOrDefault(31).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
             ShipmentId = segments.Length > 32 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(32), false) : null;
-            CultureStartDateTime = segments.ElementAtOrDefault(33)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            CultureFinalDateTime = segments.ElementAtOrDefault(34)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            CultureStartDateTime = segments.ElementAtOrDefault(33)?.ToNullableDateTime();
+            CultureFinalDateTime = segments.ElementAtOrDefault(34)?.ToNullableDateTime();
             ActionCode = segments.ElementAtOrDefault(35);
         }
 

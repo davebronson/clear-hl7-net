@@ -315,7 +315,7 @@ namespace ClearHl7.V290.Segments
             PrimaryParentContainerIdentifier = segments.Length > 4 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(4), false) : null;
             EquipmentContainerIdentifier = segments.Length > 5 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(5), false) : null;
             SpecimenSource = segments.ElementAtOrDefault(6);
-            RegistrationDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            RegistrationDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
             ContainerStatus = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
             CarrierType = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), false) : null;
             CarrierIdentifier = segments.Length > 10 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(10), false) : null;

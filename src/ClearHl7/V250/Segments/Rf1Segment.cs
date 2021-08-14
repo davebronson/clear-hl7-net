@@ -108,9 +108,9 @@ namespace ClearHl7.V250.Segments
             ReferralDisposition = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
             ReferralCategory = segments.Length > 5 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(5), false) : null;
             OriginatingReferralIdentifier = segments.Length > 6 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(6), false) : null;
-            EffectiveDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ExpirationDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ProcessDate = segments.ElementAtOrDefault(9)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EffectiveDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
+            ExpirationDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
+            ProcessDate = segments.ElementAtOrDefault(9)?.ToNullableDateTime();
             ReferralReason = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
             ExternalReferralIdentifier = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
         }

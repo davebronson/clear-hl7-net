@@ -35,7 +35,7 @@ namespace ClearHl7.V230.Types
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
             OccurrenceCode = segments.Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(0), true) : null;
-            OccurrenceDate = segments.ElementAtOrDefault(1)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            OccurrenceDate = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
         }
 
         /// <summary>

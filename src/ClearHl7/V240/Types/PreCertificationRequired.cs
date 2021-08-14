@@ -43,7 +43,7 @@ namespace ClearHl7.V240.Types
 
             PreCertificationPatientType = segments.ElementAtOrDefault(0);
             PreCertificationIsRequired = segments.ElementAtOrDefault(1);
-            PreCertificationWindow = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            PreCertificationWindow = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
         }
 
         /// <summary>

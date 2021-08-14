@@ -176,10 +176,10 @@ namespace ClearHl7.V230.Segments
 
             EventIdentifiersUsed = segments.Length > 1 ? segments.ElementAtOrDefault(1).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
             EventSymptomDiagnosisCode = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            EventOnsetDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            EventExacerbationDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            EventImprovedDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            EventEndedDataTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EventOnsetDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
+            EventExacerbationDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
+            EventImprovedDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
+            EventEndedDataTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
             EventLocationOccurredAddress = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
             EventQualification = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator) : null;
             EventSerious = segments.ElementAtOrDefault(9);
@@ -197,7 +197,7 @@ namespace ClearHl7.V230.Segments
             PrimaryObserverTelephone = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
             PrimaryObserversQualification = segments.ElementAtOrDefault(22);
             ConfirmationProvidedBy = segments.ElementAtOrDefault(23);
-            PrimaryObserverAwareDateTime = segments.ElementAtOrDefault(24)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            PrimaryObserverAwareDateTime = segments.ElementAtOrDefault(24)?.ToNullableDateTime();
             PrimaryObserversIdentityMayBeDivulged = segments.ElementAtOrDefault(25);
         }
 

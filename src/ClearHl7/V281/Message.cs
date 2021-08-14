@@ -21,7 +21,7 @@ namespace ClearHl7.V281
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            StringBuilder output = new StringBuilder();
+            StringBuilder output = new();
             SegmentHelper segmentHelper = Configuration.AutoSetSubcomponentFlags ? new SegmentHelper() : null;
 
             if (Segments?.Any() == true)

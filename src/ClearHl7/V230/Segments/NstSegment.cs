@@ -117,8 +117,8 @@ namespace ClearHl7.V230.Segments
             StatisticsAvailable = segments.ElementAtOrDefault(1);
             SourceIdentifier = segments.ElementAtOrDefault(2);
             SourceType = segments.ElementAtOrDefault(3);
-            StatisticsStart = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            StatisticsEnd = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            StatisticsStart = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
+            StatisticsEnd = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
             ReceiveCharacterCount = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
             SendCharacterCount = segments.ElementAtOrDefault(7)?.ToNullableDecimal();
             MessagesReceived = segments.ElementAtOrDefault(8)?.ToNullableDecimal();

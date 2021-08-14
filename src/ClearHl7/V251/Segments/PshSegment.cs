@@ -115,9 +115,9 @@ namespace ClearHl7.V251.Segments
 
             ReportType = segments.ElementAtOrDefault(1);
             ReportFormIdentifier = segments.ElementAtOrDefault(2);
-            ReportDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ReportIntervalStartDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ReportIntervalEndDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ReportDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
+            ReportIntervalStartDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
+            ReportIntervalEndDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
             QuantityManufactured = segments.Length > 6 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(6), false) : null;
             QuantityDistributed = segments.Length > 7 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(7), false) : null;
             QuantityDistributedMethod = segments.ElementAtOrDefault(8);

@@ -36,7 +36,7 @@ namespace ClearHl7.V251.Types
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
             FinancialClassCode = segments.ElementAtOrDefault(0);
-            EffectiveDate = segments.ElementAtOrDefault(1)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EffectiveDate = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
         }
 
         /// <summary>

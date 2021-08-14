@@ -148,24 +148,24 @@ namespace ClearHl7.V240.Segments
             }
 
             ActionCode = segments.ElementAtOrDefault(1);
-            ActionDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ActionDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
             GoalId = segments.Length > 3 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(3), false) : null;
             GoalInstanceId = segments.Length > 4 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(4), false) : null;
             EpisodeOfCareId = segments.Length > 5 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(5), false) : null;
             GoalListPriority = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
-            GoalEstablishedDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ExpectedGoalAchieveDateTime = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            GoalEstablishedDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
+            ExpectedGoalAchieveDateTime = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
             GoalClassification = segments.Length > 9 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(9), false) : null;
             GoalManagementDiscipline = segments.Length > 10 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(10), false) : null;
             CurrentGoalReviewStatus = segments.Length > 11 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(11), false) : null;
-            CurrentGoalReviewDateTime = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            NextGoalReviewDateTime = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            PreviousGoalReviewDateTime = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            CurrentGoalReviewDateTime = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
+            NextGoalReviewDateTime = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
+            PreviousGoalReviewDateTime = segments.ElementAtOrDefault(14)?.ToNullableDateTime();
             GoalReviewInterval = segments.Length > 15 ? TypeHelper.Deserialize<TimingQuantity>(segments.ElementAtOrDefault(15), false) : null;
             GoalEvaluation = segments.Length > 16 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(16), false) : null;
             GoalEvaluationComment = segments.Length > 17 ? segments.ElementAtOrDefault(17).Split(separator) : null;
             GoalLifeCycleStatus = segments.Length > 18 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(18), false) : null;
-            GoalLifeCycleStatusDateTime = segments.ElementAtOrDefault(19)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            GoalLifeCycleStatusDateTime = segments.ElementAtOrDefault(19)?.ToNullableDateTime();
             GoalTargetType = segments.Length > 20 ? segments.ElementAtOrDefault(20).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
             GoalTargetName = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
         }

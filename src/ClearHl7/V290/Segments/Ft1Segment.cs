@@ -340,7 +340,7 @@ namespace ClearHl7.V290.Segments
             TransactionId = segments.Length > 2 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(2), false) : null;
             TransactionBatchId = segments.ElementAtOrDefault(3);
             TransactionDate = segments.Length > 4 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(4), false) : null;
-            TransactionPostingDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            TransactionPostingDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
             TransactionType = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
             TransactionCode = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(7), false) : null;
             TransactionDescription = segments.ElementAtOrDefault(8);
@@ -382,9 +382,9 @@ namespace ClearHl7.V290.Segments
             DmeCertificateOfMedicalNecessityTransmissionCode = segments.Length > 44 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(44), false) : null;
             DmeCertificationTypeCode = segments.Length > 45 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(45), false) : null;
             DmeDurationValue = segments.ElementAtOrDefault(46)?.ToNullableDecimal();
-            DmeCertificationRevisionDate = segments.ElementAtOrDefault(47)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            DmeInitialCertificationDate = segments.ElementAtOrDefault(48)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            DmeLastCertificationDate = segments.ElementAtOrDefault(49)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            DmeCertificationRevisionDate = segments.ElementAtOrDefault(47)?.ToNullableDateTime();
+            DmeInitialCertificationDate = segments.ElementAtOrDefault(48)?.ToNullableDateTime();
+            DmeLastCertificationDate = segments.ElementAtOrDefault(49)?.ToNullableDateTime();
             DmeLengthOfMedicalNecessityDays = segments.ElementAtOrDefault(50)?.ToNullableDecimal();
             DmeRentalPrice = segments.Length > 51 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(51), false) : null;
             DmePurchasePrice = segments.Length > 52 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(52), false) : null;

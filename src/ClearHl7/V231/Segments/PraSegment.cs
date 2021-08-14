@@ -93,7 +93,7 @@ namespace ClearHl7.V231.Segments
             Specialty = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<SpecialtyDescription>(x, false)) : null;
             PractitionerIdNumbers = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<PractitionerLicenseOrOtherIdNumber>(x, false)) : null;
             Privileges = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<PractitionerInstitutionalPrivileges>(x, false)) : null;
-            DateEnteredPractice = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            DateEnteredPractice = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
         }
 
         /// <summary>

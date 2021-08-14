@@ -43,7 +43,7 @@ namespace ClearHl7.V230.Segments
                 }
             }
 
-            SystemDateTime = segments.ElementAtOrDefault(1)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            SystemDateTime = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
         }
 
         /// <summary>

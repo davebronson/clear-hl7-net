@@ -140,7 +140,7 @@ namespace ClearHl7.V240.Types
             CheckDigitScheme = segments.ElementAtOrDefault(11);
             IdentifierTypeCode = segments.ElementAtOrDefault(12);
             AssigningFacility = segments.Length > 13 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(13), true) : null;
-            DateTimeActionPerformed = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeActionPerformed = segments.ElementAtOrDefault(14)?.ToNullableDateTime();
             NameRepresentationCode = segments.ElementAtOrDefault(15);
             NameContext = segments.Length > 16 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(16), true) : null;
             NameValidityRange = segments.Length > 17 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(17), true) : null;

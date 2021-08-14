@@ -192,8 +192,8 @@ namespace ClearHl7.V281.Segments
 
             GiveSubIdCounter = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
             AdministrationSubIdCounter = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
-            DateTimeStartOfAdministration = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            DateTimeEndOfAdministration = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeStartOfAdministration = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
+            DateTimeEndOfAdministration = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
             AdministeredCode = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
             AdministeredAmount = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
             AdministeredUnits = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(7), false) : null;
@@ -205,13 +205,13 @@ namespace ClearHl7.V281.Segments
             AdministeredStrength = segments.ElementAtOrDefault(13)?.ToNullableDecimal();
             AdministeredStrengthUnits = segments.Length > 14 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(14), false) : null;
             SubstanceLotNumber = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator) : null;
-            SubstanceExpirationDate = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => x.ToDateTime(Consts.DateTimeFormatPrecisionSecond)) : null;
+            SubstanceExpirationDate = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => x.ToDateTime()) : null;
             SubstanceManufacturerName = segments.Length > 17 ? segments.ElementAtOrDefault(17).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             SubstanceTreatmentRefusalReason = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             Indication = segments.Length > 19 ? segments.ElementAtOrDefault(19).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             CompletionStatus = segments.ElementAtOrDefault(20);
             ActionCodeRxa = segments.ElementAtOrDefault(21);
-            SystemEntryDateTime = segments.ElementAtOrDefault(22)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            SystemEntryDateTime = segments.ElementAtOrDefault(22)?.ToNullableDateTime();
             AdministeredDrugStrengthVolume = segments.ElementAtOrDefault(23)?.ToNullableDecimal();
             AdministeredDrugStrengthVolumeUnits = segments.Length > 24 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(24), false) : null;
             AdministeredBarcodeIdentifier = segments.Length > 25 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(25), false) : null;

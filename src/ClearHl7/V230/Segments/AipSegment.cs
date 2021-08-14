@@ -108,7 +108,7 @@ namespace ClearHl7.V230.Segments
             PersonnelResourceId = segments.Length > 3 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(3), false) : null;
             ResourceType = segments.Length > 4 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(4), false) : null;
             ResourceGroup = segments.Length > 5 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(5), false) : null;
-            StartDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            StartDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
             StartDateTimeOffset = segments.ElementAtOrDefault(7)?.ToNullableDecimal();
             StartDateTimeOffsetUnits = segments.Length > 8 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(8), false) : null;
             Duration = segments.ElementAtOrDefault(9)?.ToNullableDecimal();

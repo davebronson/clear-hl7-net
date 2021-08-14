@@ -121,14 +121,14 @@ namespace ClearHl7.V290.Segments
             PrimaryKeyValueIim = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
             ServiceItemCode = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
             InventoryLotNumber = segments.ElementAtOrDefault(3);
-            InventoryExpirationDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            InventoryExpirationDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
             InventoryManufacturerName = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
             InventoryLocation = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
-            InventoryReceivedDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            InventoryReceivedDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
             InventoryReceivedQuantity = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
             InventoryReceivedQuantityUnit = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), false) : null;
             InventoryReceivedItemCost = segments.Length > 10 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(10), false) : null;
-            InventoryOnHandDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            InventoryOnHandDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime();
             InventoryOnHandQuantity = segments.ElementAtOrDefault(12)?.ToNullableDecimal();
             InventoryOnHandQuantityUnit = segments.Length > 13 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(13), false) : null;
             ProcedureCode = segments.Length > 14 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(14), false) : null;

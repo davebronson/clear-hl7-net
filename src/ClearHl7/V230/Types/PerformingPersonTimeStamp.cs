@@ -117,7 +117,7 @@ namespace ClearHl7.V230.Types
             CheckDigitScheme = segments.ElementAtOrDefault(11);
             IdentifierTypeCode = segments.ElementAtOrDefault(12);
             AssigningFacility = segments.Length > 13 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(13), true) : null;
-            DateTimeActionPerformed = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeActionPerformed = segments.ElementAtOrDefault(14)?.ToNullableDateTime();
         }
 
         /// <summary>

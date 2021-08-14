@@ -126,16 +126,16 @@ namespace ClearHl7.V231.Segments
             InstitutionRegisteringThePatient = segments.Length > 3 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(3), false) : null;
             SponsorPatientId = segments.Length > 4 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(4), false) : null;
             AlternatePatientIdCsr = segments.Length > 5 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(5), false) : null;
-            DateTimeOfPatientStudyRegistration = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeOfPatientStudyRegistration = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
             PersonPerformingStudyRegistration = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             StudyAuthorizingProvider = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            DateTimePatientStudyConsentSigned = segments.ElementAtOrDefault(9)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimePatientStudyConsentSigned = segments.ElementAtOrDefault(9)?.ToNullableDateTime();
             PatientStudyEligibilityStatus = segments.Length > 10 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(10), false) : null;
-            StudyRandomizationDateTime = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => x.ToDateTime(Consts.DateTimeFormatPrecisionSecond)) : null;
+            StudyRandomizationDateTime = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => x.ToDateTime()) : null;
             RandomizedStudyArm = segments.Length > 12 ? segments.ElementAtOrDefault(12).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
             StratumForStudyRandomization = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
             PatientEvaluabilityStatus = segments.Length > 14 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(14), false) : null;
-            DateTimeEndedStudy = segments.ElementAtOrDefault(15)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeEndedStudy = segments.ElementAtOrDefault(15)?.ToNullableDateTime();
             ReasonEndedStudy = segments.Length > 16 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(16), false) : null;
         }
 

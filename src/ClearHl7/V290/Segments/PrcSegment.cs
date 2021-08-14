@@ -150,8 +150,8 @@ namespace ClearHl7.V290.Segments
             MaximumQuantity = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
             MinimumPrice = segments.Length > 9 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(9), false) : null;
             MaximumPrice = segments.Length > 10 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(10), false) : null;
-            EffectiveStartDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            EffectiveEndDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EffectiveStartDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime();
+            EffectiveEndDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
             PriceOverrideFlag = segments.Length > 13 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(13), false) : null;
             BillingCategory = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             ChargeableFlag = segments.ElementAtOrDefault(15);

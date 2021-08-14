@@ -92,7 +92,7 @@ namespace ClearHl7.V290.Segments
             DeathCauseCode = segments.Length > 1 ? segments.ElementAtOrDefault(1).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             DeathLocation = segments.Length > 2 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(2), false) : null;
             DeathCertifiedIndicator = segments.ElementAtOrDefault(3);
-            DeathCertificateSignedDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DeathCertificateSignedDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
             DeathCertifiedBy = segments.Length > 5 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(5), false) : null;
             AutopsyIndicator = segments.ElementAtOrDefault(6);
             AutopsyStartAndEndDateTime = segments.Length > 7 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(7), false) : null;

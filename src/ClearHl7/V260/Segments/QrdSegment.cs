@@ -107,12 +107,12 @@ namespace ClearHl7.V260.Segments
                 }
             }
 
-            QueryDateTime = segments.ElementAtOrDefault(1)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            QueryDateTime = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
             QueryFormatCode = segments.ElementAtOrDefault(2);
             QueryPriority = segments.ElementAtOrDefault(3);
             QueryId = segments.ElementAtOrDefault(4);
             DeferredResponseType = segments.ElementAtOrDefault(5);
-            DeferredResponseDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DeferredResponseDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
             QuantityLimitedRequest = segments.Length > 7 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(7), false) : null;
             WhoSubjectFilter = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             WhatSubjectFilter = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null; ;

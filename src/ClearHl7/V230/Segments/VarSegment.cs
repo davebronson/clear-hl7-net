@@ -72,8 +72,8 @@ namespace ClearHl7.V230.Segments
             }
 
             VarianceInstanceId = segments.Length > 1 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(1), false) : null;
-            DocumentedDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            StatedVarianceDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DocumentedDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
+            StatedVarianceDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
             VarianceOriginator = segments.Length > 4 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(4), false) : null;
             VarianceClassification = segments.Length > 5 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(5), false) : null;
             VarianceDescription = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator) : null;

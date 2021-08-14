@@ -158,10 +158,10 @@ namespace ClearHl7.V290.Types
             SecondAlternateUnitOfMeasureCodingSystemVersionId = segments.ElementAtOrDefault(13);
             UnitOfMeasureCodingSystemOid = segments.ElementAtOrDefault(14);
             UnitOfMeasureValueSetOid = segments.ElementAtOrDefault(15);
-            UnitOfMeasureValueSetVersionId = segments.ElementAtOrDefault(16)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            UnitOfMeasureValueSetVersionId = segments.ElementAtOrDefault(16)?.ToNullableDateTime();
             AlternateUnitOfMeasureCodingSystemOid = segments.ElementAtOrDefault(17);
             AlternateUnitOfMeasureValueSetOid = segments.ElementAtOrDefault(18);
-            AlternateUnitOfMeasureValueSetVersionId = segments.ElementAtOrDefault(19)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            AlternateUnitOfMeasureValueSetVersionId = segments.ElementAtOrDefault(19)?.ToNullableDateTime();
             AlternateUnitOfMeasureCodingSystemOidAdditional = segments.ElementAtOrDefault(20);
             AlternateUnitOfMeasureValueSetOidAdditional = segments.ElementAtOrDefault(21);
             AlternateUnitOfMeasureValueSetVersionIdAdditional = segments.ElementAtOrDefault(22);

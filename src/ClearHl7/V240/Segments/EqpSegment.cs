@@ -67,8 +67,8 @@ namespace ClearHl7.V240.Segments
 
             EventType = segments.Length > 1 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(1), false) : null;
             FileName = segments.ElementAtOrDefault(2);
-            StartDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            EndDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            StartDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
+            EndDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
             TransactionData = segments.ElementAtOrDefault(5);
         }
 

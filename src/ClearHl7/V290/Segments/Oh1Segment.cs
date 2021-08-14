@@ -78,9 +78,9 @@ namespace ClearHl7.V290.Segments
             SetId = segments.ElementAtOrDefault(1)?.ToNullableUInt();
             ActionCode = segments.ElementAtOrDefault(2);
             EmploymentStatus = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
-            EmploymentStatusStartDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            EmploymentStatusEndDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            EnteredDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            EmploymentStatusStartDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
+            EmploymentStatusEndDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
+            EnteredDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
             EmploymentStatusUniqueIdentifier = segments.Length > 7 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(7), false) : null;
         }
 

@@ -69,7 +69,7 @@ namespace ClearHl7.V251.Segments
 
             RecordLevelEventCode = segments.ElementAtOrDefault(1);
             MfnControlId = segments.ElementAtOrDefault(2);
-            EffectiveDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EffectiveDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
             PrimaryKeyValueMfe = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator) : null;
             PrimaryKeyValueType = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator) : null;
         }

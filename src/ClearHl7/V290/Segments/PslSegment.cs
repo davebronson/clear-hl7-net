@@ -300,8 +300,8 @@ namespace ClearHl7.V290.Segments
             ProductServiceCode = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(7), false) : null;
             ProductServiceCodeModifier = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
             ProductServiceCodeDescription = segments.ElementAtOrDefault(9);
-            ProductServiceEffectiveDate = segments.ElementAtOrDefault(10)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ProductServiceExpirationDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ProductServiceEffectiveDate = segments.ElementAtOrDefault(10)?.ToNullableDateTime();
+            ProductServiceExpirationDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime();
             ProductServiceQuantity = segments.Length > 12 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(12), false) : null;
             ProductServiceUnitCost = segments.Length > 13 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(13), false) : null;
             NumberOfItemsPerUnit = segments.ElementAtOrDefault(14)?.ToNullableDecimal();

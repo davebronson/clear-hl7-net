@@ -208,7 +208,7 @@ namespace ClearHl7.V230.Segments
             AlternatePatientIdPid = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator) : null;
             PatientName = segments.Length > 5 ? TypeHelper.Deserialize<ExtendedPersonName>(segments.ElementAtOrDefault(5), false) : null;
             MothersMaidenName = segments.Length > 6 ? TypeHelper.Deserialize<ExtendedPersonName>(segments.ElementAtOrDefault(6), false) : null;
-            DateTimeOfBirth = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeOfBirth = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
             AdministrativeSex = segments.ElementAtOrDefault(8);
             PatientAlias = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
             Race = segments.ElementAtOrDefault(10);
@@ -230,7 +230,7 @@ namespace ClearHl7.V230.Segments
             Citizenship = segments.Length > 26 ? segments.ElementAtOrDefault(26).Split(separator) : null;
             VeteransMilitaryStatus = segments.Length > 27 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(27), false) : null;
             Nationality = segments.Length > 28 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(28), false) : null;
-            PatientDeathDateAndTime = segments.ElementAtOrDefault(29)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            PatientDeathDateAndTime = segments.ElementAtOrDefault(29)?.ToNullableDateTime();
             PatientDeathIndicator = segments.ElementAtOrDefault(30);
         }
 

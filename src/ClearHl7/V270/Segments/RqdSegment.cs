@@ -100,7 +100,7 @@ namespace ClearHl7.V270.Segments
             CostCenterAccountNumber = segments.Length > 7 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(7), false) : null;
             ItemNaturalAccountCode = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
             DeliverToId = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), false) : null;
-            DateNeeded = segments.ElementAtOrDefault(10)?.ToNullableDateTime(Consts.DateFormatPrecisionDay); ;
+            DateNeeded = segments.ElementAtOrDefault(10)?.ToNullableDateTime(); ;
         }
 
         /// <summary>

@@ -87,10 +87,10 @@ namespace ClearHl7.V290.Segments
             DisabledPersonCode = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
             DisabledPersonIdentifier = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
             DisabilityIndicator = segments.ElementAtOrDefault(4);
-            DisabilityStartDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            DisabilityEndDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            DisabilityReturnToWorkDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            DisabilityUnableToWorkDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            DisabilityStartDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
+            DisabilityEndDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
+            DisabilityReturnToWorkDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
+            DisabilityUnableToWorkDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
         }
 
         /// <summary>

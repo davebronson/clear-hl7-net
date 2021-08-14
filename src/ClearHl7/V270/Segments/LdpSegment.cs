@@ -114,8 +114,8 @@ namespace ClearHl7.V270.Segments
             SpecialtyType = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             ValidPatientClasses = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             ActiveInactiveFlag = segments.ElementAtOrDefault(6);
-            ActivationDateLdp = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            InactivationDateLdp = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ActivationDateLdp = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
+            InactivationDateLdp = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
             InactivatedReason = segments.ElementAtOrDefault(9);
             VisitingHours = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<VisitingHours>(x, false)) : null;
             ContactPhone = segments.Length > 11 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments.ElementAtOrDefault(11), false) : null;

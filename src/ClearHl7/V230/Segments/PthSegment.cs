@@ -73,9 +73,9 @@ namespace ClearHl7.V230.Segments
             ActionCode = segments.ElementAtOrDefault(1);
             PathwayId = segments.Length > 2 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(2), false) : null;
             PathwayInstanceId = segments.Length > 3 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(3), false) : null;
-            PathwayEstablishedDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            PathwayEstablishedDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
             PathwayLifeCycleStatus = segments.Length > 5 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(5), false) : null;
-            ChangePathwayLifeCycleStatusDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ChangePathwayLifeCycleStatusDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
         }
 
         /// <summary>

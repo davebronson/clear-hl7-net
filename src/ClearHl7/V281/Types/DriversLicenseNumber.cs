@@ -42,7 +42,7 @@ namespace ClearHl7.V281.Types
 
             LicenseNumber = segments.ElementAtOrDefault(0);
             IssuingStateProvinceCountry = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), true) : null;
-            ExpirationDate = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            ExpirationDate = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
         }
 
         /// <summary>

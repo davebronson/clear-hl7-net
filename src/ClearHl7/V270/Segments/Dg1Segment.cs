@@ -190,7 +190,7 @@ namespace ClearHl7.V270.Segments
             DiagnosisCodingMethod = segments.ElementAtOrDefault(2);
             DiagnosisCodeDg1 = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
             DiagnosisDescription = segments.ElementAtOrDefault(4);
-            DiagnosisDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DiagnosisDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
             DiagnosisType = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
             MajorDiagnosticCategory = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(7), false) : null;
             DiagnosticRelatedGroup = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(8), false) : null;
@@ -204,7 +204,7 @@ namespace ClearHl7.V270.Segments
             DiagnosingClinician = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             DiagnosisClassification = segments.Length > 17 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(17), false) : null;
             ConfidentialIndicator = segments.ElementAtOrDefault(18);
-            AttestationDateTime = segments.ElementAtOrDefault(19)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            AttestationDateTime = segments.ElementAtOrDefault(19)?.ToNullableDateTime();
             DiagnosisIdentifier = segments.Length > 20 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(20), false) : null;
             DiagnosisActionCode = segments.ElementAtOrDefault(21);
             ParentDiagnosis = segments.Length > 22 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(22), false) : null;

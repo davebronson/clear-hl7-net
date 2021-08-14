@@ -96,7 +96,7 @@ namespace ClearHl7.V230.Segments
             }
 
             DiagnosticRelatedGroup = segments.Length > 1 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(1), false) : null;
-            DrgAssignedDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DrgAssignedDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
             DrgApprovalIndicator = segments.ElementAtOrDefault(3);
             DrgGrouperReviewCode = segments.ElementAtOrDefault(4);
             OutlierType = segments.Length > 5 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(5), false) : null;

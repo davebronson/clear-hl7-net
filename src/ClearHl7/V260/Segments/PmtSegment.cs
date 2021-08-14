@@ -101,10 +101,10 @@ namespace ClearHl7.V260.Segments
             }
 
             PaymentRemittanceAdviceNumber = segments.Length > 1 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(1), false) : null;
-            PaymentRemittanceEffectiveDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            PaymentRemittanceExpirationDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            PaymentRemittanceEffectiveDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
+            PaymentRemittanceExpirationDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
             PaymentMethod = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
-            PaymentRemittanceDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            PaymentRemittanceDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
             PaymentRemittanceAmount = segments.Length > 6 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(6), false) : null;
             CheckNumber = segments.Length > 7 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(7), false) : null;
             PayeeBankIdentification = segments.Length > 8 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(8), false) : null;

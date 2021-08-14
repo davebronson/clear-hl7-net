@@ -78,8 +78,8 @@ namespace ClearHl7.V282.Segments
             MasterFileIdentifier = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
             MasterFileApplicationIdentifier = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => TypeHelper.Deserialize<HierarchicDesignator>(x, false)) : null;
             FileLevelEventCode = segments.ElementAtOrDefault(3);
-            EnteredDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            EffectiveDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EnteredDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
+            EffectiveDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
             ResponseLevelCode = segments.ElementAtOrDefault(6);
         }
 

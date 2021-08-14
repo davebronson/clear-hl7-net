@@ -43,7 +43,7 @@ namespace ClearHl7.V282.Types
 
             CertificationPatientType = segments.Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(0), true) : null;
             CertificationRequired = segments.ElementAtOrDefault(1);
-            DateTimeCertificationRequired = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeCertificationRequired = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
         }
 
         /// <summary>

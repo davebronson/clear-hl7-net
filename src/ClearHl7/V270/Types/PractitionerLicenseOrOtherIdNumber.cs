@@ -48,7 +48,7 @@ namespace ClearHl7.V270.Types
             IdNumber = segments.ElementAtOrDefault(0);
             TypeOfIdNumber = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), true) : null;
             StateOtherQualifyingInformation = segments.ElementAtOrDefault(2);
-            ExpirationDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            ExpirationDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
         }
 
         /// <summary>

@@ -105,7 +105,7 @@ namespace ClearHl7.V250.Segments
             FileSendingFacility = segments.Length > 4 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(4), false) : null;
             FileReceivingApplication = segments.Length > 5 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(5), false) : null;
             FileReceivingFacility = segments.Length > 6 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(6), false) : null;
-            FileCreationDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            FileCreationDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
             FileSecurity = segments.ElementAtOrDefault(8);
             FileNameId = segments.ElementAtOrDefault(9);
             FileHeaderComment = segments.ElementAtOrDefault(10);

@@ -71,8 +71,8 @@ namespace ClearHl7.V290.Segments
 
             DiagnosisCodeMcp = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
             ProcedureCode = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            EffectiveDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ExpirationDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EffectiveDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
+            ExpirationDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
             TypeOfLimitation = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(5), false) : null;
         }
 

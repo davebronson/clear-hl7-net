@@ -162,7 +162,7 @@ namespace ClearHl7.V290.Segments
             SetIdBpx = segments.ElementAtOrDefault(1)?.ToNullableUInt();
             BpDispenseStatus = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
             BpStatus = segments.ElementAtOrDefault(3);
-            BpDateTimeOfStatus = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            BpDateTimeOfStatus = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
             BcDonationId = segments.Length > 5 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(5), false) : null;
             BcComponent = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(6), false) : null;
             BcDonationTypeIntendedUse = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(7), false) : null;
@@ -171,7 +171,7 @@ namespace ClearHl7.V290.Segments
             CpLotNumber = segments.Length > 10 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(10), false) : null;
             BpBloodGroup = segments.Length > 11 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(11), false) : null;
             BcSpecialTesting = segments.Length > 12 ? segments.ElementAtOrDefault(12).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithNoExceptions>(x, false)) : null;
-            BpExpirationDateTime = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            BpExpirationDateTime = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
             BpQuantity = segments.ElementAtOrDefault(14)?.ToNullableDecimal();
             BpAmount = segments.ElementAtOrDefault(15)?.ToNullableDecimal();
             BpUnits = segments.Length > 16 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(16), false) : null;

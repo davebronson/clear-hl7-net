@@ -76,7 +76,7 @@ namespace ClearHl7.V281.Segments
 
             RecordLevelEventCode = segments.ElementAtOrDefault(1);
             MfnControlId = segments.ElementAtOrDefault(2);
-            EventCompletionDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EventCompletionDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
             MfnRecordLevelErrorReturn = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
             PrimaryKeyValueMfa = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator) : null;
             PrimaryKeyValueTypeMfa = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator) : null;

@@ -104,7 +104,7 @@ namespace ClearHl7.V231.Segments
             BatchSendingFacility = segments.ElementAtOrDefault(4);
             BatchReceivingApplication = segments.ElementAtOrDefault(5);
             BatchReceivingFacility = segments.ElementAtOrDefault(6);
-            BatchCreationDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            BatchCreationDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
             BatchSecurity = segments.ElementAtOrDefault(8);
             BatchNameIdType = segments.ElementAtOrDefault(9);
             BatchComment = segments.ElementAtOrDefault(10);

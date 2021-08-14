@@ -227,13 +227,13 @@ namespace ClearHl7.V251.Segments
             JurisdictionStateProvince = segments.Length > 20 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(20), false) : null;
             JurisdictionCountyParish = segments.Length > 21 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(21), false) : null;
             JurisdictionBreadth = segments.Length > 22 ? segments.ElementAtOrDefault(22).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            GrantingDate = segments.ElementAtOrDefault(23)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            IssuingDate = segments.ElementAtOrDefault(24)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ActivationDate = segments.ElementAtOrDefault(25)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            InactivationDate = segments.ElementAtOrDefault(26)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ExpirationDate = segments.ElementAtOrDefault(27)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            RenewalDate = segments.ElementAtOrDefault(28)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            RevocationDate = segments.ElementAtOrDefault(29)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            GrantingDate = segments.ElementAtOrDefault(23)?.ToNullableDateTime();
+            IssuingDate = segments.ElementAtOrDefault(24)?.ToNullableDateTime();
+            ActivationDate = segments.ElementAtOrDefault(25)?.ToNullableDateTime();
+            InactivationDate = segments.ElementAtOrDefault(26)?.ToNullableDateTime();
+            ExpirationDate = segments.ElementAtOrDefault(27)?.ToNullableDateTime();
+            RenewalDate = segments.ElementAtOrDefault(28)?.ToNullableDateTime();
+            RevocationDate = segments.ElementAtOrDefault(29)?.ToNullableDateTime();
             RevocationReasonCode = segments.Length > 30 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(30), false) : null;
             CertificateStatusCode = segments.Length > 31 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(31), false) : null;
         }

@@ -121,7 +121,7 @@ namespace ClearHl7.V290.Segments
             ResourceGroup = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             ResourceQuantity = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
             ResourceQuantityUnits = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(7), false) : null;
-            StartDateTime = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            StartDateTime = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
             StartDateTimeOffset = segments.ElementAtOrDefault(9)?.ToNullableDecimal();
             StartDateTimeOffsetUnits = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(10), false) : null;
             Duration = segments.ElementAtOrDefault(11)?.ToNullableDecimal();

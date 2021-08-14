@@ -87,7 +87,7 @@ namespace ClearHl7.V280.Segments
             PackageQuantity = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
             Price = segments.Length > 5 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(5), false) : null;
             FutureItemPrice = segments.Length > 6 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(6), false) : null;
-            FutureItemPriceEffectiveDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            FutureItemPriceEffectiveDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
             GlobalTradeItemNumber = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
         }
 

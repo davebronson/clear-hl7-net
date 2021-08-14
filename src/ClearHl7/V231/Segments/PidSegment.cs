@@ -209,7 +209,7 @@ namespace ClearHl7.V231.Segments
             AlternatePatientIdPid = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
             PatientName = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
             MothersMaidenName = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
-            DateTimeOfBirth = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeOfBirth = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
             AdministrativeSex = segments.ElementAtOrDefault(8);
             PatientAlias = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
             Race = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
@@ -231,7 +231,7 @@ namespace ClearHl7.V231.Segments
             Citizenship = segments.Length > 26 ? segments.ElementAtOrDefault(26).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
             VeteransMilitaryStatus = segments.Length > 27 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(27), false) : null;
             Nationality = segments.Length > 28 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(28), false) : null;
-            PatientDeathDateAndTime = segments.ElementAtOrDefault(29)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            PatientDeathDateAndTime = segments.ElementAtOrDefault(29)?.ToNullableDateTime();
             PatientDeathIndicator = segments.ElementAtOrDefault(30);
         }
 

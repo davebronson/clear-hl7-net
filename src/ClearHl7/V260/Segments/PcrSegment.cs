@@ -171,10 +171,10 @@ namespace ClearHl7.V260.Segments
             GenericProduct = segments.ElementAtOrDefault(2);
             ProductClass = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
             TotalDurationOfTherapy = segments.Length > 4 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(4), false) : null;
-            ProductManufactureDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ProductExpirationDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ProductImplantationDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ProductExplantationDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ProductManufactureDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
+            ProductExpirationDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
+            ProductImplantationDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
+            ProductExplantationDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
             SingleUseDevice = segments.ElementAtOrDefault(9);
             IndicationForProductUse = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(10), false) : null;
             ProductProblem = segments.ElementAtOrDefault(11);
@@ -184,7 +184,7 @@ namespace ClearHl7.V260.Segments
             ProductEvaluationStatus = segments.Length > 15 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(15), false) : null;
             ProductEvaluationResults = segments.Length > 16 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(16), false) : null;
             EvaluatedProductSource = segments.ElementAtOrDefault(17);
-            DateProductReturnedToManufacturer = segments.ElementAtOrDefault(18)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateProductReturnedToManufacturer = segments.ElementAtOrDefault(18)?.ToNullableDateTime();
             DeviceOperatorQualifications = segments.ElementAtOrDefault(19);
             RelatednessAssessment = segments.ElementAtOrDefault(20);
             ActionTakenInResponseToTheEvent = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator) : null;

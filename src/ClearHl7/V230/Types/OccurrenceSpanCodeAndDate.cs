@@ -40,8 +40,8 @@ namespace ClearHl7.V230.Types
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
             OccurrenceSpanCode = segments.Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(0), true) : null;
-            OccurrenceSpanStartDate = segments.ElementAtOrDefault(1)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            OccurrenceSpanStopDate = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            OccurrenceSpanStartDate = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
+            OccurrenceSpanStopDate = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
         }
 
         /// <summary>

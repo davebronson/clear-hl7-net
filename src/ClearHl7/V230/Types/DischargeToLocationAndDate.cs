@@ -35,7 +35,7 @@ namespace ClearHl7.V230.Types
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
             DischargeToLocation = segments.ElementAtOrDefault(0);
-            EffectiveDate = segments.ElementAtOrDefault(1)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EffectiveDate = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
         }
 
         /// <summary>

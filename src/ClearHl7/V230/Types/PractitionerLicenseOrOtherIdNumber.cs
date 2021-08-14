@@ -47,7 +47,7 @@ namespace ClearHl7.V230.Types
             IdNumber = segments.ElementAtOrDefault(0);
             TypeOfIdNumber = segments.ElementAtOrDefault(1);
             StateOtherQualifyingInformation = segments.ElementAtOrDefault(2);
-            ExpirationDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            ExpirationDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
         }
 
         /// <summary>

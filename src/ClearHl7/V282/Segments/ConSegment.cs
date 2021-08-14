@@ -189,10 +189,10 @@ namespace ClearHl7.V282.Segments
             ConsenterImposedLimitations = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator) : null;
             ConsentMode = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(10), false) : null;
             ConsentStatus = segments.Length > 11 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(11), false) : null;
-            ConsentDiscussionDateTime = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ConsentDecisionDateTime = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ConsentEffectiveDateTime = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ConsentEndDateTime = segments.ElementAtOrDefault(15)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ConsentDiscussionDateTime = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
+            ConsentDecisionDateTime = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
+            ConsentEffectiveDateTime = segments.ElementAtOrDefault(14)?.ToNullableDateTime();
+            ConsentEndDateTime = segments.ElementAtOrDefault(15)?.ToNullableDateTime();
             SubjectCompetenceIndicator = segments.ElementAtOrDefault(16);
             TranslatorAssistanceIndicator = segments.ElementAtOrDefault(17);
             LanguageTranslatedTo = segments.Length > 18 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(18), false) : null;

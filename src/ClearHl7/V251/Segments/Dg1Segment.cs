@@ -162,7 +162,7 @@ namespace ClearHl7.V251.Segments
             DiagnosisCodingMethod = segments.ElementAtOrDefault(2);
             DiagnosisCodeDg1 = segments.Length > 3 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(3), false) : null;
             DiagnosisDescription = segments.ElementAtOrDefault(4);
-            DiagnosisDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DiagnosisDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
             DiagnosisType = segments.ElementAtOrDefault(6);
             MajorDiagnosticCategory = segments.Length > 7 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(7), false) : null;
             DiagnosticRelatedGroup = segments.Length > 8 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(8), false) : null;
@@ -176,7 +176,7 @@ namespace ClearHl7.V251.Segments
             DiagnosingClinician = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             DiagnosisClassification = segments.ElementAtOrDefault(17);
             ConfidentialIndicator = segments.ElementAtOrDefault(18);
-            AttestationDateTime = segments.ElementAtOrDefault(19)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            AttestationDateTime = segments.ElementAtOrDefault(19)?.ToNullableDateTime();
             DiagnosisIdentifier = segments.Length > 20 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(20), false) : null;
             DiagnosisActionCode = segments.ElementAtOrDefault(21);
         }

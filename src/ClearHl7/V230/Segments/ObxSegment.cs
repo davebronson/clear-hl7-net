@@ -141,9 +141,9 @@ namespace ClearHl7.V230.Segments
             Probability = segments.ElementAtOrDefault(9)?.ToNullableDecimal();
             NatureOfAbnormalTest = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator) : null;
             ObservationResultStatus = segments.ElementAtOrDefault(11);
-            EffectiveDateOfReferenceRange = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EffectiveDateOfReferenceRange = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
             UserDefinedAccessChecks = segments.ElementAtOrDefault(13);
-            DateTimeOfTheObservation = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeOfTheObservation = segments.ElementAtOrDefault(14)?.ToNullableDateTime();
             ProducersId = segments.Length > 15 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(15), false) : null;
             ResponsibleObserver = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             ObservationMethod = segments.Length > 17 ? segments.ElementAtOrDefault(17).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;

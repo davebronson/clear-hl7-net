@@ -165,11 +165,11 @@ namespace ClearHl7.V230.Segments
             SetIdTxa = segments.ElementAtOrDefault(1)?.ToNullableUInt();
             DocumentType = segments.ElementAtOrDefault(2);
             DocumentContentPresentation = segments.ElementAtOrDefault(3);
-            ActivityDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ActivityDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
             PrimaryActivityProviderCodeName = segments.Length > 5 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(5), false) : null;
-            OriginationDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            TranscriptionDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            EditDateTime = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => x.ToDateTime(Consts.DateTimeFormatPrecisionSecond)) : null;
+            OriginationDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
+            TranscriptionDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
+            EditDateTime = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => x.ToDateTime()) : null;
             OriginatorCodeName = segments.Length > 9 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(9), false) : null;
             AssignedDocumentAuthenticator = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             TranscriptionistCodeName = segments.Length > 11 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(11), false) : null;

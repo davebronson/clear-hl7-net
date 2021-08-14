@@ -57,7 +57,7 @@ namespace ClearHl7.V271.Segments
             }
 
             RiskManagementIncidentCode = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
-            DateTimeIncident = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeIncident = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
             IncidentTypeCode = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
         }
 

@@ -84,9 +84,9 @@ namespace ClearHl7.V270.Segments
             ProviderCrossReferenceIdentifier = segments.Length > 2 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(2), false) : null;
             PayerCrossReferenceIdentifier = segments.Length > 3 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(3), false) : null;
             IprStatus = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
-            IprDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            IprDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
             AdjudicatedPaidAmount = segments.Length > 6 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(6), false) : null;
-            ExpectedPaymentDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ExpectedPaymentDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
             IprChecksum = segments.ElementAtOrDefault(8);
         }
 

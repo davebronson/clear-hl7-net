@@ -78,7 +78,7 @@ namespace ClearHl7.V271.Segments
             AllergenCodeMnemonicDescription = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
             AllergySeverityCode = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
             AllergyReactionCode = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator) : null;
-            IdentificationDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            IdentificationDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
         }
 
         /// <summary>

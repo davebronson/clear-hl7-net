@@ -213,7 +213,7 @@ namespace ClearHl7.V260.Segments
             TransactionId = segments.ElementAtOrDefault(2);
             TransactionBatchId = segments.ElementAtOrDefault(3);
             TransactionDate = segments.Length > 4 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(4), false) : null;
-            TransactionPostingDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            TransactionPostingDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
             TransactionType = segments.ElementAtOrDefault(6);
             TransactionCode = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(7), false) : null;
             TransactionDescription = segments.ElementAtOrDefault(8);

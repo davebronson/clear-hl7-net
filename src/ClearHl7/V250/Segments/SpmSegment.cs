@@ -219,8 +219,8 @@ namespace ClearHl7.V250.Segments
             SpecimenHandlingCode = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             SpecimenRiskCode = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             SpecimenCollectionDateTime = segments.Length > 17 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(17), false) : null;
-            SpecimenReceivedDateTime = segments.ElementAtOrDefault(18)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            SpecimenExpirationDateTime = segments.ElementAtOrDefault(19)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            SpecimenReceivedDateTime = segments.ElementAtOrDefault(18)?.ToNullableDateTime();
+            SpecimenExpirationDateTime = segments.ElementAtOrDefault(19)?.ToNullableDateTime();
             SpecimenAvailability = segments.ElementAtOrDefault(20);
             SpecimenRejectReason = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             SpecimenQuality = segments.Length > 22 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(22), false) : null;

@@ -88,9 +88,9 @@ namespace ClearHl7.V260.Segments
             Comment = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator) : null;
             CommentType = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
             EnteredBy = segments.Length > 5 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(5), false) : null;
-            EnteredDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            EffectiveStartDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ExpirationDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EnteredDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
+            EffectiveStartDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
+            ExpirationDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
         }
 
         /// <summary>

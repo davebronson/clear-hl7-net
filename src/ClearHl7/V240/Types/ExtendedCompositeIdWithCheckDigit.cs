@@ -72,8 +72,8 @@ namespace ClearHl7.V240.Types
             AssigningAuthority = segments.Length > 3 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(3), true) : null;
             IdentifierTypeCode = segments.ElementAtOrDefault(4);
             AssigningFacility = segments.Length > 5 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(5), true) : null;
-            EffectiveDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            ExpirationDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            EffectiveDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
+            ExpirationDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
         }
 
         /// <summary>

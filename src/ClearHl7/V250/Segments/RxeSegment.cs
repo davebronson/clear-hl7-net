@@ -285,7 +285,7 @@ namespace ClearHl7.V250.Segments
             PrescriptionNumber = segments.ElementAtOrDefault(15);
             NumberOfRefillsRemaining = segments.ElementAtOrDefault(16)?.ToNullableDecimal();
             NumberOfRefillsDosesDispensed = segments.ElementAtOrDefault(17)?.ToNullableDecimal();
-            DateTimeOfMostRecentRefillOrDoseDispensed = segments.ElementAtOrDefault(18)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeOfMostRecentRefillOrDoseDispensed = segments.ElementAtOrDefault(18)?.ToNullableDateTime();
             TotalDailyDose = segments.Length > 19 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(19), false) : null;
             NeedsHumanReview = segments.ElementAtOrDefault(20);
             SpecialDispensingInstructions = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
@@ -299,7 +299,7 @@ namespace ClearHl7.V250.Segments
             DispensePackageSizeUnit = segments.Length > 29 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(29), false) : null;
             DispensePackageMethod = segments.ElementAtOrDefault(30);
             SupplementaryCode = segments.Length > 31 ? segments.ElementAtOrDefault(31).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            OriginalOrderDateTime = segments.ElementAtOrDefault(32)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            OriginalOrderDateTime = segments.ElementAtOrDefault(32)?.ToNullableDateTime();
             GiveDrugStrengthVolume = segments.ElementAtOrDefault(33)?.ToNullableDecimal();
             GiveDrugStrengthVolumeUnits = segments.Length > 34 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(34), false) : null;
             ControlledSubstanceSchedule = segments.Length > 35 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(35), false) : null;

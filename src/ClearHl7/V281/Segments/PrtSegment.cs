@@ -129,8 +129,8 @@ namespace ClearHl7.V281.Segments
             ParticipationOrganization = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
             ParticipantLocation = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<PersonLocation>(x, false)) : null;
             ParticipationDevice = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
-            ParticipationBeginDateTimeArrivalTime = segments.ElementAtOrDefault(11)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ParticipationEndDateTimeDepartureTime = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ParticipationBeginDateTimeArrivalTime = segments.ElementAtOrDefault(11)?.ToNullableDateTime();
+            ParticipationEndDateTimeDepartureTime = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
             ParticipationQualitativeDuration = segments.Length > 13 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(13), false) : null;
             ParticipationAddress = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
             ParticipantTelecommunicationAddress = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;

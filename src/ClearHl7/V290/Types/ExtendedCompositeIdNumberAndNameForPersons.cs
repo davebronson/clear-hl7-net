@@ -176,8 +176,8 @@ namespace ClearHl7.V290.Types
             NameContext = segments.Length > 15 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(15), true) : null;
             NameValidityRange = segments.Length > 16 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(16), true) : null;
             NameAssemblyOrder = segments.ElementAtOrDefault(17);
-            EffectiveDate = segments.ElementAtOrDefault(18)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ExpirationDate = segments.ElementAtOrDefault(19)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EffectiveDate = segments.ElementAtOrDefault(18)?.ToNullableDateTime();
+            ExpirationDate = segments.ElementAtOrDefault(19)?.ToNullableDateTime();
             ProfessionalSuffix = segments.ElementAtOrDefault(20);
             AssigningJurisdiction = segments.Length > 21 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(21), true) : null;
             AssigningAgencyOrDepartment = segments.Length > 22 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(22), true) : null;

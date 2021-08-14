@@ -94,8 +94,8 @@ namespace ClearHl7.V282.Types
             AssigningAuthority = segments.Length > 3 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(3), true) : null;
             IdentifierTypeCode = segments.ElementAtOrDefault(4);
             AssigningFacility = segments.Length > 5 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(5), true) : null;
-            EffectiveDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            ExpirationDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            EffectiveDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
+            ExpirationDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
             AssigningJurisdiction = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), true) : null;
             AssigningAgencyOrDepartment = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), true) : null;
             SecurityCheck = segments.ElementAtOrDefault(10);

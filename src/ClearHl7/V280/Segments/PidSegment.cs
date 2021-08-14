@@ -264,7 +264,7 @@ namespace ClearHl7.V280.Segments
             AlternatePatientIdPid = segments.ElementAtOrDefault(4);
             PatientName = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
             MothersMaidenName = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
-            DateTimeOfBirth = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeOfBirth = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
             AdministrativeSex = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
             PatientAlias = segments.ElementAtOrDefault(9);
             Race = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
@@ -278,7 +278,22 @@ namespace ClearHl7.V280.Segments
             PatientAccountNumber = segments.Length > 18 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(18), false) : null;
             SsnNumberPatient = segments.ElementAtOrDefault(19);
             DriversLicenseNumberPatient = segments.ElementAtOrDefault(20);
+
+
+
+            // Revisit string and single-object props too to set NULL where appropriate
+            // At minimum, remove entry entries.  Would be nice to set the collection to null too, though.
+
             MothersIdentifier = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
+
+            // This one works for what we need:
+            MothersIdentifier = segments.Length > 21 && segments[21].Length > 0 ? segments[21].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
+
+
+
+
+
+
             EthnicGroup = segments.Length > 22 ? segments.ElementAtOrDefault(22).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             BirthPlace = segments.ElementAtOrDefault(23);
             MultipleBirthIndicator = segments.ElementAtOrDefault(24);
@@ -286,11 +301,11 @@ namespace ClearHl7.V280.Segments
             Citizenship = segments.Length > 26 ? segments.ElementAtOrDefault(26).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
             VeteransMilitaryStatus = segments.Length > 27 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(27), false) : null;
             Nationality = segments.Length > 28 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(28), false) : null;
-            PatientDeathDateAndTime = segments.ElementAtOrDefault(29)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            PatientDeathDateAndTime = segments.ElementAtOrDefault(29)?.ToNullableDateTime();
             PatientDeathIndicator = segments.ElementAtOrDefault(30);
             IdentityUnknownIndicator = segments.ElementAtOrDefault(31);
             IdentityReliabilityCode = segments.Length > 32 ? segments.ElementAtOrDefault(32).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            LastUpdateDateTime = segments.ElementAtOrDefault(33)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            LastUpdateDateTime = segments.ElementAtOrDefault(33)?.ToNullableDateTime();
             LastUpdateFacility = segments.Length > 34 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(34), false) : null;
             TaxonomicClassificationCode = segments.Length > 35 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(35), false) : null;
             BreedCode = segments.Length > 36 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(36), false) : null;

@@ -309,16 +309,16 @@ namespace ClearHl7.V240.Segments
             PatientValuables = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator) : null;
             PatientValuablesLocation = segments.ElementAtOrDefault(6);
             VisitUserCode = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator) : null;
-            ExpectedAdmitDateTime = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ExpectedDischargeDateTime = segments.ElementAtOrDefault(9)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ExpectedAdmitDateTime = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
+            ExpectedDischargeDateTime = segments.ElementAtOrDefault(9)?.ToNullableDateTime();
             EstimatedLengthOfInpatientStay = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
             ActualLengthOfInpatientStay = segments.ElementAtOrDefault(11)?.ToNullableDecimal();
             VisitDescription = segments.ElementAtOrDefault(12);
             ReferralSourceCode = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            PreviousServiceDate = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            PreviousServiceDate = segments.ElementAtOrDefault(14)?.ToNullableDateTime();
             EmploymentIllnessRelatedIndicator = segments.ElementAtOrDefault(15);
             PurgeStatusCode = segments.ElementAtOrDefault(16);
-            PurgeStatusDate = segments.ElementAtOrDefault(17)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            PurgeStatusDate = segments.ElementAtOrDefault(17)?.ToNullableDateTime();
             SpecialProgramCode = segments.ElementAtOrDefault(18);
             RetentionIndicator = segments.ElementAtOrDefault(19);
             ExpectedNumberOfInsurancePlans = segments.ElementAtOrDefault(20)?.ToNullableDecimal();
@@ -327,14 +327,14 @@ namespace ClearHl7.V240.Segments
             ClinicOrganizationName = segments.Length > 23 ? segments.ElementAtOrDefault(23).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
             PatientStatusCode = segments.ElementAtOrDefault(24);
             VisitPriorityCode = segments.ElementAtOrDefault(25);
-            PreviousTreatmentDate = segments.ElementAtOrDefault(26)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            PreviousTreatmentDate = segments.ElementAtOrDefault(26)?.ToNullableDateTime();
             ExpectedDischargeDisposition = segments.ElementAtOrDefault(27);
-            SignatureOnFileDate = segments.ElementAtOrDefault(28)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            FirstSimilarIllnessDate = segments.ElementAtOrDefault(29)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            SignatureOnFileDate = segments.ElementAtOrDefault(28)?.ToNullableDateTime();
+            FirstSimilarIllnessDate = segments.ElementAtOrDefault(29)?.ToNullableDateTime();
             PatientChargeAdjustmentCode = segments.Length > 30 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(30), false) : null;
             RecurringServiceCode = segments.ElementAtOrDefault(31);
             BillingMediaCode = segments.ElementAtOrDefault(32);
-            ExpectedSurgeryDateAndTime = segments.ElementAtOrDefault(33)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            ExpectedSurgeryDateAndTime = segments.ElementAtOrDefault(33)?.ToNullableDateTime();
             MilitaryPartnershipCode = segments.ElementAtOrDefault(34);
             MilitaryNonAvailabilityCode = segments.ElementAtOrDefault(35);
             NewbornBabyIndicator = segments.ElementAtOrDefault(36);
@@ -347,8 +347,8 @@ namespace ClearHl7.V240.Segments
             LivingWillCode = segments.ElementAtOrDefault(43);
             OrganDonorCode = segments.ElementAtOrDefault(44);
             AdvanceDirectiveCode = segments.Length > 45 ? segments.ElementAtOrDefault(45).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            PatientStatusEffectiveDate = segments.ElementAtOrDefault(46)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            ExpectedLoaReturnDateTime = segments.ElementAtOrDefault(47)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            PatientStatusEffectiveDate = segments.ElementAtOrDefault(46)?.ToNullableDateTime();
+            ExpectedLoaReturnDateTime = segments.ElementAtOrDefault(47)?.ToNullableDateTime();
         }
 
         /// <summary>

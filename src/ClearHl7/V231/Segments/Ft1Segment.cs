@@ -184,8 +184,8 @@ namespace ClearHl7.V231.Segments
             SetIdFt1 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
             TransactionId = segments.ElementAtOrDefault(2);
             TransactionBatchId = segments.ElementAtOrDefault(3);
-            TransactionDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            TransactionPostingDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            TransactionDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
+            TransactionPostingDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
             TransactionType = segments.ElementAtOrDefault(6);
             TransactionCode = segments.Length > 7 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(7), false) : null;
             TransactionDescription = segments.ElementAtOrDefault(8);

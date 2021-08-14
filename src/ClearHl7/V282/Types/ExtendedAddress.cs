@@ -161,8 +161,8 @@ namespace ClearHl7.V282.Types
             CensusTract = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), true) : null;
             AddressRepresentationCode = segments.ElementAtOrDefault(10);
             AddressValidityRange = segments.Length > 11 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(11), true) : null;
-            EffectiveDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            ExpirationDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            EffectiveDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
+            ExpirationDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
             ExpirationReason = segments.Length > 14 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(14), true) : null;
             TemporaryIndicator = segments.ElementAtOrDefault(15);
             BadAddressIndicator = segments.ElementAtOrDefault(16);

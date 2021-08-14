@@ -171,12 +171,12 @@ namespace ClearHl7.V230.Segments
             NumberOfGraceDays = segments.ElementAtOrDefault(11)?.ToNullableDecimal();
             SpecialProgramIndicator = segments.Length > 12 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(12), false) : null;
             PsroUrApprovalIndicator = segments.Length > 13 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(13), false) : null;
-            PsroUrApprovedStayFm = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            PsroUrApprovedStayTo = segments.ElementAtOrDefault(15)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            PsroUrApprovedStayFm = segments.ElementAtOrDefault(14)?.ToNullableDateTime();
+            PsroUrApprovedStayTo = segments.ElementAtOrDefault(15)?.ToNullableDateTime();
             Occurrence = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<OccurrenceCodeAndDate>(x, false)) : null;
             OccurrenceSpan = segments.Length > 17 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(17), false) : null;
-            OccurSpanStartDate = segments.ElementAtOrDefault(18)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            OccurSpanEndDate = segments.ElementAtOrDefault(19)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            OccurSpanStartDate = segments.ElementAtOrDefault(18)?.ToNullableDateTime();
+            OccurSpanEndDate = segments.ElementAtOrDefault(19)?.ToNullableDateTime();
             Ub82Locator2 = segments.ElementAtOrDefault(20);
             Ub82Locator9 = segments.ElementAtOrDefault(21);
             Ub82Locator27 = segments.ElementAtOrDefault(22);

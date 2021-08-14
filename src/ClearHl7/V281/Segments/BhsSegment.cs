@@ -115,7 +115,7 @@ namespace ClearHl7.V281.Segments
             BatchSendingFacility = segments.Length > 4 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(4), false) : null;
             BatchReceivingApplication = segments.Length > 5 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(5), false) : null;
             BatchReceivingFacility = segments.Length > 6 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(6), false) : null;
-            BatchCreationDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            BatchCreationDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
             BatchSecurity = segments.ElementAtOrDefault(8);
             BatchNameIdType = segments.ElementAtOrDefault(9);
             BatchComment = segments.ElementAtOrDefault(10);

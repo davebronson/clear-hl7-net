@@ -212,7 +212,7 @@ namespace ClearHl7.V231.Segments
             PrescriptionNumber = segments.ElementAtOrDefault(15);
             NumberOfRefillsRemaining = segments.ElementAtOrDefault(16)?.ToNullableDecimal();
             NumberOfRefillsDosesDispensed = segments.ElementAtOrDefault(17)?.ToNullableDecimal();
-            DateTimeOfMostRecentRefillOrDoseDispensed = segments.ElementAtOrDefault(18)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeOfMostRecentRefillOrDoseDispensed = segments.ElementAtOrDefault(18)?.ToNullableDateTime();
             TotalDailyDose = segments.Length > 19 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(19), false) : null;
             NeedsHumanReview = segments.ElementAtOrDefault(20);
             SpecialDispensingInstructions = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;

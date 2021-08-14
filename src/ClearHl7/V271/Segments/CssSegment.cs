@@ -57,7 +57,7 @@ namespace ClearHl7.V271.Segments
             }
 
             StudyScheduledTimePoint = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
-            StudyScheduledPatientTimePoint = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            StudyScheduledPatientTimePoint = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
             StudyQualityControlCodes = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
         }
 

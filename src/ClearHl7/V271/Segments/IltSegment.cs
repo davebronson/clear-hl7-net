@@ -93,12 +93,12 @@ namespace ClearHl7.V271.Segments
 
             SetIdIlt = segments.ElementAtOrDefault(1)?.ToNullableUInt();
             InventoryLotNumber = segments.ElementAtOrDefault(2);
-            InventoryExpirationDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            InventoryReceivedDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            InventoryExpirationDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
+            InventoryReceivedDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
             InventoryReceivedQuantity = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
             InventoryReceivedQuantityUnit = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
             InventoryReceivedItemCost = segments.Length > 7 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(7), false) : null;
-            InventoryOnHandDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            InventoryOnHandDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
             InventoryOnHandQuantity = segments.ElementAtOrDefault(9)?.ToNullableDecimal();
             InventoryOnHandQuantityUnit = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(10), false) : null;
         }

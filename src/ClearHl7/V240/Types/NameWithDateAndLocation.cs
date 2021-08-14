@@ -87,8 +87,8 @@ namespace ClearHl7.V240.Types
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
             Name = segments.Length > 0 ? TypeHelper.Deserialize<CompositeIdNumberAndNameSimplified>(segments.ElementAtOrDefault(0), true) : null;
-            StartDateTime = segments.ElementAtOrDefault(1)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            EndDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            StartDateTime = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
+            EndDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
             PointOfCare = segments.ElementAtOrDefault(3);
             Room = segments.ElementAtOrDefault(4);
             Bed = segments.ElementAtOrDefault(5);

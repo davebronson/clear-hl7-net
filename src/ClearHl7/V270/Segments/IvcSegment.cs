@@ -204,14 +204,14 @@ namespace ClearHl7.V270.Segments
             InvoiceControl = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
             InvoiceReason = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
             InvoiceType = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
-            InvoiceDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            InvoiceDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
             InvoiceAmount = segments.Length > 8 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(8), false) : null;
             PaymentTerms = segments.ElementAtOrDefault(9);
             ProviderOrganization = segments.Length > 10 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(10), false) : null;
             PayerOrganization = segments.Length > 11 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(11), false) : null;
             Attention = segments.Length > 12 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(12), false) : null;
             LastInvoiceIndicator = segments.ElementAtOrDefault(13);
-            InvoiceBookingPeriod = segments.ElementAtOrDefault(14)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            InvoiceBookingPeriod = segments.ElementAtOrDefault(14)?.ToNullableDateTime();
             Origin = segments.ElementAtOrDefault(15);
             InvoiceFixedAmount = segments.Length > 16 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(16), false) : null;
             SpecialCosts = segments.Length > 17 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(17), false) : null;

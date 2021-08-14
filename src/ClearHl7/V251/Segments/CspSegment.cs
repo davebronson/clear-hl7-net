@@ -60,8 +60,8 @@ namespace ClearHl7.V251.Segments
             }
 
             StudyPhaseIdentifier = segments.Length > 1 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(1), false) : null;
-            DateTimeStudyPhaseBegan = segments.ElementAtOrDefault(2)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
-            DateTimeStudyPhaseEnded = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeStudyPhaseBegan = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
+            DateTimeStudyPhaseEnded = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
             StudyPhaseEvaluability = segments.Length > 4 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(4), false) : null;
         }
 

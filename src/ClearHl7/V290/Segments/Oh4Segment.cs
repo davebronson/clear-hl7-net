@@ -72,9 +72,9 @@ namespace ClearHl7.V290.Segments
 
             SetId = segments.ElementAtOrDefault(1)?.ToNullableUInt();
             ActionCode = segments.ElementAtOrDefault(2);
-            CombatZoneStartDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            CombatZoneEndDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            EnteredDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            CombatZoneStartDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
+            CombatZoneEndDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
+            EnteredDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
             CombatZoneUniqueIdentifier = segments.Length > 6 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(6), false) : null;
         }
 

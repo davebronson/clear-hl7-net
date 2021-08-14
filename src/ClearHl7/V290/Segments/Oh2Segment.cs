@@ -139,12 +139,12 @@ namespace ClearHl7.V290.Segments
 
             SetId = segments.ElementAtOrDefault(1)?.ToNullableUInt();
             ActionCode = segments.ElementAtOrDefault(2);
-            EnteredDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            EnteredDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
             Occupation = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
             Industry = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
             WorkClassification = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
-            JobStartDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            JobEndDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            JobStartDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
+            JobEndDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
             WorkSchedule = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), false) : null;
             AverageHoursWorkedPerDay = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
             AverageDaysWorkedPerWeek = segments.ElementAtOrDefault(11)?.ToNullableDecimal();

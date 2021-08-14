@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using ClearHl7.Helpers;
+using ClearHl7.V290.Segments;
 
 namespace ClearHl7.V290
 {
@@ -15,13 +18,15 @@ namespace ClearHl7.V290
         /// </summary>
         public IEnumerable<ISegment> Segments { get; set; }
 
+        
+
         /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
         public string ToDelimitedString()
         {
-            StringBuilder output = new StringBuilder();
+            StringBuilder output = new();
             SegmentHelper segmentHelper = Configuration.AutoSetSubcomponentFlags ? new SegmentHelper() : null;
 
             if (Segments?.Any() == true)

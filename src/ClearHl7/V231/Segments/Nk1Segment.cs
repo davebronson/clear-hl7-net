@@ -252,15 +252,15 @@ namespace ClearHl7.V231.Segments
             PhoneNumber = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
             BusinessPhoneNumber = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
             ContactRole = segments.Length > 7 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(7), false) : null;
-            StartDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
-            EndDate = segments.ElementAtOrDefault(9)?.ToNullableDateTime(Consts.DateFormatPrecisionDay);
+            StartDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
+            EndDate = segments.ElementAtOrDefault(9)?.ToNullableDateTime();
             NextOfKinAssociatedPartiesJobTitle = segments.ElementAtOrDefault(10);
             NextOfKinAssociatedPartiesJobCodeClass = segments.Length > 11 ? TypeHelper.Deserialize<JobCodeClass>(segments.ElementAtOrDefault(11), false) : null;
             NextOfKinAssociatedPartiesEmployeeNumber = segments.Length > 12 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(12), false) : null;
             OrganizationNameNk1 = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
             MaritalStatus = segments.Length > 14 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(14), false) : null;
             AdministrativeSex = segments.ElementAtOrDefault(15);
-            DateTimeOfBirth = segments.ElementAtOrDefault(16)?.ToNullableDateTime(Consts.DateTimeFormatPrecisionSecond);
+            DateTimeOfBirth = segments.ElementAtOrDefault(16)?.ToNullableDateTime();
             LivingDependency = segments.Length > 17 ? segments.ElementAtOrDefault(17).Split(separator) : null;
             AmbulatoryStatus = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator) : null;
             Citizenship = segments.Length > 19 ? segments.ElementAtOrDefault(19).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
