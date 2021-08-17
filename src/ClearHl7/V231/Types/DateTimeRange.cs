@@ -34,8 +34,8 @@ namespace ClearHl7.V231.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            RangeStartDateTime = segments.ElementAtOrDefault(0)?.ToNullableDateTime();
-            RangeEndDateTime = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
+            RangeStartDateTime = segments.Length > 0 && segments[0].Length > 0 ? segments[0].ToNullableDateTime() : null;
+            RangeEndDateTime = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDateTime() : null;
         }
 
         /// <summary>

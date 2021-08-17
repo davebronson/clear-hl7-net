@@ -70,15 +70,15 @@ namespace ClearHl7.V230.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            TelephoneNumber = segments.ElementAtOrDefault(0);
-            TelecommunicationUseCode = segments.ElementAtOrDefault(1);
-            TelecommunicationEquipmentType = segments.ElementAtOrDefault(2);
-            CommunicationAddress = segments.ElementAtOrDefault(3);
-            CountryCode = segments.ElementAtOrDefault(4)?.ToNullableInt();
-            AreaCityCode = segments.ElementAtOrDefault(5)?.ToNullableInt();
-            LocalNumber = segments.ElementAtOrDefault(6)?.ToNullableInt();
-            Extension = segments.ElementAtOrDefault(7)?.ToNullableInt();
-            AnyText = segments.ElementAtOrDefault(8);
+            TelephoneNumber = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            TelecommunicationUseCode = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            TelecommunicationEquipmentType = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            CommunicationAddress = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            CountryCode = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableInt() : null;
+            AreaCityCode = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableInt() : null;
+            LocalNumber = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableInt() : null;
+            Extension = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableInt() : null;
+            AnyText = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
         }
 
         /// <summary>

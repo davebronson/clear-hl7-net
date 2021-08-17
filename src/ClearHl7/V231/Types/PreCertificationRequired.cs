@@ -41,9 +41,9 @@ namespace ClearHl7.V231.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            PreCertificationPatientType = segments.ElementAtOrDefault(0);
-            PreCertificationIsRequired = segments.ElementAtOrDefault(1);
-            PreCertificationWindow = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
+            PreCertificationPatientType = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            PreCertificationIsRequired = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            PreCertificationWindow = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDateTime() : null;
         }
 
         /// <summary>

@@ -68,18 +68,18 @@ namespace ClearHl7.V231.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            EventTypeCode = segments.ElementAtOrDefault(1);
-            RecordedDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
-            DateTimePlannedEvent = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
-            EventReasonCode = segments.ElementAtOrDefault(4);
-            OperatorId = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            EventOccurred = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
+            EventTypeCode = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            RecordedDateTime = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDateTime() : null;
+            DateTimePlannedEvent = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
+            EventReasonCode = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            OperatorId = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            EventOccurred = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDateTime() : null;
         }
 
         /// <summary>

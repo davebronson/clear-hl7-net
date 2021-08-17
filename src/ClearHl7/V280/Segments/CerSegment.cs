@@ -199,43 +199,43 @@ namespace ClearHl7.V280.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdCer = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            SerialNumber = segments.ElementAtOrDefault(2);
-            Version = segments.ElementAtOrDefault(3);
-            GrantingAuthority = segments.Length > 4 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(4), false) : null;
-            IssuingAuthority = segments.Length > 5 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(5), false) : null;
-            Signature = segments.Length > 6 ? TypeHelper.Deserialize<EncapsulatedData>(segments.ElementAtOrDefault(6), false) : null;
-            GrantingCountry = segments.ElementAtOrDefault(7);
-            GrantingStateProvince = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
-            GrantingCountyParish = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), false) : null;
-            CertificateType = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(10), false) : null;
-            CertificateDomain = segments.Length > 11 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(11), false) : null;
-            SubjectId = segments.Length > 12 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(12), false) : null;
-            SubjectName = segments.ElementAtOrDefault(13);
-            SubjectDirectoryAttributeExtension = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            SubjectPublicKeyInfo = segments.Length > 15 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(15), false) : null;
-            AuthorityKeyIdentifier = segments.Length > 16 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(16), false) : null;
-            BasicConstraint = segments.ElementAtOrDefault(17);
-            CrlDistributionPoint = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            JurisdictionCountry = segments.ElementAtOrDefault(19);
-            JurisdictionStateProvince = segments.Length > 20 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(20), false) : null;
-            JurisdictionCountyParish = segments.Length > 21 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(21), false) : null;
-            JurisdictionBreadth = segments.Length > 22 ? segments.ElementAtOrDefault(22).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            GrantingDate = segments.ElementAtOrDefault(23)?.ToNullableDateTime();
-            IssuingDate = segments.ElementAtOrDefault(24)?.ToNullableDateTime();
-            ActivationDate = segments.ElementAtOrDefault(25)?.ToNullableDateTime();
-            InactivationDate = segments.ElementAtOrDefault(26)?.ToNullableDateTime();
-            ExpirationDate = segments.ElementAtOrDefault(27)?.ToNullableDateTime();
-            RenewalDate = segments.ElementAtOrDefault(28)?.ToNullableDateTime();
-            RevocationDate = segments.ElementAtOrDefault(29)?.ToNullableDateTime();
-            RevocationReasonCode = segments.Length > 30 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(30), false) : null;
-            CertificateStatusCode = segments.Length > 31 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(31), false) : null;
+            SetIdCer = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            SerialNumber = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            Version = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            GrantingAuthority = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[4], false) : null;
+            IssuingAuthority = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[5], false) : null;
+            Signature = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<EncapsulatedData>(segments[6], false) : null;
+            GrantingCountry = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
+            GrantingStateProvince = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[8], false) : null;
+            GrantingCountyParish = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[9], false) : null;
+            CertificateType = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[10], false) : null;
+            CertificateDomain = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[11], false) : null;
+            SubjectId = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[12], false) : null;
+            SubjectName = segments.Length > 13 && segments[13].Length > 0 ? segments[13] : null;
+            SubjectDirectoryAttributeExtension = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            SubjectPublicKeyInfo = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[15], false) : null;
+            AuthorityKeyIdentifier = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[16], false) : null;
+            BasicConstraint = segments.Length > 17 && segments[17].Length > 0 ? segments[17] : null;
+            CrlDistributionPoint = segments.Length > 18 && segments[18].Length > 0 ? segments[18].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            JurisdictionCountry = segments.Length > 19 && segments[19].Length > 0 ? segments[19] : null;
+            JurisdictionStateProvince = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[20], false) : null;
+            JurisdictionCountyParish = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[21], false) : null;
+            JurisdictionBreadth = segments.Length > 22 && segments[22].Length > 0 ? segments[22].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            GrantingDate = segments.Length > 23 && segments[23].Length > 0 ? segments[23].ToNullableDateTime() : null;
+            IssuingDate = segments.Length > 24 && segments[24].Length > 0 ? segments[24].ToNullableDateTime() : null;
+            ActivationDate = segments.Length > 25 && segments[25].Length > 0 ? segments[25].ToNullableDateTime() : null;
+            InactivationDate = segments.Length > 26 && segments[26].Length > 0 ? segments[26].ToNullableDateTime() : null;
+            ExpirationDate = segments.Length > 27 && segments[27].Length > 0 ? segments[27].ToNullableDateTime() : null;
+            RenewalDate = segments.Length > 28 && segments[28].Length > 0 ? segments[28].ToNullableDateTime() : null;
+            RevocationDate = segments.Length > 29 && segments[29].Length > 0 ? segments[29].ToNullableDateTime() : null;
+            RevocationReasonCode = segments.Length > 30 && segments[30].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[30], false) : null;
+            CertificateStatusCode = segments.Length > 31 && segments[31].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[31], false) : null;
         }
 
         /// <summary>

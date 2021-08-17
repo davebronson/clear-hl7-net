@@ -108,26 +108,26 @@ namespace ClearHl7.V251.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdTq1 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            Quantity = segments.Length > 2 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(2), false) : null;
-            RepeatPattern = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<RepeatPattern>(x, false)) : null;
-            ExplicitTime = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => x.ToDateTime()) : null;
-            RelativeTimeAndUnits = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<CompositeQuantityWithUnits>(x, false)) : null;
-            ServiceDuration = segments.Length > 6 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(6), false) : null;
-            StartDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
-            EndDateTime = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
-            Priority = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            ConditionText = segments.Length > 10 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(10), false) : null;
-            TextInstruction = segments.Length > 11 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(11), false) : null;
-            Conjunction = segments.ElementAtOrDefault(12);
-            OccurrenceDuration = segments.Length > 13 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(13), false) : null;
-            TotalOccurrences = segments.ElementAtOrDefault(14)?.ToNullableDecimal();
+            SetIdTq1 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            Quantity = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[2], false) : null;
+            RepeatPattern = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(separator).Select(x => TypeHelper.Deserialize<RepeatPattern>(x, false)) : null;
+            ExplicitTime = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(separator).Select(x => x.ToDateTime()) : null;
+            RelativeTimeAndUnits = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(separator).Select(x => TypeHelper.Deserialize<CompositeQuantityWithUnits>(x, false)) : null;
+            ServiceDuration = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[6], false) : null;
+            StartDateTime = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
+            EndDateTime = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDateTime() : null;
+            Priority = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            ConditionText = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<Text>(segments[10], false) : null;
+            TextInstruction = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<Text>(segments[11], false) : null;
+            Conjunction = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
+            OccurrenceDuration = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[13], false) : null;
+            TotalOccurrences = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDecimal() : null;
         }
 
         /// <summary>

@@ -59,17 +59,17 @@ namespace ClearHl7.V260.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            BusinessRuleOverrideType = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
-            BusinessRuleOverrideCode = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
-            OverrideComments = segments.Length > 3 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(3), false) : null;
-            OverrideEnteredBy = segments.Length > 4 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(4), false) : null;
-            OverrideAuthorizedBy = segments.Length > 5 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(5), false) : null;
+            BusinessRuleOverrideType = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false) : null;
+            BusinessRuleOverrideCode = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
+            OverrideComments = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<Text>(segments[3], false) : null;
+            OverrideEnteredBy = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[4], false) : null;
+            OverrideAuthorizedBy = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[5], false) : null;
         }
 
         /// <summary>

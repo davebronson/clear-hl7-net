@@ -285,60 +285,60 @@ namespace ClearHl7.V270.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            ProviderProductServiceLineItemNumber = segments.Length > 1 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(1), false) : null;
-            PayerProductServiceLineItemNumber = segments.Length > 2 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(2), false) : null;
-            ProductServiceLineItemSequenceNumber = segments.ElementAtOrDefault(3)?.ToNullableUInt();
-            ProviderTrackingId = segments.Length > 4 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(4), false) : null;
-            PayerTrackingId = segments.Length > 5 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(5), false) : null;
-            ProductServiceLineItemStatus = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
-            ProductServiceCode = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(7), false) : null;
-            ProductServiceCodeModifier = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
-            ProductServiceCodeDescription = segments.ElementAtOrDefault(9);
-            ProductServiceEffectiveDate = segments.ElementAtOrDefault(10)?.ToNullableDateTime();
-            ProductServiceExpirationDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime();
-            ProductServiceQuantity = segments.Length > 12 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(12), false) : null;
-            ProductServiceUnitCost = segments.Length > 13 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(13), false) : null;
-            NumberOfItemsPerUnit = segments.ElementAtOrDefault(14)?.ToNullableDecimal();
-            ProductServiceGrossAmount = segments.Length > 15 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(15), false) : null;
-            ProductServiceBilledAmount = segments.Length > 16 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(16), false) : null;
-            ProductServiceClarificationCodeType = segments.Length > 17 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(17), false) : null;
-            ProductServiceClarificationCodeValue = segments.ElementAtOrDefault(18);
-            HealthDocumentReferenceIdentifier = segments.Length > 19 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(19), false) : null;
-            ProcessingConsiderationCode = segments.Length > 20 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(20), false) : null;
-            RestrictedDisclosureIndicator = segments.ElementAtOrDefault(21);
-            RelatedProductServiceCodeIndicator = segments.Length > 22 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(22), false) : null;
-            ProductServiceAmountForPhysician = segments.Length > 23 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(23), false) : null;
-            ProductServiceCostFactor = segments.ElementAtOrDefault(24)?.ToNullableDecimal();
-            CostCenter = segments.Length > 25 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(25), false) : null;
-            BillingPeriod = segments.Length > 26 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(26), false) : null;
-            DaysWithoutBilling = segments.ElementAtOrDefault(27)?.ToNullableDecimal();
-            SessionNo = segments.ElementAtOrDefault(28)?.ToNullableDecimal();
-            ExecutingPhysicianId = segments.Length > 29 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(29), false) : null;
-            ResponsiblePhysicianId = segments.Length > 30 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(30), false) : null;
-            RoleExecutingPhysician = segments.Length > 31 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(31), false) : null;
-            MedicalRoleExecutingPhysician = segments.Length > 32 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(32), false) : null;
-            SideOfBody = segments.Length > 33 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(33), false) : null;
-            NumberOfTpsPp = segments.ElementAtOrDefault(34)?.ToNullableDecimal();
-            TpValuePp = segments.Length > 35 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(35), false) : null;
-            InternalScalingFactorPp = segments.ElementAtOrDefault(36)?.ToNullableDecimal();
-            ExternalScalingFactorPp = segments.ElementAtOrDefault(37)?.ToNullableDecimal();
-            AmountPp = segments.Length > 38 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(38), false) : null;
-            NumberOfTpsTechnicalPart = segments.ElementAtOrDefault(39)?.ToNullableDecimal();
-            TpValueTechnicalPart = segments.Length > 40 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(40), false) : null;
-            InternalScalingFactorTechnicalPart = segments.ElementAtOrDefault(41)?.ToNullableDecimal();
-            ExternalScalingFactorTechnicalPart = segments.ElementAtOrDefault(42)?.ToNullableDecimal();
-            AmountTechnicalPart = segments.Length > 43 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(43), false) : null;
-            TotalAmountProfessionalPartTechnicalPart = segments.Length > 44 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(44), false) : null;
-            VatRate = segments.ElementAtOrDefault(45)?.ToNullableDecimal();
-            MainService = segments.ElementAtOrDefault(46);
-            Validation = segments.ElementAtOrDefault(47);
-            Comment = segments.ElementAtOrDefault(48);
+            ProviderProductServiceLineItemNumber = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false) : null;
+            PayerProductServiceLineItemNumber = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false) : null;
+            ProductServiceLineItemSequenceNumber = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableUInt() : null;
+            ProviderTrackingId = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[4], false) : null;
+            PayerTrackingId = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[5], false) : null;
+            ProductServiceLineItemStatus = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[6], false) : null;
+            ProductServiceCode = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[7], false) : null;
+            ProductServiceCodeModifier = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[8], false) : null;
+            ProductServiceCodeDescription = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
+            ProductServiceEffectiveDate = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDateTime() : null;
+            ProductServiceExpirationDate = segments.Length > 11 && segments[11].Length > 0 ? segments[11].ToNullableDateTime() : null;
+            ProductServiceQuantity = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[12], false) : null;
+            ProductServiceUnitCost = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[13], false) : null;
+            NumberOfItemsPerUnit = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDecimal() : null;
+            ProductServiceGrossAmount = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[15], false) : null;
+            ProductServiceBilledAmount = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[16], false) : null;
+            ProductServiceClarificationCodeType = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[17], false) : null;
+            ProductServiceClarificationCodeValue = segments.Length > 18 && segments[18].Length > 0 ? segments[18] : null;
+            HealthDocumentReferenceIdentifier = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[19], false) : null;
+            ProcessingConsiderationCode = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[20], false) : null;
+            RestrictedDisclosureIndicator = segments.Length > 21 && segments[21].Length > 0 ? segments[21] : null;
+            RelatedProductServiceCodeIndicator = segments.Length > 22 && segments[22].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[22], false) : null;
+            ProductServiceAmountForPhysician = segments.Length > 23 && segments[23].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[23], false) : null;
+            ProductServiceCostFactor = segments.Length > 24 && segments[24].Length > 0 ? segments[24].ToNullableDecimal() : null;
+            CostCenter = segments.Length > 25 && segments[25].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments[25], false) : null;
+            BillingPeriod = segments.Length > 26 && segments[26].Length > 0 ? TypeHelper.Deserialize<DateTimeRange>(segments[26], false) : null;
+            DaysWithoutBilling = segments.Length > 27 && segments[27].Length > 0 ? segments[27].ToNullableDecimal() : null;
+            SessionNo = segments.Length > 28 && segments[28].Length > 0 ? segments[28].ToNullableDecimal() : null;
+            ExecutingPhysicianId = segments.Length > 29 && segments[29].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[29], false) : null;
+            ResponsiblePhysicianId = segments.Length > 30 && segments[30].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[30], false) : null;
+            RoleExecutingPhysician = segments.Length > 31 && segments[31].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[31], false) : null;
+            MedicalRoleExecutingPhysician = segments.Length > 32 && segments[32].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[32], false) : null;
+            SideOfBody = segments.Length > 33 && segments[33].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[33], false) : null;
+            NumberOfTpsPp = segments.Length > 34 && segments[34].Length > 0 ? segments[34].ToNullableDecimal() : null;
+            TpValuePp = segments.Length > 35 && segments[35].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[35], false) : null;
+            InternalScalingFactorPp = segments.Length > 36 && segments[36].Length > 0 ? segments[36].ToNullableDecimal() : null;
+            ExternalScalingFactorPp = segments.Length > 37 && segments[37].Length > 0 ? segments[37].ToNullableDecimal() : null;
+            AmountPp = segments.Length > 38 && segments[38].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[38], false) : null;
+            NumberOfTpsTechnicalPart = segments.Length > 39 && segments[39].Length > 0 ? segments[39].ToNullableDecimal() : null;
+            TpValueTechnicalPart = segments.Length > 40 && segments[40].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[40], false) : null;
+            InternalScalingFactorTechnicalPart = segments.Length > 41 && segments[41].Length > 0 ? segments[41].ToNullableDecimal() : null;
+            ExternalScalingFactorTechnicalPart = segments.Length > 42 && segments[42].Length > 0 ? segments[42].ToNullableDecimal() : null;
+            AmountTechnicalPart = segments.Length > 43 && segments[43].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[43], false) : null;
+            TotalAmountProfessionalPartTechnicalPart = segments.Length > 44 && segments[44].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[44], false) : null;
+            VatRate = segments.Length > 45 && segments[45].Length > 0 ? segments[45].ToNullableDecimal() : null;
+            MainService = segments.Length > 46 && segments[46].Length > 0 ? segments[46] : null;
+            Validation = segments.Length > 47 && segments[47].Length > 0 ? segments[47] : null;
+            Comment = segments.Length > 48 && segments[48].Length > 0 ? segments[48] : null;
         }
 
         /// <summary>

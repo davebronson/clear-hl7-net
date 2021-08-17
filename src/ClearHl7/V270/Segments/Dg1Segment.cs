@@ -180,38 +180,38 @@ namespace ClearHl7.V270.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdDg1 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            DiagnosisCodingMethod = segments.ElementAtOrDefault(2);
-            DiagnosisCodeDg1 = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
-            DiagnosisDescription = segments.ElementAtOrDefault(4);
-            DiagnosisDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
-            DiagnosisType = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
-            MajorDiagnosticCategory = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(7), false) : null;
-            DiagnosticRelatedGroup = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(8), false) : null;
-            DrgApprovalIndicator = segments.ElementAtOrDefault(9);
-            DrgGrouperReviewCode = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(10), false) : null;
-            OutlierType = segments.Length > 11 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(11), false) : null;
-            OutlierDays = segments.ElementAtOrDefault(12)?.ToNullableDecimal();
-            OutlierCost = segments.Length > 13 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(13), false) : null;
-            GrouperVersionAndType = segments.ElementAtOrDefault(14);
-            DiagnosisPriority = segments.ElementAtOrDefault(15)?.ToNullableDecimal();
-            DiagnosingClinician = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            DiagnosisClassification = segments.Length > 17 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(17), false) : null;
-            ConfidentialIndicator = segments.ElementAtOrDefault(18);
-            AttestationDateTime = segments.ElementAtOrDefault(19)?.ToNullableDateTime();
-            DiagnosisIdentifier = segments.Length > 20 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(20), false) : null;
-            DiagnosisActionCode = segments.ElementAtOrDefault(21);
-            ParentDiagnosis = segments.Length > 22 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(22), false) : null;
-            DrgCclValueCode = segments.Length > 23 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(23), false) : null;
-            DrgGroupingUsage = segments.ElementAtOrDefault(24);
-            DrgDiagnosisDeterminationStatus = segments.Length > 25 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(25), false) : null;
-            PresentOnAdmissionPoaIndicator = segments.Length > 26 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(26), false) : null;
+            SetIdDg1 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            DiagnosisCodingMethod = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            DiagnosisCodeDg1 = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false) : null;
+            DiagnosisDescription = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            DiagnosisDateTime = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDateTime() : null;
+            DiagnosisType = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[6], false) : null;
+            MajorDiagnosticCategory = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[7], false) : null;
+            DiagnosticRelatedGroup = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[8], false) : null;
+            DrgApprovalIndicator = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
+            DrgGrouperReviewCode = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[10], false) : null;
+            OutlierType = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[11], false) : null;
+            OutlierDays = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDecimal() : null;
+            OutlierCost = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[13], false) : null;
+            GrouperVersionAndType = segments.Length > 14 && segments[14].Length > 0 ? segments[14] : null;
+            DiagnosisPriority = segments.Length > 15 && segments[15].Length > 0 ? segments[15].ToNullableDecimal() : null;
+            DiagnosingClinician = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            DiagnosisClassification = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[17], false) : null;
+            ConfidentialIndicator = segments.Length > 18 && segments[18].Length > 0 ? segments[18] : null;
+            AttestationDateTime = segments.Length > 19 && segments[19].Length > 0 ? segments[19].ToNullableDateTime() : null;
+            DiagnosisIdentifier = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[20], false) : null;
+            DiagnosisActionCode = segments.Length > 21 && segments[21].Length > 0 ? segments[21] : null;
+            ParentDiagnosis = segments.Length > 22 && segments[22].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[22], false) : null;
+            DrgCclValueCode = segments.Length > 23 && segments[23].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[23], false) : null;
+            DrgGroupingUsage = segments.Length > 24 && segments[24].Length > 0 ? segments[24] : null;
+            DrgDiagnosisDeterminationStatus = segments.Length > 25 && segments[25].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[25], false) : null;
+            PresentOnAdmissionPoaIndicator = segments.Length > 26 && segments[26].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[26], false) : null;
         }
 
         /// <summary>

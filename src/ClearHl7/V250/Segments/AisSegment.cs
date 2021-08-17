@@ -100,24 +100,24 @@ namespace ClearHl7.V250.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdAis = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            SegmentActionCode = segments.ElementAtOrDefault(2);
-            UniversalServiceIdentifier = segments.Length > 3 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(3), false) : null;
-            StartDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
-            StartDateTimeOffset = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
-            StartDateTimeOffsetUnits = segments.Length > 6 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(6), false) : null;
-            Duration = segments.ElementAtOrDefault(7)?.ToNullableDecimal();
-            DurationUnits = segments.Length > 8 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(8), false) : null;
-            AllowSubstitutionCode = segments.ElementAtOrDefault(9);
-            FillerStatusCode = segments.Length > 10 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(10), false) : null;
-            PlacerSupplementalServiceInformation = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            FillerSupplementalServiceInformation = segments.Length > 12 ? segments.ElementAtOrDefault(12).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            SetIdAis = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            SegmentActionCode = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            UniversalServiceIdentifier = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[3], false) : null;
+            StartDateTime = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
+            StartDateTimeOffset = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDecimal() : null;
+            StartDateTimeOffsetUnits = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[6], false) : null;
+            Duration = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDecimal() : null;
+            DurationUnits = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[8], false) : null;
+            AllowSubstitutionCode = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
+            FillerStatusCode = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[10], false) : null;
+            PlacerSupplementalServiceInformation = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            FillerSupplementalServiceInformation = segments.Length > 12 && segments[12].Length > 0 ? segments[12].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
         }
 
         /// <summary>

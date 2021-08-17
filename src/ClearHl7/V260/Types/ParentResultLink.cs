@@ -37,9 +37,9 @@ namespace ClearHl7.V260.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            ParentObservationIdentifier = segments.Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(0), true) : null;
-            ParentObservationSubIdentifier = segments.ElementAtOrDefault(1);
-            ParentObservationValueDescriptor = segments.Length > 2 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(2), true) : null;
+            ParentObservationIdentifier = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[0], true) : null;
+            ParentObservationSubIdentifier = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            ParentObservationValueDescriptor = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<Text>(segments[2], true) : null;
         }
 
         /// <summary>

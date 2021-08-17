@@ -140,32 +140,32 @@ namespace ClearHl7.V250.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SubstanceIdentifier = segments.Length > 1 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(1), false) : null;
-            SubstanceStatus = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            SubstanceType = segments.Length > 3 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(3), false) : null;
-            InventoryContainerIdentifier = segments.Length > 4 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(4), false) : null;
-            ContainerCarrierIdentifier = segments.Length > 5 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(5), false) : null;
-            PositionOnCarrier = segments.Length > 6 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(6), false) : null;
-            InitialQuantity = segments.ElementAtOrDefault(7)?.ToNullableDecimal();
-            CurrentQuantity = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
-            AvailableQuantity = segments.ElementAtOrDefault(9)?.ToNullableDecimal();
-            ConsumptionQuantity = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
-            QuantityUnits = segments.Length > 11 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(11), false) : null;
-            ExpirationDateTime = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
-            FirstUsedDateTime = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
-            OnBoardStabilityDuration = segments.Length > 14 ? TypeHelper.Deserialize<TimingQuantity>(segments.ElementAtOrDefault(14), false) : null;
-            TestFluidIdentifiers = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            ManufacturerLotNumber = segments.ElementAtOrDefault(16);
-            ManufacturerIdentifier = segments.Length > 17 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(17), false) : null;
-            SupplierIdentifier = segments.Length > 18 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(18), false) : null;
-            OnBoardStabilityTime = segments.Length > 19 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(19), false) : null;
-            TargetValue = segments.Length > 20 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(20), false) : null;
+            SubstanceIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[1], false) : null;
+            SubstanceStatus = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            SubstanceType = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[3], false) : null;
+            InventoryContainerIdentifier = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[4], false) : null;
+            ContainerCarrierIdentifier = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[5], false) : null;
+            PositionOnCarrier = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[6], false) : null;
+            InitialQuantity = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDecimal() : null;
+            CurrentQuantity = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDecimal() : null;
+            AvailableQuantity = segments.Length > 9 && segments[9].Length > 0 ? segments[9].ToNullableDecimal() : null;
+            ConsumptionQuantity = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDecimal() : null;
+            QuantityUnits = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[11], false) : null;
+            ExpirationDateTime = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDateTime() : null;
+            FirstUsedDateTime = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDateTime() : null;
+            OnBoardStabilityDuration = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<TimingQuantity>(segments[14], false) : null;
+            TestFluidIdentifiers = segments.Length > 15 && segments[15].Length > 0 ? segments[15].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            ManufacturerLotNumber = segments.Length > 16 && segments[16].Length > 0 ? segments[16] : null;
+            ManufacturerIdentifier = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[17], false) : null;
+            SupplierIdentifier = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[18], false) : null;
+            OnBoardStabilityTime = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[19], false) : null;
+            TargetValue = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[20], false) : null;
         }
 
         /// <summary>

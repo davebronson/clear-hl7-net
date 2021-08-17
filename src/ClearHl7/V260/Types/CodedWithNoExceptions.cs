@@ -69,15 +69,15 @@ namespace ClearHl7.V260.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            Identifier = segments.ElementAtOrDefault(0);
-            Text = segments.ElementAtOrDefault(1);
-            NameOfCodingSystem = segments.ElementAtOrDefault(2);
-            AlternateIdentifier = segments.ElementAtOrDefault(3);
-            AlternateText = segments.ElementAtOrDefault(4);
-            NameOfAlternateCodingSystem = segments.ElementAtOrDefault(5);
-            CodingSystemVersionId = segments.ElementAtOrDefault(6);
-            AlternateCodingSystemVersionId = segments.ElementAtOrDefault(7);
-            OriginalText = segments.ElementAtOrDefault(8);
+            Identifier = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            Text = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            NameOfCodingSystem = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            AlternateIdentifier = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            AlternateText = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            NameOfAlternateCodingSystem = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
+            CodingSystemVersionId = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
+            AlternateCodingSystemVersionId = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
+            OriginalText = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
         }
 
         /// <summary>

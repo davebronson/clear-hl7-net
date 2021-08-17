@@ -94,24 +94,24 @@ namespace ClearHl7.V290.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            PaymentRemittanceAdviceNumber = segments.Length > 1 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(1), false) : null;
-            PaymentRemittanceEffectiveDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
-            PaymentRemittanceExpirationDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
-            PaymentMethod = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
-            PaymentRemittanceDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
-            PaymentRemittanceAmount = segments.Length > 6 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(6), false) : null;
-            CheckNumber = segments.Length > 7 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(7), false) : null;
-            PayeeBankIdentification = segments.Length > 8 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(8), false) : null;
-            PayeeTransitNumber = segments.ElementAtOrDefault(9);
-            PayeeBankAccountId = segments.Length > 10 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(10), false) : null;
-            PaymentOrganization = segments.Length > 11 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(11), false) : null;
-            EsrCodeLine = segments.ElementAtOrDefault(12);
+            PaymentRemittanceAdviceNumber = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false) : null;
+            PaymentRemittanceEffectiveDateTime = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDateTime() : null;
+            PaymentRemittanceExpirationDateTime = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
+            PaymentMethod = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false) : null;
+            PaymentRemittanceDateTime = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDateTime() : null;
+            PaymentRemittanceAmount = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[6], false) : null;
+            CheckNumber = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[7], false) : null;
+            PayeeBankIdentification = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[8], false) : null;
+            PayeeTransitNumber = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
+            PayeeBankAccountId = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments[10], false) : null;
+            PaymentOrganization = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[11], false) : null;
+            EsrCodeLine = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
         }
 
         /// <summary>

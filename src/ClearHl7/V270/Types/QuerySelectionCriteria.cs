@@ -44,10 +44,10 @@ namespace ClearHl7.V270.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            SegmentFieldName = segments.ElementAtOrDefault(0);
-            RelationalOperator = segments.ElementAtOrDefault(1);
-            Value = segments.ElementAtOrDefault(2);
-            RelationalConjunction = segments.ElementAtOrDefault(3);
+            SegmentFieldName = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            RelationalOperator = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            Value = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            RelationalConjunction = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
         }
 
         /// <summary>

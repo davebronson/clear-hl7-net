@@ -32,8 +32,8 @@ namespace ClearHl7.V250.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            FirstDataCodeValue = segments.ElementAtOrDefault(0);
-            LastDataCodeValue = segments.ElementAtOrDefault(1);
+            FirstDataCodeValue = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            LastDataCodeValue = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
         }
 
         /// <summary>

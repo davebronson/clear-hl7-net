@@ -58,17 +58,17 @@ namespace ClearHl7.V240.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdDsp = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            DisplayLevel = segments.ElementAtOrDefault(2)?.ToNullableUInt();
-            DataLine = segments.Length > 3 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(3), false) : null;
-            LogicalBreakPoint = segments.ElementAtOrDefault(4);
-            ResultId = segments.Length > 5 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(5), false) : null;
+            SetIdDsp = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            DisplayLevel = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableUInt() : null;
+            DataLine = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<Text>(segments[3], false) : null;
+            LogicalBreakPoint = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            ResultId = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<Text>(segments[5], false) : null;
         }
 
         /// <summary>

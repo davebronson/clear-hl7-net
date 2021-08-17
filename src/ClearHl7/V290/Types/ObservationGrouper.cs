@@ -43,10 +43,10 @@ namespace ClearHl7.V290.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            OriginalSubIdentifier = segments.ElementAtOrDefault(0);
-            Group = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
-            Sequence = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
-            Identifier = segments.ElementAtOrDefault(3);
+            OriginalSubIdentifier = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            Group = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
+            Sequence = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDecimal() : null;
+            Identifier = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
         }
 
         /// <summary>

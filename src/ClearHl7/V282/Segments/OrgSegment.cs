@@ -110,25 +110,25 @@ namespace ClearHl7.V282.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdOrg = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            OrganizationUnitCode = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
-            OrganizationUnitTypeCode = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
-            PrimaryOrgUnitIndicator = segments.ElementAtOrDefault(4);
-            PractitionerOrgUnitIdentifier = segments.Length > 5 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(5), false) : null;
-            HealthCareProviderTypeCode = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
-            HealthCareProviderClassificationCode = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(7), false) : null;
-            HealthCareProviderAreaOfSpecializationCode = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
-            EffectiveDateRange = segments.Length > 9 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(9), false) : null;
-            EmploymentStatusCode = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(10), false) : null;
-            BoardApprovalIndicator = segments.ElementAtOrDefault(11);
-            PrimaryCarePhysicianIndicator = segments.ElementAtOrDefault(12);
-            CostCenterCode = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            SetIdOrg = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            OrganizationUnitCode = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
+            OrganizationUnitTypeCode = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false) : null;
+            PrimaryOrgUnitIndicator = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            PractitionerOrgUnitIdentifier = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments[5], false) : null;
+            HealthCareProviderTypeCode = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[6], false) : null;
+            HealthCareProviderClassificationCode = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[7], false) : null;
+            HealthCareProviderAreaOfSpecializationCode = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[8], false) : null;
+            EffectiveDateRange = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<DateTimeRange>(segments[9], false) : null;
+            EmploymentStatusCode = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[10], false) : null;
+            BoardApprovalIndicator = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
+            PrimaryCarePhysicianIndicator = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
+            CostCenterCode = segments.Length > 13 && segments[13].Length > 0 ? segments[13].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
         }
 
         /// <summary>

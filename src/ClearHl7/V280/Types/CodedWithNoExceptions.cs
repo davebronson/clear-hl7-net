@@ -137,28 +137,28 @@ namespace ClearHl7.V280.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            Identifier = segments.ElementAtOrDefault(0);
-            Text = segments.ElementAtOrDefault(1);
-            NameOfCodingSystem = segments.ElementAtOrDefault(2);
-            AlternateIdentifier = segments.ElementAtOrDefault(3);
-            AlternateText = segments.ElementAtOrDefault(4);
-            NameOfAlternateCodingSystem = segments.ElementAtOrDefault(5);
-            CodingSystemVersionId = segments.ElementAtOrDefault(6);
-            AlternateCodingSystemVersionId = segments.ElementAtOrDefault(7);
-            OriginalText = segments.ElementAtOrDefault(8);
-            SecondAlternateIdentifier = segments.ElementAtOrDefault(9);
-            SecondAlternateText = segments.ElementAtOrDefault(10);
-            NameOfSecondAlternateCodingSystem = segments.ElementAtOrDefault(11);
-            SecondAlternateCodingSystemVersionId = segments.ElementAtOrDefault(12);
-            CodingSystemOid = segments.ElementAtOrDefault(13);
-            ValueSetOid = segments.ElementAtOrDefault(14);
-            ValueSetVersionId = segments.ElementAtOrDefault(15)?.ToNullableDateTime();
-            AlternateCodingSystemOid = segments.ElementAtOrDefault(16);
-            AlternateValueSetOid = segments.ElementAtOrDefault(17);
-            AlternateValueSetVersionId = segments.ElementAtOrDefault(18)?.ToNullableDateTime();
-            SecondAlternateCodingSystemOid = segments.ElementAtOrDefault(19);
-            SecondAlternateValueSetOid = segments.ElementAtOrDefault(20);
-            SecondAlternateValueSetVersionId = segments.ElementAtOrDefault(21)?.ToNullableDateTime();
+            Identifier = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            Text = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            NameOfCodingSystem = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            AlternateIdentifier = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            AlternateText = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            NameOfAlternateCodingSystem = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
+            CodingSystemVersionId = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
+            AlternateCodingSystemVersionId = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
+            OriginalText = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
+            SecondAlternateIdentifier = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
+            SecondAlternateText = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
+            NameOfSecondAlternateCodingSystem = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
+            SecondAlternateCodingSystemVersionId = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
+            CodingSystemOid = segments.Length > 13 && segments[13].Length > 0 ? segments[13] : null;
+            ValueSetOid = segments.Length > 14 && segments[14].Length > 0 ? segments[14] : null;
+            ValueSetVersionId = segments.Length > 15 && segments[15].Length > 0 ? segments[15].ToNullableDateTime() : null;
+            AlternateCodingSystemOid = segments.Length > 16 && segments[16].Length > 0 ? segments[16] : null;
+            AlternateValueSetOid = segments.Length > 17 && segments[17].Length > 0 ? segments[17] : null;
+            AlternateValueSetVersionId = segments.Length > 18 && segments[18].Length > 0 ? segments[18].ToNullableDateTime() : null;
+            SecondAlternateCodingSystemOid = segments.Length > 19 && segments[19].Length > 0 ? segments[19] : null;
+            SecondAlternateValueSetOid = segments.Length > 20 && segments[20].Length > 0 ? segments[20] : null;
+            SecondAlternateValueSetVersionId = segments.Length > 21 && segments[21].Length > 0 ? segments[21].ToNullableDateTime() : null;
         }
 
         /// <summary>

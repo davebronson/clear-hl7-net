@@ -32,8 +32,8 @@ namespace ClearHl7.V290.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            MonetaryAmount = segments.Length > 0 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(0), true) : null;
-            ChargeCode = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), true) : null;
+            MonetaryAmount = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<Money>(segments[0], true) : null;
+            ChargeCode = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], true) : null;
         }
 
         /// <summary>

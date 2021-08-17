@@ -108,27 +108,27 @@ namespace ClearHl7.V230.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            StatisticsAvailable = segments.ElementAtOrDefault(1);
-            SourceIdentifier = segments.ElementAtOrDefault(2);
-            SourceType = segments.ElementAtOrDefault(3);
-            StatisticsStart = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
-            StatisticsEnd = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
-            ReceiveCharacterCount = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
-            SendCharacterCount = segments.ElementAtOrDefault(7)?.ToNullableDecimal();
-            MessagesReceived = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
-            MessagesSent = segments.ElementAtOrDefault(9)?.ToNullableDecimal();
-            ChecksumErrorsReceived = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
-            LengthErrorsReceived = segments.ElementAtOrDefault(11)?.ToNullableDecimal();
-            OtherErrorsReceived = segments.ElementAtOrDefault(12)?.ToNullableDecimal();
-            ConnectTimeouts = segments.ElementAtOrDefault(13)?.ToNullableDecimal();
-            ReceiveTimeouts = segments.ElementAtOrDefault(14)?.ToNullableDecimal();
-            ApplicationControlLevelErrors = segments.ElementAtOrDefault(15)?.ToNullableDecimal();
+            StatisticsAvailable = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            SourceIdentifier = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            SourceType = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            StatisticsStart = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
+            StatisticsEnd = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDateTime() : null;
+            ReceiveCharacterCount = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDecimal() : null;
+            SendCharacterCount = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDecimal() : null;
+            MessagesReceived = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDecimal() : null;
+            MessagesSent = segments.Length > 9 && segments[9].Length > 0 ? segments[9].ToNullableDecimal() : null;
+            ChecksumErrorsReceived = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDecimal() : null;
+            LengthErrorsReceived = segments.Length > 11 && segments[11].Length > 0 ? segments[11].ToNullableDecimal() : null;
+            OtherErrorsReceived = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDecimal() : null;
+            ConnectTimeouts = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDecimal() : null;
+            ReceiveTimeouts = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDecimal() : null;
+            ApplicationControlLevelErrors = segments.Length > 15 && segments[15].Length > 0 ? segments[15].ToNullableDecimal() : null;
         }
 
         /// <summary>

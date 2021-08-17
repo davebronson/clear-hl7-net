@@ -149,34 +149,34 @@ namespace ClearHl7.V231.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            GiveSubIdCounter = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
-            AdministrationSubIdCounter = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
-            DateTimeStartOfAdministration = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
-            DateTimeEndOfAdministration = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
-            AdministeredCode = segments.Length > 5 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(5), false) : null;
-            AdministeredAmount = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
-            AdministeredUnits = segments.Length > 7 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(7), false) : null;
-            AdministeredDosageForm = segments.Length > 8 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(8), false) : null;
-            AdministrationNotes = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            AdministeringProvider = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            AdministeredAtLocation = segments.Length > 11 ? TypeHelper.Deserialize<LocationWithAddressVariationTwo>(segments.ElementAtOrDefault(1), false) : null;
-            AdministeredPerTimeUnit = segments.ElementAtOrDefault(12);
-            AdministeredStrength = segments.ElementAtOrDefault(13)?.ToNullableDecimal();
-            AdministeredStrengthUnits = segments.Length > 14 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(14), false) : null;
-            SubstanceLotNumber = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator) : null;
-            SubstanceExpirationDate = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => x.ToDateTime()) : null;
-            SubstanceManufacturerName = segments.Length > 17 ? segments.ElementAtOrDefault(17).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            SubstanceTreatmentRefusalReason = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            Indication = segments.Length > 19 ? segments.ElementAtOrDefault(19).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            CompletionStatus = segments.ElementAtOrDefault(20);
-            ActionCodeRxa = segments.ElementAtOrDefault(21);
-            SystemEntryDateTime = segments.ElementAtOrDefault(22)?.ToNullableDateTime();
+            GiveSubIdCounter = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
+            AdministrationSubIdCounter = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDecimal() : null;
+            DateTimeStartOfAdministration = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
+            DateTimeEndOfAdministration = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
+            AdministeredCode = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[5], false) : null;
+            AdministeredAmount = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDecimal() : null;
+            AdministeredUnits = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[7], false) : null;
+            AdministeredDosageForm = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[8], false) : null;
+            AdministrationNotes = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            AdministeringProvider = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            AdministeredAtLocation = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<LocationWithAddressVariationTwo>(segments[1], false) : null;
+            AdministeredPerTimeUnit = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
+            AdministeredStrength = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDecimal() : null;
+            AdministeredStrengthUnits = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[14], false) : null;
+            SubstanceLotNumber = segments.Length > 15 && segments[15].Length > 0 ? segments[15].Split(separator) : null;
+            SubstanceExpirationDate = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(separator).Select(x => x.ToDateTime()) : null;
+            SubstanceManufacturerName = segments.Length > 17 && segments[17].Length > 0 ? segments[17].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            SubstanceTreatmentRefusalReason = segments.Length > 18 && segments[18].Length > 0 ? segments[18].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            Indication = segments.Length > 19 && segments[19].Length > 0 ? segments[19].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            CompletionStatus = segments.Length > 20 && segments[20].Length > 0 ? segments[20] : null;
+            ActionCodeRxa = segments.Length > 21 && segments[21].Length > 0 ? segments[21] : null;
+            SystemEntryDateTime = segments.Length > 22 && segments[22].Length > 0 ? segments[22].ToNullableDateTime() : null;
         }
 
         /// <summary>

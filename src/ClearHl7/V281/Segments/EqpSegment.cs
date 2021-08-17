@@ -59,17 +59,17 @@ namespace ClearHl7.V281.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            EventType = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
-            FileName = segments.ElementAtOrDefault(2);
-            StartDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
-            EndDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
-            TransactionData = segments.ElementAtOrDefault(5);
+            EventType = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false) : null;
+            FileName = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            StartDateTime = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
+            EndDateTime = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
+            TransactionData = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
         }
 
         /// <summary>

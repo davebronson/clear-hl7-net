@@ -44,10 +44,10 @@ namespace ClearHl7.V251.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            NormalRange = segments.Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments.ElementAtOrDefault(0), true) : null;
-            NumericThreshold = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
-            ChangeComputation = segments.ElementAtOrDefault(2);
-            DaysRetained = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
+            NormalRange = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments[0], true) : null;
+            NumericThreshold = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
+            ChangeComputation = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            DaysRetained = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDecimal() : null;
         }
 
         /// <summary>

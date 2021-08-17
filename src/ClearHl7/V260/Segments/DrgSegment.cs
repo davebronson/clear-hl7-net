@@ -217,45 +217,45 @@ namespace ClearHl7.V260.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            DiagnosticRelatedGroup = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(1), false) : null;
-            DrgAssignedDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
-            DrgApprovalIndicator = segments.ElementAtOrDefault(3);
-            DrgGrouperReviewCode = segments.ElementAtOrDefault(4);
-            OutlierType = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
-            OutlierDays = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
-            OutlierCost = segments.Length > 7 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(7), false) : null;
-            DrgPayor = segments.ElementAtOrDefault(8);
-            OutlierReimbursement = segments.Length > 9 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(9), false) : null;
-            ConfidentialIndicator = segments.ElementAtOrDefault(10);
-            DrgTransferType = segments.ElementAtOrDefault(11);
-            NameOfCoder = segments.Length > 12 ? TypeHelper.Deserialize<ExtendedPersonName>(segments.ElementAtOrDefault(12), false) : null;
-            GrouperStatus = segments.Length > 13 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(13), false) : null;
-            PcclValueCode = segments.Length > 14 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(14), false) : null;
-            EffectiveWeight = segments.ElementAtOrDefault(15)?.ToNullableDecimal();
-            MonetaryAmount = segments.Length > 16 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(16), false) : null;
-            StatusPatient = segments.ElementAtOrDefault(17);
-            GrouperSoftwareName = segments.ElementAtOrDefault(18);
-            GrouperSoftwareVersion = segments.ElementAtOrDefault(19);
-            StatusFinancialCalculation = segments.ElementAtOrDefault(20);
-            RelativeDiscountSurcharge = segments.Length > 21 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(21), false) : null;
-            BasicCharge = segments.Length > 22 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(22), false) : null;
-            TotalCharge = segments.Length > 23 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(23), false) : null;
-            DiscountSurcharge = segments.Length > 24 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(24), false) : null;
-            CalculatedDays = segments.ElementAtOrDefault(25)?.ToNullableDecimal();
-            StatusGender = segments.ElementAtOrDefault(26);
-            StatusAge = segments.ElementAtOrDefault(27);
-            StatusLengthOfStay = segments.ElementAtOrDefault(28);
-            StatusSameDayFlag = segments.ElementAtOrDefault(29);
-            StatusSeparationMode = segments.ElementAtOrDefault(30);
-            StatusWeightAtBirth = segments.ElementAtOrDefault(31);
-            StatusRespirationMinutes = segments.ElementAtOrDefault(32);
-            StatusAdmission = segments.ElementAtOrDefault(33);
+            DiagnosticRelatedGroup = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[1], false) : null;
+            DrgAssignedDateTime = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDateTime() : null;
+            DrgApprovalIndicator = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            DrgGrouperReviewCode = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            OutlierType = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], false) : null;
+            OutlierDays = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDecimal() : null;
+            OutlierCost = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[7], false) : null;
+            DrgPayor = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
+            OutlierReimbursement = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[9], false) : null;
+            ConfidentialIndicator = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
+            DrgTransferType = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
+            NameOfCoder = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<ExtendedPersonName>(segments[12], false) : null;
+            GrouperStatus = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[13], false) : null;
+            PcclValueCode = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[14], false) : null;
+            EffectiveWeight = segments.Length > 15 && segments[15].Length > 0 ? segments[15].ToNullableDecimal() : null;
+            MonetaryAmount = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<Money>(segments[16], false) : null;
+            StatusPatient = segments.Length > 17 && segments[17].Length > 0 ? segments[17] : null;
+            GrouperSoftwareName = segments.Length > 18 && segments[18].Length > 0 ? segments[18] : null;
+            GrouperSoftwareVersion = segments.Length > 19 && segments[19].Length > 0 ? segments[19] : null;
+            StatusFinancialCalculation = segments.Length > 20 && segments[20].Length > 0 ? segments[20] : null;
+            RelativeDiscountSurcharge = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<Money>(segments[21], false) : null;
+            BasicCharge = segments.Length > 22 && segments[22].Length > 0 ? TypeHelper.Deserialize<Money>(segments[22], false) : null;
+            TotalCharge = segments.Length > 23 && segments[23].Length > 0 ? TypeHelper.Deserialize<Money>(segments[23], false) : null;
+            DiscountSurcharge = segments.Length > 24 && segments[24].Length > 0 ? TypeHelper.Deserialize<Money>(segments[24], false) : null;
+            CalculatedDays = segments.Length > 25 && segments[25].Length > 0 ? segments[25].ToNullableDecimal() : null;
+            StatusGender = segments.Length > 26 && segments[26].Length > 0 ? segments[26] : null;
+            StatusAge = segments.Length > 27 && segments[27].Length > 0 ? segments[27] : null;
+            StatusLengthOfStay = segments.Length > 28 && segments[28].Length > 0 ? segments[28] : null;
+            StatusSameDayFlag = segments.Length > 29 && segments[29].Length > 0 ? segments[29] : null;
+            StatusSeparationMode = segments.Length > 30 && segments[30].Length > 0 ? segments[30] : null;
+            StatusWeightAtBirth = segments.Length > 31 && segments[31].Length > 0 ? segments[31] : null;
+            StatusRespirationMinutes = segments.Length > 32 && segments[32].Length > 0 ? segments[32] : null;
+            StatusAdmission = segments.Length > 33 && segments[33].Length > 0 ? segments[33] : null;
         }
 
         /// <summary>

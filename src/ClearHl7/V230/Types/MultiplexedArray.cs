@@ -53,12 +53,12 @@ namespace ClearHl7.V230.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            Sample1FromChannel1 = segments.ElementAtOrDefault(0)?.ToNullableDecimal();
-            Sample1FromChannel2 = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
-            Sample1FromChannelN = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
-            Sample2FromChannel1 = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
-            Sample2FromChannelN = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
-            SampleNFromChannelN = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
+            Sample1FromChannel1 = segments.Length > 0 && segments[0].Length > 0 ? segments[0].ToNullableDecimal() : null;
+            Sample1FromChannel2 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
+            Sample1FromChannelN = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDecimal() : null;
+            Sample2FromChannel1 = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDecimal() : null;
+            Sample2FromChannelN = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDecimal() : null;
+            SampleNFromChannelN = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDecimal() : null;
         }
 
         /// <summary>

@@ -42,14 +42,14 @@ namespace ClearHl7.V281.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdSgt = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            SegmentGroupName = segments.ElementAtOrDefault(2);
+            SetIdSgt = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            SegmentGroupName = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
         }
 
         /// <summary>

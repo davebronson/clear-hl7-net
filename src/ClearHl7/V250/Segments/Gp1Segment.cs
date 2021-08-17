@@ -63,17 +63,17 @@ namespace ClearHl7.V250.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            TypeOfBillCode = segments.ElementAtOrDefault(1);
-            RevenueCode = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator) : null;
-            OverallClaimDispositionCode = segments.ElementAtOrDefault(3);
-            OceEditsPerVisitCode = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator) : null;
-            OutlierCost = segments.Length > 5 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(5), false) : null;
+            TypeOfBillCode = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            RevenueCode = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(separator) : null;
+            OverallClaimDispositionCode = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            OceEditsPerVisitCode = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(separator) : null;
+            OutlierCost = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[5], false) : null;
         }
 
         /// <summary>

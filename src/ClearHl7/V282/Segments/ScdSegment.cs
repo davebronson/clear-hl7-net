@@ -232,49 +232,49 @@ namespace ClearHl7.V282.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            CycleStartTime = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
-            CycleCount = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
-            TempMax = segments.Length > 3 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(3), false) : null;
-            TempMin = segments.Length > 4 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(4), false) : null;
-            LoadNumber = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
-            ConditionTime = segments.Length > 6 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(6), false) : null;
-            SterilizeTime = segments.Length > 7 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(7), false) : null;
-            ExhaustTime = segments.Length > 8 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(8), false) : null;
-            TotalCycleTime = segments.Length > 9 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(9), false) : null;
-            DeviceStatus = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(10), false) : null;
-            CycleStartDateTime = segments.ElementAtOrDefault(11)?.ToNullableDateTime();
-            DryTime = segments.Length > 12 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(12), false) : null;
-            LeakRate = segments.Length > 13 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(13), false) : null;
-            ControlTemperature = segments.Length > 14 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(14), false) : null;
-            SterilizerTemperature = segments.Length > 15 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(15), false) : null;
-            CycleCompleteTime = segments.ElementAtOrDefault(16)?.ToNullableDateTime();
-            UnderTemperature = segments.Length > 17 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(17), false) : null;
-            OverTemperature = segments.Length > 18 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(18), false) : null;
-            AbortCycle = segments.Length > 19 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(19), false) : null;
-            Alarm = segments.Length > 20 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(20), false) : null;
-            LongInChargePhase = segments.Length > 21 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(21), false) : null;
-            LongInExhaustPhase = segments.Length > 22 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(22), false) : null;
-            LongInFastExhaustPhase = segments.Length > 23 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(23), false) : null;
-            Reset = segments.Length > 24 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(24), false) : null;
-            OperatorUnload = segments.Length > 25 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(25), false) : null;
-            DoorOpen = segments.Length > 26 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(26), false) : null;
-            ReadingFailure = segments.Length > 27 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(27), false) : null;
-            CycleType = segments.Length > 28 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(28), false) : null;
-            ThermalRinseTime = segments.Length > 29 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(29), false) : null;
-            WashTime = segments.Length > 30 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(30), false) : null;
-            InjectionRate = segments.Length > 31 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(31), false) : null;
-            ProcedureCode = segments.Length > 32 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(32), false) : null;
-            PatientIdentifierList = segments.Length > 33 ? segments.ElementAtOrDefault(33).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
-            AttendingDoctor = segments.Length > 34 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(34), false) : null;
-            DilutionFactor = segments.Length > 35 ? TypeHelper.Deserialize<StructuredNumeric>(segments.ElementAtOrDefault(35), false) : null;
-            FillTime = segments.Length > 36 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(36), false) : null;
-            InletTemperature = segments.Length > 37 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(37), false) : null;
+            CycleStartTime = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDateTime() : null;
+            CycleCount = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDecimal() : null;
+            TempMax = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[3], false) : null;
+            TempMin = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[4], false) : null;
+            LoadNumber = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDecimal() : null;
+            ConditionTime = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[6], false) : null;
+            SterilizeTime = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[7], false) : null;
+            ExhaustTime = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[8], false) : null;
+            TotalCycleTime = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[9], false) : null;
+            DeviceStatus = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[10], false) : null;
+            CycleStartDateTime = segments.Length > 11 && segments[11].Length > 0 ? segments[11].ToNullableDateTime() : null;
+            DryTime = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[12], false) : null;
+            LeakRate = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[13], false) : null;
+            ControlTemperature = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[14], false) : null;
+            SterilizerTemperature = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[15], false) : null;
+            CycleCompleteTime = segments.Length > 16 && segments[16].Length > 0 ? segments[16].ToNullableDateTime() : null;
+            UnderTemperature = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[17], false) : null;
+            OverTemperature = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[18], false) : null;
+            AbortCycle = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[19], false) : null;
+            Alarm = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[20], false) : null;
+            LongInChargePhase = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[21], false) : null;
+            LongInExhaustPhase = segments.Length > 22 && segments[22].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[22], false) : null;
+            LongInFastExhaustPhase = segments.Length > 23 && segments[23].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[23], false) : null;
+            Reset = segments.Length > 24 && segments[24].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[24], false) : null;
+            OperatorUnload = segments.Length > 25 && segments[25].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[25], false) : null;
+            DoorOpen = segments.Length > 26 && segments[26].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[26], false) : null;
+            ReadingFailure = segments.Length > 27 && segments[27].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[27], false) : null;
+            CycleType = segments.Length > 28 && segments[28].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[28], false) : null;
+            ThermalRinseTime = segments.Length > 29 && segments[29].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[29], false) : null;
+            WashTime = segments.Length > 30 && segments[30].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[30], false) : null;
+            InjectionRate = segments.Length > 31 && segments[31].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[31], false) : null;
+            ProcedureCode = segments.Length > 32 && segments[32].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[32], false) : null;
+            PatientIdentifierList = segments.Length > 33 && segments[33].Length > 0 ? segments[33].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
+            AttendingDoctor = segments.Length > 34 && segments[34].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[34], false) : null;
+            DilutionFactor = segments.Length > 35 && segments[35].Length > 0 ? TypeHelper.Deserialize<StructuredNumeric>(segments[35], false) : null;
+            FillTime = segments.Length > 36 && segments[36].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[36], false) : null;
+            InletTemperature = segments.Length > 37 && segments[37].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[37], false) : null;
         }
 
         /// <summary>

@@ -39,9 +39,9 @@ namespace ClearHl7.V260.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            JobCode = segments.ElementAtOrDefault(0);
-            JobClass = segments.ElementAtOrDefault(1);
-            JobDescriptionText = segments.Length > 2 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(2), true) : null;
+            JobCode = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            JobClass = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            JobDescriptionText = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<Text>(segments[2], true) : null;
         }
 
         /// <summary>

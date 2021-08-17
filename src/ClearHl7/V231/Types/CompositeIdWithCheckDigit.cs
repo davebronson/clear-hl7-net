@@ -44,10 +44,10 @@ namespace ClearHl7.V231.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            IdNumber = segments.ElementAtOrDefault(0)?.ToNullableDecimal();
-            CheckDigit = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
-            CodeIdentifyingTheCheckDigitSchemeEmployed = segments.ElementAtOrDefault(2);
-            AssigningAuthority = segments.Length > 3 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(3), true) : null;
+            IdNumber = segments.Length > 0 && segments[0].Length > 0 ? segments[0].ToNullableDecimal() : null;
+            CheckDigit = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
+            CodeIdentifyingTheCheckDigitSchemeEmployed = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            AssigningAuthority = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[3], true) : null;
         }
 
         /// <summary>

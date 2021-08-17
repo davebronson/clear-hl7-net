@@ -85,22 +85,22 @@ namespace ClearHl7.V240.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SequenceNumberTestObservationMasterFile = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
-            UnitsOfMeasure = segments.Length > 2 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(2), false) : null;
-            RangeOfDecimalPrecision = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => x.ToDecimal()) : null;
-            CorrespondingSiUnitsOfMeasure = segments.Length > 4 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(4), false) : null;
-            SiConversionFactor = segments.Length > 5 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(5), false) : null;
-            ReferenceNormalRangeForOrdinalAndContinuousObservations = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<ReferenceRange>(x, false)) : null;
-            CriticalRangeForOrdinalAndContinuousObservations = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<NumericRange>(x, false)) : null;
-            AbsoluteRangeForOrdinalAndContinuousObservations = segments.Length > 8 ? TypeHelper.Deserialize<ReferenceRange>(segments.ElementAtOrDefault(8), false) : null;
-            DeltaCheckCriteria = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<Delta>(x, false)) : null;
-            MinimumMeaningfulIncrements = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
+            SequenceNumberTestObservationMasterFile = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
+            UnitsOfMeasure = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[2], false) : null;
+            RangeOfDecimalPrecision = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(separator).Select(x => x.ToDecimal()) : null;
+            CorrespondingSiUnitsOfMeasure = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[4], false) : null;
+            SiConversionFactor = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<Text>(segments[5], false) : null;
+            ReferenceNormalRangeForOrdinalAndContinuousObservations = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(separator).Select(x => TypeHelper.Deserialize<ReferenceRange>(x, false)) : null;
+            CriticalRangeForOrdinalAndContinuousObservations = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(separator).Select(x => TypeHelper.Deserialize<NumericRange>(x, false)) : null;
+            AbsoluteRangeForOrdinalAndContinuousObservations = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<ReferenceRange>(segments[8], false) : null;
+            DeltaCheckCriteria = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(separator).Select(x => TypeHelper.Deserialize<Delta>(x, false)) : null;
+            MinimumMeaningfulIncrements = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDecimal() : null;
         }
 
         /// <summary>

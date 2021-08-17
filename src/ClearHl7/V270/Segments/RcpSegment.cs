@@ -75,19 +75,19 @@ namespace ClearHl7.V270.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            QueryPriority = segments.ElementAtOrDefault(1);
-            QuantityLimitedRequest = segments.Length > 2 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(2), false) : null;
-            ResponseModality = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(3), false) : null;
-            ExecutionAndDeliveryTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
-            ModifyIndicator = segments.ElementAtOrDefault(5);
-            SortByField = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<SortOrder>(x, false)) : null;
-            SegmentGroupInclusion = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator) : null;
+            QueryPriority = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            QuantityLimitedRequest = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[2], false) : null;
+            ResponseModality = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[3], false) : null;
+            ExecutionAndDeliveryTime = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
+            ModifyIndicator = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
+            SortByField = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(separator).Select(x => TypeHelper.Deserialize<SortOrder>(x, false)) : null;
+            SegmentGroupInclusion = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(separator) : null;
         }
 
         /// <summary>

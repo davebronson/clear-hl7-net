@@ -28,7 +28,7 @@ namespace ClearHl7.V282.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            Value = segments.ElementAtOrDefault(0);
+            Value = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
         }
 
         /// <summary>

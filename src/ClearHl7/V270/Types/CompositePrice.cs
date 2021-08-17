@@ -55,12 +55,12 @@ namespace ClearHl7.V270.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            Price = segments.Length > 0 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(0), true) : null;
-            PriceType = segments.ElementAtOrDefault(1);
-            FromValue = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
-            ToValue = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
-            RangeUnits = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), true) : null;
-            RangeType = segments.ElementAtOrDefault(5);
+            Price = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<Money>(segments[0], true) : null;
+            PriceType = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            FromValue = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDecimal() : null;
+            ToValue = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDecimal() : null;
+            RangeUnits = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], true) : null;
+            RangeType = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
         }
 
         /// <summary>

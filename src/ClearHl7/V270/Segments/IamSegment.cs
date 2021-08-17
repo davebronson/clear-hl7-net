@@ -192,42 +192,42 @@ namespace ClearHl7.V270.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdIam = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            AllergenTypeCode = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
-            AllergenCodeMnemonicDescription = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
-            AllergySeverityCode = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
-            AllergyReactionCode = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator) : null;
-            AllergyActionCode = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(6), false) : null;
-            AllergyUniqueIdentifier = segments.Length > 7 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(7), false) : null;
-            ActionReason = segments.ElementAtOrDefault(8);
-            SensitivityToCausativeAgentCode = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), false) : null;
-            AllergenGroupCodeMnemonicDescription = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(10), false) : null;
-            OnsetDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime();
-            OnsetDateText = segments.ElementAtOrDefault(12);
-            ReportedDateTime = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
-            ReportedBy = segments.Length > 14 ? TypeHelper.Deserialize<ExtendedPersonName>(segments.ElementAtOrDefault(14), false) : null;
-            RelationshipToPatientCode = segments.Length > 15 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(15), false) : null;
-            AlertDeviceCode = segments.Length > 16 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(16), false) : null;
-            AllergyClinicalStatusCode = segments.Length > 17 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(17), false) : null;
-            StatusedByPerson = segments.Length > 18 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(18), false) : null;
-            StatusedByOrganization = segments.Length > 19 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(19), false) : null;
-            StatusedAtDateTime = segments.ElementAtOrDefault(20)?.ToNullableDateTime();
-            InactivatedByPerson = segments.Length > 21 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(21), false) : null;
-            InactivatedDateTime = segments.ElementAtOrDefault(22)?.ToNullableDateTime();
-            InitiallyRecordedByPerson = segments.Length > 23 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(23), false) : null;
-            InitiallyRecordedDateTime = segments.ElementAtOrDefault(24)?.ToNullableDateTime();
-            ModifiedByPerson = segments.Length > 25 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(25), false) : null;
-            ModifiedDateTime = segments.ElementAtOrDefault(26)?.ToNullableDateTime();
-            ClinicianIdentifiedCode = segments.Length > 27 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(27), false) : null;
-            InitiallyRecordedByOrganization = segments.Length > 28 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(28), false) : null;
-            ModifiedByOrganization = segments.Length > 29 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(29), false) : null;
-            InactivatedByOrganization = segments.Length > 30 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(30), false) : null;
+            SetIdIam = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            AllergenTypeCode = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
+            AllergenCodeMnemonicDescription = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false) : null;
+            AllergySeverityCode = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false) : null;
+            AllergyReactionCode = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(separator) : null;
+            AllergyActionCode = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[6], false) : null;
+            AllergyUniqueIdentifier = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[7], false) : null;
+            ActionReason = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
+            SensitivityToCausativeAgentCode = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[9], false) : null;
+            AllergenGroupCodeMnemonicDescription = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[10], false) : null;
+            OnsetDate = segments.Length > 11 && segments[11].Length > 0 ? segments[11].ToNullableDateTime() : null;
+            OnsetDateText = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
+            ReportedDateTime = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDateTime() : null;
+            ReportedBy = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<ExtendedPersonName>(segments[14], false) : null;
+            RelationshipToPatientCode = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[15], false) : null;
+            AlertDeviceCode = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[16], false) : null;
+            AllergyClinicalStatusCode = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[17], false) : null;
+            StatusedByPerson = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[18], false) : null;
+            StatusedByOrganization = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[19], false) : null;
+            StatusedAtDateTime = segments.Length > 20 && segments[20].Length > 0 ? segments[20].ToNullableDateTime() : null;
+            InactivatedByPerson = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[21], false) : null;
+            InactivatedDateTime = segments.Length > 22 && segments[22].Length > 0 ? segments[22].ToNullableDateTime() : null;
+            InitiallyRecordedByPerson = segments.Length > 23 && segments[23].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[23], false) : null;
+            InitiallyRecordedDateTime = segments.Length > 24 && segments[24].Length > 0 ? segments[24].ToNullableDateTime() : null;
+            ModifiedByPerson = segments.Length > 25 && segments[25].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[25], false) : null;
+            ModifiedDateTime = segments.Length > 26 && segments[26].Length > 0 ? segments[26].ToNullableDateTime() : null;
+            ClinicianIdentifiedCode = segments.Length > 27 && segments[27].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[27], false) : null;
+            InitiallyRecordedByOrganization = segments.Length > 28 && segments[28].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[28], false) : null;
+            ModifiedByOrganization = segments.Length > 29 && segments[29].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[29], false) : null;
+            InactivatedByOrganization = segments.Length > 30 && segments[30].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[30], false) : null;
         }
 
         /// <summary>

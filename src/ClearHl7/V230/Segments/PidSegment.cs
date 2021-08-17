@@ -196,42 +196,42 @@ namespace ClearHl7.V230.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdPid = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            PatientId = segments.Length > 2 ? TypeHelper.Deserialize<CompositeIdWithCheckDigit>(segments.ElementAtOrDefault(2), false) : null;
-            PatientIdentifierList = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
-            AlternatePatientIdPid = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator) : null;
-            PatientName = segments.Length > 5 ? TypeHelper.Deserialize<ExtendedPersonName>(segments.ElementAtOrDefault(5), false) : null;
-            MothersMaidenName = segments.Length > 6 ? TypeHelper.Deserialize<ExtendedPersonName>(segments.ElementAtOrDefault(6), false) : null;
-            DateTimeOfBirth = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
-            AdministrativeSex = segments.ElementAtOrDefault(8);
-            PatientAlias = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
-            Race = segments.ElementAtOrDefault(10);
-            PatientAddress = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
-            CountyCode = segments.ElementAtOrDefault(12);
-            PhoneNumberHome = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
-            PhoneNumberBusiness = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
-            PrimaryLanguage = segments.Length > 15 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(15), false) : null;
-            MaritalStatus = segments.Length > 16 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(16), false) : null;
-            Religion = segments.Length > 17 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(17), false) : null;
-            PatientAccountNumber = segments.Length > 18 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(18), false) : null;
-            SsnNumberPatient = segments.ElementAtOrDefault(19);
-            DriversLicenseNumberPatient = segments.Length > 20 ? TypeHelper.Deserialize<DriversLicenseNumber>(segments.ElementAtOrDefault(20), false) : null;
-            MothersIdentifier = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
-            EthnicGroup = segments.ElementAtOrDefault(22);
-            BirthPlace = segments.ElementAtOrDefault(23);
-            MultipleBirthIndicator = segments.ElementAtOrDefault(24);
-            BirthOrder = segments.ElementAtOrDefault(25)?.ToNullableDecimal();
-            Citizenship = segments.Length > 26 ? segments.ElementAtOrDefault(26).Split(separator) : null;
-            VeteransMilitaryStatus = segments.Length > 27 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(27), false) : null;
-            Nationality = segments.Length > 28 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(28), false) : null;
-            PatientDeathDateAndTime = segments.ElementAtOrDefault(29)?.ToNullableDateTime();
-            PatientDeathIndicator = segments.ElementAtOrDefault(30);
+            SetIdPid = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            PatientId = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CompositeIdWithCheckDigit>(segments[2], false) : null;
+            PatientIdentifierList = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
+            AlternatePatientIdPid = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(separator) : null;
+            PatientName = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<ExtendedPersonName>(segments[5], false) : null;
+            MothersMaidenName = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<ExtendedPersonName>(segments[6], false) : null;
+            DateTimeOfBirth = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
+            AdministrativeSex = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
+            PatientAlias = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
+            Race = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
+            PatientAddress = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
+            CountyCode = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
+            PhoneNumberHome = segments.Length > 13 && segments[13].Length > 0 ? segments[13].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
+            PhoneNumberBusiness = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
+            PrimaryLanguage = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[15], false) : null;
+            MaritalStatus = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[16], false) : null;
+            Religion = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[17], false) : null;
+            PatientAccountNumber = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments[18], false) : null;
+            SsnNumberPatient = segments.Length > 19 && segments[19].Length > 0 ? segments[19] : null;
+            DriversLicenseNumberPatient = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<DriversLicenseNumber>(segments[20], false) : null;
+            MothersIdentifier = segments.Length > 21 && segments[21].Length > 0 ? segments[21].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
+            EthnicGroup = segments.Length > 22 && segments[22].Length > 0 ? segments[22] : null;
+            BirthPlace = segments.Length > 23 && segments[23].Length > 0 ? segments[23] : null;
+            MultipleBirthIndicator = segments.Length > 24 && segments[24].Length > 0 ? segments[24] : null;
+            BirthOrder = segments.Length > 25 && segments[25].Length > 0 ? segments[25].ToNullableDecimal() : null;
+            Citizenship = segments.Length > 26 && segments[26].Length > 0 ? segments[26].Split(separator) : null;
+            VeteransMilitaryStatus = segments.Length > 27 && segments[27].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[27], false) : null;
+            Nationality = segments.Length > 28 && segments[28].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[28], false) : null;
+            PatientDeathDateAndTime = segments.Length > 29 && segments[29].Length > 0 ? segments[29].ToNullableDateTime() : null;
+            PatientDeathIndicator = segments.Length > 30 && segments[30].Length > 0 ? segments[30] : null;
         }
 
         /// <summary>

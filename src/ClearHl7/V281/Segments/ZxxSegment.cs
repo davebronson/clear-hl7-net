@@ -45,7 +45,7 @@ namespace ClearHl7.V281.Segments
 
             if (segments.Length > 0)
             {
-                if (!segments.First().StartsWith("Z", StringComparison.CurrentCultureIgnoreCase))
+                if (!segments[0].StartsWith("Z", StringComparison.CurrentCultureIgnoreCase))
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: 'Z[XX]{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
@@ -53,8 +53,8 @@ namespace ClearHl7.V281.Segments
 
             // TODO:  Means to provide the collection of ITypes to be used when building SegmentItems
 
-            SegmentSuffix = segments.Length > 0 ? segments.FirstOrDefault().Substring(1) : SegmentSuffix;
-            SegmentItems = segments.Length > 1 ? segments.ElementAtOrDefault(1).Split(separator).Select(x => TypeHelper.Deserialize<Text>(x, false)) : null;
+            SegmentSuffix = segments.Length > 0 && segments[0].Length > 0 ? segments[0].Substring(1) : SegmentSuffix;
+            SegmentItems = segments.Length > 1 && segments[1].Length > 0 ? segments[1].Split(separator).Select(x => TypeHelper.Deserialize<Text>(x, false)) : null;
         }
 
         /// <summary>

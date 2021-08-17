@@ -168,36 +168,36 @@ namespace ClearHl7.V282.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            HealthPlanId = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
-            InsuranceCompanyId = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
-            InsuranceCompanyName = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
-            InsuranceCompanyAddress = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
-            InsuranceCoContactPerson = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
-            InsuranceCoPhoneNumber = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
-            GroupNumber = segments.ElementAtOrDefault(7);
-            GroupName = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
-            PlanEffectiveDate = segments.ElementAtOrDefault(9)?.ToNullableDateTime();
-            PlanExpirationDate = segments.ElementAtOrDefault(10)?.ToNullableDateTime();
-            PatientDobRequired = segments.ElementAtOrDefault(11);
-            PatientGenderRequired = segments.ElementAtOrDefault(12);
-            PatientRelationshipRequired = segments.ElementAtOrDefault(13);
-            PatientSignatureRequired = segments.ElementAtOrDefault(14);
-            DiagnosisRequired = segments.ElementAtOrDefault(15);
-            ServiceRequired = segments.ElementAtOrDefault(16);
-            PatientNameRequired = segments.ElementAtOrDefault(17);
-            PatientAddressRequired = segments.ElementAtOrDefault(18);
-            SubscribersNameRequired = segments.ElementAtOrDefault(19);
-            WorkmansCompIndicator = segments.ElementAtOrDefault(20);
-            BillTypeRequired = segments.ElementAtOrDefault(21);
-            CommercialCarrierNameAndAddressRequired = segments.ElementAtOrDefault(22);
-            PolicyNumberPattern = segments.ElementAtOrDefault(23);
-            GroupNumberPattern = segments.ElementAtOrDefault(24);
+            HealthPlanId = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false) : null;
+            InsuranceCompanyId = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
+            InsuranceCompanyName = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
+            InsuranceCompanyAddress = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
+            InsuranceCoContactPerson = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
+            InsuranceCoPhoneNumber = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
+            GroupNumber = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
+            GroupName = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
+            PlanEffectiveDate = segments.Length > 9 && segments[9].Length > 0 ? segments[9].ToNullableDateTime() : null;
+            PlanExpirationDate = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDateTime() : null;
+            PatientDobRequired = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
+            PatientGenderRequired = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
+            PatientRelationshipRequired = segments.Length > 13 && segments[13].Length > 0 ? segments[13] : null;
+            PatientSignatureRequired = segments.Length > 14 && segments[14].Length > 0 ? segments[14] : null;
+            DiagnosisRequired = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
+            ServiceRequired = segments.Length > 16 && segments[16].Length > 0 ? segments[16] : null;
+            PatientNameRequired = segments.Length > 17 && segments[17].Length > 0 ? segments[17] : null;
+            PatientAddressRequired = segments.Length > 18 && segments[18].Length > 0 ? segments[18] : null;
+            SubscribersNameRequired = segments.Length > 19 && segments[19].Length > 0 ? segments[19] : null;
+            WorkmansCompIndicator = segments.Length > 20 && segments[20].Length > 0 ? segments[20] : null;
+            BillTypeRequired = segments.Length > 21 && segments[21].Length > 0 ? segments[21] : null;
+            CommercialCarrierNameAndAddressRequired = segments.Length > 22 && segments[22].Length > 0 ? segments[22] : null;
+            PolicyNumberPattern = segments.Length > 23 && segments[23].Length > 0 ? segments[23] : null;
+            GroupNumberPattern = segments.Length > 24 && segments[24].Length > 0 ? segments[24] : null;
         }
 
         /// <summary>

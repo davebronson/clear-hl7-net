@@ -58,17 +58,17 @@ namespace ClearHl7.V290.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            ProviderProductServiceSectionNumber = segments.Length > 1 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(1), false) : null;
-            PayerProductServiceSectionNumber = segments.Length > 2 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(2), false) : null;
-            ProductServiceSectionSequenceNumber = segments.ElementAtOrDefault(3)?.ToNullableUInt();
-            BilledAmount = segments.Length > 4 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(4), false) : null;
-            SectionDescriptionOrHeading = segments.ElementAtOrDefault(5);
+            ProviderProductServiceSectionNumber = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false) : null;
+            PayerProductServiceSectionNumber = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false) : null;
+            ProductServiceSectionSequenceNumber = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableUInt() : null;
+            BilledAmount = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[4], false) : null;
+            SectionDescriptionOrHeading = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
         }
 
         /// <summary>

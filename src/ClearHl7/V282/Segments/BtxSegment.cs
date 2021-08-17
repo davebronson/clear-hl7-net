@@ -140,32 +140,32 @@ namespace ClearHl7.V282.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdBtx = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            BcDonationId = segments.Length > 2 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(2), false) : null;
-            BcComponent = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(3), false) : null;
-            BcBloodGroup = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(4), false) : null;
-            CpCommercialProduct = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
-            CpManufacturer = segments.Length > 6 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(6), false) : null;
-            CpLotNumber = segments.Length > 7 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(7), false) : null;
-            BpQuantity = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
-            BpAmount = segments.ElementAtOrDefault(9)?.ToNullableDecimal();
-            BpUnits = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(10), false) : null;
-            BpTransfusionDispositionStatus = segments.Length > 11 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(11), false) : null;
-            BpMessageStatus = segments.ElementAtOrDefault(12);
-            BpDateTimeOfStatus = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
-            BpTransfusionAdministrator = segments.Length > 14 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(14), false) : null;
-            BpTransfusionVerifier = segments.Length > 15 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(15), false) : null;
-            BpTransfusionStartDateTimeOfStatus = segments.ElementAtOrDefault(16)?.ToNullableDateTime();
-            BpTransfusionEndDateTimeOfStatus = segments.ElementAtOrDefault(17)?.ToNullableDateTime();
-            BpAdverseReactionType = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            BpTransfusionInterruptedReason = segments.Length > 19 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(19), false) : null;
-            BpUniqueId = segments.Length > 20 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(20), false) : null;
+            SetIdBtx = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            BcDonationId = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false) : null;
+            BcComponent = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[3], false) : null;
+            BcBloodGroup = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[4], false) : null;
+            CpCommercialProduct = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], false) : null;
+            CpManufacturer = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[6], false) : null;
+            CpLotNumber = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[7], false) : null;
+            BpQuantity = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDecimal() : null;
+            BpAmount = segments.Length > 9 && segments[9].Length > 0 ? segments[9].ToNullableDecimal() : null;
+            BpUnits = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[10], false) : null;
+            BpTransfusionDispositionStatus = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[11], false) : null;
+            BpMessageStatus = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
+            BpDateTimeOfStatus = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDateTime() : null;
+            BpTransfusionAdministrator = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[14], false) : null;
+            BpTransfusionVerifier = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[15], false) : null;
+            BpTransfusionStartDateTimeOfStatus = segments.Length > 16 && segments[16].Length > 0 ? segments[16].ToNullableDateTime() : null;
+            BpTransfusionEndDateTimeOfStatus = segments.Length > 17 && segments[17].Length > 0 ? segments[17].ToNullableDateTime() : null;
+            BpAdverseReactionType = segments.Length > 18 && segments[18].Length > 0 ? segments[18].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            BpTransfusionInterruptedReason = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[19], false) : null;
+            BpUniqueId = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[20], false) : null;
         }
 
         /// <summary>

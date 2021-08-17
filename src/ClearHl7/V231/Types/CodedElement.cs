@@ -52,12 +52,12 @@ namespace ClearHl7.V231.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            Identifier = segments.ElementAtOrDefault(0);
-            Text = segments.ElementAtOrDefault(1);
-            NameOfCodingSystem = segments.ElementAtOrDefault(2);
-            AlternateIdentifier = segments.ElementAtOrDefault(3);
-            AlternateText = segments.ElementAtOrDefault(4);
-            NameOfAlternateCodingSystem = segments.ElementAtOrDefault(5);
+            Identifier = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            Text = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            NameOfCodingSystem = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            AlternateIdentifier = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            AlternateText = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            NameOfAlternateCodingSystem = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
         }
 
         /// <summary>

@@ -312,62 +312,62 @@ namespace ClearHl7.V280.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            PriorPendingLocation = segments.Length > 1 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(1), false) : null;
-            AccommodationCode = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
-            AdmitReason = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
-            TransferReason = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
-            PatientValuables = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator) : null;
-            PatientValuablesLocation = segments.ElementAtOrDefault(6);
-            VisitUserCode = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            ExpectedAdmitDateTime = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
-            ExpectedDischargeDateTime = segments.ElementAtOrDefault(9)?.ToNullableDateTime();
-            EstimatedLengthOfInpatientStay = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
-            ActualLengthOfInpatientStay = segments.ElementAtOrDefault(11)?.ToNullableDecimal();
-            VisitDescription = segments.ElementAtOrDefault(12);
-            ReferralSourceCode = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            PreviousServiceDate = segments.ElementAtOrDefault(14)?.ToNullableDateTime();
-            EmploymentIllnessRelatedIndicator = segments.ElementAtOrDefault(15);
-            PurgeStatusCode = segments.Length > 16 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(16), false) : null;
-            PurgeStatusDate = segments.ElementAtOrDefault(17)?.ToNullableDateTime();
-            SpecialProgramCode = segments.Length > 18 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(18), false) : null;
-            RetentionIndicator = segments.ElementAtOrDefault(19);
-            ExpectedNumberOfInsurancePlans = segments.ElementAtOrDefault(20)?.ToNullableDecimal();
-            VisitPublicityCode = segments.Length > 21 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(21), false) : null;
-            VisitProtectionIndicator = segments.ElementAtOrDefault(22);
-            ClinicOrganizationName = segments.Length > 23 ? segments.ElementAtOrDefault(23).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
-            PatientStatusCode = segments.Length > 24 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(24), false) : null;
-            VisitPriorityCode = segments.Length > 25 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(25), false) : null;
-            PreviousTreatmentDate = segments.ElementAtOrDefault(26)?.ToNullableDateTime();
-            ExpectedDischargeDisposition = segments.Length > 27 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(27), false) : null;
-            SignatureOnFileDate = segments.ElementAtOrDefault(28)?.ToNullableDateTime();
-            FirstSimilarIllnessDate = segments.ElementAtOrDefault(29)?.ToNullableDateTime();
-            PatientChargeAdjustmentCode = segments.Length > 30 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(30), false) : null;
-            RecurringServiceCode = segments.Length > 31 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(31), false) : null;
-            BillingMediaCode = segments.ElementAtOrDefault(32);
-            ExpectedSurgeryDateAndTime = segments.ElementAtOrDefault(33)?.ToNullableDateTime();
-            MilitaryPartnershipCode = segments.ElementAtOrDefault(34);
-            MilitaryNonAvailabilityCode = segments.ElementAtOrDefault(35);
-            NewbornBabyIndicator = segments.ElementAtOrDefault(36);
-            BabyDetainedIndicator = segments.ElementAtOrDefault(37);
-            ModeOfArrivalCode = segments.Length > 38 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(38), false) : null;
-            RecreationalDrugUseCode = segments.Length > 39 ? segments.ElementAtOrDefault(39).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            AdmissionLevelOfCareCode = segments.Length > 40 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(40), false) : null;
-            PrecautionCode = segments.Length > 41 ? segments.ElementAtOrDefault(41).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            PatientConditionCode = segments.Length > 42 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(42), false) : null;
-            LivingWillCode = segments.Length > 43 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(43), false) : null;
-            OrganDonorCode = segments.Length > 44 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(44), false) : null;
-            AdvanceDirectiveCode = segments.Length > 45 ? segments.ElementAtOrDefault(45).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            PatientStatusEffectiveDate = segments.ElementAtOrDefault(46)?.ToNullableDateTime();
-            ExpectedLoaReturnDateTime = segments.ElementAtOrDefault(47)?.ToNullableDateTime();
-            ExpectedPreAdmissionTestingDateTime = segments.ElementAtOrDefault(48)?.ToNullableDateTime();
-            NotifyClergyCode = segments.Length > 49 ? segments.ElementAtOrDefault(49).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            AdvanceDirectiveLastVerifiedDate = segments.ElementAtOrDefault(50)?.ToNullableDateTime();
+            PriorPendingLocation = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[1], false) : null;
+            AccommodationCode = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
+            AdmitReason = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false) : null;
+            TransferReason = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false) : null;
+            PatientValuables = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(separator) : null;
+            PatientValuablesLocation = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
+            VisitUserCode = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            ExpectedAdmitDateTime = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDateTime() : null;
+            ExpectedDischargeDateTime = segments.Length > 9 && segments[9].Length > 0 ? segments[9].ToNullableDateTime() : null;
+            EstimatedLengthOfInpatientStay = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDecimal() : null;
+            ActualLengthOfInpatientStay = segments.Length > 11 && segments[11].Length > 0 ? segments[11].ToNullableDecimal() : null;
+            VisitDescription = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
+            ReferralSourceCode = segments.Length > 13 && segments[13].Length > 0 ? segments[13].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            PreviousServiceDate = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDateTime() : null;
+            EmploymentIllnessRelatedIndicator = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
+            PurgeStatusCode = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[16], false) : null;
+            PurgeStatusDate = segments.Length > 17 && segments[17].Length > 0 ? segments[17].ToNullableDateTime() : null;
+            SpecialProgramCode = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[18], false) : null;
+            RetentionIndicator = segments.Length > 19 && segments[19].Length > 0 ? segments[19] : null;
+            ExpectedNumberOfInsurancePlans = segments.Length > 20 && segments[20].Length > 0 ? segments[20].ToNullableDecimal() : null;
+            VisitPublicityCode = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[21], false) : null;
+            VisitProtectionIndicator = segments.Length > 22 && segments[22].Length > 0 ? segments[22] : null;
+            ClinicOrganizationName = segments.Length > 23 && segments[23].Length > 0 ? segments[23].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
+            PatientStatusCode = segments.Length > 24 && segments[24].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[24], false) : null;
+            VisitPriorityCode = segments.Length > 25 && segments[25].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[25], false) : null;
+            PreviousTreatmentDate = segments.Length > 26 && segments[26].Length > 0 ? segments[26].ToNullableDateTime() : null;
+            ExpectedDischargeDisposition = segments.Length > 27 && segments[27].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[27], false) : null;
+            SignatureOnFileDate = segments.Length > 28 && segments[28].Length > 0 ? segments[28].ToNullableDateTime() : null;
+            FirstSimilarIllnessDate = segments.Length > 29 && segments[29].Length > 0 ? segments[29].ToNullableDateTime() : null;
+            PatientChargeAdjustmentCode = segments.Length > 30 && segments[30].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[30], false) : null;
+            RecurringServiceCode = segments.Length > 31 && segments[31].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[31], false) : null;
+            BillingMediaCode = segments.Length > 32 && segments[32].Length > 0 ? segments[32] : null;
+            ExpectedSurgeryDateAndTime = segments.Length > 33 && segments[33].Length > 0 ? segments[33].ToNullableDateTime() : null;
+            MilitaryPartnershipCode = segments.Length > 34 && segments[34].Length > 0 ? segments[34] : null;
+            MilitaryNonAvailabilityCode = segments.Length > 35 && segments[35].Length > 0 ? segments[35] : null;
+            NewbornBabyIndicator = segments.Length > 36 && segments[36].Length > 0 ? segments[36] : null;
+            BabyDetainedIndicator = segments.Length > 37 && segments[37].Length > 0 ? segments[37] : null;
+            ModeOfArrivalCode = segments.Length > 38 && segments[38].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[38], false) : null;
+            RecreationalDrugUseCode = segments.Length > 39 && segments[39].Length > 0 ? segments[39].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            AdmissionLevelOfCareCode = segments.Length > 40 && segments[40].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[40], false) : null;
+            PrecautionCode = segments.Length > 41 && segments[41].Length > 0 ? segments[41].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            PatientConditionCode = segments.Length > 42 && segments[42].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[42], false) : null;
+            LivingWillCode = segments.Length > 43 && segments[43].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[43], false) : null;
+            OrganDonorCode = segments.Length > 44 && segments[44].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[44], false) : null;
+            AdvanceDirectiveCode = segments.Length > 45 && segments[45].Length > 0 ? segments[45].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            PatientStatusEffectiveDate = segments.Length > 46 && segments[46].Length > 0 ? segments[46].ToNullableDateTime() : null;
+            ExpectedLoaReturnDateTime = segments.Length > 47 && segments[47].Length > 0 ? segments[47].ToNullableDateTime() : null;
+            ExpectedPreAdmissionTestingDateTime = segments.Length > 48 && segments[48].Length > 0 ? segments[48].ToNullableDateTime() : null;
+            NotifyClergyCode = segments.Length > 49 && segments[49].Length > 0 ? segments[49].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            AdvanceDirectiveLastVerifiedDate = segments.Length > 50 && segments[50].Length > 0 ? segments[50].ToNullableDateTime() : null;
         }
 
         /// <summary>

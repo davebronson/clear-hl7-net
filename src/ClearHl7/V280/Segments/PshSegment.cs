@@ -107,26 +107,26 @@ namespace ClearHl7.V280.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            ReportType = segments.ElementAtOrDefault(1);
-            ReportFormIdentifier = segments.ElementAtOrDefault(2);
-            ReportDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
-            ReportIntervalStartDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
-            ReportIntervalEndDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
-            QuantityManufactured = segments.Length > 6 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(6), false) : null;
-            QuantityDistributed = segments.Length > 7 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(7), false) : null;
-            QuantityDistributedMethod = segments.ElementAtOrDefault(8);
-            QuantityDistributedComment = segments.ElementAtOrDefault(9);
-            QuantityInUse = segments.Length > 10 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(10), false) : null;
-            QuantityInUseMethod = segments.ElementAtOrDefault(11);
-            QuantityInUseComment = segments.ElementAtOrDefault(12);
-            NumberOfProductExperienceReportsFiledByFacility = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => x.ToDecimal()) : null;
-            NumberOfProductExperienceReportsFiledByDistributor = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => x.ToDecimal()) : null;
+            ReportType = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            ReportFormIdentifier = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            ReportDate = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
+            ReportIntervalStartDate = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
+            ReportIntervalEndDate = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDateTime() : null;
+            QuantityManufactured = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[6], false) : null;
+            QuantityDistributed = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[7], false) : null;
+            QuantityDistributedMethod = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
+            QuantityDistributedComment = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
+            QuantityInUse = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[10], false) : null;
+            QuantityInUseMethod = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
+            QuantityInUseComment = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
+            NumberOfProductExperienceReportsFiledByFacility = segments.Length > 13 && segments[13].Length > 0 ? segments[13].Split(separator).Select(x => x.ToDecimal()) : null;
+            NumberOfProductExperienceReportsFiledByDistributor = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(separator).Select(x => x.ToDecimal()) : null;
         }
 
         /// <summary>

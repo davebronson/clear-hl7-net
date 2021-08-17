@@ -33,8 +33,8 @@ namespace ClearHl7.V230.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            LowValue = segments.ElementAtOrDefault(0)?.ToNullableDecimal();
-            HighValue = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
+            LowValue = segments.Length > 0 && segments[0].Length > 0 ? segments[0].ToNullableDecimal() : null;
+            HighValue = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
         }
 
         /// <summary>

@@ -134,30 +134,30 @@ namespace ClearHl7.V240.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            PrimaryKeyValuePrc = segments.Length > 1 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(1), false) : null;
-            FacilityIdPrc = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            Department = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            ValidPatientClasses = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator) : null;
-            Price = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<CompositePrice>(x, false)) : null;
-            Formula = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator) : null;
-            MinimumQuantity = segments.ElementAtOrDefault(7)?.ToNullableDecimal();
-            MaximumQuantity = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
-            MinimumPrice = segments.Length > 9 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(9), false) : null;
-            MaximumPrice = segments.Length > 10 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(10), false) : null;
-            EffectiveStartDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime();
-            EffectiveEndDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
-            PriceOverrideFlag = segments.ElementAtOrDefault(13);
-            BillingCategory = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            ChargeableFlag = segments.ElementAtOrDefault(15);
-            ActiveInactiveFlag = segments.ElementAtOrDefault(16);
-            Cost = segments.Length > 17 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(17), false) : null;
-            ChargeOnIndicator = segments.ElementAtOrDefault(18);
+            PrimaryKeyValuePrc = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[1], false) : null;
+            FacilityIdPrc = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            Department = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            ValidPatientClasses = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(separator) : null;
+            Price = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(separator).Select(x => TypeHelper.Deserialize<CompositePrice>(x, false)) : null;
+            Formula = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(separator) : null;
+            MinimumQuantity = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDecimal() : null;
+            MaximumQuantity = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDecimal() : null;
+            MinimumPrice = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<Money>(segments[9], false) : null;
+            MaximumPrice = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<Money>(segments[10], false) : null;
+            EffectiveStartDate = segments.Length > 11 && segments[11].Length > 0 ? segments[11].ToNullableDateTime() : null;
+            EffectiveEndDate = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDateTime() : null;
+            PriceOverrideFlag = segments.Length > 13 && segments[13].Length > 0 ? segments[13] : null;
+            BillingCategory = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            ChargeableFlag = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
+            ActiveInactiveFlag = segments.Length > 16 && segments[16].Length > 0 ? segments[16] : null;
+            Cost = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<Money>(segments[17], false) : null;
+            ChargeOnIndicator = segments.Length > 18 && segments[18].Length > 0 ? segments[18] : null;
         }
 
         /// <summary>

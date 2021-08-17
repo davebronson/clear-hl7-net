@@ -51,11 +51,11 @@ namespace ClearHl7.V282.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            Privilege = segments.Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(0), true) : null;
-            PrivilegeClass = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), true) : null;
-            ExpirationDate = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
-            ActivationDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
-            Facility = segments.Length > 4 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(4), true) : null;
+            Privilege = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[0], true) : null;
+            PrivilegeClass = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], true) : null;
+            ExpirationDate = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDateTime() : null;
+            ActivationDate = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
+            Facility = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[4], true) : null;
         }
 
         /// <summary>

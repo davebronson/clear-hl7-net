@@ -108,26 +108,26 @@ namespace ClearHl7.V271.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdBpo = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            BpUniversalServiceIdentifier = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
-            BpProcessingRequirements = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            BpQuantity = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
-            BpAmount = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
-            BpUnits = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
-            BpIntendedUseDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
-            BpIntendedDispenseFromLocation = segments.Length > 8 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(8), false) : null;
-            BpIntendedDispenseFromAddress = segments.Length > 9 ? TypeHelper.Deserialize<ExtendedAddress>(segments.ElementAtOrDefault(9), false) : null;
-            BpRequestedDispenseDateTime = segments.ElementAtOrDefault(10)?.ToNullableDateTime();
-            BpRequestedDispenseToLocation = segments.Length > 11 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(11), false) : null;
-            BpRequestedDispenseToAddress = segments.Length > 12 ? TypeHelper.Deserialize<ExtendedAddress>(segments.ElementAtOrDefault(12), false) : null;
-            BpIndicationForUse = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            BpInformedConsentIndicator = segments.ElementAtOrDefault(14);
+            SetIdBpo = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            BpUniversalServiceIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
+            BpProcessingRequirements = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            BpQuantity = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDecimal() : null;
+            BpAmount = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDecimal() : null;
+            BpUnits = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[6], false) : null;
+            BpIntendedUseDateTime = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
+            BpIntendedDispenseFromLocation = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[8], false) : null;
+            BpIntendedDispenseFromAddress = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<ExtendedAddress>(segments[9], false) : null;
+            BpRequestedDispenseDateTime = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDateTime() : null;
+            BpRequestedDispenseToLocation = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[11], false) : null;
+            BpRequestedDispenseToAddress = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<ExtendedAddress>(segments[12], false) : null;
+            BpIndicationForUse = segments.Length > 13 && segments[13].Length > 0 ? segments[13].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            BpInformedConsentIndicator = segments.Length > 14 && segments[14].Length > 0 ? segments[14] : null;
         }
 
         /// <summary>

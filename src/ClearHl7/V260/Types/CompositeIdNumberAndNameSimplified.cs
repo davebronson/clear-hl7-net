@@ -81,17 +81,17 @@ namespace ClearHl7.V260.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            IdNumber = segments.ElementAtOrDefault(0);
-            FamilyName = segments.ElementAtOrDefault(1);
-            GivenName = segments.ElementAtOrDefault(2);
-            SecondAndFurtherGivenNamesOrInitialsThereof = segments.ElementAtOrDefault(3);
-            Suffix = segments.ElementAtOrDefault(4);
-            Prefix = segments.ElementAtOrDefault(5);
-            Degree = segments.ElementAtOrDefault(6);
-            SourceTable = segments.ElementAtOrDefault(7);
-            AssigningAuthorityNamespaceId = segments.ElementAtOrDefault(8);
-            AssigningAuthorityUniversalId = segments.ElementAtOrDefault(9);
-            AssigningAuthorityUniversalIdType = segments.ElementAtOrDefault(10);
+            IdNumber = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            FamilyName = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            GivenName = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            SecondAndFurtherGivenNamesOrInitialsThereof = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            Suffix = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            Prefix = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
+            Degree = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
+            SourceTable = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
+            AssigningAuthorityNamespaceId = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
+            AssigningAuthorityUniversalId = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
+            AssigningAuthorityUniversalIdType = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
         }
 
         /// <summary>

@@ -161,37 +161,37 @@ namespace ClearHl7.V230.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            ActionCode = segments.ElementAtOrDefault(1);
-            ActionDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
-            ProblemId = segments.Length > 3 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(3), false) : null;
-            ProblemInstanceId = segments.Length > 4 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(4), false) : null;
-            EpisodeOfCareId = segments.Length > 5 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(5), false) : null;
-            ProblemListPriority = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
-            ProblemEstablishedDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
-            AnticipatedProblemResolutionDateTime = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
-            ActualProblemResolutionDateTime = segments.ElementAtOrDefault(9)?.ToNullableDateTime();
-            ProblemClassification = segments.Length > 10 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(10), false) : null;
-            ProblemManagementDiscipline = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            ProblemPersistence = segments.Length > 12 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(12), false) : null;
-            ProblemConfirmationStatus = segments.Length > 13 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(13), false) : null;
-            ProblemLifeCycleStatus = segments.Length > 14 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(14), false) : null;
-            ProblemLifeCycleStatusDateTime = segments.ElementAtOrDefault(15)?.ToNullableDateTime();
-            ProblemDateOfOnset = segments.ElementAtOrDefault(16)?.ToNullableDateTime();
-            ProblemOnsetText = segments.ElementAtOrDefault(17);
-            ProblemRanking = segments.Length > 18 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(18), false) : null;
-            CertaintyOfProblem = segments.Length > 19 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(19), false) : null;
-            ProbabilityOfProblem01 = segments.ElementAtOrDefault(20)?.ToNullableDecimal();
-            IndividualAwarenessOfProblem = segments.Length > 21 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(21), false) : null;
-            ProblemPrognosis = segments.Length > 22 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(22), false) : null;
-            IndividualAwarenessOfPrognosis = segments.Length > 23 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(23), false) : null;
-            FamilySignificantOtherAwarenessOfProblemPrognosis = segments.ElementAtOrDefault(24);
-            SecuritySensitivity = segments.Length > 25 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(25), false) : null;
+            ActionCode = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            ActionDateTime = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDateTime() : null;
+            ProblemId = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[3], false) : null;
+            ProblemInstanceId = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[4], false) : null;
+            EpisodeOfCareId = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[5], false) : null;
+            ProblemListPriority = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDecimal() : null;
+            ProblemEstablishedDateTime = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
+            AnticipatedProblemResolutionDateTime = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDateTime() : null;
+            ActualProblemResolutionDateTime = segments.Length > 9 && segments[9].Length > 0 ? segments[9].ToNullableDateTime() : null;
+            ProblemClassification = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[10], false) : null;
+            ProblemManagementDiscipline = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            ProblemPersistence = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[12], false) : null;
+            ProblemConfirmationStatus = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[13], false) : null;
+            ProblemLifeCycleStatus = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[14], false) : null;
+            ProblemLifeCycleStatusDateTime = segments.Length > 15 && segments[15].Length > 0 ? segments[15].ToNullableDateTime() : null;
+            ProblemDateOfOnset = segments.Length > 16 && segments[16].Length > 0 ? segments[16].ToNullableDateTime() : null;
+            ProblemOnsetText = segments.Length > 17 && segments[17].Length > 0 ? segments[17] : null;
+            ProblemRanking = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[18], false) : null;
+            CertaintyOfProblem = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[19], false) : null;
+            ProbabilityOfProblem01 = segments.Length > 20 && segments[20].Length > 0 ? segments[20].ToNullableDecimal() : null;
+            IndividualAwarenessOfProblem = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[21], false) : null;
+            ProblemPrognosis = segments.Length > 22 && segments[22].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[22], false) : null;
+            IndividualAwarenessOfPrognosis = segments.Length > 23 && segments[23].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[23], false) : null;
+            FamilySignificantOtherAwarenessOfProblemPrognosis = segments.Length > 24 && segments[24].Length > 0 ? segments[24] : null;
+            SecuritySensitivity = segments.Length > 25 && segments[25].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[25], false) : null;
         }
 
         /// <summary>

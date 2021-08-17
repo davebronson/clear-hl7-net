@@ -88,22 +88,22 @@ namespace ClearHl7.V251.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            WhereSubjectFilter = segments.Length > 1 ? segments.ElementAtOrDefault(1).Split(separator) : null;
-            WhenDataStartDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
-            WhenDataEndDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
-            WhatUserQualifier = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator) : null;
-            OtherQrySubjectFilter = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator) : null;
-            WhichDateTimeQualifier = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator) : null;
-            WhichDateTimeStatusQualifier = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator) : null;
-            DateTimeSelectionQualifier = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator) : null;
-            WhenQuantityTimingQualifier = segments.Length > 9 ? TypeHelper.Deserialize<TimingQuantity>(segments.ElementAtOrDefault(9), false) : null;
-            SearchConfidenceThreshold = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
+            WhereSubjectFilter = segments.Length > 1 && segments[1].Length > 0 ? segments[1].Split(separator) : null;
+            WhenDataStartDateTime = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDateTime() : null;
+            WhenDataEndDateTime = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
+            WhatUserQualifier = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(separator) : null;
+            OtherQrySubjectFilter = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(separator) : null;
+            WhichDateTimeQualifier = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(separator) : null;
+            WhichDateTimeStatusQualifier = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(separator) : null;
+            DateTimeSelectionQualifier = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(separator) : null;
+            WhenQuantityTimingQualifier = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<TimingQuantity>(segments[9], false) : null;
+            SearchConfidenceThreshold = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDecimal() : null;
         }
 
         /// <summary>

@@ -92,23 +92,23 @@ namespace ClearHl7.V290.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            UniversalServiceIdentifier = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
-            AutoDilutionFactor = segments.Length > 2 ? TypeHelper.Deserialize<StructuredNumeric>(segments.ElementAtOrDefault(2), false) : null;
-            RerunDilutionFactor = segments.Length > 3 ? TypeHelper.Deserialize<StructuredNumeric>(segments.ElementAtOrDefault(3), false) : null;
-            PreDilutionFactor = segments.Length > 4 ? TypeHelper.Deserialize<StructuredNumeric>(segments.ElementAtOrDefault(4), false) : null;
-            EndogenousContentOfPreDilutionDiluent = segments.Length > 5 ? TypeHelper.Deserialize<StructuredNumeric>(segments.ElementAtOrDefault(5), false) : null;
-            AutomaticRepeatAllowed = segments.ElementAtOrDefault(6);
-            ReflexAllowed = segments.ElementAtOrDefault(7);
-            AnalyteRepeatStatus = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
-            SpecimenConsumptionQuantity = segments.Length > 9 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(9), false) : null;
-            PoolSize = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
-            AutoDilutionType = segments.Length > 11 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(11), false) : null;
+            UniversalServiceIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false) : null;
+            AutoDilutionFactor = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<StructuredNumeric>(segments[2], false) : null;
+            RerunDilutionFactor = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<StructuredNumeric>(segments[3], false) : null;
+            PreDilutionFactor = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<StructuredNumeric>(segments[4], false) : null;
+            EndogenousContentOfPreDilutionDiluent = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<StructuredNumeric>(segments[5], false) : null;
+            AutomaticRepeatAllowed = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
+            ReflexAllowed = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
+            AnalyteRepeatStatus = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[8], false) : null;
+            SpecimenConsumptionQuantity = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[9], false) : null;
+            PoolSize = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDecimal() : null;
+            AutoDilutionType = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[11], false) : null;
         }
 
         /// <summary>

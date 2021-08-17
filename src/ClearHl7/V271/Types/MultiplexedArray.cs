@@ -43,10 +43,10 @@ namespace ClearHl7.V271.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            SampleYFromChannel1 = segments.ElementAtOrDefault(0)?.ToNullableDecimal();
-            SampleYFromChannel2 = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
-            SampleYFromChannel3 = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
-            SampleYFromChannel4 = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
+            SampleYFromChannel1 = segments.Length > 0 && segments[0].Length > 0 ? segments[0].ToNullableDecimal() : null;
+            SampleYFromChannel2 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
+            SampleYFromChannel3 = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDecimal() : null;
+            SampleYFromChannel4 = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDecimal() : null;
         }
 
         /// <summary>

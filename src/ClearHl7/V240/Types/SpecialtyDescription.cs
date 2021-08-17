@@ -45,10 +45,10 @@ namespace ClearHl7.V240.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            SpecialtyName = segments.ElementAtOrDefault(0);
-            GoverningBoard = segments.ElementAtOrDefault(1);
-            EligibleOrCertified = segments.ElementAtOrDefault(2);
-            DateOfCertification = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
+            SpecialtyName = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            GoverningBoard = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            EligibleOrCertified = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            DateOfCertification = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
         }
 
         /// <summary>

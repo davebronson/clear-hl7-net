@@ -83,21 +83,21 @@ namespace ClearHl7.V240.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            DeathCauseCode = segments.Length > 1 ? segments.ElementAtOrDefault(1).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            DeathLocation = segments.Length > 2 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(2), false) : null;
-            DeathCertifiedIndicator = segments.ElementAtOrDefault(3);
-            DeathCertificateSignedDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
-            DeathCertifiedBy = segments.Length > 5 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(5), false) : null;
-            AutopsyIndicator = segments.ElementAtOrDefault(6);
-            AutopsyStartAndEndDateTime = segments.Length > 7 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(7), false) : null;
-            AutopsyPerformedBy = segments.Length > 8 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(8), false) : null;
-            CoronerIndicator = segments.ElementAtOrDefault(9);
+            DeathCauseCode = segments.Length > 1 && segments[1].Length > 0 ? segments[1].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            DeathLocation = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[2], false) : null;
+            DeathCertifiedIndicator = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            DeathCertificateSignedDateTime = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
+            DeathCertifiedBy = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[5], false) : null;
+            AutopsyIndicator = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
+            AutopsyStartAndEndDateTime = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<DateTimeRange>(segments[7], false) : null;
+            AutopsyPerformedBy = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[8], false) : null;
+            CoronerIndicator = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
         }
 
         /// <summary>

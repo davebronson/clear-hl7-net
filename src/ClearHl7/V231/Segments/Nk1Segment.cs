@@ -239,49 +239,49 @@ namespace ClearHl7.V231.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdNk1 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            Name = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
-            Relationship = segments.Length > 3 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(3), false) : null;
-            Address = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
-            PhoneNumber = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
-            BusinessPhoneNumber = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
-            ContactRole = segments.Length > 7 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(7), false) : null;
-            StartDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
-            EndDate = segments.ElementAtOrDefault(9)?.ToNullableDateTime();
-            NextOfKinAssociatedPartiesJobTitle = segments.ElementAtOrDefault(10);
-            NextOfKinAssociatedPartiesJobCodeClass = segments.Length > 11 ? TypeHelper.Deserialize<JobCodeClass>(segments.ElementAtOrDefault(11), false) : null;
-            NextOfKinAssociatedPartiesEmployeeNumber = segments.Length > 12 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(12), false) : null;
-            OrganizationNameNk1 = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
-            MaritalStatus = segments.Length > 14 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(14), false) : null;
-            AdministrativeSex = segments.ElementAtOrDefault(15);
-            DateTimeOfBirth = segments.ElementAtOrDefault(16)?.ToNullableDateTime();
-            LivingDependency = segments.Length > 17 ? segments.ElementAtOrDefault(17).Split(separator) : null;
-            AmbulatoryStatus = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator) : null;
-            Citizenship = segments.Length > 19 ? segments.ElementAtOrDefault(19).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            PrimaryLanguage = segments.Length > 20 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(20), false) : null;
-            LivingArrangement = segments.ElementAtOrDefault(21);
-            PublicityCode = segments.Length > 22 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(22), false) : null;
-            ProtectionIndicator = segments.ElementAtOrDefault(23);
-            StudentIndicator = segments.ElementAtOrDefault(24);
-            Religion = segments.Length > 25 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(25), false) : null;
-            MothersMaidenName = segments.Length > 26 ? segments.ElementAtOrDefault(26).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
-            Nationality = segments.Length > 27 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(27), false) : null;
-            EthnicGroup = segments.Length > 28 ? segments.ElementAtOrDefault(28).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            ContactReason = segments.Length > 29 ? segments.ElementAtOrDefault(29).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            ContactPersonsName = segments.Length > 30 ? segments.ElementAtOrDefault(30).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
-            ContactPersonsTelephoneNumber = segments.Length > 31 ? segments.ElementAtOrDefault(31).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
-            ContactPersonsAddress = segments.Length > 32 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
-            NextOfKinAssociatedPartysIdentifiers = segments.Length > 33 ? segments.ElementAtOrDefault(33).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
-            JobStatus = segments.ElementAtOrDefault(34);
-            Race = segments.Length > 35 ? segments.ElementAtOrDefault(35).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            Handicap = segments.ElementAtOrDefault(36);
-            ContactPersonSocialSecurityNumber = segments.ElementAtOrDefault(37);
+            SetIdNk1 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            Name = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
+            Relationship = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[3], false) : null;
+            Address = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
+            PhoneNumber = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
+            BusinessPhoneNumber = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
+            ContactRole = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[7], false) : null;
+            StartDate = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDateTime() : null;
+            EndDate = segments.Length > 9 && segments[9].Length > 0 ? segments[9].ToNullableDateTime() : null;
+            NextOfKinAssociatedPartiesJobTitle = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
+            NextOfKinAssociatedPartiesJobCodeClass = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<JobCodeClass>(segments[11], false) : null;
+            NextOfKinAssociatedPartiesEmployeeNumber = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments[12], false) : null;
+            OrganizationNameNk1 = segments.Length > 13 && segments[13].Length > 0 ? segments[13].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
+            MaritalStatus = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[14], false) : null;
+            AdministrativeSex = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
+            DateTimeOfBirth = segments.Length > 16 && segments[16].Length > 0 ? segments[16].ToNullableDateTime() : null;
+            LivingDependency = segments.Length > 17 && segments[17].Length > 0 ? segments[17].Split(separator) : null;
+            AmbulatoryStatus = segments.Length > 18 && segments[18].Length > 0 ? segments[18].Split(separator) : null;
+            Citizenship = segments.Length > 19 && segments[19].Length > 0 ? segments[19].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            PrimaryLanguage = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[20], false) : null;
+            LivingArrangement = segments.Length > 21 && segments[21].Length > 0 ? segments[21] : null;
+            PublicityCode = segments.Length > 22 && segments[22].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[22], false) : null;
+            ProtectionIndicator = segments.Length > 23 && segments[23].Length > 0 ? segments[23] : null;
+            StudentIndicator = segments.Length > 24 && segments[24].Length > 0 ? segments[24] : null;
+            Religion = segments.Length > 25 && segments[25].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[25], false) : null;
+            MothersMaidenName = segments.Length > 26 && segments[26].Length > 0 ? segments[26].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
+            Nationality = segments.Length > 27 && segments[27].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[27], false) : null;
+            EthnicGroup = segments.Length > 28 && segments[28].Length > 0 ? segments[28].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            ContactReason = segments.Length > 29 && segments[29].Length > 0 ? segments[29].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            ContactPersonsName = segments.Length > 30 && segments[30].Length > 0 ? segments[30].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
+            ContactPersonsTelephoneNumber = segments.Length > 31 && segments[31].Length > 0 ? segments[31].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
+            ContactPersonsAddress = segments.Length > 32 && segments[32].Length > 0 ? segments[32].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
+            NextOfKinAssociatedPartysIdentifiers = segments.Length > 33 && segments[33].Length > 0 ? segments[33].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
+            JobStatus = segments.Length > 34 && segments[34].Length > 0 ? segments[34] : null;
+            Race = segments.Length > 35 && segments[35].Length > 0 ? segments[35].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            Handicap = segments.Length > 36 && segments[36].Length > 0 ? segments[36] : null;
+            ContactPersonSocialSecurityNumber = segments.Length > 37 && segments[37].Length > 0 ? segments[37] : null;
         }
 
         /// <summary>

@@ -121,29 +121,29 @@ namespace ClearHl7.V250.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdUb2 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            CoInsuranceDays9 = segments.ElementAtOrDefault(2);
-            ConditionCode24To30 = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator) : null;
-            CoveredDays7 = segments.ElementAtOrDefault(4);
-            NonCoveredDays8 = segments.ElementAtOrDefault(5);
-            ValueAmountCode39To41 = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<ValueCodeAndAmount>(x, false)) : null;
-            OccurrenceCodeDate32To35 = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<OccurrenceCodeAndDate>(x, false)) : null;
-            OccurrenceSpanCodeDates36 = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => TypeHelper.Deserialize<OccurrenceSpanCodeAndDate>(x, false)) : null;
-            UniformBillingLocator2State = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator) : null;
-            UniformBillingLocator11State = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator) : null;
-            UniformBillingLocator31National = segments.ElementAtOrDefault(11);
-            DocumentControlNumber = segments.Length > 12 ? segments.ElementAtOrDefault(12).Split(separator) : null;
-            UniformBillingLocator49National = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator) : null;
-            UniformBillingLocator56State = segments.Length > 14 ? segments.ElementAtOrDefault(12).Split(separator) : null;
-            UniformBillingLocator57Sational = segments.ElementAtOrDefault(15);
-            UniformBillingLocator78State = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator) : null;
-            SpecialVisitCount = segments.ElementAtOrDefault(17)?.ToNullableDecimal();
+            SetIdUb2 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            CoInsuranceDays9 = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            ConditionCode24To30 = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(separator) : null;
+            CoveredDays7 = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            NonCoveredDays8 = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
+            ValueAmountCode39To41 = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(separator).Select(x => TypeHelper.Deserialize<ValueCodeAndAmount>(x, false)) : null;
+            OccurrenceCodeDate32To35 = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(separator).Select(x => TypeHelper.Deserialize<OccurrenceCodeAndDate>(x, false)) : null;
+            OccurrenceSpanCodeDates36 = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(separator).Select(x => TypeHelper.Deserialize<OccurrenceSpanCodeAndDate>(x, false)) : null;
+            UniformBillingLocator2State = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(separator) : null;
+            UniformBillingLocator11State = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(separator) : null;
+            UniformBillingLocator31National = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
+            DocumentControlNumber = segments.Length > 12 && segments[12].Length > 0 ? segments[12].Split(separator) : null;
+            UniformBillingLocator49National = segments.Length > 13 && segments[13].Length > 0 ? segments[13].Split(separator) : null;
+            UniformBillingLocator56State = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(separator) : null;
+            UniformBillingLocator57Sational = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
+            UniformBillingLocator78State = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(separator) : null;
+            SpecialVisitCount = segments.Length > 17 && segments[17].Length > 0 ? segments[17].ToNullableDecimal() : null;
         }
 
         /// <summary>

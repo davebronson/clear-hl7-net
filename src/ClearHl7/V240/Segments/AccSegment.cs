@@ -88,22 +88,22 @@ namespace ClearHl7.V240.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            AccidentDateTime = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
-            AccidentCode = segments.Length > 2 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(2), false) : null;
-            AccidentLocation = segments.ElementAtOrDefault(3);
-            AutoAccidentState = segments.Length > 4 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(4), false) : null;
-            AccidentJobRelatedIndicator = segments.ElementAtOrDefault(5);
-            AccidentDeathIndicator = segments.ElementAtOrDefault(6);
-            EnteredBy = segments.Length > 7 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(7), false) : null;
-            AccidentDescription = segments.ElementAtOrDefault(8);
-            BroughtInBy = segments.ElementAtOrDefault(9);
-            PoliceNotifiedIndicator = segments.ElementAtOrDefault(10);
+            AccidentDateTime = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDateTime() : null;
+            AccidentCode = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[2], false) : null;
+            AccidentLocation = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            AutoAccidentState = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[4], false) : null;
+            AccidentJobRelatedIndicator = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
+            AccidentDeathIndicator = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
+            EnteredBy = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[7], false) : null;
+            AccidentDescription = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
+            BroughtInBy = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
+            PoliceNotifiedIndicator = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
         }
 
         /// <summary>

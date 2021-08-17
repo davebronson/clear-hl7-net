@@ -34,8 +34,8 @@ namespace ClearHl7.V240.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            DayType = segments.ElementAtOrDefault(0);
-            NumberOfDays = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
+            DayType = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            NumberOfDays = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
         }
 
         /// <summary>

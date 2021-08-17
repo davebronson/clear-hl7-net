@@ -67,18 +67,18 @@ namespace ClearHl7.V230.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdAl1 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            AllergenTypeCode = segments.ElementAtOrDefault(2);
-            AllergenCodeMnemonicDescription = segments.Length > 3 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(3), false) : null;
-            AllergySeverityCode = segments.ElementAtOrDefault(4);
-            AllergyReactionCode = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator) : null;
-            IdentificationDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
+            SetIdAl1 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            AllergenTypeCode = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            AllergenCodeMnemonicDescription = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[3], false) : null;
+            AllergySeverityCode = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            AllergyReactionCode = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(separator) : null;
+            IdentificationDate = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDateTime() : null;
         }
 
         /// <summary>

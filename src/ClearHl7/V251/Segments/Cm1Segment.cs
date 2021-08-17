@@ -48,15 +48,15 @@ namespace ClearHl7.V251.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdCm1 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            StudyPhaseIdentifier = segments.Length > 2 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(2), false) : null;
-            DescriptionOfStudyPhase = segments.ElementAtOrDefault(3);
+            SetIdCm1 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            StudyPhaseIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[2], false) : null;
+            DescriptionOfStudyPhase = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
         }
 
         /// <summary>

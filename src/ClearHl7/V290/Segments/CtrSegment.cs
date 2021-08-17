@@ -147,33 +147,33 @@ namespace ClearHl7.V290.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            ContractIdentifier = segments.Length > 1 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(1), false) : null;
-            ContractDescription = segments.ElementAtOrDefault(2);
-            ContractStatus = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
-            EffectiveDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
-            ExpirationDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
-            ContractOwnerName = segments.Length > 6 ? TypeHelper.Deserialize<ExtendedPersonName>(segments.ElementAtOrDefault(6), false) : null;
-            ContractOriginatorName = segments.Length > 7 ? TypeHelper.Deserialize<ExtendedPersonName>(segments.ElementAtOrDefault(7), false) : null;
-            SupplierType = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
-            ContractType = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), false) : null;
-            FreeOnBoardFreightTerms = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(10), false) : null;
-            PriceProtectionDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime();
-            FixedPriceContractIndicator = segments.Length > 12 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(12), false) : null;
-            GroupPurchasingOrganization = segments.Length > 13 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(13), false) : null;
-            MaximumMarkup = segments.Length > 14 ? TypeHelper.Deserialize<MoneyOrPercentage>(segments.ElementAtOrDefault(14), false) : null;
-            ActualMarkup = segments.Length > 15 ? TypeHelper.Deserialize<MoneyOrPercentage>(segments.ElementAtOrDefault(15), false) : null;
-            Corporation = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
-            ParentOfCorporation = segments.Length > 17 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(17), false) : null;
-            PricingTierLevel = segments.Length > 18 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(18), false) : null;
-            ContractPriority = segments.ElementAtOrDefault(19);
-            ClassOfTrade = segments.Length > 20 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(20), false) : null;
-            AssociatedContractId = segments.Length > 21 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(21), false) : null;
+            ContractIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false) : null;
+            ContractDescription = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            ContractStatus = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false) : null;
+            EffectiveDate = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
+            ExpirationDate = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDateTime() : null;
+            ContractOwnerName = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<ExtendedPersonName>(segments[6], false) : null;
+            ContractOriginatorName = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<ExtendedPersonName>(segments[7], false) : null;
+            SupplierType = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[8], false) : null;
+            ContractType = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[9], false) : null;
+            FreeOnBoardFreightTerms = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[10], false) : null;
+            PriceProtectionDate = segments.Length > 11 && segments[11].Length > 0 ? segments[11].ToNullableDateTime() : null;
+            FixedPriceContractIndicator = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[12], false) : null;
+            GroupPurchasingOrganization = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[13], false) : null;
+            MaximumMarkup = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<MoneyOrPercentage>(segments[14], false) : null;
+            ActualMarkup = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<MoneyOrPercentage>(segments[15], false) : null;
+            Corporation = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
+            ParentOfCorporation = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[17], false) : null;
+            PricingTierLevel = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[18], false) : null;
+            ContractPriority = segments.Length > 19 && segments[19].Length > 0 ? segments[19] : null;
+            ClassOfTrade = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[20], false) : null;
+            AssociatedContractId = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[21], false) : null;
         }
 
         /// <summary>

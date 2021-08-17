@@ -142,29 +142,29 @@ namespace ClearHl7.V280.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            ChannelSensitivity = segments.ElementAtOrDefault(0)?.ToNullableDecimal();
-            UnitOfMeasureIdentifier = segments.ElementAtOrDefault(1);
-            UnitOfMeasureDescription = segments.ElementAtOrDefault(2);
-            UnitOfMeasureCodingSystem = segments.ElementAtOrDefault(3);
-            AlternateUnitOfMeasureIdentifier = segments.ElementAtOrDefault(4);
-            AlternateUnitOfMeasureDescription = segments.ElementAtOrDefault(5);
-            AlternateUnitOfMeasureCodingSystem = segments.ElementAtOrDefault(6);
-            UnitOfMeasureCodingSystemVersionId = segments.ElementAtOrDefault(7);
-            AlternateUnitOfMeasureCodingSystemVersionId = segments.ElementAtOrDefault(8);
-            OriginalText = segments.ElementAtOrDefault(9);
-            SecondAlternateUnitOfMeasureIdentifier = segments.ElementAtOrDefault(10);
-            SecondAlternateUnitOfMeasureText = segments.ElementAtOrDefault(11);
-            NameOfSecondAlternateUnitOfMeasureCodingSystem = segments.ElementAtOrDefault(12);
-            SecondAlternateUnitOfMeasureCodingSystemVersionId = segments.ElementAtOrDefault(13);
-            UnitOfMeasureCodingSystemOid = segments.ElementAtOrDefault(14);
-            UnitOfMeasureValueSetOid = segments.ElementAtOrDefault(15);
-            UnitOfMeasureValueSetVersionId = segments.ElementAtOrDefault(16)?.ToNullableDateTime();
-            AlternateUnitOfMeasureCodingSystemOid = segments.ElementAtOrDefault(17);
-            AlternateUnitOfMeasureValueSetOid = segments.ElementAtOrDefault(18);
-            AlternateUnitOfMeasureValueSetVersionId = segments.ElementAtOrDefault(19)?.ToNullableDateTime();
-            AlternateUnitOfMeasureCodingSystemOidAdditional = segments.ElementAtOrDefault(20);
-            AlternateUnitOfMeasureValueSetOidAdditional = segments.ElementAtOrDefault(21);
-            AlternateUnitOfMeasureValueSetVersionIdAdditional = segments.ElementAtOrDefault(22);
+            ChannelSensitivity = segments.Length > 0 && segments[0].Length > 0 ? segments[0].ToNullableDecimal() : null;
+            UnitOfMeasureIdentifier = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            UnitOfMeasureDescription = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            UnitOfMeasureCodingSystem = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            AlternateUnitOfMeasureIdentifier = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            AlternateUnitOfMeasureDescription = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
+            AlternateUnitOfMeasureCodingSystem = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
+            UnitOfMeasureCodingSystemVersionId = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
+            AlternateUnitOfMeasureCodingSystemVersionId = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
+            OriginalText = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
+            SecondAlternateUnitOfMeasureIdentifier = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
+            SecondAlternateUnitOfMeasureText = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
+            NameOfSecondAlternateUnitOfMeasureCodingSystem = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
+            SecondAlternateUnitOfMeasureCodingSystemVersionId = segments.Length > 13 && segments[13].Length > 0 ? segments[13] : null;
+            UnitOfMeasureCodingSystemOid = segments.Length > 14 && segments[14].Length > 0 ? segments[14] : null;
+            UnitOfMeasureValueSetOid = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
+            UnitOfMeasureValueSetVersionId = segments.Length > 16 && segments[16].Length > 0 ? segments[16].ToNullableDateTime() : null;
+            AlternateUnitOfMeasureCodingSystemOid = segments.Length > 17 && segments[17].Length > 0 ? segments[17] : null;
+            AlternateUnitOfMeasureValueSetOid = segments.Length > 18 && segments[18].Length > 0 ? segments[18] : null;
+            AlternateUnitOfMeasureValueSetVersionId = segments.Length > 19 && segments[19].Length > 0 ? segments[19].ToNullableDateTime() : null;
+            AlternateUnitOfMeasureCodingSystemOidAdditional = segments.Length > 20 && segments[20].Length > 0 ? segments[20] : null;
+            AlternateUnitOfMeasureValueSetOidAdditional = segments.Length > 21 && segments[21].Length > 0 ? segments[21] : null;
+            AlternateUnitOfMeasureValueSetVersionIdAdditional = segments.Length > 22 && segments[22].Length > 0 ? segments[22] : null;
         }
 
         /// <summary>

@@ -39,9 +39,9 @@ namespace ClearHl7.V250.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            AuthorizationNumber = segments.ElementAtOrDefault(0);
-            Date = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
-            Source = segments.ElementAtOrDefault(2);
+            AuthorizationNumber = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            Date = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDateTime() : null;
+            Source = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
         }
 
         /// <summary>

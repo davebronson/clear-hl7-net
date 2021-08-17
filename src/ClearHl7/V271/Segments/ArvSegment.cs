@@ -68,18 +68,18 @@ namespace ClearHl7.V271.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetId = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            AccessRestrictionActionCode = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(2), false) : null;
-            AccessRestrictionValue = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
-            AccessRestrictionReason = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            SpecialAccessRestrictionInstructions = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator) : null;
-            AccessRestrictionDateRange = segments.Length > 6 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(6), false) : null;
+            SetId = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            AccessRestrictionActionCode = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[2], false) : null;
+            AccessRestrictionValue = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false) : null;
+            AccessRestrictionReason = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            SpecialAccessRestrictionInstructions = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(separator) : null;
+            AccessRestrictionDateRange = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<DateTimeRange>(segments[6], false) : null;
         }
 
         /// <summary>

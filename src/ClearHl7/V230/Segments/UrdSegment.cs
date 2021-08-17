@@ -73,19 +73,19 @@ namespace ClearHl7.V230.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            RuDateTime = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
-            ReportPriority = segments.ElementAtOrDefault(2);
-            RuWhoSubjectDefinition = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            RuWhatSubjectDefinition = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            RuWhatDepartmentCode = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            RuDisplayPrintLocations = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator) : null;
-            RuResultsLevel = segments.ElementAtOrDefault(7);
+            RuDateTime = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDateTime() : null;
+            ReportPriority = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            RuWhoSubjectDefinition = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            RuWhatSubjectDefinition = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            RuWhatDepartmentCode = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            RuDisplayPrintLocations = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(separator) : null;
+            RuResultsLevel = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
         }
 
         /// <summary>

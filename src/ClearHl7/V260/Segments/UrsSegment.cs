@@ -83,21 +83,21 @@ namespace ClearHl7.V260.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            RuWhereSubjectDefinition = segments.Length > 1 ? segments.ElementAtOrDefault(1).Split(separator) : null;
-            RuWhenDataStartDateTime = segments.ElementAtOrDefault(2)?.ToNullableDateTime();
-            RuWhenDataEndDateTime = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
-            RuWhatUserQualifier = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator) : null;
-            RuOtherResultsSubjectDefinition = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator) : null;
-            RuWhichDateTimeQualifier = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator) : null;
-            RuWhichDateTimeStatusQualifier = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator) : null;
-            RuDateTimeSelectionQualifier = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator) : null;
-            RuQuantityTimingQualifier = segments.Length > 9 ? TypeHelper.Deserialize<TimingQuantity>(segments.ElementAtOrDefault(9), false) : null;
+            RuWhereSubjectDefinition = segments.Length > 1 && segments[1].Length > 0 ? segments[1].Split(separator) : null;
+            RuWhenDataStartDateTime = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDateTime() : null;
+            RuWhenDataEndDateTime = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
+            RuWhatUserQualifier = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(separator) : null;
+            RuOtherResultsSubjectDefinition = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(separator) : null;
+            RuWhichDateTimeQualifier = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(separator) : null;
+            RuWhichDateTimeStatusQualifier = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(separator) : null;
+            RuDateTimeSelectionQualifier = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(separator) : null;
+            RuQuantityTimingQualifier = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<TimingQuantity>(segments[9], false) : null;
         }
 
         /// <summary>

@@ -85,17 +85,17 @@ namespace ClearHl7.V281.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            PointOfCare = segments.Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(0), true) : null;
-            Room = segments.Length > 1 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(1), true) : null;
-            Bed = segments.Length > 2 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(2), true) : null;
-            Facility = segments.Length > 3 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(3), true) : null;
-            LocationStatus = segments.ElementAtOrDefault(4);
-            PersonLocationType = segments.ElementAtOrDefault(5);
-            Building = segments.Length > 6 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(6), true) : null;
-            Floor = segments.Length > 7 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(7), true) : null;
-            LocationDescription = segments.ElementAtOrDefault(8);
-            ComprehensiveLocationIdentifier = segments.Length > 9 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(9), true) : null;
-            AssigningAuthorityForLocation = segments.Length > 10 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(10), true) : null;
+            PointOfCare = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[0], true) : null;
+            Room = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[1], true) : null;
+            Bed = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[2], true) : null;
+            Facility = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[3], true) : null;
+            LocationStatus = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            PersonLocationType = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
+            Building = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[6], true) : null;
+            Floor = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[7], true) : null;
+            LocationDescription = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
+            ComprehensiveLocationIdentifier = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[9], true) : null;
+            AssigningAuthorityForLocation = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[10], true) : null;
         }
 
         /// <summary>

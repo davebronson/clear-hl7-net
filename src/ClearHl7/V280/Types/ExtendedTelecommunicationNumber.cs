@@ -118,24 +118,24 @@ namespace ClearHl7.V280.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            TelephoneNumber = segments.ElementAtOrDefault(0);
-            TelecommunicationUseCode = segments.ElementAtOrDefault(1);
-            TelecommunicationEquipmentType = segments.ElementAtOrDefault(2);
-            CommunicationAddress = segments.ElementAtOrDefault(3);
-            CountryCode = segments.ElementAtOrDefault(4)?.ToNullableInt();
-            AreaCityCode = segments.ElementAtOrDefault(5)?.ToNullableInt();
-            LocalNumber = segments.ElementAtOrDefault(6)?.ToNullableInt();
-            Extension = segments.ElementAtOrDefault(7)?.ToNullableInt();
-            AnyText = segments.ElementAtOrDefault(8);
-            ExtensionPrefix = segments.ElementAtOrDefault(9);
-            SpeedDialCode = segments.ElementAtOrDefault(10);
-            UnformattedTelephoneNumber = segments.ElementAtOrDefault(11);
-            EffectiveStartDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
-            ExpirationDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
-            ExpirationReason = segments.Length > 14 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(14), true) : null;
-            ProtectionCode = segments.Length > 15 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(15), true) : null;
-            SharedTelecommunicationIdentifier = segments.Length > 16 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(16), true) : null;
-            PreferenceOrder = segments.ElementAtOrDefault(17)?.ToNullableDecimal();
+            TelephoneNumber = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            TelecommunicationUseCode = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            TelecommunicationEquipmentType = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            CommunicationAddress = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            CountryCode = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableInt() : null;
+            AreaCityCode = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableInt() : null;
+            LocalNumber = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableInt() : null;
+            Extension = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableInt() : null;
+            AnyText = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
+            ExtensionPrefix = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
+            SpeedDialCode = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
+            UnformattedTelephoneNumber = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
+            EffectiveStartDate = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDateTime() : null;
+            ExpirationDate = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDateTime() : null;
+            ExpirationReason = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[14], true) : null;
+            ProtectionCode = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[15], true) : null;
+            SharedTelecommunicationIdentifier = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[16], true) : null;
+            PreferenceOrder = segments.Length > 17 && segments[17].Length > 0 ? segments[17].ToNullableDecimal() : null;
         }
 
         /// <summary>

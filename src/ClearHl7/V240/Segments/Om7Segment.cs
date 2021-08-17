@@ -163,36 +163,36 @@ namespace ClearHl7.V240.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SequenceNumberTestObservationMasterFile = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
-            UniversalServiceIdentifier = segments.Length > 2 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(2), false) : null;
-            CategoryIdentifier = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            CategoryDescription = segments.Length > 4 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(4), false) : null;
-            CategorySynonym = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator) : null;
-            EffectiveTestServiceStartDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
-            EffectiveTestServiceEndDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
-            TestServiceDefaultDurationQuantity = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
-            TestServiceDefaultDurationUnits = segments.Length > 9 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(9), false) : null;
-            TestServiceDefaultFrequency = segments.ElementAtOrDefault(10);
-            ConsentIndicator = segments.ElementAtOrDefault(11);
-            ConsentIdentifier = segments.Length > 12 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(12), false) : null;
-            ConsentEffectiveStartDateTime = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
-            ConsentEffectiveEndDateTime = segments.ElementAtOrDefault(14)?.ToNullableDateTime();
-            ConsentIntervalQuantity = segments.ElementAtOrDefault(15)?.ToNullableDecimal();
-            ConsentIntervalUnits = segments.Length > 16 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(16), false) : null;
-            ConsentWaitingPeriodQuantity = segments.ElementAtOrDefault(17)?.ToNullableDecimal();
-            ConsentWaitingPeriodUnits = segments.Length > 18 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(18), false) : null;
-            EffectiveDateTimeOfChange = segments.ElementAtOrDefault(19)?.ToNullableDateTime();
-            EnteredBy = segments.Length > 20 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(20), false) : null;
-            OrderableAtLocation = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => TypeHelper.Deserialize<PersonLocation>(x, false)) : null;
-            FormularyStatus = segments.ElementAtOrDefault(22);
-            SpecialOrderIndicator = segments.ElementAtOrDefault(23);
-            PrimaryKeyValueCdm = segments.Length > 24 ? segments.ElementAtOrDefault(24).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            SequenceNumberTestObservationMasterFile = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
+            UniversalServiceIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[2], false) : null;
+            CategoryIdentifier = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            CategoryDescription = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<Text>(segments[4], false) : null;
+            CategorySynonym = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(separator) : null;
+            EffectiveTestServiceStartDateTime = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDateTime() : null;
+            EffectiveTestServiceEndDateTime = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
+            TestServiceDefaultDurationQuantity = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDecimal() : null;
+            TestServiceDefaultDurationUnits = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[9], false) : null;
+            TestServiceDefaultFrequency = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
+            ConsentIndicator = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
+            ConsentIdentifier = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[12], false) : null;
+            ConsentEffectiveStartDateTime = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDateTime() : null;
+            ConsentEffectiveEndDateTime = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDateTime() : null;
+            ConsentIntervalQuantity = segments.Length > 15 && segments[15].Length > 0 ? segments[15].ToNullableDecimal() : null;
+            ConsentIntervalUnits = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[16], false) : null;
+            ConsentWaitingPeriodQuantity = segments.Length > 17 && segments[17].Length > 0 ? segments[17].ToNullableDecimal() : null;
+            ConsentWaitingPeriodUnits = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[18], false) : null;
+            EffectiveDateTimeOfChange = segments.Length > 19 && segments[19].Length > 0 ? segments[19].ToNullableDateTime() : null;
+            EnteredBy = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[20], false) : null;
+            OrderableAtLocation = segments.Length > 21 && segments[21].Length > 0 ? segments[21].Split(separator).Select(x => TypeHelper.Deserialize<PersonLocation>(x, false)) : null;
+            FormularyStatus = segments.Length > 22 && segments[22].Length > 0 ? segments[22] : null;
+            SpecialOrderIndicator = segments.Length > 23 && segments[23].Length > 0 ? segments[23] : null;
+            PrimaryKeyValueCdm = segments.Length > 24 && segments[24].Length > 0 ? segments[24].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
         }
 
         /// <summary>

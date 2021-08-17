@@ -92,24 +92,24 @@ namespace ClearHl7.V231.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            BatchFieldSeparator = segments.ElementAtOrDefault(1);
-            BatchEncodingCharacters = segments.ElementAtOrDefault(2);
-            BatchSendingApplication = segments.ElementAtOrDefault(3);
-            BatchSendingFacility = segments.ElementAtOrDefault(4);
-            BatchReceivingApplication = segments.ElementAtOrDefault(5);
-            BatchReceivingFacility = segments.ElementAtOrDefault(6);
-            BatchCreationDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
-            BatchSecurity = segments.ElementAtOrDefault(8);
-            BatchNameIdType = segments.ElementAtOrDefault(9);
-            BatchComment = segments.ElementAtOrDefault(10);
-            BatchControlId = segments.ElementAtOrDefault(11);
-            ReferenceBatchControlId = segments.ElementAtOrDefault(12);
+            BatchFieldSeparator = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            BatchEncodingCharacters = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            BatchSendingApplication = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            BatchSendingFacility = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            BatchReceivingApplication = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
+            BatchReceivingFacility = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
+            BatchCreationDateTime = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
+            BatchSecurity = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
+            BatchNameIdType = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
+            BatchComment = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
+            BatchControlId = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
+            ReferenceBatchControlId = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
         }
 
         /// <summary>

@@ -99,20 +99,20 @@ namespace ClearHl7.V250.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            FamilyName = segments.Length > 0 ? TypeHelper.Deserialize<FamilyName>(segments.ElementAtOrDefault(0), true) : null;
-            GivenName = segments.ElementAtOrDefault(1);
-            SecondAndFurtherGivenNamesOrInitialsThereof = segments.ElementAtOrDefault(2);
-            Suffix = segments.ElementAtOrDefault(3);
-            Prefix = segments.ElementAtOrDefault(4);
-            Degree = segments.ElementAtOrDefault(5);
-            NameTypeCode = segments.ElementAtOrDefault(6);
-            NameRepresentationCode = segments.ElementAtOrDefault(7);
-            NameContext = segments.Length > 8 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(8), true) : null;
-            NameValidityRange = segments.Length > 9 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(9), true) : null;
-            NameAssemblyOrder = segments.ElementAtOrDefault(10);
-            EffectiveDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime();
-            ExpirationDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
-            ProfessionalSuffix = segments.ElementAtOrDefault(13);
+            FamilyName = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<FamilyName>(segments[0], true) : null;
+            GivenName = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            SecondAndFurtherGivenNamesOrInitialsThereof = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            Suffix = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            Prefix = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            Degree = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
+            NameTypeCode = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
+            NameRepresentationCode = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
+            NameContext = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[8], true) : null;
+            NameValidityRange = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<DateTimeRange>(segments[9], true) : null;
+            NameAssemblyOrder = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
+            EffectiveDate = segments.Length > 11 && segments[11].Length > 0 ? segments[11].ToNullableDateTime() : null;
+            ExpirationDate = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDateTime() : null;
+            ProfessionalSuffix = segments.Length > 13 && segments[13].Length > 0 ? segments[13] : null;
         }
 
         /// <summary>

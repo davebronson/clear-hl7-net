@@ -34,8 +34,8 @@ namespace ClearHl7.V230.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            JobCode = segments.ElementAtOrDefault(0);
-            JobClass = segments.ElementAtOrDefault(1);
+            JobCode = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            JobClass = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
         }
 
         /// <summary>

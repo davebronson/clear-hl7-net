@@ -163,32 +163,32 @@ namespace ClearHl7.V271.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            PersonIdentifier = segments.ElementAtOrDefault(0);
-            FamilyName = segments.Length > 1 ? TypeHelper.Deserialize<FamilyName>(segments.ElementAtOrDefault(1), true) : null;
-            GivenName = segments.ElementAtOrDefault(2);
-            SecondAndFurtherGivenNamesOrInitialsThereof = segments.ElementAtOrDefault(3);
-            Suffix = segments.ElementAtOrDefault(4);
-            Prefix = segments.ElementAtOrDefault(5);
-            Degree = segments.ElementAtOrDefault(6);
-            SourceTable = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(7), true) : null;
-            AssigningAuthority = segments.Length > 8 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(8), true) : null;
-            NameTypeCode = segments.ElementAtOrDefault(9);
-            IdentifierCheckDigit = segments.ElementAtOrDefault(10);
-            CheckDigitScheme = segments.ElementAtOrDefault(11);
-            IdentifierTypeCode = segments.ElementAtOrDefault(12);
-            AssigningFacility = segments.Length > 13 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(13), true) : null;
-            DateTimeActionPerformed = segments.ElementAtOrDefault(14)?.ToNullableDateTime();
-            NameRepresentationCode = segments.ElementAtOrDefault(15);
-            NameContext = segments.Length > 16 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(16), true) : null;
-            NameValidityRange = segments.ElementAtOrDefault(17);
-            NameAssemblyOrder = segments.ElementAtOrDefault(18);
-            EffectiveDate = segments.ElementAtOrDefault(19)?.ToNullableDateTime();
-            ExpirationDate = segments.ElementAtOrDefault(20)?.ToNullableDateTime();
-            ProfessionalSuffix = segments.ElementAtOrDefault(21);
-            AssigningJurisdiction = segments.Length > 22 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(22), true) : null;
-            AssigningAgencyOrDepartment = segments.Length > 23 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(23), true) : null;
-            SecurityCheck = segments.ElementAtOrDefault(24);
-            SecurityCheckScheme = segments.ElementAtOrDefault(25);
+            PersonIdentifier = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            FamilyName = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<FamilyName>(segments[1], true) : null;
+            GivenName = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            SecondAndFurtherGivenNamesOrInitialsThereof = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            Suffix = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            Prefix = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
+            Degree = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
+            SourceTable = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[7], true) : null;
+            AssigningAuthority = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[8], true) : null;
+            NameTypeCode = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
+            IdentifierCheckDigit = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
+            CheckDigitScheme = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
+            IdentifierTypeCode = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
+            AssigningFacility = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[13], true) : null;
+            DateTimeActionPerformed = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDateTime() : null;
+            NameRepresentationCode = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
+            NameContext = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[16], true) : null;
+            NameValidityRange = segments.Length > 17 && segments[17].Length > 0 ? segments[17] : null;
+            NameAssemblyOrder = segments.Length > 18 && segments[18].Length > 0 ? segments[18] : null;
+            EffectiveDate = segments.Length > 19 && segments[19].Length > 0 ? segments[19].ToNullableDateTime() : null;
+            ExpirationDate = segments.Length > 20 && segments[20].Length > 0 ? segments[20].ToNullableDateTime() : null;
+            ProfessionalSuffix = segments.Length > 21 && segments[21].Length > 0 ? segments[21] : null;
+            AssigningJurisdiction = segments.Length > 22 && segments[22].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[22], true) : null;
+            AssigningAgencyOrDepartment = segments.Length > 23 && segments[23].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[23], true) : null;
+            SecurityCheck = segments.Length > 24 && segments[24].Length > 0 ? segments[24] : null;
+            SecurityCheckScheme = segments.Length > 25 && segments[25].Length > 0 ? segments[25] : null;
         }
 
         /// <summary>

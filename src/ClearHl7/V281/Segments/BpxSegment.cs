@@ -143,33 +143,33 @@ namespace ClearHl7.V281.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdBpx = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            BpDispenseStatus = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
-            BpStatus = segments.ElementAtOrDefault(3);
-            BpDateTimeOfStatus = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
-            BcDonationId = segments.Length > 5 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(5), false) : null;
-            BcComponent = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(6), false) : null;
-            BcDonationTypeIntendedUse = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(7), false) : null;
-            CpCommercialProduct = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
-            CpManufacturer = segments.Length > 9 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(9), false) : null;
-            CpLotNumber = segments.Length > 10 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(10), false) : null;
-            BpBloodGroup = segments.Length > 11 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(11), false) : null;
-            BcSpecialTesting = segments.Length > 12 ? segments.ElementAtOrDefault(12).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithNoExceptions>(x, false)) : null;
-            BpExpirationDateTime = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
-            BpQuantity = segments.ElementAtOrDefault(14)?.ToNullableDecimal();
-            BpAmount = segments.ElementAtOrDefault(15)?.ToNullableDecimal();
-            BpUnits = segments.Length > 16 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(16), false) : null;
-            BpUniqueId = segments.Length > 17 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(17), false) : null;
-            BpActualDispensedToLocation = segments.Length > 18 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(18), false) : null;
-            BpActualDispensedToAddress = segments.Length > 19 ? TypeHelper.Deserialize<ExtendedAddress>(segments.ElementAtOrDefault(19), false) : null;
-            BpDispensedToReceiver = segments.Length > 20 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(20), false) : null;
-            BpDispensingIndividual = segments.Length > 21 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(21), false) : null;
+            SetIdBpx = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            BpDispenseStatus = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
+            BpStatus = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            BpDateTimeOfStatus = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
+            BcDonationId = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[5], false) : null;
+            BcComponent = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[6], false) : null;
+            BcDonationTypeIntendedUse = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[7], false) : null;
+            CpCommercialProduct = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[8], false) : null;
+            CpManufacturer = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[9], false) : null;
+            CpLotNumber = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[10], false) : null;
+            BpBloodGroup = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[11], false) : null;
+            BcSpecialTesting = segments.Length > 12 && segments[12].Length > 0 ? segments[12].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithNoExceptions>(x, false)) : null;
+            BpExpirationDateTime = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDateTime() : null;
+            BpQuantity = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDecimal() : null;
+            BpAmount = segments.Length > 15 && segments[15].Length > 0 ? segments[15].ToNullableDecimal() : null;
+            BpUnits = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[16], false) : null;
+            BpUniqueId = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[17], false) : null;
+            BpActualDispensedToLocation = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[18], false) : null;
+            BpActualDispensedToAddress = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<ExtendedAddress>(segments[19], false) : null;
+            BpDispensedToReceiver = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[20], false) : null;
+            BpDispensingIndividual = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[21], false) : null;
         }
 
         /// <summary>

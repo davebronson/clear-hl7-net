@@ -171,37 +171,37 @@ namespace ClearHl7.V240.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdIn3 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            CertificationNumber = segments.Length > 2 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(2), false) : null;
-            CertifiedBy = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            CertificationRequired = segments.ElementAtOrDefault(4);
-            Penalty = segments.Length > 5 ? TypeHelper.Deserialize<MoneyOrPercentage>(segments.ElementAtOrDefault(5), false) : null;
-            CertificationDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
-            CertificationModifyDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
-            Operator = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            CertificationBeginDate = segments.ElementAtOrDefault(9)?.ToNullableDateTime();
-            CertificationEndDate = segments.ElementAtOrDefault(10)?.ToNullableDateTime();
-            Days = segments.Length > 11 ? TypeHelper.Deserialize<DayTypeAndNumber>(segments.ElementAtOrDefault(11), false) : null;
-            NonConcurCodeDescription = segments.Length > 12 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(12), false) : null;
-            NonConcurEffectiveDateTime = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
-            PhysicianReviewer = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            CertificationContact = segments.ElementAtOrDefault(15);
-            CertificationContactPhoneNumber = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
-            AppealReason = segments.Length > 17 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(17), false) : null;
-            CertificationAgency = segments.Length > 18 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(18), false) : null;
-            CertificationAgencyPhoneNumber = segments.Length > 19 ? segments.ElementAtOrDefault(19).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
-            PreCertificationRequirement = segments.Length > 20 ? segments.ElementAtOrDefault(20).Split(separator).Select(x => TypeHelper.Deserialize<PreCertificationRequired>(x, false)) : null;
-            CaseManager = segments.ElementAtOrDefault(21);
-            SecondOpinionDate = segments.ElementAtOrDefault(22)?.ToNullableDateTime();
-            SecondOpinionStatus = segments.ElementAtOrDefault(23);
-            SecondOpinionDocumentationReceived = segments.Length > 24 ? segments.ElementAtOrDefault(24).Split(separator) : null;
-            SecondOpinionPhysician = segments.Length > 25 ? segments.ElementAtOrDefault(25).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            SetIdIn3 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            CertificationNumber = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments[2], false) : null;
+            CertifiedBy = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            CertificationRequired = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            Penalty = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<MoneyOrPercentage>(segments[5], false) : null;
+            CertificationDateTime = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDateTime() : null;
+            CertificationModifyDateTime = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
+            Operator = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            CertificationBeginDate = segments.Length > 9 && segments[9].Length > 0 ? segments[9].ToNullableDateTime() : null;
+            CertificationEndDate = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDateTime() : null;
+            Days = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<DayTypeAndNumber>(segments[11], false) : null;
+            NonConcurCodeDescription = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[12], false) : null;
+            NonConcurEffectiveDateTime = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDateTime() : null;
+            PhysicianReviewer = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            CertificationContact = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
+            CertificationContactPhoneNumber = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
+            AppealReason = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[17], false) : null;
+            CertificationAgency = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[18], false) : null;
+            CertificationAgencyPhoneNumber = segments.Length > 19 && segments[19].Length > 0 ? segments[19].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
+            PreCertificationRequirement = segments.Length > 20 && segments[20].Length > 0 ? segments[20].Split(separator).Select(x => TypeHelper.Deserialize<PreCertificationRequired>(x, false)) : null;
+            CaseManager = segments.Length > 21 && segments[21].Length > 0 ? segments[21] : null;
+            SecondOpinionDate = segments.Length > 22 && segments[22].Length > 0 ? segments[22].ToNullableDateTime() : null;
+            SecondOpinionStatus = segments.Length > 23 && segments[23].Length > 0 ? segments[23] : null;
+            SecondOpinionDocumentationReceived = segments.Length > 24 && segments[24].Length > 0 ? segments[24].Split(separator) : null;
+            SecondOpinionPhysician = segments.Length > 25 && segments[25].Length > 0 ? segments[25].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
         }
 
         /// <summary>

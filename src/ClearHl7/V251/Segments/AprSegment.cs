@@ -62,17 +62,17 @@ namespace ClearHl7.V251.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            TimeSelectionCriteria = segments.Length > 1 ? segments.ElementAtOrDefault(1).Split(separator).Select(x => TypeHelper.Deserialize<SchedulingClassValuePair>(x, false)) : null;
-            ResourceSelectionCriteria = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => TypeHelper.Deserialize<SchedulingClassValuePair>(x, false)) : null;
-            LocationSelectionCriteria = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<SchedulingClassValuePair>(x, false)) : null;
-            SlotSpacingCriteria = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
-            FillerOverrideCriteria = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<SchedulingClassValuePair>(x, false)) : null;
+            TimeSelectionCriteria = segments.Length > 1 && segments[1].Length > 0 ? segments[1].Split(separator).Select(x => TypeHelper.Deserialize<SchedulingClassValuePair>(x, false)) : null;
+            ResourceSelectionCriteria = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(separator).Select(x => TypeHelper.Deserialize<SchedulingClassValuePair>(x, false)) : null;
+            LocationSelectionCriteria = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(separator).Select(x => TypeHelper.Deserialize<SchedulingClassValuePair>(x, false)) : null;
+            SlotSpacingCriteria = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDecimal() : null;
+            FillerOverrideCriteria = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(separator).Select(x => TypeHelper.Deserialize<SchedulingClassValuePair>(x, false)) : null;
         }
 
         /// <summary>

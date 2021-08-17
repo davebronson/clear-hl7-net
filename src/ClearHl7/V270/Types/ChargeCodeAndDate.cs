@@ -35,8 +35,8 @@ namespace ClearHl7.V270.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            InvocationEvent = segments.ElementAtOrDefault(0);
-            Datetime = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
+            InvocationEvent = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            Datetime = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDateTime() : null;
         }
 
         /// <summary>

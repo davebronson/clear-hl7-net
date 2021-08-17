@@ -58,13 +58,13 @@ namespace ClearHl7.V281.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            NumericRange = segments.Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments.ElementAtOrDefault(0), true) : null;
-            AdministrativeSex = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), true) : null;
-            AgeRange = segments.Length > 2 ? TypeHelper.Deserialize<NumericRange>(segments.ElementAtOrDefault(2), true) : null;
-            GestationalAgeRange = segments.Length > 3 ? TypeHelper.Deserialize<NumericRange>(segments.ElementAtOrDefault(3), true) : null;
-            Species = segments.ElementAtOrDefault(4);
-            RaceSubspecies = segments.ElementAtOrDefault(5);
-            Conditions = segments.Length > 6 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(6), true) : null;
+            NumericRange = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments[0], true) : null;
+            AdministrativeSex = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], true) : null;
+            AgeRange = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments[2], true) : null;
+            GestationalAgeRange = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments[3], true) : null;
+            Species = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            RaceSubspecies = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
+            Conditions = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<Text>(segments[6], true) : null;
         }
 
         /// <summary>

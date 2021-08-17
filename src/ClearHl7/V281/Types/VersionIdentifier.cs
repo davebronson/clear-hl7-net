@@ -39,9 +39,9 @@ namespace ClearHl7.V281.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            VersionId = segments.ElementAtOrDefault(0);
-            InternationalizationCode = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), true) : null;
-            InternationalVersionId = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), true) : null;
+            VersionId = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            InternationalizationCode = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], true) : null;
+            InternationalVersionId = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], true) : null;
         }
 
         /// <summary>

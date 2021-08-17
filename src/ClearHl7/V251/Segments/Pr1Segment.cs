@@ -149,32 +149,32 @@ namespace ClearHl7.V251.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdPr1 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            ProcedureCodingMethod = segments.ElementAtOrDefault(2);
-            ProcedureCode = segments.Length > 3 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(3), false) : null;
-            ProcedureDescription = segments.ElementAtOrDefault(4);
-            ProcedureDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
-            ProcedureFunctionalType = segments.ElementAtOrDefault(6);
-            ProcedureMinutes = segments.ElementAtOrDefault(7)?.ToNullableDecimal();
-            Anesthesiologist = segments.Length > 8 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(8), false) : null;
-            AnesthesiaCode = segments.ElementAtOrDefault(9);
-            AnesthesiaMinutes = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
-            Surgeon = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            ProcedurePractitioner = segments.Length > 12 ? segments.ElementAtOrDefault(12).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            ConsentCode = segments.Length > 13 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(13), false) : null;
-            ProcedurePriority = segments.ElementAtOrDefault(14)?.ToNullableDecimal();
-            AssociatedDiagnosisCode = segments.Length > 15 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(15), false) : null;
-            ProcedureCodeModifier = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            ProcedureDrgType = segments.ElementAtOrDefault(17);
-            TissueTypeCode = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            ProcedureIdentifier = segments.Length > 19 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(19), false) : null;
-            ProcedureActionCode = segments.ElementAtOrDefault(20);
+            SetIdPr1 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            ProcedureCodingMethod = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            ProcedureCode = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[3], false) : null;
+            ProcedureDescription = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            ProcedureDateTime = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDateTime() : null;
+            ProcedureFunctionalType = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
+            ProcedureMinutes = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDecimal() : null;
+            Anesthesiologist = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[8], false) : null;
+            AnesthesiaCode = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
+            AnesthesiaMinutes = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDecimal() : null;
+            Surgeon = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            ProcedurePractitioner = segments.Length > 12 && segments[12].Length > 0 ? segments[12].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            ConsentCode = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[13], false) : null;
+            ProcedurePriority = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDecimal() : null;
+            AssociatedDiagnosisCode = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[15], false) : null;
+            ProcedureCodeModifier = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            ProcedureDrgType = segments.Length > 17 && segments[17].Length > 0 ? segments[17] : null;
+            TissueTypeCode = segments.Length > 18 && segments[18].Length > 0 ? segments[18].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            ProcedureIdentifier = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[19], false) : null;
+            ProcedureActionCode = segments.Length > 20 && segments[20].Length > 0 ? segments[20] : null;
         }
 
         /// <summary>

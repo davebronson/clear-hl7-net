@@ -194,43 +194,43 @@ namespace ClearHl7.V240.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            QuantityTiming = segments.Length > 1 ? TypeHelper.Deserialize<TimingQuantity>(segments.ElementAtOrDefault(1), false) : null;
-            GiveCode = segments.Length > 2 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(2), false) : null;
-            GiveAmountMinimum = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
-            GiveAmountMaximum = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
-            GiveUnits = segments.Length > 5 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(5), false) : null;
-            GiveDosageForm = segments.Length > 6 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(6), false) : null;
-            ProvidersAdministrationInstructions = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            DeliverToLocation = segments.Length > 8 ? TypeHelper.Deserialize<LocationWithAddressVariationOne>(segments.ElementAtOrDefault(8), false) : null;
-            SubstitutionStatus = segments.ElementAtOrDefault(9);
-            DispenseAmount = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
-            DispenseUnits = segments.Length > 11 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(11), false) : null;
-            NumberOfRefills = segments.ElementAtOrDefault(12)?.ToNullableDecimal();
-            OrderingProvidersDeaNumber = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            PharmacistTreatmentSuppliersVerifierId = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            PrescriptionNumber = segments.ElementAtOrDefault(15);
-            NumberOfRefillsRemaining = segments.ElementAtOrDefault(16)?.ToNullableDecimal();
-            NumberOfRefillsDosesDispensed = segments.ElementAtOrDefault(17)?.ToNullableDecimal();
-            DateTimeOfMostRecentRefillOrDoseDispensed = segments.ElementAtOrDefault(18)?.ToNullableDateTime();
-            TotalDailyDose = segments.Length > 19 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(19), false) : null;
-            NeedsHumanReview = segments.ElementAtOrDefault(20);
-            SpecialDispensingInstructions = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            GivePerTimeUnit = segments.ElementAtOrDefault(22);
-            GiveRateAmount = segments.ElementAtOrDefault(23);
-            GiveRateUnits = segments.Length > 24 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(24), false) : null;
-            GiveStrength = segments.ElementAtOrDefault(25)?.ToNullableDecimal();
-            GiveStrengthUnits = segments.Length > 26 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(26), false) : null;
-            GiveIndication = segments.Length > 27 ? segments.ElementAtOrDefault(27).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            DispensePackageSize = segments.ElementAtOrDefault(28)?.ToNullableDecimal();
-            DispensePackageSizeUnit = segments.Length > 29 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(29), false) : null;
-            DispensePackageMethod = segments.ElementAtOrDefault(30);
-            SupplementaryCode = segments.Length > 31 ? segments.ElementAtOrDefault(31).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            QuantityTiming = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<TimingQuantity>(segments[1], false) : null;
+            GiveCode = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[2], false) : null;
+            GiveAmountMinimum = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDecimal() : null;
+            GiveAmountMaximum = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDecimal() : null;
+            GiveUnits = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[5], false) : null;
+            GiveDosageForm = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[6], false) : null;
+            ProvidersAdministrationInstructions = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            DeliverToLocation = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<LocationWithAddressVariationOne>(segments[8], false) : null;
+            SubstitutionStatus = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
+            DispenseAmount = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDecimal() : null;
+            DispenseUnits = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[11], false) : null;
+            NumberOfRefills = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDecimal() : null;
+            OrderingProvidersDeaNumber = segments.Length > 13 && segments[13].Length > 0 ? segments[13].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            PharmacistTreatmentSuppliersVerifierId = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            PrescriptionNumber = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
+            NumberOfRefillsRemaining = segments.Length > 16 && segments[16].Length > 0 ? segments[16].ToNullableDecimal() : null;
+            NumberOfRefillsDosesDispensed = segments.Length > 17 && segments[17].Length > 0 ? segments[17].ToNullableDecimal() : null;
+            DateTimeOfMostRecentRefillOrDoseDispensed = segments.Length > 18 && segments[18].Length > 0 ? segments[18].ToNullableDateTime() : null;
+            TotalDailyDose = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[19], false) : null;
+            NeedsHumanReview = segments.Length > 20 && segments[20].Length > 0 ? segments[20] : null;
+            SpecialDispensingInstructions = segments.Length > 21 && segments[21].Length > 0 ? segments[21].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            GivePerTimeUnit = segments.Length > 22 && segments[22].Length > 0 ? segments[22] : null;
+            GiveRateAmount = segments.Length > 23 && segments[23].Length > 0 ? segments[23] : null;
+            GiveRateUnits = segments.Length > 24 && segments[24].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[24], false) : null;
+            GiveStrength = segments.Length > 25 && segments[25].Length > 0 ? segments[25].ToNullableDecimal() : null;
+            GiveStrengthUnits = segments.Length > 26 && segments[26].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[26], false) : null;
+            GiveIndication = segments.Length > 27 && segments[27].Length > 0 ? segments[27].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            DispensePackageSize = segments.Length > 28 && segments[28].Length > 0 ? segments[28].ToNullableDecimal() : null;
+            DispensePackageSizeUnit = segments.Length > 29 && segments[29].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[29], false) : null;
+            DispensePackageMethod = segments.Length > 30 && segments[30].Length > 0 ? segments[30] : null;
+            SupplementaryCode = segments.Length > 31 && segments[31].Length > 0 ? segments[31].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
         }
 
         /// <summary>

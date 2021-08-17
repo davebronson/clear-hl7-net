@@ -90,22 +90,22 @@ namespace ClearHl7.V290.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            RequisitionLineNumber = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            ItemCodeInternal = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
-            ItemCodeExternal = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
-            HospitalItemCode = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
-            RequisitionQuantity = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
-            RequisitionUnitOfMeasure = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
-            CostCenterAccountNumber = segments.Length > 7 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(7), false) : null;
-            ItemNaturalAccountCode = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
-            DeliverToId = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), false) : null;
-            DateNeeded = segments.ElementAtOrDefault(10)?.ToNullableDateTime();;
+            RequisitionLineNumber = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            ItemCodeInternal = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
+            ItemCodeExternal = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false) : null;
+            HospitalItemCode = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false) : null;
+            RequisitionQuantity = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDecimal() : null;
+            RequisitionUnitOfMeasure = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[6], false) : null;
+            CostCenterAccountNumber = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments[7], false) : null;
+            ItemNaturalAccountCode = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[8], false) : null;
+            DeliverToId = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[9], false) : null;
+            DateNeeded = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDateTime() : null;;
         }
 
         /// <summary>

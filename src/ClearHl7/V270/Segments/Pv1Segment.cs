@@ -334,66 +334,66 @@ namespace ClearHl7.V270.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdPv1 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            PatientClass = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
-            AssignedPatientLocation = segments.Length > 3 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(3), false) : null;
-            AdmissionType = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
-            PreadmitNumber = segments.Length > 5 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(5), false) : null;
-            PriorPatientLocation = segments.Length > 6 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(6), false) : null;
-            AttendingDoctor = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            ReferringDoctor = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            ConsultingDoctor = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            HospitalService = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(10), false) : null;
-            TemporaryLocation = segments.Length > 11 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(11), false) : null;
-            PreadmitTestIndicator = segments.Length > 12 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(12), false) : null;
-            ReadmissionIndicator = segments.Length > 13 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(13), false) : null;
-            AdmitSource = segments.Length > 14 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(14), false) : null;
-            AmbulatoryStatus = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            VipIndicator = segments.Length > 16 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(16), false) : null;
-            AdmittingDoctor = segments.Length > 17 ? segments.ElementAtOrDefault(17).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            PatientType = segments.Length > 18 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(18), false) : null;
-            VisitNumber = segments.Length > 19 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(19), false) : null;
-            FinancialClass = segments.Length > 20 ? segments.ElementAtOrDefault(20).Split(separator).Select(x => TypeHelper.Deserialize<FinancialClass>(x, false)) : null;
-            ChargePriceIndicator = segments.Length > 21 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(21), false) : null;
-            CourtesyCode = segments.Length > 22 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(22), false) : null;
-            CreditRating = segments.Length > 23 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(23), false) : null;
-            ContractCode = segments.Length > 24 ? segments.ElementAtOrDefault(24).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            ContractEffectiveDate = segments.Length > 25 ? segments.ElementAtOrDefault(25).Split(separator).Select(x => x.ToDateTime()) : null;
-            ContractAmount = segments.Length > 26 ? segments.ElementAtOrDefault(26).Split(separator).Select(x => x.ToDecimal()) : null;
-            ContractPeriod = segments.Length > 27 ? segments.ElementAtOrDefault(27).Split(separator).Select(x => x.ToDecimal()) : null;
-            InterestCode = segments.Length > 28 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(28), false) : null;
-            TransferToBadDebtCode = segments.Length > 29 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(29), false) : null;
-            TransferToBadDebtDate = segments.ElementAtOrDefault(30)?.ToNullableDateTime();
-            BadDebtAgencyCode = segments.Length > 31 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(31), false) : null;
-            BadDebtTransferAmount = segments.Length > 32 ? segments.ElementAtOrDefault(32)?.ToNullableDecimal() : null;
-            BadDebtRecoveryAmount = segments.Length > 33 ? segments.ElementAtOrDefault(33)?.ToNullableDecimal() : null;
-            DeleteAccountIndicator = segments.Length > 34 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(34), false) : null;
-            DeleteAccountDate = segments.ElementAtOrDefault(35)?.ToNullableDateTime();
-            DischargeDisposition = segments.Length > 36 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(36), false) : null;
-            DischargedToLocation = segments.Length > 37 ? TypeHelper.Deserialize<DischargeToLocationAndDate>(segments.ElementAtOrDefault(37), false) : null;
-            DietType = segments.Length > 38 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(38), false) : null;
-            ServicingFacility = segments.Length > 39 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(39), false) : null;
-            BedStatus = segments.Length > 40 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(40), false) : null;
-            AccountStatus = segments.Length > 41 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(41), false) : null;
-            PendingLocation = segments.Length > 42 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(42), false) : null;
-            PriorTemporaryLocation = segments.Length > 43 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(43), false) : null;
-            AdmitDateTime = segments.ElementAtOrDefault(44)?.ToNullableDateTime();
-            DischargeDateTime = segments.ElementAtOrDefault(45)?.ToNullableDateTime();
-            CurrentPatientBalance = segments.ElementAtOrDefault(46)?.ToNullableDecimal();
-            TotalCharges = segments.ElementAtOrDefault(47)?.ToNullableDecimal();
-            TotalAdjustments = segments.ElementAtOrDefault(48)?.ToNullableDecimal();
-            TotalPayments = segments.ElementAtOrDefault(49)?.ToNullableDecimal();
-            AlternateVisitId = segments.Length > 50 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(50), false) : null;
-            VisitIndicator = segments.Length > 51 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(51), false) : null;
-            OtherHealthcareProvider = segments.Length > 52 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(52), false) : null;
-            ServiceEpisodeDescription = segments.ElementAtOrDefault(53);
-            ServiceEpisodeIdentifier = segments.Length > 54 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(54), false) : null;
+            SetIdPv1 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            PatientClass = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
+            AssignedPatientLocation = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[3], false) : null;
+            AdmissionType = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false) : null;
+            PreadmitNumber = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments[5], false) : null;
+            PriorPatientLocation = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[6], false) : null;
+            AttendingDoctor = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            ReferringDoctor = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            ConsultingDoctor = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            HospitalService = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[10], false) : null;
+            TemporaryLocation = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[11], false) : null;
+            PreadmitTestIndicator = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[12], false) : null;
+            ReadmissionIndicator = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[13], false) : null;
+            AdmitSource = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[14], false) : null;
+            AmbulatoryStatus = segments.Length > 15 && segments[15].Length > 0 ? segments[15].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            VipIndicator = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[16], false) : null;
+            AdmittingDoctor = segments.Length > 17 && segments[17].Length > 0 ? segments[17].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            PatientType = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[18], false) : null;
+            VisitNumber = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments[19], false) : null;
+            FinancialClass = segments.Length > 20 && segments[20].Length > 0 ? segments[20].Split(separator).Select(x => TypeHelper.Deserialize<FinancialClass>(x, false)) : null;
+            ChargePriceIndicator = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[21], false) : null;
+            CourtesyCode = segments.Length > 22 && segments[22].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[22], false) : null;
+            CreditRating = segments.Length > 23 && segments[23].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[23], false) : null;
+            ContractCode = segments.Length > 24 && segments[24].Length > 0 ? segments[24].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            ContractEffectiveDate = segments.Length > 25 && segments[25].Length > 0 ? segments[25].Split(separator).Select(x => x.ToDateTime()) : null;
+            ContractAmount = segments.Length > 26 && segments[26].Length > 0 ? segments[26].Split(separator).Select(x => x.ToDecimal()) : null;
+            ContractPeriod = segments.Length > 27 && segments[27].Length > 0 ? segments[27].Split(separator).Select(x => x.ToDecimal()) : null;
+            InterestCode = segments.Length > 28 && segments[28].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[28], false) : null;
+            TransferToBadDebtCode = segments.Length > 29 && segments[29].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[29], false) : null;
+            TransferToBadDebtDate = segments.Length > 30 && segments[30].Length > 0 ? segments[30].ToNullableDateTime() : null;
+            BadDebtAgencyCode = segments.Length > 31 && segments[31].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[31], false) : null;
+            BadDebtTransferAmount = segments.Length > 32 && segments[32].Length > 0 ? segments[32].ToNullableDecimal() : null;
+            BadDebtRecoveryAmount = segments.Length > 33 && segments[33].Length > 0 ? segments[33].ToNullableDecimal() : null;
+            DeleteAccountIndicator = segments.Length > 34 && segments[34].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[34], false) : null;
+            DeleteAccountDate = segments.Length > 35 && segments[35].Length > 0 ? segments[35].ToNullableDateTime() : null;
+            DischargeDisposition = segments.Length > 36 && segments[36].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[36], false) : null;
+            DischargedToLocation = segments.Length > 37 && segments[37].Length > 0 ? TypeHelper.Deserialize<DischargeToLocationAndDate>(segments[37], false) : null;
+            DietType = segments.Length > 38 && segments[38].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[38], false) : null;
+            ServicingFacility = segments.Length > 39 && segments[39].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[39], false) : null;
+            BedStatus = segments.Length > 40 && segments[40].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[40], false) : null;
+            AccountStatus = segments.Length > 41 && segments[41].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[41], false) : null;
+            PendingLocation = segments.Length > 42 && segments[42].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[42], false) : null;
+            PriorTemporaryLocation = segments.Length > 43 && segments[43].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[43], false) : null;
+            AdmitDateTime = segments.Length > 44 && segments[44].Length > 0 ? segments[44].ToNullableDateTime() : null;
+            DischargeDateTime = segments.Length > 45 && segments[45].Length > 0 ? segments[45].ToNullableDateTime() : null;
+            CurrentPatientBalance = segments.Length > 46 && segments[46].Length > 0 ? segments[46].ToNullableDecimal() : null;
+            TotalCharges = segments.Length > 47 && segments[47].Length > 0 ? segments[47].ToNullableDecimal() : null;
+            TotalAdjustments = segments.Length > 48 && segments[48].Length > 0 ? segments[48].ToNullableDecimal() : null;
+            TotalPayments = segments.Length > 49 && segments[49].Length > 0 ? segments[49].ToNullableDecimal() : null;
+            AlternateVisitId = segments.Length > 50 && segments[50].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments[50], false) : null;
+            VisitIndicator = segments.Length > 51 && segments[51].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[51], false) : null;
+            OtherHealthcareProvider = segments.Length > 52 && segments[52].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[52], false) : null;
+            ServiceEpisodeDescription = segments.Length > 53 && segments[53].Length > 0 ? segments[53] : null;
+            ServiceEpisodeIdentifier = segments.Length > 54 && segments[54].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments[54], false) : null;
         }
 
         /// <summary>

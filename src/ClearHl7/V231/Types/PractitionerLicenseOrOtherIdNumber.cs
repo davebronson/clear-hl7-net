@@ -45,10 +45,10 @@ namespace ClearHl7.V231.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            IdNumber = segments.ElementAtOrDefault(0);
-            TypeOfIdNumber = segments.ElementAtOrDefault(1);
-            StateOtherQualifyingInformation = segments.ElementAtOrDefault(2);
-            ExpirationDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
+            IdNumber = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            TypeOfIdNumber = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            StateOtherQualifyingInformation = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            ExpirationDate = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
         }
 
         /// <summary>

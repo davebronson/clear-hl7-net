@@ -78,21 +78,21 @@ namespace ClearHl7.V260.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            ApplicationChangeType = segments.ElementAtOrDefault(1);
-            CurrentCpu = segments.ElementAtOrDefault(2);
-            CurrentFileserver = segments.ElementAtOrDefault(3);
-            CurrentApplication = segments.Length > 4 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(4), false) : null;
-            CurrentFacility = segments.Length > 5 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(5), false) : null;
-            NewCpu = segments.ElementAtOrDefault(6);
-            NewFileserver = segments.ElementAtOrDefault(7);
-            NewApplication = segments.Length > 8 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(8), false) : null;
-            NewFacility = segments.Length > 9 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(9), false) : null;
+            ApplicationChangeType = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            CurrentCpu = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            CurrentFileserver = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            CurrentApplication = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[4], false) : null;
+            CurrentFacility = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[5], false) : null;
+            NewCpu = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
+            NewFileserver = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
+            NewApplication = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[8], false) : null;
+            NewFacility = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[9], false) : null;
         }
 
         /// <summary>

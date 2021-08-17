@@ -66,18 +66,18 @@ namespace ClearHl7.V231.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            MasterFileIdentifier = segments.Length > 1 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(1), false) : null;
-            MasterFileApplicationIdentifier = segments.Length > 2 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(2), false) : null;
-            FileLevelEventCode = segments.ElementAtOrDefault(3);
-            EnteredDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
-            EffectiveDateTime = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
-            ResponseLevelCode = segments.ElementAtOrDefault(6);
+            MasterFileIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[1], false) : null;
+            MasterFileApplicationIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[2], false) : null;
+            FileLevelEventCode = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            EnteredDateTime = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
+            EffectiveDateTime = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDateTime() : null;
+            ResponseLevelCode = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
         }
 
         /// <summary>

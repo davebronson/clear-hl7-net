@@ -150,35 +150,35 @@ namespace ClearHl7.V280.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdUb1 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            BloodDeductible = segments.ElementAtOrDefault(2);
-            BloodFurnishedPints = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
-            BloodReplacedPints = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
-            BloodNotReplacedPints = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
-            CoInsuranceDays = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
-            ConditionCode = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator) : null;
-            CoveredDays = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
-            NonCoveredDays = segments.ElementAtOrDefault(9)?.ToNullableDecimal();
-            ValueAmountCode = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<ValueCodeAndAmount>(x, false)) : null;
-            NumberOfGraceDays = segments.ElementAtOrDefault(11)?.ToNullableDecimal();
-            SpecialProgramIndicator = segments.Length > 12 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(12), false) : null;
-            PsroUrApprovalIndicator = segments.Length > 13 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(13), false) : null;
-            PsroUrApprovedStayFm = segments.ElementAtOrDefault(14)?.ToNullableDateTime();
-            PsroUrApprovedStayTo = segments.ElementAtOrDefault(15)?.ToNullableDateTime();
-            Occurrence = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<OccurrenceCodeAndDate>(x, false)) : null;
-            OccurrenceSpan = segments.Length > 17 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(17), false) : null;
-            OccurSpanStartDate = segments.ElementAtOrDefault(18)?.ToNullableDateTime();
-            OccurSpanEndDate = segments.ElementAtOrDefault(19)?.ToNullableDateTime();
-            Ub82Locator2 = segments.ElementAtOrDefault(20);
-            Ub82Locator9 = segments.ElementAtOrDefault(21);
-            Ub82Locator27 = segments.ElementAtOrDefault(22);
-            Ub82Locator45 = segments.ElementAtOrDefault(23);
+            SetIdUb1 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            BloodDeductible = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            BloodFurnishedPints = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDecimal() : null;
+            BloodReplacedPints = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDecimal() : null;
+            BloodNotReplacedPints = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDecimal() : null;
+            CoInsuranceDays = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDecimal() : null;
+            ConditionCode = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(separator) : null;
+            CoveredDays = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDecimal() : null;
+            NonCoveredDays = segments.Length > 9 && segments[9].Length > 0 ? segments[9].ToNullableDecimal() : null;
+            ValueAmountCode = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(separator).Select(x => TypeHelper.Deserialize<ValueCodeAndAmount>(x, false)) : null;
+            NumberOfGraceDays = segments.Length > 11 && segments[11].Length > 0 ? segments[11].ToNullableDecimal() : null;
+            SpecialProgramIndicator = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[12], false) : null;
+            PsroUrApprovalIndicator = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[13], false) : null;
+            PsroUrApprovedStayFm = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDateTime() : null;
+            PsroUrApprovedStayTo = segments.Length > 15 && segments[15].Length > 0 ? segments[15].ToNullableDateTime() : null;
+            Occurrence = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(separator).Select(x => TypeHelper.Deserialize<OccurrenceCodeAndDate>(x, false)) : null;
+            OccurrenceSpan = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[17], false) : null;
+            OccurSpanStartDate = segments.Length > 18 && segments[18].Length > 0 ? segments[18].ToNullableDateTime() : null;
+            OccurSpanEndDate = segments.Length > 19 && segments[19].Length > 0 ? segments[19].ToNullableDateTime() : null;
+            Ub82Locator2 = segments.Length > 20 && segments[20].Length > 0 ? segments[20] : null;
+            Ub82Locator9 = segments.Length > 21 && segments[21].Length > 0 ? segments[21] : null;
+            Ub82Locator27 = segments.Length > 22 && segments[22].Length > 0 ? segments[22] : null;
+            Ub82Locator45 = segments.Length > 23 && segments[23].Length > 0 ? segments[23] : null;
         }
 
         /// <summary>

@@ -55,16 +55,16 @@ namespace ClearHl7.V260.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            Type = segments.ElementAtOrDefault(1);
-            ServicePeriod = segments.Length > 2 ? segments.ElementAtOrDefault(2).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            DietSupplementOrPreferenceCode = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            TextInstruction = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator) : null;
+            Type = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            ServicePeriod = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            DietSupplementOrPreferenceCode = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            TextInstruction = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(separator) : null;
         }
 
         /// <summary>

@@ -38,9 +38,9 @@ namespace ClearHl7.V282.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            ChannelCalibrationSensitivityCorrectionFactor = segments.ElementAtOrDefault(0)?.ToNullableDecimal();
-            ChannelCalibrationBaseline = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
-            ChannelCalibrationTimeSkew = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
+            ChannelCalibrationSensitivityCorrectionFactor = segments.Length > 0 && segments[0].Length > 0 ? segments[0].ToNullableDecimal() : null;
+            ChannelCalibrationBaseline = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
+            ChannelCalibrationTimeSkew = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDecimal() : null;
         }
 
         /// <summary>

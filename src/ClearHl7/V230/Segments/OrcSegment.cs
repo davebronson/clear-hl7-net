@@ -133,31 +133,31 @@ namespace ClearHl7.V230.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            OrderControl = segments.ElementAtOrDefault(1);
-            PlacerOrderNumber = segments.Length > 2 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(2), false) : null;
-            FillerOrderNumber = segments.Length > 3 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(3), false) : null;
-            PlacerGroupNumber = segments.Length > 4 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(4), false) : null;
-            OrderStatus = segments.ElementAtOrDefault(5);
-            ResponseFlag = segments.ElementAtOrDefault(6);
-            QuantityTiming = segments.Length > 7 ? TypeHelper.Deserialize<TimingQuantity>(segments.ElementAtOrDefault(7), false) : null;
-            ParentOrder = segments.Length > 8 ? TypeHelper.Deserialize<ParentOrder>(segments.ElementAtOrDefault(8), false) : null;
-            DateTimeOfTransaction = segments.ElementAtOrDefault(9)?.ToNullableDateTime();
-            EnteredBy = segments.Length > 10 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(10), false) : null;
-            VerifiedBy = segments.Length > 11 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(11), false) : null;
-            OrderingProvider = segments.Length > 12 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(12), false) : null;
-            EnterersLocation = segments.Length > 13 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(13), false) : null;
-            CallBackPhoneNumber = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
-            OrderEffectiveDateTime = segments.ElementAtOrDefault(15)?.ToNullableDateTime();
-            OrderControlCodeReason = segments.Length > 16 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(16), false) : null;
-            EnteringOrganization = segments.Length > 17 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(17), false) : null;
-            EnteringDevice = segments.Length > 18 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(18), false) : null;
-            ActionBy = segments.Length > 19 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(19), false) : null;
+            OrderControl = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            PlacerOrderNumber = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false) : null;
+            FillerOrderNumber = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[3], false) : null;
+            PlacerGroupNumber = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[4], false) : null;
+            OrderStatus = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
+            ResponseFlag = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
+            QuantityTiming = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<TimingQuantity>(segments[7], false) : null;
+            ParentOrder = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<ParentOrder>(segments[8], false) : null;
+            DateTimeOfTransaction = segments.Length > 9 && segments[9].Length > 0 ? segments[9].ToNullableDateTime() : null;
+            EnteredBy = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[10], false) : null;
+            VerifiedBy = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[11], false) : null;
+            OrderingProvider = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[12], false) : null;
+            EnterersLocation = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[13], false) : null;
+            CallBackPhoneNumber = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
+            OrderEffectiveDateTime = segments.Length > 15 && segments[15].Length > 0 ? segments[15].ToNullableDateTime() : null;
+            OrderControlCodeReason = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[16], false) : null;
+            EnteringOrganization = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[17], false) : null;
+            EnteringDevice = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[18], false) : null;
+            ActionBy = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[19], false) : null;
         }
 
         /// <summary>

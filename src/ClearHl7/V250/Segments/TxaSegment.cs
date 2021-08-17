@@ -156,35 +156,35 @@ namespace ClearHl7.V250.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdTxa = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            DocumentType = segments.ElementAtOrDefault(2);
-            DocumentContentPresentation = segments.ElementAtOrDefault(3);
-            ActivityDateTime = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
-            PrimaryActivityProviderCodeName = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            OriginationDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
-            TranscriptionDateTime = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
-            EditDateTime = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => x.ToDateTime()) : null;
-            OriginatorCodeName = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            AssignedDocumentAuthenticator = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            TranscriptionistCodeName = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            UniqueDocumentNumber = segments.Length > 12 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(12), false) : null;
-            ParentDocumentNumber = segments.Length > 13 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(13), false) : null;
-            PlacerOrderNumber = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
-            FillerOrderNumber = segments.Length > 15 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(15), false) : null;
-            UniqueDocumentFileName = segments.ElementAtOrDefault(16);
-            DocumentCompletionStatus = segments.ElementAtOrDefault(17);
-            DocumentConfidentialityStatus = segments.ElementAtOrDefault(18);
-            DocumentAvailabilityStatus = segments.ElementAtOrDefault(19);
-            DocumentStorageStatus = segments.ElementAtOrDefault(20);
-            DocumentChangeReason = segments.ElementAtOrDefault(21);
-            AuthenticationPersonTimeStampSet = segments.Length > 22 ? segments.ElementAtOrDefault(22).Split(separator).Select(x => TypeHelper.Deserialize<PerformingPersonTimeStamp>(x, false)) : null;
-            DistributedCopiesCodeAndNameOfRecipients = segments.Length > 23 ? segments.ElementAtOrDefault(23).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            SetIdTxa = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            DocumentType = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            DocumentContentPresentation = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            ActivityDateTime = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
+            PrimaryActivityProviderCodeName = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            OriginationDateTime = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDateTime() : null;
+            TranscriptionDateTime = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
+            EditDateTime = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(separator).Select(x => x.ToDateTime()) : null;
+            OriginatorCodeName = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            AssignedDocumentAuthenticator = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            TranscriptionistCodeName = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            UniqueDocumentNumber = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[12], false) : null;
+            ParentDocumentNumber = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[13], false) : null;
+            PlacerOrderNumber = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
+            FillerOrderNumber = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[15], false) : null;
+            UniqueDocumentFileName = segments.Length > 16 && segments[16].Length > 0 ? segments[16] : null;
+            DocumentCompletionStatus = segments.Length > 17 && segments[17].Length > 0 ? segments[17] : null;
+            DocumentConfidentialityStatus = segments.Length > 18 && segments[18].Length > 0 ? segments[18] : null;
+            DocumentAvailabilityStatus = segments.Length > 19 && segments[19].Length > 0 ? segments[19] : null;
+            DocumentStorageStatus = segments.Length > 20 && segments[20].Length > 0 ? segments[20] : null;
+            DocumentChangeReason = segments.Length > 21 && segments[21].Length > 0 ? segments[21] : null;
+            AuthenticationPersonTimeStampSet = segments.Length > 22 && segments[22].Length > 0 ? segments[22].Split(separator).Select(x => TypeHelper.Deserialize<PerformingPersonTimeStamp>(x, false)) : null;
+            DistributedCopiesCodeAndNameOfRecipients = segments.Length > 23 && segments[23].Length > 0 ? segments[23].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
         }
 
         /// <summary>

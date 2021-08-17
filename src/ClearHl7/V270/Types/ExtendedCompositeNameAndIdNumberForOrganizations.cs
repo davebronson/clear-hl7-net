@@ -78,16 +78,16 @@ namespace ClearHl7.V270.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            OrganizationName = segments.ElementAtOrDefault(0);
-            OrganizationNameTypeCode = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), true) : null;
-            IdNumber = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
-            IdentifierCheckDigit = segments.ElementAtOrDefault(3)?.ToNullableDecimal();
-            CheckDigitScheme = segments.ElementAtOrDefault(4);
-            AssigningAuthority = segments.Length > 5 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(5), true) : null;
-            IdentifierTypeCode = segments.ElementAtOrDefault(6);
-            AssigningFacility = segments.Length > 7 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(7), true) : null;
-            NameRepresentationCode = segments.ElementAtOrDefault(8);
-            OrganizationIdentifier = segments.ElementAtOrDefault(9);
+            OrganizationName = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            OrganizationNameTypeCode = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], true) : null;
+            IdNumber = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDecimal() : null;
+            IdentifierCheckDigit = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDecimal() : null;
+            CheckDigitScheme = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            AssigningAuthority = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[5], true) : null;
+            IdentifierTypeCode = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
+            AssigningFacility = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[7], true) : null;
+            NameRepresentationCode = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
+            OrganizationIdentifier = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
         }
 
         /// <summary>

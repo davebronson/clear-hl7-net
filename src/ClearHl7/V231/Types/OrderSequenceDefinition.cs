@@ -78,17 +78,17 @@ namespace ClearHl7.V231.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            SequenceResultsFlag = segments.ElementAtOrDefault(0);
-            PlacerOrderNumberEntityIdentifier = segments.ElementAtOrDefault(1);
-            PlacerOrderNumberNamespaceId = segments.ElementAtOrDefault(2);
-            FillerOrderNumberEntityIdentifier = segments.ElementAtOrDefault(3);
-            FillerOrderNumberNamespaceId = segments.ElementAtOrDefault(4);
-            SequenceConditionValue = segments.ElementAtOrDefault(5);
-            MaximumNumberOfRepeats = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
-            PlacerOrderNumberUniversalId = segments.ElementAtOrDefault(7);
-            PlacerOrderNumberUniversalIdType = segments.ElementAtOrDefault(8);
-            FillerOrderNumberUniversalId = segments.ElementAtOrDefault(9);
-            FillerOrderNumberUniversalIdType = segments.ElementAtOrDefault(10);
+            SequenceResultsFlag = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            PlacerOrderNumberEntityIdentifier = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            PlacerOrderNumberNamespaceId = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            FillerOrderNumberEntityIdentifier = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            FillerOrderNumberNamespaceId = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            SequenceConditionValue = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
+            MaximumNumberOfRepeats = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDecimal() : null;
+            PlacerOrderNumberUniversalId = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
+            PlacerOrderNumberUniversalIdType = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
+            FillerOrderNumberUniversalId = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
+            FillerOrderNumberUniversalIdType = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
         }
 
         /// <summary>

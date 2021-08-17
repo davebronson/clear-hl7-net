@@ -63,18 +63,18 @@ namespace ClearHl7.V250.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SoftwareVendorOrganization = segments.Length > 1 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(1), false) : null;
-            SoftwareCertifiedVersionOrReleaseNumber = segments.ElementAtOrDefault(2);
-            SoftwareProductName = segments.ElementAtOrDefault(3);
-            SoftwareBinaryId = segments.ElementAtOrDefault(4);
-            SoftwareProductInformation = segments.Length > 5 ? TypeHelper.Deserialize<Text>(segments.ElementAtOrDefault(5), false) : null;
-            SoftwareInstallDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
+            SoftwareVendorOrganization = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[1], false) : null;
+            SoftwareCertifiedVersionOrReleaseNumber = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            SoftwareProductName = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            SoftwareBinaryId = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            SoftwareProductInformation = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<Text>(segments[5], false) : null;
+            SoftwareInstallDate = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDateTime() : null;
         }
 
         /// <summary>

@@ -99,20 +99,20 @@ namespace ClearHl7.V250.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            StreetAddress = segments.Length > 0 ? TypeHelper.Deserialize<StreetAddress>(segments.ElementAtOrDefault(0), true) : null;
-            OtherDesignation = segments.ElementAtOrDefault(1);
-            City = segments.ElementAtOrDefault(2);
-            StateOrProvince = segments.ElementAtOrDefault(3);
-            ZipOrPostalCode = segments.ElementAtOrDefault(4);
-            Country = segments.ElementAtOrDefault(5);
-            AddressType = segments.ElementAtOrDefault(6);
-            OtherGeographicDesignation = segments.ElementAtOrDefault(7);
-            CountyParishCode = segments.ElementAtOrDefault(8);
-            CensusTract = segments.ElementAtOrDefault(9);
-            AddressRepresentationCode = segments.ElementAtOrDefault(10);
-            AddressValidityRange = segments.Length > 11 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(11), true) : null;
-            EffectiveDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
-            ExpirationDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
+            StreetAddress = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<StreetAddress>(segments[0], true) : null;
+            OtherDesignation = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            City = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            StateOrProvince = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            ZipOrPostalCode = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            Country = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
+            AddressType = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
+            OtherGeographicDesignation = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
+            CountyParishCode = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
+            CensusTract = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
+            AddressRepresentationCode = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
+            AddressValidityRange = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<DateTimeRange>(segments[11], true) : null;
+            EffectiveDate = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDateTime() : null;
+            ExpirationDate = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDateTime() : null;
         }
 
         /// <summary>

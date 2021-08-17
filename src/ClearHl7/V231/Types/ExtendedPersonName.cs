@@ -65,14 +65,14 @@ namespace ClearHl7.V231.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            FamilyName = segments.ElementAtOrDefault(0);
-            GivenName = segments.ElementAtOrDefault(1);
-            SecondAndFurtherGivenNamesOrInitialsThereof = segments.ElementAtOrDefault(2);
-            Suffix = segments.ElementAtOrDefault(3);
-            Prefix = segments.ElementAtOrDefault(4);
-            Degree = segments.ElementAtOrDefault(5);
-            NameTypeCode = segments.ElementAtOrDefault(6);
-            NameRepresentationCode = segments.ElementAtOrDefault(7);
+            FamilyName = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            GivenName = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            SecondAndFurtherGivenNamesOrInitialsThereof = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            Suffix = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            Prefix = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            Degree = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
+            NameTypeCode = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
+            NameRepresentationCode = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
         }
 
         /// <summary>

@@ -112,27 +112,27 @@ namespace ClearHl7.V281.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            PrimaryKeyValueIim = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
-            ServiceItemCode = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
-            InventoryLotNumber = segments.ElementAtOrDefault(3);
-            InventoryExpirationDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
-            InventoryManufacturerName = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
-            InventoryLocation = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
-            InventoryReceivedDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
-            InventoryReceivedQuantity = segments.ElementAtOrDefault(8)?.ToNullableDecimal();
-            InventoryReceivedQuantityUnit = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), false) : null;
-            InventoryReceivedItemCost = segments.Length > 10 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(10), false) : null;
-            InventoryOnHandDate = segments.ElementAtOrDefault(11)?.ToNullableDateTime();
-            InventoryOnHandQuantity = segments.ElementAtOrDefault(12)?.ToNullableDecimal();
-            InventoryOnHandQuantityUnit = segments.Length > 13 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(13), false) : null;
-            ProcedureCode = segments.Length > 14 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(14), false) : null;
-            ProcedureCodeModifier = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithNoExceptions>(x, false)) : null;
+            PrimaryKeyValueIim = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false) : null;
+            ServiceItemCode = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
+            InventoryLotNumber = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            InventoryExpirationDate = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
+            InventoryManufacturerName = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], false) : null;
+            InventoryLocation = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[6], false) : null;
+            InventoryReceivedDate = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
+            InventoryReceivedQuantity = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDecimal() : null;
+            InventoryReceivedQuantityUnit = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[9], false) : null;
+            InventoryReceivedItemCost = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<Money>(segments[10], false) : null;
+            InventoryOnHandDate = segments.Length > 11 && segments[11].Length > 0 ? segments[11].ToNullableDateTime() : null;
+            InventoryOnHandQuantity = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDecimal() : null;
+            InventoryOnHandQuantityUnit = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[13], false) : null;
+            ProcedureCode = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[14], false) : null;
+            ProcedureCodeModifier = segments.Length > 15 && segments[15].Length > 0 ? segments[15].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithNoExceptions>(x, false)) : null;
         }
 
         /// <summary>

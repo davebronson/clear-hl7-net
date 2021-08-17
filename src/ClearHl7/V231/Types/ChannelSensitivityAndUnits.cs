@@ -58,13 +58,13 @@ namespace ClearHl7.V231.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            ChannelSensitivity = segments.ElementAtOrDefault(0)?.ToNullableDecimal();
-            UnitOfMeasureIdentifier = segments.ElementAtOrDefault(1);
-            UnitOfMeasureDescription = segments.ElementAtOrDefault(2);
-            UnitOfMeasureCodingSystem = segments.ElementAtOrDefault(3);
-            AlternateUnitOfMeasureIdentifier = segments.ElementAtOrDefault(4);
-            AlternateUnitOfMeasureDescription = segments.ElementAtOrDefault(5);
-            AlternateUnitOfMeasureCodingSystem = segments.ElementAtOrDefault(6);
+            ChannelSensitivity = segments.Length > 0 && segments[0].Length > 0 ? segments[0].ToNullableDecimal() : null;
+            UnitOfMeasureIdentifier = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            UnitOfMeasureDescription = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            UnitOfMeasureCodingSystem = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            AlternateUnitOfMeasureIdentifier = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            AlternateUnitOfMeasureDescription = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
+            AlternateUnitOfMeasureCodingSystem = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
         }
 
         /// <summary>

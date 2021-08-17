@@ -101,24 +101,24 @@ namespace ClearHl7.V250.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            QueryDateTime = segments.ElementAtOrDefault(1)?.ToNullableDateTime();
-            QueryFormatCode = segments.ElementAtOrDefault(2);
-            QueryPriority = segments.ElementAtOrDefault(3);
-            QueryId = segments.ElementAtOrDefault(4);
-            DeferredResponseType = segments.ElementAtOrDefault(5);
-            DeferredResponseDateTime = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
-            QuantityLimitedRequest = segments.Length > 7 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(7), false) : null;
-            WhoSubjectFilter = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            WhatSubjectFilter = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null; ;
-            WhatDepartmentDataCode = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null; ;
-            WhatDataCodeValueQual = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<ValueRange>(x, false)) : null; ;
-            QueryResultsLevel = segments.ElementAtOrDefault(12);
+            QueryDateTime = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDateTime() : null;
+            QueryFormatCode = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            QueryPriority = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            QueryId = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            DeferredResponseType = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
+            DeferredResponseDateTime = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDateTime() : null;
+            QuantityLimitedRequest = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[7], false) : null;
+            WhoSubjectFilter = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            WhatSubjectFilter = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null; ;
+            WhatDepartmentDataCode = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null; ;
+            WhatDataCodeValueQual = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(separator).Select(x => TypeHelper.Deserialize<ValueRange>(x, false)) : null; ;
+            QueryResultsLevel = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
         }
 
         /// <summary>

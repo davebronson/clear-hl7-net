@@ -60,17 +60,17 @@ namespace ClearHl7.V290.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            DiagnosticRelatedGroup = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(1), false) : null;
-            MajorDiagnosticCategory = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(2), false) : null;
-            LowerAndUpperTrimPoints = segments.Length > 3 ? TypeHelper.Deserialize<NumericRange>(segments.ElementAtOrDefault(3), false) : null;
-            AverageLengthOfStay = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
-            RelativeWeight = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
+            DiagnosticRelatedGroup = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[1], false) : null;
+            MajorDiagnosticCategory = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[2], false) : null;
+            LowerAndUpperTrimPoints = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments[3], false) : null;
+            AverageLengthOfStay = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDecimal() : null;
+            RelativeWeight = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDecimal() : null;
         }
 
         /// <summary>

@@ -53,16 +53,16 @@ namespace ClearHl7.V260.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            ApplicationMethodIdentifier = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
-            SubstanceLotNumber = segments.ElementAtOrDefault(2);
-            SubstanceContainerIdentifier = segments.ElementAtOrDefault(3);
-            SubstanceManufacturerIdentifier = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
+            ApplicationMethodIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false) : null;
+            SubstanceLotNumber = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            SubstanceContainerIdentifier = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            SubstanceManufacturerIdentifier = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false) : null;
         }
 
         /// <summary>

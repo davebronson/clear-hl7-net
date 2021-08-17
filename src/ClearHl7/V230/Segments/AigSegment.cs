@@ -108,26 +108,26 @@ namespace ClearHl7.V230.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdAig = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            SegmentActionCode = segments.ElementAtOrDefault(2);
-            ResourceId = segments.Length > 3 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(3), false) : null;
-            ResourceType = segments.Length > 4 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(4), false) : null;
-            ResourceGroup = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            ResourceQuantity = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
-            ResourceQuantityUnits = segments.Length > 7 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(7), false) : null;
-            StartDateTime = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
-            StartDateTimeOffset = segments.ElementAtOrDefault(9)?.ToNullableDecimal();
-            StartDateTimeOffsetUnits = segments.Length > 10 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(10), false) : null;
-            Duration = segments.ElementAtOrDefault(11)?.ToNullableDecimal();
-            DurationUnits = segments.Length > 12 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(12), false) : null;
-            AllowSubstitutionCode = segments.ElementAtOrDefault(13);
-            FillerStatusCode = segments.Length > 14 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(14), false) : null;
+            SetIdAig = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            SegmentActionCode = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            ResourceId = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[3], false) : null;
+            ResourceType = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[4], false) : null;
+            ResourceGroup = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            ResourceQuantity = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDecimal() : null;
+            ResourceQuantityUnits = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[7], false) : null;
+            StartDateTime = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDateTime() : null;
+            StartDateTimeOffset = segments.Length > 9 && segments[9].Length > 0 ? segments[9].ToNullableDecimal() : null;
+            StartDateTimeOffsetUnits = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[10], false) : null;
+            Duration = segments.Length > 11 && segments[11].Length > 0 ? segments[11].ToNullableDecimal() : null;
+            DurationUnits = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[12], false) : null;
+            AllowSubstitutionCode = segments.Length > 13 && segments[13].Length > 0 ? segments[13] : null;
+            FillerStatusCode = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[14], false) : null;
         }
 
         /// <summary>

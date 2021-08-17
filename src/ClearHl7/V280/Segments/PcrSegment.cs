@@ -161,35 +161,35 @@ namespace ClearHl7.V280.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            ImplicatedProduct = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
-            GenericProduct = segments.ElementAtOrDefault(2);
-            ProductClass = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
-            TotalDurationOfTherapy = segments.Length > 4 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(4), false) : null;
-            ProductManufactureDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
-            ProductExpirationDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
-            ProductImplantationDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
-            ProductExplantationDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
-            SingleUseDevice = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), false) : null;
-            IndicationForProductUse = segments.Length > 10 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(10), false) : null;
-            ProductProblem = segments.Length > 11 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(11), false) : null;
-            ProductSerialLotNumber = segments.Length > 12 ? segments.ElementAtOrDefault(12).Split(separator) : null;
-            ProductAvailableForInspection = segments.Length > 13 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(13), false) : null;
-            ProductEvaluationPerformed = segments.Length > 14 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(14), false) : null;
-            ProductEvaluationStatus = segments.Length > 15 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(15), false) : null;
-            ProductEvaluationResults = segments.Length > 16 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(16), false) : null;
-            EvaluatedProductSource = segments.ElementAtOrDefault(17);
-            DateProductReturnedToManufacturer = segments.ElementAtOrDefault(18)?.ToNullableDateTime();
-            DeviceOperatorQualifications = segments.ElementAtOrDefault(19);
-            RelatednessAssessment = segments.ElementAtOrDefault(20);
-            ActionTakenInResponseToTheEvent = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator) : null;
-            EventCausalityObservations = segments.Length > 22 ? segments.ElementAtOrDefault(22).Split(separator) : null;
-            IndirectExposureMechanism = segments.Length > 23 ? segments.ElementAtOrDefault(23).Split(separator) : null;
+            ImplicatedProduct = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false) : null;
+            GenericProduct = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            ProductClass = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false) : null;
+            TotalDurationOfTherapy = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[4], false) : null;
+            ProductManufactureDate = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDateTime() : null;
+            ProductExpirationDate = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDateTime() : null;
+            ProductImplantationDate = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
+            ProductExplantationDate = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDateTime() : null;
+            SingleUseDevice = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[9], false) : null;
+            IndicationForProductUse = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[10], false) : null;
+            ProductProblem = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[11], false) : null;
+            ProductSerialLotNumber = segments.Length > 12 && segments[12].Length > 0 ? segments[12].Split(separator) : null;
+            ProductAvailableForInspection = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[13], false) : null;
+            ProductEvaluationPerformed = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[14], false) : null;
+            ProductEvaluationStatus = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[15], false) : null;
+            ProductEvaluationResults = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[16], false) : null;
+            EvaluatedProductSource = segments.Length > 17 && segments[17].Length > 0 ? segments[17] : null;
+            DateProductReturnedToManufacturer = segments.Length > 18 && segments[18].Length > 0 ? segments[18].ToNullableDateTime() : null;
+            DeviceOperatorQualifications = segments.Length > 19 && segments[19].Length > 0 ? segments[19] : null;
+            RelatednessAssessment = segments.Length > 20 && segments[20].Length > 0 ? segments[20] : null;
+            ActionTakenInResponseToTheEvent = segments.Length > 21 && segments[21].Length > 0 ? segments[21].Split(separator) : null;
+            EventCausalityObservations = segments.Length > 22 && segments[22].Length > 0 ? segments[22].Split(separator) : null;
+            IndirectExposureMechanism = segments.Length > 23 && segments[23].Length > 0 ? segments[23].Split(separator) : null;
         }
 
         /// <summary>

@@ -71,19 +71,19 @@ namespace ClearHl7.V281.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdPye = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            PayeeType = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
-            PayeeRelationshipToInvoicePatient = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
-            PayeeIdentificationList = segments.Length > 4 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(4), false) : null;
-            PayeePersonName = segments.Length > 5 ? TypeHelper.Deserialize<ExtendedPersonName>(segments.ElementAtOrDefault(5), false) : null;
-            PayeeAddress = segments.Length > 6 ? TypeHelper.Deserialize<ExtendedAddress>(segments.ElementAtOrDefault(6), false) : null;
-            PaymentMethod = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(7), false) : null;
+            SetIdPye = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            PayeeType = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
+            PayeeRelationshipToInvoicePatient = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false) : null;
+            PayeeIdentificationList = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[4], false) : null;
+            PayeePersonName = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<ExtendedPersonName>(segments[5], false) : null;
+            PayeeAddress = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<ExtendedAddress>(segments[6], false) : null;
+            PaymentMethod = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[7], false) : null;
         }
 
         /// <summary>

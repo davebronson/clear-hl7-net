@@ -44,10 +44,10 @@ namespace ClearHl7.V280.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            Pointer = segments.ElementAtOrDefault(0);
-            ApplicationId = segments.Length > 1 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(1), true) : null;
-            TypeOfData = segments.ElementAtOrDefault(2);
-            Subtype = segments.ElementAtOrDefault(3);
+            Pointer = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            ApplicationId = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[1], true) : null;
+            TypeOfData = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            Subtype = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
         }
 
         /// <summary>

@@ -43,7 +43,7 @@ namespace ClearHl7.V280
 
             if (segments.Length > 0)
             {
-                if (!segments.First().StartsWith($"MSH{ Configuration.FieldSeparator }", StringComparison.CurrentCultureIgnoreCase))
+                if (!segments[0].StartsWith($"MSH{ Configuration.FieldSeparator }", StringComparison.CurrentCultureIgnoreCase))
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } must begin with an MSH segment.", nameof(delimitedString));
                 }

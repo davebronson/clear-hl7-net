@@ -82,21 +82,21 @@ namespace ClearHl7.V280.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdEdu = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            AcademicDegree = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
-            AcademicDegreeProgramDateRange = segments.Length > 3 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(3), false) : null;
-            AcademicDegreeProgramParticipationDateRange = segments.Length > 4 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(4), false) : null;
-            AcademicDegreeGrantedDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
-            School = segments.Length > 6 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(6), false) : null;
-            SchoolTypeCode = segments.Length > 7 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(7), false) : null;
-            SchoolAddress = segments.Length > 8 ? TypeHelper.Deserialize<ExtendedAddress>(segments.ElementAtOrDefault(8), false) : null;
-            MajorFieldOfStudy = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            SetIdEdu = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            AcademicDegree = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
+            AcademicDegreeProgramDateRange = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<DateTimeRange>(segments[3], false) : null;
+            AcademicDegreeProgramParticipationDateRange = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<DateTimeRange>(segments[4], false) : null;
+            AcademicDegreeGrantedDate = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDateTime() : null;
+            School = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[6], false) : null;
+            SchoolTypeCode = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[7], false) : null;
+            SchoolAddress = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<ExtendedAddress>(segments[8], false) : null;
+            MajorFieldOfStudy = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
         }
 
         /// <summary>

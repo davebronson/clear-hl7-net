@@ -39,9 +39,9 @@ namespace ClearHl7.V250.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            SegmentFieldName = segments.ElementAtOrDefault(0);
-            Hl7DataType = segments.ElementAtOrDefault(1);
-            MaximumColumnWidth = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
+            SegmentFieldName = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            Hl7DataType = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            MaximumColumnWidth = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDecimal() : null;
         }
 
         /// <summary>

@@ -184,40 +184,40 @@ namespace ClearHl7.V281.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdObx = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            ValueType = segments.ElementAtOrDefault(2);
-            ObservationIdentifier = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
-            ObservationSubId = segments.ElementAtOrDefault(4);
-            ObservationValue = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator) : null;
-            Units = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
-            ReferencesRange = segments.ElementAtOrDefault(7);
-            InterpretationCodes = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            Probability = segments.ElementAtOrDefault(9)?.ToNullableDecimal();
-            NatureOfAbnormalTest = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator) : null;
-            ObservationResultStatus = segments.ElementAtOrDefault(11);
-            EffectiveDateOfReferenceRange = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
-            UserDefinedAccessChecks = segments.ElementAtOrDefault(13);
-            DateTimeOfTheObservation = segments.ElementAtOrDefault(14)?.ToNullableDateTime();
-            ProducersId = segments.Length > 15 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(15), false) : null;
-            ResponsibleObserver = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            ObservationMethod = segments.Length > 17 ? segments.ElementAtOrDefault(17).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            EquipmentInstanceIdentifier = segments.Length > 18 ? segments.ElementAtOrDefault(18).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
-            DateTimeOfTheAnalysis = segments.ElementAtOrDefault(19)?.ToNullableDateTime();
-            ObservationSite = segments.Length > 20 ? segments.ElementAtOrDefault(20).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            ObservationInstanceIdentifier = segments.Length > 21 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(21), false) : null;
-            MoodCode = segments.Length > 22 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(22), false) : null;
-            PerformingOrganizationName = segments.Length > 23 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(23), false) : null;
-            PerformingOrganizationAddress = segments.Length > 24 ? TypeHelper.Deserialize<ExtendedAddress>(segments.ElementAtOrDefault(24), false) : null;
-            PerformingOrganizationMedicalDirector = segments.Length > 25 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(25), false) : null;
-            PatientResultsReleaseCategory = segments.ElementAtOrDefault(26);
-            RootCause = segments.Length > 27 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(27), false) : null;
-            LocalProcessControl = segments.Length > 28 ? segments.ElementAtOrDefault(28).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            SetIdObx = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            ValueType = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            ObservationIdentifier = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false) : null;
+            ObservationSubId = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            ObservationValue = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(separator) : null;
+            Units = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[6], false) : null;
+            ReferencesRange = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
+            InterpretationCodes = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            Probability = segments.Length > 9 && segments[9].Length > 0 ? segments[9].ToNullableDecimal() : null;
+            NatureOfAbnormalTest = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(separator) : null;
+            ObservationResultStatus = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
+            EffectiveDateOfReferenceRange = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDateTime() : null;
+            UserDefinedAccessChecks = segments.Length > 13 && segments[13].Length > 0 ? segments[13] : null;
+            DateTimeOfTheObservation = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDateTime() : null;
+            ProducersId = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[15], false) : null;
+            ResponsibleObserver = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            ObservationMethod = segments.Length > 17 && segments[17].Length > 0 ? segments[17].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            EquipmentInstanceIdentifier = segments.Length > 18 && segments[18].Length > 0 ? segments[18].Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
+            DateTimeOfTheAnalysis = segments.Length > 19 && segments[19].Length > 0 ? segments[19].ToNullableDateTime() : null;
+            ObservationSite = segments.Length > 20 && segments[20].Length > 0 ? segments[20].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            ObservationInstanceIdentifier = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[21], false) : null;
+            MoodCode = segments.Length > 22 && segments[22].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[22], false) : null;
+            PerformingOrganizationName = segments.Length > 23 && segments[23].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[23], false) : null;
+            PerformingOrganizationAddress = segments.Length > 24 && segments[24].Length > 0 ? TypeHelper.Deserialize<ExtendedAddress>(segments[24], false) : null;
+            PerformingOrganizationMedicalDirector = segments.Length > 25 && segments[25].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[25], false) : null;
+            PatientResultsReleaseCategory = segments.Length > 26 && segments[26].Length > 0 ? segments[26] : null;
+            RootCause = segments.Length > 27 && segments[27].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[27], false) : null;
+            LocalProcessControl = segments.Length > 28 && segments[28].Length > 0 ? segments[28].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
         }
 
         /// <summary>

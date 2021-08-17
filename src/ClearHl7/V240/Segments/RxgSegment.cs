@@ -149,34 +149,34 @@ namespace ClearHl7.V240.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            GiveSubIdCounter = segments.ElementAtOrDefault(1)?.ToNullableDecimal();
-            DispenseSubIdCounter = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
-            QuantityTiming = segments.Length > 3 ? TypeHelper.Deserialize<TimingQuantity>(segments.ElementAtOrDefault(3), false) : null;
-            GiveCode = segments.Length > 4 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(4), false) : null;
-            GiveAmountMinimum = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
-            GiveAmountMaximum = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
-            GiveUnits = segments.Length > 7 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(7), false) : null;
-            GiveDosageForm = segments.Length > 8 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(8), false) : null;
-            AdministrationNotes = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            SubstitutionStatus = segments.ElementAtOrDefault(10);
-            DispenseToLocation = segments.Length > 11 ? TypeHelper.Deserialize<LocationWithAddressVariationTwo>(segments.ElementAtOrDefault(11), false) : null;
-            NeedsHumanReview = segments.ElementAtOrDefault(12);
-            SpecialAdministrationInstructions = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            GivePerTimeUnit = segments.ElementAtOrDefault(14);
-            GiveRateAmount = segments.ElementAtOrDefault(15);
-            GiveRateUnits = segments.Length > 16 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(16), false) : null;
-            GiveStrength = segments.ElementAtOrDefault(17)?.ToNullableDecimal();
-            GiveStrengthUnits = segments.Length > 18 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(18), false) : null;
-            SubstanceLotNumber = segments.Length > 19 ? segments.ElementAtOrDefault(19).Split(separator) : null;
-            SubstanceExpirationDate = segments.Length > 20 ? segments.ElementAtOrDefault(20).Split(separator).Select(x => x.ToDateTime()) : null;
-            SubstanceManufacturerName = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            Indication = segments.Length > 22 ? segments.ElementAtOrDefault(22).Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            GiveSubIdCounter = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
+            DispenseSubIdCounter = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDecimal() : null;
+            QuantityTiming = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<TimingQuantity>(segments[3], false) : null;
+            GiveCode = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[4], false) : null;
+            GiveAmountMinimum = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDecimal() : null;
+            GiveAmountMaximum = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDecimal() : null;
+            GiveUnits = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[7], false) : null;
+            GiveDosageForm = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[8], false) : null;
+            AdministrationNotes = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            SubstitutionStatus = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
+            DispenseToLocation = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<LocationWithAddressVariationTwo>(segments[11], false) : null;
+            NeedsHumanReview = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
+            SpecialAdministrationInstructions = segments.Length > 13 && segments[13].Length > 0 ? segments[13].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            GivePerTimeUnit = segments.Length > 14 && segments[14].Length > 0 ? segments[14] : null;
+            GiveRateAmount = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
+            GiveRateUnits = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[16], false) : null;
+            GiveStrength = segments.Length > 17 && segments[17].Length > 0 ? segments[17].ToNullableDecimal() : null;
+            GiveStrengthUnits = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[18], false) : null;
+            SubstanceLotNumber = segments.Length > 19 && segments[19].Length > 0 ? segments[19].Split(separator) : null;
+            SubstanceExpirationDate = segments.Length > 20 && segments[20].Length > 0 ? segments[20].Split(separator).Select(x => x.ToDateTime()) : null;
+            SubstanceManufacturerName = segments.Length > 21 && segments[21].Length > 0 ? segments[21].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            Indication = segments.Length > 22 && segments[22].Length > 0 ? segments[22].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
         }
 
         /// <summary>

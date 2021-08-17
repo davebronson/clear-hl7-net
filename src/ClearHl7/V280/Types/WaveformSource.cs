@@ -32,8 +32,8 @@ namespace ClearHl7.V280.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            SourceOneName = segments.ElementAtOrDefault(0);
-            SourceTwoName = segments.ElementAtOrDefault(1);
+            SourceOneName = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            SourceTwoName = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
         }
 
         /// <summary>

@@ -77,20 +77,20 @@ namespace ClearHl7.V230.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdDb1 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            DisabledPersonCode = segments.ElementAtOrDefault(2);
-            DisabledPersonIdentifier = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
-            DisabilityIndicator = segments.ElementAtOrDefault(4);
-            DisabilityStartDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
-            DisabilityEndDate = segments.ElementAtOrDefault(6)?.ToNullableDateTime();
-            DisabilityReturnToWorkDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
-            DisabilityUnableToWorkDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
+            SetIdDb1 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            DisabledPersonCode = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            DisabledPersonIdentifier = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
+            DisabilityIndicator = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            DisabilityStartDate = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDateTime() : null;
+            DisabilityEndDate = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDateTime() : null;
+            DisabilityReturnToWorkDate = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
+            DisabilityUnableToWorkDate = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDateTime() : null;
         }
 
         /// <summary>

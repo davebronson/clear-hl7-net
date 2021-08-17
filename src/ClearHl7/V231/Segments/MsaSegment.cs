@@ -65,18 +65,18 @@ namespace ClearHl7.V231.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            AcknowledgmentCode = segments.ElementAtOrDefault(1);
-            MessageControlId = segments.ElementAtOrDefault(2);
-            TextMessage = segments.ElementAtOrDefault(3);
-            ExpectedSequenceNumber = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
-            DelayedAcknowledgmentType = segments.ElementAtOrDefault(5);
-            ErrorCondition = segments.Length > 6 ? TypeHelper.Deserialize<CodedElement>(segments.ElementAtOrDefault(6), false) : null;
+            AcknowledgmentCode = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            MessageControlId = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            TextMessage = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            ExpectedSequenceNumber = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDecimal() : null;
+            DelayedAcknowledgmentType = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
+            ErrorCondition = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[6], false) : null;
         }
 
         /// <summary>

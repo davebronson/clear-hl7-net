@@ -55,16 +55,16 @@ namespace ClearHl7.V280.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdCdo = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            ActionCode = segments.ElementAtOrDefault(2);
-            CumulativeDosageLimit = segments.Length > 3 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(3), false) : null;
-            CumulativeDosageLimitTimeInterval = segments.Length > 4 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(4), false) : null;
+            SetIdCdo = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            ActionCode = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            CumulativeDosageLimit = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[3], false) : null;
+            CumulativeDosageLimitTimeInterval = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[4], false) : null;
         }
 
         /// <summary>

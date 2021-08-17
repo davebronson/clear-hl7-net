@@ -45,10 +45,10 @@ namespace ClearHl7.V260.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            RoomType = segments.ElementAtOrDefault(0);
-            AmountType = segments.ElementAtOrDefault(1);
-            CoverageAmount = segments.ElementAtOrDefault(2)?.ToNullableDecimal();
-            MoneyOrPercentage = segments.Length > 3 ? TypeHelper.Deserialize<MoneyOrPercentage>(segments.ElementAtOrDefault(3), true) : null;
+            RoomType = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            AmountType = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            CoverageAmount = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDecimal() : null;
+            MoneyOrPercentage = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<MoneyOrPercentage>(segments[3], true) : null;
         }
 
         /// <summary>

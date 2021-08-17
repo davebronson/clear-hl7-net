@@ -131,30 +131,30 @@ namespace ClearHl7.V290.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetId = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            ActionCode = segments.ElementAtOrDefault(2);
-            EnteredDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
-            Occupation = segments.Length > 4 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(4), false) : null;
-            Industry = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
-            WorkClassification = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
-            JobStartDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
-            JobEndDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
-            WorkSchedule = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), false) : null;
-            AverageHoursWorkedPerDay = segments.ElementAtOrDefault(10)?.ToNullableDecimal();
-            AverageDaysWorkedPerWeek = segments.ElementAtOrDefault(11)?.ToNullableDecimal();
-            EmployerOrganization = segments.Length > 12 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(12), false) : null;
-            EmployerAddress = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
-            SupervisoryLevel = segments.Length > 14 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(14), false) : null;
-            JobDuties = segments.Length > 15 ? segments.ElementAtOrDefault(15).Split(separator) : null;
-            OccupationalHazards = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator) : null;
-            JobUniqueIdentifier = segments.Length > 17 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(17), false) : null;
-            CurrentJobIndicator = segments.Length > 18 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(18), false) : null;
+            SetId = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            ActionCode = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            EnteredDate = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
+            Occupation = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false) : null;
+            Industry = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], false) : null;
+            WorkClassification = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[6], false) : null;
+            JobStartDate = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
+            JobEndDate = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDateTime() : null;
+            WorkSchedule = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[9], false) : null;
+            AverageHoursWorkedPerDay = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDecimal() : null;
+            AverageDaysWorkedPerWeek = segments.Length > 11 && segments[11].Length > 0 ? segments[11].ToNullableDecimal() : null;
+            EmployerOrganization = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[12], false) : null;
+            EmployerAddress = segments.Length > 13 && segments[13].Length > 0 ? segments[13].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
+            SupervisoryLevel = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[14], false) : null;
+            JobDuties = segments.Length > 15 && segments[15].Length > 0 ? segments[15].Split(separator) : null;
+            OccupationalHazards = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(separator) : null;
+            JobUniqueIdentifier = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[17], false) : null;
+            CurrentJobIndicator = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[18], false) : null;
         }
 
         /// <summary>

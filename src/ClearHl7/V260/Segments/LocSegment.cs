@@ -83,21 +83,21 @@ namespace ClearHl7.V260.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            PrimaryKeyValueLoc = segments.Length > 1 ? TypeHelper.Deserialize<PersonLocation>(segments.ElementAtOrDefault(1), false) : null;
-            LocationDescription = segments.ElementAtOrDefault(2);
-            LocationTypeLoc = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator) : null;
-            OrganizationNameLoc = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
-            LocationAddress = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
-            LocationPhone = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
-            LicenseNumber = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            LocationEquipment = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator) : null;
-            LocationServiceCode = segments.ElementAtOrDefault(9);
+            PrimaryKeyValueLoc = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[1], false) : null;
+            LocationDescription = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            LocationTypeLoc = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(separator) : null;
+            OrganizationNameLoc = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
+            LocationAddress = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
+            LocationPhone = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
+            LicenseNumber = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            LocationEquipment = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(separator) : null;
+            LocationServiceCode = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
         }
 
         /// <summary>

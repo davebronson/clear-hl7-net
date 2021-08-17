@@ -111,27 +111,27 @@ namespace ClearHl7.V282.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            ManufacturerDistributor = segments.Length > 1 ? segments.ElementAtOrDefault(1).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
-            Country = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
-            BrandName = segments.ElementAtOrDefault(3);
-            DeviceFamilyName = segments.ElementAtOrDefault(4);
-            GenericName = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
-            ModelIdentifier = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator) : null;
-            CatalogueIdentifier = segments.ElementAtOrDefault(7);
-            OtherIdentifier = segments.Length > 8 ? segments.ElementAtOrDefault(8).Split(separator) : null;
-            ProductCode = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), false) : null;
-            MarketingBasis = segments.ElementAtOrDefault(10);
-            MarketingApprovalId = segments.ElementAtOrDefault(11);
-            LabeledShelfLife = segments.Length > 12 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(12), false) : null;
-            ExpectedShelfLife = segments.Length > 13 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(13), false) : null;
-            DateFirstMarketed = segments.ElementAtOrDefault(14)?.ToNullableDateTime();
-            DateLastMarketed = segments.ElementAtOrDefault(15)?.ToNullableDateTime();
+            ManufacturerDistributor = segments.Length > 1 && segments[1].Length > 0 ? segments[1].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
+            Country = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
+            BrandName = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            DeviceFamilyName = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            GenericName = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], false) : null;
+            ModelIdentifier = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(separator) : null;
+            CatalogueIdentifier = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
+            OtherIdentifier = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(separator) : null;
+            ProductCode = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[9], false) : null;
+            MarketingBasis = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
+            MarketingApprovalId = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
+            LabeledShelfLife = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[12], false) : null;
+            ExpectedShelfLife = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[13], false) : null;
+            DateFirstMarketed = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDateTime() : null;
+            DateLastMarketed = segments.Length > 15 && segments[15].Length > 0 ? segments[15].ToNullableDateTime() : null;
         }
 
         /// <summary>

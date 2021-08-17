@@ -255,52 +255,52 @@ namespace ClearHl7.V271.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdPid = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            PatientId = segments.ElementAtOrDefault(2);
-            PatientIdentifierList = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
-            AlternatePatientIdPid = segments.ElementAtOrDefault(4);
-            PatientName = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
-            MothersMaidenName = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
-            DateTimeOfBirth = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
-            AdministrativeSex = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
-            PatientAlias = segments.ElementAtOrDefault(9);
-            Race = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            PatientAddress = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
-            CountyCode = segments.ElementAtOrDefault(12);
-            PhoneNumberHome = segments.Length > 13 ? segments.ElementAtOrDefault(13).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
-            PhoneNumberBusiness = segments.Length > 14 ? segments.ElementAtOrDefault(14).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
-            PrimaryLanguage = segments.Length > 15 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(15), false) : null;
-            MaritalStatus = segments.Length > 16 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(16), false) : null;
-            Religion = segments.Length > 17 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(17), false) : null;
-            PatientAccountNumber = segments.Length > 18 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments.ElementAtOrDefault(18), false) : null;
-            SsnNumberPatient = segments.ElementAtOrDefault(19);
-            DriversLicenseNumberPatient = segments.ElementAtOrDefault(20);
-            MothersIdentifier = segments.Length > 21 ? segments.ElementAtOrDefault(21).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
-            EthnicGroup = segments.Length > 22 ? segments.ElementAtOrDefault(22).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            BirthPlace = segments.ElementAtOrDefault(23);
-            MultipleBirthIndicator = segments.ElementAtOrDefault(24);
-            BirthOrder = segments.ElementAtOrDefault(25)?.ToNullableDecimal();
-            Citizenship = segments.Length > 26 ? segments.ElementAtOrDefault(26).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            VeteransMilitaryStatus = segments.Length > 27 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(27), false) : null;
-            Nationality = segments.Length > 28 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(28), false) : null;
-            PatientDeathDateAndTime = segments.ElementAtOrDefault(29)?.ToNullableDateTime();
-            PatientDeathIndicator = segments.ElementAtOrDefault(30);
-            IdentityUnknownIndicator = segments.ElementAtOrDefault(31);
-            IdentityReliabilityCode = segments.Length > 32 ? segments.ElementAtOrDefault(32).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            LastUpdateDateTime = segments.ElementAtOrDefault(33)?.ToNullableDateTime();
-            LastUpdateFacility = segments.Length > 34 ? TypeHelper.Deserialize<HierarchicDesignator>(segments.ElementAtOrDefault(34), false) : null;
-            TaxonomicClassificationCode = segments.Length > 35 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(35), false) : null;
-            BreedCode = segments.Length > 36 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(36), false) : null;
-            Strain = segments.ElementAtOrDefault(37);
-            ProductionClassCode = segments.Length > 38 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(38), false) : null;
-            TribalCitizenship = segments.Length > 39 ? segments.ElementAtOrDefault(39).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            PatientTelecommunicationInformation = segments.Length > 40 ? segments.ElementAtOrDefault(40).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
+            SetIdPid = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            PatientId = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            PatientIdentifierList = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
+            AlternatePatientIdPid = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            PatientName = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
+            MothersMaidenName = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
+            DateTimeOfBirth = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
+            AdministrativeSex = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[8], false) : null;
+            PatientAlias = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
+            Race = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            PatientAddress = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
+            CountyCode = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
+            PhoneNumberHome = segments.Length > 13 && segments[13].Length > 0 ? segments[13].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
+            PhoneNumberBusiness = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
+            PrimaryLanguage = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[15], false) : null;
+            MaritalStatus = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[16], false) : null;
+            Religion = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[17], false) : null;
+            PatientAccountNumber = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments[18], false) : null;
+            SsnNumberPatient = segments.Length > 19 && segments[19].Length > 0 ? segments[19] : null;
+            DriversLicenseNumberPatient = segments.Length > 20 && segments[20].Length > 0 ? segments[20] : null;
+            MothersIdentifier = segments.Length > 21 && segments[21].Length > 0 ? segments[21].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
+            EthnicGroup = segments.Length > 22 && segments[22].Length > 0 ? segments[22].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            BirthPlace = segments.Length > 23 && segments[23].Length > 0 ? segments[23] : null;
+            MultipleBirthIndicator = segments.Length > 24 && segments[24].Length > 0 ? segments[24] : null;
+            BirthOrder = segments.Length > 25 && segments[25].Length > 0 ? segments[25].ToNullableDecimal() : null;
+            Citizenship = segments.Length > 26 && segments[26].Length > 0 ? segments[26].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            VeteransMilitaryStatus = segments.Length > 27 && segments[27].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[27], false) : null;
+            Nationality = segments.Length > 28 && segments[28].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[28], false) : null;
+            PatientDeathDateAndTime = segments.Length > 29 && segments[29].Length > 0 ? segments[29].ToNullableDateTime() : null;
+            PatientDeathIndicator = segments.Length > 30 && segments[30].Length > 0 ? segments[30] : null;
+            IdentityUnknownIndicator = segments.Length > 31 && segments[31].Length > 0 ? segments[31] : null;
+            IdentityReliabilityCode = segments.Length > 32 && segments[32].Length > 0 ? segments[32].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            LastUpdateDateTime = segments.Length > 33 && segments[33].Length > 0 ? segments[33].ToNullableDateTime() : null;
+            LastUpdateFacility = segments.Length > 34 && segments[34].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[34], false) : null;
+            TaxonomicClassificationCode = segments.Length > 35 && segments[35].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[35], false) : null;
+            BreedCode = segments.Length > 36 && segments[36].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[36], false) : null;
+            Strain = segments.Length > 37 && segments[37].Length > 0 ? segments[37] : null;
+            ProductionClassCode = segments.Length > 38 && segments[38].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[38], false) : null;
+            TribalCitizenship = segments.Length > 39 && segments[39].Length > 0 ? segments[39].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            PatientTelecommunicationInformation = segments.Length > 40 && segments[40].Length > 0 ? segments[40].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
         }
 
         /// <summary>

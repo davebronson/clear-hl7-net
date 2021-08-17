@@ -64,18 +64,18 @@ namespace ClearHl7.V290.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetId = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            ActionCode = segments.ElementAtOrDefault(2);
-            CombatZoneStartDate = segments.ElementAtOrDefault(3)?.ToNullableDateTime();
-            CombatZoneEndDate = segments.ElementAtOrDefault(4)?.ToNullableDateTime();
-            EnteredDate = segments.ElementAtOrDefault(5)?.ToNullableDateTime();
-            CombatZoneUniqueIdentifier = segments.Length > 6 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(6), false) : null;
+            SetId = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            ActionCode = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            CombatZoneStartDate = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
+            CombatZoneEndDate = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
+            EnteredDate = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDateTime() : null;
+            CombatZoneUniqueIdentifier = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[6], false) : null;
         }
 
         /// <summary>

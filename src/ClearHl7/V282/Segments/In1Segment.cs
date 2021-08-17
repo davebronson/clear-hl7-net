@@ -329,67 +329,67 @@ namespace ClearHl7.V282.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdIn1 = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            HealthPlanId = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
-            InsuranceCompanyId = segments.Length > 3 ? segments.ElementAtOrDefault(3).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
-            InsuranceCompanyName = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
-            InsuranceCompanyAddress = segments.Length > 5 ? segments.ElementAtOrDefault(5).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
-            InsuranceCoContactPerson = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
-            InsuranceCoPhoneNumber = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
-            GroupNumber = segments.ElementAtOrDefault(8);
-            GroupName = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
-            InsuredsGroupEmpId = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
-            InsuredsGroupEmpName = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
-            PlanEffectiveDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
-            PlanExpirationDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
-            AuthorizationInformation = segments.Length > 14 ? TypeHelper.Deserialize<AuthorizationInformation>(segments.ElementAtOrDefault(14), false) : null;
-            PlanType = segments.Length > 15 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(15), false) : null;
-            NameOfInsured = segments.Length > 16 ? segments.ElementAtOrDefault(16).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
-            InsuredsRelationshipToPatient = segments.Length > 17 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(17), false) : null;
-            InsuredsDateOfBirth = segments.ElementAtOrDefault(18)?.ToNullableDateTime();
-            InsuredsAddress = segments.Length > 19 ? segments.ElementAtOrDefault(19).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
-            AssignmentOfBenefits = segments.Length > 20 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(20), false) : null;
-            CoordinationOfBenefits = segments.Length > 21 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(21), false) : null;
-            CoordOfBenPriority = segments.ElementAtOrDefault(22);
-            NoticeOfAdmissionFlag = segments.ElementAtOrDefault(23);
-            NoticeOfAdmissionDate = segments.ElementAtOrDefault(24)?.ToNullableDateTime();
-            ReportOfEligibilityFlag = segments.ElementAtOrDefault(25);
-            ReportOfEligibilityDate = segments.ElementAtOrDefault(26)?.ToNullableDateTime();
-            ReleaseInformationCode = segments.Length > 27 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(27), false) : null;
-            PreAdmitCertPac = segments.ElementAtOrDefault(28);
-            VerificationDateTime = segments.ElementAtOrDefault(29)?.ToNullableDateTime();
-            VerificationBy = segments.Length > 30 ? segments.ElementAtOrDefault(30).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            TypeOfAgreementCode = segments.Length > 31 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(31), false) : null;
-            BillingStatus = segments.Length > 32 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(32), false) : null;
-            LifetimeReserveDays = segments.ElementAtOrDefault(33)?.ToNullableDecimal();
-            DelayBeforeLRDay = segments.ElementAtOrDefault(34)?.ToNullableDecimal();
-            CompanyPlanCode = segments.Length > 35 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(35), false) : null;
-            PolicyNumber = segments.ElementAtOrDefault(36);
-            PolicyDeductible = segments.Length > 37 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(37), false) : null;
-            PolicyLimitAmount = segments.ElementAtOrDefault(38);
-            PolicyLimitDays = segments.ElementAtOrDefault(39)?.ToNullableDecimal();
-            RoomRateSemiPrivate = segments.ElementAtOrDefault(40);
-            RoomRatePrivate = segments.ElementAtOrDefault(41);
-            InsuredsEmploymentStatus = segments.Length > 42 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(42), false) : null;
-            InsuredsAdministrativeSex = segments.Length > 43 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(43), false) : null;
-            InsuredsEmployersAddress = segments.Length > 44 ? segments.ElementAtOrDefault(44).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
-            VerificationStatus = segments.ElementAtOrDefault(45);
-            PriorInsurancePlanId = segments.Length > 46 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(46), false) : null;
-            CoverageType = segments.Length > 47 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(47), false) : null;
-            Handicap = segments.Length > 48 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(48), false) : null;
-            InsuredsIdNumber = segments.Length > 49 ? segments.ElementAtOrDefault(49).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
-            SignatureCode = segments.Length > 50 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(50), false) : null;
-            SignatureCodeDate = segments.ElementAtOrDefault(51)?.ToNullableDateTime();
-            InsuredsBirthPlace = segments.ElementAtOrDefault(52);
-            VipIndicator = segments.Length > 53 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(53), false) : null;
-            ExternalHealthPlanIdentifiers = segments.Length > 54 ? segments.ElementAtOrDefault(54).Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
-            InsuranceActionCode = segments.ElementAtOrDefault(55);
+            SetIdIn1 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            HealthPlanId = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
+            InsuranceCompanyId = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
+            InsuranceCompanyName = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
+            InsuranceCompanyAddress = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
+            InsuranceCoContactPerson = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
+            InsuranceCoPhoneNumber = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
+            GroupNumber = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
+            GroupName = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
+            InsuredsGroupEmpId = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
+            InsuredsGroupEmpName = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
+            PlanEffectiveDate = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDateTime() : null;
+            PlanExpirationDate = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDateTime() : null;
+            AuthorizationInformation = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<AuthorizationInformation>(segments[14], false) : null;
+            PlanType = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[15], false) : null;
+            NameOfInsured = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
+            InsuredsRelationshipToPatient = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[17], false) : null;
+            InsuredsDateOfBirth = segments.Length > 18 && segments[18].Length > 0 ? segments[18].ToNullableDateTime() : null;
+            InsuredsAddress = segments.Length > 19 && segments[19].Length > 0 ? segments[19].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
+            AssignmentOfBenefits = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[20], false) : null;
+            CoordinationOfBenefits = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[21], false) : null;
+            CoordOfBenPriority = segments.Length > 22 && segments[22].Length > 0 ? segments[22] : null;
+            NoticeOfAdmissionFlag = segments.Length > 23 && segments[23].Length > 0 ? segments[23] : null;
+            NoticeOfAdmissionDate = segments.Length > 24 && segments[24].Length > 0 ? segments[24].ToNullableDateTime() : null;
+            ReportOfEligibilityFlag = segments.Length > 25 && segments[25].Length > 0 ? segments[25] : null;
+            ReportOfEligibilityDate = segments.Length > 26 && segments[26].Length > 0 ? segments[26].ToNullableDateTime() : null;
+            ReleaseInformationCode = segments.Length > 27 && segments[27].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[27], false) : null;
+            PreAdmitCertPac = segments.Length > 28 && segments[28].Length > 0 ? segments[28] : null;
+            VerificationDateTime = segments.Length > 29 && segments[29].Length > 0 ? segments[29].ToNullableDateTime() : null;
+            VerificationBy = segments.Length > 30 && segments[30].Length > 0 ? segments[30].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            TypeOfAgreementCode = segments.Length > 31 && segments[31].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[31], false) : null;
+            BillingStatus = segments.Length > 32 && segments[32].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[32], false) : null;
+            LifetimeReserveDays = segments.Length > 33 && segments[33].Length > 0 ? segments[33].ToNullableDecimal() : null;
+            DelayBeforeLRDay = segments.Length > 34 && segments[34].Length > 0 ? segments[34].ToNullableDecimal() : null;
+            CompanyPlanCode = segments.Length > 35 && segments[35].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[35], false) : null;
+            PolicyNumber = segments.Length > 36 && segments[36].Length > 0 ? segments[36] : null;
+            PolicyDeductible = segments.Length > 37 && segments[37].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[37], false) : null;
+            PolicyLimitAmount = segments.Length > 38 && segments[38].Length > 0 ? segments[38] : null;
+            PolicyLimitDays = segments.Length > 39 && segments[39].Length > 0 ? segments[39].ToNullableDecimal() : null;
+            RoomRateSemiPrivate = segments.Length > 40 && segments[40].Length > 0 ? segments[40] : null;
+            RoomRatePrivate = segments.Length > 41 && segments[41].Length > 0 ? segments[41] : null;
+            InsuredsEmploymentStatus = segments.Length > 42 && segments[42].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[42], false) : null;
+            InsuredsAdministrativeSex = segments.Length > 43 && segments[43].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[43], false) : null;
+            InsuredsEmployersAddress = segments.Length > 44 && segments[44].Length > 0 ? segments[44].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
+            VerificationStatus = segments.Length > 45 && segments[45].Length > 0 ? segments[45] : null;
+            PriorInsurancePlanId = segments.Length > 46 && segments[46].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[46], false) : null;
+            CoverageType = segments.Length > 47 && segments[47].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[47], false) : null;
+            Handicap = segments.Length > 48 && segments[48].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[48], false) : null;
+            InsuredsIdNumber = segments.Length > 49 && segments[49].Length > 0 ? segments[49].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
+            SignatureCode = segments.Length > 50 && segments[50].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[50], false) : null;
+            SignatureCodeDate = segments.Length > 51 && segments[51].Length > 0 ? segments[51].ToNullableDateTime() : null;
+            InsuredsBirthPlace = segments.Length > 52 && segments[52].Length > 0 ? segments[52] : null;
+            VipIndicator = segments.Length > 53 && segments[53].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[53], false) : null;
+            ExternalHealthPlanIdentifiers = segments.Length > 54 && segments[54].Length > 0 ? segments[54].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
+            InsuranceActionCode = segments.Length > 55 && segments[55].Length > 0 ? segments[55] : null;
         }
 
         /// <summary>

@@ -65,18 +65,18 @@ namespace ClearHl7.V260.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            QueryTag = segments.ElementAtOrDefault(1);
-            QueryResponseStatus = segments.ElementAtOrDefault(2);
-            MessageQueryName = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
-            HitCountTotal = segments.ElementAtOrDefault(4)?.ToNullableDecimal();
-            ThisPayload = segments.ElementAtOrDefault(5)?.ToNullableDecimal();
-            HitsRemaining = segments.ElementAtOrDefault(6)?.ToNullableDecimal();
+            QueryTag = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            QueryResponseStatus = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            MessageQueryName = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false) : null;
+            HitCountTotal = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDecimal() : null;
+            ThisPayload = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDecimal() : null;
+            HitsRemaining = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDecimal() : null;
         }
 
         /// <summary>

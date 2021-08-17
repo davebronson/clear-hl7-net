@@ -32,8 +32,8 @@ namespace ClearHl7.V251.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            PlacerAssignedIdentifier = segments.Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(0), true) : null;
-            FillerAssignedIdentifier = segments.Length > 1 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(1), true) : null;
+            PlacerAssignedIdentifier = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[0], true) : null;
+            FillerAssignedIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], true) : null;
         }
 
         /// <summary>

@@ -35,8 +35,8 @@ namespace ClearHl7.V282.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            Date = segments.ElementAtOrDefault(0)?.ToNullableDateTime();
-            InstitutionName = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), true) : null;
+            Date = segments.Length > 0 && segments[0].Length > 0 ? segments[0].ToNullableDateTime() : null;
+            InstitutionName = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], true) : null;
         }
 
         /// <summary>

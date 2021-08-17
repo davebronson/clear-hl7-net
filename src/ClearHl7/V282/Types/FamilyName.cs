@@ -47,11 +47,11 @@ namespace ClearHl7.V282.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            Surname = segments.ElementAtOrDefault(0);
-            OwnSurnamePrefix = segments.ElementAtOrDefault(1);
-            OwnSurname = segments.ElementAtOrDefault(2);
-            SurnamePrefixFromPartnerSpouse = segments.ElementAtOrDefault(3);
-            SurnameFromPartnerSpouse = segments.ElementAtOrDefault(4);
+            Surname = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
+            OwnSurnamePrefix = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            OwnSurname = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            SurnamePrefixFromPartnerSpouse = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            SurnameFromPartnerSpouse = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
         }
 
         /// <summary>

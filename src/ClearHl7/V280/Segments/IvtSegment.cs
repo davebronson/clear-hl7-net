@@ -175,38 +175,38 @@ namespace ClearHl7.V280.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdIvt = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            InventoryLocationIdentifier = segments.Length > 2 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(2), false) : null;
-            InventoryLocationName = segments.ElementAtOrDefault(3);
-            SourceLocationIdentifier = segments.Length > 4 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(4), false) : null;
-            SourceLocationName = segments.ElementAtOrDefault(5);
-            ItemStatus = segments.Length > 6 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(6), false) : null;
-            BinLocationIdentifier = segments.Length > 7 ? segments.ElementAtOrDefault(7).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
-            OrderPackaging = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), false) : null;
-            IssuePackaging = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), false) : null;
-            DefaultInventoryAssetAccount = segments.Length > 10 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(10), false) : null;
-            PatientChargeableIndicator = segments.Length > 11 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(11), false) : null;
-            TransactionCode = segments.Length > 12 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(12), false) : null;
-            TransactionAmountUnit = segments.Length > 13 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(13), false) : null;
-            ItemImportanceCode = segments.Length > 14 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(14), false) : null;
-            StockedItemIndicator = segments.Length > 15 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(15), false) : null;
-            ConsignmentItemIndicator = segments.Length > 16 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(16), false) : null;
-            ReusableItemIndicator = segments.Length > 17 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(17), false) : null;
-            ReusableCost = segments.Length > 18 ? TypeHelper.Deserialize<CompositePrice>(segments.ElementAtOrDefault(18), false) : null;
-            SubstituteItemIdentifier = segments.Length > 19 ? segments.ElementAtOrDefault(19).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
-            LatexFreeSubstituteItemIdentifier = segments.Length > 20 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(20), false) : null;
-            RecommendedReorderTheory = segments.Length > 21 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(21), false) : null;
-            RecommendedSafetyStockDays = segments.ElementAtOrDefault(22)?.ToNullableDecimal();
-            RecommendedMaximumDaysInventory = segments.ElementAtOrDefault(23)?.ToNullableDecimal();
-            RecommendedOrderPoint = segments.ElementAtOrDefault(24)?.ToNullableDecimal();
-            RecommendedOrderAmount = segments.ElementAtOrDefault(25)?.ToNullableDecimal();
-            OperatingRoomParLevelIndicator = segments.Length > 26 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(26), false) : null;
+            SetIdIvt = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            InventoryLocationIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false) : null;
+            InventoryLocationName = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            SourceLocationIdentifier = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[4], false) : null;
+            SourceLocationName = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
+            ItemStatus = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[6], false) : null;
+            BinLocationIdentifier = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
+            OrderPackaging = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[8], false) : null;
+            IssuePackaging = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[9], false) : null;
+            DefaultInventoryAssetAccount = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[10], false) : null;
+            PatientChargeableIndicator = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[11], false) : null;
+            TransactionCode = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[12], false) : null;
+            TransactionAmountUnit = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[13], false) : null;
+            ItemImportanceCode = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[14], false) : null;
+            StockedItemIndicator = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[15], false) : null;
+            ConsignmentItemIndicator = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[16], false) : null;
+            ReusableItemIndicator = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[17], false) : null;
+            ReusableCost = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[18], false) : null;
+            SubstituteItemIdentifier = segments.Length > 19 && segments[19].Length > 0 ? segments[19].Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
+            LatexFreeSubstituteItemIdentifier = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[20], false) : null;
+            RecommendedReorderTheory = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[21], false) : null;
+            RecommendedSafetyStockDays = segments.Length > 22 && segments[22].Length > 0 ? segments[22].ToNullableDecimal() : null;
+            RecommendedMaximumDaysInventory = segments.Length > 23 && segments[23].Length > 0 ? segments[23].ToNullableDecimal() : null;
+            RecommendedOrderPoint = segments.Length > 24 && segments[24].Length > 0 ? segments[24].ToNullableDecimal() : null;
+            RecommendedOrderAmount = segments.Length > 25 && segments[25].Length > 0 ? segments[25].ToNullableDecimal() : null;
+            OperatingRoomParLevelIndicator = segments.Length > 26 && segments[26].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[26], false) : null;
         }
 
         /// <summary>

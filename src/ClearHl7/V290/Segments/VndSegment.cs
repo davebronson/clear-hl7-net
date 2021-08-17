@@ -91,23 +91,23 @@ namespace ClearHl7.V290.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            SetIdVnd = segments.ElementAtOrDefault(1)?.ToNullableUInt();
-            VendorIdentifier = segments.Length > 2 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(2), false) : null;
-            VendorName = segments.ElementAtOrDefault(3);
-            VendorCatalogNumber = segments.Length > 4 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(4), false) : null;
-            PrimaryVendorIndicator = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(5), false) : null;
-            Corporation = segments.Length > 6 ? segments.ElementAtOrDefault(6).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
-            PrimaryContact = segments.Length > 7 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(7), false) : null;
-            ContractAdjustment = segments.Length > 8 ? TypeHelper.Deserialize<MoneyOrPercentage>(segments.ElementAtOrDefault(8), false) : null;
-            AssociatedContractId = segments.Length > 9 ? segments.ElementAtOrDefault(9).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
-            ClassOfTrade = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator) : null;
-            PricingTierLevel = segments.Length > 11 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments.ElementAtOrDefault(11), false) : null;
+            SetIdVnd = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
+            VendorIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false) : null;
+            VendorName = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            VendorCatalogNumber = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[4], false) : null;
+            PrimaryVendorIndicator = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[5], false) : null;
+            Corporation = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
+            PrimaryContact = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[7], false) : null;
+            ContractAdjustment = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<MoneyOrPercentage>(segments[8], false) : null;
+            AssociatedContractId = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
+            ClassOfTrade = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(separator) : null;
+            PricingTierLevel = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[11], false) : null;
         }
 
         /// <summary>

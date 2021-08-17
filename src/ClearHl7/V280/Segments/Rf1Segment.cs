@@ -168,37 +168,37 @@ namespace ClearHl7.V280.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments.First(), true, CultureInfo.CurrentCulture) != 0)
+                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
-            ReferralStatus = segments.Length > 1 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(1), false) : null;
-            ReferralPriority = segments.Length > 2 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(2), false) : null;
-            ReferralType = segments.Length > 3 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(3), false) : null;
-            ReferralDisposition = segments.Length > 4 ? segments.ElementAtOrDefault(4).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            ReferralCategory = segments.Length > 5 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(5), false) : null;
-            OriginatingReferralIdentifier = segments.Length > 6 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(6), false) : null;
-            EffectiveDate = segments.ElementAtOrDefault(7)?.ToNullableDateTime();
-            ExpirationDate = segments.ElementAtOrDefault(8)?.ToNullableDateTime();
-            ProcessDate = segments.ElementAtOrDefault(9)?.ToNullableDateTime();
-            ReferralReason = segments.Length > 10 ? segments.ElementAtOrDefault(10).Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            ExternalReferralIdentifier = segments.Length > 11 ? segments.ElementAtOrDefault(11).Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
-            ReferralDocumentationCompletionStatus = segments.Length > 12 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(12), false) : null;
-            PlannedTreatmentStopDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
-            ReferralReasonText = segments.ElementAtOrDefault(14);
-            NumberOfAuthorizedTreatmentsUnits = segments.Length > 15 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(15), false) : null;
-            NumberOfUsedTreatmentsUnits = segments.Length > 16 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(16), false) : null;
-            NumberOfScheduleTreatmentsUnits = segments.Length > 17 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments.ElementAtOrDefault(17), false) : null;
-            RemainingBenefitAmount = segments.Length > 18 ? TypeHelper.Deserialize<Money>(segments.ElementAtOrDefault(18), false) : null;
-            AuthorizedProvider = segments.Length > 19 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments.ElementAtOrDefault(19), false) : null;
-            AuthorizedHealthProfessional = segments.Length > 20 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments.ElementAtOrDefault(20), false) : null;
-            SourceText = segments.ElementAtOrDefault(21);
-            SourceDate = segments.ElementAtOrDefault(22)?.ToNullableDateTime();
-            SourcePhone = segments.Length > 23 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments.ElementAtOrDefault(23), false) : null;
-            Comment = segments.ElementAtOrDefault(24);
-            ActionCode = segments.ElementAtOrDefault(25);
+            ReferralStatus = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false) : null;
+            ReferralPriority = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
+            ReferralType = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false) : null;
+            ReferralDisposition = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            ReferralCategory = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], false) : null;
+            OriginatingReferralIdentifier = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[6], false) : null;
+            EffectiveDate = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
+            ExpirationDate = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDateTime() : null;
+            ProcessDate = segments.Length > 9 && segments[9].Length > 0 ? segments[9].ToNullableDateTime() : null;
+            ReferralReason = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(separator).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            ExternalReferralIdentifier = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
+            ReferralDocumentationCompletionStatus = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[12], false) : null;
+            PlannedTreatmentStopDate = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDateTime() : null;
+            ReferralReasonText = segments.Length > 14 && segments[14].Length > 0 ? segments[14] : null;
+            NumberOfAuthorizedTreatmentsUnits = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[15], false) : null;
+            NumberOfUsedTreatmentsUnits = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[16], false) : null;
+            NumberOfScheduleTreatmentsUnits = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[17], false) : null;
+            RemainingBenefitAmount = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<Money>(segments[18], false) : null;
+            AuthorizedProvider = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[19], false) : null;
+            AuthorizedHealthProfessional = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[20], false) : null;
+            SourceText = segments.Length > 21 && segments[21].Length > 0 ? segments[21] : null;
+            SourceDate = segments.Length > 22 && segments[22].Length > 0 ? segments[22].ToNullableDateTime() : null;
+            SourcePhone = segments.Length > 23 && segments[23].Length > 0 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments[23], false) : null;
+            Comment = segments.Length > 24 && segments[24].Length > 0 ? segments[24] : null;
+            ActionCode = segments.Length > 25 && segments[25].Length > 0 ? segments[25] : null;
         }
 
         /// <summary>

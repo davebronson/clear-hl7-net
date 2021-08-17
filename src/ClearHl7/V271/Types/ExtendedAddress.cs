@@ -149,29 +149,29 @@ namespace ClearHl7.V271.Types
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
 
-            StreetAddress = segments.Length > 0 ? TypeHelper.Deserialize<StreetAddress>(segments.ElementAtOrDefault(0), true) : null;
-            OtherDesignation = segments.ElementAtOrDefault(1);
-            City = segments.ElementAtOrDefault(2);
-            StateOrProvince = segments.ElementAtOrDefault(3);
-            ZipOrPostalCode = segments.ElementAtOrDefault(4);
-            Country = segments.ElementAtOrDefault(5);
-            AddressType = segments.ElementAtOrDefault(6);
-            OtherGeographicDesignation = segments.ElementAtOrDefault(7);
-            CountyParishCode = segments.Length > 8 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(8), true) : null;
-            CensusTract = segments.Length > 9 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(9), true) : null;
-            AddressRepresentationCode = segments.ElementAtOrDefault(10);
-            AddressValidityRange = segments.Length > 11 ? TypeHelper.Deserialize<DateTimeRange>(segments.ElementAtOrDefault(11), true) : null;
-            EffectiveDate = segments.ElementAtOrDefault(12)?.ToNullableDateTime();
-            ExpirationDate = segments.ElementAtOrDefault(13)?.ToNullableDateTime();
-            ExpirationReason = segments.Length > 14 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(14), true) : null;
-            TemporaryIndicator = segments.ElementAtOrDefault(15);
-            BadAddressIndicator = segments.ElementAtOrDefault(16);
-            AddressUsage = segments.ElementAtOrDefault(17);
-            Addressee = segments.ElementAtOrDefault(18);
-            Comment = segments.ElementAtOrDefault(19);
-            PreferenceOrder = segments.ElementAtOrDefault(20)?.ToNullableDecimal();
-            ProtectionCode = segments.Length > 21 ? TypeHelper.Deserialize<CodedWithExceptions>(segments.ElementAtOrDefault(21), true) : null;
-            AddressIdentifier = segments.Length > 22 ? TypeHelper.Deserialize<EntityIdentifier>(segments.ElementAtOrDefault(22), true) : null;
+            StreetAddress = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<StreetAddress>(segments[0], true) : null;
+            OtherDesignation = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
+            City = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
+            StateOrProvince = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
+            ZipOrPostalCode = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
+            Country = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
+            AddressType = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
+            OtherGeographicDesignation = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
+            CountyParishCode = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[8], true) : null;
+            CensusTract = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[9], true) : null;
+            AddressRepresentationCode = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
+            AddressValidityRange = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<DateTimeRange>(segments[11], true) : null;
+            EffectiveDate = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDateTime() : null;
+            ExpirationDate = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDateTime() : null;
+            ExpirationReason = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[14], true) : null;
+            TemporaryIndicator = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
+            BadAddressIndicator = segments.Length > 16 && segments[16].Length > 0 ? segments[16] : null;
+            AddressUsage = segments.Length > 17 && segments[17].Length > 0 ? segments[17] : null;
+            Addressee = segments.Length > 18 && segments[18].Length > 0 ? segments[18] : null;
+            Comment = segments.Length > 19 && segments[19].Length > 0 ? segments[19] : null;
+            PreferenceOrder = segments.Length > 20 && segments[20].Length > 0 ? segments[20].ToNullableDecimal() : null;
+            ProtectionCode = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[21], true) : null;
+            AddressIdentifier = segments.Length > 22 && segments[22].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[22], true) : null;
         }
 
         /// <summary>
