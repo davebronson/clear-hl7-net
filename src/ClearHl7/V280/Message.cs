@@ -88,6 +88,7 @@ namespace ClearHl7.V280
 
                 // Init segment properties, and add to collection
                 ISegment sss = (ISegment)segment;
+                sss.Ordinal = i;
                 sss.FromDelimitedString(segmentString);
                 list.Add(sss);
             }

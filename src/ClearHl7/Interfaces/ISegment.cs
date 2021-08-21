@@ -13,7 +13,7 @@
         /// <summary>
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
         /// </summary>
-        int Ordinal { get; }
+        int Ordinal { get; set; }
 
         /// <summary>
         /// Initializes properties of this instance with values parsed from the given delimited string.

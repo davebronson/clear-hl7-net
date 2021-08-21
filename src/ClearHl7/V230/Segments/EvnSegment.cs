@@ -63,7 +63,6 @@ namespace ClearHl7.V230.Segments
         public void FromDelimitedString(string delimitedString)
         {
             string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
-            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
 
             if (segments.Length > 0)
             {

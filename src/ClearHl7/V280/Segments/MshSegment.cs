@@ -19,9 +19,9 @@ namespace ClearHl7.V280.Segments
         public string Id { get; } = "MSH";
 
         /// <summary>
-        /// Gets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.  This property is read-only.
+        /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
         /// </summary>
-        public int Ordinal { get; } = int.MinValue;
+        public int Ordinal { get; set; } = int.MinValue;
 
         /// <summary>
         /// MSH.1 - Field Separator.  This property is read-only.
@@ -188,18 +188,18 @@ namespace ClearHl7.V280.Segments
             ProcessingId = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<ProcessingType>(segments[10], false) : null;
             VersionId = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<VersionIdentifier>(segments[11], false) : VersionId;
             SequenceNumber = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDecimal() : null;
-            ContinuationPointer = segments.Length > 14 && segments[14].Length > 0 ? segments[14] : null;
-            AcceptAcknowledgmentType = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
-            ApplicationAcknowledgmentType = segments.Length > 16 && segments[16].Length > 0 ? segments[16] : null;
-            CountryCode = segments.Length > 17 && segments[17].Length > 0 ? segments[17] : null;
-            CharacterSet = segments.Length > 18 && segments[18].Length > 0 ? segments[18].Split(separator) : null;
-            PrincipalLanguageOfMessage = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[19], false) : null;
-            AlternateCharacterSetHandlingScheme = segments.Length > 20 && segments[20].Length > 0 ? segments[20] : null;
-            MessageProfileIdentifier = segments.Length > 21 && segments[21].Length > 0 ? segments[21].Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
-            SendingResponsibleOrganization = segments.Length > 22 && segments[22].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[22], false) : null;
-            ReceivingResponsibleOrganization = segments.Length > 23 && segments[23].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[23], false) : null;
-            SendingNetworkAddress = segments.Length > 24 && segments[24].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[24], false) : null;
-            ReceivingNetworkAddress = segments.Length > 25 && segments[25].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[25], false) : null;
+            ContinuationPointer = segments.Length > 13 && segments[13].Length > 0 ? segments[13] : null;
+            AcceptAcknowledgmentType = segments.Length > 14 && segments[14].Length > 0 ? segments[14] : null;
+            ApplicationAcknowledgmentType = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
+            CountryCode = segments.Length > 16 && segments[16].Length > 0 ? segments[16] : null;
+            CharacterSet = segments.Length > 17 && segments[17].Length > 0 ? segments[17].Split(separator) : null;
+            PrincipalLanguageOfMessage = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[18], false) : null;
+            AlternateCharacterSetHandlingScheme = segments.Length > 19 && segments[19].Length > 0 ? segments[19] : null;
+            MessageProfileIdentifier = segments.Length > 20 && segments[20].Length > 0 ? segments[20].Split(separator).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
+            SendingResponsibleOrganization = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[21], false) : null;
+            ReceivingResponsibleOrganization = segments.Length > 22 && segments[22].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[22], false) : null;
+            SendingNetworkAddress = segments.Length > 23 && segments[23].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[23], false) : null;
+            ReceivingNetworkAddress = segments.Length > 24 && segments[24].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[24], false) : null;
         }
 
         /// <summary>

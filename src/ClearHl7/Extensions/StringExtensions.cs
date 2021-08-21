@@ -8,10 +8,9 @@ namespace ClearHl7.Extensions
     /// </summary>
     public static class StringExtensions
     {
-        private static string[] ValidDateTimeFormats = {
+        private static readonly string[] ValidDateTimeFormats = {
             Consts.DateTimeFormatPrecisionSecond,
             Consts.DateFormatPrecisionDay,
-
             Consts.DateTimeFormatPrecisionMinute,
             Consts.DateTimeFormatPrecisionHour,
             Consts.DateFormatPrecisionMonth,
