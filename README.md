@@ -199,6 +199,8 @@ using ClearHl7;
 
 Configuration.FieldRepeatSeparator = "%"; // Use percent symbol
 Configuration.SubcomponentSeparator = "/"; // Use forward slash
+
+Configuration.ResetSeparators(); // Reset the separator configuration properties to their default, recommended values
 ```
 
 ## Using the ClearHl7.Codes Component

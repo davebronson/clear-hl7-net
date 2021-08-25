@@ -6,6 +6,31 @@
     public static class Consts
     {
         /// <summary>
+        /// Default field separator.
+        /// </summary>
+        public const string DefaultFieldSeparator = "|";
+
+        /// <summary>
+        /// Default component separator.
+        /// </summary>
+        public const string DefaultComponentSeparator = "^";
+
+        /// <summary>
+        /// Default field repeat separator.
+        /// </summary>
+        public const string DefaultFieldRepeatSeparator = "~";
+
+        /// <summary>
+        /// Default escape character.
+        /// </summary>
+        public const string DefaultEscapeCharacter = "\\";
+
+        /// <summary>
+        /// Default subcomponent separator.
+        /// </summary>
+        public const string DefaultSubcomponentSeparator = "&";
+
+        /// <summary>
         /// Standard date format string.
         /// </summary>
         public const string DateFormat = "yyyyMMdd";
