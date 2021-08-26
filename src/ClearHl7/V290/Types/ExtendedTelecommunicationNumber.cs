@@ -110,13 +110,26 @@ namespace ClearHl7.V290.Types
         public decimal? PreferenceOrder { get; set; }
 
         /// <summary>
-        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// Initializes properties of this instance with values parsed from the given delimited string.  Separators defined in the Configuration class are used to split the string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
         public void FromDelimitedString(string delimitedString)
         {
-            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
-            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(separator.ToCharArray());
+            FromDelimitedString(delimitedString, null);
+        }
+
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.  The provided separators are used to split the string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <param name="separators">The separators to use for splitting the string.</param>
+        internal void FromDelimitedString(string delimitedString, Separators separators)
+        {
+            Separators seps = separators ?? new Separators().UsingConfigurationValues();
+            string[] separator = IsSubcomponent ? seps.SubcomponentSeparator : seps.ComponentSeparator;
+            string[] segments = delimitedString == null
+                ? new string[] { }
+                : delimitedString.Split(separator, StringSplitOptions.None);
 
             TelephoneNumber = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
             TelecommunicationUseCode = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;

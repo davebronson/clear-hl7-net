@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Globalization;
-using System.Linq;
 using ClearHl7.Helpers;
 
 namespace ClearHl7.V271.Segments

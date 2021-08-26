@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Globalization;
-using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.V230.Types;
