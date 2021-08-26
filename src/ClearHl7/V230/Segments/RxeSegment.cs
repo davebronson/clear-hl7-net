@@ -178,20 +178,33 @@ namespace ClearHl7.V230.Segments
         public string DispensePackageMethod { get; set; }
 
         /// <summary>
-        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// Initializes properties of this instance with values parsed from the given delimited string.  Separators defined in the Configuration class are used to split the string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
         public void FromDelimitedString(string delimitedString)
         {
-            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
-            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+            FromDelimitedString(delimitedString, null);
+        }
 
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.  The provided separators are used to split the string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <param name="separators">The separators to use for splitting the string.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        internal void FromDelimitedString(string delimitedString, Separators separators)
+        {
+            Separators seps = separators ?? new Separators().UsingConfigurationValues();
+            string[] segments = delimitedString == null
+                ? new string[] { }
+                : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
+            
             if (segments.Length > 0)
             {
                 if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
-                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ seps.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
@@ -201,7 +214,7 @@ namespace ClearHl7.V230.Segments
             GiveAmountMaximum = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDecimal() : null;
             GiveUnits = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[5], false) : null;
             GiveDosageForm = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[6], false) : null;
-            ProvidersAdministrationInstructions = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            ProvidersAdministrationInstructions = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
             DeliverToLocation = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<LocationWithAddressVariationOne>(segments[8], false) : null;
             SubstitutionStatus = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
             DispenseAmount = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDecimal() : null;
@@ -215,13 +228,13 @@ namespace ClearHl7.V230.Segments
             DateTimeOfMostRecentRefillOrDoseDispensed = segments.Length > 18 && segments[18].Length > 0 ? segments[18].ToNullableDateTime() : null;
             TotalDailyDose = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[19], false) : null;
             NeedsHumanReview = segments.Length > 20 && segments[20].Length > 0 ? segments[20] : null;
-            SpecialDispensingInstructions = segments.Length > 21 && segments[21].Length > 0 ? segments[21].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            SpecialDispensingInstructions = segments.Length > 21 && segments[21].Length > 0 ? segments[21].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
             GivePerTimeUnit = segments.Length > 22 && segments[22].Length > 0 ? segments[22] : null;
             GiveRateAmount = segments.Length > 23 && segments[23].Length > 0 ? segments[23] : null;
             GiveRateUnits = segments.Length > 24 && segments[24].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[24], false) : null;
             GiveStrength = segments.Length > 25 && segments[25].Length > 0 ? segments[25].ToNullableDecimal() : null;
             GiveStrengthUnits = segments.Length > 26 && segments[26].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[26], false) : null;
-            GiveIndication = segments.Length > 27 && segments[27].Length > 0 ? segments[27].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            GiveIndication = segments.Length > 27 && segments[27].Length > 0 ? segments[27].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
             DispensePackageSize = segments.Length > 28 && segments[28].Length > 0 ? segments[28].ToNullableDecimal() : null;
             DispensePackageSizeUnit = segments.Length > 29 && segments[29].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[29], false) : null;
             DispensePackageMethod = segments.Length > 30 && segments[30].Length > 0 ? segments[30] : null;

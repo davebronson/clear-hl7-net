@@ -258,20 +258,33 @@ namespace ClearHl7.V231.Segments
         public IEnumerable<CodedElement> ProcedureCodeModifier { get; set; }
 
         /// <summary>
-        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// Initializes properties of this instance with values parsed from the given delimited string.  Separators defined in the Configuration class are used to split the string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
         public void FromDelimitedString(string delimitedString)
         {
-            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
-            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+            FromDelimitedString(delimitedString, null);
+        }
 
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.  The provided separators are used to split the string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <param name="separators">The separators to use for splitting the string.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        internal void FromDelimitedString(string delimitedString, Separators separators)
+        {
+            Separators seps = separators ?? new Separators().UsingConfigurationValues();
+            string[] segments = delimitedString == null
+                ? new string[] { }
+                : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
+            
             if (segments.Length > 0)
             {
                 if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
-                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ seps.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
@@ -284,14 +297,14 @@ namespace ClearHl7.V231.Segments
             ObservationDateTime = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
             ObservationEndDateTime = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDateTime() : null;
             CollectionVolume = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[9], false) : null;
-            CollectorIdentifier = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            CollectorIdentifier = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             SpecimenActionCode = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
             DangerCode = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[12], false) : null;
             RelevantClinicalInformation = segments.Length > 13 && segments[13].Length > 0 ? segments[13] : null;
             SpecimenReceivedDateTime = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDateTime() : null;
             SpecimenSource = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<SpecimentSource>(segments[15], false) : null;
-            OrderingProvider = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            OrderCallbackPhoneNumber = segments.Length > 17 && segments[17].Length > 0 ? segments[17].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
+            OrderingProvider = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            OrderCallbackPhoneNumber = segments.Length > 17 && segments[17].Length > 0 ? segments[17].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
             PlacerField1 = segments.Length > 18 && segments[18].Length > 0 ? segments[18] : null;
             PlacerField2 = segments.Length > 19 && segments[19].Length > 0 ? segments[19] : null;
             FillerField1 = segments.Length > 20 && segments[20].Length > 0 ? segments[20] : null;
@@ -301,25 +314,25 @@ namespace ClearHl7.V231.Segments
             DiagnosticServSectId = segments.Length > 24 && segments[24].Length > 0 ? segments[24] : null;
             ResultStatus = segments.Length > 25 && segments[25].Length > 0 ? segments[25] : null;
             ParentResult = segments.Length > 26 && segments[26].Length > 0 ? TypeHelper.Deserialize<ParentResultLink>(segments[26], false) : null;
-            QuantityTiming = segments.Length > 27 && segments[27].Length > 0 ? segments[27].Split(separator).Select(x => TypeHelper.Deserialize<TimingQuantity>(x, false)) : null;
-            ResultCopiesTo = segments.Length > 28 && segments[28].Length > 0 ? segments[28].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            QuantityTiming = segments.Length > 27 && segments[27].Length > 0 ? segments[27].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<TimingQuantity>(x, false)) : null;
+            ResultCopiesTo = segments.Length > 28 && segments[28].Length > 0 ? segments[28].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
             ParentResultsObservationIdentifier = segments.Length > 29 && segments[29].Length > 0 ? TypeHelper.Deserialize<ParentOrder>(segments[29], false) : null;
             TransportationMode = segments.Length > 30 && segments[30].Length > 0 ? segments[30] : null;
-            ReasonForStudy = segments.Length > 31 && segments[31].Length > 0 ? segments[31].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            ReasonForStudy = segments.Length > 31 && segments[31].Length > 0 ? segments[31].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
             PrincipalResultInterpreter = segments.Length > 32 && segments[32].Length > 0 ? TypeHelper.Deserialize<NameWithDateAndLocation>(segments[32], false) : null;
-            AssistantResultInterpreter = segments.Length > 33 && segments[33].Length > 0 ? segments[33].Split(separator).Select(x => TypeHelper.Deserialize<NameWithDateAndLocation>(x, false)) : null;
-            Technician = segments.Length > 34 && segments[34].Length > 0 ? segments[34].Split(separator).Select(x => TypeHelper.Deserialize<NameWithDateAndLocation>(x, false)) : null;
-            Transcriptionist = segments.Length > 35 && segments[35].Length > 0 ? segments[35].Split(separator).Select(x => TypeHelper.Deserialize<NameWithDateAndLocation>(x, false)) : null;
+            AssistantResultInterpreter = segments.Length > 33 && segments[33].Length > 0 ? segments[33].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<NameWithDateAndLocation>(x, false)) : null;
+            Technician = segments.Length > 34 && segments[34].Length > 0 ? segments[34].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<NameWithDateAndLocation>(x, false)) : null;
+            Transcriptionist = segments.Length > 35 && segments[35].Length > 0 ? segments[35].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<NameWithDateAndLocation>(x, false)) : null;
             ScheduledDateTime = segments.Length > 36 && segments[36].Length > 0 ? segments[36].ToNullableDateTime() : null;
             NumberOfSampleContainers = segments.Length > 37 && segments[37].Length > 0 ? segments[37].ToNullableDecimal() : null;
-            TransportLogisticsOfCollectedSample = segments.Length > 38 && segments[38].Length > 0 ? segments[38].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            CollectorsComment = segments.Length > 39 && segments[39].Length > 0 ? segments[39].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            TransportLogisticsOfCollectedSample = segments.Length > 38 && segments[38].Length > 0 ? segments[38].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            CollectorsComment = segments.Length > 39 && segments[39].Length > 0 ? segments[39].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
             TransportArrangementResponsibility = segments.Length > 40 && segments[40].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[40], false) : null;
             TransportArranged = segments.Length > 41 && segments[41].Length > 0 ? segments[41] : null;
             EscortRequired = segments.Length > 42 && segments[42].Length > 0 ? segments[42] : null;
-            PlannedPatientTransportComment = segments.Length > 43 && segments[43].Length > 0 ? segments[43].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            PlannedPatientTransportComment = segments.Length > 43 && segments[43].Length > 0 ? segments[43].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
             ProcedureCode = segments.Length > 44 && segments[44].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[44], false) : null;
-            ProcedureCodeModifier = segments.Length > 45 && segments[45].Length > 0 ? segments[45].Split(separator).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            ProcedureCodeModifier = segments.Length > 45 && segments[45].Length > 0 ? segments[45].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
         }
 
         /// <summary>

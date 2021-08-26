@@ -221,20 +221,33 @@ namespace ClearHl7.V282.Segments
         public CompositeQuantityWithUnits InletTemperature { get; set; }
 
         /// <summary>
-        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// Initializes properties of this instance with values parsed from the given delimited string.  Separators defined in the Configuration class are used to split the string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
         public void FromDelimitedString(string delimitedString)
         {
-            string[] segments = delimitedString == null ? new string[] { } : delimitedString.Split(Configuration.FieldSeparator.ToCharArray());
-            char[] separator = Configuration.FieldRepeatSeparator.ToCharArray();
+            FromDelimitedString(delimitedString, null);
+        }
 
+        /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.  The provided separators are used to split the string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <param name="separators">The separators to use for splitting the string.</param>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        internal void FromDelimitedString(string delimitedString, Separators separators)
+        {
+            Separators seps = separators ?? new Separators().UsingConfigurationValues();
+            string[] segments = delimitedString == null
+                ? new string[] { }
+                : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
+            
             if (segments.Length > 0)
             {
                 if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
-                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ seps.FieldSeparator }'.", nameof(delimitedString));
                 }
             }
 
@@ -270,7 +283,7 @@ namespace ClearHl7.V282.Segments
             WashTime = segments.Length > 30 && segments[30].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[30], false) : null;
             InjectionRate = segments.Length > 31 && segments[31].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[31], false) : null;
             ProcedureCode = segments.Length > 32 && segments[32].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[32], false) : null;
-            PatientIdentifierList = segments.Length > 33 && segments[33].Length > 0 ? segments[33].Split(separator).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
+            PatientIdentifierList = segments.Length > 33 && segments[33].Length > 0 ? segments[33].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
             AttendingDoctor = segments.Length > 34 && segments[34].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[34], false) : null;
             DilutionFactor = segments.Length > 35 && segments[35].Length > 0 ? TypeHelper.Deserialize<StructuredNumeric>(segments[35], false) : null;
             FillTime = segments.Length > 36 && segments[36].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[36], false) : null;
