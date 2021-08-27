@@ -21,11 +21,7 @@ namespace ClearHl7
         /// Initializes properties of this instance with values parsed from the given delimited string.  Separators defined in the Configuration class are used to split the string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <exception cref="ArgumentException">
-        /// delimitedString does not begin with the proper segment Id.
-        /// -or-
-        /// delimitedString does not contain exactly four encoding characters.
-        /// </exception>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
         void FromDelimitedString(string delimitedString);
 
         /// <summary>
@@ -33,11 +29,7 @@ namespace ClearHl7
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
         /// <param name="separators">The separators to use for splitting the string.</param>
-        /// <exception cref="ArgumentException">
-        /// delimitedString does not begin with the proper segment Id.
-        /// -or-
-        /// delimitedString does not contain exactly four encoding characters.
-        /// </exception>
+        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
         void FromDelimitedString(string delimitedString, Separators separators);
 
         /// <summary>
