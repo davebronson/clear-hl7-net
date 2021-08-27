@@ -12,8 +12,9 @@ namespace ClearHl7.Helpers
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
         /// <param name="isSubcomponent">A boolean value that indicates whether this instance is a subcomponent of another HL7 component instance.</param>
+        /// <param name="separators">The separators to use for splitting the string.</param>
         /// <returns>An instance of type T if delimitedString is not null or empty.  Otherwise, null.</returns>
-        public static T Deserialize<T>(string delimitedString, bool isSubcomponent) where T : class, IType
+        public static T Deserialize<T>(string delimitedString, bool isSubcomponent, Separators separators) where T : class, IType
         {
             if (string.IsNullOrEmpty(delimitedString))
             {
@@ -23,7 +24,7 @@ namespace ClearHl7.Helpers
             {
                 T item = Activator.CreateInstance<T>();
                 item.IsSubcomponent = isSubcomponent;
-                item.FromDelimitedString(delimitedString);
+                item.FromDelimitedString(delimitedString, separators);
 
                 return item;
             }

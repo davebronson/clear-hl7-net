@@ -41,6 +41,9 @@ namespace ClearHl7.V280
             // The locally stored chars should be used for processing the remaining Segments in the collection
             // Add a check to ensure that line endings are \r
 
+            // TODO: Add unit test for test for all possible exceptions here and from MSH
+            // TODO: Unit tests for Separator class
+
             if (segments.Length > 0)
             {
                 if (!segments[0].StartsWith($"MSH{ Configuration.FieldSeparator }", StringComparison.CurrentCultureIgnoreCase))
@@ -58,13 +61,7 @@ namespace ClearHl7.V280
             }
 
             // Capture the encoding chars
-            char[] encodingChars = msh.EncodingCharacters.ToCharArray();
-            // TODO:  Throw error from MSH if encodingChars isn't length = 4
-            // TODO:  Split out 4 encoding chars from inside MSH
-            char componentSepararor = encodingChars[0];
-            char fieldRepeatSeparator = encodingChars[1];
-            char escapeCharacter = encodingChars[2];
-            char subcomponentSeparator = encodingChars[3];
+            Separators seps = new Separators().UsingInput(msh.EncodingCharacters);
 
             // Process remaining segments
             for (int i = 1; i < segments.Length; i++)
