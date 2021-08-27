@@ -1,4 +1,6 @@
-﻿namespace ClearHl7
+﻿using System;
+
+namespace ClearHl7
 {
     /// <summary>
     /// Represents a lightweight structure for passing separator characters.
@@ -31,14 +33,43 @@
         public string[] SubcomponentSeparator { get; set; }
 
         /// <summary>
-        /// Sets properties using current Configuration class values.
+        /// Initializes properties of this instance using current Configuration class values.
         /// </summary>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
         public Separators UsingConfigurationValues()
         {
             ComponentSeparator = new[] { Configuration.ComponentSeparator };
             FieldRepeatSeparator = new[] { Configuration.FieldRepeatSeparator };
             EscapeCharacter = new[] { Configuration.EscapeCharacter };
             SubcomponentSeparator = new[] { Configuration.SubcomponentSeparator };
+
+            return this;
+        }
+
+        /// <summary>
+        /// Initializes properties of this instance using characters parsed from the input string.
+        /// </summary>
+        /// <param name="input">The string to parse.</param>
+        /// <returns>A reference to this instance after the operation has completed.</returns>
+        /// <remarks>
+        /// The input string must contain exactly four characters, with an expected ordering:
+        /// 1) ComponentSeparator
+        /// 2) FieldRepeatSeparator
+        /// 3) EscapeCharacter
+        /// 4) SubcomponentSeparator
+        /// </remarks>
+        /// <exception cref="ArgumentException">input does not contain exactly four encoding characters.</exception>
+        public Separators UsingInput(string input)
+        {
+            if (string.IsNullOrEmpty(input) || input.Length != 4)
+            {
+                throw new ArgumentException($"{ nameof(input) } does not contains exactly four characters.", nameof(input));
+            }
+
+            ComponentSeparator = new[] { input[0].ToString() };
+            FieldRepeatSeparator = new[] { input[1].ToString() };
+            EscapeCharacter = new[] { input[2].ToString() };
+            SubcomponentSeparator = new[] { input[3].ToString() };
 
             return this;
         }
