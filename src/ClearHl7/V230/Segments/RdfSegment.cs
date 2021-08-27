@@ -49,7 +49,7 @@ namespace ClearHl7.V230.Segments
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
         /// <param name="separators">The separators to use for splitting the string.</param>
         /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        internal void FromDelimitedString(string delimitedString, Separators separators)
+        public void FromDelimitedString(string delimitedString, Separators separators)
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null

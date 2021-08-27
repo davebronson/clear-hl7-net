@@ -60,6 +60,7 @@ namespace ClearHl7.V280
             // Capture the encoding chars
             char[] encodingChars = msh.EncodingCharacters.ToCharArray();
             // TODO:  Throw error from MSH if encodingChars isn't length = 4
+            // TODO:  Split out 4 encoding chars from inside MSH
             char componentSepararor = encodingChars[0];
             char fieldRepeatSeparator = encodingChars[1];
             char escapeCharacter = encodingChars[2];

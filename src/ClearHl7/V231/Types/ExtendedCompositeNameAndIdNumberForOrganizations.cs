@@ -78,7 +78,7 @@ namespace ClearHl7.V231.Types
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
         /// <param name="separators">The separators to use for splitting the string.</param>
-        internal void FromDelimitedString(string delimitedString, Separators separators)
+        public void FromDelimitedString(string delimitedString, Separators separators)
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] separator = IsSubcomponent ? seps.SubcomponentSeparator : seps.ComponentSeparator;

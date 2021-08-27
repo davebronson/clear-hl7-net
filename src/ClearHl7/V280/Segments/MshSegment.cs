@@ -31,7 +31,7 @@ namespace ClearHl7.V280.Segments
         /// <summary>
         /// MSH.2 - Encoding Characters.  This property is read-only.
         /// </summary>
-        public string EncodingCharacters => $"{ Configuration.ComponentSeparator }{ Configuration.FieldRepeatSeparator }{ Configuration.EscapeCharacter }{ Configuration.SubcomponentSeparator }";
+        public string EncodingCharacters { get; private set; } = $"{ Configuration.ComponentSeparator }{ Configuration.FieldRepeatSeparator }{ Configuration.EscapeCharacter }{ Configuration.SubcomponentSeparator }";
 
         /// <summary>
         /// MSH.3 - Sending Application.
@@ -161,7 +161,11 @@ namespace ClearHl7.V280.Segments
         /// Initializes properties of this instance with values parsed from the given delimited string.  Separators defined in the Configuration class are used to split the string.
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        /// <exception cref="ArgumentException">
+        /// delimitedString does not begin with the proper segment Id.
+        /// -or-
+        /// The encoding characters in delimitedString does not contain exactly four characters.
+        /// </exception>
         public void FromDelimitedString(string delimitedString)
         {
             FromDelimitedString(delimitedString, null);
@@ -172,8 +176,12 @@ namespace ClearHl7.V280.Segments
         /// </summary>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
         /// <param name="separators">The separators to use for splitting the string.</param>
-        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
-        internal void FromDelimitedString(string delimitedString, Separators separators)
+        /// <exception cref="ArgumentException">
+        /// delimitedString does not begin with the proper segment Id.
+        /// -or-
+        /// delimitedString does not contain exactly four encoding characters.
+        /// </exception>
+        public void FromDelimitedString(string delimitedString, Separators separators)
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
@@ -188,8 +196,12 @@ namespace ClearHl7.V280.Segments
                 }
             }
 
-            //FieldSeparator = ;
-            //EncodingCharacters = ;
+            if (segments.Length < 2 || segments[1].Length != 4)
+            {
+                throw new ArgumentException($"{ nameof(delimitedString) } does not contains exactly four encoding characters.", nameof(delimitedString));
+            }
+
+            EncodingCharacters = segments[1];
             SendingApplication = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[2], false) : null;
             SendingFacility = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[3], false) : null;
             ReceivingApplication = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[4], false) : null;
