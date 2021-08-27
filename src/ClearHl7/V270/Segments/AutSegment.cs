@@ -116,18 +116,18 @@ namespace ClearHl7.V270.Segments
                 }
             }
 
-            AuthorizingPayorPlanId = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false) : null;
-            AuthorizingPayorCompanyId = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
+            AuthorizingPayorPlanId = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false, seps) : null;
+            AuthorizingPayorCompanyId = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false, seps) : null;
             AuthorizingPayorCompanyName = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
             AuthorizationEffectiveDate = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
             AuthorizationExpirationDate = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDateTime() : null;
-            AuthorizationIdentifier = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[6], false) : null;
-            ReimbursementLimit = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[7], false) : null;
-            RequestedNumberOfTreatments = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[8], false) : null;
-            AuthorizedNumberOfTreatments = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[9], false) : null;
+            AuthorizationIdentifier = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[6], false, seps) : null;
+            ReimbursementLimit = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[7], false, seps) : null;
+            RequestedNumberOfTreatments = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[8], false, seps) : null;
+            AuthorizedNumberOfTreatments = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[9], false, seps) : null;
             ProcessDate = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDateTime() : null;
-            RequestedDisciplines = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            AuthorizedDisciplines = segments.Length > 12 && segments[12].Length > 0 ? segments[12].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            RequestedDisciplines = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            AuthorizedDisciplines = segments.Length > 12 && segments[12].Length > 0 ? segments[12].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
         }
 
         /// <summary>

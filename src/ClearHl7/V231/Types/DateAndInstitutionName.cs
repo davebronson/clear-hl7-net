@@ -48,7 +48,7 @@ namespace ClearHl7.V231.Types
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
             Date = segments.Length > 0 && segments[0].Length > 0 ? segments[0].ToNullableDateTime() : null;
-            InstitutionName = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[1], true) : null;
+            InstitutionName = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[1], true, seps) : null;
         }
 
         /// <summary>

@@ -207,31 +207,31 @@ namespace ClearHl7.V280.Segments
             AdministrationSubIdCounter = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDecimal() : null;
             DateTimeStartOfAdministration = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
             DateTimeEndOfAdministration = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
-            AdministeredCode = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], false) : null;
+            AdministeredCode = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], false, seps) : null;
             AdministeredAmount = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDecimal() : null;
-            AdministeredUnits = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[7], false) : null;
-            AdministeredDosageForm = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[8], false) : null;
-            AdministrationNotes = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            AdministeringProvider = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            AdministeredUnits = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[7], false, seps) : null;
+            AdministeredDosageForm = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[8], false, seps) : null;
+            AdministrationNotes = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            AdministeringProvider = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
             AdministeredAtLocation = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
             AdministeredPerTimeUnit = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
             AdministeredStrength = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDecimal() : null;
-            AdministeredStrengthUnits = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[14], false) : null;
+            AdministeredStrengthUnits = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[14], false, seps) : null;
             SubstanceLotNumber = segments.Length > 15 && segments[15].Length > 0 ? segments[15].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             SubstanceExpirationDate = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => x.ToDateTime()) : null;
-            SubstanceManufacturerName = segments.Length > 17 && segments[17].Length > 0 ? segments[17].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            SubstanceTreatmentRefusalReason = segments.Length > 18 && segments[18].Length > 0 ? segments[18].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            Indication = segments.Length > 19 && segments[19].Length > 0 ? segments[19].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            SubstanceManufacturerName = segments.Length > 17 && segments[17].Length > 0 ? segments[17].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            SubstanceTreatmentRefusalReason = segments.Length > 18 && segments[18].Length > 0 ? segments[18].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            Indication = segments.Length > 19 && segments[19].Length > 0 ? segments[19].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
             CompletionStatus = segments.Length > 20 && segments[20].Length > 0 ? segments[20] : null;
             ActionCodeRxa = segments.Length > 21 && segments[21].Length > 0 ? segments[21] : null;
             SystemEntryDateTime = segments.Length > 22 && segments[22].Length > 0 ? segments[22].ToNullableDateTime() : null;
             AdministeredDrugStrengthVolume = segments.Length > 23 && segments[23].Length > 0 ? segments[23].ToNullableDecimal() : null;
-            AdministeredDrugStrengthVolumeUnits = segments.Length > 24 && segments[24].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[24], false) : null;
-            AdministeredBarcodeIdentifier = segments.Length > 25 && segments[25].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[25], false) : null;
+            AdministeredDrugStrengthVolumeUnits = segments.Length > 24 && segments[24].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[24], false, seps) : null;
+            AdministeredBarcodeIdentifier = segments.Length > 25 && segments[25].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[25], false, seps) : null;
             PharmacyOrderType = segments.Length > 26 && segments[26].Length > 0 ? segments[26] : null;
-            AdministerAt = segments.Length > 27 && segments[27].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[27], false) : null;
-            AdministeredAtAddress = segments.Length > 28 && segments[28].Length > 0 ? TypeHelper.Deserialize<ExtendedAddress>(segments[28], false) : null;
-            AdministeredTagIdentifier = segments.Length > 29 && segments[29].Length > 0 ? segments[29].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
+            AdministerAt = segments.Length > 27 && segments[27].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[27], false, seps) : null;
+            AdministeredAtAddress = segments.Length > 28 && segments[28].Length > 0 ? TypeHelper.Deserialize<ExtendedAddress>(segments[28], false, seps) : null;
+            AdministeredTagIdentifier = segments.Length > 29 && segments[29].Length > 0 ? segments[29].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false, seps)) : null;
         }
 
         /// <summary>

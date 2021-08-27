@@ -153,24 +153,24 @@ namespace ClearHl7.V270.Segments
                 }
             }
 
-            PrimaryKeyValuePrc = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false) : null;
-            FacilityIdPrc = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            Department = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            ValidPatientClasses = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            Price = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CompositePrice>(x, false)) : null;
+            PrimaryKeyValuePrc = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false, seps) : null;
+            FacilityIdPrc = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            Department = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            ValidPatientClasses = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            Price = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CompositePrice>(x, false, seps)) : null;
             Formula = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             MinimumQuantity = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDecimal() : null;
             MaximumQuantity = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDecimal() : null;
-            MinimumPrice = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<Money>(segments[9], false) : null;
-            MaximumPrice = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<Money>(segments[10], false) : null;
+            MinimumPrice = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<Money>(segments[9], false, seps) : null;
+            MaximumPrice = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<Money>(segments[10], false, seps) : null;
             EffectiveStartDate = segments.Length > 11 && segments[11].Length > 0 ? segments[11].ToNullableDateTime() : null;
             EffectiveEndDate = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDateTime() : null;
-            PriceOverrideFlag = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[13], false) : null;
-            BillingCategory = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            PriceOverrideFlag = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[13], false, seps) : null;
+            BillingCategory = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
             ChargeableFlag = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
             ActiveInactiveFlag = segments.Length > 16 && segments[16].Length > 0 ? segments[16] : null;
-            Cost = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<Money>(segments[17], false) : null;
-            ChargeOnIndicator = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[18], false) : null;
+            Cost = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<Money>(segments[17], false, seps) : null;
+            ChargeOnIndicator = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[18], false, seps) : null;
         }
 
         /// <summary>

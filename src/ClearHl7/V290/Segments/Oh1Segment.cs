@@ -91,11 +91,11 @@ namespace ClearHl7.V290.Segments
 
             SetId = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
             ActionCode = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
-            EmploymentStatus = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false) : null;
+            EmploymentStatus = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false, seps) : null;
             EmploymentStatusStartDate = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
             EmploymentStatusEndDate = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDateTime() : null;
             EnteredDate = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDateTime() : null;
-            EmploymentStatusUniqueIdentifier = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[7], false) : null;
+            EmploymentStatusUniqueIdentifier = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[7], false, seps) : null;
         }
 
         /// <summary>

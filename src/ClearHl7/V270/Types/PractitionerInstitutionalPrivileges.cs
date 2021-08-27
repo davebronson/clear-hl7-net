@@ -64,11 +64,11 @@ namespace ClearHl7.V270.Types
                 ? new string[] { }
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
-            Privilege = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[0], true) : null;
-            PrivilegeClass = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], true) : null;
+            Privilege = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[0], true, seps) : null;
+            PrivilegeClass = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], true, seps) : null;
             ExpirationDate = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDateTime() : null;
             ActivationDate = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
-            Facility = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[4], true) : null;
+            Facility = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[4], true, seps) : null;
         }
 
         /// <summary>

@@ -47,7 +47,7 @@ namespace ClearHl7.V281.Types
                 ? new string[] { }
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
-            RepeatPattern = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[0], true) : null;
+            RepeatPattern = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[0], true, seps) : null;
             ExplicitTimeInterval = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
         }
 

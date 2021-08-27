@@ -84,11 +84,11 @@ namespace ClearHl7.V281.Segments
                 }
             }
 
-            ProviderProductServiceGroupNumber = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false) : null;
-            PayerProductServiceGroupNumber = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false) : null;
+            ProviderProductServiceGroupNumber = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
+            PayerProductServiceGroupNumber = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false, seps) : null;
             ProductServiceGroupSequenceNumber = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableUInt() : null;
             AdjudicateAsGroup = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
-            ProductServiceGroupBilledAmount = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[5], false) : null;
+            ProductServiceGroupBilledAmount = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[5], false, seps) : null;
             ProductServiceGroupDescription = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
         }
 

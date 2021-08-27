@@ -59,7 +59,7 @@ namespace ClearHl7.V290.Types
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
             IdNumber = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
-            TypeOfIdNumber = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], true) : null;
+            TypeOfIdNumber = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], true, seps) : null;
             StateOtherQualifyingInformation = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
             ExpirationDate = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
         }

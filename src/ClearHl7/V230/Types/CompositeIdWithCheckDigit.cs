@@ -60,7 +60,7 @@ namespace ClearHl7.V230.Types
             IdNumber = segments.Length > 0 && segments[0].Length > 0 ? segments[0].ToNullableDecimal() : null;
             CheckDigit = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
             CodeIdentifyingTheCheckDigitSchemeEmployed = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
-            AssigningAuthority = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[3], true) : null;
+            AssigningAuthority = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[3], true, seps) : null;
         }
 
         /// <summary>

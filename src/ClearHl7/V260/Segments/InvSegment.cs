@@ -159,26 +159,26 @@ namespace ClearHl7.V260.Segments
                 }
             }
 
-            SubstanceIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false) : null;
-            SubstanceStatus = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            SubstanceType = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false) : null;
-            InventoryContainerIdentifier = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false) : null;
-            ContainerCarrierIdentifier = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], false) : null;
-            PositionOnCarrier = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[6], false) : null;
+            SubstanceIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false, seps) : null;
+            SubstanceStatus = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            SubstanceType = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false, seps) : null;
+            InventoryContainerIdentifier = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false, seps) : null;
+            ContainerCarrierIdentifier = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], false, seps) : null;
+            PositionOnCarrier = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[6], false, seps) : null;
             InitialQuantity = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDecimal() : null;
             CurrentQuantity = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDecimal() : null;
             AvailableQuantity = segments.Length > 9 && segments[9].Length > 0 ? segments[9].ToNullableDecimal() : null;
             ConsumptionQuantity = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDecimal() : null;
-            QuantityUnits = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[11], false) : null;
+            QuantityUnits = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[11], false, seps) : null;
             ExpirationDateTime = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDateTime() : null;
             FirstUsedDateTime = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDateTime() : null;
-            OnBoardStabilityDuration = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<TimingQuantity>(segments[14], false) : null;
-            TestFluidIdentifiers = segments.Length > 15 && segments[15].Length > 0 ? segments[15].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            OnBoardStabilityDuration = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<TimingQuantity>(segments[14], false, seps) : null;
+            TestFluidIdentifiers = segments.Length > 15 && segments[15].Length > 0 ? segments[15].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
             ManufacturerLotNumber = segments.Length > 16 && segments[16].Length > 0 ? segments[16] : null;
-            ManufacturerIdentifier = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[17], false) : null;
-            SupplierIdentifier = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[18], false) : null;
-            OnBoardStabilityTime = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[19], false) : null;
-            TargetValue = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[20], false) : null;
+            ManufacturerIdentifier = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[17], false, seps) : null;
+            SupplierIdentifier = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[18], false, seps) : null;
+            OnBoardStabilityTime = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[19], false, seps) : null;
+            TargetValue = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[20], false, seps) : null;
         }
 
         /// <summary>

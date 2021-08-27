@@ -79,7 +79,7 @@ namespace ClearHl7.V260.Segments
                 }
             }
 
-            EventType = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false) : null;
+            EventType = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false, seps) : null;
             FileName = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
             StartDateTime = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
             EndDateTime = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;

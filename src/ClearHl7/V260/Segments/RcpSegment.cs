@@ -95,11 +95,11 @@ namespace ClearHl7.V260.Segments
             }
 
             QueryPriority = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
-            QuantityLimitedRequest = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[2], false) : null;
-            ResponseModality = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[3], false) : null;
+            QuantityLimitedRequest = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[2], false, seps) : null;
+            ResponseModality = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[3], false, seps) : null;
             ExecutionAndDeliveryTime = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
             ModifyIndicator = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
-            SortByField = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<SortOrder>(x, false)) : null;
+            SortByField = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<SortOrder>(x, false, seps)) : null;
             SegmentGroupInclusion = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
         }
 

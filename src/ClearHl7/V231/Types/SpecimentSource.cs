@@ -72,13 +72,13 @@ namespace ClearHl7.V231.Types
                 ? new string[] { }
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
-            SpecimenSourceNameOrCode = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[0], true) : null;
-            Additives = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], true) : null;
-            SpecimenCollectionMethod = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<Text>(segments[2], true) : null;
-            BodySite = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[3], true) : null;
-            SiteModifier = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[4], true) : null;
-            CollectionMethodModifierCode = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[5], true) : null;
-            SpecimenRole = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[6], true) : null;
+            SpecimenSourceNameOrCode = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[0], true, seps) : null;
+            Additives = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], true, seps) : null;
+            SpecimenCollectionMethod = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<Text>(segments[2], true, seps) : null;
+            BodySite = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[3], true, seps) : null;
+            SiteModifier = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[4], true, seps) : null;
+            CollectionMethodModifierCode = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[5], true, seps) : null;
+            SpecimenRole = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[6], true, seps) : null;
         }
 
         /// <summary>

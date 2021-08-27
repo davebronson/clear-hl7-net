@@ -112,7 +112,7 @@ namespace ClearHl7.V251.Types
                 ? new string[] { }
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
-            StreetAddress = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<StreetAddress>(segments[0], true) : null;
+            StreetAddress = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<StreetAddress>(segments[0], true, seps) : null;
             OtherDesignation = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
             City = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
             StateOrProvince = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
@@ -123,7 +123,7 @@ namespace ClearHl7.V251.Types
             CountyParishCode = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
             CensusTract = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
             AddressRepresentationCode = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
-            AddressValidityRange = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<DateTimeRange>(segments[11], true) : null;
+            AddressValidityRange = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<DateTimeRange>(segments[11], true, seps) : null;
             EffectiveDate = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDateTime() : null;
             ExpirationDate = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDateTime() : null;
         }

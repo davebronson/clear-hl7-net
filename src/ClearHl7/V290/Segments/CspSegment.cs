@@ -74,10 +74,10 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
-            StudyPhaseIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false) : null;
+            StudyPhaseIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false, seps) : null;
             DateTimeStudyPhaseBegan = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDateTime() : null;
             DateTimeStudyPhaseEnded = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
-            StudyPhaseEvaluability = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false) : null;
+            StudyPhaseEvaluability = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false, seps) : null;
         }
 
         /// <summary>

@@ -43,6 +43,7 @@ namespace ClearHl7.V280
 
             // TODO: Add unit test for test for all possible exceptions here and from MSH
             // TODO: Unit tests for Separator class
+            // TODO: Can this method be moved to a helper class?
 
             if (segments.Length > 0)
             {
@@ -87,7 +88,7 @@ namespace ClearHl7.V280
                 // Init segment properties, and add to collection
                 ISegment sss = (ISegment)segment;
                 sss.Ordinal = i;
-                sss.FromDelimitedString(segmentString);
+                sss.FromDelimitedString(segmentString, seps);
                 list.Add(sss);
             }
 

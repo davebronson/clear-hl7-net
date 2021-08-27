@@ -94,12 +94,12 @@ namespace ClearHl7.V280.Segments
                 }
             }
 
-            IprIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false) : null;
-            ProviderCrossReferenceIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false) : null;
-            PayerCrossReferenceIdentifier = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[3], false) : null;
-            IprStatus = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false) : null;
+            IprIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
+            ProviderCrossReferenceIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false, seps) : null;
+            PayerCrossReferenceIdentifier = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[3], false, seps) : null;
+            IprStatus = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false, seps) : null;
             IprDateTime = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDateTime() : null;
-            AdjudicatedPaidAmount = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[6], false) : null;
+            AdjudicatedPaidAmount = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[6], false, seps) : null;
             ExpectedPaymentDateTime = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
             IprChecksum = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
         }

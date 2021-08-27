@@ -73,10 +73,10 @@ namespace ClearHl7.V281.Segments
                 }
             }
 
-            ApplicationMethodIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false) : null;
+            ApplicationMethodIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false, seps) : null;
             SubstanceLotNumber = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
             SubstanceContainerIdentifier = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
-            SubstanceManufacturerIdentifier = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false) : null;
+            SubstanceManufacturerIdentifier = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false, seps) : null;
         }
 
         /// <summary>

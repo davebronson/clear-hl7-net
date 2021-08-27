@@ -68,7 +68,7 @@ namespace ClearHl7.V240.Segments
                 }
             }
 
-            MessageQueryName = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[1], false) : null;
+            MessageQueryName = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[1], false, seps) : null;
             QueryTag = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
             UserParametersInSuccessiveFields = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
         }

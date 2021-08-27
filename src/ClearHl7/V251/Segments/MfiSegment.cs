@@ -88,8 +88,8 @@ namespace ClearHl7.V251.Segments
                 }
             }
 
-            MasterFileIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[1], false) : null;
-            MasterFileApplicationIdentifier = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<HierarchicDesignator>(x, false)) : null;
+            MasterFileIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[1], false, seps) : null;
+            MasterFileApplicationIdentifier = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<HierarchicDesignator>(x, false, seps)) : null;
             FileLevelEventCode = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
             EnteredDateTime = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
             EffectiveDateTime = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDateTime() : null;

@@ -90,12 +90,12 @@ namespace ClearHl7.V290.Segments
             }
 
             ActionCode = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
-            PathwayId = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
-            PathwayInstanceId = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[3], false) : null;
+            PathwayId = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false, seps) : null;
+            PathwayInstanceId = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[3], false, seps) : null;
             PathwayEstablishedDateTime = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
-            PathwayLifeCycleStatus = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], false) : null;
+            PathwayLifeCycleStatus = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], false, seps) : null;
             ChangePathwayLifeCycleStatusDateTime = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDateTime() : null;
-            MoodCode = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[7], false) : null;
+            MoodCode = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[7], false, seps) : null;
         }
 
         /// <summary>

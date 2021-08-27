@@ -80,11 +80,11 @@ namespace ClearHl7.V251.Segments
                 }
             }
 
-            PrimaryKeyValueLch = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[1], false) : null;
+            PrimaryKeyValueLch = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[1], false, seps) : null;
             SegmentActionCode = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
-            SegmentUniqueKey = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[3], false) : null;
-            LocationCharacteristicId = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[4], false) : null;
-            LocationCharacteristicValueLch = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[5], false) : null;
+            SegmentUniqueKey = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[3], false, seps) : null;
+            LocationCharacteristicId = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[4], false, seps) : null;
+            LocationCharacteristicValueLch = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[5], false, seps) : null;
         }
 
         /// <summary>

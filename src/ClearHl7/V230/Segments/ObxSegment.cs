@@ -145,10 +145,10 @@ namespace ClearHl7.V230.Segments
 
             SetIdObx = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
             ValueType = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
-            ObservationIdentifier = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[3], false) : null;
+            ObservationIdentifier = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[3], false, seps) : null;
             ObservationSubId = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
             ObservationValue = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
-            Units = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[6], false) : null;
+            Units = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[6], false, seps) : null;
             ReferencesRange = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
             InterpretationCodes = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             Probability = segments.Length > 9 && segments[9].Length > 0 ? segments[9].ToNullableDecimal() : null;
@@ -157,9 +157,9 @@ namespace ClearHl7.V230.Segments
             EffectiveDateOfReferenceRange = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDateTime() : null;
             UserDefinedAccessChecks = segments.Length > 13 && segments[13].Length > 0 ? segments[13] : null;
             DateTimeOfTheObservation = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDateTime() : null;
-            ProducersId = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[15], false) : null;
-            ResponsibleObserver = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            ObservationMethod = segments.Length > 17 && segments[17].Length > 0 ? segments[17].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            ProducersId = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[15], false, seps) : null;
+            ResponsibleObserver = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
+            ObservationMethod = segments.Length > 17 && segments[17].Length > 0 ? segments[17].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false, seps)) : null;
         }
 
         /// <summary>

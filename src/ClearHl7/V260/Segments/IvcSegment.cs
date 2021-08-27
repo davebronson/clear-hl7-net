@@ -211,29 +211,29 @@ namespace ClearHl7.V260.Segments
                 }
             }
 
-            ProviderInvoiceNumber = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false) : null;
-            PayerInvoiceNumber = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false) : null;
-            ContractAgreementNumber = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[3], false) : null;
+            ProviderInvoiceNumber = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
+            PayerInvoiceNumber = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false, seps) : null;
+            ContractAgreementNumber = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[3], false, seps) : null;
             InvoiceControl = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
             InvoiceReason = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
             InvoiceType = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
             InvoiceDateTime = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
-            InvoiceAmount = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[8], false) : null;
+            InvoiceAmount = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[8], false, seps) : null;
             PaymentTerms = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
-            ProviderOrganization = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[10], false) : null;
-            PayerOrganization = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[11], false) : null;
-            Attention = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[12], false) : null;
+            ProviderOrganization = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[10], false, seps) : null;
+            PayerOrganization = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[11], false, seps) : null;
+            Attention = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[12], false, seps) : null;
             LastInvoiceIndicator = segments.Length > 13 && segments[13].Length > 0 ? segments[13] : null;
             InvoiceBookingPeriod = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDateTime() : null;
             Origin = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
-            InvoiceFixedAmount = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[16], false) : null;
-            SpecialCosts = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[17], false) : null;
-            AmountForDoctorsTreatment = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[18], false) : null;
-            ResponsiblePhysician = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[19], false) : null;
-            CostCenter = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments[20], false) : null;
-            InvoicePrepaidAmount = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[21], false) : null;
-            TotalInvoiceAmountWithoutPrepaidAmount = segments.Length > 22 && segments[22].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[22], false) : null;
-            TotalAmountOfVat = segments.Length > 23 && segments[23].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[23], false) : null;
+            InvoiceFixedAmount = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[16], false, seps) : null;
+            SpecialCosts = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[17], false, seps) : null;
+            AmountForDoctorsTreatment = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[18], false, seps) : null;
+            ResponsiblePhysician = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[19], false, seps) : null;
+            CostCenter = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments[20], false, seps) : null;
+            InvoicePrepaidAmount = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[21], false, seps) : null;
+            TotalInvoiceAmountWithoutPrepaidAmount = segments.Length > 22 && segments[22].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[22], false, seps) : null;
+            TotalAmountOfVat = segments.Length > 23 && segments[23].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[23], false, seps) : null;
             VatRatesApplied = segments.Length > 24 && segments[24].Length > 0 ? segments[24].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => x.ToDecimal()) : null;
             BenefitGroup = segments.Length > 25 && segments[25].Length > 0 ? segments[25] : null;
             ProviderTaxId = segments.Length > 26 && segments[26].Length > 0 ? segments[26] : null;

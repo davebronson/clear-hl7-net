@@ -67,7 +67,7 @@ namespace ClearHl7.V281.Segments
             // TODO:  Means to provide the collection of ITypes to be used when building SegmentItems
 
             SegmentSuffix = segments.Length > 0 && segments[0].Length > 0 ? segments[0].Substring(1) : SegmentSuffix;
-            SegmentItems = segments.Length > 1 && segments[1].Length > 0 ? segments[1].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<Text>(x, false)) : null;
+            SegmentItems = segments.Length > 1 && segments[1].Length > 0 ? segments[1].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<Text>(x, false, seps)) : null;
         }
 
         /// <summary>

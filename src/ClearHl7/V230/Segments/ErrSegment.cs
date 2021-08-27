@@ -58,7 +58,7 @@ namespace ClearHl7.V230.Segments
                 }
             }
 
-            ErrorCodeAndLocation = segments.Length > 1 && segments[1].Length > 0 ? segments[1].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ErrorLocationAndDescription>(x, false)) : null;
+            ErrorCodeAndLocation = segments.Length > 1 && segments[1].Length > 0 ? segments[1].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ErrorLocationAndDescription>(x, false, seps)) : null;
         }
 
         /// <summary>

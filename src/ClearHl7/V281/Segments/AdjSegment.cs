@@ -132,21 +132,21 @@ namespace ClearHl7.V281.Segments
                 }
             }
 
-            ProviderAdjustmentNumber = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false) : null;
-            PayerAdjustmentNumber = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false) : null;
-            AdjustmentSequenceNumber = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[3], false) : null;
-            AdjustmentCategory = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false) : null;
-            AdjustmentAmount = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[5], false) : null;
-            AdjustmentQuantity = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[6], false) : null;
-            AdjustmentReasonPa = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[7], false) : null;
+            ProviderAdjustmentNumber = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
+            PayerAdjustmentNumber = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false, seps) : null;
+            AdjustmentSequenceNumber = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[3], false, seps) : null;
+            AdjustmentCategory = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false, seps) : null;
+            AdjustmentAmount = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[5], false, seps) : null;
+            AdjustmentQuantity = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[6], false, seps) : null;
+            AdjustmentReasonPa = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[7], false, seps) : null;
             AdjustmentDescription = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
             OriginalValue = segments.Length > 9 && segments[9].Length > 0 ? segments[9].ToNullableDecimal() : null;
             SubstituteValue = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDecimal() : null;
-            AdjustmentAction = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[11], false) : null;
-            ProviderAdjustmentNumberCrossReference = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[12], false) : null;
-            ProviderProductServiceLineItemNumberCrossReference = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[13], false) : null;
+            AdjustmentAction = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[11], false, seps) : null;
+            ProviderAdjustmentNumberCrossReference = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[12], false, seps) : null;
+            ProviderProductServiceLineItemNumberCrossReference = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[13], false, seps) : null;
             AdjustmentDate = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDateTime() : null;
-            ResponsibleOrganization = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[15], false) : null;
+            ResponsibleOrganization = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[15], false, seps) : null;
         }
 
         /// <summary>

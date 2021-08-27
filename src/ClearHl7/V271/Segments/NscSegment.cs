@@ -102,15 +102,15 @@ namespace ClearHl7.V271.Segments
                 }
             }
 
-            ApplicationChangeType = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false) : null;
+            ApplicationChangeType = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false, seps) : null;
             CurrentCpu = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
             CurrentFileserver = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
-            CurrentApplication = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[4], false) : null;
-            CurrentFacility = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[5], false) : null;
+            CurrentApplication = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[4], false, seps) : null;
+            CurrentFacility = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[5], false, seps) : null;
             NewCpu = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
             NewFileserver = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
-            NewApplication = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[8], false) : null;
-            NewFacility = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[9], false) : null;
+            NewApplication = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[8], false, seps) : null;
+            NewFacility = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[9], false, seps) : null;
         }
 
         /// <summary>

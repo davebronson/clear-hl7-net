@@ -69,7 +69,7 @@ namespace ClearHl7.V251.Segments
             }
 
             SetIdCm1 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
-            StudyPhaseIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[2], false) : null;
+            StudyPhaseIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[2], false, seps) : null;
             DescriptionOfStudyPhase = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
         }
 

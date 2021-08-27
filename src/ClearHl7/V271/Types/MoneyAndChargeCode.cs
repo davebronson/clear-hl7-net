@@ -46,8 +46,8 @@ namespace ClearHl7.V271.Types
                 ? new string[] { }
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
-            MonetaryAmount = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<Money>(segments[0], true) : null;
-            ChargeCode = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], true) : null;
+            MonetaryAmount = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<Money>(segments[0], true, seps) : null;
+            ChargeCode = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], true, seps) : null;
         }
 
         /// <summary>

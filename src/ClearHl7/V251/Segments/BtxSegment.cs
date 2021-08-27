@@ -155,24 +155,24 @@ namespace ClearHl7.V251.Segments
             }
 
             SetIdBtx = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
-            BcDonationId = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false) : null;
-            BcComponent = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[3], false) : null;
-            BcBloodGroup = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[4], false) : null;
-            CpCommercialProduct = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], false) : null;
-            CpManufacturer = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[6], false) : null;
-            CpLotNumber = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[7], false) : null;
+            BcDonationId = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false, seps) : null;
+            BcComponent = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[3], false, seps) : null;
+            BcBloodGroup = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[4], false, seps) : null;
+            CpCommercialProduct = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], false, seps) : null;
+            CpManufacturer = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[6], false, seps) : null;
+            CpLotNumber = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[7], false, seps) : null;
             BpQuantity = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDecimal() : null;
             BpAmount = segments.Length > 9 && segments[9].Length > 0 ? segments[9].ToNullableDecimal() : null;
-            BpUnits = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[10], false) : null;
-            BpTransfusionDispositionStatus = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[11], false) : null;
+            BpUnits = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[10], false, seps) : null;
+            BpTransfusionDispositionStatus = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[11], false, seps) : null;
             BpMessageStatus = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
             BpDateTimeOfStatus = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDateTime() : null;
-            BpTransfusionAdministrator = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[14], false) : null;
-            BpTransfusionVerifier = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[15], false) : null;
+            BpTransfusionAdministrator = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[14], false, seps) : null;
+            BpTransfusionVerifier = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[15], false, seps) : null;
             BpTransfusionStartDateTimeOfStatus = segments.Length > 16 && segments[16].Length > 0 ? segments[16].ToNullableDateTime() : null;
             BpTransfusionEndDateTimeOfStatus = segments.Length > 17 && segments[17].Length > 0 ? segments[17].ToNullableDateTime() : null;
-            BpAdverseReactionType = segments.Length > 18 && segments[18].Length > 0 ? segments[18].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            BpTransfusionInterruptedReason = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[19], false) : null;
+            BpAdverseReactionType = segments.Length > 18 && segments[18].Length > 0 ? segments[18].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            BpTransfusionInterruptedReason = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[19], false, seps) : null;
         }
 
         /// <summary>

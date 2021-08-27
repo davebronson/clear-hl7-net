@@ -240,39 +240,39 @@ namespace ClearHl7.V282.Segments
                 }
             }
 
-            ItemIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false) : null;
+            ItemIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
             ItemDescription = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
-            ItemStatus = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false) : null;
-            ItemType = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false) : null;
-            ItemCategory = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], false) : null;
-            SubjectToExpirationIndicator = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[6], false) : null;
-            ManufacturerIdentifier = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[7], false) : null;
+            ItemStatus = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false, seps) : null;
+            ItemType = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false, seps) : null;
+            ItemCategory = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], false, seps) : null;
+            SubjectToExpirationIndicator = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[6], false, seps) : null;
+            ManufacturerIdentifier = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[7], false, seps) : null;
             ManufacturerName = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
             ManufacturerCatalogNumber = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
-            ManufacturerLabelerIdentificationCode = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[10], false) : null;
-            PatientChargeableIndicator = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[11], false) : null;
-            TransactionCode = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[12], false) : null;
-            TransactionAmountUnit = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[13], false) : null;
-            StockedItemIndicator = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[14], false) : null;
-            SupplyRiskCodes = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[15], false) : null;
-            ApprovingRegulatoryAgency = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
-            LatexIndicator = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[17], false) : null;
-            RulingAct = segments.Length > 18 && segments[18].Length > 0 ? segments[18].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            ItemNaturalAccountCode = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[19], false) : null;
+            ManufacturerLabelerIdentificationCode = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[10], false, seps) : null;
+            PatientChargeableIndicator = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[11], false, seps) : null;
+            TransactionCode = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[12], false, seps) : null;
+            TransactionAmountUnit = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[13], false, seps) : null;
+            StockedItemIndicator = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[14], false, seps) : null;
+            SupplyRiskCodes = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[15], false, seps) : null;
+            ApprovingRegulatoryAgency = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false, seps)) : null;
+            LatexIndicator = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[17], false, seps) : null;
+            RulingAct = segments.Length > 18 && segments[18].Length > 0 ? segments[18].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            ItemNaturalAccountCode = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[19], false, seps) : null;
             ApprovedToBuyQuantity = segments.Length > 20 && segments[20].Length > 0 ? segments[20].ToNullableDecimal() : null;
-            ApprovedToBuyPrice = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<Money>(segments[21], false) : null;
-            TaxableItemIndicator = segments.Length > 22 && segments[22].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[22], false) : null;
-            FreightChargeIndicator = segments.Length > 23 && segments[23].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[23], false) : null;
-            ItemSetIndicator = segments.Length > 24 && segments[24].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[24], false) : null;
-            ItemSetIdentifier = segments.Length > 25 && segments[25].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[25], false) : null;
-            TrackDepartmentUsageIndicator = segments.Length > 26 && segments[26].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[26], false) : null;
-            ProcedureCode = segments.Length > 27 && segments[27].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[27], false) : null;
-            ProcedureCodeModifier = segments.Length > 28 && segments[28].Length > 0 ? segments[28].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithNoExceptions>(x, false)) : null;
-            SpecialHandlingCode = segments.Length > 29 && segments[29].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[29], false) : null;
-            HazardousIndicator = segments.Length > 30 && segments[30].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[30], false) : null;
-            SterileIndicator = segments.Length > 31 && segments[31].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[31], false) : null;
-            MaterialDataSafetySheetNumber = segments.Length > 32 && segments[32].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[32], false) : null;
-            UnitedNationsStandardProductsAndServicesCode = segments.Length > 33 && segments[33].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[33], false) : null;
+            ApprovedToBuyPrice = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<Money>(segments[21], false, seps) : null;
+            TaxableItemIndicator = segments.Length > 22 && segments[22].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[22], false, seps) : null;
+            FreightChargeIndicator = segments.Length > 23 && segments[23].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[23], false, seps) : null;
+            ItemSetIndicator = segments.Length > 24 && segments[24].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[24], false, seps) : null;
+            ItemSetIdentifier = segments.Length > 25 && segments[25].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[25], false, seps) : null;
+            TrackDepartmentUsageIndicator = segments.Length > 26 && segments[26].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[26], false, seps) : null;
+            ProcedureCode = segments.Length > 27 && segments[27].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[27], false, seps) : null;
+            ProcedureCodeModifier = segments.Length > 28 && segments[28].Length > 0 ? segments[28].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithNoExceptions>(x, false, seps)) : null;
+            SpecialHandlingCode = segments.Length > 29 && segments[29].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[29], false, seps) : null;
+            HazardousIndicator = segments.Length > 30 && segments[30].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[30], false, seps) : null;
+            SterileIndicator = segments.Length > 31 && segments[31].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[31], false, seps) : null;
+            MaterialDataSafetySheetNumber = segments.Length > 32 && segments[32].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[32], false, seps) : null;
+            UnitedNationsStandardProductsAndServicesCode = segments.Length > 33 && segments[33].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[33], false, seps) : null;
         }
 
         /// <summary>

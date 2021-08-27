@@ -63,8 +63,8 @@ namespace ClearHl7.V260.Segments
                 }
             }
 
-            BloodProductCode = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false) : null;
-            BloodAmount = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[2], false) : null;
+            BloodProductCode = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false, seps) : null;
+            BloodAmount = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[2], false, seps) : null;
         }
 
         /// <summary>

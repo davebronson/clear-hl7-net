@@ -145,9 +145,9 @@ namespace ClearHl7.V271.Types
             UnformattedTelephoneNumber = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
             EffectiveStartDate = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDateTime() : null;
             ExpirationDate = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDateTime() : null;
-            ExpirationReason = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[14], true) : null;
-            ProtectionCode = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[15], true) : null;
-            SharedTelecommunicationIdentifier = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[16], true) : null;
+            ExpirationReason = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[14], true, seps) : null;
+            ProtectionCode = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[15], true, seps) : null;
+            SharedTelecommunicationIdentifier = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[16], true, seps) : null;
             PreferenceOrder = segments.Length > 17 && segments[17].Length > 0 ? segments[17].ToNullableDecimal() : null;
         }
 

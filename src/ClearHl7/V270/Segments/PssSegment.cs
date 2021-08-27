@@ -78,10 +78,10 @@ namespace ClearHl7.V270.Segments
                 }
             }
 
-            ProviderProductServiceSectionNumber = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false) : null;
-            PayerProductServiceSectionNumber = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false) : null;
+            ProviderProductServiceSectionNumber = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
+            PayerProductServiceSectionNumber = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false, seps) : null;
             ProductServiceSectionSequenceNumber = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableUInt() : null;
-            BilledAmount = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[4], false) : null;
+            BilledAmount = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[4], false, seps) : null;
             SectionDescriptionOrHeading = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
         }
 

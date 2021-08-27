@@ -54,7 +54,7 @@ namespace ClearHl7.V270.Types
                 ? new string[] { }
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
-            CertificationPatientType = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[0], true) : null;
+            CertificationPatientType = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[0], true, seps) : null;
             CertificationRequired = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
             DateTimeCertificationRequired = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDateTime() : null;
         }

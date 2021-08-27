@@ -83,11 +83,11 @@ namespace ClearHl7.V251.Segments
                 }
             }
 
-            SoftwareVendorOrganization = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[1], false) : null;
+            SoftwareVendorOrganization = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[1], false, seps) : null;
             SoftwareCertifiedVersionOrReleaseNumber = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
             SoftwareProductName = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
             SoftwareBinaryId = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
-            SoftwareProductInformation = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<Text>(segments[5], false) : null;
+            SoftwareProductInformation = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<Text>(segments[5], false, seps) : null;
             SoftwareInstallDate = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDateTime() : null;
         }
 

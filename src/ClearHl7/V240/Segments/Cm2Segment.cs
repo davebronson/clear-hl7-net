@@ -75,9 +75,9 @@ namespace ClearHl7.V240.Segments
             }
 
             SetIdCm2 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
-            ScheduledTimePoint = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[2], false) : null;
+            ScheduledTimePoint = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[2], false, seps) : null;
             DescriptionOfTimePoint = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
-            EventsScheduledThisTimePoint = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            EventsScheduledThisTimePoint = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false, seps)) : null;
         }
 
         /// <summary>

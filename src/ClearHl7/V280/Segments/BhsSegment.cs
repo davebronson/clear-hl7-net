@@ -125,18 +125,18 @@ namespace ClearHl7.V280.Segments
 
             BatchFieldSeparator = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
             BatchEncodingCharacters = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
-            BatchSendingApplication = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[3], false) : null;
-            BatchSendingFacility = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[4], false) : null;
-            BatchReceivingApplication = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[5], false) : null;
-            BatchReceivingFacility = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[6], false) : null;
+            BatchSendingApplication = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[3], false, seps) : null;
+            BatchSendingFacility = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[4], false, seps) : null;
+            BatchReceivingApplication = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[5], false, seps) : null;
+            BatchReceivingFacility = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[6], false, seps) : null;
             BatchCreationDateTime = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
             BatchSecurity = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
             BatchNameIdType = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
             BatchComment = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
             BatchControlId = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
             ReferenceBatchControlId = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
-            BatchSendingNetworkAddress = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[13], false) : null;
-            BatchReceivingNetworkAddress = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[14], false) : null;
+            BatchSendingNetworkAddress = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[13], false, seps) : null;
+            BatchReceivingNetworkAddress = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[14], false, seps) : null;
         }
 
         /// <summary>

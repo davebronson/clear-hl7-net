@@ -64,7 +64,7 @@ namespace ClearHl7.V230.Types
                 ? new string[] { }
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
-            SourceApplication = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[0], true) : null;
+            SourceApplication = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[0], true, seps) : null;
             TypeOfData = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
             DataSubtype = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
             Encoding = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;

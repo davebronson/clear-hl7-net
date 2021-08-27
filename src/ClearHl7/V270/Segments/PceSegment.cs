@@ -76,9 +76,9 @@ namespace ClearHl7.V270.Segments
             }
 
             SetIdPce = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
-            CostCenterAccountNumber = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments[2], false) : null;
-            TransactionCode = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false) : null;
-            TransactionAmountUnit = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[4], false) : null;
+            CostCenterAccountNumber = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments[2], false, seps) : null;
+            TransactionCode = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false, seps) : null;
+            TransactionAmountUnit = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[4], false, seps) : null;
         }
 
         /// <summary>

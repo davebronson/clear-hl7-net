@@ -60,7 +60,7 @@ namespace ClearHl7.V240.Types
             SegmentId = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
             SegmentSequence = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
             FieldPosition = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDecimal() : null;
-            CodeIdentifyingError = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[3], true) : null;
+            CodeIdentifyingError = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[3], true, seps) : null;
         }
 
         /// <summary>

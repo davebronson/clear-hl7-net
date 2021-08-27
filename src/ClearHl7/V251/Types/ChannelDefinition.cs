@@ -67,12 +67,12 @@ namespace ClearHl7.V251.Types
                 ? new string[] { }
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
-            ChannelIdentifier = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<ChannelIdentifier>(segments[0], true) : null;
-            WaveformSource = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<WaveformSource>(segments[1], true) : null;
-            ChannelSensitivityAndUnits = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<ChannelSensitivityAndUnits>(segments[2], true) : null;
-            ChannelCalibrationParameters = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<ChannelCalibrationParameters>(segments[3], true) : null;
+            ChannelIdentifier = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<ChannelIdentifier>(segments[0], true, seps) : null;
+            WaveformSource = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<WaveformSource>(segments[1], true, seps) : null;
+            ChannelSensitivityAndUnits = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<ChannelSensitivityAndUnits>(segments[2], true, seps) : null;
+            ChannelCalibrationParameters = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<ChannelCalibrationParameters>(segments[3], true, seps) : null;
             ChannelSamplingFrequency = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDecimal() : null;
-            MinimumAndMaximumDataValues = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments[5], true) : null;
+            MinimumAndMaximumDataValues = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments[5], true, seps) : null;
         }
 
         /// <summary>

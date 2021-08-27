@@ -94,14 +94,14 @@ namespace ClearHl7.V230.Segments
                 }
             }
 
-            RoleInstanceId = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false) : null;
+            RoleInstanceId = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
             ActionCode = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
-            RoleRol = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[3], false) : null;
-            RolePerson = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[4], false) : null;
+            RoleRol = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[3], false, seps) : null;
+            RolePerson = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[4], false, seps) : null;
             RoleBeginDateTime = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDateTime() : null;
             RoleEndDateTime = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDateTime() : null;
-            RoleDuration = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[7], false) : null;
-            RoleActionReason = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[8], false) : null;
+            RoleDuration = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[7], false, seps) : null;
+            RoleActionReason = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[8], false, seps) : null;
         }
 
         /// <summary>

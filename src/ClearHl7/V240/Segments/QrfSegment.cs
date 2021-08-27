@@ -115,7 +115,7 @@ namespace ClearHl7.V240.Segments
             WhichDateTimeQualifier = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             WhichDateTimeStatusQualifier = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             DateTimeSelectionQualifier = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
-            WhenQuantityTimingQualifier = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<TimingQuantity>(segments[9], false) : null;
+            WhenQuantityTimingQualifier = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<TimingQuantity>(segments[9], false, seps) : null;
             SearchConfidenceThreshold = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDecimal() : null;
         }
 

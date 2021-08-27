@@ -105,14 +105,14 @@ namespace ClearHl7.V281.Segments
             }
 
             SequenceNumberTestObservationMasterFile = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
-            UnitsOfMeasure = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
+            UnitsOfMeasure = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false, seps) : null;
             RangeOfDecimalPrecision = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => x.ToDecimal()) : null;
-            CorrespondingSiUnitsOfMeasure = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false) : null;
-            SiConversionFactor = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<Text>(segments[5], false) : null;
-            ReferenceNormalRangeForOrdinalAndContinuousObservations = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ReferenceRange>(x, false)) : null;
-            CriticalRangeForOrdinalAndContinuousObservations = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ReferenceRange>(x, false)) : null;
-            AbsoluteRangeForOrdinalAndContinuousObservations = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<ReferenceRange>(segments[8], false) : null;
-            DeltaCheckCriteria = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<Delta>(x, false)) : null;
+            CorrespondingSiUnitsOfMeasure = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false, seps) : null;
+            SiConversionFactor = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<Text>(segments[5], false, seps) : null;
+            ReferenceNormalRangeForOrdinalAndContinuousObservations = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ReferenceRange>(x, false, seps)) : null;
+            CriticalRangeForOrdinalAndContinuousObservations = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ReferenceRange>(x, false, seps)) : null;
+            AbsoluteRangeForOrdinalAndContinuousObservations = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<ReferenceRange>(segments[8], false, seps) : null;
+            DeltaCheckCriteria = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<Delta>(x, false, seps)) : null;
             MinimumMeaningfulIncrements = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDecimal() : null;
         }
 

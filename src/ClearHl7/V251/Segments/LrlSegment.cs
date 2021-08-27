@@ -85,12 +85,12 @@ namespace ClearHl7.V251.Segments
                 }
             }
 
-            PrimaryKeyValueLrl = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[1], false) : null;
+            PrimaryKeyValueLrl = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[1], false, seps) : null;
             SegmentActionCode = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
-            SegmentUniqueKey = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[3], false) : null;
-            LocationRelationshipId = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[4], false) : null;
-            OrganizationalLocationRelationshipValue = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
-            PatientLocationRelationshipValue = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[6], false) : null;
+            SegmentUniqueKey = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[3], false, seps) : null;
+            LocationRelationshipId = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[4], false, seps) : null;
+            OrganizationalLocationRelationshipValue = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false, seps)) : null;
+            PatientLocationRelationshipValue = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[6], false, seps) : null;
         }
 
         /// <summary>

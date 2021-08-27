@@ -55,7 +55,7 @@ namespace ClearHl7.V260.Types
 
             JobCode = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
             JobClass = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
-            JobDescriptionText = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<Text>(segments[2], true) : null;
+            JobDescriptionText = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<Text>(segments[2], true, seps) : null;
         }
 
         /// <summary>

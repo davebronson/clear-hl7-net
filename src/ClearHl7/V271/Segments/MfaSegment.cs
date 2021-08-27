@@ -90,7 +90,7 @@ namespace ClearHl7.V271.Segments
             RecordLevelEventCode = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
             MfnControlId = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
             EventCompletionDateTime = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
-            MfnRecordLevelErrorReturn = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false) : null;
+            MfnRecordLevelErrorReturn = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false, seps) : null;
             PrimaryKeyValueMfa = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             PrimaryKeyValueTypeMfa = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
         }

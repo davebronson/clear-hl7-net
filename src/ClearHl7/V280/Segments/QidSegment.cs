@@ -64,7 +64,7 @@ namespace ClearHl7.V280.Segments
             }
 
             QueryTag = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
-            MessageQueryName = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
+            MessageQueryName = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false, seps) : null;
         }
 
         /// <summary>

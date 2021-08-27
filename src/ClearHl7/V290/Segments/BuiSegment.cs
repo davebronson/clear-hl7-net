@@ -123,17 +123,17 @@ namespace ClearHl7.V290.Segments
             }
 
             SetIdBui = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
-            BloodUnitIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false) : null;
-            BloodUnitType = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false) : null;
+            BloodUnitIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false, seps) : null;
+            BloodUnitType = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false, seps) : null;
             BloodUnitWeight = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDecimal() : null;
-            WeightUnits = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[5], false) : null;
+            WeightUnits = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[5], false, seps) : null;
             BloodUnitVolume = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDecimal() : null;
-            VolumeUnits = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[7], false) : null;
+            VolumeUnits = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[7], false, seps) : null;
             ContainerCatalogNumber = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
             ContainerLotNumber = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
-            ContainerManufacturer = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[10], false) : null;
-            TransportTemperature = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments[11], false) : null;
-            TransportTemperatureUnits = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[12], false) : null;
+            ContainerManufacturer = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[10], false, seps) : null;
+            TransportTemperature = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments[11], false, seps) : null;
+            TransportTemperatureUnits = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[12], false, seps) : null;
             ActionCode = segments.Length > 13 && segments[13].Length > 0 ? segments[13] : null;
         }
 

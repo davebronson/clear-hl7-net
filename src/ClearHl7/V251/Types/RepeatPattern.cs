@@ -96,7 +96,7 @@ namespace ClearHl7.V251.Types
                 ? new string[] { }
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
-            RepeatPatternCode = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[0], true) : null;
+            RepeatPatternCode = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[0], true, seps) : null;
             CalendarAlignment = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
             PhaseRangeBeginValue = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDecimal() : null;
             PhaseRangeEndValue = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDecimal() : null;

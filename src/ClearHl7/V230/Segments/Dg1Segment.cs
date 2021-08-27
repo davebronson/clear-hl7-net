@@ -161,20 +161,20 @@ namespace ClearHl7.V230.Segments
 
             SetIdDg1 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
             DiagnosisCodingMethod = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
-            DiagnosisCodeDg1 = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[3], false) : null;
+            DiagnosisCodeDg1 = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[3], false, seps) : null;
             DiagnosisDescription = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
             DiagnosisDateTime = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDateTime() : null;
             DiagnosisType = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
-            MajorDiagnosticCategory = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[7], false) : null;
-            DiagnosticRelatedGroup = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[8], false) : null;
+            MajorDiagnosticCategory = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[7], false, seps) : null;
+            DiagnosticRelatedGroup = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[8], false, seps) : null;
             DrgApprovalIndicator = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
             DrgGrouperReviewCode = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
-            OutlierType = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[11], false) : null;
+            OutlierType = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[11], false, seps) : null;
             OutlierDays = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDecimal() : null;
-            OutlierCost = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[13], false) : null;
+            OutlierCost = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[13], false, seps) : null;
             GrouperVersionAndType = segments.Length > 14 && segments[14].Length > 0 ? segments[14] : null;
             DiagnosisPriority = segments.Length > 15 && segments[15].Length > 0 ? segments[15].ToNullableDecimal() : null;
-            DiagnosingClinician = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            DiagnosingClinician = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
             DiagnosisClassification = segments.Length > 17 && segments[17].Length > 0 ? segments[17] : null;
             ConfidentialIndicator = segments.Length > 18 && segments[18].Length > 0 ? segments[18] : null;
             AttestationDateTime = segments.Length > 19 && segments[19].Length > 0 ? segments[19].ToNullableDateTime() : null;

@@ -72,13 +72,13 @@ namespace ClearHl7.V260.Types
                 ? new string[] { }
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
-            NumericRange = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments[0], true) : null;
+            NumericRange = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments[0], true, seps) : null;
             AdministrativeSex = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
-            AgeRange = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments[2], true) : null;
-            GestationalAgeRange = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments[3], true) : null;
+            AgeRange = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments[2], true, seps) : null;
+            GestationalAgeRange = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments[3], true, seps) : null;
             Species = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
             RaceSubspecies = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
-            Conditions = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<Text>(segments[6], true) : null;
+            Conditions = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<Text>(segments[6], true, seps) : null;
         }
 
         /// <summary>

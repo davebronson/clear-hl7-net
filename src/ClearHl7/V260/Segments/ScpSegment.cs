@@ -98,13 +98,13 @@ namespace ClearHl7.V260.Segments
             }
 
             NumberOfDecontaminationSterilizationDevices = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
-            LaborCalculationType = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
-            DateFormat = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false) : null;
-            DeviceNumber = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[4], false) : null;
+            LaborCalculationType = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false, seps) : null;
+            DateFormat = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false, seps) : null;
+            DeviceNumber = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[4], false, seps) : null;
             DeviceName = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
             DeviceModelName = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
-            DeviceType = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[7], false) : null;
-            LotControl = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[8], false) : null;
+            DeviceType = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[7], false, seps) : null;
+            LotControl = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[8], false, seps) : null;
         }
 
         /// <summary>

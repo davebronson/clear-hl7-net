@@ -53,7 +53,7 @@ namespace ClearHl7.V281.Types
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
             DelayDays = segments.Length > 0 && segments[0].Length > 0 ? segments[0].ToNullableDecimal() : null;
-            MonetaryAmount = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<Money>(segments[1], true) : null;
+            MonetaryAmount = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<Money>(segments[1], true, seps) : null;
             NumberOfDays = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDecimal() : null;
         }
 

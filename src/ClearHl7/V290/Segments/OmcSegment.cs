@@ -129,15 +129,15 @@ namespace ClearHl7.V290.Segments
 
             SequenceNumberTestObservationMasterFile = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
             SegmentActionCode = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
-            SegmentUniqueKey = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[3], false) : null;
-            ClinicalInformationRequest = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false) : null;
-            CollectionEventProcessStep = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            CommunicationLocation = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[6], false) : null;
+            SegmentUniqueKey = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[3], false, seps) : null;
+            ClinicalInformationRequest = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false, seps) : null;
+            CollectionEventProcessStep = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            CommunicationLocation = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[6], false, seps) : null;
             AnswerRequired = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
             HintHelpText = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
             TypeOfAnswer = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
             MultipleAnswersAllowed = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
-            AnswerChoices = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            AnswerChoices = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
             CharacterLimit = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDecimal() : null;
             NumberOfDecimals = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDecimal() : null;
         }

@@ -69,9 +69,9 @@ namespace ClearHl7.V270.Segments
                 }
             }
 
-            StudyScheduledTimePoint = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false) : null;
+            StudyScheduledTimePoint = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false, seps) : null;
             StudyScheduledPatientTimePoint = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDateTime() : null;
-            StudyQualityControlCodes = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            StudyQualityControlCodes = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
         }
 
         /// <summary>

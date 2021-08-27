@@ -124,12 +124,12 @@ namespace ClearHl7.V230.Types
             Prefix = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
             Degree = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
             SourceTable = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
-            AssigningAuthority = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[8], true) : null;
+            AssigningAuthority = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[8], true, seps) : null;
             NameTypeCode = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
             IdentifierCheckDigit = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
             CheckDigitScheme = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
             IdentifierTypeCode = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
-            AssigningFacility = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[13], true) : null;
+            AssigningFacility = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[13], true, seps) : null;
             DateTimeActionPerformed = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDateTime() : null;
         }
 

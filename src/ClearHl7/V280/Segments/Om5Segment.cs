@@ -70,7 +70,7 @@ namespace ClearHl7.V280.Segments
             }
 
             SequenceNumberTestObservationMasterFile = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
-            TestObservationsIncludedWithinAnOrderedTestBattery = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            TestObservationsIncludedWithinAnOrderedTestBattery = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
             ObservationIdSuffixes = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
         }
 

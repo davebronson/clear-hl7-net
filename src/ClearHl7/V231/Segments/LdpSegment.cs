@@ -115,17 +115,17 @@ namespace ClearHl7.V231.Segments
                 }
             }
 
-            PrimaryKeyValueLdp = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[1], false) : null;
+            PrimaryKeyValueLdp = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[1], false, seps) : null;
             LocationDepartment = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
             LocationService = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
-            SpecialtyType = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            SpecialtyType = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false, seps)) : null;
             ValidPatientClasses = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             ActiveInactiveFlag = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
             ActivationDateLdp = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
             InactivationDateLdp = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDateTime() : null;
             InactivatedReason = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
-            VisitingHours = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<VisitingHours>(x, false)) : null;
-            ContactPhone = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments[11], false) : null;
+            VisitingHours = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<VisitingHours>(x, false, seps)) : null;
+            ContactPhone = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments[11], false, seps) : null;
         }
 
         /// <summary>

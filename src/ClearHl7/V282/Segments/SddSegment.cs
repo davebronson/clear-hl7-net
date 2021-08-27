@@ -90,11 +90,11 @@ namespace ClearHl7.V282.Segments
                 }
             }
 
-            LotNumber = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false) : null;
-            DeviceNumber = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false) : null;
+            LotNumber = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
+            DeviceNumber = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false, seps) : null;
             DeviceName = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
-            DeviceDataState = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false) : null;
-            LoadStatus = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], false) : null;
+            DeviceDataState = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false, seps) : null;
+            LoadStatus = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], false, seps) : null;
             ControlCode = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDecimal() : null;
             OperatorName = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
         }

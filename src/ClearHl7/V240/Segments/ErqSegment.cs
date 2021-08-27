@@ -69,8 +69,8 @@ namespace ClearHl7.V240.Segments
             }
 
             QueryTag = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
-            EventIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[2], false) : null;
-            InputParameterList = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<QueryInputParameterList>(x, false)) : null;
+            EventIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[2], false, seps) : null;
+            InputParameterList = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<QueryInputParameterList>(x, false, seps)) : null;
         }
 
         /// <summary>

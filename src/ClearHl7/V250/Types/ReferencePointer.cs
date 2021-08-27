@@ -59,7 +59,7 @@ namespace ClearHl7.V250.Types
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
             Pointer = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
-            ApplicationId = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[1], true) : null;
+            ApplicationId = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[1], true, seps) : null;
             TypeOfData = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
             Subtype = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
         }

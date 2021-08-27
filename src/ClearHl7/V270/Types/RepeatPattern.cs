@@ -96,16 +96,16 @@ namespace ClearHl7.V270.Types
                 ? new string[] { }
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
-            RepeatPatternCode = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[0], true) : null;
+            RepeatPatternCode = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[0], true, seps) : null;
             CalendarAlignment = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
             PhaseRangeBeginValue = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDecimal() : null;
             PhaseRangeEndValue = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDecimal() : null;
             PeriodQuantity = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDecimal() : null;
-            PeriodUnits = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], true) : null;
+            PeriodUnits = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], true, seps) : null;
             InstitutionSpecifiedTime = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
             Event = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
             EventOffsetQuantity = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDecimal() : null;
-            EventOffsetUnits = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[9], true) : null;
+            EventOffsetUnits = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[9], true, seps) : null;
             GeneralTimingSpecification = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
         }
 

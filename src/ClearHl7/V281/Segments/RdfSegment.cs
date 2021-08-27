@@ -66,7 +66,7 @@ namespace ClearHl7.V281.Segments
             }
 
             NumberOfColumnsPerRow = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
-            ColumnDescription = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<RowColumnDefinition>(x, false)) : null;
+            ColumnDescription = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<RowColumnDefinition>(x, false, seps)) : null;
         }
 
         /// <summary>

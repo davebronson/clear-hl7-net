@@ -46,8 +46,8 @@ namespace ClearHl7.V251.Types
                 ? new string[] { }
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
-            PlacerAssignedIdentifier = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[0], true) : null;
-            FillerAssignedIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], true) : null;
+            PlacerAssignedIdentifier = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[0], true, seps) : null;
+            FillerAssignedIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], true, seps) : null;
         }
 
         /// <summary>

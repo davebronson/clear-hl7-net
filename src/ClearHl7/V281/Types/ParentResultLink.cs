@@ -51,9 +51,9 @@ namespace ClearHl7.V281.Types
                 ? new string[] { }
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
-            ParentObservationIdentifier = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[0], true) : null;
+            ParentObservationIdentifier = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[0], true, seps) : null;
             ParentObservationSubIdentifier = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
-            ParentObservationValueDescriptor = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<Text>(segments[2], true) : null;
+            ParentObservationValueDescriptor = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<Text>(segments[2], true, seps) : null;
         }
 
         /// <summary>

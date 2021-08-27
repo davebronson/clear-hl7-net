@@ -63,7 +63,7 @@ namespace ClearHl7.V250.Segments
                 }
             }
 
-            BedLocation = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[1], false) : null;
+            BedLocation = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[1], false, seps) : null;
             BedStatus = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
         }
 

@@ -58,7 +58,7 @@ namespace ClearHl7.V250.Types
                 ? new string[] { }
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
-            NormalRange = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments[0], true) : null;
+            NormalRange = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments[0], true, seps) : null;
             NumericThreshold = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
             ChangeComputation = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
             DaysRetained = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDecimal() : null;

@@ -110,12 +110,12 @@ namespace ClearHl7.V271.Segments
 
             SetIdTq2 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
             SequenceResultsFlag = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
-            RelatedPlacerNumber = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
-            RelatedFillerNumber = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
-            RelatedPlacerGroupNumber = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
+            RelatedPlacerNumber = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false, seps)) : null;
+            RelatedFillerNumber = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false, seps)) : null;
+            RelatedPlacerGroupNumber = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false, seps)) : null;
             SequenceConditionCode = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
             CyclicEntryExitIndicator = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
-            SequenceConditionTimeInterval = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[8], false) : null;
+            SequenceConditionTimeInterval = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[8], false, seps) : null;
             CyclicGroupMaximumNumberOfRepeats = segments.Length > 9 && segments[9].Length > 0 ? segments[9].ToNullableDecimal() : null;
             SpecialServiceRequestRelationship = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
         }

@@ -124,15 +124,15 @@ namespace ClearHl7.V230.Segments
 
             LivingDependency = segments.Length > 1 && segments[1].Length > 0 ? segments[1].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             LivingArrangement = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
-            PatientPrimaryFacility = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
-            PatientPrimaryCareProviderNameIdNo = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            PatientPrimaryFacility = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false, seps)) : null;
+            PatientPrimaryCareProviderNameIdNo = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
             StudentIndicator = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
             Handicap = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
             LivingWillCode = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
             OrganDonorCode = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
             SeparateBill = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
-            DuplicatePatient = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
-            PublicityCode = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[11], false) : null;
+            DuplicatePatient = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false, seps)) : null;
+            PublicityCode = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[11], false, seps) : null;
             ProtectionIndicator = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
         }
 

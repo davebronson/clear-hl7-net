@@ -136,18 +136,18 @@ namespace ClearHl7.V260.Segments
             }
 
             SetIdRel = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
-            RelationshipType = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
-            ThisRelationshipInstanceIdentifier = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[3], false) : null;
-            SourceInformationInstanceIdentifier = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[4], false) : null;
-            TargetInformationInstanceIdentifier = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[5], false) : null;
-            AssertingEntityInstanceId = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[6], false) : null;
-            AssertingPerson = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[7], false) : null;
-            AssertingOrganization = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[8], false) : null;
-            AssertorAddress = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<ExtendedAddress>(segments[9], false) : null;
-            AssertorContact = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments[10], false) : null;
-            AssertionDateRange = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<DateTimeRange>(segments[11], false) : null;
+            RelationshipType = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false, seps) : null;
+            ThisRelationshipInstanceIdentifier = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[3], false, seps) : null;
+            SourceInformationInstanceIdentifier = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[4], false, seps) : null;
+            TargetInformationInstanceIdentifier = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[5], false, seps) : null;
+            AssertingEntityInstanceId = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[6], false, seps) : null;
+            AssertingPerson = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[7], false, seps) : null;
+            AssertingOrganization = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[8], false, seps) : null;
+            AssertorAddress = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<ExtendedAddress>(segments[9], false, seps) : null;
+            AssertorContact = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments[10], false, seps) : null;
+            AssertionDateRange = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<DateTimeRange>(segments[11], false, seps) : null;
             NegationIndicator = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
-            CertaintyOfRelationship = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[13], false) : null;
+            CertaintyOfRelationship = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[13], false, seps) : null;
             PriorityNo = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDecimal() : null;
             PrioritySequenceNoRelPreferenceForConsideration = segments.Length > 15 && segments[15].Length > 0 ? segments[15].ToNullableDecimal() : null;
             SeparabilityIndicator = segments.Length > 16 && segments[16].Length > 0 ? segments[16] : null;

@@ -80,9 +80,9 @@ namespace ClearHl7.V290.Segments
 
             SetIdDsp = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
             DisplayLevel = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableUInt() : null;
-            DataLine = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<Text>(segments[3], false) : null;
+            DataLine = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<Text>(segments[3], false, seps) : null;
             LogicalBreakPoint = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
-            ResultId = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<Text>(segments[5], false) : null;
+            ResultId = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<Text>(segments[5], false, seps) : null;
         }
 
         /// <summary>

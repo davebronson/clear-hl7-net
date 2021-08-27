@@ -58,10 +58,10 @@ namespace ClearHl7.V280.Types
                 ? new string[] { }
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
-            ValueCode = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[0], true) : null;
-            ValueAmount = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<Money>(segments[1], true) : null;
+            ValueCode = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[0], true, seps) : null;
+            ValueAmount = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<Money>(segments[1], true, seps) : null;
             NonMonetaryValueAmountQuantity = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDecimal() : null;
-            NonMonetaryValueAmountUnits = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], true) : null;
+            NonMonetaryValueAmountUnits = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], true, seps) : null;
         }
 
         /// <summary>

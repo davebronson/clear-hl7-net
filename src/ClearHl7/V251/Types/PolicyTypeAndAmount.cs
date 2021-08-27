@@ -62,7 +62,7 @@ namespace ClearHl7.V251.Types
             PolicyType = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
             AmountClass = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
             MoneyOrPercentageQuantity = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDecimal() : null;
-            MoneyOrPercentage = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<MoneyOrPercentage>(segments[3], true) : null;
+            MoneyOrPercentage = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<MoneyOrPercentage>(segments[3], true, seps) : null;
         }
 
         /// <summary>

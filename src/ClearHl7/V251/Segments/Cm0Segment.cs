@@ -110,16 +110,16 @@ namespace ClearHl7.V251.Segments
             }
 
             SetIdCm0 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
-            SponsorStudyId = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false) : null;
-            AlternateStudyId = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false)) : null;
+            SponsorStudyId = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false, seps) : null;
+            AlternateStudyId = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false, seps)) : null;
             TitleOfStudy = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
-            ChairmanOfStudy = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
+            ChairmanOfStudy = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
             LastIrbApprovalDate = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDateTime() : null;
             TotalAccrualToDate = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDecimal() : null;
             LastAccrualDate = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDateTime() : null;
-            ContactForStudy = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false)) : null;
-            ContactsTelephoneNumber = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments[10], false) : null;
-            ContactsAddress = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
+            ContactForStudy = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
+            ContactsTelephoneNumber = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments[10], false, seps) : null;
+            ContactsAddress = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false, seps)) : null;
         }
 
         /// <summary>

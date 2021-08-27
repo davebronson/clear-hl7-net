@@ -70,7 +70,7 @@ namespace ClearHl7.V240.Segments
                 }
             }
 
-            CommandResponse = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[1], false) : null;
+            CommandResponse = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[1], false, seps) : null;
             DateTimeCompleted = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDateTime() : null;
             CommandResponseParameters = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
         }

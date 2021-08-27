@@ -46,7 +46,7 @@ namespace ClearHl7.V250.Types
                 ? new string[] { }
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
-            ParameterClass = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[0], true) : null;
+            ParameterClass = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[0], true, seps) : null;
             ParameterValue = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
         }
 

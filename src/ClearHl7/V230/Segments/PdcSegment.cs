@@ -130,19 +130,19 @@ namespace ClearHl7.V230.Segments
                 }
             }
 
-            ManufacturerDistributor = segments.Length > 1 && segments[1].Length > 0 ? segments[1].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false)) : null;
-            Country = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[2], false) : null;
+            ManufacturerDistributor = segments.Length > 1 && segments[1].Length > 0 ? segments[1].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false, seps)) : null;
+            Country = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[2], false, seps) : null;
             BrandName = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
             DeviceFamilyName = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
-            GenericName = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[5], false) : null;
+            GenericName = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[5], false, seps) : null;
             ModelIdentifier = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             CatalogueIdentifier = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
             OtherIdentifier = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
-            ProductCode = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[9], false) : null;
+            ProductCode = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[9], false, seps) : null;
             MarketingBasis = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
             MarketingApprovalId = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
-            LabeledShelfLife = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[12], false) : null;
-            ExpectedShelfLife = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[13], false) : null;
+            LabeledShelfLife = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[12], false, seps) : null;
+            ExpectedShelfLife = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[13], false, seps) : null;
             DateFirstMarketed = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDateTime() : null;
             DateLastMarketed = segments.Length > 15 && segments[15].Length > 0 ? segments[15].ToNullableDateTime() : null;
         }

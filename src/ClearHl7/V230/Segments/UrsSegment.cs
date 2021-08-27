@@ -110,7 +110,7 @@ namespace ClearHl7.V230.Segments
             RuWhichDateTimeQualifier = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             RuWhichDateTimeStatusQualifier = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             RuDateTimeSelectionQualifier = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
-            RuQuantityTimingQualifier = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<TimingQuantity>(segments[9], false) : null;
+            RuQuantityTimingQualifier = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<TimingQuantity>(segments[9], false, seps) : null;
         }
 
         /// <summary>

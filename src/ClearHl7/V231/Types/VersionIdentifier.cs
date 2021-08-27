@@ -53,8 +53,8 @@ namespace ClearHl7.V231.Types
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
             VersionId = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
-            InternationalizationCode = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[1], true) : null;
-            InternationalVersionId = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[2], true) : null;
+            InternationalizationCode = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[1], true, seps) : null;
+            InternationalVersionId = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[2], true, seps) : null;
         }
 
         /// <summary>

@@ -97,12 +97,12 @@ namespace ClearHl7.V240.Segments
 
             SetIdEdu = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
             AcademicDegree = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
-            AcademicDegreeProgramDateRange = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<DateTimeRange>(segments[3], false) : null;
-            AcademicDegreeProgramParticipationDateRange = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<DateTimeRange>(segments[4], false) : null;
+            AcademicDegreeProgramDateRange = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<DateTimeRange>(segments[3], false, seps) : null;
+            AcademicDegreeProgramParticipationDateRange = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<DateTimeRange>(segments[4], false, seps) : null;
             AcademicDegreeGrantedDate = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDateTime() : null;
-            School = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[6], false) : null;
-            SchoolTypeCode = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[7], false) : null;
-            SchoolAddress = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<ExtendedAddress>(segments[8], false) : null;
+            School = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[6], false, seps) : null;
+            SchoolTypeCode = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[7], false, seps) : null;
+            SchoolAddress = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<ExtendedAddress>(segments[8], false, seps) : null;
         }
 
         /// <summary>

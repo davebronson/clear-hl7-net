@@ -77,8 +77,8 @@ namespace ClearHl7.V281.Segments
 
             SetIdCdo = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
             ActionCode = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
-            CumulativeDosageLimit = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[3], false) : null;
-            CumulativeDosageLimitTimeInterval = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[4], false) : null;
+            CumulativeDosageLimit = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[3], false, seps) : null;
+            CumulativeDosageLimitTimeInterval = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[4], false, seps) : null;
         }
 
         /// <summary>

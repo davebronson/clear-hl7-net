@@ -79,9 +79,9 @@ namespace ClearHl7.V282.Segments
             }
 
             SetIdMcp = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
-            ProducersServiceTestObservationId = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
-            UniversalServicePriceRangeLowValue = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<Money>(segments[3], false) : null;
-            UniversalServicePriceRangeHighValue = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<Money>(segments[4], false) : null;
+            ProducersServiceTestObservationId = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false, seps) : null;
+            UniversalServicePriceRangeLowValue = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<Money>(segments[3], false, seps) : null;
+            UniversalServicePriceRangeHighValue = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<Money>(segments[4], false, seps) : null;
             ReasonForUniversalServiceCostRange = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
         }
 

@@ -135,17 +135,17 @@ namespace ClearHl7.V260.Segments
 
             RevenueCode = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
             NumberOfServiceUnits = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDecimal() : null;
-            Charge = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[3], false) : null;
+            Charge = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[3], false, seps) : null;
             ReimbursementActionCode = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
             DenialOrRejectionCode = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
             OceEditCode = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
-            AmbulatoryPaymentClassificationCode = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[7], false) : null;
+            AmbulatoryPaymentClassificationCode = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[7], false, seps) : null;
             ModifierEditCode = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             PaymentAdjustmentCode = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
             PackagingStatusCode = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
-            ExpectedCmsPaymentAmount = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[11], false) : null;
+            ExpectedCmsPaymentAmount = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[11], false, seps) : null;
             ReimbursementTypeCode = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
-            CoPayAmount = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[13], false) : null;
+            CoPayAmount = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[13], false, seps) : null;
             PayRatePerServiceUnit = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDecimal() : null;
         }
 

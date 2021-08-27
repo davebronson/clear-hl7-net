@@ -59,10 +59,10 @@ namespace ClearHl7.V280.Types
                 ? new string[] { }
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
-            RoomType = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[0], true) : null;
-            AmountType = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], true) : null;
+            RoomType = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[0], true, seps) : null;
+            AmountType = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], true, seps) : null;
             CoverageAmount = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDecimal() : null;
-            MoneyOrPercentage = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<MoneyOrPercentage>(segments[3], true) : null;
+            MoneyOrPercentage = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<MoneyOrPercentage>(segments[3], true, seps) : null;
         }
 
         /// <summary>

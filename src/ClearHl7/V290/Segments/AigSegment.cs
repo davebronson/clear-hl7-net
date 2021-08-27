@@ -129,18 +129,18 @@ namespace ClearHl7.V290.Segments
 
             SetIdAig = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
             SegmentActionCode = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
-            ResourceId = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false) : null;
-            ResourceType = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false) : null;
-            ResourceGroup = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            ResourceId = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false, seps) : null;
+            ResourceType = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false, seps) : null;
+            ResourceGroup = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
             ResourceQuantity = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDecimal() : null;
-            ResourceQuantityUnits = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[7], false) : null;
+            ResourceQuantityUnits = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[7], false, seps) : null;
             StartDateTime = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDateTime() : null;
             StartDateTimeOffset = segments.Length > 9 && segments[9].Length > 0 ? segments[9].ToNullableDecimal() : null;
-            StartDateTimeOffsetUnits = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[10], false) : null;
+            StartDateTimeOffsetUnits = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[10], false, seps) : null;
             Duration = segments.Length > 11 && segments[11].Length > 0 ? segments[11].ToNullableDecimal() : null;
-            DurationUnits = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[12], false) : null;
-            AllowSubstitutionCode = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[13], false) : null;
-            FillerStatusCode = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[14], false) : null;
+            DurationUnits = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[12], false, seps) : null;
+            AllowSubstitutionCode = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[13], false, seps) : null;
+            FillerStatusCode = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[14], false, seps) : null;
         }
 
         /// <summary>

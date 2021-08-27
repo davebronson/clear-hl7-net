@@ -213,34 +213,34 @@ namespace ClearHl7.V240.Segments
                 }
             }
 
-            PrimaryKeyValueStf = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[1], false) : null;
-            StaffIdentifierList = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false)) : null;
-            StaffName = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false)) : null;
+            PrimaryKeyValueStf = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[1], false, seps) : null;
+            StaffIdentifierList = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false, seps)) : null;
+            StaffName = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false, seps)) : null;
             StaffType = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             AdministrativeSex = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
             DateTimeOfBirth = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDateTime() : null;
             ActiveInactiveFlag = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
-            Department = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            HospitalServiceStf = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
-            Phone = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false)) : null;
-            OfficeHomeAddressBirthplace = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false)) : null;
-            InstitutionActivationDate = segments.Length > 12 && segments[12].Length > 0 ? segments[12].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<DateAndInstitutionName>(x, false)) : null;
-            InstitutionInactivationDate = segments.Length > 13 && segments[13].Length > 0 ? segments[13].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<DateAndInstitutionName>(x, false)) : null;
-            BackupPersonId = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false)) : null;
+            Department = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false, seps)) : null;
+            HospitalServiceStf = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false, seps)) : null;
+            Phone = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false, seps)) : null;
+            OfficeHomeAddressBirthplace = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false, seps)) : null;
+            InstitutionActivationDate = segments.Length > 12 && segments[12].Length > 0 ? segments[12].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<DateAndInstitutionName>(x, false, seps)) : null;
+            InstitutionInactivationDate = segments.Length > 13 && segments[13].Length > 0 ? segments[13].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<DateAndInstitutionName>(x, false, seps)) : null;
+            BackupPersonId = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false, seps)) : null;
             EmailAddress = segments.Length > 15 && segments[15].Length > 0 ? segments[15].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
-            PreferredMethodOfContact = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[16], false) : null;
-            MaritalStatus = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[17], false) : null;
+            PreferredMethodOfContact = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[16], false, seps) : null;
+            MaritalStatus = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[17], false, seps) : null;
             JobTitle = segments.Length > 18 && segments[18].Length > 0 ? segments[18] : null;
-            JobCodeClass = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<JobCodeClass>(segments[19], false) : null;
+            JobCodeClass = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<JobCodeClass>(segments[19], false, seps) : null;
             EmploymentStatusCode = segments.Length > 20 && segments[20].Length > 0 ? segments[20] : null;
             AdditionalInsuredOnAuto = segments.Length > 21 && segments[21].Length > 0 ? segments[21] : null;
-            DriversLicenseNumberStaff = segments.Length > 22 && segments[22].Length > 0 ? TypeHelper.Deserialize<DriversLicenseNumber>(segments[22], false) : null;
+            DriversLicenseNumberStaff = segments.Length > 22 && segments[22].Length > 0 ? TypeHelper.Deserialize<DriversLicenseNumber>(segments[22], false, seps) : null;
             CopyAutoIns = segments.Length > 23 && segments[23].Length > 0 ? segments[23] : null;
             AutoInsExpires = segments.Length > 24 && segments[24].Length > 0 ? segments[24].ToNullableDateTime() : null;
             DateLastDmvReview = segments.Length > 25 && segments[25].Length > 0 ? segments[25].ToNullableDateTime() : null;
             DateNextDmvReview = segments.Length > 26 && segments[26].Length > 0 ? segments[26].ToNullableDateTime() : null;
-            Race = segments.Length > 27 && segments[27].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[27], false) : null;
-            EthnicGroup = segments.Length > 28 && segments[28].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[28], false) : null;
+            Race = segments.Length > 27 && segments[27].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[27], false, seps) : null;
+            EthnicGroup = segments.Length > 28 && segments[28].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[28], false, seps) : null;
             ReactivationApprovalIndicator = segments.Length > 29 && segments[29].Length > 0 ? segments[29] : null;
         }
 

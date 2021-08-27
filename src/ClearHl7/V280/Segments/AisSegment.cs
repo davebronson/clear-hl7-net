@@ -121,16 +121,16 @@ namespace ClearHl7.V280.Segments
 
             SetIdAis = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
             SegmentActionCode = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
-            UniversalServiceIdentifier = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false) : null;
+            UniversalServiceIdentifier = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false, seps) : null;
             StartDateTime = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
             StartDateTimeOffset = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDecimal() : null;
-            StartDateTimeOffsetUnits = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[6], false) : null;
+            StartDateTimeOffsetUnits = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[6], false, seps) : null;
             Duration = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDecimal() : null;
-            DurationUnits = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[8], false) : null;
-            AllowSubstitutionCode = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[9], false) : null;
-            FillerStatusCode = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[10], false) : null;
-            PlacerSupplementalServiceInformation = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
-            FillerSupplementalServiceInformation = segments.Length > 12 && segments[12].Length > 0 ? segments[12].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false)) : null;
+            DurationUnits = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[8], false, seps) : null;
+            AllowSubstitutionCode = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[9], false, seps) : null;
+            FillerStatusCode = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[10], false, seps) : null;
+            PlacerSupplementalServiceInformation = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            FillerSupplementalServiceInformation = segments.Length > 12 && segments[12].Length > 0 ? segments[12].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
         }
 
         /// <summary>

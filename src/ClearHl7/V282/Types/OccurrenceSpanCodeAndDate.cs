@@ -53,7 +53,7 @@ namespace ClearHl7.V282.Types
                 ? new string[] { }
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
-            OccurrenceSpanCode = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[0], true) : null;
+            OccurrenceSpanCode = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[0], true, seps) : null;
             OccurrenceSpanStartDate = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDateTime() : null;
             OccurrenceSpanStopDate = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDateTime() : null;
         }

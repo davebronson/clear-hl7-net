@@ -114,16 +114,16 @@ namespace ClearHl7.V260.Segments
             }
 
             AccidentDateTime = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDateTime() : null;
-            AccidentCode = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false) : null;
+            AccidentCode = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false, seps) : null;
             AccidentLocation = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
-            AutoAccidentState = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false) : null;
+            AutoAccidentState = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false, seps) : null;
             AccidentJobRelatedIndicator = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
             AccidentDeathIndicator = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
-            EnteredBy = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[7], false) : null;
+            EnteredBy = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[7], false, seps) : null;
             AccidentDescription = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
             BroughtInBy = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
             PoliceNotifiedIndicator = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
-            AccidentAddress = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<ExtendedAddress>(segments[11], false) : null;
+            AccidentAddress = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<ExtendedAddress>(segments[11], false, seps) : null;
         }
 
         /// <summary>
