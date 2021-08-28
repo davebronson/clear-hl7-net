@@ -36,14 +36,10 @@ namespace ClearHl7.V280
             List<ISegment> list = new();
             Type messageClass = GetType();
 
-            // MSH will be responsible for determing the separator chars, and processing itself accordingly.
-            //      When MSH processing completes, this Message will grab the sparator chars and store locally
-            // The locally stored chars should be used for processing the remaining Segments in the collection
-            // Add a check to ensure that line endings are \r
-
-            // TODO: Add unit test for test for all possible exceptions here and from MSH
-            // TODO: Unit tests for Separator class
+            // TODO: Add a check to ensure that line endings are \r
+            // TODO: Add unit tests for Message.FromDelimitedString()
             // TODO: Can this method be moved to a helper class?
+            // TODO: Test with a non-standard set of delimiter chars
 
             if (segments.Length > 0)
             {

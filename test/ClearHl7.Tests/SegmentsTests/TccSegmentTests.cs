@@ -1,4 +1,5 @@
-﻿using ClearHl7.V290.Segments;
+﻿using System;
+using ClearHl7.V290.Segments;
 using ClearHl7.V290.Types;
 using FluentAssertions;
 using Xunit;
@@ -66,6 +67,19 @@ namespace ClearHl7.Tests.SegmentsTests
             actual.FromDelimitedString("TCC|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15");
 
             expected.Should().BeEquivalentTo(actual);
+        }
+
+        /// <summary>
+        /// Validates that calling FromDelimitedString() with a string input containing an incorrect segment ID results in an ArgumentException being thrown.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithIncorrectSegmentId_ThrowsArgumentException()
+        {
+            Assert.Throws<ArgumentException>(() =>
+            {
+                ISegment hl7Segment = new TccSegment();
+                hl7Segment.FromDelimitedString("TCA|^~&|3|4|5|6");
+            });
         }
 
         /// <summary>

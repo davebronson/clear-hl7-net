@@ -111,6 +111,45 @@ namespace ClearHl7.Tests.SegmentsTests
         }
 
         /// <summary>
+        /// Validates that calling FromDelimitedString() with a string input containing an incorrect segment ID results in an ArgumentException being thrown.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithIncorrectSegmentId_ThrowsArgumentException()
+        {
+            Assert.Throws<ArgumentException>(() =>
+            {
+                ISegment hl7Segment = new MshSegment();
+                hl7Segment.FromDelimitedString("MSA|^~&|3|4|5|6");
+            });
+        }
+
+        /// <summary>
+        /// Validates that calling FromDelimitedString() with a string input containing three encoding characters results in an ArgumentException being thrown.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithThreeEncodingChars_ThrowsArgumentException()
+        {
+            Assert.Throws<ArgumentException>(() =>
+            {
+                ISegment hl7Segment = new MshSegment();
+                hl7Segment.FromDelimitedString("MSH|^~&|3|4|5|6");
+            });
+        }
+
+        /// <summary>
+        /// Validates that calling FromDelimitedString() with a string input containing five encoding characters results in an ArgumentException being thrown.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithFiveEncodingChars_ThrowsArgumentException()
+        {
+            Assert.Throws<ArgumentException>(() =>
+            {
+                ISegment hl7Segment = new MshSegment();
+                hl7Segment.FromDelimitedString("MSH|^~\\&$|3|4|5|6");
+            });
+        }
+
+        /// <summary>
         /// Validates that ToDelimitedString() returns output with all properties populated and in the correct sequence.
         /// </summary>
         /// <remarks>Assumes usage of the standard delimiter characters.</remarks>

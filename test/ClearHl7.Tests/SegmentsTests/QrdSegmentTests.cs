@@ -1,4 +1,5 @@
-﻿using ClearHl7.V282.Segments;
+﻿using System;
+using ClearHl7.V282.Segments;
 using FluentAssertions;
 using Xunit;
 
@@ -21,6 +22,19 @@ namespace ClearHl7.Tests.SegmentsTests
             actual.FromDelimitedString("QRD|1");
 
             expected.Should().BeEquivalentTo(actual);
+        }
+
+        /// <summary>
+        /// Validates that calling FromDelimitedString() with a string input containing an incorrect segment ID results in an ArgumentException being thrown.
+        /// </summary>
+        [Fact]
+        public void FromDelimitedString_WithIncorrectSegmentId_ThrowsArgumentException()
+        {
+            Assert.Throws<ArgumentException>(() =>
+            {
+                ISegment hl7Segment = new QrdSegment();
+                hl7Segment.FromDelimitedString("QRA|^~&|3|4|5|6");
+            });
         }
 
         /// <summary>
