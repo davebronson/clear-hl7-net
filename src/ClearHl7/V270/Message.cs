@@ -16,6 +16,15 @@ namespace ClearHl7.V270
         public IEnumerable<ISegment> Segments { get; set; }
 
         /// <summary>
+        /// Initializes properties of this instance with values parsed from the given delimited string.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        public void FromDelimitedString(string delimitedString)
+        {
+            Segments = MessageHelper.Deserialize<Message>(delimitedString).Segments;
+        }
+
+        /// <summary>
         /// Returns a delimited string representation of this instance.
         /// </summary>
         /// <returns>A string.</returns>
