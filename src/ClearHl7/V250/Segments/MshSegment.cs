@@ -11,7 +11,7 @@ namespace ClearHl7.V250.Segments
     /// <summary>
     /// HL7 Version 2 Segment MSH - Message Header.
     /// </summary>
-    public class MshSegment : ISegment
+    public class MshSegment : ISegment, IMshSegment
     {
         /// <summary>
         /// Gets the ID for the Segment.  This property is read-only.
