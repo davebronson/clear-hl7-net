@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V240.Types;
 
 namespace ClearHl7.V240.Segments
@@ -183,7 +184,7 @@ namespace ClearHl7.V240.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -195,32 +196,32 @@ namespace ClearHl7.V240.Segments
             }
 
             DispenseSubIdCounter = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
-            DispenseGiveCode = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[2], false, seps) : null;
+            DispenseGiveCode = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[2], false, seps) : null;
             DateTimeDispensed = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
             ActualDispenseAmount = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDecimal() : null;
-            ActualDispenseUnits = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[5], false, seps) : null;
-            ActualDosageForm = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[6], false, seps) : null;
+            ActualDispenseUnits = segments.Length > 5 && segments[5].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[5], false, seps) : null;
+            ActualDosageForm = segments.Length > 6 && segments[6].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[6], false, seps) : null;
             PrescriptionNumber = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
             NumberOfRefillsRemaining = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDecimal() : null;
             DispenseNotes = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
-            DispensingProvider = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
+            DispensingProvider = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
             SubstitutionStatus = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
-            TotalDailyDose = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[12], false, seps) : null;
-            DispenseToLocation = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<LocationWithAddressVariationTwo>(segments[13], false, seps) : null;
+            TotalDailyDose = segments.Length > 12 && segments[12].Length > 0 ? TypeSerializer.Deserialize<CompositeQuantityWithUnits>(segments[12], false, seps) : null;
+            DispenseToLocation = segments.Length > 13 && segments[13].Length > 0 ? TypeSerializer.Deserialize<LocationWithAddressVariationTwo>(segments[13], false, seps) : null;
             NeedsHumanReview = segments.Length > 14 && segments[14].Length > 0 ? segments[14] : null;
-            SpecialDispensingInstructions = segments.Length > 15 && segments[15].Length > 0 ? segments[15].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false, seps)) : null;
+            SpecialDispensingInstructions = segments.Length > 15 && segments[15].Length > 0 ? segments[15].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedElement>(x, false, seps)) : null;
             ActualStrength = segments.Length > 16 && segments[16].Length > 0 ? segments[16].ToNullableDecimal() : null;
-            ActualStrengthUnit = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[17], false, seps) : null;
+            ActualStrengthUnit = segments.Length > 17 && segments[17].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[17], false, seps) : null;
             SubstanceLotNumber = segments.Length > 18 && segments[18].Length > 0 ? segments[18].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             SubstanceExpirationDate = segments.Length > 19 && segments[19].Length > 0 ? segments[19].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => x.ToDateTime()) : null;
-            SubstanceManufacturerName = segments.Length > 20 && segments[20].Length > 0 ? segments[20].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false, seps)) : null;
-            Indication = segments.Length > 21 && segments[21].Length > 0 ? segments[21].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false, seps)) : null;
+            SubstanceManufacturerName = segments.Length > 20 && segments[20].Length > 0 ? segments[20].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedElement>(x, false, seps)) : null;
+            Indication = segments.Length > 21 && segments[21].Length > 0 ? segments[21].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedElement>(x, false, seps)) : null;
             DispensePackageSize = segments.Length > 22 && segments[22].Length > 0 ? segments[22].ToNullableDecimal() : null;
-            DispensePackageSizeUnit = segments.Length > 23 && segments[23].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[23], false, seps) : null;
+            DispensePackageSizeUnit = segments.Length > 23 && segments[23].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[23], false, seps) : null;
             DispensePackageMethod = segments.Length > 24 && segments[24].Length > 0 ? segments[24] : null;
-            SupplementaryCode = segments.Length > 25 && segments[25].Length > 0 ? segments[25].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false, seps)) : null;
-            InitiatingLocation = segments.Length > 26 && segments[26].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[26], false, seps) : null;
-            PackagingAssemblyLocation = segments.Length > 27 && segments[27].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[27], false, seps) : null;
+            SupplementaryCode = segments.Length > 25 && segments[25].Length > 0 ? segments[25].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedElement>(x, false, seps)) : null;
+            InitiatingLocation = segments.Length > 26 && segments[26].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[26], false, seps) : null;
+            PackagingAssemblyLocation = segments.Length > 27 && segments[27].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[27], false, seps) : null;
         }
 
         /// <summary>

@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V280.Types;
 
 namespace ClearHl7.V280.Segments
@@ -112,7 +113,7 @@ namespace ClearHl7.V280.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
 
             if (segments.Length > 0)
@@ -125,18 +126,18 @@ namespace ClearHl7.V280.Segments
 
             FileFieldSeparator = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
             FileEncodingCharacters = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
-            FileSendingApplication = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[3], false, seps) : null;
-            FileSendingFacility = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[4], false, seps) : null;
-            FileReceivingApplication = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[5], false, seps) : null;
-            FileReceivingFacility = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[6], false, seps) : null;
+            FileSendingApplication = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<HierarchicDesignator>(segments[3], false, seps) : null;
+            FileSendingFacility = segments.Length > 4 && segments[4].Length > 0 ? TypeSerializer.Deserialize<HierarchicDesignator>(segments[4], false, seps) : null;
+            FileReceivingApplication = segments.Length > 5 && segments[5].Length > 0 ? TypeSerializer.Deserialize<HierarchicDesignator>(segments[5], false, seps) : null;
+            FileReceivingFacility = segments.Length > 6 && segments[6].Length > 0 ? TypeSerializer.Deserialize<HierarchicDesignator>(segments[6], false, seps) : null;
             FileCreationDateTime = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
             FileSecurity = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
             FileNameId = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
             FileHeaderComment = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
             FileControlId = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
             ReferenceFileControlId = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
-            FileSendingNetworkAddress = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[13], false, seps) : null;
-            FileReceivingNetworkAddress = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[14], false, seps) : null;
+            FileSendingNetworkAddress = segments.Length > 13 && segments[13].Length > 0 ? TypeSerializer.Deserialize<HierarchicDesignator>(segments[13], false, seps) : null;
+            FileReceivingNetworkAddress = segments.Length > 14 && segments[14].Length > 0 ? TypeSerializer.Deserialize<HierarchicDesignator>(segments[14], false, seps) : null;
         }
 
         /// <summary>

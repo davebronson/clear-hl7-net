@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace ClearHl7.Helpers
+namespace ClearHl7.Serialization
 {
     /// <summary>
-    /// Provides helper methods for interacting with HL7 Types.
+    /// Provides serialization methods for HL7 Types.
     /// </summary>
-    public static class TypeHelper
+    public static class TypeSerializer
     {
         /// <summary>
         /// Returns a new instance of type T with values parsed from the given delimited string.

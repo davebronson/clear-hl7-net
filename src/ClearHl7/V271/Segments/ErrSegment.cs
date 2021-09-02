@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V271.Types;
 
 namespace ClearHl7.V271.Segments
@@ -108,7 +109,7 @@ namespace ClearHl7.V271.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -120,17 +121,17 @@ namespace ClearHl7.V271.Segments
             }
 
             ErrorCodeAndLocation = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
-            ErrorLocation = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ErrorLocation>(x, false, seps)) : null;
-            Hl7ErrorCode = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false, seps) : null;
+            ErrorLocation = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ErrorLocation>(x, false, seps)) : null;
+            Hl7ErrorCode = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[3], false, seps) : null;
             Severity = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
-            ApplicationErrorCode = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], false, seps) : null;
+            ApplicationErrorCode = segments.Length > 5 && segments[5].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[5], false, seps) : null;
             ApplicationErrorParameter = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
-            DiagnosticInformation = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<Text>(segments[7], false, seps) : null;
-            UserMessage = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<Text>(segments[8], false, seps) : null;
-            InformPersonIndicator = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
-            OverrideType = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[10], false, seps) : null;
-            OverrideReasonCode = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
-            HelpDeskContactPoint = segments.Length > 12 && segments[12].Length > 0 ? segments[12].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false, seps)) : null;
+            DiagnosticInformation = segments.Length > 7 && segments[7].Length > 0 ? TypeSerializer.Deserialize<Text>(segments[7], false, seps) : null;
+            UserMessage = segments.Length > 8 && segments[8].Length > 0 ? TypeSerializer.Deserialize<Text>(segments[8], false, seps) : null;
+            InformPersonIndicator = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            OverrideType = segments.Length > 10 && segments[10].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[10], false, seps) : null;
+            OverrideReasonCode = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            HelpDeskContactPoint = segments.Length > 12 && segments[12].Length > 0 ? segments[12].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedTelecommunicationNumber>(x, false, seps)) : null;
         }
 
         /// <summary>

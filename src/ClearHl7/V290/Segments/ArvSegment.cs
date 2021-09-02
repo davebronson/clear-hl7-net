@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V290.Types;
 
 namespace ClearHl7.V290.Segments
@@ -98,7 +99,7 @@ namespace ClearHl7.V290.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -110,15 +111,15 @@ namespace ClearHl7.V290.Segments
             }
 
             SetId = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
-            AccessRestrictionActionCode = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[2], false, seps) : null;
-            AccessRestrictionValue = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false, seps) : null;
-            AccessRestrictionReason = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            AccessRestrictionActionCode = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<CodedWithNoExceptions>(segments[2], false, seps) : null;
+            AccessRestrictionValue = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[3], false, seps) : null;
+            AccessRestrictionReason = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
             SpecialAccessRestrictionInstructions = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
-            AccessRestrictionDateRange = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<DateTimeRange>(segments[6], false, seps) : null;
-            SecurityClassificationTag = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[7], false, seps) : null;
-            SecurityHandlingInstructions = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
-            AccessRestrictionMessageLocation = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<MessageLocation>(x, false, seps)) : null;
-            AccessRestrictionInstanceIdentifier = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[10], false, seps) : null;
+            AccessRestrictionDateRange = segments.Length > 6 && segments[6].Length > 0 ? TypeSerializer.Deserialize<DateTimeRange>(segments[6], false, seps) : null;
+            SecurityClassificationTag = segments.Length > 7 && segments[7].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[7], false, seps) : null;
+            SecurityHandlingInstructions = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            AccessRestrictionMessageLocation = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<MessageLocation>(x, false, seps)) : null;
+            AccessRestrictionInstanceIdentifier = segments.Length > 10 && segments[10].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[10], false, seps) : null;
         }
 
         /// <summary>

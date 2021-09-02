@@ -2,6 +2,7 @@
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 
 namespace ClearHl7.V290.Types
 {
@@ -159,10 +160,10 @@ namespace ClearHl7.V290.Types
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] separator = IsSubcomponent ? seps.SubcomponentSeparator : seps.ComponentSeparator;
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
-            StreetAddress = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<StreetAddress>(segments[0], true, seps) : null;
+            StreetAddress = segments.Length > 0 && segments[0].Length > 0 ? TypeSerializer.Deserialize<StreetAddress>(segments[0], true, seps) : null;
             OtherDesignation = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
             City = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
             StateOrProvince = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
@@ -170,21 +171,21 @@ namespace ClearHl7.V290.Types
             Country = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
             AddressType = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
             OtherGeographicDesignation = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
-            CountyParishCode = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[8], true, seps) : null;
-            CensusTract = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[9], true, seps) : null;
+            CountyParishCode = segments.Length > 8 && segments[8].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[8], true, seps) : null;
+            CensusTract = segments.Length > 9 && segments[9].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[9], true, seps) : null;
             AddressRepresentationCode = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
-            AddressValidityRange = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<DateTimeRange>(segments[11], true, seps) : null;
+            AddressValidityRange = segments.Length > 11 && segments[11].Length > 0 ? TypeSerializer.Deserialize<DateTimeRange>(segments[11], true, seps) : null;
             EffectiveDate = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDateTime() : null;
             ExpirationDate = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDateTime() : null;
-            ExpirationReason = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[14], true, seps) : null;
+            ExpirationReason = segments.Length > 14 && segments[14].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[14], true, seps) : null;
             TemporaryIndicator = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
             BadAddressIndicator = segments.Length > 16 && segments[16].Length > 0 ? segments[16] : null;
             AddressUsage = segments.Length > 17 && segments[17].Length > 0 ? segments[17] : null;
             Addressee = segments.Length > 18 && segments[18].Length > 0 ? segments[18] : null;
             Comment = segments.Length > 19 && segments[19].Length > 0 ? segments[19] : null;
             PreferenceOrder = segments.Length > 20 && segments[20].Length > 0 ? segments[20].ToNullableDecimal() : null;
-            ProtectionCode = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[21], true, seps) : null;
-            AddressIdentifier = segments.Length > 22 && segments[22].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[22], true, seps) : null;
+            ProtectionCode = segments.Length > 21 && segments[21].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[21], true, seps) : null;
+            AddressIdentifier = segments.Length > 22 && segments[22].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[22], true, seps) : null;
         }
 
         /// <summary>

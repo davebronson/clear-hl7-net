@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V290.Types;
 
 namespace ClearHl7.V290.Segments
@@ -337,7 +338,7 @@ namespace ClearHl7.V290.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -349,59 +350,59 @@ namespace ClearHl7.V290.Segments
             }
 
             SetIdIn1 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
-            HealthPlanId = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false, seps) : null;
-            InsuranceCompanyId = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false, seps)) : null;
-            InsuranceCompanyName = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false, seps)) : null;
-            InsuranceCompanyAddress = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false, seps)) : null;
-            InsuranceCoContactPerson = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false, seps)) : null;
-            InsuranceCoPhoneNumber = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(x, false, seps)) : null;
+            HealthPlanId = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[2], false, seps) : null;
+            InsuranceCompanyId = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false, seps)) : null;
+            InsuranceCompanyName = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false, seps)) : null;
+            InsuranceCompanyAddress = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedAddress>(x, false, seps)) : null;
+            InsuranceCoContactPerson = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedPersonName>(x, false, seps)) : null;
+            InsuranceCoPhoneNumber = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedTelecommunicationNumber>(x, false, seps)) : null;
             GroupNumber = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
-            GroupName = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false, seps)) : null;
-            InsuredsGroupEmpId = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false, seps)) : null;
-            InsuredsGroupEmpName = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false, seps)) : null;
+            GroupName = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false, seps)) : null;
+            InsuredsGroupEmpId = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false, seps)) : null;
+            InsuredsGroupEmpName = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false, seps)) : null;
             PlanEffectiveDate = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDateTime() : null;
             PlanExpirationDate = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDateTime() : null;
-            AuthorizationInformation = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<AuthorizationInformation>(segments[14], false, seps) : null;
-            PlanType = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[15], false, seps) : null;
-            NameOfInsured = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedPersonName>(x, false, seps)) : null;
-            InsuredsRelationshipToPatient = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[17], false, seps) : null;
+            AuthorizationInformation = segments.Length > 14 && segments[14].Length > 0 ? TypeSerializer.Deserialize<AuthorizationInformation>(segments[14], false, seps) : null;
+            PlanType = segments.Length > 15 && segments[15].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[15], false, seps) : null;
+            NameOfInsured = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedPersonName>(x, false, seps)) : null;
+            InsuredsRelationshipToPatient = segments.Length > 17 && segments[17].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[17], false, seps) : null;
             InsuredsDateOfBirth = segments.Length > 18 && segments[18].Length > 0 ? segments[18].ToNullableDateTime() : null;
-            InsuredsAddress = segments.Length > 19 && segments[19].Length > 0 ? segments[19].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false, seps)) : null;
-            AssignmentOfBenefits = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[20], false, seps) : null;
-            CoordinationOfBenefits = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[21], false, seps) : null;
+            InsuredsAddress = segments.Length > 19 && segments[19].Length > 0 ? segments[19].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedAddress>(x, false, seps)) : null;
+            AssignmentOfBenefits = segments.Length > 20 && segments[20].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[20], false, seps) : null;
+            CoordinationOfBenefits = segments.Length > 21 && segments[21].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[21], false, seps) : null;
             CoordOfBenPriority = segments.Length > 22 && segments[22].Length > 0 ? segments[22] : null;
             NoticeOfAdmissionFlag = segments.Length > 23 && segments[23].Length > 0 ? segments[23] : null;
             NoticeOfAdmissionDate = segments.Length > 24 && segments[24].Length > 0 ? segments[24].ToNullableDateTime() : null;
             ReportOfEligibilityFlag = segments.Length > 25 && segments[25].Length > 0 ? segments[25] : null;
             ReportOfEligibilityDate = segments.Length > 26 && segments[26].Length > 0 ? segments[26].ToNullableDateTime() : null;
-            ReleaseInformationCode = segments.Length > 27 && segments[27].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[27], false, seps) : null;
+            ReleaseInformationCode = segments.Length > 27 && segments[27].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[27], false, seps) : null;
             PreAdmitCertPac = segments.Length > 28 && segments[28].Length > 0 ? segments[28] : null;
             VerificationDateTime = segments.Length > 29 && segments[29].Length > 0 ? segments[29].ToNullableDateTime() : null;
-            VerificationBy = segments.Length > 30 && segments[30].Length > 0 ? segments[30].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
-            TypeOfAgreementCode = segments.Length > 31 && segments[31].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[31], false, seps) : null;
-            BillingStatus = segments.Length > 32 && segments[32].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[32], false, seps) : null;
+            VerificationBy = segments.Length > 30 && segments[30].Length > 0 ? segments[30].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
+            TypeOfAgreementCode = segments.Length > 31 && segments[31].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[31], false, seps) : null;
+            BillingStatus = segments.Length > 32 && segments[32].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[32], false, seps) : null;
             LifetimeReserveDays = segments.Length > 33 && segments[33].Length > 0 ? segments[33].ToNullableDecimal() : null;
             DelayBeforeLRDay = segments.Length > 34 && segments[34].Length > 0 ? segments[34].ToNullableDecimal() : null;
-            CompanyPlanCode = segments.Length > 35 && segments[35].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[35], false, seps) : null;
+            CompanyPlanCode = segments.Length > 35 && segments[35].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[35], false, seps) : null;
             PolicyNumber = segments.Length > 36 && segments[36].Length > 0 ? segments[36] : null;
-            PolicyDeductible = segments.Length > 37 && segments[37].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[37], false, seps) : null;
+            PolicyDeductible = segments.Length > 37 && segments[37].Length > 0 ? TypeSerializer.Deserialize<CompositePrice>(segments[37], false, seps) : null;
             PolicyLimitAmount = segments.Length > 38 && segments[38].Length > 0 ? segments[38] : null;
             PolicyLimitDays = segments.Length > 39 && segments[39].Length > 0 ? segments[39].ToNullableDecimal() : null;
             RoomRateSemiPrivate = segments.Length > 40 && segments[40].Length > 0 ? segments[40] : null;
             RoomRatePrivate = segments.Length > 41 && segments[41].Length > 0 ? segments[41] : null;
-            InsuredsEmploymentStatus = segments.Length > 42 && segments[42].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[42], false, seps) : null;
-            InsuredsAdministrativeSex = segments.Length > 43 && segments[43].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[43], false, seps) : null;
-            InsuredsEmployersAddress = segments.Length > 44 && segments[44].Length > 0 ? segments[44].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false, seps)) : null;
+            InsuredsEmploymentStatus = segments.Length > 42 && segments[42].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[42], false, seps) : null;
+            InsuredsAdministrativeSex = segments.Length > 43 && segments[43].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[43], false, seps) : null;
+            InsuredsEmployersAddress = segments.Length > 44 && segments[44].Length > 0 ? segments[44].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedAddress>(x, false, seps)) : null;
             VerificationStatus = segments.Length > 45 && segments[45].Length > 0 ? segments[45] : null;
-            PriorInsurancePlanId = segments.Length > 46 && segments[46].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[46], false, seps) : null;
-            CoverageType = segments.Length > 47 && segments[47].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[47], false, seps) : null;
-            Handicap = segments.Length > 48 && segments[48].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[48], false, seps) : null;
-            InsuredsIdNumber = segments.Length > 49 && segments[49].Length > 0 ? segments[49].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false, seps)) : null;
-            SignatureCode = segments.Length > 50 && segments[50].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[50], false, seps) : null;
+            PriorInsurancePlanId = segments.Length > 46 && segments[46].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[46], false, seps) : null;
+            CoverageType = segments.Length > 47 && segments[47].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[47], false, seps) : null;
+            Handicap = segments.Length > 48 && segments[48].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[48], false, seps) : null;
+            InsuredsIdNumber = segments.Length > 49 && segments[49].Length > 0 ? segments[49].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false, seps)) : null;
+            SignatureCode = segments.Length > 50 && segments[50].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[50], false, seps) : null;
             SignatureCodeDate = segments.Length > 51 && segments[51].Length > 0 ? segments[51].ToNullableDateTime() : null;
             InsuredsBirthPlace = segments.Length > 52 && segments[52].Length > 0 ? segments[52] : null;
-            VipIndicator = segments.Length > 53 && segments[53].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[53], false, seps) : null;
-            ExternalHealthPlanIdentifiers = segments.Length > 54 && segments[54].Length > 0 ? segments[54].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false, seps)) : null;
+            VipIndicator = segments.Length > 53 && segments[53].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[53], false, seps) : null;
+            ExternalHealthPlanIdentifiers = segments.Length > 54 && segments[54].Length > 0 ? segments[54].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeIdWithCheckDigit>(x, false, seps)) : null;
             InsuranceActionCode = segments.Length > 55 && segments[55].Length > 0 ? segments[55] : null;
         }
 

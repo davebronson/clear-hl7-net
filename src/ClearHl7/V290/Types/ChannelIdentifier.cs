@@ -2,6 +2,7 @@
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 
 namespace ClearHl7.V290.Types
 {
@@ -44,7 +45,7 @@ namespace ClearHl7.V290.Types
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] separator = IsSubcomponent ? seps.SubcomponentSeparator : seps.ComponentSeparator;
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
             ChannelNumber = segments.Length > 0 && segments[0].Length > 0 ? segments[0].ToNullableDecimal() : null;

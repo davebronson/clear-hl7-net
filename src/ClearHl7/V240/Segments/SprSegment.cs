@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V240.Types;
 
 namespace ClearHl7.V240.Segments
@@ -63,7 +64,7 @@ namespace ClearHl7.V240.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -76,8 +77,8 @@ namespace ClearHl7.V240.Segments
 
             QueryTag = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
             QueryResponseFormatCode = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
-            StoredProcedureName = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[3], false, seps) : null;
-            InputParameterList = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<QueryInputParameterList>(x, false, seps)) : null;
+            StoredProcedureName = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[3], false, seps) : null;
+            InputParameterList = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<QueryInputParameterList>(x, false, seps)) : null;
         }
 
         /// <summary>

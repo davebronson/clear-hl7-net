@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V280.Types;
 
 namespace ClearHl7.V280.Segments
@@ -103,7 +104,7 @@ namespace ClearHl7.V280.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
 
             if (segments.Length > 0)
@@ -114,17 +115,17 @@ namespace ClearHl7.V280.Segments
                 }
             }
 
-            PaymentRemittanceAdviceNumber = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
+            PaymentRemittanceAdviceNumber = segments.Length > 1 && segments[1].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
             PaymentRemittanceEffectiveDateTime = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDateTime() : null;
             PaymentRemittanceExpirationDateTime = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
-            PaymentMethod = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false, seps) : null;
+            PaymentMethod = segments.Length > 4 && segments[4].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[4], false, seps) : null;
             PaymentRemittanceDateTime = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDateTime() : null;
-            PaymentRemittanceAmount = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[6], false, seps) : null;
-            CheckNumber = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[7], false, seps) : null;
-            PayeeBankIdentification = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[8], false, seps) : null;
+            PaymentRemittanceAmount = segments.Length > 6 && segments[6].Length > 0 ? TypeSerializer.Deserialize<CompositePrice>(segments[6], false, seps) : null;
+            CheckNumber = segments.Length > 7 && segments[7].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[7], false, seps) : null;
+            PayeeBankIdentification = segments.Length > 8 && segments[8].Length > 0 ? TypeSerializer.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[8], false, seps) : null;
             PayeeTransitNumber = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
-            PayeeBankAccountId = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments[10], false, seps) : null;
-            PaymentOrganization = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[11], false, seps) : null;
+            PayeeBankAccountId = segments.Length > 10 && segments[10].Length > 0 ? TypeSerializer.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments[10], false, seps) : null;
+            PaymentOrganization = segments.Length > 11 && segments[11].Length > 0 ? TypeSerializer.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[11], false, seps) : null;
             EsrCodeLine = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
         }
 

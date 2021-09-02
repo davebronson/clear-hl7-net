@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V260.Types;
 
 namespace ClearHl7.V260.Segments
@@ -79,7 +80,7 @@ namespace ClearHl7.V260.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
 
             if (segments.Length > 0)
@@ -90,8 +91,8 @@ namespace ClearHl7.V260.Segments
                 }
             }
 
-            LotNumber = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
-            DeviceNumber = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false, seps) : null;
+            LotNumber = segments.Length > 1 && segments[1].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
+            DeviceNumber = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[2], false, seps) : null;
             DeviceName = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
             DeviceDataState = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
             LoadStatus = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;

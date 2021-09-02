@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Linq;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 
 namespace ClearHl7.V281.Segments
 {
@@ -45,7 +46,7 @@ namespace ClearHl7.V281.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
 
             if (segments.Length > 0)

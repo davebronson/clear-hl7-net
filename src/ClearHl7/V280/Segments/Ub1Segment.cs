@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V280.Types;
 
 namespace ClearHl7.V280.Segments
@@ -158,7 +159,7 @@ namespace ClearHl7.V280.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -178,14 +179,14 @@ namespace ClearHl7.V280.Segments
             ConditionCode = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             CoveredDays = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDecimal() : null;
             NonCoveredDays = segments.Length > 9 && segments[9].Length > 0 ? segments[9].ToNullableDecimal() : null;
-            ValueAmountCode = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ValueCodeAndAmount>(x, false, seps)) : null;
+            ValueAmountCode = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ValueCodeAndAmount>(x, false, seps)) : null;
             NumberOfGraceDays = segments.Length > 11 && segments[11].Length > 0 ? segments[11].ToNullableDecimal() : null;
-            SpecialProgramIndicator = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[12], false, seps) : null;
-            PsroUrApprovalIndicator = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[13], false, seps) : null;
+            SpecialProgramIndicator = segments.Length > 12 && segments[12].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[12], false, seps) : null;
+            PsroUrApprovalIndicator = segments.Length > 13 && segments[13].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[13], false, seps) : null;
             PsroUrApprovedStayFm = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDateTime() : null;
             PsroUrApprovedStayTo = segments.Length > 15 && segments[15].Length > 0 ? segments[15].ToNullableDateTime() : null;
-            Occurrence = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<OccurrenceCodeAndDate>(x, false, seps)) : null;
-            OccurrenceSpan = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[17], false, seps) : null;
+            Occurrence = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<OccurrenceCodeAndDate>(x, false, seps)) : null;
+            OccurrenceSpan = segments.Length > 17 && segments[17].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[17], false, seps) : null;
             OccurSpanStartDate = segments.Length > 18 && segments[18].Length > 0 ? segments[18].ToNullableDateTime() : null;
             OccurSpanEndDate = segments.Length > 19 && segments[19].Length > 0 ? segments[19].ToNullableDateTime() : null;
             Ub82Locator2 = segments.Length > 20 && segments[20].Length > 0 ? segments[20] : null;

@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V251.Types;
 
 namespace ClearHl7.V251.Segments
@@ -116,7 +117,7 @@ namespace ClearHl7.V251.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -128,18 +129,18 @@ namespace ClearHl7.V251.Segments
             }
 
             SetIdBpo = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
-            BpUniversalServiceIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false, seps) : null;
-            BpProcessingRequirements = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            BpUniversalServiceIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[2], false, seps) : null;
+            BpProcessingRequirements = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
             BpQuantity = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDecimal() : null;
             BpAmount = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDecimal() : null;
-            BpUnits = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[6], false, seps) : null;
+            BpUnits = segments.Length > 6 && segments[6].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[6], false, seps) : null;
             BpIntendedUseDateTime = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
-            BpIntendedDispenseFromLocation = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[8], false, seps) : null;
-            BpIntendedDispenseFromAddress = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<ExtendedAddress>(segments[9], false, seps) : null;
+            BpIntendedDispenseFromLocation = segments.Length > 8 && segments[8].Length > 0 ? TypeSerializer.Deserialize<PersonLocation>(segments[8], false, seps) : null;
+            BpIntendedDispenseFromAddress = segments.Length > 9 && segments[9].Length > 0 ? TypeSerializer.Deserialize<ExtendedAddress>(segments[9], false, seps) : null;
             BpRequestedDispenseDateTime = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDateTime() : null;
-            BpRequestedDispenseToLocation = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[11], false, seps) : null;
-            BpRequestedDispenseToAddress = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<ExtendedAddress>(segments[12], false, seps) : null;
-            BpIndicationForUse = segments.Length > 13 && segments[13].Length > 0 ? segments[13].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            BpRequestedDispenseToLocation = segments.Length > 11 && segments[11].Length > 0 ? TypeSerializer.Deserialize<PersonLocation>(segments[11], false, seps) : null;
+            BpRequestedDispenseToAddress = segments.Length > 12 && segments[12].Length > 0 ? TypeSerializer.Deserialize<ExtendedAddress>(segments[12], false, seps) : null;
+            BpIndicationForUse = segments.Length > 13 && segments[13].Length > 0 ? segments[13].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
             BpInformedConsentIndicator = segments.Length > 14 && segments[14].Length > 0 ? segments[14] : null;
         }
 

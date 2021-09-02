@@ -2,6 +2,7 @@
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 
 namespace ClearHl7.V280.Types
 {
@@ -50,11 +51,11 @@ namespace ClearHl7.V280.Types
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] separator = IsSubcomponent ? seps.SubcomponentSeparator : seps.ComponentSeparator;
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
             LicenseNumber = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
-            IssuingStateProvinceCountry = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], true, seps) : null;
+            IssuingStateProvinceCountry = segments.Length > 1 && segments[1].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[1], true, seps) : null;
             ExpirationDate = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDateTime() : null;
         }
 

@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ClearHl7.Helpers;
-using ClearHl7.V251.Segments;
+using ClearHl7.Serialization;
 
 namespace ClearHl7.V251
 {
@@ -24,7 +22,7 @@ namespace ClearHl7.V251
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
         public void FromDelimitedString(string delimitedString)
         {
-            Segments = MessageHelper.Deserialize<Message>(delimitedString).Segments;
+            Segments = MessageSerializer.Deserialize<Message>(delimitedString).Segments;
         }
 
         /// <summary>

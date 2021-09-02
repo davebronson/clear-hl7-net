@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V290.Types;
 
 namespace ClearHl7.V290.Segments
@@ -132,7 +133,7 @@ namespace ClearHl7.V290.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -144,22 +145,22 @@ namespace ClearHl7.V290.Segments
             }
 
             ActionCode = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
-            UniqueDeviceIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false, seps) : null;
-            DeviceType = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithNoExceptions>(x, false, seps)) : null;
-            DeviceStatus = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithNoExceptions>(x, false, seps)) : null;
-            ManufacturerDistributor = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[5], false, seps) : null;
+            UniqueDeviceIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[2], false, seps) : null;
+            DeviceType = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithNoExceptions>(x, false, seps)) : null;
+            DeviceStatus = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithNoExceptions>(x, false, seps)) : null;
+            ManufacturerDistributor = segments.Length > 5 && segments[5].Length > 0 ? TypeSerializer.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[5], false, seps) : null;
             BrandName = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
             ModelIdentifier = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
             CatalogueIdentifier = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
-            UdiDeviceIdentifier = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[9], false, seps) : null;
+            UdiDeviceIdentifier = segments.Length > 9 && segments[9].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[9], false, seps) : null;
             DeviceLotNumber = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
             DeviceSerialNumber = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
             DeviceManufactureDate = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDateTime() : null;
             DeviceExpiryDate = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDateTime() : null;
-            SafetyCharacteristics = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
-            DeviceDonationIdentification = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[15], false, seps) : null;
+            SafetyCharacteristics = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            DeviceDonationIdentification = segments.Length > 15 && segments[15].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[15], false, seps) : null;
             SoftwareVersionNumber = segments.Length > 16 && segments[16].Length > 0 ? segments[16] : null;
-            ImplantationStatus = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[17], false, seps) : null;
+            ImplantationStatus = segments.Length > 17 && segments[17].Length > 0 ? TypeSerializer.Deserialize<CodedWithNoExceptions>(segments[17], false, seps) : null;
         }
 
         /// <summary>

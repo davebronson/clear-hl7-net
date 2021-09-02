@@ -2,6 +2,7 @@
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 
 namespace ClearHl7.V271.Types
 {
@@ -128,7 +129,7 @@ namespace ClearHl7.V271.Types
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] separator = IsSubcomponent ? seps.SubcomponentSeparator : seps.ComponentSeparator;
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
             TelephoneNumber = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
@@ -145,9 +146,9 @@ namespace ClearHl7.V271.Types
             UnformattedTelephoneNumber = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
             EffectiveStartDate = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDateTime() : null;
             ExpirationDate = segments.Length > 13 && segments[13].Length > 0 ? segments[13].ToNullableDateTime() : null;
-            ExpirationReason = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[14], true, seps) : null;
-            ProtectionCode = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[15], true, seps) : null;
-            SharedTelecommunicationIdentifier = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[16], true, seps) : null;
+            ExpirationReason = segments.Length > 14 && segments[14].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[14], true, seps) : null;
+            ProtectionCode = segments.Length > 15 && segments[15].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[15], true, seps) : null;
+            SharedTelecommunicationIdentifier = segments.Length > 16 && segments[16].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[16], true, seps) : null;
             PreferenceOrder = segments.Length > 17 && segments[17].Length > 0 ? segments[17].ToNullableDecimal() : null;
         }
 

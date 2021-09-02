@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V230.Types;
 
 namespace ClearHl7.V230.Segments
@@ -140,7 +141,7 @@ namespace ClearHl7.V230.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -151,23 +152,23 @@ namespace ClearHl7.V230.Segments
                 }
             }
 
-            PrimaryKeyValuePrc = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[1], false, seps) : null;
-            FacilityIdPrc = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false, seps)) : null;
-            Department = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false, seps)) : null;
+            PrimaryKeyValuePrc = segments.Length > 1 && segments[1].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[1], false, seps) : null;
+            FacilityIdPrc = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedElement>(x, false, seps)) : null;
+            Department = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedElement>(x, false, seps)) : null;
             ValidPatientClasses = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
-            Price = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CompositePrice>(x, false, seps)) : null;
+            Price = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CompositePrice>(x, false, seps)) : null;
             Formula = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             MinimumQuantity = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDecimal() : null;
             MaximumQuantity = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDecimal() : null;
-            MinimumPrice = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[9], false, seps) : null;
-            MaximumPrice = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[10], false, seps) : null;
+            MinimumPrice = segments.Length > 9 && segments[9].Length > 0 ? TypeSerializer.Deserialize<CompositePrice>(segments[9], false, seps) : null;
+            MaximumPrice = segments.Length > 10 && segments[10].Length > 0 ? TypeSerializer.Deserialize<CompositePrice>(segments[10], false, seps) : null;
             EffectiveStartDate = segments.Length > 11 && segments[11].Length > 0 ? segments[11].ToNullableDateTime() : null;
             EffectiveEndDate = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDateTime() : null;
             PriceOverrideFlag = segments.Length > 13 && segments[13].Length > 0 ? segments[13] : null;
-            BillingCategory = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false, seps)) : null;
+            BillingCategory = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedElement>(x, false, seps)) : null;
             ChargeableFlag = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
             ActiveInactiveFlag = segments.Length > 16 && segments[16].Length > 0 ? segments[16] : null;
-            Cost = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[17], false, seps) : null;
+            Cost = segments.Length > 17 && segments[17].Length > 0 ? TypeSerializer.Deserialize<CompositePrice>(segments[17], false, seps) : null;
             ChargeOnIndicator = segments.Length > 18 && segments[18].Length > 0 ? segments[18] : null;
         }
 

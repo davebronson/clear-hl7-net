@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V230.Types;
 
 namespace ClearHl7.V230.Segments
@@ -130,7 +131,7 @@ namespace ClearHl7.V230.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -146,9 +147,9 @@ namespace ClearHl7.V230.Segments
             ConditionCode24To30 = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             CoveredDays7 = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
             NonCoveredDays8 = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
-            ValueAmountCode39To41 = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ValueCodeAndAmount>(x, false, seps)) : null;
-            OccurrenceCodeDate32To35 = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<OccurrenceCodeAndDate>(x, false, seps)) : null;
-            OccurrenceSpanCodeDates36 = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<OccurrenceSpanCodeAndDate>(x, false, seps)) : null;
+            ValueAmountCode39To41 = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ValueCodeAndAmount>(x, false, seps)) : null;
+            OccurrenceCodeDate32To35 = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<OccurrenceCodeAndDate>(x, false, seps)) : null;
+            OccurrenceSpanCodeDates36 = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<OccurrenceSpanCodeAndDate>(x, false, seps)) : null;
             UniformBillingLocator2State = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             UniformBillingLocator11State = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             UniformBillingLocator31National = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;

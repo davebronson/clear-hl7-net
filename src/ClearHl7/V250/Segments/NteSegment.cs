@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V250.Types;
 
 namespace ClearHl7.V250.Segments
@@ -65,7 +66,7 @@ namespace ClearHl7.V250.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -79,7 +80,7 @@ namespace ClearHl7.V250.Segments
             SetIdNte = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
             SourceOfComment = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
             Comment = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
-            CommentType = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[4], false, seps) : null;
+            CommentType = segments.Length > 4 && segments[4].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[4], false, seps) : null;
         }
 
         /// <summary>

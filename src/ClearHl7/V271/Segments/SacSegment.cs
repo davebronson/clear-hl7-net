@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V271.Types;
 
 namespace ClearHl7.V271.Segments
@@ -276,7 +277,7 @@ namespace ClearHl7.V271.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -287,50 +288,50 @@ namespace ClearHl7.V271.Segments
                 }
             }
 
-            ExternalAccessionIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
-            AccessionIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[2], false, seps) : null;
-            ContainerIdentifier = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[3], false, seps) : null;
-            PrimaryParentContainerIdentifier = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[4], false, seps) : null;
-            EquipmentContainerIdentifier = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[5], false, seps) : null;
+            ExternalAccessionIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
+            AccessionIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[2], false, seps) : null;
+            ContainerIdentifier = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[3], false, seps) : null;
+            PrimaryParentContainerIdentifier = segments.Length > 4 && segments[4].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[4], false, seps) : null;
+            EquipmentContainerIdentifier = segments.Length > 5 && segments[5].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[5], false, seps) : null;
             SpecimenSource = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
             RegistrationDateTime = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
-            ContainerStatus = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[8], false, seps) : null;
-            CarrierType = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[9], false, seps) : null;
-            CarrierIdentifier = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[10], false, seps) : null;
-            PositionInCarrier = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<NumericArray>(segments[11], false, seps) : null;
-            TrayTypeSac = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[12], false, seps) : null;
-            TrayIdentifier = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[13], false, seps) : null;
-            PositionInTray = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<NumericArray>(segments[14], false, seps) : null;
-            Location = segments.Length > 15 && segments[15].Length > 0 ? segments[15].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            ContainerStatus = segments.Length > 8 && segments[8].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[8], false, seps) : null;
+            CarrierType = segments.Length > 9 && segments[9].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[9], false, seps) : null;
+            CarrierIdentifier = segments.Length > 10 && segments[10].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[10], false, seps) : null;
+            PositionInCarrier = segments.Length > 11 && segments[11].Length > 0 ? TypeSerializer.Deserialize<NumericArray>(segments[11], false, seps) : null;
+            TrayTypeSac = segments.Length > 12 && segments[12].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[12], false, seps) : null;
+            TrayIdentifier = segments.Length > 13 && segments[13].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[13], false, seps) : null;
+            PositionInTray = segments.Length > 14 && segments[14].Length > 0 ? TypeSerializer.Deserialize<NumericArray>(segments[14], false, seps) : null;
+            Location = segments.Length > 15 && segments[15].Length > 0 ? segments[15].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
             ContainerHeight = segments.Length > 16 && segments[16].Length > 0 ? segments[16].ToNullableDecimal() : null;
             ContainerDiameter = segments.Length > 17 && segments[17].Length > 0 ? segments[17].ToNullableDecimal() : null;
             BarrierDelta = segments.Length > 18 && segments[18].Length > 0 ? segments[18].ToNullableDecimal() : null;
             BottomDelta = segments.Length > 19 && segments[19].Length > 0 ? segments[19].ToNullableDecimal() : null;
-            ContainerHeightDiameterDeltaUnits = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[20], false, seps) : null;
+            ContainerHeightDiameterDeltaUnits = segments.Length > 20 && segments[20].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[20], false, seps) : null;
             ContainerVolume = segments.Length > 21 && segments[21].Length > 0 ? segments[21].ToNullableDecimal() : null;
             AvailableSpecimenVolume = segments.Length > 22 && segments[22].Length > 0 ? segments[22].ToNullableDecimal() : null;
             InitialSpecimenVolume = segments.Length > 23 && segments[23].Length > 0 ? segments[23].ToNullableDecimal() : null;
-            VolumeUnits = segments.Length > 24 && segments[24].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[24], false, seps) : null;
-            SeparatorType = segments.Length > 25 && segments[25].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[25], false, seps) : null;
-            CapType = segments.Length > 26 && segments[26].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[26], false, seps) : null;
-            Additive = segments.Length > 27 && segments[27].Length > 0 ? segments[27].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
-            SpecimenComponent = segments.Length > 28 && segments[28].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[28], false, seps) : null;
-            DilutionFactor = segments.Length > 29 && segments[29].Length > 0 ? TypeHelper.Deserialize<StructuredNumeric>(segments[29], false, seps) : null;
-            Treatment = segments.Length > 30 && segments[30].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[30], false, seps) : null;
-            Temperature = segments.Length > 31 && segments[31].Length > 0 ? TypeHelper.Deserialize<StructuredNumeric>(segments[31], false, seps) : null;
+            VolumeUnits = segments.Length > 24 && segments[24].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[24], false, seps) : null;
+            SeparatorType = segments.Length > 25 && segments[25].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[25], false, seps) : null;
+            CapType = segments.Length > 26 && segments[26].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[26], false, seps) : null;
+            Additive = segments.Length > 27 && segments[27].Length > 0 ? segments[27].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            SpecimenComponent = segments.Length > 28 && segments[28].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[28], false, seps) : null;
+            DilutionFactor = segments.Length > 29 && segments[29].Length > 0 ? TypeSerializer.Deserialize<StructuredNumeric>(segments[29], false, seps) : null;
+            Treatment = segments.Length > 30 && segments[30].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[30], false, seps) : null;
+            Temperature = segments.Length > 31 && segments[31].Length > 0 ? TypeSerializer.Deserialize<StructuredNumeric>(segments[31], false, seps) : null;
             HemolysisIndex = segments.Length > 32 && segments[32].Length > 0 ? segments[32].ToNullableDecimal() : null;
-            HemolysisIndexUnits = segments.Length > 33 && segments[33].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[33], false, seps) : null;
+            HemolysisIndexUnits = segments.Length > 33 && segments[33].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[33], false, seps) : null;
             LipemiaIndex = segments.Length > 34 && segments[34].Length > 0 ? segments[34].ToNullableDecimal() : null;
-            LipemiaIndexUnits = segments.Length > 35 && segments[35].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[35], false, seps) : null;
+            LipemiaIndexUnits = segments.Length > 35 && segments[35].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[35], false, seps) : null;
             IcterusIndex = segments.Length > 36 && segments[36].Length > 0 ? segments[36].ToNullableDecimal() : null;
-            IcterusIndexUnits = segments.Length > 37 && segments[37].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[37], false, seps) : null;
+            IcterusIndexUnits = segments.Length > 37 && segments[37].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[37], false, seps) : null;
             FibrinIndex = segments.Length > 38 && segments[38].Length > 0 ? segments[38].ToNullableDecimal() : null;
-            FibrinIndexUnits = segments.Length > 39 && segments[39].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[39], false, seps) : null;
-            SystemInducedContaminants = segments.Length > 40 && segments[40].Length > 0 ? segments[40].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
-            DrugInterference = segments.Length > 41 && segments[41].Length > 0 ? segments[41].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
-            ArtificialBlood = segments.Length > 42 && segments[42].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[42], false, seps) : null;
-            SpecialHandlingCode = segments.Length > 43 && segments[43].Length > 0 ? segments[43].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
-            OtherEnvironmentalFactors = segments.Length > 44 && segments[44].Length > 0 ? segments[44].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            FibrinIndexUnits = segments.Length > 39 && segments[39].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[39], false, seps) : null;
+            SystemInducedContaminants = segments.Length > 40 && segments[40].Length > 0 ? segments[40].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            DrugInterference = segments.Length > 41 && segments[41].Length > 0 ? segments[41].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            ArtificialBlood = segments.Length > 42 && segments[42].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[42], false, seps) : null;
+            SpecialHandlingCode = segments.Length > 43 && segments[43].Length > 0 ? segments[43].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            OtherEnvironmentalFactors = segments.Length > 44 && segments[44].Length > 0 ? segments[44].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
         }
 
         /// <summary>

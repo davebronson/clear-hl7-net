@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 
 namespace ClearHl7.V231.Types
 {
@@ -80,7 +81,7 @@ namespace ClearHl7.V231.Types
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] separator = IsSubcomponent ? seps.SubcomponentSeparator : seps.ComponentSeparator;
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
             IdNumber = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
@@ -91,7 +92,7 @@ namespace ClearHl7.V231.Types
             Prefix = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
             Degree = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
             SourceTable = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
-            AssigningAuthority = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[8], true, seps) : null;
+            AssigningAuthority = segments.Length > 8 && segments[8].Length > 0 ? TypeSerializer.Deserialize<HierarchicDesignator>(segments[8], true, seps) : null;
         }
 
         /// <summary>

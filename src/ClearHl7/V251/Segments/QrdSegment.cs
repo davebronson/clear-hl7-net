@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V251.Types;
 
 namespace ClearHl7.V251.Segments
@@ -109,7 +110,7 @@ namespace ClearHl7.V251.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -126,11 +127,11 @@ namespace ClearHl7.V251.Segments
             QueryId = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
             DeferredResponseType = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
             DeferredResponseDateTime = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDateTime() : null;
-            QuantityLimitedRequest = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[7], false, seps) : null;
-            WhoSubjectFilter = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
-            WhatSubjectFilter = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false, seps)) : null; ;
-            WhatDepartmentDataCode = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false, seps)) : null; ;
-            WhatDataCodeValueQual = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ValueRange>(x, false, seps)) : null; ;
+            QuantityLimitedRequest = segments.Length > 7 && segments[7].Length > 0 ? TypeSerializer.Deserialize<CompositeQuantityWithUnits>(segments[7], false, seps) : null;
+            WhoSubjectFilter = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
+            WhatSubjectFilter = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedElement>(x, false, seps)) : null; ;
+            WhatDepartmentDataCode = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedElement>(x, false, seps)) : null; ;
+            WhatDataCodeValueQual = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ValueRange>(x, false, seps)) : null; ;
             QueryResultsLevel = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
         }
 

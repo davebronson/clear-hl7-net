@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V250.Types;
 
 namespace ClearHl7.V250.Segments
@@ -110,7 +111,7 @@ namespace ClearHl7.V250.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -121,18 +122,18 @@ namespace ClearHl7.V250.Segments
                 }
             }
 
-            PrimaryKeyValueLdp = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[1], false, seps) : null;
-            LocationDepartment = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[2], false, seps) : null;
+            PrimaryKeyValueLdp = segments.Length > 1 && segments[1].Length > 0 ? TypeSerializer.Deserialize<PersonLocation>(segments[1], false, seps) : null;
+            LocationDepartment = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[2], false, seps) : null;
             LocationService = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
-            SpecialtyType = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedElement>(x, false, seps)) : null;
+            SpecialtyType = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedElement>(x, false, seps)) : null;
             ValidPatientClasses = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             ActiveInactiveFlag = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
             ActivationDateLdp = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
             InactivationDateLdp = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDateTime() : null;
             InactivatedReason = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
-            VisitingHours = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<VisitingHours>(x, false, seps)) : null;
-            ContactPhone = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments[11], false, seps) : null;
-            LocationCostCenter = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[12], false, seps) : null;
+            VisitingHours = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<VisitingHours>(x, false, seps)) : null;
+            ContactPhone = segments.Length > 11 && segments[11].Length > 0 ? TypeSerializer.Deserialize<ExtendedTelecommunicationNumber>(segments[11], false, seps) : null;
+            LocationCostCenter = segments.Length > 12 && segments[12].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[12], false, seps) : null;
         }
 
         /// <summary>

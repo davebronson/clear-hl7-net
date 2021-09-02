@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V281.Types;
 
 namespace ClearHl7.V281.Segments
@@ -118,7 +119,7 @@ namespace ClearHl7.V281.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -130,18 +131,18 @@ namespace ClearHl7.V281.Segments
             }
 
             SetIdOrg = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
-            OrganizationUnitCode = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false, seps) : null;
-            OrganizationUnitTypeCode = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false, seps) : null;
+            OrganizationUnitCode = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[2], false, seps) : null;
+            OrganizationUnitTypeCode = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[3], false, seps) : null;
             PrimaryOrgUnitIndicator = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
-            PractitionerOrgUnitIdentifier = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments[5], false, seps) : null;
-            HealthCareProviderTypeCode = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[6], false, seps) : null;
-            HealthCareProviderClassificationCode = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[7], false, seps) : null;
-            HealthCareProviderAreaOfSpecializationCode = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[8], false, seps) : null;
-            EffectiveDateRange = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<DateTimeRange>(segments[9], false, seps) : null;
-            EmploymentStatusCode = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[10], false, seps) : null;
+            PractitionerOrgUnitIdentifier = segments.Length > 5 && segments[5].Length > 0 ? TypeSerializer.Deserialize<ExtendedCompositeIdWithCheckDigit>(segments[5], false, seps) : null;
+            HealthCareProviderTypeCode = segments.Length > 6 && segments[6].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[6], false, seps) : null;
+            HealthCareProviderClassificationCode = segments.Length > 7 && segments[7].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[7], false, seps) : null;
+            HealthCareProviderAreaOfSpecializationCode = segments.Length > 8 && segments[8].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[8], false, seps) : null;
+            EffectiveDateRange = segments.Length > 9 && segments[9].Length > 0 ? TypeSerializer.Deserialize<DateTimeRange>(segments[9], false, seps) : null;
+            EmploymentStatusCode = segments.Length > 10 && segments[10].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[10], false, seps) : null;
             BoardApprovalIndicator = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
             PrimaryCarePhysicianIndicator = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
-            CostCenterCode = segments.Length > 13 && segments[13].Length > 0 ? segments[13].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            CostCenterCode = segments.Length > 13 && segments[13].Length > 0 ? segments[13].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
         }
 
         /// <summary>

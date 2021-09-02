@@ -2,6 +2,7 @@
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 
 namespace ClearHl7.V290.Types
 {
@@ -96,16 +97,16 @@ namespace ClearHl7.V290.Types
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] separator = IsSubcomponent ? seps.SubcomponentSeparator : seps.ComponentSeparator;
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
-            Name = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CompositeIdNumberAndNameSimplified>(segments[0], true, seps) : null;
+            Name = segments.Length > 0 && segments[0].Length > 0 ? TypeSerializer.Deserialize<CompositeIdNumberAndNameSimplified>(segments[0], true, seps) : null;
             StartDateTime = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDateTime() : null;
             EndDateTime = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDateTime() : null;
             PointOfCare = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
             Room = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
             Bed = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
-            Facility = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[6], true, seps) : null;
+            Facility = segments.Length > 6 && segments[6].Length > 0 ? TypeSerializer.Deserialize<HierarchicDesignator>(segments[6], true, seps) : null;
             LocationStatus = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
             PatientLocationType = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
             Building = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;

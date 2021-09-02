@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V230.Types;
 
 namespace ClearHl7.V230.Segments
@@ -246,7 +247,7 @@ namespace ClearHl7.V230.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -257,10 +258,10 @@ namespace ClearHl7.V230.Segments
                 }
             }
 
-            PriorPendingLocation = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<PersonLocation>(segments[1], false, seps) : null;
-            AccommodationCode = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[2], false, seps) : null;
-            AdmitReason = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[3], false, seps) : null;
-            TransferReason = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[4], false, seps) : null;
+            PriorPendingLocation = segments.Length > 1 && segments[1].Length > 0 ? TypeSerializer.Deserialize<PersonLocation>(segments[1], false, seps) : null;
+            AccommodationCode = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[2], false, seps) : null;
+            AdmitReason = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[3], false, seps) : null;
+            TransferReason = segments.Length > 4 && segments[4].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[4], false, seps) : null;
             PatientValuables = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             PatientValuablesLocation = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
             VisitUserCode = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
@@ -269,7 +270,7 @@ namespace ClearHl7.V230.Segments
             EstimatedLengthOfInpatientStay = segments.Length > 10 && segments[10].Length > 0 ? segments[10].ToNullableDecimal() : null;
             ActualLengthOfInpatientStay = segments.Length > 11 && segments[11].Length > 0 ? segments[11].ToNullableDecimal() : null;
             VisitDescription = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
-            ReferralSourceCode = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[13], false, seps) : null;
+            ReferralSourceCode = segments.Length > 13 && segments[13].Length > 0 ? TypeSerializer.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[13], false, seps) : null;
             PreviousServiceDate = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDateTime() : null;
             EmploymentIllnessRelatedIndicator = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
             PurgeStatusCode = segments.Length > 16 && segments[16].Length > 0 ? segments[16] : null;
@@ -279,7 +280,7 @@ namespace ClearHl7.V230.Segments
             ExpectedNumberOfInsurancePlans = segments.Length > 20 && segments[20].Length > 0 ? segments[20].ToNullableDecimal() : null;
             VisitPublicityCode = segments.Length > 21 && segments[21].Length > 0 ? segments[21] : null;
             VisitProtectionIndicator = segments.Length > 22 && segments[22].Length > 0 ? segments[22] : null;
-            ClinicOrganizationName = segments.Length > 23 && segments[23].Length > 0 ? segments[23].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false, seps)) : null;
+            ClinicOrganizationName = segments.Length > 23 && segments[23].Length > 0 ? segments[23].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false, seps)) : null;
             PatientStatusCode = segments.Length > 24 && segments[24].Length > 0 ? segments[24] : null;
             VisitPriorityCode = segments.Length > 25 && segments[25].Length > 0 ? segments[25] : null;
             PreviousTreatmentDate = segments.Length > 26 && segments[26].Length > 0 ? segments[26].ToNullableDateTime() : null;

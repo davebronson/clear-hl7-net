@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V282.Types;
 
 namespace ClearHl7.V282.Segments
@@ -76,7 +77,7 @@ namespace ClearHl7.V282.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -90,7 +91,7 @@ namespace ClearHl7.V282.Segments
             RecordLevelEventCode = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
             MfnControlId = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
             EventCompletionDateTime = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
-            MfnRecordLevelErrorReturn = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false, seps) : null;
+            MfnRecordLevelErrorReturn = segments.Length > 4 && segments[4].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[4], false, seps) : null;
             PrimaryKeyValueMfa = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             PrimaryKeyValueTypeMfa = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
         }

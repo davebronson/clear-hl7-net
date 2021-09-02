@@ -2,6 +2,7 @@
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 
 namespace ClearHl7.V250.Types
 {
@@ -95,20 +96,20 @@ namespace ClearHl7.V250.Types
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] separator = IsSubcomponent ? seps.SubcomponentSeparator : seps.ComponentSeparator;
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
-            Quantity = segments.Length > 0 && segments[0].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[0], true, seps) : null;
-            Interval = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<RepeatInterval>(segments[1], true, seps) : null;
+            Quantity = segments.Length > 0 && segments[0].Length > 0 ? TypeSerializer.Deserialize<CompositeQuantityWithUnits>(segments[0], true, seps) : null;
+            Interval = segments.Length > 1 && segments[1].Length > 0 ? TypeSerializer.Deserialize<RepeatInterval>(segments[1], true, seps) : null;
             Duration = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
             StartDateTime = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
             EndDateTime = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
             Priority = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
             Condition = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
-            Text = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<Text>(segments[7], true, seps) : null;
+            Text = segments.Length > 7 && segments[7].Length > 0 ? TypeSerializer.Deserialize<Text>(segments[7], true, seps) : null;
             Conjunction = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
-            OrderSequencing = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<OrderSequenceDefinition>(segments[9], true, seps) : null;
-            OccurrenceDuration = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[10], true, seps) : null;
+            OrderSequencing = segments.Length > 9 && segments[9].Length > 0 ? TypeSerializer.Deserialize<OrderSequenceDefinition>(segments[9], true, seps) : null;
+            OccurrenceDuration = segments.Length > 10 && segments[10].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[10], true, seps) : null;
             TotalOccurrences = segments.Length > 11 && segments[11].Length > 0 ? segments[11].ToNullableDecimal() : null;
         }
 

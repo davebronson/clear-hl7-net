@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V290.Types;
 
 namespace ClearHl7.V290.Segments
@@ -69,7 +70,7 @@ namespace ClearHl7.V290.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
 
             if (segments.Length > 0)
@@ -80,9 +81,9 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
-            DiagnosticRelatedGroup = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[1], false, seps) : null;
-            MajorDiagnosticCategory = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[2], false, seps) : null;
-            LowerAndUpperTrimPoints = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<NumericRange>(segments[3], false, seps) : null;
+            DiagnosticRelatedGroup = segments.Length > 1 && segments[1].Length > 0 ? TypeSerializer.Deserialize<CodedWithNoExceptions>(segments[1], false, seps) : null;
+            MajorDiagnosticCategory = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<CodedWithNoExceptions>(segments[2], false, seps) : null;
+            LowerAndUpperTrimPoints = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<NumericRange>(segments[3], false, seps) : null;
             AverageLengthOfStay = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDecimal() : null;
             RelativeWeight = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDecimal() : null;
         }

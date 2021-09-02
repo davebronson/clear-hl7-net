@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V251.Types;
 
 namespace ClearHl7.V251.Segments
@@ -160,7 +161,7 @@ namespace ClearHl7.V251.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -173,24 +174,24 @@ namespace ClearHl7.V251.Segments
 
             SetIdDg1 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
             DiagnosisCodingMethod = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
-            DiagnosisCodeDg1 = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[3], false, seps) : null;
+            DiagnosisCodeDg1 = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[3], false, seps) : null;
             DiagnosisDescription = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
             DiagnosisDateTime = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDateTime() : null;
             DiagnosisType = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
-            MajorDiagnosticCategory = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[7], false, seps) : null;
-            DiagnosticRelatedGroup = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[8], false, seps) : null;
+            MajorDiagnosticCategory = segments.Length > 7 && segments[7].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[7], false, seps) : null;
+            DiagnosticRelatedGroup = segments.Length > 8 && segments[8].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[8], false, seps) : null;
             DrgApprovalIndicator = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
             DrgGrouperReviewCode = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
-            OutlierType = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[11], false, seps) : null;
+            OutlierType = segments.Length > 11 && segments[11].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[11], false, seps) : null;
             OutlierDays = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDecimal() : null;
-            OutlierCost = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CompositePrice>(segments[13], false, seps) : null;
+            OutlierCost = segments.Length > 13 && segments[13].Length > 0 ? TypeSerializer.Deserialize<CompositePrice>(segments[13], false, seps) : null;
             GrouperVersionAndType = segments.Length > 14 && segments[14].Length > 0 ? segments[14] : null;
             DiagnosisPriority = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
-            DiagnosingClinician = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
+            DiagnosingClinician = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
             DiagnosisClassification = segments.Length > 17 && segments[17].Length > 0 ? segments[17] : null;
             ConfidentialIndicator = segments.Length > 18 && segments[18].Length > 0 ? segments[18] : null;
             AttestationDateTime = segments.Length > 19 && segments[19].Length > 0 ? segments[19].ToNullableDateTime() : null;
-            DiagnosisIdentifier = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[20], false, seps) : null;
+            DiagnosisIdentifier = segments.Length > 20 && segments[20].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[20], false, seps) : null;
             DiagnosisActionCode = segments.Length > 21 && segments[21].Length > 0 ? segments[21] : null;
         }
 

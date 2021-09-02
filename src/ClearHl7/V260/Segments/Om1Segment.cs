@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V260.Types;
 
 namespace ClearHl7.V260.Segments
@@ -291,7 +292,7 @@ namespace ClearHl7.V260.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -303,24 +304,24 @@ namespace ClearHl7.V260.Segments
             }
 
             SequenceNumberTestObservationMasterFile = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
-            ProducersServiceTestObservationId = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[2], false, seps) : null;
+            ProducersServiceTestObservationId = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[2], false, seps) : null;
             PermittedDataTypes = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             SpecimenRequired = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
-            ProducerId = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[5], false, seps) : null;
-            ObservationDescription = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<Text>(segments[6], false, seps) : null;
-            OtherServiceTestObservationIdsForTheObservation = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[7], false, seps) : null;
+            ProducerId = segments.Length > 5 && segments[5].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[5], false, seps) : null;
+            ObservationDescription = segments.Length > 6 && segments[6].Length > 0 ? TypeSerializer.Deserialize<Text>(segments[6], false, seps) : null;
+            OtherServiceTestObservationIdsForTheObservation = segments.Length > 7 && segments[7].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[7], false, seps) : null;
             OtherNames = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             PreferredReportNameForTheObservation = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
             PreferredShortNameOrMnemonicForTheObservation = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
             PreferredLongNameForTheObservation = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
             Orderability = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
-            IdentityOfInstrumentUsedToPerformThisStudy = segments.Length > 13 && segments[13].Length > 0 ? segments[13].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
-            CodedRepresentationOfMethod = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            IdentityOfInstrumentUsedToPerformThisStudy = segments.Length > 13 && segments[13].Length > 0 ? segments[13].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            CodedRepresentationOfMethod = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
             PortableDeviceIndicator = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
-            ObservationProducingDepartmentSection = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
-            TelephoneNumberOfSection = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments[17], false, seps) : null;
+            ObservationProducingDepartmentSection = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            TelephoneNumberOfSection = segments.Length > 17 && segments[17].Length > 0 ? TypeSerializer.Deserialize<ExtendedTelecommunicationNumber>(segments[17], false, seps) : null;
             NatureOfServiceTestObservation = segments.Length > 18 && segments[18].Length > 0 ? segments[18] : null;
-            ReportSubheader = segments.Length > 19 && segments[19].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[19], false, seps) : null;
+            ReportSubheader = segments.Length > 19 && segments[19].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[19], false, seps) : null;
             ReportDisplayOrder = segments.Length > 20 && segments[20].Length > 0 ? segments[20] : null;
             DateTimeStampForAnyChangeInDefinitionForTheObservation = segments.Length > 21 && segments[21].Length > 0 ? segments[21].ToNullableDateTime() : null;
             EffectiveDateTimeOfChange = segments.Length > 22 && segments[22].Length > 0 ? segments[22].ToNullableDateTime() : null;
@@ -328,27 +329,27 @@ namespace ClearHl7.V260.Segments
             ProcessingTime = segments.Length > 24 && segments[24].Length > 0 ? segments[24].ToNullableDecimal() : null;
             ProcessingPriority = segments.Length > 25 && segments[25].Length > 0 ? segments[25].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             ReportingPriority = segments.Length > 26 && segments[26].Length > 0 ? segments[26] : null;
-            OutsideSitesWhereObservationMayBePerformed = segments.Length > 27 && segments[27].Length > 0 ? segments[27].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
-            AddressOfOutsideSites = segments.Length > 28 && segments[28].Length > 0 ? segments[28].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedAddress>(x, false, seps)) : null;
-            PhoneNumberOfOutsideSite = segments.Length > 29 && segments[29].Length > 0 ? TypeHelper.Deserialize<ExtendedTelecommunicationNumber>(segments[29], false, seps) : null;
-            ConfidentialityCode = segments.Length > 30 && segments[30].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[30], false, seps) : null;
-            ObservationsRequiredToInterpretThisObservation = segments.Length > 31 && segments[31].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[31], false, seps) : null;
-            InterpretationOfObservations = segments.Length > 32 && segments[32].Length > 0 ? TypeHelper.Deserialize<Text>(segments[32], false, seps) : null;
-            ContraindicationsToObservations = segments.Length > 33 && segments[33].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[33], false, seps) : null;
-            ReflexTestsObservations = segments.Length > 34 && segments[34].Length > 0 ? segments[34].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
-            RulesThatTriggerReflexTesting = segments.Length > 35 && segments[35].Length > 0 ? TypeHelper.Deserialize<Text>(segments[35], false, seps) : null;
-            FixedCannedMessage = segments.Length > 36 && segments[36].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[36], false, seps) : null;
-            PatientPreparation = segments.Length > 37 && segments[37].Length > 0 ? TypeHelper.Deserialize<Text>(segments[37], false, seps) : null;
-            ProcedureMedication = segments.Length > 38 && segments[38].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[38], false, seps) : null;
-            FactorsThatMayAffectTheObservation = segments.Length > 39 && segments[39].Length > 0 ? TypeHelper.Deserialize<Text>(segments[39], false, seps) : null;
+            OutsideSitesWhereObservationMayBePerformed = segments.Length > 27 && segments[27].Length > 0 ? segments[27].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            AddressOfOutsideSites = segments.Length > 28 && segments[28].Length > 0 ? segments[28].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedAddress>(x, false, seps)) : null;
+            PhoneNumberOfOutsideSite = segments.Length > 29 && segments[29].Length > 0 ? TypeSerializer.Deserialize<ExtendedTelecommunicationNumber>(segments[29], false, seps) : null;
+            ConfidentialityCode = segments.Length > 30 && segments[30].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[30], false, seps) : null;
+            ObservationsRequiredToInterpretThisObservation = segments.Length > 31 && segments[31].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[31], false, seps) : null;
+            InterpretationOfObservations = segments.Length > 32 && segments[32].Length > 0 ? TypeSerializer.Deserialize<Text>(segments[32], false, seps) : null;
+            ContraindicationsToObservations = segments.Length > 33 && segments[33].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[33], false, seps) : null;
+            ReflexTestsObservations = segments.Length > 34 && segments[34].Length > 0 ? segments[34].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            RulesThatTriggerReflexTesting = segments.Length > 35 && segments[35].Length > 0 ? TypeSerializer.Deserialize<Text>(segments[35], false, seps) : null;
+            FixedCannedMessage = segments.Length > 36 && segments[36].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[36], false, seps) : null;
+            PatientPreparation = segments.Length > 37 && segments[37].Length > 0 ? TypeSerializer.Deserialize<Text>(segments[37], false, seps) : null;
+            ProcedureMedication = segments.Length > 38 && segments[38].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[38], false, seps) : null;
+            FactorsThatMayAffectTheObservation = segments.Length > 39 && segments[39].Length > 0 ? TypeSerializer.Deserialize<Text>(segments[39], false, seps) : null;
             ServiceTestObservationPerformanceSchedule = segments.Length > 40 && segments[40].Length > 0 ? segments[40].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
-            DescriptionOfTestMethods = segments.Length > 41 && segments[41].Length > 0 ? TypeHelper.Deserialize<Text>(segments[41], false, seps) : null;
-            KindOfQuantityObserved = segments.Length > 42 && segments[42].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[42], false, seps) : null;
-            PointVersusInterval = segments.Length > 43 && segments[43].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[43], false, seps) : null;
-            ChallengeInformation = segments.Length > 44 && segments[44].Length > 0 ? TypeHelper.Deserialize<Text>(segments[44], false, seps) : null;
-            RelationshipModifier = segments.Length > 45 && segments[45].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[45], false, seps) : null;
-            TargetAnatomicSiteOfTest = segments.Length > 46 && segments[46].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[46], false, seps) : null;
-            ModalityOfImagingMeasurement = segments.Length > 47 && segments[47].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[47], false, seps) : null;
+            DescriptionOfTestMethods = segments.Length > 41 && segments[41].Length > 0 ? TypeSerializer.Deserialize<Text>(segments[41], false, seps) : null;
+            KindOfQuantityObserved = segments.Length > 42 && segments[42].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[42], false, seps) : null;
+            PointVersusInterval = segments.Length > 43 && segments[43].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[43], false, seps) : null;
+            ChallengeInformation = segments.Length > 44 && segments[44].Length > 0 ? TypeSerializer.Deserialize<Text>(segments[44], false, seps) : null;
+            RelationshipModifier = segments.Length > 45 && segments[45].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[45], false, seps) : null;
+            TargetAnatomicSiteOfTest = segments.Length > 46 && segments[46].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[46], false, seps) : null;
+            ModalityOfImagingMeasurement = segments.Length > 47 && segments[47].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[47], false, seps) : null;
         }
 
         /// <summary>

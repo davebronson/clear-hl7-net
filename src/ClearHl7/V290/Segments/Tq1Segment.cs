@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V290.Types;
 
 namespace ClearHl7.V290.Segments
@@ -115,7 +116,7 @@ namespace ClearHl7.V290.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -127,18 +128,18 @@ namespace ClearHl7.V290.Segments
             }
 
             SetIdTq1 = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
-            Quantity = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[2], false, seps) : null;
-            RepeatPattern = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<RepeatPattern>(x, false, seps)) : null;
+            Quantity = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<CompositeQuantityWithUnits>(segments[2], false, seps) : null;
+            RepeatPattern = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<RepeatPattern>(x, false, seps)) : null;
             ExplicitTime = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => x.ToDateTime()) : null;
-            RelativeTimeAndUnits = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CompositeQuantityWithUnits>(x, false, seps)) : null;
-            ServiceDuration = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[6], false, seps) : null;
+            RelativeTimeAndUnits = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CompositeQuantityWithUnits>(x, false, seps)) : null;
+            ServiceDuration = segments.Length > 6 && segments[6].Length > 0 ? TypeSerializer.Deserialize<CompositeQuantityWithUnits>(segments[6], false, seps) : null;
             StartDateTime = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
             EndDateTime = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDateTime() : null;
-            Priority = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
-            ConditionText = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<Text>(segments[10], false, seps) : null;
-            TextInstruction = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<Text>(segments[11], false, seps) : null;
+            Priority = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
+            ConditionText = segments.Length > 10 && segments[10].Length > 0 ? TypeSerializer.Deserialize<Text>(segments[10], false, seps) : null;
+            TextInstruction = segments.Length > 11 && segments[11].Length > 0 ? TypeSerializer.Deserialize<Text>(segments[11], false, seps) : null;
             Conjunction = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
-            OccurrenceDuration = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CompositeQuantityWithUnits>(segments[13], false, seps) : null;
+            OccurrenceDuration = segments.Length > 13 && segments[13].Length > 0 ? TypeSerializer.Deserialize<CompositeQuantityWithUnits>(segments[13], false, seps) : null;
             TotalOccurrences = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDecimal() : null;
         }
 

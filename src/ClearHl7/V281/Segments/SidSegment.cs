@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Linq;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V281.Types;
 
 namespace ClearHl7.V281.Segments
@@ -62,7 +63,7 @@ namespace ClearHl7.V281.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
 
             if (segments.Length > 0)
@@ -73,10 +74,10 @@ namespace ClearHl7.V281.Segments
                 }
             }
 
-            ApplicationMethodIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[1], false, seps) : null;
+            ApplicationMethodIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[1], false, seps) : null;
             SubstanceLotNumber = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
             SubstanceContainerIdentifier = segments.Length > 3 && segments[3].Length > 0 ? segments[3] : null;
-            SubstanceManufacturerIdentifier = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[4], false, seps) : null;
+            SubstanceManufacturerIdentifier = segments.Length > 4 && segments[4].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[4], false, seps) : null;
         }
 
         /// <summary>

@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 
 namespace ClearHl7.V280
 {
@@ -21,7 +22,7 @@ namespace ClearHl7.V280
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
         public void FromDelimitedString(string delimitedString)
         {
-            Segments = MessageHelper.Deserialize<Message>(delimitedString).Segments;
+            Segments = MessageSerializer.Deserialize<Message>(delimitedString).Segments;
         }
 
         /// <summary>

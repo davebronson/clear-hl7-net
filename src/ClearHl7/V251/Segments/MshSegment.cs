@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V251.Types;
 
 namespace ClearHl7.V251.Segments
@@ -164,7 +165,7 @@ namespace ClearHl7.V251.Segments
         public void FromDelimitedString(string delimitedString, Separators separators)
         {
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(new[] { Configuration.FieldSeparator }, StringSplitOptions.None);
 
             if (segments.Length > 0)
@@ -183,25 +184,25 @@ namespace ClearHl7.V251.Segments
             EncodingCharacters = segments[1];
             Separators seps = new Separators().UsingInput(EncodingCharacters);
 
-            SendingApplication = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[2], false, seps) : null;
-            SendingFacility = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[3], false, seps) : null;
-            ReceivingApplication = segments.Length > 4 && segments[4].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[4], false, seps) : null;
-            ReceivingFacility = segments.Length > 5 && segments[5].Length > 0 ? TypeHelper.Deserialize<HierarchicDesignator>(segments[5], false, seps) : null;
+            SendingApplication = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<HierarchicDesignator>(segments[2], false, seps) : null;
+            SendingFacility = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<HierarchicDesignator>(segments[3], false, seps) : null;
+            ReceivingApplication = segments.Length > 4 && segments[4].Length > 0 ? TypeSerializer.Deserialize<HierarchicDesignator>(segments[4], false, seps) : null;
+            ReceivingFacility = segments.Length > 5 && segments[5].Length > 0 ? TypeSerializer.Deserialize<HierarchicDesignator>(segments[5], false, seps) : null;
             DateTimeOfMessage = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDateTime() : null;
             Security = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
-            MessageType = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<MessageType>(segments[8], false, seps) : null;
+            MessageType = segments.Length > 8 && segments[8].Length > 0 ? TypeSerializer.Deserialize<MessageType>(segments[8], false, seps) : null;
             MessageControlId = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
-            ProcessingId = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<ProcessingType>(segments[10], false, seps) : null;
-            VersionId = segments.Length > 11 && segments[11].Length > 0 ? TypeHelper.Deserialize<VersionIdentifier>(segments[11], false, seps) : null;
+            ProcessingId = segments.Length > 10 && segments[10].Length > 0 ? TypeSerializer.Deserialize<ProcessingType>(segments[10], false, seps) : null;
+            VersionId = segments.Length > 11 && segments[11].Length > 0 ? TypeSerializer.Deserialize<VersionIdentifier>(segments[11], false, seps) : null;
             SequenceNumber = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDecimal() : null;
             ContinuationPointer = segments.Length > 13 && segments[13].Length > 0 ? segments[13] : null;
             AcceptAcknowledgmentType = segments.Length > 14 && segments[14].Length > 0 ? segments[14] : null;
             ApplicationAcknowledgmentType = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
             CountryCode = segments.Length > 16 && segments[16].Length > 0 ? segments[16] : null;
             CharacterSet = segments.Length > 17 && segments[17].Length > 0 ? segments[17].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
-            PrincipalLanguageOfMessage = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<CodedElement>(segments[18], false, seps) : null;
+            PrincipalLanguageOfMessage = segments.Length > 18 && segments[18].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[18], false, seps) : null;
             AlternateCharacterSetHandlingScheme = segments.Length > 19 && segments[19].Length > 0 ? segments[19] : null;
-            MessageProfileIdentifier = segments.Length > 20 && segments[20].Length > 0 ? segments[20].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false, seps)) : null;
+            MessageProfileIdentifier = segments.Length > 20 && segments[20].Length > 0 ? segments[20].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<EntityIdentifier>(x, false, seps)) : null;
         }
 
         /// <summary>

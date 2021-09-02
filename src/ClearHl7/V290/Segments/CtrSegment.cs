@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V290.Types;
 
 namespace ClearHl7.V290.Segments
@@ -155,7 +156,7 @@ namespace ClearHl7.V290.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -166,27 +167,27 @@ namespace ClearHl7.V290.Segments
                 }
             }
 
-            ContractIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
+            ContractIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
             ContractDescription = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
-            ContractStatus = segments.Length > 3 && segments[3].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[3], false, seps) : null;
+            ContractStatus = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[3], false, seps) : null;
             EffectiveDate = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
             ExpirationDate = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDateTime() : null;
-            ContractOwnerName = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<ExtendedPersonName>(segments[6], false, seps) : null;
-            ContractOriginatorName = segments.Length > 7 && segments[7].Length > 0 ? TypeHelper.Deserialize<ExtendedPersonName>(segments[7], false, seps) : null;
-            SupplierType = segments.Length > 8 && segments[8].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[8], false, seps) : null;
-            ContractType = segments.Length > 9 && segments[9].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[9], false, seps) : null;
-            FreeOnBoardFreightTerms = segments.Length > 10 && segments[10].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[10], false, seps) : null;
+            ContractOwnerName = segments.Length > 6 && segments[6].Length > 0 ? TypeSerializer.Deserialize<ExtendedPersonName>(segments[6], false, seps) : null;
+            ContractOriginatorName = segments.Length > 7 && segments[7].Length > 0 ? TypeSerializer.Deserialize<ExtendedPersonName>(segments[7], false, seps) : null;
+            SupplierType = segments.Length > 8 && segments[8].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[8], false, seps) : null;
+            ContractType = segments.Length > 9 && segments[9].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[9], false, seps) : null;
+            FreeOnBoardFreightTerms = segments.Length > 10 && segments[10].Length > 0 ? TypeSerializer.Deserialize<CodedWithNoExceptions>(segments[10], false, seps) : null;
             PriceProtectionDate = segments.Length > 11 && segments[11].Length > 0 ? segments[11].ToNullableDateTime() : null;
-            FixedPriceContractIndicator = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[12], false, seps) : null;
-            GroupPurchasingOrganization = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[13], false, seps) : null;
-            MaximumMarkup = segments.Length > 14 && segments[14].Length > 0 ? TypeHelper.Deserialize<MoneyOrPercentage>(segments[14], false, seps) : null;
-            ActualMarkup = segments.Length > 15 && segments[15].Length > 0 ? TypeHelper.Deserialize<MoneyOrPercentage>(segments[15], false, seps) : null;
-            Corporation = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false, seps)) : null;
-            ParentOfCorporation = segments.Length > 17 && segments[17].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[17], false, seps) : null;
-            PricingTierLevel = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[18], false, seps) : null;
+            FixedPriceContractIndicator = segments.Length > 12 && segments[12].Length > 0 ? TypeSerializer.Deserialize<CodedWithNoExceptions>(segments[12], false, seps) : null;
+            GroupPurchasingOrganization = segments.Length > 13 && segments[13].Length > 0 ? TypeSerializer.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[13], false, seps) : null;
+            MaximumMarkup = segments.Length > 14 && segments[14].Length > 0 ? TypeSerializer.Deserialize<MoneyOrPercentage>(segments[14], false, seps) : null;
+            ActualMarkup = segments.Length > 15 && segments[15].Length > 0 ? TypeSerializer.Deserialize<MoneyOrPercentage>(segments[15], false, seps) : null;
+            Corporation = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false, seps)) : null;
+            ParentOfCorporation = segments.Length > 17 && segments[17].Length > 0 ? TypeSerializer.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[17], false, seps) : null;
+            PricingTierLevel = segments.Length > 18 && segments[18].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[18], false, seps) : null;
             ContractPriority = segments.Length > 19 && segments[19].Length > 0 ? segments[19] : null;
-            ClassOfTrade = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<CodedWithExceptions>(segments[20], false, seps) : null;
-            AssociatedContractId = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[21], false, seps) : null;
+            ClassOfTrade = segments.Length > 20 && segments[20].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[20], false, seps) : null;
+            AssociatedContractId = segments.Length > 21 && segments[21].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[21], false, seps) : null;
         }
 
         /// <summary>

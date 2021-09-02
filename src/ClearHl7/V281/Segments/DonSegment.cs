@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V281.Types;
 
 namespace ClearHl7.V281.Segments
@@ -220,7 +221,7 @@ namespace ClearHl7.V281.Segments
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
             string[] segments = delimitedString == null
-                ? new string[] { }
+                ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (segments.Length > 0)
@@ -231,39 +232,39 @@ namespace ClearHl7.V281.Segments
                 }
             }
 
-            DonationIdentificationNumberDin = segments.Length > 1 && segments[1].Length > 0 ? TypeHelper.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
-            DonationType = segments.Length > 2 && segments[2].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[2], false, seps) : null;
+            DonationIdentificationNumberDin = segments.Length > 1 && segments[1].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
+            DonationType = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<CodedWithNoExceptions>(segments[2], false, seps) : null;
             PhlebotomyStartDateTime = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDateTime() : null;
             PhlebotomyEndDateTime = segments.Length > 4 && segments[4].Length > 0 ? segments[4].ToNullableDateTime() : null;
             DonationDuration = segments.Length > 5 && segments[5].Length > 0 ? segments[5].ToNullableDecimal() : null;
-            DonationDurationUnits = segments.Length > 6 && segments[6].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[6], false, seps) : null;
-            IntendedProcedureType = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithNoExceptions>(x, false, seps)) : null;
-            ActualProcedureType = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithNoExceptions>(x, false, seps)) : null;
+            DonationDurationUnits = segments.Length > 6 && segments[6].Length > 0 ? TypeSerializer.Deserialize<CodedWithNoExceptions>(segments[6], false, seps) : null;
+            IntendedProcedureType = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithNoExceptions>(x, false, seps)) : null;
+            ActualProcedureType = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithNoExceptions>(x, false, seps)) : null;
             DonorEligibilityFlag = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
-            DonorEligibilityProcedureType = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithNoExceptions>(x, false, seps)) : null;
+            DonorEligibilityProcedureType = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithNoExceptions>(x, false, seps)) : null;
             DonorEligibilityDate = segments.Length > 11 && segments[11].Length > 0 ? segments[11].ToNullableDateTime() : null;
-            ProcessInterruption = segments.Length > 12 && segments[12].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[12], false, seps) : null;
-            ProcessInterruptionReason = segments.Length > 13 && segments[13].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[13], false, seps) : null;
-            PhlebotomyIssue = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<CodedWithNoExceptions>(x, false, seps)) : null;
+            ProcessInterruption = segments.Length > 12 && segments[12].Length > 0 ? TypeSerializer.Deserialize<CodedWithNoExceptions>(segments[12], false, seps) : null;
+            ProcessInterruptionReason = segments.Length > 13 && segments[13].Length > 0 ? TypeSerializer.Deserialize<CodedWithNoExceptions>(segments[13], false, seps) : null;
+            PhlebotomyIssue = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithNoExceptions>(x, false, seps)) : null;
             IntendedRecipientBloodRelative = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
-            IntendedRecipientName = segments.Length > 16 && segments[16].Length > 0 ? TypeHelper.Deserialize<ExtendedPersonName>(segments[16], false, seps) : null;
+            IntendedRecipientName = segments.Length > 16 && segments[16].Length > 0 ? TypeSerializer.Deserialize<ExtendedPersonName>(segments[16], false, seps) : null;
             IntendedRecipientDob = segments.Length > 17 && segments[17].Length > 0 ? segments[17].ToNullableDateTime() : null;
-            IntendedRecipientFacility = segments.Length > 18 && segments[18].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[18], false, seps) : null;
+            IntendedRecipientFacility = segments.Length > 18 && segments[18].Length > 0 ? TypeSerializer.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(segments[18], false, seps) : null;
             IntendedRecipientProcedureDate = segments.Length > 19 && segments[19].Length > 0 ? segments[19].ToNullableDateTime() : null;
-            IntendedRecipientOrderingProvider = segments.Length > 20 && segments[20].Length > 0 ? TypeHelper.Deserialize<ExtendedPersonName>(segments[20], false, seps) : null;
-            PhlebotomyStatus = segments.Length > 21 && segments[21].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[21], false, seps) : null;
-            ArmStick = segments.Length > 22 && segments[22].Length > 0 ? TypeHelper.Deserialize<CodedWithNoExceptions>(segments[22], false, seps) : null;
-            BleedStartPhlebotomist = segments.Length > 23 && segments[23].Length > 0 ? TypeHelper.Deserialize<ExtendedPersonName>(segments[23], false, seps) : null;
-            BleedEndPhlebotomist = segments.Length > 24 && segments[24].Length > 0 ? TypeHelper.Deserialize<ExtendedPersonName>(segments[24], false, seps) : null;
+            IntendedRecipientOrderingProvider = segments.Length > 20 && segments[20].Length > 0 ? TypeSerializer.Deserialize<ExtendedPersonName>(segments[20], false, seps) : null;
+            PhlebotomyStatus = segments.Length > 21 && segments[21].Length > 0 ? TypeSerializer.Deserialize<CodedWithNoExceptions>(segments[21], false, seps) : null;
+            ArmStick = segments.Length > 22 && segments[22].Length > 0 ? TypeSerializer.Deserialize<CodedWithNoExceptions>(segments[22], false, seps) : null;
+            BleedStartPhlebotomist = segments.Length > 23 && segments[23].Length > 0 ? TypeSerializer.Deserialize<ExtendedPersonName>(segments[23], false, seps) : null;
+            BleedEndPhlebotomist = segments.Length > 24 && segments[24].Length > 0 ? TypeSerializer.Deserialize<ExtendedPersonName>(segments[24], false, seps) : null;
             AphaeresisTypeMachine = segments.Length > 25 && segments[25].Length > 0 ? segments[25] : null;
             AphaeresisMachineSerialNumber = segments.Length > 26 && segments[26].Length > 0 ? segments[26] : null;
             DonorReaction = segments.Length > 27 && segments[27].Length > 0 ? segments[27] : null;
-            FinalReviewStaffId = segments.Length > 28 && segments[28].Length > 0 ? TypeHelper.Deserialize<ExtendedPersonName>(segments[28], false, seps) : null;
+            FinalReviewStaffId = segments.Length > 28 && segments[28].Length > 0 ? TypeSerializer.Deserialize<ExtendedPersonName>(segments[28], false, seps) : null;
             FinalReviewDateTime = segments.Length > 29 && segments[29].Length > 0 ? segments[29].ToNullableDateTime() : null;
             NumberOfTubesCollected = segments.Length > 30 && segments[30].Length > 0 ? segments[30].ToNullableDecimal() : null;
-            DonationSampleIdentifier = segments.Length > 31 && segments[31].Length > 0 ? segments[31].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<EntityIdentifier>(x, false, seps)) : null;
-            DonationAcceptStaff = segments.Length > 32 && segments[32].Length > 0 ? TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[32], false, seps) : null;
-            DonationMaterialReviewStaff = segments.Length > 33 && segments[33].Length > 0 ? segments[33].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeHelper.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
+            DonationSampleIdentifier = segments.Length > 31 && segments[31].Length > 0 ? segments[31].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<EntityIdentifier>(x, false, seps)) : null;
+            DonationAcceptStaff = segments.Length > 32 && segments[32].Length > 0 ? TypeSerializer.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[32], false, seps) : null;
+            DonationMaterialReviewStaff = segments.Length > 33 && segments[33].Length > 0 ? segments[33].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
         }
 
         /// <summary>
