@@ -198,7 +198,7 @@ namespace ClearHl7.V282.Segments
 
             if (segments.Length < 2 || segments[1].Length != 4)
             {
-                throw new ArgumentException($"{ nameof(delimitedString) } does not contains exactly four encoding characters.", nameof(delimitedString));
+                throw new ArgumentException($"{ nameof(delimitedString) } does not contain exactly four encoding characters.", nameof(delimitedString));
             }
 
             EncodingCharacters = segments[1];
