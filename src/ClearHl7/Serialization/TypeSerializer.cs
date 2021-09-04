@@ -22,7 +22,7 @@ namespace ClearHl7.Serialization
                 throw new ArgumentNullException(nameof(delimitedString), $"{ delimitedString } is null.");
             }
 
-            return Deserialize<T>(delimitedString, isSubcomponent);
+            return Deserialize<T>(delimitedString, isSubcomponent, null);
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace ClearHl7.Serialization
         /// <summary>
         /// Converts the value of a specified Type into a string.
         /// </summary>
-        /// <param name="value">The Type to convert.</param>
+        /// <param name="type">The Type to convert.</param>
         /// <returns>A string.</returns>
         /// <exception cref="ArgumentNullException">value is null.</exception>
         public static string Serialize(IType type)
