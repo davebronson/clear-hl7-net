@@ -26,6 +26,7 @@
     <Folder Include="HelpersTests\" />
     <Folder Include="FormatTests\" />
     <Folder Include="ConfigurationTests\" />
+    <Folder Include="SerializationTests\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,5 +35,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="ConfigurationTests\" />
+    <None Remove="SerializationTests\" />
   </ItemGroup>
 </Project>

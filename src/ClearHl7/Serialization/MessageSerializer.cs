@@ -10,8 +10,9 @@ namespace ClearHl7.Serialization
     public static class MessageSerializer
     {
         /// <summary>
-        /// Returns a new instance of type T with values parsed from the given delimited string.
+        /// Parses the text representing a single Type value into an instance of a specified type.
         /// </summary>
+        /// <typeparam name="T">The target type of the string value.</typeparam>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
         /// <returns>An instance of type T.</returns>
         /// <exception cref="ArgumentException">
@@ -94,6 +95,22 @@ namespace ClearHl7.Serialization
 
             // Return
             return item;
+        }
+
+        /// <summary>
+        /// Converts the value of a specified Message into a string.
+        /// </summary>
+        /// <param name="message">The Message to convert.</param>
+        /// <returns>A string.</returns>
+        /// <exception cref="ArgumentNullException">value is null.</exception>
+        public static string Serialize(IMessage message)
+        {
+            if (message == null)
+            {
+                throw new ArgumentNullException(nameof(message), $"{ message } is null.");
+            }
+
+            return message.ToDelimitedString();
         }
     }
 }

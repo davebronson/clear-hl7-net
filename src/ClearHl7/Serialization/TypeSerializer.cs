@@ -8,8 +8,9 @@ namespace ClearHl7.Serialization
     public static class TypeSerializer
     {
         /// <summary>
-        /// Returns a new instance of type T with values parsed from the given delimited string.
+        /// Parses the text representing a single Type value into an instance of a specified type.
         /// </summary>
+        /// <typeparam name="T">The target type of the string value.</typeparam>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
         /// <param name="isSubcomponent">A boolean value that indicates whether this instance is a subcomponent of another HL7 component instance.</param>
         /// <param name="separators">The separators to use for splitting the string.</param>
@@ -27,6 +28,22 @@ namespace ClearHl7.Serialization
             item.FromDelimitedString(delimitedString, separators);
 
             return item;
+        }
+
+        /// <summary>
+        /// Converts the value of a specified Type into a string.
+        /// </summary>
+        /// <param name="value">The Type to convert.</param>
+        /// <returns>A string.</returns>
+        /// <exception cref="ArgumentNullException">value is null.</exception>
+        public static string Serialize(IType type)
+        {
+            if (type == null)
+            {
+                throw new ArgumentNullException(nameof(type), $"{ type } is null.");
+            }
+
+            return type.ToDelimitedString();
         }
     }
 }

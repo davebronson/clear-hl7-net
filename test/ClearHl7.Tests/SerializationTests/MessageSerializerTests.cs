@@ -1,21 +1,22 @@
 ﻿using System;
+using ClearHl7.Serialization;
 using ClearHl7.V290;
 using ClearHl7.V290.Segments;
 using ClearHl7.V290.Types;
 using FluentAssertions;
 using Xunit;
 
-namespace ClearHl7.Tests.MessagesTests
+namespace ClearHl7.Tests.SerializationTests
 {
-    public class MessageTests
+    public class MessageSerializerTests
     {
         /// <summary>
-        /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
+        /// Validates that Deserialize() returns the object instance with all properties correctly initialized.
         /// </summary>
         [Fact]
-        public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
+        public void Deserialize_WithThreeSegments_ReturnsCorrectlyInitializedFields()
         {
-            IMessage expected = new Message
+            Message expected = new()
             {
                 Segments = new ISegment[]
                 {
@@ -90,19 +91,19 @@ namespace ClearHl7.Tests.MessagesTests
                 }
             };
 
-            IMessage actual = new Message();
-            actual.FromDelimitedString("MSH|^~\\&|Sender 1||Receiver 1||20201202144539|||||2.9\rIN1|15|MNO Healthcare|736HB^^^DES1&UID654&Type 5~AA876^^^LLL098&UID123&Type 7\rCDM||Code 1^ABC~Code 2^ZYX\r");
+            string delimitedString = "MSH|^~\\&|Sender 1||Receiver 1||20201202144539|||||2.9\rIN1|15|MNO Healthcare|736HB^^^DES1&UID654&Type 5~AA876^^^LLL098&UID123&Type 7\rCDM||Code 1^ABC~Code 2^ZYX\r";
+            Message actual = MessageSerializer.Deserialize<Message>(delimitedString);
 
             expected.Should().BeEquivalentTo(actual);
         }
 
         /// <summary>
-        /// Validates that ToDelimitedString() returns output with all segments populated and in order.
+        /// Validates that Serialize() returns output with all properties populated and in the correct sequence.
         /// </summary>
         [Fact]
-        public void ToDelimitedString_WithThreeSegments_ReturnsCorrectMessage()
+        public void Serialize_WithAllThreeSegments_ReturnsCorrectlySequencedFields()
         {
-            Message message = new Message
+            IMessage hl7Message = new Message
             {
                 Segments = new ISegment[]
                 {
@@ -178,7 +179,7 @@ namespace ClearHl7.Tests.MessagesTests
             };
 
             string expected = "MSH|^~\\&|Sender 1||Receiver 1||20201202144539|||||2.9\rIN1|15|MNO Healthcare|736HB^^^DES1&UID654&Type 5~AA876^^^LLL098&UID123&Type 7\rCDM||Code 1^ABC~Code 2^ZYX\r";
-            string actual = message.ToDelimitedString();
+            string actual = MessageSerializer.Serialize(hl7Message);
 
             Assert.Equal(expected, actual);
         }
