@@ -26,7 +26,7 @@ namespace ClearHl7.Tests.SerializationTests
             };
 
             string delimitedString = "1^2^3^4^5^6^7^8";
-            IType actual = TypeSerializer.Deserialize<Address>(delimitedString, false, null);
+            IType actual = TypeSerializer.Deserialize<Address>(delimitedString, false);
 
             expected.Should().BeEquivalentTo(actual);
         }

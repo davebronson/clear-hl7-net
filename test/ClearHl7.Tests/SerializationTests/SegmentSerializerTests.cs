@@ -61,7 +61,7 @@ namespace ClearHl7.Tests.SerializationTests
             };
 
             string delimitedString = "ABS|1|2|3|20200401000000|5|6|20200701000000|8|9|10|11|12|13|14";
-            ISegment actual = SegmentSerializer.Deserialize<AbsSegment>(delimitedString, null);
+            ISegment actual = SegmentSerializer.Deserialize<AbsSegment>(delimitedString);
 
             expected.Should().BeEquivalentTo(actual);
         }

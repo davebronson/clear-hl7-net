@@ -34,14 +34,11 @@ namespace ClearHl7.Serialization
             T item = Activator.CreateInstance<T>();
 
             CultureInfo culture = CultureInfo.CurrentCulture;
-            string[] segments = delimitedString == null ? Array.Empty<string>() : delimitedString.Split(new char[] { (char)13 }, StringSplitOptions.RemoveEmptyEntries);
+            string[] segments = delimitedString == null
+                ? Array.Empty<string>()
+                : delimitedString.Split(new char[] { (char)13 }, StringSplitOptions.RemoveEmptyEntries);
             List<ISegment> list = new();
             Type messageClass = item.GetType();
-
-            // TODO: Add a check to ensure that line endings are \r
-            // TODO: Add unit tests for Message.FromDelimitedString()
-            // TODO: Test with a non-standard set of delimiter chars
-            // TODO: Test methods for DetectHl7Version()
 
             if (segments.Length > 0)
             {
@@ -51,7 +48,7 @@ namespace ClearHl7.Serialization
                 }
             }
 
-            // Process the first segment (MSH)
+            // Process the first segment (Expected: MSH)
             ISegment mshSegment = (ISegment)messageClass.Assembly.CreateInstance($"{ messageClass.Namespace }.Segments.MshSegment", false);
             if (segments.Length > 0)
             {
