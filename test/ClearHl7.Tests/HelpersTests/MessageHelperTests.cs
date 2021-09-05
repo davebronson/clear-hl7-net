@@ -250,111 +250,111 @@ namespace ClearHl7.Tests.HelpersTests
         }
 
         /// <summary>
-        /// Validates that NewMessageForVersion() returns the correct message instance when V2.3 is specified.
+        /// Validates that NewInstance() returns the correct message instance when V2.3 is specified.
         /// </summary>
         [Fact]
-        public void NewMessageForVersion_With23Specified_ReturnsCorrectHl7Version()
+        public void NewInstance_With23Specified_ReturnsCorrectHl7Version()
         {
-            Assert.IsType<V230.Message>(MessageHelper.NewMessageForVersion(Hl7Version.V230));
+            Assert.IsType<V230.Message>(MessageHelper.NewInstance(Hl7Version.V230));
         }
 
         /// <summary>
-        /// Validates that NewMessageForVersion() returns the correct message instance when V2.3.1 is specified.
+        /// Validates that NewInstance() returns the correct message instance when V2.3.1 is specified.
         /// </summary>
         [Fact]
-        public void NewMessageForVersion_Wit231Specified_ReturnsCorrectHl7Version()
+        public void NewInstance_Wit231Specified_ReturnsCorrectHl7Version()
         {
-            Assert.IsType<V231.Message>(MessageHelper.NewMessageForVersion(Hl7Version.V231));
+            Assert.IsType<V231.Message>(MessageHelper.NewInstance(Hl7Version.V231));
         }
 
         /// <summary>
-        /// Validates that NewMessageForVersion() returns the correct message instance when V2.4 is specified.
+        /// Validates that NewInstance() returns the correct message instance when V2.4 is specified.
         /// </summary>
         [Fact]
-        public void NewMessageForVersion_With24Specified_ReturnsCorrectHl7Version()
+        public void NewInstance_With24Specified_ReturnsCorrectHl7Version()
         {
-            Assert.IsType<V240.Message>(MessageHelper.NewMessageForVersion(Hl7Version.V240));
+            Assert.IsType<V240.Message>(MessageHelper.NewInstance(Hl7Version.V240));
         }
 
         /// <summary>
-        /// Validates that NewMessageForVersion() returns the correct message instance when V2.5 is specified.
+        /// Validates that NewInstance() returns the correct message instance when V2.5 is specified.
         /// </summary>
         [Fact]
-        public void NewMessageForVersion_With25Specified_ReturnsCorrectHl7Version()
+        public void NewInstance_With25Specified_ReturnsCorrectHl7Version()
         {
-            Assert.IsType<V250.Message>(MessageHelper.NewMessageForVersion(Hl7Version.V250));
+            Assert.IsType<V250.Message>(MessageHelper.NewInstance(Hl7Version.V250));
         }
 
         /// <summary>
-        /// Validates that NewMessageForVersion() returns the correct message instance when V2.5.1 is specified.
+        /// Validates that NewInstance() returns the correct message instance when V2.5.1 is specified.
         /// </summary>
         [Fact]
-        public void NewMessageForVersion_With251Specified_ReturnsCorrectHl7Version()
+        public void NewInstance_With251Specified_ReturnsCorrectHl7Version()
         {
-            Assert.IsType<V251.Message>(MessageHelper.NewMessageForVersion(Hl7Version.V251));
+            Assert.IsType<V251.Message>(MessageHelper.NewInstance(Hl7Version.V251));
         }
 
         /// <summary>
-        /// Validates that NewMessageForVersion() returns the correct message instance when V2.6 is specified.
+        /// Validates that NewInstance() returns the correct message instance when V2.6 is specified.
         /// </summary>
         [Fact]
-        public void NewMessageForVersion_With26Specified_ReturnsCorrectHl7Version()
+        public void NewInstance_With26Specified_ReturnsCorrectHl7Version()
         {
-            Assert.IsType<V260.Message>(MessageHelper.NewMessageForVersion(Hl7Version.V260));
+            Assert.IsType<V260.Message>(MessageHelper.NewInstance(Hl7Version.V260));
         }
 
         /// <summary>
-        /// Validates that NewMessageForVersion() returns the correct message instance when V2.7 is specified.
+        /// Validates that NewInstance() returns the correct message instance when V2.7 is specified.
         /// </summary>
         [Fact]
-        public void NewMessageForVersion_With27Specified_ReturnsCorrectHl7Version()
+        public void NewInstance_With27Specified_ReturnsCorrectHl7Version()
         {
-            Assert.IsType<V270.Message>(MessageHelper.NewMessageForVersion(Hl7Version.V270));
+            Assert.IsType<V270.Message>(MessageHelper.NewInstance(Hl7Version.V270));
         }
 
         /// <summary>
-        /// Validates that NewMessageForVersion() returns the correct message instance when V2.7.1 is specified.
+        /// Validates that NewInstance() returns the correct message instance when V2.7.1 is specified.
         /// </summary>
         [Fact]
-        public void NewMessageForVersion_With271Specified_ReturnsCorrectHl7Version()
+        public void NewInstance_With271Specified_ReturnsCorrectHl7Version()
         {
-            Assert.IsType<V271.Message>(MessageHelper.NewMessageForVersion(Hl7Version.V271));
+            Assert.IsType<V271.Message>(MessageHelper.NewInstance(Hl7Version.V271));
         }
 
         /// <summary>
-        /// Validates that NewMessageForVersion() returns the correct message instance when V2.8 is specified.
+        /// Validates that NewInstance() returns the correct message instance when V2.8 is specified.
         /// </summary>
         [Fact]
-        public void NewMessageForVersion_With28Specified_ReturnsCorrectHl7Version()
+        public void NewInstance_With28Specified_ReturnsCorrectHl7Version()
         {
-            Assert.IsType<V280.Message>(MessageHelper.NewMessageForVersion(Hl7Version.V280));
+            Assert.IsType<V280.Message>(MessageHelper.NewInstance(Hl7Version.V280));
         }
 
         /// <summary>
-        /// Validates that NewMessageForVersion() returns the correct message instance when V2.8.1 is specified.
+        /// Validates that NewInstance() returns the correct message instance when V2.8.1 is specified.
         /// </summary>
         [Fact]
-        public void NewMessageForVersion_With281Specified_ReturnsCorrectHl7Version()
+        public void NewInstance_With281Specified_ReturnsCorrectHl7Version()
         {
-            Assert.IsType<V281.Message>(MessageHelper.NewMessageForVersion(Hl7Version.V281));
+            Assert.IsType<V281.Message>(MessageHelper.NewInstance(Hl7Version.V281));
         }
 
         /// <summary>
-        /// Validates that NewMessageForVersion() returns the correct message instance when V2.8.2 is specified.
+        /// Validates that NewInstance() returns the correct message instance when V2.8.2 is specified.
         /// </summary>
         [Fact]
-        public void NewMessageForVersion_With282Specified_ReturnsCorrectHl7Version()
+        public void NewInstance_With282Specified_ReturnsCorrectHl7Version()
         {
-            Assert.IsType<V282.Message>(MessageHelper.NewMessageForVersion(Hl7Version.V282));
+            Assert.IsType<V282.Message>(MessageHelper.NewInstance(Hl7Version.V282));
         }
 
         /// <summary>
-        /// Validates that NewMessageForVersion() returns the correct message instance when V2.9 is specified.
+        /// Validates that NewInstance() returns the correct message instance when V2.9 is specified.
         /// </summary>
         [Fact]
-        public void NewMessageForVersion_With29Specified_ReturnsCorrectHl7Version()
+        public void NewInstance_With29Specified_ReturnsCorrectHl7Version()
         {
-            Assert.IsType<V290.Message>(MessageHelper.NewMessageForVersion(Hl7Version.V290));
+            Assert.IsType<V290.Message>(MessageHelper.NewInstance(Hl7Version.V290));
         }
     }
 }

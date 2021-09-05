@@ -88,7 +88,7 @@ namespace ClearHl7.Helpers
         /// <param name="version">The HL7 version.</param>
         /// <returns>An instance of the Message class.</returns>
         /// <exception cref="ArgumentException">An invalid HL7 version was provided.</exception>
-        public static IMessage NewMessageForVersion(Hl7Version version)
+        public static IMessage NewInstance(Hl7Version version)
         {
             return version switch
             {
@@ -104,7 +104,7 @@ namespace ClearHl7.Helpers
                 Hl7Version.V281 => new V281.Message(),
                 Hl7Version.V282 => new V282.Message(),
                 Hl7Version.V290 => new V290.Message(),
-                _ => throw new ArgumentException("An invalid version was provided.", nameof(version)),
+                _ => throw new ArgumentException("An invalid version was provided.", nameof(version))
             };
         }
     }
