@@ -205,9 +205,11 @@ using ClearHl7.V282;
 string messageString = YourApp.ReceiveMessage();
 
 // Two ways that you can deserialize:
-// 1) Call MessageSerializer.Deserialize(), which returns a new Message instance
+// 1) Call MessageSerializer.Deserialize(), which returns
+//    a new Message instance
 IMessage message = MessageSerializer.Deserialize<Message>(messageString);
-// 2) Call FromDelimitedString() on the existing Message instance, which performs the conversion in-place
+// 2) Call FromDelimitedString() on the existing Message
+//    instance, which performs the conversion in-place
 IMessage message = new Message();
 message.FromDelimitedString(messageString);
 ```
@@ -256,7 +258,9 @@ using ClearHl7;
 Configuration.FieldRepeatSeparator = "%"; // Use percent symbol
 Configuration.SubcomponentSeparator = "/"; // Use forward slash
 
-Configuration.ResetSeparators(); // Reset the separator configuration properties to their default, recommended values
+// Reset the separator configuration properties to their
+// default, recommended values
+Configuration.ResetSeparators();
 ```
 
 ## Using the ClearHl7.Codes Component
@@ -270,8 +274,12 @@ using ClearHl7.Codes.V282.Helpers;
 var helper = new EnumHelper();
 
 // Example using the MaritalStatus and YesNoIndicator codes
-// You must call EnumHelper.EnumToCode() to receive the actual coded string for a given enum value
-pidSegment.MaritalStatus = new CodedWithExceptions { Identifier = helper.EnumToCode(CodeMaritalStatus.Married) };
+// You must call EnumHelper.EnumToCode() to receive the
+// actual coded string for a given enum value
+pidSegment.MaritalStatus = new CodedWithExceptions
+{
+    Identifier = helper.EnumToCode(CodeMaritalStatus.Married)
+};
 pidSegment.MultipleBirthIndicator = helper.EnumToCode(CodeYesNoIndicator.No);
 ```
 
