@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using ClearHl7.Helpers;
 
 namespace ClearHl7.Serialization
 {
@@ -10,7 +11,43 @@ namespace ClearHl7.Serialization
     public static class MessageSerializer
     {
         /// <summary>
-        /// Parses the text representing a single Type value into an instance of a specified type.
+        /// Parses the text representing a single Message value into an instance of the appropriate type based upon the HL7 version provided in delimitedString.
+        /// </summary>
+        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <returns>An instance of type Message.</returns>
+        /// <exception cref="ArgumentException">Unable to determine the HL7 version provided in delimitedString.</exception>
+        /// <exception cref="ArgumentNullException">delimitedString is null.</exception>
+        public static IMessage Deserialize(string delimitedString)
+        {
+            if (string.IsNullOrEmpty(delimitedString))
+            {
+                throw new ArgumentNullException(nameof(delimitedString), $"{ delimitedString } is null.");
+            }
+
+            // Detect HL7 version
+            Hl7Version version = MessageHelper.DetectVersion(delimitedString);
+
+            // Return
+            return version switch
+            {
+                Hl7Version.V230 => Deserialize<V230.Message>(delimitedString),
+                Hl7Version.V231 => Deserialize<V231.Message>(delimitedString),
+                Hl7Version.V240 => Deserialize<V240.Message>(delimitedString),
+                Hl7Version.V250 => Deserialize<V250.Message>(delimitedString),
+                Hl7Version.V251 => Deserialize<V251.Message>(delimitedString),
+                Hl7Version.V260 => Deserialize<V260.Message>(delimitedString),
+                Hl7Version.V270 => Deserialize<V270.Message>(delimitedString),
+                Hl7Version.V271 => Deserialize<V271.Message>(delimitedString),
+                Hl7Version.V280 => Deserialize<V280.Message>(delimitedString),
+                Hl7Version.V281 => Deserialize<V281.Message>(delimitedString),
+                Hl7Version.V282 => Deserialize<V282.Message>(delimitedString),
+                Hl7Version.V290 => Deserialize<V290.Message>(delimitedString),
+                _ => throw new ArgumentException($"Unable to determine the HL7 version provided in { nameof(delimitedString) }.", nameof(delimitedString))
+            };
+        }
+
+        /// <summary>
+        /// Parses the text representing a single Message value into an instance of a specified type.
         /// </summary>
         /// <typeparam name="T">The target type of the string value.</typeparam>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>

@@ -98,6 +98,138 @@ namespace ClearHl7.Tests.SerializationTests
         }
 
         /// <summary>
+        /// Validates that Deserialize() throws an ArgumentNullException when a null input is provided.
+        /// </summary>
+        [Fact]
+        public void Deserialize_WithNullInput_ThrowsArgumentNullException()
+        {
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                MessageSerializer.Deserialize(null);
+            });
+        }
+
+        /// <summary>
+        /// Validates that Deserialize() throws an ArgumentException when an invalid HL7 version is specified.
+        /// </summary>
+        [Fact]
+        public void Deserialize_WithInvalidVersionSpecified_ThrowsArgumentException()
+        {
+            Assert.Throws<ArgumentException>(() =>
+            {
+                MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.2.7||");
+            });
+        }
+
+        /// <summary>
+        /// Validates that Deserialize() returns the correct Message instance when V2.3 is specified.
+        /// </summary>
+        [Fact]
+        public void Deserialize_With23Specified_ReturnsCorrectMesssageVersion()
+        {
+            Assert.IsType<V230.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.3||"));
+        }
+
+        /// <summary>
+        /// Validates that Deserialize() returns the correct Message instance when V2.3.1 is specified.
+        /// </summary>
+        [Fact]
+        public void Deserialize_With231Specified_ReturnsCorrectMesssageVersion()
+        {
+            Assert.IsType<V231.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.3.1||"));
+        }
+
+        /// <summary>
+        /// Validates that Deserialize() returns the correct Message instance when V2.4 is specified.
+        /// </summary>
+        [Fact]
+        public void Deserialize_With24Specified_ReturnsCorrectMesssageVersion()
+        {
+            Assert.IsType<V240.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.4||"));
+        }
+
+        /// <summary>
+        /// Validates that Deserialize() returns the correct Message instance when V2.5 is specified.
+        /// </summary>
+        [Fact]
+        public void Deserialize_With25Specified_ReturnsCorrectMesssageVersion()
+        {
+            Assert.IsType<V250.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.5||"));
+        }
+
+        /// <summary>
+        /// Validates that Deserialize() returns the correct Message instance when V2.5.1 is specified.
+        /// </summary>
+        [Fact]
+        public void Deserialize_With251Specified_ReturnsCorrectMesssageVersion()
+        {
+            Assert.IsType<V251.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.5.1||"));
+        }
+
+        /// <summary>
+        /// Validates that Deserialize() returns the correct Message instance when V2.6 is specified.
+        /// </summary>
+        [Fact]
+        public void Deserialize_With26Specified_ReturnsCorrectMesssageVersion()
+        {
+            Assert.IsType<V260.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.6||"));
+        }
+
+        /// <summary>
+        /// Validates that Deserialize() returns the correct Message instance when V2.7 is specified.
+        /// </summary>
+        [Fact]
+        public void Deserialize_With27Specified_ReturnsCorrectMesssageVersion()
+        {
+            Assert.IsType<V270.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.7||"));
+        }
+
+        /// <summary>
+        /// Validates that Deserialize() returns the correct Message instance when V2.7.1 is specified.
+        /// </summary>
+        [Fact]
+        public void Deserialize_With271Specified_ReturnsCorrectMesssageVersion()
+        {
+            Assert.IsType<V271.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.7.1||"));
+        }
+
+        /// <summary>
+        /// Validates that Deserialize() returns the correct Message instance when V2.8 is specified.
+        /// </summary>
+        [Fact]
+        public void Deserialize_With28Specified_ReturnsCorrectMesssageVersion()
+        {
+            Assert.IsType<V280.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.8||"));
+        }
+
+        /// <summary>
+        /// Validates that Deserialize() returns the correct Message instance when V2.8.1 is specified.
+        /// </summary>
+        [Fact]
+        public void Deserialize_With281Specified_ReturnsCorrectMesssageVersion()
+        {
+            Assert.IsType<V281.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.8.1||"));
+        }
+
+        /// <summary>
+        /// Validates that Deserialize() returns the correct Message instance when V2.8.2 is specified.
+        /// </summary>
+        [Fact]
+        public void Deserialize_With282Specified_ReturnsCorrectMesssageVersion()
+        {
+            Assert.IsType<V282.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.8.2||"));
+        }
+
+        /// <summary>
+        /// Validates that Deserialize() returns the correct Message instance when V2.9 is specified.
+        /// </summary>
+        [Fact]
+        public void Deserialize_With29Specified_ReturnsCorrectMesssageVersion()
+        {
+            Assert.IsType<V290.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.9||"));
+        }
+
+        /// <summary>
         /// Validates that Serialize() returns output with all properties populated and in the correct sequence.
         /// </summary>
         [Fact]

@@ -180,10 +180,14 @@ var message = new Message
     }
 };
 
-// Two ways that you can serialize the structure into HL7 'pipehat' format:
+// there are two ways that you can serialize the structure into HL7 'pipehat' format:
+
 // 1) Call MessageSerializer.Serialize()
+// **********************************
 string output = MessageSerializer.Serialize(message);
+
 // 2) Call ToDelimitedString() on the Message instance
+// **********************************
 string output = message.ToDelimitedString();
 
 // Outputs the following:
@@ -204,12 +208,19 @@ using ClearHl7.V282;
 
 string messageString = YourApp.ReceiveMessage();
 
-// Two ways that you can deserialize:
+// There are two ways that you can deserialize:
+
 // 1) Call MessageSerializer.Deserialize(), which returns
 //    a new Message instance
-IMessage message = MessageSerializer.Deserialize<Message>(messageString);
-// 2) Call FromDelimitedString() on the existing Message
+// **********************************
+// I don't know the HL7 version:
+IMessage message = MessageSerializer.Deserialize(messageString);
+// I do know the HL7 version, or want to force a specific version:
+IMessage message = MessageSerializer.Deserialize<V282.Message>(messageString);
+
+// 2) Call FromDelimitedString() on an existing Message
 //    instance, which performs the conversion in-place
+// **********************************
 IMessage message = new Message();
 message.FromDelimitedString(messageString);
 ```
@@ -241,7 +252,7 @@ using ClearHl7.Helpers;
 // [...]
 
 // Create a new Message instance for V2.8.1
-IMessage message = MessageHelper.NewMessageForVersion(Hl7Version.V281);
+IMessage message = MessageHelper.NewInstance(Hl7Version.V281);
 
 // Returns:
 //      An instance of ClearHl7.V281.Message

@@ -8,7 +8,7 @@ namespace ClearHl7.Serialization
     public static class SegmentSerializer
     {
         /// <summary>
-        /// Parses the text representing a single Type value into an instance of a specified type.
+        /// Parses the text representing a single Segment value into an instance of a specified type.
         /// </summary>
         /// <typeparam name="T">The target type of the string value.</typeparam>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
