@@ -20,7 +20,7 @@ HL7® is the registered trademark of Health Level Seven International, and the u
 * .NET 5
 
 ## Supported HL7 Versions
-Several published versions exist for the HL7 Version 2.x messaging standard.  clear-hl7-net supports the following:
+Several versions exist for the HL7 Version 2.x messaging standard.  clear-hl7-net supports the following:
 * 2.3
 * 2.31
 * 2.4
@@ -59,11 +59,12 @@ HL7 Version 2.x messages consist of a collection of segments, with the MSH segme
         * Type
             * Sub-Type
 
-## Example
+## Example: Building a Message
 Let's build a sample `Message` containing the standard MSH `Segment`, and accompanied by PID, PVI, and Zxx `Segment`s.
 ```csharp
 using ClearHl7;
 using ClearHl7.Helpers;
+using ClearHl7.Serialization;
 using ClearHl7.V282;
 using ClearHl7.V282.Segments;
 using ClearHl7.V282.Types;
@@ -87,7 +88,7 @@ var message = new Message
 
             // ADT message, Admit/visit notification
             MessageType = new MessageType { MessageCode = "ADT", TriggerEvent = "A01", MessageStructure = "ADT_A01" },
-            
+
             // Production, Current processing transmitted at intervals
             ProcessingId = new ProcessingType { ProcessingId = "P", ProcessingMode = "T" }
         },
@@ -151,7 +152,7 @@ var message = new Message
             Ordinal = 2,
             PatientClass = new CodedWithExceptions { Identifier = "I" }, // Inpatient
             AdmissionType = new CodedWithExceptions { Identifier = "E" }, // Emergency
-            ReadmissionIndicator = new CodedWithExceptions { Identifier = "R" }, // Re-admission	
+            ReadmissionIndicator = new CodedWithExceptions { Identifier = "R" }, // Re-admission
             AmbulatoryStatus = new CodedWithExceptions[]
             {
                 new CodedWithExceptions { Identifier = "A2" }, // Ambulates with assistive device
@@ -179,7 +180,10 @@ var message = new Message
     }
 };
 
-// Call ToDelimitedString() on the Message object to serialize the structure into HL7 'pipehat' format
+// Two ways that you can serialize the structure into HL7 'pipehat' format:
+// 1) Call MessageSerializer.Serialize()
+string output = MessageSerializer.Serialize(message);
+// 2) Call ToDelimitedString() on the Message instance
 string output = message.ToDelimitedString();
 
 // Outputs the following:
@@ -187,6 +191,58 @@ string output = message.ToDelimitedString();
 //     PID|1||P12345^^^^PI~A98765^^^^PT||Anderson^Andy||19500101045200||||123 Main Street^^Anywhere^FL^33333~987 1st Avenue^^Somewhere^FL^33333|||||||||||||||||||N||||||||||777-888-9999^^PH~333-444-5555^^CP
 //     PV1||I||E|||||||||R||A2~A5~A6~B3|||||||||||||||||||||||||||||20200101133512||1432.87
 //     ZPD|GREEN|^^^andy.anderson@somewhere.com|Code1234|Anderson \T\ Sons \R\ Piano \T\ Drywall Repair
+```
+
+## Example: Converting HL7 'pipehat' String into a ClearHl7 Message
+We've received an HL7 message string.  Let's deserialize it into a `Message` instance for integration elsewhere.
+```csharp
+using ClearHl7;
+using ClearHl7.Serialization;
+using ClearHl7.V282;
+
+// [...]
+
+string messageString = YourApp.ReceiveMessage();
+
+// Two ways that you can deserialize:
+// 1) Call MessageSerializer.Deserialize(), which returns a new Message instance
+IMessage message = MessageSerializer.Deserialize<Message>(messageString);
+// 2) Call FromDelimitedString() on the existing Message instance, which performs the conversion in-place
+IMessage message = new Message();
+message.FromDelimitedString(messageString);
+```
+
+## Example: Detecting the HL7 Version for a Message String
+Let's detect the HL7 version that is being used in an HL7 message string.
+```csharp
+using ClearHl7;
+using ClearHl7.Helpers;
+
+// [...]
+
+// Where messageString = "MSH|^~\&||||||||||2.3||[...]"
+string messageString = YourApp.ReceiveMessage();
+
+// Get the version
+Hl7Version version = MessageHelper.DetectVersion(messageString);
+
+// Returns:
+//     The enumeration value Hl7Version.V230
+```
+
+## Example: Creating an Instance of a ClearHl7 Message for a Specific Version
+Let's create a Message instance with a specific HL7 version.
+```csharp
+using ClearHl7;
+using ClearHl7.Helpers;
+
+// [...]
+
+// Create a new Message instance for V2.8.1
+IMessage message = MessageHelper.NewMessageForVersion(Hl7Version.V281);
+
+// Returns:
+//      An instance of ClearHl7.V281.Message
 ```
 
 ## Customizing
@@ -223,8 +279,10 @@ pidSegment.MultipleBirthIndicator = helper.EnumToCode(CodeYesNoIndicator.No);
 * `Segment`s, `Type`s, and collections are __not__ automatically initialized for you.  You must manually instantiate each object that you're going to read/write to.  But be a good steward of machine resources, and only instantiate objects that you'll interact with.
 * Collection properties are all implemented with the `IEnumerable` interface to provide you with wide flexibility in the type of collection that you pass into the class.  The example above shows usage of simple arrays, but you can use more complex types like `List`, etc.
 * `Segment`s can be built and added to a `Message` in any order.  Just set the `Segment.Ordinal` property for each to specify the ordering in the final output.  And remember that the MSH `Segment` is required, and must appear first.
+* The HL7 spec calls out that segments shall be terminated with a single carriage return (a.k.a. \r or (char)13). ClearHl7 supports only this charater.  If you receive messages that use alternate line terminators, you must perform a programmatic replace on those alternate terminators before attempting to deserialize with ClearHL7, so that you may receive the expected result.
 * Any string input that may contain one of the utilized delimiter characters should be escaped with `ClearHl7.Helpers.StringHelper.Escape()`.  See the Zxx/ZPD segment in the example above.
-* You may call `ToDelimitedString()` on any `Message`, `Segment`, or `Type` to receive the full serialized output for that instance.
+* Any `Message`, `Segment`, or `Type` can be serialized to an HL7 pipehat string by calling `Serialize()` or `ToDelimitedString()`.  Utilize the `ClearHl7.Serialization` namespace.
+* Any `Message`, `Segment`, or `Type` can be instantiated and populated using an HL7 pipehat string by calling `Deserialize()` or `FromDelimitedString()`.  Utilize the `ClearHl7.Serialization` namespace.
 
 ## Contributing
 We welcome code and documentation contributions!

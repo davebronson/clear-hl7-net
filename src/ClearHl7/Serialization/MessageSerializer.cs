@@ -48,7 +48,7 @@ namespace ClearHl7.Serialization
                 }
             }
 
-            // Process the first segment (Expected: MSH)
+            // Process the first segment (expected: MSH)
             ISegment mshSegment = (ISegment)messageClass.Assembly.CreateInstance($"{ messageClass.Namespace }.Segments.MshSegment", false);
             if (segments.Length > 0)
             {
