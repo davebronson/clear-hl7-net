@@ -10,8 +10,11 @@
     <Title>ClearHL7</Title>
     <Description>.NET HL7® message generation library for the Version 2.x standard</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <PackageVersion>1.3.0</PackageVersion>
+    <PackageVersion>1.4.0-beta1</PackageVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <ReleaseVersion>1.4.0-beta1</ReleaseVersion>
+    <PackOnBuild>true</PackOnBuild>
+    <Owners>Dave Bronson</Owners>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <LangVersion>latest</LangVersion>
@@ -19,7 +22,6 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <LangVersion>latest</LangVersion>
-    <DebugType></DebugType>
     <DocumentationFile>bin\Release\netstandard2.0\ClearHl7.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>

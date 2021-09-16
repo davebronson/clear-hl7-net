@@ -1,4 +1,4 @@
-﻿using System; 
+﻿using System;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;

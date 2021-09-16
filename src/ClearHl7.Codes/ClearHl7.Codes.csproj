@@ -12,7 +12,9 @@
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageVersion>1.3.0</PackageVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <ReleaseVersion>1.3</ReleaseVersion>
+    <ReleaseVersion>1.4.0-beta1</ReleaseVersion>
+    <PackOnBuild>true</PackOnBuild>
+    <Owners>Dave Bronson</Owners>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <LangVersion>latest</LangVersion>
