@@ -1,8 +1,6 @@
-﻿    using System;
-using System.Linq;
+﻿using System;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
-using ClearHl7.Serialization;
 
 namespace ClearHl7.V280.Types
 {

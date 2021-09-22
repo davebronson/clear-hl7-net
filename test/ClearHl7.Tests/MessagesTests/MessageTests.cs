@@ -189,7 +189,7 @@ namespace ClearHl7.Tests.MessagesTests
         [Fact]
         public void ToDelimitedString_WithThreeSegments_ReturnsCorrectMessage()
         {
-            Message message = new Message
+            Message message = new()
             {
                 Segments = new ISegment[]
                 {

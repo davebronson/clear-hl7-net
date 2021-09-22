@@ -14,7 +14,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void SetSubcomponentFlags_WithSubcomponent_ReturnsObjectWithFlagSet()
         {
-            PidSegment segment = new PidSegment
+            PidSegment segment = new()
             {
                 PatientAddress = new ExtendedAddress[]
                 {
@@ -29,7 +29,7 @@ namespace ClearHl7.Tests.HelpersTests
                 }
             };
 
-            SegmentHelper helper = new SegmentHelper();
+            SegmentHelper helper = new();
             helper.SetSubcomponentFlags(segment);
 
             Assert.True(segment.PatientAddress.FirstOrDefault().StreetAddress.IsSubcomponent);
@@ -41,7 +41,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void SetSubcomponentFlags_WithoutSubcomponent_ReturnsObjectWithNoFlagSet()
         {
-            PidSegment segment = new PidSegment
+            PidSegment segment = new()
             {
                 PatientAddress = new ExtendedAddress[]
                 {
@@ -52,7 +52,7 @@ namespace ClearHl7.Tests.HelpersTests
                 }
             };
 
-            SegmentHelper helper = new SegmentHelper();
+            SegmentHelper helper = new();
             helper.SetSubcomponentFlags(segment);
 
             Assert.False(segment.PatientAddress.FirstOrDefault().IsSubcomponent);

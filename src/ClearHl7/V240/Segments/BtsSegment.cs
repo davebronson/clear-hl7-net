@@ -4,7 +4,6 @@ using System.Globalization;
 using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
-using ClearHl7.Serialization;
 
 namespace ClearHl7.V240.Segments
 {

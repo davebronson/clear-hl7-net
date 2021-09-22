@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using ClearHl7.Helpers;
 using ClearHl7.Serialization;
 

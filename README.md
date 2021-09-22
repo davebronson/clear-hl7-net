@@ -213,9 +213,9 @@ string messageString = YourApp.ReceiveMessage();
 // 1) Call MessageSerializer.Deserialize(), which returns
 //    a new Message instance
 // **********************************
-// I don't know the HL7 version:
+//    I don't know the HL7 version:
 IMessage message = MessageSerializer.Deserialize(messageString);
-// I do know the HL7 version, or want to force a specific version:
+//    I do know the HL7 version, or want to force a specific version:
 IMessage message = MessageSerializer.Deserialize<V282.Message>(messageString);
 
 // 2) Call FromDelimitedString() on an existing Message

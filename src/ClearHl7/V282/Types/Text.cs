@@ -1,6 +1,5 @@
 ﻿using System;
 using ClearHl7.Helpers;
-using ClearHl7.Serialization;
 
 namespace ClearHl7.V282.Types
 {

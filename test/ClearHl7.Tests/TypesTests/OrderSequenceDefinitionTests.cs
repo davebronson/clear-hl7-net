@@ -1,5 +1,4 @@
-﻿using System;
-using ClearHl7.V260.Types;
+﻿using ClearHl7.V260.Types;
 using FluentAssertions;
 using Xunit;
 
