@@ -178,7 +178,7 @@ namespace ClearHl7.Tests.MessagesTests
             };
 
             IMessage actual = new Message();
-            actual.FromDelimitedString("MSH|$*\\-|Sender 1||Receiver 1||20201202144539|||||2.9\rIN1|15|MNO Healthcare|736HB$$$DES1-UID654-Type 5*AA876$$$LLL09--UID123-Type 7\rCDM||Code 1$ABC*Code 2$ZYX\r");
+            actual.FromDelimitedString("MSH~$*\\-~Sender 1~~Receiver 1~~20201202144539~~~~~2.9\rIN1~15~MNO Healthcare~736HB$$$DES1-UID654-Type 5*AA876$$$LLL09--UID123-Type 7\rCDM~~Code 1$ABC*Code 2$ZYX\r");
 
             expected.Should().BeEquivalentTo(actual);
         }
