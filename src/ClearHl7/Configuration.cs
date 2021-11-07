@@ -17,10 +17,10 @@
         public static bool AutoSetSubcomponentFlags { get; set; } = true;
 
         /// <summary>
-        /// Gets the character used to separate fields.  This property is read-only.
+        /// Gets or sets the character used to separate fields.
         /// </summary>
         /// <remarks>The default character | is recommended.</remarks>
-        public static string FieldSeparator { get; } = Consts.DefaultFieldSeparator;
+        public static string FieldSeparator { get; set; } = Consts.DefaultFieldSeparator;
 
         /// <summary>
         /// Gets or sets the character used to separate components.
@@ -52,6 +52,7 @@
         /// <remarks>Resets ComponentSeparator, FieldRepeatSeparator, EscapeCharacter, and SubcomponentSeparator to their default, recommended values.</remarks>
         public static void ResetSeparators()
         {
+            FieldSeparator = Consts.DefaultFieldSeparator;
             ComponentSeparator = Consts.DefaultComponentSeparator;
             FieldRepeatSeparator = Consts.DefaultFieldRepeatSeparator;
             EscapeCharacter = Consts.DefaultEscapeCharacter;

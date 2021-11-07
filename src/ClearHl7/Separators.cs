@@ -8,9 +8,9 @@ namespace ClearHl7
     public class Separators
     {
         /// <summary>
-        /// Gets the character used to separate fields.  This property is read-only.
+        /// Gets or sets the character used to separate fields.
         /// </summary>
-        public string[] FieldSeparator { get; } = { Consts.DefaultFieldSeparator };
+        public string[] FieldSeparator { get; set; }
 
         /// <summary>
         /// Gets or sets the character used to separate components.
@@ -38,6 +38,7 @@ namespace ClearHl7
         /// <returns>A reference to this instance after the operation has completed.</returns>
         public Separators UsingConfigurationValues()
         {
+            FieldSeparator = new[] { Configuration.FieldSeparator };
             ComponentSeparator = new[] { Configuration.ComponentSeparator };
             FieldRepeatSeparator = new[] { Configuration.FieldRepeatSeparator };
             EscapeCharacter = new[] { Configuration.EscapeCharacter };
@@ -52,24 +53,26 @@ namespace ClearHl7
         /// <param name="input">The string to parse.</param>
         /// <returns>A reference to this instance after the operation has completed.</returns>
         /// <remarks>
-        /// The input string must contain exactly four characters, with an expected ordering:
-        /// 1) ComponentSeparator
-        /// 2) FieldRepeatSeparator
-        /// 3) EscapeCharacter
-        /// 4) SubcomponentSeparator
+        /// The input string must contain exactly five characters, with an expected ordering:
+        /// 1) FieldSeparator
+        /// 2) ComponentSeparator
+        /// 3) FieldRepeatSeparator
+        /// 4) EscapeCharacter
+        /// 5) SubcomponentSeparator
         /// </remarks>
-        /// <exception cref="ArgumentException">input does not contain exactly four encoding characters.</exception>
+        /// <exception cref="ArgumentException">input does not contain exactly five encoding characters.</exception>
         public Separators UsingInput(string input)
         {
-            if (string.IsNullOrEmpty(input) || input.Length != 4)
+            if (string.IsNullOrEmpty(input) || input.Length != 5)
             {
-                throw new ArgumentException($"{ nameof(input) } does not contains exactly four characters.", nameof(input));
+                throw new ArgumentException($"{ nameof(input) } does not contains exactly five characters.", nameof(input));
             }
 
-            ComponentSeparator = new[] { input[0].ToString() };
-            FieldRepeatSeparator = new[] { input[1].ToString() };
-            EscapeCharacter = new[] { input[2].ToString() };
-            SubcomponentSeparator = new[] { input[3].ToString() };
+            FieldSeparator = new[] { input[0].ToString() };
+            ComponentSeparator = new[] { input[1].ToString() };
+            FieldRepeatSeparator = new[] { input[2].ToString() };
+            EscapeCharacter = new[] { input[3].ToString() };
+            SubcomponentSeparator = new[] { input[4].ToString() };
 
             return this;
         }

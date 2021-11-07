@@ -14,6 +14,7 @@ namespace ClearHl7.Tests.ConfigurationTests
         {
             Separators expected = new()
             {
+                FieldSeparator = new[] { Configuration.FieldSeparator },
                 ComponentSeparator = new[] { Configuration.ComponentSeparator },
                 FieldRepeatSeparator = new[] { Configuration.FieldRepeatSeparator },
                 EscapeCharacter = new[] { Configuration.EscapeCharacter },
@@ -26,20 +27,21 @@ namespace ClearHl7.Tests.ConfigurationTests
         }
 
         /// <summary>
-        /// Validates that calling UsingInput() with a string input containing 4 characters results in the expected output.
+        /// Validates that calling UsingInput() with a string input containing five characters results in the expected output.
         /// </summary>
         [Fact]
-        public void UsingInput_WithFourCharInput_InitializesPropertiesCorrectly()
+        public void UsingInput_WithFiveCharInput_InitializesPropertiesCorrectly()
         {
             Separators expected = new()
             {
-                ComponentSeparator = new[] { "A" },
-                FieldRepeatSeparator = new[] { "B" },
-                EscapeCharacter = new[] { "C" },
-                SubcomponentSeparator = new[] { "D" },
+                FieldSeparator = new[] { "A" },
+                ComponentSeparator = new[] { "B" },
+                FieldRepeatSeparator = new[] { "C" },
+                EscapeCharacter = new[] { "D" },
+                SubcomponentSeparator = new[] { "E" },
             };
 
-            Separators actual = new Separators().UsingInput("ABCD");
+            Separators actual = new Separators().UsingInput("ABCDE");
 
             expected.Should().BeEquivalentTo(actual);
         }
@@ -54,12 +56,12 @@ namespace ClearHl7.Tests.ConfigurationTests
         }
 
         /// <summary>
-        /// Validates that calling UsingInput() with a string input containing five characters results in an ArgumentException being thrown.
+        /// Validates that calling UsingInput() with a string input containing six characters results in an ArgumentException being thrown.
         /// </summary>
         [Fact]
-        public void UsingInput_WithFiveCharInput_ThrowsArgumentException()
+        public void UsingInput_WithSixCharInput_ThrowsArgumentException()
         {
-            Assert.Throws<ArgumentException>(() => new Separators().UsingInput("ABCDE"));
+            Assert.Throws<ArgumentException>(() => new Separators().UsingInput("ABCDEF"));
         }
     }
 }

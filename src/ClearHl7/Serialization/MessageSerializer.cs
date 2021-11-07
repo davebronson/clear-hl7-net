@@ -79,7 +79,7 @@ namespace ClearHl7.Serialization
 
             if (segments.Length > 0)
             {
-                if (!segments[0].StartsWith($"MSH{ Configuration.FieldSeparator }", StringComparison.CurrentCultureIgnoreCase))
+                if (!segments[0].StartsWith("MSH", StringComparison.CurrentCultureIgnoreCase))
                 {
                     throw new ArgumentException($"The first segment in { nameof(delimitedString) } is not the MSH segment.", nameof(delimitedString));
                 }
@@ -94,7 +94,8 @@ namespace ClearHl7.Serialization
             }
 
             // Capture the encoding chars
-            Separators seps = new Separators().UsingInput(((IMshSegment)mshSegment).EncodingCharacters);
+            IMshSegment msh = (IMshSegment)mshSegment;
+            Separators seps = new Separators().UsingInput($"{ msh.FieldSeparator }{ msh.EncodingCharacters }");
 
             // Process remaining segments
             for (int i = 1; i < segments.Length; i++)

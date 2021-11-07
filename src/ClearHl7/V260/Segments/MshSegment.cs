@@ -27,7 +27,7 @@ namespace ClearHl7.V260.Segments
         /// <summary>
         /// MSH.1 - Field Separator.  This property is read-only.
         /// </summary>
-        public string FieldSeparator => Configuration.FieldSeparator;
+        public string FieldSeparator { get; private set; } = Configuration.FieldSeparator;
 
         /// <summary>
         /// MSH.2 - Encoding Characters.  This property is read-only.
@@ -184,15 +184,20 @@ namespace ClearHl7.V260.Segments
         /// </exception>
         public void FromDelimitedString(string delimitedString, Separators separators)
         {
+            if (delimitedString != null && delimitedString.Length > 3)
+            {
+                FieldSeparator = delimitedString[3].ToString();
+            }
+
             string[] segments = delimitedString == null
                 ? Array.Empty<string>()
-                : delimitedString.Split(new[] { Configuration.FieldSeparator }, StringSplitOptions.None);
+                : delimitedString.Split(new[] { FieldSeparator }, StringSplitOptions.None);
 
             if (segments.Length > 0)
             {
                 if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
                 {
-                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ Configuration.FieldSeparator }'.", nameof(delimitedString));
+                    throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }'.", nameof(delimitedString));
                 }
             }
 
@@ -202,7 +207,7 @@ namespace ClearHl7.V260.Segments
             }
 
             EncodingCharacters = segments[1];
-            Separators seps = new Separators().UsingInput(EncodingCharacters);
+            Separators seps = new Separators().UsingInput($"{ FieldSeparator }{ EncodingCharacters }");
 
             SendingApplication = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<HierarchicDesignator>(segments[2], false, seps) : null;
             SendingFacility = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<HierarchicDesignator>(segments[3], false, seps) : null;

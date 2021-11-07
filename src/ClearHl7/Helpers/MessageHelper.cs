@@ -30,12 +30,13 @@ namespace ClearHl7.Helpers
 
             int delimitedStringEndPosition = delimitedString.Length - 1;
             int startPosition = 0;
-            
+            char fieldSeparator = delimitedString[3];
+
             // The value for HL7 Version lives at position 12
             // Find the starting position of #12
             for (int i = 0; i < 11; i++)
             {
-                startPosition = delimitedString.IndexOf(Consts.DefaultFieldSeparator, startPosition + 1);
+                startPosition = delimitedString.IndexOf(fieldSeparator, startPosition + 1);
 
                 if (startPosition == -1 || startPosition == delimitedStringEndPosition)
                 {
@@ -46,7 +47,7 @@ namespace ClearHl7.Helpers
             startPosition++;
 
             // Find the ending position of the version identifier
-            int endPosition = delimitedString.IndexOfAny(new[] { Consts.DefaultFieldSeparator[0], delimitedString[4] }, startPosition);
+            int endPosition = delimitedString.IndexOfAny(new[] { fieldSeparator, delimitedString[4], (char)13 }, startPosition);
 
             if (endPosition == -1)
             {

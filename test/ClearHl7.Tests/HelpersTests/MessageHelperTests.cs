@@ -196,12 +196,21 @@ namespace ClearHl7.Tests.HelpersTests
         }
 
         /// <summary>
+        /// Validates that DetectVersion() returns the correct HL7 version enum value when a custom field separator is used.
+        /// </summary>
+        [Fact]
+        public void DetectVersion_WithCustomFieldSeparator_ReturnsCorrectHl7Version()
+        {
+            Assert.True(MessageHelper.DetectVersion(@"MSH$^~\&$$$$$$$$$$2.5.1$$") == Hl7Version.V251);
+        }
+
+        /// <summary>
         /// Validates that DetectVersion() returns the correct HL7 version enum value when exactly 12 positions are provided.
         /// </summary>
         [Fact]
         public void DetectVersion_WithExactly12Positions_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||||||2.5.1") == Hl7Version.V251);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.5.1" }{ (char)13 }") == Hl7Version.V251);
         }
 
         /// <summary>
