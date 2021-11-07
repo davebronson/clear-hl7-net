@@ -24,11 +24,4 @@
     <LangVersion>latest</LangVersion>
     <DocumentationFile>bin\Release\netstandard2.0\ClearHl7.xml</DocumentationFile>
   </PropertyGroup>
-  <ItemGroup>
-    <Folder Include="Extensions\" />
-    <Folder Include="Serialization\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="Serialization\" />
-  </ItemGroup>
 </Project>

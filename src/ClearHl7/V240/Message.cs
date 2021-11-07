@@ -44,7 +44,7 @@ namespace ClearHl7.V240
                     }
 
                     output.Append(item.ToDelimitedString());
-                    output.Append((char)13);
+                    output.Append(Consts.LineTerminator);
                 }
             }
 

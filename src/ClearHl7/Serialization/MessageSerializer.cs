@@ -73,7 +73,7 @@ namespace ClearHl7.Serialization
             CultureInfo culture = CultureInfo.CurrentCulture;
             string[] segments = delimitedString == null
                 ? Array.Empty<string>()
-                : delimitedString.Split(new char[] { (char)13 }, StringSplitOptions.RemoveEmptyEntries);
+                : delimitedString.Split(new char[] { Consts.LineTerminator }, StringSplitOptions.RemoveEmptyEntries);
             List<ISegment> list = new();
             Type messageClass = item.GetType();
 

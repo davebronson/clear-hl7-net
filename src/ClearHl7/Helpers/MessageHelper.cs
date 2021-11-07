@@ -47,7 +47,7 @@ namespace ClearHl7.Helpers
             startPosition++;
 
             // Find the ending position of the version identifier
-            int endPosition = delimitedString.IndexOfAny(new[] { fieldSeparator, delimitedString[4], (char)13 }, startPosition);
+            int endPosition = delimitedString.IndexOfAny(new[] { fieldSeparator, delimitedString[4], Consts.LineTerminator }, startPosition);
 
             if (endPosition == -1)
             {

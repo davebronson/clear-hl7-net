@@ -6,6 +6,11 @@
     public static class Consts
     {
         /// <summary>
+        /// Standard Message line terminator.
+        /// </summary>
+        public const char LineTerminator = (char)13;
+
+        /// <summary>
         /// Default field separator.
         /// </summary>
         public const string DefaultFieldSeparator = "|";

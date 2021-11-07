@@ -91,7 +91,7 @@ namespace ClearHl7.Tests.SerializationTests
                 }
             };
 
-            string delimitedString = "MSH|^~\\&|Sender 1||Receiver 1||20201202144539|||||2.9\rIN1|15|MNO Healthcare|736HB^^^DES1&UID654&Type 5~AA876^^^LLL098&UID123&Type 7\rCDM||Code 1^ABC~Code 2^ZYX\r";
+            string delimitedString = $"MSH|^~\\&|Sender 1||Receiver 1||20201202144539|||||2.9{ Consts.LineTerminator }IN1|15|MNO Healthcare|736HB^^^DES1&UID654&Type 5~AA876^^^LLL098&UID123&Type 7{ Consts.LineTerminator }CDM||Code 1^ABC~Code 2^ZYX{ Consts.LineTerminator }";
             Message actual = MessageSerializer.Deserialize<Message>(delimitedString);
 
             expected.Should().BeEquivalentTo(actual);
@@ -178,7 +178,7 @@ namespace ClearHl7.Tests.SerializationTests
                 }
             };
 
-            string delimitedString = "MSH$^~\\&$Sender 1$$Receiver 1$$20201202144539$$$$$2.9\rIN1$15$MNO Healthcare$736HB^^^DES1&UID654&Type 5~AA876^^^LLL098&UID123&Type 7\rCDM$$Code 1^ABC~Code 2^ZYX\r";
+            string delimitedString = $"MSH$^~\\&$Sender 1$$Receiver 1$$20201202144539$$$$$2.9{ Consts.LineTerminator }IN1$15$MNO Healthcare$736HB^^^DES1&UID654&Type 5~AA876^^^LLL098&UID123&Type 7{ Consts.LineTerminator }CDM$$Code 1^ABC~Code 2^ZYX{ Consts.LineTerminator }";
             Message actual = MessageSerializer.Deserialize<Message>(delimitedString);
 
             expected.Should().BeEquivalentTo(actual);
@@ -204,7 +204,7 @@ namespace ClearHl7.Tests.SerializationTests
         {
             Assert.Throws<ArgumentException>(() =>
             {
-                MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.2.7||");
+                MessageSerializer.Deserialize($"{ @"MSH|^~\&||||||||||2.2.7||" }{ Consts.LineTerminator }");
             });
         }
 
@@ -214,7 +214,7 @@ namespace ClearHl7.Tests.SerializationTests
         [Fact]
         public void Deserialize_With23Specified_ReturnsCorrectMesssageVersion()
         {
-            Assert.IsType<V230.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.3||"));
+            Assert.IsType<V230.Message>(MessageSerializer.Deserialize($"{ @"MSH|^~\&||||||||||2.3||" }{ Consts.LineTerminator }"));
         }
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace ClearHl7.Tests.SerializationTests
         [Fact]
         public void Deserialize_With231Specified_ReturnsCorrectMesssageVersion()
         {
-            Assert.IsType<V231.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.3.1||"));
+            Assert.IsType<V231.Message>(MessageSerializer.Deserialize($"{ @"MSH|^~\&||||||||||2.3.1||" }{ Consts.LineTerminator }"));
         }
 
         /// <summary>
@@ -232,7 +232,7 @@ namespace ClearHl7.Tests.SerializationTests
         [Fact]
         public void Deserialize_With24Specified_ReturnsCorrectMesssageVersion()
         {
-            Assert.IsType<V240.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.4||"));
+            Assert.IsType<V240.Message>(MessageSerializer.Deserialize($"{ @"MSH|^~\&||||||||||2.4||" }{ Consts.LineTerminator }"));
         }
 
         /// <summary>
@@ -241,7 +241,7 @@ namespace ClearHl7.Tests.SerializationTests
         [Fact]
         public void Deserialize_With25Specified_ReturnsCorrectMesssageVersion()
         {
-            Assert.IsType<V250.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.5||"));
+            Assert.IsType<V250.Message>(MessageSerializer.Deserialize($"{ @"MSH|^~\&||||||||||2.5||" }{ Consts.LineTerminator }"));
         }
 
         /// <summary>
@@ -250,7 +250,7 @@ namespace ClearHl7.Tests.SerializationTests
         [Fact]
         public void Deserialize_With251Specified_ReturnsCorrectMesssageVersion()
         {
-            Assert.IsType<V251.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.5.1||"));
+            Assert.IsType<V251.Message>(MessageSerializer.Deserialize($"{ @"MSH|^~\&||||||||||2.5.1||" }{ Consts.LineTerminator }"));
         }
 
         /// <summary>
@@ -259,7 +259,7 @@ namespace ClearHl7.Tests.SerializationTests
         [Fact]
         public void Deserialize_With26Specified_ReturnsCorrectMesssageVersion()
         {
-            Assert.IsType<V260.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.6||"));
+            Assert.IsType<V260.Message>(MessageSerializer.Deserialize($"{ @"MSH|^~\&||||||||||2.6||" }{ Consts.LineTerminator }"));
         }
 
         /// <summary>
@@ -268,7 +268,7 @@ namespace ClearHl7.Tests.SerializationTests
         [Fact]
         public void Deserialize_With27Specified_ReturnsCorrectMesssageVersion()
         {
-            Assert.IsType<V270.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.7||"));
+            Assert.IsType<V270.Message>(MessageSerializer.Deserialize($"{ @"MSH|^~\&||||||||||2.7||" }{ Consts.LineTerminator }"));
         }
 
         /// <summary>
@@ -277,7 +277,7 @@ namespace ClearHl7.Tests.SerializationTests
         [Fact]
         public void Deserialize_With271Specified_ReturnsCorrectMesssageVersion()
         {
-            Assert.IsType<V271.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.7.1||"));
+            Assert.IsType<V271.Message>(MessageSerializer.Deserialize($"{ @"MSH|^~\&||||||||||2.7.1||" }{ Consts.LineTerminator }"));
         }
 
         /// <summary>
@@ -286,7 +286,7 @@ namespace ClearHl7.Tests.SerializationTests
         [Fact]
         public void Deserialize_With28Specified_ReturnsCorrectMesssageVersion()
         {
-            Assert.IsType<V280.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.8||"));
+            Assert.IsType<V280.Message>(MessageSerializer.Deserialize($"{ @"MSH|^~\&||||||||||2.8||" }{ Consts.LineTerminator }"));
         }
 
         /// <summary>
@@ -295,7 +295,7 @@ namespace ClearHl7.Tests.SerializationTests
         [Fact]
         public void Deserialize_With281Specified_ReturnsCorrectMesssageVersion()
         {
-            Assert.IsType<V281.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.8.1||"));
+            Assert.IsType<V281.Message>(MessageSerializer.Deserialize($"{ @"MSH|^~\&||||||||||2.8.1||" }{ Consts.LineTerminator }"));
         }
 
         /// <summary>
@@ -304,7 +304,7 @@ namespace ClearHl7.Tests.SerializationTests
         [Fact]
         public void Deserialize_With282Specified_ReturnsCorrectMesssageVersion()
         {
-            Assert.IsType<V282.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.8.2||"));
+            Assert.IsType<V282.Message>(MessageSerializer.Deserialize($"{ @"MSH|^~\&||||||||||2.8.2||" }{ Consts.LineTerminator }"));
         }
 
         /// <summary>
@@ -313,7 +313,7 @@ namespace ClearHl7.Tests.SerializationTests
         [Fact]
         public void Deserialize_With29Specified_ReturnsCorrectMesssageVersion()
         {
-            Assert.IsType<V290.Message>(MessageSerializer.Deserialize(@"MSH|^~\&||||||||||2.9||"));
+            Assert.IsType<V290.Message>(MessageSerializer.Deserialize($"{ @"MSH|^~\&||||||||||2.9||" }{ Consts.LineTerminator }"));
         }
 
         /// <summary>
@@ -397,7 +397,7 @@ namespace ClearHl7.Tests.SerializationTests
                 }
             };
 
-            string expected = "MSH|^~\\&|Sender 1||Receiver 1||20201202144539|||||2.9\rIN1|15|MNO Healthcare|736HB^^^DES1&UID654&Type 5~AA876^^^LLL098&UID123&Type 7\rCDM||Code 1^ABC~Code 2^ZYX\r";
+            string expected = $"MSH|^~\\&|Sender 1||Receiver 1||20201202144539|||||2.9{ Consts.LineTerminator }IN1|15|MNO Healthcare|736HB^^^DES1&UID654&Type 5~AA876^^^LLL098&UID123&Type 7{ Consts.LineTerminator }CDM||Code 1^ABC~Code 2^ZYX{ Consts.LineTerminator }";
             string actual = MessageSerializer.Serialize(hl7Message);
 
             Assert.Equal(expected, actual);

@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_With23Specified_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||||||2.3||") == Hl7Version.V230);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.3||" }{ Consts.LineTerminator }") == Hl7Version.V230);
         }
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_With230Specified_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||||||2.3.0||") == Hl7Version.V230);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.3.0||" }{ Consts.LineTerminator }") == Hl7Version.V230);
         }
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_With231Specified_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||||||2.3.1||") == Hl7Version.V231);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.3.1||" }{ Consts.LineTerminator }") == Hl7Version.V231);
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_With24Specified_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||||||2.4||") == Hl7Version.V240);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.4||" }{ Consts.LineTerminator }") == Hl7Version.V240);
         }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_With240Specified_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||||||2.4.0||") == Hl7Version.V240);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.4.0||" }{ Consts.LineTerminator }") == Hl7Version.V240);
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_With25Specified_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||||||2.5||") == Hl7Version.V250);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.5||" }{ Consts.LineTerminator }") == Hl7Version.V250);
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_With250Specified_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||||||2.5.0||") == Hl7Version.V250);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.5.0||" }{ Consts.LineTerminator }") == Hl7Version.V250);
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_With251Specified_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||||||2.5.1||") == Hl7Version.V251);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.5.1||" }{ Consts.LineTerminator }") == Hl7Version.V251);
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_With26Specified_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||||||2.6||") == Hl7Version.V260);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.6||" }{ Consts.LineTerminator }") == Hl7Version.V260);
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_With260Specified_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||||||2.6.0||") == Hl7Version.V260);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.6.0||" }{ Consts.LineTerminator }") == Hl7Version.V260);
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_With27Specified_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||||||2.7||") == Hl7Version.V270);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.7||" }{ Consts.LineTerminator }") == Hl7Version.V270);
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_With270Specified_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||||||2.7.0||") == Hl7Version.V270);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.7.0||" }{ Consts.LineTerminator }") == Hl7Version.V270);
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_With271Specified_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||||||2.7.1||") == Hl7Version.V271);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.7.1||" }{ Consts.LineTerminator }") == Hl7Version.V271);
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_With28Specified_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||||||2.8||") == Hl7Version.V280);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.8||" }{ Consts.LineTerminator }") == Hl7Version.V280);
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_With280Specified_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||||||2.8.0||") == Hl7Version.V280);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.8.0||" }{ Consts.LineTerminator }") == Hl7Version.V280);
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_With281Specified_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||||||2.8.1||") == Hl7Version.V281);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.8.1||" }{ Consts.LineTerminator }") == Hl7Version.V281);
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_With282Specified_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||||||2.8.2||") == Hl7Version.V282);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.8.2||" }{ Consts.LineTerminator }") == Hl7Version.V282);
         }
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_With29Specified_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||||||2.9||") == Hl7Version.V290);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.9||" }{ Consts.LineTerminator }") == Hl7Version.V290);
         }
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_With290Specified_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||||||2.9.0||") == Hl7Version.V290);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.9.0||" }{ Consts.LineTerminator }") == Hl7Version.V290);
         }
 
         /// <summary>
@@ -183,7 +183,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_WithMultipleComponentsInPositionTwelve_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||||||2.5.1^something else||") == Hl7Version.V251);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.5.1^something else||" }{ Consts.LineTerminator }") == Hl7Version.V251);
         }
 
         /// <summary>
@@ -192,7 +192,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_WithCustomComponentSeparator_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|$~\&||||||||||2.5.1$something else||") == Hl7Version.V251);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|$~\&||||||||||2.5.1$something else||" }{ Consts.LineTerminator }") == Hl7Version.V251);
         }
 
         /// <summary>
@@ -201,7 +201,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_WithCustomFieldSeparator_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH$^~\&$$$$$$$$$$2.5.1$$") == Hl7Version.V251);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH$^~\&$$$$$$$$$$2.5.1$$" }{ Consts.LineTerminator }") == Hl7Version.V251);
         }
 
         /// <summary>
@@ -210,7 +210,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_WithExactly12Positions_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.5.1" }{ (char)13 }") == Hl7Version.V251);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||||||2.5.1" }{ Consts.LineTerminator }") == Hl7Version.V251);
         }
 
         /// <summary>
@@ -219,7 +219,7 @@ namespace ClearHl7.Tests.HelpersTests
         [Fact]
         public void DetectVersion_WithLessThan12Positions_ReturnsCorrectHl7Version()
         {
-            Assert.True(MessageHelper.DetectVersion(@"MSH|^~\&||||||") == Hl7Version.None);
+            Assert.True(MessageHelper.DetectVersion($"{ @"MSH|^~\&||||||" }{ Consts.LineTerminator }") == Hl7Version.None);
         }
 
         /// <summary>
@@ -254,7 +254,7 @@ namespace ClearHl7.Tests.HelpersTests
         {
             Assert.Throws<ArgumentException>(() =>
             {
-                MessageHelper.DetectVersion(@"ABC|^~\&||||||||||2.8.0||");
+                MessageHelper.DetectVersion($"{ @"ABC|^~\&||||||||||2.8.0||" }{ Consts.LineTerminator }");
             });
         }
 
