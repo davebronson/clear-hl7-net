@@ -10,9 +10,9 @@
     <Title>ClearHL7</Title>
     <Description>.NET HL7® message generation library for the Version 2.x standard</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <PackageVersion>1.4.0-beta3</PackageVersion>
+    <PackageVersion>1.4.0</PackageVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <ReleaseVersion>1.4.0-beta3</ReleaseVersion>
+    <ReleaseVersion>1.4.0</ReleaseVersion>
     <PackOnBuild>true</PackOnBuild>
     <Owners>Dave Bronson</Owners>
   </PropertyGroup>
