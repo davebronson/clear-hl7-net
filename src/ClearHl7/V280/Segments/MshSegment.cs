@@ -24,14 +24,10 @@ namespace ClearHl7.V280.Segments
         /// </summary>
         public int Ordinal { get; set; } = int.MinValue;
 
-        /// <summary>
-        /// MSH.1 - Field Separator.  This property is read-only.
-        /// </summary>
+        /// <inheritdoc/>
         public string FieldSeparator { get; private set; } = Configuration.FieldSeparator;
 
-        /// <summary>
-        /// MSH.2 - Encoding Characters.  This property is read-only.
-        /// </summary>
+        /// <inheritdoc/>
         public string EncodingCharacters { get; private set; } = $"{ Configuration.ComponentSeparator }{ Configuration.FieldRepeatSeparator }{ Configuration.EscapeCharacter }{ Configuration.SubcomponentSeparator }";
 
         /// <summary>
