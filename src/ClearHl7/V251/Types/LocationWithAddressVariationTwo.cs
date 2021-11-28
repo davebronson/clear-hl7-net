@@ -9,9 +9,7 @@ namespace ClearHl7.V251.Types
     /// </summary>
     public class LocationWithAddressVariationTwo : IType
     {
-        /// <summary>
-        /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
-        /// </summary>
+        /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 
         /// <summary>
@@ -103,20 +101,13 @@ namespace ClearHl7.V251.Types
         /// </summary>
         public string OtherGeographicDesignation { get; set; }
 
-        /// <summary>
-        /// Initializes properties of this instance with values parsed from the given delimited string.  Separators defined in the Configuration class are used to split the string.
-        /// </summary>
-        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <inheritdoc/>
         public void FromDelimitedString(string delimitedString)
         {
             FromDelimitedString(delimitedString, null);
         }
 
-        /// <summary>
-        /// Initializes properties of this instance with values parsed from the given delimited string.  The provided separators are used to split the string.
-        /// </summary>
-        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <param name="separators">The separators to use for splitting the string.</param>
+        /// <inheritdoc/>
         public void FromDelimitedString(string delimitedString, Separators separators)
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
@@ -143,10 +134,7 @@ namespace ClearHl7.V251.Types
             OtherGeographicDesignation = segments.Length > 15 && segments[15].Length > 0 ? segments[15] : null;
         }
 
-        /// <summary>
-        /// Returns a delimited string representation of this instance.
-        /// </summary>
-        /// <returns>A string.</returns>
+        /// <inheritdoc/>
         public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;

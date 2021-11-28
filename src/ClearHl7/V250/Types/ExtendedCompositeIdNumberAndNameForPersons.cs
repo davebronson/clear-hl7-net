@@ -10,9 +10,7 @@ namespace ClearHl7.V250.Types
     /// </summary>
     public class ExtendedCompositeIdNumberAndNameForPersons : IType
     {
-        /// <summary>
-        /// Gets or sets a value that indicates whether this instance is a subcomponent of another HL7 component instance.
-        /// </summary>
+        /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 
         /// <summary>
@@ -139,20 +137,13 @@ namespace ClearHl7.V250.Types
         /// </summary>
         public CodedWithExceptions AssigningAgencyOrDepartment { get; set; }
 
-        /// <summary>
-        /// Initializes properties of this instance with values parsed from the given delimited string.  Separators defined in the Configuration class are used to split the string.
-        /// </summary>
-        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <inheritdoc/>
         public void FromDelimitedString(string delimitedString)
         {
             FromDelimitedString(delimitedString, null);
         }
 
-        /// <summary>
-        /// Initializes properties of this instance with values parsed from the given delimited string.  The provided separators are used to split the string.
-        /// </summary>
-        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <param name="separators">The separators to use for splitting the string.</param>
+        /// <inheritdoc/>
         public void FromDelimitedString(string delimitedString, Separators separators)
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
@@ -186,10 +177,7 @@ namespace ClearHl7.V250.Types
             AssigningAgencyOrDepartment = segments.Length > 22 && segments[22].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[22], true, seps) : null;
         }
 
-        /// <summary>
-        /// Returns a delimited string representation of this instance.
-        /// </summary>
-        /// <returns>A string.</returns>
+        /// <inheritdoc/>
         public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
