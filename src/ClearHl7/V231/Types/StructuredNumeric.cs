@@ -53,7 +53,7 @@ namespace ClearHl7.V231.Types
             Num2 = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDecimal() : null;
         }
 
-        /// <inheritdoc/>w
+        /// <inheritdoc/>
         public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;

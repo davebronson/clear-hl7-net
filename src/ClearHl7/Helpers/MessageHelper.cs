@@ -56,7 +56,7 @@ namespace ClearHl7.Helpers
 
             // Extract the version string
             string versionString = delimitedString.Substring(startPosition, endPosition - startPosition);
-            
+
             // Map and return
             if (string.Compare("2.3", versionString, false, culture) == 0) { return Hl7Version.V230; }
             if (string.Compare("2.3.1", versionString, false, culture) == 0) { return Hl7Version.V231; }

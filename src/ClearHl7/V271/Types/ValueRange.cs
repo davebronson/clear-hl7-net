@@ -40,7 +40,7 @@ namespace ClearHl7.V271.Types
             LastDataCodeValue = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
         }
 
-        /// <inheritdoc/>w
+        /// <inheritdoc/>
         public string ToDelimitedString()
         {
             System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;

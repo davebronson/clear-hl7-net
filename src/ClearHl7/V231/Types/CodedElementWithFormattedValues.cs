@@ -14,7 +14,7 @@ namespace ClearHl7.V231.Types
         /// <summary>
         /// CF.1 - Identifier.
         /// </summary>
-        public string Identifier{ get; set; }
+        public string Identifier { get; set; }
 
         /// <summary>
         /// CF.2 - Formatted Text.

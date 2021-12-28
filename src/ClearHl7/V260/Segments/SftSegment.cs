@@ -12,14 +12,10 @@ namespace ClearHl7.V260.Segments
     /// </summary>
     public class SftSegment : ISegment
     {
-        /// <summary>
-        /// Gets the ID for the Segment.  This property is read-only.
-        /// </summary>
+        /// <inheritdoc/>
         public string Id { get; } = "SFT";
-        
-        /// <summary>
-        /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
-        /// </summary>
+
+        /// <inheritdoc/>
         public int Ordinal { get; set; }
 
         /// <summary>
@@ -52,22 +48,13 @@ namespace ClearHl7.V260.Segments
         /// </summary>
         public DateTime? SoftwareInstallDate { get; set; }
 
-        /// <summary>
-        /// Initializes properties of this instance with values parsed from the given delimited string.  Separators defined in the Configuration class are used to split the string.
-        /// </summary>
-        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        /// <inheritdoc/>
         public void FromDelimitedString(string delimitedString)
         {
             FromDelimitedString(delimitedString, null);
         }
 
-        /// <summary>
-        /// Initializes properties of this instance with values parsed from the given delimited string.  The provided separators are used to split the string.
-        /// </summary>
-        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <param name="separators">The separators to use for splitting the string.</param>
-        /// <exception cref="ArgumentException">delimitedString does not begin with the proper segment Id.</exception>
+        /// <inheritdoc/>
         public void FromDelimitedString(string delimitedString, Separators separators)
         {
             Separators seps = separators ?? new Separators().UsingConfigurationValues();
@@ -91,10 +78,7 @@ namespace ClearHl7.V260.Segments
             SoftwareInstallDate = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDateTime() : null;
         }
 
-        /// <summary>
-        /// Returns a delimited string representation of this instance.
-        /// </summary>
-        /// <returns>A string.</returns>
+        /// <inheritdoc/>
         public string ToDelimitedString()
         {
             CultureInfo culture = CultureInfo.CurrentCulture;

@@ -13,14 +13,10 @@ namespace ClearHl7.V230.Segments
     /// </summary>
     public class MshSegment : ISegment, IMshSegment
     {
-        /// <summary>
-        /// Gets the ID for the Segment.  This property is read-only.
-        /// </summary>
+        /// <inheritdoc/>
         public string Id { get; } = "MSH";
 
-        /// <summary>
-        /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
-        /// </summary>
+        /// <inheritdoc/>
         public int Ordinal { get; set; } = int.MinValue;
 
         /// <inheritdoc/>
@@ -118,30 +114,23 @@ namespace ClearHl7.V230.Segments
         /// </summary>
         public CodedElement PrincipalLanguageOfMessage { get; set; }
 
-        /// <summary>
-        /// Initializes properties of this instance with values parsed from the given delimited string.  Separators defined in the Configuration class are used to split the string.
-        /// </summary>
-        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
         /// <exception cref="ArgumentException">
         /// delimitedString does not begin with the proper segment Id.
         /// -or-
         /// The encoding characters in delimitedString does not contain exactly four characters.
         /// </exception>
+        /// <inheritdoc/>
         public void FromDelimitedString(string delimitedString)
         {
             FromDelimitedString(delimitedString, null);
         }
 
-        /// <summary>
-        /// Initializes properties of this instance with values parsed from the given delimited string.  The provided separators are used to split the string.
-        /// </summary>
-        /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
-        /// <param name="separators">The separators to use for splitting the string.</param>
         /// <exception cref="ArgumentException">
         /// delimitedString does not begin with the proper segment Id.
         /// -or-
         /// delimitedString does not contain exactly four encoding characters.
         /// </exception>
+        /// <inheritdoc/>
         public void FromDelimitedString(string delimitedString, Separators separators)
         {
             if (delimitedString != null && delimitedString.Length > 3)
@@ -188,10 +177,7 @@ namespace ClearHl7.V230.Segments
             PrincipalLanguageOfMessage = segments.Length > 18 && segments[18].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[18], false, seps) : null;
         }
 
-        /// <summary>
-        /// Returns a delimited string representation of this instance.
-        /// </summary>
-        /// <returns>A string.</returns>
+        /// <inheritdoc/>
         public string ToDelimitedString()
         {
             CultureInfo culture = CultureInfo.CurrentCulture;

@@ -41,7 +41,7 @@ namespace ClearHl7.V260.Types
         /// <summary>
         /// CD.6 - Minimum and Maximum Data Values.
         /// </summary>
-        public NumericRange MinimumAndMaximumDataValues{ get; set; }
+        public NumericRange MinimumAndMaximumDataValues { get; set; }
 
         /// <inheritdoc/>
         public void FromDelimitedString(string delimitedString)

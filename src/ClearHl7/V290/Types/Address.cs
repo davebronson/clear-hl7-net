@@ -67,7 +67,7 @@ namespace ClearHl7.V290.Types
             string[] segments = delimitedString == null
                 ? Array.Empty<string>()
                 : delimitedString.Split(separator, StringSplitOptions.None);
-            
+
             StreetAddress = segments.Length > 0 && segments[0].Length > 0 ? segments[0] : null;
             OtherDesignation = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
             City = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;

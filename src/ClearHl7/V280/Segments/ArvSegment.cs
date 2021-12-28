@@ -18,7 +18,7 @@ namespace ClearHl7.V280.Segments
         /// Gets the ID for the Segment.  This property is read-only.
         /// </summary>
         public string Id { get; } = "ARV";
-        
+
         /// <summary>
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.
         /// </summary>
@@ -79,7 +79,7 @@ namespace ClearHl7.V280.Segments
             string[] segments = delimitedString == null
                 ? Array.Empty<string>()
                 : delimitedString.Split(seps.FieldSeparator, StringSplitOptions.None);
-            
+
             if (segments.Length > 0)
             {
                 if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
