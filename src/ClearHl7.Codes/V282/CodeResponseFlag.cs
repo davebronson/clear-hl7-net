@@ -10,22 +10,22 @@
         /// D - Same as R, also other associated segments.
         /// </summary>
         AlsoOtherAssociatedSegments,
-        
+
         /// <summary>
         /// E - Report exceptions only.
         /// </summary>
         ReportExceptionsOnly,
-        
+
         /// <summary>
         /// F - Same as D, plus confirmations explicitly.
         /// </summary>
         PlusConfirmationsExplicitly,
-        
+
         /// <summary>
         /// N - Only the MSA segment is returned.
         /// </summary>
         OnlyMsaSegmentIsReturned,
-        
+
         /// <summary>
         /// R - Same as E, also Replacement and Parent-Child.
         /// </summary>

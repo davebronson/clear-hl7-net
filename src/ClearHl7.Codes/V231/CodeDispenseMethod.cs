@@ -10,17 +10,17 @@
         /// AD - Automatic Dispensing.
         /// </summary>
         AutomaticDispensing,
-        
+
         /// <summary>
         /// F - Floor Stock.
         /// </summary>
         FloorStock,
-        
+
         /// <summary>
         /// TR - Traditional.
         /// </summary>
         Traditional,
-        
+
         /// <summary>
         /// UD - Unit Dose.
         /// </summary>

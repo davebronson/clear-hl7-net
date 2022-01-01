@@ -10,17 +10,17 @@
         /// A - Actual product involved in incident was evaluated.
         /// </summary>
         ActualProductWasEvaluated,
-        
+
         /// <summary>
         /// L - A product from the same lot as the actual product involved was evaluated.
         /// </summary>
         ProductFromSameLotWasEvaluated,
-        
+
         /// <summary>
         /// N - A product from a controlled/non-related inventory was evaluated.
         /// </summary>
         ProductFromNonRelatedInventoryWasEvaluated,
-        
+
         /// <summary>
         /// R - A product from a reserve sample was evaluated.
         /// </summary>

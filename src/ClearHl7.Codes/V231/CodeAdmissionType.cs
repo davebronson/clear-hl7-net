@@ -10,17 +10,17 @@
         /// A - Accident.
         /// </summary>
         Accident,
-        
+
         /// <summary>
         /// E - Emergency.
         /// </summary>
         Emergency,
-        
+
         /// <summary>
         /// L - Labor and Delivery.
         /// </summary>
         LaborAndDelivery,
-        
+
         /// <summary>
         /// R - Routine.
         /// </summary>

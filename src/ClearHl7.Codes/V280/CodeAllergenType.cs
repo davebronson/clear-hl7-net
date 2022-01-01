@@ -10,37 +10,37 @@
         /// AA - Animal Allergy.
         /// </summary>
         AnimalAllergy,
-        
+
         /// <summary>
         /// DA - Drug allergy.
         /// </summary>
         DrugAllergy,
-        
+
         /// <summary>
         /// EA - Environmental Allergy.
         /// </summary>
         EnvironmentalAllergy,
-        
+
         /// <summary>
         /// FA - Food allergy.
         /// </summary>
         FoodAllergy,
-        
+
         /// <summary>
         /// LA - Pollen Allergy.
         /// </summary>
         PollenAllergy,
-        
+
         /// <summary>
         /// MA - Miscellaneous allergy.
         /// </summary>
         MiscellaneousAllergy,
-        
+
         /// <summary>
         /// MC - Miscellaneous contraindication.
         /// </summary>
         MiscellaneousContraindication,
-        
+
         /// <summary>
         /// PA - Plant Allergy.
         /// </summary>

@@ -10,22 +10,22 @@
         /// L - Last Rites only.
         /// </summary>
         LastRitesOnly,
-        
+
         /// <summary>
         /// N - No.
         /// </summary>
         No,
-        
+
         /// <summary>
         /// O - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>
         Unknown,
-        
+
         /// <summary>
         /// Y - Yes.
         /// </summary>

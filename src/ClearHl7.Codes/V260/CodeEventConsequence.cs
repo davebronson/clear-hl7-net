@@ -10,42 +10,42 @@
         /// C - Congenital anomaly/birth defect.
         /// </summary>
         CongenitalAnomalyBirthDefect,
-        
+
         /// <summary>
         /// D - Death.
         /// </summary>
         Death,
-        
+
         /// <summary>
         /// H - Caused hospitalized.
         /// </summary>
         CausedHospitalized,
-        
+
         /// <summary>
         /// I - Incapacity which is significant, persistent or permanent.
         /// </summary>
         Incapacity,
-        
+
         /// <summary>
         /// J - Disability which is significant, persistent or permanent.
         /// </summary>
         Disability,
-        
+
         /// <summary>
         /// L - Life threatening.
         /// </summary>
         LifeThreatening,
-        
+
         /// <summary>
         /// O - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// P - Prolonged hospitalization.
         /// </summary>
         ProlongedHospitalization,
-        
+
         /// <summary>
         /// R - Required intervention to prevent permanent impairment/damage.
         /// </summary>

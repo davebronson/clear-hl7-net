@@ -10,17 +10,17 @@
         /// D - Distributor.
         /// </summary>
         Distributor,
-        
+
         /// <summary>
         /// L - Local facility/user facility.
         /// </summary>
         LocalFacilityUserFacility,
-        
+
         /// <summary>
         /// M - Manufacturer.
         /// </summary>
         Manufacturer,
-        
+
         /// <summary>
         /// R - Regulatory agency.
         /// </summary>

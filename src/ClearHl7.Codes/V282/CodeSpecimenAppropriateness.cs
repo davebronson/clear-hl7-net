@@ -10,12 +10,12 @@
         /// A - Appropriate.
         /// </summary>
         Appropriate,
-        
+
         /// <summary>
         /// I - Inappropriate.
         /// </summary>
         Inappropriate,
-        
+
         /// <summary>
         /// P - Preferred.
         /// </summary>

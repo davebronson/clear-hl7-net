@@ -10,47 +10,47 @@
         /// AUT - Autolyzed.
         /// </summary>
         Autolyzed,
-        
+
         /// <summary>
         /// CFU - Centrifuged.
         /// </summary>
         Centrifuged,
-        
+
         /// <summary>
         /// CLOT - Clotted.
         /// </summary>
         Clotted,
-        
+
         /// <summary>
         /// CON - Contaminated.
         /// </summary>
         Contaminated,
-        
+
         /// <summary>
         /// COOL - Cool.
         /// </summary>
         Cool,
-        
+
         /// <summary>
         /// FROZ - Frozen.
         /// </summary>
         Frozen,
-        
+
         /// <summary>
         /// HEM - Hemolyzed.
         /// </summary>
         Hemolyzed,
-        
+
         /// <summary>
         /// LIVE - Live.
         /// </summary>
         Live,
-        
+
         /// <summary>
         /// ROOM - Room temperature.
         /// </summary>
         RoomTemperature,
-        
+
         /// <summary>
         /// SNR - Sample not received.
         /// </summary>

@@ -10,7 +10,7 @@
         /// F - Prefix Family Middle Given Suffix.
         /// </summary>
         PrefixFamilyMiddleGivenSuffix,
-        
+
         /// <summary>
         /// G - Prefix Given Middle Family Suffix.
         /// </summary>

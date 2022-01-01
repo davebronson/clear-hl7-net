@@ -10,72 +10,72 @@
         /// CH - Chew.
         /// </summary>
         Chew,
-        
+
         /// <summary>
         /// DI - Dissolve.
         /// </summary>
         Dissolve,
-        
+
         /// <summary>
         /// DU - Dust.
         /// </summary>
         Dust,
-        
+
         /// <summary>
         /// IF - Infiltrate.
         /// </summary>
         Infiltrate,
-        
+
         /// <summary>
         /// IR - Irrigate.
         /// </summary>
         Irrigate,
-        
+
         /// <summary>
         /// IS - Insert.
         /// </summary>
         Insert,
-        
+
         /// <summary>
         /// IVP - IV Push.
         /// </summary>
         IvPush,
-        
+
         /// <summary>
         /// IVPB - IV Piggyback.
         /// </summary>
         IvPiggyback,
-        
+
         /// <summary>
         /// NB - Nebulized.
         /// </summary>
         Nebulized,
-        
+
         /// <summary>
         /// PF - Perfuse.
         /// </summary>
         Perfuse,
-        
+
         /// <summary>
         /// PT - Paint.
         /// </summary>
         Paint,
-        
+
         /// <summary>
         /// SH - Shampoo.
         /// </summary>
         Shampoo,
-        
+
         /// <summary>
         /// SO - Soak.
         /// </summary>
         Soak,
-        
+
         /// <summary>
         /// WA - Wash.
         /// </summary>
         Wash,
-        
+
         /// <summary>
         /// WI - Wipe.
         /// </summary>

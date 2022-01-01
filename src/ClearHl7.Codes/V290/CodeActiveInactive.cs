@@ -10,7 +10,7 @@
         /// A - Active Staff.
         /// </summary>
         ActiveStaff,
-        
+
         /// <summary>
         /// I - Inactive Staff.
         /// </summary>

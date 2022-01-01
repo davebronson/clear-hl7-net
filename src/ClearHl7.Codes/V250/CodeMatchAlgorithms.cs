@@ -10,7 +10,7 @@
         /// LINKSOFT_2.01 - Proprietary algorithm for LinkSoft v2.01.
         /// </summary>
         ProprietaryAlgorithmForLinksoftV201,
-        
+
         /// <summary>
         /// MATCHWARE_1.2 - Proprietary algorithm for MatchWare v1.2.
         /// </summary>

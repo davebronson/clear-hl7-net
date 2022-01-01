@@ -10,47 +10,47 @@
         /// AID - AIDS patient.
         /// </summary>
         AidsPatient,
-        
+
         /// <summary>
         /// EMP - Employee.
         /// </summary>
         Employee,
-        
+
         /// <summary>
         /// ETH - Alcohol/drug treatment patient.
         /// </summary>
         AlcoholDrugTreatmentPatient,
-        
+
         /// <summary>
         /// HIV - HIV(+) patient.
         /// </summary>
         HivPatient,
-        
+
         /// <summary>
         /// PSY - Psychiatric patient.
         /// </summary>
         PsychiatricPatient,
-        
+
         /// <summary>
         /// R - Restricted.
         /// </summary>
         Restricted,
-        
+
         /// <summary>
         /// U - Usual control.
         /// </summary>
         UsualControl,
-        
+
         /// <summary>
         /// UWM - Unwed mother.
         /// </summary>
         UnwedMother,
-        
+
         /// <summary>
         /// V - Very restricted.
         /// </summary>
         VeryRestricted,
-        
+
         /// <summary>
         /// VIP - Very important person or celebrity.
         /// </summary>

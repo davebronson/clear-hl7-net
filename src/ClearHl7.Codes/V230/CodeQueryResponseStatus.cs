@@ -10,7 +10,7 @@
         /// NF - No data found, no errors.
         /// </summary>
         NoDataFoundNoErrors,
-        
+
         /// <summary>
         /// OK - Data found, no errors (this is the default).
         /// </summary>

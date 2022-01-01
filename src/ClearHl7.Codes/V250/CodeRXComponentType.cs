@@ -10,7 +10,7 @@
         /// A - Additive.
         /// </summary>
         Additive,
-        
+
         /// <summary>
         /// B - Base.
         /// </summary>

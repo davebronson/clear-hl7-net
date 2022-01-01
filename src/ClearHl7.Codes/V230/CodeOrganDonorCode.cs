@@ -10,17 +10,17 @@
         /// F - Yes, patient is a documented donor, but documentation is not on file.
         /// </summary>
         YesPatientIsDonorButDocumentationNotOnFile,
-        
+
         /// <summary>
         /// N - No, patient has not agreed to be a donor.
         /// </summary>
         NoPatientHasNotAgreedToBeDonor,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>
         Unknown,
-        
+
         /// <summary>
         /// Y - Yes, patient is a documented donor and documentation is on file.
         /// </summary>

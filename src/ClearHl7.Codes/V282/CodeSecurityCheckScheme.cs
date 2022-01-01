@@ -10,12 +10,12 @@
         /// BCV - Bank Card Validation Number.
         /// </summary>
         BankCardValidationNumber,
-        
+
         /// <summary>
         /// CCS - Credit Card Security code.
         /// </summary>
         CreditCardSecurityCode,
-        
+
         /// <summary>
         /// VID - Version ID.
         /// </summary>

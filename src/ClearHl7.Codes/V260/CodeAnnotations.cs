@@ -10,24 +10,24 @@
         /// 9900 - Pace spike.
         /// </summary>
         PaceSpike,
-        
+
         /// <summary>
         /// 9901 - SAS marker.
         /// </summary>
         SasMarker,
-        
+
         /// <summary>
         /// 9902 - Sense marker.
         /// </summary>
         SenseMarker,
-        
+
         /// <summary>
         /// 9903 - Beat marker.
         /// </summary>
         BeatMarker,
-        
+
         /// <summary>
-        /// 9904 - etc..
+        /// 9904 - etc.
         /// </summary>
         Etc
     }

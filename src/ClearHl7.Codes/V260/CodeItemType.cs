@@ -10,22 +10,22 @@
         /// EQP - Equipment.
         /// </summary>
         Equipment,
-        
+
         /// <summary>
         /// IMP - Implant.
         /// </summary>
         Implant,
-        
+
         /// <summary>
         /// MED - Medication.
         /// </summary>
         Medication,
-        
+
         /// <summary>
         /// SUP - Supply.
         /// </summary>
         Supply,
-        
+
         /// <summary>
         /// TDC - Tubes, Drains, and Catheters.
         /// </summary>

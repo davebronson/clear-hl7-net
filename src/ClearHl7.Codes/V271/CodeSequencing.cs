@@ -10,22 +10,22 @@
         /// A - Ascending.
         /// </summary>
         Ascending,
-        
+
         /// <summary>
         /// AN - Ascending, case insensitive.
         /// </summary>
         AscendingCaseInsensitive,
-        
+
         /// <summary>
         /// D - Descending.
         /// </summary>
         Descending,
-        
+
         /// <summary>
         /// DN - Descending, case insensitive.
         /// </summary>
         DescendingCaseInsensitive,
-        
+
         /// <summary>
         /// N - None.
         /// </summary>

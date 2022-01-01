@@ -10,7 +10,7 @@
         /// KERB - Kerberos Service Ticket.
         /// </summary>
         KerberosServiceTicket,
-        
+
         /// <summary>
         /// SAML - Authenticated User Identity Assertion.
         /// </summary>

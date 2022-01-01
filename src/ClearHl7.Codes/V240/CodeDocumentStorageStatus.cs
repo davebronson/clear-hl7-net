@@ -10,17 +10,17 @@
         /// AA - Active and archived.
         /// </summary>
         ActiveAndArchived,
-        
+
         /// <summary>
         /// AC - Active.
         /// </summary>
         Active,
-        
+
         /// <summary>
         /// AR - Archived (not active).
         /// </summary>
         Archived,
-        
+
         /// <summary>
         /// PU - Purged.
         /// </summary>

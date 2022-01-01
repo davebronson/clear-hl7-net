@@ -10,12 +10,12 @@
         /// ADM - Admitting.
         /// </summary>
         Admitting,
-        
+
         /// <summary>
         /// PROC - Procedure.
         /// </summary>
         Procedure,
-        
+
         /// <summary>
         /// SERV - Service.
         /// </summary>

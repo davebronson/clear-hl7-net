@@ -10,32 +10,32 @@
         /// A - Alcohol.
         /// </summary>
         Alcohol,
-        
+
         /// <summary>
         /// C - Tobacco - chewed.
         /// </summary>
         TobaccoChewed,
-        
+
         /// <summary>
         /// K - Kava.
         /// </summary>
         Kava,
-        
+
         /// <summary>
         /// M - Marijuana.
         /// </summary>
         Marijuana,
-        
+
         /// <summary>
         /// O - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// T - Tobacco - smoked.
         /// </summary>
         TobaccoSmoked,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>

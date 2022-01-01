@@ -10,42 +10,42 @@
         /// APT - Appointment.
         /// </summary>
         Appointment,
-        
+
         /// <summary>
         /// ARQ - Appointment Request.
         /// </summary>
         AppointmentRequest,
-        
+
         /// <summary>
         /// EVN - Event.
         /// </summary>
         Event,
-        
+
         /// <summary>
         /// EVN.CRT - Event Criterion.
         /// </summary>
         EventCriterion,
-        
+
         /// <summary>
         /// EXP - Expectation.
         /// </summary>
         Expectation,
-        
+
         /// <summary>
         /// INT - Intent.
         /// </summary>
         Intent,
-        
+
         /// <summary>
         /// PRMS - Promise.
         /// </summary>
         Promise,
-        
+
         /// <summary>
         /// PRP - Proposal.
         /// </summary>
         Proposal,
-        
+
         /// <summary>
         /// RQO - Request-Order.
         /// </summary>

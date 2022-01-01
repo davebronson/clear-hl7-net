@@ -10,17 +10,17 @@
         /// A - Alias name.
         /// </summary>
         AliasName,
-        
+
         /// <summary>
         /// D - Display name.
         /// </summary>
         DisplayName,
-        
+
         /// <summary>
         /// L - Legal name.
         /// </summary>
         LegalName,
-        
+
         /// <summary>
         /// SL - Stock exchange listing name.
         /// </summary>

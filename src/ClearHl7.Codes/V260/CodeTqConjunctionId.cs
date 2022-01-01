@@ -10,12 +10,12 @@
         /// A - Asynchronous.
         /// </summary>
         Asynchronous,
-        
+
         /// <summary>
         /// C - Actuation Time.
         /// </summary>
         ActuationTime,
-        
+
         /// <summary>
         /// S - Synchronous.
         /// </summary>

@@ -10,32 +10,32 @@
         /// ASN - Answering Service Number.
         /// </summary>
         AnsweringServiceNumber,
-        
+
         /// <summary>
         /// EMR - Emergency Number.
         /// </summary>
         EmergencyNumber,
-        
+
         /// <summary>
         /// NET - Network (email) Address.
         /// </summary>
         NetworkEmailAddress,
-        
+
         /// <summary>
         /// ORN - Other Residence Number.
         /// </summary>
         OtherResidenceNumber,
-        
+
         /// <summary>
         /// PRN - Primary Residence Number.
         /// </summary>
         PrimaryResidenceNumber,
-        
+
         /// <summary>
         /// VHN - Vacation Home Number.
         /// </summary>
         VacationHomeNumber,
-        
+
         /// <summary>
         /// WPN - Work Number.
         /// </summary>

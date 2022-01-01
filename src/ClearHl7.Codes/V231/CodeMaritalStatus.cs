@@ -10,22 +10,22 @@
         /// A - Separated.
         /// </summary>
         Separated,
-        
+
         /// <summary>
         /// D - Divorced.
         /// </summary>
         Divorced,
-        
+
         /// <summary>
         /// M - Married.
         /// </summary>
         Married,
-        
+
         /// <summary>
         /// S - Single.
         /// </summary>
         Single,
-        
+
         /// <summary>
         /// W - Widowed.
         /// </summary>

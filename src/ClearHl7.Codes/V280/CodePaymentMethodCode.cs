@@ -10,47 +10,47 @@
         /// CASH - Cash.
         /// </summary>
         Cash,
-        
+
         /// <summary>
         /// CCCA - Credit Card.
         /// </summary>
         CreditCard,
-        
+
         /// <summary>
         /// CCHK - Cashier's Check.
         /// </summary>
         CashiersCheck,
-        
+
         /// <summary>
         /// CDAC - Credit/Debit Account.
         /// </summary>
         CreditDebitAccount,
-        
+
         /// <summary>
         /// CHCK - Check.
         /// </summary>
         Check,
-        
+
         /// <summary>
         /// DDPO - Direct Deposit.
         /// </summary>
         DirectDeposit,
-        
+
         /// <summary>
         /// DEBC - Debit Card.
         /// </summary>
         DebitCard,
-        
+
         /// <summary>
         /// SWFT - Society for Worldwide Interbank Financial Telecommunications (S.W.I.F.T.).
         /// </summary>
         SocietyForWorldwideInterbankFinancialTelecom,
-        
+
         /// <summary>
         /// TRAC - Traveler's Check.
         /// </summary>
         TravelersCheck,
-        
+
         /// <summary>
         /// VISN - VISA Special Electronic Funds Transfer Network.
         /// </summary>

@@ -7,17 +7,17 @@
     public enum CodePurgeStatusCode
     {
         /// <summary>
-        /// D - The visit is marked for deletion and the user cannot enter new data against it..
+        /// D - The visit is marked for deletion and the user cannot enter new data against it.
         /// </summary>
         VisitMarkedForDeletion,
-        
+
         /// <summary>
-        /// I - The visit is marked inactive and the user cannot enter new data against it..
+        /// I - The visit is marked inactive and the user cannot enter new data against it.
         /// </summary>
         VisitMarkedInactive,
-        
+
         /// <summary>
-        /// P - Marked for purge.  User is no longer able to update the visit..
+        /// P - Marked for purge.  User is no longer able to update the visit.
         /// </summary>
         MarkedForPurge
     }

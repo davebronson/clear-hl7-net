@@ -10,7 +10,7 @@
         /// S - Successful posting of the record defined by the MFE segment.
         /// </summary>
         SuccessfulPostingOfTheRecord,
-        
+
         /// <summary>
         /// U - Unsuccessful posting of the record defined by the MFE segment.
         /// </summary>

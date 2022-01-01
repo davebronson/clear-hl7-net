@@ -10,42 +10,42 @@
         /// A - Some, but not all, results available.
         /// </summary>
         SomeButNotAllResultsAvailable,
-        
+
         /// <summary>
         /// CA - Order was canceled.
         /// </summary>
         OrderWasCanceled,
-        
+
         /// <summary>
         /// CM - Order is completed.
         /// </summary>
         OrderIsCompleted,
-        
+
         /// <summary>
         /// DC - Order was discontinued.
         /// </summary>
         OrderWasDiscontinued,
-        
+
         /// <summary>
         /// ER - Error, order not found.
         /// </summary>
         ErrorOrderNotFound,
-        
+
         /// <summary>
         /// HD - Order is on hold.
         /// </summary>
         OrderIsOnHold,
-        
+
         /// <summary>
         /// IP - In process, unspecified.
         /// </summary>
         InProcessUnspecified,
-        
+
         /// <summary>
         /// RP - Order has been replaced.
         /// </summary>
         OrderHasBeenReplaced,
-        
+
         /// <summary>
         /// SC - In process, scheduled.
         /// </summary>

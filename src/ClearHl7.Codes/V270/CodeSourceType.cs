@@ -10,7 +10,7 @@
         /// A - Accept.
         /// </summary>
         Accept,
-        
+
         /// <summary>
         /// I - Initiate.
         /// </summary>

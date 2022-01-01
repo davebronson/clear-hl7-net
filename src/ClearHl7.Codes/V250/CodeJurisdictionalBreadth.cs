@@ -10,12 +10,12 @@
         /// C - County/Parish.
         /// </summary>
         CountyParish,
-        
+
         /// <summary>
         /// N - Country.
         /// </summary>
         Country,
-        
+
         /// <summary>
         /// S - State/Province.
         /// </summary>

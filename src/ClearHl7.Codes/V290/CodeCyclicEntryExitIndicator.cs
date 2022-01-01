@@ -7,20 +7,20 @@
     public enum CodeCyclicEntryExitIndicator
     {
         /// <summary>
-        /// # - The last service request in a cyclic group..
+        /// # - The last service request in a cyclic group.
         /// </summary>
         TheLastServiceRequestInCyclicGroup,
-        
+
         /// <summary>
         /// * - The first service request in a cyclic group.
         /// </summary>
         TheFirstServiceRequestInCyclicGroup,
-        
+
         /// <summary>
         /// F - First service.
         /// </summary>
         FirstService,
-        
+
         /// <summary>
         /// L - Last service.
         /// </summary>

@@ -10,17 +10,17 @@
         /// BX - Box.
         /// </summary>
         Box,
-        
+
         /// <summary>
         /// CS - Case.
         /// </summary>
         Case,
-        
+
         /// <summary>
         /// EA - Each.
         /// </summary>
         Each,
-        
+
         /// <summary>
         /// SET - Set.
         /// </summary>

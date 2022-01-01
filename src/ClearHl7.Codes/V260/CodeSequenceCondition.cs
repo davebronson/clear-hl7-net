@@ -10,12 +10,12 @@
         /// C - Repeating cycle of orders.
         /// </summary>
         RepeatingCycleOfOrders,
-        
+
         /// <summary>
         /// R - Reserved for possible future use.
         /// </summary>
         ReservedForPossibleFutureUse,
-        
+
         /// <summary>
         /// S - Sequence conditions.
         /// </summary>

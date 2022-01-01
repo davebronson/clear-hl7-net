@@ -10,22 +10,22 @@
         /// CH - Characters.
         /// </summary>
         Characters,
-        
+
         /// <summary>
         /// LI - Lines.
         /// </summary>
         Lines,
-        
+
         /// <summary>
         /// PG - Pages.
         /// </summary>
         Pages,
-        
+
         /// <summary>
         /// RD - Records.
         /// </summary>
         Records,
-        
+
         /// <summary>
         /// ZO - Locally defined.
         /// </summary>

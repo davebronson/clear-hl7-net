@@ -10,32 +10,32 @@
         /// C - Confirmed or verified.
         /// </summary>
         ConfirmedOrVerified,
-        
+
         /// <summary>
         /// D - Doubt raised.
         /// </summary>
         DoubtRaised,
-        
+
         /// <summary>
         /// E - Erroneous.
         /// </summary>
         Erroneous,
-        
+
         /// <summary>
         /// I - Confirmed but inactive.
         /// </summary>
         ConfirmedButInactive,
-        
+
         /// <summary>
         /// P - Pending.
         /// </summary>
         Pending,
-        
+
         /// <summary>
         /// S - Suspect.
         /// </summary>
         Suspect,
-        
+
         /// <summary>
         /// U - Unconfirmed.
         /// </summary>

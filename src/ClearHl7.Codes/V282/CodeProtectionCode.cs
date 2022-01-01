@@ -10,12 +10,12 @@
         /// LI - Listed.
         /// </summary>
         Listed,
-        
+
         /// <summary>
         /// UL - Unlisted (Should not appear in directories).
         /// </summary>
         UnlistedShouldNotAppearInDirectories,
-        
+
         /// <summary>
         /// UP - Unpublished.
         /// </summary>

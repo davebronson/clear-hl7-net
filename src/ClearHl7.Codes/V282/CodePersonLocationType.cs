@@ -10,32 +10,32 @@
         /// C - Clinic.
         /// </summary>
         Clinic,
-        
+
         /// <summary>
         /// D - Department.
         /// </summary>
         Department,
-        
+
         /// <summary>
         /// H - Home.
         /// </summary>
         Home,
-        
+
         /// <summary>
         /// N - Nursing Unit.
         /// </summary>
         NursingUnit,
-        
+
         /// <summary>
         /// O - Provider's Office.
         /// </summary>
         ProvidersOffice,
-        
+
         /// <summary>
         /// P - Phone.
         /// </summary>
         Phone,
-        
+
         /// <summary>
         /// S - SNF.
         /// </summary>

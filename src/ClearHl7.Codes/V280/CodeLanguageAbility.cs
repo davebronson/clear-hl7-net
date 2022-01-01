@@ -10,22 +10,22 @@
         /// 1 - Read.
         /// </summary>
         Read,
-        
+
         /// <summary>
         /// 2 - Write.
         /// </summary>
         Write,
-        
+
         /// <summary>
         /// 3 - Speak.
         /// </summary>
         Speak,
-        
+
         /// <summary>
         /// 4 - Understand.
         /// </summary>
         Understand,
-        
+
         /// <summary>
         /// 5 - Sign.
         /// </summary>

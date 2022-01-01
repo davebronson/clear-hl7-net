@@ -10,12 +10,12 @@
         /// O - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// P - Preventable.
         /// </summary>
         Preventable,
-        
+
         /// <summary>
         /// U - User Error.
         /// </summary>

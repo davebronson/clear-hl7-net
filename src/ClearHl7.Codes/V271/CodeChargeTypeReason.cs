@@ -10,22 +10,22 @@
         /// 01 - Allergy.
         /// </summary>
         Allergy,
-        
+
         /// <summary>
         /// 02 - Intolerance.
         /// </summary>
         Intolerance,
-        
+
         /// <summary>
         /// 03 - Treatment Failure.
         /// </summary>
         TreatmentFailure,
-        
+
         /// <summary>
         /// 04 - Patient Request.
         /// </summary>
         PatientRequest,
-        
+
         /// <summary>
         /// 05 - No Exception.
         /// </summary>

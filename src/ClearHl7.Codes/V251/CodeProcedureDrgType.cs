@@ -10,22 +10,22 @@
         /// 1 - 1st non-Operative.
         /// </summary>
         FirstNonOperative,
-        
+
         /// <summary>
         /// 2 - 2nd non-Operative.
         /// </summary>
         SecondNonOperative,
-        
+
         /// <summary>
         /// 3 - Major Operative.
         /// </summary>
         MajorOperative,
-        
+
         /// <summary>
         /// 4 - 2nd Operative.
         /// </summary>
         SecondOperative,
-        
+
         /// <summary>
         /// 5 - 3rd Operative.
         /// </summary>

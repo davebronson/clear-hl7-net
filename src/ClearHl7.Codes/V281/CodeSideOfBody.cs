@@ -10,7 +10,7 @@
         /// L - Left.
         /// </summary>
         Left,
-        
+
         /// <summary>
         /// R - Right.
         /// </summary>

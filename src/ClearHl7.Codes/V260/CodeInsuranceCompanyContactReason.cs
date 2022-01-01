@@ -10,12 +10,12 @@
         /// 01 - Medicare claim status.
         /// </summary>
         MedicareClaimStatus,
-        
+
         /// <summary>
         /// 02 - Medicaid claim status.
         /// </summary>
         MedicaidClaimStatus,
-        
+
         /// <summary>
         /// 03 - Name/address change.
         /// </summary>

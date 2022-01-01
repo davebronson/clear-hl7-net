@@ -10,22 +10,22 @@
         /// A - Add/Insert.
         /// </summary>
         AddInsert,
-        
+
         /// <summary>
         /// D - Delete.
         /// </summary>
         Delete,
-        
+
         /// <summary>
         /// S - Used in Snapshot mode.
         /// </summary>
         UsedInSnapshotMode,
-        
+
         /// <summary>
         /// U - Update.
         /// </summary>
         Update,
-        
+
         /// <summary>
         /// X - No Change.
         /// </summary>

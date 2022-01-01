@@ -10,12 +10,12 @@
         /// 1 - EO Gas Sterilizer.
         /// </summary>
         EoGasSterilizer,
-        
+
         /// <summary>
         /// 2 - Steam Sterilizer.
         /// </summary>
         SteamSterilizer,
-        
+
         /// <summary>
         /// 3 - Peracetic Acid.
         /// </summary>

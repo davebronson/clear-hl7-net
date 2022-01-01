@@ -10,7 +10,7 @@
         /// R - Routine.
         /// </summary>
         Routine,
-        
+
         /// <summary>
         /// S - Stat.
         /// </summary>

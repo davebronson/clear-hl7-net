@@ -10,12 +10,12 @@
         /// A - Alphabetic (i.e., Default or some single-byte).
         /// </summary>
         Alphabetic,
-        
+
         /// <summary>
         /// I - Ideographic (i.e., Kanji).
         /// </summary>
         Ideographic,
-        
+
         /// <summary>
         /// P - Phonetic (i.e., ASCII, Katakana, Hiragana, etc.).
         /// </summary>

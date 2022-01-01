@@ -10,37 +10,37 @@
         /// I - Identified.
         /// </summary>
         Identified,
-        
+
         /// <summary>
         /// L - Left Equipment.
         /// </summary>
         LeftEquipment,
-        
+
         /// <summary>
         /// M - Missing.
         /// </summary>
         Missing,
-        
+
         /// <summary>
         /// O - In Process.
         /// </summary>
         InProcess,
-        
+
         /// <summary>
         /// P - In Position.
         /// </summary>
         InPosition,
-        
+
         /// <summary>
         /// R - Process Completed.
         /// </summary>
         ProcessCompleted,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>
         Unknown,
-        
+
         /// <summary>
         /// X - Container Unavailable.
         /// </summary>

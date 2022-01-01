@@ -10,7 +10,7 @@
         /// C - Call back results.
         /// </summary>
         CallBackResults,
-        
+
         /// <summary>
         /// R - Rush reporting.
         /// </summary>

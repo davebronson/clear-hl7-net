@@ -10,17 +10,17 @@
         /// O - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// P - Permanent.
         /// </summary>
         Permanent,
-        
+
         /// <summary>
         /// T - Temporary.
         /// </summary>
         Temporary,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>

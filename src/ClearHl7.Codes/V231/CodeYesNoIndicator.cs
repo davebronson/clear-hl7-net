@@ -10,7 +10,7 @@
         /// N - No.
         /// </summary>
         No,
-        
+
         /// <summary>
         /// Y - Yes.
         /// </summary>

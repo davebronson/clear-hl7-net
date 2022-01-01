@@ -10,52 +10,52 @@
         /// ... - (null) No state change.
         /// </summary>
         NullNoStateChangeADeprecated,
-        
+
         /// <summary>
         /// CL - Clearing.
         /// </summary>
         Clearing,
-        
+
         /// <summary>
         /// CO - Configuring.
         /// </summary>
         Configuring,
-        
+
         /// <summary>
         /// ES - E-stopped.
         /// </summary>
         EStopped,
-        
+
         /// <summary>
         /// ID - Idle.
         /// </summary>
         Idle,
-        
+
         /// <summary>
         /// IN - Initializing.
         /// </summary>
         Initializing,
-        
+
         /// <summary>
         /// OP - Normal Operation.
         /// </summary>
         NormalOperation,
-        
+
         /// <summary>
         /// PA - Pausing.
         /// </summary>
         Pausing,
-        
+
         /// <summary>
         /// PD - Paused.
         /// </summary>
         Paused,
-        
+
         /// <summary>
         /// PU - Powered Up.
         /// </summary>
         PoweredUp,
-        
+
         /// <summary>
         /// ... - (null) No state change.
         /// </summary>

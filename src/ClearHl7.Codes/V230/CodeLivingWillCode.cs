@@ -10,22 +10,22 @@
         /// F - Yes, patient has a living will but it is not on file.
         /// </summary>
         YesPatientHasLivingWillButNotOnFile,
-        
+
         /// <summary>
         /// I - No, patient does not have a living will but information was provided.
         /// </summary>
         NoPatientDoesNotHaveLivingWillButInfoWasProvided,
-        
+
         /// <summary>
         /// N - No, patient does not have a living will and no information was provided.
         /// </summary>
         NoPatientDoesNotHaveLivingWillAndNoInfoWasProvided,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>
         Unknown,
-        
+
         /// <summary>
         /// Y - Yes, patient has a living will.
         /// </summary>

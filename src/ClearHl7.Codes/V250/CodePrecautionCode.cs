@@ -10,42 +10,42 @@
         /// A - Aggressive.
         /// </summary>
         Aggressive,
-        
+
         /// <summary>
         /// B - Blind.
         /// </summary>
         Blind,
-        
+
         /// <summary>
         /// C - Confused.
         /// </summary>
         Confused,
-        
+
         /// <summary>
         /// D - Deaf.
         /// </summary>
         Deaf,
-        
+
         /// <summary>
         /// I - On IV.
         /// </summary>
         OnIv,
-        
+
         /// <summary>
         /// N - Do not resuscitate.
         /// </summary>
         DoNotResuscitate,
-        
+
         /// <summary>
         /// O - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// P - Paraplegic.
         /// </summary>
         Paraplegic,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>

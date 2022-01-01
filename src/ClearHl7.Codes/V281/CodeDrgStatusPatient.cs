@@ -10,12 +10,12 @@
         /// 1 - Normal length of stay.
         /// </summary>
         NormalLengthOfStay,
-        
+
         /// <summary>
         /// 2 - Short length of stay.
         /// </summary>
         ShortLengthOfStay,
-        
+
         /// <summary>
         /// 3 - Long length of stay.
         /// </summary>

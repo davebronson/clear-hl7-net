@@ -10,7 +10,7 @@
         /// 0 - Real Time Values.
         /// </summary>
         RealTimeValues,
-        
+
         /// <summary>
         /// 1 - Historic Values.
         /// </summary>

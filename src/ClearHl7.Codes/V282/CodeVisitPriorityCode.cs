@@ -10,12 +10,12 @@
         /// 1 - Emergency.
         /// </summary>
         Emergency,
-        
+
         /// <summary>
         /// 2 - Urgent.
         /// </summary>
         Urgent,
-        
+
         /// <summary>
         /// 3 - Elective.
         /// </summary>

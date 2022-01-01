@@ -10,12 +10,12 @@
         /// N - No.
         /// </summary>
         No,
-        
+
         /// <summary>
         /// NA - Not applicable.
         /// </summary>
         NotApplicable,
-        
+
         /// <summary>
         /// Y - Yes.
         /// </summary>

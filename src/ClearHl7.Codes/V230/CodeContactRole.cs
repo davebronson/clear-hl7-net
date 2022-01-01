@@ -10,17 +10,17 @@
         /// BP - Billing contact person.
         /// </summary>
         BillingContactPerson,
-        
+
         /// <summary>
         /// CP - Contact person.
         /// </summary>
         ContactPerson,
-        
+
         /// <summary>
         /// EP - Emergency contact person.
         /// </summary>
         EmergencyContactPerson,
-        
+
         /// <summary>
         /// PR - Person preparing referral.
         /// </summary>

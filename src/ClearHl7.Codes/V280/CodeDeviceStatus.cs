@@ -10,7 +10,7 @@
         /// 0 - Ready.
         /// </summary>
         Ready,
-        
+
         /// <summary>
         /// 1 - Not Ready.
         /// </summary>

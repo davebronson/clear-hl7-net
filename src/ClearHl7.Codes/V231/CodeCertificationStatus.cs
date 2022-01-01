@@ -10,7 +10,7 @@
         /// C - Certified.
         /// </summary>
         Certified,
-        
+
         /// <summary>
         /// E - Eligible.
         /// </summary>

@@ -10,12 +10,12 @@
         /// T - Telephone.
         /// </summary>
         Telephone,
-        
+
         /// <summary>
         /// V - Verbal.
         /// </summary>
         Verbal,
-        
+
         /// <summary>
         /// W - Written.
         /// </summary>

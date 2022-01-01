@@ -10,12 +10,12 @@
         /// B - Batch.
         /// </summary>
         Batch,
-        
+
         /// <summary>
         /// R - Real Time.
         /// </summary>
         RealTime,
-        
+
         /// <summary>
         /// T - Bolus (a series of responses sent at the same time without use of batch formatting).
         /// </summary>

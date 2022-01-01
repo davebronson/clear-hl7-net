@@ -10,7 +10,7 @@
         /// A60 - Opened container, indoor atmosphere, 60 minutes duration.
         /// </summary>
         OpenedContainerIndoorAtmosphere60MinutesDuration,
-        
+
         /// <summary>
         /// ATM - Opened container, atmosphere and duration unspecified.
         /// </summary>

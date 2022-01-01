@@ -10,17 +10,17 @@
         /// ER - Emergency.
         /// </summary>
         Emergency,
-        
+
         /// <summary>
         /// IPE - Inpatient elective.
         /// </summary>
         InpatientElective,
-        
+
         /// <summary>
         /// OPE - Outpatient elective.
         /// </summary>
         OutpatientElective,
-        
+
         /// <summary>
         /// UR - Urgent.
         /// </summary>

@@ -10,12 +10,12 @@
         /// LM - Legally mandated.
         /// </summary>
         LegallyMandated,
-        
+
         /// <summary>
         /// MIN - Subject is a minor.
         /// </summary>
         SubjectIsAMinor,
-        
+
         /// <summary>
         /// NC - Subject is not competent to consent.
         /// </summary>

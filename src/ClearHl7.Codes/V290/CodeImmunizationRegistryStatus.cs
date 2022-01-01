@@ -10,32 +10,32 @@
         /// A - Active.
         /// </summary>
         Active,
-        
+
         /// <summary>
         /// I - Inactive.
         /// </summary>
         Inactive,
-        
+
         /// <summary>
         /// L - Inactive - Lost to follow-up (cancel contract).
         /// </summary>
         InactiveLostToFollowUp,
-        
+
         /// <summary>
         /// M - Inactive - Moved or gone elsewhere (cancel contract).
         /// </summary>
         InactiveMovedOrGoneElsewhere,
-        
+
         /// <summary>
         /// O - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// P - Inactive - Permanently inactive (Do not reactivate or add new entries to the record).
         /// </summary>
         InactivePermanently,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>

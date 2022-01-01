@@ -10,22 +10,22 @@
         /// E - Employer.
         /// </summary>
         Employer,
-        
+
         /// <summary>
         /// G - Guarantor.
         /// </summary>
         Guarantor,
-        
+
         /// <summary>
         /// I - Insurance company.
         /// </summary>
         InsuranceCompany,
-        
+
         /// <summary>
         /// O - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// P - Patient.
         /// </summary>

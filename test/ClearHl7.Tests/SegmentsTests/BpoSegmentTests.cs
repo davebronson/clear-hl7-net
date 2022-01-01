@@ -114,12 +114,12 @@ namespace ClearHl7.Tests.SegmentsTests
                     }
                 },
                 BpQuantity = 4,
-                BpAmount  = 5,
+                BpAmount = 5,
                 BpUnits = new CodedWithExceptions
                 {
                     Identifier = "6"
                 },
-                BpIntendedUseDateTime = new DateTime(2020,7,7,0,0,7),
+                BpIntendedUseDateTime = new DateTime(2020, 7, 7, 0, 0, 7),
                 BpIntendedDispenseFromLocation = new PersonLocation
                 {
                     PointOfCare = new HierarchicDesignator
@@ -134,7 +134,7 @@ namespace ClearHl7.Tests.SegmentsTests
                         StreetOrMailingAddress = "9"
                     }
                 },
-                BpRequestedDispenseDateTime = new DateTime(2020,10,10,0,0,10),
+                BpRequestedDispenseDateTime = new DateTime(2020, 10, 10, 0, 0, 10),
                 BpRequestedDispenseToLocation = new PersonLocation
                 {
                     PointOfCare = new HierarchicDesignator

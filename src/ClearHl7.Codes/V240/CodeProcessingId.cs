@@ -10,12 +10,12 @@
         /// D - Debugging.
         /// </summary>
         Debugging,
-        
+
         /// <summary>
         /// P - Production.
         /// </summary>
         Production,
-        
+
         /// <summary>
         /// T - Training.
         /// </summary>

@@ -10,32 +10,32 @@
         /// GRN - Granulocytes.
         /// </summary>
         Granulocytes,
-        
+
         /// <summary>
         /// LYM - Lymphocytes.
         /// </summary>
         Lymphocytes,
-        
+
         /// <summary>
         /// PLS - Plasma.
         /// </summary>
         Plasma,
-        
+
         /// <summary>
         /// PLT - Platelets.
         /// </summary>
         Platelets,
-        
+
         /// <summary>
         /// PSC - Peripheral Stem Cells.
         /// </summary>
         PeripheralStemCells,
-        
+
         /// <summary>
         /// RBC - Red Blood Cells.
         /// </summary>
         RedBloodCells,
-        
+
         /// <summary>
         /// WBL - Whole Blood.
         /// </summary>

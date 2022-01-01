@@ -10,27 +10,27 @@
         /// D - day.
         /// </summary>
         Day,
-        
+
         /// <summary>
         /// H - hour.
         /// </summary>
         Hour,
-        
+
         /// <summary>
         /// L - month.
         /// </summary>
         Month,
-        
+
         /// <summary>
         /// M - minute.
         /// </summary>
         Minute,
-        
+
         /// <summary>
         /// S - second.
         /// </summary>
         Second,
-        
+
         /// <summary>
         /// Y - year.
         /// </summary>

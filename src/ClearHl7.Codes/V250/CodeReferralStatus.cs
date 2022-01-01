@@ -10,17 +10,17 @@
         /// A - Accepted.
         /// </summary>
         Accepted,
-        
+
         /// <summary>
         /// E - Expired.
         /// </summary>
         Expired,
-        
+
         /// <summary>
         /// P - Pending.
         /// </summary>
         Pending,
-        
+
         /// <summary>
         /// R - Rejected.
         /// </summary>

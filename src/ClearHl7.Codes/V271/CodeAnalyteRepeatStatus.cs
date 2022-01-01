@@ -10,17 +10,17 @@
         /// D - Repeated with dilution.
         /// </summary>
         RepeatedWithDilution,
-        
+
         /// <summary>
         /// F - Reflex test.
         /// </summary>
         ReflexTest,
-        
+
         /// <summary>
         /// O - Original, first run.
         /// </summary>
         OriginalFirstRun,
-        
+
         /// <summary>
         /// R - Repeated without dilution.
         /// </summary>

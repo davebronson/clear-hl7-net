@@ -10,27 +10,27 @@
         /// C - Closed.
         /// </summary>
         Closed,
-        
+
         /// <summary>
         /// H - Housekeeping.
         /// </summary>
         Housekeeping,
-        
+
         /// <summary>
         /// I - Isolated.
         /// </summary>
         Isolated,
-        
+
         /// <summary>
         /// K - Contaminated.
         /// </summary>
         Contaminated,
-        
+
         /// <summary>
         /// O - Occupied.
         /// </summary>
         Occupied,
-        
+
         /// <summary>
         /// U - Unoccupied.
         /// </summary>

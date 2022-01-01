@@ -10,22 +10,22 @@
         /// A - Archive.
         /// </summary>
         Archive,
-        
+
         /// <summary>
         /// I - Initial load.
         /// </summary>
         InitialLoad,
-        
+
         /// <summary>
         /// Not present - Not present (the default, meaning current  processing).
         /// </summary>
         NotPresent,
-        
+
         /// <summary>
         /// R - Restore from archive.
         /// </summary>
         RestoreFromArchive,
-        
+
         /// <summary>
         /// T - Current processing, transmitted at intervals (scheduled or on demand).
         /// </summary>

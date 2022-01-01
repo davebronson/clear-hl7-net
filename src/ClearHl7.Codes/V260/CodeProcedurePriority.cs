@@ -10,17 +10,17 @@
         /// ... - No suggested values defined.
         /// </summary>
         NoSuggestedValuesDefined,
-        
+
         /// <summary>
         /// 0 - the admitting procedure.
         /// </summary>
         TheAdmittingProcedure,
-        
+
         /// <summary>
         /// 1 - the primary procedure.
         /// </summary>
         ThePrimaryProcedure,
-        
+
         /// <summary>
         /// 2 - for ranked secondary procedures.
         /// </summary>

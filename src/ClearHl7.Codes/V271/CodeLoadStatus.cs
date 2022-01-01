@@ -10,17 +10,17 @@
         /// LCC - Load is Complete.
         /// </summary>
         LoadIsComplete,
-        
+
         /// <summary>
         /// LCN - Load Canceled.
         /// </summary>
         LoadCanceled,
-        
+
         /// <summary>
         /// LCP - Load In Process.
         /// </summary>
         LoadInProcess,
-        
+
         /// <summary>
         /// LLD - Building a Load.
         /// </summary>

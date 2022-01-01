@@ -10,32 +10,32 @@
         /// ANY - Any date/time within a range.
         /// </summary>
         AnyDateTimeWithinRange,
-        
+
         /// <summary>
         /// CAN - Cancellation date/time.
         /// </summary>
         CancellationDateTime,
-        
+
         /// <summary>
         /// COL - Collection date/time, equivalent to film or sample collection date/time.
         /// </summary>
         CollectionDateTime,
-        
+
         /// <summary>
         /// ORD - Order date/time.
         /// </summary>
         OrderDateTime,
-        
+
         /// <summary>
         /// RCT - Specimen receipt date/time, receipt of specimen in filling ancillary (Lab).
         /// </summary>
         SpecimenReceiptDateTime,
-        
+
         /// <summary>
         /// REP - Report date/time, report date/time at filling ancillary (i.e., Lab).
         /// </summary>
         ReportDateTime,
-        
+
         /// <summary>
         /// SCHED - Schedule date/time.
         /// </summary>

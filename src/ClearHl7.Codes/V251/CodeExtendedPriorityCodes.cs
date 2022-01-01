@@ -10,64 +10,64 @@
         /// A - ASAP.
         /// </summary>
         Asap,
-        
+
         /// <summary>
         /// C - Callback.
         /// </summary>
         Callback,
-        
+
         /// <summary>
         /// P - Preop.
         /// </summary>
         Preop,
-        
+
         /// <summary>
         /// PRN - As needed.
         /// </summary>
         AsNeeded,
-        
+
         /// <summary>
         /// R - Routine.
         /// </summary>
         Routine,
-        
+
         /// <summary>
         /// S - Stat.
         /// </summary>
         Stat,
-        
+
         /// <summary>
         /// T - Timing critical.
         /// </summary>
         TimingCritical,
-        
+
         /// <summary>
-        /// TDinteger - Timing critical within integer days..
+        /// TDinteger - Timing critical within integer days.
         /// </summary>
         TimingCriticalWithinIntegerDays,
-        
+
         /// <summary>
-        /// THinteger - Timing critical within integer hours..
+        /// THinteger - Timing critical within integer hours.
         /// </summary>
         TimingCriticalWithinIntegerHours,
-        
+
         /// <summary>
-        /// TLinteger - Timing critical within integer months..
+        /// TLinteger - Timing critical within integer months.
         /// </summary>
         TimingCriticalWithinIntegerMonths,
-        
+
         /// <summary>
-        /// TMinteger - Timing critical within integer minutes..
+        /// TMinteger - Timing critical within integer minutes.
         /// </summary>
         TimingCriticalWithinIntegerMinutes,
-        
+
         /// <summary>
-        /// TSinteger - Timing critical within integer seconds..
+        /// TSinteger - Timing critical within integer seconds.
         /// </summary>
         TimingCriticalWithinIntegerSeconds,
-        
+
         /// <summary>
-        /// TWinteger - Timing critical within integer weeks..
+        /// TWinteger - Timing critical within integer weeks.
         /// </summary>
         TimingCriticalWithinIntegerWeeks
     }

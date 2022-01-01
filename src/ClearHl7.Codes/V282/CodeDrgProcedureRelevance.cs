@@ -10,12 +10,12 @@
         /// 0 - Neither operation relevant nor non-operation relevant procedure.
         /// </summary>
         NeitherOperationRelevantNorNonOperationRelevantProcedure,
-        
+
         /// <summary>
         /// 1 - Operation relevant procedure.
         /// </summary>
         OperationRelevantProcedure,
-        
+
         /// <summary>
         /// 2 - Non-operation relevant procedure.
         /// </summary>

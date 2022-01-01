@@ -10,22 +10,22 @@
         /// C - Corrected.
         /// </summary>
         Corrected,
-        
+
         /// <summary>
         /// E - Added in error.
         /// </summary>
         AddedInError,
-        
+
         /// <summary>
         /// M - Moved.
         /// </summary>
         Moved,
-        
+
         /// <summary>
         /// N - No longer in service.
         /// </summary>
         NoLongerInService,
-        
+
         /// <summary>
         /// R - On request.
         /// </summary>

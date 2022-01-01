@@ -10,17 +10,17 @@
         /// HO - Home.
         /// </summary>
         Home,
-        
+
         /// <summary>
         /// MO - Mobile Unit.
         /// </summary>
         MobileUnit,
-        
+
         /// <summary>
         /// PH - Phone.
         /// </summary>
         Phone,
-        
+
         /// <summary>
         /// TE - Teaching.
         /// </summary>

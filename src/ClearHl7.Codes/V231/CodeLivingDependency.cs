@@ -10,22 +10,22 @@
         /// CB - Common Bath.
         /// </summary>
         CommonBathDeprecated,
-        
+
         /// <summary>
         /// D - Spouse dependent.
         /// </summary>
         SpouseDependentDeprecated,
-        
+
         /// <summary>
         /// M - Medical Supervision Required.
         /// </summary>
         MedicalSupervisionRequired,
-        
+
         /// <summary>
         /// S - Spouse Dependent.
         /// </summary>
         SpouseDependent,
-        
+
         /// <summary>
         /// WU - Walk up.
         /// </summary>

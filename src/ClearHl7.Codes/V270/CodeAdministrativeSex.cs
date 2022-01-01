@@ -10,27 +10,27 @@
         /// A - Ambiguous.
         /// </summary>
         Ambiguous,
-        
+
         /// <summary>
         /// F - Female.
         /// </summary>
         Female,
-        
+
         /// <summary>
         /// M - Male.
         /// </summary>
         Male,
-        
+
         /// <summary>
         /// N - Not applicable.
         /// </summary>
         NotApplicable,
-        
+
         /// <summary>
         /// O - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>

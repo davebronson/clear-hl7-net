@@ -10,12 +10,12 @@
         /// AP - Approved.
         /// </summary>
         Approved,
-        
+
         /// <summary>
         /// DE - Denied.
         /// </summary>
         Denied,
-        
+
         /// <summary>
         /// PE - Pending.
         /// </summary>

@@ -10,17 +10,17 @@
         /// G - This observation/service is on the formulary, and has guidelines.
         /// </summary>
         ThisObservationServiceIsOnFormularyAndHasGuidelines,
-        
+
         /// <summary>
         /// N - This observation/service is not on the formulary.
         /// </summary>
         ThisObservationServiceIsNotOnFormulary,
-        
+
         /// <summary>
         /// R - This observation/service is on the formulary, but is restricted.
         /// </summary>
         ThisObservationServiceIsOnFormularyButIsRestricted,
-        
+
         /// <summary>
         /// Y - This observation/service is on the formulary.
         /// </summary>

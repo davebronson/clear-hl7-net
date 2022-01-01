@@ -7,7 +7,7 @@
     public enum CodeSupplementalServiceInformationValues
     {
         /// <summary>
-        /// ... - No suggested values defined..
+        /// ... - No suggested values defined.
         /// </summary>
         NoSuggestedValuesDefined
     }

@@ -10,7 +10,7 @@
         /// RVAT - Registered in VAT register.
         /// </summary>
         RegisteredInVatRegister,
-        
+
         /// <summary>
         /// UVAT - Unregistered in VAT register.
         /// </summary>

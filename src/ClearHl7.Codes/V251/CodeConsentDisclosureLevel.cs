@@ -10,12 +10,12 @@
         /// F - Full Disclosure.
         /// </summary>
         FullDisclosure,
-        
+
         /// <summary>
         /// N - No Disclosure.
         /// </summary>
         NoDisclosure,
-        
+
         /// <summary>
         /// P - Partial Disclosure.
         /// </summary>

@@ -10,57 +10,57 @@
         /// CO - Control Reagent.
         /// </summary>
         ControlReagent,
-        
+
         /// <summary>
         /// DI - Diluent.
         /// </summary>
         Diluent,
-        
+
         /// <summary>
         /// LI - Measurable Liquid Item.
         /// </summary>
         MeasurableLiquidItem,
-        
+
         /// <summary>
         /// LW - Liquid Waste.
         /// </summary>
         LiquidWaste,
-        
+
         /// <summary>
         /// MR - Multiple Test Reagent.
         /// </summary>
         MultipleTestReagent,
-        
+
         /// <summary>
         /// OT - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// PT - Pretreatment.
         /// </summary>
         Pretreatment,
-        
+
         /// <summary>
         /// PW - Purified Water.
         /// </summary>
         PurifiedWater,
-        
+
         /// <summary>
         /// RC - Reagent Calibrator.
         /// </summary>
         ReagentCalibrator,
-        
+
         /// <summary>
         /// SC - Countable Solid Item.
         /// </summary>
         CountableSolidItem,
-        
+
         /// <summary>
         /// SR - Single Test Reagent.
         /// </summary>
         SingleTestReagent,
-        
+
         /// <summary>
         /// SW - Solid Waste.
         /// </summary>

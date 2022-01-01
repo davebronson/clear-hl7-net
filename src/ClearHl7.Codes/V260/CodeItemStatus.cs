@@ -10,12 +10,12 @@
         /// A - Active.
         /// </summary>
         Active,
-        
+
         /// <summary>
         /// I - Inactive.
         /// </summary>
         Inactive,
-        
+
         /// <summary>
         /// P - Pending Inactive.
         /// </summary>

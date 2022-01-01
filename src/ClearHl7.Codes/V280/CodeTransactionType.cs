@@ -10,22 +10,22 @@
         /// AJ - Adjustment.
         /// </summary>
         Adjustment,
-        
+
         /// <summary>
         /// CD - Credit.
         /// </summary>
         Credit,
-        
+
         /// <summary>
         /// CG - Charge.
         /// </summary>
         Charge,
-        
+
         /// <summary>
         /// CO - Co-payment.
         /// </summary>
         CoPayment,
-        
+
         /// <summary>
         /// PY - Payment.
         /// </summary>

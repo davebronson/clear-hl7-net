@@ -10,12 +10,12 @@
         /// M - Modified assignment.
         /// </summary>
         ModifiedAssignment,
-        
+
         /// <summary>
         /// N - No.
         /// </summary>
         No,
-        
+
         /// <summary>
         /// Y - Yes.
         /// </summary>

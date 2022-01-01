@@ -10,27 +10,27 @@
         /// 1 - Non-acute.
         /// </summary>
         NonAcute,
-        
+
         /// <summary>
         /// 2 - Acute.
         /// </summary>
         Acute,
-        
+
         /// <summary>
         /// 3 - Urgent.
         /// </summary>
         Urgent,
-        
+
         /// <summary>
         /// 4 - Severe.
         /// </summary>
         Severe,
-        
+
         /// <summary>
         /// 5 - Dead on Arrival (DOA).
         /// </summary>
         DeadOnArrivalDoa,
-        
+
         /// <summary>
         /// 99 - Other.
         /// </summary>

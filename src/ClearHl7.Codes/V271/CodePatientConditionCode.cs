@@ -10,27 +10,27 @@
         /// A - Satisfactory.
         /// </summary>
         Satisfactory,
-        
+
         /// <summary>
         /// C - Critical.
         /// </summary>
         Critical,
-        
+
         /// <summary>
         /// O - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// P - Poor.
         /// </summary>
         Poor,
-        
+
         /// <summary>
         /// S - Stable.
         /// </summary>
         Stable,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>

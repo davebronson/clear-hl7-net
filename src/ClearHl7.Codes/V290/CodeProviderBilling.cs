@@ -10,7 +10,7 @@
         /// I - Institution bills for provider.
         /// </summary>
         InstitutionBillsForProvider,
-        
+
         /// <summary>
         /// P - Provider does own billing.
         /// </summary>

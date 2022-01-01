@@ -10,7 +10,7 @@
         /// CST - Cost.
         /// </summary>
         Cost,
-        
+
         /// <summary>
         /// TME - Time.
         /// </summary>

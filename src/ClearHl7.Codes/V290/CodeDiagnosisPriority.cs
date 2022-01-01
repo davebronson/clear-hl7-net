@@ -10,22 +10,22 @@
         /// 0 - Not included in diagnosis ranking.
         /// </summary>
         NotIncludedInDiagnosisRanking,
-        
+
         /// <summary>
         /// 1 - The primary diagnosis.
         /// </summary>
         ThePrimaryDiagnosis,
-        
+
         /// <summary>
         /// 2 - For  secondary diagnosis.
         /// </summary>
         ForSecondaryDiagnosis,
-        
+
         /// <summary>
         /// 3 - For tertiary diagnosis.
         /// </summary>
         ForTertiaryDiagnosis,
-        
+
         /// <summary>
         /// 4 - For quaternary diagnosis.
         /// </summary>

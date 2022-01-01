@@ -10,7 +10,7 @@
         /// DNR - Do not resuscitate.
         /// </summary>
         DoNotResuscitate,
-        
+
         /// <summary>
         /// N - No directive.
         /// </summary>

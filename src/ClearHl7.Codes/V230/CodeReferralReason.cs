@@ -10,17 +10,17 @@
         /// O - Provider Ordered.
         /// </summary>
         ProviderOrdered,
-        
+
         /// <summary>
         /// P - Patient Preference.
         /// </summary>
         PatientPreference,
-        
+
         /// <summary>
         /// S - Second Opinion.
         /// </summary>
         SecondOpinion,
-        
+
         /// <summary>
         /// W - Work Load.
         /// </summary>

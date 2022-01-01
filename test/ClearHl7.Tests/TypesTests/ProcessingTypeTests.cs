@@ -17,7 +17,7 @@ namespace ClearHl7.Tests.TypesTests
                 ProcessingId = "1",
                 ProcessingMode = "2"
             };
-            
+
             IType actual = new ProcessingType();
             actual.FromDelimitedString("1^2");
 

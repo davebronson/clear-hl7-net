@@ -10,32 +10,32 @@
         /// BP - Beeper.
         /// </summary>
         Beeper,
-        
+
         /// <summary>
         /// CP - Cellular or Mobile Phone.
         /// </summary>
         CellularOrMobilePhone,
-        
+
         /// <summary>
         /// FX - Fax.
         /// </summary>
         Fax,
-        
+
         /// <summary>
         /// Internet - Internet Address.
         /// </summary>
         InternetAddress,
-        
+
         /// <summary>
         /// MD - Modem.
         /// </summary>
         Modem,
-        
+
         /// <summary>
         /// PH - Telephone.
         /// </summary>
         Telephone,
-        
+
         /// <summary>
         /// X.400 - X.400 email address.
         /// </summary>

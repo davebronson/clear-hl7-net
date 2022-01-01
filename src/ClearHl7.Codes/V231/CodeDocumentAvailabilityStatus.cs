@@ -10,17 +10,17 @@
         /// AV - Available for patient care.
         /// </summary>
         AvailableForPatientCare,
-        
+
         /// <summary>
         /// CA - Deleted.
         /// </summary>
         Deleted,
-        
+
         /// <summary>
         /// OB - Obsolete.
         /// </summary>
         Obsolete,
-        
+
         /// <summary>
         /// UN - Unavailable for patient care.
         /// </summary>

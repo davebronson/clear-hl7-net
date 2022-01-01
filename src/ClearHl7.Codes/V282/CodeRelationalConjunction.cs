@@ -10,7 +10,7 @@
         /// AND - Default.
         /// </summary>
         Default,
-        
+
         /// <summary>
         /// OR - OR.
         /// </summary>

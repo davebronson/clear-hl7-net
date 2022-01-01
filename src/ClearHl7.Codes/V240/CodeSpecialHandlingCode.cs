@@ -10,27 +10,27 @@
         /// C37 - Body temperature.
         /// </summary>
         BodyTemperature,
-        
+
         /// <summary>
         /// CAMB - Critical ambient temperature.
         /// </summary>
         CriticalAmbientTemperature,
-        
+
         /// <summary>
         /// CATM - Protect from air.
         /// </summary>
         ProtectFromAir,
-        
+
         /// <summary>
         /// CFRZ - Critical frozen temperature.
         /// </summary>
         CriticalFrozenTemperature,
-        
+
         /// <summary>
         /// CREF - Critical refrigerated temperature.
         /// </summary>
         CriticalRefrigeratedTemperature,
-        
+
         /// <summary>
         /// PRTL - Protect from light.
         /// </summary>

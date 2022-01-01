@@ -10,7 +10,7 @@
         /// A - Actual count.
         /// </summary>
         ActualCount,
-        
+
         /// <summary>
         /// E - Estimated (see comment).
         /// </summary>

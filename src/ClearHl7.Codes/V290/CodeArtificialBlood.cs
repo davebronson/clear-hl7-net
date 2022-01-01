@@ -10,7 +10,7 @@
         /// FLUR - Fluorocarbons.
         /// </summary>
         Fluorocarbons,
-        
+
         /// <summary>
         /// SFHB - Stromal free hemoglobin preparations.
         /// </summary>

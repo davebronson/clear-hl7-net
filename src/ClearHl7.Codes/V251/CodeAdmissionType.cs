@@ -10,32 +10,32 @@
         /// A - Accident.
         /// </summary>
         Accident,
-        
+
         /// <summary>
         /// C - Elective.
         /// </summary>
         Elective,
-        
+
         /// <summary>
         /// E - Emergency.
         /// </summary>
         Emergency,
-        
+
         /// <summary>
         /// L - Labor and Delivery.
         /// </summary>
         LaborAndDelivery,
-        
+
         /// <summary>
         /// N - Newborn (Birth in healthcare facility).
         /// </summary>
         NewbornBirthInHealthcareFacility,
-        
+
         /// <summary>
         /// R - Routine.
         /// </summary>
         Routine,
-        
+
         /// <summary>
         /// U - Urgent.
         /// </summary>

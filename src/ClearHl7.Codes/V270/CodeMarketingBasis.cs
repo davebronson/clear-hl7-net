@@ -10,27 +10,27 @@
         /// 510E - 510 (K) exempt.
         /// </summary>
         Basis510KExempt,
-        
+
         /// <summary>
         /// 510K - 510 (K).
         /// </summary>
         Basis510K,
-        
+
         /// <summary>
         /// 522S - Post marketing study (522).
         /// </summary>
         PostMarketingStudy522,
-        
+
         /// <summary>
         /// PMA - Premarketing authorization.
         /// </summary>
         PremarketingAuthorization,
-        
+
         /// <summary>
         /// PRE - Preamendment.
         /// </summary>
         Preamendment,
-        
+
         /// <summary>
         /// TXN - Transitional.
         /// </summary>

@@ -10,17 +10,17 @@
         /// D - Dental.
         /// </summary>
         Dental,
-        
+
         /// <summary>
         /// G - Graduate.
         /// </summary>
         Graduate,
-        
+
         /// <summary>
         /// M - Medical.
         /// </summary>
         Medical,
-        
+
         /// <summary>
         /// U - Undergraduate.
         /// </summary>

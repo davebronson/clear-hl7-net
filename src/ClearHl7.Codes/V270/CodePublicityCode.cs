@@ -10,17 +10,17 @@
         /// F - Family only.
         /// </summary>
         FamilyOnly,
-        
+
         /// <summary>
         /// N - No Publicity.
         /// </summary>
         NoPublicity,
-        
+
         /// <summary>
         /// O - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>

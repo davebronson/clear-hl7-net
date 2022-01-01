@@ -10,27 +10,27 @@
         /// F - Isolation.
         /// </summary>
         Isolation,
-        
+
         /// <summary>
         /// J - Private room - medically justified.
         /// </summary>
         PrivateRoomMedicallyJustified,
-        
+
         /// <summary>
         /// P - Private room.
         /// </summary>
         PrivateRoom,
-        
+
         /// <summary>
         /// Q - Private room - due to overflow.
         /// </summary>
         PrivateRoomDueToOverflow,
-        
+
         /// <summary>
         /// S - Semi-private room.
         /// </summary>
         SemiPrivateRoom,
-        
+
         /// <summary>
         /// W - Ward.
         /// </summary>

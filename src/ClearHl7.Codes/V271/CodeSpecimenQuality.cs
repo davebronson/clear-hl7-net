@@ -10,17 +10,17 @@
         /// E - Excellent.
         /// </summary>
         Excellent,
-        
+
         /// <summary>
         /// F - Fair.
         /// </summary>
         Fair,
-        
+
         /// <summary>
         /// G - Good.
         /// </summary>
         Good,
-        
+
         /// <summary>
         /// P - Poor.
         /// </summary>

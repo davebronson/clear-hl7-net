@@ -10,32 +10,32 @@
         /// AU - Authenticated.
         /// </summary>
         Authenticated,
-        
+
         /// <summary>
         /// DI - Dictated.
         /// </summary>
         Dictated,
-        
+
         /// <summary>
         /// DO - Documented.
         /// </summary>
         Documented,
-        
+
         /// <summary>
         /// IN - Incomplete.
         /// </summary>
         Incomplete,
-        
+
         /// <summary>
         /// IP - In Progress.
         /// </summary>
         InProgress,
-        
+
         /// <summary>
         /// LA - Legally authenticated.
         /// </summary>
         LegallyAuthenticated,
-        
+
         /// <summary>
         /// PA - Pre-authenticated.
         /// </summary>

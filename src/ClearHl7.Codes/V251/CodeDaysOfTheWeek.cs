@@ -10,32 +10,32 @@
         /// FRI - Friday.
         /// </summary>
         Friday,
-        
+
         /// <summary>
         /// MON - Monday.
         /// </summary>
         Monday,
-        
+
         /// <summary>
         /// SAT - Saturday.
         /// </summary>
         Saturday,
-        
+
         /// <summary>
         /// SUN - Sunday.
         /// </summary>
         Sunday,
-        
+
         /// <summary>
         /// THU - Thursday.
         /// </summary>
         Thursday,
-        
+
         /// <summary>
         /// TUE - Tuesday.
         /// </summary>
         Tuesday,
-        
+
         /// <summary>
         /// WED - Wednesday.
         /// </summary>

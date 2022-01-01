@@ -10,12 +10,12 @@
         /// A - Add/Insert.
         /// </summary>
         AddInsert,
-        
+
         /// <summary>
         /// D - Delete.
         /// </summary>
         Delete,
-        
+
         /// <summary>
         /// U - Update.
         /// </summary>

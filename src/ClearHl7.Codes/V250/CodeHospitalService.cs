@@ -10,22 +10,22 @@
         /// CAR - Cardiac Service.
         /// </summary>
         CardiacService,
-        
+
         /// <summary>
         /// MED - Medical Service.
         /// </summary>
         MedicalService,
-        
+
         /// <summary>
         /// PUL - Pulmonary Service.
         /// </summary>
         PulmonaryService,
-        
+
         /// <summary>
         /// SUR - Surgical Service.
         /// </summary>
         SurgicalService,
-        
+
         /// <summary>
         /// URO - Urology Service.
         /// </summary>

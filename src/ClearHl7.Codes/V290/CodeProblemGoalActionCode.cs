@@ -10,37 +10,37 @@
         /// AD - ADD.
         /// </summary>
         Add,
-        
+
         /// <summary>
         /// CO - CORRECT.
         /// </summary>
         Correct,
-        
+
         /// <summary>
         /// DE - DELETE.
         /// </summary>
         Delete,
-        
+
         /// <summary>
         /// LI - LINK.
         /// </summary>
         Link,
-        
+
         /// <summary>
         /// SP - Used in Snapshot mode.
         /// </summary>
         UsedInSnapshotMode,
-        
+
         /// <summary>
         /// UC - UNCHANGED.
         /// </summary>
         Unchanged,
-        
+
         /// <summary>
         /// UN - UNLINK.
         /// </summary>
         Unlink,
-        
+
         /// <summary>
         /// UP - UPDATE.
         /// </summary>

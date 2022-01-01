@@ -10,32 +10,32 @@
         /// A - Ambulance.
         /// </summary>
         Ambulance,
-        
+
         /// <summary>
         /// C - Car.
         /// </summary>
         Car,
-        
+
         /// <summary>
         /// F - On foot.
         /// </summary>
         OnFoot,
-        
+
         /// <summary>
         /// H - Helicopter.
         /// </summary>
         Helicopter,
-        
+
         /// <summary>
         /// O - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// P - Public Transport.
         /// </summary>
         PublicTransport,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>

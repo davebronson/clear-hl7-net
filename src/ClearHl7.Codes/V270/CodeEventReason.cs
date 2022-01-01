@@ -10,22 +10,22 @@
         /// 01 - Patient request.
         /// </summary>
         PatientRequest,
-        
+
         /// <summary>
         /// 02 - Physician/health practitioner order.
         /// </summary>
         PhysicianHealthPractitionerOrder,
-        
+
         /// <summary>
         /// 03 - Census management.
         /// </summary>
         CensusManagement,
-        
+
         /// <summary>
         /// O - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>

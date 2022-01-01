@@ -10,17 +10,17 @@
         /// 0 - Admission status is valid; used for grouping.
         /// </summary>
         AdmissionStatusIsValidUsedForGrouping,
-        
+
         /// <summary>
         /// 1 - Admission status is valid; not used for grouping.
         /// </summary>
         AdmissionStatusIsValidNotUsedForGrouping,
-        
+
         /// <summary>
         /// 2 - Admission status is invalid; not used for grouping.
         /// </summary>
         AdmissionStatusIsInvalidNotUsedForGrouping,
-        
+
         /// <summary>
         /// 3 - Admission status is invalid; default value used for grouping.
         /// </summary>

@@ -10,27 +10,27 @@
         /// Hom - Home Care.
         /// </summary>
         HomeCare,
-        
+
         /// <summary>
         /// Lab - Laboratory.
         /// </summary>
         Laboratory,
-        
+
         /// <summary>
         /// Med - Medical.
         /// </summary>
         Medical,
-        
+
         /// <summary>
         /// Psy - Psychiatric.
         /// </summary>
         Psychiatric,
-        
+
         /// <summary>
         /// Rad - Radiology.
         /// </summary>
         Radiology,
-        
+
         /// <summary>
         /// Skn - Skilled Nursing.
         /// </summary>

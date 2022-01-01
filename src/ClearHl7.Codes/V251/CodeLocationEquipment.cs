@@ -10,37 +10,37 @@
         /// EEG - Electro-Encephalogram.
         /// </summary>
         ElectroEncephalogram,
-        
+
         /// <summary>
         /// EKG - Electro-Cardiogram.
         /// </summary>
         ElectroCardiogram,
-        
+
         /// <summary>
         /// INF - Infusion pump.
         /// </summary>
         InfusionPump,
-        
+
         /// <summary>
         /// IVP - IV pump.
         /// </summary>
         IvPump,
-        
+
         /// <summary>
         /// OXY - Oxygen.
         /// </summary>
         Oxygen,
-        
+
         /// <summary>
         /// SUC - Suction.
         /// </summary>
         Suction,
-        
+
         /// <summary>
         /// VEN - Ventilator.
         /// </summary>
         Ventilator,
-        
+
         /// <summary>
         /// VIT - Vital signs monitor.
         /// </summary>

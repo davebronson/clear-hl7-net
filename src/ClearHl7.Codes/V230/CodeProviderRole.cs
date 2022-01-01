@@ -10,17 +10,17 @@
         /// CP - Consulting Provider.
         /// </summary>
         ConsultingProvider,
-        
+
         /// <summary>
         /// PP - Primary Care Provider.
         /// </summary>
         PrimaryCareProvider,
-        
+
         /// <summary>
         /// RP - Referring Provider.
         /// </summary>
         ReferringProvider,
-        
+
         /// <summary>
         /// RT - Referred to Provider.
         /// </summary>

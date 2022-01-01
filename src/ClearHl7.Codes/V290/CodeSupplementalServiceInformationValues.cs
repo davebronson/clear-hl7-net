@@ -10,7 +10,7 @@
         /// CG - Observation of type Clinical Genomics (CG).
         /// </summary>
         ObservationOfTypeClinicalGenomicsCg,
-        
+
         /// <summary>
         /// NDBS - Observation of type Newborn Dried Blood Screening (NDBS).
         /// </summary>

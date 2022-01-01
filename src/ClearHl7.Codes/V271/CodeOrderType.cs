@@ -10,7 +10,7 @@
         /// I - Inpatient Order.
         /// </summary>
         InpatientOrder,
-        
+
         /// <summary>
         /// O - Outpatient Order.
         /// </summary>

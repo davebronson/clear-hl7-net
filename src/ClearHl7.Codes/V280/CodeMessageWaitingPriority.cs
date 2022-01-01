@@ -10,12 +10,12 @@
         /// H - High.
         /// </summary>
         High,
-        
+
         /// <summary>
         /// L - Low.
         /// </summary>
         Low,
-        
+
         /// <summary>
         /// M - Medium.
         /// </summary>

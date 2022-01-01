@@ -10,42 +10,42 @@
         /// AP - Applicator.
         /// </summary>
         Applicator,
-        
+
         /// <summary>
         /// BT - Buretrol.
         /// </summary>
         Buretrol,
-        
+
         /// <summary>
         /// HL - Heparin Lock.
         /// </summary>
         HeparinLock,
-        
+
         /// <summary>
         /// IPPB - IPPB.
         /// </summary>
         Ippb,
-        
+
         /// <summary>
         /// IVP - IV Pump.
         /// </summary>
         IvPump,
-        
+
         /// <summary>
         /// IVS - IV Soluset.
         /// </summary>
         IvSoluset,
-        
+
         /// <summary>
         /// MI - Metered Inhaler.
         /// </summary>
         MeteredInhaler,
-        
+
         /// <summary>
         /// NEB - Nebulizer.
         /// </summary>
         Nebulizer,
-        
+
         /// <summary>
         /// PCA - PCA Pump.
         /// </summary>

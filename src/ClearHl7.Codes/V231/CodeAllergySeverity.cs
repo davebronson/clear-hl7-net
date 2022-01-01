@@ -10,12 +10,12 @@
         /// MI - Mild.
         /// </summary>
         Mild,
-        
+
         /// <summary>
         /// MO - Moderate.
         /// </summary>
         Moderate,
-        
+
         /// <summary>
         /// SV - Severe.
         /// </summary>

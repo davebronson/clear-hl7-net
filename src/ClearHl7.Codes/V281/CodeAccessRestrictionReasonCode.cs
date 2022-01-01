@@ -10,32 +10,32 @@
         /// DIA - Diagnosis-related.
         /// </summary>
         DiagnosisRelated,
-        
+
         /// <summary>
         /// EMP - Employee of this organization.
         /// </summary>
         EmployeeOfThisOrganization,
-        
+
         /// <summary>
         /// ORG - Organizational policy or requirement.
         /// </summary>
         OrganizationalPolicyOrRequirement,
-        
+
         /// <summary>
         /// PAT - Patient Request.
         /// </summary>
         PatientRequest,
-        
+
         /// <summary>
         /// PHY - Physician Request.
         /// </summary>
         PhysicianRequest,
-        
+
         /// <summary>
         /// REG - Regulatory requirement.
         /// </summary>
         RegulatoryRequirement,
-        
+
         /// <summary>
         /// VIP - Very important person or celebrity.
         /// </summary>

@@ -10,12 +10,12 @@
         /// N - No.
         /// </summary>
         No,
-        
+
         /// <summary>
         /// S - Significant.
         /// </summary>
         Significant,
-        
+
         /// <summary>
         /// Y - Yes.
         /// </summary>

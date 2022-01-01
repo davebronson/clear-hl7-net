@@ -10,12 +10,12 @@
         /// LATE - Late Invoice.
         /// </summary>
         LateInvoice,
-        
+
         /// <summary>
         /// NORM - Normal submission.
         /// </summary>
         NormalSubmission,
-        
+
         /// <summary>
         /// SUB - Subscriber coverage problem.
         /// </summary>

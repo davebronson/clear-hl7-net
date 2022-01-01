@@ -10,42 +10,42 @@
         /// C - Record coming over is a correction and thus replaces a final result.
         /// </summary>
         RecordIsCorrection,
-        
+
         /// <summary>
         /// D - Deletes the OBX record.
         /// </summary>
         DeletesTheObxRecord,
-        
+
         /// <summary>
         /// F - Final results.
         /// </summary>
         FinalResults,
-        
+
         /// <summary>
         /// I - Specimen in lab; results pending.
         /// </summary>
         SpecimenInLabResultsPending,
-        
+
         /// <summary>
         /// P - Preliminary results.
         /// </summary>
         PreliminaryResults,
-        
+
         /// <summary>
         /// R - Results entered -- not verified.
         /// </summary>
         ResultsEnteredNotVerified,
-        
+
         /// <summary>
-        /// S - Partial results.   Deprecated. Retained only for backward compatibility as of V2.6..
+        /// S - Partial results. Deprecated. Retained only for backward compatibility as of V2.6.
         /// </summary>
         PartialResults,
-        
+
         /// <summary>
-        /// U - Results status change to final without retransmitting results already sent as 'preliminary.'  E.g., radiology changes status from preliminary to final.
+        /// U - Results status change to final without retransmitting results already sent as 'preliminary.'  e.g., radiology changes status from preliminary to final.
         /// </summary>
         ResultsChangeToFinalWithoutRetransmit,
-        
+
         /// <summary>
         /// X - Results cannot be obtained for this observation.
         /// </summary>

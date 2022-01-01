@@ -10,17 +10,17 @@
         /// HD - Inform help desk.
         /// </summary>
         InformHelpDesk,
-        
+
         /// <summary>
         /// NPAT - Do NOT inform patient.
         /// </summary>
         DoNotInformPatient,
-        
+
         /// <summary>
         /// PAT - Inform patient.
         /// </summary>
         InformPatient,
-        
+
         /// <summary>
         /// USR - Inform User.
         /// </summary>

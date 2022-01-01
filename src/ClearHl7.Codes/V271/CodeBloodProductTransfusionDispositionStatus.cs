@@ -10,22 +10,22 @@
         /// RA - Returned unused/no longer needed.
         /// </summary>
         ReturnedUnused,
-        
+
         /// <summary>
         /// RL - Returned unused/keep linked to patient for possible use later.
         /// </summary>
         ReturnedUnusedKeepLinkedToPatient,
-        
+
         /// <summary>
         /// TR - Transfused with adverse reaction.
         /// </summary>
         TransfusedWithAdverseReaction,
-        
+
         /// <summary>
         /// TX - Transfused.
         /// </summary>
         Transfused,
-        
+
         /// <summary>
         /// WA - Wasted (product no longer viable).
         /// </summary>

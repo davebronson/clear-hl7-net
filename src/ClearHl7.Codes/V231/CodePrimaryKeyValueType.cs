@@ -10,7 +10,7 @@
         /// CE - Coded element.
         /// </summary>
         CodedElement,
-        
+
         /// <summary>
         /// PL - Person location.
         /// </summary>

@@ -10,7 +10,7 @@
         /// AMA - American Medical Association.
         /// </summary>
         AmericanMedicalAssociation,
-        
+
         /// <summary>
         /// FDA - Food and Drug Administration.
         /// </summary>

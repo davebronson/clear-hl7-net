@@ -10,7 +10,7 @@
         /// ... - Use NUBC codes.
         /// </summary>
         UseNubcCodes,
-        
+
         /// <summary>
         /// ... - Use NUBC codes.
         /// </summary>

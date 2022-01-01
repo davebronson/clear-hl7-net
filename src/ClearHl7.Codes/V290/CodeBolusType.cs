@@ -10,7 +10,7 @@
         /// C - Supplemental.
         /// </summary>
         Supplemental,
-        
+
         /// <summary>
         /// L - Loading.
         /// </summary>

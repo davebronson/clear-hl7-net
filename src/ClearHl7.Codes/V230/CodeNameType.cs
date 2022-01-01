@@ -10,27 +10,27 @@
         /// A - Assigned.
         /// </summary>
         Assigned,
-        
+
         /// <summary>
         /// C - Adopted Name.
         /// </summary>
         AdoptedName,
-        
+
         /// <summary>
         /// D - Customary Name.
         /// </summary>
         CustomaryName,
-        
+
         /// <summary>
         /// L - Official Registry Name.
         /// </summary>
         OfficialRegistryName,
-        
+
         /// <summary>
         /// M - Maiden Name.
         /// </summary>
         MaidenName,
-        
+
         /// <summary>
         /// O - Other.
         /// </summary>

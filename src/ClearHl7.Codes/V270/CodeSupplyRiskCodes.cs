@@ -10,32 +10,32 @@
         /// COR - Corrosive.
         /// </summary>
         Corrosive,
-        
+
         /// <summary>
         /// EXP - Explosive.
         /// </summary>
         Explosive,
-        
+
         /// <summary>
         /// FLA - Flammable.
         /// </summary>
         Flammable,
-        
+
         /// <summary>
         /// INJ - Injury Hazard.
         /// </summary>
         InjuryHazard,
-        
+
         /// <summary>
         /// RAD - Radioactive.
         /// </summary>
         Radioactive,
-        
+
         /// <summary>
         /// TOX - Toxic.
         /// </summary>
         Toxic,
-        
+
         /// <summary>
         /// UNK - Unknown.
         /// </summary>

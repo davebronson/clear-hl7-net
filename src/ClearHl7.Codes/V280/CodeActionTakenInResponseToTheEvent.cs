@@ -10,27 +10,27 @@
         /// DI - Product dose or frequency of use increased.
         /// </summary>
         ProductDoseIncreased,
-        
+
         /// <summary>
         /// DR - Product dose or frequency of use reduced.
         /// </summary>
         ProductDoseReduced,
-        
+
         /// <summary>
         /// N - None.
         /// </summary>
         None,
-        
+
         /// <summary>
         /// OT - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// WP - Product withdrawn permanently.
         /// </summary>
         ProductWithdrawnPermanently,
-        
+
         /// <summary>
         /// WT - Product withdrawn temporarily.
         /// </summary>

@@ -10,7 +10,7 @@
         /// ... - See NUBC codes.
         /// </summary>
         SeeNubcCodesADeprecated,
-        
+
         /// <summary>
         /// ... - See NUBC codes.
         /// </summary>

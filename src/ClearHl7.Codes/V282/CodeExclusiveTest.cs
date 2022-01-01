@@ -10,12 +10,12 @@
         /// D - In some cases, this test should be only exclusively with like tests (examples are cyto or pathology).
         /// </summary>
         TestShouldBeOnlyExclusivelyWithLikeTests,
-        
+
         /// <summary>
         /// N - This test can be included with any number of other tests.
         /// </summary>
         TestCanBeIncludedWithAnyOtherTests,
-        
+
         /// <summary>
         /// Y - This test should be exclusive.
         /// </summary>

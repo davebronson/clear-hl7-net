@@ -10,12 +10,12 @@
         /// R - Restricted.
         /// </summary>
         Restricted,
-        
+
         /// <summary>
         /// U - Usual control.
         /// </summary>
         UsualControl,
-        
+
         /// <summary>
         /// V - Very restricted.
         /// </summary>

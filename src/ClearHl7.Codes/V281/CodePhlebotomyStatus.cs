@@ -10,12 +10,12 @@
         /// NDR - Not Drawn.
         /// </summary>
         NotDrawn,
-        
+
         /// <summary>
         /// SUC - Successful.
         /// </summary>
         Successful,
-        
+
         /// <summary>
         /// UL5 - Unsuccessful Less than 50 ml drawn.
         /// </summary>

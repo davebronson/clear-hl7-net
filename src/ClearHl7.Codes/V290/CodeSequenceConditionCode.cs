@@ -7,22 +7,22 @@
     public enum CodeSequenceConditionCode
     {
         /// <summary>
-        /// EE - End related service request(s), end current service request..
+        /// EE - End related service request(s), end current service request.
         /// </summary>
         EndRelatedEndCurrent,
-        
+
         /// <summary>
-        /// ES - End related service request(s), start current service request..
+        /// ES - End related service request(s), start current service request.
         /// </summary>
         EndRelatedStartCurrent,
-        
+
         /// <summary>
-        /// SE - Start related service request(s), end current service request..
+        /// SE - Start related service request(s), end current service request.
         /// </summary>
         StartRelatedEndCurrent,
-        
+
         /// <summary>
-        /// SS - Start related service request(s), start current service request..
+        /// SS - Start related service request(s), start current service request.
         /// </summary>
         StartRelatedStartCurrent
     }

@@ -10,17 +10,17 @@
         /// A - Anesthesia.
         /// </summary>
         Anesthesia,
-        
+
         /// <summary>
         /// D - Diagnostic procedure.
         /// </summary>
         DiagnosticProcedure,
-        
+
         /// <summary>
         /// I - Invasive procedure not classified elsewhere (e.g., IV, catheter, etc.).
         /// </summary>
         InvasiveProcedureNotClassified,
-        
+
         /// <summary>
         /// P - Procedure for treatment (therapeutic, including operations).
         /// </summary>

@@ -10,12 +10,12 @@
         /// M - Migrates to different CPU.
         /// </summary>
         MigratesToDifferentCpu,
-        
+
         /// <summary>
         /// SD - Shut down.
         /// </summary>
         ShutDown,
-        
+
         /// <summary>
         /// SU - Start up.
         /// </summary>

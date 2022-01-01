@@ -10,17 +10,17 @@
         /// EMPL - Employer.
         /// </summary>
         Employer,
-        
+
         /// <summary>
         /// ORG - Payee Organization.
         /// </summary>
         PayeeOrganization,
-        
+
         /// <summary>
         /// PERS - Person.
         /// </summary>
         Person,
-        
+
         /// <summary>
         /// PPER - Pay Person.
         /// </summary>

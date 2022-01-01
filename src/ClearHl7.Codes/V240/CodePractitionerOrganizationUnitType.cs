@@ -10,32 +10,32 @@
         /// D - Department.
         /// </summary>
         Department,
-        
+
         /// <summary>
         /// F - Facility.
         /// </summary>
         Facility,
-        
+
         /// <summary>
         /// L - Local market area.
         /// </summary>
         LocalMarketArea,
-        
+
         /// <summary>
         /// M - Medical Center Area.
         /// </summary>
         MedicalCenterArea,
-        
+
         /// <summary>
         /// S - Subdivision.
         /// </summary>
         Subdivision,
-        
+
         /// <summary>
         /// U - Subdepartment.
         /// </summary>
         Subdepartment,
-        
+
         /// <summary>
         /// V - Division.
         /// </summary>

@@ -10,62 +10,62 @@
         /// ACN - Air Contamination.
         /// </summary>
         AirContamination,
-        
+
         /// <summary>
         /// CLT - Clotted.
         /// </summary>
         Clotted,
-        
+
         /// <summary>
         /// COL - Collapse.
         /// </summary>
         Collapse,
-        
+
         /// <summary>
         /// DAK - Defective Apheresis Kit.
         /// </summary>
         DefectiveApheresisKit,
-        
+
         /// <summary>
         /// DBG - Defective Bag.
         /// </summary>
         DefectiveBag,
-        
+
         /// <summary>
         /// DMT - Defective Instrument.
         /// </summary>
         DefectiveInstrument,
-        
+
         /// <summary>
         /// DND - Defective Needle.
         /// </summary>
         DefectiveNeedle,
-        
+
         /// <summary>
         /// INF - Infiltration.
         /// </summary>
         Infiltration,
-        
+
         /// <summary>
         /// IPF - Instrument Power Failure.
         /// </summary>
         InstrumentPowerFailure,
-        
+
         /// <summary>
         /// MIS - Missed / in tissue.
         /// </summary>
         MissedInTissue,
-        
+
         /// <summary>
         /// NAD - Needle adjustment (this may not end a procedure, if successful will impact component production).
         /// </summary>
         NeedleAdjustment,
-        
+
         /// <summary>
         /// PFL - Poor flow.
         /// </summary>
         PoorFlow,
-        
+
         /// <summary>
         /// VSM - Vein Spasm.
         /// </summary>

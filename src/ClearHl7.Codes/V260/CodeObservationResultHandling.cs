@@ -10,7 +10,7 @@
         /// F - Film-with-patient.
         /// </summary>
         FilmWithPatient,
-        
+
         /// <summary>
         /// N - Notify provider when ready.
         /// </summary>

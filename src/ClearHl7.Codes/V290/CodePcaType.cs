@@ -10,12 +10,12 @@
         /// C - Continuous.
         /// </summary>
         Continuous,
-        
+
         /// <summary>
         /// P - PCA Only.
         /// </summary>
         PcaOnly,
-        
+
         /// <summary>
         /// PC - PCA + Continuous.
         /// </summary>

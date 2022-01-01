@@ -10,22 +10,22 @@
         /// C - Compound.
         /// </summary>
         Compound,
-        
+
         /// <summary>
         /// E - Exclusive.
         /// </summary>
         Exclusive,
-        
+
         /// <summary>
         /// N - Nurse prerogative.
         /// </summary>
         NursePrerogative,
-        
+
         /// <summary>
         /// S - Simultaneous.
         /// </summary>
         Simultaneous,
-        
+
         /// <summary>
         /// T - Tapering.
         /// </summary>

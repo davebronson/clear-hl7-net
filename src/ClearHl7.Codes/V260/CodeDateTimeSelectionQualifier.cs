@@ -10,17 +10,17 @@
         /// 1ST - First value within range.
         /// </summary>
         FirstValueWithinRange,
-        
+
         /// <summary>
         /// ALL - All values within the range.
         /// </summary>
         AllValuesWithinTheRange,
-        
+
         /// <summary>
         /// LST - Last value within the range.
         /// </summary>
         LastValueWithinTheRange,
-        
+
         /// <summary>
         /// REV - All values within the range returned in reverse chronological order (This is the default if not otherwise specified.).
         /// </summary>

@@ -10,17 +10,17 @@
         /// F - Female.
         /// </summary>
         Female,
-        
+
         /// <summary>
         /// M - Male.
         /// </summary>
         Male,
-        
+
         /// <summary>
         /// O - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>

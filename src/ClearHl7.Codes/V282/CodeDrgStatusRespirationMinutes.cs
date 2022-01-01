@@ -10,12 +10,12 @@
         /// 0 - Respiration minutes not used for grouping.
         /// </summary>
         RespirationMinutesNotUsedForGrouping,
-        
+
         /// <summary>
         /// 1 - Listed respiration minutes used for grouping.
         /// </summary>
         ListedRespirationMinutesUsedForGrouping,
-        
+
         /// <summary>
         /// 2 - OPS code value used for grouping.
         /// </summary>

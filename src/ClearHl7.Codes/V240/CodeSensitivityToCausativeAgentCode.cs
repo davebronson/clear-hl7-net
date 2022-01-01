@@ -10,17 +10,17 @@
         /// AD - Adverse Reaction (Not otherwise classified).
         /// </summary>
         AdverseReaction,
-        
+
         /// <summary>
         /// AL - Allergy.
         /// </summary>
         Allergy,
-        
+
         /// <summary>
         /// CT - Contraindication.
         /// </summary>
         Contraindication,
-        
+
         /// <summary>
         /// IN - Intolerance.
         /// </summary>

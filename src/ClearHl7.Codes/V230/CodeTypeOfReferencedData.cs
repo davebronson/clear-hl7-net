@@ -10,37 +10,37 @@
         /// AP - Other application data, typically uninterpreted binary data (HL7 V2.3 and later).
         /// </summary>
         OtherApplicationData,
-        
+
         /// <summary>
         /// AU - Audio data (HL7 V2.3 and later).
         /// </summary>
         AudioData,
-        
+
         /// <summary>
         /// FT - Formatted text (HL7 V2.2 only).
         /// </summary>
         FormattedText,
-        
+
         /// <summary>
         /// IM - Image data (HL7 V2.3 and later).
         /// </summary>
         ImageData,
-        
+
         /// <summary>
         /// NS - Non-scanned image (HL7 V2.2 only).
         /// </summary>
         NonScannedImage,
-        
+
         /// <summary>
         /// SD - Scanned document (HL7 V2.2 only).
         /// </summary>
         ScannedDocument,
-        
+
         /// <summary>
         /// SI - Scanned image (HL7 V2.2 only).
         /// </summary>
         ScannedImage,
-        
+
         /// <summary>
         /// TX - Machine readable text document (HL7 V2.2 only).
         /// </summary>

@@ -10,37 +10,37 @@
         /// C - Small Children Dependent.
         /// </summary>
         SmallChildrenDependent,
-        
+
         /// <summary>
         /// CB - Common Bath.
         /// </summary>
         CommonBathDeprecated,
-        
+
         /// <summary>
         /// D - Spouse dependent.
         /// </summary>
         SpouseDependentDeprecated,
-        
+
         /// <summary>
         /// M - Medical Supervision Required.
         /// </summary>
         MedicalSupervisionRequired,
-        
+
         /// <summary>
         /// O - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// S - Spouse Dependent.
         /// </summary>
         SpouseDependent,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>
         Unknown,
-        
+
         /// <summary>
         /// WU - Walk up.
         /// </summary>

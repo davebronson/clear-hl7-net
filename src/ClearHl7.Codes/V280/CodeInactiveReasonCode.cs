@@ -10,12 +10,12 @@
         /// L - Leave of Absence.
         /// </summary>
         LeaveOfAbsence,
-        
+
         /// <summary>
         /// R - Retired.
         /// </summary>
         Retired,
-        
+
         /// <summary>
         /// T - Termination.
         /// </summary>

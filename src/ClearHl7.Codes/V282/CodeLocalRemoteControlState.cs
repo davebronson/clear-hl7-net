@@ -10,12 +10,12 @@
         /// ... - (null) No state change.
         /// </summary>
         NullNoStateChangeADeprecated,
-        
+
         /// <summary>
         /// L - Local.
         /// </summary>
         Local,
-        
+
         /// <summary>
         /// R - Remote.
         /// </summary>

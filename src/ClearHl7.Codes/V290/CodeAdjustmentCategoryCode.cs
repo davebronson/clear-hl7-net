@@ -10,17 +10,17 @@
         /// EA - Edit/Adjudication Response.
         /// </summary>
         EditAdjudicationResponse,
-        
+
         /// <summary>
         /// IN - Information.
         /// </summary>
         Information,
-        
+
         /// <summary>
         /// PA - Provider Adjustment.
         /// </summary>
         ProviderAdjustment,
-        
+
         /// <summary>
         /// PR - Processing Result.
         /// </summary>

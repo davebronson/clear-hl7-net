@@ -10,32 +10,32 @@
         /// C - Health care consumer/patient.
         /// </summary>
         HealthCareConsumerPatient,
-        
+
         /// <summary>
         /// H - Other health professional.
         /// </summary>
         OtherHealthProfessional,
-        
+
         /// <summary>
         /// L - Lawyer/attorney.
         /// </summary>
         LawyerAttorney,
-        
+
         /// <summary>
         /// M - Mid-level professional (nurse, nurse practitioner, physician's assistant).
         /// </summary>
         MidLevelProfessional,
-        
+
         /// <summary>
         /// O - Other non-health professional.
         /// </summary>
         OtherNonHealthProfessional,
-        
+
         /// <summary>
         /// P - Physician (osteopath, homeopath).
         /// </summary>
         PhysicianOsteopathHomeopath,
-        
+
         /// <summary>
         /// R - Pharmacist.
         /// </summary>

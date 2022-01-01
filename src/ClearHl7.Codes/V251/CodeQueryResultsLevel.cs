@@ -10,17 +10,17 @@
         /// O - Order plus order status.
         /// </summary>
         OrderPlusOrderStatus,
-        
+
         /// <summary>
         /// R - Results without bulk text.
         /// </summary>
         ResultsWithoutBulkText,
-        
+
         /// <summary>
         /// S - Status only.
         /// </summary>
         StatusOnly,
-        
+
         /// <summary>
         /// T - Full results.
         /// </summary>

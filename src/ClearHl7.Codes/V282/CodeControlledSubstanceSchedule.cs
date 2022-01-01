@@ -10,27 +10,27 @@
         /// I - Schedule I.
         /// </summary>
         ScheduleI,
-        
+
         /// <summary>
         /// II - Schedule II.
         /// </summary>
         ScheduleIi,
-        
+
         /// <summary>
         /// III - Schedule III.
         /// </summary>
         ScheduleIii,
-        
+
         /// <summary>
         /// IV - Schedule IV.
         /// </summary>
         ScheduleIv,
-        
+
         /// <summary>
         /// V - Schedule V.
         /// </summary>
         ScheduleV,
-        
+
         /// <summary>
         /// VI - Schedule VI.
         /// </summary>

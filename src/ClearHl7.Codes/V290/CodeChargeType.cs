@@ -10,37 +10,37 @@
         /// CH - Charge.
         /// </summary>
         Charge,
-        
+
         /// <summary>
         /// CO - Contract.
         /// </summary>
         Contract,
-        
+
         /// <summary>
         /// CR - Credit.
         /// </summary>
         Credit,
-        
+
         /// <summary>
         /// DP - Department.
         /// </summary>
         Department,
-        
+
         /// <summary>
         /// GR - Grant.
         /// </summary>
         Grant,
-        
+
         /// <summary>
         /// NC - No Charge.
         /// </summary>
         NoCharge,
-        
+
         /// <summary>
         /// PC - Professional.
         /// </summary>
         Professional,
-        
+
         /// <summary>
         /// RS - Research.
         /// </summary>

@@ -10,12 +10,12 @@
         /// D - Diet.
         /// </summary>
         Diet,
-        
+
         /// <summary>
         /// P - Preference.
         /// </summary>
         Preference,
-        
+
         /// <summary>
         /// S - Supplement.
         /// </summary>

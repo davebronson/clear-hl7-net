@@ -10,17 +10,17 @@
         /// AT - Amount.
         /// </summary>
         Amount,
-        
+
         /// <summary>
         /// LM - Limit.
         /// </summary>
         Limit,
-        
+
         /// <summary>
         /// PC - Percentage.
         /// </summary>
         Percentage,
-        
+
         /// <summary>
         /// UL - Unlimited.
         /// </summary>

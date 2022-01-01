@@ -10,17 +10,17 @@
         /// CON - Contractor.
         /// </summary>
         Contractor,
-        
+
         /// <summary>
         /// CST - Consultant.
         /// </summary>
         Consultant,
-        
+
         /// <summary>
         /// EMP - Employee.
         /// </summary>
         Employee,
-        
+
         /// <summary>
         /// VOL - Volunteer.
         /// </summary>

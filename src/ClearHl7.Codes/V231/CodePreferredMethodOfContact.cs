@@ -10,27 +10,27 @@
         /// B - Beeper Number.
         /// </summary>
         BeeperNumber,
-        
+
         /// <summary>
         /// C - Cellular Phone Number.
         /// </summary>
         CellularPhoneNumber,
-        
+
         /// <summary>
         /// E - E-Mail Address (for backward compatibility).
         /// </summary>
         EmailAddress,
-        
+
         /// <summary>
         /// F - FAX Number.
         /// </summary>
         FaxNumber,
-        
+
         /// <summary>
         /// H - Home Phone Number.
         /// </summary>
         HomePhoneNumber,
-        
+
         /// <summary>
         /// O - Office Phone Number.
         /// </summary>

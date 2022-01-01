@@ -10,22 +10,22 @@
         /// D - On discharge.
         /// </summary>
         OnDischarge,
-        
+
         /// <summary>
         /// O - On receipt of order.
         /// </summary>
         OnReceiptOfOrder,
-        
+
         /// <summary>
         /// R - At time service is completed.
         /// </summary>
         AtTimeServiceIsCompleted,
-        
+
         /// <summary>
         /// S - At time service is started.
         /// </summary>
         AtTimeServiceIsStarted,
-        
+
         /// <summary>
         /// T - At a designated date/time.
         /// </summary>

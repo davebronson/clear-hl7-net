@@ -10,7 +10,7 @@
         /// A - Alternate.
         /// </summary>
         Alternate,
-        
+
         /// <summary>
         /// P - Preferred.
         /// </summary>

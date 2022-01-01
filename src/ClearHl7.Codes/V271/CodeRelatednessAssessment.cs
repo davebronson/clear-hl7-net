@@ -10,22 +10,22 @@
         /// H - Highly probable.
         /// </summary>
         HighlyProbable,
-        
+
         /// <summary>
         /// I - Improbable.
         /// </summary>
         Improbable,
-        
+
         /// <summary>
         /// M - Moderately probable.
         /// </summary>
         ModeratelyProbable,
-        
+
         /// <summary>
         /// N - Not related.
         /// </summary>
         NotRelated,
-        
+
         /// <summary>
         /// S - Somewhat probable.
         /// </summary>

@@ -10,17 +10,17 @@
         /// AM - Assume Management.
         /// </summary>
         AssumeManagement,
-        
+
         /// <summary>
         /// RP - Return Patient After Evaluation.
         /// </summary>
         ReturnPatientAfterEvaluation,
-        
+
         /// <summary>
         /// SO - Second Opinion.
         /// </summary>
         SecondOpinion,
-        
+
         /// <summary>
         /// WR - Send Written Report.
         /// </summary>

@@ -10,47 +10,47 @@
         /// C - Clinical trial.
         /// </summary>
         ClinicalTrial,
-        
+
         /// <summary>
         /// D - Database/registry/poison control center.
         /// </summary>
         DatabaseRegistryPoisonControlCenter,
-        
+
         /// <summary>
         /// E - Distributor.
         /// </summary>
         Distributor,
-        
+
         /// <summary>
         /// H - Health professional.
         /// </summary>
         HealthProfessional,
-        
+
         /// <summary>
         /// L - Literature.
         /// </summary>
         Literature,
-        
+
         /// <summary>
         /// M - Manufacturer/marketing authority holder.
         /// </summary>
         ManufacturerMarketingAuthorityHolder,
-        
+
         /// <summary>
         /// N - Non-healthcare professional.
         /// </summary>
         NonHealthcareProfessional,
-        
+
         /// <summary>
         /// O - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// P - Patient.
         /// </summary>
         Patient,
-        
+
         /// <summary>
         /// R - Regulatory agency.
         /// </summary>

@@ -10,12 +10,12 @@
         /// N - No.
         /// </summary>
         No,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>
         Unknown,
-        
+
         /// <summary>
         /// Y - Yes.
         /// </summary>

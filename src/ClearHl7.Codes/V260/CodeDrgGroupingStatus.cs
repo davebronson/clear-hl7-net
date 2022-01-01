@@ -10,17 +10,17 @@
         /// 0 - Valid code; not used for grouping.
         /// </summary>
         ValidCodeNotUsedForGrouping,
-        
+
         /// <summary>
         /// 1 - Valid code; used for grouping.
         /// </summary>
         ValidCodeUsedForGrouping,
-        
+
         /// <summary>
         /// 2 - Invalid code; not used for grouping.
         /// </summary>
         InvalidCodeNotUsedForGrouping,
-        
+
         /// <summary>
         /// 3 - Invalid code; code is relevant for grouping.
         /// </summary>

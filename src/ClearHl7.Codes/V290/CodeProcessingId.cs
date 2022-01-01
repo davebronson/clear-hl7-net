@@ -10,22 +10,22 @@
         /// D - Debugging.
         /// </summary>
         Debugging,
-        
+
         /// <summary>
         /// N - Non-Production Testing.
         /// </summary>
         NonProductionTesting,
-        
+
         /// <summary>
         /// P - Production.
         /// </summary>
         Production,
-        
+
         /// <summary>
         /// T - Training.
         /// </summary>
         Training,
-        
+
         /// <summary>
         /// V - Validation.
         /// </summary>

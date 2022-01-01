@@ -10,17 +10,17 @@
         /// G - Pharmaceutical substance is in the formulary, but guidelines apply.
         /// </summary>
         PharmaceuticalSubstanceIsInFormularyButGuidelinesApply,
-        
+
         /// <summary>
         /// N - Pharmaceutical substance is NOT in the formulary.
         /// </summary>
         PharmaceuticalSubstanceIsNotInFormulary,
-        
+
         /// <summary>
         /// R - Pharmaceutical substance is in the formulary, but restrictions apply.
         /// </summary>
         PharmaceuticalSubstanceIsInFormularyButRestrictionsApply,
-        
+
         /// <summary>
         /// Y - Pharmaceutical substance is in the formulary.
         /// </summary>

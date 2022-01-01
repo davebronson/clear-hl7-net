@@ -10,12 +10,12 @@
         /// A - Admitting.
         /// </summary>
         Admitting,
-        
+
         /// <summary>
         /// F - Final.
         /// </summary>
         Final,
-        
+
         /// <summary>
         /// W - Working.
         /// </summary>

@@ -7,17 +7,17 @@
     public enum CodeSubstitutionStatus
     {
         /// <summary>
-        /// G - A generic substitution was dispensed..
+        /// G - A generic substitution was dispensed.
         /// </summary>
         AGenericSubstitutionWasDispensed,
-        
+
         /// <summary>
-        /// N - No substitute was dispensed.  This is equivalent to the default (null) value..
+        /// N - No substitute was dispensed.  This is equivalent to the default (null) value.
         /// </summary>
         NoSubstituteWasDispensed,
-        
+
         /// <summary>
-        /// T - A therapeutic substitution was dispensed..
+        /// T - A therapeutic substitution was dispensed.
         /// </summary>
         TherapeuticSubstitutionWasDispensed
     }

@@ -10,17 +10,17 @@
         /// C - Critical.
         /// </summary>
         Critical,
-        
+
         /// <summary>
         /// N - Normal.
         /// </summary>
         Normal,
-        
+
         /// <summary>
         /// S - Serious.
         /// </summary>
         Serious,
-        
+
         /// <summary>
         /// W - Warning.
         /// </summary>

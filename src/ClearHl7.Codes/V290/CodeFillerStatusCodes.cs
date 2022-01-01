@@ -10,52 +10,52 @@
         /// Blocked - Blocked.
         /// </summary>
         Blocked,
-        
+
         /// <summary>
         /// Booked - Booked.
         /// </summary>
         Booked,
-        
+
         /// <summary>
         /// Cancelled - Cancelled.
         /// </summary>
         Cancelled,
-        
+
         /// <summary>
         /// Complete - Complete.
         /// </summary>
         Complete,
-        
+
         /// <summary>
         /// DC - Discontinued.
         /// </summary>
         Discontinued,
-        
+
         /// <summary>
         /// Deleted - Deleted.
         /// </summary>
         Deleted,
-        
+
         /// <summary>
         /// Noshow - Noshow.
         /// </summary>
         Noshow,
-        
+
         /// <summary>
         /// Overbook - Overbook.
         /// </summary>
         Overbook,
-        
+
         /// <summary>
         /// Pending - Pending.
         /// </summary>
         Pending,
-        
+
         /// <summary>
         /// Started - Started.
         /// </summary>
         Started,
-        
+
         /// <summary>
         /// Waitlist - Waitlist.
         /// </summary>

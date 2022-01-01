@@ -10,12 +10,12 @@
         /// ... - No suggested values defined.
         /// </summary>
         NoSuggestedValuesDefined,
-        
+
         /// <summary>
         /// 131 - Hospital - Outpatient - Admit thru Discharge Claim.
         /// </summary>
         HospitalOutpatientAdmitThruDischargeClaim,
-        
+
         /// <summary>
         /// 141 - Hospital - Other - Admit thru Discharge Claim.
         /// </summary>

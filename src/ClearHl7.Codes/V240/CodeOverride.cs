@@ -10,12 +10,12 @@
         /// A - Override allowed.
         /// </summary>
         OverrideAllowed,
-        
+
         /// <summary>
         /// R - Override required.
         /// </summary>
         OverrideRequired,
-        
+
         /// <summary>
         /// X - Override not allowed.
         /// </summary>

@@ -10,37 +10,37 @@
         /// NATO - North Atlantic Treaty Organization.
         /// </summary>
         Nato,
-        
+
         /// <summary>
         /// NOAA - National Oceanic and Atmospheric Administration.
         /// </summary>
         Noaa,
-        
+
         /// <summary>
         /// USA - US Army.
         /// </summary>
         UsArmy,
-        
+
         /// <summary>
         /// USAF - US Air Force.
         /// </summary>
         UsAirForce,
-        
+
         /// <summary>
         /// USCG - US Coast Guard.
         /// </summary>
         UsCoastGuard,
-        
+
         /// <summary>
         /// USMC - US Marine Corps.
         /// </summary>
         UsMarineCorps,
-        
+
         /// <summary>
         /// USN - US Navy.
         /// </summary>
         UsNavy,
-        
+
         /// <summary>
         /// USPHS - US Public Health Service.
         /// </summary>

@@ -10,22 +10,22 @@
         /// DF - Differential.
         /// </summary>
         Differential,
-        
+
         /// <summary>
         /// LM - Limit.
         /// </summary>
         Limit,
-        
+
         /// <summary>
         /// PC - Percentage.
         /// </summary>
         Percentage,
-        
+
         /// <summary>
         /// RT - Rate.
         /// </summary>
         Rate,
-        
+
         /// <summary>
         /// UL - Unlimited.
         /// </summary>

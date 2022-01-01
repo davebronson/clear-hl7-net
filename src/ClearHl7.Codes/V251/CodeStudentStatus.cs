@@ -10,12 +10,12 @@
         /// F - Full-time student.
         /// </summary>
         FullTimeStudent,
-        
+
         /// <summary>
         /// N - Not a student.
         /// </summary>
         NotAStudent,
-        
+
         /// <summary>
         /// P - Part-time student.
         /// </summary>

@@ -10,7 +10,7 @@
         /// AMB - AMBULATORY CARE.
         /// </summary>
         AmbulatoryCare,
-        
+
         /// <summary>
         /// DENT - DENTAL.
         /// </summary>

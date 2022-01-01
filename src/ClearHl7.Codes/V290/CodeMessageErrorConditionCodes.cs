@@ -10,77 +10,77 @@
         /// 0 - Message accepted.
         /// </summary>
         MessageAccepted,
-        
+
         /// <summary>
         /// 100 - Segment sequence error.
         /// </summary>
         SegmentSequenceError,
-        
+
         /// <summary>
         /// 101 - Required field missing.
         /// </summary>
         RequiredFieldMissing,
-        
+
         /// <summary>
         /// 102 - Data type error.
         /// </summary>
         DataTypeError,
-        
+
         /// <summary>
         /// 103 - Table value not found.
         /// </summary>
         TableValueNotFound,
-        
+
         /// <summary>
         /// 104 - Value too long.
         /// </summary>
         ValueTooLong,
-        
+
         /// <summary>
         /// 198 - Non-Conformant Cardinality.
         /// </summary>
         NonConformantCardinality,
-        
+
         /// <summary>
         /// 199 - Other HL7 Error.
         /// </summary>
         OtherHl7Error,
-        
+
         /// <summary>
         /// 200 - Unsupported message type.
         /// </summary>
         UnsupportedMessageType,
-        
+
         /// <summary>
         /// 201 - Unsupported event code.
         /// </summary>
         UnsupportedEventCode,
-        
+
         /// <summary>
         /// 202 - Unsupported processing id.
         /// </summary>
         UnsupportedProcessingId,
-        
+
         /// <summary>
         /// 203 - Unsupported version id.
         /// </summary>
         UnsupportedVersionId,
-        
+
         /// <summary>
         /// 204 - Unknown key identifier.
         /// </summary>
         UnknownKeyIdentifier,
-        
+
         /// <summary>
         /// 205 - Duplicate key identifier.
         /// </summary>
         DuplicateKeyIdentifier,
-        
+
         /// <summary>
         /// 206 - Application record locked.
         /// </summary>
         ApplicationRecordLocked,
-        
+
         /// <summary>
         /// 207 - Application error.
         /// </summary>

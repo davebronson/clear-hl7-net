@@ -10,12 +10,12 @@
         /// C - Classification.
         /// </summary>
         Classification,
-        
+
         /// <summary>
         /// M - Mailing.
         /// </summary>
         Mailing,
-        
+
         /// <summary>
         /// V - Visit.
         /// </summary>

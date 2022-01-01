@@ -10,12 +10,12 @@
         /// E - Error.
         /// </summary>
         Error,
-        
+
         /// <summary>
         /// I - Information.
         /// </summary>
         Information,
-        
+
         /// <summary>
         /// W - Warning.
         /// </summary>

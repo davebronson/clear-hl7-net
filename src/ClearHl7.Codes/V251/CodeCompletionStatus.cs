@@ -10,17 +10,17 @@
         /// CP - Complete.
         /// </summary>
         Complete,
-        
+
         /// <summary>
         /// NA - Not Administered.
         /// </summary>
         NotAdministered,
-        
+
         /// <summary>
         /// PA - Partially Administered.
         /// </summary>
         PartiallyAdministered,
-        
+
         /// <summary>
         /// RE - Refused.
         /// </summary>

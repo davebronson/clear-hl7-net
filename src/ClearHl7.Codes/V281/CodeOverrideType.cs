@@ -10,12 +10,12 @@
         /// EQV - Equivalence Override.
         /// </summary>
         EquivalenceOverride,
-        
+
         /// <summary>
         /// EXTN - Extension Override.
         /// </summary>
         ExtensionOverride,
-        
+
         /// <summary>
         /// INLV - Interval Override.
         /// </summary>

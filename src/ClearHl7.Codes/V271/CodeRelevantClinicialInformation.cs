@@ -7,22 +7,22 @@
     public enum CodeRelevantClinicialInformation
     {
         /// <summary>
-        /// F - Patient was fasting prior to the procedure..
+        /// F - Patient was fasting prior to the procedure.
         /// </summary>
         PatientWasFastingPrior,
-        
+
         /// <summary>
-        /// FNA - Fasting not asked of the patient at time of procedure..
+        /// FNA - Fasting not asked of the patient at time of procedure.
         /// </summary>
         FastingNotAskedOfThePatient,
-        
+
         /// <summary>
-        /// NF - The patient indicated they did not fast prior to the procedure..
+        /// NF - The patient indicated they did not fast prior to the procedure.
         /// </summary>
         PatientIndicatedTheyDidNotFastPrior,
-        
+
         /// <summary>
-        /// NG - Not Given - Patient was not asked at the time of the procedure..
+        /// NG - Not Given - Patient was not asked at the time of the procedure.
         /// </summary>
         PatientWasNotAsked
     }

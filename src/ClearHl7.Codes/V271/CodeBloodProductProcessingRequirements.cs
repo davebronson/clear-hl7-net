@@ -10,52 +10,52 @@
         /// AU - Autologous Unit.
         /// </summary>
         AutologousUnit,
-        
+
         /// <summary>
         /// CM - CMV Negative.
         /// </summary>
         CmvNegative,
-        
+
         /// <summary>
         /// CS - CMV Safe.
         /// </summary>
         CmvSafe,
-        
+
         /// <summary>
         /// DI - Directed Unit.
         /// </summary>
         DirectedUnit,
-        
+
         /// <summary>
         /// FR - Fresh unit.
         /// </summary>
         FreshUnit,
-        
+
         /// <summary>
         /// HB - Hemoglobin S Negative.
         /// </summary>
         HemoglobinSNegative,
-        
+
         /// <summary>
         /// HL - HLA Matched.
         /// </summary>
         HlaMatched,
-        
+
         /// <summary>
         /// IG - IgA Deficient.
         /// </summary>
         IgaDeficient,
-        
+
         /// <summary>
         /// IR - Irradiated.
         /// </summary>
         Irradiated,
-        
+
         /// <summary>
         /// LR - Leukoreduced.
         /// </summary>
         Leukoreduced,
-        
+
         /// <summary>
         /// WA - Washed.
         /// </summary>

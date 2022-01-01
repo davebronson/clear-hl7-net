@@ -10,7 +10,7 @@
         /// O - Charge on Order.
         /// </summary>
         ChargeOnOrder,
-        
+
         /// <summary>
         /// R - Charge on Result.
         /// </summary>

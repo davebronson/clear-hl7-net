@@ -10,19 +10,19 @@
         /// ... - No suggested values defined.
         /// </summary>
         NoSuggestedValuesDefined,
-        
+
         /// <summary>
         /// 031 - Dental procedures.
         /// </summary>
         DentalProcedures,
-        
+
         /// <summary>
         /// 163 - Excision/biopsy.
         /// </summary>
         ExcisionBiopsy,
-        
+
         /// <summary>
-        /// 181 - Level 1 skin repair..
+        /// 181 - Level 1 skin repair.
         /// </summary>
         Level1SkinRepair
     }

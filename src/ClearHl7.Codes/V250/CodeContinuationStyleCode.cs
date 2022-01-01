@@ -10,7 +10,7 @@
         /// F - Fragmentation.
         /// </summary>
         Fragmentation,
-        
+
         /// <summary>
         /// I - Interactive Continuation.
         /// </summary>

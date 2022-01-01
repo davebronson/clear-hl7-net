@@ -10,22 +10,22 @@
         /// E - Expired.
         /// </summary>
         Expired,
-        
+
         /// <summary>
         /// I - Inactive.
         /// </summary>
         Inactive,
-        
+
         /// <summary>
         /// P - Provisional.
         /// </summary>
         Provisional,
-        
+
         /// <summary>
         /// R - Revoked.
         /// </summary>
         Revoked,
-        
+
         /// <summary>
         /// V - Active/Valid.
         /// </summary>

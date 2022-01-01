@@ -10,12 +10,12 @@
         /// 0 - No weight reported at admission used for grouping.
         /// </summary>
         NoWeightReportedAtAdmissionUsedForGrouping,
-        
+
         /// <summary>
         /// 1 - Weight reported at admission used for grouping.
         /// </summary>
         WeightReportedAtAdmissionUsedForGrouping,
-        
+
         /// <summary>
         /// 2 - Default weight (2499g) used for grouping.
         /// </summary>

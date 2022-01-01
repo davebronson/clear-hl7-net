@@ -10,42 +10,42 @@
         /// A - Atheist.
         /// </summary>
         Atheist,
-        
+
         /// <summary>
         /// B - Baptist.
         /// </summary>
         Baptist,
-        
+
         /// <summary>
         /// C - Catholic.
         /// </summary>
         Catholic,
-        
+
         /// <summary>
         /// E - Episcopalian.
         /// </summary>
         Episcopalian,
-        
+
         /// <summary>
         /// J - Judaism.
         /// </summary>
         Judaism,
-        
+
         /// <summary>
         /// L - Lutheran.
         /// </summary>
         Lutheran,
-        
+
         /// <summary>
         /// M - Church of Latter Day Saints (Mormon).
         /// </summary>
         ChurchOfLatterDaySaintsMormon,
-        
+
         /// <summary>
         /// N - Hindu.
         /// </summary>
         Hindu,
-        
+
         /// <summary>
         /// P - Protestant.
         /// </summary>

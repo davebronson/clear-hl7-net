@@ -10,77 +10,77 @@
         /// ANT - Anterior.
         /// </summary>
         Anterior,
-        
+
         /// <summary>
         /// BIL - Bilateral.
         /// </summary>
         Bilateral,
-        
+
         /// <summary>
         /// DIS - Distal.
         /// </summary>
         Distal,
-        
+
         /// <summary>
         /// EXT - External.
         /// </summary>
         External,
-        
+
         /// <summary>
         /// L - Left.
         /// </summary>
         Left,
-        
+
         /// <summary>
         /// LAT - Lateral.
         /// </summary>
         Lateral,
-        
+
         /// <summary>
         /// LLQ - Quadrant, Left Lower.
         /// </summary>
         QuadrantLeftLower,
-        
+
         /// <summary>
         /// LOW - Lower.
         /// </summary>
         Lower,
-        
+
         /// <summary>
         /// LUQ - Quadrant, Left Upper.
         /// </summary>
         QuadrantLeftUpper,
-        
+
         /// <summary>
         /// MED - Medial.
         /// </summary>
         Medial,
-        
+
         /// <summary>
         /// POS - Posterior.
         /// </summary>
         Posterior,
-        
+
         /// <summary>
         /// PRO - Proximal.
         /// </summary>
         Proximal,
-        
+
         /// <summary>
         /// R - Right.
         /// </summary>
         Right,
-        
+
         /// <summary>
         /// RLQ - Quadrant, Right Lower.
         /// </summary>
         QuadrantRightLower,
-        
+
         /// <summary>
         /// RUQ - Quadrant, Right Upper.
         /// </summary>
         QuadrantRightUpper,
-        
+
         /// <summary>
         /// UPP - Upper.
         /// </summary>

@@ -10,27 +10,27 @@
         /// 1 - mm/dd/yy.
         /// </summary>
         MmDdYyWithSlashes,
-        
+
         /// <summary>
         /// 2 - yy.mm.dd.
         /// </summary>
         YyMmDdWithPeriods,
-        
+
         /// <summary>
         /// 3 - dd/mm/yy.
         /// </summary>
         DdMmYyWithSlashes,
-        
+
         /// <summary>
         /// 4 - dd.mm.yy.
         /// </summary>
         DdMmYyWithPeriods,
-        
+
         /// <summary>
         /// 5 - yy/mm/dd.
         /// </summary>
         YyMmDdWithSlashes,
-        
+
         /// <summary>
         /// 6 - Yymmdd.
         /// </summary>

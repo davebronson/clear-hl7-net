@@ -10,29 +10,29 @@
         /// A - Active - Consent has been granted.
         /// </summary>
         Active,
-        
+
         /// <summary>
         /// B - Bypassed (Consent not sought).
         /// </summary>
         Bypassed,
-        
+
         /// <summary>
         /// L - Limited - Consent has been granted with limitations.
         /// </summary>
         Limited,
-        
+
         /// <summary>
         /// P - Pending - Consent has not yet been sought.
         /// </summary>
         Pending,
-        
+
         /// <summary>
         /// R - Refused - Consent has been refused.
         /// </summary>
         Refused,
-        
+
         /// <summary>
-        /// X - Rescinded - Consent was initially granted, but was subsequently revoked or ended..
+        /// X - Rescinded - Consent was initially granted, but was subsequently revoked or ended.
         /// </summary>
         Rescinded
     }

@@ -10,12 +10,12 @@
         /// C - Child Observation.
         /// </summary>
         ChildObservation,
-        
+
         /// <summary>
         /// N - Not Applicable.
         /// </summary>
         NotApplicable,
-        
+
         /// <summary>
         /// P - Parent Observation.
         /// </summary>

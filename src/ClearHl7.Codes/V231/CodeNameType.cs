@@ -10,47 +10,47 @@
         /// A - Assigned.
         /// </summary>
         Assigned,
-        
+
         /// <summary>
         /// B - Birth name.
         /// </summary>
         BirthName,
-        
+
         /// <summary>
         /// C - Adopted Name.
         /// </summary>
         AdoptedName,
-        
+
         /// <summary>
         /// D - Customary Name.
         /// </summary>
         CustomaryName,
-        
+
         /// <summary>
         /// L - Official Registry Name.
         /// </summary>
         OfficialRegistryName,
-        
+
         /// <summary>
         /// M - Maiden Name.
         /// </summary>
         MaidenName,
-        
+
         /// <summary>
         /// P - Name of Partner/Spouse.
         /// </summary>
         NameOfPartnerSpouse,
-        
+
         /// <summary>
         /// S - Pseudonym.
         /// </summary>
         Pseudonym,
-        
+
         /// <summary>
         /// T - Indigenous/Tribal.
         /// </summary>
         IndigenousTribal,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>

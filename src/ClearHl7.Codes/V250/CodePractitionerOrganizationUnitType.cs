@@ -10,22 +10,22 @@
         /// D - Department.
         /// </summary>
         Department,
-        
+
         /// <summary>
         /// F - Facility.
         /// </summary>
         Facility,
-        
+
         /// <summary>
         /// S - Subdivision.
         /// </summary>
         Subdivision,
-        
+
         /// <summary>
         /// U - Subdepartment.
         /// </summary>
         Subdepartment,
-        
+
         /// <summary>
         /// V - Division.
         /// </summary>

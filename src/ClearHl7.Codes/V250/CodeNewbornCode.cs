@@ -10,22 +10,22 @@
         /// 1 - Born in facility.
         /// </summary>
         BornInFacility,
-        
+
         /// <summary>
         /// 2 - Transfer in.
         /// </summary>
         TransferIn,
-        
+
         /// <summary>
         /// 3 - Born en route.
         /// </summary>
         BornEnRoute,
-        
+
         /// <summary>
         /// 4 - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// 5 - Born at home.
         /// </summary>

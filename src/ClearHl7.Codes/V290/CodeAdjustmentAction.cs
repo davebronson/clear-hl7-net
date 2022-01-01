@@ -10,12 +10,12 @@
         /// EOB - Print on EOB.
         /// </summary>
         PrintOnEob,
-        
+
         /// <summary>
         /// PAT - Inform Patient.
         /// </summary>
         InformPatient,
-        
+
         /// <summary>
         /// PRO - Inform Provider.
         /// </summary>

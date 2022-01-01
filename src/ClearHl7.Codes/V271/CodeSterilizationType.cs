@@ -10,12 +10,12 @@
         /// EOG - Ethylene Oxide Gas.
         /// </summary>
         EthyleneOxideGas,
-        
+
         /// <summary>
         /// PCA - Peracetic acid.
         /// </summary>
         PeraceticAcid,
-        
+
         /// <summary>
         /// STM - Steam.
         /// </summary>

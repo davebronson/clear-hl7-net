@@ -10,22 +10,22 @@
         /// AP - Analysis Process.
         /// </summary>
         AnalysisProcess,
-        
+
         /// <summary>
         /// IM - Information Management.
         /// </summary>
         InformationManagement,
-        
+
         /// <summary>
         /// L - Laboratory.
         /// </summary>
         Laboratory,
-        
+
         /// <summary>
         /// NA - Not Applicable.
         /// </summary>
         NotApplicable,
-        
+
         /// <summary>
         /// PD - Placer Data.
         /// </summary>

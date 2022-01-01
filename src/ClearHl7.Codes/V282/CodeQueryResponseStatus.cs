@@ -10,17 +10,17 @@
         /// AE - Application error.
         /// </summary>
         ApplicationError,
-        
+
         /// <summary>
         /// AR - Application reject.
         /// </summary>
         ApplicationReject,
-        
+
         /// <summary>
         /// NF - No data found, no errors.
         /// </summary>
         NoDataFoundNoErrors,
-        
+
         /// <summary>
         /// OK - Data found, no errors (this is the default).
         /// </summary>

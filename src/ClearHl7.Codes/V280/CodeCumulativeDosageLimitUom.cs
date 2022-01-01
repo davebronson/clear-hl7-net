@@ -10,27 +10,27 @@
         /// A - Annual.
         /// </summary>
         Annual,
-        
+
         /// <summary>
         /// D - Per Day.
         /// </summary>
         PerDay,
-        
+
         /// <summary>
         /// M - Per Month.
         /// </summary>
         PerMonth,
-        
+
         /// <summary>
         /// O - Duration of the Order.
         /// </summary>
         DurationOfTheOrder,
-        
+
         /// <summary>
         /// PL - Patients Lifetime.
         /// </summary>
         PatientsLifetime,
-        
+
         /// <summary>
         /// WK - Per Week.
         /// </summary>

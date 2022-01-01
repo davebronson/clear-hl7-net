@@ -10,42 +10,42 @@
         /// B - Trial Quantity Balance.
         /// </summary>
         TrialQuantityBalance,
-        
+
         /// <summary>
         /// C - Compassionate Fill.
         /// </summary>
         CompassionateFill,
-        
+
         /// <summary>
         /// N - New/Renew - Full Fill.
         /// </summary>
         NewRenewFullFill,
-        
+
         /// <summary>
         /// P - New/Renew - Part Fill.
         /// </summary>
         NewRenewPartFill,
-        
+
         /// <summary>
         /// Q - Refill - Part Fill.
         /// </summary>
         RefillPartFill,
-        
+
         /// <summary>
         /// R - Refill - Full Fill.
         /// </summary>
         RefillFullFill,
-        
+
         /// <summary>
         /// S - Manufacturer Sample.
         /// </summary>
         ManufacturerSample,
-        
+
         /// <summary>
         /// T - Trial Quantity.
         /// </summary>
         TrialQuantity,
-        
+
         /// <summary>
         /// Z - Non-Prescription Fill.
         /// </summary>

@@ -10,7 +10,7 @@
         /// D - Deferred.
         /// </summary>
         Deferred,
-        
+
         /// <summary>
         /// I - Immediate.
         /// </summary>

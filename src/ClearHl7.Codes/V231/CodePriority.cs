@@ -10,22 +10,22 @@
         /// A - As soon as possible (a priority lower than stat).
         /// </summary>
         AsSoonAsPossible,
-        
+
         /// <summary>
         /// P - Preoperative (to be done prior to surgery).
         /// </summary>
         Preoperative,
-        
+
         /// <summary>
         /// R - Routine.
         /// </summary>
         Routine,
-        
+
         /// <summary>
         /// S - Stat (do immediately).
         /// </summary>
         Stat,
-        
+
         /// <summary>
         /// T - Timing critical (do as near as possible to requested time).
         /// </summary>

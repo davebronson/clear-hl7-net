@@ -10,12 +10,12 @@
         /// 1 - Premature / Pre-term.
         /// </summary>
         PrematurePreTerm,
-        
+
         /// <summary>
         /// 2 - Full Term.
         /// </summary>
         FullTerm,
-        
+
         /// <summary>
         /// 3 - Overdue / Post-term.
         /// </summary>

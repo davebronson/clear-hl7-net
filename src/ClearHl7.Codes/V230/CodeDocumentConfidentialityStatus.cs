@@ -10,27 +10,27 @@
         /// 1 - ASTM Level 1.
         /// </summary>
         AstmLevel1,
-        
+
         /// <summary>
         /// 2 - ASTM Level 2.
         /// </summary>
         AstmLevel2,
-        
+
         /// <summary>
         /// 3 - ASTM Level 3.
         /// </summary>
         AstmLevel3,
-        
+
         /// <summary>
         /// RE - Restricted.
         /// </summary>
         Restricted,
-        
+
         /// <summary>
         /// UC - Usual control.
         /// </summary>
         UsualControl,
-        
+
         /// <summary>
         /// VR - Very restricted.
         /// </summary>

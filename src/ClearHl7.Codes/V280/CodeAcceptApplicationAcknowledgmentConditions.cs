@@ -10,17 +10,17 @@
         /// AL - Always.
         /// </summary>
         Always,
-        
+
         /// <summary>
         /// ER - Error/reject conditions only.
         /// </summary>
         ErrorRejectConditionsOnly,
-        
+
         /// <summary>
         /// NE - Never.
         /// </summary>
         Never,
-        
+
         /// <summary>
         /// SU - Successful completion only.
         /// </summary>

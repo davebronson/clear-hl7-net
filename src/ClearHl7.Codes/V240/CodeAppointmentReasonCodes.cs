@@ -10,22 +10,22 @@
         /// CHECKUP - A routine check-up, such as an annual physical.
         /// </summary>
         ARoutineCheckUpSuchAsAnAnnualPhysical,
-        
+
         /// <summary>
         /// EMERGENCY - Emergency appointment.
         /// </summary>
         EmergencyAppointment,
-        
+
         /// <summary>
         /// FOLLOWUP - A follow up visit from a previous appointment.
         /// </summary>
         AFollowUpVisitFromAPreviousAppointment,
-        
+
         /// <summary>
         /// ROUTINE - Routine appointment - default if not valued.
         /// </summary>
         RoutineAppointmentDefaultIfNotValued,
-        
+
         /// <summary>
         /// WALKIN - A previously unscheduled walk-in visit.
         /// </summary>

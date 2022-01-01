@@ -10,7 +10,7 @@
         /// M - Modified Subscription.
         /// </summary>
         ModifiedSubscription,
-        
+
         /// <summary>
         /// N - New Subscription.
         /// </summary>

@@ -10,12 +10,12 @@
         /// M - Maternity.
         /// </summary>
         Maternity,
-        
+
         /// <summary>
         /// S - Standard.
         /// </summary>
         Standard,
-        
+
         /// <summary>
         /// U - Unified.
         /// </summary>

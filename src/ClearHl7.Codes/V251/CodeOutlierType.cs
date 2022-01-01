@@ -10,7 +10,7 @@
         /// C - Outlier cost.
         /// </summary>
         OutlierCost,
-        
+
         /// <summary>
         /// D - Outlier days.
         /// </summary>

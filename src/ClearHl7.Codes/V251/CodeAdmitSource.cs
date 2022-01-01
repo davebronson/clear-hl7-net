@@ -10,42 +10,42 @@
         /// 1 - Physician referral.
         /// </summary>
         PhysicianReferral,
-        
+
         /// <summary>
         /// 2 - Clinic referral.
         /// </summary>
         ClinicReferral,
-        
+
         /// <summary>
         /// 3 - HMO referral.
         /// </summary>
         HmoReferral,
-        
+
         /// <summary>
         /// 4 - Transfer from a hospital.
         /// </summary>
         TransferFromHospital,
-        
+
         /// <summary>
         /// 5 - Transfer from a skilled nursing facility.
         /// </summary>
         TransferFromSkilledNursingFacility,
-        
+
         /// <summary>
         /// 6 - Transfer from another health care facility.
         /// </summary>
         TransferFromAnotherHealthCareFacility,
-        
+
         /// <summary>
         /// 7 - Emergency room.
         /// </summary>
         EmergencyRoom,
-        
+
         /// <summary>
         /// 8 - Court/law enforcement.
         /// </summary>
         CourtLawEnforcement,
-        
+
         /// <summary>
         /// 9 - Information not available.
         /// </summary>

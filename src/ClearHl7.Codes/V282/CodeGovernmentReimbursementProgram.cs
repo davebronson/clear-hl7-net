@@ -10,7 +10,7 @@
         /// C - Medi-Cal.
         /// </summary>
         MediCal,
-        
+
         /// <summary>
         /// MM - Medicare.
         /// </summary>

@@ -10,7 +10,7 @@
         /// L - Local.
         /// </summary>
         Local,
-        
+
         /// <summary>
         /// R - Remote.
         /// </summary>

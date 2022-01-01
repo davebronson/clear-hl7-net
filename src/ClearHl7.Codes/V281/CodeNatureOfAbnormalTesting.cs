@@ -10,32 +10,32 @@
         /// A - An age-based population.
         /// </summary>
         AgeBasedPopulation,
-        
+
         /// <summary>
         /// B - Breed.
         /// </summary>
         Breed,
-        
+
         /// <summary>
         /// N - None - generic normal range.
         /// </summary>
         None,
-        
+
         /// <summary>
         /// R - A race-based population.
         /// </summary>
         RaceBasedPopulation,
-        
+
         /// <summary>
         /// S - A sex-based population.
         /// </summary>
         SexBasedPopulation,
-        
+
         /// <summary>
         /// SP - Species.
         /// </summary>
         Species,
-        
+
         /// <summary>
         /// ST - Strain.
         /// </summary>

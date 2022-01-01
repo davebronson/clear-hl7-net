@@ -10,17 +10,17 @@
         /// B - Both hospital and physician.
         /// </summary>
         BothHospitalAndPhysician,
-        
+
         /// <summary>
         /// H - Hospital/institutional.
         /// </summary>
         HospitalInstitutional,
-        
+
         /// <summary>
         /// P - Physician/professional.
         /// </summary>
         PhysicianProfessional,
-        
+
         /// <summary>
         /// RX - Pharmacy.
         /// </summary>

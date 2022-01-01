@@ -10,12 +10,12 @@
         /// A - ASAP.
         /// </summary>
         Asap,
-        
+
         /// <summary>
         /// R - Routine.
         /// </summary>
         Routine,
-        
+
         /// <summary>
         /// S - STAT.
         /// </summary>

@@ -10,17 +10,17 @@
         /// D - Diagnostic.
         /// </summary>
         Diagnostic,
-        
+
         /// <summary>
         /// E - Emergency Room Casualty.
         /// </summary>
         EmergencyRoomCasualty,
-        
+
         /// <summary>
         /// P - Primary Care.
         /// </summary>
         PrimaryCare,
-        
+
         /// <summary>
         /// T - Therapeutic.
         /// </summary>

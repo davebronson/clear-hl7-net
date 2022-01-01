@@ -10,12 +10,12 @@
         /// E - Emergency.
         /// </summary>
         Emergency,
-        
+
         /// <summary>
         /// PR - Patient Request.
         /// </summary>
         PatientRequest,
-        
+
         /// <summary>
         /// RX - Rx Private.
         /// </summary>

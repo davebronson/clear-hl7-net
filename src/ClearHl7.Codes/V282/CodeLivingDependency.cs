@@ -10,22 +10,22 @@
         /// C - Small Children Dependent.
         /// </summary>
         SmallChildrenDependent,
-        
+
         /// <summary>
         /// M - Medical Supervision Required.
         /// </summary>
         MedicalSupervisionRequired,
-        
+
         /// <summary>
         /// O - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// S - Spouse Dependent.
         /// </summary>
         SpouseDependent,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>

@@ -10,7 +10,7 @@
         /// E - Evaluation.
         /// </summary>
         Evaluation,
-        
+
         /// <summary>
         /// P - Regular Production.
         /// </summary>

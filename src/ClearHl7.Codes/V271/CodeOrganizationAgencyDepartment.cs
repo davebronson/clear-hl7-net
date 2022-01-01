@@ -10,27 +10,27 @@
         /// AE - American Express.
         /// </summary>
         AmericanExpress,
-        
+
         /// <summary>
         /// DEA - Drug Enforcement Agency.
         /// </summary>
         DrugEnforcementAgency,
-        
+
         /// <summary>
         /// DOD - Department of Defense.
         /// </summary>
         DepartmentOfDefense,
-        
+
         /// <summary>
         /// MC - Master Card.
         /// </summary>
         MasterCard,
-        
+
         /// <summary>
         /// VA - Veterans Affairs.
         /// </summary>
         VeteransAffairs,
-        
+
         /// <summary>
         /// VI - Visa.
         /// </summary>

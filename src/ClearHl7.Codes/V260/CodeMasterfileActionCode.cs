@@ -10,22 +10,22 @@
         /// MAC - Reactivate deactivated record.
         /// </summary>
         ReactivateDeactivatedRecord,
-        
+
         /// <summary>
         /// MAD - Add record to master file.
         /// </summary>
         AddRecordToMasterFile,
-        
+
         /// <summary>
         /// MDC - Deactivate: discontinue using record in master file, but do not delete from database.
         /// </summary>
         Deactivate,
-        
+
         /// <summary>
         /// MDL - Delete record from master file.
         /// </summary>
         DeleteRecordFromMasterFile,
-        
+
         /// <summary>
         /// MUP - Update record for master file.
         /// </summary>

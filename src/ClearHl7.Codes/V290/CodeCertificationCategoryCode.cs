@@ -10,12 +10,12 @@
         /// IR - Initial Request.
         /// </summary>
         InitialRequest,
-        
+
         /// <summary>
         /// RA - Request for Appeal.
         /// </summary>
         RequestForAppeal,
-        
+
         /// <summary>
         /// RE - Request for Extension.
         /// </summary>

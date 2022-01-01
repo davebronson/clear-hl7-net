@@ -10,12 +10,12 @@
         /// 0 - Not packaged.
         /// </summary>
         NotPackaged,
-        
+
         /// <summary>
         /// 1 - Packaged service (status indicator N, or no HCPCS code and certain revenue codes).
         /// </summary>
         PackagedService,
-        
+
         /// <summary>
         /// 2 - Packaged as part of partial hospitalization per diem or daily mental health service per diem.
         /// </summary>

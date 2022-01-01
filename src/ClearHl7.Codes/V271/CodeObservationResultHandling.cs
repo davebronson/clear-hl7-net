@@ -10,22 +10,22 @@
         /// A - Alert provider when abnormal.
         /// </summary>
         AlertProviderWhenAbnormal,
-        
+
         /// <summary>
         /// BCC - Blind copy.
         /// </summary>
         BlindCopy,
-        
+
         /// <summary>
         /// CC - Copies requested.
         /// </summary>
         CopiesRequested,
-        
+
         /// <summary>
         /// F - Film-with-patient.
         /// </summary>
         FilmWithPatient,
-        
+
         /// <summary>
         /// N - Notify provider when ready.
         /// </summary>

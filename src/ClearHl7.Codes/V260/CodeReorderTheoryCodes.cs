@@ -10,12 +10,12 @@
         /// D - DOP/DOQ.
         /// </summary>
         DopDoq,
-        
+
         /// <summary>
         /// M - MIN/MAX.
         /// </summary>
         MinMax,
-        
+
         /// <summary>
         /// O - Override.
         /// </summary>

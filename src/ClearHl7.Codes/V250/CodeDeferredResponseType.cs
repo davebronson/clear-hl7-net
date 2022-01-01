@@ -10,7 +10,7 @@
         /// B - Before the Date/Time specified.
         /// </summary>
         BeforeTheDateTimeSpecified,
-        
+
         /// <summary>
         /// L - Later than the Date/Time specified.
         /// </summary>

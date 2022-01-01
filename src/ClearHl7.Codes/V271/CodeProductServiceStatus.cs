@@ -10,12 +10,12 @@
         /// D - Denied.
         /// </summary>
         Denied,
-        
+
         /// <summary>
         /// P - Processed.
         /// </summary>
         Processed,
-        
+
         /// <summary>
         /// R - Rejected.
         /// </summary>

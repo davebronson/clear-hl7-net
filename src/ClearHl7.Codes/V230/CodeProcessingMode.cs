@@ -10,17 +10,17 @@
         /// A - Archive.
         /// </summary>
         Archive,
-        
+
         /// <summary>
         /// I - Initial load.
         /// </summary>
         InitialLoad,
-        
+
         /// <summary>
         /// Not present - Not present (the default, meaning current  processing).
         /// </summary>
         NotPresent,
-        
+
         /// <summary>
         /// R - Restore from archive.
         /// </summary>

@@ -10,7 +10,7 @@
         /// E - Emergency.
         /// </summary>
         Emergency,
-        
+
         /// <summary>
         /// PJ - Professional Judgment.
         /// </summary>

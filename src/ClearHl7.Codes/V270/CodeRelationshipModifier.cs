@@ -10,17 +10,17 @@
         /// BPU - Blood product unit.
         /// </summary>
         BloodProductUnit,
-        
+
         /// <summary>
         /// CONTROL - Control.
         /// </summary>
         Control,
-        
+
         /// <summary>
         /// DONOR - Donor.
         /// </summary>
         Donor,
-        
+
         /// <summary>
         /// PATIENT - Patient.
         /// </summary>

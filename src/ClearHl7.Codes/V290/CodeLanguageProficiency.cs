@@ -10,27 +10,27 @@
         /// 1 - Excellent.
         /// </summary>
         Excellent,
-        
+
         /// <summary>
         /// 2 - Good.
         /// </summary>
         Good,
-        
+
         /// <summary>
         /// 3 - Fair.
         /// </summary>
         Fair,
-        
+
         /// <summary>
         /// 4 - Poor.
         /// </summary>
         Poor,
-        
+
         /// <summary>
         /// 5 - Some (level unknown).
         /// </summary>
         SomeLevelUnknown,
-        
+
         /// <summary>
         /// 6 - None.
         /// </summary>

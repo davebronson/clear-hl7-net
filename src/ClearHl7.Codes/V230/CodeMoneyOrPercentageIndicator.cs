@@ -10,7 +10,7 @@
         /// AT - Currency amount.
         /// </summary>
         CurrencyAmount,
-        
+
         /// <summary>
         /// PC - Percentage.
         /// </summary>

@@ -10,27 +10,27 @@
         /// 2ICU - Second intensive care unit.
         /// </summary>
         SecondIntensiveCareUnit,
-        
+
         /// <summary>
         /// 2PRI - Second private room.
         /// </summary>
         SecondPrivateRoom,
-        
+
         /// <summary>
         /// 2SPR - Second semi-private room.
         /// </summary>
         SecondSemiPrivateRoom,
-        
+
         /// <summary>
         /// ICU - Intensive care unit.
         /// </summary>
         IntensiveCareUnit,
-        
+
         /// <summary>
         /// PRI - Private room.
         /// </summary>
         PrivateRoom,
-        
+
         /// <summary>
         /// SPR - Semi-private room.
         /// </summary>

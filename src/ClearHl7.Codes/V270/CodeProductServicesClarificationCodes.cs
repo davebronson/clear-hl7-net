@@ -10,32 +10,32 @@
         /// CLCTR - Claim Center.
         /// </summary>
         ClaimCenter,
-        
+
         /// <summary>
         /// DGAPP - Diagnostic Approval Number.
         /// </summary>
         DiagnosticApprovalNumber,
-        
+
         /// <summary>
         /// DTCTR - Data Center Number.
         /// </summary>
         DataCenterNumber,
-        
+
         /// <summary>
         /// ENC - Encounter Number.
         /// </summary>
         EncounterNumber,
-        
+
         /// <summary>
         /// GFTH - Good Faith Indicator.
         /// </summary>
         GoodFaithIndicator,
-        
+
         /// <summary>
         /// OOP - Out of Province Indicator.
         /// </summary>
         OutOfProvinceIndicator,
-        
+
         /// <summary>
         /// SEQ - Sequence Number.
         /// </summary>

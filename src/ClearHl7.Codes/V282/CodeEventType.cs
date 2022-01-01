@@ -10,7 +10,7 @@
         /// LOG - Log Event.
         /// </summary>
         LogEvent,
-        
+
         /// <summary>
         /// SER - Service Event.
         /// </summary>

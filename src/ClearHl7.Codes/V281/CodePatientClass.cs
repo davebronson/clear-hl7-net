@@ -10,42 +10,42 @@
         /// B - Obstetrics.
         /// </summary>
         Obstetrics,
-        
+
         /// <summary>
         /// C - Commercial Account.
         /// </summary>
         CommercialAccount,
-        
+
         /// <summary>
         /// E - Emergency.
         /// </summary>
         Emergency,
-        
+
         /// <summary>
         /// I - Inpatient.
         /// </summary>
         Inpatient,
-        
+
         /// <summary>
         /// N - Not Applicable.
         /// </summary>
         NotApplicable,
-        
+
         /// <summary>
         /// O - Outpatient.
         /// </summary>
         Outpatient,
-        
+
         /// <summary>
         /// P - Preadmit.
         /// </summary>
         Preadmit,
-        
+
         /// <summary>
         /// R - Recurring patient.
         /// </summary>
         RecurringPatient,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>

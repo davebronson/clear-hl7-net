@@ -10,32 +10,32 @@
         /// OBRG - OBR group.
         /// </summary>
         ObrGroup,
-        
+
         /// <summary>
         /// ORCG - ORC group.
         /// </summary>
         OrcGroup,
-        
+
         /// <summary>
         /// PIDG - PID group.
         /// </summary>
         PidGroup,
-        
+
         /// <summary>
         /// RXAG - RXA group.
         /// </summary>
         RxaGroup,
-        
+
         /// <summary>
         /// RXDG - RXD group.
         /// </summary>
         RxdGroup,
-        
+
         /// <summary>
         /// RXEG - RXE group.
         /// </summary>
         RxeGroup,
-        
+
         /// <summary>
         /// RXOG - RXO group.
         /// </summary>

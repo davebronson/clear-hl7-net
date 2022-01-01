@@ -10,27 +10,27 @@
         /// A - Alone.
         /// </summary>
         Alone,
-        
+
         /// <summary>
         /// F - Family.
         /// </summary>
         Family,
-        
+
         /// <summary>
         /// I - Institution.
         /// </summary>
         Institution,
-        
+
         /// <summary>
         /// R - Relative.
         /// </summary>
         Relative,
-        
+
         /// <summary>
         /// S - Spouse Only.
         /// </summary>
         SpouseOnly,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>

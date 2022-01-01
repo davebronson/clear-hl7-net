@@ -10,32 +10,32 @@
         /// application - Application data.
         /// </summary>
         ApplicationData,
-        
+
         /// <summary>
         /// audio - Audio data.
         /// </summary>
         AudioData,
-        
+
         /// <summary>
         /// image - Image data.
         /// </summary>
         ImageData,
-        
+
         /// <summary>
         /// model - Model data.
         /// </summary>
         ModelData,
-        
+
         /// <summary>
         /// multipart - MIME multipart package.
         /// </summary>
         MimeMultipartPackage,
-        
+
         /// <summary>
         /// text - Text data.
         /// </summary>
         TextData,
-        
+
         /// <summary>
         /// video - Video data.
         /// </summary>

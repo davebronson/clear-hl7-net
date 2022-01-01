@@ -10,37 +10,37 @@
         /// BLD - Whole blood, homogeneous.
         /// </summary>
         WholeBloodHomogeneous,
-        
+
         /// <summary>
         /// BSEP - Whole blood, separated.
         /// </summary>
         WholeBloodSeparated,
-        
+
         /// <summary>
         /// PLAS - Plasma, NOS (not otherwise specified).
         /// </summary>
         Plasma,
-        
+
         /// <summary>
         /// PPP - Platelet poor plasma.
         /// </summary>
         PlateletPoorPlasma,
-        
+
         /// <summary>
         /// PRP - Platelet rich plasma.
         /// </summary>
         PlateletRichPlasma,
-        
+
         /// <summary>
         /// SED - Sediment.
         /// </summary>
         Sediment,
-        
+
         /// <summary>
         /// SER - Serum, NOS (not otherwise specified).
         /// </summary>
         SerumNosNotOtherwiseSpecified,
-        
+
         /// <summary>
         /// SUP - Supernatant.
         /// </summary>

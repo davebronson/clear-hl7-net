@@ -10,12 +10,12 @@
         /// L - Ancillary (filler) department is source of comment.
         /// </summary>
         AncillaryDepartmentIsSourceOfComment,
-        
+
         /// <summary>
         /// O - Other system is source of comment.
         /// </summary>
         OtherSystemIsSourceOfComment,
-        
+
         /// <summary>
         /// P - Orderer (placer) is source of comment.
         /// </summary>

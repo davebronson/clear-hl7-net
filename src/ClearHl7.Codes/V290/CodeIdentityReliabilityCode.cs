@@ -10,17 +10,17 @@
         /// AL - Patient/Person Name is an Alias.
         /// </summary>
         PatientPersonNameIsAnAlias,
-        
+
         /// <summary>
         /// UA - Unknown/Default Address.
         /// </summary>
         UnknownDefaultAddress,
-        
+
         /// <summary>
         /// UD - Unknown/Default Date of Birth.
         /// </summary>
         UnknownDefaultDateOfBirth,
-        
+
         /// <summary>
         /// US - Unknown/Default Social Security Number.
         /// </summary>

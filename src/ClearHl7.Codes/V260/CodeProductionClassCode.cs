@@ -10,57 +10,57 @@
         /// BR - Breeding/genetic stock.
         /// </summary>
         BreedingGeneticStock,
-        
+
         /// <summary>
         /// DA - Dairy.
         /// </summary>
         Dairy,
-        
+
         /// <summary>
         /// DR - Draft.
         /// </summary>
         Draft,
-        
+
         /// <summary>
         /// DU - Dual Purpose.
         /// </summary>
         DualPurpose,
-        
+
         /// <summary>
         /// LY - Layer, Includes Multiplier flocks.
         /// </summary>
         LayerIncludesMultiplierFlocks,
-        
+
         /// <summary>
         /// MT - Meat.
         /// </summary>
         Meat,
-        
+
         /// <summary>
         /// NA - Not Applicable.
         /// </summary>
         NotApplicable,
-        
+
         /// <summary>
         /// OT - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// PL - Pleasure.
         /// </summary>
         Pleasure,
-        
+
         /// <summary>
         /// RA - Racing.
         /// </summary>
         Racing,
-        
+
         /// <summary>
         /// SH - Show.
         /// </summary>
         Show,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>

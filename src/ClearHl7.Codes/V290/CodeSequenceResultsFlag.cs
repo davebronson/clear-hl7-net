@@ -10,12 +10,12 @@
         /// C - Cyclical.
         /// </summary>
         Cyclical,
-        
+
         /// <summary>
         /// R - Reserved for future use.
         /// </summary>
         ReservedForFutureUse,
-        
+
         /// <summary>
         /// S - Sequential.
         /// </summary>

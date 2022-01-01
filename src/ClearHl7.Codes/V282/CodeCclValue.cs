@@ -10,22 +10,22 @@
         /// 0 - Nothing obvious.
         /// </summary>
         NothingObvious,
-        
+
         /// <summary>
         /// 1 - Low.
         /// </summary>
         Low,
-        
+
         /// <summary>
         /// 2 - Moderate.
         /// </summary>
         Moderate,
-        
+
         /// <summary>
         /// 3 - High.
         /// </summary>
         High,
-        
+
         /// <summary>
         /// 4 - Very high.
         /// </summary>

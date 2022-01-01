@@ -10,37 +10,37 @@
         /// DM - day of the month.
         /// </summary>
         DayOfTheMonth,
-        
+
         /// <summary>
         /// DW - day of the week (begins with Monday).
         /// </summary>
         DayOfTheWeekBeginsWithMonday,
-        
+
         /// <summary>
         /// DY - day of the year.
         /// </summary>
         DayOfTheYear,
-        
+
         /// <summary>
         /// HD - hour of the day.
         /// </summary>
         HourOfTheDay,
-        
+
         /// <summary>
         /// MY - month of the year.
         /// </summary>
         MonthOfTheYear,
-        
+
         /// <summary>
         /// NH - minute of the hour.
         /// </summary>
         MinuteOfTheHour,
-        
+
         /// <summary>
         /// SN - second of the minute.
         /// </summary>
         SecondOfTheMinute,
-        
+
         /// <summary>
         /// WY - week of the year.
         /// </summary>

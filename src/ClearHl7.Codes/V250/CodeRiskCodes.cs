@@ -10,52 +10,52 @@
         /// AGG - Aggressive.
         /// </summary>
         Aggressive,
-        
+
         /// <summary>
         /// BHZ - Biohazard.
         /// </summary>
         Biohazard,
-        
+
         /// <summary>
         /// BIO - Biological.
         /// </summary>
         Biological,
-        
+
         /// <summary>
         /// COR - Corrosive.
         /// </summary>
         Corrosive,
-        
+
         /// <summary>
         /// ESC - Escape Risk.
         /// </summary>
         EscapeRisk,
-        
+
         /// <summary>
         /// EXP - Explosive.
         /// </summary>
         Explosive,
-        
+
         /// <summary>
         /// IFL - MaterialDangerInflammable.
         /// </summary>
         Materialdangerinflammable,
-        
+
         /// <summary>
         /// INF - MaterialDangerInfectious.
         /// </summary>
         Materialdangerinfectious,
-        
+
         /// <summary>
         /// INJ - Injury Hazard.
         /// </summary>
         InjuryHazard,
-        
+
         /// <summary>
         /// POI - Poison.
         /// </summary>
         Poison,
-        
+
         /// <summary>
         /// RAD - Radioactive.
         /// </summary>

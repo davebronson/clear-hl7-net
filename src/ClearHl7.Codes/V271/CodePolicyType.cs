@@ -10,22 +10,22 @@
         /// 2ANC - Second ancillary.
         /// </summary>
         SecondAncillary,
-        
+
         /// <summary>
         /// 2MMD - Second major medical.
         /// </summary>
         SecondMajorMedical,
-        
+
         /// <summary>
         /// 3MMD - Third major medical.
         /// </summary>
         ThirdMajorMedical,
-        
+
         /// <summary>
         /// ANC - Ancillary.
         /// </summary>
         Ancillary,
-        
+
         /// <summary>
         /// MMD - Major medical.
         /// </summary>

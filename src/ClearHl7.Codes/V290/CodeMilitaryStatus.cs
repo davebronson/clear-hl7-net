@@ -10,12 +10,12 @@
         /// ACT - Active duty.
         /// </summary>
         ActiveDuty,
-        
+
         /// <summary>
         /// DEC - Deceased.
         /// </summary>
         Deceased,
-        
+
         /// <summary>
         /// RET - Retired.
         /// </summary>

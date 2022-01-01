@@ -10,22 +10,22 @@
         /// E - Exempt.
         /// </summary>
         Exempt,
-        
+
         /// <summary>
         /// N - No.
         /// </summary>
         No,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>
         Unknown,
-        
+
         /// <summary>
         /// W - Not applicable.
         /// </summary>
         NotApplicable,
-        
+
         /// <summary>
         /// Y - Yes.
         /// </summary>

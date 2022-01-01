@@ -10,17 +10,17 @@
         /// ... - No suggested values defined.
         /// </summary>
         NoSuggestedValuesDefined,
-        
+
         /// <summary>
         /// 0 - Not included in diagnosis ranking.
         /// </summary>
         NotIncludedInDiagnosisRanking,
-        
+
         /// <summary>
         /// 1 - The primary diagnosis.
         /// </summary>
         ThePrimaryDiagnosis,
-        
+
         /// <summary>
         /// 2 - For  secondary diagnosis.
         /// </summary>

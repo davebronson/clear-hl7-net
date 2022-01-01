@@ -10,12 +10,12 @@
         /// A - Arranged.
         /// </summary>
         Arranged,
-        
+
         /// <summary>
         /// N - Not Arranged.
         /// </summary>
         NotArranged,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>

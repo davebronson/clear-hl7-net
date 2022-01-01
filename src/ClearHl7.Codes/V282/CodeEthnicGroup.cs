@@ -10,12 +10,12 @@
         /// H - Hispanic or Latino.
         /// </summary>
         HispanicOrLatino,
-        
+
         /// <summary>
         /// N - Not Hispanic or Latino.
         /// </summary>
         NotHispanicOrLatino,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>

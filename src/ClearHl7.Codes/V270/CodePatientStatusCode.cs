@@ -10,7 +10,7 @@
         /// AI - Active Inpatient.
         /// </summary>
         ActiveInpatient,
-        
+
         /// <summary>
         /// DI - Discharged Inpatient.
         /// </summary>

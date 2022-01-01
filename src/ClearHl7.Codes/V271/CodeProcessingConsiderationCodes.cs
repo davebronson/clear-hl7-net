@@ -10,27 +10,27 @@
         /// DFADJ - Deferred Adjudication Processing.
         /// </summary>
         DeferredAdjudicationProcessing,
-        
+
         /// <summary>
         /// EFORM - Electronic form to follow.
         /// </summary>
         ElectronicFormToFollow,
-        
+
         /// <summary>
         /// FAX - Fax to follow.
         /// </summary>
         FaxToFollow,
-        
+
         /// <summary>
         /// PAPER - Paper documentation to follow.
         /// </summary>
         PaperDocumentationToFollow,
-        
+
         /// <summary>
         /// PYRDELAY - Delayed by a Previous Payer.
         /// </summary>
         DelayedByAPreviousPayer,
-        
+
         /// <summary>
         /// RTADJ - Real Time Adjudication Processing.
         /// </summary>

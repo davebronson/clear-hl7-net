@@ -10,22 +10,22 @@
         /// B - Breast milk.
         /// </summary>
         BreastMilk,
-        
+
         /// <summary>
         /// F - Father.
         /// </summary>
         Father,
-        
+
         /// <summary>
         /// O - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// P - Transplacental.
         /// </summary>
         Transplacental,
-        
+
         /// <summary>
         /// X - Blood product.
         /// </summary>

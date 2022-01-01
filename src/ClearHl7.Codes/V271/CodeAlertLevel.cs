@@ -10,27 +10,27 @@
         /// ... - (null) No level change.
         /// </summary>
         NullNoLevelChangeADeprecated,
-        
+
         /// <summary>
         /// C - Critical.
         /// </summary>
         Critical,
-        
+
         /// <summary>
         /// N - Normal.
         /// </summary>
         Normal,
-        
+
         /// <summary>
         /// S - Serious.
         /// </summary>
         Serious,
-        
+
         /// <summary>
         /// W - Warning.
         /// </summary>
         Warning,
-        
+
         /// <summary>
         /// ... - (null) No level change.
         /// </summary>

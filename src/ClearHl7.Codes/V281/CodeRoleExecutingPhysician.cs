@@ -10,12 +10,12 @@
         /// B - Both.
         /// </summary>
         Both,
-        
+
         /// <summary>
         /// P - Professional Part.
         /// </summary>
         ProfessionalPart,
-        
+
         /// <summary>
         /// T - Technical Part.
         /// </summary>

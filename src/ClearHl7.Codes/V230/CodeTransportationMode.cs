@@ -10,17 +10,17 @@
         /// CART - Cart - patient travels on cart or gurney.
         /// </summary>
         CartPatientTravelsOnCartOrGurney,
-        
+
         /// <summary>
         /// PORT - The examining device goes to patient's location.
         /// </summary>
         TheExaminingDeviceGoesToPatientsLocation,
-        
+
         /// <summary>
         /// WALK - Patient walks to diagnostic service.
         /// </summary>
         PatientWalksToDiagnosticService,
-        
+
         /// <summary>
         /// WHLC - Wheelchair.
         /// </summary>

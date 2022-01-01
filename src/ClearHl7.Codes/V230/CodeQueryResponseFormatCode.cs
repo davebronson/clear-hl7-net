@@ -10,12 +10,12 @@
         /// D - Response is in display format.
         /// </summary>
         ResponseIsInDisplayFormat,
-        
+
         /// <summary>
         /// R - Response is in record-oriented format.
         /// </summary>
         ResponseIsInRecordOrientedFormat,
-        
+
         /// <summary>
         /// T - Response is in tabular format.
         /// </summary>

@@ -10,12 +10,12 @@
         /// B - Both Arms.
         /// </summary>
         BothArms,
-        
+
         /// <summary>
         /// L - Left Arm.
         /// </summary>
         LeftArm,
-        
+
         /// <summary>
         /// R - Right Arm.
         /// </summary>

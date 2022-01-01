@@ -10,7 +10,7 @@
         /// A - Account level.
         /// </summary>
         AccountLevel,
-        
+
         /// <summary>
         /// V - Visit level.
         /// </summary>

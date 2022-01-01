@@ -10,32 +10,32 @@
         /// A - Ambulatory.
         /// </summary>
         Ambulatory,
-        
+
         /// <summary>
         /// C - Critical care.
         /// </summary>
         CriticalCare,
-        
+
         /// <summary>
         /// E - Emergency.
         /// </summary>
         Emergency,
-        
+
         /// <summary>
         /// F - Isolation.
         /// </summary>
         Isolation,
-        
+
         /// <summary>
         /// N - Intensive care.
         /// </summary>
         IntensiveCare,
-        
+
         /// <summary>
         /// R - Routine.
         /// </summary>
         Routine,
-        
+
         /// <summary>
         /// S - Surgery.
         /// </summary>

@@ -10,17 +10,17 @@
         /// A - Agent for a foreign manufacturer.
         /// </summary>
         AgentForForeignManufacturer,
-        
+
         /// <summary>
         /// D - Distributor.
         /// </summary>
         Distributor,
-        
+
         /// <summary>
         /// M - Manufacturer.
         /// </summary>
         Manufacturer,
-        
+
         /// <summary>
         /// U - User.
         /// </summary>

@@ -10,17 +10,17 @@
         /// DA - Drug allergy.
         /// </summary>
         DrugAllergy,
-        
+
         /// <summary>
         /// FA - Food allergy.
         /// </summary>
         FoodAllergy,
-        
+
         /// <summary>
         /// MA - Miscellaneous allergy.
         /// </summary>
         MiscellaneousAllergy,
-        
+
         /// <summary>
         /// MC - Miscellaneous contraindication.
         /// </summary>

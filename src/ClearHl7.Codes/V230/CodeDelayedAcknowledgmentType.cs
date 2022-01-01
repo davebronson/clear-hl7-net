@@ -10,7 +10,7 @@
         /// D - Message received, stored for later processing.
         /// </summary>
         MessageReceived,
-        
+
         /// <summary>
         /// F - acknowledgment after processing.
         /// </summary>

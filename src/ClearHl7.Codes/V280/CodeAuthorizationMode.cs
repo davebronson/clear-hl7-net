@@ -10,47 +10,47 @@
         /// EL - Electronic.
         /// </summary>
         Electronic,
-        
+
         /// <summary>
         /// EM - E-mail.
         /// </summary>
         EMail,
-        
+
         /// <summary>
         /// FX - Fax.
         /// </summary>
         Fax,
-        
+
         /// <summary>
         /// IP - In Person.
         /// </summary>
         InPerson,
-        
+
         /// <summary>
         /// MA - Mail.
         /// </summary>
         Mail,
-        
+
         /// <summary>
         /// PA - Paper.
         /// </summary>
         Paper,
-        
+
         /// <summary>
         /// PH - Phone.
         /// </summary>
         Phone,
-        
+
         /// <summary>
         /// RE - Reflexive (Automated system).
         /// </summary>
         ReflexiveAutomatedSystem,
-        
+
         /// <summary>
         /// VC - Video-conference.
         /// </summary>
         VideoConference,
-        
+
         /// <summary>
         /// VO - Voice.
         /// </summary>

@@ -10,22 +10,22 @@
         /// EARLY - Early tray.
         /// </summary>
         EarlyTray,
-        
+
         /// <summary>
         /// GUEST - Guest tray.
         /// </summary>
         GuestTray,
-        
+
         /// <summary>
         /// LATE - Late tray.
         /// </summary>
         LateTray,
-        
+
         /// <summary>
         /// MSG - Tray message only.
         /// </summary>
         TrayMessageOnly,
-        
+
         /// <summary>
         /// NO - No tray.
         /// </summary>

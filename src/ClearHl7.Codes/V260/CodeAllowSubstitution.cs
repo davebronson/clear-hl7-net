@@ -7,15 +7,15 @@
     public enum CodeAllowSubstitution
     {
         /// <summary>
-        /// G - Allow generic substitutions..
+        /// G - Allow generic substitutions.
         /// </summary>
         AllowGenericSubstitutions,
-        
+
         /// <summary>
-        /// N - Substitutions are NOT authorized.  (This is the default - null.).
+        /// N - Substitutions are NOT authorized.  (This is the default - null).
         /// </summary>
         SubstitutionsAreNotAuthorized,
-        
+
         /// <summary>
         /// T - Allow therapeutic substitutions.
         /// </summary>

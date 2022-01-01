@@ -10,17 +10,17 @@
         /// A - An age-based population.
         /// </summary>
         AgeBasedPopulation,
-        
+
         /// <summary>
         /// N - None - generic normal range.
         /// </summary>
         None,
-        
+
         /// <summary>
         /// R - A race-based population.
         /// </summary>
         RaceBasedPopulation,
-        
+
         /// <summary>
         /// S - A sex-based population.
         /// </summary>

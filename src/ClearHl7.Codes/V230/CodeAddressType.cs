@@ -10,32 +10,32 @@
         /// B - Firm/Business.
         /// </summary>
         FirmBusiness,
-        
+
         /// <summary>
         /// C - Current Or Temporary.
         /// </summary>
         CurrentOrTemporary,
-        
+
         /// <summary>
         /// F - Country Of Origin.
         /// </summary>
         CountryOfOrigin,
-        
+
         /// <summary>
         /// H - Home.
         /// </summary>
         Home,
-        
+
         /// <summary>
         /// M - Mailing.
         /// </summary>
         Mailing,
-        
+
         /// <summary>
         /// O - Office/Business.
         /// </summary>
         OfficeBusiness,
-        
+
         /// <summary>
         /// P - Permanent.
         /// </summary>

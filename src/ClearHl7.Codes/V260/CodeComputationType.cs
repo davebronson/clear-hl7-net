@@ -10,7 +10,7 @@
         /// % - Indicates a percent change.
         /// </summary>
         IndicatesAPercentChange,
-        
+
         /// <summary>
         /// a - Absolute Change.
         /// </summary>

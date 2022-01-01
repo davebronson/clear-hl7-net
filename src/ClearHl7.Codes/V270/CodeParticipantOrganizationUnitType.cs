@@ -10,32 +10,32 @@
         /// 1 - Hospital.
         /// </summary>
         Hospital,
-        
+
         /// <summary>
         /// 2 - Physician Clinic.
         /// </summary>
         PhysicianClinic,
-        
+
         /// <summary>
         /// 3 - Long Term Care.
         /// </summary>
         LongTermCare,
-        
+
         /// <summary>
         /// 4 - Acute Care.
         /// </summary>
         AcuteCare,
-        
+
         /// <summary>
         /// 5 - Other.
         /// </summary>
         Other,
-        
+
         /// <summary>
         /// H - Home.
         /// </summary>
         Home,
-        
+
         /// <summary>
         /// O - Office.
         /// </summary>

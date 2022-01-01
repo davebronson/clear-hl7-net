@@ -10,32 +10,32 @@
         /// 1 - Self.
         /// </summary>
         Self,
-        
+
         /// <summary>
         /// 2 - Parent.
         /// </summary>
         Parent,
-        
+
         /// <summary>
         /// 3 - Next of Kin.
         /// </summary>
         NextOfKin,
-        
+
         /// <summary>
         /// 4 - Durable Power of Attorney in Healthcare Affairs.
         /// </summary>
         DurablePowerOfAttorneyInHealthcareAffairs,
-        
+
         /// <summary>
         /// 5 - Conservator.
         /// </summary>
         Conservator,
-        
+
         /// <summary>
         /// 6 - Emergent Practitioner (practitioner judging case as emergency requiring care without a consent).
         /// </summary>
         EmergentPractitioner,
-        
+
         /// <summary>
         /// 7 - Non-Emergent Practitioner (i.e. medical ethics committee).
         /// </summary>

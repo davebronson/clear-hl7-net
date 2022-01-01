@@ -10,12 +10,12 @@
         /// CE - Coded element.
         /// </summary>
         CodedElement,
-        
+
         /// <summary>
         /// CWE - Coded with Exceptions.
         /// </summary>
         CodedWithExceptions,
-        
+
         /// <summary>
         /// PL - Person location.
         /// </summary>

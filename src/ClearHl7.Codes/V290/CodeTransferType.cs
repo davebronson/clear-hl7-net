@@ -10,7 +10,7 @@
         /// E - DRG Exempt.
         /// </summary>
         DrgExempt,
-        
+
         /// <summary>
         /// N - DRG Non Exempt.
         /// </summary>

@@ -10,32 +10,32 @@
         /// AD - Admitting.
         /// </summary>
         Admitting,
-        
+
         /// <summary>
         /// AT - Attending.
         /// </summary>
         Attending,
-        
+
         /// <summary>
         /// CP - Consulting Provider.
         /// </summary>
         ConsultingProvider,
-        
+
         /// <summary>
         /// FHCP - Family Health Care Professional.
         /// </summary>
         FamilyHealthCareProfessional,
-        
+
         /// <summary>
         /// PP - Primary Care Provider.
         /// </summary>
         PrimaryCareProvider,
-        
+
         /// <summary>
         /// RP - Referring Provider.
         /// </summary>
         ReferringProvider,
-        
+
         /// <summary>
         /// RT - Referred to Provider.
         /// </summary>

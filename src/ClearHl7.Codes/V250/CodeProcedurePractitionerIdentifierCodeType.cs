@@ -10,42 +10,42 @@
         /// AN - Anesthesiologist/Anesthetist.
         /// </summary>
         AnesthesiologistAnesthetist,
-        
+
         /// <summary>
         /// AS - Assistant Surgeon.
         /// </summary>
         AssistantSurgeon,
-        
+
         /// <summary>
         /// CM - Certified Nurse Midwife.
         /// </summary>
         CertifiedNurseMidwife,
-        
+
         /// <summary>
         /// NP - Nurse Practitioner.
         /// </summary>
         NursePractitioner,
-        
+
         /// <summary>
         /// PR - Procedure MD/ Surgeon.
         /// </summary>
         ProcedureMdSurgeon,
-        
+
         /// <summary>
         /// PS - Primary Surgeon.
         /// </summary>
         PrimarySurgeon,
-        
+
         /// <summary>
         /// RD - Radiologist.
         /// </summary>
         Radiologist,
-        
+
         /// <summary>
         /// RS - Resident.
         /// </summary>
         Resident,
-        
+
         /// <summary>
         /// SN - Scrub Nurse.
         /// </summary>

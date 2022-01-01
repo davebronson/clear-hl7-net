@@ -10,7 +10,7 @@
         /// E - Employed.
         /// </summary>
         Employed,
-        
+
         /// <summary>
         /// SE - Self-employed.
         /// </summary>

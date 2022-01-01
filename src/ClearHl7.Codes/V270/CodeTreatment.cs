@@ -10,37 +10,37 @@
         /// ACID - Acidification.
         /// </summary>
         Acidification,
-        
+
         /// <summary>
         /// ALK - Alkalization.
         /// </summary>
         Alkalization,
-        
+
         /// <summary>
         /// DEFB - Defibrination.
         /// </summary>
         Defibrination,
-        
+
         /// <summary>
         /// FILT - Filtration.
         /// </summary>
         Filtration,
-        
+
         /// <summary>
         /// LDLP - LDL Precipitation.
         /// </summary>
         LdlPrecipitation,
-        
+
         /// <summary>
         /// NEUT - Neutralization.
         /// </summary>
         Neutralization,
-        
+
         /// <summary>
         /// RECA - Recalification.
         /// </summary>
         Recalification,
-        
+
         /// <summary>
         /// UFIL - Ultrafiltration.
         /// </summary>

@@ -10,32 +10,32 @@
         /// D - Died.
         /// </summary>
         Died,
-        
+
         /// <summary>
         /// F - Fully recovered.
         /// </summary>
         FullyRecovered,
-        
+
         /// <summary>
         /// N - Not recovering/unchanged.
         /// </summary>
         NotRecoveringUnchanged,
-        
+
         /// <summary>
         /// R - Recovering.
         /// </summary>
         Recovering,
-        
+
         /// <summary>
         /// S - Sequelae.
         /// </summary>
         Sequelae,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>
         Unknown,
-        
+
         /// <summary>
         /// W - Worsening.
         /// </summary>

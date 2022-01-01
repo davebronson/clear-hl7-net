@@ -10,17 +10,17 @@
         /// E - Error.
         /// </summary>
         Error,
-        
+
         /// <summary>
         /// F - Fatal Error.
         /// </summary>
         FatalError,
-        
+
         /// <summary>
         /// I - Information.
         /// </summary>
         Information,
-        
+
         /// <summary>
         /// W - Warning.
         /// </summary>

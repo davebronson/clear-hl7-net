@@ -10,27 +10,27 @@
         /// INV - Inventoried.
         /// </summary>
         Inventoried,
-        
+
         /// <summary>
         /// ONH - On Hold.
         /// </summary>
         OnHold,
-        
+
         /// <summary>
         /// PRC - Processing.
         /// </summary>
         Processing,
-        
+
         /// <summary>
         /// REJ - Rejected.
         /// </summary>
         Rejected,
-        
+
         /// <summary>
         /// TRN - In Transit.
         /// </summary>
         InTransit,
-        
+
         /// <summary>
         /// TTL - Triaged to Lab.
         /// </summary>

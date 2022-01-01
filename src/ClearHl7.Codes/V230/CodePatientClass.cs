@@ -10,27 +10,27 @@
         /// B - Obstetrics.
         /// </summary>
         Obstetrics,
-        
+
         /// <summary>
         /// E - Emergency.
         /// </summary>
         Emergency,
-        
+
         /// <summary>
         /// I - Inpatient.
         /// </summary>
         Inpatient,
-        
+
         /// <summary>
         /// O - Outpatient.
         /// </summary>
         Outpatient,
-        
+
         /// <summary>
         /// P - Preadmit.
         /// </summary>
         Preadmit,
-        
+
         /// <summary>
         /// R - Recurring patient.
         /// </summary>

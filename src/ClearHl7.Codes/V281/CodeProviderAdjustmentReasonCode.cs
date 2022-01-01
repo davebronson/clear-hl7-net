@@ -10,22 +10,22 @@
         /// DISP - Dispensing Fee.
         /// </summary>
         DispensingFee,
-        
+
         /// <summary>
         /// GST - Goods and Services Tax.
         /// </summary>
         GoodsAndServicesTax,
-        
+
         /// <summary>
         /// HST - Harmonized Sales Tax.
         /// </summary>
         HarmonizedSalesTax,
-        
+
         /// <summary>
         /// MKUP - Mark up Fee.
         /// </summary>
         MarkUpFee,
-        
+
         /// <summary>
         /// PST - Provincial Sales Tax.
         /// </summary>

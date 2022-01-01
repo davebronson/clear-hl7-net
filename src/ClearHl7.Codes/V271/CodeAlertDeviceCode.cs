@@ -10,12 +10,12 @@
         /// B - Bracelet.
         /// </summary>
         Bracelet,
-        
+
         /// <summary>
         /// N - Necklace.
         /// </summary>
         Necklace,
-        
+
         /// <summary>
         /// W - Wallet Card.
         /// </summary>

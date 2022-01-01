@@ -10,17 +10,17 @@
         /// A - Ambulatory.
         /// </summary>
         Ambulatory,
-        
+
         /// <summary>
         /// E - Emergency.
         /// </summary>
         Emergency,
-        
+
         /// <summary>
         /// I - Inpatient.
         /// </summary>
         Inpatient,
-        
+
         /// <summary>
         /// O - Outpatient.
         /// </summary>

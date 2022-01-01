@@ -10,27 +10,27 @@
         /// AC - Acute.
         /// </summary>
         Acute,
-        
+
         /// <summary>
         /// CH - Chronic.
         /// </summary>
         Chronic,
-        
+
         /// <summary>
         /// CO - Comatose.
         /// </summary>
         Comatose,
-        
+
         /// <summary>
         /// CR - Critical.
         /// </summary>
         Critical,
-        
+
         /// <summary>
         /// IM - Improved.
         /// </summary>
         Improved,
-        
+
         /// <summary>
         /// MO - Moribund.
         /// </summary>

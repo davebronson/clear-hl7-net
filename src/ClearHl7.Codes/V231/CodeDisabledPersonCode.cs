@@ -10,17 +10,17 @@
         /// AP - Associated party.
         /// </summary>
         AssociatedParty,
-        
+
         /// <summary>
         /// GT - Guarantor.
         /// </summary>
         Guarantor,
-        
+
         /// <summary>
         /// IN - Insured.
         /// </summary>
         Insured,
-        
+
         /// <summary>
         /// PT - Patient.
         /// </summary>

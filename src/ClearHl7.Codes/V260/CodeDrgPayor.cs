@@ -10,12 +10,12 @@
         /// C - Champus.
         /// </summary>
         Champus,
-        
+
         /// <summary>
         /// G - Managed Care Organization.
         /// </summary>
         ManagedCareOrganization,
-        
+
         /// <summary>
         /// M - Medicare.
         /// </summary>

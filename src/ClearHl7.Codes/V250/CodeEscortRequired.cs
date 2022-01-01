@@ -10,12 +10,12 @@
         /// N - Not Required.
         /// </summary>
         NotRequired,
-        
+
         /// <summary>
         /// R - Required.
         /// </summary>
         Required,
-        
+
         /// <summary>
         /// U - Unknown.
         /// </summary>

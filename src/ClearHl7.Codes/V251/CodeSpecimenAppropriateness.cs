@@ -7,20 +7,20 @@
     public enum CodeSpecimenAppropriateness
     {
         /// <summary>
-        /// ?? - Inappropriate due to ....
+        /// ?? - Inappropriate due to ...
         /// </summary>
         InappropriateDueTo,
-        
+
         /// <summary>
         /// A - Appropriate.
         /// </summary>
         Appropriate,
-        
+
         /// <summary>
         /// I - Inappropriate.
         /// </summary>
         Inappropriate,
-        
+
         /// <summary>
         /// P - Preferred.
         /// </summary>

@@ -7,17 +7,17 @@
     public enum CodeAlternateCharacterSetHandlingScheme
     {
         /// <summary>
-        /// 2.3 - The character set switching mode specified in HL7 2.5, section 2.7.2 and section 2.A.46, "XPN - extended person name"..
+        /// 2.3 - The character set switching mode specified in HL7 2.5, section 2.7.2 and section 2.A.46, "XPN - extended person name".
         /// </summary>
         CharacterSetSwitchingXpnExtendedPersonName,
-        
+
         /// <summary>
-        /// null - This is the default, indicating that there is no character set switching occurring in this message..
+        /// null - This is the default, indicating that there is no character set switching occurring in this message.
         /// </summary>
         NoCharacterSetSwitching,
-        
+
         /// <summary>
-        /// ISO 2022-1994 - This standard is titled "Information Technology - Character Code Structure and Extension Technique". ..
+        /// ISO 2022-1994 - This standard is titled "Information Technology - Character Code Structure and Extension Technique".
         /// </summary>
         Iso20221994
     }

@@ -10,7 +10,7 @@
         /// CO - Coordination.
         /// </summary>
         Coordination,
-        
+
         /// <summary>
         /// IN - Independent.
         /// </summary>

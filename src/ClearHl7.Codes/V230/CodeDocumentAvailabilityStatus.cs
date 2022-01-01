@@ -10,7 +10,7 @@
         /// AV - Available for patient care.
         /// </summary>
         AvailableForPatientCare,
-        
+
         /// <summary>
         /// UN - Unavailable for patient care.
         /// </summary>

@@ -10,12 +10,12 @@
         /// A - Aliquot.
         /// </summary>
         Aliquot,
-        
+
         /// <summary>
         /// C - Component.
         /// </summary>
         Component,
-        
+
         /// <summary>
         /// M - Modified from original specimen.
         /// </summary>
