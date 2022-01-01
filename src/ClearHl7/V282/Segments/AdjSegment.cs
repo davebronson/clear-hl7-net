@@ -31,7 +31,7 @@ namespace ClearHl7.V282.Segments
         /// <summary>
         /// ADJ.3 - Adjustment Sequence Number.
         /// </summary>
-        public EntityIdentifier AdjustmentSequenceNumber { get; set; }
+        public uint? AdjustmentSequenceNumber { get; set; }
 
         /// <summary>
         /// ADJ.4 - Adjustment Category.
@@ -121,7 +121,7 @@ namespace ClearHl7.V282.Segments
 
             ProviderAdjustmentNumber = segments.Length > 1 && segments[1].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
             PayerAdjustmentNumber = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[2], false, seps) : null;
-            AdjustmentSequenceNumber = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[3], false, seps) : null;
+            AdjustmentSequenceNumber = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableUInt() : null;
             AdjustmentCategory = segments.Length > 4 && segments[4].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[4], false, seps) : null;
             AdjustmentAmount = segments.Length > 5 && segments[5].Length > 0 ? TypeSerializer.Deserialize<CompositePrice>(segments[5], false, seps) : null;
             AdjustmentQuantity = segments.Length > 6 && segments[6].Length > 0 ? TypeSerializer.Deserialize<CompositeQuantityWithUnits>(segments[6], false, seps) : null;
@@ -147,7 +147,7 @@ namespace ClearHl7.V282.Segments
                                 Id,
                                 ProviderAdjustmentNumber?.ToDelimitedString(),
                                 PayerAdjustmentNumber?.ToDelimitedString(),
-                                AdjustmentSequenceNumber?.ToDelimitedString(),
+                                AdjustmentSequenceNumber.HasValue ? AdjustmentSequenceNumber.Value.ToString(culture) : null,
                                 AdjustmentCategory?.ToDelimitedString(),
                                 AdjustmentAmount?.ToDelimitedString(),
                                 AdjustmentQuantity?.ToDelimitedString(),
