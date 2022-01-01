@@ -21,9 +21,12 @@ namespace ClearHl7.Tests.SegmentsTests
                 {
                     Identifier = "2"
                 },
-                InputParameterList = new QueryInputParameterList
+                InputParameterList = new QueryInputParameterList[]
                 {
-                    SegmentFieldName = "3"
+                    new QueryInputParameterList
+                    {
+                        SegmentFieldName = "3"
+                    }
                 }
             };
 
@@ -59,9 +62,12 @@ namespace ClearHl7.Tests.SegmentsTests
                 {
                     Identifier = "2"
                 },
-                InputParameterList = new QueryInputParameterList
+                InputParameterList = new QueryInputParameterList[]
                 {
-                    SegmentFieldName = "3"
+                    new QueryInputParameterList
+                    {
+                        SegmentFieldName = "3"
+                    }
                 }
             };
 

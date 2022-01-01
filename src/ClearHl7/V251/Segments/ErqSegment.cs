@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using ClearHl7.Helpers;
 using ClearHl7.Serialization;
 using ClearHl7.V251.Types;
@@ -30,7 +32,7 @@ namespace ClearHl7.V251.Segments
         /// <summary>
         /// ERQ.3 - Input Parameter List.
         /// </summary>
-        public QueryInputParameterList InputParameterList { get; set; }
+        public IEnumerable<QueryInputParameterList> InputParameterList { get; set; }
 
         /// <inheritdoc/>
         public void FromDelimitedString(string delimitedString)
@@ -56,7 +58,7 @@ namespace ClearHl7.V251.Segments
 
             QueryTag = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
             EventIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[2], false, seps) : null;
-            InputParameterList = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<QueryInputParameterList>(segments[3], false, seps) : null;
+            InputParameterList = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<QueryInputParameterList>(x, false, seps)) : null;
         }
 
         /// <inheritdoc/>
@@ -70,7 +72,7 @@ namespace ClearHl7.V251.Segments
                                 Id,
                                 QueryTag,
                                 EventIdentifier?.ToDelimitedString(),
-                                InputParameterList?.ToDelimitedString()
+                                InputParameterList != null ? string.Join(Configuration.FieldRepeatSeparator, InputParameterList.Select(x => x.ToDelimitedString())) : null
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
