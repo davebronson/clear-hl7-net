@@ -75,7 +75,7 @@ namespace ClearHl7.V260.Segments
         /// <summary>
         /// SCH.11 - Appointment Timing Quantity.
         /// </summary>
-        public TimingQuantity AppointmentTimingQuantity { get; set; }
+        public IEnumerable<TimingQuantity> AppointmentTimingQuantity { get; set; }
 
         /// <summary>
         /// SCH.12 - Placer Contact Person.
@@ -190,7 +190,7 @@ namespace ClearHl7.V260.Segments
             AppointmentType = segments.Length > 8 && segments[8].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[8], false, seps) : null;
             AppointmentDuration = segments.Length > 9 && segments[9].Length > 0 ? segments[9].ToNullableDecimal() : null;
             AppointmentDurationUnits = segments.Length > 10 && segments[10].Length > 0 ? TypeSerializer.Deserialize<CodedWithNoExceptions>(segments[10], false, seps) : null;
-            AppointmentTimingQuantity = segments.Length > 11 && segments[11].Length > 0 ? TypeSerializer.Deserialize<TimingQuantity>(segments[11], false, seps) : null;
+            AppointmentTimingQuantity = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<TimingQuantity>(x, false, seps)) : null;
             PlacerContactPerson = segments.Length > 12 && segments[12].Length > 0 ? segments[12].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
             PlacerContactPhoneNumber = segments.Length > 13 && segments[13].Length > 0 ? TypeSerializer.Deserialize<ExtendedTelecommunicationNumber>(segments[13], false, seps) : null;
             PlacerContactAddress = segments.Length > 14 && segments[14].Length > 0 ? segments[14].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedAddress>(x, false, seps)) : null;
@@ -228,7 +228,7 @@ namespace ClearHl7.V260.Segments
                                 AppointmentType?.ToDelimitedString(),
                                 AppointmentDuration.HasValue ? AppointmentDuration.Value.ToString(Consts.NumericFormat, culture) : null,
                                 AppointmentDurationUnits?.ToDelimitedString(),
-                                AppointmentTimingQuantity?.ToDelimitedString(),
+                                AppointmentTimingQuantity != null ? string.Join(Configuration.FieldRepeatSeparator, AppointmentTimingQuantity.Select(x => x.ToDelimitedString())) : null,
                                 PlacerContactPerson != null ? string.Join(Configuration.FieldRepeatSeparator, PlacerContactPerson.Select(x => x.ToDelimitedString())) : null,
                                 PlacerContactPhoneNumber?.ToDelimitedString(),
                                 PlacerContactAddress != null ? string.Join(Configuration.FieldRepeatSeparator, PlacerContactAddress.Select(x => x.ToDelimitedString())) : null,
