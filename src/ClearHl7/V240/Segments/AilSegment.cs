@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.Serialization;
@@ -34,7 +32,7 @@ namespace ClearHl7.V240.Segments
         /// <summary>
         /// AIL.3 - Location Resource ID.
         /// </summary>
-        public IEnumerable<PersonLocation> LocationResourceId { get; set; }
+        public PersonLocation LocationResourceId { get; set; }
 
         /// <summary>
         /// AIL.4 - Location Type - AIL.
@@ -107,7 +105,7 @@ namespace ClearHl7.V240.Segments
 
             SetIdAil = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableUInt() : null;
             SegmentActionCode = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
-            LocationResourceId = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<PersonLocation>(x, false, seps)) : null;
+            LocationResourceId = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<PersonLocation>(segments[3], false, seps) : null;
             LocationTypeAil = segments.Length > 4 && segments[4].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[4], false, seps) : null;
             LocationGroup = segments.Length > 5 && segments[5].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[5], false, seps) : null;
             StartDateTime = segments.Length > 6 && segments[6].Length > 0 ? segments[6].ToNullableDateTime() : null;
@@ -130,7 +128,7 @@ namespace ClearHl7.V240.Segments
                                 Id,
                                 SetIdAil.HasValue ? SetIdAil.Value.ToString(culture) : null,
                                 SegmentActionCode,
-                                LocationResourceId != null ? string.Join(Configuration.FieldRepeatSeparator, LocationResourceId.Select(x => x.ToDelimitedString())) : null,
+                                LocationResourceId?.ToDelimitedString(),
                                 LocationTypeAil?.ToDelimitedString(),
                                 LocationGroup?.ToDelimitedString(),
                                 StartDateTime.HasValue ? StartDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
