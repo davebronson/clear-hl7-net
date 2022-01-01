@@ -20,7 +20,7 @@ namespace ClearHl7.V282.Types
         /// <summary>
         /// PRL.2 - Parent Observation Sub-identifier.
         /// </summary>
-        public ObservationGrouper ParentObservationSubIdentifier { get; set; }
+        public string ParentObservationSubIdentifier { get; set; }
 
         /// <summary>
         /// PRL.3 - Parent Observation Value Descriptor.
@@ -43,7 +43,7 @@ namespace ClearHl7.V282.Types
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
             ParentObservationIdentifier = segments.Length > 0 && segments[0].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[0], true, seps) : null;
-            ParentObservationSubIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeSerializer.Deserialize<ObservationGrouper>(segments[1], true, seps) : null;
+            ParentObservationSubIdentifier = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
             ParentObservationValueDescriptor = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<Text>(segments[2], true, seps) : null;
         }
 
@@ -57,7 +57,7 @@ namespace ClearHl7.V282.Types
                                 culture,
                                 StringHelper.StringFormatSequence(0, 3, separator),
                                 ParentObservationIdentifier?.ToDelimitedString(),
-                                ParentObservationSubIdentifier?.ToDelimitedString(),
+                                ParentObservationSubIdentifier,
                                 ParentObservationValueDescriptor?.ToDelimitedString()
                                 ).TrimEnd(separator.ToCharArray());
         }
