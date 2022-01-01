@@ -271,7 +271,7 @@ namespace ClearHl7.V251.Segments
         /// <summary>
         /// PV1.45 - Discharge Date/Time.
         /// </summary>
-        public DateTime? DischargeDateTime { get; set; }
+        public IEnumerable<DateTime> DischargeDateTime { get; set; }
 
         /// <summary>
         /// PV1.46 - Current Patient Balance.
@@ -377,7 +377,7 @@ namespace ClearHl7.V251.Segments
             PendingLocation = segments.Length > 42 && segments[42].Length > 0 ? TypeSerializer.Deserialize<PersonLocation>(segments[42], false, seps) : null;
             PriorTemporaryLocation = segments.Length > 43 && segments[43].Length > 0 ? TypeSerializer.Deserialize<PersonLocation>(segments[43], false, seps) : null;
             AdmitDateTime = segments.Length > 44 && segments[44].Length > 0 ? segments[44].ToNullableDateTime() : null;
-            DischargeDateTime = segments.Length > 45 && segments[45].Length > 0 ? segments[45].ToNullableDateTime() : null;
+            DischargeDateTime = segments.Length > 45 && segments[45].Length > 0 ? segments[45].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => x.ToDateTime()) : null;
             CurrentPatientBalance = segments.Length > 46 && segments[46].Length > 0 ? segments[46].ToNullableDecimal() : null;
             TotalCharges = segments.Length > 47 && segments[47].Length > 0 ? segments[47].ToNullableDecimal() : null;
             TotalAdjustments = segments.Length > 48 && segments[48].Length > 0 ? segments[48].ToNullableDecimal() : null;
@@ -440,7 +440,7 @@ namespace ClearHl7.V251.Segments
                                 PendingLocation?.ToDelimitedString(),
                                 PriorTemporaryLocation?.ToDelimitedString(),
                                 AdmitDateTime.HasValue ? AdmitDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                DischargeDateTime.HasValue ? DischargeDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                DischargeDateTime != null ? string.Join(Configuration.FieldRepeatSeparator, DischargeDateTime.Select(x => x.ToString(Consts.DateTimeFormatPrecisionSecond, culture))) : null,
                                 CurrentPatientBalance.HasValue ? CurrentPatientBalance.Value.ToString(Consts.NumericFormat, culture) : null,
                                 TotalCharges.HasValue ? TotalCharges.Value.ToString(Consts.NumericFormat, culture) : null,
                                 TotalAdjustments.HasValue ? TotalAdjustments.Value.ToString(Consts.NumericFormat, culture) : null,
