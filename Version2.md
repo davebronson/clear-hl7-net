@@ -11,6 +11,7 @@ It's important to know that they are breaking from Version 1.x of this library. 
 |---|---|---|---|
 |V240|`AilSegment.LocationResourceId`|`IEnumerable<PersonLocation>`|`PersonLocation`|
 |V251|`ErqSegment.InputParameterList`|`QueryInputParameterList`|`IEnumerable<QueryInputParameterList>`|
+|V251|`Pv1Segment.DischargeDateTime`|`DateTime?`|`IEnumerable<DateTime>`|
 |V260|`PidSegment.PatientAlias`|`ExtendedPersonName`|`IEnumerable<ExtendedPersonName>`|
 |V260|`SchSegment.AppointmentTimingQuantity`|`TimingQuantity`|`IEnumerable<TimingQuantity>`|
 |V271|`ArqSegment.PlacerGroupNumber`|`EntityIdentifierPair`|`EntityIdentifier`|
