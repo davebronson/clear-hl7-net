@@ -78,7 +78,7 @@ namespace ClearHl7.V282.Segments
         /// <summary>
         /// IIM.12 - Inventory On Hand Quantity.
         /// </summary>
-        public CodedWithExceptions InventoryOnHandQuantity { get; set; }
+        public decimal? InventoryOnHandQuantity { get; set; }
 
         /// <summary>
         /// IIM.13 - Inventory On Hand Quantity Unit.
@@ -130,7 +130,7 @@ namespace ClearHl7.V282.Segments
             InventoryReceivedQuantityUnit = segments.Length > 9 && segments[9].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[9], false, seps) : null;
             InventoryReceivedItemCost = segments.Length > 10 && segments[10].Length > 0 ? TypeSerializer.Deserialize<Money>(segments[10], false, seps) : null;
             InventoryOnHandDate = segments.Length > 11 && segments[11].Length > 0 ? segments[11].ToNullableDateTime() : null;
-            InventoryOnHandQuantity = segments.Length > 12 && segments[12].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[12], false, seps) : null;
+            InventoryOnHandQuantity = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDecimal() : null;
             InventoryOnHandQuantityUnit = segments.Length > 13 && segments[13].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[13], false, seps) : null;
             ProcedureCode = segments.Length > 14 && segments[14].Length > 0 ? TypeSerializer.Deserialize<CodedWithNoExceptions>(segments[14], false, seps) : null;
             ProcedureCodeModifier = segments.Length > 15 && segments[15].Length > 0 ? segments[15].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithNoExceptions>(x, false, seps)) : null;
@@ -156,7 +156,7 @@ namespace ClearHl7.V282.Segments
                                 InventoryReceivedQuantityUnit?.ToDelimitedString(),
                                 InventoryReceivedItemCost?.ToDelimitedString(),
                                 InventoryOnHandDate.HasValue ? InventoryOnHandDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                InventoryOnHandQuantity?.ToDelimitedString(),
+                                InventoryOnHandQuantity.HasValue ? InventoryOnHandQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
                                 InventoryOnHandQuantityUnit?.ToDelimitedString(),
                                 ProcedureCode?.ToDelimitedString(),
                                 ProcedureCodeModifier != null ? string.Join(Configuration.FieldRepeatSeparator, ProcedureCodeModifier.Select(x => x.ToDelimitedString())) : null
