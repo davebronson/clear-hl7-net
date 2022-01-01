@@ -38,7 +38,7 @@ namespace ClearHl7.V271.Segments
         /// <summary>
         /// ARQ.4 - Placer Group Number.
         /// </summary>
-        public EntityIdentifierPair PlacerGroupNumber { get; set; }
+        public EntityIdentifier PlacerGroupNumber { get; set; }
 
         /// <summary>
         /// ARQ.5 - Schedule ID.
@@ -172,7 +172,7 @@ namespace ClearHl7.V271.Segments
             PlacerAppointmentId = segments.Length > 1 && segments[1].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
             FillerAppointmentId = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[2], false, seps) : null;
             OccurrenceNumber = segments.Length > 3 && segments[3].Length > 0 ? segments[3].ToNullableDecimal() : null;
-            PlacerGroupNumber = segments.Length > 4 && segments[4].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifierPair>(segments[4], false, seps) : null;
+            PlacerGroupNumber = segments.Length > 4 && segments[4].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[4], false, seps) : null;
             ScheduleId = segments.Length > 5 && segments[5].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[5], false, seps) : null;
             RequestEventReason = segments.Length > 6 && segments[6].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[6], false, seps) : null;
             AppointmentReason = segments.Length > 7 && segments[7].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[7], false, seps) : null;
