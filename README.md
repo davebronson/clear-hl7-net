@@ -5,6 +5,9 @@ Understanding and programmatically building HL7 messages can be difficult.  clea
 
 HL7® is the registered trademark of Health Level Seven International, and the use of this trademark does not constitute an endorsement by HL7.
 
+## Important Notes About Version 2
+Please read some important notes about [Version 2](Version2.md) of the library, which is currently under development.
+
 ## Getting Started
 ### Building clear-hl7-net
 1. Clone the source code: `git clone https://github.com/davebronson/clear-hl7-net.git`
