@@ -13,3 +13,4 @@ It's important to know that they are breaking from Version 1.x of this library. 
 |V260|`SchSegment.AppointmentTimingQuantity`|`TimingQuantity`|`IEnumerable<TimingQuantity>`|
 |V271|`ArqSegment.PlacerGroupNumber`|`EntityIdentifierPair`|`EntityIdentifier`|
 |V271|`EquSegment.EquipmentInstanceIdentifier`|`IEnumerable<EntityIdentifier>`|`EntityIdentifier`|
+|V281|`AdjSegment.AdjustmentSequenceNumber`|`EntityIdentifier`|`uint?`|
