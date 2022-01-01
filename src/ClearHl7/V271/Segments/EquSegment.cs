@@ -23,7 +23,7 @@ namespace ClearHl7.V271.Segments
         /// <summary>
         /// EQU.1 - Equipment Instance Identifier.
         /// </summary>
-        public IEnumerable<EntityIdentifier> EquipmentInstanceIdentifier { get; set; }
+        public EntityIdentifier EquipmentInstanceIdentifier { get; set; }
 
         /// <summary>
         /// EQU.2 - Event Date/Time.
@@ -70,7 +70,7 @@ namespace ClearHl7.V271.Segments
                 }
             }
 
-            EquipmentInstanceIdentifier = segments.Length > 1 && segments[1].Length > 0 ? segments[1].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<EntityIdentifier>(x, false, seps)) : null;
+            EquipmentInstanceIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
             EventDateTime = segments.Length > 2 && segments[2].Length > 0 ? segments[2].ToNullableDateTime() : null;
             EquipmentState = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[3], false, seps) : null;
             LocalRemoteControlState = segments.Length > 4 && segments[4].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[4], false, seps) : null;
@@ -86,7 +86,7 @@ namespace ClearHl7.V271.Segments
                                 culture,
                                 StringHelper.StringFormatSequence(0, 6, Configuration.FieldSeparator),
                                 Id,
-                                EquipmentInstanceIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, EquipmentInstanceIdentifier.Select(x => x.ToDelimitedString())) : null,
+                                EquipmentInstanceIdentifier?.ToDelimitedString(),
                                 EventDateTime.HasValue ? EventDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 EquipmentState?.ToDelimitedString(),
                                 LocalRemoteControlState?.ToDelimitedString(),
