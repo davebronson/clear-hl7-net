@@ -34,9 +34,12 @@ namespace ClearHl7.Tests.SegmentsTests
                         OrganizationName = "3"
                     }
                 },
-                PatientPrimaryCareProviderNameIdNo = new ExtendedCompositeIdNumberAndNameForPersons
+                PatientPrimaryCareProviderNameIdNo = new ExtendedCompositeIdNumberAndNameForPersons[]
                 {
-                    PersonIdentifier = "4"
+                    new ExtendedCompositeIdNumberAndNameForPersons
+                    {
+                        PersonIdentifier = "4"
+                    }
                 },
                 StudentIndicator = new CodedWithExceptions
                 {
@@ -149,9 +152,12 @@ namespace ClearHl7.Tests.SegmentsTests
                         OrganizationName = "3"
                     }
                 },
-                PatientPrimaryCareProviderNameIdNo = new ExtendedCompositeIdNumberAndNameForPersons
+                PatientPrimaryCareProviderNameIdNo = new ExtendedCompositeIdNumberAndNameForPersons[]
                 {
-                    PersonIdentifier = "4"
+                    new ExtendedCompositeIdNumberAndNameForPersons
+                    {
+                        PersonIdentifier = "4"
+                    }
                 },
                 StudentIndicator = new CodedWithExceptions
                 {

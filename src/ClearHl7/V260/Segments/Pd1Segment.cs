@@ -41,7 +41,7 @@ namespace ClearHl7.V260.Segments
         /// <summary>
         /// PD1.4 - Patient Primary Care Provider Name &amp; ID No.
         /// </summary>
-        public ExtendedCompositeIdNumberAndNameForPersons PatientPrimaryCareProviderNameIdNo { get; set; }
+        public IEnumerable<ExtendedCompositeIdNumberAndNameForPersons> PatientPrimaryCareProviderNameIdNo { get; set; }
 
         /// <summary>
         /// PD1.5 - Student Indicator.
@@ -170,7 +170,7 @@ namespace ClearHl7.V260.Segments
             LivingDependency = segments.Length > 1 && segments[1].Length > 0 ? segments[1].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             LivingArrangement = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
             PatientPrimaryFacility = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeNameAndIdNumberForOrganizations>(x, false, seps)) : null;
-            PatientPrimaryCareProviderNameIdNo = segments.Length > 4 && segments[4].Length > 0 ? TypeSerializer.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[4], false, seps) : null;
+            PatientPrimaryCareProviderNameIdNo = segments.Length > 4 && segments[4].Length > 0 ? segments[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
             StudentIndicator = segments.Length > 5 && segments[5].Length > 0 ? segments[5] : null;
             Handicap = segments.Length > 6 && segments[6].Length > 0 ? segments[6] : null;
             LivingWillCode = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
@@ -203,7 +203,7 @@ namespace ClearHl7.V260.Segments
                                 LivingDependency != null ? string.Join(Configuration.FieldRepeatSeparator, LivingDependency) : null,
                                 LivingArrangement,
                                 PatientPrimaryFacility != null ? string.Join(Configuration.FieldRepeatSeparator, PatientPrimaryFacility.Select(x => x.ToDelimitedString())) : null,
-                                PatientPrimaryCareProviderNameIdNo?.ToDelimitedString(),
+                                PatientPrimaryCareProviderNameIdNo != null ? string.Join(Configuration.FieldRepeatSeparator, PatientPrimaryCareProviderNameIdNo.Select(x => x.ToDelimitedString())) : null,
                                 StudentIndicator,
                                 Handicap,
                                 LivingWillCode,
