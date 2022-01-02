@@ -44,7 +44,7 @@ namespace ClearHl7.V251.Segments
         /// <summary>
         /// OBX.5 - Observation Value.
         /// </summary>
-        public ChannelDefinition ObservationValue { get; set; }
+        public IEnumerable<string> ObservationValue { get; set; }
 
         /// <summary>
         /// OBX.6 - Units.
@@ -175,7 +175,7 @@ namespace ClearHl7.V251.Segments
             ValueType = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
             ObservationIdentifier = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[3], false, seps) : null;
             ObservationSubId = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
-            ObservationValue = segments.Length > 5 && segments[5].Length > 0 ? TypeSerializer.Deserialize<ChannelDefinition>(segments[5], false, seps) : null;
+            ObservationValue = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             Units = segments.Length > 6 && segments[6].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[6], false, seps) : null;
             ReferencesRange = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
             InterpretationCodes = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedWithExceptions>(x, false, seps)) : null;
@@ -211,7 +211,7 @@ namespace ClearHl7.V251.Segments
                                 ValueType,
                                 ObservationIdentifier?.ToDelimitedString(),
                                 ObservationSubId,
-                                ObservationValue?.ToDelimitedString(),
+                                ObservationValue != null ? string.Join(Configuration.FieldRepeatSeparator, ObservationValue) : null,
                                 Units?.ToDelimitedString(),
                                 ReferencesRange,
                                 InterpretationCodes != null ? string.Join(Configuration.FieldRepeatSeparator, InterpretationCodes.Select(x => x.ToDelimitedString())) : null,
