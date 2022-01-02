@@ -38,7 +38,7 @@ namespace ClearHl7.V230.Segments
         /// <summary>
         /// CTD.4 - Contact Location.
         /// </summary>
-        public EntityIdentifier ContactLocation { get; set; }
+        public PersonLocation ContactLocation { get; set; }
 
         /// <summary>
         /// CTD.5 - Contact Communication Information.
@@ -81,7 +81,7 @@ namespace ClearHl7.V230.Segments
             ContactRole = segments.Length > 1 && segments[1].Length > 0 ? segments[1].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedElement>(x, false, seps)) : null;
             ContactName = segments.Length > 2 && segments[2].Length > 0 ? segments[2].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedPersonName>(x, false, seps)) : null;
             ContactAddress = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<ExtendedAddress>(segments[3], false, seps) : null;
-            ContactLocation = segments.Length > 4 && segments[4].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[4], false, seps) : null;
+            ContactLocation = segments.Length > 4 && segments[4].Length > 0 ? TypeSerializer.Deserialize<PersonLocation>(segments[4], false, seps) : null;
             ContactCommunicationInformation = segments.Length > 5 && segments[5].Length > 0 ? segments[5].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedTelecommunicationNumber>(x, false, seps)) : null;
             PreferredMethodOfContact = segments.Length > 6 && segments[6].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[6], false, seps) : null;
             ContactIdentifiers = segments.Length > 7 && segments[7].Length > 0 ? segments[7].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
