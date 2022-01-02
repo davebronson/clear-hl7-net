@@ -31,3 +31,4 @@ It's important to know that they are breaking from Version 1.x of this library. 
 |V282|`AdjSegment.AdjustmentSequenceNumber`|`EntityIdentifier`|`uint?`|
 |V282|`IimSegment.InventoryOnHandQuantity`|`CodedWithExceptions`|`decimal?`|
 |V282|`ParentResultLink.ParentObservationSubIdentifier`|`ObservationGrouper`|`string`|
+|All|`Pr1Segment.ProcedurePriority`|`decimal`|`string`|
