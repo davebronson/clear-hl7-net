@@ -97,7 +97,7 @@ namespace ClearHl7.V251.Segments
         /// PR1.14 - Procedure Priority.
         /// <para>Suggested: 0418 Procedure Priority -&gt; ClearHl7.Codes.V251.CodeProcedurePriority</para>
         /// </summary>
-        public decimal? ProcedurePriority { get; set; }
+        public string ProcedurePriority { get; set; }
 
         /// <summary>
         /// PR1.15 - Associated Diagnosis Code.
@@ -169,7 +169,7 @@ namespace ClearHl7.V251.Segments
             Surgeon = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
             ProcedurePractitioner = segments.Length > 12 && segments[12].Length > 0 ? segments[12].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
             ConsentCode = segments.Length > 13 && segments[13].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[13], false, seps) : null;
-            ProcedurePriority = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDecimal() : null;
+            ProcedurePriority = segments.Length > 14 && segments[14].Length > 0 ? segments[14] : null;
             AssociatedDiagnosisCode = segments.Length > 15 && segments[15].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[15], false, seps) : null;
             ProcedureCodeModifier = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedElement>(x, false, seps)) : null;
             ProcedureDrgType = segments.Length > 17 && segments[17].Length > 0 ? segments[17] : null;
@@ -200,7 +200,7 @@ namespace ClearHl7.V251.Segments
                                 Surgeon != null ? string.Join(Configuration.FieldRepeatSeparator, Surgeon.Select(x => x.ToDelimitedString())) : null,
                                 ProcedurePractitioner != null ? string.Join(Configuration.FieldRepeatSeparator, ProcedurePractitioner.Select(x => x.ToDelimitedString())) : null,
                                 ConsentCode?.ToDelimitedString(),
-                                ProcedurePriority.HasValue ? ProcedurePriority.Value.ToString(Consts.NumericFormat, culture) : null,
+                                ProcedurePriority,
                                 AssociatedDiagnosisCode?.ToDelimitedString(),
                                 ProcedureCodeModifier != null ? string.Join(Configuration.FieldRepeatSeparator, ProcedureCodeModifier.Select(x => x.ToDelimitedString())) : null,
                                 ProcedureDrgType,

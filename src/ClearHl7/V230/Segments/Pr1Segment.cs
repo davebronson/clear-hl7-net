@@ -96,7 +96,7 @@ namespace ClearHl7.V230.Segments
         /// <summary>
         /// PR1.14 - Procedure Priority.
         /// </summary>
-        public decimal? ProcedurePriority { get; set; }
+        public string ProcedurePriority { get; set; }
 
         /// <summary>
         /// PR1.15 - Associated Diagnosis Code.
@@ -138,7 +138,7 @@ namespace ClearHl7.V230.Segments
             Surgeon = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
             ProcedurePractitioner = segments.Length > 12 && segments[12].Length > 0 ? segments[12].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
             ConsentCode = segments.Length > 13 && segments[13].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[13], false, seps) : null;
-            ProcedurePriority = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDecimal() : null;
+            ProcedurePriority = segments.Length > 14 && segments[14].Length > 0 ? segments[14] : null;
             AssociatedDiagnosisCode = segments.Length > 15 && segments[15].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[15], false, seps) : null;
         }
 

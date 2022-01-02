@@ -50,7 +50,7 @@ namespace ClearHl7.Tests.SegmentsTests
                 {
                     Identifier = "13"
                 },
-                ProcedurePriority = 14,
+                ProcedurePriority = "14",
                 AssociatedDiagnosisCode = new CodedWithExceptions
                 {
                     Identifier = "15"
@@ -164,7 +164,7 @@ namespace ClearHl7.Tests.SegmentsTests
                 {
                     Identifier = "13"
                 },
-                ProcedurePriority = 14,
+                ProcedurePriority = "14",
                 AssociatedDiagnosisCode = new CodedWithExceptions
                 {
                     Identifier = "15"
