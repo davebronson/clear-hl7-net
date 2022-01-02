@@ -64,7 +64,7 @@ namespace ClearHl7.V230.Segments
         /// <summary>
         /// RXD.9 - Dispense Notes.
         /// </summary>
-        public IEnumerable<CodedElement> DispenseNotes { get; set; }
+        public IEnumerable<string> DispenseNotes { get; set; }
 
         /// <summary>
         /// RXD.10 - Dispensing Provider.
@@ -174,7 +174,7 @@ namespace ClearHl7.V230.Segments
             ActualDosageForm = segments.Length > 6 && segments[6].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[6], false, seps) : null;
             PrescriptionNumber = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
             NumberOfRefillsRemaining = segments.Length > 8 && segments[8].Length > 0 ? segments[8].ToNullableDecimal() : null;
-            DispenseNotes = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedElement>(x, false, seps)) : null;
+            DispenseNotes = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             DispensingProvider = segments.Length > 10 && segments[10].Length > 0 ? TypeSerializer.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(segments[10], false, seps) : null;
             SubstitutionStatus = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
             TotalDailyDose = segments.Length > 12 && segments[12].Length > 0 ? TypeSerializer.Deserialize<CompositeQuantityWithUnits>(segments[12], false, seps) : null;
