@@ -71,7 +71,7 @@ namespace ClearHl7.V231.Segments
         /// OBX.10 - Nature of Abnormal Test.
         /// <para>Suggested: 0080 Nature Of Abnormal Testing -&gt; ClearHl7.Codes.V231.CodeNatureOfAbnormalTesting</para>
         /// </summary>
-        public string NatureOfAbnormalTest { get; set; }
+        public IEnumerable<string> NatureOfAbnormalTest { get; set; }
 
         /// <summary>
         /// OBX.11 - Observation Result Status.
@@ -140,7 +140,7 @@ namespace ClearHl7.V231.Segments
             ReferencesRange = segments.Length > 7 && segments[7].Length > 0 ? segments[7] : null;
             InterpretationCodes = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             Probability = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => x.ToDecimal()) : null;
-            NatureOfAbnormalTest = segments.Length > 10 && segments[10].Length > 0 ? segments[10] : null;
+            NatureOfAbnormalTest = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             ObservationResultStatus = segments.Length > 11 && segments[11].Length > 0 ? segments[11] : null;
             EffectiveDateOfReferenceRange = segments.Length > 12 && segments[12].Length > 0 ? segments[12].ToNullableDateTime() : null;
             UserDefinedAccessChecks = segments.Length > 13 && segments[13].Length > 0 ? segments[13] : null;
