@@ -10,6 +10,7 @@ It's important to know that they are breaking from Version 1.x of this library. 
 |Version|Component|Previous|New|
 |---|---|---|---|
 |V230|`CtdSegment.ContactLocation`|`EntityIdentifier`|`PersonLocation`|
+|V230|`CtiSegment.SponsorStudyId`|`CodedElement`|`EntityIdentifier`|
 |V230|`Om1Segment.ObservationDescription`|`CodedElement`|`Text`|
 |V230|`RxdSegment.DispenseNotes`|`IEnumerable<CodedElement>`|`IEnumerable<string>`|
 |V231|`ObxSegment.NatureOfAbnormalTest`|`string`|`IEnumerable<string>`|
