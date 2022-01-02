@@ -64,7 +64,7 @@ namespace ClearHl7.V251.Segments
         /// <summary>
         /// PID.9 - Patient Alias.
         /// </summary>
-        public ExtendedPersonName PatientAlias { get; set; }
+        public IEnumerable<ExtendedPersonName> PatientAlias { get; set; }
 
         /// <summary>
         /// PID.10 - Race.
@@ -263,7 +263,7 @@ namespace ClearHl7.V251.Segments
             MothersMaidenName = segments.Length > 6 && segments[6].Length > 0 ? segments[6].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedPersonName>(x, false, seps)) : null;
             DateTimeOfBirth = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
             AdministrativeSex = segments.Length > 8 && segments[8].Length > 0 ? segments[8] : null;
-            PatientAlias = segments.Length > 9 && segments[9].Length > 0 ? TypeSerializer.Deserialize<ExtendedPersonName>(segments[9], false, seps) : null;
+            PatientAlias = segments.Length > 9 && segments[9].Length > 0 ? segments[9].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedPersonName>(x, false, seps)) : null;
             Race = segments.Length > 10 && segments[10].Length > 0 ? segments[10].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<CodedElement>(x, false, seps)) : null;
             PatientAddress = segments.Length > 11 && segments[11].Length > 0 ? segments[11].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedAddress>(x, false, seps)) : null;
             CountyCode = segments.Length > 12 && segments[12].Length > 0 ? segments[12] : null;
@@ -313,7 +313,7 @@ namespace ClearHl7.V251.Segments
                                 MothersMaidenName != null ? string.Join(Configuration.FieldRepeatSeparator, MothersMaidenName.Select(x => x.ToDelimitedString())) : null,
                                 DateTimeOfBirth.HasValue ? DateTimeOfBirth.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
                                 AdministrativeSex,
-                                PatientAlias?.ToDelimitedString(),
+                                PatientAlias != null ? string.Join(Configuration.FieldRepeatSeparator, PatientAlias.Select(x => x.ToDelimitedString())) : null,
                                 Race != null ? string.Join(Configuration.FieldRepeatSeparator, Race.Select(x => x.ToDelimitedString())) : null,
                                 PatientAddress != null ? string.Join(Configuration.FieldRepeatSeparator, PatientAddress.Select(x => x.ToDelimitedString())) : null,
                                 CountyCode,
