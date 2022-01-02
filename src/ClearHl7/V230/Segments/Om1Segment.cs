@@ -50,7 +50,7 @@ namespace ClearHl7.V230.Segments
         /// <summary>
         /// OM1.6 - Observation Description.
         /// </summary>
-        public CodedElement ObservationDescription { get; set; }
+        public Text ObservationDescription { get; set; }
 
         /// <summary>
         /// OM1.7 - Other Service/Test/Observation IDs for the Observation.
@@ -294,7 +294,7 @@ namespace ClearHl7.V230.Segments
             PermittedDataTypes = segments.Length > 3 && segments[3].Length > 0 ? segments[3].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             SpecimenRequired = segments.Length > 4 && segments[4].Length > 0 ? segments[4] : null;
             ProducerId = segments.Length > 5 && segments[5].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[5], false, seps) : null;
-            ObservationDescription = segments.Length > 6 && segments[6].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[6], false, seps) : null;
+            ObservationDescription = segments.Length > 6 && segments[6].Length > 0 ? TypeSerializer.Deserialize<Text>(segments[6], false, seps) : null;
             OtherServiceTestObservationIdsForTheObservation = segments.Length > 7 && segments[7].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[7], false, seps) : null;
             OtherNames = segments.Length > 8 && segments[8].Length > 0 ? segments[8].Split(seps.FieldRepeatSeparator, StringSplitOptions.None) : null;
             PreferredReportNameForTheObservation = segments.Length > 9 && segments[9].Length > 0 ? segments[9] : null;
