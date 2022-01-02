@@ -20,7 +20,7 @@ namespace ClearHl7.V230.Segments
         /// <summary>
         /// CTI.1 - Sponsor Study ID.
         /// </summary>
-        public CodedElement SponsorStudyId { get; set; }
+        public EntityIdentifier SponsorStudyId { get; set; }
 
         /// <summary>
         /// CTI.2 - Study Phase Identifier.
@@ -54,7 +54,7 @@ namespace ClearHl7.V230.Segments
                 }
             }
 
-            SponsorStudyId = segments.Length > 1 && segments[1].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[1], false, seps) : null;
+            SponsorStudyId = segments.Length > 1 && segments[1].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[1], false, seps) : null;
             StudyPhaseIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[2], false, seps) : null;
             StudyScheduledTimePoint = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[3], false, seps) : null;
         }
