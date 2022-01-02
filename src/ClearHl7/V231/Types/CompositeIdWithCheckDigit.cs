@@ -21,7 +21,7 @@ namespace ClearHl7.V231.Types
         /// <summary>
         /// CK.2 - Check Digit.
         /// </summary>
-        public decimal? CheckDigit { get; set; }
+        public string CheckDigit { get; set; }
 
         /// <summary>
         /// CK.3 - Code Identifying The Check Digit Scheme Employed.
@@ -50,7 +50,7 @@ namespace ClearHl7.V231.Types
                 : delimitedString.Split(separator, StringSplitOptions.None);
 
             IdNumber = segments.Length > 0 && segments[0].Length > 0 ? segments[0].ToNullableDecimal() : null;
-            CheckDigit = segments.Length > 1 && segments[1].Length > 0 ? segments[1].ToNullableDecimal() : null;
+            CheckDigit = segments.Length > 1 && segments[1].Length > 0 ? segments[1] : null;
             CodeIdentifyingTheCheckDigitSchemeEmployed = segments.Length > 2 && segments[2].Length > 0 ? segments[2] : null;
             AssigningAuthority = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<HierarchicDesignator>(segments[3], true, seps) : null;
         }
@@ -65,7 +65,7 @@ namespace ClearHl7.V231.Types
                                 culture,
                                 StringHelper.StringFormatSequence(0, 4, separator),
                                 IdNumber.HasValue ? IdNumber.Value.ToString(Consts.NumericFormat, culture) : null,
-                                CheckDigit.HasValue ? CheckDigit.Value.ToString(Consts.NumericFormat, culture) : null,
+                                CheckDigit,
                                 CodeIdentifyingTheCheckDigitSchemeEmployed,
                                 AssigningAuthority?.ToDelimitedString()
                                 ).TrimEnd(separator.ToCharArray());
