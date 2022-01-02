@@ -13,6 +13,7 @@ It's important to know that they are breaking from Version 1.x of this library. 
 |V230|`CtiSegment.SponsorStudyId`|`CodedElement`|`EntityIdentifier`|
 |V230|`Om1Segment.ObservationDescription`|`CodedElement`|`Text`|
 |V230|`RxdSegment.DispenseNotes`|`IEnumerable<CodedElement>`|`IEnumerable<string>`|
+|V230|`CompositeIdWithCheckDigit.CheckDigit`|`decimal?`|`string`|
 |V231|`ObxSegment.NatureOfAbnormalTest`|`string`|`IEnumerable<string>`|
 |V240|`AilSegment.LocationResourceId`|`IEnumerable<PersonLocation>`|`PersonLocation`|
 |V251|`ErqSegment.InputParameterList`|`QueryInputParameterList`|`IEnumerable<QueryInputParameterList>`|
