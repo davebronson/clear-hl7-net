@@ -17,6 +17,7 @@ It's important to know that they are breaking from Version 1.x of this library. 
 |V231|`ObxSegment.NatureOfAbnormalTest`|`string`|`IEnumerable<string>`|
 |V231|`CompositeIdWithCheckDigit.CheckDigit`|`decimal?`|`string`|
 |V240|`AilSegment.LocationResourceId`|`IEnumerable<PersonLocation>`|`PersonLocation`|
+|V251|`ObxSegment.ObservationValue`|`ChannelDefinition`|`IEnumerable<string>`|
 |V251|`ErqSegment.InputParameterList`|`QueryInputParameterList`|`IEnumerable<QueryInputParameterList>`|
 |V251|`PidSegment.PatientAlias`|`ExtendedPersonName`|`IEnumerable<ExtendedPersonName>`|
 |V251|`Pv1Segment.DischargeDateTime`|`DateTime?`|`IEnumerable<DateTime>`|
