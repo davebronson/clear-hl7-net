@@ -14,7 +14,7 @@ It's important to know that these are breaking from Version 1.x of this library.
 |`CtdSegment.ContactLocation`|`EntityIdentifier`|`PersonLocation`|
 |`CtiSegment.SponsorStudyId`|`CodedElement`|`EntityIdentifier`|
 |`Om1Segment.ObservationDescription`|`CodedElement`|`Text`|
-|`Pr1Segment.ProcedurePriority`|`decimal`|`string`|
+|`Pr1Segment.ProcedurePriority`|`decimal?`|`string`|
 |`RxdSegment.DispenseNotes`|`IEnumerable<CodedElement>`|`IEnumerable<string>`|
 |`CompositeIdWithCheckDigit.CheckDigit`|`decimal?`|`string`|
 
@@ -22,19 +22,19 @@ It's important to know that these are breaking from Version 1.x of this library.
 |Component|Previous|New|
 |---|---|---|
 |`ObxSegment.NatureOfAbnormalTest`|`string`|`IEnumerable<string>`|
-|`Pr1Segment.ProcedurePriority`|`decimal`|`string`|
+|`Pr1Segment.ProcedurePriority`|`decimal?`|`string`|
 |`CompositeIdWithCheckDigit.CheckDigit`|`decimal?`|`string`|
 
 ### V240
 |Component|Previous|New|
 |---|---|---|
 |`AilSegment.LocationResourceId`|`IEnumerable<PersonLocation>`|`PersonLocation`|
-|`Pr1Segment.ProcedurePriority`|`decimal`|`string`|
+|`Pr1Segment.ProcedurePriority`|`decimal?`|`string`|
 
 ### V250
 |Component|Previous|New|
 |---|---|---|
-|`Pr1Segment.ProcedurePriority`|`decimal`|`string`|
+|`Pr1Segment.ProcedurePriority`|`decimal?`|`string`|
 
 ### V251
 |Component|Previous|New|
@@ -43,7 +43,7 @@ It's important to know that these are breaking from Version 1.x of this library.
 |`ErqSegment.InputParameterList`|`QueryInputParameterList`|`IEnumerable<QueryInputParameterList>`|
 |`Pd1Segment.PatientPrimaryCareProviderNameIdNo`|`ExtendedCompositeIdNumberAndNameForPersons`|`IEnumerable<ExtendedCompositeIdNumberAndNameForPersons>`|
 |`PidSegment.PatientAlias`|`ExtendedPersonName`|`IEnumerable<ExtendedPersonName>`|
-|`Pr1Segment.ProcedurePriority`|`decimal`|`string`|
+|`Pr1Segment.ProcedurePriority`|`decimal?`|`string`|
 |`Pv1Segment.DischargeDateTime`|`DateTime?`|`IEnumerable<DateTime>`|
 |`SchSegment.AppointmentTimingQuantity`|`TimingQuantity`|`IEnumerable<TimingQuantity>`|
 
@@ -53,14 +53,14 @@ It's important to know that these are breaking from Version 1.x of this library.
 |`ObxSegment.ObservationValue`|`ChannelDefinition`|`IEnumerable<string>`|
 |`Pd1Segment.PatientPrimaryCareProviderNameIdNo`|`ExtendedCompositeIdNumberAndNameForPersons`|`IEnumerable<ExtendedCompositeIdNumberAndNameForPersons>`|
 |`PidSegment.PatientAlias`|`ExtendedPersonName`|`IEnumerable<ExtendedPersonName>`|
-|`Pr1Segment.ProcedurePriority`|`decimal`|`string`|
+|`Pr1Segment.ProcedurePriority`|`decimal?`|`string`|
 |`SchSegment.AppointmentTimingQuantity`|`TimingQuantity`|`IEnumerable<TimingQuantity>`|
 
 ### V270
 |Component|Previous|New|
 |---|---|---|
 |`Pd1Segment.PatientPrimaryCareProviderNameIdNo`|`ExtendedCompositeIdNumberAndNameForPersons`|`IEnumerable<ExtendedCompositeIdNumberAndNameForPersons>`|
-|`Pr1Segment.ProcedurePriority`|`decimal`|`string`|
+|`Pr1Segment.ProcedurePriority`|`decimal?`|`string`|
 
 ### V271
 |Component|Previous|New|
@@ -68,20 +68,20 @@ It's important to know that these are breaking from Version 1.x of this library.
 |`ArqSegment.PlacerGroupNumber`|`EntityIdentifierPair`|`EntityIdentifier`|
 |`EquSegment.EquipmentInstanceIdentifier`|`IEnumerable<EntityIdentifier>`|`EntityIdentifier`|
 |`Pd1Segment.PatientPrimaryCareProviderNameIdNo`|`ExtendedCompositeIdNumberAndNameForPersons`|`IEnumerable<ExtendedCompositeIdNumberAndNameForPersons>`|
-|`Pr1Segment.ProcedurePriority`|`decimal`|`string`|
+|`Pr1Segment.ProcedurePriority`|`decimal?`|`string`|
 
 ### V280
 |Component|Previous|New|
 |---|---|---|
 |`Pd1Segment.PatientPrimaryCareProviderNameIdNo`|`ExtendedCompositeIdNumberAndNameForPersons`|`IEnumerable<ExtendedCompositeIdNumberAndNameForPersons>`|
-|`Pr1Segment.ProcedurePriority`|`decimal`|`string`|
+|`Pr1Segment.ProcedurePriority`|`decimal?`|`string`|
 
 ### V281
 |Component|Previous|New|
 |---|---|---|
 |`AdjSegment.AdjustmentSequenceNumber`|`EntityIdentifier`|`uint?`|
 |`Pd1Segment.PatientPrimaryCareProviderNameIdNo`|`ExtendedCompositeIdNumberAndNameForPersons`|`IEnumerable<ExtendedCompositeIdNumberAndNameForPersons>`|
-|`Pr1Segment.ProcedurePriority`|`decimal`|`string`|
+|`Pr1Segment.ProcedurePriority`|`decimal?`|`string`|
 
 ### V282
 |Component|Previous|New|
@@ -89,11 +89,11 @@ It's important to know that these are breaking from Version 1.x of this library.
 |`AdjSegment.AdjustmentSequenceNumber`|`EntityIdentifier`|`uint?`|
 |`IimSegment.InventoryOnHandQuantity`|`CodedWithExceptions`|`decimal?`|
 |`Pd1Segment.PatientPrimaryCareProviderNameIdNo`|`ExtendedCompositeIdNumberAndNameForPersons`|`IEnumerable<ExtendedCompositeIdNumberAndNameForPersons>`|
-|`Pr1Segment.ProcedurePriority`|`decimal`|`string`|
+|`Pr1Segment.ProcedurePriority`|`decimal?`|`string`|
 |`ParentResultLink.ParentObservationSubIdentifier`|`ObservationGrouper`|`string`|
 
 ### V290
 |Component|Previous|New|
 |---|---|---|
 |`Pd1Segment.PatientPrimaryCareProviderNameIdNo`|`ExtendedCompositeIdNumberAndNameForPersons`|`IEnumerable<ExtendedCompositeIdNumberAndNameForPersons>`|
-|`Pr1Segment.ProcedurePriority`|`decimal`|`string`|
+|`Pr1Segment.ProcedurePriority`|`decimal?`|`string`|
