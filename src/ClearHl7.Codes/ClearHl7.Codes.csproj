@@ -3,17 +3,18 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1;net5.0</TargetFrameworks>
     <Authors>Dave Bronson</Authors>
-    <Copyright>Copyright © Dave Bronson 2020-2021</Copyright>
+    <Copyright>Copyright © Dave Bronson 2020-2022</Copyright>
     <PackageProjectUrl>https://github.com/davebronson/clear-hl7-net</PackageProjectUrl>
     <Summary>Enumerated coded values for the HL7® standard</Summary>
     <PackageTags>hl7;hl7-builder;hl7-message;hl7-generating;dotnet;healthcare;code;codesystem</PackageTags>
     <Title>ClearHL7.Codes</Title>
     <Description>Enumerated coded values for the HL7® standard</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <PackageVersion>1.3.0</PackageVersion>
+    <PackageVersion>2.0.0</PackageVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackOnBuild>true</PackOnBuild>
     <Owners>Dave Bronson</Owners>
+    <ReleaseVersion>2.0.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <LangVersion>latest</LangVersion>
@@ -21,7 +22,6 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <LangVersion>latest</LangVersion>
-    <DebugType></DebugType>
     <DocumentationFile>bin\Release\netstandard2.0\ClearHl7.Codes.xml</DocumentationFile>
   </PropertyGroup>
 </Project>
