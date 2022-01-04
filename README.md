@@ -1,9 +1,12 @@
 # clear-hl7-net
-.NET message generation library for the HL7® Version 2.x standard
+.NET HL7&reg; message generation and parsing library for the version 2.x standard
 
 Understanding and programmatically building HL7 messages can be difficult.  clear-hl7-net takes pain out of this process by exposing an object hierarchy that is well structured, clearly named, and (most importantly) strongly-typed.
 
-HL7® is the registered trademark of Health Level Seven International, and the use of this trademark does not constitute an endorsement by HL7.
+HL7&reg; is the registered trademark of Health Level Seven International, and the use of this trademark does not constitute an endorsement by HL7.
+
+## Important Notes About Version 2
+Please read some important notes about [Version 2](Version2.md) of the library, which is currently under development.
 
 ## Getting Started
 ### Building clear-hl7-net
@@ -197,7 +200,7 @@ string output = message.ToDelimitedString();
 //     ZPD|GREEN|^^^andy.anderson@somewhere.com|Code1234|Anderson \T\ Sons \R\ Piano \T\ Drywall Repair
 ```
 
-## Example: Converting HL7 'pipehat' String into a ClearHl7 Message
+## Example: Parsing an HL7 'pipehat' String into a ClearHl7 Message
 We've received an HL7 message string.  Let's deserialize it into a `Message` instance for integration elsewhere.
 ```csharp
 using ClearHl7;
