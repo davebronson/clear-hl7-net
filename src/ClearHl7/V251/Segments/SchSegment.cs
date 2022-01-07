@@ -228,7 +228,7 @@ namespace ClearHl7.V251.Segments
                                 AppointmentType?.ToDelimitedString(),
                                 AppointmentDuration.HasValue ? AppointmentDuration.Value.ToString(Consts.NumericFormat, culture) : null,
                                 AppointmentDurationUnits?.ToDelimitedString(),
-                                AppointmentTimingQuantity != null ? string.Join(Configuration.FieldRepeatSeparator, PlacerContactPerson.Select(x => x.ToDelimitedString())) : null,
+                                AppointmentTimingQuantity != null ? string.Join(Configuration.FieldRepeatSeparator, AppointmentTimingQuantity.Select(x => x.ToDelimitedString())) : null,
                                 PlacerContactPerson != null ? string.Join(Configuration.FieldRepeatSeparator, PlacerContactPerson.Select(x => x.ToDelimitedString())) : null,
                                 PlacerContactPhoneNumber?.ToDelimitedString(),
                                 PlacerContactAddress != null ? string.Join(Configuration.FieldRepeatSeparator, PlacerContactAddress.Select(x => x.ToDelimitedString())) : null,
