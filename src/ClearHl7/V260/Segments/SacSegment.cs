@@ -48,7 +48,7 @@ namespace ClearHl7.V260.Segments
         /// <summary>
         /// SAC.6 - Specimen Source.
         /// </summary>
-        public SpecimentSource SpecimenSource { get; set; }
+        public SpecimenSource SpecimenSource { get; set; }
 
         /// <summary>
         /// SAC.7 - Registration Date/Time.
@@ -280,7 +280,7 @@ namespace ClearHl7.V260.Segments
             ContainerIdentifier = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[3], false, seps) : null;
             PrimaryParentContainerIdentifier = segments.Length > 4 && segments[4].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[4], false, seps) : null;
             EquipmentContainerIdentifier = segments.Length > 5 && segments[5].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[5], false, seps) : null;
-            SpecimenSource = segments.Length > 6 && segments[6].Length > 0 ? TypeSerializer.Deserialize<SpecimentSource>(segments[6], false, seps) : null;
+            SpecimenSource = segments.Length > 6 && segments[6].Length > 0 ? TypeSerializer.Deserialize<SpecimenSource>(segments[6], false, seps) : null;
             RegistrationDateTime = segments.Length > 7 && segments[7].Length > 0 ? segments[7].ToNullableDateTime() : null;
             ContainerStatus = segments.Length > 8 && segments[8].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[8], false, seps) : null;
             CarrierType = segments.Length > 9 && segments[9].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[9], false, seps) : null;

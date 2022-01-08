@@ -5,9 +5,9 @@ using ClearHl7.Serialization;
 namespace ClearHl7.V251.Types
 {
     /// <summary>
-    /// HL7 Version 2 SPS - Speciment Source.
+    /// HL7 Version 2 SPS - Specimen Source.
     /// </summary>
-    public class SpecimentSource : IType
+    public class SpecimenSource : IType
     {
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }

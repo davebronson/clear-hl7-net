@@ -31,7 +31,7 @@ namespace ClearHl7.V260.Segments
         /// <summary>
         /// TCC.3 - Specimen Source.
         /// </summary>
-        public SpecimentSource SpecimenSource { get; set; }
+        public SpecimenSource SpecimenSource { get; set; }
 
         /// <summary>
         /// TCC.4 - Auto-Dilution Factor Default.
@@ -116,7 +116,7 @@ namespace ClearHl7.V260.Segments
 
             UniversalServiceIdentifier = segments.Length > 1 && segments[1].Length > 0 ? TypeSerializer.Deserialize<CodedWithExceptions>(segments[1], false, seps) : null;
             EquipmentTestApplicationIdentifier = segments.Length > 2 && segments[2].Length > 0 ? TypeSerializer.Deserialize<EntityIdentifier>(segments[2], false, seps) : null;
-            SpecimenSource = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<SpecimentSource>(segments[3], false, seps) : null;
+            SpecimenSource = segments.Length > 3 && segments[3].Length > 0 ? TypeSerializer.Deserialize<SpecimenSource>(segments[3], false, seps) : null;
             AutoDilutionFactorDefault = segments.Length > 4 && segments[4].Length > 0 ? TypeSerializer.Deserialize<StructuredNumeric>(segments[4], false, seps) : null;
             RerunDilutionFactorDefault = segments.Length > 5 && segments[5].Length > 0 ? TypeSerializer.Deserialize<StructuredNumeric>(segments[5], false, seps) : null;
             PreDilutionFactorDefault = segments.Length > 6 && segments[6].Length > 0 ? TypeSerializer.Deserialize<StructuredNumeric>(segments[6], false, seps) : null;

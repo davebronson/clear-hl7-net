@@ -95,7 +95,7 @@ namespace ClearHl7.V231.Segments
         /// OBR.15 - Specimen Source.
         /// <para>Suggested: 0070 Specimen Source Codes -&gt; ClearHl7.Codes.V231.CodeSpecimenSourceCodes</para>
         /// </summary>
-        public SpecimentSource SpecimenSource { get; set; }
+        public SpecimenSource SpecimenSource { get; set; }
 
         /// <summary>
         /// OBR.16 - Ordering Provider.
@@ -290,7 +290,7 @@ namespace ClearHl7.V231.Segments
             DangerCode = segments.Length > 12 && segments[12].Length > 0 ? TypeSerializer.Deserialize<CodedElement>(segments[12], false, seps) : null;
             RelevantClinicalInformation = segments.Length > 13 && segments[13].Length > 0 ? segments[13] : null;
             SpecimenReceivedDateTime = segments.Length > 14 && segments[14].Length > 0 ? segments[14].ToNullableDateTime() : null;
-            SpecimenSource = segments.Length > 15 && segments[15].Length > 0 ? TypeSerializer.Deserialize<SpecimentSource>(segments[15], false, seps) : null;
+            SpecimenSource = segments.Length > 15 && segments[15].Length > 0 ? TypeSerializer.Deserialize<SpecimenSource>(segments[15], false, seps) : null;
             OrderingProvider = segments.Length > 16 && segments[16].Length > 0 ? segments[16].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedCompositeIdNumberAndNameForPersons>(x, false, seps)) : null;
             OrderCallbackPhoneNumber = segments.Length > 17 && segments[17].Length > 0 ? segments[17].Split(seps.FieldRepeatSeparator, StringSplitOptions.None).Select(x => TypeSerializer.Deserialize<ExtendedTelecommunicationNumber>(x, false, seps)) : null;
             PlacerField1 = segments.Length > 18 && segments[18].Length > 0 ? segments[18] : null;

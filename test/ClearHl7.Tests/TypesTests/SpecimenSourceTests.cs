@@ -4,7 +4,7 @@ using Xunit;
 
 namespace ClearHl7.Tests.TypesTests
 {
-    public class SpecimentSourceTests
+    public class SpecimenSourceTests
     {
         /// <summary>
         /// Validates that FromDelimitedString() returns the object instance with all properties correctly initialized.
@@ -12,7 +12,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void FromDelimitedString_WithAllProperties_ReturnsCorrectlyInitializedFields()
         {
-            IType expected = new SpecimentSource
+            IType expected = new SpecimenSource
             {
                 SpecimenSourceNameOrCode = new CodedWithExceptions
                 {
@@ -51,7 +51,7 @@ namespace ClearHl7.Tests.TypesTests
                 }
             };
 
-            IType actual = new SpecimentSource();
+            IType actual = new SpecimenSource();
             actual.FromDelimitedString("1^2^3^4^5^6^7");
 
             expected.Should().BeEquivalentTo(actual);
@@ -63,7 +63,7 @@ namespace ClearHl7.Tests.TypesTests
         [Fact]
         public void ToDelimitedString_WithAllProperties_ReturnsCorrectlySequencedFields()
         {
-            IType hl7Type = new SpecimentSource
+            IType hl7Type = new SpecimenSource
             {
                 SpecimenSourceNameOrCode = new CodedWithExceptions
                 {
