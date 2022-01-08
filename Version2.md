@@ -17,6 +17,7 @@ It's important to know that these are breaking from Version 1.x of this library.
 |`Pr1Segment.ProcedurePriority`|`decimal?`|`string`|
 |`RxdSegment.DispenseNotes`|`IEnumerable<CodedElement>`|`IEnumerable<string>`|
 |`CompositeIdWithCheckDigit.CheckDigit`|`decimal?`|`string`|
+|`SpecimenSource` (corrected spelling)|`SpecimentSource`|`SpecimenSource`|
 
 ### V231
 |Component|Previous|New|
@@ -24,17 +25,20 @@ It's important to know that these are breaking from Version 1.x of this library.
 |`ObxSegment.NatureOfAbnormalTest`|`string`|`IEnumerable<string>`|
 |`Pr1Segment.ProcedurePriority`|`decimal?`|`string`|
 |`CompositeIdWithCheckDigit.CheckDigit`|`decimal?`|`string`|
+|`SpecimenSource` (corrected spelling)|`SpecimentSource`|`SpecimenSource`|
 
 ### V240
 |Component|Previous|New|
 |---|---|---|
 |`AilSegment.LocationResourceId`|`IEnumerable<PersonLocation>`|`PersonLocation`|
 |`Pr1Segment.ProcedurePriority`|`decimal?`|`string`|
+|`SpecimenSource` (corrected spelling)|`SpecimentSource`|`SpecimenSource`|
 
 ### V250
 |Component|Previous|New|
 |---|---|---|
 |`Pr1Segment.ProcedurePriority`|`decimal?`|`string`|
+|`SpecimenSource` (corrected spelling)|`SpecimentSource`|`SpecimenSource`|
 
 ### V251
 |Component|Previous|New|
@@ -46,6 +50,7 @@ It's important to know that these are breaking from Version 1.x of this library.
 |`Pr1Segment.ProcedurePriority`|`decimal?`|`string`|
 |`Pv1Segment.DischargeDateTime`|`DateTime?`|`IEnumerable<DateTime>`|
 |`SchSegment.AppointmentTimingQuantity`|`TimingQuantity`|`IEnumerable<TimingQuantity>`|
+|`SpecimenSource` (corrected spelling)|`SpecimentSource`|`SpecimenSource`|
 
 ### V260
 |Component|Previous|New|
@@ -55,6 +60,7 @@ It's important to know that these are breaking from Version 1.x of this library.
 |`PidSegment.PatientAlias`|`ExtendedPersonName`|`IEnumerable<ExtendedPersonName>`|
 |`Pr1Segment.ProcedurePriority`|`decimal?`|`string`|
 |`SchSegment.AppointmentTimingQuantity`|`TimingQuantity`|`IEnumerable<TimingQuantity>`|
+|`SpecimenSource` (corrected spelling)|`SpecimentSource`|`SpecimenSource`|
 
 ### V270
 |Component|Previous|New|
