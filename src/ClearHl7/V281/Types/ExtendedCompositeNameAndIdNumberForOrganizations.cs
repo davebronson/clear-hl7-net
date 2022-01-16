@@ -10,6 +10,23 @@ namespace ClearHl7.V281.Types
     /// </summary>
     public class ExtendedCompositeNameAndIdNumberForOrganizations : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtendedCompositeNameAndIdNumberForOrganizations"/> class.
+        /// </summary>
+        public ExtendedCompositeNameAndIdNumberForOrganizations()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtendedCompositeNameAndIdNumberForOrganizations"/> class.
+        /// </summary>
+        /// <param name="organizationName">XON.1 - Organization Name.</param>
+        public ExtendedCompositeNameAndIdNumberForOrganizations(string organizationName)
+        {
+            OrganizationName = organizationName;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

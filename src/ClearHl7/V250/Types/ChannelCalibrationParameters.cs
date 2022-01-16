@@ -9,6 +9,23 @@ namespace ClearHl7.V250.Types
     /// </summary>
     public class ChannelCalibrationParameters : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChannelCalibrationParameters"/> class.
+        /// </summary>
+        public ChannelCalibrationParameters()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChannelCalibrationParameters"/> class.
+        /// </summary>
+        /// <param name="channelCalibrationSensitivityCorrectionFactor">CCP.1 - Channel Calibration Sensitivity Correction Factor.</param>
+        public ChannelCalibrationParameters(decimal channelCalibrationSensitivityCorrectionFactor)
+        {
+            ChannelCalibrationSensitivityCorrectionFactor = channelCalibrationSensitivityCorrectionFactor;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

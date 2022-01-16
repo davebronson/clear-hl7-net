@@ -10,6 +10,34 @@ namespace ClearHl7.V280.Types
     /// </summary>
     public class DriversLicenseNumber : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DriversLicenseNumber"/> class.
+        /// </summary>
+        public DriversLicenseNumber()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DriversLicenseNumber"/> class.
+        /// </summary>
+        /// <param name="licenseNumber">DLN.1 - License Number.</param>
+        public DriversLicenseNumber(string licenseNumber)
+        {
+            LicenseNumber = licenseNumber;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DriversLicenseNumber"/> class.
+        /// </summary>
+        /// <param name="licenseNumber">DLN.1 - License Number.</param>
+        /// <param name="issuingStateProvinceCountry">DLN.2 - Issuing State, Province, Country.</param>
+        public DriversLicenseNumber(string licenseNumber, CodedWithExceptions issuingStateProvinceCountry)
+        {
+            LicenseNumber = licenseNumber;
+            IssuingStateProvinceCountry = issuingStateProvinceCountry;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

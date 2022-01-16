@@ -9,6 +9,34 @@ namespace ClearHl7.V231.Types
     /// </summary>
     public class ParentOrder : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ParentOrder"/> class.
+        /// </summary>
+        public ParentOrder()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ParentOrder"/> class.
+        /// </summary>
+        /// <param name="placerAssignedIdentifier">EIP.1 - Placer Assigned Identifier.</param>
+        public ParentOrder(EntityIdentifier placerAssignedIdentifier)
+        {
+            PlacerAssignedIdentifier = placerAssignedIdentifier;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ParentOrder"/> class.
+        /// </summary>
+        /// <param name="placerAssignedIdentifier">EIP.1 - Placer Assigned Identifier.</param>
+        /// <param name="fillerAssignedIdentifier">EIP.2 - Filler Assigned Identifier.</param>
+        public ParentOrder(EntityIdentifier placerAssignedIdentifier, EntityIdentifier fillerAssignedIdentifier)
+        {
+            PlacerAssignedIdentifier = placerAssignedIdentifier;
+            FillerAssignedIdentifier = fillerAssignedIdentifier;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

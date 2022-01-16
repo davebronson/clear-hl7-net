@@ -9,6 +9,14 @@ namespace ClearHl7.V270.Types
     /// </summary>
     public class NumericRange : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NumericRange"/> class.
+        /// </summary>
+        public NumericRange()
+        {
+
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

@@ -8,6 +8,25 @@ namespace ClearHl7.V231.Types
     /// </summary>
     public class QueryInputParameterList : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueryInputParameterList"/> class.
+        /// </summary>
+        public QueryInputParameterList()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueryInputParameterList"/> class.
+        /// </summary>
+        /// <param name="segmentFieldName">QIP.1 - Segment Field Name.</param>
+        /// <param name="values">QIP.2 - Values.</param>
+        public QueryInputParameterList(string segmentFieldName, string values)
+        {
+            SegmentFieldName = segmentFieldName;
+            Values = values;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

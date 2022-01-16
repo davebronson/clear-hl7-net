@@ -10,6 +10,23 @@ namespace ClearHl7.V280.Types
     /// </summary>
     public class NameWithDateAndLocation : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NameWithDateAndLocation"/> class.
+        /// </summary>
+        public NameWithDateAndLocation()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NameWithDateAndLocation"/> class.
+        /// </summary>
+        /// <param name="name">NDL.1 - Name.</param>
+        public NameWithDateAndLocation(CompositeIdNumberAndNameSimplified name)
+        {
+            Name = name;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

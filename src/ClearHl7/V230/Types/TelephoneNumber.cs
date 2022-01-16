@@ -8,6 +8,23 @@ namespace ClearHl7.V230.Types
     /// </summary>
     public class TelephoneNumber : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TelephoneNumber"/> class.
+        /// </summary>
+        public TelephoneNumber()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TelephoneNumber"/> class.
+        /// </summary>
+        /// <param name="value">TN.1 - Value.</param>
+        public TelephoneNumber(string value)
+        {
+            Value = value;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

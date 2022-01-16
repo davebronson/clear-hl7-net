@@ -9,6 +9,34 @@ namespace ClearHl7.V230.Types
     /// </summary>
     public class ExtendedTelecommunicationNumber : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtendedTelecommunicationNumber"/> class.
+        /// </summary>
+        public ExtendedTelecommunicationNumber()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtendedTelecommunicationNumber"/> class.
+        /// </summary>
+        /// <param name="telephoneNumber">XTN.1 - Telephone Number.</param>
+        public ExtendedTelecommunicationNumber(string telephoneNumber)
+        {
+            TelephoneNumber = telephoneNumber;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtendedTelecommunicationNumber"/> class.
+        /// </summary>
+        /// <param name="areaCityCode">XTN.6 - Area/City Code.</param>
+        /// <param name="localNumber">XTN.7 - Local Number.</param>
+        public ExtendedTelecommunicationNumber(int areaCityCode, int localNumber)
+        {
+            AreaCityCode = areaCityCode;
+            LocalNumber = localNumber;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

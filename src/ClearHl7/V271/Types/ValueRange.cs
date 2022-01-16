@@ -8,6 +8,25 @@ namespace ClearHl7.V271.Types
     /// </summary>
     public class ValueRange : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValueRange"/> class.
+        /// </summary>
+        public ValueRange()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValueRange"/> class.
+        /// </summary>
+        /// <param name="firstDataCodeValue">VR.1 - First Data Code Value.</param>
+        /// <param name="lastDataCodeValue">VR.2 - Last Data Code Value.</param>
+        public ValueRange(string firstDataCodeValue, string lastDataCodeValue)
+        {
+            FirstDataCodeValue = firstDataCodeValue;
+            LastDataCodeValue = lastDataCodeValue;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

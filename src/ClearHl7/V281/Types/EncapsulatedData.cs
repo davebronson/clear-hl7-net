@@ -9,6 +9,36 @@ namespace ClearHl7.V281.Types
     /// </summary>
     public class EncapsulatedData : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EncapsulatedData"/> class.
+        /// </summary>
+        public EncapsulatedData()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EncapsulatedData"/> class.
+        /// </summary>
+        /// <param name="data">ED.5 - Data.</param>
+        public EncapsulatedData(Text data)
+        {
+            Data = data;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EncapsulatedData"/> class.
+        /// </summary>
+        /// <param name="data">ED.5 - Data.</param>
+        /// <param name="typeOfData">ED.2 - Type of Data.</param>
+        /// <param name="encoding">ED.4 - Encoding.</param>
+        public EncapsulatedData(Text data, string typeOfData, string encoding)
+        {
+            Data = data;
+            TypeOfData = typeOfData;
+            Encoding = encoding;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

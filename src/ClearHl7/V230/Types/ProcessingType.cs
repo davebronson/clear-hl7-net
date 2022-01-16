@@ -8,6 +8,23 @@ namespace ClearHl7.V230.Types
     /// </summary>
     public class ProcessingType : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProcessingType"/> class.
+        /// </summary>
+        public ProcessingType()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProcessingType"/> class.
+        /// </summary>
+        /// <param name="processingId">PT.1 - Processing ID.</param>
+        public ProcessingType(string processingId)
+        {
+            ProcessingId = processingId;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

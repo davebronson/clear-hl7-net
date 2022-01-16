@@ -9,6 +9,23 @@ namespace ClearHl7.V271.Types
     /// </summary>
     public class VersionIdentifier : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VersionIdentifier"/> class.
+        /// </summary>
+        public VersionIdentifier()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VersionIdentifier"/> class.
+        /// </summary>
+        /// <param name="versionId">VID.1 - Version ID.</param>
+        public VersionIdentifier(string versionId)
+        {
+            VersionId = versionId;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

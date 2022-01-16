@@ -9,6 +9,62 @@ namespace ClearHl7.V282.Types
     /// </summary>
     public class NumericArray : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NumericArray"/> class.
+        /// </summary>
+        public NumericArray()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NumericArray"/> class.
+        /// </summary>
+        /// <param name="value1">NA.1 - Value1.</param>
+        public NumericArray(decimal value1)
+        {
+            Value1 = value1;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NumericArray"/> class.
+        /// </summary>
+        /// <param name="value1">NA.1 - Value1.</param>
+        /// <param name="value2">NA.2 - Value2.</param>
+        public NumericArray(decimal value1, decimal value2)
+        {
+            Value1 = value1;
+            Value2 = value2;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NumericArray"/> class.
+        /// </summary>
+        /// <param name="value1">NA.1 - Value1.</param>
+        /// <param name="value2">NA.2 - Value2.</param>
+        /// <param name="value3">NA.3 - Value3.</param>
+        public NumericArray(decimal value1, decimal value2, decimal value3)
+        {
+            Value1 = value1;
+            Value2 = value2;
+            Value3 = value3;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NumericArray"/> class.
+        /// </summary>
+        /// <param name="value1">NA.1 - Value1.</param>
+        /// <param name="value2">NA.2 - Value2.</param>
+        /// <param name="value3">NA.3 - Value3.</param>
+        /// <param name="value4">NA.4 - Value4.</param>
+        public NumericArray(decimal value1, decimal value2, decimal value3, decimal value4)
+        {
+            Value1 = value1;
+            Value2 = value2;
+            Value3 = value3;
+            Value4 = value4;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

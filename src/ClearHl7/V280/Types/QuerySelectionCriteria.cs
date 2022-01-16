@@ -8,6 +8,23 @@ namespace ClearHl7.V280.Types
     /// </summary>
     public class QuerySelectionCriteria : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QuerySelectionCriteria"/> class.
+        /// </summary>
+        public QuerySelectionCriteria()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QuerySelectionCriteria"/> class.
+        /// </summary>
+        /// <param name="segmentFieldName">QSC.1 - Segment Field Name.</param>
+        public QuerySelectionCriteria(string segmentFieldName)
+        {
+            SegmentFieldName = segmentFieldName;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

@@ -9,6 +9,14 @@ namespace ClearHl7.V270.Types
     /// </summary>
     public class StructuredNumeric : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StructuredNumeric"/> class.
+        /// </summary>
+        public StructuredNumeric()
+        {
+
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

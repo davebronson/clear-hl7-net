@@ -9,6 +9,23 @@ namespace ClearHl7.V271.Types
     /// </summary>
     public class JobCodeClass : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="JobCodeClass"/> class.
+        /// </summary>
+        public JobCodeClass()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="JobCodeClass"/> class.
+        /// </summary>
+        /// <param name="jobCode">JCC.1 - Job Code.</param>
+        public JobCodeClass(CodedWithExceptions jobCode)
+        {
+            JobCode = jobCode;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

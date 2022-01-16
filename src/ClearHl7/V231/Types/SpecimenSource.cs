@@ -9,6 +9,23 @@ namespace ClearHl7.V231.Types
     /// </summary>
     public class SpecimenSource : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SpecimenSource"/> class.
+        /// </summary>
+        public SpecimenSource()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SpecimenSource"/> class.
+        /// </summary>
+        /// <param name="specimenSourceNameOrCode">SPS.1 - Specimen Source Name or Code.</param>
+        public SpecimenSource(CodedElement specimenSourceNameOrCode)
+        {
+            SpecimenSourceNameOrCode = specimenSourceNameOrCode;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

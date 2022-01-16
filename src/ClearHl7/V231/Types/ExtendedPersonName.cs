@@ -8,6 +8,25 @@ namespace ClearHl7.V231.Types
     /// </summary>
     public class ExtendedPersonName : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtendedPersonName"/> class.
+        /// </summary>
+        public ExtendedPersonName()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtendedPersonName"/> class.
+        /// </summary>
+        /// <param name="familyName">XPN.1 - Family Name.</param>
+        /// <param name="givenName">XPN.2 - Given Name.</param>
+        public ExtendedPersonName(string familyName, string givenName)
+        {
+            FamilyName = familyName;
+            GivenName = givenName;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

@@ -9,6 +9,34 @@ namespace ClearHl7.V250.Types
     /// </summary>
     public class InsuranceCertificationDefinition : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InsuranceCertificationDefinition"/> class.
+        /// </summary>
+        public InsuranceCertificationDefinition()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InsuranceCertificationDefinition"/> class.
+        /// </summary>
+        /// <param name="certificationPatientType">ICD.1 - Certification Patient Type.</param>
+        public InsuranceCertificationDefinition(string certificationPatientType)
+        {
+            CertificationPatientType = certificationPatientType;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InsuranceCertificationDefinition"/> class.
+        /// </summary>
+        /// <param name="certificationPatientType">ICD.1 - Certification Patient Type.</param>
+        /// <param name="certificationRequired">ICD.2 - Certification Required.</param>
+        public InsuranceCertificationDefinition(string certificationPatientType, string certificationRequired)
+        {
+            CertificationPatientType = certificationPatientType;
+            CertificationRequired = certificationRequired;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

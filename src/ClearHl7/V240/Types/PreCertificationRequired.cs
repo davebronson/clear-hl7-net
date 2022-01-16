@@ -9,6 +9,14 @@ namespace ClearHl7.V240.Types
     /// </summary>
     public class PreCertificationRequired : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PreCertificationRequired"/> class.
+        /// </summary>
+        public PreCertificationRequired()
+        {
+
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

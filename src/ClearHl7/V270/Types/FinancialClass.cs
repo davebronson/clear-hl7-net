@@ -10,6 +10,23 @@ namespace ClearHl7.V270.Types
     /// </summary>
     public class FinancialClass : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FinancialClass"/> class.
+        /// </summary>
+        public FinancialClass()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FinancialClass"/> class.
+        /// </summary>
+        /// <param name="financialClassCode">FC.1 - Financial Class Code.</param>
+        public FinancialClass(CodedWithExceptions financialClassCode)
+        {
+            FinancialClassCode = financialClassCode;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

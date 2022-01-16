@@ -9,6 +9,23 @@ namespace ClearHl7.V231.Types
     /// </summary>
     public class ChargeToPractise : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChargeToPractise"/> class.
+        /// </summary>
+        public ChargeToPractise()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChargeToPractise"/> class.
+        /// </summary>
+        /// <param name="dollarAmount">MOC.1 - Dollar Amount.</param>
+        public ChargeToPractise(Money dollarAmount)
+        {
+            DollarAmount = dollarAmount;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

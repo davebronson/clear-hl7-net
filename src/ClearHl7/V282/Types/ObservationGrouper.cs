@@ -9,6 +9,25 @@ namespace ClearHl7.V282.Types
     /// </summary>
     public class ObservationGrouper : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ObservationGrouper"/> class.
+        /// </summary>
+        public ObservationGrouper()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ObservationGrouper"/> class.
+        /// </summary>
+        /// <param name="group">OG.2 - Group.</param>
+        /// <param name="sequence">OG.3 - Sequence.</param>
+        public ObservationGrouper(decimal group, decimal sequence)
+        {
+            Group = group;
+            Sequence = sequence;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

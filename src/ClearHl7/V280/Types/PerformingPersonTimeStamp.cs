@@ -10,6 +10,36 @@ namespace ClearHl7.V280.Types
     /// </summary>
     public class PerformingPersonTimeStamp : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PerformingPersonTimeStamp"/> class.
+        /// </summary>
+        public PerformingPersonTimeStamp()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PerformingPersonTimeStamp"/> class.
+        /// </summary>
+        /// <param name="personIdentifier">PPN.1 - Person Identifier.</param>
+        public PerformingPersonTimeStamp(string personIdentifier)
+        {
+            PersonIdentifier = personIdentifier;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PerformingPersonTimeStamp"/> class.
+        /// </summary>
+        /// <param name="personIdentifier">PPN.1 - Person Identifier.</param>
+        /// <param name="familyName">PPN.2 - Family Name.</param>
+        /// <param name="givenName">PPN.3 - Given Name.</param>
+        public PerformingPersonTimeStamp(string personIdentifier, FamilyName familyName, string givenName)
+        {
+            PersonIdentifier = personIdentifier;
+            FamilyName = familyName;
+            GivenName = givenName;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

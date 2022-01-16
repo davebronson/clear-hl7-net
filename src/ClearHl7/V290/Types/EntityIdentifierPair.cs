@@ -9,6 +9,34 @@ namespace ClearHl7.V290.Types
     /// </summary>
     public class EntityIdentifierPair : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EntityIdentifierPair"/> class.
+        /// </summary>
+        public EntityIdentifierPair()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EntityIdentifierPair"/> class.
+        /// </summary>
+        /// <param name="placerAssignedIdentifier">EIP.1 - Placer Assigned Identifier.</param>
+        public EntityIdentifierPair(EntityIdentifier placerAssignedIdentifier)
+        {
+            PlacerAssignedIdentifier = placerAssignedIdentifier;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EntityIdentifierPair"/> class.
+        /// </summary>
+        /// <param name="placerAssignedIdentifier">EIP.1 - Placer Assigned Identifier.</param>
+        /// <param name="fillerAssignedIdentifier">EIP.2 - Filler Assigned Identifier.</param>
+        public EntityIdentifierPair(EntityIdentifier placerAssignedIdentifier, EntityIdentifier fillerAssignedIdentifier)
+        {
+            PlacerAssignedIdentifier = placerAssignedIdentifier;
+            FillerAssignedIdentifier = fillerAssignedIdentifier;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

@@ -9,6 +9,23 @@ namespace ClearHl7.V230.Types
     /// </summary>
     public class AuthorizationInformation : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuthorizationInformation"/> class.
+        /// </summary>
+        public AuthorizationInformation()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuthorizationInformation"/> class.
+        /// </summary>
+        /// <param name="authorizationNumber">AUI.1 - Authorization Number.</param>
+        public AuthorizationInformation(string authorizationNumber)
+        {
+            AuthorizationNumber = authorizationNumber;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

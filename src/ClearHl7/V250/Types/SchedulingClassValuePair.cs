@@ -9,6 +9,14 @@ namespace ClearHl7.V250.Types
     /// </summary>
     public class SchedulingClassValuePair : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SchedulingClassValuePair"/> class.
+        /// </summary>
+        public SchedulingClassValuePair()
+        {
+
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

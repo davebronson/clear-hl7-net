@@ -9,6 +9,23 @@ namespace ClearHl7.V281.Types
     /// </summary>
     public class PersonLocation : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PersonLocation"/> class.
+        /// </summary>
+        public PersonLocation()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PersonLocation"/> class.
+        /// </summary>
+        /// <param name="pointOfCare">PL.1 - Point of Care.</param>
+        public PersonLocation(HierarchicDesignator pointOfCare)
+        {
+            PointOfCare = pointOfCare;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

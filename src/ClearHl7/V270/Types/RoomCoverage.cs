@@ -10,6 +10,23 @@ namespace ClearHl7.V270.Types
     /// </summary>
     public class RoomCoverage : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RoomCoverage"/> class.
+        /// </summary>
+        public RoomCoverage()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RoomCoverage"/> class.
+        /// </summary>
+        /// <param name="roomType">RMC.1 - Room Type.</param>
+        public RoomCoverage(CodedWithExceptions roomType)
+        {
+            RoomType = roomType;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

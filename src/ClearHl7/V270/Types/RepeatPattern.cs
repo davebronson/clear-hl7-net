@@ -10,6 +10,23 @@ namespace ClearHl7.V270.Types
     /// </summary>
     public class RepeatPattern : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepeatPattern"/> class.
+        /// </summary>
+        public RepeatPattern()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepeatPattern"/> class.
+        /// </summary>
+        /// <param name="repeatPatternCode">RPT.1 - Repeat Pattern Code.</param>
+        public RepeatPattern(CodedWithExceptions repeatPatternCode)
+        {
+            RepeatPatternCode = repeatPatternCode;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

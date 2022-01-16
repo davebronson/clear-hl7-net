@@ -8,6 +8,23 @@ namespace ClearHl7.V240.Types
     /// </summary>
     public class EntityIdentifier : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EntityIdentifier"/> class.
+        /// </summary>
+        public EntityIdentifier()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EntityIdentifier"/> class.
+        /// </summary>
+        /// <param name="entityId">EI.1 - Entity Id.</param>
+        public EntityIdentifier(string entityId)
+        {
+            EntityId = entityId;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

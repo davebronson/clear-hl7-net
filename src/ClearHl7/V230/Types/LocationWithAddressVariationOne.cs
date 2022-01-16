@@ -9,6 +9,23 @@ namespace ClearHl7.V230.Types
     /// </summary>
     public class LocationWithAddressVariationOne : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LocationWithAddressVariationOne"/> class.
+        /// </summary>
+        public LocationWithAddressVariationOne()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LocationWithAddressVariationOne"/> class.
+        /// </summary>
+        /// <param name="pointOfCare">LA1.1 - Point of Care.</param>
+        public LocationWithAddressVariationOne(string pointOfCare)
+        {
+            PointOfCare = pointOfCare;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

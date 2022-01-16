@@ -10,6 +10,36 @@ namespace ClearHl7.V271.Types
     /// </summary>
     public class OccurrenceSpanCodeAndDate : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OccurrenceSpanCodeAndDate"/> class.
+        /// </summary>
+        public OccurrenceSpanCodeAndDate()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OccurrenceSpanCodeAndDate"/> class.
+        /// </summary>
+        /// <param name="occurrenceSpanCode">OSP.1 - Occurrence Span Code.</param>
+        public OccurrenceSpanCodeAndDate(CodedWithNoExceptions occurrenceSpanCode)
+        {
+            OccurrenceSpanCode = occurrenceSpanCode;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OccurrenceSpanCodeAndDate"/> class.
+        /// </summary>
+        /// <param name="occurrenceSpanCode">OSP.1 - Occurrence Span Code.</param>
+        /// <param name="occurrenceSpanStartDate">OSP.2 - Occurrence Span Start Date.</param>
+        /// <param name="occurrenceSpanStopDate">OSP.3 - Occurrence Span Stop Date.</param>
+        public OccurrenceSpanCodeAndDate(CodedWithNoExceptions occurrenceSpanCode, DateTime occurrenceSpanStartDate, DateTime occurrenceSpanStopDate)
+        {
+            OccurrenceSpanCode = occurrenceSpanCode;
+            OccurrenceSpanStartDate = occurrenceSpanStartDate;
+            OccurrenceSpanStopDate = occurrenceSpanStopDate;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

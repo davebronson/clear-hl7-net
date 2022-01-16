@@ -8,6 +8,23 @@ namespace ClearHl7.V240.Types
     /// </summary>
     public class WaveformSource : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WaveformSource"/> class.
+        /// </summary>
+        public WaveformSource()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WaveformSource"/> class.
+        /// </summary>
+        /// <param name="sourceOneName">WVS.1 - Source One Name.</param>
+        public WaveformSource(string sourceOneName)
+        {
+            SourceOneName = sourceOneName;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

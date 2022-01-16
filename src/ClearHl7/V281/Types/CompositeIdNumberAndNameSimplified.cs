@@ -8,6 +8,27 @@ namespace ClearHl7.V281.Types
     /// </summary>
     public class CompositeIdNumberAndNameSimplified : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompositeIdNumberAndNameSimplified"/> class.
+        /// </summary>
+        public CompositeIdNumberAndNameSimplified()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompositeIdNumberAndNameSimplified"/> class.
+        /// </summary>
+        /// <param name="idNumber">CNN.1 - ID Number.</param>
+        /// <param name="familyName">CNN.2 - Family Name.</param>
+        /// <param name="givenName">CNN.3 - Given Name.</param>
+        public CompositeIdNumberAndNameSimplified(string idNumber, string familyName, string givenName)
+        {
+            IdNumber = idNumber;
+            FamilyName = familyName;
+            GivenName = givenName;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

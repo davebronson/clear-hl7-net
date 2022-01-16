@@ -10,6 +10,23 @@ namespace ClearHl7.V231.Types
     /// </summary>
     public class CompositePrice : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompositePrice"/> class.
+        /// </summary>
+        public CompositePrice()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompositePrice"/> class.
+        /// </summary>
+        /// <param name="price">CP.1 - Price.</param>
+        public CompositePrice(Money price)
+        {
+            Price = price;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

@@ -8,6 +8,27 @@ namespace ClearHl7.V281.Types
     /// </summary>
     public class MessageType : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageType"/> class.
+        /// </summary>
+        public MessageType()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageType"/> class.
+        /// </summary>
+        /// <param name="messageCode">MSG.1 - Message Code.</param>
+        /// <param name="triggerEvent">MSG.2 - Trigger Event.</param>
+        /// <param name="messageStructure">MSG.3 - Message Structure.</param>
+        public MessageType(string messageCode, string triggerEvent, string messageStructure)
+        {
+            MessageCode = messageCode;
+            TriggerEvent = triggerEvent;
+            MessageStructure = messageStructure;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

@@ -9,6 +9,34 @@ namespace ClearHl7.V282.Types
     /// </summary>
     public class DateTimeRange : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DateTimeRange"/> class.
+        /// </summary>
+        public DateTimeRange()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DateTimeRange"/> class.
+        /// </summary>
+        /// <param name="rangeStartDateTime">DR.1 - Range Start Date/Time.</param>
+        public DateTimeRange(DateTime rangeStartDateTime)
+        {
+            RangeStartDateTime = rangeStartDateTime;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DateTimeRange"/> class.
+        /// </summary>
+        /// <param name="rangeStartDateTime">DR.1 - Range Start Date/Time.</param>
+        /// <param name="rangeEndDateTime">DR.2 - Range End Date/Time.</param>
+        public DateTimeRange(DateTime rangeStartDateTime, DateTime rangeEndDateTime)
+        {
+            RangeStartDateTime = rangeStartDateTime;
+            RangeEndDateTime = rangeEndDateTime;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

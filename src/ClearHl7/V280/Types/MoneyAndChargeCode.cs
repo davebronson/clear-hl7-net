@@ -9,6 +9,34 @@ namespace ClearHl7.V280.Types
     /// </summary>
     public class MoneyAndChargeCode : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MoneyAndChargeCode"/> class.
+        /// </summary>
+        public MoneyAndChargeCode()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MoneyAndChargeCode"/> class.
+        /// </summary>
+        /// <param name="monetaryAmount">MOC.1 - Monetary Amount.</param>
+        public MoneyAndChargeCode(Money monetaryAmount)
+        {
+            MonetaryAmount = monetaryAmount;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MoneyAndChargeCode"/> class.
+        /// </summary>
+        /// <param name="monetaryAmount">MOC.1 - Monetary Amount.</param>
+        /// <param name="chargeCode">MOC.2 - Charge Code.</param>
+        public MoneyAndChargeCode(Money monetaryAmount, CodedWithExceptions chargeCode)
+        {
+            MonetaryAmount = monetaryAmount;
+            ChargeCode = chargeCode;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

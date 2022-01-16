@@ -9,6 +9,34 @@ namespace ClearHl7.V230.Types
     /// </summary>
     public class DailyDeductibleInformation : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DailyDeductibleInformation"/> class.
+        /// </summary>
+        public DailyDeductibleInformation()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DailyDeductibleInformation"/> class.
+        /// </summary>
+        /// <param name="delayDays">DDI.1 - Delay Days.</param>
+        public DailyDeductibleInformation(decimal delayDays)
+        {
+            DelayDays = delayDays;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DailyDeductibleInformation"/> class.
+        /// </summary>
+        /// <param name="delayDays">DDI.1 - Delay Days.</param>
+        /// <param name="monetaryAmount">DDI.2 - Monetary Amount.</param>
+        public DailyDeductibleInformation(decimal delayDays, decimal monetaryAmount)
+        {
+            DelayDays = delayDays;
+            MonetaryAmount = monetaryAmount;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

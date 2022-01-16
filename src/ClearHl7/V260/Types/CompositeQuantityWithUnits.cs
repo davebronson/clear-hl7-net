@@ -10,6 +10,34 @@ namespace ClearHl7.V260.Types
     /// </summary>
     public class CompositeQuantityWithUnits : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompositeQuantityWithUnits"/> class.
+        /// </summary>
+        public CompositeQuantityWithUnits()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompositeQuantityWithUnits"/> class.
+        /// </summary>
+        /// <param name="quantity">CQ.1 - Quantity.</param>
+        public CompositeQuantityWithUnits(decimal quantity)
+        {
+            Quantity = quantity;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompositeQuantityWithUnits"/> class.
+        /// </summary>
+        /// <param name="quantity">CQ.1 - Quantity.</param>
+        /// <param name="units">CQ.2 - Units.</param>
+        public CompositeQuantityWithUnits(decimal quantity, CodedWithExceptions units)
+        {
+            Quantity = quantity;
+            Units = units;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

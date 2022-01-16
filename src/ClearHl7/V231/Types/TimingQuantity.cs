@@ -10,6 +10,23 @@ namespace ClearHl7.V231.Types
     /// </summary>
     public class TimingQuantity : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TimingQuantity"/> class.
+        /// </summary>
+        public TimingQuantity()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TimingQuantity"/> class.
+        /// </summary>
+        /// <param name="quantity">TQ.1 - Quantity.</param>
+        public TimingQuantity(CompositeQuantityWithUnits quantity)
+        {
+            Quantity = quantity;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

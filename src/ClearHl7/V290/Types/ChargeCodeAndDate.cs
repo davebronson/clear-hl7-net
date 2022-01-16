@@ -9,6 +9,23 @@ namespace ClearHl7.V290.Types
     /// </summary>
     public class ChargeCodeAndDate : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChargeCodeAndDate"/> class.
+        /// </summary>
+        public ChargeCodeAndDate()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChargeCodeAndDate"/> class.
+        /// </summary>
+        /// <param name="invocationEvent">CCD.1 - Invocation Event.</param>
+        public ChargeCodeAndDate(string invocationEvent)
+        {
+            InvocationEvent = invocationEvent;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

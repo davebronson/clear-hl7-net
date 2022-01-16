@@ -9,6 +9,23 @@ namespace ClearHl7.V280.Types
     /// </summary>
     public class ReferencePointer : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReferencePointer"/> class.
+        /// </summary>
+        public ReferencePointer()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReferencePointer"/> class.
+        /// </summary>
+        /// <param name="pointer">RP.1 - Pointer.</param>
+        public ReferencePointer(string pointer)
+        {
+            Pointer = pointer;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

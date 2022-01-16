@@ -9,6 +9,25 @@ namespace ClearHl7.V270.Types
     /// </summary>
     public class RowColumnDefinition : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RowColumnDefinition"/> class.
+        /// </summary>
+        public RowColumnDefinition()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RowColumnDefinition"/> class.
+        /// </summary>
+        /// <param name="segmentFieldName">RCD.1 - Segment Field Name.</param>
+        /// <param name="hl7DataType">RCD.2 - HL7 Data Type.</param>
+        public RowColumnDefinition(string segmentFieldName, string hl7DataType)
+        {
+            SegmentFieldName = segmentFieldName;
+            Hl7DataType = hl7DataType;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

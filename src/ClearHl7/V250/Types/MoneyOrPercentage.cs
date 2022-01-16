@@ -9,6 +9,25 @@ namespace ClearHl7.V250.Types
     /// </summary>
     public class MoneyOrPercentage : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MoneyOrPercentage"/> class.
+        /// </summary>
+        public MoneyOrPercentage()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MoneyOrPercentage"/> class.
+        /// </summary>
+        /// <param name="moneyOrPercentageIndicator">MOP.1 - Money or Percentage Indicator.</param>
+        /// <param name="moneyOrPercentageQuantity">MOP.2 - Money or Percentage Quantity.</param>
+        public MoneyOrPercentage(string moneyOrPercentageIndicator, decimal moneyOrPercentageQuantity)
+        {
+            MoneyOrPercentageIndicator = moneyOrPercentageIndicator;
+            MoneyOrPercentageQuantity = moneyOrPercentageQuantity;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

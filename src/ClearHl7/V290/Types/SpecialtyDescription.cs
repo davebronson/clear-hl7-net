@@ -9,6 +9,23 @@ namespace ClearHl7.V290.Types
     /// </summary>
     public class SpecialtyDescription : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SpecialtyDescription"/> class.
+        /// </summary>
+        public SpecialtyDescription()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SpecialtyDescription"/> class.
+        /// </summary>
+        /// <param name="specialtyName">SPD.1 - Specialty Name.</param>
+        public SpecialtyDescription(string specialtyName)
+        {
+            SpecialtyName = specialtyName;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

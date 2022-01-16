@@ -8,6 +8,29 @@ namespace ClearHl7.V270.Types
     /// </summary>
     public class Address : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Address"/> class.
+        /// </summary>
+        public Address()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Address"/> class.
+        /// </summary>
+        /// <param name="streetAddress">AD.1 - Street Address.</param>
+        /// <param name="city">AD.3 - City.</param>
+        /// <param name="stateOrProvince">AD.4 - State or Province.</param>
+        /// <param name="zipOrPostalCode">AD.5 - Zip or Postal Code.</param>
+        public Address(string streetAddress, string city, string stateOrProvince, string zipOrPostalCode)
+        {
+            StreetAddress = streetAddress;
+            City = city;
+            StateOrProvince = stateOrProvince;
+            ZipOrPostalCode = zipOrPostalCode;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

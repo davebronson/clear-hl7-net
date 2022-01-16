@@ -9,6 +9,23 @@ namespace ClearHl7.V281.Types
     /// </summary>
     public class CodedWithNoExceptions : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodedWithNoExceptions"/> class.
+        /// </summary>
+        public CodedWithNoExceptions()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodedWithNoExceptions"/> class.
+        /// </summary>
+        /// <param name="identifier">CNE.1 - Identifier.</param>
+        public CodedWithNoExceptions(string identifier)
+        {
+            Identifier = identifier;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

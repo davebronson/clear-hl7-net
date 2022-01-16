@@ -10,6 +10,23 @@ namespace ClearHl7.V271.Types
     /// </summary>
     public class Delta : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Delta"/> class.
+        /// </summary>
+        public Delta()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Delta"/> class.
+        /// </summary>
+        /// <param name="normalRange">DLT.1 - Normal Range.</param>
+        public Delta(NumericRange normalRange)
+        {
+            NormalRange = normalRange;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

@@ -9,6 +9,23 @@ namespace ClearHl7.V230.Types
     /// </summary>
     public class ExtendedCompositeIdWithCheckDigit : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtendedCompositeIdWithCheckDigit"/> class.
+        /// </summary>
+        public ExtendedCompositeIdWithCheckDigit()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtendedCompositeIdWithCheckDigit"/> class.
+        /// </summary>
+        /// <param name="idNumber">CX.1 - ID Number.</param>
+        public ExtendedCompositeIdWithCheckDigit(string idNumber)
+        {
+            IdNumber = idNumber;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

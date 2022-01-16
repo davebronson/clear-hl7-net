@@ -10,6 +10,23 @@ namespace ClearHl7.V250.Types
     /// </summary>
     public class PractitionerInstitutionalPrivileges : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PractitionerInstitutionalPrivileges"/> class.
+        /// </summary>
+        public PractitionerInstitutionalPrivileges()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PractitionerInstitutionalPrivileges"/> class.
+        /// </summary>
+        /// <param name="privilege">PIP.1 - Privilege.</param>
+        public PractitionerInstitutionalPrivileges(CodedElement privilege)
+        {
+            Privilege = privilege;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

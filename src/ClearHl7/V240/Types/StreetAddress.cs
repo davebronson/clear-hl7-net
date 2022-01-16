@@ -8,6 +8,23 @@ namespace ClearHl7.V240.Types
     /// </summary>
     public class StreetAddress : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StreetAddress"/> class.
+        /// </summary>
+        public StreetAddress()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StreetAddress"/> class.
+        /// </summary>
+        /// <param name="streetOrMailingAddress">SAD.1 - Street or Mailing Address.</param>
+        public StreetAddress(string streetOrMailingAddress)
+        {
+            StreetOrMailingAddress = streetOrMailingAddress;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

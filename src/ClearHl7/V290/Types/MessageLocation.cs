@@ -9,6 +9,23 @@ namespace ClearHl7.V290.Types
     /// </summary>
     public class MessageLocation : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageLocation"/> class.
+        /// </summary>
+        public MessageLocation()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageLocation"/> class.
+        /// </summary>
+        /// <param name="segmentId">ERL.1 - Segment ID.</param>
+        public MessageLocation(string segmentId)
+        {
+            SegmentId = segmentId;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

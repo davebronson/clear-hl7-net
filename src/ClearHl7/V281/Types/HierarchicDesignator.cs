@@ -8,6 +8,34 @@ namespace ClearHl7.V281.Types
     /// </summary>
     public class HierarchicDesignator : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HierarchicDesignator"/> class.
+        /// </summary>
+        public HierarchicDesignator()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HierarchicDesignator"/> class.
+        /// </summary>
+        /// <param name="namespaceId">HD.1 - Namespace ID.</param>
+        public HierarchicDesignator(string namespaceId)
+        {
+            NamespaceId = namespaceId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HierarchicDesignator"/> class.
+        /// </summary>
+        /// <param name="universalId">HD.2 - Universal ID.</param>
+        /// <param name="universalIdType">HD.3 - Universal ID Type.</param>
+        public HierarchicDesignator(string universalId, string universalIdType)
+        {
+            UniversalId = universalId;
+            UniversalIdType = universalIdType;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

@@ -9,6 +9,25 @@ namespace ClearHl7.V280.Types
     /// </summary>
     public class ErrorLocation : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ErrorLocation"/> class.
+        /// </summary>
+        public ErrorLocation()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ErrorLocation"/> class.
+        /// </summary>
+        /// <param name="segmentId">ERL.1 - Segment ID.</param>
+        /// <param name="segmentSequence">ERL.2 - Segment Sequence.</param>
+        public ErrorLocation(string segmentId, decimal segmentSequence)
+        {
+            SegmentId = segmentId;
+            SegmentSequence = segmentSequence;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

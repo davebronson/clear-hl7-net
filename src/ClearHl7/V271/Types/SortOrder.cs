@@ -8,6 +8,23 @@ namespace ClearHl7.V271.Types
     /// </summary>
     public class SortOrder : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SortOrder"/> class.
+        /// </summary>
+        public SortOrder()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SortOrder"/> class.
+        /// </summary>
+        /// <param name="sortByField">SRT.1 - Sort-by Field.</param>
+        public SortOrder(string sortByField)
+        {
+            SortByField = sortByField;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

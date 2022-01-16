@@ -8,6 +8,23 @@ namespace ClearHl7.V260.Types
     /// </summary>
     public class CodedElement : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodedElement"/> class.
+        /// </summary>
+        public CodedElement()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodedElement"/> class.
+        /// </summary>
+        /// <param name="identifier">CE.1 - Identifier.</param>
+        public CodedElement(string identifier)
+        {
+            Identifier = identifier;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

@@ -9,6 +9,23 @@ namespace ClearHl7.V230.Types
     /// </summary>
     public class ChannelIdentifier : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChannelIdentifier"/> class.
+        /// </summary>
+        public ChannelIdentifier()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChannelIdentifier"/> class.
+        /// </summary>
+        /// <param name="channelNumber">WVI.1 - Channel Number.</param>
+        public ChannelIdentifier(decimal channelNumber)
+        {
+            ChannelNumber = channelNumber;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

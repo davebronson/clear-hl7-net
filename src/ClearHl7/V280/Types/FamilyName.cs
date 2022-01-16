@@ -8,6 +8,23 @@ namespace ClearHl7.V280.Types
     /// </summary>
     public class FamilyName : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FamilyName"/> class.
+        /// </summary>
+        public FamilyName()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FamilyName"/> class.
+        /// </summary>
+        /// <param name="surname">FN.1 - Surname.</param>
+        public FamilyName(string surname)
+        {
+            Surname = surname;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

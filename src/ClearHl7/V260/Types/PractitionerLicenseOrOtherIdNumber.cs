@@ -9,6 +9,34 @@ namespace ClearHl7.V260.Types
     /// </summary>
     public class PractitionerLicenseOrOtherIdNumber : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PractitionerLicenseOrOtherIdNumber"/> class.
+        /// </summary>
+        public PractitionerLicenseOrOtherIdNumber()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PractitionerLicenseOrOtherIdNumber"/> class.
+        /// </summary>
+        /// <param name="idNumber">PLN.1 - ID Number.</param>
+        public PractitionerLicenseOrOtherIdNumber(string idNumber)
+        {
+            IdNumber = idNumber;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PractitionerLicenseOrOtherIdNumber"/> class.
+        /// </summary>
+        /// <param name="idNumber">PLN.1 - ID Number.</param>
+        /// <param name="typeOfIdNumber">PLN.2 - Type of ID Number.</param>
+        public PractitionerLicenseOrOtherIdNumber(string idNumber, string typeOfIdNumber)
+        {
+            IdNumber = idNumber;
+            TypeOfIdNumber = typeOfIdNumber;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

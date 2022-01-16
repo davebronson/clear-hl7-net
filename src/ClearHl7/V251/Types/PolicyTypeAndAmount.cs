@@ -10,6 +10,23 @@ namespace ClearHl7.V251.Types
     /// </summary>
     public class PolicyTypeAndAmount : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PolicyTypeAndAmount"/> class.
+        /// </summary>
+        public PolicyTypeAndAmount()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PolicyTypeAndAmount"/> class.
+        /// </summary>
+        /// <param name="policyType">PTA.1 - Policy Type.</param>
+        public PolicyTypeAndAmount(string policyType)
+        {
+            PolicyType = policyType;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

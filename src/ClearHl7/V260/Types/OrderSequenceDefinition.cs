@@ -9,6 +9,27 @@ namespace ClearHl7.V260.Types
     /// </summary>
     public class OrderSequenceDefinition : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrderSequenceDefinition"/> class.
+        /// </summary>
+        public OrderSequenceDefinition()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrderSequenceDefinition"/> class.
+        /// </summary>
+        /// <param name="sequenceResultsFlag">OSD.1 - Sequence/Results Flag.</param>
+        /// <param name="placerOrderNumberEntityIdentifier">OSD.2 - Placer Order Number: Entity Identifier.</param>
+        /// <param name="fillerOrderNumberEntityIdentifier">OSD.4 - Filler Order Number: Entity Identifier.</param>
+        public OrderSequenceDefinition(string sequenceResultsFlag, string placerOrderNumberEntityIdentifier, string fillerOrderNumberEntityIdentifier)
+        {
+            SequenceResultsFlag = sequenceResultsFlag;
+            PlacerOrderNumberEntityIdentifier = placerOrderNumberEntityIdentifier;
+            FillerOrderNumberEntityIdentifier = fillerOrderNumberEntityIdentifier;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

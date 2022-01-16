@@ -10,6 +10,34 @@ namespace ClearHl7.V230.Types
     /// </summary>
     public class CompositeIdWithCheckDigit : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompositeIdWithCheckDigit"/> class.
+        /// </summary>
+        public CompositeIdWithCheckDigit()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompositeIdWithCheckDigit"/> class.
+        /// </summary>
+        /// <param name="idNumber">CK.1 - ID Number.</param>
+        public CompositeIdWithCheckDigit(decimal idNumber)
+        {
+            IdNumber = idNumber;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompositeIdWithCheckDigit"/> class.
+        /// </summary>
+        /// <param name="idNumber">CK.1 - ID Number.</param>
+        /// <param name="checkDigit">CK.2 - Check Digit.</param>
+        public CompositeIdWithCheckDigit(decimal idNumber, string checkDigit)
+        {
+            IdNumber = idNumber;
+            CheckDigit = checkDigit;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

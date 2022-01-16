@@ -9,6 +9,34 @@ namespace ClearHl7.V290.Types
     /// </summary>
     public class Money : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Money"/> class.
+        /// </summary>
+        public Money()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Money"/> class.
+        /// </summary>
+        /// <param name="quantity">MO.1 - Quantity.</param>
+        public Money(decimal quantity)
+        {
+            Quantity = quantity;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Money"/> class.
+        /// </summary>
+        /// <param name="quantity">MO.1 - Quantity.</param>
+        /// <param name="denomination">MO.2 - Denomination.</param>
+        public Money(decimal quantity, string denomination)
+        {
+            Quantity = quantity;
+            Denomination = denomination;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

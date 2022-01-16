@@ -8,6 +8,23 @@ namespace ClearHl7.V240.Types
     /// </summary>
     public class CodedElementWithFormattedValues : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodedElementWithFormattedValues"/> class.
+        /// </summary>
+        public CodedElementWithFormattedValues()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodedElementWithFormattedValues"/> class.
+        /// </summary>
+        /// <param name="identifier">CF.1 - Identifier.</param>
+        public CodedElementWithFormattedValues(string identifier)
+        {
+            Identifier = identifier;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

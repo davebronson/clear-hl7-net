@@ -10,6 +10,25 @@ namespace ClearHl7.V271.Types
     /// </summary>
     public class DateAndInstitutionName : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DateAndInstitutionName"/> class.
+        /// </summary>
+        public DateAndInstitutionName()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DateAndInstitutionName"/> class.
+        /// </summary>
+        /// <param name="date">DIN.1 - Date.</param>
+        /// <param name="institutionName">DIN.2 - Institution Name.</param>
+        public DateAndInstitutionName(DateTime date, CodedWithExceptions institutionName)
+        {
+            Date = date;
+            InstitutionName = institutionName;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

@@ -10,6 +10,25 @@ namespace ClearHl7.V282.Types
     /// </summary>
     public class OccurrenceCodeAndDate : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OccurrenceCodeAndDate"/> class.
+        /// </summary>
+        public OccurrenceCodeAndDate()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OccurrenceCodeAndDate"/> class.
+        /// </summary>
+        /// <param name="occurrenceCode">OCD.1 - Occurrence Code.</param>
+        /// <param name="occurrenceDate">OCD.2 - Occurrence Date.</param>
+        public OccurrenceCodeAndDate(CodedWithNoExceptions occurrenceCode, DateTime occurrenceDate)
+        {
+            OccurrenceCode = occurrenceCode;
+            OccurrenceDate = occurrenceDate;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

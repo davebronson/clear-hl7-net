@@ -10,6 +10,29 @@ namespace ClearHl7.V231.Types
     /// </summary>
     public class ErrorLocationAndDescription : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ErrorLocationAndDescription"/> class.
+        /// </summary>
+        public ErrorLocationAndDescription()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ErrorLocationAndDescription"/> class.
+        /// </summary>
+        /// <param name="segmentId">ELD.1 - Segment ID.</param>
+        /// <param name="segmentSequence">ELD.2 - Segment Sequence.</param>
+        /// <param name="fieldPosition">ELD.3 - Field Position.</param>
+        /// <param name="codeIdentifyingError">ELD.4 - Code Identifying Error.</param>
+        public ErrorLocationAndDescription(string segmentId, decimal segmentSequence, decimal fieldPosition, CodedElement codeIdentifyingError)
+        {
+            SegmentId = segmentId;
+            SegmentSequence = segmentSequence;
+            FieldPosition = fieldPosition;
+            CodeIdentifyingError = codeIdentifyingError;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

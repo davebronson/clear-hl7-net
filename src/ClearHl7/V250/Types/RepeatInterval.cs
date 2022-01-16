@@ -8,6 +8,23 @@ namespace ClearHl7.V250.Types
     /// </summary>
     public class RepeatInterval : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepeatInterval"/> class.
+        /// </summary>
+        public RepeatInterval()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepeatInterval"/> class.
+        /// </summary>
+        /// <param name="repeatPattern">RI.1 - Repeat Pattern.</param>
+        public RepeatInterval(string repeatPattern)
+        {
+            RepeatPattern = repeatPattern;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

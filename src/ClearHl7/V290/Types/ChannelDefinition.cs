@@ -10,6 +10,23 @@ namespace ClearHl7.V290.Types
     /// </summary>
     public class ChannelDefinition : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChannelDefinition"/> class.
+        /// </summary>
+        public ChannelDefinition()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChannelDefinition"/> class.
+        /// </summary>
+        /// <param name="channelIdentifier">CD.1 - Channel Identifier.</param>
+        public ChannelDefinition(ChannelIdentifier channelIdentifier)
+        {
+            ChannelIdentifier = channelIdentifier;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

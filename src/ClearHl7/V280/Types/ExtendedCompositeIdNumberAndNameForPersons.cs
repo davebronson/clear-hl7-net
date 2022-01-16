@@ -10,6 +10,36 @@ namespace ClearHl7.V280.Types
     /// </summary>
     public class ExtendedCompositeIdNumberAndNameForPersons : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtendedCompositeIdNumberAndNameForPersons"/> class.
+        /// </summary>
+        public ExtendedCompositeIdNumberAndNameForPersons()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtendedCompositeIdNumberAndNameForPersons"/> class.
+        /// </summary>
+        /// <param name="personIdentifier">XCN.1 - Person Identifier.</param>
+        public ExtendedCompositeIdNumberAndNameForPersons(string personIdentifier)
+        {
+            PersonIdentifier = personIdentifier;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtendedCompositeIdNumberAndNameForPersons"/> class.
+        /// </summary>
+        /// <param name="personIdentifier">XCN.1 - Person Identifier.</param>
+        /// <param name="familyName">XCN.2 - Family Name.</param>
+        /// <param name="givenName">XCN.3 - Given Name.</param>
+        public ExtendedCompositeIdNumberAndNameForPersons(string personIdentifier, FamilyName familyName, string givenName)
+        {
+            PersonIdentifier = personIdentifier;
+            FamilyName = familyName;
+            GivenName = givenName;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

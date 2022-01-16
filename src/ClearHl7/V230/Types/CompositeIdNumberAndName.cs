@@ -9,6 +9,36 @@ namespace ClearHl7.V230.Types
     /// </summary>
     public class CompositeIdNumberAndName : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompositeIdNumberAndName"/> class.
+        /// </summary>
+        public CompositeIdNumberAndName()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompositeIdNumberAndName"/> class.
+        /// </summary>
+        /// <param name="idNumber">CN.1 - ID Number.</param>
+        public CompositeIdNumberAndName(string idNumber)
+        {
+            IdNumber = idNumber;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompositeIdNumberAndName"/> class.
+        /// </summary>
+        /// <param name="idNumber">CN.1 - ID Number.</param>
+        /// <param name="familyName">CN.2 - Family Name.</param>
+        /// <param name="givenName">CN.3 - Given Name.</param>
+        public CompositeIdNumberAndName(string idNumber, string familyName, string givenName)
+        {
+            IdNumber = idNumber;
+            FamilyName = familyName;
+            GivenName = givenName;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

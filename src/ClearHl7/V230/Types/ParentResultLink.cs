@@ -9,6 +9,23 @@ namespace ClearHl7.V230.Types
     /// </summary>
     public class ParentResultLink : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ParentResultLink"/> class.
+        /// </summary>
+        public ParentResultLink()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ParentResultLink"/> class.
+        /// </summary>
+        /// <param name="parentObservationIdentifier">PRL.1 - Parent Observation Identifier.</param>
+        public ParentResultLink(CodedElement parentObservationIdentifier)
+        {
+            ParentObservationIdentifier = parentObservationIdentifier;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

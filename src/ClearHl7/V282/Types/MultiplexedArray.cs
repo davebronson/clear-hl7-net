@@ -9,6 +9,14 @@ namespace ClearHl7.V282.Types
     /// </summary>
     public class MultiplexedArray : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MultiplexedArray"/> class.
+        /// </summary>
+        public MultiplexedArray()
+        {
+
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

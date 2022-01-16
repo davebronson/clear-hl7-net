@@ -9,6 +9,23 @@ namespace ClearHl7.V270.Types
     /// </summary>
     public class ReferenceRange : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReferenceRange"/> class.
+        /// </summary>
+        public ReferenceRange()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReferenceRange"/> class.
+        /// </summary>
+        /// <param name="numericRange">RFR.1 - Numeric Range.</param>
+        public ReferenceRange(NumericRange numericRange)
+        {
+            NumericRange = numericRange;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

@@ -10,6 +10,29 @@ namespace ClearHl7.V290.Types
     /// </summary>
     public class ExtendedAddress : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtendedAddress"/> class.
+        /// </summary>
+        public ExtendedAddress()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtendedAddress"/> class.
+        /// </summary>
+        /// <param name="streetAddress">XAD.1 - Street Address.</param>
+        /// <param name="city">XAD.3 - City.</param>
+        /// <param name="stateOrProvince">XAD.4 - State or Province.</param>
+        /// <param name="zipOrPostalCode">XAD.5 - Zip or Postal Code.</param>
+        public ExtendedAddress(StreetAddress streetAddress, string city, string stateOrProvince, string zipOrPostalCode)
+        {
+            StreetAddress = streetAddress;
+            City = city;
+            StateOrProvince = stateOrProvince;
+            ZipOrPostalCode = zipOrPostalCode;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

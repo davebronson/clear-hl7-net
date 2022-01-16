@@ -9,6 +9,23 @@ namespace ClearHl7.V271.Types
     /// </summary>
     public class ChannelSensitivityAndUnits : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChannelSensitivityAndUnits"/> class.
+        /// </summary>
+        public ChannelSensitivityAndUnits()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChannelSensitivityAndUnits"/> class.
+        /// </summary>
+        /// <param name="channelSensitivity">CSU.1 - Channel Sensitivity.</param>
+        public ChannelSensitivityAndUnits(decimal channelSensitivity)
+        {
+            ChannelSensitivity = channelSensitivity;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

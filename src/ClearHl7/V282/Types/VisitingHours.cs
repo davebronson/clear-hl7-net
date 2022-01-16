@@ -9,6 +9,40 @@ namespace ClearHl7.V282.Types
     /// </summary>
     public class VisitingHours : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VisitingHours"/> class.
+        /// </summary>
+        public VisitingHours()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VisitingHours"/> class.
+        /// </summary>
+        /// <param name="startHourRange">VH.3 - Start Hour Range.</param>
+        /// <param name="endHourRange">VH.4 - End Hour Range.</param>
+        public VisitingHours(DateTime startHourRange, DateTime endHourRange)
+        {
+            StartHourRange = startHourRange;
+            EndHourRange = endHourRange;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VisitingHours"/> class.
+        /// </summary>
+        /// <param name="startDayRange">VH.1 - Start Day Range.</param>
+        /// <param name="endDayRange">VH.2 - End Day Range.</param>
+        /// <param name="startHourRange">VH.3 - Start Hour Range.</param>
+        /// <param name="endHourRange">VH.4 - End Hour Range.</param>
+        public VisitingHours(string startDayRange, string endDayRange, DateTime startHourRange, DateTime endHourRange)
+        {
+            StartDayRange = startDayRange;
+            EndDayRange = endDayRange;
+            StartHourRange = startHourRange;
+            EndHourRange = endHourRange;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

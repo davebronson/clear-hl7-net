@@ -9,6 +9,25 @@ namespace ClearHl7.V251.Types
     /// </summary>
     public class DayTypeAndNumber : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DayTypeAndNumber"/> class.
+        /// </summary>
+        public DayTypeAndNumber()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DayTypeAndNumber"/> class.
+        /// </summary>
+        /// <param name="dayType">DTN.1 - Day Type.</param>
+        /// <param name="numberOfDays">DTN.2 - Number of Days.</param>
+        public DayTypeAndNumber(string dayType, decimal numberOfDays)
+        {
+            DayType = dayType;
+            NumberOfDays = numberOfDays;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

@@ -9,6 +9,34 @@ namespace ClearHl7.V250.Types
     /// </summary>
     public class DischargeToLocationAndDate : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DischargeToLocationAndDate"/> class.
+        /// </summary>
+        public DischargeToLocationAndDate()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DischargeToLocationAndDate"/> class.
+        /// </summary>
+        /// <param name="dischargeToLocation">DLD.1 - Discharge to Location.</param>
+        public DischargeToLocationAndDate(string dischargeToLocation)
+        {
+            DischargeToLocation = dischargeToLocation;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DischargeToLocationAndDate"/> class.
+        /// </summary>
+        /// <param name="dischargeToLocation">DLD.1 - Discharge to Location.</param>
+        /// <param name="effectiveDate">DLD.2 - Effective Date.</param>
+        public DischargeToLocationAndDate(string dischargeToLocation, DateTime effectiveDate)
+        {
+            DischargeToLocation = dischargeToLocation;
+            EffectiveDate = effectiveDate;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

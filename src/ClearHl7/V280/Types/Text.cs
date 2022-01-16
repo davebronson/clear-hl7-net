@@ -8,6 +8,23 @@ namespace ClearHl7.V280.Types
     /// </summary>
     public class Text : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Text"/> class.
+        /// </summary>
+        public Text()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Text"/> class.
+        /// </summary>
+        /// <param name="value">TX.1 - Value.</param>
+        public Text(string value)
+        {
+            Value = value;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 

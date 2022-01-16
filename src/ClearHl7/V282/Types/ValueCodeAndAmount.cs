@@ -10,6 +10,34 @@ namespace ClearHl7.V282.Types
     /// </summary>
     public class ValueCodeAndAmount : IType
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValueCodeAndAmount"/> class.
+        /// </summary>
+        public ValueCodeAndAmount()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValueCodeAndAmount"/> class.
+        /// </summary>
+        /// <param name="valueCode">UVC.1 - Value Code.</param>
+        public ValueCodeAndAmount(CodedWithExceptions valueCode)
+        {
+            ValueCode = valueCode;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValueCodeAndAmount"/> class.
+        /// </summary>
+        /// <param name="valueCode">UVC.1 - Value Code.</param>
+        /// <param name="valueAmount">UVC.2 - Value Amount.</param>
+        public ValueCodeAndAmount(CodedWithExceptions valueCode, Money valueAmount)
+        {
+            ValueCode = valueCode;
+            ValueAmount = valueAmount;
+        }
+
         /// <inheritdoc/>
         public bool IsSubcomponent { get; set; }
 
