@@ -11,6 +11,23 @@ namespace ClearHl7.V270
     /// </summary>
     public class Message : IMessage
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Message"/> class.
+        /// </summary>
+        public Message()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Message"/> class.
+        /// </summary>
+        /// <param name="segments">The list of Segments.</param>
+        public Message(IEnumerable<ISegment> segments)
+        {
+            Segments = segments;
+        }
+
         /// <inheritdoc/>
         public IEnumerable<ISegment> Segments { get; set; }
 

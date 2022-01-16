@@ -8,7 +8,7 @@ namespace ClearHl7
     public interface IMessage
     {
         /// <summary>
-        /// Gets or sets the list of Message Segments.
+        /// Gets or sets the list of Segments.
         /// </summary>
         IEnumerable<ISegment> Segments { get; set; }
 
