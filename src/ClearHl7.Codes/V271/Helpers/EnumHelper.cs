@@ -7,6 +7,14 @@ namespace ClearHl7.Codes.V271.Helpers
     /// </summary>
     public class EnumHelper : IEnumHelper
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EnumHelper"/> class.
+        /// </summary>
+        public EnumHelper()
+        {
+
+        }
+
         /// <inheritdoc/>
         public string EnumToCode(CodeAcceptApplicationAcknowledgmentConditions input)
         {
