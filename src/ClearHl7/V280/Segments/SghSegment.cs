@@ -10,6 +10,23 @@ namespace ClearHl7.V280.Segments
     /// </summary>
     public class SghSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SghSegment"/> class.
+        /// </summary>
+        public SghSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SghSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public SghSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "SGH";
 

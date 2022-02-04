@@ -11,6 +11,23 @@ namespace ClearHl7.V270.Segments
     /// </summary>
     public class NpuSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NpuSegment"/> class.
+        /// </summary>
+        public NpuSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NpuSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public NpuSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "NPU";
 

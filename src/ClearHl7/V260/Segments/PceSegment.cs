@@ -12,6 +12,23 @@ namespace ClearHl7.V260.Segments
     /// </summary>
     public class PceSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PceSegment"/> class.
+        /// </summary>
+        public PceSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PceSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public PceSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "PCE";
 

@@ -13,6 +13,23 @@ namespace ClearHl7.V280.Segments
     /// </summary>
     public class LocSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LocSegment"/> class.
+        /// </summary>
+        public LocSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LocSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public LocSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "LOC";
 

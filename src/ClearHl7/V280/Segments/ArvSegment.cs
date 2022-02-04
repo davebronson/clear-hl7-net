@@ -15,6 +15,23 @@ namespace ClearHl7.V280.Segments
     public class ArvSegment : ISegment
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="ArvSegment"/> class.
+        /// </summary>
+        public ArvSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ArvSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public ArvSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
+        /// <summary>
         /// Gets the ID for the Segment.  This property is read-only.
         /// </summary>
         public string Id { get; } = "ARV";

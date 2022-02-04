@@ -14,6 +14,23 @@ namespace ClearHl7.V281.Segments
     /// </summary>
     public class EquSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EquSegment"/> class.
+        /// </summary>
+        public EquSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EquSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public EquSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "EQU";
 

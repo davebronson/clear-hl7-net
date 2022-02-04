@@ -14,6 +14,23 @@ namespace ClearHl7.V251.Segments
     /// </summary>
     public class PrbSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PrbSegment"/> class.
+        /// </summary>
+        public PrbSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PrbSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public PrbSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "PRB";
 

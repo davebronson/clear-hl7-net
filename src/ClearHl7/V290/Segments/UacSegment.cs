@@ -11,6 +11,23 @@ namespace ClearHl7.V290.Segments
     /// </summary>
     public class UacSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UacSegment"/> class.
+        /// </summary>
+        public UacSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UacSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public UacSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "UAC";
 

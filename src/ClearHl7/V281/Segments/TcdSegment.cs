@@ -11,6 +11,23 @@ namespace ClearHl7.V281.Segments
     /// </summary>
     public class TcdSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TcdSegment"/> class.
+        /// </summary>
+        public TcdSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TcdSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public TcdSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "TCD";
 

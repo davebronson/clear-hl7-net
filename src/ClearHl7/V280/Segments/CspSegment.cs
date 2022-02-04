@@ -12,6 +12,23 @@ namespace ClearHl7.V280.Segments
     /// </summary>
     public class CspSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CspSegment"/> class.
+        /// </summary>
+        public CspSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CspSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public CspSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "CSP";
 

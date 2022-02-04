@@ -14,6 +14,23 @@ namespace ClearHl7.V240.Segments
     /// </summary>
     public class VarSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VarSegment"/> class.
+        /// </summary>
+        public VarSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VarSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public VarSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "VAR";
 

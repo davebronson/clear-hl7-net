@@ -12,6 +12,23 @@ namespace ClearHl7.V230.Segments
     /// </summary>
     public class RgsSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RgsSegment"/> class.
+        /// </summary>
+        public RgsSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RgsSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public RgsSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "RGS";
 

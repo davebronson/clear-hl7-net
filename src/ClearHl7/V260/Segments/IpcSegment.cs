@@ -13,6 +13,23 @@ namespace ClearHl7.V260.Segments
     /// </summary>
     public class IpcSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IpcSegment"/> class.
+        /// </summary>
+        public IpcSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IpcSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public IpcSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "IPC";
 

@@ -14,6 +14,23 @@ namespace ClearHl7.V290.Segments
     /// </summary>
     public class VndSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VndSegment"/> class.
+        /// </summary>
+        public VndSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VndSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public VndSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "VND";
 

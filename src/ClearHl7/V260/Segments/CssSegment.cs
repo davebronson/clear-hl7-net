@@ -14,6 +14,23 @@ namespace ClearHl7.V260.Segments
     /// </summary>
     public class CssSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CssSegment"/> class.
+        /// </summary>
+        public CssSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CssSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public CssSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "CSS";
 

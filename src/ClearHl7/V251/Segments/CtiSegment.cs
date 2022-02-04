@@ -11,6 +11,23 @@ namespace ClearHl7.V251.Segments
     /// </summary>
     public class CtiSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CtiSegment"/> class.
+        /// </summary>
+        public CtiSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CtiSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public CtiSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "CTI";
 

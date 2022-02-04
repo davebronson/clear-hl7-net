@@ -14,6 +14,23 @@ namespace ClearHl7.V290.Segments
     /// </summary>
     public class Oh2Segment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Oh2Segment"/> class.
+        /// </summary>
+        public Oh2Segment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Oh2Segment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public Oh2Segment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "OH2";
 

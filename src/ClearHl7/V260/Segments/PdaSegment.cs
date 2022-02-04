@@ -14,6 +14,23 @@ namespace ClearHl7.V260.Segments
     /// </summary>
     public class PdaSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PdaSegment"/> class.
+        /// </summary>
+        public PdaSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PdaSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public PdaSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "PDA";
 

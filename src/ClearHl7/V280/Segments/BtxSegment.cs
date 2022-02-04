@@ -14,6 +14,23 @@ namespace ClearHl7.V280.Segments
     /// </summary>
     public class BtxSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BtxSegment"/> class.
+        /// </summary>
+        public BtxSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BtxSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public BtxSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "BTX";
 

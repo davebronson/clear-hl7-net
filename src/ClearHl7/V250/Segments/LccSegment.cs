@@ -13,6 +13,23 @@ namespace ClearHl7.V250.Segments
     /// </summary>
     public class LccSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LccSegment"/> class.
+        /// </summary>
+        public LccSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LccSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public LccSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "LCC";
 

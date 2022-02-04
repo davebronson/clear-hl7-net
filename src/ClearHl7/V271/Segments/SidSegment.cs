@@ -11,6 +11,23 @@ namespace ClearHl7.V271.Segments
     /// </summary>
     public class SidSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SidSegment"/> class.
+        /// </summary>
+        public SidSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SidSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public SidSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "SID";
 

@@ -14,6 +14,23 @@ namespace ClearHl7.V282.Segments
     /// </summary>
     public class Gt1Segment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Gt1Segment"/> class.
+        /// </summary>
+        public Gt1Segment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Gt1Segment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public Gt1Segment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "GT1";
 

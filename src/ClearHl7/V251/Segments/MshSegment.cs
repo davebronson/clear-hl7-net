@@ -14,10 +14,35 @@ namespace ClearHl7.V251.Segments
     /// </summary>
     public class MshSegment : ISegment, IMshSegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MshSegment"/> class.
+        /// </summary>
+        public MshSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MshSegment"/> class.
+        /// </summary>
+        /// <param name="dateTimeOfMessage">MSH.7 - Date/Time of Message.</param>
+        /// <param name="messageType">MSH.9 - Message Type.</param>
+        /// <param name="messageControlId">MSH.10 - Message Control ID.</param>
+        /// <param name="processingId">MSH.11 - Processing ID.</param>
+        public MshSegment(DateTime dateTimeOfMessage, MessageType messageType, string messageControlId, ProcessingType processingId)
+        {
+            DateTimeOfMessage = dateTimeOfMessage;
+            MessageType = messageType;
+            MessageControlId = messageControlId;
+            ProcessingId = processingId;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "MSH";
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.  The default is <see cref="int.MinValue">MinValue</see>.
+        /// </summary>
         public int Ordinal { get; set; } = int.MinValue;
 
         /// <inheritdoc/>
@@ -76,7 +101,7 @@ namespace ClearHl7.V251.Segments
         public ProcessingType ProcessingId { get; set; }
 
         /// <summary>
-        /// MSH.12 - Version ID.
+        /// MSH.12 - Version ID.  The default is &quot;2.5.1&quot;.
         /// </summary>
         public VersionIdentifier VersionId { get; set; } = new VersionIdentifier { VersionId = "2.5.1" };
 

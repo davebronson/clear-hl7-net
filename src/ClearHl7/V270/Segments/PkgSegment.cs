@@ -12,6 +12,23 @@ namespace ClearHl7.V270.Segments
     /// </summary>
     public class PkgSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PkgSegment"/> class.
+        /// </summary>
+        public PkgSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PkgSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public PkgSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "PKG";
 

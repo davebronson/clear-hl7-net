@@ -14,6 +14,23 @@ namespace ClearHl7.V281.Segments
     /// </summary>
     public class PacSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PacSegment"/> class.
+        /// </summary>
+        public PacSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PacSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public PacSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "PAC";
 

@@ -13,6 +13,23 @@ namespace ClearHl7.V282.Segments
     /// </summary>
     public class ZxxSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ZxxSegment"/> class.
+        /// </summary>
+        public ZxxSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ZxxSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public ZxxSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id => $"Z{ (string.IsNullOrEmpty(SegmentSuffix) ? "" : SegmentSuffix.Substring(0, Math.Min(SegmentSuffix.Length, 2))) }";
 

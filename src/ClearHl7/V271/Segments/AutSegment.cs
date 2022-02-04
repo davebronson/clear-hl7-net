@@ -14,6 +14,23 @@ namespace ClearHl7.V271.Segments
     /// </summary>
     public class AutSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AutSegment"/> class.
+        /// </summary>
+        public AutSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AutSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public AutSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "AUT";
 

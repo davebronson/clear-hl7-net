@@ -10,6 +10,23 @@ namespace ClearHl7.V290.Segments
     /// </summary>
     public class MsaSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MsaSegment"/> class.
+        /// </summary>
+        public MsaSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MsaSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public MsaSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "MSA";
 

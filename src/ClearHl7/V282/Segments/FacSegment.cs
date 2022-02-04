@@ -13,6 +13,23 @@ namespace ClearHl7.V282.Segments
     /// </summary>
     public class FacSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FacSegment"/> class.
+        /// </summary>
+        public FacSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FacSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public FacSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "FAC";
 

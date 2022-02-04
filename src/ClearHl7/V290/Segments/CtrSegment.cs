@@ -14,6 +14,23 @@ namespace ClearHl7.V290.Segments
     /// </summary>
     public class CtrSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CtrSegment"/> class.
+        /// </summary>
+        public CtrSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CtrSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public CtrSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "CTR";
 

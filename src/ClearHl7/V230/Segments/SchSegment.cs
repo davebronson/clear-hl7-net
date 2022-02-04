@@ -14,6 +14,23 @@ namespace ClearHl7.V230.Segments
     /// </summary>
     public class SchSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SchSegment"/> class.
+        /// </summary>
+        public SchSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SchSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public SchSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "SCH";
 

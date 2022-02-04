@@ -14,6 +14,23 @@ namespace ClearHl7.V250.Segments
     /// </summary>
     public class EvnSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EvnSegment"/> class.
+        /// </summary>
+        public EvnSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EvnSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public EvnSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "EVN";
 

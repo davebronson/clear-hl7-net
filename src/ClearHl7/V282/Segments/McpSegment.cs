@@ -12,6 +12,23 @@ namespace ClearHl7.V282.Segments
     /// </summary>
     public class McpSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="McpSegment"/> class.
+        /// </summary>
+        public McpSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="McpSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public McpSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "MCP";
 

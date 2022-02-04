@@ -14,6 +14,23 @@ namespace ClearHl7.V251.Segments
     /// </summary>
     public class AffSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AffSegment"/> class.
+        /// </summary>
+        public AffSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AffSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public AffSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "AFF";
 

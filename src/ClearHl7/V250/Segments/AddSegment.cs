@@ -9,6 +9,23 @@ namespace ClearHl7.V250.Segments
     /// </summary>
     public class AddSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddSegment"/> class.
+        /// </summary>
+        public AddSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public AddSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "ADD";
 

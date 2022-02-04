@@ -14,6 +14,23 @@ namespace ClearHl7.V231.Segments
     /// </summary>
     public class In2Segment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="In2Segment"/> class.
+        /// </summary>
+        public In2Segment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="In2Segment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public In2Segment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "IN2";
 

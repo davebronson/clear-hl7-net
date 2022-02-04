@@ -12,6 +12,23 @@ namespace ClearHl7.V231.Segments
     /// </summary>
     public class PthSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PthSegment"/> class.
+        /// </summary>
+        public PthSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PthSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public PthSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "PTH";
 

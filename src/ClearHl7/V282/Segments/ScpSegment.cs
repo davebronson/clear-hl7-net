@@ -12,6 +12,23 @@ namespace ClearHl7.V282.Segments
     /// </summary>
     public class ScpSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ScpSegment"/> class.
+        /// </summary>
+        public ScpSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ScpSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public ScpSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "SCP";
 

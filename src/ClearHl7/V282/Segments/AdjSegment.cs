@@ -12,6 +12,23 @@ namespace ClearHl7.V282.Segments
     /// </summary>
     public class AdjSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AdjSegment"/> class.
+        /// </summary>
+        public AdjSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AdjSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public AdjSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "ADJ";
 

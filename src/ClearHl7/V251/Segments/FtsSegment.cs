@@ -10,6 +10,23 @@ namespace ClearHl7.V251.Segments
     /// </summary>
     public class FtsSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FtsSegment"/> class.
+        /// </summary>
+        public FtsSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FtsSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public FtsSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "FTS";
 

@@ -14,6 +14,23 @@ namespace ClearHl7.V282.Segments
     /// </summary>
     public class DonSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DonSegment"/> class.
+        /// </summary>
+        public DonSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DonSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public DonSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "DON";
 

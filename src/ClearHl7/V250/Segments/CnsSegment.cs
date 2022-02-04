@@ -12,6 +12,23 @@ namespace ClearHl7.V250.Segments
     /// </summary>
     public class CnsSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CnsSegment"/> class.
+        /// </summary>
+        public CnsSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CnsSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public CnsSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "CNS";
 

@@ -12,6 +12,23 @@ namespace ClearHl7.V282.Segments
     /// </summary>
     public class PslSegment : ISegment
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PslSegment"/> class.
+        /// </summary>
+        public PslSegment()
+        {
+
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PslSegment"/> class.
+        /// </summary>
+        /// <param name="ordinal">The rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.</param>
+        public PslSegment(int ordinal)
+        {
+            Ordinal = ordinal;
+        }
+
         /// <inheritdoc/>
         public string Id { get; } = "PSL";
 
