@@ -32,7 +32,7 @@ namespace ClearHl7.V290.Segments
         }
 
         /// <inheritdoc/>
-        public string Id { get; } = "QRI";
+        public string Id => "QRI";
 
         /// <inheritdoc/>
         public int Ordinal { get; set; }

@@ -34,7 +34,7 @@ namespace ClearHl7.V280.Segments
         /// <summary>
         /// Gets the ID for the Segment.  This property is read-only.
         /// </summary>
-        public string Id { get; } = "ARV";
+        public string Id => "ARV";
 
         /// <summary>
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.

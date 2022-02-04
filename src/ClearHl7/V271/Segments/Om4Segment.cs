@@ -31,7 +31,7 @@ namespace ClearHl7.V271.Segments
         }
 
         /// <inheritdoc/>
-        public string Id { get; } = "OM4";
+        public string Id => "OM4";
 
         /// <inheritdoc/>
         public int Ordinal { get; set; }

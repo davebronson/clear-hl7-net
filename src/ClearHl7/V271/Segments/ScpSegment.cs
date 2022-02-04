@@ -30,7 +30,7 @@ namespace ClearHl7.V271.Segments
         }
 
         /// <inheritdoc/>
-        public string Id { get; } = "SCP";
+        public string Id => "SCP";
 
         /// <inheritdoc/>
         public int Ordinal { get; set; }

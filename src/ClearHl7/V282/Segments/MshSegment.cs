@@ -38,7 +38,7 @@ namespace ClearHl7.V282.Segments
         }
 
         /// <inheritdoc/>
-        public string Id { get; } = "MSH";
+        public string Id => "MSH";
 
         /// <summary>
         /// Gets or sets the rank, or ordinal, which describes the place that this Segment resides in an ordered list of Segments.  The default is <see cref="int.MinValue">MinValue</see>.

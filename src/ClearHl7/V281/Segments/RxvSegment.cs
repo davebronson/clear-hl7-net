@@ -30,7 +30,7 @@ namespace ClearHl7.V281.Segments
         }
 
         /// <inheritdoc/>
-        public string Id { get; } = "RXV";
+        public string Id => "RXV";
 
         /// <inheritdoc/>
         public int Ordinal { get; set; }
