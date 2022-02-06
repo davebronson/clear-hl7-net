@@ -42,6 +42,7 @@ namespace ClearHl7.Serialization
                 Hl7Version.V281 => Deserialize<V281.Message>(delimitedString),
                 Hl7Version.V282 => Deserialize<V282.Message>(delimitedString),
                 Hl7Version.V290 => Deserialize<V290.Message>(delimitedString),
+                Hl7Version.None => throw new ArgumentException($"Unable to determine the HL7 version provided in { nameof(delimitedString) }.", nameof(delimitedString)),
                 _ => throw new ArgumentException($"Unable to determine the HL7 version provided in { nameof(delimitedString) }.", nameof(delimitedString))
             };
         }

@@ -105,6 +105,7 @@ namespace ClearHl7.Helpers
                 Hl7Version.V281 => new V281.Message(),
                 Hl7Version.V282 => new V282.Message(),
                 Hl7Version.V290 => new V290.Message(),
+                Hl7Version.None => throw new ArgumentException("An invalid version was provided.", nameof(version)),
                 _ => throw new ArgumentException("An invalid version was provided.", nameof(version))
             };
         }
