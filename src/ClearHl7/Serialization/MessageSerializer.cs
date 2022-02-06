@@ -21,7 +21,7 @@ namespace ClearHl7.Serialization
         {
             if (string.IsNullOrEmpty(delimitedString))
             {
-                throw new ArgumentNullException(nameof(delimitedString), $"{ delimitedString } is null.");
+                throw new ArgumentNullException(nameof(delimitedString), $"{ nameof(delimitedString) } is null.");
             }
 
             // Detect HL7 version
@@ -64,7 +64,7 @@ namespace ClearHl7.Serialization
         {
             if (string.IsNullOrEmpty(delimitedString))
             {
-                throw new ArgumentNullException(nameof(delimitedString), $"{ delimitedString } is null.");
+                throw new ArgumentNullException(nameof(delimitedString), $"{ nameof(delimitedString) } is null.");
             }
 
             // Create instance of the Message class
@@ -142,7 +142,7 @@ namespace ClearHl7.Serialization
         {
             if (message == null)
             {
-                throw new ArgumentNullException(nameof(message), $"{ message } is null.");
+                throw new ArgumentNullException(nameof(message), $"{ nameof(message) } is null.");
             }
 
             return message.ToDelimitedString();

@@ -24,9 +24,9 @@ namespace ClearHl7.Helpers
         {
             CultureInfo culture = CultureInfo.CurrentCulture;
 
-            if (delimitedString == null) { throw new ArgumentNullException($"{ delimitedString } is null.", nameof(delimitedString)); }
-            if (delimitedString.Length < 5) { throw new ArgumentException($"{ delimitedString } is not valid.", nameof(delimitedString)); }
-            if (!delimitedString.StartsWith("MSH", true, culture)) { throw new ArgumentException($"{ delimitedString } string does not begin with an MSH segment.", nameof(delimitedString)); }
+            if (delimitedString == null) { throw new ArgumentNullException($"{ nameof(delimitedString) } is null.", nameof(delimitedString)); }
+            if (delimitedString.Length < 5) { throw new ArgumentException($"{ nameof(delimitedString) } is not valid.", nameof(delimitedString)); }
+            if (!delimitedString.StartsWith("MSH", true, culture)) { throw new ArgumentException($"{ nameof(delimitedString) } string does not begin with an MSH segment.", nameof(delimitedString)); }
 
             int delimitedStringEndPosition = delimitedString.Length - 1;
             int startPosition = 0;

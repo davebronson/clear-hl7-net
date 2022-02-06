@@ -18,7 +18,7 @@ namespace ClearHl7.Serialization
         {
             if (string.IsNullOrEmpty(delimitedString))
             {
-                throw new ArgumentNullException(nameof(delimitedString), $"{ delimitedString } is null.");
+                throw new ArgumentNullException(nameof(delimitedString), $"{ nameof(delimitedString) } is null.");
             }
 
             return Deserialize<T>(delimitedString, null);
@@ -36,7 +36,7 @@ namespace ClearHl7.Serialization
         {
             if (string.IsNullOrEmpty(delimitedString))
             {
-                throw new ArgumentNullException(nameof(delimitedString), $"{ delimitedString } is null.");
+                throw new ArgumentNullException(nameof(delimitedString), $"{ nameof(delimitedString) } is null.");
             }
 
             T item = Activator.CreateInstance<T>();
@@ -55,7 +55,7 @@ namespace ClearHl7.Serialization
         {
             if (segment == null)
             {
-                throw new ArgumentNullException(nameof(segment), $"{ segment } is null.");
+                throw new ArgumentNullException(nameof(segment), $"{ nameof(segment) } is null.");
             }
 
             return segment.ToDelimitedString();
