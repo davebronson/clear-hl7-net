@@ -1,4 +1,9 @@
 # clear-hl7-net
+![GitHub](https://img.shields.io/github/license/davebronson/clear-hl7-net)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/davebronson/clear-hl7-net)
+![GitHub last commit](https://img.shields.io/github/last-commit/davebronson/clear-hl7-net?logo=github)
+![Nuget](https://img.shields.io/nuget/dt/ClearHl7?logo=nuget)
+
 .NET HL7&reg; message generation and parsing library for the version 2.x standard
 
 Understanding and programmatically building HL7 messages can be difficult.  clear-hl7-net takes pain out of this process by exposing an object hierarchy that is well structured, clearly named, and (most importantly) strongly-typed.
