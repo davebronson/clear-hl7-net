@@ -192,7 +192,7 @@ namespace ClearHl7.Tests.SerializationTests
         {
             Assert.Throws<ArgumentNullException>(() =>
             {
-                MessageSerializer.Deserialize(null);
+                IMessage result = MessageSerializer.Deserialize(null);
             });
         }
 
@@ -401,6 +401,18 @@ namespace ClearHl7.Tests.SerializationTests
             string actual = MessageSerializer.Serialize(hl7Message);
 
             Assert.Equal(expected, actual);
+        }
+
+        /// <summary>
+        /// Validates that calling Serialize() with a null input results in an ArgumentNullException being thrown.
+        /// </summary>
+        [Fact]
+        public void Serialize_WithNullInput_ThrowsArgumentNullException()
+        {
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                string result = MessageSerializer.Serialize(null);
+            });
         }
     }
 }

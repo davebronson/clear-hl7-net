@@ -42,6 +42,24 @@ namespace ClearHl7.Tests.HelpersTests
         }
 
         /// <summary>
+        /// Validates that calling Escape() with a null input returns null.
+        /// </summary>
+        [Fact]
+        public void Escape_WithNullInput_ReturnsNull()
+        {
+            Assert.Null(StringHelper.Escape(null));
+        }
+
+        /// <summary>
+        /// Validates that calling Escape() with a zero-length input returns an empty string.
+        /// </summary>
+        [Fact]
+        public void Escape_WithZeroLengthInput_ReturnsNull()
+        {
+            Assert.True(StringHelper.Escape("").Length == 0);
+        }
+
+        /// <summary>
         /// Validates that Unescape() returns the input string with escaped control characters restored to their normal, unescaped state.
         /// </summary>
         [Fact]
@@ -51,6 +69,24 @@ namespace ClearHl7.Tests.HelpersTests
             string actual = StringHelper.Unescape(@"Test \E\ \T\ \R\ \S\ \F\ End");
 
             Assert.Equal(expected, actual);
+        }
+
+        /// <summary>
+        /// Validates that calling Unescape() with a null input returns null.
+        /// </summary>
+        [Fact]
+        public void Unescape_WithNullInput_ReturnsNull()
+        {
+            Assert.Null(StringHelper.Unescape(null));
+        }
+
+        /// <summary>
+        /// Validates that calling Unescape() with a zero-length input returns an empty string.
+        /// </summary>
+        [Fact]
+        public void Unescape_WithZeroLengthInput_ReturnsNull()
+        {
+            Assert.True(StringHelper.Unescape("").Length == 0);
         }
     }
 }

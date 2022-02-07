@@ -67,6 +67,30 @@ namespace ClearHl7.Tests.SerializationTests
         }
 
         /// <summary>
+        /// Validates that calling Deserialize() with a null input results in an ArgumentNullException being thrown.
+        /// </summary>
+        [Fact]
+        public void DeserializeOverload1_WithNullInput_ThrowsArgumentNullException()
+        {
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                ISegment result = SegmentSerializer.Deserialize<AbsSegment>(null);
+            });
+        }
+
+        /// <summary>
+        /// Validates that calling Deserialize() with a null input results in an ArgumentNullException being thrown.
+        /// </summary>
+        [Fact]
+        public void DeserializeOverload2_WithNullInput_ThrowsArgumentNullException()
+        {
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                ISegment result = SegmentSerializer.Deserialize<AbsSegment>(null, null);
+            });
+        }
+
+        /// <summary>
         /// Validates that Serialize() returns output with all properties populated and in the correct sequence.
         /// </summary>
         [Fact]
@@ -121,6 +145,18 @@ namespace ClearHl7.Tests.SerializationTests
             string actual = SegmentSerializer.Serialize(hl7Segment);
 
             Assert.Equal(expected, actual);
+        }
+
+        /// <summary>
+        /// Validates that calling Serialize() with a null input results in an ArgumentNullException being thrown.
+        /// </summary>
+        [Fact]
+        public void Serialize_WithNullInput_ThrowsArgumentNullException()
+        {
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                string result = SegmentSerializer.Serialize(null);
+            });
         }
     }
 }

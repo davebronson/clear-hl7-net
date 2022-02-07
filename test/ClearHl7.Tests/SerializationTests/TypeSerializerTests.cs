@@ -1,4 +1,5 @@
-﻿using ClearHl7.Serialization;
+﻿using System;
+using ClearHl7.Serialization;
 using ClearHl7.V290.Types;
 using FluentAssertions;
 using Xunit;
@@ -32,6 +33,30 @@ namespace ClearHl7.Tests.SerializationTests
         }
 
         /// <summary>
+        /// Validates that calling Deserialize() with a null input results in an ArgumentNullException being thrown.
+        /// </summary>
+        [Fact]
+        public void DeserializeOverload1_WithNullInput_ThrowsArgumentNullException()
+        {
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                IType result = TypeSerializer.Deserialize<Address>(null, false);
+            });
+        }
+
+        /// <summary>
+        /// Validates that calling Deserialize() with a null input results in an ArgumentNullException being thrown.
+        /// </summary>
+        [Fact]
+        public void DeserializeOverload2_WithNullInput_ThrowsArgumentNullException()
+        {
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                IType result = TypeSerializer.Deserialize<Address>(null, false, null);
+            });
+        }
+
+        /// <summary>
         /// Validates that Serialize() returns output with all properties populated and in the correct sequence.
         /// </summary>
         [Fact]
@@ -53,6 +78,18 @@ namespace ClearHl7.Tests.SerializationTests
             string actual = TypeSerializer.Serialize(hl7Type);
 
             Assert.Equal(expected, actual);
+        }
+
+        /// <summary>
+        /// Validates that calling Serialize() with a null input results in an ArgumentNullException being thrown.
+        /// </summary>
+        [Fact]
+        public void Serialize_WithNullInput_ThrowsArgumentNullException()
+        {
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                string result = TypeSerializer.Serialize(null);
+            });
         }
     }
 }
