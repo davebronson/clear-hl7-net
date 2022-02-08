@@ -6,7 +6,7 @@
     <Copyright>Copyright © Dave Bronson 2020-2022</Copyright>
     <PackageProjectUrl>https://github.com/davebronson/clear-hl7-net</PackageProjectUrl>
     <Summary>Enumerated coded values for the HL7® standard</Summary>
-    <PackageTags>hl7;hl7-builder;hl7-message;hl7-generating;dotnet;healthcare;code;codesystem</PackageTags>
+    <PackageTags>hl7;hl7-builder;hl7-parser;hl7-message;hl7-generating;dotnet;healthcare;code;codesystem</PackageTags>
     <Title>ClearHL7.Codes</Title>
     <Description>Enumerated coded values for the HL7® standard</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
