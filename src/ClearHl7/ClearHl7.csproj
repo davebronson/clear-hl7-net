@@ -10,11 +10,13 @@
     <Title>ClearHL7</Title>
     <Description>.NET HL7® message generation and parsing library for the version 2.x standard. Please see important info about changes in V2: https://github.com/davebronson/clear-hl7-net/blob/master/Version2.md </Description>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <PackageVersion>2.0.0</PackageVersion>
+    <PackageVersion>2.0.0-beta1</PackageVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackOnBuild>true</PackOnBuild>
     <Owners>Dave Bronson</Owners>
-    <ReleaseVersion>2.0.0</ReleaseVersion>
+    <ReleaseVersion>2.0.0-beta1</ReleaseVersion>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <LangVersion>latest</LangVersion>
