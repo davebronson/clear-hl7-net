@@ -10,11 +10,13 @@
     <Title>ClearHL7.Codes</Title>
     <Description>Enumerated coded values for the HL7® standard</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <PackageVersion>2.0.0-beta1</PackageVersion>
+    <PackageVersion>2.0.0-beta2</PackageVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackOnBuild>true</PackOnBuild>
     <Owners>Dave Bronson</Owners>
-    <ReleaseVersion>2.0.0-beta1</ReleaseVersion>
+    <ReleaseVersion>2.0.0-beta2</ReleaseVersion>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
@@ -26,4 +28,13 @@
     <LangVersion>latest</LangVersion>
     <DocumentationFile>bin\Release\netstandard2.0\ClearHl7.Codes.xml</DocumentationFile>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Microsoft.SourceLink.GitHub" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
 </Project>

@@ -37,7 +37,7 @@ Global
 		$0.VersionControlPolicy = $2
 		$0.DotNetNamingPolicy = $3
 		$3.DirectoryNamespaceAssociation = PrefixedHierarchical
-		version = 2.0.0-beta1
+		version = 2.0.0-beta2
 		description = .NET HL7® library
 	EndGlobalSection
 EndGlobal
