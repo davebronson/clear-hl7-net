@@ -10,11 +10,11 @@
     <Title>ClearHL7.Codes</Title>
     <Description>Enumerated coded values for the HL7® standard</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <PackageVersion>2.0.0-beta2</PackageVersion>
+    <PackageVersion>2.0.0-beta3</PackageVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackOnBuild>true</PackOnBuild>
     <Owners>Dave Bronson</Owners>
-    <ReleaseVersion>2.0.0-beta2</ReleaseVersion>
+    <ReleaseVersion>2.0.0-beta3</ReleaseVersion>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <IncludeSymbols>true</IncludeSymbols>
