@@ -80,7 +80,7 @@ namespace ClearHl7.Serialization
 
             if (segments.Length > 0)
             {
-                if (!segments[0].StartsWith("MSH", StringComparison.CurrentCultureIgnoreCase))
+                if (!segments[0].StartsWith("MSH", StringComparison.OrdinalIgnoreCase))
                 {
                     throw new ArgumentException($"The first segment in { nameof(delimitedString) } is not the MSH segment.", nameof(delimitedString));
                 }

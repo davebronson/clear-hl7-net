@@ -210,7 +210,7 @@ namespace ClearHl7.V280.Segments
 
             if (segments.Length > 0)
             {
-                if (string.Compare(Id, segments[0], true, CultureInfo.CurrentCulture) != 0)
+                if (!string.Equals(Id, segments[0], StringComparison.OrdinalIgnoreCase))
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: '{ Id }{ seps.FieldSeparator }'.", nameof(delimitedString));
                 }

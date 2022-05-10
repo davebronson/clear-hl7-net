@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Globalization;
 
 namespace ClearHl7.Helpers
 {
@@ -22,11 +21,9 @@ namespace ClearHl7.Helpers
         /// </exception>
         public static Hl7Version DetectVersion(string delimitedString)
         {
-            CultureInfo culture = CultureInfo.CurrentCulture;
-
             if (delimitedString == null) { throw new ArgumentNullException(nameof(delimitedString), $"{ nameof(delimitedString) } is null."); }
             if (delimitedString.Length < 5) { throw new ArgumentException($"{ nameof(delimitedString) } is not valid.", nameof(delimitedString)); }
-            if (!delimitedString.StartsWith("MSH", true, culture)) { throw new ArgumentException($"{ nameof(delimitedString) } string does not begin with an MSH segment.", nameof(delimitedString)); }
+            if (!delimitedString.StartsWith("MSH", StringComparison.OrdinalIgnoreCase)) { throw new ArgumentException($"{ nameof(delimitedString) } string does not begin with an MSH segment.", nameof(delimitedString)); }
 
             int delimitedStringEndPosition = delimitedString.Length - 1;
             int startPosition = 0;
@@ -58,26 +55,26 @@ namespace ClearHl7.Helpers
             string versionString = delimitedString.Substring(startPosition, endPosition - startPosition);
 
             // Map and return
-            if (string.Compare("2.3", versionString, false, culture) == 0) { return Hl7Version.V230; }
-            if (string.Compare("2.3.1", versionString, false, culture) == 0) { return Hl7Version.V231; }
-            if (string.Compare("2.4", versionString, false, culture) == 0) { return Hl7Version.V240; }
-            if (string.Compare("2.5", versionString, false, culture) == 0) { return Hl7Version.V250; }
-            if (string.Compare("2.5.1", versionString, false, culture) == 0) { return Hl7Version.V251; }
-            if (string.Compare("2.6", versionString, false, culture) == 0) { return Hl7Version.V260; }
-            if (string.Compare("2.7", versionString, false, culture) == 0) { return Hl7Version.V270; }
-            if (string.Compare("2.7.1", versionString, false, culture) == 0) { return Hl7Version.V271; }
-            if (string.Compare("2.8", versionString, false, culture) == 0) { return Hl7Version.V280; }
-            if (string.Compare("2.8.1", versionString, false, culture) == 0) { return Hl7Version.V281; }
-            if (string.Compare("2.8.2", versionString, false, culture) == 0) { return Hl7Version.V282; }
-            if (string.Compare("2.9", versionString, false, culture) == 0) { return Hl7Version.V290; }
+            if (string.Equals("2.3", versionString, StringComparison.Ordinal)) { return Hl7Version.V230; }
+            if (string.Equals("2.3.1", versionString, StringComparison.Ordinal)) { return Hl7Version.V231; }
+            if (string.Equals("2.4", versionString, StringComparison.Ordinal)) { return Hl7Version.V240; }
+            if (string.Equals("2.5", versionString, StringComparison.Ordinal)) { return Hl7Version.V250; }
+            if (string.Equals("2.5.1", versionString, StringComparison.Ordinal)) { return Hl7Version.V251; }
+            if (string.Equals("2.6", versionString, StringComparison.Ordinal)) { return Hl7Version.V260; }
+            if (string.Equals("2.7", versionString, StringComparison.Ordinal)) { return Hl7Version.V270; }
+            if (string.Equals("2.7.1", versionString, StringComparison.Ordinal)) { return Hl7Version.V271; }
+            if (string.Equals("2.8", versionString, StringComparison.Ordinal)) { return Hl7Version.V280; }
+            if (string.Equals("2.8.1", versionString, StringComparison.Ordinal)) { return Hl7Version.V281; }
+            if (string.Equals("2.8.2", versionString, StringComparison.Ordinal)) { return Hl7Version.V282; }
+            if (string.Equals("2.9", versionString, StringComparison.Ordinal)) { return Hl7Version.V290; }
             // The following possibilities shouldn't pop up, technically, but we'll account for them to be helpful
-            if (string.Compare("2.3.0", versionString, false, culture) == 0) { return Hl7Version.V230; }
-            if (string.Compare("2.4.0", versionString, false, culture) == 0) { return Hl7Version.V240; }
-            if (string.Compare("2.5.0", versionString, false, culture) == 0) { return Hl7Version.V250; }
-            if (string.Compare("2.6.0", versionString, false, culture) == 0) { return Hl7Version.V260; }
-            if (string.Compare("2.7.0", versionString, false, culture) == 0) { return Hl7Version.V270; }
-            if (string.Compare("2.8.0", versionString, false, culture) == 0) { return Hl7Version.V280; }
-            if (string.Compare("2.9.0", versionString, false, culture) == 0) { return Hl7Version.V290; }
+            if (string.Equals("2.3.0", versionString, StringComparison.Ordinal)) { return Hl7Version.V230; }
+            if (string.Equals("2.4.0", versionString, StringComparison.Ordinal)) { return Hl7Version.V240; }
+            if (string.Equals("2.5.0", versionString, StringComparison.Ordinal)) { return Hl7Version.V250; }
+            if (string.Equals("2.6.0", versionString, StringComparison.Ordinal)) { return Hl7Version.V260; }
+            if (string.Equals("2.7.0", versionString, StringComparison.Ordinal)) { return Hl7Version.V270; }
+            if (string.Equals("2.8.0", versionString, StringComparison.Ordinal)) { return Hl7Version.V280; }
+            if (string.Equals("2.9.0", versionString, StringComparison.Ordinal)) { return Hl7Version.V290; }
 
             // Default
             return Hl7Version.None;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
 using ClearHl7.Serialization;
@@ -123,7 +124,7 @@ namespace ClearHl7.V282.Types
         /// <inheritdoc/>
         public string ToDelimitedString()
         {
-            System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CurrentCulture;
+            CultureInfo culture = CultureInfo.CurrentCulture;
             string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
 
             return string.Format(

@@ -63,7 +63,7 @@ namespace ClearHl7.V290.Segments
 
             if (segments.Length > 0)
             {
-                if (!segments[0].StartsWith("Z", StringComparison.CurrentCultureIgnoreCase))
+                if (!segments[0].StartsWith("Z", StringComparison.OrdinalIgnoreCase))
                 {
                     throw new ArgumentException($"{ nameof(delimitedString) } does not begin with the proper segment Id: 'Z[XX]{ Configuration.FieldSeparator }'.", nameof(delimitedString));
                 }
