@@ -1,17 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;net5.0;net6.0;net7.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <CheckEolTargetFramework>false</CheckEolTargetFramework>
     <Authors>Dave Bronson</Authors>
-    <Copyright>Copyright © Dave Bronson 2020-2022</Copyright>
+    <Copyright>Copyright © Dave Bronson 2020-2024</Copyright>
     <PackageProjectUrl>https://github.com/davebronson/clear-hl7-net</PackageProjectUrl>
     <Summary>.NET HL7® message generation and parsing library for the version 2.x standard</Summary>
     <PackageTags>hl7;hl7-builder;hl7-parser;hl7-message;hl7-generating;hl7-parsing;dotnet;healthcare</PackageTags>
     <Title>ClearHL7</Title>
     <Description>.NET HL7® message generation and parsing library for the version 2.x standard. Please see important info about changes in V2: https://github.com/davebronson/clear-hl7-net/blob/master/Version2.md </Description>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <PackageVersion>2.1.0</PackageVersion>
+	<VersionPrefix>2.1.1</VersionPrefix>
+    <PackageVersion>2.1.1</PackageVersion>
+	<ReleaseVersion>2.1.1</ReleaseVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackOnBuild>true</PackOnBuild>
     <Owners>Dave Bronson</Owners>
@@ -20,7 +22,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <Deterministic>true</Deterministic>
-    <ReleaseVersion>2.1.0</ReleaseVersion>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <LangVersion>latest</LangVersion>
@@ -34,7 +36,7 @@
     <None Remove="Microsoft.SourceLink.GitHub" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>

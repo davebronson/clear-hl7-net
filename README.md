@@ -6,7 +6,7 @@
 
 .NET HL7&reg; message generation and parsing library for the version 2.x standard
 
-Understanding and programmatically building HL7 messages can be difficult.  clear-hl7-net takes pain out of this process by exposing an object hierarchy that is well structured, clearly named, and (most importantly) strongly-typed.
+Understanding and programmatically building HL7 messages can be difficult.  clear-hl7-net takes pain out of this process by exposing an object hierarchy that is well structured, clearly named, and strongly-typed.
 
 HL7&reg; is the registered trademark of Health Level Seven International, and the use of this trademark does not constitute an endorsement by HL7.
 
@@ -16,7 +16,7 @@ Upgrading from Version 1.x to Version 2? Please read some important notes about 
 ## Getting Started
 ### Building clear-hl7-net
 1. Clone the source code: `git clone https://github.com/davebronson/clear-hl7-net.git`
-2. Open ClearHl7.sln in Visual Studio for Windows or Mac, or build from the command line
+2. Open ClearHl7.sln in Visual Studio or VS Code, or build from the command line
 
 ### Download From NuGet
 * https://www.nuget.org/packages/ClearHl7
@@ -25,9 +25,6 @@ Upgrading from Version 1.x to Version 2? Please read some important notes about 
 ### Targets
 * .NET Standard 2.0
 * .NET Standard 2.1
-* .NET 5
-* .NET 6
-* .NET 7
 
 ## Supported HL7 Versions
 Several versions exist for the HL7 Version 2.x messaging standard.  clear-hl7-net supports the following:
