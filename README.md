@@ -301,6 +301,268 @@ pidSegment.MaritalStatus = new CodedWithExceptions
 pidSegment.MultipleBirthIndicator = helper.EnumToCode(CodeYesNoIndicator.No);
 ```
 
+## Custom Segments
+
+As of version 2.x, clear-hl7-net supports custom HL7 segments through the `SegmentFactory` class. This feature enables you to define and register custom segments (such as Z-segments) that will be automatically recognized during message parsing and serialization.
+
+### Quick Start with Custom Segments
+
+#### 1. Define Your Custom Segment
+
+```csharp
+using ClearHl7;
+using ClearHl7.V282.Types;
+
+public class ZdsSegment : ISegment
+{
+    public string Id => "ZDS";
+    public int Ordinal { get; set; }
+
+    // Define typed properties for your segment fields
+    public string RecordId { get; set; }
+    public CodedWithExceptions DataSource { get; set; }
+    public CodedWithExceptions ProcessingStatus { get; set; }
+    public ExtendedTelecommunicationNumber[] ContactInfo { get; set; }
+    public DateTime? LastUpdated { get; set; }
+    public string Comments { get; set; }
+
+    public void FromDelimitedString(string delimitedString)
+    {
+        FromDelimitedString(delimitedString, null);
+    }
+
+    public void FromDelimitedString(string delimitedString, Separators separators)
+    {
+        var seps = separators ?? new Separators();
+        var fields = delimitedString?.Split(seps.FieldSeparator);
+        
+        if (fields == null || fields.Length == 0) return;
+
+        // Parse fields (skip field 0 which is the segment ID)
+        if (fields.Length > 1) RecordId = fields[1];
+        
+        if (fields.Length > 2 && !string.IsNullOrEmpty(fields[2]))
+        {
+            DataSource = new CodedWithExceptions();
+            DataSource.FromDelimitedString(fields[2], seps);
+        }
+
+        if (fields.Length > 3 && !string.IsNullOrEmpty(fields[3]))
+        {
+            ProcessingStatus = new CodedWithExceptions();
+            ProcessingStatus.FromDelimitedString(fields[3], seps);
+        }
+
+        // Handle repeating contact info
+        if (fields.Length > 4 && !string.IsNullOrEmpty(fields[4]))
+        {
+            var contactElements = fields[4].Split(seps.FieldRepeatSeparator);
+            ContactInfo = new ExtendedTelecommunicationNumber[contactElements.Length];
+            for (int i = 0; i < contactElements.Length; i++)
+            {
+                ContactInfo[i] = new ExtendedTelecommunicationNumber();
+                ContactInfo[i].FromDelimitedString(contactElements[i], seps);
+            }
+        }
+
+        // Handle timestamp
+        if (fields.Length > 5 && !string.IsNullOrEmpty(fields[5]))
+        {
+            if (DateTime.TryParseExact(fields[5], "yyyyMMddHHmmss", null, 
+                System.Globalization.DateTimeStyles.None, out DateTime timestamp))
+            {
+                LastUpdated = timestamp;
+            }
+        }
+
+        // Handle comments with escape sequences
+        if (fields.Length > 6 && !string.IsNullOrEmpty(fields[6]))
+        {
+            Comments = Helpers.StringHelper.Unescape(fields[6]);
+        }
+    }
+
+    public string ToDelimitedString()
+    {
+        var seps = new Separators();
+        var fields = new string[7];
+        
+        fields[0] = Id;
+        fields[1] = RecordId;
+        fields[2] = DataSource?.ToDelimitedString();
+        fields[3] = ProcessingStatus?.ToDelimitedString();
+        
+        if (ContactInfo?.Length > 0)
+        {
+            fields[4] = string.Join(seps.FieldRepeatSeparator.ToString(), 
+                ContactInfo.Select(ci => ci?.ToDelimitedString() ?? string.Empty));
+        }
+        
+        fields[5] = LastUpdated?.ToString("yyyyMMddHHmmss");
+        fields[6] = !string.IsNullOrEmpty(Comments) ? Helpers.StringHelper.Escape(Comments) : null;
+
+        return string.Join(seps.FieldSeparator.ToString(), fields);
+    }
+}
+```
+
+#### 2. Register Your Custom Segment
+
+```csharp
+using ClearHl7;
+
+// Register for all HL7 versions (global registration)
+SegmentFactory.RegisterSegment<ZdsSegment>("ZDS");
+
+// OR register for a specific HL7 version
+SegmentFactory.RegisterSegment<Hl7Version, ZdsSegment>("ZDS");
+```
+
+#### 3. Use Custom Segments in Message Processing
+
+```csharp
+using ClearHl7;
+using ClearHl7.Serialization;
+using ClearHl7.Extensions;
+using ClearHl7.V282;
+
+// Parse messages containing custom segments
+string hl7Message = 
+    "MSH|^~\\&|SYSTEM|SENDER|RECEIVER|DEST|20240101120000||ADT^A01|MSG001|P|2.8.2||||\r" +
+    "PID|1||12345^^^^MR||Doe^John^J||19800101|M|\r" +
+    "ZDS|REC001|SRC^Data Source^L|PROC^Processing^L|555-1234^WPN^PH|20240101120000|Custom data segment\r";
+
+var message = MessageSerializer.Deserialize<Message>(hl7Message);
+
+// Access custom segments using new convenience methods
+var zdsSegments = message.GetCustomSegments("ZDS");
+var firstZds = message.GetCustomSegment("ZDS") as ZdsSegment;
+
+// Access with strong typing
+var typedZdsSegments = message.GetSegments<ZdsSegment>("ZDS");
+var typedZds = message.GetSegment<ZdsSegment>("ZDS");
+
+// Work with parsed custom segment data
+if (typedZds != null)
+{
+    Console.WriteLine($"Record ID: {typedZds.RecordId}");
+    Console.WriteLine($"Data Source: {typedZds.DataSource?.Identifier}");
+    Console.WriteLine($"Last Updated: {typedZds.LastUpdated}");
+}
+```
+
+### Advanced Custom Segment Features
+
+#### Supporting Complex HL7 Data Types
+
+Custom segments can use any of the built-in HL7 data types, including:
+
+- `CodedWithExceptions` - for coded values
+- `ExtendedTelecommunicationNumber` - for phone/email contacts  
+- `ExtendedPersonName` - for person names
+- `ExtendedAddress` - for addresses
+- `HierarchicDesignator` - for hierarchical identifiers
+- `DateTime` and other primitives
+
+#### Supporting Repetition
+
+Fields can repeat within segments by using arrays and the field repeat separator (`~`):
+
+```csharp
+// Multiple contact methods
+public ExtendedTelecommunicationNumber[] ContactInfo { get; set; }
+
+// Multiple coded categories
+public CodedWithExceptions[] Categories { get; set; }
+
+// Parse repeating fields
+var elements = field.Split(seps.FieldRepeatSeparator);
+ContactInfo = new ExtendedTelecommunicationNumber[elements.Length];
+for (int i = 0; i < elements.Length; i++)
+{
+    ContactInfo[i] = new ExtendedTelecommunicationNumber();
+    ContactInfo[i].FromDelimitedString(elements[i], seps);
+}
+```
+
+#### Handling Special Characters
+
+Use the `StringHelper.Escape()` and `StringHelper.Unescape()` methods for text fields that may contain HL7 delimiter characters:
+
+```csharp
+// When parsing from HL7
+Comments = Helpers.StringHelper.Unescape(fields[6]);
+
+// When serializing to HL7  
+return Helpers.StringHelper.Escape(Comments);
+```
+
+### Accessing Segments in Messages
+
+The library provides several convenient methods for accessing both built-in and custom segments:
+
+```csharp
+using ClearHl7.Extensions;
+
+// Get all segments with a specific ID
+var allZdsSegments = message.GetSegments("ZDS");
+var allZdsCustomSegments = message.GetCustomSegments("ZDS");
+
+// Get the first segment with a specific ID
+var firstMsh = message.GetSegment("MSH");
+var firstZds = message.GetCustomSegment("ZDS");
+
+// Get segments with strong typing
+var typedZdsSegments = message.GetSegments<ZdsSegment>("ZDS");
+var typedZds = message.GetSegment<ZdsSegment>("ZDS");
+
+// Get all segments in order
+var allSegments = message.GetAllSegments();
+```
+
+### Message Structure Patterns
+
+Most message classes expose typed properties for standard segments, and repeating segments are usually exposed as lists:
+
+```csharp
+// For built-in segments, access via Segments collection and LINQ
+var msh = message.Segments.OfType<MshSegment>().FirstOrDefault();
+var pid = message.Segments.OfType<PidSegment>().FirstOrDefault();
+
+// For repeating segments like NK1 (Next of Kin)
+var nk1s = message.Segments.OfType<Nk1Segment>().ToList();
+foreach(var nk1 in nk1s)
+{
+    Console.WriteLine(nk1.NkName?.FamilyName?.Surname);
+}
+
+// For custom segments, use the new convenience methods
+var customSegments = message.GetCustomSegments("ZDS").Cast<ZdsSegment>();
+```
+
+### Registration Options
+
+The `SegmentFactory` provides flexible registration options:
+
+```csharp
+// Global registration - works with all HL7 versions
+SegmentFactory.RegisterSegment<ZdsSegment>("ZDS");
+
+// Version-specific registration
+SegmentFactory.RegisterSegment<Hl7Version, ZdsSegment>("ZDS");
+
+// You can also register different implementations for different versions
+SegmentFactory.RegisterSegment(Hl7Version.V282, "ZDS");
+```
+
+### Thread Safety
+
+The `SegmentFactory` is thread-safe and uses `ConcurrentDictionary` internally. You can safely register custom segments from multiple threads, though it's recommended to register all custom segments during application startup.
+
+### Backward Compatibility
+
+Custom segments are fully backward compatible. All existing functionality is preserved, and the library falls back to built-in segments when no custom registration is found.
+
 ## Anything Else?
 * `Segment`s, `Type`s, and collections are __not__ automatically initialized for you.  You must manually instantiate each object that you're going to read/write to.  But be a good steward of machine resources, and only instantiate objects that you'll interact with.
 * Collection properties are all implemented with the `IEnumerable` interface to provide you with wide flexibility in the type of collection that you pass into the class.  The example above shows usage of simple arrays, but you can use more complex types like `List`, etc.
