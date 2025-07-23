@@ -111,7 +111,20 @@ namespace ClearHl7.Serialization
 
                 // Instantiate the segment
                 string id = segmentString.Substring(0, 3);
-                object segment = messageClass.Assembly.CreateInstance($"{ messageClass.Namespace }.Segments.{ id.Substring(0, 1).ToUpper(culture) }{ id.Substring(1, 2).ToLower(culture) }Segment", false);
+                object segment = null;
+
+                // First try to create segment using SegmentFactory (for custom segments)
+                Hl7Version version = GetVersionFromNamespace(messageClass.Namespace);
+                ISegment customSegment = SegmentFactory.CreateSegment(id, version);
+                if (customSegment != null)
+                {
+                    segment = customSegment;
+                }
+                else
+                {
+                    // Fall back to reflection for built-in segments
+                    segment = messageClass.Assembly.CreateInstance($"{ messageClass.Namespace }.Segments.{ id.Substring(0, 1).ToUpper(culture) }{ id.Substring(1, 2).ToLower(culture) }Segment", false);
+                }
 
                 if (segment == null)
                 {
@@ -147,6 +160,32 @@ namespace ClearHl7.Serialization
             }
 
             return message.ToDelimitedString();
+        }
+
+        /// <summary>
+        /// Extracts the HL7 version from a namespace string.
+        /// </summary>
+        /// <param name="namespaceName">The namespace (e.g., "ClearHl7.V281").</param>
+        /// <returns>The corresponding Hl7Version enumeration value.</returns>
+        private static Hl7Version GetVersionFromNamespace(string namespaceName)
+        {
+            if (string.IsNullOrEmpty(namespaceName))
+            {
+                return Hl7Version.None;
+            }
+
+            // Extract version from namespace like "ClearHl7.V281"
+            int lastDotIndex = namespaceName.LastIndexOf('.');
+            if (lastDotIndex >= 0 && lastDotIndex < namespaceName.Length - 1)
+            {
+                string versionString = namespaceName.Substring(lastDotIndex + 1);
+                if (Enum.TryParse<Hl7Version>(versionString, out Hl7Version version))
+                {
+                    return version;
+                }
+            }
+
+            return Hl7Version.None;
         }
     }
 }
