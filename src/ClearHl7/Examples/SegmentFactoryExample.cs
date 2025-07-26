@@ -1,10 +1,9 @@
 using System;
 using System.Linq;
-using ClearHl7;
+using ClearHl7.Extensions;
 using ClearHl7.Serialization;
 using ClearHl7.V281;
 using ClearHl7.V281.Types;
-using ClearHl7.Extensions;
 
 namespace ClearHl7.Examples
 {
@@ -14,7 +13,10 @@ namespace ClearHl7.Examples
     /// </summary>
     public class ZdsSegment : ISegment
     {
+        /// <inheritdoc/>
         public string Id => "ZDS";
+
+        /// <inheritdoc/>
         public int Ordinal { get; set; }
 
         /// <summary>
@@ -54,11 +56,13 @@ namespace ClearHl7.Examples
         /// </summary>
         public string Comments { get; set; }
 
+        /// <inheritdoc/>
         public void FromDelimitedString(string delimitedString) 
         { 
             FromDelimitedString(delimitedString, null);
         }
 
+        /// <inheritdoc/>
         public void FromDelimitedString(string delimitedString, Separators separators)
         {
             var seps = separators ?? new Separators();
@@ -129,6 +133,7 @@ namespace ClearHl7.Examples
             }
         }
 
+        /// <inheritdoc/>
         public string ToDelimitedString()
         {
             var seps = new Separators();
@@ -169,7 +174,10 @@ namespace ClearHl7.Examples
     /// </summary>
     public class ZpdSegment : ISegment
     {
+        /// <inheritdoc/>
         public string Id => "ZPD";
+
+        /// <inheritdoc/>
         public int Ordinal { get; set; }
 
         /// <summary>
@@ -187,11 +195,13 @@ namespace ClearHl7.Examples
         /// </summary>
         public DateTime? EffectiveDate { get; set; }
 
+        /// <inheritdoc/>
         public void FromDelimitedString(string delimitedString) 
         { 
             FromDelimitedString(delimitedString, null);
         }
 
+        /// <inheritdoc/>
         public void FromDelimitedString(string delimitedString, Separators separators)
         {
             var seps = separators ?? new Separators();
@@ -218,6 +228,7 @@ namespace ClearHl7.Examples
             }
         }
 
+        /// <inheritdoc/>
         public string ToDelimitedString()
         {
             var seps = new Separators();
@@ -230,6 +241,9 @@ namespace ClearHl7.Examples
     /// </summary>
     public class SegmentFactoryExample
     {
+        /// <summary>
+        /// Runs a segment factory example.
+        /// </summary>
         public static void RunExample()
         {
             Console.WriteLine("SegmentFactory Custom Segment Registration Example");

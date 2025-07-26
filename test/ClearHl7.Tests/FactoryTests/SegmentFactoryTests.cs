@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using ClearHl7;
 using ClearHl7.Serialization;
 using ClearHl7.V281;
 using ClearHl7.V281.Types;
@@ -8,7 +7,7 @@ using ClearHl7.Extensions;
 using FluentAssertions;
 using Xunit;
 
-namespace ClearHl7.Tests
+namespace ClearHl7.Tests.FactoryTests
 {
     public class SegmentFactoryTests
     {
