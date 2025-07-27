@@ -42,7 +42,7 @@ Global
 		$4.scope = text/x-csharp
 		$0.CSharpFormattingPolicy = $5
 		$5.scope = text/x-csharp
-		version = 2.1.1
+		version = 2.2.0
 		description = .NET HL7® library
 	EndGlobalSection
 EndGlobal
