@@ -165,7 +165,7 @@ namespace ClearHl7.Extensions
         public static string ToHl7DateTimeString(this DateTime dateTime, Type segmentType, string propertyName)
         {
             string format = Hl7DateTimeFormatConfig.GetFormatForField(segmentType, propertyName);
-            return dateTime.ToString(format, CultureInfo.CurrentCulture);
+            return dateTime.ToString(format, CultureInfo.InvariantCulture);
         }
 
         /// <summary>
