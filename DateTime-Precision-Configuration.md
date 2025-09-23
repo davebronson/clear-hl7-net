@@ -4,17 +4,17 @@ This document describes the per-field DateTime precision configuration feature t
 
 ## Overview
 
-Previously, all DateTime fields in HL7 messages were hardcoded to use specific precision formatting. With this enhancement, you can now:
+The DateTime precision configuration feature allows you to control how DateTime values are formatted in HL7 messages with granular control over individual fields. You can:
 
-1. Set a global default DateTime precision for all fields
+1. Set a global DateTime precision for all fields
 2. Override specific fields with type-safe per-field configuration
-3. Preserve existing field-specific precision requirements (e.g., some fields that were intentionally using day precision vs. second precision)
+3. Preserve field-specific precision requirements where certain fields need specific formatting
 
 ## Configuration
 
 ### Global Override Configuration
 
-You can configure the global DateTime precision override using the `Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride` property. When set to null (default), all fields use their original precision. When set to a format, all fields use this format unless individually overridden:
+You can configure the global DateTime precision override using the `Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride` property. When set to null (default), all fields use their default precision. When set to a format, all fields use this format unless individually overridden:
 
 ```csharp
 using ClearHl7;
@@ -22,7 +22,7 @@ using ClearHl7;
 // Set global DateTime format override to minute precision (affects all fields)
 Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride = Consts.DateTimeFormatPrecisionMinute;
 
-// Clear global override to revert to original field precisions
+// Clear global override to revert to default field precisions
 Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride = null;
 // OR use the convenience method:
 Hl7DateTimeFormatConfig.ClearGlobalOverride();
@@ -73,24 +73,24 @@ string mshFormat = sampleDate.ToHl7DateTimeString(typeof(MshSegment), "DateTimeO
 
 ## Configuration Behavior
 
-The configuration system works with a clear hierarchy to ensure original field-specific precisions are preserved:
+The configuration system works with a clear hierarchy:
 
 ### Configuration Hierarchy (Priority Order)
 
 1. **Individual field override** (highest priority) - Set via `SetPrecision<T>()`
 2. **Global override** - Set via `GlobalDateTimeFormatOverride` 
-3. **Original field precision** (preserved from original codebase)
+3. **Default field precision** (field-specific defaults)
 4. **Fallback to second precision** (lowest priority, rarely used)
 
 ### Behavior Scenarios
 
 #### Scenario 1: No Global Override Set
-**Result**: ALL date/time fields will have the **original precision** that the original code had for them.
+**Result**: ALL date/time fields will use their **default precision** as defined by the field type.
 
 ```csharp
-// No configuration set - uses original precisions
+// No configuration set - uses default precisions
 var mshSegment = new MshSegment(DateTime.Now, messageType, "MSG001", processingType);
-// MSH.DateTimeOfMessage uses original second precision: "20240315143045"
+// MSH.DateTimeOfMessage uses default second precision: "20240315143045"
 ```
 
 #### Scenario 2: Global Override Set
@@ -105,7 +105,7 @@ var mshSegment = new MshSegment(DateTime.Now, messageType, "MSG001", processingT
 ```
 
 #### Scenario 3: No Global Override, Individual Field Override Set
-**Result**: ONLY that field will change its precision from the original code.
+**Result**: ONLY that field will change its precision from the default behavior.
 
 ```csharp
 // No global override, but individual field override
@@ -114,7 +114,7 @@ Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Const
 var mshSegment = new MshSegment(DateTime.Now, messageType, "MSG001", processingType);
 var evnSegment = new EvnSegment { RecordedDateTime = DateTime.Now };
 // MSH.DateTimeOfMessage uses day precision: "20240315" (overridden)
-// EVN.RecordedDateTime uses original second precision: "20240315143045"
+// EVN.RecordedDateTime uses default second precision: "20240315143045"
 ```
 
 #### Scenario 4: Global Override + Individual Field Overrides
@@ -177,17 +177,10 @@ public static string ToHl7DateTimeString(this DateTime dateTime, Type segmentTyp
 public static string ToHl7DateTimeString(this DateTime? dateTime, Type segmentType, string propertyName);
 ```
 
-## Migration from Previous Approach
-
-If you were using the previous global `Configuration.DateTimePrecision` approach, you can migrate by:
-
-1. Setting the global default: `Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride = desiredFormat`
-2. Converting specific field configurations to use the type-safe `SetPrecision` method
-
 ## Thread Safety
 
 The configuration is stored in static properties. In multi-threaded environments, ensure proper synchronization when changing the configuration to avoid race conditions.
 
 ## Performance
 
-The per-field configuration system uses efficient dictionary lookups and has minimal performance impact compared to the previous implementation.
+The per-field configuration system uses efficient dictionary lookups and has minimal performance impact.

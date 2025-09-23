@@ -282,10 +282,10 @@ Configuration.ResetSeparators();
 ```
 
 ### DateTime Precision Configuration
-clear-hl7-net provides flexible DateTime precision configuration that allows you to control how DateTime values are formatted in HL7 messages while preserving original field-specific precision requirements.
+clear-hl7-net provides flexible DateTime precision configuration that allows you to control how DateTime values are formatted in HL7 messages while preserving field-specific precision requirements.
 
 #### Key Features
-- **Original precision preservation**: Fields maintain their original HL7 standard precisions when no overrides are set
+- **Precision preservation**: Fields maintain their HL7 standard precisions when no overrides are set
 - **Global override capability**: Optional global setting affects all fields without individual configuration  
 - **Per-field overrides**: Type-safe configuration for individual fields
 - **Clear hierarchy**: Predictable behavior with well-defined priority order
@@ -301,15 +301,15 @@ Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride = Consts.DateTimeFormatPrec
 Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateFormatPrecisionDay);
 Hl7DateTimeFormatConfig.SetPrecision<EvnSegment>(x => x.RecordedDateTime, Consts.DateTimeFormatPrecisionHour);
 
-// Clear overrides to revert to original behavior
+// Clear overrides to revert to default behavior
 Hl7DateTimeFormatConfig.ClearGlobalOverride();
 Hl7DateTimeFormatConfig.ClearFieldPrecisions();
 ```
 
 #### Configuration Scenarios
-1. **No Global Override**: ALL fields use original precision from the codebase
+1. **No Global Override**: ALL fields use default precision based on field type
 2. **Global Override Set**: ALL fields use global precision  
-3. **Individual Override Only**: ONLY overridden fields change from original precision
+3. **Individual Override Only**: ONLY overridden fields change from default precision
 4. **Global + Individual Overrides**: Global precision for all fields except individually overridden ones
 
 #### Available Precision Levels
@@ -608,7 +608,7 @@ Custom segments are fully backward compatible. All existing functionality is pre
 * `Segment`s, `Type`s, and collections are __not__ automatically initialized for you.  You must manually instantiate each object that you're going to read/write to.  But be a good steward of machine resources, and only instantiate objects that you'll interact with.
 * Collection properties are all implemented with the `IEnumerable` interface to provide you with wide flexibility in the type of collection that you pass into the class.  The example above shows usage of simple arrays, but you can use more complex types like `List`, etc.
 * `Segment`s can be built and added to a `Message` in any order.  Just set the `Segment.Ordinal` property for each to specify the ordering in the final output.  And remember that the MSH `Segment` is required, and must appear first.
-* **DateTime precision is configurable**: You can control how DateTime values are formatted in HL7 messages using global overrides and per-field configuration while preserving original field-specific precision requirements. See [DateTime Precision Configuration](DateTime-Precision-Configuration.md) for details.
+* **DateTime precision is configurable**: You can control how DateTime values are formatted in HL7 messages using global overrides and per-field configuration while preserving field-specific precision requirements. See [DateTime Precision Configuration](DateTime-Precision-Configuration.md) for details.
 * The HL7 spec calls out that segments shall be terminated with a single carriage return (a.k.a. \r or (char)13). ClearHl7 supports only this charater.  If you receive messages that use alternate line terminators, you must perform a programmatic replace on those alternate terminators before attempting to deserialize with ClearHL7, so that you may receive the expected result.
 * Any string input that may contain one of the utilized delimiter characters should be escaped with `ClearHl7.Helpers.StringHelper.Escape()`.  See the Zxx/ZPD segment in the example above.
 * Any `Message`, `Segment`, or `Type` can be serialized to an HL7 pipehat string by calling `Serialize()` or `ToDelimitedString()`.  Utilize the `ClearHl7.Serialization` namespace.
