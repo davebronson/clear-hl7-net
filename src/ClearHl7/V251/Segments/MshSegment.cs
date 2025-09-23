@@ -235,7 +235,7 @@ namespace ClearHl7.V251.Segments
                                 SendingFacility?.ToDelimitedString(),
                                 ReceivingApplication?.ToDelimitedString(),
                                 ReceivingFacility?.ToDelimitedString(),
-                                DateTimeOfMessage.ToHl7DateTimeString(),
+                                DateTimeOfMessage.ToHl7DateTimeString(typeof(MshSegment), nameof(DateTimeOfMessage)),
                                 Security,
                                 MessageType?.ToDelimitedString(),
                                 MessageControlId,

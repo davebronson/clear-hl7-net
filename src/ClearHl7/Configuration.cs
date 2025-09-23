@@ -47,12 +47,6 @@
         public static string SubcomponentSeparator { get; set; } = Consts.DefaultSubcomponentSeparator;
 
         /// <summary>
-        /// Gets or sets the precision level for DateTime formatting in HL7 messages.
-        /// </summary>
-        /// <remarks>The default precision is Second, which maintains backward compatibility.</remarks>
-        public static DateTimePrecision DateTimePrecision { get; set; } = DateTimePrecision.Second;
-
-        /// <summary>
         /// Resets the separator configuration properties to their default, recommended values.
         /// </summary>
         /// <remarks>Resets ComponentSeparator, FieldRepeatSeparator, EscapeCharacter, and SubcomponentSeparator to their default, recommended values.</remarks>

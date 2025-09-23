@@ -7,7 +7,7 @@ using ClearHl7.V251.Types;
 namespace DateTimePrecisionExample
 {
     /// <summary>
-    /// Example demonstrating the configurable DateTime precision feature.
+    /// Example demonstrating the configurable DateTime precision feature with per-field configuration.
     /// </summary>
     class Program
     {
@@ -15,12 +15,12 @@ namespace DateTimePrecisionExample
         {
             DateTime sampleDateTime = new DateTime(2024, 3, 15, 14, 30, 45);
             
-            Console.WriteLine("ClearHL7 DateTime Precision Configuration Example");
-            Console.WriteLine("================================================");
+            Console.WriteLine("ClearHL7 Per-Field DateTime Precision Configuration Example");
+            Console.WriteLine("=========================================================");
             Console.WriteLine($"Sample DateTime: {sampleDateTime}");
             Console.WriteLine();
 
-            // Demonstrate different precision levels
+            // Demonstrate different precision levels using extension methods
             Console.WriteLine("Extension Method Examples:");
             Console.WriteLine($"Year precision:   {sampleDateTime.ToHl7DateTimeString(DateTimePrecision.Year)}");
             Console.WriteLine($"Month precision:  {sampleDateTime.ToHl7DateTimeString(DateTimePrecision.Month)}");
@@ -30,24 +30,28 @@ namespace DateTimePrecisionExample
             Console.WriteLine($"Second precision: {sampleDateTime.ToHl7DateTimeString(DateTimePrecision.Second)}");
             Console.WriteLine();
 
-            // Demonstrate configuration usage
-            Console.WriteLine("Configuration-based Examples:");
+            // Demonstrate global default and per-field configuration
+            Console.WriteLine("Per-Field Configuration Examples:");
             
-            // Save original configuration
-            var originalPrecision = Configuration.DateTimePrecision;
+            // Save original default
+            var originalDefault = Hl7DateTimeFormatConfig.DefaultDateTimeFormat;
 
             try
             {
-                // Test different configurations
-                Configuration.DateTimePrecision = DateTimePrecision.Day;
-                Console.WriteLine($"Day precision (configured):    {sampleDateTime.ToHl7DateTimeString()}");
+                // Set global default to minute precision
+                Hl7DateTimeFormatConfig.DefaultDateTimeFormat = Consts.DateTimeFormatPrecisionMinute;
+                
+                // Configure specific fields to use different precision
+                Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateFormatPrecisionDay);
+                Hl7DateTimeFormatConfig.SetPrecision<EvnSegment>(x => x.RecordedDateTime, Consts.DateTimeFormatPrecisionHour);
 
-                Configuration.DateTimePrecision = DateTimePrecision.Minute;
-                Console.WriteLine($"Minute precision (configured): {sampleDateTime.ToHl7DateTimeString()}");
-
-                // Demonstrate MSH segment with different precisions
+                Console.WriteLine($"Global default (minute):     {sampleDateTime.ToHl7DateTimeString(typeof(object), "AnyField")}");
+                Console.WriteLine($"MSH.DateTimeOfMessage (day): {sampleDateTime.ToHl7DateTimeString(typeof(MshSegment), "DateTimeOfMessage")}");
+                Console.WriteLine($"EVN.RecordedDateTime (hour): {sampleDateTime.ToHl7DateTimeString(typeof(EvnSegment), "RecordedDateTime")}");
                 Console.WriteLine();
-                Console.WriteLine("MSH Segment Examples:");
+
+                // Demonstrate with actual segments
+                Console.WriteLine("Segment Examples:");
 
                 var messageType = new MessageType
                 {
@@ -61,24 +65,39 @@ namespace DateTimePrecisionExample
                     ProcessingId = "P"
                 };
 
-                Configuration.DateTimePrecision = DateTimePrecision.Second;
                 var mshSegment = new MshSegment(sampleDateTime, messageType, "MSG001", processingType);
-                Console.WriteLine($"Second precision: {mshSegment.ToDelimitedString()}");
+                var evnSegment = new EvnSegment
+                {
+                    EventTypeCode = "A01",
+                    RecordedDateTime = sampleDateTime
+                };
 
-                Configuration.DateTimePrecision = DateTimePrecision.Minute;
-                Console.WriteLine($"Minute precision: {mshSegment.ToDelimitedString()}");
+                Console.WriteLine($"MSH Segment (day precision):  {mshSegment.ToDelimitedString()}");
+                Console.WriteLine($"EVN Segment (hour precision): {evnSegment.ToDelimitedString()}");
+                Console.WriteLine();
 
-                Configuration.DateTimePrecision = DateTimePrecision.Day;
-                Console.WriteLine($"Day precision:    {mshSegment.ToDelimitedString()}");
+                // Demonstrate type-safe configuration
+                Console.WriteLine("Type-Safe Configuration API:");
+                Console.WriteLine("// Global default");
+                Console.WriteLine("Hl7DateTimeFormatConfig.DefaultDateTimeFormat = Consts.DateTimeFormatPrecisionMinute;");
+                Console.WriteLine();
+                Console.WriteLine("// Per-field configuration (type-safe)");
+                Console.WriteLine("Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateFormatPrecisionDay);");
+                Console.WriteLine("Hl7DateTimeFormatConfig.SetPrecision<EvnSegment>(x => x.RecordedDateTime, Consts.DateTimeFormatPrecisionHour);");
             }
             finally
             {
                 // Restore original configuration
-                Configuration.DateTimePrecision = originalPrecision;
+                Hl7DateTimeFormatConfig.DefaultDateTimeFormat = originalDefault;
+                Hl7DateTimeFormatConfig.ClearFieldPrecisions();
             }
 
             Console.WriteLine();
-            Console.WriteLine("Note: The default precision is Second for backward compatibility.");
+            Console.WriteLine("Key Features:");
+            Console.WriteLine("- Global default precision setting");
+            Console.WriteLine("- Type-safe per-field configuration overrides");
+            Console.WriteLine("- Preserves existing field-specific precision requirements");
+            Console.WriteLine("- Full backward compatibility");
         }
     }
 }

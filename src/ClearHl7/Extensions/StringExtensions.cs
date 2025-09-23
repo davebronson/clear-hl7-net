@@ -156,23 +156,28 @@ namespace ClearHl7.Extensions
         }
 
         /// <summary>
-        /// Formats a DateTime value using the configured precision level.
+        /// Formats a DateTime value using per-field configuration with fallback to global default.
         /// </summary>
         /// <param name="dateTime">The DateTime value to format.</param>
-        /// <returns>A formatted string representation of the DateTime value using the configured precision.</returns>
-        public static string ToHl7DateTimeString(this DateTime dateTime)
+        /// <param name="segmentType">The type of the segment containing this field.</param>
+        /// <param name="propertyName">The name of the property being formatted.</param>
+        /// <returns>A formatted string representation of the DateTime value using field-specific or default formatting.</returns>
+        public static string ToHl7DateTimeString(this DateTime dateTime, Type segmentType, string propertyName)
         {
-            return dateTime.ToHl7DateTimeString(Configuration.DateTimePrecision);
+            string format = Hl7DateTimeFormatConfig.GetFormatForField(segmentType, propertyName);
+            return dateTime.ToString(format, CultureInfo.CurrentCulture);
         }
 
         /// <summary>
-        /// Formats a nullable DateTime value using the configured precision level.
+        /// Formats a nullable DateTime value using per-field configuration with fallback to global default.
         /// </summary>
         /// <param name="dateTime">The nullable DateTime value to format.</param>
-        /// <returns>A formatted string representation of the DateTime value using the configured precision, or null if the input is null.</returns>
-        public static string ToHl7DateTimeString(this DateTime? dateTime)
+        /// <param name="segmentType">The type of the segment containing this field.</param>
+        /// <param name="propertyName">The name of the property being formatted.</param>
+        /// <returns>A formatted string representation of the DateTime value using field-specific or default formatting, or null if the input is null.</returns>
+        public static string ToHl7DateTimeString(this DateTime? dateTime, Type segmentType, string propertyName)
         {
-            return dateTime.HasValue ? dateTime.Value.ToHl7DateTimeString() : null;
+            return dateTime.HasValue ? dateTime.Value.ToHl7DateTimeString(segmentType, propertyName) : null;
         }
 
         /// <summary>
