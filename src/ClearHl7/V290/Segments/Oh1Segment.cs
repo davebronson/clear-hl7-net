@@ -114,9 +114,9 @@ namespace ClearHl7.V290.Segments
                                 SetId.HasValue ? SetId.Value.ToString(culture) : null,
                                 ActionCode,
                                 EmploymentStatus?.ToDelimitedString(),
-                                EmploymentStatusStartDate.HasValue ? EmploymentStatusStartDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
-                                EmploymentStatusEndDate.HasValue ? EmploymentStatusEndDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
-                                EnteredDate.HasValue ? EnteredDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
+                                EmploymentStatusStartDate.ToHl7DateTimeString(typeof(Oh1Segment), nameof(EmploymentStatusStartDate), Consts.DateFormatPrecisionDay, culture),
+                                EmploymentStatusEndDate.ToHl7DateTimeString(typeof(Oh1Segment), nameof(EmploymentStatusEndDate), Consts.DateFormatPrecisionDay, culture),
+                                EnteredDate.ToHl7DateTimeString(typeof(Oh1Segment), nameof(EnteredDate), Consts.DateFormatPrecisionDay, culture),
                                 EmploymentStatusUniqueIdentifier?.ToDelimitedString()
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }

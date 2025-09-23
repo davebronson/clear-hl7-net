@@ -93,8 +93,8 @@ namespace ClearHl7.V230.Segments
                                 StringHelper.StringFormatSequence(0, 5, Configuration.FieldSeparator),
                                 Id,
                                 StudyPhaseIdentifier?.ToDelimitedString(),
-                                DateTimeStudyPhaseBegan.HasValue ? DateTimeStudyPhaseBegan.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                DateTimeStudyPhaseEnded.HasValue ? DateTimeStudyPhaseEnded.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                DateTimeStudyPhaseBegan.ToHl7DateTimeString(typeof(CspSegment), nameof(DateTimeStudyPhaseBegan), Consts.DateTimeFormatPrecisionSecond, culture),
+                                DateTimeStudyPhaseEnded.ToHl7DateTimeString(typeof(CspSegment), nameof(DateTimeStudyPhaseEnded), Consts.DateTimeFormatPrecisionSecond, culture),
                                 StudyPhaseEvaluability?.ToDelimitedString()
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }

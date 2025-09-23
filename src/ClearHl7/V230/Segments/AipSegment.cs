@@ -148,7 +148,7 @@ namespace ClearHl7.V230.Segments
                                 PersonnelResourceId?.ToDelimitedString(),
                                 ResourceType?.ToDelimitedString(),
                                 ResourceGroup?.ToDelimitedString(),
-                                StartDateTime.HasValue ? StartDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                StartDateTime.ToHl7DateTimeString(typeof(AipSegment), nameof(StartDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 StartDateTimeOffset.HasValue ? StartDateTimeOffset.Value.ToString(Consts.NumericFormat, culture) : null,
                                 StartDateTimeOffsetUnits?.ToDelimitedString(),
                                 Duration.HasValue ? Duration.Value.ToString(Consts.NumericFormat, culture) : null,

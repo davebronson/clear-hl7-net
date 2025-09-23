@@ -108,9 +108,9 @@ namespace ClearHl7.V231.Segments
                                 ActionCode,
                                 PathwayId?.ToDelimitedString(),
                                 PathwayInstanceId?.ToDelimitedString(),
-                                PathwayEstablishedDateTime.HasValue ? PathwayEstablishedDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                PathwayEstablishedDateTime.ToHl7DateTimeString(typeof(PthSegment), nameof(PathwayEstablishedDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 PathwayLifeCycleStatus?.ToDelimitedString(),
-                                ChangePathwayLifeCycleStatusDateTime.HasValue ? ChangePathwayLifeCycleStatusDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
+                                ChangePathwayLifeCycleStatusDateTime.ToHl7DateTimeString(typeof(PthSegment), nameof(ChangePathwayLifeCycleStatusDateTime), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

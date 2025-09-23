@@ -144,7 +144,7 @@ namespace ClearHl7.V230.Segments
                                 FileSendingFacility,
                                 FileReceivingApplication,
                                 FileReceivingFacility,
-                                FileCreationDateTime.HasValue ? FileCreationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                FileCreationDateTime.ToHl7DateTimeString(typeof(FhsSegment), nameof(FileCreationDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 FileSecurity,
                                 FileNameId,
                                 FileHeaderComment,

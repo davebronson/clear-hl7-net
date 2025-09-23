@@ -130,7 +130,7 @@ namespace ClearHl7.V282.Segments
                                 AcademicDegree?.ToDelimitedString(),
                                 AcademicDegreeProgramDateRange?.ToDelimitedString(),
                                 AcademicDegreeProgramParticipationDateRange?.ToDelimitedString(),
-                                AcademicDegreeGrantedDate.HasValue ? AcademicDegreeGrantedDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
+                                AcademicDegreeGrantedDate.ToHl7DateTimeString(typeof(EduSegment), nameof(AcademicDegreeGrantedDate), Consts.DateFormatPrecisionDay, culture),
                                 School?.ToDelimitedString(),
                                 SchoolTypeCode?.ToDelimitedString(),
                                 SchoolAddress?.ToDelimitedString(),

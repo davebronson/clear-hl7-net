@@ -117,7 +117,7 @@ namespace ClearHl7.V271.Segments
                                 PackageQuantity.HasValue ? PackageQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
                                 Price?.ToDelimitedString(),
                                 FutureItemPrice?.ToDelimitedString(),
-                                FutureItemPriceEffectiveDate.HasValue ? FutureItemPriceEffectiveDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
+                                FutureItemPriceEffectiveDate.ToHl7DateTimeString(typeof(PkgSegment), nameof(FutureItemPriceEffectiveDate), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

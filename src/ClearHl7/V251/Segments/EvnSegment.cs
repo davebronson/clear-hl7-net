@@ -116,11 +116,11 @@ namespace ClearHl7.V251.Segments
                                 StringHelper.StringFormatSequence(0, 8, Configuration.FieldSeparator),
                                 Id,
                                 EventTypeCode,
-                                RecordedDateTime.ToHl7DateTimeString(typeof(EvnSegment), nameof(RecordedDateTime)),
-                                DateTimePlannedEvent.ToHl7DateTimeString(typeof(EvnSegment), nameof(DateTimePlannedEvent)),
+                                RecordedDateTime.ToHl7DateTimeString(typeof(EvnSegment), nameof(RecordedDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                DateTimePlannedEvent.ToHl7DateTimeString(typeof(EvnSegment), nameof(DateTimePlannedEvent), Consts.DateTimeFormatPrecisionSecond, culture),
                                 EventReasonCode,
                                 OperatorId != null ? string.Join(Configuration.FieldRepeatSeparator, OperatorId.Select(x => x.ToDelimitedString())) : null,
-                                EventOccurred.ToHl7DateTimeString(typeof(EvnSegment), nameof(EventOccurred)),
+                                EventOccurred.ToHl7DateTimeString(typeof(EvnSegment), nameof(EventOccurred), Consts.DateTimeFormatPrecisionSecond, culture),
                                 EventFacility?.ToDelimitedString()
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }

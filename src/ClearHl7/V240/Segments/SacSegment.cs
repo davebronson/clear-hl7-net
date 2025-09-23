@@ -353,7 +353,7 @@ namespace ClearHl7.V240.Segments
                                 PrimaryParentContainerIdentifier?.ToDelimitedString(),
                                 EquipmentContainerIdentifier?.ToDelimitedString(),
                                 SpecimenSource?.ToDelimitedString(),
-                                RegistrationDateTime.HasValue ? RegistrationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                RegistrationDateTime.ToHl7DateTimeString(typeof(SacSegment), nameof(RegistrationDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ContainerStatus?.ToDelimitedString(),
                                 CarrierType?.ToDelimitedString(),
                                 CarrierIdentifier?.ToDelimitedString(),

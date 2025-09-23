@@ -110,8 +110,8 @@ namespace ClearHl7.V231.Segments
                                 MasterFileIdentifier?.ToDelimitedString(),
                                 MasterFileApplicationIdentifier?.ToDelimitedString(),
                                 FileLevelEventCode,
-                                EnteredDateTime.HasValue ? EnteredDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                EffectiveDateTime.HasValue ? EffectiveDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                EnteredDateTime.ToHl7DateTimeString(typeof(MfiSegment), nameof(EnteredDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                EffectiveDateTime.ToHl7DateTimeString(typeof(MfiSegment), nameof(EffectiveDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ResponseLevelCode
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }

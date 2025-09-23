@@ -148,9 +148,9 @@ namespace ClearHl7.V231.Segments
                                 ReferralDisposition != null ? string.Join(Configuration.FieldRepeatSeparator, ReferralDisposition.Select(x => x.ToDelimitedString())) : null,
                                 ReferralCategory?.ToDelimitedString(),
                                 OriginatingReferralIdentifier?.ToDelimitedString(),
-                                EffectiveDate.HasValue ? EffectiveDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                ProcessDate.HasValue ? ProcessDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                EffectiveDate.ToHl7DateTimeString(typeof(Rf1Segment), nameof(EffectiveDate), Consts.DateTimeFormatPrecisionSecond, culture),
+                                ExpirationDate.ToHl7DateTimeString(typeof(Rf1Segment), nameof(ExpirationDate), Consts.DateTimeFormatPrecisionSecond, culture),
+                                ProcessDate.ToHl7DateTimeString(typeof(Rf1Segment), nameof(ProcessDate), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ReferralReason != null ? string.Join(Configuration.FieldRepeatSeparator, ReferralReason.Select(x => x.ToDelimitedString())) : null,
                                 ExternalReferralIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, ExternalReferralIdentifier.Select(x => x.ToDelimitedString())) : null
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());

@@ -132,9 +132,9 @@ namespace ClearHl7.V290.Segments
                                 Comment != null ? string.Join(Configuration.FieldRepeatSeparator, Comment) : null,
                                 CommentType?.ToDelimitedString(),
                                 EnteredBy?.ToDelimitedString(),
-                                EnteredDateTime.HasValue ? EnteredDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                EffectiveStartDate.HasValue ? EffectiveStartDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                EnteredDateTime.ToHl7DateTimeString(typeof(NteSegment), nameof(EnteredDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                EffectiveStartDate.ToHl7DateTimeString(typeof(NteSegment), nameof(EffectiveStartDate), Consts.DateTimeFormatPrecisionSecond, culture),
+                                ExpirationDate.ToHl7DateTimeString(typeof(NteSegment), nameof(ExpirationDate), Consts.DateTimeFormatPrecisionSecond, culture),
                                 CodedComment != null ? string.Join(Configuration.FieldRepeatSeparator, CodedComment.Select(x => x.ToDelimitedString())) : null
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }

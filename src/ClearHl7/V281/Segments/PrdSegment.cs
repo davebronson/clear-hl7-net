@@ -165,7 +165,7 @@ namespace ClearHl7.V281.Segments
                                 ProviderCommunicationInformation != null ? string.Join(Configuration.FieldRepeatSeparator, ProviderCommunicationInformation.Select(x => x.ToDelimitedString())) : null,
                                 PreferredMethodOfContact?.ToDelimitedString(),
                                 ProviderIdentifiers != null ? string.Join(Configuration.FieldRepeatSeparator, ProviderIdentifiers.Select(x => x.ToDelimitedString())) : null,
-                                EffectiveStartDateOfProviderRole.HasValue ? EffectiveStartDateOfProviderRole.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                EffectiveStartDateOfProviderRole.ToHl7DateTimeString(typeof(PrdSegment), nameof(EffectiveStartDateOfProviderRole), Consts.DateTimeFormatPrecisionSecond, culture),
                                 EffectiveEndDateOfProviderRole != null ? string.Join(Configuration.FieldRepeatSeparator, EffectiveEndDateOfProviderRole.Select(x => x.ToString(Consts.DateTimeFormatPrecisionSecond, culture))) : null,
                                 ProviderOrganizationNameAndIdentifier?.ToDelimitedString(),
                                 ProviderOrganizationAddress != null ? string.Join(Configuration.FieldRepeatSeparator, ProviderOrganizationAddress.Select(x => x.ToDelimitedString())) : null,

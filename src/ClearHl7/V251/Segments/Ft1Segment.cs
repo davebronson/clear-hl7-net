@@ -273,7 +273,7 @@ namespace ClearHl7.V251.Segments
                                 TransactionId,
                                 TransactionBatchId,
                                 TransactionDate?.ToDelimitedString(),
-                                TransactionPostingDate.HasValue ? TransactionPostingDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                TransactionPostingDate.ToHl7DateTimeString(typeof(Ft1Segment), nameof(TransactionPostingDate), Consts.DateTimeFormatPrecisionSecond, culture),
                                 TransactionType,
                                 TransactionCode?.ToDelimitedString(),
                                 TransactionDescription,

@@ -145,7 +145,7 @@ namespace ClearHl7.V271.Segments
                                 ShipmentId?.ToDelimitedString(),
                                 InternalShipmentId != null ? string.Join(Configuration.FieldRepeatSeparator, InternalShipmentId.Select(x => x.ToDelimitedString())) : null,
                                 ShipmentStatus?.ToDelimitedString(),
-                                ShipmentStatusDateTime.HasValue ? ShipmentStatusDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                ShipmentStatusDateTime.ToHl7DateTimeString(typeof(ShpSegment), nameof(ShipmentStatusDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ShipmentStatusReason?.ToDelimitedString(),
                                 ShipmentPriority?.ToDelimitedString(),
                                 ShipmentConfidentiality != null ? string.Join(Configuration.FieldRepeatSeparator, ShipmentConfidentiality.Select(x => x.ToDelimitedString())) : null,

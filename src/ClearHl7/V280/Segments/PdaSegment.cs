@@ -130,7 +130,7 @@ namespace ClearHl7.V280.Segments
                                 DeathCauseCode != null ? string.Join(Configuration.FieldRepeatSeparator, DeathCauseCode.Select(x => x.ToDelimitedString())) : null,
                                 DeathLocation?.ToDelimitedString(),
                                 DeathCertifiedIndicator,
-                                DeathCertificateSignedDateTime.HasValue ? DeathCertificateSignedDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                DeathCertificateSignedDateTime.ToHl7DateTimeString(typeof(PdaSegment), nameof(DeathCertificateSignedDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 DeathCertifiedBy?.ToDelimitedString(),
                                 AutopsyIndicator,
                                 AutopsyStartAndEndDateTime?.ToDelimitedString(),

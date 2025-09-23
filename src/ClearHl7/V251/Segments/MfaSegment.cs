@@ -110,7 +110,7 @@ namespace ClearHl7.V251.Segments
                                 Id,
                                 RecordLevelEventCode,
                                 MfnControlId,
-                                EventCompletionDateTime.HasValue ? EventCompletionDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                EventCompletionDateTime.ToHl7DateTimeString(typeof(MfaSegment), nameof(EventCompletionDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 MfnRecordLevelErrorReturn?.ToDelimitedString(),
                                 PrimaryKeyValueMfa != null ? string.Join(Configuration.FieldRepeatSeparator, PrimaryKeyValueMfa) : null,
                                 PrimaryKeyValueTypeMfa != null ? string.Join(Configuration.FieldRepeatSeparator, PrimaryKeyValueTypeMfa) : null

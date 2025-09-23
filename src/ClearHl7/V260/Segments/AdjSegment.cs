@@ -175,7 +175,7 @@ namespace ClearHl7.V260.Segments
                                 AdjustmentAction,
                                 ProviderAdjustmentNumberCrossReference?.ToDelimitedString(),
                                 ProviderProductServiceLineItemNumberCrossReference?.ToDelimitedString(),
-                                AdjustmentDate.HasValue ? AdjustmentDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                AdjustmentDate.ToHl7DateTimeString(typeof(AdjSegment), nameof(AdjustmentDate), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ResponsibleOrganization?.ToDelimitedString()
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }

@@ -106,8 +106,8 @@ namespace ClearHl7.V282.Segments
                                 Id,
                                 StartingNotificationReferenceNumber.HasValue ? StartingNotificationReferenceNumber.Value.ToString(Consts.NumericFormat, culture) : null,
                                 EndingNotificationReferenceNumber.HasValue ? EndingNotificationReferenceNumber.Value.ToString(Consts.NumericFormat, culture) : null,
-                                StartingNotificationDateTime.HasValue ? StartingNotificationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                EndingNotificationDateTime.HasValue ? EndingNotificationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                StartingNotificationDateTime.ToHl7DateTimeString(typeof(CnsSegment), nameof(StartingNotificationDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                EndingNotificationDateTime.ToHl7DateTimeString(typeof(CnsSegment), nameof(EndingNotificationDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 StartingNotificationCode?.ToDelimitedString(),
                                 EndingNotificationCode?.ToDelimitedString()
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());

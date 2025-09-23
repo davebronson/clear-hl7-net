@@ -107,8 +107,8 @@ namespace ClearHl7.V282.Segments
                                 StringHelper.StringFormatSequence(0, 7, Configuration.FieldSeparator),
                                 Id,
                                 VarianceInstanceId?.ToDelimitedString(),
-                                DocumentedDateTime.HasValue ? DocumentedDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                StatedVarianceDateTime.HasValue ? StatedVarianceDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                DocumentedDateTime.ToHl7DateTimeString(typeof(VarSegment), nameof(DocumentedDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                StatedVarianceDateTime.ToHl7DateTimeString(typeof(VarSegment), nameof(StatedVarianceDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 VarianceOriginator != null ? string.Join(Configuration.FieldRepeatSeparator, VarianceOriginator.Select(x => x.ToDelimitedString())) : null,
                                 VarianceClassification?.ToDelimitedString(),
                                 VarianceDescription != null ? string.Join(Configuration.FieldRepeatSeparator, VarianceDescription) : null

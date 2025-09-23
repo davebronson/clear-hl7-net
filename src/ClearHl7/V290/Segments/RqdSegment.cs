@@ -144,7 +144,7 @@ namespace ClearHl7.V290.Segments
                                 CostCenterAccountNumber?.ToDelimitedString(),
                                 ItemNaturalAccountCode?.ToDelimitedString(),
                                 DeliverToId?.ToDelimitedString(),
-                                DateNeeded.HasValue ? DateNeeded.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
+                                DateNeeded.ToHl7DateTimeString(typeof(RqdSegment), nameof(DateNeeded), Consts.DateFormatPrecisionDay, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

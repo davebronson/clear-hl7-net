@@ -229,16 +229,16 @@ namespace ClearHl7.V281.Segments
                                 DuplicatePatient != null ? string.Join(Configuration.FieldRepeatSeparator, DuplicatePatient.Select(x => x.ToDelimitedString())) : null,
                                 PublicityCode?.ToDelimitedString(),
                                 ProtectionIndicator,
-                                ProtectionIndicatorEffectiveDate.HasValue ? ProtectionIndicatorEffectiveDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
+                                ProtectionIndicatorEffectiveDate.ToHl7DateTimeString(typeof(Pd1Segment), nameof(ProtectionIndicatorEffectiveDate), Consts.DateFormatPrecisionDay, culture),
                                 PlaceOfWorship != null ? string.Join(Configuration.FieldRepeatSeparator, PlaceOfWorship.Select(x => x.ToDelimitedString())) : null,
                                 AdvanceDirectiveCode != null ? string.Join(Configuration.FieldRepeatSeparator, AdvanceDirectiveCode.Select(x => x.ToDelimitedString())) : null,
                                 ImmunizationRegistryStatus?.ToDelimitedString(),
-                                ImmunizationRegistryStatusEffectiveDate.HasValue ? ImmunizationRegistryStatusEffectiveDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
-                                PublicityCodeEffectiveDate.HasValue ? PublicityCodeEffectiveDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
+                                ImmunizationRegistryStatusEffectiveDate.ToHl7DateTimeString(typeof(Pd1Segment), nameof(ImmunizationRegistryStatusEffectiveDate), Consts.DateFormatPrecisionDay, culture),
+                                PublicityCodeEffectiveDate.ToHl7DateTimeString(typeof(Pd1Segment), nameof(PublicityCodeEffectiveDate), Consts.DateFormatPrecisionDay, culture),
                                 MilitaryBranch?.ToDelimitedString(),
                                 MilitaryRankGrade?.ToDelimitedString(),
                                 MilitaryStatus?.ToDelimitedString(),
-                                AdvanceDirectiveLastVerifiedDate.HasValue ? AdvanceDirectiveLastVerifiedDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
+                                AdvanceDirectiveLastVerifiedDate.ToHl7DateTimeString(typeof(Pd1Segment), nameof(AdvanceDirectiveLastVerifiedDate), Consts.DateFormatPrecisionDay, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

@@ -144,7 +144,7 @@ namespace ClearHl7.V240.Segments
                                 BatchSendingFacility,
                                 BatchReceivingApplication,
                                 BatchReceivingFacility,
-                                BatchCreationDateTime.HasValue ? BatchCreationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                BatchCreationDateTime.ToHl7DateTimeString(typeof(BhsSegment), nameof(BatchCreationDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 BatchSecurity,
                                 BatchNameIdType,
                                 BatchComment,

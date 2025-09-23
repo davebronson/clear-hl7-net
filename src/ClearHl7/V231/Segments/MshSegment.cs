@@ -229,7 +229,7 @@ namespace ClearHl7.V231.Segments
                                 SendingFacility?.ToDelimitedString(),
                                 ReceivingApplication?.ToDelimitedString(),
                                 ReceivingFacility?.ToDelimitedString(),
-                                DateTimeOfMessage.HasValue ? DateTimeOfMessage.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                DateTimeOfMessage.ToHl7DateTimeString(typeof(MshSegment), nameof(DateTimeOfMessage), Consts.DateTimeFormatPrecisionSecond, culture),
                                 Security,
                                 MessageType?.ToDelimitedString(),
                                 MessageControlId,

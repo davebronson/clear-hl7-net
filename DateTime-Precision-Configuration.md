@@ -67,8 +67,11 @@ string yearFormat = sampleDate.ToHl7DateTimeString(DateTimePrecision.Year);     
 string dayFormat = sampleDate.ToHl7DateTimeString(DateTimePrecision.Day);       // "20240315"
 string minuteFormat = sampleDate.ToHl7DateTimeString(DateTimePrecision.Minute); // "202403151430"
 
-// Using per-field configuration approach
-string mshFormat = sampleDate.ToHl7DateTimeString(typeof(MshSegment), "DateTimeOfMessage");
+// Using per-field configuration approach (NEW - with explicit original precision)
+string mshFormat = sampleDate.ToHl7DateTimeString(typeof(MshSegment), "DateTimeOfMessage", Consts.DateTimeFormatPrecisionSecond);
+
+// Legacy approach (DEPRECATED - but still works)
+string legacyFormat = sampleDate.ToHl7DateTimeString(typeof(MshSegment), "DateTimeOfMessage");
 ```
 
 ## Configuration Behavior
@@ -79,8 +82,25 @@ The configuration system works with a clear hierarchy:
 
 1. **Individual field override** (highest priority) - Set via `SetPrecision<T>()`
 2. **Global override** - Set via `GlobalDateTimeFormatOverride` 
-3. **Default field precision** (field-specific defaults)
-4. **Fallback to second precision** (lowest priority, rarely used)
+3. **Original code-defined precision** - Explicitly specified in the formatting call
+4. **No fallback needed** - All fields should specify their original precision
+
+### Important: New Explicit Approach
+
+**The preferred approach is now to explicitly specify the original precision** in the formatting call:
+
+```csharp
+// GOOD: Explicit original precision (recommended)
+DateTimeOfMessage.ToHl7DateTimeString(typeof(MshSegment), nameof(DateTimeOfMessage), Consts.DateTimeFormatPrecisionSecond)
+
+// DEPRECATED: Implicit precision lookup (still works but generates warnings)
+DateTimeOfMessage.ToHl7DateTimeString(typeof(MshSegment), nameof(DateTimeOfMessage))
+```
+
+This approach ensures that:
+- Original precisions are clearly visible where they're used
+- No separate maintenance of precision lists is required
+- Code is self-documenting and maintainable
 
 ### Behavior Scenarios
 
@@ -152,8 +172,11 @@ public static class Hl7DateTimeFormatConfig
     // Type-safe per-field configuration
     public static void SetPrecision<TSegment>(Expression<Func<TSegment, object>> property, string format);
     
-    // Get format for a specific field (respects hierarchy)
-    public static string GetFormatForField(Type segmentType, string propertyName);
+    // Get format for a specific field (respects hierarchy) - NEW: with explicit original format
+    public static string GetFormatForField(Type segmentType, string propertyName, string originalFormat);
+    
+    // Get format for a specific field (respects hierarchy) - DEPRECATED: uses fallback
+    [Obsolete] public static string GetFormatForField(Type segmentType, string propertyName);
     
     // Clear configurations
     public static void ClearFieldPrecisions();
@@ -172,10 +195,35 @@ public static class Hl7DateTimeFormatConfig
 public static string ToHl7DateTimeString(this DateTime dateTime, DateTimePrecision precision);
 public static string ToHl7DateTimeString(this DateTime? dateTime, DateTimePrecision precision);
 
-// Extension methods using per-field configuration
-public static string ToHl7DateTimeString(this DateTime dateTime, Type segmentType, string propertyName);
-public static string ToHl7DateTimeString(this DateTime? dateTime, Type segmentType, string propertyName);
+// Extension methods using per-field configuration - NEW: with explicit original format
+public static string ToHl7DateTimeString(this DateTime dateTime, Type segmentType, string propertyName, string originalFormat);
+public static string ToHl7DateTimeString(this DateTime? dateTime, Type segmentType, string propertyName, string originalFormat);
+
+// Extension methods using per-field configuration - DEPRECATED: uses fallback lookup
+[Obsolete] public static string ToHl7DateTimeString(this DateTime dateTime, Type segmentType, string propertyName);
+[Obsolete] public static string ToHl7DateTimeString(this DateTime? dateTime, Type segmentType, string propertyName);
 ```
+
+## Migration Guide
+
+### From Old Static Constructor Approach
+
+If you have segments using the old configuration approach:
+
+```csharp
+// OLD (generates warnings)
+DateTimeOfMessage.ToHl7DateTimeString(typeof(MshSegment), nameof(DateTimeOfMessage))
+
+// NEW (recommended)
+DateTimeOfMessage.ToHl7DateTimeString(typeof(MshSegment), nameof(DateTimeOfMessage), Consts.DateTimeFormatPrecisionSecond)
+```
+
+### Finding Original Precisions
+
+Look for the original precision in:
+1. The old static constructor in `Hl7DateTimeFormatConfig` 
+2. Direct `ToString()` calls with `Consts.DateTimeFormatPrecision*` constants
+3. Documentation or specifications for the field
 
 ## Thread Safety
 

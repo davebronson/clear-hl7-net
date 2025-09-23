@@ -235,10 +235,10 @@ namespace ClearHl7.V280.Segments
                                 SetIdTxa.HasValue ? SetIdTxa.Value.ToString(culture) : null,
                                 DocumentType?.ToDelimitedString(),
                                 DocumentContentPresentation,
-                                ActivityDateTime.HasValue ? ActivityDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                ActivityDateTime.ToHl7DateTimeString(typeof(TxaSegment), nameof(ActivityDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 PrimaryActivityProviderCodeName != null ? string.Join(Configuration.FieldRepeatSeparator, PrimaryActivityProviderCodeName.Select(x => x.ToDelimitedString())) : null,
-                                OriginationDateTime.HasValue ? OriginationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                TranscriptionDateTime.HasValue ? TranscriptionDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                OriginationDateTime.ToHl7DateTimeString(typeof(TxaSegment), nameof(OriginationDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                TranscriptionDateTime.ToHl7DateTimeString(typeof(TxaSegment), nameof(TranscriptionDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 EditDateTime != null ? string.Join(Configuration.FieldRepeatSeparator, EditDateTime.Select(x => x.ToString(Consts.DateTimeFormatPrecisionSecond, culture))) : null,
                                 OriginatorCodeName != null ? string.Join(Configuration.FieldRepeatSeparator, OriginatorCodeName.Select(x => x.ToDelimitedString())) : null,
                                 AssignedDocumentAuthenticator != null ? string.Join(Configuration.FieldRepeatSeparator, AssignedDocumentAuthenticator.Select(x => x.ToDelimitedString())) : null,
@@ -257,7 +257,7 @@ namespace ClearHl7.V280.Segments
                                 DistributedCopiesCodeAndNameOfRecipients != null ? string.Join(Configuration.FieldRepeatSeparator, DistributedCopiesCodeAndNameOfRecipients.Select(x => x.ToDelimitedString())) : null,
                                 FolderAssignment != null ? string.Join(Configuration.FieldRepeatSeparator, FolderAssignment.Select(x => x.ToDelimitedString())) : null,
                                 DocumentTitle != null ? string.Join(Configuration.FieldRepeatSeparator, DocumentTitle) : null,
-                                AgreedDueDateTime.HasValue ? AgreedDueDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
+                                AgreedDueDateTime.ToHl7DateTimeString(typeof(TxaSegment), nameof(AgreedDueDateTime), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

@@ -115,7 +115,7 @@ namespace ClearHl7.V250.Segments
                                 culture,
                                 StringHelper.StringFormatSequence(0, 8, Configuration.FieldSeparator),
                                 Id,
-                                RuDateTime.HasValue ? RuDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                RuDateTime.ToHl7DateTimeString(typeof(UrdSegment), nameof(RuDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ReportPriority,
                                 RuWhoSubjectDefinition != null ? string.Join(Configuration.FieldRepeatSeparator, RuWhoSubjectDefinition.Select(x => x.ToDelimitedString())) : null,
                                 RuWhatSubjectDefinition != null ? string.Join(Configuration.FieldRepeatSeparator, RuWhatSubjectDefinition.Select(x => x.ToDelimitedString())) : null,

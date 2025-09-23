@@ -156,28 +156,34 @@ namespace ClearHl7.Extensions
         }
 
         /// <summary>
-        /// Formats a DateTime value using per-field configuration with fallback to global default.
+        /// Formats a DateTime value using per-field configuration with explicit original precision.
+        /// Follows the hierarchy: 1) Individual field override, 2) Global override, 3) Original code-defined precision.
         /// </summary>
         /// <param name="dateTime">The DateTime value to format.</param>
         /// <param name="segmentType">The type of the segment containing this field.</param>
         /// <param name="propertyName">The name of the property being formatted.</param>
-        /// <returns>A formatted string representation of the DateTime value using field-specific or default formatting.</returns>
-        public static string ToHl7DateTimeString(this DateTime dateTime, Type segmentType, string propertyName)
+        /// <param name="originalFormat">The original format defined in the code for this specific field.</param>
+        /// <param name="culture">The culture to use for formatting.</param>
+        /// <returns>A formatted string representation of the DateTime value using the configured hierarchy.</returns>
+        public static string ToHl7DateTimeString(this DateTime dateTime, Type segmentType, string propertyName, string originalFormat, CultureInfo culture)
         {
-            string format = Hl7DateTimeFormatConfig.GetFormatForField(segmentType, propertyName);
-            return dateTime.ToString(format, CultureInfo.CurrentCulture);
+            string format = Hl7DateTimeFormatConfig.GetFormatForField(segmentType, propertyName, originalFormat);
+            return dateTime.ToString(format, culture);
         }
 
         /// <summary>
-        /// Formats a nullable DateTime value using per-field configuration with fallback to global default.
+        /// Formats a nullable DateTime value using per-field configuration with explicit original precision.
+        /// Follows the hierarchy: 1) Individual field override, 2) Global override, 3) Original code-defined precision.
         /// </summary>
         /// <param name="dateTime">The nullable DateTime value to format.</param>
         /// <param name="segmentType">The type of the segment containing this field.</param>
         /// <param name="propertyName">The name of the property being formatted.</param>
-        /// <returns>A formatted string representation of the DateTime value using field-specific or default formatting, or null if the input is null.</returns>
-        public static string ToHl7DateTimeString(this DateTime? dateTime, Type segmentType, string propertyName)
+        /// <param name="originalFormat">The original format defined in the code for this specific field.</param>
+        /// <param name="culture">The culture to use for formatting.</param>
+        /// <returns>A formatted string representation of the DateTime value using the configured hierarchy, or null if the input is null.</returns>
+        public static string ToHl7DateTimeString(this DateTime? dateTime, Type segmentType, string propertyName, string originalFormat, CultureInfo culture)
         {
-            return dateTime.HasValue ? dateTime.Value.ToHl7DateTimeString(segmentType, propertyName) : null;
+            return dateTime.HasValue ? dateTime.Value.ToHl7DateTimeString(segmentType, propertyName, originalFormat, culture) : null;
         }
 
         /// <summary>

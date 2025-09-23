@@ -112,7 +112,7 @@ namespace ClearHl7.V282.Segments
                                 AllergenCodeMnemonicDescription?.ToDelimitedString(),
                                 AllergySeverityCode?.ToDelimitedString(),
                                 AllergyReactionCode != null ? string.Join(Configuration.FieldRepeatSeparator, AllergyReactionCode) : null,
-                                IdentificationDate.HasValue ? IdentificationDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
+                                IdentificationDate.ToHl7DateTimeString(typeof(Al1Segment), nameof(IdentificationDate), Consts.DateFormatPrecisionDay, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

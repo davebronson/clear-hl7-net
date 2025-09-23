@@ -148,8 +148,8 @@ namespace ClearHl7.V231.Segments
                                 SpecialtyType != null ? string.Join(Configuration.FieldRepeatSeparator, SpecialtyType.Select(x => x.ToDelimitedString())) : null,
                                 ValidPatientClasses != null ? string.Join(Configuration.FieldRepeatSeparator, ValidPatientClasses) : null,
                                 ActiveInactiveFlag,
-                                ActivationDateLdp.HasValue ? ActivationDateLdp.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                InactivationDateLdp.HasValue ? InactivationDateLdp.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                ActivationDateLdp.ToHl7DateTimeString(typeof(LdpSegment), nameof(ActivationDateLdp), Consts.DateTimeFormatPrecisionSecond, culture),
+                                InactivationDateLdp.ToHl7DateTimeString(typeof(LdpSegment), nameof(InactivationDateLdp), Consts.DateTimeFormatPrecisionSecond, culture),
                                 InactivatedReason,
                                 VisitingHours != null ? string.Join(Configuration.FieldRepeatSeparator, VisitingHours.Select(x => x.ToDelimitedString())) : null,
                                 ContactPhone?.ToDelimitedString()

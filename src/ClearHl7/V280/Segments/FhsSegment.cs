@@ -158,7 +158,7 @@ namespace ClearHl7.V280.Segments
                                 FileSendingFacility?.ToDelimitedString(),
                                 FileReceivingApplication?.ToDelimitedString(),
                                 FileReceivingFacility?.ToDelimitedString(),
-                                FileCreationDateTime.HasValue ? FileCreationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                FileCreationDateTime.ToHl7DateTimeString(typeof(FhsSegment), nameof(FileCreationDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 FileSecurity,
                                 FileNameId,
                                 FileHeaderComment,

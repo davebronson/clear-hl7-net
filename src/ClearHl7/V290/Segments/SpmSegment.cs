@@ -315,8 +315,8 @@ namespace ClearHl7.V290.Segments
                                 SpecimenHandlingCode != null ? string.Join(Configuration.FieldRepeatSeparator, SpecimenHandlingCode.Select(x => x.ToDelimitedString())) : null,
                                 SpecimenRiskCode != null ? string.Join(Configuration.FieldRepeatSeparator, SpecimenRiskCode.Select(x => x.ToDelimitedString())) : null,
                                 SpecimenCollectionDateTime?.ToDelimitedString(),
-                                SpecimenReceivedDateTime.HasValue ? SpecimenReceivedDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                SpecimenExpirationDateTime.HasValue ? SpecimenExpirationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                SpecimenReceivedDateTime.ToHl7DateTimeString(typeof(SpmSegment), nameof(SpecimenReceivedDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                SpecimenExpirationDateTime.ToHl7DateTimeString(typeof(SpmSegment), nameof(SpecimenExpirationDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 SpecimenAvailability,
                                 SpecimenRejectReason != null ? string.Join(Configuration.FieldRepeatSeparator, SpecimenRejectReason.Select(x => x.ToDelimitedString())) : null,
                                 SpecimenQuality?.ToDelimitedString(),
@@ -330,8 +330,8 @@ namespace ClearHl7.V290.Segments
                                 AccessionId != null ? string.Join(Configuration.FieldRepeatSeparator, AccessionId.Select(x => x.ToDelimitedString())) : null,
                                 OtherSpecimenId != null ? string.Join(Configuration.FieldRepeatSeparator, OtherSpecimenId.Select(x => x.ToDelimitedString())) : null,
                                 ShipmentId?.ToDelimitedString(),
-                                CultureStartDateTime.HasValue ? CultureStartDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                CultureFinalDateTime.HasValue ? CultureFinalDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                CultureStartDateTime.ToHl7DateTimeString(typeof(SpmSegment), nameof(CultureStartDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                CultureFinalDateTime.ToHl7DateTimeString(typeof(SpmSegment), nameof(CultureFinalDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ActionCode
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }

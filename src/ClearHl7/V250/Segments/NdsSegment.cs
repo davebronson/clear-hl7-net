@@ -94,7 +94,7 @@ namespace ClearHl7.V250.Segments
                                 StringHelper.StringFormatSequence(0, 5, Configuration.FieldSeparator),
                                 Id,
                                 NotificationReferenceNumber.HasValue ? NotificationReferenceNumber.Value.ToString(Consts.NumericFormat, culture) : null,
-                                NotificationDateTime.HasValue ? NotificationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                NotificationDateTime.ToHl7DateTimeString(typeof(NdsSegment), nameof(NotificationDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 NotificationAlertSeverity?.ToDelimitedString(),
                                 NotificationCode?.ToDelimitedString()
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());

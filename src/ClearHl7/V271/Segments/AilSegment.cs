@@ -151,7 +151,7 @@ namespace ClearHl7.V271.Segments
                                 LocationResourceId != null ? string.Join(Configuration.FieldRepeatSeparator, LocationResourceId.Select(x => x.ToDelimitedString())) : null,
                                 LocationTypeAil?.ToDelimitedString(),
                                 LocationGroup?.ToDelimitedString(),
-                                StartDateTime.HasValue ? StartDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                StartDateTime.ToHl7DateTimeString(typeof(AilSegment), nameof(StartDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 StartDateTimeOffset.HasValue ? StartDateTimeOffset.Value.ToString(Consts.NumericFormat, culture) : null,
                                 StartDateTimeOffsetUnits?.ToDelimitedString(),
                                 Duration.HasValue ? Duration.Value.ToString(Consts.NumericFormat, culture) : null,

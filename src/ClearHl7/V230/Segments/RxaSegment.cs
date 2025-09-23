@@ -208,8 +208,8 @@ namespace ClearHl7.V230.Segments
                                 Id,
                                 GiveSubIdCounter.HasValue ? GiveSubIdCounter.Value.ToString(Consts.NumericFormat, culture) : null,
                                 AdministrationSubIdCounter.HasValue ? AdministrationSubIdCounter.Value.ToString(Consts.NumericFormat, culture) : null,
-                                DateTimeStartOfAdministration.HasValue ? DateTimeStartOfAdministration.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                DateTimeEndOfAdministration.HasValue ? DateTimeEndOfAdministration.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                DateTimeStartOfAdministration.ToHl7DateTimeString(typeof(RxaSegment), nameof(DateTimeStartOfAdministration), Consts.DateTimeFormatPrecisionSecond, culture),
+                                DateTimeEndOfAdministration.ToHl7DateTimeString(typeof(RxaSegment), nameof(DateTimeEndOfAdministration), Consts.DateTimeFormatPrecisionSecond, culture),
                                 AdministeredCode?.ToDelimitedString(),
                                 AdministeredAmount.HasValue ? AdministeredAmount.Value.ToString(Consts.NumericFormat, culture) : null,
                                 AdministeredUnits?.ToDelimitedString(),
@@ -227,7 +227,7 @@ namespace ClearHl7.V230.Segments
                                 Indication != null ? string.Join(Configuration.FieldRepeatSeparator, Indication.Select(x => x.ToDelimitedString())) : null,
                                 CompletionStatus,
                                 ActionCodeRxa,
-                                SystemEntryDateTime.HasValue ? SystemEntryDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
+                                SystemEntryDateTime.ToHl7DateTimeString(typeof(RxaSegment), nameof(SystemEntryDateTime), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

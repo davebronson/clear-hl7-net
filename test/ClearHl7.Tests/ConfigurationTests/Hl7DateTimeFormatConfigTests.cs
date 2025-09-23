@@ -28,7 +28,7 @@ namespace ClearHl7.Tests.ConfigurationTests
             Assert.Equal(0, Hl7DateTimeFormatConfig.ConfiguredFieldCount);
 
             // Act
-            string mshFormat = Hl7DateTimeFormatConfig.GetFormatForField(typeof(MshSegment), "DateTimeOfMessage");
+            string mshFormat = Hl7DateTimeFormatConfig.GetFormatForField(typeof(MshSegment), "DateTimeOfMessage", Consts.DateTimeFormatPrecisionSecond);
 
             // Assert - Should use original precision (second precision for MSH.DateTimeOfMessage)
             Assert.Equal(Consts.DateTimeFormatPrecisionSecond, mshFormat);
@@ -45,8 +45,8 @@ namespace ClearHl7.Tests.ConfigurationTests
             Assert.True(Hl7DateTimeFormatConfig.HasGlobalOverride);
 
             // Act
-            string mshFormat = Hl7DateTimeFormatConfig.GetFormatForField(typeof(MshSegment), "DateTimeOfMessage");
-            string evnFormat = Hl7DateTimeFormatConfig.GetFormatForField(typeof(EvnSegment), "RecordedDateTime");
+            string mshFormat = Hl7DateTimeFormatConfig.GetFormatForField(typeof(MshSegment), "DateTimeOfMessage", Consts.DateTimeFormatPrecisionSecond);
+            string evnFormat = Hl7DateTimeFormatConfig.GetFormatForField(typeof(EvnSegment), "RecordedDateTime", Consts.DateTimeFormatPrecisionSecond);
 
             // Assert - Both should use global override (day precision)
             Assert.Equal(Consts.DateFormatPrecisionDay, mshFormat);
@@ -61,12 +61,13 @@ namespace ClearHl7.Tests.ConfigurationTests
         public void Scenario3_NoGlobalOverride_IndividualFieldOverride_OnlyThatFieldChanges()
         {
             // Arrange - No global override, but individual field override
+            Hl7DateTimeFormatConfig.ClearFieldPrecisions(); // Ensure clean state
             Assert.False(Hl7DateTimeFormatConfig.HasGlobalOverride);
             Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateFormatPrecisionDay);
             
             // Act
-            string mshFormat = Hl7DateTimeFormatConfig.GetFormatForField(typeof(MshSegment), "DateTimeOfMessage");
-            string evnFormat = Hl7DateTimeFormatConfig.GetFormatForField(typeof(EvnSegment), "RecordedDateTime");
+            string mshFormat = Hl7DateTimeFormatConfig.GetFormatForField(typeof(MshSegment), "DateTimeOfMessage", Consts.DateTimeFormatPrecisionSecond);
+            string evnFormat = Hl7DateTimeFormatConfig.GetFormatForField(typeof(EvnSegment), "RecordedDateTime", Consts.DateTimeFormatPrecisionSecond);
 
             // Assert - MSH field uses override, EVN field uses original precision
             Assert.Equal(Consts.DateFormatPrecisionDay, mshFormat);        // Overridden field
@@ -86,8 +87,8 @@ namespace ClearHl7.Tests.ConfigurationTests
             Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateFormatPrecisionDay);
             
             // Act
-            string mshFormat = Hl7DateTimeFormatConfig.GetFormatForField(typeof(MshSegment), "DateTimeOfMessage");
-            string evnFormat = Hl7DateTimeFormatConfig.GetFormatForField(typeof(EvnSegment), "RecordedDateTime");
+            string mshFormat = Hl7DateTimeFormatConfig.GetFormatForField(typeof(MshSegment), "DateTimeOfMessage", Consts.DateTimeFormatPrecisionSecond);
+            string evnFormat = Hl7DateTimeFormatConfig.GetFormatForField(typeof(EvnSegment), "RecordedDateTime", Consts.DateTimeFormatPrecisionSecond);
 
             // Assert 
             Assert.Equal(Consts.DateFormatPrecisionDay, mshFormat);          // Uses individual override

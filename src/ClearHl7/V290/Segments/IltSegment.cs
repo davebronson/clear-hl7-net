@@ -130,12 +130,12 @@ namespace ClearHl7.V290.Segments
                                 Id,
                                 SetIdIlt.HasValue ? SetIdIlt.Value.ToString(culture) : null,
                                 InventoryLotNumber,
-                                InventoryExpirationDate.HasValue ? InventoryExpirationDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                InventoryReceivedDate.HasValue ? InventoryReceivedDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                InventoryExpirationDate.ToHl7DateTimeString(typeof(IltSegment), nameof(InventoryExpirationDate), Consts.DateTimeFormatPrecisionSecond, culture),
+                                InventoryReceivedDate.ToHl7DateTimeString(typeof(IltSegment), nameof(InventoryReceivedDate), Consts.DateTimeFormatPrecisionSecond, culture),
                                 InventoryReceivedQuantity.HasValue ? InventoryReceivedQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
                                 InventoryReceivedQuantityUnit?.ToDelimitedString(),
                                 InventoryReceivedItemCost?.ToDelimitedString(),
-                                InventoryOnHandDate.HasValue ? InventoryOnHandDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                InventoryOnHandDate.ToHl7DateTimeString(typeof(IltSegment), nameof(InventoryOnHandDate), Consts.DateTimeFormatPrecisionSecond, culture),
                                 InventoryOnHandQuantity.HasValue ? InventoryOnHandQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
                                 InventoryOnHandQuantityUnit?.ToDelimitedString()
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());

@@ -150,7 +150,7 @@ namespace ClearHl7.V260.Segments
                                 SetIdAis.HasValue ? SetIdAis.Value.ToString(culture) : null,
                                 SegmentActionCode,
                                 UniversalServiceIdentifier?.ToDelimitedString(),
-                                StartDateTime.HasValue ? StartDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                StartDateTime.ToHl7DateTimeString(typeof(AisSegment), nameof(StartDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 StartDateTimeOffset.HasValue ? StartDateTimeOffset.Value.ToString(Consts.NumericFormat, culture) : null,
                                 StartDateTimeOffsetUnits?.ToDelimitedString(),
                                 Duration.HasValue ? Duration.Value.ToString(Consts.NumericFormat, culture) : null,

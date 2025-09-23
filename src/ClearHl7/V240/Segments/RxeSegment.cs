@@ -277,7 +277,7 @@ namespace ClearHl7.V240.Segments
                                 PrescriptionNumber,
                                 NumberOfRefillsRemaining.HasValue ? NumberOfRefillsRemaining.Value.ToString(Consts.NumericFormat, culture) : null,
                                 NumberOfRefillsDosesDispensed.HasValue ? NumberOfRefillsDosesDispensed.Value.ToString(Consts.NumericFormat, culture) : null,
-                                DateTimeOfMostRecentRefillOrDoseDispensed.HasValue ? DateTimeOfMostRecentRefillOrDoseDispensed.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                DateTimeOfMostRecentRefillOrDoseDispensed.ToHl7DateTimeString(typeof(RxeSegment), nameof(DateTimeOfMostRecentRefillOrDoseDispensed), Consts.DateTimeFormatPrecisionSecond, culture),
                                 TotalDailyDose?.ToDelimitedString(),
                                 NeedsHumanReview,
                                 SpecialDispensingInstructions != null ? string.Join(Configuration.FieldRepeatSeparator, SpecialDispensingInstructions.Select(x => x.ToDelimitedString())) : null,

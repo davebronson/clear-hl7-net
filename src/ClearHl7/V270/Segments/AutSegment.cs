@@ -147,13 +147,13 @@ namespace ClearHl7.V270.Segments
                                 AuthorizingPayorPlanId?.ToDelimitedString(),
                                 AuthorizingPayorCompanyId?.ToDelimitedString(),
                                 AuthorizingPayorCompanyName,
-                                AuthorizationEffectiveDate.HasValue ? AuthorizationEffectiveDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                AuthorizationExpirationDate.HasValue ? AuthorizationExpirationDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                AuthorizationEffectiveDate.ToHl7DateTimeString(typeof(AutSegment), nameof(AuthorizationEffectiveDate), Consts.DateTimeFormatPrecisionSecond, culture),
+                                AuthorizationExpirationDate.ToHl7DateTimeString(typeof(AutSegment), nameof(AuthorizationExpirationDate), Consts.DateTimeFormatPrecisionSecond, culture),
                                 AuthorizationIdentifier?.ToDelimitedString(),
                                 ReimbursementLimit?.ToDelimitedString(),
                                 RequestedNumberOfTreatments?.ToDelimitedString(),
                                 AuthorizedNumberOfTreatments?.ToDelimitedString(),
-                                ProcessDate.HasValue ? ProcessDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                ProcessDate.ToHl7DateTimeString(typeof(AutSegment), nameof(ProcessDate), Consts.DateTimeFormatPrecisionSecond, culture),
                                 RequestedDisciplines != null ? string.Join(Configuration.FieldRepeatSeparator, RequestedDisciplines.Select(x => x.ToDelimitedString())) : null,
                                 AuthorizedDisciplines != null ? string.Join(Configuration.FieldRepeatSeparator, AuthorizedDisciplines.Select(x => x.ToDelimitedString())) : null
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());

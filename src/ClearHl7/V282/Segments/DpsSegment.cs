@@ -105,8 +105,8 @@ namespace ClearHl7.V282.Segments
                                 Id,
                                 DiagnosisCodeMcp?.ToDelimitedString(),
                                 ProcedureCode != null ? string.Join(Configuration.FieldRepeatSeparator, ProcedureCode.Select(x => x.ToDelimitedString())) : null,
-                                EffectiveDateTime.HasValue ? EffectiveDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                ExpirationDateTime.HasValue ? ExpirationDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                EffectiveDateTime.ToHl7DateTimeString(typeof(DpsSegment), nameof(EffectiveDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                ExpirationDateTime.ToHl7DateTimeString(typeof(DpsSegment), nameof(ExpirationDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 TypeOfLimitation?.ToDelimitedString()
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }

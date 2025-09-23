@@ -288,7 +288,7 @@ namespace ClearHl7.V282.Segments
                                 Id,
                                 DispenseSubIdCounter.HasValue ? DispenseSubIdCounter.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DispenseGiveCode?.ToDelimitedString(),
-                                DateTimeDispensed.HasValue ? DateTimeDispensed.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                DateTimeDispensed.ToHl7DateTimeString(typeof(RxdSegment), nameof(DateTimeDispensed), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ActualDispenseAmount.HasValue ? ActualDispenseAmount.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ActualDispenseUnits?.ToDelimitedString(),
                                 ActualDosageForm?.ToDelimitedString(),

@@ -102,7 +102,7 @@ namespace ClearHl7.V251.Segments
                                 StringHelper.StringFormatSequence(0, 6, Configuration.FieldSeparator),
                                 Id,
                                 EquipmentInstanceIdentifier?.ToDelimitedString(),
-                                EventDateTime.HasValue ? EventDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                EventDateTime.ToHl7DateTimeString(typeof(EquSegment), nameof(EventDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 EquipmentState?.ToDelimitedString(),
                                 LocalRemoteControlState?.ToDelimitedString(),
                                 AlertLevel?.ToDelimitedString()

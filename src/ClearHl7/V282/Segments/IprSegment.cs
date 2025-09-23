@@ -121,9 +121,9 @@ namespace ClearHl7.V282.Segments
                                 ProviderCrossReferenceIdentifier?.ToDelimitedString(),
                                 PayerCrossReferenceIdentifier?.ToDelimitedString(),
                                 IprStatus?.ToDelimitedString(),
-                                IprDateTime.HasValue ? IprDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                IprDateTime.ToHl7DateTimeString(typeof(IprSegment), nameof(IprDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 AdjudicatedPaidAmount?.ToDelimitedString(),
-                                ExpectedPaymentDateTime.HasValue ? ExpectedPaymentDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                ExpectedPaymentDateTime.ToHl7DateTimeString(typeof(IprSegment), nameof(ExpectedPaymentDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 IprChecksum
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
