@@ -12,15 +12,20 @@ Previously, all DateTime fields in HL7 messages were hardcoded to use specific p
 
 ## Configuration
 
-### Global Default Configuration
+### Global Override Configuration
 
-You can configure the global default DateTime precision using the `Hl7DateTimeFormatConfig.DefaultDateTimeFormat` property:
+You can configure the global DateTime precision override using the `Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride` property. When set to null (default), all fields use their original precision. When set to a format, all fields use this format unless individually overridden:
 
 ```csharp
 using ClearHl7;
 
-// Set global default DateTime format to minute precision
-Hl7DateTimeFormatConfig.DefaultDateTimeFormat = Consts.DateTimeFormatPrecisionMinute;
+// Set global DateTime format override to minute precision (affects all fields)
+Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride = Consts.DateTimeFormatPrecisionMinute;
+
+// Clear global override to revert to original field precisions
+Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride = null;
+// OR use the convenience method:
+Hl7DateTimeFormatConfig.ClearGlobalOverride();
 ```
 
 ### Per-Field Configuration (Type-Safe)

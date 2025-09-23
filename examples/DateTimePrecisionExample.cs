@@ -34,18 +34,18 @@ namespace DateTimePrecisionExample
             Console.WriteLine("Per-Field Configuration Examples:");
             
             // Save original default
-            var originalDefault = Hl7DateTimeFormatConfig.DefaultDateTimeFormat;
+            var originalGlobalOverride = Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride;
 
             try
             {
-                // Set global default to minute precision
-                Hl7DateTimeFormatConfig.DefaultDateTimeFormat = Consts.DateTimeFormatPrecisionMinute;
+                // Set global override to minute precision
+                Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride = Consts.DateTimeFormatPrecisionMinute;
                 
                 // Configure specific fields to use different precision
                 Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateFormatPrecisionDay);
                 Hl7DateTimeFormatConfig.SetPrecision<EvnSegment>(x => x.RecordedDateTime, Consts.DateTimeFormatPrecisionHour);
 
-                Console.WriteLine($"Global default (minute):     {sampleDateTime.ToHl7DateTimeString(typeof(object), "AnyField")}");
+                Console.WriteLine($"Global override (minute):     {sampleDateTime.ToHl7DateTimeString(typeof(object), "AnyField")}");
                 Console.WriteLine($"MSH.DateTimeOfMessage (day): {sampleDateTime.ToHl7DateTimeString(typeof(MshSegment), "DateTimeOfMessage")}");
                 Console.WriteLine($"EVN.RecordedDateTime (hour): {sampleDateTime.ToHl7DateTimeString(typeof(EvnSegment), "RecordedDateTime")}");
                 Console.WriteLine();
@@ -78,8 +78,8 @@ namespace DateTimePrecisionExample
 
                 // Demonstrate type-safe configuration
                 Console.WriteLine("Type-Safe Configuration API:");
-                Console.WriteLine("// Global default");
-                Console.WriteLine("Hl7DateTimeFormatConfig.DefaultDateTimeFormat = Consts.DateTimeFormatPrecisionMinute;");
+                Console.WriteLine("// Global override");
+                Console.WriteLine("Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride = Consts.DateTimeFormatPrecisionMinute;");
                 Console.WriteLine();
                 Console.WriteLine("// Per-field configuration (type-safe)");
                 Console.WriteLine("Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateFormatPrecisionDay);");
@@ -88,7 +88,7 @@ namespace DateTimePrecisionExample
             finally
             {
                 // Restore original configuration
-                Hl7DateTimeFormatConfig.DefaultDateTimeFormat = originalDefault;
+                Hl7DateTimeFormatConfig.ClearGlobalOverride();
                 Hl7DateTimeFormatConfig.ClearFieldPrecisions();
             }
 
