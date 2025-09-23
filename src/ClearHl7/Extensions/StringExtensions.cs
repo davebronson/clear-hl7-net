@@ -141,7 +141,7 @@ namespace ClearHl7.Extensions
         public static string ToHl7DateTimeString(this DateTime dateTime, DateTimePrecision precision)
         {
             string format = GetDateTimeFormatString(precision);
-            return dateTime.ToString(format, CultureInfo.CurrentCulture);
+            return dateTime.ToString(format, CultureInfo.InvariantCulture);
         }
 
         /// <summary>
