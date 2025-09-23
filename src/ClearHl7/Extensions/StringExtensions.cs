@@ -131,5 +131,72 @@ namespace ClearHl7.Extensions
 
             return success ? returnValue : null;
         }
+
+        /// <summary>
+        /// Formats a DateTime value using the specified precision level.
+        /// </summary>
+        /// <param name="dateTime">The DateTime value to format.</param>
+        /// <param name="precision">The precision level to use for formatting.</param>
+        /// <returns>A formatted string representation of the DateTime value.</returns>
+        public static string ToHl7DateTimeString(this DateTime dateTime, DateTimePrecision precision)
+        {
+            string format = GetDateTimeFormatString(precision);
+            return dateTime.ToString(format, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Formats a nullable DateTime value using the specified precision level.
+        /// </summary>
+        /// <param name="dateTime">The nullable DateTime value to format.</param>
+        /// <param name="precision">The precision level to use for formatting.</param>
+        /// <returns>A formatted string representation of the DateTime value, or null if the input is null.</returns>
+        public static string ToHl7DateTimeString(this DateTime? dateTime, DateTimePrecision precision)
+        {
+            return dateTime.HasValue ? dateTime.Value.ToHl7DateTimeString(precision) : null;
+        }
+
+        /// <summary>
+        /// Formats a DateTime value using per-field configuration with fallback to global default.
+        /// </summary>
+        /// <param name="dateTime">The DateTime value to format.</param>
+        /// <param name="segmentType">The type of the segment containing this field.</param>
+        /// <param name="propertyName">The name of the property being formatted.</param>
+        /// <returns>A formatted string representation of the DateTime value using field-specific or default formatting.</returns>
+        public static string ToHl7DateTimeString(this DateTime dateTime, Type segmentType, string propertyName)
+        {
+            string format = Hl7DateTimeFormatConfig.GetFormatForField(segmentType, propertyName);
+            return dateTime.ToString(format, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Formats a nullable DateTime value using per-field configuration with fallback to global default.
+        /// </summary>
+        /// <param name="dateTime">The nullable DateTime value to format.</param>
+        /// <param name="segmentType">The type of the segment containing this field.</param>
+        /// <param name="propertyName">The name of the property being formatted.</param>
+        /// <returns>A formatted string representation of the DateTime value using field-specific or default formatting, or null if the input is null.</returns>
+        public static string ToHl7DateTimeString(this DateTime? dateTime, Type segmentType, string propertyName)
+        {
+            return dateTime.HasValue ? dateTime.Value.ToHl7DateTimeString(segmentType, propertyName) : null;
+        }
+
+        /// <summary>
+        /// Gets the appropriate HL7 DateTime format string for the specified precision level.
+        /// </summary>
+        /// <param name="precision">The precision level.</param>
+        /// <returns>The format string corresponding to the precision level.</returns>
+        private static string GetDateTimeFormatString(DateTimePrecision precision)
+        {
+            return precision switch
+            {
+                DateTimePrecision.Year => Consts.DateFormatPrecisionYear,
+                DateTimePrecision.Month => Consts.DateFormatPrecisionMonth,
+                DateTimePrecision.Day => Consts.DateFormatPrecisionDay,
+                DateTimePrecision.Hour => Consts.DateTimeFormatPrecisionHour,
+                DateTimePrecision.Minute => Consts.DateTimeFormatPrecisionMinute,
+                DateTimePrecision.Second => Consts.DateTimeFormatPrecisionSecond,
+                _ => Consts.DateTimeFormatPrecisionSecond
+            };
+        }
     }
 }

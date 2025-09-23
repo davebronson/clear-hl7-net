@@ -281,6 +281,47 @@ Configuration.SubcomponentSeparator = "/"; // Use forward slash
 Configuration.ResetSeparators();
 ```
 
+### DateTime Precision Configuration
+clear-hl7-net provides flexible DateTime precision configuration that allows you to control how DateTime values are formatted in HL7 messages while preserving field-specific precision requirements.
+
+#### Key Features
+- **Precision preservation**: Fields maintain their HL7 standard precisions when no overrides are set
+- **Global override capability**: Optional global setting affects all fields without individual configuration  
+- **Per-field overrides**: Type-safe configuration for individual fields
+- **Clear hierarchy**: Predictable behavior with well-defined priority order
+
+#### Basic Usage
+```csharp
+using ClearHl7;
+
+// Set global override (affects all DateTime fields)
+Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride = Consts.DateTimeFormatPrecisionMinute;
+
+// Configure specific fields (type-safe)
+Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateFormatPrecisionDay);
+Hl7DateTimeFormatConfig.SetPrecision<EvnSegment>(x => x.RecordedDateTime, Consts.DateTimeFormatPrecisionHour);
+
+// Clear overrides to revert to default behavior
+Hl7DateTimeFormatConfig.ClearGlobalOverride();
+Hl7DateTimeFormatConfig.ClearFieldPrecisions();
+```
+
+#### Configuration Scenarios
+1. **No Global Override**: ALL fields use default precision based on field type
+2. **Global Override Set**: ALL fields use global precision  
+3. **Individual Override Only**: ONLY overridden fields change from default precision
+4. **Global + Individual Overrides**: Global precision for all fields except individually overridden ones
+
+#### Available Precision Levels
+- `Consts.DateFormatPrecisionYear` - Year only (yyyy) - e.g., "2024"
+- `Consts.DateFormatPrecisionMonth` - Year and month (yyyyMM) - e.g., "202403"  
+- `Consts.DateFormatPrecisionDay` - Date only (yyyyMMdd) - e.g., "20240315"
+- `Consts.DateTimeFormatPrecisionHour` - Date and hour (yyyyMMddHH) - e.g., "2024031514"
+- `Consts.DateTimeFormatPrecisionMinute` - Date, hour, and minute (yyyyMMddHHmm) - e.g., "202403151430"
+- `Consts.DateTimeFormatPrecisionSecond` - Full precision (yyyyMMddHHmmss) - e.g., "20240315143045"
+
+For detailed documentation and advanced scenarios, see [DateTime Precision Configuration](DateTime-Precision-Configuration.md).
+
 ## Using the ClearHl7.Codes Component
 There are code systems published as part of the HL7 specification, which are recommended for use in your messages.  You have flexibility, of course, to use any coded values that you and your message consumer might agree upon.  To easily access the defined codes you may utilize the `ClearHl7.Codes` component, which contains enumerations for each.
 ```csharp
@@ -567,6 +608,7 @@ Custom segments are fully backward compatible. All existing functionality is pre
 * `Segment`s, `Type`s, and collections are __not__ automatically initialized for you.  You must manually instantiate each object that you're going to read/write to.  But be a good steward of machine resources, and only instantiate objects that you'll interact with.
 * Collection properties are all implemented with the `IEnumerable` interface to provide you with wide flexibility in the type of collection that you pass into the class.  The example above shows usage of simple arrays, but you can use more complex types like `List`, etc.
 * `Segment`s can be built and added to a `Message` in any order.  Just set the `Segment.Ordinal` property for each to specify the ordering in the final output.  And remember that the MSH `Segment` is required, and must appear first.
+* **DateTime precision is configurable**: You can control how DateTime values are formatted in HL7 messages using global overrides and per-field configuration while preserving field-specific precision requirements. See [DateTime Precision Configuration](DateTime-Precision-Configuration.md) for details.
 * The HL7 spec calls out that segments shall be terminated with a single carriage return (a.k.a. \r or (char)13). ClearHl7 supports only this charater.  If you receive messages that use alternate line terminators, you must perform a programmatic replace on those alternate terminators before attempting to deserialize with ClearHL7, so that you may receive the expected result.
 * Any string input that may contain one of the utilized delimiter characters should be escaped with `ClearHl7.Helpers.StringHelper.Escape()`.  See the Zxx/ZPD segment in the example above.
 * Any `Message`, `Segment`, or `Type` can be serialized to an HL7 pipehat string by calling `Serialize()` or `ToDelimitedString()`.  Utilize the `ClearHl7.Serialization` namespace.
