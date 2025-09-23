@@ -12,238 +12,179 @@ namespace ClearHl7.Tests.ConfigurationTests
 
         public Hl7DateTimeFormatConfigTests()
         {
-            // Clear any existing field configurations before each test
+            // Clear any existing configurations before each test
             Hl7DateTimeFormatConfig.ClearFieldPrecisions();
+            Hl7DateTimeFormatConfig.ClearGlobalOverride();
         }
 
         /// <summary>
-        /// Validates the default DateTime format is used when no per-field configuration exists.
+        /// Validates Scenario 1: If Global Override IS NOT SET, then ALL date/time fields will have the original precision.
         /// </summary>
         [Fact]
-        public void GetFormatForField_WithNoSpecificConfiguration_ReturnsDefault()
+        public void Scenario1_NoGlobalOverride_UsesOriginalPrecision()
         {
-            // Arrange
-            var originalDefault = Hl7DateTimeFormatConfig.DefaultDateTimeFormat;
-            try
-            {
-                Hl7DateTimeFormatConfig.DefaultDateTimeFormat = Consts.DateTimeFormatPrecisionMinute;
+            // Arrange - No global override set, no field overrides set
+            Assert.False(Hl7DateTimeFormatConfig.HasGlobalOverride);
+            Assert.Equal(0, Hl7DateTimeFormatConfig.ConfiguredFieldCount);
 
-                // Act
-                string format = Hl7DateTimeFormatConfig.GetFormatForField(typeof(MshSegment), "DateTimeOfMessage");
+            // Act
+            string mshFormat = Hl7DateTimeFormatConfig.GetFormatForField(typeof(MshSegment), "DateTimeOfMessage");
 
-                // Assert
-                Assert.Equal(Consts.DateTimeFormatPrecisionMinute, format);
-            }
-            finally
-            {
-                Hl7DateTimeFormatConfig.DefaultDateTimeFormat = originalDefault;
-            }
+            // Assert - Should use original precision (second precision for MSH.DateTimeOfMessage)
+            Assert.Equal(Consts.DateTimeFormatPrecisionSecond, mshFormat);
         }
 
         /// <summary>
-        /// Validates that per-field configuration overrides the default.
+        /// Validates Scenario 2: If the Global override IS SET, then ALL date/time fields will be changed to that precision.
         /// </summary>
         [Fact]
-        public void SetPrecision_WithFieldSpecificConfiguration_OverridesDefault()
+        public void Scenario2_GlobalOverrideSet_AllFieldsUseGlobalPrecision()
         {
-            // Arrange
-            var originalDefault = Hl7DateTimeFormatConfig.DefaultDateTimeFormat;
-            try
-            {
-                Hl7DateTimeFormatConfig.DefaultDateTimeFormat = Consts.DateTimeFormatPrecisionSecond;
-                
-                // Act
-                Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateFormatPrecisionDay);
-                string format = Hl7DateTimeFormatConfig.GetFormatForField(typeof(MshSegment), "DateTimeOfMessage");
+            // Arrange - Set global override
+            Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride = Consts.DateFormatPrecisionDay;
+            Assert.True(Hl7DateTimeFormatConfig.HasGlobalOverride);
 
-                // Assert
-                Assert.Equal(Consts.DateFormatPrecisionDay, format);
-                Assert.Equal(1, Hl7DateTimeFormatConfig.ConfiguredFieldCount);
-            }
-            finally
-            {
-                Hl7DateTimeFormatConfig.DefaultDateTimeFormat = originalDefault;
-                Hl7DateTimeFormatConfig.ClearFieldPrecisions();
-            }
-        }
-
-        /// <summary>
-        /// Validates that different fields can have different configurations.
-        /// </summary>
-        [Fact]
-        public void SetPrecision_WithMultipleFields_AllowsDifferentConfigurations()
-        {
-            // Arrange & Act
-            Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateTimeFormatPrecisionMinute);
-            Hl7DateTimeFormatConfig.SetPrecision<EvnSegment>(x => x.RecordedDateTime, Consts.DateFormatPrecisionDay);
-
-            // Assert
+            // Act
             string mshFormat = Hl7DateTimeFormatConfig.GetFormatForField(typeof(MshSegment), "DateTimeOfMessage");
             string evnFormat = Hl7DateTimeFormatConfig.GetFormatForField(typeof(EvnSegment), "RecordedDateTime");
 
-            Assert.Equal(Consts.DateTimeFormatPrecisionMinute, mshFormat);
+            // Assert - Both should use global override (day precision)
+            Assert.Equal(Consts.DateFormatPrecisionDay, mshFormat);
             Assert.Equal(Consts.DateFormatPrecisionDay, evnFormat);
-            Assert.Equal(2, Hl7DateTimeFormatConfig.ConfiguredFieldCount);
         }
 
         /// <summary>
-        /// Validates that the extension method uses per-field configuration.
+        /// Validates Scenario 3: If the global override is NOT SET, but an individual field override is configured, 
+        /// then ONLY that field will change its precision from the original code.
         /// </summary>
         [Fact]
-        public void ToHl7DateTimeString_WithPerFieldConfiguration_UsesFieldSpecificFormat()
+        public void Scenario3_NoGlobalOverride_IndividualFieldOverride_OnlyThatFieldChanges()
         {
-            // Arrange
-            var originalDefault = Hl7DateTimeFormatConfig.DefaultDateTimeFormat;
-            try
-            {
-                Hl7DateTimeFormatConfig.DefaultDateTimeFormat = Consts.DateTimeFormatPrecisionSecond;
-                Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateFormatPrecisionDay);
-
-                // Act
-                string defaultFormat = _testDateTime.ToHl7DateTimeString(typeof(EvnSegment), "RecordedDateTime");
-                string specificFormat = _testDateTime.ToHl7DateTimeString(typeof(MshSegment), "DateTimeOfMessage");
-
-                // Assert
-                Assert.Equal("20240315143045", defaultFormat); // Uses default (second precision)
-                Assert.Equal("20240315", specificFormat);      // Uses field-specific (day precision)
-            }
-            finally
-            {
-                Hl7DateTimeFormatConfig.DefaultDateTimeFormat = originalDefault;
-                Hl7DateTimeFormatConfig.ClearFieldPrecisions();
-            }
-        }
-
-        /// <summary>
-        /// Validates that nullable DateTime works with per-field configuration.
-        /// </summary>
-        [Fact]
-        public void ToHl7DateTimeString_WithNullableDateTime_WorksCorrectly()
-        {
-            // Arrange
-            DateTime? nullableDateTime = _testDateTime;
-            DateTime? nullDateTime = null;
-
+            // Arrange - No global override, but individual field override
+            Assert.False(Hl7DateTimeFormatConfig.HasGlobalOverride);
             Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateFormatPrecisionDay);
-
-            // Act
-            string result1 = nullableDateTime.ToHl7DateTimeString(typeof(MshSegment), "DateTimeOfMessage");
-            string result2 = nullDateTime.ToHl7DateTimeString(typeof(MshSegment), "DateTimeOfMessage");
-
-            // Assert
-            Assert.Equal("20240315", result1);
-            Assert.Null(result2);
-        }
-
-        /// <summary>
-        /// Validates that segments use the per-field configuration when calling ToDelimitedString.
-        /// </summary>
-        [Fact]
-        public void MshSegment_WithFieldConfiguration_UsesConfiguredPrecision()
-        {
-            // Arrange
-            var originalDefault = Hl7DateTimeFormatConfig.DefaultDateTimeFormat;
-            try
-            {
-                Hl7DateTimeFormatConfig.DefaultDateTimeFormat = Consts.DateTimeFormatPrecisionSecond;
-                Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateFormatPrecisionDay);
-
-                var messageType = new MessageType
-                {
-                    MessageCode = "ADT",
-                    TriggerEvent = "A01",
-                    MessageStructure = "ADT_A01"
-                };
-
-                var processingType = new ProcessingType
-                {
-                    ProcessingId = "P"
-                };
-
-                var mshSegment = new MshSegment(_testDateTime, messageType, "MSG001", processingType);
-
-                // Act
-                string result = mshSegment.ToDelimitedString();
-
-                // Assert
-                Assert.Contains("20240315", result);          // Should use day precision
-                Assert.DoesNotContain("20240315143045", result); // Should not use second precision
-            }
-            finally
-            {
-                Hl7DateTimeFormatConfig.DefaultDateTimeFormat = originalDefault;
-                Hl7DateTimeFormatConfig.ClearFieldPrecisions();
-            }
-        }
-
-        /// <summary>
-        /// Validates backward compatibility - without configuration, existing behavior is preserved.
-        /// </summary>
-        [Fact]
-        public void MshSegment_WithoutConfiguration_UsesDefaultSecondPrecision()
-        {
-            // Arrange
-            var originalDefault = Hl7DateTimeFormatConfig.DefaultDateTimeFormat;
-            try
-            {
-                // Ensure default is second precision (existing behavior)
-                Hl7DateTimeFormatConfig.DefaultDateTimeFormat = Consts.DateTimeFormatPrecisionSecond;
-
-                var messageType = new MessageType
-                {
-                    MessageCode = "ADT",
-                    TriggerEvent = "A01",
-                    MessageStructure = "ADT_A01"
-                };
-
-                var processingType = new ProcessingType
-                {
-                    ProcessingId = "P"
-                };
-
-                var mshSegment = new MshSegment(_testDateTime, messageType, "MSG001", processingType);
-
-                // Act
-                string result = mshSegment.ToDelimitedString();
-
-                // Assert
-                Assert.Contains("20240315143045", result); // Should use second precision by default
-            }
-            finally
-            {
-                Hl7DateTimeFormatConfig.DefaultDateTimeFormat = originalDefault;
-            }
-        }
-
-        /// <summary>
-        /// Validates that expression-based configuration handles nullable types correctly.
-        /// </summary>
-        [Fact]
-        public void SetPrecision_WithNullableProperty_ConfiguresCorrectly()
-        {
-            // Act & Assert - Should not throw exception
-            Hl7DateTimeFormatConfig.SetPrecision<EvnSegment>(x => x.RecordedDateTime, Consts.DateFormatPrecisionDay);
             
-            string format = Hl7DateTimeFormatConfig.GetFormatForField(typeof(EvnSegment), "RecordedDateTime");
-            Assert.Equal(Consts.DateFormatPrecisionDay, format);
+            // Act
+            string mshFormat = Hl7DateTimeFormatConfig.GetFormatForField(typeof(MshSegment), "DateTimeOfMessage");
+            string evnFormat = Hl7DateTimeFormatConfig.GetFormatForField(typeof(EvnSegment), "RecordedDateTime");
+
+            // Assert - MSH field uses override, EVN field uses original precision
+            Assert.Equal(Consts.DateFormatPrecisionDay, mshFormat);        // Overridden field
+            Assert.Equal(Consts.DateTimeFormatPrecisionSecond, evnFormat); // Original precision
         }
 
         /// <summary>
-        /// Validates that ClearFieldPrecisions works correctly.
+        /// Validates Scenario 4: If the Global override IS SET, and individual field overrides are configured,
+        /// then ALL date/time fields will be changed to the Global Precision Override, 
+        /// except for those individual fields that have been overridden.
         /// </summary>
         [Fact]
-        public void ClearFieldPrecisions_RemovesAllConfigurations()
+        public void Scenario4_GlobalOverrideSet_IndividualFieldOverrides_GlobalPlusIndividualOverrides()
         {
-            // Arrange
+            // Arrange - Set global override AND individual field override
+            Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride = Consts.DateTimeFormatPrecisionMinute;
             Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateFormatPrecisionDay);
-            Hl7DateTimeFormatConfig.SetPrecision<EvnSegment>(x => x.RecordedDateTime, Consts.DateFormatPrecisionMonth);
-            Assert.Equal(2, Hl7DateTimeFormatConfig.ConfiguredFieldCount);
+            
+            // Act
+            string mshFormat = Hl7DateTimeFormatConfig.GetFormatForField(typeof(MshSegment), "DateTimeOfMessage");
+            string evnFormat = Hl7DateTimeFormatConfig.GetFormatForField(typeof(EvnSegment), "RecordedDateTime");
+
+            // Assert 
+            Assert.Equal(Consts.DateFormatPrecisionDay, mshFormat);          // Uses individual override
+            Assert.Equal(Consts.DateTimeFormatPrecisionMinute, evnFormat);   // Uses global override
+        }
+
+        /// <summary>
+        /// Validates that segments use the configuration when calling ToDelimitedString.
+        /// </summary>
+        [Fact]
+        public void MshSegment_WithNoOverrides_UsesOriginalPrecision()
+        {
+            // Arrange - No overrides set
+            var messageType = new MessageType
+            {
+                MessageCode = "ADT",
+                TriggerEvent = "A01",
+                MessageStructure = "ADT_A01"
+            };
+
+            var processingType = new ProcessingType
+            {
+                ProcessingId = "P"
+            };
+
+            var mshSegment = new MshSegment(_testDateTime, messageType, "MSG001", processingType);
 
             // Act
-            Hl7DateTimeFormatConfig.ClearFieldPrecisions();
+            string result = mshSegment.ToDelimitedString();
+
+            // Assert - Should use original precision (second precision)
+            Assert.Contains("20240315143045", result);
+        }
+
+        /// <summary>
+        /// Validates that segments use global override when set.
+        /// </summary>
+        [Fact]
+        public void MshSegment_WithGlobalOverride_UsesGlobalPrecision()
+        {
+            // Arrange - Set global override
+            Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride = Consts.DateFormatPrecisionDay;
+
+            var messageType = new MessageType
+            {
+                MessageCode = "ADT",
+                TriggerEvent = "A01",
+                MessageStructure = "ADT_A01"
+            };
+
+            var processingType = new ProcessingType
+            {
+                ProcessingId = "P"
+            };
+
+            var mshSegment = new MshSegment(_testDateTime, messageType, "MSG001", processingType);
+
+            // Act
+            string result = mshSegment.ToDelimitedString();
+
+            // Assert - Should use global override (day precision)
+            Assert.Contains("20240315", result);
+            Assert.DoesNotContain("20240315143045", result); // Should not contain seconds
+        }
+
+        /// <summary>
+        /// Validates that ClearGlobalOverride works correctly.
+        /// </summary>
+        [Fact]
+        public void ClearGlobalOverride_RemovesGlobalOverride()
+        {
+            // Arrange
+            Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride = Consts.DateFormatPrecisionDay;
+            Assert.True(Hl7DateTimeFormatConfig.HasGlobalOverride);
+
+            // Act
+            Hl7DateTimeFormatConfig.ClearGlobalOverride();
 
             // Assert
-            Assert.Equal(0, Hl7DateTimeFormatConfig.ConfiguredFieldCount);
+            Assert.False(Hl7DateTimeFormatConfig.HasGlobalOverride);
+            Assert.Null(Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride);
+        }
+
+        /// <summary>
+        /// Validates that extension method with explicit precision still works.
+        /// </summary>
+        [Fact]
+        public void ToHl7DateTimeString_WithExplicitPrecision_WorksRegardlessOfConfiguration()
+        {
+            // Arrange - Set global override
+            Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride = Consts.DateFormatPrecisionDay;
+
+            // Act - Use explicit precision
+            string result = _testDateTime.ToHl7DateTimeString(DateTimePrecision.Minute);
+
+            // Assert - Should use explicit precision, ignoring global override
+            Assert.Equal("202403151430", result);
         }
     }
 }

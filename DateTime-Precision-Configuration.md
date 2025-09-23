@@ -66,42 +66,64 @@ string minuteFormat = sampleDate.ToHl7DateTimeString(DateTimePrecision.Minute); 
 string mshFormat = sampleDate.ToHl7DateTimeString(typeof(MshSegment), "DateTimeOfMessage");
 ```
 
-### Global Configuration with Per-Field Overrides
+## Configuration Behavior
+
+The configuration system works with a clear hierarchy to ensure original field-specific precisions are preserved:
+
+### Configuration Hierarchy (Priority Order)
+
+1. **Individual field override** (highest priority) - Set via `SetPrecision<T>()`
+2. **Global override** - Set via `GlobalDateTimeFormatOverride` 
+3. **Original field precision** (preserved from original codebase)
+4. **Fallback to second precision** (lowest priority, rarely used)
+
+### Behavior Scenarios
+
+#### Scenario 1: No Global Override Set
+**Result**: ALL date/time fields will have the **original precision** that the original code had for them.
 
 ```csharp
-using ClearHl7;
-using ClearHl7.V251.Segments;
-using ClearHl7.V251.Types;
+// No configuration set - uses original precisions
+var mshSegment = new MshSegment(DateTime.Now, messageType, "MSG001", processingType);
+// MSH.DateTimeOfMessage uses original second precision: "20240315143045"
+```
 
-// Set global default to minute precision
-Hl7DateTimeFormatConfig.DefaultDateTimeFormat = Consts.DateTimeFormatPrecisionMinute;
+#### Scenario 2: Global Override Set
+**Result**: ALL date/time fields will be changed to that precision.
 
-// Override specific fields
-Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateFormatPrecisionDay);
-Hl7DateTimeFormatConfig.SetPrecision<EvnSegment>(x => x.RecordedDateTime, Consts.DateTimeFormatPrecisionHour);
-
-// Create segments - they will automatically use the configured precision
-var messageType = new MessageType
-{
-    MessageCode = "ADT",
-    TriggerEvent = "A01",
-    MessageStructure = "ADT_A01"
-};
-
-var processingType = new ProcessingType
-{
-    ProcessingId = "P"
-};
+```csharp
+// Set global override
+Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride = Consts.DateFormatPrecisionDay;
 
 var mshSegment = new MshSegment(DateTime.Now, messageType, "MSG001", processingType);
-// MSH.DateTimeOfMessage will use day precision
+// MSH.DateTimeOfMessage now uses day precision: "20240315"
+```
 
-var evnSegment = new EvnSegment
-{
-    EventTypeCode = "A01",
-    RecordedDateTime = DateTime.Now
-};
-// EVN.RecordedDateTime will use hour precision
+#### Scenario 3: No Global Override, Individual Field Override Set
+**Result**: ONLY that field will change its precision from the original code.
+
+```csharp
+// No global override, but individual field override
+Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateFormatPrecisionDay);
+
+var mshSegment = new MshSegment(DateTime.Now, messageType, "MSG001", processingType);
+var evnSegment = new EvnSegment { RecordedDateTime = DateTime.Now };
+// MSH.DateTimeOfMessage uses day precision: "20240315" (overridden)
+// EVN.RecordedDateTime uses original second precision: "20240315143045"
+```
+
+#### Scenario 4: Global Override + Individual Field Overrides
+**Result**: ALL date/time fields use the Global Precision Override, except individual fields that have been overridden.
+
+```csharp
+// Both global override and individual field override
+Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride = Consts.DateTimeFormatPrecisionMinute;
+Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateFormatPrecisionDay);
+
+var mshSegment = new MshSegment(DateTime.Now, messageType, "MSG001", processingType);
+var evnSegment = new EvnSegment { RecordedDateTime = DateTime.Now };
+// MSH.DateTimeOfMessage uses individual override (day): "20240315"
+// EVN.RecordedDateTime uses global override (minute): "202403151430"
 ```
 
 ## Key Benefits
@@ -119,20 +141,22 @@ var evnSegment = new EvnSegment
 ```csharp
 public static class Hl7DateTimeFormatConfig
 {
-    // Global default format
-    public static string DefaultDateTimeFormat { get; set; }
+    // Global override (null = no global override, uses original precisions)
+    public static string GlobalDateTimeFormatOverride { get; set; }
     
     // Type-safe per-field configuration
     public static void SetPrecision<TSegment>(Expression<Func<TSegment, object>> property, string format);
     
-    // Get format for a specific field
+    // Get format for a specific field (respects hierarchy)
     public static string GetFormatForField(Type segmentType, string propertyName);
     
-    // Clear all field-specific configurations
+    // Clear configurations
     public static void ClearFieldPrecisions();
+    public static void ClearGlobalOverride();
     
-    // Get count of configured field-specific precisions
+    // Status properties
     public static int ConfiguredFieldCount { get; }
+    public static bool HasGlobalOverride { get; }
 }
 ```
 
