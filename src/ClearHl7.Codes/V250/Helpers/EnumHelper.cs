@@ -4,19 +4,18 @@ namespace ClearHl7.Codes.V250.Helpers
 {
     /// <summary>
     /// Provides helper methods for interacting with enumerations.
+    /// Static methods are available for optimal performance.
+    /// </summary>
     /// </summary>
     public class EnumHelper : IEnumHelper
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="EnumHelper"/> class.
+        /// <summary>
+        /// Converts the given CodeAcceptApplicationAcknowledgmentConditions enum value into its HL7 equivalent code.
         /// </summary>
-        public EnumHelper()
-        {
-
-        }
-
-        /// <inheritdoc/>
-        public string EnumToCode(CodeAcceptApplicationAcknowledgmentConditions input)
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAcceptApplicationAcknowledgmentConditions input)
         {
             return input switch
             {
@@ -29,7 +28,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAcknowledgmentCode input)
+        string IEnumHelper.EnumToCode(CodeAcceptApplicationAcknowledgmentConditions input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAcknowledgmentCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAcknowledgmentCode input)
         {
             return input switch
             {
@@ -44,7 +50,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeActionCode input)
+        string IEnumHelper.EnumToCode(CodeAcknowledgmentCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeActionCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeActionCode input)
         {
             return input switch
             {
@@ -57,7 +70,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeActionTakenInResponseToTheEvent input)
+        string IEnumHelper.EnumToCode(CodeActionCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeActionTakenInResponseToTheEvent enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeActionTakenInResponseToTheEvent input)
         {
             return input switch
             {
@@ -72,7 +92,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeActiveInactive input)
+        string IEnumHelper.EnumToCode(CodeActionTakenInResponseToTheEvent input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeActiveInactive enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeActiveInactive input)
         {
             return input switch
             {
@@ -83,7 +110,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAdditivePreservative input)
+        string IEnumHelper.EnumToCode(CodeActiveInactive input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAdditivePreservative enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAdditivePreservative input)
         {
             return input switch
             {
@@ -149,7 +183,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAddressType input)
+        string IEnumHelper.EnumToCode(CodeAdditivePreservative input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAddressType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAddressType input)
         {
             return input switch
             {
@@ -171,7 +212,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAdministrationDevice input)
+        string IEnumHelper.EnumToCode(CodeAddressType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAdministrationDevice enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAdministrationDevice input)
         {
             return input switch
             {
@@ -189,7 +237,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAdministrationMethod input)
+        string IEnumHelper.EnumToCode(CodeAdministrationDevice input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAdministrationMethod enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAdministrationMethod input)
         {
             return input switch
             {
@@ -213,7 +268,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAdministrativeSex input)
+        string IEnumHelper.EnumToCode(CodeAdministrationMethod input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAdministrativeSex enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAdministrativeSex input)
         {
             return input switch
             {
@@ -228,7 +290,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAdmissionLevelOfCareCode input)
+        string IEnumHelper.EnumToCode(CodeAdministrativeSex input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAdmissionLevelOfCareCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAdmissionLevelOfCareCode input)
         {
             return input switch
             {
@@ -243,7 +312,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAdmissionType input)
+        string IEnumHelper.EnumToCode(CodeAdmissionLevelOfCareCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAdmissionType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAdmissionType input)
         {
             return input switch
             {
@@ -259,7 +335,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAdmitSource input)
+        string IEnumHelper.EnumToCode(CodeAdmissionType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAdmitSource enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAdmitSource input)
         {
             return input switch
             {
@@ -277,7 +360,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAdvancedBeneficiaryNoticeCode input)
+        string IEnumHelper.EnumToCode(CodeAdmitSource input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAdvancedBeneficiaryNoticeCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAdvancedBeneficiaryNoticeCode input)
         {
             return input switch
             {
@@ -290,7 +380,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAdvanceDirectiveCode input)
+        string IEnumHelper.EnumToCode(CodeAdvancedBeneficiaryNoticeCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAdvanceDirectiveCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAdvanceDirectiveCode input)
         {
             return input switch
             {
@@ -300,7 +397,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAlertDeviceCode input)
+        string IEnumHelper.EnumToCode(CodeAdvanceDirectiveCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAlertDeviceCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAlertDeviceCode input)
         {
             return input switch
             {
@@ -312,7 +416,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAlertLevel input)
+        string IEnumHelper.EnumToCode(CodeAlertDeviceCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAlertLevel enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAlertLevel input)
         {
             return input switch
             {
@@ -325,7 +436,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAllergenType input)
+        string IEnumHelper.EnumToCode(CodeAlertLevel input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAllergenType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAllergenType input)
         {
             return input switch
             {
@@ -342,7 +460,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAllergyClinicalStatus input)
+        string IEnumHelper.EnumToCode(CodeAllergenType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAllergyClinicalStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAllergyClinicalStatus input)
         {
             return input switch
             {
@@ -358,7 +483,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAllergySeverity input)
+        string IEnumHelper.EnumToCode(CodeAllergyClinicalStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAllergySeverity enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAllergySeverity input)
         {
             return input switch
             {
@@ -371,7 +503,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAllowSubstitution input)
+        string IEnumHelper.EnumToCode(CodeAllergySeverity input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAllowSubstitution enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAllowSubstitution input)
         {
             return input switch
             {
@@ -383,7 +522,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAllowSubstitutionCodes input)
+        string IEnumHelper.EnumToCode(CodeAllowSubstitution input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAllowSubstitutionCodes enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAllowSubstitutionCodes input)
         {
             return input switch
             {
@@ -396,7 +542,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAlternateCharacterSetHandlingScheme input)
+        string IEnumHelper.EnumToCode(CodeAllowSubstitutionCodes input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAlternateCharacterSetHandlingScheme enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAlternateCharacterSetHandlingScheme input)
         {
             return input switch
             {
@@ -408,7 +561,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAlternateCharacterSets input)
+        string IEnumHelper.EnumToCode(CodeAlternateCharacterSetHandlingScheme input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAlternateCharacterSets enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAlternateCharacterSets input)
         {
             return input switch
             {
@@ -438,7 +598,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAmbulatoryPaymentClassificationCode input)
+        string IEnumHelper.EnumToCode(CodeAlternateCharacterSets input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAmbulatoryPaymentClassificationCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAmbulatoryPaymentClassificationCode input)
         {
             return input switch
             {
@@ -451,7 +618,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAmbulatoryStatus input)
+        string IEnumHelper.EnumToCode(CodeAmbulatoryPaymentClassificationCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAmbulatoryStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAmbulatoryStatus input)
         {
             return input switch
             {
@@ -476,7 +650,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAmountClass input)
+        string IEnumHelper.EnumToCode(CodeAmbulatoryStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAmountClass enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAmountClass input)
         {
             return input switch
             {
@@ -489,7 +670,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAmountType input)
+        string IEnumHelper.EnumToCode(CodeAmountClass input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAmountType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAmountType input)
         {
             return input switch
             {
@@ -503,7 +691,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAnalyteRepeatStatus input)
+        string IEnumHelper.EnumToCode(CodeAmountType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAnalyteRepeatStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAnalyteRepeatStatus input)
         {
             return input switch
             {
@@ -516,7 +711,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAnnotations input)
+        string IEnumHelper.EnumToCode(CodeAnalyteRepeatStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAnnotations enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAnnotations input)
         {
             return input switch
             {
@@ -530,7 +732,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeApplicationChangeType input)
+        string IEnumHelper.EnumToCode(CodeAnnotations input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeApplicationChangeType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeApplicationChangeType input)
         {
             return input switch
             {
@@ -542,7 +751,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAppointmentReasonCodes input)
+        string IEnumHelper.EnumToCode(CodeApplicationChangeType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAppointmentReasonCodes enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAppointmentReasonCodes input)
         {
             return input switch
             {
@@ -556,7 +772,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAppointmentTypeCodes input)
+        string IEnumHelper.EnumToCode(CodeAppointmentReasonCodes input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAppointmentTypeCodes enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAppointmentTypeCodes input)
         {
             return input switch
             {
@@ -568,7 +791,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeArtificialBlood input)
+        string IEnumHelper.EnumToCode(CodeAppointmentTypeCodes input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeArtificialBlood enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeArtificialBlood input)
         {
             return input switch
             {
@@ -579,7 +809,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAssignmentOfBenefits input)
+        string IEnumHelper.EnumToCode(CodeArtificialBlood input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAssignmentOfBenefits enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAssignmentOfBenefits input)
         {
             return input switch
             {
@@ -591,7 +828,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeAuthorizationMode input)
+        string IEnumHelper.EnumToCode(CodeAssignmentOfBenefits input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeAuthorizationMode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeAuthorizationMode input)
         {
             return input switch
             {
@@ -610,7 +854,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeBedStatus input)
+        string IEnumHelper.EnumToCode(CodeAuthorizationMode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeBedStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeBedStatus input)
         {
             return input switch
             {
@@ -625,7 +876,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeBloodProductCode input)
+        string IEnumHelper.EnumToCode(CodeBedStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeBloodProductCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeBloodProductCode input)
         {
             return input switch
             {
@@ -649,7 +907,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeBloodProductDispenseStatus input)
+        string IEnumHelper.EnumToCode(CodeBloodProductCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeBloodProductDispenseStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeBloodProductDispenseStatus input)
         {
             return input switch
             {
@@ -669,7 +934,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeBloodProductProcessingRequirements input)
+        string IEnumHelper.EnumToCode(CodeBloodProductDispenseStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeBloodProductProcessingRequirements enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeBloodProductProcessingRequirements input)
         {
             return input switch
             {
@@ -689,7 +961,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeBloodProductTransfusionDispositionStatus input)
+        string IEnumHelper.EnumToCode(CodeBloodProductProcessingRequirements input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeBloodProductTransfusionDispositionStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeBloodProductTransfusionDispositionStatus input)
         {
             return input switch
             {
@@ -703,7 +982,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeBodyParts input)
+        string IEnumHelper.EnumToCode(CodeBloodProductTransfusionDispositionStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeBodyParts enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeBodyParts input)
         {
             return input switch
             {
@@ -1155,7 +1441,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeBodySite input)
+        string IEnumHelper.EnumToCode(CodeBodyParts input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeBodySite enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeBodySite input)
         {
             return input switch
             {
@@ -1218,7 +1511,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeBodySiteModifier input)
+        string IEnumHelper.EnumToCode(CodeBodySite input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeBodySiteModifier enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeBodySiteModifier input)
         {
             return input switch
             {
@@ -1243,7 +1543,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeBpObservationStatusCodesInterpretation input)
+        string IEnumHelper.EnumToCode(CodeBodySiteModifier input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeBpObservationStatusCodesInterpretation enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeBpObservationStatusCodesInterpretation input)
         {
             return input switch
             {
@@ -1258,7 +1565,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeCalendarAlignment input)
+        string IEnumHelper.EnumToCode(CodeBpObservationStatusCodesInterpretation input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeCalendarAlignment enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeCalendarAlignment input)
         {
             return input switch
             {
@@ -1275,7 +1589,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeCaseCategoryCode input)
+        string IEnumHelper.EnumToCode(CodeCalendarAlignment input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeCaseCategoryCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeCaseCategoryCode input)
         {
             return input switch
             {
@@ -1285,7 +1606,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeCausalityObservations input)
+        string IEnumHelper.EnumToCode(CodeCaseCategoryCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeCausalityObservations enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeCausalityObservations input)
         {
             return input switch
             {
@@ -1305,7 +1633,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeCertificateStatus input)
+        string IEnumHelper.EnumToCode(CodeCausalityObservations input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeCertificateStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeCertificateStatus input)
         {
             return input switch
             {
@@ -1319,7 +1654,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeCertificationPatientType input)
+        string IEnumHelper.EnumToCode(CodeCertificateStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeCertificationPatientType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeCertificationPatientType input)
         {
             return input switch
             {
@@ -1332,7 +1674,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeCertificationStatus input)
+        string IEnumHelper.EnumToCode(CodeCertificationPatientType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeCertificationStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeCertificationStatus input)
         {
             return input switch
             {
@@ -1343,7 +1692,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeChargeOnIndicator input)
+        string IEnumHelper.EnumToCode(CodeCertificationStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeChargeOnIndicator enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeChargeOnIndicator input)
         {
             return input switch
             {
@@ -1354,7 +1710,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeChargeType input)
+        string IEnumHelper.EnumToCode(CodeChargeOnIndicator input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeChargeType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeChargeType input)
         {
             return input switch
             {
@@ -1371,7 +1734,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeChargeTypeReason input)
+        string IEnumHelper.EnumToCode(CodeChargeType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeChargeTypeReason enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeChargeTypeReason input)
         {
             return input switch
             {
@@ -1385,7 +1755,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeCheckDigitScheme input)
+        string IEnumHelper.EnumToCode(CodeChargeTypeReason input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeCheckDigitScheme enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeCheckDigitScheme input)
         {
             return input switch
             {
@@ -1398,7 +1775,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeCodingSystem input)
+        string IEnumHelper.EnumToCode(CodeCheckDigitScheme input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeCodingSystem enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeCodingSystem input)
         {
             return input switch
             {
@@ -1494,7 +1878,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeCommandResponse input)
+        string IEnumHelper.EnumToCode(CodeCodingSystem input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeCommandResponse enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeCommandResponse input)
         {
             return input switch
             {
@@ -1508,7 +1899,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeCommentType input)
+        string IEnumHelper.EnumToCode(CodeCommandResponse input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeCommentType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeCommentType input)
         {
             return input switch
             {
@@ -1525,7 +1923,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeCompletionStatus input)
+        string IEnumHelper.EnumToCode(CodeCommentType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeCompletionStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeCompletionStatus input)
         {
             return input switch
             {
@@ -1538,7 +1943,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeComputationType input)
+        string IEnumHelper.EnumToCode(CodeCompletionStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeComputationType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeComputationType input)
         {
             return input switch
             {
@@ -1549,7 +1961,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeConfidentialityCode input)
+        string IEnumHelper.EnumToCode(CodeComputationType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeConfidentialityCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeConfidentialityCode input)
         {
             return input switch
             {
@@ -1568,7 +1987,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeConsentBypassReason input)
+        string IEnumHelper.EnumToCode(CodeConfidentialityCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeConsentBypassReason enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeConsentBypassReason input)
         {
             return input switch
             {
@@ -1579,7 +2005,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeConsentDisclosureLevel input)
+        string IEnumHelper.EnumToCode(CodeConsentBypassReason input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeConsentDisclosureLevel enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeConsentDisclosureLevel input)
         {
             return input switch
             {
@@ -1591,7 +2024,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeConsentMode input)
+        string IEnumHelper.EnumToCode(CodeConsentDisclosureLevel input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeConsentMode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeConsentMode input)
         {
             return input switch
             {
@@ -1603,7 +2043,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeConsentNonDisclosureReason input)
+        string IEnumHelper.EnumToCode(CodeConsentMode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeConsentNonDisclosureReason enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeConsentNonDisclosureReason input)
         {
             return input switch
             {
@@ -1615,7 +2062,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeConsentStatus input)
+        string IEnumHelper.EnumToCode(CodeConsentNonDisclosureReason input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeConsentStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeConsentStatus input)
         {
             return input switch
             {
@@ -1630,7 +2084,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeConsentType input)
+        string IEnumHelper.EnumToCode(CodeConsentStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeConsentType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeConsentType input)
         {
             return input switch
             {
@@ -1776,7 +2237,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeContactRole input)
+        string IEnumHelper.EnumToCode(CodeConsentType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeContactRole enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeContactRole input)
         {
             return input switch
             {
@@ -1793,7 +2261,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeContainerStatus input)
+        string IEnumHelper.EnumToCode(CodeContactRole input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeContainerStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeContainerStatus input)
         {
             return input switch
             {
@@ -1810,7 +2285,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeContinuationStyleCode input)
+        string IEnumHelper.EnumToCode(CodeContainerStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeContinuationStyleCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeContinuationStyleCode input)
         {
             return input switch
             {
@@ -1821,7 +2303,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeControlledSubstanceSchedule input)
+        string IEnumHelper.EnumToCode(CodeContinuationStyleCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeControlledSubstanceSchedule enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeControlledSubstanceSchedule input)
         {
             return input switch
             {
@@ -1836,7 +2325,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeCoordinationOfBenefits input)
+        string IEnumHelper.EnumToCode(CodeControlledSubstanceSchedule input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeCoordinationOfBenefits enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeCoordinationOfBenefits input)
         {
             return input switch
             {
@@ -1847,7 +2343,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeCoverageType input)
+        string IEnumHelper.EnumToCode(CodeCoordinationOfBenefits input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeCoverageType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeCoverageType input)
         {
             return input switch
             {
@@ -1859,7 +2362,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeCpRangeType input)
+        string IEnumHelper.EnumToCode(CodeCoverageType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeCpRangeType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeCpRangeType input)
         {
             return input switch
             {
@@ -1870,7 +2380,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeCyclicEntryExitIndicator input)
+        string IEnumHelper.EnumToCode(CodeCpRangeType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeCyclicEntryExitIndicator enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeCyclicEntryExitIndicator input)
         {
             return input switch
             {
@@ -1881,7 +2398,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDataTypes input)
+        string IEnumHelper.EnumToCode(CodeCyclicEntryExitIndicator input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDataTypes enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDataTypes input)
         {
             return input switch
             {
@@ -1984,7 +2508,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDateTimeSelectionQualifier input)
+        string IEnumHelper.EnumToCode(CodeDataTypes input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDateTimeSelectionQualifier enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDateTimeSelectionQualifier input)
         {
             return input switch
             {
@@ -1997,7 +2528,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDaysOfTheWeek input)
+        string IEnumHelper.EnumToCode(CodeDateTimeSelectionQualifier input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDaysOfTheWeek enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDaysOfTheWeek input)
         {
             return input switch
             {
@@ -2013,7 +2551,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDayType input)
+        string IEnumHelper.EnumToCode(CodeDaysOfTheWeek input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDayType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDayType input)
         {
             return input switch
             {
@@ -2025,7 +2570,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDeferredResponseType input)
+        string IEnumHelper.EnumToCode(CodeDayType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDeferredResponseType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDeferredResponseType input)
         {
             return input switch
             {
@@ -2036,7 +2588,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDegreeLicenseCertificate input)
+        string IEnumHelper.EnumToCode(CodeDeferredResponseType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDegreeLicenseCertificate enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDegreeLicenseCertificate input)
         {
             return input switch
             {
@@ -2103,7 +2662,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDenialOrRejectionCode input)
+        string IEnumHelper.EnumToCode(CodeDegreeLicenseCertificate input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDenialOrRejectionCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDenialOrRejectionCode input)
         {
             return input switch
             {
@@ -2115,7 +2681,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDerivedSpecimen input)
+        string IEnumHelper.EnumToCode(CodeDenialOrRejectionCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDerivedSpecimen enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDerivedSpecimen input)
         {
             return input switch
             {
@@ -2127,7 +2700,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDiagnosisClassification input)
+        string IEnumHelper.EnumToCode(CodeDerivedSpecimen input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDiagnosisClassification enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDiagnosisClassification input)
         {
             return input switch
             {
@@ -2144,7 +2724,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDiagnosisPriority input)
+        string IEnumHelper.EnumToCode(CodeDiagnosisClassification input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDiagnosisPriority enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDiagnosisPriority input)
         {
             return input switch
             {
@@ -2156,7 +2743,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDiagnosisType input)
+        string IEnumHelper.EnumToCode(CodeDiagnosisPriority input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDiagnosisType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDiagnosisType input)
         {
             return input switch
             {
@@ -2168,7 +2762,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDiagnosticServiceSectionId input)
+        string IEnumHelper.EnumToCode(CodeDiagnosisType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDiagnosticServiceSectionId enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDiagnosticServiceSectionId input)
         {
             return input switch
             {
@@ -2216,7 +2817,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDietCodeSpecificationType input)
+        string IEnumHelper.EnumToCode(CodeDiagnosticServiceSectionId input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDietCodeSpecificationType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDietCodeSpecificationType input)
         {
             return input switch
             {
@@ -2228,7 +2836,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDisabledPersonCode input)
+        string IEnumHelper.EnumToCode(CodeDietCodeSpecificationType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDisabledPersonCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDisabledPersonCode input)
         {
             return input switch
             {
@@ -2241,7 +2856,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDispenseMethod input)
+        string IEnumHelper.EnumToCode(CodeDisabledPersonCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDispenseMethod enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDispenseMethod input)
         {
             return input switch
             {
@@ -2254,7 +2876,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDispenseType input)
+        string IEnumHelper.EnumToCode(CodeDispenseMethod input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDispenseType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDispenseType input)
         {
             return input switch
             {
@@ -2272,7 +2901,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDocumentAvailabilityStatus input)
+        string IEnumHelper.EnumToCode(CodeDispenseType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDocumentAvailabilityStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDocumentAvailabilityStatus input)
         {
             return input switch
             {
@@ -2285,7 +2921,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDocumentCompletionStatus input)
+        string IEnumHelper.EnumToCode(CodeDocumentAvailabilityStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDocumentCompletionStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDocumentCompletionStatus input)
         {
             return input switch
             {
@@ -2301,7 +2944,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDocumentConfidentialityStatus input)
+        string IEnumHelper.EnumToCode(CodeDocumentCompletionStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDocumentConfidentialityStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDocumentConfidentialityStatus input)
         {
             return input switch
             {
@@ -2313,7 +2963,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDocumentStorageStatus input)
+        string IEnumHelper.EnumToCode(CodeDocumentConfidentialityStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDocumentStorageStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDocumentStorageStatus input)
         {
             return input switch
             {
@@ -2326,7 +2983,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDocumentType input)
+        string IEnumHelper.EnumToCode(CodeDocumentStorageStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDocumentType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDocumentType input)
         {
             return input switch
             {
@@ -2349,7 +3013,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDrgPayor input)
+        string IEnumHelper.EnumToCode(CodeDocumentType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDrgPayor enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDrgPayor input)
         {
             return input switch
             {
@@ -2361,7 +3032,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeDurationCategories input)
+        string IEnumHelper.EnumToCode(CodeDrgPayor input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeDurationCategories enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeDurationCategories input)
         {
             return input switch
             {
@@ -2396,7 +3074,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeEligibilitySource input)
+        string IEnumHelper.EnumToCode(CodeDurationCategories input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeEligibilitySource enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeEligibilitySource input)
         {
             return input switch
             {
@@ -2412,7 +3097,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeEmploymentStatus input)
+        string IEnumHelper.EnumToCode(CodeEligibilitySource input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeEmploymentStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeEmploymentStatus input)
         {
             return input switch
             {
@@ -2432,7 +3124,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeEncoding input)
+        string IEnumHelper.EnumToCode(CodeEmploymentStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeEncoding enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeEncoding input)
         {
             return input switch
             {
@@ -2444,7 +3143,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeEquipmentState input)
+        string IEnumHelper.EnumToCode(CodeEncoding input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeEquipmentState enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeEquipmentState input)
         {
             return input switch
             {
@@ -2462,7 +3168,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeErrorSeverity input)
+        string IEnumHelper.EnumToCode(CodeEquipmentState input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeErrorSeverity enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeErrorSeverity input)
         {
             return input switch
             {
@@ -2474,7 +3187,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeEscortRequired input)
+        string IEnumHelper.EnumToCode(CodeErrorSeverity input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeEscortRequired enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeEscortRequired input)
         {
             return input switch
             {
@@ -2486,7 +3206,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeEthnicGroup input)
+        string IEnumHelper.EnumToCode(CodeEscortRequired input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeEthnicGroup enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeEthnicGroup input)
         {
             return input switch
             {
@@ -2498,7 +3225,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeEventConsequence input)
+        string IEnumHelper.EnumToCode(CodeEthnicGroup input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeEventConsequence enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeEventConsequence input)
         {
             return input switch
             {
@@ -2516,7 +3250,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeEventExpected input)
+        string IEnumHelper.EnumToCode(CodeEventConsequence input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeEventExpected enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeEventExpected input)
         {
             return input switch
             {
@@ -2528,7 +3269,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeEventQualification input)
+        string IEnumHelper.EnumToCode(CodeEventExpected input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeEventQualification enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeEventQualification input)
         {
             return input switch
             {
@@ -2545,7 +3293,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeEventReason input)
+        string IEnumHelper.EnumToCode(CodeEventQualification input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeEventReason enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeEventReason input)
         {
             return input switch
             {
@@ -2559,7 +3314,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeEventRelatedPeriod input)
+        string IEnumHelper.EnumToCode(CodeEventReason input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeEventRelatedPeriod enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeEventRelatedPeriod input)
         {
             return input switch
             {
@@ -2581,7 +3343,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeEventReportedTo input)
+        string IEnumHelper.EnumToCode(CodeEventRelatedPeriod input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeEventReportedTo enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeEventReportedTo input)
         {
             return input switch
             {
@@ -2594,7 +3363,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeEventSeriousness input)
+        string IEnumHelper.EnumToCode(CodeEventReportedTo input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeEventSeriousness enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeEventSeriousness input)
         {
             return input switch
             {
@@ -2606,7 +3382,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeEventType input)
+        string IEnumHelper.EnumToCode(CodeEventSeriousness input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeEventType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeEventType input)
         {
             return input switch
             {
@@ -2617,7 +3400,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeEventTypeCode input)
+        string IEnumHelper.EnumToCode(CodeEventType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeEventTypeCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeEventTypeCode input)
         {
             return input switch
             {
@@ -2912,7 +3702,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeExpandedYesNoIndicator input)
+        string IEnumHelper.EnumToCode(CodeEventTypeCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeExpandedYesNoIndicator enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeExpandedYesNoIndicator input)
         {
             return input switch
             {
@@ -2930,7 +3727,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeExtendedPriorityCodes input)
+        string IEnumHelper.EnumToCode(CodeExpandedYesNoIndicator input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeExtendedPriorityCodes enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeExtendedPriorityCodes input)
         {
             return input switch
             {
@@ -2952,7 +3756,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeFacilityType input)
+        string IEnumHelper.EnumToCode(CodeExtendedPriorityCodes input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeFacilityType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeFacilityType input)
         {
             return input switch
             {
@@ -2965,7 +3776,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeFileLevelEventCode input)
+        string IEnumHelper.EnumToCode(CodeFacilityType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeFileLevelEventCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeFileLevelEventCode input)
         {
             return input switch
             {
@@ -2976,7 +3794,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeFillerStatusCodes input)
+        string IEnumHelper.EnumToCode(CodeFileLevelEventCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeFillerStatusCodes enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeFillerStatusCodes input)
         {
             return input switch
             {
@@ -2996,7 +3821,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeFormularyStatus input)
+        string IEnumHelper.EnumToCode(CodeFillerStatusCodes input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeFormularyStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeFormularyStatus input)
         {
             return input switch
             {
@@ -3009,7 +3841,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeGestationCategoryCode input)
+        string IEnumHelper.EnumToCode(CodeFormularyStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeGestationCategoryCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeGestationCategoryCode input)
         {
             return input switch
             {
@@ -3021,7 +3860,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeGovernmentReimbursementProgram input)
+        string IEnumHelper.EnumToCode(CodeGestationCategoryCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeGovernmentReimbursementProgram enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeGovernmentReimbursementProgram input)
         {
             return input switch
             {
@@ -3032,7 +3878,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeHospitalService input)
+        string IEnumHelper.EnumToCode(CodeGovernmentReimbursementProgram input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeHospitalService enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeHospitalService input)
         {
             return input switch
             {
@@ -3046,7 +3899,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeIdentifierType input)
+        string IEnumHelper.EnumToCode(CodeHospitalService input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeIdentifierType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeIdentifierType input)
         {
             return input switch
             {
@@ -3140,7 +4000,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeIdentityMayBeDivulged input)
+        string IEnumHelper.EnumToCode(CodeIdentifierType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeIdentityMayBeDivulged enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeIdentityMayBeDivulged input)
         {
             return input switch
             {
@@ -3152,7 +4019,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeIdentityReliabilityCode input)
+        string IEnumHelper.EnumToCode(CodeIdentityMayBeDivulged input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeIdentityReliabilityCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeIdentityReliabilityCode input)
         {
             return input switch
             {
@@ -3165,7 +4039,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeImmunizationRegistryStatus input)
+        string IEnumHelper.EnumToCode(CodeIdentityReliabilityCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeImmunizationRegistryStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeImmunizationRegistryStatus input)
         {
             return input switch
             {
@@ -3181,7 +4062,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeInactiveReasonCode input)
+        string IEnumHelper.EnumToCode(CodeImmunizationRegistryStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeInactiveReasonCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeInactiveReasonCode input)
         {
             return input switch
             {
@@ -3193,7 +4081,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeIncidentTypeCode input)
+        string IEnumHelper.EnumToCode(CodeInactiveReasonCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeIncidentTypeCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeIncidentTypeCode input)
         {
             return input switch
             {
@@ -3205,7 +4100,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeIndirectExposureMechanism input)
+        string IEnumHelper.EnumToCode(CodeIncidentTypeCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeIndirectExposureMechanism enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeIndirectExposureMechanism input)
         {
             return input switch
             {
@@ -3219,7 +4121,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeInformPersonCode input)
+        string IEnumHelper.EnumToCode(CodeIndirectExposureMechanism input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeInformPersonCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeInformPersonCode input)
         {
             return input switch
             {
@@ -3232,7 +4141,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeInstitutionRelationshipType input)
+        string IEnumHelper.EnumToCode(CodeInformPersonCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeInstitutionRelationshipType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeInstitutionRelationshipType input)
         {
             return input switch
             {
@@ -3245,7 +4161,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeInsuranceCompanyContactReason input)
+        string IEnumHelper.EnumToCode(CodeInstitutionRelationshipType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeInsuranceCompanyContactReason enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeInsuranceCompanyContactReason input)
         {
             return input switch
             {
@@ -3257,7 +4180,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeInterpretationCodes input)
+        string IEnumHelper.EnumToCode(CodeInsuranceCompanyContactReason input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeInterpretationCodes enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeInterpretationCodes input)
         {
             return input switch
             {
@@ -3285,7 +4215,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeInvocationEvent input)
+        string IEnumHelper.EnumToCode(CodeInterpretationCodes input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeInvocationEvent enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeInvocationEvent input)
         {
             return input switch
             {
@@ -3299,7 +4236,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeJobStatus input)
+        string IEnumHelper.EnumToCode(CodeInvocationEvent input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeJobStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeJobStatus input)
         {
             return input switch
             {
@@ -3312,7 +4256,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeJurisdictionalBreadth input)
+        string IEnumHelper.EnumToCode(CodeJobStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeJurisdictionalBreadth enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeJurisdictionalBreadth input)
         {
             return input switch
             {
@@ -3324,7 +4275,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeKindOfQuantity input)
+        string IEnumHelper.EnumToCode(CodeJurisdictionalBreadth input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeKindOfQuantity enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeKindOfQuantity input)
         {
             return input switch
             {
@@ -3435,7 +4393,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeLanguageAbility input)
+        string IEnumHelper.EnumToCode(CodeKindOfQuantity input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeLanguageAbility enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeLanguageAbility input)
         {
             return input switch
             {
@@ -3449,7 +4414,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeLanguageProficiency input)
+        string IEnumHelper.EnumToCode(CodeLanguageAbility input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeLanguageProficiency enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeLanguageProficiency input)
         {
             return input switch
             {
@@ -3464,7 +4436,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeLevelOfCare input)
+        string IEnumHelper.EnumToCode(CodeLanguageProficiency input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeLevelOfCare enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeLevelOfCare input)
         {
             return input switch
             {
@@ -3480,7 +4459,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeLivingArrangement input)
+        string IEnumHelper.EnumToCode(CodeLevelOfCare input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeLivingArrangement enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeLivingArrangement input)
         {
             return input switch
             {
@@ -3495,7 +4481,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeLivingDependency input)
+        string IEnumHelper.EnumToCode(CodeLivingArrangement input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeLivingDependency enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeLivingDependency input)
         {
             return input switch
             {
@@ -3509,7 +4502,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeLivingWillCode input)
+        string IEnumHelper.EnumToCode(CodeLivingDependency input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeLivingWillCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeLivingWillCode input)
         {
             return input switch
             {
@@ -3523,7 +4523,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeLocalRemoteControlState input)
+        string IEnumHelper.EnumToCode(CodeLivingWillCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeLocalRemoteControlState enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeLocalRemoteControlState input)
         {
             return input switch
             {
@@ -3534,7 +4541,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeLocationCharacteristicId input)
+        string IEnumHelper.EnumToCode(CodeLocalRemoteControlState input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeLocationCharacteristicId enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeLocationCharacteristicId input)
         {
             return input switch
             {
@@ -3555,7 +4569,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeLocationEquipment input)
+        string IEnumHelper.EnumToCode(CodeLocationCharacteristicId input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeLocationEquipment enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeLocationEquipment input)
         {
             return input switch
             {
@@ -3572,7 +4593,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeLocationRelationshipId input)
+        string IEnumHelper.EnumToCode(CodeLocationEquipment input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeLocationRelationshipId enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeLocationRelationshipId input)
         {
             return input switch
             {
@@ -3588,7 +4616,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeLocationServiceCode input)
+        string IEnumHelper.EnumToCode(CodeLocationRelationshipId input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeLocationServiceCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeLocationServiceCode input)
         {
             return input switch
             {
@@ -3601,7 +4636,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeMailClaimParty input)
+        string IEnumHelper.EnumToCode(CodeLocationServiceCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeMailClaimParty enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeMailClaimParty input)
         {
             return input switch
             {
@@ -3615,7 +4657,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeManufacturersOfVaccines input)
+        string IEnumHelper.EnumToCode(CodeMailClaimParty input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeManufacturersOfVaccines enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeManufacturersOfVaccines input)
         {
             return input switch
             {
@@ -3671,7 +4720,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeMaritalStatus input)
+        string IEnumHelper.EnumToCode(CodeManufacturersOfVaccines input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeMaritalStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeMaritalStatus input)
         {
             return input switch
             {
@@ -3696,7 +4752,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeMarketingBasis input)
+        string IEnumHelper.EnumToCode(CodeMaritalStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeMarketingBasis enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeMarketingBasis input)
         {
             return input switch
             {
@@ -3711,7 +4774,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeMasterfileActionCode input)
+        string IEnumHelper.EnumToCode(CodeMarketingBasis input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeMasterfileActionCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeMasterfileActionCode input)
         {
             return input switch
             {
@@ -3725,7 +4795,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeMasterFileIdentifierCode input)
+        string IEnumHelper.EnumToCode(CodeMasterfileActionCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeMasterFileIdentifierCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeMasterFileIdentifierCode input)
         {
             return input switch
             {
@@ -3747,7 +4824,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeMatchAlgorithms input)
+        string IEnumHelper.EnumToCode(CodeMasterFileIdentifierCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeMatchAlgorithms enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeMatchAlgorithms input)
         {
             return input switch
             {
@@ -3758,7 +4842,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeMatchReason input)
+        string IEnumHelper.EnumToCode(CodeMatchAlgorithms input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeMatchReason enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeMatchReason input)
         {
             return input switch
             {
@@ -3771,7 +4862,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeMessageErrorConditionCodes input)
+        string IEnumHelper.EnumToCode(CodeMatchReason input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeMessageErrorConditionCodes enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeMessageErrorConditionCodes input)
         {
             return input switch
             {
@@ -3793,7 +4891,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeMessageStructure input)
+        string IEnumHelper.EnumToCode(CodeMessageErrorConditionCodes input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeMessageStructure enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeMessageStructure input)
         {
             return input switch
             {
@@ -4000,7 +5105,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeMessageType input)
+        string IEnumHelper.EnumToCode(CodeMessageStructure input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeMessageType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeMessageType input)
         {
             return input switch
             {
@@ -4132,7 +5244,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeMfnRecordLevelErrorReturn input)
+        string IEnumHelper.EnumToCode(CodeMessageType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeMfnRecordLevelErrorReturn enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeMfnRecordLevelErrorReturn input)
         {
             return input switch
             {
@@ -4143,7 +5262,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeMilitaryRankGrade input)
+        string IEnumHelper.EnumToCode(CodeMfnRecordLevelErrorReturn input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeMilitaryRankGrade enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeMilitaryRankGrade input)
         {
             return input switch
             {
@@ -4177,7 +5303,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeMilitaryService input)
+        string IEnumHelper.EnumToCode(CodeMilitaryRankGrade input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeMilitaryService enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeMilitaryService input)
         {
             return input switch
             {
@@ -4197,7 +5330,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeMilitaryStatus input)
+        string IEnumHelper.EnumToCode(CodeMilitaryService input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeMilitaryStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeMilitaryStatus input)
         {
             return input switch
             {
@@ -4209,7 +5349,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeModality input)
+        string IEnumHelper.EnumToCode(CodeMilitaryStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeModality enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeModality input)
         {
             return input switch
             {
@@ -4244,7 +5391,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeModeOfArrivalCode input)
+        string IEnumHelper.EnumToCode(CodeModality input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeModeOfArrivalCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeModeOfArrivalCode input)
         {
             return input switch
             {
@@ -4260,7 +5414,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeModifyIndicator input)
+        string IEnumHelper.EnumToCode(CodeModeOfArrivalCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeModifyIndicator enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeModifyIndicator input)
         {
             return input switch
             {
@@ -4271,7 +5432,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeMoneyOrPercentageIndicator input)
+        string IEnumHelper.EnumToCode(CodeModifyIndicator input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeMoneyOrPercentageIndicator enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeMoneyOrPercentageIndicator input)
         {
             return input switch
             {
@@ -4282,7 +5450,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeNameAddressRepresentation input)
+        string IEnumHelper.EnumToCode(CodeMoneyOrPercentageIndicator input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeNameAddressRepresentation enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeNameAddressRepresentation input)
         {
             return input switch
             {
@@ -4294,7 +5469,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeNameAssemblyOrder input)
+        string IEnumHelper.EnumToCode(CodeNameAddressRepresentation input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeNameAssemblyOrder enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeNameAssemblyOrder input)
         {
             return input switch
             {
@@ -4305,7 +5487,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeNameType input)
+        string IEnumHelper.EnumToCode(CodeNameAssemblyOrder input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeNameType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeNameType input)
         {
             return input switch
             {
@@ -4327,7 +5516,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeNatureOfAbnormalTesting input)
+        string IEnumHelper.EnumToCode(CodeNameType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeNatureOfAbnormalTesting enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeNatureOfAbnormalTesting input)
         {
             return input switch
             {
@@ -4343,7 +5539,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeNatureOfChallenge input)
+        string IEnumHelper.EnumToCode(CodeNatureOfAbnormalTesting input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeNatureOfChallenge enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeNatureOfChallenge input)
         {
             return input switch
             {
@@ -4355,7 +5558,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeNatureOfServiceTestObservation input)
+        string IEnumHelper.EnumToCode(CodeNatureOfChallenge input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeNatureOfServiceTestObservation enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeNatureOfServiceTestObservation input)
         {
             return input switch
             {
@@ -4369,7 +5579,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeNewbornCode input)
+        string IEnumHelper.EnumToCode(CodeNatureOfServiceTestObservation input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeNewbornCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeNewbornCode input)
         {
             return input switch
             {
@@ -4383,7 +5600,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeNonSubjectConsenterReason input)
+        string IEnumHelper.EnumToCode(CodeNewbornCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeNonSubjectConsenterReason enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeNonSubjectConsenterReason input)
         {
             return input switch
             {
@@ -4395,7 +5619,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeNotifyClergyCode input)
+        string IEnumHelper.EnumToCode(CodeNonSubjectConsenterReason input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeNotifyClergyCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeNotifyClergyCode input)
         {
             return input switch
             {
@@ -4409,7 +5640,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeObservationResultHandling input)
+        string IEnumHelper.EnumToCode(CodeNotifyClergyCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeObservationResultHandling enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeObservationResultHandling input)
         {
             return input switch
             {
@@ -4420,7 +5658,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeObservationResultStatusCodesInterpretation input)
+        string IEnumHelper.EnumToCode(CodeObservationResultHandling input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeObservationResultStatusCodesInterpretation enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeObservationResultStatusCodesInterpretation input)
         {
             return input switch
             {
@@ -4441,7 +5686,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeOrderControlCodes input)
+        string IEnumHelper.EnumToCode(CodeObservationResultStatusCodesInterpretation input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeOrderControlCodes enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeOrderControlCodes input)
         {
             return input switch
             {
@@ -4500,7 +5752,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeOrderStatus input)
+        string IEnumHelper.EnumToCode(CodeOrderControlCodes input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeOrderStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeOrderStatus input)
         {
             return input switch
             {
@@ -4518,7 +5777,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeOrderType input)
+        string IEnumHelper.EnumToCode(CodeOrderStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeOrderType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeOrderType input)
         {
             return input switch
             {
@@ -4529,7 +5795,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeOrganDonorCode input)
+        string IEnumHelper.EnumToCode(CodeOrderType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeOrganDonorCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeOrganDonorCode input)
         {
             return input switch
             {
@@ -4545,7 +5818,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeOrganizationAgencyDepartment input)
+        string IEnumHelper.EnumToCode(CodeOrganDonorCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeOrganizationAgencyDepartment enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeOrganizationAgencyDepartment input)
         {
             return input switch
             {
@@ -4560,7 +5840,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeOrganizationalNameType input)
+        string IEnumHelper.EnumToCode(CodeOrganizationAgencyDepartment input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeOrganizationalNameType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeOrganizationalNameType input)
         {
             return input switch
             {
@@ -4573,7 +5860,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeOtherEnvironmentalFactors input)
+        string IEnumHelper.EnumToCode(CodeOrganizationalNameType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeOtherEnvironmentalFactors enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeOtherEnvironmentalFactors input)
         {
             return input switch
             {
@@ -4584,7 +5878,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeOutlierType input)
+        string IEnumHelper.EnumToCode(CodeOtherEnvironmentalFactors input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeOutlierType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeOutlierType input)
         {
             return input switch
             {
@@ -4595,7 +5896,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeOverallClaimDispositionCode input)
+        string IEnumHelper.EnumToCode(CodeOutlierType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeOverallClaimDispositionCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeOverallClaimDispositionCode input)
         {
             return input switch
             {
@@ -4609,7 +5917,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeOverride input)
+        string IEnumHelper.EnumToCode(CodeOverallClaimDispositionCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeOverride enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeOverride input)
         {
             return input switch
             {
@@ -4621,7 +5936,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeOverrideType input)
+        string IEnumHelper.EnumToCode(CodeOverride input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeOverrideType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeOverrideType input)
         {
             return input switch
             {
@@ -4633,7 +5955,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePackagingStatusCode input)
+        string IEnumHelper.EnumToCode(CodeOverrideType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePackagingStatusCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePackagingStatusCode input)
         {
             return input switch
             {
@@ -4645,7 +5974,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeParticipantOrganizationUnitType input)
+        string IEnumHelper.EnumToCode(CodePackagingStatusCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeParticipantOrganizationUnitType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeParticipantOrganizationUnitType input)
         {
             return input switch
             {
@@ -4661,7 +5997,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePatientClass input)
+        string IEnumHelper.EnumToCode(CodeParticipantOrganizationUnitType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePatientClass enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePatientClass input)
         {
             return input switch
             {
@@ -4679,7 +6022,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePatientConditionCode input)
+        string IEnumHelper.EnumToCode(CodePatientClass input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePatientConditionCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePatientConditionCode input)
         {
             return input switch
             {
@@ -4694,7 +6044,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePatientLocationType input)
+        string IEnumHelper.EnumToCode(CodePatientConditionCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePatientLocationType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePatientLocationType input)
         {
             return input switch
             {
@@ -4711,7 +6068,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePatientOutcome input)
+        string IEnumHelper.EnumToCode(CodePatientLocationType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePatientOutcome enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePatientOutcome input)
         {
             return input switch
             {
@@ -4727,7 +6091,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePatientsRelationshiptoInsured input)
+        string IEnumHelper.EnumToCode(CodePatientOutcome input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePatientsRelationshiptoInsured enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePatientsRelationshiptoInsured input)
         {
             return input switch
             {
@@ -4755,7 +6126,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePatientStatusCode input)
+        string IEnumHelper.EnumToCode(CodePatientsRelationshiptoInsured input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePatientStatusCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePatientStatusCode input)
         {
             return input switch
             {
@@ -4766,7 +6144,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePaymentAdjustmentCode input)
+        string IEnumHelper.EnumToCode(CodePatientStatusCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePaymentAdjustmentCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePaymentAdjustmentCode input)
         {
             return input switch
             {
@@ -4780,7 +6165,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePersonLocationType input)
+        string IEnumHelper.EnumToCode(CodePaymentAdjustmentCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePersonLocationType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePersonLocationType input)
         {
             return input switch
             {
@@ -4796,7 +6188,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePharmacyOrderTypes input)
+        string IEnumHelper.EnumToCode(CodePersonLocationType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePharmacyOrderTypes enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePharmacyOrderTypes input)
         {
             return input switch
             {
@@ -4808,7 +6207,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePolicyType input)
+        string IEnumHelper.EnumToCode(CodePharmacyOrderTypes input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePolicyType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePolicyType input)
         {
             return input switch
             {
@@ -4822,7 +6228,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePractitionerIdNumberType input)
+        string IEnumHelper.EnumToCode(CodePolicyType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePractitionerIdNumberType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePractitionerIdNumberType input)
         {
             return input switch
             {
@@ -4843,7 +6256,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePractitionerOrganizationUnitType input)
+        string IEnumHelper.EnumToCode(CodePractitionerIdNumberType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePractitionerOrganizationUnitType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePractitionerOrganizationUnitType input)
         {
             return input switch
             {
@@ -4857,7 +6277,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePrecautionCode input)
+        string IEnumHelper.EnumToCode(CodePractitionerOrganizationUnitType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePrecautionCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePrecautionCode input)
         {
             return input switch
             {
@@ -4875,7 +6302,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePrecision input)
+        string IEnumHelper.EnumToCode(CodePrecautionCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePrecision enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePrecision input)
         {
             return input switch
             {
@@ -4890,7 +6324,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePreferredMethodOfContact input)
+        string IEnumHelper.EnumToCode(CodePrecision input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePreferredMethodOfContact enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePreferredMethodOfContact input)
         {
             return input switch
             {
@@ -4905,7 +6346,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePriceType input)
+        string IEnumHelper.EnumToCode(CodePreferredMethodOfContact input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePriceType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePriceType input)
         {
             return input switch
             {
@@ -4921,7 +6369,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePrimaryKeyValueType input)
+        string IEnumHelper.EnumToCode(CodePriceType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePrimaryKeyValueType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePrimaryKeyValueType input)
         {
             return input switch
             {
@@ -4932,7 +6387,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePrimaryObserversQualification input)
+        string IEnumHelper.EnumToCode(CodePrimaryKeyValueType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePrimaryObserversQualification enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePrimaryObserversQualification input)
         {
             return input switch
             {
@@ -4948,7 +6410,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePriority input)
+        string IEnumHelper.EnumToCode(CodePrimaryObserversQualification input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePriority enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePriority input)
         {
             return input switch
             {
@@ -4962,7 +6431,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePrivacyLevel input)
+        string IEnumHelper.EnumToCode(CodePriority input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePrivacyLevel enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePrivacyLevel input)
         {
             return input switch
             {
@@ -4977,7 +6453,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeProblemGoalActionCode input)
+        string IEnumHelper.EnumToCode(CodePrivacyLevel input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeProblemGoalActionCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeProblemGoalActionCode input)
         {
             return input switch
             {
@@ -4993,7 +6476,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeProcedureDrgType input)
+        string IEnumHelper.EnumToCode(CodeProblemGoalActionCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeProcedureDrgType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeProcedureDrgType input)
         {
             return input switch
             {
@@ -5007,7 +6497,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeProcedureFunctionalType input)
+        string IEnumHelper.EnumToCode(CodeProcedureDrgType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeProcedureFunctionalType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeProcedureFunctionalType input)
         {
             return input switch
             {
@@ -5020,7 +6517,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeProcedurePractitionerIdentifierCodeType input)
+        string IEnumHelper.EnumToCode(CodeProcedureFunctionalType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeProcedurePractitionerIdentifierCodeType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeProcedurePractitionerIdentifierCodeType input)
         {
             return input switch
             {
@@ -5038,7 +6542,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeProcedurePriority input)
+        string IEnumHelper.EnumToCode(CodeProcedurePractitionerIdentifierCodeType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeProcedurePriority enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeProcedurePriority input)
         {
             return input switch
             {
@@ -5050,7 +6561,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeProcessingId input)
+        string IEnumHelper.EnumToCode(CodeProcedurePriority input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeProcessingId enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeProcessingId input)
         {
             return input switch
             {
@@ -5062,7 +6580,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeProcessingMode input)
+        string IEnumHelper.EnumToCode(CodeProcessingId input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeProcessingMode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeProcessingMode input)
         {
             return input switch
             {
@@ -5076,7 +6601,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeProcessingPriority input)
+        string IEnumHelper.EnumToCode(CodeProcessingMode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeProcessingPriority enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeProcessingPriority input)
         {
             return input switch
             {
@@ -5092,7 +6624,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeProcessingType input)
+        string IEnumHelper.EnumToCode(CodeProcessingPriority input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeProcessingType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeProcessingType input)
         {
             return input switch
             {
@@ -5103,7 +6642,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeProductionClassCode input)
+        string IEnumHelper.EnumToCode(CodeProcessingType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeProductionClassCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeProductionClassCode input)
         {
             return input switch
             {
@@ -5124,7 +6670,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeProductSource input)
+        string IEnumHelper.EnumToCode(CodeProductionClassCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeProductSource enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeProductSource input)
         {
             return input switch
             {
@@ -5137,7 +6690,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeProviderBilling input)
+        string IEnumHelper.EnumToCode(CodeProductSource input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeProviderBilling enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeProviderBilling input)
         {
             return input switch
             {
@@ -5148,7 +6708,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeProviderRole input)
+        string IEnumHelper.EnumToCode(CodeProviderBilling input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeProviderRole enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeProviderRole input)
         {
             return input switch
             {
@@ -5164,7 +6731,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePublicityCode input)
+        string IEnumHelper.EnumToCode(CodeProviderRole input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePublicityCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePublicityCode input)
         {
             return input switch
             {
@@ -5177,7 +6751,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodePurgeStatusCode input)
+        string IEnumHelper.EnumToCode(CodePublicityCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodePurgeStatusCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodePurgeStatusCode input)
         {
             return input switch
             {
@@ -5189,7 +6770,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeQuantityLimitedRequest input)
+        string IEnumHelper.EnumToCode(CodePurgeStatusCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeQuantityLimitedRequest enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeQuantityLimitedRequest input)
         {
             return input switch
             {
@@ -5203,7 +6791,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeQuantityMethod input)
+        string IEnumHelper.EnumToCode(CodeQuantityLimitedRequest input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeQuantityMethod enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeQuantityMethod input)
         {
             return input switch
             {
@@ -5214,7 +6809,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeQueryPriority input)
+        string IEnumHelper.EnumToCode(CodeQuantityMethod input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeQueryPriority enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeQueryPriority input)
         {
             return input switch
             {
@@ -5225,7 +6827,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeQueryResponseFormatCode input)
+        string IEnumHelper.EnumToCode(CodeQueryPriority input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeQueryResponseFormatCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeQueryResponseFormatCode input)
         {
             return input switch
             {
@@ -5237,7 +6846,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeQueryResponseStatus input)
+        string IEnumHelper.EnumToCode(CodeQueryResponseFormatCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeQueryResponseStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeQueryResponseStatus input)
         {
             return input switch
             {
@@ -5250,7 +6866,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeQueryResultsLevel input)
+        string IEnumHelper.EnumToCode(CodeQueryResponseStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeQueryResultsLevel enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeQueryResultsLevel input)
         {
             return input switch
             {
@@ -5263,7 +6886,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeRace input)
+        string IEnumHelper.EnumToCode(CodeQueryResultsLevel input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeRace enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeRace input)
         {
             return input switch
             {
@@ -5278,7 +6908,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeReadmissionIndicator input)
+        string IEnumHelper.EnumToCode(CodeRace input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeReadmissionIndicator enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeReadmissionIndicator input)
         {
             return input switch
             {
@@ -5288,7 +6925,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeRecreationalDrugUseCode input)
+        string IEnumHelper.EnumToCode(CodeReadmissionIndicator input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeRecreationalDrugUseCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeRecreationalDrugUseCode input)
         {
             return input switch
             {
@@ -5304,7 +6948,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeReferralCategory input)
+        string IEnumHelper.EnumToCode(CodeRecreationalDrugUseCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeReferralCategory enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeReferralCategory input)
         {
             return input switch
             {
@@ -5317,7 +6968,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeReferralDisposition input)
+        string IEnumHelper.EnumToCode(CodeReferralCategory input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeReferralDisposition enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeReferralDisposition input)
         {
             return input switch
             {
@@ -5330,7 +6988,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeReferralPriority input)
+        string IEnumHelper.EnumToCode(CodeReferralDisposition input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeReferralPriority enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeReferralPriority input)
         {
             return input switch
             {
@@ -5342,7 +7007,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeReferralReason input)
+        string IEnumHelper.EnumToCode(CodeReferralPriority input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeReferralReason enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeReferralReason input)
         {
             return input switch
             {
@@ -5355,7 +7027,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeReferralStatus input)
+        string IEnumHelper.EnumToCode(CodeReferralReason input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeReferralStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeReferralStatus input)
         {
             return input switch
             {
@@ -5368,7 +7047,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeReferralType input)
+        string IEnumHelper.EnumToCode(CodeReferralStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeReferralType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeReferralType input)
         {
             return input switch
             {
@@ -5383,7 +7069,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeReimbursementActionCode input)
+        string IEnumHelper.EnumToCode(CodeReferralType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeReimbursementActionCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeReimbursementActionCode input)
         {
             return input switch
             {
@@ -5396,7 +7089,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeReimbursementTypeCode input)
+        string IEnumHelper.EnumToCode(CodeReimbursementActionCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeReimbursementTypeCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeReimbursementTypeCode input)
         {
             return input switch
             {
@@ -5415,7 +7115,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeRelatednessAssessment input)
+        string IEnumHelper.EnumToCode(CodeReimbursementTypeCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeRelatednessAssessment enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeRelatednessAssessment input)
         {
             return input switch
             {
@@ -5429,7 +7136,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeRelationalConjunction input)
+        string IEnumHelper.EnumToCode(CodeRelatednessAssessment input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeRelationalConjunction enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeRelationalConjunction input)
         {
             return input switch
             {
@@ -5440,7 +7154,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeRelationalOperator input)
+        string IEnumHelper.EnumToCode(CodeRelationalConjunction input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeRelationalOperator enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeRelationalOperator input)
         {
             return input switch
             {
@@ -5457,7 +7178,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeRelationship input)
+        string IEnumHelper.EnumToCode(CodeRelationalOperator input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeRelationship enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeRelationship input)
         {
             return input switch
             {
@@ -5498,7 +7226,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeRelationshipModifier input)
+        string IEnumHelper.EnumToCode(CodeRelationship input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeRelationshipModifier enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeRelationshipModifier input)
         {
             return input switch
             {
@@ -5511,7 +7246,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeReligion input)
+        string IEnumHelper.EnumToCode(CodeRelationshipModifier input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeReligion enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeReligion input)
         {
             return input switch
             {
@@ -5603,7 +7345,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeRemoteControlCommand input)
+        string IEnumHelper.EnumToCode(CodeReligion input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeRemoteControlCommand enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeRemoteControlCommand input)
         {
             return input switch
             {
@@ -5631,7 +7380,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeRepeatPattern input)
+        string IEnumHelper.EnumToCode(CodeRemoteControlCommand input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeRepeatPattern enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeRepeatPattern input)
         {
             return input switch
             {
@@ -5668,7 +7424,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeReportingPriority input)
+        string IEnumHelper.EnumToCode(CodeRepeatPattern input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeReportingPriority enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeReportingPriority input)
         {
             return input switch
             {
@@ -5679,7 +7442,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeReportPriority input)
+        string IEnumHelper.EnumToCode(CodeReportingPriority input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeReportPriority enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeReportPriority input)
         {
             return input switch
             {
@@ -5690,7 +7460,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeReportSource input)
+        string IEnumHelper.EnumToCode(CodeReportPriority input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeReportSource enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeReportSource input)
         {
             return input switch
             {
@@ -5709,7 +7486,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeReportTiming input)
+        string IEnumHelper.EnumToCode(CodeReportSource input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeReportTiming enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeReportTiming input)
         {
             return input switch
             {
@@ -5728,7 +7512,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeResponseFlag input)
+        string IEnumHelper.EnumToCode(CodeReportTiming input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeResponseFlag enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeResponseFlag input)
         {
             return input switch
             {
@@ -5742,7 +7533,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeResponseLevel input)
+        string IEnumHelper.EnumToCode(CodeResponseFlag input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeResponseLevel enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeResponseLevel input)
         {
             return input switch
             {
@@ -5755,7 +7553,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeResponseModality input)
+        string IEnumHelper.EnumToCode(CodeResponseLevel input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeResponseModality enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeResponseModality input)
         {
             return input switch
             {
@@ -5767,7 +7572,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeResultStatus input)
+        string IEnumHelper.EnumToCode(CodeResponseModality input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeResultStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeResultStatus input)
         {
             return input switch
             {
@@ -5787,7 +7599,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeRevenueCode input)
+        string IEnumHelper.EnumToCode(CodeResultStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeRevenueCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeRevenueCode input)
         {
             return input switch
             {
@@ -5797,7 +7616,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeRiskCodes input)
+        string IEnumHelper.EnumToCode(CodeRevenueCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeRiskCodes enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeRiskCodes input)
         {
             return input switch
             {
@@ -5817,7 +7643,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeRiskManagementIncidentCode input)
+        string IEnumHelper.EnumToCode(CodeRiskCodes input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeRiskManagementIncidentCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeRiskManagementIncidentCode input)
         {
             return input switch
             {
@@ -5840,7 +7673,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeRoomType input)
+        string IEnumHelper.EnumToCode(CodeRiskManagementIncidentCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeRoomType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeRoomType input)
         {
             return input switch
             {
@@ -5855,7 +7695,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeRouteOfAdministration input)
+        string IEnumHelper.EnumToCode(CodeRoomType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeRouteOfAdministration enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeRouteOfAdministration input)
         {
             return input switch
             {
@@ -5911,7 +7758,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeRXComponentType input)
+        string IEnumHelper.EnumToCode(CodeRouteOfAdministration input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeRXComponentType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeRXComponentType input)
         {
             return input switch
             {
@@ -5922,7 +7776,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSchoolType input)
+        string IEnumHelper.EnumToCode(CodeRXComponentType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSchoolType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSchoolType input)
         {
             return input switch
             {
@@ -5935,7 +7796,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSegmentActionCode input)
+        string IEnumHelper.EnumToCode(CodeSchoolType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSegmentActionCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSegmentActionCode input)
         {
             return input switch
             {
@@ -5947,7 +7815,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSegmentGroup input)
+        string IEnumHelper.EnumToCode(CodeSegmentActionCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSegmentGroup enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSegmentGroup input)
         {
             return input switch
             {
@@ -5963,7 +7838,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSensitivityToCausativeAgentCode input)
+        string IEnumHelper.EnumToCode(CodeSegmentGroup input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSensitivityToCausativeAgentCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSensitivityToCausativeAgentCode input)
         {
             return input switch
             {
@@ -5976,7 +7858,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSequenceCondition input)
+        string IEnumHelper.EnumToCode(CodeSensitivityToCausativeAgentCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSequenceCondition enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSequenceCondition input)
         {
             return input switch
             {
@@ -5988,7 +7877,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSequenceConditionCode input)
+        string IEnumHelper.EnumToCode(CodeSequenceCondition input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSequenceConditionCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSequenceConditionCode input)
         {
             return input switch
             {
@@ -6001,7 +7897,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSequenceResultsFlag input)
+        string IEnumHelper.EnumToCode(CodeSequenceConditionCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSequenceResultsFlag enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSequenceResultsFlag input)
         {
             return input switch
             {
@@ -6013,7 +7916,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSequencing input)
+        string IEnumHelper.EnumToCode(CodeSequenceResultsFlag input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSequencing enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSequencing input)
         {
             return input switch
             {
@@ -6027,7 +7937,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeServiceRequestRelationship input)
+        string IEnumHelper.EnumToCode(CodeSequencing input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeServiceRequestRelationship enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeServiceRequestRelationship input)
         {
             return input switch
             {
@@ -6041,7 +7958,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSeverityOfIllnessCode input)
+        string IEnumHelper.EnumToCode(CodeServiceRequestRelationship input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSeverityOfIllnessCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSeverityOfIllnessCode input)
         {
             return input switch
             {
@@ -6053,7 +7977,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSignatorysRelationshipToSubject input)
+        string IEnumHelper.EnumToCode(CodeSeverityOfIllnessCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSignatorysRelationshipToSubject enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSignatorysRelationshipToSubject input)
         {
             return input switch
             {
@@ -6069,7 +8000,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSignatureCode input)
+        string IEnumHelper.EnumToCode(CodeSignatorysRelationshipToSubject input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSignatureCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSignatureCode input)
         {
             return input switch
             {
@@ -6082,7 +8020,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSourceOfComment input)
+        string IEnumHelper.EnumToCode(CodeSignatureCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSourceOfComment enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSourceOfComment input)
         {
             return input switch
             {
@@ -6094,7 +8039,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSourceType input)
+        string IEnumHelper.EnumToCode(CodeSourceOfComment input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSourceType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSourceType input)
         {
             return input switch
             {
@@ -6105,7 +8057,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSpecialHandlingCode input)
+        string IEnumHelper.EnumToCode(CodeSourceType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSpecialHandlingCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSpecialHandlingCode input)
         {
             return input switch
             {
@@ -6131,7 +8090,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSpecialProgramCode input)
+        string IEnumHelper.EnumToCode(CodeSpecialHandlingCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSpecialProgramCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSpecialProgramCode input)
         {
             return input switch
             {
@@ -6145,7 +8111,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSpecialtyType input)
+        string IEnumHelper.EnumToCode(CodeSpecialProgramCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSpecialtyType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSpecialtyType input)
         {
             return input switch
             {
@@ -6180,7 +8153,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSpecimenActionCode input)
+        string IEnumHelper.EnumToCode(CodeSpecialtyType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSpecimenActionCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSpecimenActionCode input)
         {
             return input switch
             {
@@ -6196,7 +8176,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSpecimenAppropriateness input)
+        string IEnumHelper.EnumToCode(CodeSpecimenActionCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSpecimenAppropriateness enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSpecimenAppropriateness input)
         {
             return input switch
             {
@@ -6209,7 +8196,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSpecimenChildRole input)
+        string IEnumHelper.EnumToCode(CodeSpecimenAppropriateness input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSpecimenChildRole enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSpecimenChildRole input)
         {
             return input switch
             {
@@ -6221,7 +8215,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSpecimenCollectionMethod input)
+        string IEnumHelper.EnumToCode(CodeSpecimenChildRole input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSpecimenCollectionMethod enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSpecimenCollectionMethod input)
         {
             return input switch
             {
@@ -6272,7 +8273,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSpecimenComponent input)
+        string IEnumHelper.EnumToCode(CodeSpecimenCollectionMethod input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSpecimenComponent enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSpecimenComponent input)
         {
             return input switch
             {
@@ -6289,7 +8297,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSpecimenCondition input)
+        string IEnumHelper.EnumToCode(CodeSpecimenComponent input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSpecimenCondition enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSpecimenCondition input)
         {
             return input switch
             {
@@ -6307,7 +8322,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSpecimenQuality input)
+        string IEnumHelper.EnumToCode(CodeSpecimenCondition input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSpecimenQuality enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSpecimenQuality input)
         {
             return input switch
             {
@@ -6320,7 +8342,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSpecimenRejectReason input)
+        string IEnumHelper.EnumToCode(CodeSpecimenQuality input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSpecimenRejectReason enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSpecimenRejectReason input)
         {
             return input switch
             {
@@ -6343,7 +8372,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSpecimenRole input)
+        string IEnumHelper.EnumToCode(CodeSpecimenRejectReason input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSpecimenRole enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSpecimenRole input)
         {
             return input switch
             {
@@ -6363,7 +8399,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSpecimenSourceCodes input)
+        string IEnumHelper.EnumToCode(CodeSpecimenRole input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSpecimenSourceCodes enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSpecimenSourceCodes input)
         {
             return input switch
             {
@@ -6497,7 +8540,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSpecimenType input)
+        string IEnumHelper.EnumToCode(CodeSpecimenSourceCodes input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSpecimenType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSpecimenType input)
         {
             return input switch
             {
@@ -6773,7 +8823,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeStatusOfEvaluation input)
+        string IEnumHelper.EnumToCode(CodeSpecimenType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeStatusOfEvaluation enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeStatusOfEvaluation input)
         {
             return input switch
             {
@@ -6794,7 +8851,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeStudentStatus input)
+        string IEnumHelper.EnumToCode(CodeStatusOfEvaluation input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeStudentStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeStudentStatus input)
         {
             return input switch
             {
@@ -6806,7 +8870,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSubstanceStatus input)
+        string IEnumHelper.EnumToCode(CodeStudentStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSubstanceStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSubstanceStatus input)
         {
             return input switch
             {
@@ -6826,7 +8897,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSubstanceType input)
+        string IEnumHelper.EnumToCode(CodeSubstanceStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSubstanceType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSubstanceType input)
         {
             return input switch
             {
@@ -6847,7 +8925,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSubstitutionStatus input)
+        string IEnumHelper.EnumToCode(CodeSubstanceType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSubstitutionStatus enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSubstitutionStatus input)
         {
             return input switch
             {
@@ -6867,7 +8952,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSubtypeOfReferencedData input)
+        string IEnumHelper.EnumToCode(CodeSubstitutionStatus input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSubtypeOfReferencedData enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSubtypeOfReferencedData input)
         {
             return input switch
             {
@@ -6891,7 +8983,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeSystemInducedContaminants input)
+        string IEnumHelper.EnumToCode(CodeSubtypeOfReferencedData input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeSystemInducedContaminants enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeSystemInducedContaminants input)
         {
             return input switch
             {
@@ -6901,7 +9000,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeTelecommunicationEquipmentType input)
+        string IEnumHelper.EnumToCode(CodeSystemInducedContaminants input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeTelecommunicationEquipmentType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeTelecommunicationEquipmentType input)
         {
             return input switch
             {
@@ -6919,7 +9025,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeTelecommunicationUseCode input)
+        string IEnumHelper.EnumToCode(CodeTelecommunicationEquipmentType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeTelecommunicationUseCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeTelecommunicationUseCode input)
         {
             return input switch
             {
@@ -6936,7 +9049,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeTimeDelayPostChallenge input)
+        string IEnumHelper.EnumToCode(CodeTelecommunicationUseCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeTimeDelayPostChallenge enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeTimeDelayPostChallenge input)
         {
             return input switch
             {
@@ -6989,7 +9109,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeTimeSelectionCriteriaParameterClassCodes input)
+        string IEnumHelper.EnumToCode(CodeTimeDelayPostChallenge input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeTimeSelectionCriteriaParameterClassCodes enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeTimeSelectionCriteriaParameterClassCodes input)
         {
             return input switch
             {
@@ -7007,7 +9134,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeTissueTypeCode input)
+        string IEnumHelper.EnumToCode(CodeTimeSelectionCriteriaParameterClassCodes input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeTissueTypeCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeTissueTypeCode input)
         {
             return input switch
             {
@@ -7029,7 +9163,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeTqConjunctionId input)
+        string IEnumHelper.EnumToCode(CodeTissueTypeCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeTqConjunctionId enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeTqConjunctionId input)
         {
             return input switch
             {
@@ -7041,7 +9182,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeTransactionType input)
+        string IEnumHelper.EnumToCode(CodeTqConjunctionId input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeTransactionType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeTransactionType input)
         {
             return input switch
             {
@@ -7055,7 +9203,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeTransferType input)
+        string IEnumHelper.EnumToCode(CodeTransactionType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeTransferType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeTransferType input)
         {
             return input switch
             {
@@ -7066,7 +9221,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeTransfusionAdverseReaction input)
+        string IEnumHelper.EnumToCode(CodeTransferType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeTransfusionAdverseReaction enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeTransfusionAdverseReaction input)
         {
             return input switch
             {
@@ -7094,7 +9256,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeTransportArranged input)
+        string IEnumHelper.EnumToCode(CodeTransfusionAdverseReaction input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeTransportArranged enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeTransportArranged input)
         {
             return input switch
             {
@@ -7106,7 +9275,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeTransportationMode input)
+        string IEnumHelper.EnumToCode(CodeTransportArranged input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeTransportationMode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeTransportationMode input)
         {
             return input switch
             {
@@ -7119,7 +9295,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeTrayType input)
+        string IEnumHelper.EnumToCode(CodeTransportationMode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeTrayType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeTrayType input)
         {
             return input switch
             {
@@ -7133,7 +9316,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeTreatment input)
+        string IEnumHelper.EnumToCode(CodeTrayType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeTreatment enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeTreatment input)
         {
             return input switch
             {
@@ -7150,7 +9340,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeTriageCode input)
+        string IEnumHelper.EnumToCode(CodeTreatment input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeTriageCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeTriageCode input)
         {
             return input switch
             {
@@ -7165,7 +9362,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeTypeOfAgreement input)
+        string IEnumHelper.EnumToCode(CodeTriageCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeTypeOfAgreement enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeTypeOfAgreement input)
         {
             return input switch
             {
@@ -7177,7 +9381,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeTypeOfBillCode input)
+        string IEnumHelper.EnumToCode(CodeTypeOfAgreement input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeTypeOfBillCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeTypeOfBillCode input)
         {
             return input switch
             {
@@ -7187,7 +9398,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeTypeOfReferencedData input)
+        string IEnumHelper.EnumToCode(CodeTypeOfBillCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeTypeOfReferencedData enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeTypeOfReferencedData input)
         {
             return input switch
             {
@@ -7205,7 +9423,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeUniversalIdType input)
+        string IEnumHelper.EnumToCode(CodeTypeOfReferencedData input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeUniversalIdType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeUniversalIdType input)
         {
             return input switch
             {
@@ -7228,7 +9453,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeVaccinesAdministered input)
+        string IEnumHelper.EnumToCode(CodeUniversalIdType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeVaccinesAdministered enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeVaccinesAdministered input)
         {
             return input switch
             {
@@ -7348,7 +9580,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeValueType input)
+        string IEnumHelper.EnumToCode(CodeVaccinesAdministered input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeValueType enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeValueType input)
         {
             return input switch
             {
@@ -7384,7 +9623,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeVersionId input)
+        string IEnumHelper.EnumToCode(CodeValueType input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeVersionId enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeVersionId input)
         {
             return input switch
             {
@@ -7401,7 +9647,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeVisitIndicator input)
+        string IEnumHelper.EnumToCode(CodeVersionId input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeVisitIndicator enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeVisitIndicator input)
         {
             return input switch
             {
@@ -7412,7 +9665,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeVisitPriorityCode input)
+        string IEnumHelper.EnumToCode(CodeVisitIndicator input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeVisitPriorityCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeVisitPriorityCode input)
         {
             return input switch
             {
@@ -7424,7 +9684,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeVisitUserCode input)
+        string IEnumHelper.EnumToCode(CodeVisitPriorityCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeVisitUserCode enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeVisitUserCode input)
         {
             return input switch
             {
@@ -7437,7 +9704,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeWhatSubjectFilter input)
+        string IEnumHelper.EnumToCode(CodeVisitUserCode input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeWhatSubjectFilter enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeWhatSubjectFilter input)
         {
             return input switch
             {
@@ -7483,7 +9757,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeWhichDateTimeQualifier input)
+        string IEnumHelper.EnumToCode(CodeWhatSubjectFilter input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeWhichDateTimeQualifier enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeWhichDateTimeQualifier input)
         {
             return input switch
             {
@@ -7498,7 +9779,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeWhichDateTimeStatusQualifier input)
+        string IEnumHelper.EnumToCode(CodeWhichDateTimeQualifier input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeWhichDateTimeStatusQualifier enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeWhichDateTimeStatusQualifier input)
         {
             return input switch
             {
@@ -7513,7 +9801,14 @@ namespace ClearHl7.Codes.V250.Helpers
         }
 
         /// <inheritdoc/>
-        public string EnumToCode(CodeYesNoIndicator input)
+        string IEnumHelper.EnumToCode(CodeWhichDateTimeStatusQualifier input) => EnumToCode(input);
+
+        /// <summary>
+        /// Converts the given CodeYesNoIndicator enum value into its HL7 equivalent code.
+        /// </summary>
+        /// <param name="input">An enum value to convert.</param>
+        /// <returns>A string.</returns>
+        public static string EnumToCode(CodeYesNoIndicator input)
         {
             return input switch
             {
@@ -7522,5 +9817,8 @@ namespace ClearHl7.Codes.V250.Helpers
                 _ => throw new NotImplementedException()
             };
         }
+
+        /// <inheritdoc/>
+        string IEnumHelper.EnumToCode(CodeYesNoIndicator input) => EnumToCode(input);
     }
 }
