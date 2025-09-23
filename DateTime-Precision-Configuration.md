@@ -181,7 +181,7 @@ public static string ToHl7DateTimeString(this DateTime? dateTime, Type segmentTy
 
 If you were using the previous global `Configuration.DateTimePrecision` approach, you can migrate by:
 
-1. Setting the global default: `Hl7DateTimeFormatConfig.DefaultDateTimeFormat = desiredFormat`
+1. Setting the global default: `Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride = desiredFormat`
 2. Converting specific field configurations to use the type-safe `SetPrecision` method
 
 ## Thread Safety
