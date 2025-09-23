@@ -70,4 +70,40 @@
         /// </summary>
         V290
     }
+
+    /// <summary>
+    /// Provides enumerated values that indicate the DateTime precision level for formatting.
+    /// </summary>
+    public enum DateTimePrecision
+    {
+        /// <summary>
+        /// Year precision (yyyy).
+        /// </summary>
+        Year,
+
+        /// <summary>
+        /// Month precision (yyyyMM).
+        /// </summary>
+        Month,
+
+        /// <summary>
+        /// Day precision (yyyyMMdd).
+        /// </summary>
+        Day,
+
+        /// <summary>
+        /// Hour precision (yyyyMMddHH).
+        /// </summary>
+        Hour,
+
+        /// <summary>
+        /// Minute precision (yyyyMMddHHmm).
+        /// </summary>
+        Minute,
+
+        /// <summary>
+        /// Second precision (yyyyMMddHHmmss). This is the default precision.
+        /// </summary>
+        Second
+    }
 }
