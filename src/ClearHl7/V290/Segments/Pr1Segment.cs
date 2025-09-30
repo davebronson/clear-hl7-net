@@ -237,7 +237,7 @@ namespace ClearHl7.V290.Segments
                                 ProcedureCodingMethod,
                                 ProcedureCode?.ToDelimitedString(),
                                 ProcedureDescription,
-                                ProcedureDateTime.ToHl7DateTimeString(typeof(Pr1Segment), nameof(ProcedureDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                ProcedureDateTime?.ToHl7DateTimeString(typeof(Pr1Segment), nameof(ProcedureDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ProcedureFunctionalType?.ToDelimitedString(),
                                 ProcedureMinutes.HasValue ? ProcedureMinutes.Value.ToString(Consts.NumericFormat, culture) : null,
                                 Anesthesiologist?.ToDelimitedString(),

@@ -107,9 +107,9 @@ namespace ClearHl7.V290.Segments
                                 Id,
                                 SetId.HasValue ? SetId.Value.ToString(culture) : null,
                                 ActionCode,
-                                CombatZoneStartDate.ToHl7DateTimeString(typeof(Oh4Segment), nameof(CombatZoneStartDate), Consts.DateFormatPrecisionDay, culture),
-                                CombatZoneEndDate.ToHl7DateTimeString(typeof(Oh4Segment), nameof(CombatZoneEndDate), Consts.DateFormatPrecisionDay, culture),
-                                EnteredDate.ToHl7DateTimeString(typeof(Oh4Segment), nameof(EnteredDate), Consts.DateFormatPrecisionDay, culture),
+                                CombatZoneStartDate?.ToHl7DateTimeString(typeof(Oh4Segment), nameof(CombatZoneStartDate), Consts.DateFormatPrecisionDay, culture),
+                                CombatZoneEndDate?.ToHl7DateTimeString(typeof(Oh4Segment), nameof(CombatZoneEndDate), Consts.DateFormatPrecisionDay, culture),
+                                EnteredDate?.ToHl7DateTimeString(typeof(Oh4Segment), nameof(EnteredDate), Consts.DateFormatPrecisionDay, culture),
                                 CombatZoneUniqueIdentifier?.ToDelimitedString()
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }

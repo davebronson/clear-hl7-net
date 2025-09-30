@@ -89,7 +89,7 @@ namespace ClearHl7.V230.Segments
                                 StringHelper.StringFormatSequence(0, 4, Configuration.FieldSeparator),
                                 Id,
                                 StudyScheduledTimePoint?.ToDelimitedString(),
-                                StudyScheduledPatientTimePoint.ToHl7DateTimeString(typeof(CssSegment), nameof(StudyScheduledPatientTimePoint), Consts.DateTimeFormatPrecisionSecond, culture),
+                                StudyScheduledPatientTimePoint?.ToHl7DateTimeString(typeof(CssSegment), nameof(StudyScheduledPatientTimePoint), Consts.DateTimeFormatPrecisionSecond, culture),
                                 StudyQualityControlCodes != null ? string.Join(Configuration.FieldRepeatSeparator, StudyQualityControlCodes.Select(x => x.ToDelimitedString())) : null
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }

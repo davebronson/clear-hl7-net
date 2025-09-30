@@ -393,7 +393,7 @@ namespace ClearHl7.V290.Segments
                                 PrimaryParentContainerIdentifier?.ToDelimitedString(),
                                 EquipmentContainerIdentifier?.ToDelimitedString(),
                                 SpecimenSource,
-                                RegistrationDateTime.ToHl7DateTimeString(typeof(SacSegment), nameof(RegistrationDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                RegistrationDateTime?.ToHl7DateTimeString(typeof(SacSegment), nameof(RegistrationDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ContainerStatus?.ToDelimitedString(),
                                 CarrierType?.ToDelimitedString(),
                                 CarrierIdentifier?.ToDelimitedString(),

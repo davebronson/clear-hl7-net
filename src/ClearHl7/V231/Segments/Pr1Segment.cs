@@ -180,7 +180,7 @@ namespace ClearHl7.V231.Segments
                                 ProcedureCodingMethod,
                                 ProcedureCode?.ToDelimitedString(),
                                 ProcedureDescription,
-                                ProcedureDateTime.ToHl7DateTimeString(typeof(Pr1Segment), nameof(ProcedureDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                ProcedureDateTime?.ToHl7DateTimeString(typeof(Pr1Segment), nameof(ProcedureDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ProcedureFunctionalType,
                                 ProcedureMinutes.HasValue ? ProcedureMinutes.Value.ToString(Consts.NumericFormat, culture) : null,
                                 Anesthesiologist != null ? string.Join(Configuration.FieldRepeatSeparator, Anesthesiologist.Select(x => x.ToDelimitedString())) : null,

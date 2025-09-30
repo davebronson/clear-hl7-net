@@ -119,7 +119,7 @@ namespace ClearHl7.V240.Segments
                                 QueryPriority,
                                 QuantityLimitedRequest?.ToDelimitedString(),
                                 ResponseModality?.ToDelimitedString(),
-                                ExecutionAndDeliveryTime.ToHl7DateTimeString(typeof(RcpSegment), nameof(ExecutionAndDeliveryTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                ExecutionAndDeliveryTime?.ToHl7DateTimeString(typeof(RcpSegment), nameof(ExecutionAndDeliveryTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ModifyIndicator,
                                 SortByField != null ? string.Join(Configuration.FieldRepeatSeparator, SortByField.Select(x => x.ToDelimitedString())) : null,
                                 SegmentGroupInclusion != null ? string.Join(Configuration.FieldRepeatSeparator, SegmentGroupInclusion) : null

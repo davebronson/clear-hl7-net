@@ -164,7 +164,7 @@ namespace ClearHl7.V281.Segments
                                 ResourceGroup != null ? string.Join(Configuration.FieldRepeatSeparator, ResourceGroup.Select(x => x.ToDelimitedString())) : null,
                                 ResourceQuantity.HasValue ? ResourceQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ResourceQuantityUnits?.ToDelimitedString(),
-                                StartDateTime.ToHl7DateTimeString(typeof(AigSegment), nameof(StartDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                StartDateTime?.ToHl7DateTimeString(typeof(AigSegment), nameof(StartDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 StartDateTimeOffset.HasValue ? StartDateTimeOffset.Value.ToString(Consts.NumericFormat, culture) : null,
                                 StartDateTimeOffsetUnits?.ToDelimitedString(),
                                 Duration.HasValue ? Duration.Value.ToString(Consts.NumericFormat, culture) : null,

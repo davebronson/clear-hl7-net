@@ -201,11 +201,11 @@ namespace ClearHl7.V270.Segments
                                 BpUnits?.ToDelimitedString(),
                                 BpTransfusionDispositionStatus?.ToDelimitedString(),
                                 BpMessageStatus,
-                                BpDateTimeOfStatus.ToHl7DateTimeString(typeof(BtxSegment), nameof(BpDateTimeOfStatus), Consts.DateTimeFormatPrecisionSecond, culture),
+                                BpDateTimeOfStatus?.ToHl7DateTimeString(typeof(BtxSegment), nameof(BpDateTimeOfStatus), Consts.DateTimeFormatPrecisionSecond, culture),
                                 BpTransfusionAdministrator?.ToDelimitedString(),
                                 BpTransfusionVerifier?.ToDelimitedString(),
-                                BpTransfusionStartDateTimeOfStatus.ToHl7DateTimeString(typeof(BtxSegment), nameof(BpTransfusionStartDateTimeOfStatus), Consts.DateTimeFormatPrecisionSecond, culture),
-                                BpTransfusionEndDateTimeOfStatus.ToHl7DateTimeString(typeof(BtxSegment), nameof(BpTransfusionEndDateTimeOfStatus), Consts.DateTimeFormatPrecisionSecond, culture),
+                                BpTransfusionStartDateTimeOfStatus?.ToHl7DateTimeString(typeof(BtxSegment), nameof(BpTransfusionStartDateTimeOfStatus), Consts.DateTimeFormatPrecisionSecond, culture),
+                                BpTransfusionEndDateTimeOfStatus?.ToHl7DateTimeString(typeof(BtxSegment), nameof(BpTransfusionEndDateTimeOfStatus), Consts.DateTimeFormatPrecisionSecond, culture),
                                 BpAdverseReactionType != null ? string.Join(Configuration.FieldRepeatSeparator, BpAdverseReactionType.Select(x => x.ToDelimitedString())) : null,
                                 BpTransfusionInterruptedReason?.ToDelimitedString()
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());

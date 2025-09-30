@@ -109,7 +109,7 @@ namespace ClearHl7.V250.Segments
                                 SoftwareProductName,
                                 SoftwareBinaryId,
                                 SoftwareProductInformation?.ToDelimitedString(),
-                                SoftwareInstallDate.ToHl7DateTimeString(typeof(SftSegment), nameof(SoftwareInstallDate), Consts.DateTimeFormatPrecisionSecond, culture)
+                                SoftwareInstallDate?.ToHl7DateTimeString(typeof(SftSegment), nameof(SoftwareInstallDate), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

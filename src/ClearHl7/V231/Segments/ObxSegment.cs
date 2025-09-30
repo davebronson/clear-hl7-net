@@ -187,9 +187,9 @@ namespace ClearHl7.V231.Segments
                                 Probability != null ? string.Join(Configuration.FieldRepeatSeparator, Probability.Select(x => x.ToString(Consts.NumericFormat, culture))) : null,
                                 NatureOfAbnormalTest != null ? string.Join(Configuration.FieldRepeatSeparator, NatureOfAbnormalTest) : null,
                                 ObservationResultStatus,
-                                EffectiveDateOfReferenceRange.ToHl7DateTimeString(typeof(ObxSegment), nameof(EffectiveDateOfReferenceRange), Consts.DateTimeFormatPrecisionSecond, culture),
+                                EffectiveDateOfReferenceRange?.ToHl7DateTimeString(typeof(ObxSegment), nameof(EffectiveDateOfReferenceRange), Consts.DateTimeFormatPrecisionSecond, culture),
                                 UserDefinedAccessChecks,
-                                DateTimeOfTheObservation.ToHl7DateTimeString(typeof(ObxSegment), nameof(DateTimeOfTheObservation), Consts.DateTimeFormatPrecisionSecond, culture),
+                                DateTimeOfTheObservation?.ToHl7DateTimeString(typeof(ObxSegment), nameof(DateTimeOfTheObservation), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ProducersId?.ToDelimitedString(),
                                 ResponsibleObserver != null ? string.Join(Configuration.FieldRepeatSeparator, ResponsibleObserver.Select(x => x.ToDelimitedString())) : null,
                                 ObservationMethod != null ? string.Join(Configuration.FieldRepeatSeparator, ObservationMethod.Select(x => x.ToDelimitedString())) : null

@@ -124,10 +124,10 @@ namespace ClearHl7.V250.Segments
                                 DisabledPersonCode,
                                 DisabledPersonIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, DisabledPersonIdentifier.Select(x => x.ToDelimitedString())) : null,
                                 DisabilityIndicator,
-                                DisabilityStartDate.ToHl7DateTimeString(typeof(Db1Segment), nameof(DisabilityStartDate), Consts.DateFormatPrecisionDay, culture),
-                                DisabilityEndDate.ToHl7DateTimeString(typeof(Db1Segment), nameof(DisabilityEndDate), Consts.DateFormatPrecisionDay, culture),
-                                DisabilityReturnToWorkDate.ToHl7DateTimeString(typeof(Db1Segment), nameof(DisabilityReturnToWorkDate), Consts.DateFormatPrecisionDay, culture),
-                                DisabilityUnableToWorkDate.ToHl7DateTimeString(typeof(Db1Segment), nameof(DisabilityUnableToWorkDate), Consts.DateFormatPrecisionDay, culture)
+                                DisabilityStartDate?.ToHl7DateTimeString(typeof(Db1Segment), nameof(DisabilityStartDate), Consts.DateFormatPrecisionDay, culture),
+                                DisabilityEndDate?.ToHl7DateTimeString(typeof(Db1Segment), nameof(DisabilityEndDate), Consts.DateFormatPrecisionDay, culture),
+                                DisabilityReturnToWorkDate?.ToHl7DateTimeString(typeof(Db1Segment), nameof(DisabilityReturnToWorkDate), Consts.DateFormatPrecisionDay, culture),
+                                DisabilityUnableToWorkDate?.ToHl7DateTimeString(typeof(Db1Segment), nameof(DisabilityUnableToWorkDate), Consts.DateFormatPrecisionDay, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

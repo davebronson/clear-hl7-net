@@ -173,8 +173,8 @@ namespace ClearHl7.V281.Segments
                                 ParticipationOrganization != null ? string.Join(Configuration.FieldRepeatSeparator, ParticipationOrganization.Select(x => x.ToDelimitedString())) : null,
                                 ParticipantLocation != null ? string.Join(Configuration.FieldRepeatSeparator, ParticipantLocation.Select(x => x.ToDelimitedString())) : null,
                                 ParticipationDevice != null ? string.Join(Configuration.FieldRepeatSeparator, ParticipationDevice.Select(x => x.ToDelimitedString())) : null,
-                                ParticipationBeginDateTimeArrivalTime.ToHl7DateTimeString(typeof(PrtSegment), nameof(ParticipationBeginDateTimeArrivalTime), Consts.DateTimeFormatPrecisionSecond, culture),
-                                ParticipationEndDateTimeDepartureTime.ToHl7DateTimeString(typeof(PrtSegment), nameof(ParticipationEndDateTimeDepartureTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                ParticipationBeginDateTimeArrivalTime?.ToHl7DateTimeString(typeof(PrtSegment), nameof(ParticipationBeginDateTimeArrivalTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                ParticipationEndDateTimeDepartureTime?.ToHl7DateTimeString(typeof(PrtSegment), nameof(ParticipationEndDateTimeDepartureTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ParticipationQualitativeDuration?.ToDelimitedString(),
                                 ParticipationAddress != null ? string.Join(Configuration.FieldRepeatSeparator, ParticipationAddress.Select(x => x.ToDelimitedString())) : null,
                                 ParticipantTelecommunicationAddress != null ? string.Join(Configuration.FieldRepeatSeparator, ParticipantTelecommunicationAddress.Select(x => x.ToDelimitedString())) : null

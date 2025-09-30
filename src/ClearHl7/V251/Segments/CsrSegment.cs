@@ -171,16 +171,16 @@ namespace ClearHl7.V251.Segments
                                 InstitutionRegisteringThePatient?.ToDelimitedString(),
                                 SponsorPatientId?.ToDelimitedString(),
                                 AlternatePatientIdCsr?.ToDelimitedString(),
-                                DateTimeOfPatientStudyRegistration.ToHl7DateTimeString(typeof(CsrSegment), nameof(DateTimeOfPatientStudyRegistration), Consts.DateTimeFormatPrecisionSecond, culture),
+                                DateTimeOfPatientStudyRegistration?.ToHl7DateTimeString(typeof(CsrSegment), nameof(DateTimeOfPatientStudyRegistration), Consts.DateTimeFormatPrecisionSecond, culture),
                                 PersonPerformingStudyRegistration != null ? string.Join(Configuration.FieldRepeatSeparator, PersonPerformingStudyRegistration.Select(x => x.ToDelimitedString())) : null,
                                 StudyAuthorizingProvider != null ? string.Join(Configuration.FieldRepeatSeparator, StudyAuthorizingProvider.Select(x => x.ToDelimitedString())) : null,
-                                DateTimePatientStudyConsentSigned.ToHl7DateTimeString(typeof(CsrSegment), nameof(DateTimePatientStudyConsentSigned), Consts.DateTimeFormatPrecisionSecond, culture),
+                                DateTimePatientStudyConsentSigned?.ToHl7DateTimeString(typeof(CsrSegment), nameof(DateTimePatientStudyConsentSigned), Consts.DateTimeFormatPrecisionSecond, culture),
                                 PatientStudyEligibilityStatus?.ToDelimitedString(),
                                 StudyRandomizationDateTime != null ? string.Join(Configuration.FieldRepeatSeparator, StudyRandomizationDateTime.Select(x => x.ToString(Consts.DateTimeFormatPrecisionSecond, culture))) : null,
                                 RandomizedStudyArm != null ? string.Join(Configuration.FieldRepeatSeparator, RandomizedStudyArm.Select(x => x.ToDelimitedString())) : null,
                                 StratumForStudyRandomization != null ? string.Join(Configuration.FieldRepeatSeparator, StratumForStudyRandomization.Select(x => x.ToDelimitedString())) : null,
                                 PatientEvaluabilityStatus?.ToDelimitedString(),
-                                DateTimeEndedStudy.ToHl7DateTimeString(typeof(CsrSegment), nameof(DateTimeEndedStudy), Consts.DateTimeFormatPrecisionSecond, culture),
+                                DateTimeEndedStudy?.ToHl7DateTimeString(typeof(CsrSegment), nameof(DateTimeEndedStudy), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ReasonEndedStudy?.ToDelimitedString()
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }

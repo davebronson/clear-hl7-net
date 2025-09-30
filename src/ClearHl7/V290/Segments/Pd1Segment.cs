@@ -235,17 +235,17 @@ namespace ClearHl7.V290.Segments
                                 DuplicatePatient != null ? string.Join(Configuration.FieldRepeatSeparator, DuplicatePatient.Select(x => x.ToDelimitedString())) : null,
                                 PublicityCode?.ToDelimitedString(),
                                 ProtectionIndicator,
-                                ProtectionIndicatorEffectiveDate.ToHl7DateTimeString(typeof(Pd1Segment), nameof(ProtectionIndicatorEffectiveDate), Consts.DateFormatPrecisionDay, culture),
+                                ProtectionIndicatorEffectiveDate?.ToHl7DateTimeString(typeof(Pd1Segment), nameof(ProtectionIndicatorEffectiveDate), Consts.DateFormatPrecisionDay, culture),
                                 PlaceOfWorship != null ? string.Join(Configuration.FieldRepeatSeparator, PlaceOfWorship.Select(x => x.ToDelimitedString())) : null,
                                 AdvanceDirectiveCode != null ? string.Join(Configuration.FieldRepeatSeparator, AdvanceDirectiveCode.Select(x => x.ToDelimitedString())) : null,
                                 ImmunizationRegistryStatus?.ToDelimitedString(),
-                                ImmunizationRegistryStatusEffectiveDate.ToHl7DateTimeString(typeof(Pd1Segment), nameof(ImmunizationRegistryStatusEffectiveDate), Consts.DateFormatPrecisionDay, culture),
-                                PublicityCodeEffectiveDate.ToHl7DateTimeString(typeof(Pd1Segment), nameof(PublicityCodeEffectiveDate), Consts.DateFormatPrecisionDay, culture),
+                                ImmunizationRegistryStatusEffectiveDate?.ToHl7DateTimeString(typeof(Pd1Segment), nameof(ImmunizationRegistryStatusEffectiveDate), Consts.DateFormatPrecisionDay, culture),
+                                PublicityCodeEffectiveDate?.ToHl7DateTimeString(typeof(Pd1Segment), nameof(PublicityCodeEffectiveDate), Consts.DateFormatPrecisionDay, culture),
                                 MilitaryBranch?.ToDelimitedString(),
                                 MilitaryRankGrade?.ToDelimitedString(),
                                 MilitaryStatus?.ToDelimitedString(),
-                                AdvanceDirectiveLastVerifiedDate.ToHl7DateTimeString(typeof(Pd1Segment), nameof(AdvanceDirectiveLastVerifiedDate), Consts.DateFormatPrecisionDay, culture),
-                                RetirementDate.ToHl7DateTimeString(typeof(Pd1Segment), nameof(RetirementDate), Consts.DateFormatPrecisionDay, culture)
+                                AdvanceDirectiveLastVerifiedDate?.ToHl7DateTimeString(typeof(Pd1Segment), nameof(AdvanceDirectiveLastVerifiedDate), Consts.DateFormatPrecisionDay, culture),
+                                RetirementDate?.ToHl7DateTimeString(typeof(Pd1Segment), nameof(RetirementDate), Consts.DateFormatPrecisionDay, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

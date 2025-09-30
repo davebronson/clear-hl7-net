@@ -150,7 +150,7 @@ namespace ClearHl7.V231.Segments
                                 PersonnelResourceId != null ? string.Join(Configuration.FieldRepeatSeparator, PersonnelResourceId.Select(x => x.ToDelimitedString())) : null,
                                 ResourceType?.ToDelimitedString(),
                                 ResourceGroup?.ToDelimitedString(),
-                                StartDateTime.ToHl7DateTimeString(typeof(AipSegment), nameof(StartDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                StartDateTime?.ToHl7DateTimeString(typeof(AipSegment), nameof(StartDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 StartDateTimeOffset.HasValue ? StartDateTimeOffset.Value.ToString(Consts.NumericFormat, culture) : null,
                                 StartDateTimeOffsetUnits?.ToDelimitedString(),
                                 Duration.HasValue ? Duration.Value.ToString(Consts.NumericFormat, culture) : null,

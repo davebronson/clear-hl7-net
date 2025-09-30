@@ -230,10 +230,10 @@ namespace ClearHl7.V271.Segments
                                 Id,
                                 EventIdentifiersUsed != null ? string.Join(Configuration.FieldRepeatSeparator, EventIdentifiersUsed.Select(x => x.ToDelimitedString())) : null,
                                 EventSymptomDiagnosisCode != null ? string.Join(Configuration.FieldRepeatSeparator, EventSymptomDiagnosisCode.Select(x => x.ToDelimitedString())) : null,
-                                EventOnsetDateTime.ToHl7DateTimeString(typeof(PeoSegment), nameof(EventOnsetDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
-                                EventExacerbationDateTime.ToHl7DateTimeString(typeof(PeoSegment), nameof(EventExacerbationDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
-                                EventImprovedDateTime.ToHl7DateTimeString(typeof(PeoSegment), nameof(EventImprovedDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
-                                EventEndedDataTime.ToHl7DateTimeString(typeof(PeoSegment), nameof(EventEndedDataTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                EventOnsetDateTime?.ToHl7DateTimeString(typeof(PeoSegment), nameof(EventOnsetDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                EventExacerbationDateTime?.ToHl7DateTimeString(typeof(PeoSegment), nameof(EventExacerbationDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                EventImprovedDateTime?.ToHl7DateTimeString(typeof(PeoSegment), nameof(EventImprovedDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                EventEndedDataTime?.ToHl7DateTimeString(typeof(PeoSegment), nameof(EventEndedDataTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 EventLocationOccurredAddress != null ? string.Join(Configuration.FieldRepeatSeparator, EventLocationOccurredAddress.Select(x => x.ToDelimitedString())) : null,
                                 EventQualification != null ? string.Join(Configuration.FieldRepeatSeparator, EventQualification) : null,
                                 EventSerious,
@@ -251,7 +251,7 @@ namespace ClearHl7.V271.Segments
                                 PrimaryObserverTelephone != null ? string.Join(Configuration.FieldRepeatSeparator, PrimaryObserverTelephone.Select(x => x.ToDelimitedString())) : null,
                                 PrimaryObserversQualification,
                                 ConfirmationProvidedBy,
-                                PrimaryObserverAwareDateTime.ToHl7DateTimeString(typeof(PeoSegment), nameof(PrimaryObserverAwareDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                PrimaryObserverAwareDateTime?.ToHl7DateTimeString(typeof(PeoSegment), nameof(PrimaryObserverAwareDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 PrimaryObserversIdentityMayBeDivulged
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }

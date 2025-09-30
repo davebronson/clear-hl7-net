@@ -142,7 +142,7 @@ namespace ClearHl7.V240.Segments
                                 StringHelper.StringFormatSequence(0, 12, Configuration.FieldSeparator),
                                 Id,
                                 DiagnosticRelatedGroup?.ToDelimitedString(),
-                                DrgAssignedDateTime.ToHl7DateTimeString(typeof(DrgSegment), nameof(DrgAssignedDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                DrgAssignedDateTime?.ToHl7DateTimeString(typeof(DrgSegment), nameof(DrgAssignedDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 DrgApprovalIndicator,
                                 DrgGrouperReviewCode,
                                 OutlierType?.ToDelimitedString(),

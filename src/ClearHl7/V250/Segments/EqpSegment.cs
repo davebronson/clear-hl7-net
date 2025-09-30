@@ -101,8 +101,8 @@ namespace ClearHl7.V250.Segments
                                 Id,
                                 EventType?.ToDelimitedString(),
                                 FileName,
-                                StartDateTime.ToHl7DateTimeString(typeof(EqpSegment), nameof(StartDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
-                                EndDateTime.ToHl7DateTimeString(typeof(EqpSegment), nameof(EndDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                StartDateTime?.ToHl7DateTimeString(typeof(EqpSegment), nameof(StartDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                EndDateTime?.ToHl7DateTimeString(typeof(EqpSegment), nameof(EndDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 TransactionData
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }

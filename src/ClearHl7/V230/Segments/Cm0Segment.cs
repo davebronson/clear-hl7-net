@@ -141,9 +141,9 @@ namespace ClearHl7.V230.Segments
                                 AlternateStudyId != null ? string.Join(Configuration.FieldRepeatSeparator, AlternateStudyId.Select(x => x.ToDelimitedString())) : null,
                                 TitleOfStudy,
                                 ChairmanOfStudy?.ToDelimitedString(),
-                                LastIrbApprovalDate.ToHl7DateTimeString(typeof(Cm0Segment), nameof(LastIrbApprovalDate), Consts.DateFormatPrecisionDay, culture),
+                                LastIrbApprovalDate?.ToHl7DateTimeString(typeof(Cm0Segment), nameof(LastIrbApprovalDate), Consts.DateFormatPrecisionDay, culture),
                                 TotalAccrualToDate.HasValue ? TotalAccrualToDate.Value.ToString(Consts.NumericFormat, culture) : null,
-                                LastAccrualDate.ToHl7DateTimeString(typeof(Cm0Segment), nameof(LastAccrualDate), Consts.DateFormatPrecisionDay, culture),
+                                LastAccrualDate?.ToHl7DateTimeString(typeof(Cm0Segment), nameof(LastAccrualDate), Consts.DateFormatPrecisionDay, culture),
                                 ContactForStudy?.ToDelimitedString(),
                                 ContactsTelephoneNumber?.ToDelimitedString(),
                                 ContactsAddress?.ToDelimitedString()

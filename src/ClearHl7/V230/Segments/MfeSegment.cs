@@ -94,7 +94,7 @@ namespace ClearHl7.V230.Segments
                                 Id,
                                 RecordLevelEventCode,
                                 MfnControlId,
-                                EffectiveDateTime.ToHl7DateTimeString(typeof(MfeSegment), nameof(EffectiveDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                EffectiveDateTime?.ToHl7DateTimeString(typeof(MfeSegment), nameof(EffectiveDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 PrimaryKeyValueMfe != null ? string.Join(Configuration.FieldRepeatSeparator, PrimaryKeyValueMfe) : null
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }

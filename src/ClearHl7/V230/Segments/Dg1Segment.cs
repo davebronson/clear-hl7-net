@@ -198,7 +198,7 @@ namespace ClearHl7.V230.Segments
                                 DiagnosisCodingMethod,
                                 DiagnosisCodeDg1?.ToDelimitedString(),
                                 DiagnosisDescription,
-                                DiagnosisDateTime.ToHl7DateTimeString(typeof(Dg1Segment), nameof(DiagnosisDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                DiagnosisDateTime?.ToHl7DateTimeString(typeof(Dg1Segment), nameof(DiagnosisDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 DiagnosisType,
                                 MajorDiagnosticCategory?.ToDelimitedString(),
                                 DiagnosticRelatedGroup?.ToDelimitedString(),
@@ -212,7 +212,7 @@ namespace ClearHl7.V230.Segments
                                 DiagnosingClinician != null ? string.Join(Configuration.FieldRepeatSeparator, DiagnosingClinician.Select(x => x.ToDelimitedString())) : null,
                                 DiagnosisClassification,
                                 ConfidentialIndicator,
-                                AttestationDateTime.ToHl7DateTimeString(typeof(Dg1Segment), nameof(AttestationDateTime), Consts.DateTimeFormatPrecisionSecond, culture)
+                                AttestationDateTime?.ToHl7DateTimeString(typeof(Dg1Segment), nameof(AttestationDateTime), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

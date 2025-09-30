@@ -121,8 +121,8 @@ namespace ClearHl7.V230.Segments
                                 ActionCode,
                                 RoleRol?.ToDelimitedString(),
                                 RolePerson?.ToDelimitedString(),
-                                RoleBeginDateTime.ToHl7DateTimeString(typeof(RolSegment), nameof(RoleBeginDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
-                                RoleEndDateTime.ToHl7DateTimeString(typeof(RolSegment), nameof(RoleEndDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                RoleBeginDateTime?.ToHl7DateTimeString(typeof(RolSegment), nameof(RoleBeginDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                RoleEndDateTime?.ToHl7DateTimeString(typeof(RolSegment), nameof(RoleEndDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 RoleDuration?.ToDelimitedString(),
                                 RoleActionReason?.ToDelimitedString()
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());

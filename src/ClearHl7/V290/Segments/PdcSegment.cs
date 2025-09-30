@@ -177,8 +177,8 @@ namespace ClearHl7.V290.Segments
                                 MarketingApprovalId,
                                 LabeledShelfLife?.ToDelimitedString(),
                                 ExpectedShelfLife?.ToDelimitedString(),
-                                DateFirstMarketed.ToHl7DateTimeString(typeof(PdcSegment), nameof(DateFirstMarketed), Consts.DateTimeFormatPrecisionSecond, culture),
-                                DateLastMarketed.ToHl7DateTimeString(typeof(PdcSegment), nameof(DateLastMarketed), Consts.DateTimeFormatPrecisionSecond, culture)
+                                DateFirstMarketed?.ToHl7DateTimeString(typeof(PdcSegment), nameof(DateFirstMarketed), Consts.DateTimeFormatPrecisionSecond, culture),
+                                DateLastMarketed?.ToHl7DateTimeString(typeof(PdcSegment), nameof(DateLastMarketed), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

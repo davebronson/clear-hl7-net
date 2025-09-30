@@ -123,8 +123,8 @@ namespace ClearHl7.V290.Segments
                                 Occupation?.ToDelimitedString(),
                                 Industry?.ToDelimitedString(),
                                 UsualOccupationDurationYears.HasValue ? UsualOccupationDurationYears.Value.ToString(Consts.NumericFormat, culture) : null,
-                                StartYear.ToHl7DateTimeString(typeof(Oh3Segment), nameof(StartYear), Consts.DateFormatPrecisionDay, culture),
-                                EnteredDate.ToHl7DateTimeString(typeof(Oh3Segment), nameof(EnteredDate), Consts.DateFormatPrecisionDay, culture),
+                                StartYear?.ToHl7DateTimeString(typeof(Oh3Segment), nameof(StartYear), Consts.DateFormatPrecisionDay, culture),
+                                EnteredDate?.ToHl7DateTimeString(typeof(Oh3Segment), nameof(EnteredDate), Consts.DateFormatPrecisionDay, culture),
                                 WorkUniqueIdentifier?.ToDelimitedString()
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }

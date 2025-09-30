@@ -115,10 +115,10 @@ namespace ClearHl7.V260.Segments
                                 Id,
                                 RecordLevelEventCode,
                                 MfnControlId,
-                                EffectiveDateTime.ToHl7DateTimeString(typeof(MfeSegment), nameof(EffectiveDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                EffectiveDateTime?.ToHl7DateTimeString(typeof(MfeSegment), nameof(EffectiveDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 PrimaryKeyValueMfe != null ? string.Join(Configuration.FieldRepeatSeparator, PrimaryKeyValueMfe) : null,
                                 PrimaryKeyValueType != null ? string.Join(Configuration.FieldRepeatSeparator, PrimaryKeyValueType) : null,
-                                EnteredDateTime.ToHl7DateTimeString(typeof(MfeSegment), nameof(EnteredDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                EnteredDateTime?.ToHl7DateTimeString(typeof(MfeSegment), nameof(EnteredDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 EnteredBy?.ToDelimitedString()
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }

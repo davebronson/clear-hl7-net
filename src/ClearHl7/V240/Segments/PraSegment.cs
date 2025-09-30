@@ -155,9 +155,9 @@ namespace ClearHl7.V240.Segments
                                 Specialty != null ? string.Join(Configuration.FieldRepeatSeparator, Specialty.Select(x => x.ToDelimitedString())) : null,
                                 PractitionerIdNumbers != null ? string.Join(Configuration.FieldRepeatSeparator, PractitionerIdNumbers.Select(x => x.ToDelimitedString())) : null,
                                 Privileges != null ? string.Join(Configuration.FieldRepeatSeparator, Privileges.Select(x => x.ToDelimitedString())) : null,
-                                DateEnteredPractice.ToHl7DateTimeString(typeof(PraSegment), nameof(DateEnteredPractice), Consts.DateFormatPrecisionDay, culture),
+                                DateEnteredPractice?.ToHl7DateTimeString(typeof(PraSegment), nameof(DateEnteredPractice), Consts.DateFormatPrecisionDay, culture),
                                 Institution?.ToDelimitedString(),
-                                DateLeftPractice.ToHl7DateTimeString(typeof(PraSegment), nameof(DateLeftPractice), Consts.DateFormatPrecisionDay, culture),
+                                DateLeftPractice?.ToHl7DateTimeString(typeof(PraSegment), nameof(DateLeftPractice), Consts.DateFormatPrecisionDay, culture),
                                 GovernmentReimbursementBillingEligibility != null ? string.Join(Configuration.FieldRepeatSeparator, GovernmentReimbursementBillingEligibility.Select(x => x.ToDelimitedString())) : null,
                                 SetIdPra.HasValue ? SetIdPra.Value.ToString(culture) : null
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());

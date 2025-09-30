@@ -130,7 +130,7 @@ namespace ClearHl7.V231.Segments
                                 Specialty != null ? string.Join(Configuration.FieldRepeatSeparator, Specialty.Select(x => x.ToDelimitedString())) : null,
                                 PractitionerIdNumbers != null ? string.Join(Configuration.FieldRepeatSeparator, PractitionerIdNumbers.Select(x => x.ToDelimitedString())) : null,
                                 Privileges != null ? string.Join(Configuration.FieldRepeatSeparator, Privileges.Select(x => x.ToDelimitedString())) : null,
-                                DateEnteredPractice.ToHl7DateTimeString(typeof(PraSegment), nameof(DateEnteredPractice), Consts.DateFormatPrecisionDay, culture)
+                                DateEnteredPractice?.ToHl7DateTimeString(typeof(PraSegment), nameof(DateEnteredPractice), Consts.DateFormatPrecisionDay, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

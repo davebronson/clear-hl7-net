@@ -139,7 +139,7 @@ namespace ClearHl7.V260.Segments
                                 culture,
                                 StringHelper.StringFormatSequence(0, 12, Configuration.FieldSeparator),
                                 Id,
-                                AccidentDateTime.ToHl7DateTimeString(typeof(AccSegment), nameof(AccidentDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                AccidentDateTime?.ToHl7DateTimeString(typeof(AccSegment), nameof(AccidentDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 AccidentCode?.ToDelimitedString(),
                                 AccidentLocation,
                                 AutoAccidentState?.ToDelimitedString(),

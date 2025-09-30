@@ -133,13 +133,13 @@ namespace ClearHl7.V250.Segments
                                 AuthorizingPayorPlanId?.ToDelimitedString(),
                                 AuthorizingPayorCompanyId?.ToDelimitedString(),
                                 AuthorizingPayorCompanyName,
-                                AuthorizationEffectiveDate.ToHl7DateTimeString(typeof(AutSegment), nameof(AuthorizationEffectiveDate), Consts.DateTimeFormatPrecisionSecond, culture),
-                                AuthorizationExpirationDate.ToHl7DateTimeString(typeof(AutSegment), nameof(AuthorizationExpirationDate), Consts.DateTimeFormatPrecisionSecond, culture),
+                                AuthorizationEffectiveDate?.ToHl7DateTimeString(typeof(AutSegment), nameof(AuthorizationEffectiveDate), Consts.DateTimeFormatPrecisionSecond, culture),
+                                AuthorizationExpirationDate?.ToHl7DateTimeString(typeof(AutSegment), nameof(AuthorizationExpirationDate), Consts.DateTimeFormatPrecisionSecond, culture),
                                 AuthorizationIdentifier?.ToDelimitedString(),
                                 ReimbursementLimit?.ToDelimitedString(),
                                 RequestedNumberOfTreatments.HasValue ? RequestedNumberOfTreatments.Value.ToString(Consts.NumericFormat) : null,
                                 AuthorizedNumberOfTreatments.HasValue ? AuthorizedNumberOfTreatments.Value.ToString(Consts.NumericFormat) : null,
-                                ProcessDate.ToHl7DateTimeString(typeof(AutSegment), nameof(ProcessDate), Consts.DateTimeFormatPrecisionSecond, culture)
+                                ProcessDate?.ToHl7DateTimeString(typeof(AutSegment), nameof(ProcessDate), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

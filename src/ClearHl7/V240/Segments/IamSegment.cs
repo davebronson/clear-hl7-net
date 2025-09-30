@@ -206,16 +206,16 @@ namespace ClearHl7.V240.Segments
                                 ActionReason,
                                 SensitivityToCausativeAgentCode?.ToDelimitedString(),
                                 AllergenGroupCodeMnemonicDescription?.ToDelimitedString(),
-                                OnsetDate.ToHl7DateTimeString(typeof(IamSegment), nameof(OnsetDate), Consts.DateFormatPrecisionDay, culture),
+                                OnsetDate?.ToHl7DateTimeString(typeof(IamSegment), nameof(OnsetDate), Consts.DateFormatPrecisionDay, culture),
                                 OnsetDateText,
-                                ReportedDateTime.ToHl7DateTimeString(typeof(IamSegment), nameof(ReportedDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                ReportedDateTime?.ToHl7DateTimeString(typeof(IamSegment), nameof(ReportedDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ReportedBy?.ToDelimitedString(),
                                 RelationshipToPatientCode?.ToDelimitedString(),
                                 AlertDeviceCode?.ToDelimitedString(),
                                 AllergyClinicalStatusCode?.ToDelimitedString(),
                                 StatusedByPerson?.ToDelimitedString(),
                                 StatusedByOrganization?.ToDelimitedString(),
-                                StatusedAtDateTime.ToHl7DateTimeString(typeof(IamSegment), nameof(StatusedAtDateTime), Consts.DateTimeFormatPrecisionSecond, culture)
+                                StatusedAtDateTime?.ToHl7DateTimeString(typeof(IamSegment), nameof(StatusedAtDateTime), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

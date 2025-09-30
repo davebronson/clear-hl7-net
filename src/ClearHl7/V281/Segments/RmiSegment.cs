@@ -89,7 +89,7 @@ namespace ClearHl7.V281.Segments
                                 StringHelper.StringFormatSequence(0, 4, Configuration.FieldSeparator),
                                 Id,
                                 RiskManagementIncidentCode?.ToDelimitedString(),
-                                DateTimeIncident.ToHl7DateTimeString(typeof(RmiSegment), nameof(DateTimeIncident), Consts.DateTimeFormatPrecisionSecond, culture),
+                                DateTimeIncident?.ToHl7DateTimeString(typeof(RmiSegment), nameof(DateTimeIncident), Consts.DateTimeFormatPrecisionSecond, culture),
                                 IncidentTypeCode?.ToDelimitedString()
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }

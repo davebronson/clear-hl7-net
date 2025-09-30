@@ -72,7 +72,7 @@ namespace ClearHl7.V231.Segments
                                 culture,
                                 StringHelper.StringFormatSequence(0, 2, Configuration.FieldSeparator),
                                 Id,
-                                SystemDateTime.ToHl7DateTimeString(typeof(NckSegment), nameof(SystemDateTime), Consts.DateTimeFormatPrecisionSecond, culture)
+                                SystemDateTime?.ToHl7DateTimeString(typeof(NckSegment), nameof(SystemDateTime), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

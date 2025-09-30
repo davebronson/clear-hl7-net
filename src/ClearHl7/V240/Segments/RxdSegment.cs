@@ -239,7 +239,7 @@ namespace ClearHl7.V240.Segments
                                 Id,
                                 DispenseSubIdCounter.HasValue ? DispenseSubIdCounter.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DispenseGiveCode?.ToDelimitedString(),
-                                DateTimeDispensed.ToHl7DateTimeString(typeof(RxdSegment), nameof(DateTimeDispensed), Consts.DateTimeFormatPrecisionSecond, culture),
+                                DateTimeDispensed?.ToHl7DateTimeString(typeof(RxdSegment), nameof(DateTimeDispensed), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ActualDispenseAmount.HasValue ? ActualDispenseAmount.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ActualDispenseUnits?.ToDelimitedString(),
                                 ActualDosageForm?.ToDelimitedString(),

@@ -241,7 +241,7 @@ namespace ClearHl7.V231.Segments
                                 StaffName != null ? string.Join(Configuration.FieldRepeatSeparator, StaffName.Select(x => x.ToDelimitedString())) : null,
                                 StaffType != null ? string.Join(Configuration.FieldRepeatSeparator, StaffType) : null,
                                 AdministrativeSex,
-                                DateTimeOfBirth.ToHl7DateTimeString(typeof(StfSegment), nameof(DateTimeOfBirth), Consts.DateTimeFormatPrecisionSecond, culture),
+                                DateTimeOfBirth?.ToHl7DateTimeString(typeof(StfSegment), nameof(DateTimeOfBirth), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ActiveInactiveFlag,
                                 Department != null ? string.Join(Configuration.FieldRepeatSeparator, Department.Select(x => x.ToDelimitedString())) : null,
                                 HospitalServiceStf != null ? string.Join(Configuration.FieldRepeatSeparator, HospitalServiceStf.Select(x => x.ToDelimitedString())) : null,
@@ -259,9 +259,9 @@ namespace ClearHl7.V231.Segments
                                 AdditionalInsuredOnAuto,
                                 DriversLicenseNumberStaff?.ToDelimitedString(),
                                 CopyAutoIns,
-                                AutoInsExpires.ToHl7DateTimeString(typeof(StfSegment), nameof(AutoInsExpires), Consts.DateFormatPrecisionDay, culture),
-                                DateLastDmvReview.ToHl7DateTimeString(typeof(StfSegment), nameof(DateLastDmvReview), Consts.DateFormatPrecisionDay, culture),
-                                DateNextDmvReview.ToHl7DateTimeString(typeof(StfSegment), nameof(DateNextDmvReview), Consts.DateFormatPrecisionDay, culture)
+                                AutoInsExpires?.ToHl7DateTimeString(typeof(StfSegment), nameof(AutoInsExpires), Consts.DateFormatPrecisionDay, culture),
+                                DateLastDmvReview?.ToHl7DateTimeString(typeof(StfSegment), nameof(DateLastDmvReview), Consts.DateFormatPrecisionDay, culture),
+                                DateNextDmvReview?.ToHl7DateTimeString(typeof(StfSegment), nameof(DateNextDmvReview), Consts.DateFormatPrecisionDay, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

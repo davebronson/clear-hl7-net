@@ -267,7 +267,7 @@ namespace ClearHl7.V230.Segments
                                 AlternatePatientIdPid != null ? string.Join(Configuration.FieldRepeatSeparator, AlternatePatientIdPid) : null,
                                 PatientName?.ToDelimitedString(),
                                 MothersMaidenName?.ToDelimitedString(),
-                                DateTimeOfBirth.ToHl7DateTimeString(typeof(PidSegment), nameof(DateTimeOfBirth), Consts.DateTimeFormatPrecisionSecond, culture),
+                                DateTimeOfBirth?.ToHl7DateTimeString(typeof(PidSegment), nameof(DateTimeOfBirth), Consts.DateTimeFormatPrecisionSecond, culture),
                                 AdministrativeSex,
                                 PatientAlias != null ? string.Join(Configuration.FieldRepeatSeparator, PatientAlias.Select(x => x.ToDelimitedString())) : null,
                                 Race,
@@ -289,7 +289,7 @@ namespace ClearHl7.V230.Segments
                                 Citizenship != null ? string.Join(Configuration.FieldRepeatSeparator, Citizenship) : null,
                                 VeteransMilitaryStatus?.ToDelimitedString(),
                                 Nationality?.ToDelimitedString(),
-                                PatientDeathDateAndTime.ToHl7DateTimeString(typeof(PidSegment), nameof(PatientDeathDateAndTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                PatientDeathDateAndTime?.ToHl7DateTimeString(typeof(PidSegment), nameof(PatientDeathDateAndTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 PatientDeathIndicator
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }

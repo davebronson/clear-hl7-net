@@ -110,11 +110,11 @@ namespace ClearHl7.V290.Segments
                                 StringHelper.StringFormatSequence(0, 7, Configuration.FieldSeparator),
                                 Id,
                                 EquipmentInstanceIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, EquipmentInstanceIdentifier.Select(x => x.ToDelimitedString())) : null,
-                                EventDateTime.ToHl7DateTimeString(typeof(EquSegment), nameof(EventDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                EventDateTime?.ToHl7DateTimeString(typeof(EquSegment), nameof(EventDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 EquipmentState?.ToDelimitedString(),
                                 LocalRemoteControlState?.ToDelimitedString(),
                                 AlertLevel?.ToDelimitedString(),
-                                ExpectedDateTimeOfTheNextStatusChange.ToHl7DateTimeString(typeof(EquSegment), nameof(ExpectedDateTimeOfTheNextStatusChange), Consts.DateTimeFormatPrecisionSecond, culture)
+                                ExpectedDateTimeOfTheNextStatusChange?.ToHl7DateTimeString(typeof(EquSegment), nameof(ExpectedDateTimeOfTheNextStatusChange), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

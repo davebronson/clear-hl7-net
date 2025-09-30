@@ -179,7 +179,7 @@ namespace ClearHl7.V290.Segments
                                 FileSendingFacility?.ToDelimitedString(),
                                 FileReceivingApplication?.ToDelimitedString(),
                                 FileReceivingFacility?.ToDelimitedString(),
-                                FileCreationDateTime.ToHl7DateTimeString(typeof(FhsSegment), nameof(FileCreationDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                FileCreationDateTime?.ToHl7DateTimeString(typeof(FhsSegment), nameof(FileCreationDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 FileSecurity,
                                 FileNameId,
                                 FileHeaderComment,

@@ -90,7 +90,7 @@ namespace ClearHl7.V271.Segments
                                 StringHelper.StringFormatSequence(0, 4, Configuration.FieldSeparator),
                                 Id,
                                 CommandResponse?.ToDelimitedString(),
-                                DateTimeCompleted.ToHl7DateTimeString(typeof(EcrSegment), nameof(DateTimeCompleted), Consts.DateTimeFormatPrecisionSecond, culture),
+                                DateTimeCompleted?.ToHl7DateTimeString(typeof(EcrSegment), nameof(DateTimeCompleted), Consts.DateTimeFormatPrecisionSecond, culture),
                                 CommandResponseParameters != null ? string.Join(Configuration.FieldRepeatSeparator, CommandResponseParameters.Select(x => x.ToDelimitedString())) : null
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }

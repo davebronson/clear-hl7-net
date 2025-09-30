@@ -180,7 +180,7 @@ namespace ClearHl7.V290.Segments
                                 BatchSendingFacility?.ToDelimitedString(),
                                 BatchReceivingApplication?.ToDelimitedString(),
                                 BatchReceivingFacility?.ToDelimitedString(),
-                                BatchCreationDateTime.ToHl7DateTimeString(typeof(BhsSegment), nameof(BatchCreationDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                BatchCreationDateTime?.ToHl7DateTimeString(typeof(BhsSegment), nameof(BatchCreationDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 BatchSecurity,
                                 BatchNameIdType,
                                 BatchComment,

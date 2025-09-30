@@ -113,8 +113,8 @@ namespace ClearHl7.V281.Segments
                                 MasterFileIdentifier?.ToDelimitedString(),
                                 MasterFileApplicationIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, MasterFileApplicationIdentifier.Select(x => x.ToDelimitedString())) : null,
                                 FileLevelEventCode,
-                                EnteredDateTime.ToHl7DateTimeString(typeof(MfiSegment), nameof(EnteredDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
-                                EffectiveDateTime.ToHl7DateTimeString(typeof(MfiSegment), nameof(EffectiveDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                EnteredDateTime?.ToHl7DateTimeString(typeof(MfiSegment), nameof(EnteredDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                EffectiveDateTime?.ToHl7DateTimeString(typeof(MfiSegment), nameof(EffectiveDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ResponseLevelCode
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }

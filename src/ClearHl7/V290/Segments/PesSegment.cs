@@ -159,8 +159,8 @@ namespace ClearHl7.V290.Segments
                                 SenderSequenceNumber.HasValue ? SenderSequenceNumber.Value.ToString(Consts.NumericFormat, culture) : null,
                                 SenderEventDescription != null ? string.Join(Configuration.FieldRepeatSeparator, SenderEventDescription) : null,
                                 SenderComment,
-                                SenderAwareDateTime.ToHl7DateTimeString(typeof(PesSegment), nameof(SenderAwareDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
-                                EventReportDate.ToHl7DateTimeString(typeof(PesSegment), nameof(EventReportDate), Consts.DateTimeFormatPrecisionSecond, culture),
+                                SenderAwareDateTime?.ToHl7DateTimeString(typeof(PesSegment), nameof(SenderAwareDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                EventReportDate?.ToHl7DateTimeString(typeof(PesSegment), nameof(EventReportDate), Consts.DateTimeFormatPrecisionSecond, culture),
                                 EventReportTimingType != null ? string.Join(Configuration.FieldRepeatSeparator, EventReportTimingType) : null,
                                 EventReportSource,
                                 EventReportedTo != null ? string.Join(Configuration.FieldRepeatSeparator, EventReportedTo) : null

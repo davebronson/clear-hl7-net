@@ -133,8 +133,8 @@ namespace ClearHl7.V230.Segments
                                 ProviderCommunicationInformation != null ? string.Join(Configuration.FieldRepeatSeparator, ProviderCommunicationInformation.Select(x => x.ToDelimitedString())) : null,
                                 PreferredMethodOfContact?.ToDelimitedString(),
                                 ProviderIdentifiers != null ? string.Join(Configuration.FieldRepeatSeparator, ProviderIdentifiers.Select(x => x.ToDelimitedString())) : null,
-                                EffectiveStartDateOfProviderRole.ToHl7DateTimeString(typeof(PrdSegment), nameof(EffectiveStartDateOfProviderRole), Consts.DateTimeFormatPrecisionSecond, culture),
-                                EffectiveEndDateOfProviderRole.ToHl7DateTimeString(typeof(PrdSegment), nameof(EffectiveEndDateOfProviderRole), Consts.DateTimeFormatPrecisionSecond, culture)
+                                EffectiveStartDateOfProviderRole?.ToHl7DateTimeString(typeof(PrdSegment), nameof(EffectiveStartDateOfProviderRole), Consts.DateTimeFormatPrecisionSecond, culture),
+                                EffectiveEndDateOfProviderRole?.ToHl7DateTimeString(typeof(PrdSegment), nameof(EffectiveEndDateOfProviderRole), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

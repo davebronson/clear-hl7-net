@@ -124,9 +124,9 @@ namespace ClearHl7.V270.Segments
                                 Comment != null ? string.Join(Configuration.FieldRepeatSeparator, Comment) : null,
                                 CommentType?.ToDelimitedString(),
                                 EnteredBy?.ToDelimitedString(),
-                                EnteredDateTime.ToHl7DateTimeString(typeof(NteSegment), nameof(EnteredDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
-                                EffectiveStartDate.ToHl7DateTimeString(typeof(NteSegment), nameof(EffectiveStartDate), Consts.DateTimeFormatPrecisionSecond, culture),
-                                ExpirationDate.ToHl7DateTimeString(typeof(NteSegment), nameof(ExpirationDate), Consts.DateTimeFormatPrecisionSecond, culture)
+                                EnteredDateTime?.ToHl7DateTimeString(typeof(NteSegment), nameof(EnteredDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                EffectiveStartDate?.ToHl7DateTimeString(typeof(NteSegment), nameof(EffectiveStartDate), Consts.DateTimeFormatPrecisionSecond, culture),
+                                ExpirationDate?.ToHl7DateTimeString(typeof(NteSegment), nameof(ExpirationDate), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

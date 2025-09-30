@@ -139,7 +139,7 @@ namespace ClearHl7.V280.Segments
                                 CostCenterAccountNumber?.ToDelimitedString(),
                                 ItemNaturalAccountCode?.ToDelimitedString(),
                                 DeliverToId?.ToDelimitedString(),
-                                DateNeeded.ToHl7DateTimeString(typeof(RqdSegment), nameof(DateNeeded), Consts.DateFormatPrecisionDay, culture)
+                                DateNeeded?.ToHl7DateTimeString(typeof(RqdSegment), nameof(DateNeeded), Consts.DateFormatPrecisionDay, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }

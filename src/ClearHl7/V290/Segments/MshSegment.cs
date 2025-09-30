@@ -280,7 +280,7 @@ namespace ClearHl7.V290.Segments
                                 SendingFacility?.ToDelimitedString(),
                                 ReceivingApplication?.ToDelimitedString(),
                                 ReceivingFacility != null ? string.Join(Configuration.FieldRepeatSeparator, ReceivingFacility.Select(x => x.ToDelimitedString())) : null,
-                                DateTimeOfMessage.ToHl7DateTimeString(typeof(MshSegment), nameof(DateTimeOfMessage), Consts.DateTimeFormatPrecisionSecond, culture),
+                                DateTimeOfMessage?.ToHl7DateTimeString(typeof(MshSegment), nameof(DateTimeOfMessage), Consts.DateTimeFormatPrecisionSecond, culture),
                                 Security,
                                 MessageType?.ToDelimitedString(),
                                 MessageControlId,

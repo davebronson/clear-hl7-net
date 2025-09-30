@@ -91,10 +91,10 @@ namespace ClearHl7.V290.Segments
                                 culture,
                                 StringHelper.StringFormatSequence(0, 5, Configuration.FieldSeparator),
                                 Id,
-                                RequestDate.ToHl7DateTimeString(typeof(RfiSegment), nameof(RequestDate), Consts.DateTimeFormatPrecisionSecond, culture),
-                                ResponseDueDate.ToHl7DateTimeString(typeof(RfiSegment), nameof(ResponseDueDate), Consts.DateTimeFormatPrecisionSecond, culture),
+                                RequestDate?.ToHl7DateTimeString(typeof(RfiSegment), nameof(RequestDate), Consts.DateTimeFormatPrecisionSecond, culture),
+                                ResponseDueDate?.ToHl7DateTimeString(typeof(RfiSegment), nameof(ResponseDueDate), Consts.DateTimeFormatPrecisionSecond, culture),
                                 PatientConsent,
-                                DateAdditionalInformationWasSubmitted.ToHl7DateTimeString(typeof(RfiSegment), nameof(DateAdditionalInformationWasSubmitted), Consts.DateTimeFormatPrecisionSecond, culture)
+                                DateAdditionalInformationWasSubmitted?.ToHl7DateTimeString(typeof(RfiSegment), nameof(DateAdditionalInformationWasSubmitted), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
         }
     }
