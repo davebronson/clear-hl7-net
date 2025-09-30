@@ -4,14 +4,17 @@ using ClearHl7.Extensions;
 using ClearHl7.V251.Segments;
 using ClearHl7.V251.Types;
 
-namespace DateTimePrecisionExample
+namespace ClearHl7.Examples
 {
     /// <summary>
     /// Example demonstrating the configurable DateTime precision feature with per-field configuration.
     /// </summary>
-    class Program
+    public class DateTimePrecisionExample
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Runs a DateTime precision configuration example.
+        /// </summary>
+        public static void RunExample()
         {
             DateTime sampleDateTime = new DateTime(2024, 3, 15, 14, 30, 45);
             
@@ -45,9 +48,9 @@ namespace DateTimePrecisionExample
                 Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateFormatPrecisionDay);
                 Hl7DateTimeFormatConfig.SetPrecision<EvnSegment>(x => x.RecordedDateTime, Consts.DateTimeFormatPrecisionHour);
 
-                Console.WriteLine($"Global override (minute):     {sampleDateTime.ToHl7DateTimeString(typeof(object), "AnyField")}");
-                Console.WriteLine($"MSH.DateTimeOfMessage (day): {sampleDateTime.ToHl7DateTimeString(typeof(MshSegment), "DateTimeOfMessage")}");
-                Console.WriteLine($"EVN.RecordedDateTime (hour): {sampleDateTime.ToHl7DateTimeString(typeof(EvnSegment), "RecordedDateTime")}");
+                Console.WriteLine($"Global override (minute):     {sampleDateTime.ToHl7DateTimeString(typeof(object), "AnyField", Consts.DateTimeFormatPrecisionSecond, null)}");
+                Console.WriteLine($"MSH.DateTimeOfMessage (day): {sampleDateTime.ToHl7DateTimeString(typeof(MshSegment), "DateTimeOfMessage", Consts.DateTimeFormatPrecisionSecond, null)}");
+                Console.WriteLine($"EVN.RecordedDateTime (hour): {sampleDateTime.ToHl7DateTimeString(typeof(EvnSegment), "RecordedDateTime", Consts.DateTimeFormatPrecisionSecond, null)}");
                 Console.WriteLine();
 
                 // Demonstrate with actual segments
