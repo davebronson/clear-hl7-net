@@ -84,7 +84,7 @@ namespace ClearHl7.V240.Types
                                 SpecialtyName,
                                 GoverningBoard,
                                 EligibleOrCertified,
-                                DateOfCertification.HasValue ? DateOfCertification.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
+                                DateOfCertification?.ToHl7DateTimeString(typeof(SpecialtyDescription), nameof(DateOfCertification), Consts.DateFormatPrecisionDay, culture)
                                 ).TrimEnd(separator.ToCharArray());
         }
     }

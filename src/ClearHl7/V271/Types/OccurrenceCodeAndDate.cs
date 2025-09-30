@@ -73,7 +73,7 @@ namespace ClearHl7.V271.Types
                                 culture,
                                 StringHelper.StringFormatSequence(0, 2, separator),
                                 OccurrenceCode?.ToDelimitedString(),
-                                OccurrenceDate.HasValue ? OccurrenceDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
+                                OccurrenceDate?.ToHl7DateTimeString(typeof(OccurrenceCodeAndDate), nameof(OccurrenceDate), Consts.DateFormatPrecisionDay, culture)
                                 ).TrimEnd(separator.ToCharArray());
         }
     }

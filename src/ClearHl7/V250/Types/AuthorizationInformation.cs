@@ -75,7 +75,7 @@ namespace ClearHl7.V250.Types
                                 culture,
                                 StringHelper.StringFormatSequence(0, 3, separator),
                                 AuthorizationNumber,
-                                Date.HasValue ? Date.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
+                                Date?.ToHl7DateTimeString(typeof(AuthorizationInformation), nameof(Date), Consts.DateFormatPrecisionDay, culture),
                                 Source
                                 ).TrimEnd(separator.ToCharArray());
         }

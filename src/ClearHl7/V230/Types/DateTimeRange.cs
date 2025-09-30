@@ -79,8 +79,8 @@ namespace ClearHl7.V230.Types
             return string.Format(
                                 culture,
                                 StringHelper.StringFormatSequence(0, 2, separator),
-                                RangeStartDateTime.HasValue ? RangeStartDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                RangeEndDateTime.HasValue ? RangeEndDateTime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
+                                RangeStartDateTime?.ToHl7DateTimeString(typeof(DateTimeRange), nameof(RangeStartDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
+                                RangeEndDateTime?.ToHl7DateTimeString(typeof(DateTimeRange), nameof(RangeEndDateTime), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(separator.ToCharArray());
         }
     }

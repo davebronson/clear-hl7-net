@@ -90,8 +90,8 @@ namespace ClearHl7.V240.Types
                                 culture,
                                 StringHelper.StringFormatSequence(0, 3, separator),
                                 OccurrenceSpanCode?.ToDelimitedString(),
-                                OccurrenceSpanStartDate.HasValue ? OccurrenceSpanStartDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                OccurrenceSpanStopDate.HasValue ? OccurrenceSpanStopDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
+                                OccurrenceSpanStartDate?.ToHl7DateTimeString(typeof(OccurrenceSpanCodeAndDate), nameof(OccurrenceSpanStartDate), Consts.DateTimeFormatPrecisionSecond, culture),
+                                OccurrenceSpanStopDate?.ToHl7DateTimeString(typeof(OccurrenceSpanCodeAndDate), nameof(OccurrenceSpanStopDate), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(separator.ToCharArray());
         }
     }

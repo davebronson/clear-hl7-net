@@ -89,8 +89,8 @@ namespace ClearHl7.V231.Types
                                 StringHelper.StringFormatSequence(0, 5, separator),
                                 Privilege?.ToDelimitedString(),
                                 PrivilegeClass?.ToDelimitedString(),
-                                ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
-                                ActivationDate.HasValue ? ActivationDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
+                                ExpirationDate?.ToHl7DateTimeString(typeof(PractitionerInstitutionalPrivileges), nameof(ExpirationDate), Consts.DateFormatPrecisionDay, culture),
+                                ActivationDate?.ToHl7DateTimeString(typeof(PractitionerInstitutionalPrivileges), nameof(ActivationDate), Consts.DateFormatPrecisionDay, culture),
                                 Facility?.ToDelimitedString()
                                 ).TrimEnd(separator.ToCharArray());
         }

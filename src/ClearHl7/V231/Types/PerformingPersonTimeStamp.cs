@@ -186,7 +186,7 @@ namespace ClearHl7.V231.Types
                                 CheckDigitScheme,
                                 IdentifierTypeCode,
                                 AssigningFacility?.ToDelimitedString(),
-                                DateTimeActionPerformed.HasValue ? DateTimeActionPerformed.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                DateTimeActionPerformed?.ToHl7DateTimeString(typeof(PerformingPersonTimeStamp), nameof(DateTimeActionPerformed), Consts.DateTimeFormatPrecisionSecond, culture),
                                 NameRepresentationCode
                                 ).TrimEnd(separator.ToCharArray());
         }

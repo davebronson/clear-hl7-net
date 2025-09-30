@@ -164,8 +164,8 @@ namespace ClearHl7.V240.Types
                                 CensusTract,
                                 AddressRepresentationCode,
                                 AddressValidityRange?.ToDelimitedString(),
-                                EffectiveDate.HasValue ? EffectiveDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
+                                EffectiveDate?.ToHl7DateTimeString(typeof(ExtendedAddress), nameof(EffectiveDate), Consts.DateTimeFormatPrecisionSecond, culture),
+                                ExpirationDate?.ToHl7DateTimeString(typeof(ExtendedAddress), nameof(ExpirationDate), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(separator.ToCharArray());
         }
     }

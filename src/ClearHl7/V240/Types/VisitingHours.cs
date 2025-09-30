@@ -101,8 +101,8 @@ namespace ClearHl7.V240.Types
                                 StringHelper.StringFormatSequence(0, 4, separator),
                                 StartDayRange,
                                 EndDayRange,
-                                StartHourRange.HasValue ? StartHourRange.Value.ToString(Consts.TimeFormatPrecisionSecond, culture) : null,
-                                EndHourRange.HasValue ? EndHourRange.Value.ToString(Consts.TimeFormatPrecisionSecond, culture) : null
+                                StartHourRange?.ToHl7DateTimeString(typeof(VisitingHours), nameof(StartHourRange), Consts.TimeFormatPrecisionSecond, culture),
+                                EndHourRange?.ToHl7DateTimeString(typeof(VisitingHours), nameof(EndHourRange), Consts.TimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(separator.ToCharArray());
         }
     }

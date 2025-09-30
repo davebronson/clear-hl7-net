@@ -96,7 +96,7 @@ namespace ClearHl7.V270.Types
                                 IdNumber,
                                 TypeOfIdNumber?.ToDelimitedString(),
                                 StateOtherQualifyingInformation,
-                                ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
+                                ExpirationDate?.ToHl7DateTimeString(typeof(PractitionerLicenseOrOtherIdNumber), nameof(ExpirationDate), Consts.DateFormatPrecisionDay, culture)
                                 ).TrimEnd(separator.ToCharArray());
         }
     }

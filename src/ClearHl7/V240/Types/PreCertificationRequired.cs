@@ -69,7 +69,7 @@ namespace ClearHl7.V240.Types
                                 StringHelper.StringFormatSequence(0, 3, separator),
                                 PreCertificationPatientType,
                                 PreCertificationIsRequired,
-                                PreCertificationWindow.HasValue ? PreCertificationWindow.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
+                                PreCertificationWindow?.ToHl7DateTimeString(typeof(PreCertificationRequired), nameof(PreCertificationWindow), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(separator.ToCharArray());
         }
     }

@@ -90,7 +90,7 @@ namespace ClearHl7.V270.Types
                                 StringHelper.StringFormatSequence(0, 3, separator),
                                 CertificationPatientType?.ToDelimitedString(),
                                 CertificationRequired,
-                                DateTimeCertificationRequired.HasValue ? DateTimeCertificationRequired.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
+                                DateTimeCertificationRequired?.ToHl7DateTimeString(typeof(InsuranceCertificationDefinition), nameof(DateTimeCertificationRequired), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(separator.ToCharArray());
         }
     }

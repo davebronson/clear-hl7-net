@@ -89,7 +89,7 @@ namespace ClearHl7.V281.Types
                                 StringHelper.StringFormatSequence(0, 3, separator),
                                 LicenseNumber,
                                 IssuingStateProvinceCountry?.ToDelimitedString(),
-                                ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
+                                ExpirationDate?.ToHl7DateTimeString(typeof(DriversLicenseNumber), nameof(ExpirationDate), Consts.DateFormatPrecisionDay, culture)
                                 ).TrimEnd(separator.ToCharArray());
         }
     }
