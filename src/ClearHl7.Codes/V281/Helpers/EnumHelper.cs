@@ -6,10 +6,8 @@ namespace ClearHl7.Codes.V281.Helpers
     /// Provides helper methods for interacting with enumerations.
     /// Static methods are available for optimal performance.
     /// </summary>
-    /// </summary>
     public class EnumHelper : IEnumHelper
     {
-        /// <summary>
         /// <summary>
         /// Converts the given CodeAcceptApplicationAcknowledgmentConditions enum value into its HL7 equivalent code.
         /// </summary>
