@@ -326,7 +326,7 @@ For detailed documentation and advanced scenarios, see [DateTime Precision Confi
 There are code systems published as part of the HL7 specification, which are recommended for use in your messages.  You have flexibility, of course, to use any coded values that you and your message consumer might agree upon.  To easily access the defined codes you may utilize the `ClearHl7.Codes` component, which contains enumerations for each.
 
 ### Static Usage (Recommended)
-The static `EnumHelpers` class provides a convenient way to convert enum values without needing to instantiate a helper object:
+The static `EnumMaps` class provides a convenient way to convert enum values without needing to instantiate a helper object:
 
 ```csharp
 using ClearHl7.Codes.V282;
@@ -335,13 +335,13 @@ using ClearHl7.Codes.V282.Helpers;
 // [...]
 
 // Example using the MaritalStatus and YesNoIndicator codes
-// Call EnumHelpers.EnumToCode() static method to receive the
+// Call EnumMaps.EnumToCode() static method to receive the
 // actual coded string for a given enum value
 pidSegment.MaritalStatus = new CodedWithExceptions
 {
-    Identifier = EnumHelpers.EnumToCode(CodeMaritalStatus.Married)
+    Identifier = EnumMaps.EnumToCode(CodeMaritalStatus.Married)
 };
-pidSegment.MultipleBirthIndicator = EnumHelpers.EnumToCode(CodeYesNoIndicator.No);
+pidSegment.MultipleBirthIndicator = EnumMaps.EnumToCode(CodeYesNoIndicator.No);
 ```
 
 ### Instance Usage (For Dependency Injection)
