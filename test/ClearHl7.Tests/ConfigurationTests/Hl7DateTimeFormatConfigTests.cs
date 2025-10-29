@@ -6,13 +6,20 @@ using Xunit;
 
 namespace ClearHl7.Tests.ConfigurationTests
 {
-    public class Hl7DateTimeFormatConfigTests
+    public class Hl7DateTimeFormatConfigTests : IDisposable
     {
         private readonly DateTime _testDateTime = new DateTime(2024, 3, 15, 14, 30, 45);
 
         public Hl7DateTimeFormatConfigTests()
         {
             // Clear any existing configurations before each test
+            Hl7DateTimeFormatConfig.ClearFieldPrecisions();
+            Hl7DateTimeFormatConfig.ClearGlobalOverride();
+        }
+
+        public void Dispose()
+        {
+            // Clean up after each test to prevent affecting other tests
             Hl7DateTimeFormatConfig.ClearFieldPrecisions();
             Hl7DateTimeFormatConfig.ClearGlobalOverride();
         }

@@ -9,11 +9,18 @@ namespace ClearHl7.Tests.IntegrationTests
     /// <summary>
     /// Integration tests to verify that the new DateTime precision hierarchy works correctly in real segments.
     /// </summary>
-    public class SegmentDateTimePrecisionIntegrationTests
+    public class SegmentDateTimePrecisionIntegrationTests : IDisposable
     {
         public SegmentDateTimePrecisionIntegrationTests()
         {
             // Ensure clean test state
+            Hl7DateTimeFormatConfig.ClearFieldPrecisions();
+            Hl7DateTimeFormatConfig.ClearGlobalOverride();
+        }
+
+        public void Dispose()
+        {
+            // Clean up after each test to prevent affecting other tests
             Hl7DateTimeFormatConfig.ClearFieldPrecisions();
             Hl7DateTimeFormatConfig.ClearGlobalOverride();
         }
