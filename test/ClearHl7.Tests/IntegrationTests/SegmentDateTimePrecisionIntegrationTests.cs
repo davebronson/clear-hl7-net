@@ -9,6 +9,7 @@ namespace ClearHl7.Tests.IntegrationTests
     /// <summary>
     /// Integration tests to verify that the new DateTime precision hierarchy works correctly in real segments.
     /// </summary>
+    [Collection("Hl7DateTimeFormatConfig")]
     public class SegmentDateTimePrecisionIntegrationTests : IDisposable
     {
         public SegmentDateTimePrecisionIntegrationTests()

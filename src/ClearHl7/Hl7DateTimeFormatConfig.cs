@@ -9,11 +9,30 @@ namespace ClearHl7
     /// </summary>
     public static class Hl7DateTimeFormatConfig
     {
+        private static readonly object _lock = new object();
+        private static string _globalDateTimeFormatOverride = null;
+
         /// <summary>
         /// Gets or sets the global DateTime format override for all DateTime fields.
         /// When null, fields use their original precision. When set, all fields use this format unless individually overridden.
         /// </summary>
-        public static string GlobalDateTimeFormatOverride { get; set; } = null;
+        public static string GlobalDateTimeFormatOverride
+        {
+            get
+            {
+                lock (_lock)
+                {
+                    return _globalDateTimeFormatOverride;
+                }
+            }
+            set
+            {
+                lock (_lock)
+                {
+                    _globalDateTimeFormatOverride = value;
+                }
+            }
+        }
 
         // Use (segmentType, propertyName) as the key for per-field precision
         private static readonly Dictionary<(Type, string), string> FieldPrecisions = new();
@@ -28,17 +47,20 @@ namespace ClearHl7
             Expression<Func<TSegment, object>> property,
             string format)
         {
-            if (property.Body is MemberExpression member)
+            lock (_lock)
             {
-                FieldPrecisions[(typeof(TSegment), member.Member.Name)] = format;
-            }
-            else if (property.Body is UnaryExpression unary && unary.Operand is MemberExpression unaryMember)
-            {
-                FieldPrecisions[(typeof(TSegment), unaryMember.Member.Name)] = format;
-            }
-            else
-            {
-                throw new ArgumentException("Expression is not a property", nameof(property));
+                if (property.Body is MemberExpression member)
+                {
+                    FieldPrecisions[(typeof(TSegment), member.Member.Name)] = format;
+                }
+                else if (property.Body is UnaryExpression unary && unary.Operand is MemberExpression unaryMember)
+                {
+                    FieldPrecisions[(typeof(TSegment), unaryMember.Member.Name)] = format;
+                }
+                else
+                {
+                    throw new ArgumentException("Expression is not a property", nameof(property));
+                }
             }
         }
 
@@ -54,16 +76,19 @@ namespace ClearHl7
         /// <returns>The DateTime format string to use for this field.</returns>
         public static string GetFormatForField(Type segmentType, string propertyName, string originalFormat)
         {
-            // 1. Check for individual field override first
-            if (FieldPrecisions.TryGetValue((segmentType, propertyName), out var fieldFormat))
-                return fieldFormat;
+            lock (_lock)
+            {
+                // 1. Check for individual field override first
+                if (FieldPrecisions.TryGetValue((segmentType, propertyName), out var fieldFormat))
+                    return fieldFormat;
 
-            // 2. Check for global override
-            if (GlobalDateTimeFormatOverride != null)
-                return GlobalDateTimeFormatOverride;
+                // 2. Check for global override
+                if (_globalDateTimeFormatOverride != null)
+                    return _globalDateTimeFormatOverride;
 
-            // 3. Use original field precision (as defined in the original code)
-            return originalFormat;
+                // 3. Use original field precision (as defined in the original code)
+                return originalFormat;
+            }
         }
 
         /// <summary>
@@ -71,7 +96,10 @@ namespace ClearHl7
         /// </summary>
         public static void ClearFieldPrecisions()
         {
-            FieldPrecisions.Clear();
+            lock (_lock)
+            {
+                FieldPrecisions.Clear();
+            }
         }
 
         /// <summary>
@@ -79,17 +107,38 @@ namespace ClearHl7
         /// </summary>
         public static void ClearGlobalOverride()
         {
-            GlobalDateTimeFormatOverride = null;
+            lock (_lock)
+            {
+                _globalDateTimeFormatOverride = null;
+            }
         }
 
         /// <summary>
         /// Gets the count of configured field-specific precisions.
         /// </summary>
-        public static int ConfiguredFieldCount => FieldPrecisions.Count;
+        public static int ConfiguredFieldCount
+        {
+            get
+            {
+                lock (_lock)
+                {
+                    return FieldPrecisions.Count;
+                }
+            }
+        }
 
         /// <summary>
         /// Gets whether a global override is currently set.
         /// </summary>
-        public static bool HasGlobalOverride => GlobalDateTimeFormatOverride != null;
+        public static bool HasGlobalOverride
+        {
+            get
+            {
+                lock (_lock)
+                {
+                    return _globalDateTimeFormatOverride != null;
+                }
+            }
+        }
     }
 }

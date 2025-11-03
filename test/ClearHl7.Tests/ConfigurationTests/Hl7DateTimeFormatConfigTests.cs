@@ -6,6 +6,7 @@ using Xunit;
 
 namespace ClearHl7.Tests.ConfigurationTests
 {
+    [Collection("Hl7DateTimeFormatConfig")]
     public class Hl7DateTimeFormatConfigTests : IDisposable
     {
         private readonly DateTime _testDateTime = new DateTime(2024, 3, 15, 14, 30, 45);
