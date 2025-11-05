@@ -11,9 +11,9 @@
     <Title>ClearHL7.Codes</Title>
     <Description>Enumerated coded values for the HL7® standard</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
-	<VersionPrefix>2.2.0</VersionPrefix>
-    <PackageVersion>2.2.0</PackageVersion>
-	<ReleaseVersion>2.2.0</ReleaseVersion>
+	<VersionPrefix>2.3.0</VersionPrefix>
+    <PackageVersion>2.3.0</PackageVersion>
+	<ReleaseVersion>2.3.0</ReleaseVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackOnBuild>true</PackOnBuild>
     <Owners>Dave Bronson</Owners>
@@ -33,6 +33,9 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Microsoft.SourceLink.GitHub" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
