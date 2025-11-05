@@ -213,10 +213,10 @@ namespace ClearHl7.V271.Types
                                 SecondAlternateUnitOfMeasureCodingSystemVersionId,
                                 UnitOfMeasureCodingSystemOid,
                                 UnitOfMeasureValueSetOid,
-                                UnitOfMeasureValueSetVersionId.HasValue ? UnitOfMeasureValueSetVersionId.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
+                                UnitOfMeasureValueSetVersionId?.ToHl7DateTimeString(typeof(ChannelSensitivityAndUnits), nameof(UnitOfMeasureValueSetVersionId), Consts.DateFormatPrecisionDay, culture),
                                 AlternateUnitOfMeasureCodingSystemOid,
                                 AlternateUnitOfMeasureValueSetOid,
-                                AlternateUnitOfMeasureValueSetVersionId.HasValue ? AlternateUnitOfMeasureValueSetVersionId.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
+                                AlternateUnitOfMeasureValueSetVersionId?.ToHl7DateTimeString(typeof(ChannelSensitivityAndUnits), nameof(AlternateUnitOfMeasureValueSetVersionId), Consts.DateFormatPrecisionDay, culture),
                                 AlternateUnitOfMeasureCodingSystemOidAdditional,
                                 AlternateUnitOfMeasureValueSetOidAdditional,
                                 AlternateUnitOfMeasureValueSetVersionIdAdditional

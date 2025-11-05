@@ -206,13 +206,13 @@ namespace ClearHl7.V281.Types
                                 SecondAlternateCodingSystemVersionId,
                                 CodingSystemOid,
                                 ValueSetOid,
-                                ValueSetVersionId.HasValue ? ValueSetVersionId.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
+                                ValueSetVersionId?.ToHl7DateTimeString(typeof(CodedWithExceptions), nameof(ValueSetVersionId), Consts.DateFormatPrecisionDay, culture),
                                 AlternateCodingSystemOid,
                                 AlternateValueSetOid,
-                                AlternateValueSetVersionId.HasValue ? AlternateValueSetVersionId.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
+                                AlternateValueSetVersionId?.ToHl7DateTimeString(typeof(CodedWithExceptions), nameof(AlternateValueSetVersionId), Consts.DateFormatPrecisionDay, culture),
                                 SecondAlternateCodingSystemOid,
                                 SecondAlternateValueSetOid,
-                                SecondAlternateValueSetVersionId.HasValue ? SecondAlternateValueSetVersionId.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null
+                                SecondAlternateValueSetVersionId?.ToHl7DateTimeString(typeof(CodedWithExceptions), nameof(SecondAlternateValueSetVersionId), Consts.DateFormatPrecisionDay, culture)
                                 ).TrimEnd(separator.ToCharArray());
         }
     }

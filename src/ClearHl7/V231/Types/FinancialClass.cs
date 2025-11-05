@@ -70,7 +70,7 @@ namespace ClearHl7.V231.Types
                                 culture,
                                 StringHelper.StringFormatSequence(0, 2, separator),
                                 FinancialClassCode,
-                                EffectiveDate.HasValue ? EffectiveDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
+                                EffectiveDate?.ToHl7DateTimeString(typeof(FinancialClass), nameof(EffectiveDate), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(separator.ToCharArray());
         }
     }

@@ -159,8 +159,8 @@ namespace ClearHl7.V250.Types
                                 NameContext?.ToDelimitedString(),
                                 NameValidityRange?.ToDelimitedString(),
                                 NameAssemblyOrder,
-                                EffectiveDate.HasValue ? EffectiveDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
-                                ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null,
+                                EffectiveDate?.ToHl7DateTimeString(typeof(ExtendedPersonName), nameof(EffectiveDate), Consts.DateTimeFormatPrecisionSecond, culture),
+                                ExpirationDate?.ToHl7DateTimeString(typeof(ExtendedPersonName), nameof(ExpirationDate), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ProfessionalSuffix
                                 ).TrimEnd(separator.ToCharArray());
         }

@@ -81,7 +81,7 @@ namespace ClearHl7.V251.Types
                                 culture,
                                 StringHelper.StringFormatSequence(0, 2, separator),
                                 DischargeToLocation,
-                                EffectiveDate.HasValue ? EffectiveDate.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
+                                EffectiveDate?.ToHl7DateTimeString(typeof(DischargeToLocationAndDate), nameof(EffectiveDate), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(separator.ToCharArray());
         }
     }

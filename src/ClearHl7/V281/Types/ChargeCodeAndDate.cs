@@ -70,7 +70,7 @@ namespace ClearHl7.V281.Types
                                 culture,
                                 StringHelper.StringFormatSequence(0, 2, separator),
                                 InvocationEvent,
-                                Datetime.HasValue ? Datetime.Value.ToString(Consts.DateTimeFormatPrecisionSecond, culture) : null
+                                Datetime?.ToHl7DateTimeString(typeof(ChargeCodeAndDate), nameof(Datetime), Consts.DateTimeFormatPrecisionSecond, culture)
                                 ).TrimEnd(separator.ToCharArray());
         }
     }

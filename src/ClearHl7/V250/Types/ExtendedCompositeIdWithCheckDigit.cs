@@ -126,8 +126,8 @@ namespace ClearHl7.V250.Types
                                 AssigningAuthority?.ToDelimitedString(),
                                 IdentifierTypeCode,
                                 AssigningFacility?.ToDelimitedString(),
-                                EffectiveDate.HasValue ? EffectiveDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
-                                ExpirationDate.HasValue ? ExpirationDate.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
+                                EffectiveDate?.ToHl7DateTimeString(typeof(ExtendedCompositeIdWithCheckDigit), nameof(EffectiveDate), Consts.DateFormatPrecisionDay, culture),
+                                ExpirationDate?.ToHl7DateTimeString(typeof(ExtendedCompositeIdWithCheckDigit), nameof(ExpirationDate), Consts.DateFormatPrecisionDay, culture),
                                 AssigningJurisdiction?.ToDelimitedString(),
                                 AssigningAgencyOrDepartment?.ToDelimitedString()
                                 ).TrimEnd(separator.ToCharArray());

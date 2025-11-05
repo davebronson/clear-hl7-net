@@ -72,7 +72,7 @@ namespace ClearHl7.V271.Types
             return string.Format(
                                 culture,
                                 StringHelper.StringFormatSequence(0, 2, separator),
-                                Date.HasValue ? Date.Value.ToString(Consts.DateFormatPrecisionDay, culture) : null,
+                                Date?.ToHl7DateTimeString(typeof(DateAndInstitutionName), nameof(Date), Consts.DateFormatPrecisionDay, culture),
                                 InstitutionName?.ToDelimitedString()
                                 ).TrimEnd(separator.ToCharArray());
         }
