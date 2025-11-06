@@ -148,5 +148,19 @@ namespace ClearHl7.Tests.FormatTests
 
             Assert.Equal(expected, actual);
         }
+
+        /// <summary>
+        /// Validates that the DateTimeFormatPrecisionSecondWithTimezoneOffset constant is documented correctly.
+        /// Note: This constant documents the format but the offset must be appended manually using helper methods
+        /// because .NET's standard format tokens produce "+HH:mm" with a colon, not HL7's "±HHMM" without colon.
+        /// </summary>
+        [Fact]
+        public void Constant_DateTimeFormatPrecisionSecondWithTimezoneOffset_HasCorrectValue()
+        {
+            string expected = "yyyyMMddHHmmss±HHMM";
+            string actual = Consts.DateTimeFormatPrecisionSecondWithTimezoneOffset;
+
+            Assert.Equal(expected, actual);
+        }
     }
 }

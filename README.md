@@ -301,6 +301,9 @@ Hl7DateTimeFormatConfig.GlobalDateTimeFormatOverride = Consts.DateTimeFormatPrec
 Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateFormatPrecisionDay);
 Hl7DateTimeFormatConfig.SetPrecision<EvnSegment>(x => x.RecordedDateTime, Consts.DateTimeFormatPrecisionHour);
 
+// NEW: Configure field to use timezone offset format
+Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateTimeFormatPrecisionSecondWithTimezoneOffset);
+
 // Clear overrides to revert to default behavior
 Hl7DateTimeFormatConfig.ClearGlobalOverride();
 Hl7DateTimeFormatConfig.ClearFieldPrecisions();
@@ -319,6 +322,82 @@ Hl7DateTimeFormatConfig.ClearFieldPrecisions();
 - `Consts.DateTimeFormatPrecisionHour` - Date and hour (yyyyMMddHH) - e.g., "2024031514"
 - `Consts.DateTimeFormatPrecisionMinute` - Date, hour, and minute (yyyyMMddHHmm) - e.g., "202403151430"
 - `Consts.DateTimeFormatPrecisionSecond` - Full precision (yyyyMMddHHmmss) - e.g., "20240315143045"
+- `Consts.DateTimeFormatPrecisionSecondWithTimezoneOffset` - Full precision with timezone offset (yyyyMMddHHmmss±HHMM) - e.g., "20240315143045+0530" (documentation constant; use helper methods below to format with HL7-compliant offsets)
+
+#### Timezone Offset Support
+clear-hl7-net provides deterministic timezone offset support for HL7 datetime values. By default, all datetime values with timezone offsets are serialized using UTC (+0000) to ensure consistent, deterministic behavior across different machines and CI environments.
+
+##### Default Behavior (UTC)
+```csharp
+using ClearHl7;
+
+// Default: Uses UTC offset (+0000)
+var dt = new DateTimeOffset(2024, 3, 15, 14, 30, 45, TimeSpan.FromHours(-5));
+var result = Hl7DateTimeFormatConfig.FormatDateTimeWithConfiguredOffset(dt);
+// Result: "20240315193045+0000" (converted to UTC)
+```
+
+##### Using System Local Timezone
+```csharp
+using ClearHl7;
+
+// Configure to use local system timezone
+Hl7DateTimeFormatConfig.TimezoneOffset = DateTimeOffset.Now.Offset;
+
+var dt = new DateTimeOffset(2024, 3, 15, 14, 30, 45, TimeSpan.Zero);
+var result = Hl7DateTimeFormatConfig.FormatDateTimeWithConfiguredOffset(dt);
+// Result: "20240315093045-0500" (if local offset is -05:00)
+```
+
+##### Using Custom Timezone Offset
+```csharp
+using ClearHl7;
+
+// Configure a specific timezone offset (e.g., IST +05:30)
+Hl7DateTimeFormatConfig.TimezoneOffset = new TimeSpan(5, 30, 0);
+
+var dt = new DateTimeOffset(2024, 3, 15, 14, 30, 45, TimeSpan.Zero);
+var result = Hl7DateTimeFormatConfig.FormatDateTimeWithConfiguredOffset(dt);
+// Result: "20240315200045+0530" (converted to +05:30)
+```
+
+##### Preserving Source Offset
+```csharp
+using ClearHl7;
+
+// Use the source DateTimeOffset's own timezone offset
+var dt = new DateTimeOffset(2024, 3, 15, 14, 30, 45, TimeSpan.FromHours(5));
+var result = Hl7DateTimeFormatConfig.FormatDateTimeUsingSourceOffset(dt);
+// Result: "20240315143045+0500" (preserves original +05:00 offset)
+```
+
+##### HL7 Offset Format
+The library ensures HL7-compliant timezone offsets in ±HHMM format (without colon), as required by the HL7 standard:
+- UTC: `+0000`
+- EST: `-0500`
+- IST: `+0530`
+- ACDT: `+1030`
+
+##### Helper Methods
+The `Hl7DateTimeFormatConfig` class provides three helper methods for working with timezone offsets:
+
+1. **`ToHl7OffsetString(TimeSpan offset)`** - Converts a TimeSpan to HL7's ±HHMM format (without colon)
+   ```csharp
+   var offsetString = Hl7DateTimeFormatConfig.ToHl7OffsetString(TimeSpan.FromHours(5));
+   // Returns: "+0500"
+   ```
+
+2. **`FormatDateTimeWithConfiguredOffset(DateTimeOffset dt)`** - Formats using the configured `TimezoneOffset` property
+   - Converts the DateTimeOffset to the configured timezone
+   - Returns HL7 format: `yyyyMMddHHmmss±HHMM`
+   - Uses the global `TimezoneOffset` configuration (defaults to UTC)
+
+3. **`FormatDateTimeUsingSourceOffset(DateTimeOffset dt)`** - Formats using the DateTimeOffset's own timezone
+   - Preserves the original timezone of the DateTimeOffset
+   - Returns HL7 format: `yyyyMMddHHmmss±HHMM`
+   - Useful when you want to keep the source timezone information
+
+**Note**: The configured `TimezoneOffset` is global and thread-safe. Set it once at application startup for consistent behavior throughout your application.
 
 For detailed documentation and advanced scenarios, see [DateTime Precision Configuration](DateTime-Precision-Configuration.md).
 
