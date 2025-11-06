@@ -11,9 +11,9 @@
     <Title>ClearHL7</Title>
     <Description>.NET HL7® message generation and parsing library for the version 2.x standard. Please see important info about changes in V2: https://github.com/davebronson/clear-hl7-net/blob/master/Version2.md </Description>
     <NeutralLanguage>en-US</NeutralLanguage>
-	<VersionPrefix>2.2.0</VersionPrefix>
-    <PackageVersion>2.2.0</PackageVersion>
-	<ReleaseVersion>2.2.0</ReleaseVersion>
+	<VersionPrefix>2.3.0</VersionPrefix>
+    <PackageVersion>2.3.0</PackageVersion>
+	<ReleaseVersion>2.3.0</ReleaseVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackOnBuild>true</PackOnBuild>
     <Owners>Dave Bronson</Owners>
@@ -23,6 +23,7 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <Deterministic>true</Deterministic>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <LangVersion>latest</LangVersion>
@@ -34,6 +35,9 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Microsoft.SourceLink.GitHub" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
