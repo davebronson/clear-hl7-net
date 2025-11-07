@@ -21,6 +21,12 @@ namespace ClearHl7
         /// Set to DateTimeOffset.Now.Offset to use the system's local timezone offset.
         /// Thread-safe.
         /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when the value is outside the valid range of -12:00 to +14:00.</exception>
+        /// <remarks>
+        /// Valid timezone offsets typically range from -12:00 (UTC-12) to +14:00 (UTC+14).
+        /// When using TimeSpan constructor with negative offsets, note that for a negative offset like -4 hours 30 minutes,
+        /// you must use new TimeSpan(-4, -30, 0) where both components are negative, or use TimeSpan.FromMinutes(-270) for clarity.
+        /// </remarks>
         public static TimeSpan TimezoneOffset
         {
             get
@@ -32,6 +38,16 @@ namespace ClearHl7
             }
             set
             {
+                // Validate offset is within typical timezone range: -12:00 to +14:00
+                if (value < TimeSpan.FromHours(-12) || value > TimeSpan.FromHours(14))
+                {
+                    throw new ArgumentOutOfRangeException(
+                        nameof(value),
+                        value,
+                        "Timezone offset must be between -12:00 and +14:00 hours. " +
+                        $"Provided offset: {value.TotalHours:F2} hours.");
+                }
+
                 lock (_timezoneOffsetLock)
                 {
                     _timezoneOffset = value;
@@ -163,10 +179,26 @@ namespace ClearHl7
         /// <summary>
         /// Converts a TimeSpan offset to HL7-compliant offset string format (±HHMM without colon).
         /// </summary>
-        /// <param name="offset">The timezone offset to convert.</param>
+        /// <param name="offset">The timezone offset to convert. Must be between -12:00 and +14:00 hours (typical timezone range).</param>
         /// <returns>A string in ±HHMM format, e.g., "+0000", "-0500", "+0530".</returns>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when offset is outside the valid range of -12:00 to +14:00.</exception>
+        /// <remarks>
+        /// Valid timezone offsets typically range from -12:00 (UTC-12) to +14:00 (UTC+14).
+        /// When using TimeSpan constructor with negative offsets, note that for a negative offset like -4 hours 30 minutes,
+        /// you must use new TimeSpan(-4, -30, 0) where both components are negative, or use TimeSpan.FromMinutes(-270) for clarity.
+        /// </remarks>
         public static string ToHl7OffsetString(TimeSpan offset)
         {
+            // Validate offset is within typical timezone range: -12:00 to +14:00
+            if (offset < TimeSpan.FromHours(-12) || offset > TimeSpan.FromHours(14))
+            {
+                throw new ArgumentOutOfRangeException(
+                    nameof(offset),
+                    offset,
+                    "Timezone offset must be between -12:00 and +14:00 hours. " +
+                    $"Provided offset: {offset.TotalHours:F2} hours.");
+            }
+
             var sign = offset.TotalMinutes >= 0 ? "+" : "-";
             var absoluteOffset = offset.Duration();
             var hours = (int)absoluteOffset.TotalHours;

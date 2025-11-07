@@ -42,18 +42,61 @@ namespace ClearHl7.Tests.ConfigurationTests
             Assert.Equal(newOffset, retrievedOffset);
         }
 
+        [Fact]
+        public void TimezoneOffset_SetValidEdgeCases_Succeeds()
+        {
+            // Test maximum positive offset boundary (UTC+14)
+            Hl7DateTimeFormatConfig.TimezoneOffset = TimeSpan.FromHours(14);
+            Assert.Equal(TimeSpan.FromHours(14), Hl7DateTimeFormatConfig.TimezoneOffset);
+
+            // Test maximum negative offset boundary (UTC-12)
+            Hl7DateTimeFormatConfig.TimezoneOffset = TimeSpan.FromHours(-12);
+            Assert.Equal(TimeSpan.FromHours(-12), Hl7DateTimeFormatConfig.TimezoneOffset);
+
+            // Test offset with fractional hours (e.g., India UTC+5:30)
+            var indiaOffset = new TimeSpan(5, 30, 0);
+            Hl7DateTimeFormatConfig.TimezoneOffset = indiaOffset;
+            Assert.Equal(indiaOffset, Hl7DateTimeFormatConfig.TimezoneOffset);
+
+            // Reset to default
+            Hl7DateTimeFormatConfig.TimezoneOffset = TimeSpan.Zero;
+        }
+
+        [Theory]
+        [InlineData(15, 0)]    // UTC+15 exceeds maximum
+        [InlineData(14, 1)]    // UTC+14:01 exceeds maximum
+        [InlineData(-13, 0)]   // UTC-13 exceeds minimum
+        [InlineData(-12, -1)]  // UTC-12:01 exceeds minimum
+        [InlineData(24, 0)]    // UTC+24 far exceeds maximum
+        [InlineData(100, 0)]   // UTC+100 extremely out of range
+        public void TimezoneOffset_SetInvalidValue_ThrowsArgumentOutOfRangeException(int hours, int minutes)
+        {
+            // Arrange
+            var invalidOffset = new TimeSpan(hours, minutes, 0);
+
+            // Act & Assert
+            var exception = Assert.Throws<ArgumentOutOfRangeException>(() =>
+                Hl7DateTimeFormatConfig.TimezoneOffset = invalidOffset);
+
+            Assert.Equal("value", exception.ParamName);
+            Assert.Contains("between -12:00 and +14:00", exception.Message);
+
+            // Ensure the property value hasn't changed
+            Assert.Equal(TimeSpan.Zero, Hl7DateTimeFormatConfig.TimezoneOffset);
+        }
+
         [Theory]
         [InlineData(0, 0, "+0000")]
         [InlineData(5, 0, "+0500")]
         [InlineData(-5, 0, "-0500")]
         [InlineData(5, 30, "+0530")]
-        [InlineData(-4, -30, "-0430")]
+        [InlineData(-4, -30, "-0430")]  // Note: Both hours and minutes must be negative for negative offsets
         [InlineData(10, 0, "+1000")]
         [InlineData(-10, 0, "-1000")]
         [InlineData(0, 30, "+0030")]
         [InlineData(0, -30, "-0030")]
-        [InlineData(12, 45, "+1245")]
-        [InlineData(-12, -45, "-1245")]
+        [InlineData(12, 0, "+1200")]
+        [InlineData(-12, 0, "-1200")]
         public void ToHl7OffsetString_WithVariousOffsets_ReturnsCorrectFormat(int hours, int minutes, string expected)
         {
             // Arrange
@@ -250,6 +293,64 @@ namespace ClearHl7.Tests.ConfigurationTests
 
             // Assert
             Assert.Equal("-1200", result);
+        }
+
+        [Fact]
+        public void ToHl7OffsetString_WithValidEdgeCases_FormatsCorrectly()
+        {
+            // Test maximum positive offset boundary (UTC+14)
+            var maxPositive = TimeSpan.FromHours(14);
+            Assert.Equal("+1400", Hl7DateTimeFormatConfig.ToHl7OffsetString(maxPositive));
+
+            // Test maximum negative offset boundary (UTC-12)
+            var maxNegative = TimeSpan.FromHours(-12);
+            Assert.Equal("-1200", Hl7DateTimeFormatConfig.ToHl7OffsetString(maxNegative));
+
+            // Test offset with fractional hours (e.g., Nepal UTC+5:45)
+            var nepalOffset = new TimeSpan(5, 45, 0);
+            Assert.Equal("+0545", Hl7DateTimeFormatConfig.ToHl7OffsetString(nepalOffset));
+
+            // Test offset with 30-minute increment (e.g., India UTC+5:30)
+            var indiaOffset = new TimeSpan(5, 30, 0);
+            Assert.Equal("+0530", Hl7DateTimeFormatConfig.ToHl7OffsetString(indiaOffset));
+        }
+
+        [Theory]
+        [InlineData(15, 0)]    // UTC+15 exceeds maximum
+        [InlineData(14, 1)]    // UTC+14:01 exceeds maximum
+        [InlineData(-13, 0)]   // UTC-13 exceeds minimum
+        [InlineData(-12, -1)]  // UTC-12:01 exceeds minimum
+        [InlineData(24, 0)]    // UTC+24 far exceeds maximum
+        [InlineData(100, 0)]   // UTC+100 extremely out of range
+        public void ToHl7OffsetString_WithInvalidOffset_ThrowsArgumentOutOfRangeException(int hours, int minutes)
+        {
+            // Arrange
+            var invalidOffset = new TimeSpan(hours, minutes, 0);
+
+            // Act & Assert
+            var exception = Assert.Throws<ArgumentOutOfRangeException>(() =>
+                Hl7DateTimeFormatConfig.ToHl7OffsetString(invalidOffset));
+
+            Assert.Equal("offset", exception.ParamName);
+            Assert.Contains("between -12:00 and +14:00", exception.Message);
+        }
+
+        [Fact]
+        public void ToHl7OffsetString_WithNegativeOffset_UsesCorrectTimeSpanConstructor()
+        {
+            // This test demonstrates the correct way to construct negative TimeSpan offsets
+            // For a negative offset like UTC-4:30, both hours and minutes must be negative
+
+            // Correct way 1: Using negative values for both components
+            var offset1 = new TimeSpan(-4, -30, 0);
+            Assert.Equal("-0430", Hl7DateTimeFormatConfig.ToHl7OffsetString(offset1));
+
+            // Correct way 2: Using FromMinutes for clarity
+            var offset2 = TimeSpan.FromMinutes(-270); // -4.5 hours = -270 minutes
+            Assert.Equal("-0430", Hl7DateTimeFormatConfig.ToHl7OffsetString(offset2));
+
+            // Both approaches produce the same result
+            Assert.Equal(offset1, offset2);
         }
 
         [Fact]
