@@ -14,6 +14,8 @@ namespace ClearHl7
         private static string _globalDateTimeFormatOverride = null;
         private static readonly object _timezoneOffsetLock = new object();
         private static TimeSpan _timezoneOffset = TimeSpan.Zero;
+        private static readonly TimeSpan MinTimezoneOffset = TimeSpan.FromHours(-12);
+        private static readonly TimeSpan MaxTimezoneOffset = TimeSpan.FromHours(14);
 
         /// <summary>
         /// Gets or sets the timezone offset to use when serializing DateTime/DateTimeOffset values with timezone information.
@@ -39,7 +41,7 @@ namespace ClearHl7
             set
             {
                 // Validate offset is within typical timezone range: -12:00 to +14:00
-                if (value < TimeSpan.FromHours(-12) || value > TimeSpan.FromHours(14))
+                if (value < MinTimezoneOffset || value > MaxTimezoneOffset)
                 {
                     throw new ArgumentOutOfRangeException(
                         nameof(value),
@@ -190,7 +192,7 @@ namespace ClearHl7
         public static string ToHl7OffsetString(TimeSpan offset)
         {
             // Validate offset is within typical timezone range: -12:00 to +14:00
-            if (offset < TimeSpan.FromHours(-12) || offset > TimeSpan.FromHours(14))
+            if (offset < MinTimezoneOffset || offset > MaxTimezoneOffset)
             {
                 throw new ArgumentOutOfRangeException(
                     nameof(offset),
