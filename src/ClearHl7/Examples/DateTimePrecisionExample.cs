@@ -1,8 +1,7 @@
-using System;
-using ClearHl7;
 using ClearHl7.Extensions;
 using ClearHl7.V251.Segments;
 using ClearHl7.V251.Types;
+using System;
 
 namespace ClearHl7.Examples
 {

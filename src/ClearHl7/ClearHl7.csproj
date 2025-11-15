@@ -9,11 +9,11 @@
     <Summary>.NET HL7® message generation and parsing library for the version 2.x standard</Summary>
     <PackageTags>hl7;hl7-builder;hl7-parser;hl7-message;hl7-generating;hl7-parsing;dotnet;healthcare</PackageTags>
     <Title>ClearHL7</Title>
-    <Description>.NET HL7® message generation and parsing library for the version 2.x standard. Please see important info about changes in V2: https://github.com/davebronson/clear-hl7-net/blob/master/Version2.md </Description>
+    <Description>.NET HL7® message generation and parsing library for the version 2.x standard. Please see important info about changes in V2: https://github.com/davebronson/clear-hl7-net/blob/master/Version2.md</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
-	<VersionPrefix>2.3.0</VersionPrefix>
-    <PackageVersion>2.3.0</PackageVersion>
-	<ReleaseVersion>2.3.0</ReleaseVersion>
+	<VersionPrefix>2.3.1</VersionPrefix>
+    <PackageVersion>2.3.1</PackageVersion>
+	<ReleaseVersion>2.3.1</ReleaseVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackOnBuild>true</PackOnBuild>
     <Owners>Dave Bronson</Owners>
