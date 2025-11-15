@@ -12,6 +12,50 @@ namespace ClearHl7
     {
         private static readonly object _globalOverrideLock = new object();
         private static string _globalDateTimeFormatOverride = null;
+        private static readonly object _timezoneOffsetLock = new object();
+        private static TimeSpan _timezoneOffset = TimeSpan.Zero;
+        private static readonly TimeSpan MinTimezoneOffset = TimeSpan.FromHours(-12);
+        private static readonly TimeSpan MaxTimezoneOffset = TimeSpan.FromHours(14);
+
+        /// <summary>
+        /// Gets or sets the timezone offset to use when serializing DateTime/DateTimeOffset values with timezone information.
+        /// Default is TimeSpan.Zero (UTC, represented as +0000 in HL7 format).
+        /// Set to DateTimeOffset.Now.Offset to use the system's local timezone offset.
+        /// Thread-safe.
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when the value is outside the valid range of -12:00 to +14:00.</exception>
+        /// <remarks>
+        /// Valid timezone offsets typically range from -12:00 (UTC-12) to +14:00 (UTC+14).
+        /// When using TimeSpan constructor with negative offsets, note that for a negative offset like -4 hours 30 minutes,
+        /// you must use new TimeSpan(-4, -30, 0) where both components are negative, or use TimeSpan.FromMinutes(-270) for clarity.
+        /// </remarks>
+        public static TimeSpan TimezoneOffset
+        {
+            get
+            {
+                lock (_timezoneOffsetLock)
+                {
+                    return _timezoneOffset;
+                }
+            }
+            set
+            {
+                // Validate offset is within typical timezone range: -12:00 to +14:00
+                if (value < MinTimezoneOffset || value > MaxTimezoneOffset)
+                {
+                    throw new ArgumentOutOfRangeException(
+                        nameof(value),
+                        value,
+                        "Timezone offset must be between -12:00 and +14:00 hours. " +
+                        $"Provided offset: {value.TotalHours:F2} hours.");
+                }
+
+                lock (_timezoneOffsetLock)
+                {
+                    _timezoneOffset = value;
+                }
+            }
+        }
 
         /// <summary>
         /// Gets or sets the global DateTime format override for all DateTime fields.
@@ -132,6 +176,89 @@ namespace ClearHl7
                     return _globalDateTimeFormatOverride != null;
                 }
             }
+        }
+
+        /// <summary>
+        /// Converts a TimeSpan offset to HL7-compliant offset string format (±HHMM without colon).
+        /// </summary>
+        /// <param name="offset">The timezone offset to convert. Must be between -12:00 and +14:00 hours (typical timezone range).</param>
+        /// <returns>A string in ±HHMM format, e.g., "+0000", "-0500", "+0530".</returns>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when offset is outside the valid range of -12:00 to +14:00.</exception>
+        /// <remarks>
+        /// Valid timezone offsets typically range from -12:00 (UTC-12) to +14:00 (UTC+14).
+        /// When using TimeSpan constructor with negative offsets, note that for a negative offset like -4 hours 30 minutes,
+        /// you must use new TimeSpan(-4, -30, 0) where both components are negative, or use TimeSpan.FromMinutes(-270) for clarity.
+        /// </remarks>
+        public static string ToHl7OffsetString(TimeSpan offset)
+        {
+            // Validate offset is within typical timezone range: -12:00 to +14:00
+            if (offset < MinTimezoneOffset || offset > MaxTimezoneOffset)
+            {
+                throw new ArgumentOutOfRangeException(
+                    nameof(offset),
+                    offset,
+                    "Timezone offset must be between -12:00 and +14:00 hours. " +
+                    $"Provided offset: {offset.TotalHours:F2} hours.");
+            }
+
+            var sign = offset.TotalMinutes >= 0 ? "+" : "-";
+            var absoluteOffset = offset.Duration();
+            var hours = (int)absoluteOffset.TotalHours;
+            var minutes = absoluteOffset.Minutes;
+            return $"{sign}{hours:D2}{minutes:D2}";
+        }
+
+        /// <summary>
+        /// Formats a DateTime using the configured TimezoneOffset.
+        /// The datetime is treated as UTC and converted to the configured timezone, then formatted as yyyyMMddHHmmss±HHMM.
+        /// </summary>
+        /// <param name="dt">The DateTime to format (treated as UTC).</param>
+        /// <returns>An HL7-formatted datetime string with the configured timezone offset.</returns>
+        public static string FormatDateTimeWithConfiguredOffset(DateTime dt)
+        {
+            var dateTimeOffset = new DateTimeOffset(dt, TimeSpan.Zero);
+            return FormatDateTimeWithConfiguredOffset(dateTimeOffset);
+        }
+
+        /// <summary>
+        /// Formats a DateTimeOffset using the configured TimezoneOffset.
+        /// The datetime is converted to the configured timezone and formatted as yyyyMMddHHmmss±HHMM.
+        /// </summary>
+        /// <param name="dt">The DateTimeOffset to format.</param>
+        /// <returns>An HL7-formatted datetime string with the configured timezone offset.</returns>
+        public static string FormatDateTimeWithConfiguredOffset(DateTimeOffset dt)
+        {
+            var configuredOffset = TimezoneOffset;
+            var convertedDt = dt.ToOffset(configuredOffset);
+            var baseString = convertedDt.ToString(Consts.DateTimeFormatPrecisionSecond);
+            var offsetString = ToHl7OffsetString(configuredOffset);
+            return baseString + offsetString;
+        }
+
+        /// <summary>
+        /// Formats a DateTime using the configured TimezoneOffset.
+        /// The datetime is treated as unspecified and the configured timezone offset is applied.
+        /// </summary>
+        /// <param name="dt">The DateTime to format.</param>
+        /// <returns>An HL7-formatted datetime string with the configured timezone offset.</returns>
+        public static string FormatDateTimeUsingSourceOffset(DateTime dt)
+        {
+            var baseString = dt.ToString(Consts.DateTimeFormatPrecisionSecond);
+            var offsetString = ToHl7OffsetString(TimezoneOffset);
+            return baseString + offsetString;
+        }
+
+        /// <summary>
+        /// Formats a DateTimeOffset using its own offset (preserves the source offset).
+        /// The datetime is formatted as yyyyMMddHHmmss±HHMM using dt.Offset.
+        /// </summary>
+        /// <param name="dt">The DateTimeOffset to format.</param>
+        /// <returns>An HL7-formatted datetime string with the source timezone offset.</returns>
+        public static string FormatDateTimeUsingSourceOffset(DateTimeOffset dt)
+        {
+            var baseString = dt.ToString(Consts.DateTimeFormatPrecisionSecond);
+            var offsetString = ToHl7OffsetString(dt.Offset);
+            return baseString + offsetString;
         }
     }
 }
