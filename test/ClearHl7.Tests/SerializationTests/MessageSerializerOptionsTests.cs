@@ -80,10 +80,10 @@ namespace ClearHl7.Tests.SerializationTests
             var message = MessageSerializer.Deserialize<Message>(delimitedString, options);
 
             message.Should().NotBeNull();
-            // Currently skips as CreateGeneric is TODO - warning should be generated
+            // Currently skips as CreateGeneric is not yet implemented - warning should be generated
             options.Warnings.Should().HaveCount(1);
             options.Warnings[0].Type.Should().Be(ParserWarningType.UnknownSegment);
-            options.Warnings[0].Message.Should().Contain("parsed as generic");
+            options.Warnings[0].Message.Should().Contain("not yet implemented");
         }
 
         [Fact]
@@ -218,7 +218,9 @@ namespace ClearHl7.Tests.SerializationTests
 
             MessageSerializer.Deserialize<Message>(delimitedString, options);
 
-            options.Warnings[0].LineNumber.Should().Be(2); // ZZZ is at index 2
+            // LineNumber corresponds to the segment's ordinal position in the parsing loop
+            // MSH is 0, PID is 1, ZZZ is 2
+            options.Warnings[0].LineNumber.Should().Be(2);
         }
 
         [Fact]

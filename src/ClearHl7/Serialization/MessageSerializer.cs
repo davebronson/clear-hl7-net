@@ -243,15 +243,16 @@ namespace ClearHl7.Serialization
 
                 case UnknownSegmentHandling.CreateGeneric:
                     // TODO: Future enhancement - create UnknownSegment instance
+                    // For now, we skip the segment and add a warning
                     options.AddWarning(new ParserWarning
                     {
                         Type = ParserWarningType.UnknownSegment,
                         SegmentId = id,
                         LineNumber = ordinal,
-                        Message = $"Unknown segment '{id}' parsed as generic",
+                        Message = $"Unknown segment '{id}' skipped (CreateGeneric not yet implemented)",
                         RawSegment = segmentString
                     });
-                    return true; // Handled - create generic segment
+                    return true; // Handled - skip for now
 
                 default:
                     return false;
@@ -296,10 +297,12 @@ namespace ClearHl7.Serialization
                         Type = ParserWarningType.MalformedSegment,
                         SegmentId = segmentId,
                         LineNumber = ordinal,
-                        Message = $"Malformed segment parsed with best effort: {reason}",
+                        Message = $"Malformed segment - attempting best effort parse: {reason}",
                         RawSegment = segmentString
                     });
-                    return true; // Handled - attempt parsing
+                    // For BestEffort, we allow parsing to continue
+                    // The segment will be skipped if it's too short to parse
+                    return true; // Handled - continue parsing
 
                 default:
                     return false;
