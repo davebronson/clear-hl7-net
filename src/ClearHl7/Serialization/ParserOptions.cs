@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 
 namespace ClearHl7.Serialization
 {
@@ -42,7 +41,7 @@ namespace ClearHl7.Serialization
         /// Returns an immutable snapshot of the warnings collection.
         /// </summary>
         public IReadOnlyList<ParserWarning> Warnings 
-            => _warnings.ToImmutableList();
+            => Array.AsReadOnly(_warnings.ToArray());
         
         /// <summary>
         /// Clears all collected warnings.  Thread-safe.
