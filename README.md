@@ -68,6 +68,8 @@ HL7 Version 2.x messages consist of a collection of segments, with the MSH segme
 
 ## Example: Building a Message
 Let's build a sample `Message` containing the standard MSH `Segment`, and accompanied by PID, PVI, and Zxx `Segment`s.
+
+> **Note:** The `ZxxSegment` class (generic Z-segment handler) is available across all supported HL7 versions (2.3, 2.31, 2.4, 2.5, 2.51, 2.6, 2.7, 2.71, 2.8, 2.81, 2.82, and 2.9). This example uses V282, but you can use any version namespace.
 ```csharp
 using ClearHl7;
 using ClearHl7.Helpers;
@@ -445,6 +447,8 @@ pidSegment.MultipleBirthIndicator = helper.EnumToCode(CodeYesNoIndicator.No);
 ## Custom Segments
 
 As of version 2.x, clear-hl7-net supports custom HL7 segments through the `SegmentFactory` class. This feature enables you to define and register custom segments (such as Z-segments) that will be automatically recognized during message parsing and serialization.
+
+Additionally, the library provides a generic `ZxxSegment` class that handles any Z-segment (custom segments starting with "Z"). This generic handler is available across all supported HL7 versions (2.3 through 2.9).
 
 ### Quick Start with Custom Segments
 
