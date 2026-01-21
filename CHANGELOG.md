@@ -17,12 +17,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Optional `ParserOptions` parameter on `MessageSerializer.Deserialize<T>()` (backward compatible)
   - New `MessageSerializer.DeserializeWithWarnings<T>()` method
   - Warning collection and event-based notification at both instance and global levels
-  - Thread-safe implementation using `ConcurrentBag<T>` and defensive copying
-
-### Dependencies
-- Added `System.Collections.Immutable` 8.0.0 for immutable warning list snapshots
+  - Thread-safe implementation using `ConcurrentBag<T>` and defensive copying with `Array.AsReadOnly()`
 
 ### Notes
 - Default behavior remains strict (throw on errors) for full backward compatibility
 - No breaking changes - all existing code continues to work unchanged
 - 42 new comprehensive tests added (1037 total tests passing)
+- No external dependencies added - uses built-in .NET types
