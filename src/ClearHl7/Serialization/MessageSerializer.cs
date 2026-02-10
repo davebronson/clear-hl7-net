@@ -52,6 +52,7 @@ namespace ClearHl7.Serialization
         /// </summary>
         /// <typeparam name="T">The target type of the string value.</typeparam>
         /// <param name="delimitedString">A string representation that will be deserialized into the object instance.</param>
+        /// <param name="options">Optional parser options. If null, uses global defaults from ParserConfiguration.</param>
         /// <returns>An instance of type T.</returns>
         /// <exception cref="ArgumentException">
         /// The first segment in delimitedString is not the MSH segment.
@@ -61,12 +62,15 @@ namespace ClearHl7.Serialization
         /// delimitedString contains an incomplete segment string.
         /// </exception>
         /// <exception cref="ArgumentNullException">delimitedString is null.</exception>
-        public static T Deserialize<T>(string delimitedString) where T : class, IMessage
+        public static T Deserialize<T>(string delimitedString, ParserOptions options = null) where T : class, IMessage
         {
             if (string.IsNullOrEmpty(delimitedString))
             {
                 throw new ArgumentNullException(nameof(delimitedString), $"{ nameof(delimitedString) } is null.");
             }
+
+            // Resolve options - use provided or get from global defaults
+            options ??= ParserConfiguration.DefaultOptions;
 
             // Create instance of the Message class
             T item = Activator.CreateInstance<T>();
@@ -105,8 +109,12 @@ namespace ClearHl7.Serialization
 
                 if (segmentString.Length < 3)
                 {
-                    // Segment string is incomplete
-                    throw new ArgumentException($"{ nameof(delimitedString) } contains an incomplete segment string.  '{ segmentString }' is invalid.", nameof(delimitedString));
+                    // Segment string is incomplete - handle based on options
+                    if (!HandleMalformedSegment(segmentString, i, options, "Incomplete segment string"))
+                    {
+                        throw new ArgumentException($"{ nameof(delimitedString) } contains an incomplete segment string.  '{ segmentString }' is invalid.", nameof(delimitedString));
+                    }
+                    continue; // Skip to next segment
                 }
 
                 // Instantiate the segment
@@ -128,15 +136,30 @@ namespace ClearHl7.Serialization
 
                 if (segment == null)
                 {
-                    // Segment string begins with an invalid segment ID
-                    throw new ArgumentException($"{ nameof(delimitedString) } contains a segment string that does not begin with a valid segment ID.  '{ id }' is invalid.", nameof(delimitedString));
+                    // Segment string begins with an invalid segment ID - handle based on options
+                    if (!HandleUnknownSegment(id, segmentString, i, options))
+                    {
+                        throw new ArgumentException($"{ nameof(delimitedString) } contains a segment string that does not begin with a valid segment ID.  '{ id }' is invalid.", nameof(delimitedString));
+                    }
+                    continue; // Skip to next segment
                 }
 
                 // Init segment properties, and add to collection
-                ISegment seg = (ISegment)segment;
-                seg.Ordinal = i;
-                seg.FromDelimitedString(segmentString, seps);
-                list.Add(seg);
+                try
+                {
+                    ISegment seg = (ISegment)segment;
+                    seg.Ordinal = i;
+                    seg.FromDelimitedString(segmentString, seps);
+                    list.Add(seg);
+                }
+                catch (Exception ex)
+                {
+                    if (!HandleSegmentParseError(id, segmentString, i, options, ex))
+                    {
+                        throw; // Re-throw if options say to throw
+                    }
+                    // Otherwise continue parsing
+                }
             }
 
             // Flush segment list
@@ -186,6 +209,172 @@ namespace ClearHl7.Serialization
             }
 
             return Hl7Version.None;
+        }
+
+        /// <summary>
+        /// Handles an unknown segment based on parser options.
+        /// </summary>
+        /// <param name="id">The segment ID.</param>
+        /// <param name="segmentString">The raw segment string.</param>
+        /// <param name="ordinal">The line number/ordinal.</param>
+        /// <param name="options">Parser options.</param>
+        /// <returns>True if the segment was handled (skip/continue), false if should throw.</returns>
+        private static bool HandleUnknownSegment(
+            string id, 
+            string segmentString, 
+            int ordinal, 
+            ParserOptions options)
+        {
+            switch (options.UnknownSegmentHandling)
+            {
+                case UnknownSegmentHandling.Throw:
+                    return false; // Let caller throw exception
+
+                case UnknownSegmentHandling.Skip:
+                    options.AddWarning(new ParserWarning
+                    {
+                        Type = ParserWarningType.UnknownSegment,
+                        SegmentId = id,
+                        LineNumber = ordinal,
+                        Message = $"Unknown segment '{id}' skipped",
+                        RawSegment = segmentString
+                    });
+                    return true; // Handled - skip segment
+
+                case UnknownSegmentHandling.CreateGeneric:
+                    // TODO: Future enhancement - create UnknownSegment instance
+                    // For now, we skip the segment and add a warning
+                    options.AddWarning(new ParserWarning
+                    {
+                        Type = ParserWarningType.UnknownSegment,
+                        SegmentId = id,
+                        LineNumber = ordinal,
+                        Message = $"Unknown segment '{id}' skipped (CreateGeneric not yet implemented)",
+                        RawSegment = segmentString
+                    });
+                    return true; // Handled - skip for now
+
+                default:
+                    return false;
+            }
+        }
+
+        /// <summary>
+        /// Handles a malformed segment based on parser options.
+        /// </summary>
+        /// <param name="segmentString">The raw segment string.</param>
+        /// <param name="ordinal">The line number/ordinal.</param>
+        /// <param name="options">Parser options.</param>
+        /// <param name="reason">The reason the segment is considered malformed.</param>
+        /// <returns>True if the segment was handled (skip/continue), false if should throw.</returns>
+        private static bool HandleMalformedSegment(
+            string segmentString,
+            int ordinal,
+            ParserOptions options,
+            string reason)
+        {
+            string segmentId = segmentString.Length >= 3 ? segmentString.Substring(0, 3) : "???";
+            
+            switch (options.MalformedSegmentHandling)
+            {
+                case MalformedSegmentHandling.Throw:
+                    return false; // Let caller throw exception
+
+                case MalformedSegmentHandling.Skip:
+                    options.AddWarning(new ParserWarning
+                    {
+                        Type = ParserWarningType.MalformedSegment,
+                        SegmentId = segmentId,
+                        LineNumber = ordinal,
+                        Message = $"Malformed segment skipped: {reason}",
+                        RawSegment = segmentString
+                    });
+                    return true; // Handled - skip segment
+
+                case MalformedSegmentHandling.BestEffort:
+                    options.AddWarning(new ParserWarning
+                    {
+                        Type = ParserWarningType.MalformedSegment,
+                        SegmentId = segmentId,
+                        LineNumber = ordinal,
+                        Message = $"Malformed segment - attempting best effort parse: {reason}",
+                        RawSegment = segmentString
+                    });
+                    // For BestEffort, we allow parsing to continue
+                    // The segment will be skipped if it's too short to parse
+                    return true; // Handled - continue parsing
+
+                default:
+                    return false;
+            }
+        }
+
+        /// <summary>
+        /// Handles an error that occurred while parsing a segment.
+        /// </summary>
+        /// <param name="id">The segment ID.</param>
+        /// <param name="segmentString">The raw segment string.</param>
+        /// <param name="ordinal">The line number/ordinal.</param>
+        /// <param name="options">Parser options.</param>
+        /// <param name="ex">The exception that occurred.</param>
+        /// <returns>True if the error was handled (skip/continue), false if should throw.</returns>
+        private static bool HandleSegmentParseError(
+            string id,
+            string segmentString,
+            int ordinal,
+            ParserOptions options,
+            Exception ex)
+        {
+            switch (options.MalformedSegmentHandling)
+            {
+                case MalformedSegmentHandling.Throw:
+                    return false; // Let caller re-throw exception
+
+                case MalformedSegmentHandling.Skip:
+                case MalformedSegmentHandling.BestEffort:
+                    options.AddWarning(new ParserWarning
+                    {
+                        Type = ParserWarningType.ParseError,
+                        SegmentId = id,
+                        LineNumber = ordinal,
+                        Message = $"Error parsing segment '{id}': {ex.Message}",
+                        RawSegment = segmentString,
+                        Exception = ex
+                    });
+                    return true; // Handled - skip or use partial data
+
+                default:
+                    return false;
+            }
+        }
+
+        /// <summary>
+        /// Deserializes an HL7 message and returns the result with collected warnings.
+        /// This method forces warning collection regardless of options settings.
+        /// Thread-safe.
+        /// </summary>
+        /// <typeparam name="T">The message type.</typeparam>
+        /// <param name="delimitedString">The HL7 message string.</param>
+        /// <param name="options">Optional parser options. If null, uses global defaults.</param>
+        /// <returns>A ParseResult containing the message and any warnings.</returns>
+        public static ParseResult<T> DeserializeWithWarnings<T>(
+            string delimitedString, 
+            ParserOptions options = null
+        ) where T : class, IMessage
+        {
+            // Clone options and force warning collection
+            var localOptions = (options ?? ParserConfiguration.DefaultOptions).Clone();
+            localOptions.CollectWarnings = true;
+            
+            // Parse the message
+            var message = Deserialize<T>(delimitedString, localOptions);
+            
+            // Return result with warnings
+            return new ParseResult<T>
+            {
+                Message = message,
+                Warnings = localOptions.Warnings // Already an immutable snapshot
+            };
         }
     }
 }
