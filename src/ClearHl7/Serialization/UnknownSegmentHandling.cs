@@ -17,10 +17,10 @@ namespace ClearHl7.Serialization
         /// </summary>
         Skip = 1,
         
-        /// <summary>
-        /// Create a generic UnknownSegment instance containing the raw segment data.
-        /// A warning is added to the warnings collection if CollectWarnings is true. 
-        /// </summary>
-        CreateGeneric = 2
+        ///// <summary>
+        ///// Create a generic UnknownSegment instance containing the raw segment data.
+        ///// A warning is added to the warnings collection if CollectWarnings is true. 
+        ///// </summary>
+        //CreateGeneric = 2
     }
 }

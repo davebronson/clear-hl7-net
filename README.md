@@ -334,8 +334,7 @@ Controls how the parser handles segments with unknown segment IDs:
 var options = new ParserOptions
 {
     UnknownSegmentHandling = UnknownSegmentHandling.Throw,  // Default - throw exception (strict)
-    // UnknownSegmentHandling = UnknownSegmentHandling.Skip,      // Skip unknown segments
-    // UnknownSegmentHandling = UnknownSegmentHandling.CreateGeneric // Create generic placeholder (future)
+    // UnknownSegmentHandling = UnknownSegmentHandling.Skip      // Skip unknown segments
 };
 ```
 

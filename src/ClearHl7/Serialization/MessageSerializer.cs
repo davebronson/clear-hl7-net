@@ -336,18 +336,19 @@ namespace ClearHl7.Serialization
                     });
                     return true; // Handled - skip segment
 
-                case UnknownSegmentHandling.CreateGeneric:
-                    // TODO: Future enhancement - create UnknownSegment instance
-                    // For now, we skip the segment and add a warning
-                    options.AddWarning(new ParserWarning
-                    {
-                        Type = ParserWarningType.UnknownSegment,
-                        SegmentId = id,
-                        LineNumber = ordinal,
-                        Message = $"Unknown segment '{id}' skipped (CreateGeneric not yet implemented)",
-                        RawSegment = segmentString
-                    });
-                    return true; // Handled - skip for now
+
+                // TODO: Future enhancement - create UnknownSegment instance
+                //case UnknownSegmentHandling.CreateGeneric:
+
+                    //options.AddWarning(new ParserWarning
+                    //{
+                    //    Type = ParserWarningType.UnknownSegment,
+                    //    SegmentId = id,
+                    //    LineNumber = ordinal,
+                    //    Message = $"Unknown segment '{id}' skipped (CreateGeneric not yet implemented)",
+                    //    RawSegment = segmentString
+                    //});
+                    //return true; // Handled - skip for now
 
                 default:
                     return false;
@@ -407,7 +408,7 @@ namespace ClearHl7.Serialization
 
         /// <summary>
         /// Identifies the 1-based index of the first bad field in a partially-parsed segment
-        /// using the "null boundary" technique.  Because <see cref="ISegment.FromDelimitedString"/>
+        /// using the "null boundary" technique.  Because <see cref="ISegment.FromDelimitedString(string)"/>
         /// processes fields sequentially, the number of non-null data properties in
         /// <paramref name="partialSeg"/> equals the number of non-empty fields that were
         /// successfully parsed before the exception was thrown.  The bad field is therefore
