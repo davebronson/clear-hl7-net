@@ -38,6 +38,20 @@ namespace ClearHl7.Serialization
         public Exception Exception { get; set; }
         
         /// <summary>
+        /// Gets or sets the 1-based index of the field within the segment that was blanked during
+        /// best-effort parsing (e.g., 5 means the fifth field after the segment ID, equivalent to
+        /// the 6th pipe-delimited token in the raw segment string).
+        /// Null if the error is not field-specific.
+        /// </summary>
+        public int? FieldIndex { get; set; }
+
+        /// <summary>
+        /// Gets or sets the raw string value of the field that caused the error, before it was blanked during best-effort parsing.
+        /// Null if not applicable.
+        /// </summary>
+        public string RawFieldValue { get; set; }
+
+        /// <summary>
         /// Gets or sets the timestamp when the warning was created.
         /// </summary>
         public DateTime Timestamp { get; set; } = DateTime.UtcNow;

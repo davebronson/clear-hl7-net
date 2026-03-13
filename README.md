@@ -341,15 +341,54 @@ var options = new ParserOptions
 
 #### Malformed Segment Handling
 
-Controls how the parser handles malformed segments (too short, invalid format):
+Controls how the parser handles malformed segments (too short, or throwing during field parsing):
 
 ```csharp
 var options = new ParserOptions
 {
-    MalformedSegmentHandling = MalformedSegmentHandling.Throw,  // Default - throw exception (strict)
-    // MalformedSegmentHandling = MalformedSegmentHandling.Skip,      // Skip malformed segments
-    // MalformedSegmentHandling = MalformedSegmentHandling.BestEffort // Parse what's possible
+    MalformedSegmentHandling = MalformedSegmentHandling.Throw,      // Default - throw exception (strict)
+    // MalformedSegmentHandling = MalformedSegmentHandling.Skip,      // Drop the segment and add a warning
+    // MalformedSegmentHandling = MalformedSegmentHandling.BestEffort // Retry with bad fields blanked one at a time
 };
+```
+
+**`Skip`** — drops the entire segment and records a warning. No segment data is added to the message.
+
+**`BestEffort`** — when a segment throws during parsing, the parser uses the partially-populated segment instance to locate the bad field in **O(1)**. Because `FromDelimitedString` assigns fields strictly in order, the failing field is always the first position where the raw segment has a non-empty value but the corresponding property in the segment object is still `null` — the **null boundary**. The parser blanks exactly that field and retries from scratch with a fresh instance:
+
+- If the retry succeeds, the segment is added to the message with the bad field set to `null` and one warning is emitted.
+- If the retry fails again, the new partial instance reveals the next null boundary. The process repeats, blanking one bad field per iteration, until the segment parses completely.
+- **Five independently bad fields → five warnings**, one per blanked field. Fields before and after the bad ones are fully populated in the recovered segment.
+- If the bad field is already empty in the raw segment (so the null boundary cannot be identified), or no further progress is possible, the segment is dropped and a single warning is emitted without `FieldIndex`/`RawFieldValue` — identical to `Skip`.
+
+Callers using `BestEffort` **must** check `ParserWarning`s — they have explicitly accepted that the message may contain segments with partial data.
+
+```csharp
+var options = new ParserOptions
+{
+    MalformedSegmentHandling = MalformedSegmentHandling.BestEffort,
+    CollectWarnings = true
+};
+
+var result = MessageSerializer.DeserializeWithWarnings<Message>(hl7String, options);
+
+foreach (var warning in result.Warnings)
+{
+    if (warning.FieldIndex.HasValue)
+    {
+        // Field-level recovery succeeded: segment is in the message with this field nulled out.
+        Console.WriteLine(
+            $"Segment {warning.SegmentId} recovered: field {warning.FieldIndex} was blanked " +
+            $"(original value: '{warning.RawFieldValue}'). Full segment: {warning.RawSegment}");
+    }
+    else
+    {
+        // All-fields-failed fallback: segment was dropped entirely.
+        Console.WriteLine(
+            $"Segment {warning.SegmentId} could not be recovered and was dropped. " +
+            $"Full segment: {warning.RawSegment}");
+    }
+}
 ```
 
 #### Warning Collection
@@ -460,8 +499,14 @@ public class ParserWarning
     public string RawSegment { get; set; }             // Original segment string
     public Exception Exception { get; set; }           // Exception if applicable
     public DateTime Timestamp { get; set; }            // When warning occurred
+
+    // Populated only for BestEffort field-level recovery:
+    public int? FieldIndex { get; set; }               // 1-based index of the field that was blanked
+    public string RawFieldValue { get; set; }          // Original value of that field before blanking
 }
 ```
+
+`FieldIndex` and `RawFieldValue` are non-null only when `BestEffort` parsing successfully recovered a segment by blanking a specific field. They are both `null` for `Skip` warnings and for `BestEffort` all-fields-failed fallbacks.
 
 ### Thread Safety
 
