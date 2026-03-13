@@ -404,7 +404,7 @@ var options = new ParserOptions
 
 options.ParserWarning += (sender, e) =>
 {
-    _logger.LogWarning($"Parser warning: {e.Warning.Message}");
+    _logger.LogWarning("Parser warning: {message}", e.Warning.Message);
 };
 
 // Global events
