@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -207,7 +207,7 @@ namespace ClearHl7.V250.Segments
                                 ObservationMethod != null ? string.Join(Configuration.FieldRepeatSeparator, ObservationMethod.Select(x => x.ToDelimitedString())) : null,
                                 EquipmentInstanceIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, EquipmentInstanceIdentifier.Select(x => x.ToDelimitedString())) : null,
                                 DateTimeOfTheAnalysis?.ToHl7DateTimeString(typeof(ObxSegment), nameof(DateTimeOfTheAnalysis), Consts.DateTimeFormatPrecisionSecond, culture)
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -82,7 +82,7 @@ namespace ClearHl7.V251.Segments
                                 Id,
                                 SequenceNumberTestObservationMasterFile.HasValue ? SequenceNumberTestObservationMasterFile.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DerivationRule?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

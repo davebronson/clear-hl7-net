@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -466,7 +466,7 @@ namespace ClearHl7.V271.Segments
                                 InsuredsBirthPlace,
                                 VipIndicator?.ToDelimitedString(),
                                 ExternalHealthPlanIdentifiers != null ? string.Join(Configuration.FieldRepeatSeparator, ExternalHealthPlanIdentifiers.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

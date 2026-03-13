@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -103,7 +103,7 @@ namespace ClearHl7.V240.Segments
                                 DataLine?.ToDelimitedString(),
                                 LogicalBreakPoint,
                                 ResultId?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

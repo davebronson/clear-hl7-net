@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -177,7 +177,7 @@ namespace ClearHl7.V280.Segments
                                 ReimbursementTypeCode?.ToDelimitedString(),
                                 CoPayAmount?.ToDelimitedString(),
                                 PayRatePerServiceUnit.HasValue ? PayRatePerServiceUnit.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

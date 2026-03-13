@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -147,7 +147,7 @@ namespace ClearHl7.V271.Segments
                                 ContactForStudy != null ? string.Join(Configuration.FieldRepeatSeparator, ContactForStudy.Select(x => x.ToDelimitedString())) : null,
                                 ContactsTelephoneNumber?.ToDelimitedString(),
                                 ContactsAddress != null ? string.Join(Configuration.FieldRepeatSeparator, ContactsAddress.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

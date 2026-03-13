@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -258,7 +258,7 @@ namespace ClearHl7.V282.Segments
                                 TreatingOrganizationalUnit != null ? string.Join(Configuration.FieldRepeatSeparator, TreatingOrganizationalUnit.Select(x => x.ToDelimitedString())) : null,
                                 RespiratoryWithinSurgery,
                                 ParentProcedureId?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -271,7 +271,7 @@ namespace ClearHl7.V260.Segments
                                 PharmacyOrderType,
                                 AdministerAt?.ToDelimitedString(),
                                 AdministeredAtAddress?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -195,7 +195,7 @@ namespace ClearHl7.V290.Segments
                                 DateTimeEndedStudy?.ToHl7DateTimeString(typeof(CsrSegment), nameof(DateTimeEndedStudy), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ReasonEndedStudy?.ToDelimitedString(),
                                 ActionCode
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

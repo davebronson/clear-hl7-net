@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -499,7 +499,7 @@ namespace ClearHl7.V282.Segments
                                 TypicalTurnAroundTimeWithUnits?.ToDelimitedString(),
                                 GenderRestriction != null ? string.Join(Configuration.FieldRepeatSeparator, GenderRestriction.Select(x => x.ToDelimitedString())) : null,
                                 AgeRestriction != null ? string.Join(Configuration.FieldRepeatSeparator, AgeRestriction.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

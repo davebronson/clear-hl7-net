@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -114,7 +114,7 @@ namespace ClearHl7.V250.Segments
                                 EnteredDateTime?.ToHl7DateTimeString(typeof(MfiSegment), nameof(EnteredDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 EffectiveDateTime?.ToHl7DateTimeString(typeof(MfiSegment), nameof(EffectiveDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ResponseLevelCode
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

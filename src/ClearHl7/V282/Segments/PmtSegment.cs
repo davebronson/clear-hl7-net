@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -153,7 +153,7 @@ namespace ClearHl7.V282.Segments
                                 PayeeBankAccountId?.ToDelimitedString(),
                                 PaymentOrganization?.ToDelimitedString(),
                                 EsrCodeLine
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

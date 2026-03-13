@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -253,7 +253,7 @@ namespace ClearHl7.V281.Segments
                                 ConfirmationProvidedBy,
                                 PrimaryObserverAwareDateTime?.ToHl7DateTimeString(typeof(PeoSegment), nameof(PrimaryObserverAwareDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 PrimaryObserversIdentityMayBeDivulged
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

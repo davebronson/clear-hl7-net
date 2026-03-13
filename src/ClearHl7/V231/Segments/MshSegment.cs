@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using ClearHl7.Extensions;
@@ -243,7 +243,7 @@ namespace ClearHl7.V231.Segments
                                 CharacterSet != null ? string.Join(Configuration.FieldRepeatSeparator, CharacterSet) : null,
                                 PrincipalLanguageOfMessage?.ToDelimitedString(),
                                 AlternateCharacterSetHandlingScheme
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

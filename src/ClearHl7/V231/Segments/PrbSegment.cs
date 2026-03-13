@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -246,7 +246,7 @@ namespace ClearHl7.V231.Segments
                                 IndividualAwarenessOfPrognosis?.ToDelimitedString(),
                                 FamilySignificantOtherAwarenessOfProblemPrognosis,
                                 SecuritySensitivity?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

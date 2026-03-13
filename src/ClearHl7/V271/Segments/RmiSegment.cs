@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -91,7 +91,7 @@ namespace ClearHl7.V271.Segments
                                 RiskManagementIncidentCode?.ToDelimitedString(),
                                 DateTimeIncident?.ToHl7DateTimeString(typeof(RmiSegment), nameof(DateTimeIncident), Consts.DateTimeFormatPrecisionSecond, culture),
                                 IncidentTypeCode?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

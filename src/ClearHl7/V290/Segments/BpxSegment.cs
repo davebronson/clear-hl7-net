@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -232,7 +232,7 @@ namespace ClearHl7.V290.Segments
                                 BpDispensedToReceiver?.ToDelimitedString(),
                                 BpDispensingIndividual?.ToDelimitedString(),
                                 ActionCode
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -349,7 +349,7 @@ namespace ClearHl7.V290.Segments
                                 OrderStatusDateRange?.ToDelimitedString(),
                                 OrderCreationDateTime?.ToHl7DateTimeString(typeof(OrcSegment), nameof(OrderCreationDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 FillerOrderGroupNumber?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

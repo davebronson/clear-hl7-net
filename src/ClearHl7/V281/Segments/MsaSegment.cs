@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -124,7 +124,7 @@ namespace ClearHl7.V281.Segments
                                 ErrorCondition,
                                 MessageWaitingNumber.HasValue ? MessageWaitingNumber.Value.ToString(Consts.NumericFormat, culture) : null,
                                 MessageWaitingPriority
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

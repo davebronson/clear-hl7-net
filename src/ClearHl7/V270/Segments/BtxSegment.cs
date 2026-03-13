@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -208,7 +208,7 @@ namespace ClearHl7.V270.Segments
                                 BpTransfusionEndDateTimeOfStatus?.ToHl7DateTimeString(typeof(BtxSegment), nameof(BpTransfusionEndDateTimeOfStatus), Consts.DateTimeFormatPrecisionSecond, culture),
                                 BpAdverseReactionType != null ? string.Join(Configuration.FieldRepeatSeparator, BpAdverseReactionType.Select(x => x.ToDelimitedString())) : null,
                                 BpTransfusionInterruptedReason?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

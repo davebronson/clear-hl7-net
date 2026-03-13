@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -123,7 +123,7 @@ namespace ClearHl7.V281.Segments
                                 PriorVisitNumber?.ToDelimitedString(),
                                 PriorAlternateVisitId != null ? string.Join(Configuration.FieldRepeatSeparator, PriorAlternateVisitId.Select(x => x.ToDelimitedString())) : null,
                                 PriorPatientName != null ? string.Join(Configuration.FieldRepeatSeparator, PriorPatientName.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -124,7 +124,7 @@ namespace ClearHl7.V282.Segments
                                 ModifyIndicator,
                                 SortByField != null ? string.Join(Configuration.FieldRepeatSeparator, SortByField.Select(x => x.ToDelimitedString())) : null,
                                 SegmentGroupInclusion != null ? string.Join(Configuration.FieldRepeatSeparator, SegmentGroupInclusion) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

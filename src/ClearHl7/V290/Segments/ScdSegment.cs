@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -341,7 +341,7 @@ namespace ClearHl7.V290.Segments
                                 DilutionFactor?.ToDelimitedString(),
                                 FillTime?.ToDelimitedString(),
                                 InletTemperature?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

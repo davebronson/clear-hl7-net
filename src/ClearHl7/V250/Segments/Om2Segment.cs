@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -140,7 +140,7 @@ namespace ClearHl7.V250.Segments
                                 AbsoluteRangeForOrdinalAndContinuousObservations?.ToDelimitedString(),
                                 DeltaCheckCriteria != null ? string.Join(Configuration.FieldRepeatSeparator, DeltaCheckCriteria.Select(x => x.ToDelimitedString())) : null,
                                 MinimumMeaningfulIncrements.HasValue ? MinimumMeaningfulIncrements.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -229,7 +229,7 @@ namespace ClearHl7.V250.Segments
                                 AttestationDateTime?.ToHl7DateTimeString(typeof(Dg1Segment), nameof(AttestationDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 DiagnosisIdentifier?.ToDelimitedString(),
                                 DiagnosisActionCode
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

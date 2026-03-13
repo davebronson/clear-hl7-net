@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -274,7 +274,7 @@ namespace ClearHl7.V290.Segments
                                 AgreedDueDateTime?.ToHl7DateTimeString(typeof(TxaSegment), nameof(AgreedDueDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 CreatingFacility?.ToDelimitedString(),
                                 CreatingSpecialty?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

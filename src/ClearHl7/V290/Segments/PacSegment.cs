@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -137,7 +137,7 @@ namespace ClearHl7.V290.Segments
                                 PackageHandlingCode != null ? string.Join(Configuration.FieldRepeatSeparator, PackageHandlingCode.Select(x => x.ToDelimitedString())) : null,
                                 PackageRiskCode != null ? string.Join(Configuration.FieldRepeatSeparator, PackageRiskCode.Select(x => x.ToDelimitedString())) : null,
                                 ActionCode
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

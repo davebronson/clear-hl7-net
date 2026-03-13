@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -316,7 +316,7 @@ namespace ClearHl7.V290.Segments
                                 GiveTagIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, GiveTagIdentifier.Select(x => x.ToDelimitedString())) : null,
                                 DispenseAmount.HasValue ? DispenseAmount.Value.ToString(Consts.NumericFormat, culture) : null,
                                 DispenseUnits?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

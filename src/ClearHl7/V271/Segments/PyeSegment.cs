@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -120,7 +120,7 @@ namespace ClearHl7.V271.Segments
                                 PayeePersonName?.ToDelimitedString(),
                                 PayeeAddress?.ToDelimitedString(),
                                 PaymentMethod?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

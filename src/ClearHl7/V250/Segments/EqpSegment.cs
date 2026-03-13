@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -104,7 +104,7 @@ namespace ClearHl7.V250.Segments
                                 StartDateTime?.ToHl7DateTimeString(typeof(EqpSegment), nameof(StartDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 EndDateTime?.ToHl7DateTimeString(typeof(EqpSegment), nameof(EndDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 TransactionData
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

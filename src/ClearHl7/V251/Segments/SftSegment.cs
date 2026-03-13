@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -110,7 +110,7 @@ namespace ClearHl7.V251.Segments
                                 SoftwareBinaryId,
                                 SoftwareProductInformation?.ToDelimitedString(),
                                 SoftwareInstallDate?.ToHl7DateTimeString(typeof(SftSegment), nameof(SoftwareInstallDate), Consts.DateTimeFormatPrecisionSecond, culture)
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

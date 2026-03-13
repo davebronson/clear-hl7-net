@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Helpers;
 using ClearHl7.Serialization;
@@ -104,7 +104,7 @@ namespace ClearHl7.V282.Segments
                                 OverrideComments?.ToDelimitedString(),
                                 OverrideEnteredBy?.ToDelimitedString(),
                                 OverrideAuthorizedBy?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

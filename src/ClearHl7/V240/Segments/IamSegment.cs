@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using ClearHl7.Extensions;
@@ -216,7 +216,7 @@ namespace ClearHl7.V240.Segments
                                 StatusedByPerson?.ToDelimitedString(),
                                 StatusedByOrganization?.ToDelimitedString(),
                                 StatusedAtDateTime?.ToHl7DateTimeString(typeof(IamSegment), nameof(StatusedAtDateTime), Consts.DateTimeFormatPrecisionSecond, culture)
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

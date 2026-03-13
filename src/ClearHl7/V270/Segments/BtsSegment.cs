@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -89,7 +89,7 @@ namespace ClearHl7.V270.Segments
                                 BatchMessageCount,
                                 BatchComment,
                                 BatchTotals != null ? string.Join(Configuration.FieldRepeatSeparator, BatchTotals.Select(x => x.ToString(Consts.NumericFormat, culture))) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

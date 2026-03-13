@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using ClearHl7.Extensions;
@@ -286,7 +286,7 @@ namespace ClearHl7.V271.Segments
                                 InitiallyRecordedByOrganization?.ToDelimitedString(),
                                 ModifiedByOrganization?.ToDelimitedString(),
                                 InactivatedByOrganization?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

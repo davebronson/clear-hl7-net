@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using ClearHl7.Extensions;
@@ -106,7 +106,7 @@ namespace ClearHl7.V240.Segments
                                 ResponseRequired,
                                 RequestedCompletionTime?.ToDelimitedString(),
                                 Parameters != null ? string.Join(Configuration.FieldRepeatSeparator, Parameters) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

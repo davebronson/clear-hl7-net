@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using ClearHl7.Extensions;
@@ -91,7 +91,7 @@ namespace ClearHl7.V240.Segments
                                 CommandResponse?.ToDelimitedString(),
                                 DateTimeCompleted?.ToHl7DateTimeString(typeof(EcrSegment), nameof(DateTimeCompleted), Consts.DateTimeFormatPrecisionSecond, culture),
                                 CommandResponseParameters != null ? string.Join(Configuration.FieldRepeatSeparator, CommandResponseParameters) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

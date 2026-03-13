@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -385,7 +385,7 @@ namespace ClearHl7.V260.Segments
                                 DeliverToPatientLocation?.ToDelimitedString(),
                                 DeliverToAddress?.ToDelimitedString(),
                                 PharmacyOrderType
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

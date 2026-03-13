@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -136,7 +136,7 @@ namespace ClearHl7.V280.Segments
                                 LicenseNumber != null ? string.Join(Configuration.FieldRepeatSeparator, LicenseNumber.Select(x => x.ToDelimitedString())) : null,
                                 LocationEquipment != null ? string.Join(Configuration.FieldRepeatSeparator, LocationEquipment.Select(x => x.ToDelimitedString())) : null,
                                 LocationServiceCode?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

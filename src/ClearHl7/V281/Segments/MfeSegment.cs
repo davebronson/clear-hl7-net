@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using ClearHl7.Extensions;
@@ -120,7 +120,7 @@ namespace ClearHl7.V281.Segments
                                 PrimaryKeyValueType != null ? string.Join(Configuration.FieldRepeatSeparator, PrimaryKeyValueType) : null,
                                 EnteredDateTime?.ToHl7DateTimeString(typeof(MfeSegment), nameof(EnteredDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 EnteredBy?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

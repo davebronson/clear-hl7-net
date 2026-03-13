@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -154,7 +154,7 @@ namespace ClearHl7.V231.Segments
                                 SignatureAuthorityTitle,
                                 SignatureAuthorityAddress != null ? string.Join(Configuration.FieldRepeatSeparator, SignatureAuthorityAddress.Select(x => x.ToDelimitedString())) : null,
                                 SignatureAuthorityTelecommunication?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

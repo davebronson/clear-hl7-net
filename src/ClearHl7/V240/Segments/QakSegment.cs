@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -112,7 +112,7 @@ namespace ClearHl7.V240.Segments
                                 HitCountTotal.HasValue ? HitCountTotal.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ThisPayload.HasValue ? ThisPayload.Value.ToString(Consts.NumericFormat, culture) : null,
                                 HitsRemaining.HasValue ? HitsRemaining.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

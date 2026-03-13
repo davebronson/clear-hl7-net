@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using ClearHl7.Extensions;
@@ -135,7 +135,7 @@ namespace ClearHl7.V230.Segments
                                 RuWhichDateTimeStatusQualifier != null ? string.Join(Configuration.FieldRepeatSeparator, RuWhichDateTimeStatusQualifier) : null,
                                 RuDateTimeSelectionQualifier != null ? string.Join(Configuration.FieldRepeatSeparator, RuDateTimeSelectionQualifier) : null,
                                 RuQuantityTimingQualifier?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

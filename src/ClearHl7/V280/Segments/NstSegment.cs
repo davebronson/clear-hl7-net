@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -173,7 +173,7 @@ namespace ClearHl7.V280.Segments
                                 ConnectTimeouts.HasValue ? ConnectTimeouts.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ReceiveTimeouts.HasValue ? ReceiveTimeouts.Value.ToString(Consts.NumericFormat, culture) : null,
                                 ApplicationControlLevelErrors.HasValue ? ApplicationControlLevelErrors.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

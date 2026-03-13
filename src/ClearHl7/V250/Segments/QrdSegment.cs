@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -160,7 +160,7 @@ namespace ClearHl7.V250.Segments
                                 WhatDepartmentDataCode != null ? string.Join(Configuration.FieldRepeatSeparator, WhatDepartmentDataCode.Select(x => x.ToDelimitedString())) : null,
                                 WhatDataCodeValueQual != null ? string.Join(Configuration.FieldRepeatSeparator, WhatDataCodeValueQual.Select(x => x.ToDelimitedString())) : null,
                                 QueryResultsLevel
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

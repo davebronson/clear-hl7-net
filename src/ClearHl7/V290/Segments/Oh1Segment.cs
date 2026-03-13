@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -118,7 +118,7 @@ namespace ClearHl7.V290.Segments
                                 EmploymentStatusEndDate?.ToHl7DateTimeString(typeof(Oh1Segment), nameof(EmploymentStatusEndDate), Consts.DateFormatPrecisionDay, culture),
                                 EnteredDate?.ToHl7DateTimeString(typeof(Oh1Segment), nameof(EnteredDate), Consts.DateFormatPrecisionDay, culture),
                                 EmploymentStatusUniqueIdentifier?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -459,7 +459,7 @@ namespace ClearHl7.V250.Segments
                                 SignatureCodeDate?.ToHl7DateTimeString(typeof(In1Segment), nameof(SignatureCodeDate), Consts.DateFormatPrecisionDay, culture),
                                 InsuredsBirthPlace,
                                 VipIndicator
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

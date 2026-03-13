@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Helpers;
 using ClearHl7.Serialization;
@@ -82,7 +82,7 @@ namespace ClearHl7.V281.Segments
                                 Id,
                                 QueryTag,
                                 MessageQueryName?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

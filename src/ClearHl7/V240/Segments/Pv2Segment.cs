@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -425,7 +425,7 @@ namespace ClearHl7.V240.Segments
                                 AdvanceDirectiveCode != null ? string.Join(Configuration.FieldRepeatSeparator, AdvanceDirectiveCode.Select(x => x.ToDelimitedString())) : null,
                                 PatientStatusEffectiveDate?.ToHl7DateTimeString(typeof(Pv2Segment), nameof(PatientStatusEffectiveDate), Consts.DateFormatPrecisionDay, culture),
                                 ExpectedLoaReturnDateTime?.ToHl7DateTimeString(typeof(Pv2Segment), nameof(ExpectedLoaReturnDateTime), Consts.DateTimeFormatPrecisionSecond, culture)
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

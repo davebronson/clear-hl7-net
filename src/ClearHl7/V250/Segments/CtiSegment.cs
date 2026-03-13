@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Helpers;
 using ClearHl7.Serialization;
@@ -88,7 +88,7 @@ namespace ClearHl7.V250.Segments
                                 SponsorStudyId?.ToDelimitedString(),
                                 StudyPhaseIdentifier?.ToDelimitedString(),
                                 StudyScheduledTimePoint?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

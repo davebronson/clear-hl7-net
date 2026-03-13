@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -295,7 +295,7 @@ namespace ClearHl7.V251.Segments
                                 OrderType?.ToDelimitedString(),
                                 EntererAuthorizationMode?.ToDelimitedString(),
                                 ParentUniversalServiceIdentifier?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

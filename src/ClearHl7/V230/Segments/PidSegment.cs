@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -291,7 +291,7 @@ namespace ClearHl7.V230.Segments
                                 Nationality?.ToDelimitedString(),
                                 PatientDeathDateAndTime?.ToHl7DateTimeString(typeof(PidSegment), nameof(PatientDeathDateAndTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 PatientDeathIndicator
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

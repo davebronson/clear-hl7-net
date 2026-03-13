@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -88,18 +88,18 @@ namespace ClearHl7.V230.Types
         public string ToDelimitedString()
         {
             CultureInfo culture = CultureInfo.CurrentCulture;
-            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            char[] separatorCharArray = IsSubcomponent ? Configuration.SubcomponentSeparatorCharArray : Configuration.ComponentSeparatorCharArray;
 
             return string.Format(
                                 culture,
-                                StringHelper.StringFormatSequence(0, 6, separator),
+                                StringHelper.StringFormatSequence(0, 6, IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator),
                                 ChannelIdentifier?.ToDelimitedString(),
                                 WaveformSource?.ToDelimitedString(),
                                 ChannelSensitivityAndUnits?.ToDelimitedString(),
                                 ChannelCalibrationParameters?.ToDelimitedString(),
                                 ChannelSamplingFrequency.HasValue ? ChannelSamplingFrequency.Value.ToString(Consts.NumericFormat, culture) : null,
                                 MinimumAndMaximumDataValues?.ToDelimitedString()
-                                ).TrimEnd(separator.ToCharArray());
+                                ).TrimEnd(separatorCharArray);
         }
     }
 }

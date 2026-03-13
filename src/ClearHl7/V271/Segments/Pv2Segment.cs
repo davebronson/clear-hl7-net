@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -447,7 +447,7 @@ namespace ClearHl7.V271.Segments
                                 ExpectedPreAdmissionTestingDateTime?.ToHl7DateTimeString(typeof(Pv2Segment), nameof(ExpectedPreAdmissionTestingDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 NotifyClergyCode != null ? string.Join(Configuration.FieldRepeatSeparator, NotifyClergyCode.Select(x => x.ToDelimitedString())) : null,
                                 AdvanceDirectiveLastVerifiedDate?.ToHl7DateTimeString(typeof(Pv2Segment), nameof(AdvanceDirectiveLastVerifiedDate), Consts.DateFormatPrecisionDay, culture)
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -105,7 +105,7 @@ namespace ClearHl7.V240.Segments
                                 ProfessionalOrganizationAddress?.ToDelimitedString(),
                                 ProfessionalOrganizationAffiliationDateRange != null ? string.Join(Configuration.FieldRepeatSeparator, ProfessionalOrganizationAffiliationDateRange.Select(x => x.ToDelimitedString())) : null,
                                 ProfessionalAffiliationAdditionalInformation
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -119,7 +119,7 @@ namespace ClearHl7.V270.Segments
                                 Price?.ToDelimitedString(),
                                 FutureItemPrice?.ToDelimitedString(),
                                 FutureItemPriceEffectiveDate?.ToHl7DateTimeString(typeof(PkgSegment), nameof(FutureItemPriceEffectiveDate), Consts.DateTimeFormatPrecisionSecond, culture)
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

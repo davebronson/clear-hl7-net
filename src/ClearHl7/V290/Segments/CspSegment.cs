@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -97,7 +97,7 @@ namespace ClearHl7.V290.Segments
                                 DateTimeStudyPhaseBegan?.ToHl7DateTimeString(typeof(CspSegment), nameof(DateTimeStudyPhaseBegan), Consts.DateTimeFormatPrecisionSecond, culture),
                                 DateTimeStudyPhaseEnded?.ToHl7DateTimeString(typeof(CspSegment), nameof(DateTimeStudyPhaseEnded), Consts.DateTimeFormatPrecisionSecond, culture),
                                 StudyPhaseEvaluability?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

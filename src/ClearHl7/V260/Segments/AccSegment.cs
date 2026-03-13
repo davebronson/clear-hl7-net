@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -150,7 +150,7 @@ namespace ClearHl7.V260.Segments
                                 BroughtInBy,
                                 PoliceNotifiedIndicator,
                                 AccidentAddress?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

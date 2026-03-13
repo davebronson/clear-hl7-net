@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -98,7 +98,7 @@ namespace ClearHl7.V230.Segments
                                 ScheduledTimePoint?.ToDelimitedString(),
                                 DescriptionOfTimePoint,
                                 EventsScheduledThisTimePoint != null ? string.Join(Configuration.FieldRepeatSeparator, EventsScheduledThisTimePoint.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

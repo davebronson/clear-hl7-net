@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -262,7 +262,7 @@ namespace ClearHl7.V231.Segments
                                 AutoInsExpires?.ToHl7DateTimeString(typeof(StfSegment), nameof(AutoInsExpires), Consts.DateFormatPrecisionDay, culture),
                                 DateLastDmvReview?.ToHl7DateTimeString(typeof(StfSegment), nameof(DateLastDmvReview), Consts.DateFormatPrecisionDay, culture),
                                 DateNextDmvReview?.ToHl7DateTimeString(typeof(StfSegment), nameof(DateNextDmvReview), Consts.DateFormatPrecisionDay, culture)
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

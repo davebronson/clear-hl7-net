@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -440,7 +440,7 @@ namespace ClearHl7.V251.Segments
                                 ExpectedLoaReturnDateTime?.ToHl7DateTimeString(typeof(Pv2Segment), nameof(ExpectedLoaReturnDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ExpectedPreAdmissionTestingDateTime?.ToHl7DateTimeString(typeof(Pv2Segment), nameof(ExpectedPreAdmissionTestingDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 NotifyClergyCode != null ? string.Join(Configuration.FieldRepeatSeparator, NotifyClergyCode) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

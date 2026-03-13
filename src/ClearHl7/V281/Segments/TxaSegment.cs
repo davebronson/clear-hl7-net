@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -258,7 +258,7 @@ namespace ClearHl7.V281.Segments
                                 FolderAssignment != null ? string.Join(Configuration.FieldRepeatSeparator, FolderAssignment.Select(x => x.ToDelimitedString())) : null,
                                 DocumentTitle != null ? string.Join(Configuration.FieldRepeatSeparator, DocumentTitle) : null,
                                 AgreedDueDateTime?.ToHl7DateTimeString(typeof(TxaSegment), nameof(AgreedDueDateTime), Consts.DateTimeFormatPrecisionSecond, culture)
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -296,7 +296,7 @@ namespace ClearHl7.V290.Segments
                                 RevocationDate?.ToHl7DateTimeString(typeof(CerSegment), nameof(RevocationDate), Consts.DateTimeFormatPrecisionSecond, culture),
                                 RevocationReasonCode?.ToDelimitedString(),
                                 CertificateStatusCode?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

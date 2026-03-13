@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -321,7 +321,7 @@ namespace ClearHl7.V280.Segments
                                 DispenseType?.ToDelimitedString(),
                                 PharmacyPhoneNumber != null ? string.Join(Configuration.FieldRepeatSeparator, PharmacyPhoneNumber.Select(x => x.ToDelimitedString())) : null,
                                 DispenseTagIdentifier != null ? string.Join(Configuration.FieldRepeatSeparator, DispenseTagIdentifier.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

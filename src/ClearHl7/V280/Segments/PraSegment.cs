@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -161,7 +161,7 @@ namespace ClearHl7.V280.Segments
                                 DateLeftPractice?.ToHl7DateTimeString(typeof(PraSegment), nameof(DateLeftPractice), Consts.DateFormatPrecisionDay, culture),
                                 GovernmentReimbursementBillingEligibility != null ? string.Join(Configuration.FieldRepeatSeparator, GovernmentReimbursementBillingEligibility.Select(x => x.ToDelimitedString())) : null,
                                 SetIdPra.HasValue ? SetIdPra.Value.ToString(culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

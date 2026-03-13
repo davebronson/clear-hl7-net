@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -110,7 +110,7 @@ namespace ClearHl7.V250.Segments
                                 EndingNotificationDateTime?.ToHl7DateTimeString(typeof(CnsSegment), nameof(EndingNotificationDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 StartingNotificationCode?.ToDelimitedString(),
                                 EndingNotificationCode?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

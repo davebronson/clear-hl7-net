@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -310,7 +310,7 @@ namespace ClearHl7.V271.Segments
                                 AccessionId != null ? string.Join(Configuration.FieldRepeatSeparator, AccessionId.Select(x => x.ToDelimitedString())) : null,
                                 OtherSpecimenId != null ? string.Join(Configuration.FieldRepeatSeparator, OtherSpecimenId.Select(x => x.ToDelimitedString())) : null,
                                 ShipmentId?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

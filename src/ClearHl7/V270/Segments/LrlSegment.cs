@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -113,7 +113,7 @@ namespace ClearHl7.V270.Segments
                                 LocationRelationshipId?.ToDelimitedString(),
                                 OrganizationalLocationRelationshipValue != null ? string.Join(Configuration.FieldRepeatSeparator, OrganizationalLocationRelationshipValue.Select(x => x.ToDelimitedString())) : null,
                                 PatientLocationRelationshipValue?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

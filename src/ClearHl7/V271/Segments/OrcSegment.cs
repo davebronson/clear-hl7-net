@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -309,7 +309,7 @@ namespace ClearHl7.V271.Segments
                                 ParentUniversalServiceIdentifier?.ToDelimitedString(),
                                 AdvancedBeneficiaryNoticeDate?.ToHl7DateTimeString(typeof(OrcSegment), nameof(AdvancedBeneficiaryNoticeDate), Consts.DateFormatPrecisionDay, culture),
                                 AlternatePlacerOrderNumber != null ? string.Join(Configuration.FieldRepeatSeparator, AlternatePlacerOrderNumber.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

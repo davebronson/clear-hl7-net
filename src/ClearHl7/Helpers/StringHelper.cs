@@ -1,4 +1,5 @@
-﻿using System.Linq;
+using System.Collections.Concurrent;
+using System.Text;
 
 namespace ClearHl7.Helpers
 {
@@ -7,6 +8,13 @@ namespace ClearHl7.Helpers
     /// </summary>
     public class StringHelper
     {
+        // Keyed by (start, count, separator). The output is purely deterministic for any given
+        // triple, so we build it once and cache it for the lifetime of the process.
+        // This eliminates both the repeated Enumerable.Range allocation AND the per-integer
+        // boxing that $"{{{x}}}" caused (string interpolation boxes int to object).
+        private static readonly ConcurrentDictionary<(int Start, int Count, string Separator), string>
+            _formatSequenceCache = new ConcurrentDictionary<(int, int, string), string>();
+
         /// <summary>
         /// Generates a custom string containing a sequence of placeholders for the .NET String.Format() method, using the given separator.
         /// </summary>
@@ -22,7 +30,30 @@ namespace ClearHl7.Helpers
         /// </remarks>
         public static string StringFormatSequence(int start, int count, string separator)
         {
-            return string.Join(separator, Enumerable.Range(start, count).Select(x => $"{{{ x }}}"));
+            return _formatSequenceCache.GetOrAdd((start, count, separator), static key =>
+            {
+                // Build without boxing: ToString() on int does not allocate a boxed object.
+                var sb = new StringBuilder(key.Count * (3 + key.Separator.Length));
+                int end = key.Start + key.Count;
+                for (int i = key.Start; i < end; i++)
+                {
+                    if (i > key.Start) sb.Append(key.Separator);
+                    sb.Append('{');
+                    sb.Append(i.ToString());
+                    sb.Append('}');
+                }
+                return sb.ToString();
+            });
+        }
+
+        /// <summary>
+        /// Clears the <see cref="StringFormatSequence"/> cache.
+        /// Called automatically by <see cref="Configuration.FieldSeparator"/> when the separator
+        /// is changed at runtime so stale format strings are never reused.
+        /// </summary>
+        public static void InvalidateFormatSequenceCache()
+        {
+            _formatSequenceCache.Clear();
         }
 
         /// <summary>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -126,7 +126,7 @@ namespace ClearHl7.V290.Segments
                                 StartYear?.ToHl7DateTimeString(typeof(Oh3Segment), nameof(StartYear), Consts.DateFormatPrecisionDay, culture),
                                 EnteredDate?.ToHl7DateTimeString(typeof(Oh3Segment), nameof(EnteredDate), Consts.DateFormatPrecisionDay, culture),
                                 WorkUniqueIdentifier?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }
