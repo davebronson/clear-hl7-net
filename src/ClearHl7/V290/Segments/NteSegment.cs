@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -136,7 +136,7 @@ namespace ClearHl7.V290.Segments
                                 EffectiveStartDate?.ToHl7DateTimeString(typeof(NteSegment), nameof(EffectiveStartDate), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ExpirationDate?.ToHl7DateTimeString(typeof(NteSegment), nameof(ExpirationDate), Consts.DateTimeFormatPrecisionSecond, culture),
                                 CodedComment != null ? string.Join(Configuration.FieldRepeatSeparator, CodedComment.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

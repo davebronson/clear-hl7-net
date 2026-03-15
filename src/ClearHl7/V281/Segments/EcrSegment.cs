@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -92,7 +92,7 @@ namespace ClearHl7.V281.Segments
                                 CommandResponse?.ToDelimitedString(),
                                 DateTimeCompleted?.ToHl7DateTimeString(typeof(EcrSegment), nameof(DateTimeCompleted), Consts.DateTimeFormatPrecisionSecond, culture),
                                 CommandResponseParameters != null ? string.Join(Configuration.FieldRepeatSeparator, CommandResponseParameters.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

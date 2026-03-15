@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -111,7 +111,7 @@ namespace ClearHl7.V240.Segments
                                 PathwayEstablishedDateTime?.ToHl7DateTimeString(typeof(PthSegment), nameof(PathwayEstablishedDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 PathwayLifeCycleStatus?.ToDelimitedString(),
                                 ChangePathwayLifeCycleStatusDateTime?.ToHl7DateTimeString(typeof(PthSegment), nameof(ChangePathwayLifeCycleStatusDateTime), Consts.DateTimeFormatPrecisionSecond, culture)
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

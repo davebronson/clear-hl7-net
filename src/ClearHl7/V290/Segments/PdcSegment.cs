@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -179,7 +179,7 @@ namespace ClearHl7.V290.Segments
                                 ExpectedShelfLife?.ToDelimitedString(),
                                 DateFirstMarketed?.ToHl7DateTimeString(typeof(PdcSegment), nameof(DateFirstMarketed), Consts.DateTimeFormatPrecisionSecond, culture),
                                 DateLastMarketed?.ToHl7DateTimeString(typeof(PdcSegment), nameof(DateLastMarketed), Consts.DateTimeFormatPrecisionSecond, culture)
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

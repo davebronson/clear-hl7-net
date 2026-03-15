@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -317,7 +317,7 @@ namespace ClearHl7.V280.Segments
                                 AdvancedBeneficiaryNoticeDate?.ToHl7DateTimeString(typeof(OrcSegment), nameof(AdvancedBeneficiaryNoticeDate), Consts.DateFormatPrecisionDay, culture),
                                 AlternatePlacerOrderNumber != null ? string.Join(Configuration.FieldRepeatSeparator, AlternatePlacerOrderNumber.Select(x => x.ToDelimitedString())) : null,
                                 OrderWorkflowProfile != null ? string.Join(Configuration.FieldRepeatSeparator, OrderWorkflowProfile.Select(x => x.ToDelimitedString())) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

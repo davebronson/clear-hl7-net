@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -228,7 +228,7 @@ namespace ClearHl7.V230.Segments
                                 CompletionStatus,
                                 ActionCodeRxa,
                                 SystemEntryDateTime?.ToHl7DateTimeString(typeof(RxaSegment), nameof(SystemEntryDateTime), Consts.DateTimeFormatPrecisionSecond, culture)
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

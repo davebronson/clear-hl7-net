@@ -1,4 +1,4 @@
-﻿namespace ClearHl7
+namespace ClearHl7
 {
     /// <summary>
     /// Provides access to certain library configuration.
@@ -16,17 +16,56 @@
         /// </remarks>
         public static bool AutoSetSubcomponentFlags { get; set; } = true;
 
+        private static string _fieldSeparator = Consts.DefaultFieldSeparator;
+        private static char[] _fieldSeparatorCharArray;
+
         /// <summary>
         /// Gets or sets the character used to separate fields.
         /// </summary>
         /// <remarks>The default character | is recommended.</remarks>
-        public static string FieldSeparator { get; set; } = Consts.DefaultFieldSeparator;
+        public static string FieldSeparator
+        {
+            get => _fieldSeparator;
+            set
+            {
+                _fieldSeparator = value;
+                _fieldSeparatorCharArray = null;  // invalidate lazily — rebuilt on next access
+                Helpers.StringHelper.InvalidateFormatSequenceCache();
+            }
+        }
+
+        /// <summary>
+        /// Gets a cached char array of <see cref="FieldSeparator"/>.
+        /// Built once on first access after construction or after a separator change.
+        /// Avoids the per-call allocation of <c>FieldSeparator.ToCharArray()</c> inside every
+        /// <c>ToDelimitedString()</c> invocation.
+        /// </summary>
+        public static char[] FieldSeparatorCharArray =>
+            _fieldSeparatorCharArray ??= _fieldSeparator.ToCharArray();
+
+        private static string _componentSeparator = Consts.DefaultComponentSeparator;
+        private static char[] _componentSeparatorCharArray;
 
         /// <summary>
         /// Gets or sets the character used to separate components.
         /// </summary>
         /// <remarks>The default character ^ is recommended.</remarks>
-        public static string ComponentSeparator { get; set; } = Consts.DefaultComponentSeparator;
+        public static string ComponentSeparator
+        {
+            get => _componentSeparator;
+            set
+            {
+                _componentSeparator = value;
+                _componentSeparatorCharArray = null;
+                Helpers.StringHelper.InvalidateFormatSequenceCache();
+            }
+        }
+
+        /// <summary>
+        /// Gets a cached char array of <see cref="ComponentSeparator"/>.
+        /// </summary>
+        public static char[] ComponentSeparatorCharArray =>
+            _componentSeparatorCharArray ??= _componentSeparator.ToCharArray();
 
         /// <summary>
         /// Gets or sets the character used to separate repeated fields.
@@ -40,11 +79,29 @@
         /// <remarks>The default character \ is recommended.</remarks>
         public static string EscapeCharacter { get; set; } = Consts.DefaultEscapeCharacter;
 
+        private static string _subcomponentSeparator = Consts.DefaultSubcomponentSeparator;
+        private static char[] _subcomponentSeparatorCharArray;
+
         /// <summary>
         /// Gets or sets the character used to separate subcomponents.
         /// </summary>
         /// <remarks>The default character &amp; is recommended.</remarks>
-        public static string SubcomponentSeparator { get; set; } = Consts.DefaultSubcomponentSeparator;
+        public static string SubcomponentSeparator
+        {
+            get => _subcomponentSeparator;
+            set
+            {
+                _subcomponentSeparator = value;
+                _subcomponentSeparatorCharArray = null;
+                Helpers.StringHelper.InvalidateFormatSequenceCache();
+            }
+        }
+
+        /// <summary>
+        /// Gets a cached char array of <see cref="SubcomponentSeparator"/>.
+        /// </summary>
+        public static char[] SubcomponentSeparatorCharArray =>
+            _subcomponentSeparatorCharArray ??= _subcomponentSeparator.ToCharArray();
 
         /// <summary>
         /// Resets the separator configuration properties to their default, recommended values.

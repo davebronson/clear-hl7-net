@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -159,11 +159,11 @@ namespace ClearHl7.V230.Types
         public string ToDelimitedString()
         {
             CultureInfo culture = CultureInfo.CurrentCulture;
-            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            char[] separatorCharArray = IsSubcomponent ? Configuration.SubcomponentSeparatorCharArray : Configuration.ComponentSeparatorCharArray;
 
             return string.Format(
                                 culture,
-                                StringHelper.StringFormatSequence(0, 15, separator),
+                                StringHelper.StringFormatSequence(0, 15, IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator),
                                 PersonIdentifier,
                                 FamilyName,
                                 GivenName,
@@ -179,7 +179,7 @@ namespace ClearHl7.V230.Types
                                 IdentifierTypeCode,
                                 AssigningFacility?.ToDelimitedString(),
                                 DateTimeActionPerformed?.ToHl7DateTimeString(typeof(PerformingPersonTimeStamp), nameof(DateTimeActionPerformed), Consts.DateTimeFormatPrecisionSecond, culture)
-                                ).TrimEnd(separator.ToCharArray());
+                                ).TrimEnd(separatorCharArray);
         }
     }
 }

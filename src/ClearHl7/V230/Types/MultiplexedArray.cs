@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -78,18 +78,18 @@ namespace ClearHl7.V230.Types
         public string ToDelimitedString()
         {
             CultureInfo culture = CultureInfo.CurrentCulture;
-            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            char[] separatorCharArray = IsSubcomponent ? Configuration.SubcomponentSeparatorCharArray : Configuration.ComponentSeparatorCharArray;
 
             return string.Format(
                                 culture,
-                                StringHelper.StringFormatSequence(0, 6, separator),
+                                StringHelper.StringFormatSequence(0, 6, IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator),
                                 Sample1FromChannel1.HasValue ? Sample1FromChannel1.Value.ToString(Consts.NumericFormat, culture) : null,
                                 Sample1FromChannel2.HasValue ? Sample1FromChannel2.Value.ToString(Consts.NumericFormat, culture) : null,
                                 Sample1FromChannelN.HasValue ? Sample1FromChannelN.Value.ToString(Consts.NumericFormat, culture) : null,
                                 Sample2FromChannel1.HasValue ? Sample2FromChannel1.Value.ToString(Consts.NumericFormat, culture) : null,
                                 Sample2FromChannelN.HasValue ? Sample2FromChannelN.Value.ToString(Consts.NumericFormat, culture) : null,
                                 SampleNFromChannelN.HasValue ? SampleNFromChannelN.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd(separator.ToCharArray());
+                                ).TrimEnd(separatorCharArray);
         }
     }
 }

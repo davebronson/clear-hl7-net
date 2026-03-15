@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -291,7 +291,7 @@ namespace ClearHl7.V282.Segments
                                 LocalProcessControl != null ? string.Join(Configuration.FieldRepeatSeparator, LocalProcessControl.Select(x => x.ToDelimitedString())) : null,
                                 ObservationType,
                                 ObservationSubType
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -164,7 +164,7 @@ namespace ClearHl7.V250.Segments
                                 EventReportTimingType != null ? string.Join(Configuration.FieldRepeatSeparator, EventReportTimingType) : null,
                                 EventReportSource,
                                 EventReportedTo != null ? string.Join(Configuration.FieldRepeatSeparator, EventReportedTo) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -147,7 +147,7 @@ namespace ClearHl7.V290.Segments
                                 ContractPrice?.ToDelimitedString(),
                                 QuantityOfEach.HasValue ? QuantityOfEach.Value.ToString(Consts.NumericFormat, culture) : null,
                                 VendorCatalogNumber?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

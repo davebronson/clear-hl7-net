@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -477,7 +477,7 @@ namespace ClearHl7.V290.Segments
                                 DmeCertificationConditionIndicator,
                                 DmeConditionIndicatorCode != null ? string.Join(Configuration.FieldRepeatSeparator, DmeConditionIndicatorCode.Select(x => x.ToDelimitedString())) : null,
                                 ServiceReasonCode?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

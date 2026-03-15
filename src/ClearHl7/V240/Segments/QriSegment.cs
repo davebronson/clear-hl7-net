@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using ClearHl7.Extensions;
@@ -92,7 +92,7 @@ namespace ClearHl7.V240.Segments
                                 CandidateConfidence.HasValue ? CandidateConfidence.Value.ToString(Consts.NumericFormat, culture) : null,
                                 MatchReasonCode != null ? string.Join(Configuration.FieldRepeatSeparator, MatchReasonCode) : null,
                                 AlgorithmDescriptor?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

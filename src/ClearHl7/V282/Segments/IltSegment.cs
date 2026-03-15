@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -138,7 +138,7 @@ namespace ClearHl7.V282.Segments
                                 InventoryOnHandDate?.ToHl7DateTimeString(typeof(IltSegment), nameof(InventoryOnHandDate), Consts.DateTimeFormatPrecisionSecond, culture),
                                 InventoryOnHandQuantity.HasValue ? InventoryOnHandQuantity.Value.ToString(Consts.NumericFormat, culture) : null,
                                 InventoryOnHandQuantityUnit?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

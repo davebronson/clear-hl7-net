@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using ClearHl7.Extensions;
@@ -113,7 +113,7 @@ namespace ClearHl7.V282.Segments
                                 AllergySeverityCode?.ToDelimitedString(),
                                 AllergyReactionCode != null ? string.Join(Configuration.FieldRepeatSeparator, AllergyReactionCode) : null,
                                 IdentificationDate?.ToHl7DateTimeString(typeof(Al1Segment), nameof(IdentificationDate), Consts.DateFormatPrecisionDay, culture)
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

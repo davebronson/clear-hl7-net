@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using ClearHl7.Extensions;
@@ -111,7 +111,7 @@ namespace ClearHl7.V230.Segments
                                 VarianceOriginator?.ToDelimitedString(),
                                 VarianceClassification?.ToDelimitedString(),
                                 VarianceDescription != null ? string.Join(Configuration.FieldRepeatSeparator, VarianceDescription) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

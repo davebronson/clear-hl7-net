@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -269,7 +269,7 @@ namespace ClearHl7.V250.Segments
                                 RequestedDrugStrengthVolumeUnits?.ToDelimitedString(),
                                 PharmacyOrderType,
                                 DispensingInterval.HasValue ? DispensingInterval.Value.ToString(Consts.NumericFormat, culture) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

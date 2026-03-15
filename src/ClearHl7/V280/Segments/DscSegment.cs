@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Helpers;
 
@@ -80,7 +80,7 @@ namespace ClearHl7.V280.Segments
                                 Id,
                                 ContinuationPointer,
                                 ContinuationStyle
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

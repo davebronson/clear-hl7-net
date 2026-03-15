@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -239,7 +239,7 @@ namespace ClearHl7.V282.Segments
                                 MilitaryRankGrade?.ToDelimitedString(),
                                 MilitaryStatus?.ToDelimitedString(),
                                 AdvanceDirectiveLastVerifiedDate?.ToHl7DateTimeString(typeof(Pd1Segment), nameof(AdvanceDirectiveLastVerifiedDate), Consts.DateFormatPrecisionDay, culture)
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

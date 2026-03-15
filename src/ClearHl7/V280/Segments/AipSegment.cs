@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -158,7 +158,7 @@ namespace ClearHl7.V280.Segments
                                 DurationUnits?.ToDelimitedString(),
                                 AllowSubstitutionCode?.ToDelimitedString(),
                                 FillerStatusCode?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

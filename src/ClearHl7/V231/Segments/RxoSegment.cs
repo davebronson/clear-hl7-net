@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -233,7 +233,7 @@ namespace ClearHl7.V231.Segments
                                 RequestedGiveRateAmount,
                                 RequestedGiveRateUnits?.ToDelimitedString(),
                                 TotalDailyDose?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

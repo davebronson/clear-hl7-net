@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -140,7 +140,7 @@ namespace ClearHl7.V281.Segments
                                 ItemNaturalAccountCode?.ToDelimitedString(),
                                 DeliverToId?.ToDelimitedString(),
                                 DateNeeded?.ToHl7DateTimeString(typeof(RqdSegment), nameof(DateNeeded), Consts.DateFormatPrecisionDay, culture)
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

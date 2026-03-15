@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Helpers;
 using ClearHl7.Serialization;
@@ -180,11 +180,11 @@ namespace ClearHl7.V240.Types
         public string ToDelimitedString()
         {
             CultureInfo culture = CultureInfo.CurrentCulture;
-            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            char[] separatorCharArray = IsSubcomponent ? Configuration.SubcomponentSeparatorCharArray : Configuration.ComponentSeparatorCharArray;
 
             return string.Format(
                                 culture,
-                                StringHelper.StringFormatSequence(0, 18, separator),
+                                StringHelper.StringFormatSequence(0, 18, IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator),
                                 PersonIdentifier,
                                 FamilyName?.ToDelimitedString(),
                                 GivenName,
@@ -203,7 +203,7 @@ namespace ClearHl7.V240.Types
                                 NameContext?.ToDelimitedString(),
                                 NameValidityRange?.ToDelimitedString(),
                                 NameAssemblyOrder
-                                ).TrimEnd(separator.ToCharArray());
+                                ).TrimEnd(separatorCharArray);
         }
     }
 }

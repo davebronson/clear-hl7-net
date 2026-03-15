@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -186,11 +186,11 @@ namespace ClearHl7.V281.Types
         public string ToDelimitedString()
         {
             CultureInfo culture = CultureInfo.CurrentCulture;
-            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            char[] separatorCharArray = IsSubcomponent ? Configuration.SubcomponentSeparatorCharArray : Configuration.ComponentSeparatorCharArray;
 
             return string.Format(
                                 culture,
-                                StringHelper.StringFormatSequence(0, 22, separator),
+                                StringHelper.StringFormatSequence(0, 22, IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator),
                                 Identifier,
                                 Text,
                                 NameOfCodingSystem,
@@ -213,7 +213,7 @@ namespace ClearHl7.V281.Types
                                 SecondAlternateCodingSystemOid,
                                 SecondAlternateValueSetOid,
                                 SecondAlternateValueSetVersionId?.ToHl7DateTimeString(typeof(CodedWithExceptions), nameof(SecondAlternateValueSetVersionId), Consts.DateFormatPrecisionDay, culture)
-                                ).TrimEnd(separator.ToCharArray());
+                                ).TrimEnd(separatorCharArray);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -442,7 +442,7 @@ namespace ClearHl7.V280.Segments
                                 DiagnosticServSectId,
                                 TaxonomicClassificationCode?.ToDelimitedString(),
                                 OtherNamesB != null ? string.Join(Configuration.FieldRepeatSeparator, OtherNamesB) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

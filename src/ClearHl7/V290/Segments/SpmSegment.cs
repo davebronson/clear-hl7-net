@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -333,7 +333,7 @@ namespace ClearHl7.V290.Segments
                                 CultureStartDateTime?.ToHl7DateTimeString(typeof(SpmSegment), nameof(CultureStartDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 CultureFinalDateTime?.ToHl7DateTimeString(typeof(SpmSegment), nameof(CultureFinalDateTime), Consts.DateTimeFormatPrecisionSecond, culture),
                                 ActionCode
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

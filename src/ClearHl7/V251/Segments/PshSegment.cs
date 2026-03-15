@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -170,7 +170,7 @@ namespace ClearHl7.V251.Segments
                                 QuantityInUseComment,
                                 NumberOfProductExperienceReportsFiledByFacility != null ? string.Join(Configuration.FieldRepeatSeparator, NumberOfProductExperienceReportsFiledByFacility.Select(x => x.ToString(Consts.NumericFormat, culture))) : null,
                                 NumberOfProductExperienceReportsFiledByDistributor != null ? string.Join(Configuration.FieldRepeatSeparator, NumberOfProductExperienceReportsFiledByDistributor.Select(x => x.ToString(Consts.NumericFormat, culture))) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

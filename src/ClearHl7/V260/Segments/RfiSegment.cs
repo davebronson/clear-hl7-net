@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -95,7 +95,7 @@ namespace ClearHl7.V260.Segments
                                 ResponseDueDate?.ToHl7DateTimeString(typeof(RfiSegment), nameof(ResponseDueDate), Consts.DateTimeFormatPrecisionSecond, culture),
                                 PatientConsent,
                                 DateAdditionalInformationWasSubmitted?.ToHl7DateTimeString(typeof(RfiSegment), nameof(DateAdditionalInformationWasSubmitted), Consts.DateTimeFormatPrecisionSecond, culture)
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

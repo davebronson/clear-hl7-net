@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -102,11 +102,11 @@ namespace ClearHl7.V240.Types
         public string ToDelimitedString()
         {
             CultureInfo culture = CultureInfo.CurrentCulture;
-            string separator = IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator;
+            char[] separatorCharArray = IsSubcomponent ? Configuration.SubcomponentSeparatorCharArray : Configuration.ComponentSeparatorCharArray;
 
             return string.Format(
                                 culture,
-                                StringHelper.StringFormatSequence(0, 8, separator),
+                                StringHelper.StringFormatSequence(0, 8, IsSubcomponent ? Configuration.SubcomponentSeparator : Configuration.ComponentSeparator),
                                 IdNumber,
                                 IdentifierCheckDigit,
                                 CheckDigitScheme,
@@ -115,7 +115,7 @@ namespace ClearHl7.V240.Types
                                 AssigningFacility?.ToDelimitedString(),
                                 EffectiveDate?.ToHl7DateTimeString(typeof(ExtendedCompositeIdWithCheckDigit), nameof(EffectiveDate), Consts.DateFormatPrecisionDay, culture),
                                 ExpirationDate?.ToHl7DateTimeString(typeof(ExtendedCompositeIdWithCheckDigit), nameof(ExpirationDate), Consts.DateFormatPrecisionDay, culture)
-                                ).TrimEnd(separator.ToCharArray());
+                                ).TrimEnd(separatorCharArray);
         }
     }
 }

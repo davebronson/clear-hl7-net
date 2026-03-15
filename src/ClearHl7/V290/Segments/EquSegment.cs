@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -115,7 +115,7 @@ namespace ClearHl7.V290.Segments
                                 LocalRemoteControlState?.ToDelimitedString(),
                                 AlertLevel?.ToDelimitedString(),
                                 ExpectedDateTimeOfTheNextStatusChange?.ToHl7DateTimeString(typeof(EquSegment), nameof(ExpectedDateTimeOfTheNextStatusChange), Consts.DateTimeFormatPrecisionSecond, culture)
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

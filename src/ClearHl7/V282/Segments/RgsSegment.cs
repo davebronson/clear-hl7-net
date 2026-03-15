@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using ClearHl7.Extensions;
 using ClearHl7.Helpers;
@@ -90,7 +90,7 @@ namespace ClearHl7.V282.Segments
                                 SetIdRgs.HasValue ? SetIdRgs.Value.ToString(culture) : null,
                                 SegmentActionCode,
                                 ResourceGroupId?.ToDelimitedString()
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }

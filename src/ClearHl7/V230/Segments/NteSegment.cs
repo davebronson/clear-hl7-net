@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using ClearHl7.Extensions;
@@ -89,7 +89,7 @@ namespace ClearHl7.V230.Segments
                                 SetIdNte.HasValue ? SetIdNte.Value.ToString(culture) : null,
                                 SourceOfComment,
                                 Comment != null ? string.Join(Configuration.FieldRepeatSeparator, Comment) : null
-                                ).TrimEnd(Configuration.FieldSeparator.ToCharArray());
+                                ).TrimEnd(Configuration.FieldSeparatorCharArray);
         }
     }
 }
