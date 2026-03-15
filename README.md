@@ -994,3 +994,6 @@ Fork davebronson/clear-hl7-net.git and begin development from your own fork.
 
 ## License
 clear-hl7-net is licensed under the [MIT License](https://github.com/davebronson/clear-hl7-net/blob/master/LICENSE).
+
+## Changelog
+For notable changes to this project, see the [CHANGELOG.md](CHANGELOG.md).
