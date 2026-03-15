@@ -10,6 +10,10 @@ Understanding and programmatically building HL7 messages can be difficult.  clea
 
 HL7&reg; is the registered trademark of Health Level Seven International, and the use of this trademark does not constitute an endorsement by HL7.
 
+## Contributors
+Special thanks to our contributors:
+- [@aarondglover](https://github.com/aarondglover) - 💻 (Code), 📖 (Documentation)
+
 ## Important Notes About Version 2 of clear-hl7-net
 Upgrading from Version 1.x to Version 2? Please read some important notes about [Version 2](Version2.md) first.
 
