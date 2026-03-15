@@ -267,6 +267,269 @@ IMessage message = MessageHelper.NewInstance(Hl7Version.V281);
 //      An instance of ClearHl7.V281.Message
 ```
 
+## Fault-Tolerant Parsing with Parser Options
+
+clear-hl7-net provides configurable parser options for handling real-world HL7 messages that may contain unknown segments or malformed data. By default, the parser is strict and throws exceptions on errors, but you can opt-in to lenient parsing modes when needed.
+
+### Basic Usage
+
+#### Lenient Parsing with Unknown Segments
+
+```csharp
+using ClearHl7;
+using ClearHl7.Serialization;
+using ClearHl7.V282;
+
+// Configure parser to skip unknown segments
+var options = new ParserOptions
+{
+    UnknownSegmentHandling = UnknownSegmentHandling.Skip,
+    CollectWarnings = true
+};
+
+string hl7String = "MSH|^~\\&|SendApp||RecvApp||20240101120000|||||2.8.2\rPID|1|123\rZZZ|unknown segment\rPV1|1";
+
+// Parse with lenient options
+var message = MessageSerializer.Deserialize<Message>(hl7String, options);
+
+// Check for warnings
+if (options.Warnings.Count > 0)
+{
+    foreach (var warning in options.Warnings)
+    {
+        Console.WriteLine($"Warning: {warning.Message} (Segment: {warning.SegmentId}, Line: {warning.LineNumber})");
+    }
+}
+// Output: Warning: Unknown segment 'ZZZ' skipped (Segment: ZZZ, Line: 2)
+```
+
+#### Parsing with Warning Collection
+
+Use `DeserializeWithWarnings<T>()` to automatically collect warnings:
+
+```csharp
+using ClearHl7.Serialization;
+using ClearHl7.V282;
+
+var result = MessageSerializer.DeserializeWithWarnings<Message>(hl7String);
+
+if (result.HasWarnings)
+{
+    Console.WriteLine($"Parsed with {result.Warnings.Count} warnings:");
+    foreach (var warning in result.Warnings)
+    {
+        Console.WriteLine($"  {warning.SegmentId}: {warning.Message}");
+    }
+}
+
+// Process the successfully parsed message
+ProcessMessage(result.Message);
+```
+
+### Configuration Options
+
+#### Unknown Segment Handling
+
+Controls how the parser handles segments with unknown segment IDs:
+
+```csharp
+var options = new ParserOptions
+{
+    UnknownSegmentHandling = UnknownSegmentHandling.Throw,  // Default - throw exception (strict)
+    // UnknownSegmentHandling = UnknownSegmentHandling.Skip      // Skip unknown segments
+};
+```
+
+#### Malformed Segment Handling
+
+Controls how the parser handles malformed segments (too short, or throwing during field parsing):
+
+```csharp
+var options = new ParserOptions
+{
+    MalformedSegmentHandling = MalformedSegmentHandling.Throw,      // Default - throw exception (strict)
+    // MalformedSegmentHandling = MalformedSegmentHandling.Skip,      // Drop the segment and add a warning
+    // MalformedSegmentHandling = MalformedSegmentHandling.BestEffort // Retry with bad fields blanked one at a time
+};
+```
+
+**`Skip`** — drops the entire segment and records a warning. No segment data is added to the message.
+
+**`BestEffort`** — when a segment throws during parsing, the parser uses the partially-populated segment instance to locate the bad field in **O(1)**. Because `FromDelimitedString` assigns fields strictly in order, the failing field is always the first position where the raw segment has a non-empty value but the corresponding property in the segment object is still `null` — the **null boundary**. The parser blanks exactly that field and retries from scratch with a fresh instance:
+
+- If the retry succeeds, the segment is added to the message with the bad field set to `null` and one warning is emitted.
+- If the retry fails again, the new partial instance reveals the next null boundary. The process repeats, blanking one bad field per iteration, until the segment parses completely.
+- **Five independently bad fields → five warnings**, one per blanked field. Fields before and after the bad ones are fully populated in the recovered segment.
+- If the bad field is already empty in the raw segment (so the null boundary cannot be identified), or no further progress is possible, the segment is dropped and a single warning is emitted without `FieldIndex`/`RawFieldValue` — identical to `Skip`.
+
+Callers using `BestEffort` **must** check `ParserWarning`s — they have explicitly accepted that the message may contain segments with partial data.
+
+```csharp
+var options = new ParserOptions
+{
+    MalformedSegmentHandling = MalformedSegmentHandling.BestEffort,
+    CollectWarnings = true
+};
+
+var result = MessageSerializer.DeserializeWithWarnings<Message>(hl7String, options);
+
+foreach (var warning in result.Warnings)
+{
+    if (warning.FieldIndex.HasValue)
+    {
+        // Field-level recovery succeeded: segment is in the message with this field nulled out.
+        Console.WriteLine(
+            $"Segment {warning.SegmentId} recovered: field {warning.FieldIndex} was blanked " +
+            $"(original value: '{warning.RawFieldValue}'). Full segment: {warning.RawSegment}");
+    }
+    else
+    {
+        // All-fields-failed fallback: segment was dropped entirely.
+        Console.WriteLine(
+            $"Segment {warning.SegmentId} could not be recovered and was dropped. " +
+            $"Full segment: {warning.RawSegment}");
+    }
+}
+```
+
+#### Warning Collection
+
+Enable warning collection to review parsing issues:
+
+```csharp
+var options = new ParserOptions
+{
+    CollectWarnings = true  // Collect warnings during parsing
+};
+```
+
+### Global Configuration
+
+Set default parser options globally for your entire application:
+
+```csharp
+using ClearHl7.Serialization;
+
+// At application startup
+ParserConfiguration.DefaultOptions = new ParserOptions
+{
+    UnknownSegmentHandling = UnknownSegmentHandling.Skip,
+    MalformedSegmentHandling = MalformedSegmentHandling.Skip,
+    CollectWarnings = true
+};
+
+// All subsequent parsing uses these defaults
+var message = MessageSerializer.Deserialize<Message>(hl7String);
+
+// Access global warnings
+foreach (var warning in ParserConfiguration.GlobalWarnings)
+{
+    Console.WriteLine($"Global warning: {warning.Message}");
+}
+
+// Clear global warnings
+ParserConfiguration.ClearGlobalWarnings();
+```
+
+### Event-Based Notification
+
+Subscribe to parsing warnings for real-time logging or monitoring:
+
+```csharp
+// Instance-level events
+var options = new ParserOptions
+{
+    UnknownSegmentHandling = UnknownSegmentHandling.Skip
+};
+
+options.ParserWarning += (sender, e) =>
+{
+    _logger.LogWarning("Parser warning: {message}", e.Warning.Message);
+};
+
+// Global events
+ParserConfiguration.ParserWarning += (sender, e) =>
+{
+    _telemetry.TrackEvent("HL7ParserWarning", new Dictionary<string, string>
+    {
+        { "Type", e.Warning.Type.ToString() },
+        { "SegmentId", e.Warning.SegmentId },
+        { "Message", e.Warning.Message }
+    });
+};
+```
+
+### Per-Call Override
+
+Override global configuration for specific parsing operations:
+
+```csharp
+// Global configuration is lenient
+ParserConfiguration.DefaultOptions = new ParserOptions
+{
+    UnknownSegmentHandling = UnknownSegmentHandling.Skip
+};
+
+// But enforce strict parsing for this specific message
+var strictOptions = new ParserOptions
+{
+    UnknownSegmentHandling = UnknownSegmentHandling.Throw
+};
+
+try
+{
+    var message = MessageSerializer.Deserialize<Message>(hl7String, strictOptions);
+}
+catch (ArgumentException ex)
+{
+    Console.WriteLine($"Strict parsing failed: {ex.Message}");
+}
+```
+
+### Warning Details
+
+Each `ParserWarning` provides detailed information about parsing issues:
+
+```csharp
+public class ParserWarning
+{
+    public ParserWarningType Type { get; set; }        // UnknownSegment, MalformedSegment, ParseError
+    public string SegmentId { get; set; }              // e.g., "ZZZ", "PID"
+    public int LineNumber { get; set; }                // Segment position in message
+    public string Message { get; set; }                // Human-readable description
+    public string RawSegment { get; set; }             // Original segment string
+    public Exception Exception { get; set; }           // Exception if applicable
+    public DateTime Timestamp { get; set; }            // When warning occurred
+
+    // Populated only for BestEffort field-level recovery:
+    public int? FieldIndex { get; set; }               // 1-based index of the field that was blanked
+    public string RawFieldValue { get; set; }          // Original value of that field before blanking
+}
+```
+
+`FieldIndex` and `RawFieldValue` are non-null only when `BestEffort` parsing successfully recovered a segment by blanking a specific field. They are both `null` for `Skip` warnings and for `BestEffort` all-fields-failed fallbacks.
+
+### Thread Safety
+
+All parser options components are thread-safe:
+
+- `ParserOptions` uses `ConcurrentBag<T>` for warning collection
+- `ParserConfiguration` uses defensive copying and locking for global state
+- Warning snapshots are immutable (`IReadOnlyList<T>`)
+
+### Backward Compatibility
+
+Parser options are fully backward compatible:
+
+```csharp
+// Existing code works unchanged - default is strict parsing
+var message = MessageSerializer.Deserialize<Message>(hl7String);
+
+// Opt-in to lenient parsing when needed
+var options = new ParserOptions { UnknownSegmentHandling = UnknownSegmentHandling.Skip };
+var message = MessageSerializer.Deserialize<Message>(hl7String, options);
+```
+
 ## Customizing
 ### Delimiter Characters
 The HL7 specification calls out default delimiters to use for fields (pipe `|`), components (caret `^`), subcomponents (ampersand `&`), escaping (backslash `\`), and repetition (tilde `~`).  Most will use these defaults.  But if the consumer of your messages supports it, it is possible to define your own delimiters.
