@@ -1,8 +1,8 @@
 using System;
 using System.Linq;
 using ClearHl7.Extensions;
+using ClearHl7.Helpers;
 using ClearHl7.Serialization;
-using ClearHl7.V281;
 using ClearHl7.V281.Types;
 
 namespace ClearHl7.Examples
@@ -57,22 +57,22 @@ namespace ClearHl7.Examples
         public string Comments { get; set; }
 
         /// <inheritdoc/>
-        public void FromDelimitedString(string delimitedString) 
-        { 
+        public void FromDelimitedString(string delimitedString)
+        {
             FromDelimitedString(delimitedString, null);
         }
 
         /// <inheritdoc/>
         public void FromDelimitedString(string delimitedString, Separators separators)
         {
-            var seps = separators ?? new Separators();
+            Separators seps = separators ?? new Separators().UsingConfigurationValues();
             var fields = delimitedString?.Split(seps.FieldSeparator, StringSplitOptions.None);
-            
+
             if (fields == null || fields.Length == 0)
                 return;
 
             // Skip field 0 (segment ID "ZDS")
-            
+
             // ZDS.1 - Record ID
             if (fields.Length > 1 && !string.IsNullOrEmpty(fields[1]))
             {
@@ -129,42 +129,41 @@ namespace ClearHl7.Examples
             // ZDS.7 - Comments (text with potential escape sequences)
             if (fields.Length > 7 && !string.IsNullOrEmpty(fields[7]))
             {
-                Comments = Helpers.StringHelper.Unescape(fields[7]);
+                Comments = StringHelper.Unescape(fields[7]);
             }
         }
 
         /// <inheritdoc/>
         public string ToDelimitedString()
         {
-            var seps = new Separators();
             var fields = new string[8]; // ZDS has 7 fields (index 0 is segment ID)
-            
+
             fields[0] = Id;
             fields[1] = RecordId;
             fields[2] = DataSource?.ToDelimitedString();
             fields[3] = ProcessingStatus?.ToDelimitedString();
-            
+
             // Handle repeating contact info
             if (ContactInfo?.Length > 0)
             {
-                fields[4] = string.Join(seps.FieldRepeatSeparator.ToString(), 
+                fields[4] = string.Join(Configuration.FieldRepeatSeparator,
                     ContactInfo.Select(ci => ci?.ToDelimitedString() ?? string.Empty));
             }
-            
+
             // Handle repeating data categories
             if (DataCategories?.Length > 0)
             {
-                fields[5] = string.Join(seps.FieldRepeatSeparator.ToString(), 
+                fields[5] = string.Join(Configuration.FieldRepeatSeparator,
                     DataCategories.Select(dc => dc?.ToDelimitedString() ?? string.Empty));
             }
-            
+
             // Handle timestamp
             fields[6] = LastUpdated?.ToString("yyyyMMddHHmmss");
-            
-            // Handle comments with escaping
-            fields[7] = !string.IsNullOrEmpty(Comments) ? Helpers.StringHelper.Escape(Comments) : null;
 
-            return string.Join(seps.FieldSeparator.ToString(), fields);
+            // Handle comments with escaping
+            fields[7] = !string.IsNullOrEmpty(Comments) ? StringHelper.Escape(Comments) : null;
+
+            return string.Join(Configuration.FieldSeparator, fields);
         }
     }
 
@@ -196,8 +195,8 @@ namespace ClearHl7.Examples
         public DateTime? EffectiveDate { get; set; }
 
         /// <inheritdoc/>
-        public void FromDelimitedString(string delimitedString) 
-        { 
+        public void FromDelimitedString(string delimitedString)
+        {
             FromDelimitedString(delimitedString, null);
         }
 
@@ -206,7 +205,7 @@ namespace ClearHl7.Examples
         {
             var seps = separators ?? new Separators();
             var fields = delimitedString?.Split(seps.FieldSeparator, StringSplitOptions.None);
-            
+
             if (fields == null || fields.Length == 0)
                 return;
 
@@ -267,20 +266,20 @@ namespace ClearHl7.Examples
 
             // Test comprehensive message parsing with multiple custom segments
             Console.WriteLine("\n3. Testing message parsing with complex custom segments...");
-            string complexHl7Message = 
+            string complexHl7Message =
                 "MSH|^~\\&|SYSTEM|SENDER|RECEIVER|DESTINATION|20240101120000||ADT^A01|MSG001|P|2.8.1||||\r" +
                 "PID|1||12345^^^^MR||Doe^John^J||19800101|M||2106-3|123 Main St^^Anytown^ST^12345^USA||(555)123-4567^PRN^PH|\r" +
                 "ZDS|REC001|SRC^Data Source^L|PROC^Processing^L|555-1234^WPN^PH~john@email.com^^^EMAIL|CAT1^Category1^L~CAT2^Category2^L|20240101120000|This is a comment with special chars: Test \\T\\ Data\r" +
                 "ZPD|PREF001|Vegetarian|20240101\r" +
                 "ZDS|REC002|SRC2^Another Source^L|COMP^Completed^L|||20240101130000|Second ZDS segment\r";
 
-            var message = MessageSerializer.Deserialize<Message>(complexHl7Message);
-            
+            var message = MessageSerializer.Deserialize(complexHl7Message);
+
             Console.WriteLine($"   ✓ Parsed message with {message.Segments.Count()} segments");
 
             // Test the new extension methods for accessing segments
             Console.WriteLine("\n4. Testing segment access via new extension methods...");
-            
+
             // Access specific segments by ID
             var mshSegment = message.GetSegment("MSH");
             var pidSegment = message.GetSegment("PID");
@@ -290,7 +289,7 @@ namespace ClearHl7.Examples
             // Access custom segments - multiple ZDS segments
             var zdsSegments = message.GetCustomSegments("ZDS").ToList();
             Console.WriteLine($"   ✓ Found {zdsSegments.Count} ZDS custom segments");
-            
+
             foreach (var zds in zdsSegments.Cast<ZdsSegment>())
             {
                 Console.WriteLine($"     - ZDS Record ID: {zds.RecordId}");
@@ -319,7 +318,7 @@ namespace ClearHl7.Examples
             Console.WriteLine("\n5. Testing typed segment access...");
             var typedZdsSegments = message.GetSegments<ZdsSegment>("ZDS").ToList();
             var typedZpdSegment = message.GetSegment<ZpdSegment>("ZPD");
-            
+
             Console.WriteLine($"   ✓ Found {typedZdsSegments.Count} ZDS segments via typed access");
             Console.WriteLine($"   ✓ Found ZPD segment via typed access: {typedZpdSegment?.PreferenceCode}");
 
@@ -328,7 +327,7 @@ namespace ClearHl7.Examples
             string serializedMessage = message.ToDelimitedString();
             Console.WriteLine("   ✓ Successfully serialized message back to HL7 format");
             Console.WriteLine($"   ✓ Total message length: {serializedMessage.Length} characters");
-            
+
             // Verify custom segments are preserved in serialization
             var lines = serializedMessage.Split('\r');
             var zdsLines = lines.Where(l => l.StartsWith("ZDS")).ToList();
