@@ -384,7 +384,7 @@ namespace ClearHl7.Tests.FactoryTests
 
         public void FromDelimitedString(string delimitedString, Separators separators)
         {
-            var seps = separators ?? new Separators();
+            Separators seps = separators ?? new Separators().UsingConfigurationValues();
             var fields = delimitedString?.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (fields == null || fields.Length == 0) return;
@@ -419,13 +419,12 @@ namespace ClearHl7.Tests.FactoryTests
 
             if (fields.Length > 5 && !string.IsNullOrEmpty(fields[5]))
             {
-                Comments = Helpers.StringHelper.Unescape(fields[5]);
+                Comments = StringHelper.Unescape(fields[5]);
             }
         }
 
         public string ToDelimitedString()
         {
-            var seps = new Separators();
             var fields = new string[6];
             
             fields[0] = Id;
@@ -434,14 +433,14 @@ namespace ClearHl7.Tests.FactoryTests
             
             if (ContactInfo?.Length > 0)
             {
-                fields[3] = string.Join(seps.FieldRepeatSeparator.ToString(), 
+                fields[3] = string.Join(Configuration.FieldRepeatSeparator, 
                     ContactInfo.Select(ci => ci?.ToDelimitedString() ?? string.Empty));
             }
             
             fields[4] = LastUpdated?.ToString("yyyyMMddHHmmss");
-            fields[5] = !string.IsNullOrEmpty(Comments) ? Helpers.StringHelper.Escape(Comments) : null;
+            fields[5] = !string.IsNullOrEmpty(Comments) ? StringHelper.Escape(Comments) : null;
 
-            return string.Join(seps.FieldSeparator.ToString(), fields);
+            return string.Join(Configuration.FieldSeparator, fields);
         }
     }
 
