@@ -723,6 +723,7 @@ Additionally, the library provides a generic `ZxxSegment` class that handles any
 
 ```csharp
 using ClearHl7;
+using ClearHl7.Helpers;
 using ClearHl7.V282.Types;
 
 public class ZdsSegment : ISegment
@@ -745,9 +746,9 @@ public class ZdsSegment : ISegment
 
     public void FromDelimitedString(string delimitedString, Separators separators)
     {
-        var seps = separators ?? new Separators();
-        var fields = delimitedString?.Split(seps.FieldSeparator);
-        
+        Separators seps = separators ?? new Separators().UsingConfigurationValues();
+        var fields = delimitedString?.Split(seps.FieldSeparator, StringSplitOptions.None);
+
         if (fields == null || fields.Length == 0) return;
 
         // Parse fields (skip field 0 which is the segment ID)
@@ -768,7 +769,7 @@ public class ZdsSegment : ISegment
         // Handle repeating contact info
         if (fields.Length > 4 && !string.IsNullOrEmpty(fields[4]))
         {
-            var contactElements = fields[4].Split(seps.FieldRepeatSeparator);
+            var contactElements = fields[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None);
             ContactInfo = new ExtendedTelecommunicationNumber[contactElements.Length];
             for (int i = 0; i < contactElements.Length; i++)
             {
@@ -790,30 +791,29 @@ public class ZdsSegment : ISegment
         // Handle comments with escape sequences
         if (fields.Length > 6 && !string.IsNullOrEmpty(fields[6]))
         {
-            Comments = Helpers.StringHelper.Unescape(fields[6]);
+            Comments = StringHelper.Unescape(fields[6]);
         }
     }
 
     public string ToDelimitedString()
     {
-        var seps = new Separators();
         var fields = new string[7];
-        
+
         fields[0] = Id;
         fields[1] = RecordId;
         fields[2] = DataSource?.ToDelimitedString();
         fields[3] = ProcessingStatus?.ToDelimitedString();
-        
+
         if (ContactInfo?.Length > 0)
         {
-            fields[4] = string.Join(seps.FieldRepeatSeparator.ToString(), 
+            fields[4] = string.Join(Configuration.FieldRepeatSeparator,
                 ContactInfo.Select(ci => ci?.ToDelimitedString() ?? string.Empty));
         }
-        
-        fields[5] = LastUpdated?.ToString("yyyyMMddHHmmss");
-        fields[6] = !string.IsNullOrEmpty(Comments) ? Helpers.StringHelper.Escape(Comments) : null;
 
-        return string.Join(seps.FieldSeparator.ToString(), fields);
+        fields[5] = LastUpdated?.ToString("yyyyMMddHHmmss");
+        fields[6] = !string.IsNullOrEmpty(Comments) ? StringHelper.Escape(Comments) : null;
+
+        return string.Join(Configuration.FieldSeparator, fields);
     }
 }
 ```
