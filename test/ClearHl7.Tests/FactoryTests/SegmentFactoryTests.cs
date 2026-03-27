@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using ClearHl7.Helpers;
 using ClearHl7.Serialization;
 using ClearHl7.V281;
 using ClearHl7.V281.Types;
@@ -331,6 +332,25 @@ namespace ClearHl7.Tests.FactoryTests
             complexSegment.ContactInfo[1].TelephoneNumber.Should().Be("john@email.com");
             complexSegment.LastUpdated.Should().Be(new DateTime(2024, 1, 1, 12, 0, 0));
             complexSegment.Comments.Should().Be("This is a comment with special chars");
+        }
+
+
+        [Fact]
+        public void ComplexCustomSegment_WithAdvancedDataTypes_SerializeCorrectly()
+        {
+            // Arrange
+            SegmentFactory.RegisterSegment<ComplexTestSegment>("ZCX");
+
+            string hl7Message =
+                "MSH|^~\\&|SYSTEM|SENDER|RECEIVER|DEST|20240101120000||ADT^A01|MSG001|P|2.8.1\r" +
+                "ZCX|REC001|SRC^Data Source^L|555-1234^WPN^PH~john@email.com^^^EMAIL|20240101120000|This is a comment with special chars\r";
+
+            // Act
+            var message = MessageSerializer.Deserialize<Message>(hl7Message);
+            string output = MessageSerializer.Serialize(message);
+
+            // Assert
+            Assert.Equal(hl7Message, output);
         }
 
         [Fact]
