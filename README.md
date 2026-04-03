@@ -723,6 +723,7 @@ Additionally, the library provides a generic `ZxxSegment` class that handles any
 
 ```csharp
 using ClearHl7;
+using ClearHl7.Helpers;
 using ClearHl7.V282.Types;
 
 public class ZdsSegment : ISegment
@@ -745,14 +746,14 @@ public class ZdsSegment : ISegment
 
     public void FromDelimitedString(string delimitedString, Separators separators)
     {
-        var seps = separators ?? new Separators();
-        var fields = delimitedString?.Split(seps.FieldSeparator);
-        
+        Separators seps = separators ?? new Separators().UsingConfigurationValues();
+        var fields = delimitedString?.Split(seps.FieldSeparator, StringSplitOptions.None);
+
         if (fields == null || fields.Length == 0) return;
 
         // Parse fields (skip field 0 which is the segment ID)
         if (fields.Length > 1) RecordId = fields[1];
-        
+
         if (fields.Length > 2 && !string.IsNullOrEmpty(fields[2]))
         {
             DataSource = new CodedWithExceptions();
@@ -768,7 +769,7 @@ public class ZdsSegment : ISegment
         // Handle repeating contact info
         if (fields.Length > 4 && !string.IsNullOrEmpty(fields[4]))
         {
-            var contactElements = fields[4].Split(seps.FieldRepeatSeparator);
+            var contactElements = fields[4].Split(seps.FieldRepeatSeparator, StringSplitOptions.None);
             ContactInfo = new ExtendedTelecommunicationNumber[contactElements.Length];
             for (int i = 0; i < contactElements.Length; i++)
             {
@@ -780,7 +781,7 @@ public class ZdsSegment : ISegment
         // Handle timestamp
         if (fields.Length > 5 && !string.IsNullOrEmpty(fields[5]))
         {
-            if (DateTime.TryParseExact(fields[5], "yyyyMMddHHmmss", null, 
+            if (DateTime.TryParseExact(fields[5], "yyyyMMddHHmmss", null,
                 System.Globalization.DateTimeStyles.None, out DateTime timestamp))
             {
                 LastUpdated = timestamp;
@@ -790,30 +791,29 @@ public class ZdsSegment : ISegment
         // Handle comments with escape sequences
         if (fields.Length > 6 && !string.IsNullOrEmpty(fields[6]))
         {
-            Comments = Helpers.StringHelper.Unescape(fields[6]);
+            Comments = StringHelper.Unescape(fields[6]);
         }
     }
 
     public string ToDelimitedString()
     {
-        var seps = new Separators();
         var fields = new string[7];
-        
+
         fields[0] = Id;
         fields[1] = RecordId;
         fields[2] = DataSource?.ToDelimitedString();
         fields[3] = ProcessingStatus?.ToDelimitedString();
-        
+
         if (ContactInfo?.Length > 0)
         {
-            fields[4] = string.Join(seps.FieldRepeatSeparator.ToString(), 
+            fields[4] = string.Join(Configuration.FieldRepeatSeparator,
                 ContactInfo.Select(ci => ci?.ToDelimitedString() ?? string.Empty));
         }
-        
-        fields[5] = LastUpdated?.ToString("yyyyMMddHHmmss");
-        fields[6] = !string.IsNullOrEmpty(Comments) ? Helpers.StringHelper.Escape(Comments) : null;
 
-        return string.Join(seps.FieldSeparator.ToString(), fields);
+        fields[5] = LastUpdated?.ToString("yyyyMMddHHmmss");
+        fields[6] = !string.IsNullOrEmpty(Comments) ? StringHelper.Escape(Comments) : null;
+
+        return string.Join(Configuration.FieldSeparator, fields);
     }
 }
 ```
@@ -832,6 +832,76 @@ SegmentFactory.RegisterSegment<Hl7Version, ZdsSegment>("ZDS");
 
 #### 3. Use Custom Segments in Message Processing
 
+Serialization
+```csharp
+using ClearHl7;
+using ClearHl7.Serialization;
+using ClearHl7.V282.Types;
+using ClearHl7.V282;
+using ClearHl7.V282.Segments;
+using ClearHl7.Codes.V282;
+using ClearHl7.Codes.V282.Helpers;
+
+// Register for all HL7 versions (global registration)
+SegmentFactory.RegisterSegment<ZdsSegment>("ZDS");
+
+// OR register for a specific HL7 version
+SegmentFactory.RegisterSegment<Hl7Version, ZdsSegment>("ZDS");
+
+// Specify we don't want time for birth dates in PID segments
+Hl7DateTimeFormatConfig.SetPrecision<PidSegment>(x => x.DateTimeOfBirth, Consts.DateFormatPrecisionDay);
+
+// Build a new HL7 message
+var message = new Message
+{
+    Segments = new ISegment[]
+    {
+        // Add an MSH segment - Message Header
+        new MshSegment
+        {
+             SendingApplication = new HierarchicDesignator { NamespaceId = "SYSTEM" },
+             SendingFacility = new HierarchicDesignator { NamespaceId = "SENDER" },
+             ReceivingApplication = new HierarchicDesignator { NamespaceId = "RECEIVER" },
+             ReceivingFacility = new HierarchicDesignator { NamespaceId = "DEST" },
+             DateTimeOfMessage = new DateTime(2024, 1, 1, 12, 0, 0),
+             MessageType = new MessageType { MessageCode = EnumMaps.EnumToCode(CodeMessageType.AdtMessage),
+                 TriggerEvent = EnumMaps.EnumToCode(CodeEventTypeCode.AdtAckAdmitVisitNotification) },
+             MessageControlId = "MSG001",
+             ProcessingId = new ProcessingType { ProcessingId = EnumMaps.EnumToCode(CodeProcessingId.Production) },
+             VersionId = new VersionIdentifier { VersionId = EnumMaps.EnumToCode(CodeVersionId.Release282)},
+        },
+
+        // Add a PID segment - Patient Identification
+        new PidSegment
+        {
+            SetIdPid = 1,
+            PatientIdentifierList = [ new ExtendedCompositeIdWithCheckDigit { IdNumber = "12345",
+                                        IdentifierTypeCode = EnumMaps.EnumToCode(CodeIdentifierType.MedicalRecordNumber) } ],
+            PatientName = [ new ExtendedPersonName { FamilyName = new FamilyName { Surname = "Doe" }, GivenName = "John",
+                                SecondAndFurtherGivenNamesOrInitialsThereof = "J" } ],
+            DateTimeOfBirth = new DateTime(1980, 1, 1),
+            AdministrativeSex = new CodedWithExceptions { Identifier = EnumMaps.EnumToCode(CodeAdministrativeSex.Male) }
+        },
+
+        // Add a Zxx segment (custom segment -> "ZDS")
+        new ZdsSegment
+        {
+            RecordId = "REC001",
+            DataSource = new CodedWithExceptions { Identifier = "SRC", Text = "Data Source", NameOfCodingSystem = "L" },
+            ProcessingStatus = new CodedWithExceptions { Identifier = "PROC", Text = "Processing", NameOfCodingSystem = "L" },
+            ContactInfo = [ new ExtendedTelecommunicationNumber { TelephoneNumber = "555-1234",
+                            TelecommunicationUseCode = EnumMaps.EnumToCode(CodeTelecommunicationUseCode.WorkNumber),
+                            TelecommunicationEquipmentType = EnumMaps.EnumToCode(CodeTelecommunicationEquipmentType.Telephone) } ],
+            LastUpdated = new DateTime(2024, 1, 1, 12, 0, 0),
+            Comments = "Custom data segment"
+        }
+    }
+};
+
+string output = MessageSerializer.Serialize(message);
+```
+
+Deserialization
 ```csharp
 using ClearHl7;
 using ClearHl7.Serialization;

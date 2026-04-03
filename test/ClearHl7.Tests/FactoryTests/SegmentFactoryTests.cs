@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using ClearHl7.Helpers;
 using ClearHl7.Serialization;
 using ClearHl7.V281;
 using ClearHl7.V281.Types;
@@ -333,6 +334,25 @@ namespace ClearHl7.Tests.FactoryTests
             complexSegment.Comments.Should().Be("This is a comment with special chars");
         }
 
+
+        [Fact]
+        public void ComplexCustomSegment_WithAdvancedDataTypes_SerializeCorrectly()
+        {
+            // Arrange
+            SegmentFactory.RegisterSegment<ComplexTestSegment>("ZCX");
+
+            string hl7Message =
+                "MSH|^~\\&|SYSTEM|SENDER|RECEIVER|DEST|20240101120000||ADT^A01|MSG001|P|2.8.1\r" +
+                "ZCX|REC001|SRC^Data Source^L|555-1234^WPN^PH~john@email.com^^^EMAIL|20240101120000|This is a comment with special chars\r";
+
+            // Act
+            var message = MessageSerializer.Deserialize<Message>(hl7Message);
+            string output = MessageSerializer.Serialize(message);
+
+            // Assert
+            Assert.Equal(hl7Message, output);
+        }
+
         [Fact]
         public void MultipleCustomSegments_InSingleMessage_AllParsedCorrectly()
         {
@@ -384,7 +404,7 @@ namespace ClearHl7.Tests.FactoryTests
 
         public void FromDelimitedString(string delimitedString, Separators separators)
         {
-            var seps = separators ?? new Separators();
+            Separators seps = separators ?? new Separators().UsingConfigurationValues();
             var fields = delimitedString?.Split(seps.FieldSeparator, StringSplitOptions.None);
             
             if (fields == null || fields.Length == 0) return;
@@ -419,13 +439,12 @@ namespace ClearHl7.Tests.FactoryTests
 
             if (fields.Length > 5 && !string.IsNullOrEmpty(fields[5]))
             {
-                Comments = Helpers.StringHelper.Unescape(fields[5]);
+                Comments = StringHelper.Unescape(fields[5]);
             }
         }
 
         public string ToDelimitedString()
         {
-            var seps = new Separators();
             var fields = new string[6];
             
             fields[0] = Id;
@@ -434,14 +453,14 @@ namespace ClearHl7.Tests.FactoryTests
             
             if (ContactInfo?.Length > 0)
             {
-                fields[3] = string.Join(seps.FieldRepeatSeparator.ToString(), 
+                fields[3] = string.Join(Configuration.FieldRepeatSeparator, 
                     ContactInfo.Select(ci => ci?.ToDelimitedString() ?? string.Empty));
             }
             
             fields[4] = LastUpdated?.ToString("yyyyMMddHHmmss");
-            fields[5] = !string.IsNullOrEmpty(Comments) ? Helpers.StringHelper.Escape(Comments) : null;
+            fields[5] = !string.IsNullOrEmpty(Comments) ? StringHelper.Escape(Comments) : null;
 
-            return string.Join(seps.FieldSeparator.ToString(), fields);
+            return string.Join(Configuration.FieldSeparator, fields);
         }
     }
 
