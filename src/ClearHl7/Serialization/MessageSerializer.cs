@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -12,6 +13,16 @@ namespace ClearHl7.Serialization
     /// </summary>
     public static class MessageSerializer
     {
+        // Cache for segment factory delegates keyed by fully-qualified type name.
+        // Avoids repeated reflection and string allocations on the deserialization hot path.
+        private static readonly ConcurrentDictionary<string, Func<object>> _segmentFactoryCache = new ConcurrentDictionary<string, Func<object>>();
+
+        /// <summary>
+        /// When true, bypasses the segment factory cache and performs raw reflection on every call.
+        /// Intended for benchmark comparison only; do not set this in production code.
+        /// </summary>
+        internal static bool DisableCaches { get; set; } = false;
+
         /// <summary>
         /// Parses the text representing a single Message value into an instance of the appropriate type based upon the HL7 version provided in delimitedString.
         /// </summary>
@@ -93,7 +104,8 @@ namespace ClearHl7.Serialization
             }
 
             // Process the first segment (expected: MSH)
-            ISegment mshSegment = (ISegment)messageClass.Assembly.CreateInstance($"{ messageClass.Namespace }.Segments.MshSegment", false);
+            string mshTypeName = $"{ messageClass.Namespace }.Segments.MshSegment";
+            ISegment mshSegment = (ISegment)CreateCachedSegmentInstance(messageClass.Assembly, mshTypeName);
             if (segments.Length > 0)
             {
                 list.Add(mshSegment);
@@ -132,8 +144,9 @@ namespace ClearHl7.Serialization
                 }
                 else
                 {
-                    // Fall back to reflection for built-in segments
-                    segment = messageClass.Assembly.CreateInstance($"{ messageClass.Namespace }.Segments.{ id.Substring(0, 1).ToUpper(culture) }{ id.Substring(1, 2).ToLower(culture) }Segment", false);
+                    // Fall back to reflection for built-in segments (result is cached after first lookup)
+                    string typeName = $"{ messageClass.Namespace }.Segments.{ id.Substring(0, 1).ToUpper(culture) }{ id.Substring(1, 2).ToLower(culture) }Segment";
+                    segment = CreateCachedSegmentInstance(messageClass.Assembly, typeName);
                 }
 
                 if (segment == null)
@@ -278,6 +291,32 @@ namespace ClearHl7.Serialization
             }
 
             return message.ToDelimitedString();
+        }
+
+        /// <summary>
+        /// Creates an instance of a segment type by its fully-qualified name, using a cached factory
+        /// delegate after the first call so that subsequent calls avoid reflection overhead.
+        /// </summary>
+        /// <param name="assembly">The assembly that contains the segment type.</param>
+        /// <param name="typeName">The fully-qualified type name (e.g. "ClearHl7.V290.Segments.PidSegment").</param>
+        /// <returns>A new instance of the segment type, or null if the type is not found.</returns>
+        private static object CreateCachedSegmentInstance(Assembly assembly, string typeName)
+        {
+            if (DisableCaches)
+            {
+                Type type = assembly.GetType(typeName);
+                return type != null ? Activator.CreateInstance(type) : null;
+            }
+
+            Func<object> factory = _segmentFactoryCache.GetOrAdd(typeName, tn =>
+            {
+                Type type = assembly.GetType(tn);
+                if (type == null)
+                    return null;
+                return () => Activator.CreateInstance(type);
+            });
+
+            return factory?.Invoke();
         }
 
         /// <summary>
