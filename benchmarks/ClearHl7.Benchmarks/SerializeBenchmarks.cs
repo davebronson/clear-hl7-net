@@ -1,5 +1,4 @@
 using BenchmarkDotNet.Attributes;
-using ClearHl7;
 using ClearHl7.Helpers;
 using ClearHl7.Serialization;
 
