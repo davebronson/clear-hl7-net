@@ -17,6 +17,7 @@ namespace ClearHl7.Tests.IntegrationTests
             // Ensure clean test state
             Hl7DateTimeFormatConfig.ClearFieldPrecisions();
             Hl7DateTimeFormatConfig.ClearGlobalOverride();
+            Hl7DateTimeFormatConfig.TimezoneOffset = TimeSpan.Zero;
         }
 
         public void Dispose()
@@ -24,6 +25,7 @@ namespace ClearHl7.Tests.IntegrationTests
             // Clean up after each test to prevent affecting other tests
             Hl7DateTimeFormatConfig.ClearFieldPrecisions();
             Hl7DateTimeFormatConfig.ClearGlobalOverride();
+            Hl7DateTimeFormatConfig.TimezoneOffset = TimeSpan.Zero;
         }
 
         [Fact]
@@ -123,6 +125,44 @@ namespace ClearHl7.Tests.IntegrationTests
             
             // Field 6 (EventOccurred) should be second precision (original)  
             Assert.Equal("20240315143045", fields[6]); // Second precision
+        }
+
+        [Fact]
+        public void MshSegment_WithTimezoneOffsetFieldOverride_UsesConfiguredPositiveOffset()
+        {
+            // Arrange
+            var dateTime = new DateTime(2024, 3, 15, 14, 30, 45);
+            var messageType = new MessageType { MessageCode = "ADT", TriggerEvent = "A01", MessageStructure = "ADT_A01" };
+            var processingType = new ProcessingType { ProcessingId = "P" };
+            Hl7DateTimeFormatConfig.TimezoneOffset = TimeSpan.FromHours(10);
+            Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateTimeFormatPrecisionSecondWithTimezoneOffset);
+
+            var segment = new MshSegment(dateTime, messageType, "MSG001", processingType);
+
+            // Act
+            string delimitedString = segment.ToDelimitedString();
+
+            // Assert
+            Assert.Contains("20240315143045+1000", delimitedString);
+        }
+
+        [Fact]
+        public void MshSegment_WithTimezoneOffsetFieldOverride_UsesConfiguredNegativeOffset()
+        {
+            // Arrange
+            var dateTime = new DateTime(2024, 3, 15, 14, 30, 45);
+            var messageType = new MessageType { MessageCode = "ADT", TriggerEvent = "A01", MessageStructure = "ADT_A01" };
+            var processingType = new ProcessingType { ProcessingId = "P" };
+            Hl7DateTimeFormatConfig.TimezoneOffset = TimeSpan.FromHours(-5);
+            Hl7DateTimeFormatConfig.SetPrecision<MshSegment>(x => x.DateTimeOfMessage, Consts.DateTimeFormatPrecisionSecondWithTimezoneOffset);
+
+            var segment = new MshSegment(dateTime, messageType, "MSG001", processingType);
+
+            // Act
+            string delimitedString = segment.ToDelimitedString();
+
+            // Assert
+            Assert.Contains("20240315143045-0500", delimitedString);
         }
     }
 }

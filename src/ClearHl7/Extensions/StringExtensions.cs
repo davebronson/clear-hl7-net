@@ -168,6 +168,12 @@ namespace ClearHl7.Extensions
         public static string ToHl7DateTimeString(this DateTime dateTime, Type segmentType, string propertyName, string originalFormat, CultureInfo culture)
         {
             string format = Hl7DateTimeFormatConfig.GetFormatForField(segmentType, propertyName, originalFormat);
+
+            if (string.Equals(format, Consts.DateTimeFormatPrecisionSecondWithTimezoneOffset, StringComparison.Ordinal))
+            {
+                return Hl7DateTimeFormatConfig.FormatDateTimeUsingSourceOffset(dateTime);
+            }
+
             return dateTime.ToString(format, culture);
         }
 
